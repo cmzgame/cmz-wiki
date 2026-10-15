@@ -1,5 +1,7 @@
 # The Cozy Medieval Zombies wiki: how the work gets done
 
+> **Before anything else, in every session: ask Michael "Am I Primary or Secondary, and what is my focus?"** and change nothing (no file, commit, issue, or pull request, here or in the game) until he answers; reading is fine. The roles, the two GitHub accounts, and the workflow for both repositories are the game's `github.md` (`C:/Users/micha/Dev/cozy-medieval-zombies/github.md`); wiki work is usually a Secondary's. **This repository's rule** (`github.md`, section 9): the wiki Secondary's routine syncs push to `main` directly; anyone else's change, and any larger change (a new page kind, the generator, the templates), goes through a pull request.
+
 This repository is the wiki of the game Cozy Medieval Zombies, published at **https://michaeldippold.github.io/cmz-wiki/** (GitHub Pages, built by `.github/workflows/pages.yml`). It is written and kept up by Claude, the **wiki agent**; Michael makes targeted changes and verifies pages. Everything about how the wiki is made, kept current, and connected to the game is in this file and the three it points to: `README.md` (the short version for anyone), `WRITING.md` (the voice, the page kinds, numbers, sources), and the game's `docs/37-the-wiki.md` (the plan and why).
 
 ## The two repositories
