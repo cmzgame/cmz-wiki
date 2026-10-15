@@ -1,0 +1,21 @@
+name: Check
+
+# Every pull request builds the wiki with --check (github.md, sections 9 and 10, in the game's repository): a template
+# naming something the data no longer has, or a number typed into prose, fails it. Nothing is published from a pull
+# request; pages.yml publishes on a push to main.
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node build.js --check
