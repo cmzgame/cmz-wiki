@@ -24,7 +24,7 @@ See [[Controls]] for every key.
 
 A click swings at once. The hit is decided on the click; the arm's animation is only a picture of it. Everything in a wedge in front of the player is hit: the weapon's reach is measured from the feet, and its arc is measured from the chest ({{n tuning.player.aimY}} pixels above the feet) toward the cursor. A target exactly at the edge of the reach is still hit.
 
-- Anything within {{n census.constants.combat.POINT_BLANK tiles}} is always hit, whatever the angle.
+- Anything within {{n combat.blow.pointBlank tiles}} is always hit, whatever the angle.
 - One of the dead drawn below the player on screen gets a little extra reach, up to {{n census.constants.combat.BODY_SLACK tiles}}.
 - The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]).
 - A swing is refused while carrying a prop, climbing, during a timed action, or when dead.
@@ -35,7 +35,7 @@ The wedge itself is not drawn. Each weapon's reach and arc are on its page and i
 
 Each weapon has its own recovery between swings; clicks during it do nothing. Two gold bars at the bottom of the screen fill over each hand's recovery.
 
-Every swing costs [[Stamina]]. The player is never locked out: a swing begun at no stamina still lands, at {{n census.constants.combat.TIRED_DAMAGE}} times its damage (the tired blow). A swing that drains the last stamina still does full damage; the next one is the tired one. Running out leaves the player winded, unable to sprint until stamina is back to {{n tuning.player.sprintRecoverAt}}.
+Every swing costs [[Stamina]]. The player is never locked out: a swing begun at no stamina still lands, at {{n combat.blow.tiredDamage}} times its damage (the tired blow). A swing that drains the last stamina still does full damage; the next one is the tired one. Running out leaves the player winded, unable to sprint until stamina is back to {{n tuning.player.sprintRecoverAt}}.
 
 ### Damage and the finisher
 
@@ -43,12 +43,12 @@ A hit takes the weapon's damage from the target's health. A hit on one of the de
 
 The damage is multiplied by each of these that applies:
 
-- {{n census.constants.combat.TIRED_DAMAGE}} for a tired blow.
+- {{n combat.blow.tiredDamage}} for a tired blow.
 - {{n combat.finisher.mult}} for a finisher.
 - {{n items.shield.shield.attackMult}} with the shield's guard raised.
 - {{n combat.dual.offDamage}} for an off-hand blow.
 
-A landed blow briefly freezes the game (hit-stop: {{n census.constants.combat.HIT_STOP seconds}}, {{n census.constants.combat.HIT_STOP_KILL seconds}} on a kill) and kicks the striking player's view {{n census.constants.combat.KICK_PX}} pixels along the aim for {{n census.constants.combat.KICK_TIME seconds}}.
+A landed blow briefly freezes the game (hit-stop: {{n combat.blow.hitStop seconds}}, {{n combat.blow.hitStopKill seconds}} on a kill) and kicks the striking player's view {{n census.constants.combat.KICK_PX}} pixels along the aim for {{n census.constants.combat.KICK_TIME seconds}}.
 
 ### Knockback
 
@@ -69,10 +69,10 @@ Weapons wear out by landed hits. See [[Durability]].
 ## Numbers
 
 - Right tap: {{n census.constants.buttons.TAP_TIME seconds}}.
-- Point blank: {{n census.constants.combat.POINT_BLANK tiles}}.
-- Tired blow: {{n census.constants.combat.TIRED_DAMAGE}} times damage.
+- Point blank: {{n combat.blow.pointBlank tiles}}.
+- Tired blow: {{n combat.blow.tiredDamage}} times damage.
 - Finisher: {{n combat.finisher.mult}} times damage.
-- Hit-stop: {{n census.constants.combat.HIT_STOP seconds}}; {{n census.constants.combat.HIT_STOP_KILL seconds}} on a kill.
+- Hit-stop: {{n combat.blow.hitStop seconds}}; {{n combat.blow.hitStopKill seconds}} on a kill.
 - Knockback time: {{n tuning.zombie.knockTime seconds}}.
 - Stamina: {{n tuning.player.stamina}}, coming back at {{n tuning.player.staminaRegen}} a second.
 
@@ -80,7 +80,7 @@ Weapons wear out by landed hits. See [[Durability]].
 
 Whenever a world is open to friends, hit-stop is switched off for everyone, host and guests. The view's kick is felt only by the player who struck.
 
-The mouse roles are read on each player's own machine and sent to the host. A guest's own swing and guard show at once on their screen, but the hits, the shove, and the bow's draw are worked out on the host. The rules (Multi-hit, Zombie aggro) are the host's, and a world keeps them in its save. See [[Multiplayer]].
+The mouse roles are read on each player's own machine and sent to the host. A guest's own swing and guard show at once on their screen, but the hits, the shove, and the bow's draw are worked out on the host; a guest's right tap during a draw ends the draw on the host too. The rules (Multi-hit, Zombie aggro) are the host's, and a world keeps them in its save. See [[Multiplayer]].
 
 ## Settings that change it
 
@@ -88,9 +88,9 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 - **Swing targets** (default off): a green outline on exactly the dead the next left click would hit. It follows the off hand when that hand would take the click.
 - **Show hit shapes** (default off): draws the points on each nearby body that the swing tests, green when in the wedge.
 - **Swing timer** (default on): the bars that fill over each hand's recovery.
-- **Zombie aggro** (default off): off, the dead ignore the player (see [[The dead]]).
+- **Zombie aggro** (default on): off, the dead ignore the player (see [[The dead]]).
 
-{{devonly note="Combat testing (default off, read when the page loads) removes the scattered and wild trees and stands a crowd of extra dead on open ground. The Dev chest setting (default on) puts a chest of every weapon beside the spawn."}}
+{{devonly note="Combat testing (default off, read when the page loads) removes the scattered and wild trees and stands a crowd of extra dead in a ring round the spawn. The Dev chest setting (default on) puts a chest of every weapon beside the spawn."}}
 
 {{planned doc=02 note="A cap on how fast the player can turn while a swing recovers, against spinning and clicking (question 29b)."}}
 
@@ -112,10 +112,11 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 - `src/combat.js:186-188`, `src/combat.js:166-176`: only the dead are targets; a swing refused while carrying, climbing, in a timed action, or dead
 - `src/buttons.js:10`, `src/buttons.js:24-47`: the roles and the tap time
 - `src/player-controller.js:17-55`: what each role does; the stance starts on the press; Space is the shove
-- `src/main.js:610-625`: a right tap: cancel a draw, else the menu
+- `src/main.js:625-640`, `src/game.js:553`: a right tap: cancel a draw (an event in the player's snapshot, ended in the world's step), else the menu (game commit 2c70942)
 - `src/combat.js:201-219`: the wedge: reach from the feet, inclusive; point blank; the down-screen slack
 - `data/tuning.json`: `player.aimY` (the chest), `player.sprintRecoverAt`, `player.stamina`, `player.staminaRegen`, `zombie.knockTime`
-- `src/combat.js:29-48`: point blank, slack, tired damage, hit-stop, kick constants
+- `data/combat.json`: `blow` (point blank, tired damage, the default knockdown, hit-stop), read by `src/combat.js:33`, `src/combat.js:67` (game commit 2c70942)
+- `src/combat.js:34`, `src/combat.js:45-46`: the slack and the kick constants
 - `src/combat.js:166-176`: line of sight to the target
 - `src/combat.js:305-323`, `src/combat.js:413-420`: cooldown, stamina cost, the tired blow
 - `src/ui/swing-timer.js`: the gold bars at bottom centre
@@ -131,8 +132,8 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 - `src/main.js:1454-1456`: the kick answered only by the striker's client
 - `src/player-controller.js:13-16`, `src/player-controller.js:43`, `src/player-controller.js:53`: a guest's swing and guard predicted; hits, shove, and draw on the host
 - `src/net.js:815`, `src/net.js:1038`, `src/rules.js:23-37`: the host's rules travel in frames and the save
-- `src/settings.js:12`, `src/settings.js:16`, `src/settings.js:18-20`: Zombie aggro, Swing timer, Swing targets, Multi-hit, Show hit shapes defaults
+- `src/settings.js:12`, `src/settings.js:16`, `src/settings.js:18-20`: Zombie aggro (on (game commit 2c70942)), Swing timer, Swing targets, Multi-hit, Show hit shapes defaults
 - `src/combat.js:399-410`, `src/combat.js:431-443`: the swing targets outline and the hit shapes
-- `src/settings.js:15`, `src/settings.js:31`, `src/main.js:1189-1192`, `src/game.js:80-83`, `src/game.js:119-132`: Combat testing and the Dev chest
+- `src/settings.js:15`, `src/settings.js:31`, `src/game.js:72-96`, `src/game.js:123-139`: Combat testing and the Dev chest (game commit 2c70942)
 
 {{navbox weapons}}

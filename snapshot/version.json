@@ -1,7 +1,7 @@
 {
-  "commit": "3c70aa734b1fe3e2da812904adba1f171f910c0c",
-  "short": "3c70aa7",
-  "date": "2026-10-14T22:40:03-05:00",
-  "subject": "Bugs: Settings' Defaults resets only what the Settings screen shows (its choices and the painted layers), never the identities, the browser id, the friends' worlds, the creator and owner keys, or the panels' places (the wiki census's first item; tried under Node with a stand-in store). The torch holders' sync moved to Fixed (8f5d996). Docs: bugs",
+  "commit": "2c70942d3f6a30c9f82b467e1eb4f63ae766c760",
+  "short": "2c70942",
+  "date": "2026-10-15T00:19:40-05:00",
+  "subject": "The wiki census's surprises, ruled by Michael and done: Zombie aggro on by default (a sandbox setting; saved settings keep their own; the headless hash keeps aggro off); health regenerates with survival off; no cloth tag on the bandage; X removes only what players made (built walls, props made at a station), a removed station spilling its output; the wheelbarrow carried; the blow's numbers and every bow number as data in combat.json, the same values; the needs' code defaults equal to the data; Leave world to the Worlds screen; Combat testing's hundred dead round the spawn. Logged: the chop tool and stump, lighting a fire (TODO), the combat pass's items (21), the settings rebuild (TODO), darkness and sight (02 question 30), the big cart (05). Tried in the pane: X, regen, the wheelbarrow, worlds 10 of 10; headless 8 of 8, hashes unchanged. Docs: bugs, 02, 05, 13, 21, TODO; data: combat, items, the wheelbarrow, the manifest",
   "ref": "origin/main"
 }

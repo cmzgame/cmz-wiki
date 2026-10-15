@@ -35,7 +35,7 @@ A world made on another map is listed but cannot be played here; its row says it
 
 ### Leaving a world
 
-**Leave world**, on the pause menu or the dead screen, saves the world and returns to the title. A host with friends in is asked first, since leaving closes the world to them.
+**Leave world**, on the pause menu or the dead screen, saves the world and shows the Worlds screen; its Back goes to the title. A host with friends in is asked first, since leaving closes the world to them.
 
 ## Numbers
 
@@ -67,6 +67,6 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 - `src/clock.js:18`: `START_HOUR`
 - `src/main.js:253-288`: Play loads the save, opens to friends again if it was open
 - `src/ui/screens.js:206`: Delete's confirmation
-- `src/main.js:335-349`, `src/ui/screens.js:198-203`: Leave world saves and returns to the title, asking a host with guests
+- `src/main.js:345-359`, `src/ui/screens.js:198-203`: Leave world saves and shows the Worlds screen, asking a host with guests (game commit 2c70942)
 - `src/ui/screens.js:571`, `src/net.js:383-394`: the dots asked of the relay
 - `src/main.js:325-331`: a guest never saves

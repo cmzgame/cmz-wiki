@@ -32,7 +32,7 @@ The ingredients are counted, and taken, from:
 - the station's own output box;
 - every container within {{n census.constants.stations.REACH tiles}} of you that has already been searched (an unsearched chest's contents do not exist yet; see [[Containers]]).
 
-They are taken from your bag first, then the belt, then your hands, then the containers. Some recipes ask for "any cloth": any cloth item will do, a bandage or a garment.
+They are taken from your bag first, then the belt, then your hands, then the containers. Some recipes ask for "any cloth": any garment will do (a bandage is not cloth).
 
 All the ingredients for the count are taken when you press Make. If anything is short, nothing is taken and the game says what is missing ("Short of ...").
 
@@ -51,7 +51,7 @@ After Make, the work runs on the station's own queue in the world's time. You ma
 
 What a recipe makes lands in the station's **output box**, a grid of 3 × 2 that opens beside your bag. If the output box is full, the item is put on the floor beside the station. The output box counts as one of the places ingredients are taken from, so a chain (planks to sticks to a bow) can be made without emptying it.
 
-A recipe for **furniture** (a chest, a shelf, a bench, a table, a bed, a workbench, a wheelbarrow) makes no item: the furniture is placed as a prop on a free tile beside the station.
+A recipe for **furniture** (a chest, a shelf, a bench, a table, a bed, a workbench, a wheelbarrow) makes no item: the furniture is placed as a prop on a free tile beside the station. A container made this way starts searched and empty, and anything made at a station can be taken down again with the removal tool (see [[Building]]).
 
 ## Recipes
 
@@ -83,7 +83,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/ui/station-panel.js:157`: the panel closes beyond reach
 - `src/stations.js:67-104`: where ingredients are counted from, searched containers only
 - `src/stations.js:108-124`: the order they are taken in
-- `data/items.json:15`: the bandage is cloth
+- `data/items.json:15`: the bandage is not cloth (game commit 2c70942)
 - `data/items.json:23-28`: the garments are cloth
 - `src/stations.js:146-154`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "Needs a hammer in hand.", "Short of ..."
 - `src/stations.js:193-205`: a job waits while its fire is out

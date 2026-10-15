@@ -18,7 +18,7 @@ When a guest leaves, closes the tab, or loses the connection, their character st
 
 A guest who goes silent has their held keys released after {{n census.constants.net.SILENT_STEPS}} steps, so their character does not keep walking.
 
-When the host leaves the world, every guest goes dormant at once, before the world saves.
+When the host leaves the world or closes it to friends, every guest goes dormant at once, before the world saves.
 
 ### Coming back
 
@@ -51,7 +51,7 @@ Dormancy exists only with friends; a world played alone has nobody to keep.
 - `src/net.js:109`, `src/net.js:619-636`: a guest who leaves stands for `GRACE_S` seconds of game time (still among the world's players), then goes dormant
 - `src/host.js:100`: the world saves when a guest goes dormant
 - `src/net.js:113`, `src/net.js:650`: held keys released after `SILENT_STEPS` silent steps
-- `src/main.js:336`: the host leaving makes every guest dormant before saving
+- `src/main.js:346`, `src/main.js:583`: the host leaving or closing to friends makes every guest dormant before saving (game commit 2c70942)
 - `src/host.js:54-80`: a rejoin from the same browser brings back the same character
 - `src/main.js:130-209`, `src/main.js:134`: stepping away after `AWAY_AFTER_MS` (300000 real ms), "You stepped away", any input brings you back
 - `src/net.js:453-472`, `src/net.js:1295`: others' logs told of stepping away and coming back

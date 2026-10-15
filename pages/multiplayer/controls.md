@@ -39,7 +39,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - `Tab`: the bag (or the character panel if you wear no bag). Also closes the actions menu.
 - `C`: the character panel.
 - `N`: the build palette (see [[Building]]).
-- `X`: removal mode, for taking down what was built.
+- `X`: removal mode, for taking down what players built or made (see [[Building]]).
 - `R`: turn the thing being placed; rotate an item being dragged.
 
 ### The screen
@@ -80,11 +80,11 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 ## Sources
 
 <!-- sources at 9205ad7 -->
-- `src/ui/screens.js:20-45`, `src/settings.js:41-59`: the Controls screen is a fixed list and no setting rebinds a key
+- `src/ui/screens.js:20-46`, `src/settings.js:41-59`: the Controls screen is a fixed list (with Q or the middle button, the right button held, and the held left click; no K) and no setting rebinds a key (game commit 2c70942)
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
 - `src/main.js:926-940`: the left button: placement's confirm, Use mode's target, else the swing
 - `src/interact.js:1156`: `CLICK_REACH`, a gatherable sways when clicked within reach
-- `src/main.js:610-626`: a right tap opens the menu, cancels a draw, puts the item down in Use mode
+- `src/main.js:625-643`: a right tap opens the menu, cancels a draw, puts the item down in Use mode (game commit 2c70942)
 - `src/input.js:69-73`: the middle button read
 - `src/main.js:71`, `src/main.js:898-906`: the wheel's zoom step, its pace, not with a panel open
 - `src/ui/inventory-panel.js:123`: the wheel rotates a dragged item

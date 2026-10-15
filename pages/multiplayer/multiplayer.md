@@ -43,7 +43,7 @@ A guest who leaves or loses their connection stands in the world for a short whi
 
 ### Names over heads
 
-Another living player's name floats over their head while they are in your [[Sight|sight]]. Your own name is never shown over you. There is no row on the Settings screen to hide the names.
+Another living player's name floats over their head while they are in your [[Sight|sight]]. Your own name is never shown over you. The **Names over heads** row on the [[Settings]] screen (Shown by default) hides them.
 
 ### Talking
 
@@ -88,6 +88,6 @@ The {{n census.counts.rules}} world rules above, set by the host.
 - `src/game.js:257-264`, `src/main.js:1464-1465`, `data/tuning.json`: time fast only when every living player sleeps, `player.sleepTimeScale`, the message
 - `src/net.js:109`, `src/net.js:619-636`, `src/host.js:95-101`: the grace and dormancy
 - `src/main.js:130-209`: stepping away
-- `src/ui/names.js:10-35`, `src/ui/screens.js:753-768`: other players' names in sight, never your own, no Settings row to hide them
+- `src/ui/names.js:10-35`, `src/ui/screens.js:761`, `src/settings.js:26`: other players' names in sight, never your own, the Settings row that hides them (game commit 2c70942)
 - `src/ui/log.js`, `src/ui/speech.js`: talking
 - `src/ui/screens.js:785-791`, `src/main.js:869-875`: the dead screen, a guest's from the host

@@ -24,9 +24,9 @@ A container can hold a bag or a belt only while that bag or belt is empty (the o
 
 - **Barrels** roll the barrel table.
 - **Chests**, and every other container in the village (bookcases, carts, coffins, counters, cupboards, desks, haystacks, shelves, stalls, strongboxes, woodpiles), roll the chest table.
-- **Wheelbarrows** roll the same fixed contents as the [[Developer chest]].
+- **Wheelbarrows** have their own table, which rolls nothing: an empty grid of {{n loot.wheelbarrow.grid.0}} × {{n loot.wheelbarrow.grid.1}}.
 
-This holds for furniture you make as well: a chest or a shelf made at the [[Workbench]] is unsearched when it appears, and its first search rolls the chest table like any other. A wheelbarrow made there fills, on its first search, with the dev chest's contents.
+Furniture you make is different: a chest, a shelf, or a wheelbarrow made at the [[Workbench]] appears already searched and empty, so nothing is ever rolled into it.
 
 Each table is rolled a number of times, and each roll picks one row by its weight. "Nothing" is a row like any other.
 
@@ -79,9 +79,10 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `src/ui/inventory-panel.js:667`: shift-click sends across, with the container rule
 - `src/inventory.js:159-173`: the one container rule
 - `data/sprites/barrel.json`: barrels roll the barrel table
-- `data/sprites/wheelbarrow.json`: the wheelbarrow rolls the dev kit
+- `data/sprites/wheelbarrow.json`, `data/loot.json`: the wheelbarrow's own empty table (game commit 2c70942)
 - `data/recipes.json:125-152`: the chest and shelf recipes
 - `data/recipes.json:229-246`: the wheelbarrow recipe
+- `src/stations.js:178-192`: a container made at a station starts with its bag made, searched and empty (game commit 2c70942)
 - `data/loot.json:2-4`: the chest, barrel, and body tables, their rolls and weights
 - `src/entities/character.js:139-162`: a body's grid of 6 x 6, its hands, garments, pockets, and what is lodged
 - `src/interact.js:1334-1358`: searching a body; villagers have no search entry

@@ -14,31 +14,31 @@ summary: The bow's draw and brace, the arc of a shot, what stops an arrow, getti
 With the bow in both hands, the left button draws. The cursor sets the direction and where a full draw comes down; it is read at chest height, so a cursor on a body aims at its feet. A partial draw falls short along the same line, gaining distance quickly at first and slowly near full.
 
 - A full free draw takes {{n items.bow.bow.drawTime seconds}}.
-- While drawing, the player walks at {{n census.constants.archery.tunables_drawSpeed}} of their speed.
-- A release before {{n census.constants.archery.tunables_minDraw}} of a full draw is dry: nothing flies and nothing is spent.
+- While drawing, the player walks at {{n combat.bow.drawSpeed}} of their speed.
+- A release before {{n combat.bow.minDraw}} of a full draw is dry: nothing flies and nothing is spent.
 - A tap of right during a draw cancels it and keeps the arrow. Sprinting, opening a panel, climbing, or a pause also cancel it.
-- After a shot there is {{n census.constants.archery.tunables_recoverTime seconds}} before the next draw.
+- After a shot there is {{n combat.bow.recoverTime seconds}} before the next draw.
 
 Arrows are taken from the bag or the belt. With none, the game says "No arrows."
 
 ### The brace
 
-Holding right while drawing braces the bow: a full draw takes {{n items.bow.bow.braceDrawTime seconds}}, but the player walks at {{n census.constants.archery.tunables_braceMove}} of their speed.
+Holding right while drawing braces the bow: a full draw takes {{n items.bow.bow.braceDrawTime seconds}}, but the player walks at {{n combat.bow.braceMove}} of their speed.
 
 ### The arc and the landing
 
-The arrow travels along the ground at {{n census.constants.archery.tunables_speed tiles a second}}, with the arc drawn above it, out to at most {{n census.constants.archery.tunables_range tiles}}. The arc rises from {{n census.constants.archery.tunables_arcMin}} to {{n census.constants.archery.tunables_arcMax}} pixels high with the distance.
+The arrow travels along the ground at {{n combat.bow.speed tiles a second}}, with the arc drawn above it, out to at most {{n combat.bow.range tiles}}. The arc rises from {{n combat.bow.arcMin}} to {{n combat.bow.arcMax}} pixels high with the distance.
 
-It hurts only where it comes down: the nearest of [[The dead]] within {{n census.constants.archery.tunables_hitRadius tiles}} of the landing point. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
+It hurts only where it comes down: the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of the landing point. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
 
 ### What stops a shot
 
 The path is checked once, when the shot is loosed. A shot is stopped by:
 
-- a wall, below {{n census.constants.archery.tunables_wallHeight}} pixels high, unless it passes through an open or broken door below its lintel, or an open or broken window without boards between its sill and its top,
+- a wall, below {{n combat.bow.wallHeight}} pixels high, unless it passes through an open or broken door below its lintel, or an open or broken window without boards between its sill and its top,
 - boards, always,
-- tree trunks and round props, below {{n census.constants.archery.tunables_trunkHeight}} pixels,
-- other solid props, below their own height, up to {{n census.constants.archery.tunables_propHeight}} pixels.
+- tree trunks and round props, below {{n combat.bow.trunkHeight}} pixels,
+- other solid props, below their own height, up to {{n combat.bow.propHeight}} pixels.
 
 A stopped arrow falls at the foot of what stopped it and hits nothing.
 
@@ -63,14 +63,14 @@ A thrown spear keeps its wear. With the [[Shield]]'s guard raised, a throw does 
 
 - Free draw: {{n items.bow.bow.drawTime seconds}}. Braced draw: {{n items.bow.bow.braceDrawTime seconds}}.
 - Bow damage: {{n items.bow.bow.damage}} at full draw.
-- Range: {{n census.constants.archery.tunables_range tiles}}. Speed: {{n census.constants.archery.tunables_speed tiles a second}}.
-- Hit radius: {{n census.constants.archery.tunables_hitRadius tiles}}.
-- Walking while drawing: {{n census.constants.archery.tunables_drawSpeed}}; braced {{n census.constants.archery.tunables_braceMove}}.
+- Range: {{n combat.bow.range tiles}}. Speed: {{n combat.bow.speed tiles a second}}.
+- Hit radius: {{n combat.bow.hitRadius tiles}}.
+- Walking while drawing: {{n combat.bow.drawSpeed}}; braced {{n combat.bow.braceMove}}.
 - Spear throw: {{n items.spear.thrown.damage}} damage, {{n items.spear.thrown.range tiles}}, break chance {{n items.spear.thrown.breakChance}}.
 
 ## With friends
 
-A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. Arrows in flight are sent to guests each frame, and arrows on the floor or lodged in bodies travel with the world.
+A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, and arrows on the floor or lodged in bodies travel with the world.
 
 ## Settings that change it
 
@@ -89,9 +89,9 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:468-477`: the bow and the spear share the launcher and the draw
 - `src/archery.js:578-617`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
 - `data/items.json`: the bow's `drawTime` and `braceDrawTime`, `damage`, `knockback`, `shots`; the spear's `thrown` block
-- `src/archery.js:27-52`: the tunables: range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights
+- `data/combat.json` `bow`, `src/archery.js:27-56`: the bow's and the flight's numbers as data (range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights) (game commit 2c70942)
 - `src/archery.js:522-575`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the bag and belt hold none
-- `src/main.js:610-625`: a right tap during a draw cancels it
+- `src/main.js:625-640`, `src/game.js:553`, `src/net.js:418`: a right tap during a draw cancels it in the world's step, a guest's too (game commit 2c70942)
 - `src/archery.js:595-597`: sprinting, a panel, climbing, or a pause cancels a draw
 - `src/archery.js:602-603`: the braced draw time
 - `src/player-controller.js:52`: walking speed while drawing and braced

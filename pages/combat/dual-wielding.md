@@ -29,7 +29,7 @@ Exposure is applied after the shield's guard.
 
 - An item for both hands needs two empty hands.
 - An item for either hand goes in the main hand first.
-- The [[Throwing spear]] is refused beside any other weapon. A torch does not count as a weapon for this rule, so a spear and a torch may be held together, and the torch then swings as the off hand.
+- The [[Throwing spear]] is refused beside any other weapon. A torch does not count as a weapon for this rule, so a spear and a torch may be held together, but the torch is then only a light: it never takes the off hand's turn, and the spear is never dual wielded. Beside any other weapon, such as a [[Sword]], a torch does swing as the off hand when clicked faster than the main weapon recovers.
 - When a two-handed item pushes the off-hand item into the bag, the game remembers it and puts it back in the hand later.
 
 ## Numbers
@@ -55,7 +55,7 @@ Each player's cooldowns and exposure travel exactly to the guest, so a guest's s
 - `src/combat.js:267-283`: the left click swings the main hand when ready, else the off hand
 - `src/combat.js:305-323`: each hand's cooldown; the lockout after a swing with two weapons
 - `data/combat.json`: `dual.offDamage`, `lockout`, `window`, `front`, `arc`, `side`, `sideArc`, `behind`
-- `src/combat.js:105-110`: any item with a weapon block in the off hand is an off-hand weapon; a shield never
+- `src/combat.js:106-115`: any item with a weapon block in the off hand is an off-hand weapon; a shield never; nothing beside a `noDual` main hand (the spear) (game commit 2c70942)
 - `src/combat.js:320`: each off-hand swing restarts the exposure
 - `src/ui/swing-timer.js`: the red exposure bar over the head
 - `src/combat.js:289-298`: the bite multipliers by direction

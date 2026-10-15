@@ -76,10 +76,10 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 
 ## Settings that change it
 
-- **Zombie aggro** (default off): off, the dead never see the player and never hunt them; they wander, and a hit does not make them hunt. Flames do not draw them either. On, they behave as described here.
-- **Zombies attack villagers** (default off): on, one of the dead that sees no player hunts the nearest of the [[Villagers]] it can see, with the same sight and memory, and bites them. Players are always preferred when in sight. A bitten villager flinches for {{n tuning.villager.hurtTime seconds}}; one bitten to death gets up as one of the dead in what they wore.
+- **Zombie aggro** (default on): on, they behave as described here. Off, the dead never see the player and never hunt them; they wander, and a hit does not make them hunt. Flames do not draw them either. A browser that saved its settings before aggro came on by default keeps its own choice.
+- **Zombies attack villagers** (default off): on, one of the dead that sees no player hunts the nearest of the [[Villagers]] it can see, with the same sight and memory, and bites them. It works whatever Zombie aggro says: with aggro off the dead ignore players and still hunt villagers; with aggro on, players are always preferred when in sight. The two are separate settings on purpose. A bitten villager flinches for {{n tuning.villager.hurtTime seconds}}; one bitten to death gets up as one of the dead in what they wore.
 
-{{devonly note="Combat testing (default off, read when the page loads) stands a crowd of extra dead on open ground and removes the scattered and wild trees."}}
+{{devonly note="Combat testing (default off, read when the page loads) stands a crowd of extra dead in a ring round the spawn, outside rooms, and removes the scattered and wild trees."}}
 
 ## See also
 
@@ -111,5 +111,5 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/entities/zombie.js:113-123`, `src/entities/zombie.js:357-364`: death and the still body
 - `src/entities/zombie.js:131-141`: a floored zombie takes finishers
 - `src/main.js:1443-1447`: the bite's words on the victim's client alone
-- `src/settings.js:12-13`, `src/entities/zombie.js:268-289`, `src/entities/zombie.js:296`, `src/entities/zombie.js:404-416`, `src/entities/villager.js:100-136`: Zombie aggro, Zombies attack villagers, a bitten villager turning
-- `src/settings.js:15`, `src/main.js:1189-1192`, `src/game.js:119-132`: Combat testing
+- `src/settings.js:12-13`, `src/settings.js:46`, `src/entities/zombie.js:268-289`, `src/entities/zombie.js:296`, `src/entities/zombie.js:404-416`, `src/entities/villager.js:100-136`: Zombie aggro, Zombies attack villagers, a bitten villager turning
+- `src/settings.js:15`, `src/game.js:123-139`: Combat testing, its crowd in a ring round the spawn (game commit 2c70942)

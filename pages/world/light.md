@@ -71,7 +71,7 @@ Light belongs to the world: the host works it out, and each guest works out the 
 
 ## Settings that change it
 
-- **Zombie aggro** (default Off): with it off, the dead neither see you nor walk to flames, whatever the light.
+- **Zombie aggro** (default On): with it off, the dead neither see you nor walk to flames, whatever the light.
 
 ## See also
 
@@ -101,5 +101,5 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `src/visibility.js:10-67`: darkness does not shorten your sight
 - `src/light.js:18`: the light grid's resolution
 - `data/tuning.json:5-7`, `src/entities/zombie.js:232-237`, `src/entities/zombie.js:295-311`: the dead's light-scaled sight and flame range
-- `src/settings.js:12`: Zombie aggro off by default
+- `src/settings.js:12`: Zombie aggro on by default (game commit 2c70942)
 - `src/net.js:1145-1152`, `src/net.js:814`, `src/light.js:161-164`: a guest rebuilds the light; each player's carried light sent when it changes

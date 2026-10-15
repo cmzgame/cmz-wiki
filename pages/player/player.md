@@ -22,7 +22,7 @@ You walk at {{n tuning.player.speed tiles a second}} in the eight isometric dire
 Some things slow you:
 
 - Shallow [[Water]]: {{n sprites.floor_water_shallow.walk}} of your speed. Deep water cannot be entered at all.
-- A drawn bow: {{n census.constants.archery.tunables_drawSpeed}} of your speed, or {{n census.constants.archery.tunables_braceMove}} while braced (see [[Archery]]).
+- A drawn bow: {{n combat.bow.drawSpeed}} of your speed, or {{n combat.bow.braceMove}} while braced (see [[Archery]]).
 - A raised [[Shield]]: {{n items.shield.shield.moveMult}} of your speed.
 
 Climbing through an open window takes {{n tuning.player.climbTime}} seconds. You cannot climb or sprint while carrying a prop. Right-click "Walk here", and the walk to any action's target, use the same speeds; any movement key stops it.
@@ -82,13 +82,13 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `src/entities/player.js:273-279,337-344`: keyed movement snapped to the eight directions
 - `src/entities/player.js:346`: facing follows the aim, not the walk
 - `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1085-1094,1120-1123`: shallow water's speed and deep water's bar
-- `src/archery.js:37-38`: the draw and brace slowdowns
+- `data/combat.json` `bow.drawSpeed`, `bow.braceMove`: the draw and brace slowdowns (game commit 2c70942)
 - `data/items.json:34`: the raised shield's slowdown
 - `src/player-controller.js:52`: the multiplier picked in one place
 - `data/tuning.json:53`, `src/entities/player.js:74-89`: the window climb, refused while carrying
 - `src/entities/player.js:328`: no sprint while carrying
 - `src/entities/player.js:250,323`: auto-walk uses the same speeds; a movement key cancels it
-- `src/entities/player.js:120-138`: the needs, their damage, and regeneration's conditions; all held full with Survival off
+- `src/entities/player.js:120-139`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running (game commit 2c70942)
 - `src/moodles.js:23-102`: the five moodles
 - `src/game.js:87,100-115,359`: the starter kit, given at create and to every added player
 - `data/items.json:29`: the rope belt's two slots

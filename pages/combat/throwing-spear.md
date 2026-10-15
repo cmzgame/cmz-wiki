@@ -7,7 +7,7 @@ summary: A main-hand spear that stabs at long reach, or is thrown with the bow's
 
 {{infobox-item spear}}
 
-The **Throwing spear** is held in the main hand only, and never beside another weapon (a [[Shield]] or a [[Torch]] is fine). It stabs at a long, narrow reach, or it can be thrown.
+The **Throwing spear** is held in the main hand only, and never beside another weapon (a [[Shield]] or a [[Torch]] is fine; a torch beside it is only a light and never swings). It stabs at a long, narrow reach, or it can be thrown.
 
 ## Combat
 
@@ -23,9 +23,10 @@ The stab lasts about {{n items.spear.weapon.kills}} kills (see [[Durability]]); 
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/combat.js:106-115`: nothing in the off hand swings beside it (game commit 2c70942)
 - `data/items.json`: the spear: main hand, `noDual`, the stab's `weapon` block, the `thrown` block
 - `src/items.js:112-133`: refused beside another weapon; a shield or torch allowed
-- `src/combat.js:37`, `src/combat.js:343`: the stab's default knockdown chance
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the stab's default knockdown chance
 - `src/player-controller.js:39-45`: middle or Q throws; no brace
 - `src/archery.js:475`, `src/archery.js:556-559`: the spear thrown with the bow's draw, leaving the hand empty with its wear
 - `src/archery.js:244-259`: damage by draw, never a knockdown, the break roll, lodging or lying where it fell

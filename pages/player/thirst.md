@@ -22,7 +22,7 @@ There are three ways to drink:
 
 - **A [[Waterskin]].** Choose "Drink" on it in your bag, or press its belt key. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water.
 - **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, [[Stew]] +{{n items.stew.thirst}}.
-- **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well" or "Drink from the water". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
+- **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well" (or the trough, or the font) or "Drink from the water". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
 
 At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag. Wells and water never run out.
 
@@ -63,7 +63,7 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 - `src/interact.js:1049-1052`, `src/entities/player.js:105-113`, `data/tuning.json:51`: the "Drink" entry and the sip
 - `src/interact.js:994-1004`: the belt key drinks a waterskin on the belt
 - `data/items.json:17,50`: the apple's and the stew's thirst
-- `src/interact.js:534-582`, `src/map.js:1125-1127`: the well's and the water's actions; floors with `drink`
+- `src/interact.js:534-582`, `src/map.js:1125-1127`: the well's and the water's actions, named for the prop; floors with `drink` (game commit 2c70942)
 - `src/interact.js:47,545,552-555`: drinking's time, the E action below 90, thirst set to full
 - `src/interact.js:48,538,566`: filling's time and every bag waterskin to full
 - `src/moodles.js:72-78`: the thirst stages

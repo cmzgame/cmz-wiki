@@ -28,7 +28,7 @@ You must be within {{n census.constants.interact.INTERACT_RANGE}} tiles of the w
 
 ### Wells, troughs, and the font
 
-A well, a trough, and the chapel's font give the same two actions. The well also lowers its bucket and winds it back up when you drink from it or click it. The valley has wells in the square, at [[Your cottage]], and in [[The inn]]'s yard; troughs in the square, the inn's yard, and [[The manor]]'s garden; and the font in [[The chapel]].
+A well, a trough, and the chapel's font give the same two actions, named for what they are: "Drink from the well", "Drink from the trough", "Drink from the font". The well also lowers its bucket and winds it back up when you drink from it or click it. The valley has wells in the square, at [[Your cottage]], and in [[The inn]]'s yard; troughs in the square, the inn's yard, and [[The manor]]'s garden; and the font in [[The chapel]].
 
 ## Numbers
 
@@ -59,7 +59,7 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 - `src/interact.js:47-48`: the drink's and the fill's times
 - `src/interact.js:538`, `src/interact.js:564-568`, `data/items.json:19`: every waterskin in the bag (not the belt) filled to 100
 - `src/interact.js:42`: the reach
-- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:574-576`, `src/interact.js:614`: wells, troughs, and the font give the same actions; the well's bucket
+- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:574-576`, `src/interact.js:614`: wells, troughs, and the font give the same actions, each named for the prop; the well's bucket (game commit 2c70942)
 - `tools/mapgen/valley.py:186`, `tools/mapgen/valley.py:193`, `tools/mapgen/valley.py:197`, `tools/mapgen/valley.py:238`, `tools/mapgen/valley.py:242`, `tools/mapgen/valley.py:253`, `tools/mapgen/valley.py:303`: where the wells, troughs, and the font stand
 - `src/interact.js:550-553`, `data/tuning.json:46`: thirst set to its maximum
 - `src/interact.js:61-83`: a guest's drink or fill run on the host by the tile

@@ -28,6 +28,6 @@ It is light and quick to find, but weak, and it wears out fast.
 - `data/loot.json`: the stick in the `body` and `wild` tables
 - `data/recipes.json`: the handle recipe (a plank into sticks at the workbench) and recipes that take sticks
 - `data/items.json`: the stick's `weapon` block
-- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
 
 {{navbox weapons}}

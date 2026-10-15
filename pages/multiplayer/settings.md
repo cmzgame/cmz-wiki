@@ -13,13 +13,14 @@ In the order the screen shows them, with the default first:
 
 - **Interface size**: Auto, or a fixed size in quarter steps up to {{n census.constants.view.UI_SCALE_MAX}}x. Auto fits the interface to the window.
 - **Zoom**: Auto, Wide, Middle, or Close. Auto picks the level that suits the window's size. `Z` and the wheel change it too, and the choice is kept here.
-- **Zombie aggro**: Off (they ignore you) or On (they hunt you). *A world rule.*
-- **Zombies attack villagers**: Off, or On (they hunt villagers too, you first). *A world rule.*
+- **Zombie aggro**: On (they hunt you) or Off (they ignore you). On by default; a browser that saved its settings before that keeps its own. *A world rule.*
+- **Zombies attack villagers**: Off (villagers are safe), or "On (they hunt villagers, whatever aggro says; with aggro on, you first)". It is a separate knob from Zombie aggro on purpose: with aggro off and this on, the dead leave you alone and still go after villagers. *A world rule.*
 - **Survival**: On (hunger, thirst, tiredness) or Off (no needs). *A world rule.*
 - **Free building**: Off (costs apply) or On (no costs). *A world rule.*
 - **Cursor**: Default, A hand, A severed hand, or A zombie hand.
+- **Names over heads**: Shown or Hidden: another player's name over their head while they are in sight.
 - **Debug corner**: Shown or Hidden.
-- **Square and paths**: Cobble or Dirt, the surface of the village square and its paths.
+- **Square and paths**: Cobble or Dirt, the surface of the village square and its paths. It changes only a world your browser runs: in a friend's world the square is the host's.
 - **Bow aim guide**: On (the landing marker and a dotted line while drawing) or Off. See [[Archery]].
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
 - **Swing targets**: Off or On (a green outline on what your next swing would hit).
@@ -30,7 +31,7 @@ In the order the screen shows them, with the default first:
 
 {{devonly note="These rows are for testing the game."}}
 
-- **Combat testing**: Off or On (no trees and many more of the dead; reload the page).
+- **Combat testing**: Off or On (no trees and a crowd of extra dead in a ring round the spawn; reload the page).
 - **Dev chest**: On (a chest of every item by the spawn) or Off. It is read when a world is made.
 - **Show hit shapes**: Off or On (draws the dead's body samples).
 
@@ -56,13 +57,15 @@ The game's full list of stored settings and their defaults, including the ones t
 
 <!-- sources at 9205ad7 -->
 - `src/ui/screens.js:748-776`: the screen, "Kept in this browser", Defaults and Back
-- `src/settings.js:8-59`: every row's choices and defaults
+- `src/settings.js:8-59`: every row's choices and defaults; Zombie aggro on, the villagers row's label (game commit 2c70942)
+- `src/ui/screens.js:754-772`, `src/ui/names.js:35`: the rows in order, Names over heads among them (game commit 2c70942)
+- `src/main.js:1025-1032`: the square's surface never laid on a guest's copy of the host's world (game commit 2c70942)
 - `src/view.js:84-88`: `UI_SCALE_MAX` and Auto's fit
 - `src/view.js:28`, `src/view.js:70-79`, `src/main.js:898-906`: the zooms and Auto
 - `src/rules.js:109-115`: the five world rules
 - `style.css:561-565`, `src/ui/swing-timer.js:16`: the swing bars at the bottom, the exposure bar over the head
 - `src/ui/screens.js:454-463`: the Layer rows
-- `src/main.js:1190-1193`: combat testing at boot
+- `src/game.js:123-139`: combat testing's crowd in a ring round the spawn (game commit 2c70942)
 - `src/main.js:241-242`: the dev chest and combat testing read when a world is made
 - `src/ui/screens.js:373-382`, `src/main.js:591`, `server/world.js:97-99`: world rules greyed for a guest, a server world's from its owner
 - `src/settings.js`: Defaults resets only the screen's own choices and the painted layers (game commit 3c70aa7)

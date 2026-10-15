@@ -36,7 +36,7 @@ The host's clock is the world's clock.
 
 ### Closing and leaving
 
-**Close to friends** ends the session for everyone in: guests are sent back to their title screen, told the host closed the world. **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same, and also makes their characters dormant in the save.
+**Close to friends** ends the session for everyone in: their characters go [[Dormancy|dormant]], kept in the world for their owners and back where they stood on a rejoin, the world saves, and the guests are sent back to their title screen, told the host closed the world. **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same and goes to the [[Worlds]] screen.
 
 ## Numbers
 
@@ -44,7 +44,7 @@ The host's clock is the world's clock.
 
 ## Settings that change it
 
-The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggro Off, Zombies attack villagers Off, Survival On, Free building Off, Multi-hit Off.
+The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggro On, Zombies attack villagers Off, Survival On, Free building Off, Multi-hit Off.
 
 ## See also
 
@@ -68,7 +68,7 @@ The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggr
 - `src/ui/screens.js:373-382`, `src/main.js:591`: a guest's rows greyed as "(the host's)"
 - `src/net.js:803`, `src/net.js:1040`: the host's clock goes to every guest
 - `server/relay.js:840-852`, `src/main.js:1567`: closing sends every guest "The host closed the world."
-- `src/net.js:149-180`: closing to friends only closes the wire; it makes no guest dormant
-- `src/ui/screens.js:198-203`, `src/main.js:335-349`: Leave world asks a host with guests, makes them dormant, saves, and leaves
+- `src/main.js:568-590`: closing to friends makes every guest's character dormant, closes the wire, and saves (game commit 2c70942)
+- `src/ui/screens.js:198-203`, `src/main.js:345-359`: Leave world asks a host with guests, makes them dormant, saves, and shows the Worlds screen (game commit 2c70942)
 - `src/host.js:30`, `src/host.js:74`: `MAX_OWNERS`, the browsers a world remembers
-- `src/settings.js:12-22`: the rules' defaults
+- `src/settings.js:12-22`: the rules' defaults, Zombie aggro on (game commit 2c70942)

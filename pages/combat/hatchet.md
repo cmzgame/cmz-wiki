@@ -27,6 +27,6 @@ Its arc is narrower than the [[Sword]]'s.
 <!-- sources at 9205ad7 -->
 - `data/loot.json`: the hatchet in the `chest` table
 - `data/items.json`: the hatchet: either hand, its `weapon` block
-- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
 
 {{navbox weapons}}

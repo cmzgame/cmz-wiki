@@ -16,7 +16,7 @@ Left swings it. It has no other mode.
 - It does {{n items.mace.weapon.damage}} damage, with a reach of {{n items.mace.weapon.range tiles}} and an arc of {{n items.mace.weapon.arc}} degrees.
 - Swing {{n items.mace.weapon.swing seconds}}, stamina {{n items.mace.weapon.stamina}}, both more than the [[Sword]].
 - Stagger chance {{n items.mace.weapon.staggerChance}}, and every hit interrupts a bite.
-- It floors on {{n items.mace.weapon.knockdown}} of hits, against the default {{n census.constants.combat.KNOCKDOWN_CHANCE}} (see [[Stagger and knockdown]]).
+- It floors on {{n items.mace.weapon.knockdown}} of hits, against the default {{n combat.blow.knockdownChance}} (see [[Stagger and knockdown]]).
 - It lasts about {{n items.mace.weapon.kills}} kills (see [[Durability]]).
 
 It may be held in either hand.
@@ -28,6 +28,6 @@ It may be held in either hand.
 <!-- sources at 9205ad7 -->
 - `data/items.json`: the mace: either hand, its `weapon` block (`staggerChance`, `interrupts`, `knockdown`, `kills`)
 - `src/entities/zombie.js:142-152`: `interrupts` cancels a bite under way
-- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance the mace overrides
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance the mace overrides
 
 {{navbox weapons}}

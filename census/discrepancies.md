@@ -17,7 +17,7 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 - `docs/02-decisions.md:1177`: four tree radii including 0.14; the data has three (0.18, 0.22, 0.3).
 - `docs/15-ground.md:118`: "only trees have [shadow] today"; rocks have it too.
 - `docs/30-the-big-pass-spec.md:158`: step 0 valley with "a dozen of the dead" and "four villagers"; now 40 and 7 (history).
-- `tools/mapgen/valley.py` comment "lamps" for the square's torch posts; they are placed without torches and give no light.
+- `tools/mapgen/valley.py` comment "lamps" for the square's torch posts; they are placed without torches and give no light. *Resolved at `2c70942`: the posts are placed with a torch.*
 - Code label: troughs and the chapel's font offer "Drink from the well" (`src/interact.js:575`).
 - Code comment `src/entities/player.js:152`: "crops grow" during sleep; no crop growth exists.
 - Code comment `src/ground.js:17`: mushrooms as baked decals; they are props and `data/ground.json` has no mushroom decal.
@@ -38,21 +38,21 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 9. The waterskin's `capacity: 100` (`data/items.json`) is not read for fill amounts. Filling and the starter kit hard-code 100 (`src/interact.js:538,566`, `src/game.js:110`). Changing capacity in data would not change the fill.
 10. `src/ui/moodles.js:1` says "Unchanged" from the parent. The always-show-green behaviour was added in `src/moodles.js:113-126`. This is a code comment only.
 11. These are not doc contradictions but behaviours no doc describes:
-    - With Survival off, health never regenerates (`src/entities/player.js:121-125` returns before the regeneration).
+    - With Survival off, health never regenerates (`src/entities/player.js:121-125` returns before the regeneration). *Resolved at `2c70942`: health regenerates with Survival off.*
     - A sip at full thirst still uses 1 unit of water (`src/entities/player.js:107`).
     - "Fill waterskins" skips waterskins on the belt (`src/inventory.js:80-82`).
     - A rested player who lies down from 20:00 to 21:59 gets up on the next step (`src/entities/player.js:188,203`).
 
 ## combat (20)
 
-- `CLAUDE.md` and `docs/21`: "Combat numbers are data"; several are code constants (tired 0.5, point blank 0.55, slack 0.8, default knockdown 0.3, hit-stop, shield push 0.25 in `src/combat.js`; every bow and throw tunable in `src/archery.js:27-52`; tap 0.2 in `src/buttons.js`).
+- `CLAUDE.md` and `docs/21`: "Combat numbers are data"; several are code constants (tired 0.5, point blank 0.55, slack 0.8, default knockdown 0.3, hit-stop, shield push 0.25 in `src/combat.js`; every bow and throw tunable in `src/archery.js:27-52`; tap 0.2 in `src/buttons.js`). *Resolved in part at `2c70942`: the tired blow, point blank, the default knockdown, and hit-stop are `blow`, every bow tunable `bow`, in `data/combat.json`; the slack, the shield push, and the tap time are still code.*
 - `docs/14` weapons table: mace `hands: main`; data `either`.
 - `docs/14` (Hitting): every hit staggers 0.3 s and "a blow cancels a bite begun"; now by `staggerChance`, and a bite is cancelled only by `interrupts` or a knockdown (the doc's status notes it).
 - `docs/14` acceptance 5: shove pushes 1.6 tiles; data 0.53 (status notes it).
 - `docs/14` As built: multi-hit "default on"; setting default is off (status notes it).
 - `docs/21` halberd: "no knockdown-finisher two-shot" framing, but the halberd floors on 30 percent of hits by the default.
-- `docs/21`: the spear is "never" dual wielded; a spear with a torch makes the torch an off-hand weapon with exposure.
-- `docs/21`: "a sword with a torch in the off hand ... costs nothing"; fast clicking swings the torch and exposes you.
+- `docs/21`: the spear is "never" dual wielded; a spear with a torch makes the torch an off-hand weapon with exposure. *Resolved at `2c70942`: a torch beside the spear never swings.*
+- `docs/21`: "a sword with a torch in the off hand ... costs nothing"; fast clicking swings the torch and exposes you. *Ruled at `2c70942`: intended, as docs/21 reads (costless only at the sword's pace).*
 - `docs/21` Bow bullet: brace rate 1.5 (0.9 s to 0.6 s); actual 1.4 s to 0.6 s, 2.33x.
 - `docs/21` "the bow's two draws" and `docs/20` The control: free-draw walking 0.5; code 0.45.
 - `docs/20`: a `drawStamina` tunable "is there for later"; it does not exist.
@@ -61,7 +61,7 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 - `docs/21` halberd: the sweep quoted as 0.8 s / reach 2.3 / 8 stamina and the thrust as 3.0 / 1.1 / 10 in places; data 0.95 / 2.2 / 12 and 1.3 / 2.9 / 15.
 - `docs/21` Status not-built list: weapon durability; it is built (flagged as history in the same doc).
 - `docs/09`: the breach is dropped when the zombie sees the player; code drops it on sight only within bite reach.
-- `src/settings.js:46` label and `docs/19` framing ("villagers too, you first"): villager hunting works with Zombie aggro off, since `nearestPrey` ignores `zombieAggro`.
+- `src/settings.js:46` label and `docs/19` framing ("villagers too, you first"): villager hunting works with Zombie aggro off, since `nearestPrey` ignores `zombieAggro`. *Ruled at `2c70942`: two knobs on purpose; the label now says so.*
 - `combatTesting` description and `docs/21`: forty dead "about the square"; on the valley they are placed in tiles 1 to 30, far from the spawn.
 - `data/loot.json dev_kit.note`: the chest is "by the well"; code places it by the spawn. `docs/21` "To test it": tile 14, 17 and three spears; the chest holds two (giveKit gives three).
 - `docs/14` says a downed target's hit is a finisher; true for melee only: arrows and thrown spears on a downed zombie do plain damage (`src/archery.js:247`, no finisher multiplier). Not stated as a difference in `docs/20`, which only says a downed zombie can be hit.
@@ -73,7 +73,7 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 - `docs/10-interface.md` container table: "Body | 3×3"; a body's grid is 6x6 (`src/entities/character.js:141`) and `loot.json`'s `body.grid` 3x3 is unused for bodies.
 - `docs/10-interface.md` chest loot "bread, cheese, planks, a log, a hatchet rarely"; the chest table also rolls a sword, mace, good belt, rucksack, gloves, and hood (`snapshot/data/loot.json`).
 - `docs/10-interface.md` acceptance 3 names the hearth's entry "Add a log"; the labels are "Light the ...", "Feed the ... (n of max, h left)", "The ... is full" (`src/interact.js:361-363`).
-- `docs/11-character.md` and `docs/02-decisions.md` (2026-10-10): the Developer Bag comes "from the console ... and never from loot"; the dev chest's `dev_kit` table holds two, and the wheelbarrow uses the same table.
+- `docs/11-character.md` and `docs/02-decisions.md` (2026-10-10): the Developer Bag comes "from the console ... and never from loot"; the dev chest's `dev_kit` table holds two, and the wheelbarrow uses the same table. *The wheelbarrow part resolved at `2c70942`: it has its own empty table.*
 - `docs/11-character.md` implies a picked-up item goes to a hand only with no bag; `takeIn` puts any single holdable item in a free hand first even with room in the bag (`src/interact.js:157-162`).
 - `CLAUDE.md` ("the dev chest every item") and the `devChest` setting's description ("the chest of every item", `src/settings.js:31`): the dev chest holds 17 kinds, no food, materials, clothing, or tools.
 - `docs/02-decisions.md` (step 2, 2026-10-13): "The forge burns charcoal ... until then the dev chest"; the dev chest has no charcoal, and nothing in play gives charcoal, so the forge cannot be lit without the console.
@@ -87,7 +87,7 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 - `docs/30-the-big-pass-spec.md` section 5.3: interaction `on` values "tree" | "rock" | "water" | "soil" | "grass", action kinds `give`/`transform`/`open`/`fill`/`plant`/`water`/`message`, and "The menu lists only rows whose `use` is in a hand"; the resolver accepts item ids/tags, prop sprite ids, character kinds, floor sprite ids, and "tile"; `action` is a verb name; no menu lists rows (`src/interactions.js:137-152`).
 - `docs/30-the-big-pass-spec.md` section 7 and `src/map.js:1535`'s comment: a fire's fuel is "an item or tag"; only an item id works (`getItem(fuelId)`, `countAll` by id, `src/interact.js:354-356`).
 - `docs/30-the-big-pass-spec.md` section 7: "the cooked food's value is the raw's doubled"; roast potato (20 from 10) fits, stew (hunger 50 from ingredients worth 31) does not.
-- `docs/30-the-big-pass-spec.md` section 9.1 and `docs/02` ("the wheelbarrow one big immovable grid"); the wheelbarrow uses the `dev_kit` table, so its first search fills it with the whole dev kit, and its sprite note's "until step 3" has passed with step 3 built.
+- `docs/30-the-big-pass-spec.md` section 9.1 and `docs/02` ("the wheelbarrow one big immovable grid"); the wheelbarrow uses the `dev_kit` table, so its first search fills it with the whole dev kit, and its sprite note's "until step 3" has passed with step 3 built. *Resolved at `2c70942`: its own empty table, and it is carried.*
 - `census.md` lists Stick as "in loot: ... wild"; that table is dead data (see the forage line above).
 
 ## building (11)
@@ -96,8 +96,8 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 - `docs/09` says the prompt names the stack as "door, 2 boards outside, 3 inside". The code shows only a disabled menu entry, "door: boarded (2 this side, 3 far side)", and E's prompt never names the stack.
 - `docs/09` says sealed is computed "per room, each step". It is computed only for the debug corner text and gates nothing.
 - `docs/02` (Openings, 2026-10-10) says sealed "gates sleep later". Nothing reads it; sleep only needs the bed to be in a room (`docs/09` Status already corrects this).
-- `docs/13` §Removal and the palette tooltip say the tool takes what "the player placed or built". The code takes any carryable prop, authored furniture included.
-- `docs/13` §Removal says a removed container spills its contents. A never-searched container has no bag and spills nothing.
+- `docs/13` §Removal and the palette tooltip say the tool takes what "the player placed or built". The code takes any carryable prop, authored furniture included. *Resolved at `2c70942`: X takes only what players made.*
+- `docs/13` §Removal says a removed container spills its contents. A never-searched container has no bag and spills nothing. *Resolved at `2c70942`: only made containers can be removed, and they start with a bag.*
 - `docs/13` §Free building says the setting is "kept in the browser". It is now a world rule carried in the save and sent to guests; only a local world reads the browser setting.
 - `docs/13` Status says prop recipes land "on a free tile beside its station". Only the anchor tile is checked, so a 2×1 piece's second tile may overlap a prop or straddle a wall (inferred).
 - `docs/17` §plan says log-wall corners fall back to `post_wood`. `wall_log.json` names `post_log`. This is history the Status supersedes.
@@ -106,20 +106,20 @@ Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`ce
 
 ## multiplayer-ui (22)
 
-- `src/ui/screens.js:41` Controls lists "K: Near walls: stubs or translucent"; no code reads K.
-- The Controls screen omits Q / middle button (the main hand's other mode) and the right-button hold (block, brace) that `src/buttons.js` implements.
-- `docs/31-multiplayer/03` promises a setting to hide names over heads; `nameTags` exists in `src/settings.js:26`, `58`, but the Settings screen has no row for it.
+- `src/ui/screens.js:41` Controls lists "K: Near walls: stubs or translucent"; no code reads K. *Resolved at `2c70942`.*
+- The Controls screen omits Q / middle button (the main hand's other mode) and the right-button hold (block, brace) that `src/buttons.js` implements. *Resolved at `2c70942`.*
+- `docs/31-multiplayer/03` promises a setting to hide names over heads; `nameTags` exists in `src/settings.js:26`, `58`, but the Settings screen has no row for it. *Resolved at `2c70942`: the Names over heads row.*
 - `docs/31-multiplayer/03` (Settings) says `combatTesting` and `squareSurface` are the host's and read-only for a guest; only the five rules are greyed, and a guest's Square and paths setting repaints its own replica.
 - `docs/31-multiplayer/03` (Pause) says hit-stop stays local on the wire; the code turns hit-stop off entirely on the wire (`src/main.js:880`).
 - `docs/31-multiplayer/03` (Pause) says a listen server with no guests pauses; its own status line and the code say any world on the wire never pauses (the doc's body is stale against its status).
 - `docs/31-multiplayer/04` status says the host loop is still requestAnimationFrame and a Worker is tier 4; the Worker background driver is built (`src/loop.js:151`, `src/main.js:1605`).
 - `docs/31-multiplayer/README` and `04` (2026-10-13) say a Node authority is optional tier 4 and the build is "through tier 3"; server worlds (`server/world.js`) exist (deploy pending).
 - `docs/31-multiplayer/09` says a guest's pause line reads "In Michael's valley as Whipitgood"; `here()` hard-codes `hostName: null` and uses the code as the name (`src/main.js:583`, `590`).
-- `docs/31-multiplayer/09` says Leave world ends on the Worlds screen; it ends on the title (`src/main.js:348`).
+- `docs/31-multiplayer/09` says Leave world ends on the Worlds screen; it ends on the title (`src/main.js:348`). *Resolved at `2c70942`.*
 - `docs/31-multiplayer/09` says a friend's row shows when you were last in it; `lastAt` is stored, never shown.
 - `docs/10` status lists the pause menu without the Owner button that item 5 step 6 added.
 - `docs/10` (Screens) gives the Escape chain as menu, screen, bag, pause; the code also closes Use mode, the station panel, the build palette, and placement, in that order (`src/main.js:679-696`).
-- `CLAUDE.md` and `docs/10` say autosave is "every minute of game time"; it is 60 s of simulation time, two hours on the in-game clock, and about once a real second while everyone sleeps.
+- `CLAUDE.md` and `docs/10` say autosave is "every minute of game time"; it is 60 s of simulation time, two hours on the in-game clock, and about once a real second while everyone sleeps. *Resolved in part at `2c70942`: an autosave also needs a real minute, so sleeping no longer saves every second.*
 - Settings label "Swing timer: On (a bar over your head)" (`src/settings.js:49`); the swing bars are at bottom centre (`style.css:561-565`), only the exposure bar is over the head.
 - `src/ui/swing-timer.js:6` says "the left stack's moodles grow upward"; the moodles are on the right edge, centred (`style.css:317-321`).
 - `src/view.js:74-75` says Auto zoom is "middle on a 4K one"; the arithmetic gives Close on 3840 by 2160 (Middle is 1440p).

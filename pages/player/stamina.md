@@ -28,7 +28,7 @@ You also cannot sprint while:
 - **A shove** costs {{n combat.shove.stamina}}.
 - **A blow taken on a shield** costs the shield's {{n items.shield.shield.stamina}}.
 
-A swing at zero stamina still lands, at ×{{n census.constants.combat.TIRED_DAMAGE}} damage. A swing or shove that empties the bar leaves you winded.
+A swing at zero stamina still lands, at ×{{n combat.blow.tiredDamage}} damage. A swing or shove that empties the bar leaves you winded.
 
 ### Recovery
 
@@ -46,7 +46,7 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - Recovery: {{n tuning.player.staminaRegen}} a second
 - Winded until: {{n tuning.player.sprintRecoverAt}}
 - Shove: {{n combat.shove.stamina}}
-- Damage at zero stamina: ×{{n census.constants.combat.TIRED_DAMAGE}}
+- Damage at zero stamina: ×{{n combat.blow.tiredDamage}}
 
 ## Settings that change it
 
@@ -65,6 +65,6 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - `src/entities/player.js:328`: no sprint when still, winded, carrying, guarding, or Exhausted
 - `data/combat.json:2,9`: the fists' and the shove's stamina
 - `data/items.json:34`, `src/combat.js:134-143`: a blocked blow costs the shield's stamina
-- `src/combat.js:48,311-314,345`: half damage at zero stamina; an emptying swing or shove leaves you winded
+- `data/combat.json` `blow.tiredDamage`, `src/combat.js:350`, `src/combat.js:311-314`: the tired blow at zero stamina (game commit 2c70942); an emptying swing or shove leaves you winded
 - `src/entities/player.js:143-148`, `data/tuning.json:61-62`: no recovery with the guard up; the needs' multipliers, multiplied together
 - `src/entities/player.js:120-126`: Survival off holds the needs full, so they never slow it

@@ -31,7 +31,7 @@ An infection belongs to whoever was bitten, and the host tells a guest when a bi
 
 ## Settings that change it
 
-- **Zombie aggro** (default Off): off, the dead do not bite, so nobody is infected.
+- **Zombie aggro** (default On): off, the dead do not bite, so nobody is infected.
 
 ## See also
 

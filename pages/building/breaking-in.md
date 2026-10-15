@@ -7,7 +7,7 @@ summary: How the dead choose an opening, hit their way through boards, doors, an
 
 **Breaking in** is how [[The dead|the dead]] get through a closed building. A zombie that cannot walk to the person it is hunting picks an opening, hits it until it gives, and walks or climbs through. The dead never attack a plain wall, and they never open a door.
 
-The dead only break in while they are hunting someone, which needs the **Zombie aggro** setting on. It is off by default, and with it off the dead wander and never break anything.
+The dead only break in while they are hunting someone, which needs the **Zombie aggro** setting on. It is on by default; with it off the dead wander and never break anything.
 
 ## How it works
 
@@ -65,7 +65,7 @@ A guest sees a break-in only as each board, door, or set of shutters gives. The 
 
 ## Settings that change it
 
-- **Zombie aggro** (default Off): with it off, the dead never hunt and never break in. It is a world rule: on a guest it is the host's.
+- **Zombie aggro** (default On): with it off, the dead never hunt and never break in. It is a world rule: on a guest it is the host's.
 
 ## See also
 
@@ -79,7 +79,7 @@ A guest sees a break-in only as each board, door, or set of shutters gives. The 
 
 <!-- sources at 9205ad7 -->
 - `src/entities/zombie.js:202-215`, `src/entities/zombie.js:488-506`: a breach starts when the path fails
-- `src/entities/zombie.js:233`, `src/settings.js:12`: hunting needs Zombie aggro, off by default
+- `src/entities/zombie.js:233`, `src/settings.js:12`: hunting needs Zombie aggro, on by default (game commit 2c70942)
 - `src/map.js:598-624`: the room chosen (out of its own, else into the target's) and its nearest opening on the zombie's side
 - `data/tuning.json`: `zombie.breachReach`; `src/entities/zombie.js:530-540`: the reach to the edge's midpoint
 - `src/map.js:536-565`: the order of the stack: near boards, the leaf, far boards

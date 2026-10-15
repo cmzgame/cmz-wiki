@@ -32,11 +32,11 @@ If you die while carrying, the piece is set down on a free tile close by, if the
 
 ### What can be carried
 
-A piece of furniture's own art data says whether it can be carried. These can: the barrel, bed, bench, bookcase, chair, chest, cupboard, desk, lectern, pew, pumpkins, shelf, spinning wheel, strongbox, table, and woodpile.
+A piece of furniture's own art data says whether it can be carried. These can: the barrel, bed, bench, bookcase, chair, chest, cupboard, desk, lectern, pew, pumpkins, shelf, spinning wheel, strongbox, table, wheelbarrow, and woodpile.
 
-These cannot: the [[Workbench]] and every other station, the wheelbarrow, the cart, the coffin, the counter, the stall, crops, mushrooms, rocks, trees, the well, torch posts, and fires that light a room or burn fuel.
+These cannot: the [[Workbench]] and every other station, the cart, the coffin, the counter, the stall, crops, mushrooms, rocks, trees, the well, torch posts, and fires that light a room or burn fuel.
 
-A piece that can be carried can also be removed with the removal tool (see [[Building]]).
+Carrying and removal are separate: the removal tool takes only what players made, whether or not it can be carried (see [[Building]]).
 
 ### Furniture you make
 
@@ -70,7 +70,8 @@ The piece you carry is part of your character, so a save and a join keep it, and
 - `src/game.js:276-285`: on death, set down on a free tile within 2
 - `src/placement.js:69-75`: the carry rule, the sprite's flag first, then trees, the well, and fires
 - `data/sprites/*.json`: each sprite's `carry` flag
-- `src/placement.js:320-363`: anything carryable can be removed
+- `src/placement.js:316-336`: removal takes only what players made, carryable or not (game commit 2c70942)
+- `data/sprites/wheelbarrow.json`: the wheelbarrow's `carry` flag (game commit 2c70942)
 - `src/stations.js:173-192`: a prop recipe set on a free tile near the station
 - `data/sprites/chest.json`, `data/sprites/workbench.json`: the chest carryable, the workbench not
 - `src/placement.js:24`: the reach to put down

@@ -29,7 +29,7 @@ Stand within {{n census.constants.interact.INTERACT_RANGE}} tiles and press E, o
 
 Most buildings in [[The valley]] have a bracket with a torch already burning. The two brackets in [[The chapel]], the one in [[The crypt]], and the one in the shut cottage start empty. [[The inn]] and [[The toll house]] each have a torch on an outside wall.
 
-The three torch posts in the square start empty and give no light until someone mounts a torch on them.
+The three torch posts in the square start with a torch burning, so the square is lit. A world made before they came lit keeps its own empty posts until a torch is mounted on them.
 <!-- the count of posts is a count of map props, said as a word -->
 
 ## Numbers
@@ -60,7 +60,7 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `src/inventory.js:125-133`: a torch to mount is found in the hands, the belt, or the bag
 - `data/maps/valley.json:2270-2281`, `data/maps/valley.json:2347-2352`, `data/maps/valley.json:4868-4873`: the chapel's two, the crypt's one, and the shut cottage's one start empty
 - `data/maps/valley.json:1900-1905`, `data/maps/valley.json:3918-3923`: the inn's and the toll house's torches outside
-- `tools/mapgen/valley.py:200-201`: the square's three posts placed with no torch
+- `tools/mapgen/valley.py:200-201`, `data/maps/valley.json`: the square's three posts placed with a torch (game commit 2c70942)
 - `src/interact.js:61-83`: a guest's take or mount run on the host by address
 - `src/map.js`: `setHolder` marks the holder's tile changed, so the frame carries it to guests (game commit 8f5d996)
 

@@ -2,10 +2,10 @@
 title: Building
 categories: [Building, Mechanics]
 aliases: [Build, Build palette, Build mode, Removal, Removal tool, Remove]
-summary: Building log walls, doors, and windows from the palette on N, and removing furniture and what you built with X.
+summary: Building log walls, doors, and windows from the palette on N, and removing what players built or made with X.
 ---
 
-**Building** is how you put up walls, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away furniture and anything you built. Everything you build is a [[Walls|wall]] on a tile's edge, made of logs.
+**Building** is how you put up walls, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Everything you build is a [[Walls|wall]] on a tile's edge, made of logs.
 
 ## How it works
 
@@ -41,14 +41,14 @@ When a wall goes up or comes down, the [[Rooms|rooms]] on either side of it are 
 
 X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
 
-Two kinds of thing can be removed:
+Only what players made can be removed:
 
-- any piece of furniture that can be carried (see [[Carrying furniture]]), including the village's own, not only what you placed
-- any wall, door, or window you built
+- any wall, door, or window a player built
+- any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
-Walls that are part of the map, trees, the well, fires, torch posts, and anything that cannot be carried never light up.
+The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map, trees, the well, fires, or torch posts.
 
-Nothing is refunded. A removed container spills what it held onto its tile, but only if it was ever opened: a chest nobody has searched has rolled no loot yet, so it drops nothing. A removed wall takes its [[Boards|boards]] and any torch bracket with it.
+Nothing is refunded. A removed container spills what it held onto its tile, and a removed station spills its output box too. A removed wall takes its [[Boards|boards]] and any torch bracket with it.
 
 The removal tool cannot be used while carrying furniture ("Your hands are full.") or with the bag open.
 
@@ -99,11 +99,10 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/map.js:1395-1457`: rooms refound on either side of a changed edge
 - `src/main.js:712-721`: X, refused while carrying or with the bag open
 - `src/placement.js:26`, `src/placement.js:365-371`: the removal reach
-- `src/placement.js:320-363`: what lights up: carryable props and built walls
-- `src/placement.js:69-75`: what can be carried
+- `src/placement.js:316-365`: what lights up: props made at a station (`made`) and built walls (game commit 2c70942)
+- `src/stations.js:183-184`: a prop made at a station marked `made` (game commit 2c70942)
 - `src/map.js:469`: built walls marked `built`
-- `src/placement.js:389-400`: a removed container spills its bag, nothing refunded
-- `src/interact.js:314-320`: a container's bag made only on first search (the empty spill is inferred)
+- `src/placement.js:389-404`: a removed container spills its bag and a station its output, nothing refunded (game commit 2c70942)
 - `src/map.js:479-488`: a removed wall takes its boards and bracket
 - `src/placement.js:509-551`: a guest's build and remove as commands, rechecked on the host
 - `src/rules.js:14`, `src/placement.js:124-127`: Free building makes costs free, the time stays

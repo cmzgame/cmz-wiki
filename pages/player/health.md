@@ -19,7 +19,7 @@ numbersOk: true
 - **Starving.** At empty [[Hunger]] you lose {{n tuning.player.starveDamage}} health a second.
 - **Dying of thirst.** At empty [[Thirst]] you lose {{n tuning.player.dehydrateDamage}} health a second. Both together add up.
 
-By default the dead do not hunt or bite: that needs the world rule Zombie aggro (see [[Settings]]).
+The dead hunt and bite only while the world rule Zombie aggro is on, as it is by default (see [[Settings]]).
 
 ### Regeneration
 
@@ -29,7 +29,8 @@ Health comes back by itself, slowly, only while all of these hold:
 - You are better than "Thirsty": thirst is at 35 or more.
 - No wound is [[Bleeding]].
 - You are not "Falling asleep" ([[Tiredness]] above empty).
-- The [[Survival]] setting is on.
+
+With the [[Survival]] setting off the needs are held full, so health comes back at the same rates as long as nothing bleeds.
 
 Awake, you regain {{n tuning.player.healthRegenPerMinute}} health a minute. Asleep in a bed, you regain {{n tuning.player.sleepRegenPerMinute}} a minute (see [[Sleep]]). A minute here is a minute of the world's own clock, so while everyone sleeps it passes much faster.
 
@@ -51,8 +52,8 @@ Each player has their own health. A sleeper among players who are awake still re
 
 ## Settings that change it
 
-- **Survival** (default On): off, needs never drain, and health never regenerates either.
-- **Zombie aggro** (default Off): on, the dead hunt and bite.
+- **Survival** (default On): off, needs never drain, and health still regenerates as a fed body's does.
+- **Zombie aggro** (default On): on, the dead hunt and bite.
 
 ## See also
 
@@ -68,9 +69,9 @@ Each player has their own health. A sleeper among players who are awake still re
 - `data/combat.json:4`: the bleeding drain by stacks
 - `data/tuning.json:49-50`, `src/entities/player.js:131-132`: starving and dehydration damage, which add up
 - `src/settings.js:12`, `src/entities/zombie.js:233,296`: the dead bite only with Zombie aggro on
-- `src/entities/player.js:133-138`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), and the awake and asleep rates
+- `src/entities/player.js:134-139`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), and the awake and asleep rates
 - `src/moodles.js:55-78`: hunger and thirst stage 2 begins below 35
-- `src/entities/player.js:120-126`: with Survival off the step returns before regeneration
+- `src/entities/player.js:120-125`: with Survival off the needs are held full and regeneration still runs (game commit 2c70942)
 - `data/tuning.json:59-60`: the regeneration rates, per sim minute
 - `src/entities/player.js:102`, `data/items.json`: `eat` adds `heal`, but no food has one
 - `src/entities/player.js:184-191`: a sleeper regenerates at the sleeping rate whatever the time scale

@@ -13,14 +13,14 @@ A [[Worlds|world]] is **saved** in the browser that made it, often and without b
 
 A world of your browser saves:
 
-- every {{n census.constants.main.AUTOSAVE}} seconds of game time (an in-game hour is {{n census.constants.map.HOUR_SECONDS}} seconds, so the clock moves on a little each time);
+- every {{n census.constants.main.AUTOSAVE}} seconds of game time, once as many real seconds have passed too (an in-game hour is {{n census.constants.map.HOUR_SECONDS}} seconds, so the clock moves on a little each time);
 - when its tab is hidden, and when the page is closed or left;
 - on **Save world** in the pause menu, which says "Saved." on the button;
 - when it is opened or closed to friends, when a friend joins or leaves, and when a friend goes [[Dormancy|dormant]];
 - whenever any player dies;
 - straight after it is made.
 
-The autosave counts game time, so while everyone sleeps and time runs fast it saves much more often in real time.
+The autosave needs both a stretch of game time and the same stretch of real time, so a night slept through at speed saves about once a real minute, not every second.
 
 If a save fails, a message says so on screen: "The world could not be saved", with the reason.
 
@@ -36,7 +36,7 @@ In the browser's own storage, on that one device and in that one browser. Anothe
 
 ## Numbers
 
-- Autosave: every {{n census.constants.main.AUTOSAVE}} seconds of game time.
+- Autosave: every {{n census.constants.main.AUTOSAVE}} seconds of game time, and no oftener than every {{n census.constants.main.AUTOSAVE}} real seconds.
 - Save format version: {{n census.constants.save.VERSION}}. An older save is brought up to date on load; a save from a newer version of the game is refused.
 
 ## With friends
@@ -53,7 +53,7 @@ A [[Server worlds|server world]] is saved by the server.
 
 <!-- sources at 9205ad7 -->
 - `src/save.js:47-50`: worlds kept in the browser's IndexedDB with an index in localStorage
-- `src/main.js:109`, `src/main.js:1089`: `AUTOSAVE`, in seconds of game time
+- `src/main.js:109-110`, `src/main.js:1112-1115`: `AUTOSAVE`, in seconds of game time and as many of real time (game commit 2c70942)
 - `src/map.js:84`: `HOUR_SECONDS`, the seconds of an in-game hour
 - `src/main.js:1611-1626`: saves when the tab is hidden and when the page is left
 - `src/main.js:1356`: Save world says "Saved."

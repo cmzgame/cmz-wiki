@@ -28,7 +28,7 @@ A knockdown also cancels a bite. A front block with the [[Shield]] staggers the 
 
 ### Knockdown
 
-Each hit may floor the target. The chance is the weapon's own where it has one: the [[Mace]] floors on {{n items.mace.weapon.knockdown}} of hits, and [[Fists]] on {{n combat.fists.knockdown}}. Every other weapon, the tools included, floors on the default {{n census.constants.combat.KNOCKDOWN_CHANCE}} of hits. Arrows and thrown spears never floor. The shove floors on {{n combat.shove.knockdown}} of shoves.
+Each hit may floor the target. The chance is the weapon's own where it has one: the [[Mace]] floors on {{n items.mace.weapon.knockdown}} of hits, and [[Fists]] on {{n combat.fists.knockdown}}. Every other weapon, the tools included, floors on the default {{n combat.blow.knockdownChance}} of hits. Arrows and thrown spears never floor. The shove floors on {{n combat.shove.knockdown}} of shoves.
 
 A knockdown cancels a bite and any attempt to break through an [[Openings|opening]].
 
@@ -43,7 +43,7 @@ Any blow in hand on a zombie that is down or getting up is a finisher: {{n comba
 - Default stagger chance: {{n combat.stagger.chance}}.
 - Stagger: {{n tuning.zombie.stagger seconds}}; from the shove {{n combat.shove.stagger seconds}}.
 - Immunity after a stagger: {{n combat.stagger.immunity seconds}}.
-- Default knockdown chance: {{n census.constants.combat.KNOCKDOWN_CHANCE}}.
+- Default knockdown chance: {{n combat.blow.knockdownChance}}.
 - Down: {{n tuning.zombie.downTime seconds}}. Getting up: {{n tuning.zombie.getUpTime seconds}}.
 
 ## See also
@@ -62,7 +62,7 @@ Any blow in hand on a zombie that is down or getting up is a finisher: {{n comba
 - `src/entities/zombie.js:105`, `src/entities/zombie.js:149-150`: the stagger's length and the immunity window
 - `src/combat.js:386`: the shove always interrupts
 - `src/entities/zombie.js:75-85`: a shield stagger ignores immunity and cancels the bite
-- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
 - `src/archery.js:247`: arrows and thrown spears never floor
 - `src/entities/zombie.js:131-141`, `src/entities/zombie.js:166-189`: a knockdown cancels a bite and a breach; getting up; back to the chase or idle
 - `src/combat.js:329-356`: the finisher on a target down or rising

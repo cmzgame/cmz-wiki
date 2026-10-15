@@ -1,16 +1,16 @@
 {
  "version": {
-  "commit": "3c70aa734b1fe3e2da812904adba1f171f910c0c",
-  "short": "3c70aa7",
-  "date": "2026-10-14T22:40:03-05:00",
-  "subject": "Bugs: Settings' Defaults resets only what the Settings screen shows (its choices and the painted layers), never the identities, the browser id, the friends' worlds, the creator and owner keys, or the panels' places (the wiki census's first item; tried under Node with a stand-in store). The torch holders' sync moved to Fixed (8f5d996). Docs: bugs",
+  "commit": "2c70942d3f6a30c9f82b467e1eb4f63ae766c760",
+  "short": "2c70942",
+  "date": "2026-10-15T00:19:40-05:00",
+  "subject": "The wiki census's surprises, ruled by Michael and done: Zombie aggro on by default (a sandbox setting; saved settings keep their own; the headless hash keeps aggro off); health regenerates with survival off; no cloth tag on the bandage; X removes only what players made (built walls, props made at a station), a removed station spilling its output; the wheelbarrow carried; the blow's numbers and every bow number as data in combat.json, the same values; the needs' code defaults equal to the data; Leave world to the Worlds screen; Combat testing's hundred dead round the spawn. Logged: the chop tool and stump, lighting a fire (TODO), the combat pass's items (21), the settings rebuild (TODO), darkness and sight (02 question 30), the big cart (05). Tried in the pane: X, regen, the wheelbarrow, worlds 10 of 10; headless 8 of 8, hashes unchanged. Docs: bugs, 02, 05, 13, 21, TODO; data: combat, items, the wheelbarrow, the manifest",
   "ref": "origin/main"
  },
  "counts": {
   "items": 50,
   "recipes": 27,
   "interactions": 2,
-  "lootTables": 5,
+  "lootTables": 6,
   "sprites": 137,
   "places": 20,
   "villagers": 7,
@@ -480,9 +480,7 @@
     1
    ],
    "stack": 5,
-   "tags": [
-    "cloth"
-   ],
+   "tags": [],
    "bandage": true,
    "art": {
     "icon": false,
@@ -490,13 +488,10 @@
     "drawn": false
    },
    "madeBy": [],
-   "usedIn": [
-    "workbench: torch",
-    "workbench: bow",
-    "workbench: prop:bed"
-   ],
+   "usedIn": [],
    "foundIn": [],
-   "interactions": []
+   "interactions": [],
+   "note": "no cloth tag: a recipe that wants cloth never takes a bandage (Michael, 2026-10-15)"
   },
   {
    "id": "bread",
@@ -2213,6 +2208,18 @@
    ]
   },
   {
+   "name": "wheelbarrow",
+   "grid": [
+    10,
+    6
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
    "name": "dev_kit",
    "grid": [
     10,
@@ -3389,8 +3396,8 @@
    "label": "Barrow",
    "drawn": false,
    "container": true,
-   "carry": false,
-   "note": "the wheelbarrow (docs/30 section 9.1 ruled: one big immovable grid); the dev kit's grid stands in for its own until step 3"
+   "carry": true,
+   "note": "the wheelbarrow (docs/30 section 9.1: one big grid; carried like a barrel since 2026-10-15, Michael: the immovable one is the horse-drawn cart, a different thing); an empty grid of its own (data/loot.json wheelbarrow)"
   },
   {
    "id": "woodpile",
@@ -4162,6 +4169,41 @@
    "sideArc": 220,
    "note": "an off-hand swing leaves you exposed for `window` seconds: a blow takes `front` times its damage from the front arc, `side` times from the sides, `behind` times (fatal) from behind; `lockout` is the share of a swing before the other hand may swing; `offDamage` multiplies the off hand's blows (1 = full; World of Warcraft's flat penalty would be 0.5) (docs/21)"
   },
+  "blow": {
+   "pointBlank": 0.55,
+   "knockdownChance": 0.3,
+   "tiredDamage": 0.5,
+   "hitStop": 0.045,
+   "hitStopKill": 0.09,
+   "note": "pointBlank: tiles this close are always hit; knockdownChance: the share of hits that floor the dead for a weapon with no knockdown of its own (high; for the combat pass, Michael 2026-10-15); tiredDamage: a swing at zero stamina lands at this share; hitStop, hitStopKill: seconds the world freezes on a hit and on a kill"
+  },
+  "bow": {
+   "range": 22,
+   "speed": 16,
+   "arcMin": 8,
+   "arcMax": 150,
+   "z0": 30,
+   "ramp": 2,
+   "drawTime": 0.9,
+   "minDraw": 0.15,
+   "minDistance": 1,
+   "drawSpeed": 0.45,
+   "braceMove": 0.2,
+   "braceDrawRate": 1.5,
+   "recoverTime": 0.22,
+   "hitRadius": 0.5,
+   "damage": 38,
+   "knockback": 0.2,
+   "wallHeight": 80,
+   "trunkHeight": 40,
+   "propHeight": 50,
+   "scanStep": 0.1,
+   "aimLift": 22,
+   "shadowRx": 7,
+   "shadowRy": 3.5,
+   "shadowAlpha": 0.55,
+   "note": "the bow's draw and every arrow's and thrown thing's flight (archery.js tunables; a bow's own drawTime, braceDrawTime, damage, and a thrown block override them): range and speed in tiles, heights in px; drawSpeed and braceMove the walk while drawing and braced; recoverTime the pause after a shot"
+  },
   "shove": {
    "range": 1,
    "arc": 100,
@@ -4287,8 +4329,8 @@
   },
   {
    "key": "zombieAggro",
-   "default": "false",
-   "note": "off: the dead wander and ignore you, there to be looked at (Michael, 2026-10-10)"
+   "default": "true",
+   "note": "on by default since 2026-10-15 (Michael: a sandbox setting, the dead hunt unless you turn them off); off they wander and ignore you (2026-10-10). A browser that saved its settings keeps its own"
   },
   {
    "key": "zombiesAttackVillagers",
@@ -4303,7 +4345,7 @@
   {
    "key": "combatTesting",
    "default": "false",
-   "note": "on (read at load): no trees, forty more of the dead standing about the square (docs/21)"
+   "note": "on (read at load): no trees, a hundred more of the dead in a ring round the spawn (docs/21; 2026-10-15)"
   },
   {
    "key": "swingTimer",
@@ -4427,26 +4469,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:915"
+    "main.js:929"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:914"
+    "main.js:928"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:894"
+    "main.js:908"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:740",
-    "main.js:754"
+    "main.js:754",
+    "main.js:768"
    ]
   },
   {
@@ -4458,13 +4500,13 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:912"
+    "main.js:926"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:896"
+    "main.js:910"
    ]
   },
   {
@@ -4489,56 +4531,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:892"
+    "main.js:906"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:897"
+    "main.js:911"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:903"
+    "main.js:917"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:894"
+    "main.js:908"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:971"
+    "main.js:986"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:971"
+    "main.js:986"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:895"
+    "main.js:909"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:982"
+    "main.js:997"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:740",
-    "main.js:746"
+    "main.js:754",
+    "main.js:760"
    ]
   }
  ],
@@ -4546,13 +4588,13 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:232"
+    "stations.js:240"
    ]
   },
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:193"
+    "entities/player.js:194"
    ]
   }
  ],
@@ -4560,19 +4602,19 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1275"
+    "main.js:1299"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:648"
+    "main.js:662"
    ]
   },
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:590"
+    "placement.js:594"
    ]
   },
   {
@@ -4584,7 +4626,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1204"
+    "main.js:1228"
    ]
   },
   {
@@ -4620,25 +4662,25 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1239"
+    "main.js:1263"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1190"
+    "main.js:1214"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1229"
+    "main.js:1253"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1288"
+    "main.js:1312"
    ]
   },
   {
@@ -4650,25 +4692,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1167"
+    "main.js:1190"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1164"
+    "main.js:1187"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1192"
+    "main.js:1216"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1191"
+    "main.js:1215"
    ]
   },
   {
@@ -4680,7 +4722,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1297"
+    "main.js:1321"
    ]
   },
   {
@@ -4729,7 +4771,7 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:562"
+    "placement.js:566"
    ]
   },
   {
@@ -4741,13 +4783,13 @@
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:600"
+    "placement.js:604"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:596"
+    "placement.js:600"
    ]
   },
   {
@@ -4803,31 +4845,31 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:263"
+    "archery.js:267"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:614"
+    "archery.js:618"
    ]
   },
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1094"
+    "main.js:1116"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:353"
+    "game.js:360"
    ]
   },
   {
    "key": "blocked",
    "at": [
-    "combat.js:149"
+    "combat.js:154"
    ]
   },
   {
@@ -4843,7 +4885,7 @@
   {
    "key": "craftDone",
    "at": [
-    "stations.js:208"
+    "stations.js:216"
    ]
   },
   {
@@ -4867,31 +4909,31 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:598"
+    "game.js:608"
    ]
   },
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:140"
+    "combat.js:145"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:259"
+    "combat.js:264"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:353"
+    "combat.js:358"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:324"
+    "combat.js:329"
    ]
   },
   {
@@ -4903,19 +4945,19 @@
   {
    "key": "shove",
    "at": [
-    "combat.js:388"
+    "combat.js:393"
    ]
   },
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:181"
+    "entities/player.js:182"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:172"
+    "entities/player.js:173"
    ]
   },
   {
@@ -4939,8 +4981,8 @@
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:622",
-    "combat.js:370"
+    "archery.js:626",
+    "combat.js:375"
    ]
   },
   {
@@ -5086,7 +5128,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1678
+   "lines": 1703
   },
   {
    "path": "interact.js",
@@ -5106,7 +5148,7 @@
   },
   {
    "path": "ui/screens.js",
-   "lines": 803
+   "lines": 805
   },
   {
    "path": "ui/inventory-panel.js",
@@ -5114,23 +5156,23 @@
   },
   {
    "path": "archery.js",
-   "lines": 669
+   "lines": 673
   },
   {
    "path": "assets.js",
    "lines": 636
   },
   {
+   "path": "game.js",
+   "lines": 630
+  },
+  {
    "path": "entities/zombie.js",
    "lines": 621
   },
   {
-   "path": "game.js",
-   "lines": 620
-  },
-  {
    "path": "placement.js",
-   "lines": 602
+   "lines": 606
   },
   {
    "path": "gl.js",
@@ -5141,16 +5183,16 @@
    "lines": 594
   },
   {
+   "path": "combat.js",
+   "lines": 449
+  },
+  {
    "path": "render/walls.js",
    "lines": 449
   },
   {
-   "path": "combat.js",
-   "lines": 444
-  },
-  {
    "path": "light.js",
-   "lines": 428
+   "lines": 416
   },
   {
    "path": "ui/inventory-actions.js",
@@ -5162,7 +5204,7 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 368
+   "lines": 369
   },
   {
    "path": "figure/raster.js",
@@ -5178,7 +5220,7 @@
   },
   {
    "path": "stations.js",
-   "lines": 248
+   "lines": 256
   },
   {
    "path": "save.js",
@@ -5281,6 +5323,10 @@
    "lines": 106
   },
   {
+   "path": "tuning.js",
+   "lines": 106
+  },
+  {
    "path": "use.js",
    "lines": 105
   },
@@ -5295,10 +5341,6 @@
   {
    "path": "iso.js",
    "lines": 98
-  },
-  {
-   "path": "tuning.js",
-   "lines": 95
   },
   {
    "path": "ui/speech.js",
@@ -5454,17 +5496,12 @@
    "START_HOUR": 8
   },
   "combat": {
-   "POINT_BLANK": 0.55,
    "BODY_SLACK": 0.8,
    "BODY_TOP": 48,
    "BODY_HALF_W": 10,
-   "KNOCKDOWN_CHANCE": 0.3,
-   "HIT_STOP": 0.045,
-   "HIT_STOP_KILL": 0.09,
    "KICK_PX": 3,
    "KICK_TIME": 0.08,
-   "WEDGE_TIME": 0.12,
-   "TIRED_DAMAGE": 0.5
+   "WEDGE_TIME": 0.12
   },
   "figure_draw": {
    "SHADE_DYE": 0.16,
@@ -5499,6 +5536,9 @@
    "tunables_emberChance": 0.3,
    "tunables_smokeChance": 0.18,
    "tunables_lightRadius": 2.4
+  },
+  "game": {
+   "TESTING_DEAD": 100
   },
   "gl": {
    "FLAG_UNLIT": 1,
@@ -5549,7 +5589,6 @@
    "PORTAL_OFF": 0.3,
    "MAX_STEPS": 400,
    "RAY_STEP": 0.15,
-   "POOL_RAYS": 28,
    "tunables_dayCap": 0.92,
    "tunables_unlitRoomCap": 0.88,
    "tunables_openingDaylight": 0.5,

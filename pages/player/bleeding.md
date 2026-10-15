@@ -43,7 +43,7 @@ A wound belongs to whoever was bitten, and the host tells a guest when they star
 
 ## Settings that change it
 
-- **Zombie aggro** (default Off): off, the dead do not bite, so nobody bleeds.
+- **Zombie aggro** (default On): off, the dead do not bite, so nobody bleeds.
 
 ## See also
 
@@ -61,4 +61,4 @@ A wound belongs to whoever was bitten, and the host tells a guest when they star
 - `src/moodles.js:23-34`: the bleed moodle's stage names, capped at stage 4, so four and five stacks look alike
 - `src/interact.js:1037-1045`: "Apply" stops all bleeding and uses one bandage
 - `src/game.js:488`, `src/host.js:185-189`: bleeding stepped per player; the host sends a guest its bite messages
-- `src/settings.js:12`, `src/entities/zombie.js:233,296`: Zombie aggro off by default; the dead bite only with it on
+- `src/settings.js:12`, `src/entities/zombie.js:233,296`: Zombie aggro on by default; the dead bite only with it on (game commit 2c70942)

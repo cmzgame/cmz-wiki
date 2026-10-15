@@ -29,7 +29,7 @@ In the off hand it counts as a weapon (see [[Dual wielding]]).
 - `src/interact.js:485-496`: boarding an opening takes a plank
 - `src/game.js:113`: a plank in the starting bag
 - `data/items.json`: the plank's `weapon` block
-- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
 - `src/combat.js:105-110`: in the off hand it is a weapon
 
 {{navbox weapons}}

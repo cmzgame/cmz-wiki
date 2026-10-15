@@ -68,7 +68,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - `data/build.json`: the log wall is the only wall you can build
 - `src/map.js:1672`, `data/maps/valley.json:4906-4911`: a material per side
 - `src/placeholders.js:88-91`: openings and the bracket at fixed heights
-- `src/placement.js:320-363`, `src/map.js:469`: only built walls can be removed
+- `src/placement.js:316-365`, `src/map.js:469`: only built walls can be removed (game commit 2c70942)
 - `src/map.js:125-199`, `src/interact.js:401-440`: brackets, their torches, E to take or mount
 - `data/items.json`: the torch's `fire`; `src/light.js:59-64`: a mounted torch's light, never burning out
 - `src/map.js:1717-1724`: brackets only where the map authors them

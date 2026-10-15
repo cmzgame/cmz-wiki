@@ -22,7 +22,7 @@ The body keeps your clothes, your bag, and everything in it. It can be searched 
 The screen says that your character died, the time, and "The body stays where it fell." It offers two buttons:
 
 - **New character** makes a fresh survivor in the same world. Character creation has {{n census.constants.ui_screens.CREATION_STEPS}} steps: pick an [[Identities|identity]], then a step kept for skills and a profession, not built yet. The new survivor has the starter kit (see [[Player]]) and appears beside the map's spawn, in your cottage, on the nearest free tile.
-- **Leave world** saves and goes back to the title screen.
+- **Leave world** saves and goes to the [[Worlds]] screen.
 
 If you reload a world whose character is dead, the dead screen shows again.
 
@@ -47,7 +47,7 @@ Each death belongs to its own player; only that player sees the dead screen. The
 - `src/ui/screens.js:63`: `CREATION_STEPS`: the identity step and the placeholder for skills
 - `src/main.js:291-320`: the respawn with the starter kit, on the nearest free walkable tile to spawn + (1, 1)
 - `data/maps/valley.json`: the valley's spawn, in your cottage
-- `src/main.js:335-349`: Leave world saves and returns to the title screen
+- `src/main.js:345-359`: Leave world saves and shows the Worlds screen (game commit 2c70942)
 - `src/main.js:280`: the dead screen shown again on a reload
 - `src/main.js:293-306,867-875`: a guest's dead screen from the host's record, and its New character as a leave and rejoin
 - `src/entities/zombie.js:259`: the dead stop hunting a fallen player

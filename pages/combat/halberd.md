@@ -25,7 +25,7 @@ Both modes floor on the default chance (see [[Stagger and knockdown]]) and share
 - `src/items.js:112-133`: a two-hander leaves no hand free
 - `src/combat.js:97-101`: the thrust laid over the sweep's numbers
 - `src/combat.js:171-175`: the thrust's `multiHit: false`
-- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
 - `src/combat.js:306`, `src/combat.js:315`: one cooldown for both modes
 - `src/items.js:27-37`: wear per hit from the base damage
 
