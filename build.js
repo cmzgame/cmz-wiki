@@ -24,6 +24,7 @@ const strict = process.argv.includes("--check");
 const data = loadData(root);
 const errors = [];
 const planned = [];
+const assets = new Map(); // generated files a template asks for (the valley map)
 
 // ---------- the pages ----------
 function walk(dir) {
@@ -92,7 +93,7 @@ const redlinks = new Map(); // title -> pages linking it
 const backlinks = new Map(); // slug -> set of titles
 
 for (const p of pages) {
-  const ctx = { data, page: p, planned };
+  const ctx = { data, page: p, planned, assets };
   let text;
   try {
     text = expand(p.body, ctx);
@@ -197,6 +198,7 @@ for (const it of data.items) if (it.icon && it.icon.src) {
 const fontDir = join(root, "snapshot", "data", "fonts");
 if (existsSync(fontDir)) for (const f of readdirSync(fontDir)) copyFileSync(join(fontDir, f), join(OUT, f));
 writeFileSync(join(OUT, ".nojekyll"), "");
+for (const [path, buf] of assets) { mkdirSync(dirname(join(OUT, path)), { recursive: true }); writeFileSync(join(OUT, path), buf); }
 
 // ---------- the report ----------
 const written = pages.filter((p) => p.written).length;

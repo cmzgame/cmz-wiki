@@ -106,3 +106,10 @@ ul.columns { columns: 16rem auto; }
   .infobox { float: none; width: 100%; margin: 0 0 1rem; }
   .brand { font-size: 18px; }
 }
+
+.valley-map { position: relative; max-width: 100%; margin: 0.75rem 0; background: #1e2a17; border: 1px solid var(--line); }
+.valley-map img { display: block; width: 100%; height: auto; }
+.map-label { position: absolute; transform: translate(-50%, -50%); font: 12px var(--font-ui); white-space: nowrap; }
+.map-label a { color: #fff6e0; background: rgba(30, 24, 20, 0.72); padding: 0 4px; border-radius: 2px; }
+.map-label a.new { color: #ffb4a8; }
+.compass { position: absolute; right: 10px; top: 8px; font: 16px var(--font-ui); color: #fff6e0; background: rgba(30, 24, 20, 0.72); padding: 2px 6px; }
