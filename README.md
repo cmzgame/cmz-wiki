@@ -1,6 +1,6 @@
 # The Cozy Medieval Zombies wiki
 
-Everything about [the game](https://github.com/michaeldippold/cozy-medieval-zombies), true to its code: published at **https://michaeldippold.github.io/cmz-wiki/**. The plan behind it is the game's `docs/37-the-wiki.md`.
+Everything about [the game](https://github.com/cmzgame/cozy-medieval-zombies), true to its code: published at **https://cmzgame.github.io/cmz-wiki/**. The plan behind it is the game's `docs/37-the-wiki.md`.
 
 Half of every page is generated from the game's own data (items, recipes, loot, stations, places, villagers, numbers); the other half is prose. Every number in prose is a reference to the data, so a retune in the game changes the wiki on the next sync with nobody rewriting a sentence.
 

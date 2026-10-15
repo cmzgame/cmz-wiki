@@ -21,11 +21,11 @@ import { render, slugify, escapeHtml } from "./lib/markdown.js";
 const root = dirname(fileURLToPath(import.meta.url));
 const outArg = process.argv.indexOf("--out");
 const OUT = outArg > 0 ? join(root, process.argv[outArg + 1]) : join(root, "site");
-const REPO = "https://github.com/michaeldippold/cmz-wiki";
+const REPO = "https://github.com/cmzgame/cmz-wiki"; // the studio's organisation since 2026-10-15 (michaeldippold/ before)
 // Sources: the code and data a page's claims rest on. Linked to the game's repository at the exact commit they
 // were read from while the game's code is public; set LINK_SOURCES to false when it goes private, and every source
 // is plain text again, with nothing left pointing at a page that 404s.
-const GAME_REPO = "https://github.com/michaeldippold/cozy-medieval-zombies";
+const GAME_REPO = "https://github.com/cmzgame/cozy-medieval-zombies";
 const LINK_SOURCES = true;
 // Verification: Michael's "I have checked this page" stamps, written by the verify workflow (.github/workflows/pages.yml).
 const verified = existsSync(join(root, "verified.json")) ? JSON.parse(readFileSync(join(root, "verified.json"), "utf8")) : {};
@@ -218,7 +218,7 @@ function layout(p) {
 <article class="content">${withToc}</article>
 ${back && back.size ? `<details class="whatlinks"><summary>What links here (${back.size})</summary>${[...back].sort().map((t) => `<a href="${byTitle.get(t.toLowerCase()).slug}.html">${escapeHtml(t)}</a>`).join(" · ")}</details>` : ""}
 ${cats}
-<footer class="foot">Describes the game at <a href="https://github.com/michaeldippold/cozy-medieval-zombies/commit/${v.commit}"><code>main</code> @ <code>${v.short}</code></a> (${v.date.slice(0, 10)}).${p.written ? "" : p.special ? "" : " Generated from the game's data."} The game is in development; things change.</footer>
+<footer class="foot">Describes the game at <a href="${GAME_REPO}/commit/${v.commit}"><code>main</code> @ <code>${v.short}</code></a> (${v.date.slice(0, 10)}).${p.written ? "" : p.special ? "" : " Generated from the game's data."} The game is in development; things change.</footer>
 </main></div>
 <script src="search.js" defer></script>
 </body></html>
@@ -229,7 +229,7 @@ function verifyHtml(p) {
   const d = v ? daysAgo(v) : null;
   const age = v ? (d === 0 ? "today" : d === 1 ? "yesterday" : `${d} days ago`) : null;
   const cls = !v ? "never" : d > 60 ? "old" : d > 21 ? "aging" : "fresh";
-  const issue = `${REPO}/issues/new?title=${encodeURIComponent(`Verify: ${p.title}`)}&body=${encodeURIComponent(`I have checked every claim on [${p.title}](https://michaeldippold.github.io/cmz-wiki/${p.slug}.html) against the game.\n\nSubmitting this stamps the page as verified now. Only the repository's owner can verify.`)}`;
+  const issue = `${REPO}/issues/new?title=${encodeURIComponent(`Verify: ${p.title}`)}&body=${encodeURIComponent(`I have checked every claim on [${p.title}](https://cmzgame.github.io/cmz-wiki/${p.slug}.html) against the game.\n\nSubmitting this stamps the page as verified now. Only Michael can verify.`)}`;
   return `<span class="verify ${cls}"><a class="verify-btn" href="${issue}" title="Opens a GitHub issue; submit it to stamp this page verified">Verify</a><span class="verify-when">${v ? `Last verified ${age} (${v.slice(0, 10)})` : "Never verified"}</span></span>`;
 }
 function insertToc(html, toc) {

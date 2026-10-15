@@ -1,6 +1,7 @@
 name: Build and publish the wiki
 
-# A push builds and publishes the site. An issue titled "Verify: <page title>" opened by the repository's owner
+# A push builds and publishes the site. An issue titled "Verify: <page title>" opened by Michael's account (the
+# repository variable VERIFIER, else michaeldippold; the repository's owner is the studio's organisation since 2026-10-15)
 # (the Verify button on every page opens one) stamps that page verified in verified.json, closes the issue,
 # and publishes. Pushes made by this workflow's own token do not start workflows, so the verify job and the
 # build run in the same workflow, the build after the stamp.
@@ -32,12 +33,12 @@ jobs:
         env:
           TITLE: ${{ github.event.issue.title }}
           AUTHOR: ${{ github.event.issue.user.login }}
-          OWNER: ${{ github.repository_owner }}
+          VERIFIER: ${{ vars.VERIFIER || 'michaeldippold' }}
           NUMBER: ${{ github.event.issue.number }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ "$AUTHOR" != "$OWNER" ]; then
-            gh issue close "$NUMBER" --comment "Only the wiki's owner can verify a page." --reason "not planned"
+          if [ "$AUTHOR" != "$VERIFIER" ]; then
+            gh issue close "$NUMBER" --comment "Only Michael can verify a page." --reason "not planned"
             exit 0
           fi
           PAGE="${TITLE#Verify:}"

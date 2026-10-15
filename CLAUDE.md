@@ -2,12 +2,12 @@
 
 > **Before anything else, in every session: ask Michael "Am I Primary or Secondary, and what is my focus?"** and change nothing (no file, commit, issue, or pull request, here or in the game) until he answers; reading is fine. The roles, the two GitHub accounts, and the workflow for both repositories are the game's `github.md` (`C:/Users/micha/Dev/cozy-medieval-zombies/github.md`); wiki work is usually a Secondary's. **This repository's rule** (`github.md`, section 9): the wiki Secondary's routine syncs push to `main` directly; anyone else's change, and any larger change (a new page kind, the generator, the templates), goes through a pull request.
 
-This repository is the wiki of the game Cozy Medieval Zombies, published at **https://michaeldippold.github.io/cmz-wiki/** (GitHub Pages, built by `.github/workflows/pages.yml`). It is written and kept up by Claude, the **wiki agent**; Michael makes targeted changes and verifies pages. Everything about how the wiki is made, kept current, and connected to the game is in this file and the three it points to: `README.md` (the short version for anyone), `WRITING.md` (the voice, the page kinds, numbers, sources), and the game's `docs/37-the-wiki.md` (the plan and why).
+This repository is the wiki of the game Cozy Medieval Zombies, published at **https://cmzgame.github.io/cmz-wiki/** (GitHub Pages, built by `.github/workflows/pages.yml`). It is written and kept up by Claude, the **wiki agent**; Michael makes targeted changes and verifies pages. Everything about how the wiki is made, kept current, and connected to the game is in this file and the three it points to: `README.md` (the short version for anyone), `WRITING.md` (the voice, the page kinds, numbers, sources), and the game's `docs/37-the-wiki.md` (the plan and why).
 
 ## The two repositories
 
-- **The game:** `C:\Users\micha\Dev\cozy-medieval-zombies` (github.com/michaeldippold/cozy-medieval-zombies). Its `main` is reviewed and merged by Michael's **technical lead**, a coding agent. The wiki agent never commits to the game's `main` directly and never checks anything out in the game's main checkout: it reads the game through `sync.js` (read-only, `git fetch` and `git archive`), and when it must write to the game (only `docs/bugs.md`, and docs about the wiki), it does so on its own branch or worktree **on top of the latest `main`**, for the lead to merge.
-- **The wiki:** this repository, `C:\Users\micha\Dev\cmz-wiki` (github.com/michaeldippold/cmz-wiki). The wiki agent commits and pushes to its `main` directly; a push publishes the site.
+- **The game:** `C:\Users\micha\Dev\cozy-medieval-zombies` (github.com/cmzgame/cozy-medieval-zombies; the studio's organisation `cmzgame` since 2026-10-15, Michael's `michaeldippold` its owner). Its `main` is reviewed and merged by Michael's **technical lead**, a coding agent. The wiki agent never commits to the game's `main` directly and never checks anything out in the game's main checkout: it reads the game through `sync.js` (read-only, `git fetch` and `git archive`), and when it must write to the game (only `docs/bugs.md`, and docs about the wiki), it does so on its own branch or worktree **on top of the latest `main`**, for the lead to merge.
+- **The wiki:** this repository, `C:\Users\micha\Dev\cmz-wiki` (github.com/cmzgame/cmz-wiki). The wiki agent commits and pushes to its `main` directly; a push publishes the site.
 
 ## The law: the code is the truth
 
@@ -25,7 +25,7 @@ Michael's rule (2026-10-14, its order ruled 2026-10-15): a feature, a fix, or a 
 6. **`node build.js --check`**: it fails on a template naming something the data no longer has, and on a number typed into prose; it reports red links, planned notes, and generated-only pages. Fix what it names.
 7. **Write an entry on the Updates page** (`pages/front/updates.md`): the date, the game commit, what changed on the wiki.
 8. **New bugs found on the way go to the game's `docs/bugs.md`** (the habits below), never into a page as a choice.
-9. **Commit and push** this repository. The site republishes in a minute or two (`gh run list -R michaeldippold/cmz-wiki`).
+9. **Commit and push** this repository. The site republishes in a minute or two (`gh run list -R cmzgame/cmz-wiki`).
 
 ## The bug pipeline: `docs/bugs.md` in the game
 
@@ -51,7 +51,7 @@ The census is the inventory of what the game contains, done once in full (2026-1
 
 ## Verification (Michael's)
 
-Every page shows **Verify** and how long since its stamp. Verify opens a GitHub issue titled `Verify: <page title>`; when Michael (the repository's owner, and only he) submits it, the workflow stamps `verified.json`, closes the issue, and republishes. `Special:Verification` and the `verification.txt` a build writes list the pages most in need of a look: never verified, then edited since their stamp (from git history), then the oldest stamps. **The wiki agent never opens a Verify issue**: verifying is Michael's word that he checked a page. When asked "what is stalest", read `verification.txt` after a build.
+Every page shows **Verify** and how long since its stamp. Verify opens a GitHub issue titled `Verify: <page title>`; when Michael (his account, `michaeldippold`, and only he: the workflow's `VERIFIER`) submits it, the workflow stamps `verified.json`, closes the issue, and republishes. `Special:Verification` and the `verification.txt` a build writes list the pages most in need of a look: never verified, then edited since their stamp (from git history), then the oldest stamps. **The wiki agent never opens a Verify issue**: verifying is Michael's word that he checked a page. When asked "what is stalest", read `verification.txt` after a build.
 
 ## Sources and the game going private
 
