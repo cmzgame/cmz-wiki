@@ -1,0 +1,108 @@
+---
+title: Combat
+categories: [Combat, Mechanics]
+aliases: [Fighting, Melee, Attacking]
+summary: How fighting the dead works: the three mouse roles, the swing, stamina, damage, the finisher, and knockback.
+---
+
+**Combat** is how the [[Player]] fights [[The dead]]. There are no guns: the player swings what is in their hands, shoves with Space, or shoots a [[Bow]]. A blow is decided on the click, and only the dead can be hit: never [[Villagers]], never other players.
+
+## How it works
+
+### The mouse
+
+The mouse buttons are roles, not fixed actions:
+
+- **Left** is the main hand: a swing, a stab, or with a bow the draw. With a weapon in each hand, left swings whichever hand is ready (see [[Dual wielding]]).
+- **Right**, tapped (let go within {{n census.constants.buttons.TAP_TIME seconds}}), opens the actions menu where it was pressed, or cancels a bow draw in progress. **Right held** is the off hand's stance: it raises the [[Shield]] or braces the bow. The stance starts on the press, without waiting for the tap time.
+- **Middle** or **Q** is the main hand's other mode: the [[Halberd]]'s thrust, or the [[Throwing spear]]'s throw.
+- **Space** is the [[Shove]].
+
+See [[Controls]] for every key.
+
+### The swing
+
+A click swings at once. The hit is decided on the click; the arm's animation is only a picture of it. Everything in a wedge in front of the player is hit: the weapon's reach is measured from the feet, and its arc is measured from the chest ({{n tuning.player.aimY}} pixels above the feet) toward the cursor. A target exactly at the edge of the reach is still hit.
+
+- Anything within {{n census.constants.combat.POINT_BLANK tiles}} is always hit, whatever the angle.
+- One of the dead drawn below the player on screen gets a little extra reach, up to {{n census.constants.combat.BODY_SLACK tiles}}.
+- The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]).
+- A swing is refused while carrying a prop, climbing, during a timed action, or when dead.
+
+The wedge itself is not drawn. Each weapon's reach and arc are on its page and in [[Weapons]].
+
+### Cooldown and stamina
+
+Each weapon has its own recovery between swings; clicks during it do nothing. Two gold bars at the bottom of the screen fill over each hand's recovery.
+
+Every swing costs [[Stamina]]. The player is never locked out: a swing begun at no stamina still lands, at {{n census.constants.combat.TIRED_DAMAGE}} times its damage (the tired blow). A swing that drains the last stamina still does full damage; the next one is the tired one. Running out leaves the player winded, unable to sprint until stamina is back to {{n tuning.player.sprintRecoverAt}}.
+
+### Damage and the finisher
+
+A hit takes the weapon's damage from the target's health. A hit on one of the dead lying on the floor (down, or getting up) is a **finisher**: it does {{n combat.finisher.mult}} times the damage, and it does not push, stagger, or floor. The finisher is for blows in hand only; an arrow or a thrown spear on a downed target does plain damage.
+
+The damage is multiplied by each of these that applies:
+
+- {{n census.constants.combat.TIRED_DAMAGE}} for a tired blow.
+- {{n combat.finisher.mult}} for a finisher.
+- {{n items.shield.shield.attackMult}} with the shield's guard raised.
+- {{n combat.dual.offDamage}} for an off-hand blow.
+
+A landed blow briefly freezes the game (hit-stop: {{n census.constants.combat.HIT_STOP seconds}}, {{n census.constants.combat.HIT_STOP_KILL seconds}} on a kill) and kicks the striking player's view {{n census.constants.combat.KICK_PX}} pixels along the aim for {{n census.constants.combat.KICK_TIME seconds}}.
+
+### Knockback
+
+Every weapon hit pushes the target away along the player's aim, spread over {{n tuning.zombie.knockTime seconds}} and stopped by walls. A downed target is not pushed. The distance is the weapon's knockback, in tiles.
+
+### Stagger and knockdown
+
+A hit may stop one of the dead for a moment, or floor it. Heavier weapons do both more often. See [[Stagger and knockdown]].
+
+### Multi-hit
+
+By default a swing hits only the nearest of the dead in the wedge. With the Multi-hit setting on, it hits everything in the wedge. The halberd's thrust always hits only the nearest.
+
+### Wear
+
+Weapons wear out by landed hits. See [[Durability]].
+
+## Numbers
+
+- Right tap: {{n census.constants.buttons.TAP_TIME seconds}}.
+- Point blank: {{n census.constants.combat.POINT_BLANK tiles}}.
+- Tired blow: {{n census.constants.combat.TIRED_DAMAGE}} times damage.
+- Finisher: {{n combat.finisher.mult}} times damage.
+- Hit-stop: {{n census.constants.combat.HIT_STOP seconds}}; {{n census.constants.combat.HIT_STOP_KILL seconds}} on a kill.
+- Knockback time: {{n tuning.zombie.knockTime seconds}}.
+- Stamina: {{n tuning.player.stamina}}, coming back at {{n tuning.player.staminaRegen}} a second.
+
+## With friends
+
+Whenever a world is open to friends, hit-stop is switched off for everyone, host and guests. The view's kick is felt only by the player who struck.
+
+The mouse roles are read on each player's own machine and sent to the host. A guest's own swing and guard show at once on their screen, but the hits, the shove, and the bow's draw are worked out on the host. The rules (Multi-hit, Zombie aggro) are the host's, and a world keeps them in its save. See [[Multiplayer]].
+
+## Settings that change it
+
+- **Multi-hit** (default off): on, a blow reaches everything in its wedge.
+- **Swing targets** (default off): a green outline on exactly the dead the next left click would hit. It follows the off hand when that hand would take the click.
+- **Show hit shapes** (default off): draws the points on each nearby body that the swing tests, green when in the wedge.
+- **Swing timer** (default on): the bars that fill over each hand's recovery.
+- **Zombie aggro** (default off): off, the dead ignore the player (see [[The dead]]).
+
+{{devonly note="Combat testing (default off, read when the page loads) removes the scattered and wild trees and stands a crowd of extra dead on open ground. The Dev chest setting (default on) puts a chest of every weapon beside the spawn."}}
+
+{{planned doc=02 note="A cap on how fast the player can turn while a swing recovers, against spinning and clicking (question 29b)."}}
+
+## See also
+
+- [[Weapons]]
+- [[Stagger and knockdown]]
+- [[Dual wielding]]
+- [[Shove]]
+- [[Archery]]
+- [[Durability]]
+- [[Fists]]
+- [[The dead]]
+
+{{navbox weapons}}

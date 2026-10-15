@@ -1,0 +1,53 @@
+---
+title: Settings
+categories: [Interface]
+aliases: [Options, Settings screen, Defaults, World rules]
+summary: The Settings screen, every choice on it with its default, and which ones are the world's rules.
+---
+
+The **Settings** screen is opened from the title screen or the pause menu. Its heading says the settings are kept in this browser. Each row is a set of buttons, one per choice; the one in use is lit. **Defaults** resets them and **Back** returns.
+
+## The rows
+
+In the order the screen shows them, with the default first:
+
+- **Interface size**: Auto, or a fixed size in quarter steps up to {{n census.constants.view.UI_SCALE_MAX}}x. Auto fits the interface to the window.
+- **Zoom**: Auto, Wide, Middle, or Close. Auto picks the level that suits the window's size. `Z` and the wheel change it too, and the choice is kept here.
+- **Zombie aggro**: Off (they ignore you) or On (they hunt you). *A world rule.*
+- **Zombies attack villagers**: Off, or On (they hunt villagers too, you first). *A world rule.*
+- **Survival**: On (hunger, thirst, tiredness) or Off (no needs). *A world rule.*
+- **Free building**: Off (costs apply) or On (no costs). *A world rule.*
+- **Cursor**: Default, A hand, A severed hand, or A zombie hand.
+- **Debug corner**: Shown or Hidden.
+- **Square and paths**: Cobble or Dirt, the surface of the village square and its paths.
+- **Bow aim guide**: On (the landing marker and a dotted line while drawing) or Off. See [[Archery]].
+- **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
+- **Swing targets**: Off or On (a green outline on what your next swing would hit).
+- **Multi-hit**: Off (a blow hits the nearest only: the intended way) or On (everything in the wedge: the easy button). *A world rule.* See [[Combat]].
+- **Layer** rows: one per slot that has painted clothing layers, to try one on in place of what is worn.
+
+### Testing rows
+
+{{devonly note="These rows are for testing the game."}}
+
+- **Combat testing**: Off or On (no trees and many more of the dead; reload the page).
+- **Dev chest**: On (a chest of every item by the spawn) or Off. It is read when a world is made.
+- **Show hit shapes**: Off or On (draws the dead's body samples).
+
+## World rules
+
+The {{n census.counts.rules}} rows marked as world rules belong to the world, not to the player. In your own world they come from your settings and are saved with the world. In a friend's world they are the host's: the rows are greyed and marked "(the host's)". In a [[Server worlds|server world]] the owner sets them. See [[Multiplayer]].
+
+## Defaults
+
+**Defaults** resets everything the browser keeps in its settings, which includes more than this screen shows: your [[Identities|identities]], the browser's own id (by which friends' worlds know your characters), the list of friends' worlds, the creator key, and the owner keys of [[Server worlds|server worlds]]. After Defaults, friends' worlds no longer recognise this browser as the owner of its characters there.
+
+## Every setting the game keeps
+
+The game's full list of stored settings and their defaults, including the ones that have no row on the screen:
+
+{{settings}}
+
+## See also
+
+- [[Controls]], [[Interface]], [[Multiplayer]], [[Screens]]

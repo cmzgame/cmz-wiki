@@ -1,0 +1,39 @@
+---
+title: Log and chat
+categories: [Interface, Multiplayer]
+aliases: [Log, Chat, Text log, Chat box, Speech bubbles, Speech]
+summary: The log at the bottom left keeps every message and every line said within sight; Enter opens the chat box.
+---
+
+The **log** sits at the bottom left of the screen. It keeps every message that floats under the clock and every line said within your [[Sight|sight]], so nothing is missed when a message fades. The **chat box** at its foot is how you speak.
+
+## How it works
+
+### The log
+
+Each line said by someone appears as "Name: line": your own as "You", another player's by their name, a villager's as "Villager", and anyone unnamed as "Someone". The groans of the dead are not logged. Messages from the game (what you found, what you cannot do) are logged too.
+
+The log keeps the last {{n census.constants.ui_log.KEEP}} lines. The wheel scrolls it while the pointer is over it. It can be resized by dragging its corner, and the browser remembers the size.
+
+### Speaking
+
+`Enter` opens the chat box. Type a line and press `Enter`: your character says it. It shows as a speech bubble over your head, for longer the longer the line, and as a line in the log of everyone who can see you. `Escape` leaves the box without saying anything.
+
+`/` opens the box with a slash already typed. A line that begins with a slash is a command. There are no commands yet: the game answers "Commands are not here yet."
+
+### Speech bubbles
+
+Anyone who speaks, players and villagers alike, gets a bubble over their head. Behind a tree's canopy a bubble shows only within {{n census.constants.ui_speech.NEAR}} tiles.
+
+## Numbers
+
+- Lines kept: {{n census.constants.ui_log.KEEP}}.
+- Bubbles behind a canopy: within {{n census.constants.ui_speech.NEAR}} tiles.
+
+## With friends
+
+A guest's line is said by their character on the host, so it reaches every player who can see them, as any line does. Only players in sight of the speaker see the bubble and the log line: there is no chat across the map. The log also says when friends join, leave, step away, and come back (see [[Dormancy]]).
+
+## See also
+
+- [[Interface]], [[Multiplayer]], [[Villagers]], [[Controls]]
