@@ -13,7 +13,7 @@ The wiki describes the game on `main` as the code has it. Where the game's docs 
 
 ## A sync (every time the game changes, and before any feature is called shipped)
 
-Michael's rule (2026-10-14): a feature is not pushed to the game's `main` until the wiki is checked and updated for it. A sync, in order:
+Michael's rule (2026-10-14, its order ruled 2026-10-15): a feature, a fix, or a change to a number is not called done until the wiki is checked and updated for it, **in the same session as its push to the game's `main`**. The sync reads `origin/main`, so it follows the push; a coding agent that pushes a batch in one session syncs once, at the batch's end, and reports nothing in it done before that sync is pushed. A sync, in order:
 
 1. **`node sync.js`**: snapshot the game's `origin/main`: its data into `snapshot/` (committed; what the build reads) and its code, tools, and docs into `.game/` (ignored; what the census and writers read). `snapshot/version.json` records the commit.
 2. **Read what changed:** `git -C ../cozy-medieval-zombies log --oneline <last commit>..origin/main` (the last commit is in the previous `snapshot/version.json`, or the latest Updates entry), and read the newest entries at the top of the game's `docs/02-decisions.md`, which say what each change does.

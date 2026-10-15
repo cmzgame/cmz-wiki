@@ -18,7 +18,7 @@ Press **Edit this page** on any page: it opens the page's markdown in GitHub's e
 
 ## Keeping it current (the rule)
 
-A feature is not pushed to the game's `main` until the wiki is checked and updated for it (Michael, 2026-10-14). A sync:
+A feature is not called done until the wiki is checked and updated for it, in the same session as its push to the game's `main` (Michael, 2026-10-14; the order 2026-10-15: the sync reads `origin/main`, so it follows the push, once for a batch). A sync:
 
 1. `node sync.js`: snapshot the game's `origin/main` (data into `snapshot/`, committed; code into `.game/`, ignored). Read-only on the game's repository.
 2. `node census/census.js`: the automatic inventory (`census/census.md`): what the game contains, and any problem the data shows by itself.
