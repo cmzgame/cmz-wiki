@@ -29,7 +29,7 @@ Holding right while drawing braces the bow: a full draw takes {{n items.bow.bow.
 
 The arrow travels along the ground at {{n combat.bow.speed tiles a second}}, with the arc drawn above it, out to at most {{n combat.bow.range tiles}}. The arc rises from {{n combat.bow.arcMin}} to {{n combat.bow.arcMax}} pixels high with the distance.
 
-It hurts only where it comes down: the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of the landing point. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
+It hurts only where it comes down: the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of the landing point, with nothing between it and that point. The test is made at the arrow's height as it lands, which is the ground, so a wall, a fence, boards, a closed door, or any window (even an open one, whose sill is above the ground) between the landing point and the body means no hit; an open or broken doorway does not. An arrow that comes down just short of a wall never hits one of the dead standing just past it. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
 
 ### What stops a shot
 
@@ -55,6 +55,7 @@ With the [[Throwing spear]] in the main hand, middle or Q draws a throw with the
 - A full throw draws in {{n items.spear.thrown.drawTime seconds}} and reaches {{n items.spear.thrown.range tiles}}, flying at {{n items.spear.thrown.speed tiles a second}}.
 - It does {{n items.spear.thrown.damage}} damage at full draw, more than the {{n tuning.zombie.hp}} health of a fresh zombie, and less for a partial draw.
 - It pushes {{n items.spear.thrown.knockback tiles}}, always staggers, and interrupts a bite. It never floors.
+- Its hit where it comes down follows the arrow's rule: never through a wall or a closed door to one of the dead past it.
 - Each time it comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone. Otherwise it lodges in the body it hit or lies where it fell.
 
 A thrown spear keeps its wear. With the [[Shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
@@ -97,6 +98,8 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/player-controller.js:52`: walking speed while drawing and braced
 - `src/archery.js:88-129`: the shot fixed at release, travelling along the ground with the arc above
 - `src/archery.js:234-261`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
+- `src/archery.js:252-262`, `src/archery.js:297-331`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not (game commit ac596bd, #13)
+- `src/archery.js:151-157`, `src/placeholders.js:88-90`: the wall test by height: a door passes open or broken below its top, a window open or broken between its sill and its top (game commit ac596bd)
 - `src/archery.js:273-285`: only the dead are hit
 - `src/archery.js:141-202`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot
 - `src/entities/character.js:139-162`: lodged arrows come out in the body's loot, the rest at its feet

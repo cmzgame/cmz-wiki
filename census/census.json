@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "2c70942d3f6a30c9f82b467e1eb4f63ae766c760",
-  "short": "2c70942",
-  "date": "2026-10-15T00:19:40-05:00",
-  "subject": "The wiki census's surprises, ruled by Michael and done: Zombie aggro on by default (a sandbox setting; saved settings keep their own; the headless hash keeps aggro off); health regenerates with survival off; no cloth tag on the bandage; X removes only what players made (built walls, props made at a station), a removed station spilling its output; the wheelbarrow carried; the blow's numbers and every bow number as data in combat.json, the same values; the needs' code defaults equal to the data; Leave world to the Worlds screen; Combat testing's hundred dead round the spawn. Logged: the chop tool and stump, lighting a fire (TODO), the combat pass's items (21), the settings rebuild (TODO), darkness and sight (02 question 30), the big cart (05). Tried in the pane: X, regen, the wheelbarrow, worlds 10 of 10; headless 8 of 8, hashes unchanged. Docs: bugs, 02, 05, 13, 21, TODO; data: combat, items, the wheelbarrow, the manifest",
+  "commit": "ac596bdd18bcb8a43fb4ce854cd8b0b51394c0f2",
+  "short": "ac596bd",
+  "date": "2026-10-15T13:06:00-05:00",
+  "subject": "Merge #58, reviewed: an arrow or a thrown spear landing just short of a wall no longer hits one of the dead past it (closes #13)",
   "ref": "origin/main"
  },
  "counts": {
@@ -23,7 +23,7 @@
   "keys": 19,
   "verbs": 2,
   "menuLabels": 40,
-  "events": 24,
+  "events": 25,
   "checks": 20,
   "modules": 81
  },
@@ -4272,7 +4272,8 @@
    "#e2cf8a",
    "#8a8478",
    "#b5b0a8",
-   "#e8e4dc"
+   "#e8e4dc",
+   "#d13fc2"
   ],
   "eyes": [
    "#1c1a22",
@@ -4294,6 +4295,8 @@
   "zombie",
   "bow",
   "bow_rest",
+  "cast_staff",
+  "cast_book",
   "throw"
  ],
  "hairStyles": {
@@ -4335,7 +4338,7 @@
   {
    "key": "zombiesAttackVillagers",
    "default": "false",
-   "note": "on: the dead hunt villagers too, always preferring the player when both are in sight (docs/19)"
+   "note": "on: the dead hunt villagers, whatever aggro says; with aggro on, the player first when both are in sight (two knobs on purpose, Michael 2026-10-15; docs/19)"
   },
   {
    "key": "squareSurface",
@@ -4519,7 +4522,7 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:274"
+    "placement.js:275"
    ]
   },
   {
@@ -4614,7 +4617,7 @@
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:594"
+    "placement.js:598"
    ]
   },
   {
@@ -4771,7 +4774,7 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:566"
+    "placement.js:570"
    ]
   },
   {
@@ -4783,13 +4786,13 @@
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:604"
+    "placement.js:608"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:600"
+    "placement.js:604"
    ]
   },
   {
@@ -4845,13 +4848,13 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:267"
+    "archery.js:280"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:618"
+    "archery.js:657"
    ]
   },
   {
@@ -4869,7 +4872,13 @@
   {
    "key": "blocked",
    "at": [
-    "combat.js:154"
+    "combat.js:159"
+   ]
+  },
+  {
+   "key": "containerGone",
+   "at": [
+    "placement.js:404"
    ]
   },
   {
@@ -4915,25 +4924,25 @@
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:145"
+    "combat.js:150"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:264"
+    "combat.js:269"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:358"
+    "combat.js:363"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:329"
+    "combat.js:334"
    ]
   },
   {
@@ -4945,7 +4954,7 @@
   {
    "key": "shove",
    "at": [
-    "combat.js:393"
+    "combat.js:398"
    ]
   },
   {
@@ -4981,8 +4990,8 @@
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:626",
-    "combat.js:375"
+    "archery.js:665",
+    "combat.js:380"
    ]
   },
   {
@@ -5128,7 +5137,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1703
+   "lines": 1706
   },
   {
    "path": "interact.js",
@@ -5151,12 +5160,12 @@
    "lines": 805
   },
   {
-   "path": "ui/inventory-panel.js",
-   "lines": 704
+   "path": "archery.js",
+   "lines": 713
   },
   {
-   "path": "archery.js",
-   "lines": 673
+   "path": "ui/inventory-panel.js",
+   "lines": 704
   },
   {
    "path": "assets.js",
@@ -5172,19 +5181,19 @@
   },
   {
    "path": "placement.js",
-   "lines": 606
+   "lines": 610
+  },
+  {
+   "path": "figure/draw.js",
+   "lines": 601
   },
   {
    "path": "gl.js",
    "lines": 601
   },
   {
-   "path": "figure/draw.js",
-   "lines": 594
-  },
-  {
    "path": "combat.js",
-   "lines": 449
+   "lines": 454
   },
   {
    "path": "render/walls.js",
@@ -5200,7 +5209,7 @@
   },
   {
    "path": "figure/rig.js",
-   "lines": 378
+   "lines": 389
   },
   {
    "path": "entities/player.js",
