@@ -5400,5 +5400,278 @@
    "lines": 14
   }
  ],
- "problems": []
+ "problems": [],
+ "constants": {
+  "archery": {
+   "tunables_range": 22,
+   "tunables_speed": 16,
+   "tunables_arcMin": 8,
+   "tunables_arcMax": 150,
+   "tunables_z0": 30,
+   "tunables_ramp": 2,
+   "tunables_drawTime": 0.9,
+   "tunables_minDraw": 0.15,
+   "tunables_minDistance": 1,
+   "tunables_drawSpeed": 0.45,
+   "tunables_braceMove": 0.2,
+   "tunables_braceDrawRate": 1.5,
+   "tunables_recoverTime": 0.22,
+   "tunables_hitRadius": 0.5,
+   "tunables_damage": 38,
+   "tunables_knockback": 0.2,
+   "tunables_wallHeight": 80,
+   "tunables_trunkHeight": 40,
+   "tunables_propHeight": 50,
+   "tunables_scanStep": 0.1,
+   "tunables_aimLift": 22,
+   "tunables_shadowRx": 7,
+   "tunables_shadowRy": 3.5,
+   "tunables_shadowAlpha": 0.55
+  },
+  "assets": {
+   "TILE_HH": 16,
+   "SLICE_INSET": 9
+  },
+  "buttons": {
+   "TAP_TIME": 0.2
+  },
+  "camera": {
+   "FOLLOW": 10
+  },
+  "clock": {
+   "DAY_LENGTH": 720,
+   "DAY_B": 1,
+   "NIGHT_B": 0.22,
+   "DUSK_START": 22,
+   "NIGHT_START": 23,
+   "NIGHT_END": 6,
+   "DAWN_END": 7,
+   "START_HOUR": 8
+  },
+  "combat": {
+   "POINT_BLANK": 0.55,
+   "BODY_SLACK": 0.8,
+   "BODY_TOP": 48,
+   "BODY_HALF_W": 10,
+   "KNOCKDOWN_CHANCE": 0.3,
+   "HIT_STOP": 0.045,
+   "HIT_STOP_KILL": 0.09,
+   "KICK_PX": 3,
+   "KICK_TIME": 0.08,
+   "WEDGE_TIME": 0.12,
+   "TIRED_DAMAGE": 0.5
+  },
+  "figure_draw": {
+   "SHADE_DYE": 0.16,
+   "FAR_ARM_SLIVER": 2,
+   "RAISED_ARM": 40
+  },
+  "figure_held": {
+   "HELD_TILT": 32,
+   "HELD_LEAN_OUT": 18,
+   "HELD_ANGLES": 16,
+   "HELD_SIZE": 32
+  },
+  "figure_raster": {
+   "SHADE_SHARE": 0.4,
+   "SHADE_TONE": 0.16,
+   "NO_SHADE": 6
+  },
+  "figure_rig": {
+   "FW": 48,
+   "FH": 72,
+   "FEET_X": 24,
+   "FEET_Y": 66,
+   "ISO": 0.5,
+   "HOLD_PITCH": 55,
+   "HOLD_OUT": 1.5
+  },
+  "fire": {
+   "tunables_rate": 40,
+   "tunables_standHeight": 44,
+   "tunables_lyingHeight": 10,
+   "tunables_spread": 5,
+   "tunables_emberChance": 0.3,
+   "tunables_smokeChance": 0.18,
+   "tunables_lightRadius": 2.4
+  },
+  "gl": {
+   "FLAG_UNLIT": 1,
+   "FLAG_OCCLUDER": 2,
+   "FLAG_SKY": 4,
+   "FLAG_NOFOG": 8,
+   "FLAG_STANDING": 16,
+   "FLAG_SOLID": 32,
+   "STRIDE": 12
+  },
+  "ground": {
+   "W": 1024,
+   "H": 512,
+   "TILE_W": 64,
+   "TILE_H": 32,
+   "KEEP_RADIUS": 2,
+   "CAP": 36,
+   "REACH_MAX": 4,
+   "SPT": 4,
+   "DECAL_PAD": 2
+  },
+  "host": {
+   "MAX_OWNERS": 16
+  },
+  "interact": {
+   "INTERACT_RANGE": 1.15,
+   "SEARCH_TIME": 1,
+   "BOARD_TIME": 2,
+   "PULL_TIME": 1.5,
+   "CHOP_TIME": 3,
+   "DRINK_TIME": 1.5,
+   "FILL_TIME": 2,
+   "HOLD_TIME": 0.35,
+   "WALL_FACE": 80,
+   "FACE_HALF_W": 26,
+   "POKE_COOLDOWN_MS": 600,
+   "CLICK_REACH": 2.6,
+   "BRUSH_MS": 560
+  },
+  "iso": {
+   "TW": 64,
+   "TH": 32
+  },
+  "light": {
+   "RES": 2,
+   "CORE_GAIN": 1.4,
+   "PORTAL_MIN": 0.1,
+   "PORTAL_OFF": 0.3,
+   "MAX_STEPS": 400,
+   "RAY_STEP": 0.15,
+   "POOL_RAYS": 28,
+   "tunables_dayCap": 0.92,
+   "tunables_unlitRoomCap": 0.88,
+   "tunables_openingDaylight": 0.5,
+   "tunables_roomBounce": 0.5
+  },
+  "loop": {
+   "MAX_FRAME": 0.1,
+   "MAX_STEPS_FAST": 120,
+   "STALL_MS": 100
+  },
+  "main": {
+   "ZOOM_PACE": 0.3,
+   "AUTOSAVE": 60
+  },
+  "map": {
+   "CHUNK": 16,
+   "ROOM_MAX": 300,
+   "ROUND_BODY_RADIUS": 0.2,
+   "HOUR_SECONDS": 30,
+   "BOARD_HP": 40,
+   "DOOR_HP": 100,
+   "SHUTTER_HP": 60,
+   "BOARDS_PER_SIDE": 3,
+   "KEY_OFF": 32768,
+   "UNVISITED": -1,
+   "OUTDOORS": -2
+  },
+  "net": {
+   "PROTOCOL": 3,
+   "GRACE_S": 60,
+   "MAX_PENDING": 180,
+   "MAX_BACKLOG": 10,
+   "SILENT_STEPS": 30,
+   "MAX_RUN": 600,
+   "SYNC_EVERY_FRAMES": 10,
+   "JOIN_WAIT_MS": 10000,
+   "FRAME_EVERY": 3
+  },
+  "pathfind": {
+   "KEY_OFF": 32768
+  },
+  "placeholders": {
+   "WALL_T": 18,
+   "DOOR_TOP": 48,
+   "WINDOW_SILL": 22,
+   "WINDOW_TOP": 51,
+   "BRACKET_UP": 32,
+   "NEAR_STUB": 8,
+   "NEAR_FRAME_H": 30,
+   "NEAR_WINDOW_H": 26
+  },
+  "placement": {
+   "PLACE_REACH": 2.6,
+   "BUILD_REACH": 2.6,
+   "REMOVE_REACH": 2.6,
+   "EDGE_CLEARANCE": 0.45
+  },
+  "render_area": {
+   "CORE_GAIN": 1.4
+  },
+  "render_entities": {
+   "WALL_HALF": 0.28
+  },
+  "render_props": {
+   "WIGGLE_MS": 560
+  },
+  "render_scene": {
+   "FOG_ALPHA": 0.36,
+   "NEAR_WALL_ALPHA": 0.42,
+   "OCCLUDER_MIN_HEIGHT": 64,
+   "HOLE_INNER": 34,
+   "HOLE_OUTER": 78
+  },
+  "render_walls": {
+   "CAP_MARGIN": 1
+  },
+  "save": {
+   "VERSION": 2
+  },
+  "stations": {
+   "REACH": 2.6
+  },
+  "ui_hud": {
+   "SCALE": 2
+  },
+  "ui_inventory-panel": {
+   "ICON_PX": 19,
+   "PORTRAIT_PX": 38,
+   "DRAG_THRESHOLD": 4
+  },
+  "ui_kit": {
+   "K": 1
+  },
+  "ui_log": {
+   "KEEP": 200
+  },
+  "ui_names": {
+   "HEAD_TOP": 78
+  },
+  "ui_screens": {
+   "CREATION_STEPS": 2
+  },
+  "ui_speech": {
+   "HEAD_TOP": 68,
+   "NEAR": 3.5,
+   "EDGE": 8,
+   "TAIL_MARGIN": 22,
+   "BORDER": 3
+  },
+  "ui_swing-timer": {
+   "HEAD_CLEARANCE": 58
+  },
+  "ui_zombie-bars": {
+   "HEAD_CLEARANCE": 76,
+   "NEAR": 3.5,
+   "PLAYER_CLEARANCE": 66
+  },
+  "view": {
+   "BASE_W": 960,
+   "BASE_H": 540,
+   "UI_SCALE_MAX": 2,
+   "BASE_CELL": 38
+  },
+  "visibility": {
+   "MAX_STEPS": 400,
+   "KEY_OFF": 32768,
+   "CORNER": 0.42
+  }
+ }
 }

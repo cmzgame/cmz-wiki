@@ -1,3 +1,4 @@
 .game/
 site/
 node_modules/
+.tmp-*/

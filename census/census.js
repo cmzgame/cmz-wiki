@@ -126,6 +126,16 @@ const rules = [...rulesText.slice(rulesText.indexOf("export const rules")).split
 const moodleText = readFileSync(join(SRC, "moodles.js"), "utf8");
 const moodles = [...moodleText.matchAll(/id:\s*"([a-z]+)",[\s\S]*?stages:\s*\[([\s\S]*?)\]/g)].map((m) => ({ id: m[1], stages: [...m[2].matchAll(/name:\s*"([^"]+)",\s*text:\s*"([^"]+)"/g)].map((s) => ({ name: s[1], text: s[2] })) }));
 const checks = existsSync(join(TOOLS, "checks")) ? readdirSync(join(TOOLS, "checks")).filter((f) => f.endsWith(".js")).map((f) => basename(f, ".js")) : [];
+// Named numbers in code (const NAME = 1.5; and the properties of an object named `tunables`), by module,
+// so a page can say {{n census.constants.combat.POINT_BLANK}} rather than type a number the code owns.
+const constants = {};
+for (const f of srcFiles) {
+  const mod = f.path.replace(/\.js$/, "").replace(/\//g, "_");
+  const put = (k, v) => { (constants[mod] = constants[mod] || {})[k] = v; };
+  for (const m of f.text.matchAll(/^(?:export\s+)?const\s+([A-Z][A-Z0-9_]*)\s*=\s*(-?\d+(?:\.\d+)?)\s*;/gm)) put(m[1], +m[2]);
+  const tb = /(?:export\s+)?const\s+tunables\s*=\s*\{([\s\S]*?)\n\};/.exec(f.text);
+  if (tb) for (const m of tb[1].matchAll(/^\s*([a-zA-Z]\w*):\s*(-?\d+(?:\.\d+)?)\s*,/gm)) put(`tunables_${m[1]}`, +m[2]);
+}
 const modules = srcFiles.map((f) => ({ path: f.path, lines: f.text.split("\n").length })).sort((a, b) => b.lines - a.lines);
 
 // ---------- items, cross-referenced ----------
@@ -161,7 +171,7 @@ const census = {
   map: { name: valley.name, spawn: valley.spawn, bounds: valley.bounds, places, villagers: valley.villagers, wild: valley.wild },
   tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
   wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
-  settings, rules, keys, verbs, menuLabels, events, moodles, checks, modules, problems,
+  settings, rules, keys, verbs, menuLabels, events, moodles, checks, modules, problems, constants,
 };
 writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
 

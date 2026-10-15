@@ -18,7 +18,8 @@ import { expand, STATION_TITLES, KIND_TITLES, placeTitle } from "./lib/templates
 import { render, slugify, escapeHtml } from "./lib/markdown.js";
 
 const root = dirname(fileURLToPath(import.meta.url));
-const OUT = join(root, "site");
+const outArg = process.argv.indexOf("--out");
+const OUT = outArg > 0 ? join(root, process.argv[outArg + 1]) : join(root, "site");
 const REPO = "https://github.com/michaeldippold/cmz-wiki";
 const strict = process.argv.includes("--check");
 const data = loadData(root);
