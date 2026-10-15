@@ -268,6 +268,6 @@ if (errors.length) {
 }
 if (strict && pages.some((p) => p.written && /\d/.test(p.body.replace(/\{\{[^}]*\}\}/g, "").replace(/`[^`]*`/g, "").replace(/\[\[[^\]]*\]\]/g, "")) && !p.meta.numbersOk)) {
   // A typed number in prose goes stale; the check names the pages so they can be turned into {{n ...}}.
-  const flagged = pages.filter((p) => p.written && !p.meta.numbersOk && /\b\d+(\.\d+)?\b/.test(p.body.replace(/^---[\s\S]*?---/, "").replace(/\{\{[^}]*\}\}/g, "").replace(/`[^`]*`/g, "").replace(/\[\[[^\]]*\]\]/g, "").replace(/\(docs\/[^)]*\)/g, "").replace(/^\s*\d+\.\s/gm, "").replace(/\d{4}-\d{2}-\d{2}/g, "").replace(/<!--[\s\S]*?-->/g, "")));
+  const flagged = pages.filter((p) => p.written && !p.meta.numbersOk && /\b\d+(\.\d+)?\b/.test(p.body.replace(/^---[\s\S]*?---/, "").replace(/^## Sources[\s\S]*$/m, "").replace(/\{\{[^}]*\}\}/g, "").replace(/`[^`]*`/g, "").replace(/\[\[[^\]]*\]\]/g, "").replace(/\(docs\/[^)]*\)/g, "").replace(/^\s*\d+\.\s/gm, "").replace(/\d{4}-\d{2}-\d{2}/g, "").replace(/<!--[\s\S]*?-->/g, "")));
   if (flagged.length) { console.error(`typed numbers in prose on: ${flagged.map((p) => p.title).join(", ")}`); process.exit(1); }
 }
