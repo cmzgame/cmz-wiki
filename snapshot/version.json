@@ -1,0 +1,7 @@
+{
+  "commit": "9205ad7e7119ce705b06bab7a47d76974b2f5fbd",
+  "short": "9205ad7",
+  "date": "2026-10-14T20:18:10-05:00",
+  "subject": "Merge item 5's step 6, the owner's powers (294d8ed, 7bf2511), reviewed: the owner's character taken only with the owner key (a stranger with the code got its own; a second device with the key took the owner's back), owner endpoints behind the key, the code moved with whoever is in, removal barring by hash, step 5's three points closed, no key in the log. Headless 7 of 7, hashes unchanged. Step 7 may begin. Docs: 02",
+  "ref": "origin/main"
+}

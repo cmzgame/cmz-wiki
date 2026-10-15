@@ -1,0 +1,10 @@
+{
+  "fists": { "staggerChance": 0.2, "damage": 6, "range": 0.9, "arc": 100, "swing": 0.4, "knockback": 0.17, "knockbackChance": 1, "stamina": 3, "knockdown": 0, "style": "one_handed" },
+  "stagger": { "chance": 0.5, "immunity": 0.6, "note": "a hit staggers the dead one with the weapon's staggerChance (this is the default); after a stagger ends it cannot be staggered again for immunity seconds; a bite under way is not cancelled unless the weapon interrupts (docs/02 question 29b)" },
+  "bleed": { "chance": 0.5, "dpsByStacks": [0.4, 1.6, 3.6, 6.4, 10], "max": 5, "duration": 12, "note": "a landed bite opens a wound with this chance, one more stack each (to max); the wound drains dpsByStacks[stacks - 1] a second, the timer is refreshed by each new bite and runs out by itself after duration seconds; a bandage stops it. Michael's bounds: five fresh stacks kill from full health in 10 s (not under 8 to 10 s), and one stack is a nuisance (under 5 health in all)" },
+  "infection": { "chance": 0.2, "days": 1.5, "note": "a landed bite infects with this chance; the moodle goes green, yellow, orange, red over this many in-game days; it does nothing else yet (docs/02 question 29b)" },
+  "combo": { "enabled": false, "hits": 3, "window": 2, "note": "the third hit on one dead one within `window` seconds always floors it; switched off for testing (Michael, 2026-10-12), the code kept" },
+  "finisher": { "mult": 1.5, "note": "what a blow on a downed dead one is multiplied by (was 2)" },
+  "dual": { "offDamage": 1, "window": 2.5, "lockout": 0.45, "front": 1.5, "side": 2.5, "behind": 100, "arc": 100, "sideArc": 220, "note": "an off-hand swing leaves you exposed for `window` seconds: a blow takes `front` times its damage from the front arc, `side` times from the sides, `behind` times (fatal) from behind; `lockout` is the share of a swing before the other hand may swing; `offDamage` multiplies the off hand's blows (1 = full; World of Warcraft's flat penalty would be 0.5) (docs/21)" },
+  "shove": { "range": 1.0, "arc": 100, "knockback": 0.53, "knockbackChance": 1, "stagger": 0.6, "knockdown": 0.25, "stamina": 5, "cooldown": 0.45 }
+}

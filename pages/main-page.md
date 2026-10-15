@@ -1,0 +1,28 @@
+---
+title: Main page
+summary: The wiki of Cozy Medieval Zombies, a cute isometric medieval village overrun by the dead.
+---
+
+**Cozy Medieval Zombies** is a cute isometric village, in the pixel style of the early 2000s, overrun by the dead. It is one continuous place with real line of sight: you cross the square, look through the inn's window, and see who is inside before you open the door. The art stays cute; the systems stay serious. Friends can play in the same world.
+
+The game is in development, and this wiki describes it as it is today, true to its code. Every table here is generated from the game's own data, so the numbers are the game's numbers.
+
+## Start here
+
+- [[Getting started]]: your first day in the valley.
+- [[Controls]]: every key and button.
+- [[The valley]]: the map, its places, and its people.
+
+## The game
+
+- **You:** [[Player]], [[Health]], [[Stamina]], [[Moodles]], [[Sleep]], [[Death]].
+- **The dead:** [[The dead]], how they see, hunt, and break in.
+- **Fighting:** [[Combat]], [[Weapons]], [[Archery]], [[Durability]].
+- **Things:** [[Items]], [[Inventory]], [[Crafting]], [[Recipes]], [[Fire]].
+- **Home:** [[Building]], [[Openings]], [[Placement]].
+- **The world:** [[Light]], [[Sight]], [[Water]], [[Gatherables]], [[Villagers]].
+- **With friends:** [[Multiplayer]], [[Worlds]].
+
+## About this wiki
+
+[[Updates]] lists what changed and when. [[Planned]] lists what is not in the game yet. A red link is a page nobody has written yet: the [[Special:Red links|list of them]] is the list of what to write next.

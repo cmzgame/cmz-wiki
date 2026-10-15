@@ -1,0 +1,234 @@
+// The census, part one: the automatic inventory of what the game contains, read
+// from the snapshot (snapshot/data, the game's data at one commit) and the code
+// beside it (.game/src, from the same commit). Writes census/census.json and a
+// readable census/census.md. Run `node sync.js` first.
+//
+// Data is read as data. Things that live only in code (keys, verbs, menu
+// entries, moodles, events, checks) are found by pattern, and the report says
+// so: they are a list to check, not a proof.
+
+import { readFileSync, readdirSync, writeFileSync, existsSync, statSync } from "node:fs";
+import { join, dirname, basename } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const D = join(root, "snapshot", "data");
+const SRC = join(root, ".game", "src");
+const TOOLS = join(root, ".game", "tools");
+const json = (p) => JSON.parse(readFileSync(p, "utf8"));
+const version = json(join(root, "snapshot", "version.json"));
+
+function walk(dir, ext) {
+  const out = [];
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) out.push(...walk(p, ext));
+    else if (!ext || p.endsWith(ext)) out.push(p);
+  }
+  return out;
+}
+const srcFiles = walk(SRC, ".js").map((p) => ({ path: p.slice(SRC.length + 1).replace(/\\/g, "/"), text: readFileSync(p, "utf8") }));
+function found(re, group = 1) {
+  const hits = new Map();
+  for (const f of srcFiles) {
+    const lines = f.text.split("\n");
+    lines.forEach((line, i) => {
+      for (const m of line.matchAll(re)) {
+        const key = m[group];
+        if (!hits.has(key)) hits.set(key, []);
+        hits.get(key).push(`${f.path}:${i + 1}`);
+      }
+    });
+  }
+  return [...hits.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([key, at]) => ({ key, at }));
+}
+
+// ---------- data ----------
+const items = json(join(D, "items.json"));
+const recipes = json(join(D, "recipes.json")).rows;
+const interactions = json(join(D, "interactions.json")).rows;
+const loot = json(join(D, "loot.json"));
+const tuning = json(join(D, "tuning.json"));
+const combat = json(join(D, "combat.json"));
+const wardrobes = json(join(D, "wardrobes.json"));
+const build = json(join(D, "build.json"));
+const looks = json(join(D, "looks.json"));
+const poses = json(join(D, "poses.json"));
+const valley = json(join(D, "maps", "valley.json"));
+const sprites = Object.fromEntries(readdirSync(join(D, "sprites")).filter((f) => f.endsWith(".json")).map((f) => [basename(f, ".json"), json(join(D, "sprites", f))]));
+const hair = existsSync(join(D, "hair", "index.json")) ? json(join(D, "hair", "index.json")) : null;
+
+const itemIds = new Set(items.map((i) => i.id));
+const ref = (x) => x.id || (x.tag ? `tag:${x.tag}` : x.prop ? `prop:${x.prop}` : JSON.stringify(x));
+
+// Loot: every table's entries with their chance per roll worked out from the weights.
+const lootTables = Object.entries(loot).map(([name, t]) => {
+  const entries = t.entries || [];
+  const total = entries.reduce((s, e) => s + (e.weight || 1), 0);
+  return {
+    name,
+    grid: t.grid,
+    rolls: t.rolls,
+    entries: entries.map((e) => ({ item: e.item, count: e.count ?? 1, weight: e.weight || 1, perRoll: +((e.weight || 1) / total).toFixed(4) })),
+  };
+});
+
+// Sprite definitions sorted by what they are, first rule that fits.
+function spriteKind(id, d) {
+  if (id.startsWith("floor_")) return "floor";
+  if (d.wall || id.startsWith("wall_")) return "wall";
+  if (d.station) return "station";
+  if (d.fire) return "fire";
+  if (d.container) return "container";
+  if (d.canopy) return "tree";
+  if (d.furrows) return "crop";
+  if (d.interactable) return "gatherable";
+  if (d.sleep || d.carry) return "furniture";
+  if (d.placeholder) return "placeholder box";
+  return "other";
+}
+const spriteList = Object.entries(sprites).map(([id, d]) => ({
+  id,
+  kind: spriteKind(id, d),
+  label: d.placeholder && d.placeholder.label ? d.placeholder.label : undefined,
+  drawn: !!(d.image || d.images || d.drawings),
+  station: d.station, fire: d.fire ? { fuel: d.fire.fuel, hoursPerUnit: d.fire.hoursPerUnit, maxFuel: d.fire.maxFuel, radius: d.fire.radius, cooks: d.fire.cooks } : undefined,
+  container: d.container ? true : undefined, carry: d.carry, collide: d.collide, interactable: d.interactable, water: d.water, walk: d.walk, drink: d.drink, sleep: d.sleep, wood: d.wood,
+  note: d.note,
+}));
+
+// The map's places: name, rect, buildings, and what is placed inside each rect.
+const inRect = ([x, y], [rx, ry, rw, rh]) => x >= rx && y >= ry && x < rx + rw && y < ry + rh;
+const places = (valley.sets || []).map((s) => {
+  const r = s.rect;
+  const props = (valley.props || []).filter((p) => p.tile && inRect(p.tile, r)).map((p) => p.sprite);
+  const setProps = (s.buildings || []).flatMap((b) => (b.props || []).map((p) => p.sprite || p.id || p.name)).filter(Boolean);
+  return {
+    name: s.name, rect: r,
+    buildings: (s.buildings || []).length,
+    rooms: (s.buildings || []).reduce((n, b) => n + 1 + (b.partitions || []).length, 0),
+    dead: (valley.zombies || []).filter((z) => inRect(z, r)).length,
+    villagers: (valley.villagers || []).filter((v) => inRect(v.tile, r)).map((v) => v.name),
+    props: [...props, ...setProps].sort(),
+  };
+});
+
+// ---------- code, by pattern ----------
+const keys = found(/(?:wasPressed|isDown)\("([A-Za-z0-9]+)"\)/g);
+const verbs = found(/verbs?\.define\("([a-z_]+)"/g);
+const menuLabels = found(/label:\s*((?:`[^`]*`|"[^"]*"))/g).map((x) => ({ ...x, key: x.key.replace(/^[`"]|[`"]$/g, "") }));
+const events = found(/\bemit\("([a-zA-Z]+)"/g);
+const settingsText = readFileSync(join(SRC, "settings.js"), "utf8");
+const defaultsBlock = settingsText.slice(settingsText.indexOf("export const DEFAULTS"), settingsText.indexOf("};", settingsText.indexOf("export const DEFAULTS")));
+const settings = [...defaultsBlock.matchAll(/^\s*([a-zA-Z]+):\s*([^,]+),\s*(?:\/\/\s*(.*))?$/gm)].map((m) => ({ key: m[1], default: m[2].trim(), note: (m[3] || "").trim() }));
+const rulesText = readFileSync(join(SRC, "rules.js"), "utf8");
+const rules = [...rulesText.slice(rulesText.indexOf("export const rules")).split("};")[0].matchAll(/^\s*([a-zA-Z]+):\s*([^,]+),/gm)].map((m) => m[1]);
+const moodleText = readFileSync(join(SRC, "moodles.js"), "utf8");
+const moodles = [...moodleText.matchAll(/id:\s*"([a-z]+)",[\s\S]*?stages:\s*\[([\s\S]*?)\]/g)].map((m) => ({ id: m[1], stages: [...m[2].matchAll(/name:\s*"([^"]+)",\s*text:\s*"([^"]+)"/g)].map((s) => ({ name: s[1], text: s[2] })) }));
+const checks = existsSync(join(TOOLS, "checks")) ? readdirSync(join(TOOLS, "checks")).filter((f) => f.endsWith(".js")).map((f) => basename(f, ".js")) : [];
+const modules = srcFiles.map((f) => ({ path: f.path, lines: f.text.split("\n").length })).sort((a, b) => b.lines - a.lines);
+
+// ---------- items, cross-referenced ----------
+const itemRows = items.map((i) => ({
+  id: i.id, name: i.name, kind: i.kind, size: i.size, hands: i.hands, stack: i.stack, tags: i.tags || [],
+  weapon: i.weapon, shots: i.shots, bow: i.bow ? true : undefined, shield: i.shield ? true : undefined, thrown: i.thrown ? true : undefined,
+  hunger: i.hunger, thirst: i.thirst, bandage: i.bandage, bag: i.bag, beltSlots: i.beltSlots, wear: i.wear, verbs: i.verbs, splitsInto: i.splitsInto, fire: i.fire,
+  art: { icon: !!i.icon, held: !!i.held, drawn: !!(i.art || i.icon) },
+  madeBy: recipes.filter((r) => r.out && r.out.id === i.id).map((r) => r.station),
+  usedIn: recipes.filter((r) => (r.in || []).some((x) => x.id === i.id || (x.tag && (i.tags || []).includes(x.tag)))).map((r) => `${r.station}: ${r.out.id || "prop:" + r.out.prop}`),
+  foundIn: lootTables.filter((t) => t.entries.some((e) => e.item === i.id)).map((t) => t.name),
+  interactions: interactions.filter((x) => x.use === i.id || x.on === i.id).map((x) => `${x.use} on ${x.on}: ${x.verb || x.action || ""}`),
+  note: i.note,
+}));
+
+// Problems the data shows by itself.
+const problems = [];
+for (const r of recipes) for (const x of [...(r.in || []), r.out]) if (x && x.id && !itemIds.has(x.id)) problems.push(`recipe at ${r.station} names unknown item ${x.id}`);
+for (const t of lootTables) for (const e of t.entries) if (e.item !== "nothing" && !itemIds.has(e.item)) problems.push(`loot table ${t.name} names unknown item ${e.item}`);
+for (const r of recipes) if (r.out && r.out.prop && !sprites[r.out.prop]) problems.push(`recipe at ${r.station} makes unknown prop ${r.out.prop}`);
+const stationsInData = new Set(spriteList.filter((s) => s.station).map((s) => s.station).concat(["cooking"]));
+for (const r of recipes) if (!stationsInData.has(r.station)) problems.push(`recipe names station ${r.station} that no sprite definition is`);
+
+const census = {
+  version,
+  counts: {
+    items: items.length, recipes: recipes.length, interactions: interactions.length, lootTables: lootTables.length, sprites: spriteList.length,
+    places: places.length, villagers: (valley.villagers || []).length, authoredDead: (valley.zombies || []).length, mapProps: (valley.props || []).length,
+    zombieWardrobes: (wardrobes.zombie || []).length, villageWardrobes: (wardrobes.village || []).length,
+    settings: settings.length, rules: rules.length, keys: keys.length, verbs: verbs.length, menuLabels: menuLabels.length, events: events.length, checks: checks.length, modules: modules.length,
+  },
+  items: itemRows, recipes, interactions, lootTables, sprites: spriteList,
+  map: { name: valley.name, spawn: valley.spawn, bounds: valley.bounds, places, villagers: valley.villagers, wild: valley.wild },
+  tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
+  wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
+  settings, rules, keys, verbs, menuLabels, events, moodles, checks, modules, problems,
+};
+writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
+
+// ---------- the readable report ----------
+const L = [];
+const h = (t) => L.push("", `## ${t}`, "");
+L.push(`# The census: what is in the game`, "", `Game \`main\` @ \`${version.short}\` (${version.date.slice(0, 10)}): ${version.subject.slice(0, 140)}`, "",
+  "Generated by `census/census.js` from the game's data and code at that commit. Data is read as data; the lists from code (keys, verbs, menu entries, events) are found by pattern and are a list to check, not a proof.");
+h("Counts");
+for (const [k, v] of Object.entries(census.counts)) L.push(`- ${k}: ${v}`);
+h("Problems the data shows by itself");
+L.push(...(problems.length ? problems.map((p) => `- ${p}`) : ["- none found"]));
+h("Items");
+for (const k of [...new Set(itemRows.map((i) => i.kind))].sort()) {
+  L.push(`### ${k}`, "");
+  for (const i of itemRows.filter((x) => x.kind === k)) {
+    const bits = [`${i.size.join("×")}`, i.hands ? `hands: ${i.hands}` : null, i.stack ? `stacks ${i.stack}` : null,
+      i.weapon ? `weapon: ${i.weapon.damage ?? "?"} dmg, ${i.weapon.swing ?? "?"} s, reach ${i.weapon.range ?? "?"}, ${i.weapon.style || ""}, kills ${i.weapon.kills ?? "-"}` : null,
+      i.shots ? `${i.shots} shots` : null, i.hunger ? `hunger +${i.hunger}` : null, i.thirst ? `thirst +${i.thirst}` : null,
+      i.madeBy.length ? `made at ${i.madeBy.join(", ")}` : null, i.foundIn.length ? `in loot: ${i.foundIn.join(", ")}` : null,
+      i.usedIn.length ? `used in ${i.usedIn.length} recipe(s)` : null, i.art.drawn ? "drawn art" : "placeholder art"].filter(Boolean);
+    L.push(`- **${i.name}** (\`${i.id}\`): ${bits.join("; ")}`);
+  }
+  L.push("");
+}
+h("Recipes");
+for (const st of [...new Set(recipes.map((r) => r.station))]) {
+  L.push(`### ${st}`, "");
+  for (const r of recipes.filter((x) => x.station === st)) L.push(`- ${r.out.id ? `${r.out.count || 1} ${r.out.id}` : `prop ${r.out.prop}`} from ${(r.in || []).map((x) => `${x.count || 1} ${ref(x)}`).join(", ")}; ${r.seconds ?? "?"} s${r.fire ? ", fire lit" : ""}${r.tool ? `, ${r.tool} in hand` : ""}`);
+  L.push("");
+}
+h("Interactions (data/interactions.json)");
+L.push(...interactions.map((x) => `- ${JSON.stringify(x)}`));
+h("Loot tables");
+for (const t of lootTables) L.push(`- **${t.name}** (grid ${t.grid ? t.grid.join("×") : "-"}, rolls ${JSON.stringify(t.rolls)}): ${t.entries.map((e) => `${e.item} ${Math.round(e.perRoll * 100)}%`).join(", ")}`);
+h("Props and other sprite definitions, by kind");
+for (const k of [...new Set(spriteList.map((s) => s.kind))].sort()) L.push(`- **${k}** (${spriteList.filter((s) => s.kind === k).length}): ${spriteList.filter((s) => s.kind === k).map((s) => s.id + (s.drawn ? "" : "*")).join(", ")}`);
+L.push("", "(* placeholder art, generated at boot)");
+h("The valley's places");
+for (const p of places) L.push(`- **${p.name}** at ${p.rect.slice(0, 2).join(",")} (${p.rect[2]}×${p.rect[3]}): ${p.buildings} building(s), ${p.rooms} room(s), ${p.dead} dead${p.villagers.length ? `, villagers: ${p.villagers.join(", ")}` : ""}`);
+h("Villagers");
+L.push(...(valley.villagers || []).map((v) => `- **${v.name}** at ${v.tile.join(",")}: "${v.line || "Hey!"}"`));
+h("The dead (data/tuning.json, zombie)");
+L.push(...Object.entries(tuning.zombie).map(([k, v]) => `- ${k}: ${JSON.stringify(v)}`));
+h("The player (data/tuning.json, player)");
+L.push(...Object.entries(tuning.player).map(([k, v]) => `- ${k}: ${JSON.stringify(v)}`));
+h("Combat (data/combat.json)");
+L.push(...Object.entries(combat).filter(([k]) => k !== "note").map(([k, v]) => `- ${k}: ${JSON.stringify(v)}`));
+h("Building (data/build.json)");
+L.push("```", JSON.stringify(build, null, 1).slice(0, 1500), "```");
+h("Moodles");
+for (const m of moodles) L.push(`- **${m.id}**: ${m.stages.map((s) => s.name).join(" → ")}`);
+h("Settings (src/settings.js DEFAULTS)");
+L.push(...settings.map((s) => `- \`${s.key}\` = ${s.default}${s.note ? `: ${s.note}` : ""}`));
+h("World rules (src/rules.js)");
+L.push(rules.map((r) => `\`${r}\``).join(", "));
+h("Keys the game reads (by pattern)");
+L.push(...keys.map((k) => `- \`${k.key}\`: ${k.at.join(", ")}`));
+h("Verbs in the table (by pattern)");
+L.push(...verbs.map((k) => `- \`${k.key}\`: ${k.at.join(", ")}`));
+h("Menu entry labels (by pattern)");
+L.push(...menuLabels.map((k) => `- ${k.key}  (${k.at[0]}${k.at.length > 1 ? ` +${k.at.length - 1}` : ""})`));
+h("Events on the bus (by pattern)");
+L.push(menuLabels.length ? events.map((e) => `\`${e.key}\``).join(", ") : "");
+h("Checks (tools/checks)");
+L.push(checks.map((c) => `\`${c}\``).join(", "));
+h("Modules by size");
+L.push(...modules.map((m) => `- ${m.path}: ${m.lines}`));
+writeFileSync(join(root, "census", "census.md"), L.join("\n") + "\n");
+console.log(`census of ${version.short}: ${Object.entries(census.counts).map(([k, v]) => `${v} ${k}`).join(", ")}; ${problems.length} problem(s)`);

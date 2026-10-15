@@ -1,0 +1,752 @@
+{
+  "name": "Village square",
+  "floor": "floor_grass",
+  "bounds": [
+    0,
+    0,
+    32,
+    32
+  ],
+  "features": [
+    {
+      "kind": "road",
+      "rect": [
+        11,
+        11,
+        10,
+        10
+      ],
+      "sprite": "floor_cobble",
+      "group": "square"
+    },
+    {
+      "kind": "road",
+      "rect": [
+        15,
+        9,
+        1,
+        2
+      ],
+      "sprite": "floor_cobble",
+      "group": "square"
+    },
+    {
+      "kind": "road",
+      "rect": [
+        21,
+        14,
+        2,
+        1
+      ],
+      "sprite": "floor_cobble",
+      "group": "square"
+    },
+    {
+      "kind": "road",
+      "rect": [
+        21,
+        15,
+        11,
+        2
+      ],
+      "sprite": "floor_dirt"
+    },
+    {
+      "kind": "water",
+      "rect": [
+        22,
+        21,
+        2,
+        2
+      ],
+      "sprite": "floor_water",
+      "note": "a trial pond (Michael, 2026-10-11), likely removed"
+    }
+  ],
+  "sets": [
+    {
+      "name": "cottage",
+      "rect": [
+        11,
+        2,
+        9,
+        9
+      ],
+      "padding": 1,
+      "buildings": [
+        {
+          "rect": [
+            1,
+            1,
+            7,
+            6
+          ],
+          "wall": "wall_wood",
+          "floor": "floor_wood",
+          "openings": [
+            {
+              "side": "s",
+              "at": 3,
+              "kind": "door"
+            },
+            {
+              "side": "s",
+              "at": 1,
+              "kind": "window"
+            },
+            {
+              "side": "s",
+              "at": 5,
+              "kind": "window"
+            },
+            {
+              "side": "e",
+              "at": 2,
+              "kind": "window"
+            }
+          ],
+          "props": [
+            {
+              "sprite": "bed",
+              "tile": [
+                0,
+                0
+              ],
+              "footprint": [
+                2,
+                1
+              ]
+            },
+            {
+              "sprite": "table",
+              "tile": [
+                3,
+                2
+              ],
+              "footprint": [
+                2,
+                1
+              ]
+            },
+            {
+              "sprite": "chest",
+              "tile": [
+                6,
+                0
+              ]
+            },
+            {
+              "sprite": "fireplace",
+              "tile": [
+                4,
+                0
+              ],
+              "footprint": [
+                2,
+                1
+              ]
+            },
+            {
+              "sprite": "chair",
+              "tile": [
+                3,
+                3
+              ],
+              "facing": "n"
+            },
+            {
+              "sprite": "chair",
+              "tile": [
+                4,
+                3
+              ],
+              "facing": "n"
+            }
+          ]
+        }
+      ],
+      "props": [
+        {
+          "sprite": "pumpkin",
+          "tile": [
+            3,
+            8
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "pumpkin",
+          "tile": [
+            5,
+            8
+          ],
+          "solid": false
+        }
+      ]
+    },
+    {
+      "name": "shed",
+      "rect": [
+        22,
+        12,
+        6,
+        6
+      ],
+      "padding": 1,
+      "buildings": [
+        {
+          "rect": [
+            1,
+            1,
+            4,
+            4
+          ],
+          "wall": "wall_stone",
+          "floor": "floor_stone",
+          "openings": [
+            {
+              "side": "w",
+              "at": 1,
+              "kind": "door"
+            },
+            {
+              "side": "s",
+              "at": 2,
+              "kind": "window"
+            }
+          ],
+          "props": [
+            {
+              "sprite": "barrel",
+              "tile": [
+                3,
+                0
+              ]
+            },
+            {
+              "sprite": "barrel",
+              "tile": [
+                3,
+                1
+              ]
+            }
+          ],
+          "brackets": [
+            {
+              "side": "n",
+              "at": 1,
+              "facing": "in",
+              "torch": true
+            }
+          ]
+        }
+      ],
+      "props": [
+        {
+          "sprite": "pumpkin",
+          "tile": [
+            0,
+            1
+          ],
+          "solid": false
+        }
+      ]
+    },
+    {
+      "name": "farm plot",
+      "rect": [
+        5,
+        8,
+        4,
+        3
+      ],
+      "padding": 1,
+      "floorRects": [
+        {
+          "rect": [
+            0,
+            0,
+            4,
+            3
+          ],
+          "sprite": "floor_farm"
+        }
+      ],
+      "props": [
+        {
+          "sprite": "crop_potato_2",
+          "tile": [
+            0,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_potato_2",
+          "tile": [
+            1,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_potato_1",
+          "tile": [
+            2,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_potato_0",
+          "tile": [
+            3,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_cabbage_2",
+          "tile": [
+            0,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_cabbage_1",
+          "tile": [
+            1,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_cabbage_2",
+          "tile": [
+            2,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_cabbage_0",
+          "tile": [
+            3,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_pumpkin_2",
+          "tile": [
+            0,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_pumpkin_0",
+          "tile": [
+            1,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_pumpkin_2",
+          "tile": [
+            2,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_pumpkin_1",
+          "tile": [
+            3,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "pumpkin_plain_0",
+          "tile": [
+            4,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "pumpkin_plain_1",
+          "tile": [
+            4,
+            2
+          ],
+          "solid": false
+        }
+      ]
+    },
+    {
+      "name": "rye field",
+      "rect": [
+        5,
+        13,
+        3,
+        4
+      ],
+      "padding": 1,
+      "floorRects": [
+        {
+          "rect": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "sprite": "floor_farm_y"
+        }
+      ],
+      "props": [
+        {
+          "sprite": "crop_rye_2",
+          "tile": [
+            0,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_2",
+          "tile": [
+            0,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_2",
+          "tile": [
+            0,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_1",
+          "tile": [
+            0,
+            3
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_2",
+          "tile": [
+            1,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_1",
+          "tile": [
+            1,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_1",
+          "tile": [
+            1,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_rye_0",
+          "tile": [
+            1,
+            3
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_garlic_2",
+          "tile": [
+            2,
+            0
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_garlic_2",
+          "tile": [
+            2,
+            1
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_garlic_1",
+          "tile": [
+            2,
+            2
+          ],
+          "solid": false
+        },
+        {
+          "sprite": "crop_garlic_0",
+          "tile": [
+            2,
+            3
+          ],
+          "solid": false
+        }
+      ],
+      "note": "furrows along y (Michael, 2026-10-11: farms either way)"
+    },
+    {
+      "name": "barrel",
+      "rect": [
+        20,
+        11,
+        1,
+        1
+      ],
+      "padding": 0,
+      "props": [
+        {
+          "sprite": "barrel",
+          "tile": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "campfire",
+      "rect": [
+        18,
+        18,
+        1,
+        1
+      ],
+      "padding": 1,
+      "props": [
+        {
+          "sprite": "campfire",
+          "tile": [
+            0,
+            0
+          ],
+          "lit": true,
+          "fuel": 2
+        }
+      ]
+    },
+    {
+      "name": "torch post",
+      "rect": [
+        24,
+        18,
+        1,
+        1
+      ],
+      "padding": 0,
+      "props": [
+        {
+          "sprite": "torch_post",
+          "tile": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "well",
+      "rect": [
+        13,
+        15,
+        1,
+        1
+      ],
+      "padding": 1,
+      "props": [
+        {
+          "sprite": "well",
+          "tile": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "biomes": {
+    "harvest": {
+      "kinds": {
+        "tree_oak_m": 1,
+        "tree_oak_l": 1,
+        "tree_oak_old": 0.5,
+        "tree_yellow_m": 1,
+        "tree_yellow_l": 1,
+        "tree_yellow_old": 0.5,
+        "tree_orange_m": 1,
+        "tree_orange_l": 1,
+        "tree_orange_old": 0.5,
+        "tree_red_m": 1,
+        "tree_red_l": 1,
+        "tree_red_old": 0.5,
+        "tree_spire_green_m": 0.5,
+        "tree_spire_green_l": 0.5,
+        "tree_spire_green_old": 0.25,
+        "tree_spire_yellow_m": 0.5,
+        "tree_spire_yellow_l": 0.5,
+        "tree_spire_yellow_old": 0.25,
+        "tree_spire_orange_m": 0.5,
+        "tree_spire_orange_l": 0.5,
+        "tree_spire_orange_old": 0.25,
+        "tree_spire_red_m": 0.5,
+        "tree_spire_red_l": 0.5,
+        "tree_spire_red_old": 0.25
+      },
+      "scale": 9
+    }
+  },
+  "scatter": [
+    {
+      "rect": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "density": [
+        0.018,
+        0.117
+      ],
+      "biome": "harvest",
+      "seed": 11
+    }
+  ],
+  "wild": {
+    "biome": "harvest",
+    "density": [
+      0.0405,
+      0.1305
+    ],
+    "seed": 21,
+    "zombiesPerChunk": [
+      0,
+      2
+    ],
+    "rocks": {
+      "kinds": {
+        "rock_0": 1,
+        "rock_1": 1,
+        "rock_2": 1,
+        "rock_3": 1
+      },
+      "cell": 40,
+      "chance": 0.6,
+      "seed": 51,
+      "note": "sparse big rocks in the wild: one in 60% of 40x40-tile patches, under one a screen on average (Michael, 2026-10-11)"
+    }
+  },
+  "spawn": [
+    15,
+    15
+  ],
+  "zombies": [
+    [
+      27,
+      23
+    ],
+    [
+      8,
+      19
+    ],
+    [
+      19,
+      28
+    ]
+  ],
+  "props": [
+    {
+      "sprite": "rock_0",
+      "tile": [
+        9,
+        13
+      ],
+      "note": "trial rock near spawn"
+    },
+    {
+      "sprite": "rock_2",
+      "tile": [
+        17,
+        23
+      ],
+      "note": "trial rock south of the square"
+    },
+    {
+      "sprite": "rock_3",
+      "tile": [
+        28,
+        14
+      ],
+      "note": "trial rock east of the shed"
+    }
+  ],
+  "forage": {
+    "kinds": {
+      "mushroom_0": 1,
+      "mushroom_1": 1,
+      "mushroom_2": 1,
+      "mushroom_3": 1,
+      "mushroom_4": 1
+    },
+    "chance": 0.021,
+    "near": 2,
+    "seed": 41,
+    "note": "mushrooms as objects near trees, inside the bounds and in the wild (Michael, 2026-10-11)"
+  },
+  "villagers": [
+    {
+      "tile": [
+        14,
+        13
+      ],
+      "name": "Wren",
+      "wardrobe": 0
+    },
+    {
+      "tile": [
+        17,
+        16
+      ],
+      "name": "Ash",
+      "wardrobe": 1
+    },
+    {
+      "tile": [
+        13,
+        19
+      ],
+      "name": "Tam",
+      "wardrobe": 2,
+      "line": "Keep the shutters closed."
+    },
+    {
+      "tile": [
+        13,
+        6
+      ],
+      "name": "Rook",
+      "wardrobe": 3
+    }
+  ]
+}

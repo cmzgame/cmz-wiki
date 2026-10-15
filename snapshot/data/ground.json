@@ -1,0 +1,50 @@
+{
+  "seed": 1,
+  "floors": {
+    "floor_grass": "grass",
+    "floor_dirt": "dirt",
+    "floor_farm": "farm",
+    "floor_farm_y": "farm",
+    "floor_cobble": "cobble",
+    "floor_water": "water",
+  "floor_water_shallow": "laid",
+    "floor_wood": "laid",
+    "floor_stone": "laid"
+  },
+  "terrain": {
+    "dirt":   { "priority": 1, "texture": "ground_dirt", "threshold": [0.15, 0.3], "lip": 0.18, "lipBand": 0.06, "includes": ["cobble", "water"] },
+    "farm":   { "priority": 2, "tiles": ["floor_farm", "floor_farm_y"], "threshold": [0.40, 0.12], "lip": 0 },
+    "cobble": { "priority": 3, "texture": "ground_cobble", "thresholdAbove": "dirt", "verge": 0.15, "lip": 0.12, "lipBand": 0.06 },
+    "water":  { "priority": 4, "texture": "ground_water", "threshold": [0.40, 0.5], "thresholdAbove": "dirt", "verge": 0.15, "lip": 0.25, "lipBand": 0.07 }
+  },
+  "edgeNoise": "ground_noise",
+  "biomes": {
+    "harvest": {
+      "grass": [
+        "data/art/ground/grass_0.png",
+        "data/art/ground/grass_1.png",
+        "data/art/ground/grass_2.png",
+        "data/art/ground/grass_3.png",
+        "data/art/ground/grass_sparse_0.png",
+        "data/art/ground/grass_sparse_1.png"
+      ],
+      "grassBase": [75, 95, 61],
+      "patch": { "scaleA": 5.0, "scaleB": 2.2, "mix": 0.7, "r": [0.88, 0.24], "g": [0.90, 0.18], "b": [0.92, 0.10] },
+      "canopy": { "perTree": 0.07, "max": 0.20 },
+      "shadow": { "steps": 3, "alpha": 0.09, "squash": 0.6, "dropPx": 2 },
+      "decals": [
+        { "id": "leaves", "kind": "leaves", "layer": "flat", "on": ["grass", "dirt"], "treeColour": 0.8, "perReach": 0.3, "extraChance": 0.22, "openChance": 0.05,
+          "files": {
+            "yellow": ["data/art/ground/leaves_yellow_0.png", "data/art/ground/leaves_yellow_1.png", "data/art/ground/leaves_yellow_2.png", "data/art/ground/leaves_yellow_3.png", "data/art/ground/leaves_yellow_4.png"],
+            "orange": ["data/art/ground/leaves_orange_0.png", "data/art/ground/leaves_orange_1.png", "data/art/ground/leaves_orange_2.png", "data/art/ground/leaves_orange_3.png", "data/art/ground/leaves_orange_4.png"],
+            "red": ["data/art/ground/leaves_red_0.png", "data/art/ground/leaves_red_1.png", "data/art/ground/leaves_red_2.png", "data/art/ground/leaves_red_3.png", "data/art/ground/leaves_red_4.png"],
+            "brown": ["data/art/ground/leaves_brown_0.png", "data/art/ground/leaves_brown_1.png", "data/art/ground/leaves_brown_2.png", "data/art/ground/leaves_brown_3.png", "data/art/ground/leaves_brown_4.png"]
+          } },
+        { "id": "twig", "kind": "perTree", "layer": "flat", "on": ["grass", "dirt"], "count": [0, 2], "radius": 1.2, "files": ["data/art/ground/twig_0.png", "data/art/ground/twig_1.png", "data/art/ground/twig_2.png"] },
+        { "id": "pebbles", "layer": "flat", "on": ["grass", "dirt"], "where": "any", "chance": 0.03, "count": [1, 1], "files": ["data/art/ground/pebbles_0.png", "data/art/ground/pebbles_1.png", "data/art/ground/pebbles_2.png"] },
+        { "id": "flowers", "layer": "flat", "stand": true, "where": "open", "chance": 0.05, "count": [1, 1], "files": ["data/art/ground/flowers_0.png", "data/art/ground/flowers_1.png", "data/art/ground/flowers_2.png", "data/art/ground/flowers_3.png"] },
+        { "id": "tuft", "layer": "flat", "stand": true, "where": "any", "chance": 0.117, "count": [1, 2], "files": ["data/art/ground/tuft_0.png", "data/art/ground/tuft_1.png", "data/art/ground/tuft_2.png", "data/art/ground/tuft_3.png"] }
+      ]
+    }
+  }
+}

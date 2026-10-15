@@ -1,0 +1,5404 @@
+{
+ "version": {
+  "commit": "9205ad7e7119ce705b06bab7a47d76974b2f5fbd",
+  "short": "9205ad7",
+  "date": "2026-10-14T20:18:10-05:00",
+  "subject": "Merge item 5's step 6, the owner's powers (294d8ed, 7bf2511), reviewed: the owner's character taken only with the owner key (a stranger with the code got its own; a second device with the key took the owner's back), owner endpoints behind the key, the code moved with whoever is in, removal barring by hash, step 5's three points closed, no key in the log. Headless 7 of 7, hashes unchanged. Step 7 may begin. Docs: 02",
+  "ref": "origin/main"
+ },
+ "counts": {
+  "items": 50,
+  "recipes": 27,
+  "interactions": 2,
+  "lootTables": 5,
+  "sprites": 137,
+  "places": 20,
+  "villagers": 7,
+  "authoredDead": 40,
+  "mapProps": 40,
+  "zombieWardrobes": 10,
+  "villageWardrobes": 6,
+  "settings": 29,
+  "rules": 5,
+  "keys": 19,
+  "verbs": 2,
+  "menuLabels": 40,
+  "events": 24,
+  "checks": 20,
+  "modules": 80
+ },
+ "items": [
+  {
+   "id": "torch",
+   "name": "Torch",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "tool"
+   ],
+   "weapon": {
+    "staggerChance": 0.2,
+    "damage": 8,
+    "range": 1.1,
+    "arc": 90,
+    "swing": 0.5,
+    "knockback": 0.13,
+    "stamina": 3,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "fire": {
+    "radius": 3,
+    "flicker": {
+     "amp": 0.14,
+     "speed": 9
+    }
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [
+    "torch on campfire: Light"
+   ]
+  },
+  {
+   "id": "charcoal",
+   "name": "Charcoal",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "fuel"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the forge's fuel (docs/30, section 7); from the charcoal burners (29/06) in step 6"
+  },
+  {
+   "id": "log",
+   "name": "Log",
+   "kind": "material",
+   "size": [
+    2,
+    3
+   ],
+   "tags": [
+    "fuel",
+    "wood"
+   ],
+   "splitsInto": {
+    "id": "plank",
+    "count": 3
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: prop:workbench"
+   ],
+   "foundIn": [
+    "chest",
+    "barrel"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "plank",
+   "name": "Plank",
+   "kind": "material",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "wood"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 16,
+    "range": 1.2,
+    "arc": 100,
+    "swing": 0.55,
+    "knockback": 0.22,
+    "stamina": 5,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: stick",
+    "workbench: hoe",
+    "workbench: shovel",
+    "workbench: shield",
+    "workbench: prop:chest",
+    "workbench: prop:shelf",
+    "workbench: prop:bench",
+    "workbench: prop:table",
+    "workbench: prop:bed",
+    "workbench: prop:workbench",
+    "workbench: prop:wheelbarrow"
+   ],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "hatchet",
+   "name": "Hatchet",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "metal",
+    "tool"
+   ],
+   "weapon": {
+    "staggerChance": 0.5,
+    "damage": 30,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.55,
+    "knockback": 0.27,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 20
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "stick",
+   "name": "Stick",
+   "kind": "tool",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "wood"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 14,
+    "range": 1.2,
+    "arc": 90,
+    "swing": 0.5,
+    "knockback": 0.2,
+    "stamina": 4,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: hoe",
+    "workbench: shovel",
+    "workbench: bow",
+    "workbench: arrow",
+    "anvil: knife",
+    "anvil: hammer",
+    "anvil: hatchet",
+    "anvil: pickaxe",
+    "anvil: scythe",
+    "anvil: spear",
+    "anvil: mace",
+    "anvil: sword"
+   ],
+   "foundIn": [
+    "body",
+    "wild"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "sword",
+   "name": "Sword",
+   "kind": "tool",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.5,
+    "damage": 34,
+    "range": 1.35,
+    "arc": 100,
+    "swing": 0.5,
+    "knockback": 0.27,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 60
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "halberd",
+   "name": "Halberd",
+   "kind": "tool",
+   "size": [
+    1,
+    5
+   ],
+   "hands": "both",
+   "tags": [
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.7,
+    "damage": 30,
+    "range": 2.2,
+    "arc": 80,
+    "swing": 0.95,
+    "knockback": 0.3,
+    "stamina": 12,
+    "style": "one_handed",
+    "alt": {
+     "name": "thrust",
+     "style": "thrust",
+     "staggerChance": 1,
+     "interrupts": true,
+     "damage": 40,
+     "range": 2.9,
+     "arc": 12,
+     "swing": 1.3,
+     "knockback": 0.45,
+     "stamina": 15,
+     "multiHit": false
+    },
+    "kills": 80
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "mace",
+   "name": "Mace",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 1,
+    "interrupts": true,
+    "damage": 38,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.65,
+    "knockback": 0.33,
+    "stamina": 8,
+    "knockdown": 0.6,
+    "style": "one_handed",
+    "kills": 40
+   },
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "book_of_fire",
+   "name": "Book of Fire",
+   "kind": "tool",
+   "size": [
+    1,
+    1
+   ],
+   "hands": "either",
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "art only for now: it does nothing yet (docs/24)"
+  },
+  {
+   "id": "staff_of_fire",
+   "name": "Staff of Fire",
+   "kind": "tool",
+   "size": [
+    1,
+    4
+   ],
+   "hands": "either",
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "art only for now: it does nothing yet (docs/24)"
+  },
+  {
+   "id": "throwing_knife",
+   "name": "Throwing Knife",
+   "kind": "tool",
+   "size": [
+    1,
+    1
+   ],
+   "hands": "either",
+   "stack": 100,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "art only for now: it does not throw yet (docs/24)"
+  },
+  {
+   "id": "throwing_axe",
+   "name": "Throwing Axe",
+   "kind": "tool",
+   "size": [
+    1,
+    1
+   ],
+   "hands": "either",
+   "stack": 100,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "art only for now: it does not throw yet (docs/24)"
+  },
+  {
+   "id": "bandage",
+   "name": "Bandage",
+   "kind": "medicine",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "cloth"
+   ],
+   "bandage": true,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "bread",
+   "name": "Loaf of bread",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "cooked",
+    "food"
+   ],
+   "hunger": 40,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "oven"
+   ],
+   "usedIn": [],
+   "foundIn": [
+    "chest",
+    "body"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "apple",
+   "name": "Apple",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "raw"
+   ],
+   "hunger": 15,
+   "thirst": 5,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [
+    "barrel",
+    "body"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "cheese",
+   "name": "Wheel of cheese",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food"
+   ],
+   "hunger": 30,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "waterskin",
+   "name": "Waterskin",
+   "kind": "drink",
+   "size": [
+    1,
+    2
+   ],
+   "tags": [
+    "container",
+    "drink"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [
+    "barrel",
+    "body"
+   ],
+   "interactions": [
+    "waterskin on well: Fill"
+   ]
+  },
+  {
+   "id": "spear",
+   "name": "Throwing spear",
+   "kind": "tool",
+   "size": [
+    1,
+    4
+   ],
+   "hands": "main",
+   "tags": [
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.5,
+    "damage": 30,
+    "range": 1.9,
+    "arc": 40,
+    "swing": 0.6,
+    "knockback": 0.25,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 25
+   },
+   "thrown": true,
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "bow",
+   "name": "Bow",
+   "kind": "tool",
+   "size": [
+    2,
+    3
+   ],
+   "hands": "both",
+   "tags": [
+    "wood"
+   ],
+   "shots": 100,
+   "bow": true,
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "arrow",
+   "name": "Arrow",
+   "kind": "ammo",
+   "size": [
+    1,
+    2
+   ],
+   "stack": 20,
+   "tags": [
+    "wood"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "cap",
+   "name": "Cap",
+   "kind": "clothing",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "cloth"
+   ],
+   "wear": "head",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "hood",
+   "name": "Hood",
+   "kind": "clothing",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "cloth"
+   ],
+   "wear": "head",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "tunic",
+   "name": "Tunic",
+   "kind": "clothing",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [
+    "cloth"
+   ],
+   "wear": "chest",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "gloves",
+   "name": "Gloves",
+   "kind": "clothing",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "cloth"
+   ],
+   "wear": "hands",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "breeches",
+   "name": "Breeches",
+   "kind": "clothing",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [
+    "cloth"
+   ],
+   "wear": "legs",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "boots",
+   "name": "Boots",
+   "kind": "clothing",
+   "size": [
+    1,
+    2
+   ],
+   "tags": [
+    "cloth"
+   ],
+   "wear": "feet",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "belt",
+   "name": "Rope belt",
+   "kind": "clothing",
+   "size": [
+    2,
+    1
+   ],
+   "tags": [],
+   "beltSlots": 2,
+   "wear": "waist",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "good_belt",
+   "name": "Good belt",
+   "kind": "clothing",
+   "size": [
+    2,
+    1
+   ],
+   "tags": [],
+   "beltSlots": 4,
+   "wear": "waist",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "small_sack",
+   "name": "Burlap sack",
+   "kind": "bag",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [],
+   "bag": [
+    6,
+    4
+   ],
+   "wear": "back",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "rucksack",
+   "name": "Rucksack",
+   "kind": "bag",
+   "size": [
+    2,
+    3
+   ],
+   "tags": [],
+   "bag": [
+    8,
+    5
+   ],
+   "wear": "back",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [
+    "chest"
+   ],
+   "interactions": []
+  },
+  {
+   "id": "dev_bag",
+   "name": "Developer Bag",
+   "kind": "bag",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [],
+   "bag": [
+    12,
+    8
+   ],
+   "wear": "back",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "shield",
+   "name": "Shield",
+   "kind": "tool",
+   "size": [
+    2,
+    2
+   ],
+   "hands": "off",
+   "tags": [
+    "wood"
+   ],
+   "shield": true,
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "pickaxe",
+   "name": "Pickaxe",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 20,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.2,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "verbs": [
+    "mine"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "hoe",
+   "name": "Hoe",
+   "kind": "tool",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 10,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.2,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "verbs": [
+    "till"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "scythe",
+   "name": "Scythe",
+   "kind": "tool",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 18,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.2,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "verbs": [
+    "harvest"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "shovel",
+   "name": "Shovel",
+   "kind": "tool",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 14,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.2,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "verbs": [
+    "dig"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "knife",
+   "name": "Knife",
+   "kind": "tool",
+   "size": [
+    1,
+    1
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 12,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.2,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "verbs": [
+    "butcher",
+    "skin",
+    "cut"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "hammer",
+   "name": "Hammer",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "weapon": {
+    "staggerChance": 0.3,
+    "damage": 16,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.2,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 5
+   },
+   "verbs": [
+    "smith",
+    "build"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "iron_ore",
+   "name": "Iron ore",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "metal",
+    "raw"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "forge: iron_bar"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "from the mine's crate and ore rocks (29/06) in step 6; a bar at the forge (docs/30, section 6)"
+  },
+  {
+   "id": "iron_bar",
+   "name": "Iron bar",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "metal"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "forge"
+   ],
+   "usedIn": [
+    "workbench: prop:wheelbarrow",
+    "anvil: knife",
+    "anvil: hammer",
+    "anvil: hatchet",
+    "anvil: pickaxe",
+    "anvil: scythe",
+    "anvil: spear",
+    "anvil: mace",
+    "anvil: sword"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "smelted at the forge; the smith's stock"
+  },
+  {
+   "id": "potato",
+   "name": "Potato",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "food",
+    "raw"
+   ],
+   "hunger": 10,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: roast_potato",
+    "cooking: stew"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "raw; roasted or stewed it is a meal (docs/30, section 7: cooked doubles)"
+  },
+  {
+   "id": "cabbage",
+   "name": "Cabbage",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "food",
+    "raw"
+   ],
+   "hunger": 8,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: stew"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "garlic",
+   "name": "Garlic",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "food",
+    "raw",
+    "herb"
+   ],
+   "hunger": 3,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: stew"
+   ],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "pumpkin",
+   "name": "Pumpkin",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "raw"
+   ],
+   "hunger": 12,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "grain",
+   "name": "Grain",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "food",
+    "raw"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: porridge"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "rye or wheat; flour at the mill (step 4), porridge at a hearth"
+  },
+  {
+   "id": "flour",
+   "name": "Flour",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "food"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "oven: bread"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "bread at an oven"
+  },
+  {
+   "id": "roast_potato",
+   "name": "Roast potato",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "food",
+    "cooked"
+   ],
+   "hunger": 20,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "cooking"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "stew",
+   "name": "Stew",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 3,
+   "tags": [
+    "food",
+    "cooked"
+   ],
+   "hunger": 50,
+   "thirst": 10,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "cooking"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "porridge",
+   "name": "Porridge",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "cooked"
+   ],
+   "hunger": 30,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "cooking"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  }
+ ],
+ "recipes": [
+  {
+   "id": "torch",
+   "station": "workbench",
+   "out": {
+    "id": "torch",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 1
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 4
+  },
+  {
+   "id": "handle",
+   "station": "workbench",
+   "out": {
+    "id": "stick",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 1
+    }
+   ],
+   "seconds": 3
+  },
+  {
+   "id": "hoe",
+   "station": "workbench",
+   "out": {
+    "id": "hoe",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 1
+    },
+    {
+     "id": "plank",
+     "count": 1
+    }
+   ],
+   "seconds": 8
+  },
+  {
+   "id": "shovel",
+   "station": "workbench",
+   "out": {
+    "id": "shovel",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 1
+    },
+    {
+     "id": "plank",
+     "count": 1
+    }
+   ],
+   "seconds": 8
+  },
+  {
+   "id": "bow",
+   "station": "workbench",
+   "out": {
+    "id": "bow",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 2
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 12
+  },
+  {
+   "id": "arrows",
+   "station": "workbench",
+   "out": {
+    "id": "arrow",
+    "count": 5
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 5
+  },
+  {
+   "id": "shield",
+   "station": "workbench",
+   "out": {
+    "id": "shield",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 3
+    }
+   ],
+   "seconds": 12
+  },
+  {
+   "id": "chest",
+   "station": "workbench",
+   "out": {
+    "prop": "chest"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 4
+    }
+   ],
+   "seconds": 10
+  },
+  {
+   "id": "shelf",
+   "station": "workbench",
+   "out": {
+    "prop": "shelf"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 3
+    }
+   ],
+   "seconds": 8
+  },
+  {
+   "id": "bench",
+   "station": "workbench",
+   "out": {
+    "prop": "bench"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 2
+    }
+   ],
+   "seconds": 6
+  },
+  {
+   "id": "table",
+   "station": "workbench",
+   "out": {
+    "prop": "table",
+    "footprint": [
+     2,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 4
+    }
+   ],
+   "seconds": 10
+  },
+  {
+   "id": "bed",
+   "station": "workbench",
+   "out": {
+    "prop": "bed",
+    "footprint": [
+     2,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 6
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 16
+  },
+  {
+   "id": "workbench",
+   "station": "workbench",
+   "out": {
+    "prop": "workbench",
+    "footprint": [
+     2,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 5
+    },
+    {
+     "id": "log",
+     "count": 1
+    }
+   ],
+   "seconds": 14
+  },
+  {
+   "id": "wheelbarrow",
+   "station": "workbench",
+   "out": {
+    "prop": "wheelbarrow"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 5
+    },
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 16
+  },
+  {
+   "id": "iron_bar",
+   "station": "forge",
+   "out": {
+    "id": "iron_bar",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_ore",
+     "count": 2
+    }
+   ],
+   "seconds": 10,
+   "fire": true
+  },
+  {
+   "id": "knife",
+   "station": "anvil",
+   "out": {
+    "id": "knife",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 8,
+   "tool": "hammer"
+  },
+  {
+   "id": "hammer",
+   "station": "anvil",
+   "out": {
+    "id": "hammer",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 8
+  },
+  {
+   "id": "hatchet",
+   "station": "anvil",
+   "out": {
+    "id": "hatchet",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 2
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 10,
+   "tool": "hammer"
+  },
+  {
+   "id": "pickaxe",
+   "station": "anvil",
+   "out": {
+    "id": "pickaxe",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 2
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 10,
+   "tool": "hammer"
+  },
+  {
+   "id": "scythe",
+   "station": "anvil",
+   "out": {
+    "id": "scythe",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    },
+    {
+     "id": "stick",
+     "count": 2
+    }
+   ],
+   "seconds": 10,
+   "tool": "hammer"
+  },
+  {
+   "id": "spear",
+   "station": "anvil",
+   "out": {
+    "id": "spear",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    },
+    {
+     "id": "stick",
+     "count": 2
+    }
+   ],
+   "seconds": 10,
+   "tool": "hammer"
+  },
+  {
+   "id": "mace",
+   "station": "anvil",
+   "out": {
+    "id": "mace",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 2
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 12,
+   "tool": "hammer"
+  },
+  {
+   "id": "sword",
+   "station": "anvil",
+   "out": {
+    "id": "sword",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 3
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 16,
+   "tool": "hammer"
+  },
+  {
+   "id": "roast_potato",
+   "station": "cooking",
+   "out": {
+    "id": "roast_potato",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "potato",
+     "count": 1
+    }
+   ],
+   "seconds": 6,
+   "fire": true
+  },
+  {
+   "id": "stew",
+   "station": "cooking",
+   "out": {
+    "id": "stew",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "potato",
+     "count": 2
+    },
+    {
+     "id": "cabbage",
+     "count": 1
+    },
+    {
+     "id": "garlic",
+     "count": 1
+    }
+   ],
+   "seconds": 12,
+   "fire": true
+  },
+  {
+   "id": "porridge",
+   "station": "cooking",
+   "out": {
+    "id": "porridge",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "grain",
+     "count": 2
+    }
+   ],
+   "seconds": 8,
+   "fire": true
+  },
+  {
+   "id": "bread",
+   "station": "oven",
+   "out": {
+    "id": "bread",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "flour",
+     "count": 2
+    }
+   ],
+   "seconds": 10,
+   "fire": true
+  }
+ ],
+ "interactions": [
+  {
+   "use": "torch",
+   "on": "campfire",
+   "verb": "Light",
+   "message": "You hold the torch to the fire. It is already burning."
+  },
+  {
+   "use": "waterskin",
+   "on": "well",
+   "verb": "Fill",
+   "message": "The well's own menu fills it; this is just a note that the rule works."
+  }
+ ],
+ "lootTables": [
+  {
+   "name": "chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    2,
+    3
+   ],
+   "entries": [
+    {
+     "item": "bread",
+     "count": 1,
+     "weight": 3,
+     "perRoll": 0.1579
+    },
+    {
+     "item": "cheese",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.1053
+    },
+    {
+     "item": "plank",
+     "count": 1,
+     "weight": 3,
+     "perRoll": 0.1579
+    },
+    {
+     "item": "log",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.1053
+    },
+    {
+     "item": "hatchet",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "sword",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "mace",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "good_belt",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "rucksack",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "gloves",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "hood",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.0526
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.1053
+    }
+   ]
+  },
+  {
+   "name": "barrel",
+   "grid": [
+    2,
+    3
+   ],
+   "rolls": [
+    2,
+    3
+   ],
+   "entries": [
+    {
+     "item": "apple",
+     "count": [
+      1,
+      4
+     ],
+     "weight": 4,
+     "perRoll": 0.4
+    },
+    {
+     "item": "waterskin",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.2
+    },
+    {
+     "item": "log",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.2
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.2
+    }
+   ]
+  },
+  {
+   "name": "body",
+   "grid": [
+    3,
+    3
+   ],
+   "rolls": [
+    0,
+    2
+   ],
+   "entries": [
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.25
+    },
+    {
+     "item": "apple",
+     "count": [
+      1,
+      2
+     ],
+     "weight": 2,
+     "perRoll": 0.25
+    },
+    {
+     "item": "bread",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.125
+    },
+    {
+     "item": "waterskin",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.125
+    },
+    {
+     "item": "stick",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.25
+    }
+   ]
+  },
+  {
+   "name": "dev_kit",
+   "grid": [
+    10,
+    6
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "wild",
+   "grid": [
+    3,
+    3
+   ],
+   "rolls": [
+    1,
+    1
+   ],
+   "entries": [
+    {
+     "item": "stick",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 1
+    }
+   ]
+  }
+ ],
+ "sprites": [
+  {
+   "id": "altar",
+   "kind": "placeholder box",
+   "label": "Altar",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the altar (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "anvil",
+   "kind": "station",
+   "label": "Anvil",
+   "drawn": false,
+   "station": "anvil",
+   "carry": false,
+   "note": "a dev box for the anvil (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "barrel",
+   "kind": "container",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "collide": {
+    "radius": 0.26
+   }
+  },
+  {
+   "id": "bed",
+   "kind": "furniture",
+   "drawn": true,
+   "carry": true,
+   "sleep": true,
+   "note": "the drawn bed (docs/17): long side along y as drawn, along x as its mirror"
+  },
+  {
+   "id": "beehive",
+   "kind": "placeholder box",
+   "label": "Beehive",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the beehive (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "bench",
+   "kind": "furniture",
+   "label": "Bench",
+   "drawn": false,
+   "carry": true,
+   "note": "a dev box for the bench (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "bookcase",
+   "kind": "container",
+   "label": "Bookcase",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "note": "a dev box for the bookcase (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "campfire",
+   "kind": "fire",
+   "drawn": false,
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 2,
+    "maxFuel": 4,
+    "radius": 4,
+    "cooks": true
+   }
+  },
+  {
+   "id": "cart",
+   "kind": "container",
+   "label": "Cart",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "a dev box for the cart (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "chair",
+   "kind": "furniture",
+   "drawn": true,
+   "carry": true,
+   "note": "the drawn chair (docs/17): facings name where the seat faces; two drawings and their mirrors"
+  },
+  {
+   "id": "chest",
+   "kind": "container",
+   "drawn": false,
+   "container": true,
+   "carry": true
+  },
+  {
+   "id": "coffin",
+   "kind": "container",
+   "label": "Coffin",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "a dev box for the coffin (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "counter",
+   "kind": "container",
+   "label": "Counter",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "a dev box for the counter (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "crop_cabbage_0",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "cabbage, planted (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_cabbage_1",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "cabbage, growing (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_cabbage_2",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "cabbage, ready to harvest (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_garlic_0",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "garlic, planted (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_garlic_1",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "garlic, growing (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_garlic_2",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "garlic, ready to harvest (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_potato_0",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "potato, planted (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_potato_1",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "potato, growing (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_potato_2",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "potato, ready to harvest (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_pumpkin_0",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "pumpkin, planted (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_pumpkin_1",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "pumpkin, growing (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_pumpkin_2",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "pumpkin, ready to harvest (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_rye_0",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "rye, planted (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_rye_1",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "rye, growing (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_rye_2",
+   "kind": "crop",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "rye, ready to harvest (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "cupboard",
+   "kind": "container",
+   "label": "Cupboard",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "note": "a dev box for the cupboard (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "desk",
+   "kind": "container",
+   "label": "Desk",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "note": "a dev box for the desk (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "dev_chest",
+   "kind": "container",
+   "drawn": false,
+   "container": true
+  },
+  {
+   "id": "dyevat",
+   "kind": "station",
+   "label": "Dye vat",
+   "drawn": false,
+   "station": "dyevat",
+   "carry": false,
+   "note": "a dev box for the dye vat (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "fireplace",
+   "kind": "fire",
+   "drawn": true,
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 3,
+    "maxFuel": 4,
+    "radius": 3,
+    "cooks": true
+   },
+   "carry": false,
+   "note": "the drawn fireplace (docs/17): backs against a west wall as drawn (y), a north wall as its mirror (x); the hearth's fire, with drawn flames"
+  },
+  {
+   "id": "flame",
+   "kind": "placeholder box",
+   "drawn": false
+  },
+  {
+   "id": "floor_cobble",
+   "kind": "floor",
+   "drawn": false
+  },
+  {
+   "id": "floor_dirt",
+   "kind": "floor",
+   "drawn": false
+  },
+  {
+   "id": "floor_farm",
+   "kind": "floor",
+   "drawn": true,
+   "note": "tilled soil (Claude Design, 2026-10-11), four variants, furrows along world x (\\ on screen), continuous across every edge; the bake picks a frame by hash"
+  },
+  {
+   "id": "floor_farm_y",
+   "kind": "floor",
+   "drawn": true,
+   "note": "tilled soil, furrows along world y (/ on screen), Claude Design's own drawing of the other direction"
+  },
+  {
+   "id": "floor_grass",
+   "kind": "floor",
+   "drawn": false
+  },
+  {
+   "id": "floor_stone",
+   "kind": "floor",
+   "drawn": true,
+   "note": "drawn floors (docs/17); the ground bake picks a frame by hash"
+  },
+  {
+   "id": "floor_water",
+   "kind": "floor",
+   "drawn": false,
+   "walk": false,
+   "drink": true,
+   "note": "wholly water: no entity walks it (docs/30, law 8); you drink and fill beside it"
+  },
+  {
+   "id": "floor_water_shallow",
+   "kind": "floor",
+   "drawn": false,
+   "walk": 0.5,
+   "drink": true,
+   "note": "shallow water, a ford or a weir's crest (docs/30, law 8): walked by everyone at half speed, never blue water; a dev flat until drawn (docs/29/09, request 3.1)"
+  },
+  {
+   "id": "floor_wood",
+   "kind": "floor",
+   "drawn": true,
+   "note": "drawn floors (docs/17); the ground bake picks a frame by hash"
+  },
+  {
+   "id": "font",
+   "kind": "placeholder box",
+   "label": "Font",
+   "drawn": false,
+   "carry": false,
+   "water": true,
+   "note": "a dev box for the font (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "forge",
+   "kind": "station",
+   "label": "Forge",
+   "drawn": false,
+   "station": "forge",
+   "fire": {
+    "fuel": "charcoal",
+    "hoursPerUnit": 2,
+    "maxFuel": 4,
+    "radius": 3,
+    "cooks": false
+   },
+   "carry": false,
+   "note": "a dev box for the forge (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "grindstone",
+   "kind": "placeholder box",
+   "label": "Grindstone",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the grindstone (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "ground_cobble",
+   "kind": "placeholder box",
+   "drawn": false
+  },
+  {
+   "id": "ground_dirt",
+   "kind": "placeholder box",
+   "drawn": false
+  },
+  {
+   "id": "ground_noise",
+   "kind": "placeholder box",
+   "drawn": false
+  },
+  {
+   "id": "ground_water",
+   "kind": "other",
+   "drawn": true,
+   "note": "still water (Claude Design, 2026-10-11), a seamless 128x64 world texture, no shore"
+  },
+  {
+   "id": "haystack",
+   "kind": "container",
+   "label": "Hay",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "a dev box for the hay (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "headstone",
+   "kind": "placeholder box",
+   "label": "Headstone",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the headstone (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "hearth",
+   "kind": "fire",
+   "drawn": false,
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 3,
+    "maxFuel": 4,
+    "radius": 3,
+    "cooks": true
+   }
+  },
+  {
+   "id": "lectern",
+   "kind": "furniture",
+   "label": "Lectern",
+   "drawn": false,
+   "carry": true,
+   "note": "a dev box for the lectern (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "loom",
+   "kind": "station",
+   "label": "Loom",
+   "drawn": false,
+   "station": "loom",
+   "carry": false,
+   "note": "a dev box for the loom (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "marketcross",
+   "kind": "placeholder box",
+   "label": "Cross",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the cross (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "maypole",
+   "kind": "placeholder box",
+   "label": "Maypole",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the maypole (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "mushroom_0",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+  },
+  {
+   "id": "mushroom_1",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+  },
+  {
+   "id": "mushroom_2",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+  },
+  {
+   "id": "mushroom_3",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+  },
+  {
+   "id": "mushroom_4",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "interactable": true,
+   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+  },
+  {
+   "id": "noticeboard",
+   "kind": "placeholder box",
+   "label": "Notices",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the notices (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "oven",
+   "kind": "station",
+   "label": "Oven",
+   "drawn": false,
+   "station": "oven",
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 2,
+    "maxFuel": 3,
+    "radius": 2,
+    "cooks": true
+   },
+   "carry": false,
+   "note": "a dev box for the oven (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "pew",
+   "kind": "furniture",
+   "label": "Pew",
+   "drawn": false,
+   "carry": true,
+   "note": "a dev box for the pew (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "player",
+   "kind": "placeholder box",
+   "drawn": false
+  },
+  {
+   "id": "post_log",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
+   "id": "post_stone",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
+   "id": "post_wood",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
+   "id": "privy",
+   "kind": "placeholder box",
+   "label": "Privy",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the privy (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "pumpkin",
+   "kind": "fire",
+   "drawn": true,
+   "fire": {
+    "radius": 1.5
+   },
+   "carry": true,
+   "interactable": true,
+   "note": "the jack-o'-lantern (docs/17): two faces, three unlit glow frames over the cuts; a gatherable (clicking sways it)"
+  },
+  {
+   "id": "pumpkin_plain_0",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": true,
+   "interactable": true,
+   "note": "a plain pumpkin (docs/17), a gatherable"
+  },
+  {
+   "id": "pumpkin_plain_1",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": true,
+   "interactable": true,
+   "note": "a plain pumpkin (docs/17), a gatherable"
+  },
+  {
+   "id": "rock_0",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "a big rock (Michael, 2026-10-11): solid, not carried, wiggles when clicked; what it is for is question 27"
+  },
+  {
+   "id": "rock_1",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "a big rock (Michael, 2026-10-11): solid, not carried, wiggles when clicked; what it is for is question 27"
+  },
+  {
+   "id": "rock_2",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "a big rock (Michael, 2026-10-11): solid, not carried, wiggles when clicked; what it is for is question 27"
+  },
+  {
+   "id": "rock_3",
+   "kind": "gatherable",
+   "drawn": true,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "a big rock (Michael, 2026-10-11): solid, not carried, wiggles when clicked; what it is for is question 27"
+  },
+  {
+   "id": "sawpit",
+   "kind": "placeholder box",
+   "label": "Sawpit",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the sawpit (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "shelf",
+   "kind": "container",
+   "label": "Shelf",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "note": "a dev box for the shelf (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "spinningwheel",
+   "kind": "furniture",
+   "label": "Spinning",
+   "drawn": false,
+   "carry": true,
+   "note": "a dev box for the spinning (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "stall",
+   "kind": "container",
+   "label": "Stall",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "a dev box for the stall (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "stocks",
+   "kind": "placeholder box",
+   "label": "Stocks",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the stocks (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "strongbox",
+   "kind": "container",
+   "label": "Strongbox",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "note": "a dev box for the strongbox (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "stump",
+   "kind": "placeholder box",
+   "label": "Stump",
+   "drawn": false,
+   "carry": false,
+   "note": "a dev box for the stump (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "table",
+   "kind": "furniture",
+   "drawn": true,
+   "carry": true,
+   "note": "the drawn table (docs/17): long side along y as drawn, along x as its mirror"
+  },
+  {
+   "id": "torch_post",
+   "kind": "fire",
+   "drawn": false,
+   "fire": {
+    "radius": 3
+   },
+   "collide": {
+    "radius": 0.12
+   }
+  },
+  {
+   "id": "tree_blue_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_blue_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_blue_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_oak_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_oak_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_oak_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_orange_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_orange_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_orange_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_purple_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_purple_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_purple_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_red_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_red_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_red_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_spire_blue_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_spire_blue_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_spire_blue_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_spire_green_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_spire_green_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_spire_green_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_spire_orange_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_spire_orange_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_spire_orange_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_spire_purple_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_spire_purple_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_spire_purple_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_spire_red_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_spire_red_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_spire_red_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_spire_yellow_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_spire_yellow_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_spire_yellow_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "tree_yellow_l",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.22
+   },
+   "interactable": true,
+   "wood": 4
+  },
+  {
+   "id": "tree_yellow_m",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 3
+  },
+  {
+   "id": "tree_yellow_old",
+   "kind": "tree",
+   "drawn": true,
+   "collide": {
+    "radius": 0.3
+   },
+   "interactable": true,
+   "wood": 6
+  },
+  {
+   "id": "trough",
+   "kind": "placeholder box",
+   "label": "Trough",
+   "drawn": false,
+   "carry": false,
+   "water": true,
+   "note": "a horse trough: water to drink and fill from, as the well (docs/30 law 8)"
+  },
+  {
+   "id": "ui_kit",
+   "kind": "placeholder box",
+   "drawn": false,
+   "note": "the UI kit (docs/23, step 4): the brick frame, the cutout well (and a thin one for the belt), the cell the bag's grid is tiled with, the flat plate (headers, the belt's bar), the button in three states; `slices` is each picture's corner in interface pixels (src/ui/kit.js); the colours are Michael's to tune"
+  },
+  {
+   "id": "wall_boards",
+   "kind": "wall",
+   "drawn": true,
+   "note": "board overlays, one to three planks, the same on every wall material (docs/17)"
+  },
+  {
+   "id": "wall_fence",
+   "kind": "wall",
+   "drawn": false,
+   "note": "a post-and-rail fence as a wall material (docs/30 step 0; docs/29/09 request 1.1): sight and light pass, bodies do not, it bounds no room; a gate is its door; a dev wall until drawn"
+  },
+  {
+   "id": "wall_log",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
+  },
+  {
+   "id": "wall_parts_log",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
+  },
+  {
+   "id": "wall_parts_stone",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
+  },
+  {
+   "id": "wall_parts_wood",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
+  },
+  {
+   "id": "wall_stone",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
+  },
+  {
+   "id": "wall_wood",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
+  },
+  {
+   "id": "well",
+   "kind": "other",
+   "drawn": true,
+   "carry": false,
+   "water": true,
+   "note": "the drawn well (docs/17), one tile; clickAnim lowers the bucket and winds it back up (part down, down, part down, up) on a left click or when drinking (Michael, 2026-10-11)"
+  },
+  {
+   "id": "wheelbarrow",
+   "kind": "container",
+   "label": "Barrow",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "the wheelbarrow (docs/30 section 9.1 ruled: one big immovable grid); the dev kit's grid stands in for its own until step 3"
+  },
+  {
+   "id": "woodpile",
+   "kind": "container",
+   "label": "Woodpile",
+   "drawn": false,
+   "container": true,
+   "carry": true,
+   "note": "a dev box for the woodpile (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "workbench",
+   "kind": "station",
+   "label": "Workbench",
+   "drawn": false,
+   "station": "workbench",
+   "carry": false,
+   "note": "a dev box for the workbench (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "zombie",
+   "kind": "placeholder box",
+   "drawn": false
+  }
+ ],
+ "map": {
+  "name": "The valley",
+  "spawn": [
+   104,
+   216
+  ],
+  "bounds": [
+   0,
+   0,
+   256,
+   256
+  ],
+  "places": [
+   {
+    "name": "your cottage",
+    "rect": [
+     98,
+     212,
+     16,
+     12
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chair",
+     "chair",
+     "chest",
+     "chest",
+     "fireplace",
+     "shelf",
+     "table"
+    ]
+   },
+   {
+    "name": "the inn",
+    "rect": [
+     98,
+     150,
+     18,
+     30
+    ],
+    "buildings": 2,
+    "rooms": 5,
+    "dead": 4,
+    "villagers": [
+     "Innkeeper",
+     "Guest",
+     "Child"
+    ],
+    "props": [
+     "barrel",
+     "barrel",
+     "barrel",
+     "barrel",
+     "bed",
+     "bed",
+     "bed",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chest",
+     "chest",
+     "chest",
+     "counter",
+     "cupboard",
+     "fireplace",
+     "fireplace",
+     "shelf",
+     "table",
+     "table",
+     "table",
+     "table"
+    ]
+   },
+   {
+    "name": "the chapel",
+    "rect": [
+     84,
+     86,
+     12,
+     12
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 2,
+    "villagers": [
+     "Priest"
+    ],
+    "props": [
+     "altar",
+     "chest",
+     "cupboard",
+     "font",
+     "lectern",
+     "pew",
+     "pew",
+     "pew",
+     "pew",
+     "pew",
+     "pew"
+    ]
+   },
+   {
+    "name": "the crypt",
+    "rect": [
+     99,
+     85,
+     6,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "chest",
+     "coffin",
+     "coffin"
+    ]
+   },
+   {
+    "name": "the priest's house",
+    "rect": [
+     98,
+     88,
+     8,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "bed",
+     "bookcase",
+     "chair",
+     "chest",
+     "fireplace",
+     "headstone",
+     "headstone",
+     "headstone",
+     "headstone",
+     "headstone",
+     "headstone",
+     "table"
+    ]
+   },
+   {
+    "name": "the manor",
+    "rect": [
+     94,
+     116,
+     16,
+     34
+    ],
+    "buildings": 1,
+    "rooms": 3,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "bookcase",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chair",
+     "chest",
+     "chest",
+     "cupboard",
+     "cupboard",
+     "cupboard",
+     "desk",
+     "fireplace",
+     "fireplace",
+     "shelf",
+     "strongbox",
+     "table",
+     "table"
+    ]
+   },
+   {
+    "name": "the merchant's house",
+    "rect": [
+     72,
+     124,
+     12,
+     24
+    ],
+    "buildings": 2,
+    "rooms": 4,
+    "dead": 2,
+    "villagers": [
+     "Apprentice"
+    ],
+    "props": [
+     "barrel",
+     "barrel",
+     "bed",
+     "bookcase",
+     "chair",
+     "chair",
+     "chair",
+     "chest",
+     "chest",
+     "chest",
+     "chest",
+     "cupboard",
+     "cupboard",
+     "cupboard",
+     "desk",
+     "fireplace",
+     "shelf",
+     "shelf",
+     "shelf",
+     "shelf",
+     "strongbox",
+     "table"
+    ]
+   },
+   {
+    "name": "the baker",
+    "rect": [
+     74,
+     176,
+     8,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "chest",
+     "oven",
+     "shelf",
+     "table"
+    ]
+   },
+   {
+    "name": "the joiner",
+    "rect": [
+     70,
+     182,
+     10,
+     14
+    ],
+    "buildings": 2,
+    "rooms": 3,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "chair",
+     "chest",
+     "chest",
+     "fireplace",
+     "shelf",
+     "shelf",
+     "table",
+     "table",
+     "workbench"
+    ]
+   },
+   {
+    "name": "the weaver",
+    "rect": [
+     66,
+     148,
+     14,
+     10
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chest",
+     "cupboard",
+     "fireplace",
+     "loom",
+     "shelf",
+     "spinningwheel"
+    ]
+   },
+   {
+    "name": "the smithy",
+    "rect": [
+     98,
+     184,
+     12,
+     12
+    ],
+    "buildings": 2,
+    "rooms": 2,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "anvil",
+     "barrel",
+     "bed",
+     "chest",
+     "chest",
+     "cupboard",
+     "forge",
+     "grindstone",
+     "shelf"
+    ]
+   },
+   {
+    "name": "the toll house",
+    "rect": [
+     112,
+     174,
+     6,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chest",
+     "shelf",
+     "strongbox"
+    ]
+   },
+   {
+    "name": "a cottage by the merchant's",
+    "rect": [
+     58,
+     130,
+     8,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chair",
+     "chest",
+     "chest",
+     "fireplace",
+     "table"
+    ]
+   },
+   {
+    "name": "the cooper's long house",
+    "rect": [
+     58,
+     138,
+     8,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "bed",
+     "chair",
+     "chest",
+     "fireplace",
+     "haystack",
+     "table"
+    ]
+   },
+   {
+    "name": "a cottage by the baker's",
+    "rect": [
+     58,
+     178,
+     8,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chair",
+     "chest",
+     "chest",
+     "fireplace",
+     "table"
+    ]
+   },
+   {
+    "name": "the chandler's house",
+    "rect": [
+     58,
+     188,
+     10,
+     10
+    ],
+    "buildings": 2,
+    "rooms": 3,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chair",
+     "chest",
+     "fireplace",
+     "shelf",
+     "table",
+     "workbench"
+    ]
+   },
+   {
+    "name": "the first cottage on the lane",
+    "rect": [
+     60,
+     214,
+     8,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "bed",
+     "chair",
+     "chest",
+     "chest",
+     "fireplace",
+     "table"
+    ]
+   },
+   {
+    "name": "the second cottage on the lane",
+    "rect": [
+     70,
+     214,
+     8,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "bed",
+     "chair",
+     "chest",
+     "fireplace",
+     "haystack",
+     "table"
+    ]
+   },
+   {
+    "name": "the shut cottage",
+    "rect": [
+     80,
+     214,
+     8,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [
+     "Neighbour"
+    ],
+    "props": [
+     "bed",
+     "chair",
+     "chest",
+     "chest",
+     "fireplace",
+     "table"
+    ]
+   },
+   {
+    "name": "the reeve's house",
+    "rect": [
+     90,
+     214,
+     8,
+     6
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [
+     "Reeve"
+    ],
+    "props": [
+     "bed",
+     "bookcase",
+     "chair",
+     "chest",
+     "desk",
+     "fireplace",
+     "table"
+    ]
+   }
+  ],
+  "villagers": [
+   {
+    "tile": [
+     104,
+     153
+    ],
+    "name": "Innkeeper",
+    "wardrobe": 0,
+    "line": "Shut that behind you."
+   },
+   {
+    "tile": [
+     101,
+     162
+    ],
+    "name": "Guest",
+    "wardrobe": 1,
+    "line": "I only stopped for the night."
+   },
+   {
+    "tile": [
+     102,
+     156
+    ],
+    "name": "Child",
+    "wardrobe": 5
+   },
+   {
+    "tile": [
+     93,
+     88
+    ],
+    "name": "Priest",
+    "wardrobe": 2,
+    "line": "The bell stopped on the third day."
+   },
+   {
+    "tile": [
+     92,
+     217
+    ],
+    "name": "Reeve",
+    "wardrobe": 3,
+    "line": "I have the keys and no one to give them to."
+   },
+   {
+    "tile": [
+     76,
+     140
+    ],
+    "name": "Apprentice",
+    "wardrobe": 4,
+    "line": "It is all here. Every bale. Nobody to buy it."
+   },
+   {
+    "tile": [
+     82,
+     217
+    ],
+    "name": "Neighbour",
+    "wardrobe": 1,
+    "line": "Go away."
+   }
+  ],
+  "wild": {
+   "biome": "harvest",
+   "density": [
+    0.0405,
+    0.1305
+   ],
+   "seed": 21,
+   "zombiesPerChunk": [
+    0,
+    2
+   ],
+   "rocks": {
+    "kinds": {
+     "rock_0": 1,
+     "rock_1": 1,
+     "rock_2": 1,
+     "rock_3": 1
+    },
+    "cell": 40,
+    "chance": 0.6,
+    "seed": 51
+   }
+  }
+ },
+ "tuning": {
+  "note": "The entities' numbers (docs/23a, D9; src/tuning.js has each one's meaning). These are the values the code carried until 2026-10-12, the cozy parent's for the most part, never re-decided: docs/02 question 19 is answered by editing this file. A section or a key left out keeps its default.",
+  "zombie": {
+   "speed": 1,
+   "sight": 8,
+   "sightDarkFraction": 0.35,
+   "flameRange": 12,
+   "flamePatience": 8,
+   "stuckTime": 1.5,
+   "contact": 0.7,
+   "damage": 8,
+   "cooldown": 1.2,
+   "hp": 100,
+   "repath": 0.3,
+   "radius": 0.3,
+   "searchTime": 10,
+   "breachDamage": 5,
+   "climb": 1.6,
+   "groanText": "Braaaains",
+   "groanMin": 20,
+   "groanMax": 60,
+   "stagger": 0.3,
+   "downTime": 2,
+   "getUpTime": 0.6,
+   "knockTime": 0.15,
+   "breachReach": 1.1,
+   "searchRadius": 3,
+   "wanderIdleMin": 1.5,
+   "wanderIdleMax": 4,
+   "separation": 0.55,
+   "sightCheck": 0.25,
+   "arrived": 0.6,
+   "repathFailBackoff": 1
+  },
+  "player": {
+   "speed": 3,
+   "radius": 0.3,
+   "hp": 100,
+   "stamina": 100,
+   "sprintMult": 1.75,
+   "sprintDrain": 16,
+   "staminaRegen": 22,
+   "sprintRecoverAt": 20,
+   "aimY": 22,
+   "hungerMax": 100,
+   "thirstMax": 100,
+   "hungerDrainSeconds": 1080,
+   "thirstDrainSeconds": 720,
+   "starveDamage": 1.5,
+   "dehydrateDamage": 2,
+   "drinkSip": 50,
+   "presentTime": 0.6,
+   "climbTime": 0.9,
+   "tiredMax": 100,
+   "tiredDrainSeconds": 900,
+   "sleepRestoreSeconds": 240,
+   "sleepTimeScale": 60,
+   "wakeHour": 6,
+   "healthRegenPerMinute": 1,
+   "sleepRegenPerMinute": 4,
+   "needsStaminaRegenMult": 0.5,
+   "tiredStaminaRegenMult": 0.75
+  },
+  "villager": {
+   "speed": 1.4,
+   "radius": 0.3,
+   "wanderRadius": 4,
+   "talkTime": 2,
+   "pokeCooldownMs": 600,
+   "hurtTime": 0.35
+  },
+  "world": {
+   "activeTiles": 40,
+   "evictChunks": 8,
+   "containerCloseDist": 2,
+   "beltLight": 0.5,
+   "twoTorches": 1.35
+  }
+ },
+ "combat": {
+  "fists": {
+   "staggerChance": 0.2,
+   "damage": 6,
+   "range": 0.9,
+   "arc": 100,
+   "swing": 0.4,
+   "knockback": 0.17,
+   "knockbackChance": 1,
+   "stamina": 3,
+   "knockdown": 0,
+   "style": "one_handed"
+  },
+  "stagger": {
+   "chance": 0.5,
+   "immunity": 0.6,
+   "note": "a hit staggers the dead one with the weapon's staggerChance (this is the default); after a stagger ends it cannot be staggered again for immunity seconds; a bite under way is not cancelled unless the weapon interrupts (docs/02 question 29b)"
+  },
+  "bleed": {
+   "chance": 0.5,
+   "dpsByStacks": [
+    0.4,
+    1.6,
+    3.6,
+    6.4,
+    10
+   ],
+   "max": 5,
+   "duration": 12,
+   "note": "a landed bite opens a wound with this chance, one more stack each (to max); the wound drains dpsByStacks[stacks - 1] a second, the timer is refreshed by each new bite and runs out by itself after duration seconds; a bandage stops it. Michael's bounds: five fresh stacks kill from full health in 10 s (not under 8 to 10 s), and one stack is a nuisance (under 5 health in all)"
+  },
+  "infection": {
+   "chance": 0.2,
+   "days": 1.5,
+   "note": "a landed bite infects with this chance; the moodle goes green, yellow, orange, red over this many in-game days; it does nothing else yet (docs/02 question 29b)"
+  },
+  "combo": {
+   "enabled": false,
+   "hits": 3,
+   "window": 2,
+   "note": "the third hit on one dead one within `window` seconds always floors it; switched off for testing (Michael, 2026-10-12), the code kept"
+  },
+  "finisher": {
+   "mult": 1.5,
+   "note": "what a blow on a downed dead one is multiplied by (was 2)"
+  },
+  "dual": {
+   "offDamage": 1,
+   "window": 2.5,
+   "lockout": 0.45,
+   "front": 1.5,
+   "side": 2.5,
+   "behind": 100,
+   "arc": 100,
+   "sideArc": 220,
+   "note": "an off-hand swing leaves you exposed for `window` seconds: a blow takes `front` times its damage from the front arc, `side` times from the sides, `behind` times (fatal) from behind; `lockout` is the share of a swing before the other hand may swing; `offDamage` multiplies the off hand's blows (1 = full; World of Warcraft's flat penalty would be 0.5) (docs/21)"
+  },
+  "shove": {
+   "range": 1,
+   "arc": 100,
+   "knockback": 0.53,
+   "knockbackChance": 1,
+   "stagger": 0.6,
+   "knockdown": 0.25,
+   "stamina": 5,
+   "cooldown": 0.45
+  }
+ },
+ "build": {
+  "wall": {
+   "label": "Log wall",
+   "sprite": "wall_log",
+   "cost": {
+    "log": 1
+   },
+   "seconds": 3
+  },
+  "door": {
+   "label": "Door",
+   "sprite": "wall_log",
+   "cost": {
+    "plank": 3
+   },
+   "seconds": 4
+  },
+  "window": {
+   "label": "Window",
+   "sprite": "wall_log",
+   "cost": {
+    "plank": 2
+   },
+   "seconds": 3
+  }
+ },
+ "looks": {
+  "note": "The character screen's palettes (docs/12, the creation screen; docs/31/03, the identity). The skin ramp is the design agent's, approved by Michael 2026-10-12 (data/art/character/character_body.json): eight living tones pale to deep, three dead ones (grey-green, grey, bruised blue) allowed in the creator for fun (Michael, 2026-10-13). The shadow is the engine's own rule (tone * 0.84). Hair and eye colours are first picks, Michael's to change here; a painted hair with no dye option (purple) keeps its own colours.",
+  "skins": {
+   "living": [
+    "#f8dcc0",
+    "#f0c8a0",
+    "#e8b88c",
+    "#d9a070",
+    "#c4875a",
+    "#a86a48",
+    "#8c5a40",
+    "#6b4432"
+   ],
+   "dead": [
+    "#8f9c72",
+    "#908c8a",
+    "#7f879c"
+   ]
+  },
+  "hair": [
+   "#1e1a1e",
+   "#3a2a1c",
+   "#5a3a20",
+   "#7a4a28",
+   "#8a3c24",
+   "#b04a2a",
+   "#c8702e",
+   "#c9a24e",
+   "#e2cf8a",
+   "#8a8478",
+   "#b5b0a8",
+   "#e8e4dc"
+  ],
+  "eyes": [
+   "#1c1a22",
+   "#5a3a22",
+   "#7a6a30",
+   "#3f7a3a",
+   "#3c6ea0",
+   "#6e7a88",
+   "#b07a2a",
+   "#6a4a8a"
+  ]
+ },
+ "poseSets": [
+  "note",
+  "walk",
+  "one_handed",
+  "present",
+  "thrust",
+  "zombie",
+  "bow",
+  "throw"
+ ],
+ "hairStyles": {
+  "styles": [
+   "purple",
+   "crop",
+   "mohawk",
+   "tight",
+   "long",
+   "pigtails",
+   "bob"
+  ]
+ },
+ "wardrobes": {
+  "zombie": 10,
+  "village": 6
+ },
+ "settings": [
+  {
+   "key": "uiScale",
+   "default": "\"auto\"",
+   "note": "\"auto\" or a number: how big the interface is drawn"
+  },
+  {
+   "key": "worldScale",
+   "default": "\"auto\"",
+   "note": "the zoom: \"auto\" or one of view.ZOOM_LEVELS"
+  },
+  {
+   "key": "debugCorner",
+   "default": "true",
+   "note": "the text in the top-left corner"
+  },
+  {
+   "key": "zombieAggro",
+   "default": "false",
+   "note": "off: the dead wander and ignore you, there to be looked at (Michael, 2026-10-10)"
+  },
+  {
+   "key": "zombiesAttackVillagers",
+   "default": "false",
+   "note": "on: the dead hunt villagers too, always preferring the player when both are in sight (docs/19)"
+  },
+  {
+   "key": "squareSurface",
+   "default": "\"cobble\"",
+   "note": "the square and its two paths: \"cobble\" or \"dirt\", to compare (docs/15, for now)"
+  },
+  {
+   "key": "combatTesting",
+   "default": "false",
+   "note": "on (read at load): no trees, forty more of the dead standing about the square (docs/21)"
+  },
+  {
+   "key": "swingTimer",
+   "default": "true",
+   "note": "a bar over your head while a swing recovers (World of Warcraft's swing timer; docs/21)"
+  },
+  {
+   "key": "aimGuide",
+   "default": "true",
+   "note": "the bow's landing marker and dotted line while you draw (docs/20); Michael wants the weapon to feel right without it, so it is a setting, on for now"
+  },
+  {
+   "key": "showSwingTargets",
+   "default": "false",
+   "note": "outline the zombies the next swing would hit (docs/14), for testing and for play"
+  },
+  {
+   "key": "multiHit",
+   "default": "false",
+   "note": "on: a blow reaches everything in its wedge; off: only the nearest. Off is the intended way to play (Michael, 2026-10-12): multi-hit is the easy button (docs/14)"
+  },
+  {
+   "key": "showHitShapes",
+   "default": "false",
+   "note": "draw the dead's body samples, green when the next swing reaches them (docs/14)"
+  },
+  {
+   "key": "freeBuilding",
+   "default": "false",
+   "note": "on: building costs nothing (docs/13), for testing structures"
+  },
+  {
+   "key": "survival",
+   "default": "true",
+   "note": "on since docs/30 step 2 (hunger, thirst, tiredness drain); off: the body is a workbench"
+  },
+  {
+   "key": "hairStyle",
+   "default": "\"short\"",
+   "note": "the player's hair (the character screen writes it, and `look.hairStyle` with it; kept for what reads it)"
+  },
+  {
+   "key": "playerName",
+   "default": "\"\"",
+   "note": "the identity before docs/31/09: read once to migrate into identities.js, and by the ?nosave test world's identity"
+  },
+  {
+   "key": "look",
+   "default": "{}",
+   "note": "the look before docs/31/09 (skin, hair, eyes, hairStyle): migrated with playerName; identities.js keeps them now"
+  },
+  {
+   "key": "nameTags",
+   "default": "true",
+   "note": "another player's name over their head while in sight (docs/31/03)"
+  },
+  {
+   "key": "paintedLayers",
+   "default": "{}",
+   "note": "slot -> painted layer name to try on, from the settings screen (docs/12)"
+  },
+  {
+   "key": "panelPos",
+   "default": "{}",
+   "note": "\"bag\" | \"character\" | \"container\" -> { x, y } in UI pixels where its header was dragged to (docs/23 step 4; Michael, 2026-10-12)"
+  },
+  {
+   "key": "cursor",
+   "default": "\"default\"",
+   "note": "the system's own, or one of the three hands (ui/cursor.js; Michael, 2026-10-12)"
+  },
+  {
+   "key": "logSize",
+   "default": "null",
+   "note": "{ w, h } in UI pixels the text log was resized to (ui/log.js)"
+  },
+  {
+   "key": "devChest",
+   "default": "true",
+   "note": "the chest of every item placed by the spawn (read at load; docs/30 step 0: the map file stays clean)"
+  },
+  {
+   "key": "identities",
+   "default": "[]",
+   "note": "[{ id, name, look }]: the identities kept in this browser (identities.js; docs/31/09)"
+  },
+  {
+   "key": "lastIdentity",
+   "default": "\"\"",
+   "note": "the one picked last, offered first on the next creation"
+  },
+  {
+   "key": "clientId",
+   "default": "\"\"",
+   "note": "the browser id a world remembers a character's owner by (docs/31/09)"
+  },
+  {
+   "key": "joined",
+   "default": "[]",
+   "note": "friends' worlds this browser has joined or tried to: [{ code, name, hostName, myCharacter, lastAt }]"
+  },
+  {
+   "key": "creatorKey",
+   "default": "\"\"",
+   "note": "the server's creator key, typed once, which lets this browser move a world to the server (item 5)"
+  },
+  {
+   "key": "owned",
+   "default": "[]",
+   "note": "the server worlds this browser owns: [{ code, serverWorldId, name, ownerKey, localWorldId, at }] (item 5)"
+  }
+ ],
+ "rules": [
+  "zombieAggro",
+  "zombiesAttackVillagers",
+  "multiHit",
+  "survival",
+  "freeBuilding"
+ ],
+ "keys": [
+  {
+   "key": "BracketLeft",
+   "at": [
+    "main.js:910"
+   ]
+  },
+  {
+   "key": "BracketRight",
+   "at": [
+    "main.js:909"
+   ]
+  },
+  {
+   "key": "Enter",
+   "at": [
+    "main.js:889"
+   ]
+  },
+  {
+   "key": "KeyC",
+   "at": [
+    "main.js:735",
+    "main.js:749"
+   ]
+  },
+  {
+   "key": "KeyE",
+   "at": [
+    "interact.js:938"
+   ]
+  },
+  {
+   "key": "KeyL",
+   "at": [
+    "main.js:907"
+   ]
+  },
+  {
+   "key": "KeyN",
+   "at": [
+    "main.js:891"
+   ]
+  },
+  {
+   "key": "KeyQ",
+   "at": [
+    "buttons.js:25",
+    "buttons.js:26"
+   ]
+  },
+  {
+   "key": "KeyR",
+   "at": [
+    "placement.js:274"
+   ]
+  },
+  {
+   "key": "KeyT",
+   "at": [
+    "interact.js:939"
+   ]
+  },
+  {
+   "key": "KeyV",
+   "at": [
+    "main.js:887"
+   ]
+  },
+  {
+   "key": "KeyX",
+   "at": [
+    "main.js:892"
+   ]
+  },
+  {
+   "key": "KeyZ",
+   "at": [
+    "main.js:898"
+   ]
+  },
+  {
+   "key": "NumpadEnter",
+   "at": [
+    "main.js:889"
+   ]
+  },
+  {
+   "key": "ShiftLeft",
+   "at": [
+    "main.js:966"
+   ]
+  },
+  {
+   "key": "ShiftRight",
+   "at": [
+    "main.js:966"
+   ]
+  },
+  {
+   "key": "Slash",
+   "at": [
+    "main.js:890"
+   ]
+  },
+  {
+   "key": "Space",
+   "at": [
+    "main.js:977"
+   ]
+  },
+  {
+   "key": "Tab",
+   "at": [
+    "main.js:735",
+    "main.js:741"
+   ]
+  }
+ ],
+ "verbs": [
+  {
+   "key": "craft",
+   "at": [
+    "stations.js:228"
+   ]
+  },
+  {
+   "key": "sleep",
+   "at": [
+    "entities/player.js:193"
+   ]
+  }
+ ],
+ "menuLabels": [
+  {
+   "key": "Baking the ground",
+   "at": [
+    "main.js:1264"
+   ]
+  },
+  {
+   "key": "Build",
+   "at": [
+    "main.js:643"
+   ]
+  },
+  {
+   "key": "Click to place · R turn · E in front",
+   "at": [
+    "placement.js:590"
+   ]
+  },
+  {
+   "key": "Climb through",
+   "at": [
+    "interact.js:478"
+   ]
+  },
+  {
+   "key": "Dressing everyone",
+   "at": [
+    "main.js:1199"
+   ]
+  },
+  {
+   "key": "Drop",
+   "at": [
+    "interact.js:1101"
+   ]
+  },
+  {
+   "key": "Eat",
+   "at": [
+    "interact.js:1047"
+   ]
+  },
+  {
+   "key": "Equip (main hand)",
+   "at": [
+    "interact.js:1024"
+   ]
+  },
+  {
+   "key": "Equip (off hand)",
+   "at": [
+    "interact.js:1025"
+   ]
+  },
+  {
+   "key": "Equip",
+   "at": [
+    "interact.js:1127"
+   ]
+  },
+  {
+   "key": "Growing the world",
+   "at": [
+    "main.js:1228"
+   ]
+  },
+  {
+   "key": "Loading the art",
+   "at": [
+    "main.js:1185"
+   ]
+  },
+  {
+   "key": "Making the held things",
+   "at": [
+    "main.js:1218"
+   ]
+  },
+  {
+   "key": "Packing the atlas",
+   "at": [
+    "main.js:1277"
+   ]
+  },
+  {
+   "key": "Put in bag",
+   "at": [
+    "interact.js:1129"
+   ]
+  },
+  {
+   "key": "Reading the data",
+   "at": [
+    "main.js:1162"
+   ]
+  },
+  {
+   "key": "Reading the manifest",
+   "at": [
+    "main.js:1159"
+   ]
+  },
+  {
+   "key": "Reading the map",
+   "at": [
+    "main.js:1187"
+   ]
+  },
+  {
+   "key": "Reading the painted layers",
+   "at": [
+    "main.js:1186"
+   ]
+  },
+  {
+   "key": "Rotate",
+   "at": [
+    "ui/inventory-panel.js:682"
+   ]
+  },
+  {
+   "key": "Setting the table",
+   "at": [
+    "main.js:1286"
+   ]
+  },
+  {
+   "key": "Sleep",
+   "at": [
+    "interact.js:388"
+   ]
+  },
+  {
+   "key": "Take off",
+   "at": [
+    "interact.js:1112"
+   ]
+  },
+  {
+   "key": "Take the torch",
+   "at": [
+    "interact.js:411"
+   ]
+  },
+  {
+   "key": "Unequip",
+   "at": [
+    "interact.js:1143"
+   ]
+  },
+  {
+   "key": "Use",
+   "at": [
+    "interact.js:1020",
+    "interact.js:1099"
+   ]
+  },
+  {
+   "key": "Walk here",
+   "at": [
+    "interact.js:586"
+   ]
+  },
+  {
+   "key": "${name}: boarded (${parts.join(\", \")})",
+   "at": [
+    "interact.js:457"
+   ]
+  },
+  {
+   "key": "Building ${d.label.toLowerCase()}",
+   "at": [
+    "placement.js:562"
+   ]
+  },
+  {
+   "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
+   "at": [
+    "interact.js:519"
+   ]
+  },
+  {
+   "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
+   "at": [
+    "placement.js:600"
+   ]
+  },
+  {
+   "key": "Click to remove ${targetName(t)} · Esc cancel",
+   "at": [
+    "placement.js:596"
+   ]
+  },
+  {
+   "key": "Drink (${pct}%)",
+   "at": [
+    "interact.js:1051"
+   ]
+  },
+  {
+   "key": "Drink from the ${source.name}",
+   "at": [
+    "interact.js:543"
+   ]
+  },
+  {
+   "key": "E: ${a.label}",
+   "at": [
+    "interact.js:873"
+   ]
+  },
+  {
+   "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
+   "at": [
+    "interact.js:1028"
+   ]
+  },
+  {
+   "key": "Open ${def.name.toLowerCase()}",
+   "at": [
+    "interact.js:203"
+   ]
+  },
+  {
+   "key": "Poke ${c.name}",
+   "at": [
+    "interact.js:1362"
+   ]
+  },
+  {
+   "key": "Pull a board (${mine.length} this side, gone)",
+   "at": [
+    "interact.js:505"
+   ]
+  },
+  {
+   "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
+   "at": [
+    "interact.js:1056"
+   ]
+  }
+ ],
+ "events": [
+  {
+   "key": "arrowLanded",
+   "at": [
+    "archery.js:260"
+   ]
+  },
+  {
+   "key": "arrowShot",
+   "at": [
+    "archery.js:563"
+   ]
+  },
+  {
+   "key": "autosaveTick",
+   "at": [
+    "main.js:1089"
+   ]
+  },
+  {
+   "key": "bitten",
+   "at": [
+    "game.js:301"
+   ]
+  },
+  {
+   "key": "blocked",
+   "at": [
+    "combat.js:149"
+   ]
+  },
+  {
+   "key": "containerOpened",
+   "at": [
+    "interact.js:209",
+    "interact.js:341",
+    "interact.js:1347",
+    "ui/station-panel.js:67",
+    "ui/station-panel.js:92"
+   ]
+  },
+  {
+   "key": "craftDone",
+   "at": [
+    "stations.js:204"
+   ]
+  },
+  {
+   "key": "craftStarted",
+   "at": [
+    "stations.js:163"
+   ]
+  },
+  {
+   "key": "fireFed",
+   "at": [
+    "map.js:115"
+   ]
+  },
+  {
+   "key": "fireOut",
+   "at": [
+    "map.js:100"
+   ]
+  },
+  {
+   "key": "gameOver",
+   "at": [
+    "game.js:546"
+   ]
+  },
+  {
+   "key": "guardBroken",
+   "at": [
+    "combat.js:140"
+   ]
+  },
+  {
+   "key": "kicked",
+   "at": [
+    "combat.js:259"
+   ]
+  },
+  {
+   "key": "meleeHit",
+   "at": [
+    "combat.js:353"
+   ]
+  },
+  {
+   "key": "meleeSwing",
+   "at": [
+    "combat.js:324"
+   ]
+  },
+  {
+   "key": "playerHit",
+   "at": [
+    "entities/zombie.js:607"
+   ]
+  },
+  {
+   "key": "shove",
+   "at": [
+    "combat.js:388"
+   ]
+  },
+  {
+   "key": "sleepEnd",
+   "at": [
+    "entities/player.js:181"
+   ]
+  },
+  {
+   "key": "sleepStart",
+   "at": [
+    "entities/player.js:172"
+   ]
+  },
+  {
+   "key": "timeScale",
+   "at": [
+    "world.js:28"
+   ]
+  },
+  {
+   "key": "villagerDied",
+   "at": [
+    "entities/villager.js:134"
+   ]
+  },
+  {
+   "key": "villagerHit",
+   "at": [
+    "entities/zombie.js:608"
+   ]
+  },
+  {
+   "key": "weaponBroke",
+   "at": [
+    "archery.js:571",
+    "combat.js:370"
+   ]
+  },
+  {
+   "key": "zombieDied",
+   "at": [
+    "entities/zombie.js:121"
+   ]
+  }
+ ],
+ "moodles": [
+  {
+   "id": "bleed",
+   "stages": [
+    {
+     "name": "Bleeding",
+     "text": "A wound is open. A bandage will close it."
+    },
+    {
+     "name": "Bleeding badly",
+     "text": "Two wounds. It will not stop by itself soon."
+    },
+    {
+     "name": "Bleeding heavily",
+     "text": "Three. Your hands are slick. Bandage it."
+    },
+    {
+     "name": "Bleeding out",
+     "text": "You are losing blood fast. Bandage it now."
+    }
+   ]
+  },
+  {
+   "id": "infection",
+   "stages": [
+    {
+     "name": "Bitten",
+     "text": "The bite broke the skin. You feel fine. Watch it."
+    },
+    {
+     "name": "Fevered",
+     "text": "A chill and a headache. It is spreading."
+    },
+    {
+     "name": "Sick",
+     "text": "Your hands shake. There is not much time."
+    },
+    {
+     "name": "Turning",
+     "text": "It has taken hold. (Nothing happens yet: a marker.)"
+    }
+   ]
+  },
+  {
+   "id": "hunger",
+   "stages": [
+    {
+     "name": "Peckish",
+     "text": "Could eat."
+    },
+    {
+     "name": "Hungry",
+     "text": "Your stomach is making itself heard."
+    },
+    {
+     "name": "Very hungry",
+     "text": "Hard to think about anything but food."
+    },
+    {
+     "name": "Starving",
+     "text": "You are wasting away. Eat something."
+    }
+   ]
+  },
+  {
+   "id": "thirst",
+   "stages": [
+    {
+     "name": "Slightly thirsty",
+     "text": "A drink would be nice."
+    },
+    {
+     "name": "Thirsty",
+     "text": "Your mouth is dry."
+    },
+    {
+     "name": "Parched",
+     "text": "Hard to catch your breath. Stamina recovers slowly."
+    },
+    {
+     "name": "Dying of thirst",
+     "text": "You will not last long without water."
+    }
+   ]
+  },
+  {
+   "id": "tired",
+   "stages": [
+    {
+     "name": "Yawning",
+     "text": "A bed would be welcome."
+    },
+    {
+     "name": "Tired",
+     "text": "Stamina comes back slower."
+    },
+    {
+     "name": "Exhausted",
+     "text": "You cannot run. Sleep."
+    },
+    {
+     "name": "Falling asleep",
+     "text": "Nothing heals until you sleep."
+    }
+   ]
+  }
+ ],
+ "checks": [
+  "craft",
+  "determinism",
+  "eviction",
+  "frame",
+  "ground",
+  "growth",
+  "layers",
+  "light",
+  "players",
+  "poses",
+  "rooms",
+  "save",
+  "sheets",
+  "sleep",
+  "sway",
+  "sync",
+  "water",
+  "wear",
+  "wire",
+  "worlds"
+ ],
+ "modules": [
+  {
+   "path": "map.js",
+   "lines": 1818
+  },
+  {
+   "path": "main.js",
+   "lines": 1666
+  },
+  {
+   "path": "interact.js",
+   "lines": 1418
+  },
+  {
+   "path": "placeholders.js",
+   "lines": 1417
+  },
+  {
+   "path": "net.js",
+   "lines": 1299
+  },
+  {
+   "path": "ground.js",
+   "lines": 977
+  },
+  {
+   "path": "ui/screens.js",
+   "lines": 803
+  },
+  {
+   "path": "ui/inventory-panel.js",
+   "lines": 704
+  },
+  {
+   "path": "assets.js",
+   "lines": 636
+  },
+  {
+   "path": "entities/zombie.js",
+   "lines": 621
+  },
+  {
+   "path": "archery.js",
+   "lines": 618
+  },
+  {
+   "path": "placement.js",
+   "lines": 602
+  },
+  {
+   "path": "gl.js",
+   "lines": 601
+  },
+  {
+   "path": "figure/draw.js",
+   "lines": 571
+  },
+  {
+   "path": "game.js",
+   "lines": 568
+  },
+  {
+   "path": "render/walls.js",
+   "lines": 449
+  },
+  {
+   "path": "combat.js",
+   "lines": 444
+  },
+  {
+   "path": "light.js",
+   "lines": 428
+  },
+  {
+   "path": "ui/inventory-actions.js",
+   "lines": 393
+  },
+  {
+   "path": "entities/player.js",
+   "lines": 368
+  },
+  {
+   "path": "figure/rig.js",
+   "lines": 339
+  },
+  {
+   "path": "figure/raster.js",
+   "lines": 329
+  },
+  {
+   "path": "render/entities.js",
+   "lines": 275
+  },
+  {
+   "path": "inventory.js",
+   "lines": 261
+  },
+  {
+   "path": "stations.js",
+   "lines": 244
+  },
+  {
+   "path": "host.js",
+   "lines": 232
+  },
+  {
+   "path": "save.js",
+   "lines": 232
+  },
+  {
+   "path": "loop.js",
+   "lines": 225
+  },
+  {
+   "path": "render/props.js",
+   "lines": 208
+  },
+  {
+   "path": "render/scene.js",
+   "lines": 203
+  },
+  {
+   "path": "entities/character.js",
+   "lines": 199
+  },
+  {
+   "path": "items.js",
+   "lines": 195
+  },
+  {
+   "path": "grid.js",
+   "lines": 187
+  },
+  {
+   "path": "render/area.js",
+   "lines": 175
+  },
+  {
+   "path": "fire.js",
+   "lines": 172
+  },
+  {
+   "path": "view.js",
+   "lines": 170
+  },
+  {
+   "path": "input.js",
+   "lines": 168
+  },
+  {
+   "path": "ui/station-panel.js",
+   "lines": 160
+  },
+  {
+   "path": "figure/held.js",
+   "lines": 158
+  },
+  {
+   "path": "identities.js",
+   "lines": 155
+  },
+  {
+   "path": "figure/wardrobe.js",
+   "lines": 153
+  },
+  {
+   "path": "entities/villager.js",
+   "lines": 152
+  },
+  {
+   "path": "dev.js",
+   "lines": 145
+  },
+  {
+   "path": "moodles.js",
+   "lines": 127
+  },
+  {
+   "path": "sprites.js",
+   "lines": 125
+  },
+  {
+   "path": "ui/hud.js",
+   "lines": 124
+  },
+  {
+   "path": "entities/movement.js",
+   "lines": 111
+  },
+  {
+   "path": "boot.js",
+   "lines": 110
+  },
+  {
+   "path": "ui/log.js",
+   "lines": 109
+  },
+  {
+   "path": "use.js",
+   "lines": 105
+  },
+  {
+   "path": "pathfind.js",
+   "lines": 102
+  },
+  {
+   "path": "settings.js",
+   "lines": 101
+  },
+  {
+   "path": "clock.js",
+   "lines": 99
+  },
+  {
+   "path": "iso.js",
+   "lines": 98
+  },
+  {
+   "path": "tuning.js",
+   "lines": 95
+  },
+  {
+   "path": "ui/speech.js",
+   "lines": 92
+  },
+  {
+   "path": "ui/zombie-bars.js",
+   "lines": 84
+  },
+  {
+   "path": "ui/context-menu.js",
+   "lines": 82
+  },
+  {
+   "path": "visibility.js",
+   "lines": 77
+  },
+  {
+   "path": "ui/prompt.js",
+   "lines": 76
+  },
+  {
+   "path": "ui/swing-timer.js",
+   "lines": 72
+  },
+  {
+   "path": "camera.js",
+   "lines": 67
+  },
+  {
+   "path": "rng.js",
+   "lines": 67
+  },
+  {
+   "path": "bleed.js",
+   "lines": 62
+  },
+  {
+   "path": "interactions.js",
+   "lines": 61
+  },
+  {
+   "path": "ui/names.js",
+   "lines": 57
+  },
+  {
+   "path": "player-controller.js",
+   "lines": 56
+  },
+  {
+   "path": "ui/build-palette.js",
+   "lines": 53
+  },
+  {
+   "path": "ui/kit.js",
+   "lines": 52
+  },
+  {
+   "path": "ui/moodles.js",
+   "lines": 52
+  },
+  {
+   "path": "infection.js",
+   "lines": 51
+  },
+  {
+   "path": "buttons.js",
+   "lines": 50
+  },
+  {
+   "path": "rules.js",
+   "lines": 38
+  },
+  {
+   "path": "ui/cursor.js",
+   "lines": 37
+  },
+  {
+   "path": "world.js",
+   "lines": 36
+  },
+  {
+   "path": "verbs.js",
+   "lines": 35
+  },
+  {
+   "path": "figure.js",
+   "lines": 30
+  },
+  {
+   "path": "render-util.js",
+   "lines": 25
+  },
+  {
+   "path": "events.js",
+   "lines": 24
+  },
+  {
+   "path": "render.js",
+   "lines": 14
+  }
+ ],
+ "problems": []
+}

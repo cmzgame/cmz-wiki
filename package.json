@@ -1,0 +1,12 @@
+{
+  "name": "cmz-wiki",
+  "private": true,
+  "type": "module",
+  "description": "The wiki of Cozy Medieval Zombies: pages generated from the game's data, prose by hand. No dependencies.",
+  "scripts": {
+    "sync": "node sync.js",
+    "census": "node census/census.js",
+    "build": "node build.js"
+  },
+  "engines": { "node": ">=20" }
+}
