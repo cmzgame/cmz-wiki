@@ -22,6 +22,7 @@ A feature is not pushed to the game's `main` until the wiki is checked and updat
 2. `node census/census.js`: the automatic inventory (`census/census.md`): what the game contains, and any problem the data shows by itself.
 3. `node build.js --check`: build `site/`; it fails on a template naming something the data no longer has, and reports red links, planned notes, and generated-only pages.
 4. Fix what the report names, write a Changes entry, commit, push. The site rebuilds itself on GitHub.
+5. Anything found on the way that looks like a bug in the game goes to the game's `docs/bugs.md` (marked with the commit it was read at), not into a wiki page as a choice.
 
 `node serve.js` previews the built site at http://localhost:8020.
 

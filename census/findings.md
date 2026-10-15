@@ -1,5 +1,7 @@
 # Findings: what the census turned up that a player would notice
 
+**Moved:** the living list is now the game's `docs/bugs.md`, where the coding agents work it (Michael, 2026-10-14). This file is the census's record as of `9205ad7` and is not kept up; new findings go to `docs/bugs.md`.
+
 Game `main` @ `9205ad7` (2026-10-14). The short list from the six fact sheets (`census/areas/`): behaviour in the code that is probably not what anyone intends, or that surprises. Each was read in the code; the ones marked *inferred* were not tried. The full docs-versus-code list is `census/discrepancies.md`. These are for Michael and the coding agent; the wiki describes the game as it is meanwhile.
 
 ## Likely bugs
