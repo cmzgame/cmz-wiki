@@ -28,7 +28,7 @@ jobs:
     if: github.event_name == 'issues' && startsWith(github.event.issue.title, 'Verify:')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Stamp the page
         env:
           TITLE: ${{ github.event.issue.title }}
@@ -64,15 +64,15 @@ jobs:
     if: always() && (github.event_name != 'issues' || needs.verify.result == 'success')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - run: node build.js
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
 
@@ -85,4 +85,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
