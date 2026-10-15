@@ -11,6 +11,7 @@
 // a written one has its title, so nothing in the game is without a page.
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, copyFileSync, existsSync, rmSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadData } from "./lib/data.js";
@@ -21,6 +22,19 @@ const root = dirname(fileURLToPath(import.meta.url));
 const outArg = process.argv.indexOf("--out");
 const OUT = outArg > 0 ? join(root, process.argv[outArg + 1]) : join(root, "site");
 const REPO = "https://github.com/michaeldippold/cmz-wiki";
+// Sources: the code and data a page's claims rest on. Linked to the game's repository at the exact commit they
+// were read from while the game's code is public; set LINK_SOURCES to false when it goes private, and every source
+// is plain text again, with nothing left pointing at a page that 404s.
+const GAME_REPO = "https://github.com/michaeldippold/cozy-medieval-zombies";
+const LINK_SOURCES = true;
+// Verification: Michael's "I have checked this page" stamps, written by the verify workflow (.github/workflows/pages.yml).
+const verified = existsSync(join(root, "verified.json")) ? JSON.parse(readFileSync(join(root, "verified.json"), "utf8")) : {};
+const NOW = Date.now();
+const daysAgo = (iso) => Math.floor((NOW - Date.parse(iso)) / 86400000);
+// When a written page's file last changed, from git (the Action checks out the whole history); null without git.
+function lastEdited(source) {
+  try { return execFileSync("git", ["log", "-1", "--format=%cI", "--", source], { cwd: root, encoding: "utf8" }).trim() || null; } catch { return null; }
+}
 const strict = process.argv.includes("--check");
 const data = loadData(root);
 const errors = [];
@@ -91,7 +105,7 @@ for (const p of pages) {
   for (const a of [].concat(p.meta.aliases || [])) byTitle.set(a.toLowerCase(), p);
 }
 // The special pages answer to [[Special:Name]] (they are made after the pages, so their addresses are known here).
-for (const [t, slug] of [["Special:Red links", "special-red-links"], ["Special:Planned notes", "special-planned-notes"], ["Special:All pages", "special-all-pages"], ["Special:Categories", "special-categories"]]) byTitle.set(t.toLowerCase(), { title: t, slug });
+for (const [t, slug] of [["Special:Verification", "special-verification"], ["Special:Red links", "special-red-links"], ["Special:Planned notes", "special-planned-notes"], ["Special:All pages", "special-all-pages"], ["Special:Categories", "special-categories"]]) byTitle.set(t.toLowerCase(), { title: t, slug });
 const redlinks = new Map(); // title -> pages linking it
 const backlinks = new Map(); // slug -> set of titles
 
@@ -118,12 +132,30 @@ for (const p of pages) {
     if (dest !== p) backlinks.get(dest.slug).add(p.title);
     return `<a href="${dest.slug}.html${hash ? "#" + slugify(hash.slice(1)) : ""}">${label}</a>`;
   });
+  text = sourcesBox(text, p);
   const { html, headings } = render(text);
   p.html = html;
   p.headings = headings;
   p.categories = [].concat(p.meta.categories || []);
   if (p.stub) p.categories.push("Stubs");
   p.summary = p.meta.summary || (html.match(/<p>([\s\S]*?)<\/p>/) || [, ""])[1].replace(/<[^>]+>/g, "").slice(0, 200);
+}
+
+// "## Sources" (optionally with a line <!-- sources at abc1234 -->) becomes a collapsed box at the foot of the page.
+// Each `path:lines` in it is linked to that commit of the game while LINK_SOURCES is on.
+function sourcesBox(text, p) {
+  const m = /^## Sources[ \t]*\n([\s\S]*?)(?=^## |^<table class="navbox"|(?![\s\S]))/m.exec(text);
+  if (!m) return text;
+  const at = (/<!--\s*sources at ([0-9a-f]{7,40})\s*-->/.exec(m[1]) || [])[1] || data.version.commit;
+  p.sourcesAt = at;
+  const body = m[1].replace(/<!--[\s\S]*?-->/g, "").trim().replace(/`((?:src|data|tools|server)\/[^`:\s]+)(?::(\d+)(?:-(\d+))?)?`/g, (all, path, a, b) => {
+    const label = `<code>${escapeHtml(path)}${a ? `:${a}${b ? `-${b}` : ""}` : ""}</code>`;
+    if (!LINK_SOURCES) return label;
+    return `<a href="${GAME_REPO}/blob/${at}/${path}${a ? `#L${a}${b ? `-L${b}` : ""}` : ""}">${label}</a>`;
+  });
+  const stale = at.slice(0, 7) !== data.version.short;
+  const note = `<p class="src-note">Read from the game at <code>${at.slice(0, 7)}</code>${stale ? `; the wiki now describes <code>${data.version.short}</code>, so line numbers may have moved` : ""}.</p>`;
+  return text.slice(0, m.index) + `<details class="sources"><summary>Sources</summary>\n\n${body}\n\n${note}\n\n</details>\n\n` + text.slice(m.index + m[0].length);
 }
 
 // ---------- special pages ----------
@@ -136,6 +168,20 @@ for (const [c, ps] of categories) special(`Category: ${c}`, `category-${slugify(
 special("All pages", "special-all-pages", `<p>${pages.length} pages: ${pages.filter((p) => p.written).length} written, ${pages.filter((p) => !p.written).length} generated from the game's data alone.</p>${list(pages)}`);
 special("Categories", "special-categories", `<ul class="columns">${[...categories.keys()].sort().map((c) => `<li><a href="category-${slugify(c)}.html">${escapeHtml(c)}</a> (${categories.get(c).length})</li>`).join("")}</ul>`);
 special("Red links", "special-red-links", `<p>Pages that are linked to but not written yet: the list of what to write next.</p><ul>${[...redlinks.entries()].sort((a, b) => b[1].size - a[1].size || a[0].localeCompare(b[0])).map(([t, from]) => `<li><strong>${escapeHtml(t)}</strong>, linked from ${[...from].map((f) => { const d = byTitle.get(f.toLowerCase()); return d ? `<a href="${d.slug}.html">${escapeHtml(f)}</a>` : escapeHtml(f); }).join(", ")}</li>`).join("")}</ul>`);
+{
+  // Verification: never verified first (written pages before generated), then the longest since a stamp.
+  const rows = pages.map((p) => {
+    const v = verified[p.title] || null;
+    const edited = p.written ? lastEdited(p.source) : null;
+    return { p, v, days: v ? daysAgo(v) : null, editedAfter: !!(v && edited && Date.parse(edited) > Date.parse(v)) };
+  }).sort((a, b) => (a.v ? 1 : 0) - (b.v ? 1 : 0)
+    || (a.v ? (b.editedAfter ? 1 : 0) - (a.editedAfter ? 1 : 0) || b.days - a.days : (b.p.written ? 1 : 0) - (a.p.written ? 1 : 0))
+    || a.p.title.localeCompare(b.p.title));
+  const never = rows.filter((r) => !r.v).length;
+  special("Verification", "special-verification", `<p>A page is verified when Michael has checked every claim on it against the game and pressed <strong>Verify</strong>. ${rows.length - never} of ${rows.length} pages verified; ${never} never. The pages most in need of a look come first: never verified, then pages edited since their stamp, then the longest since a stamp.</p>
+<table class="wikitable"><thead><tr><th>Page</th><th>Last verified</th><th>Days ago</th><th>Notes</th></tr></thead><tbody>${rows.map((r) => `<tr><td><a href="${r.p.slug}.html">${escapeHtml(r.p.title)}</a></td><td>${r.v ? r.v.slice(0, 10) : "Never"}</td><td>${r.v ? r.days : "-"}</td><td>${[r.p.written ? "" : "generated", r.editedAfter ? "edited since" : ""].filter(Boolean).join(", ")}</td></tr>`).join("")}</tbody></table>`);
+  writeFileSync(join(root, "verification.txt"), rows.map((r) => `${r.v ? `${r.days}d`.padStart(5) : "never"}  ${r.editedAfter ? "edited " : "       "}${r.p.written ? "" : "(generated) "}${r.p.title}`).join("\n") + "\n");
+}
 special("Planned notes", "special-planned-notes", `<p>Every note on the wiki about something not in the game yet. When the thing is built, its note is replaced with the real section.</p><ul>${planned.map((n) => `<li><a href="${byTitle.get(n.page.toLowerCase()).slug}.html">${escapeHtml(n.page)}</a>: ${escapeHtml(n.note)}${n.doc ? ` (docs/${escapeHtml(n.doc)})` : ""}</li>`).join("")}</ul>`);
 
 // ---------- the layout ----------
@@ -146,7 +192,7 @@ const NAV = [
 ];
 function navHtml() {
   return NAV.map(([h, ts]) => `<h3>${h}</h3><ul>${ts.map((t) => { const p = byTitle.get(t.toLowerCase()); return p ? `<li><a href="${p.slug}.html">${escapeHtml(t)}</a></li>` : `<li><a class="new" href="special-red-links.html">${escapeHtml(t)}</a></li>`; }).join("")}</ul>`).join("") +
-    `<h3>Tools</h3><ul><li><a href="special-all-pages.html">All pages</a></li><li><a href="special-categories.html">Categories</a></li><li><a href="special-red-links.html">Red links</a></li><li><a href="special-planned-notes.html">Planned notes</a></li></ul>`;
+    `<h3>Tools</h3><ul><li><a href="special-verification.html">Verification</a></li><li><a href="special-all-pages.html">All pages</a></li><li><a href="special-categories.html">Categories</a></li><li><a href="special-red-links.html">Red links</a></li><li><a href="special-planned-notes.html">Planned notes</a></li></ul>`;
 }
 function tocHtml(headings) {
   const hs = headings.filter((h) => h.level === 2 || h.level === 3);
@@ -168,7 +214,7 @@ function layout(p) {
 <header class="top"><a class="brand" href="index.html">Cozy Medieval Zombies <span>Wiki</span></a>
 <form class="search" onsubmit="return false"><input id="q" type="search" placeholder="Search the wiki" autocomplete="off" aria-label="Search the wiki"><ul id="results"></ul></form></header>
 <div class="wrap"><aside class="side">${navHtml()}</aside>
-<main class="page"><div class="page-head"><h1>${escapeHtml(p.title)}</h1>${editUrl ? `<a class="edit" href="${editUrl}">${p.written ? "Edit this page" : "Write this page"}</a>` : ""}</div>
+<main class="page"><div class="page-head"><h1>${escapeHtml(p.title)}</h1>${p.special ? "" : verifyHtml(p)}${editUrl ? `<a class="edit" href="${editUrl}">${p.written ? "Edit this page" : "Write this page"}</a>` : ""}</div>
 <article class="content">${withToc}</article>
 ${back && back.size ? `<details class="whatlinks"><summary>What links here (${back.size})</summary>${[...back].sort().map((t) => `<a href="${byTitle.get(t.toLowerCase()).slug}.html">${escapeHtml(t)}</a>`).join(" · ")}</details>` : ""}
 ${cats}
@@ -177,6 +223,14 @@ ${cats}
 <script src="search.js" defer></script>
 </body></html>
 `;
+}
+function verifyHtml(p) {
+  const v = verified[p.title];
+  const d = v ? daysAgo(v) : null;
+  const age = v ? (d === 0 ? "today" : d === 1 ? "yesterday" : `${d} days ago`) : null;
+  const cls = !v ? "never" : d > 60 ? "old" : d > 21 ? "aging" : "fresh";
+  const issue = `${REPO}/issues/new?title=${encodeURIComponent(`Verify: ${p.title}`)}&body=${encodeURIComponent(`I have checked every claim on [${p.title}](https://michaeldippold.github.io/cmz-wiki/${p.slug}.html) against the game.\n\nSubmitting this stamps the page as verified now. Only the repository's owner can verify.`)}`;
+  return `<span class="verify ${cls}"><a class="verify-btn" href="${issue}" title="Opens a GitHub issue; submit it to stamp this page verified">Verify</a><span class="verify-when">${v ? `Last verified ${age} (${v.slice(0, 10)})` : "Never verified"}</span></span>`;
 }
 function insertToc(html, toc) {
   if (!toc) return html;

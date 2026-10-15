@@ -59,3 +59,21 @@ summary: One sentence for search results and link previews.
 ## Where the facts come from
 
 The census: `census/census.md` (the automatic inventory) and `census/areas/*.md` (the fact sheets, read from the code, with file and line). **The code is the truth.** Where a game doc and the code disagree, the wiki follows the code and the disagreement goes in `census/discrepancies.md`, never into a page as a choice.
+
+## Sources
+
+Every written page ends (before its navbox) with a **Sources** section: the code and data its claims rest on, so each claim can be proved. The build turns it into a collapsed box and links each path to the game's repository at the commit named (while the game's code is public; `LINK_SOURCES` in `build.js` turns the links off).
+
+```
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/combat.js:305-357`: the swing, its cooldown and stamina
+- `data/items.json`: each weapon's numbers
+```
+
+One line per claim or group of claims, in the page's order, as `path` or `path:line` or `path:first-last`, then a colon and what it proves. The commit is the one the facts were read from (`snapshot/version.json`); when a page is rechecked against a newer game, update it.
+
+## Verifying
+
+Michael's **Verify** button on every page opens a GitHub issue titled `Verify: <page title>`; submitting it stamps the page in `verified.json` (only the repository's owner can). `Special:Verification` lists the pages most in need of a look first: never verified, edited since their stamp, then the oldest stamps. `node build.js` also writes `verification.txt`, the same list as plain text.

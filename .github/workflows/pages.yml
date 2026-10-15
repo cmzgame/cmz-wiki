@@ -1,24 +1,72 @@
 name: Build and publish the wiki
 
+# A push builds and publishes the site. An issue titled "Verify: <page title>" opened by the repository's owner
+# (the Verify button on every page opens one) stamps that page verified in verified.json, closes the issue,
+# and publishes. Pushes made by this workflow's own token do not start workflows, so the verify job and the
+# build run in the same workflow, the build after the stamp.
+
 on:
   push:
     branches: [main]
+  issues:
+    types: [opened]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+  issues: write
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
+  verify:
+    if: github.event_name == 'issues' && startsWith(github.event.issue.title, 'Verify:')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Stamp the page
+        env:
+          TITLE: ${{ github.event.issue.title }}
+          AUTHOR: ${{ github.event.issue.user.login }}
+          OWNER: ${{ github.repository_owner }}
+          NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$AUTHOR" != "$OWNER" ]; then
+            gh issue close "$NUMBER" --comment "Only the wiki's owner can verify a page." --reason "not planned"
+            exit 0
+          fi
+          PAGE="${TITLE#Verify:}"
+          PAGE="$(echo "$PAGE" | sed 's/^ *//;s/ *$//')"
+          node -e '
+            const fs = require("fs");
+            const page = process.argv[1];
+            const file = "verified.json";
+            const v = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
+            v[page] = new Date().toISOString();
+            const sorted = Object.fromEntries(Object.keys(v).sort().map((k) => [k, v[k]]));
+            fs.writeFileSync(file, JSON.stringify(sorted, null, 2) + "\n");
+          ' "$PAGE"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add verified.json
+          git commit -m "Verified: $PAGE (#$NUMBER)"
+          git push
+          gh issue close "$NUMBER" --comment "Stamped **$PAGE** verified. The site republishes in a minute or two."
+
+  build:
+    needs: verify
+    if: always() && (github.event_name != 'issues' || needs.verify.result == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -26,8 +74,10 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
   deploy:
     needs: build
+    if: always() && needs.build.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
