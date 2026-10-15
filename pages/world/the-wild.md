@@ -55,3 +55,19 @@ Only the host grows chunks, and it grows them round every player, guests include
 - [[Rocks]]
 - [[Mushrooms]]
 - [[The dead]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/maps/valley.json:4-9`, `src/map.js:915-920`: the valley's bounds; every chunk past them is wild
+- `src/map.js:16`: the chunk's size
+- `src/game.js:440`, `src/map.js:961-971`: growth round each player four chunks out; reads never grow
+- `src/map.js:242-246`, `src/map.js:278-281`, `data/maps/valley.json:5098-5120`: wild trees by density noise, the rocks' cells, and the dead per chunk
+- `src/map.js:263-273`: a rock in some cells
+- `src/map.js:301-310`: mushrooms near trees
+- `src/map.js:938-947`, `src/entities/zombie.js:36-41`: the dead placed on a hashed tile, idle
+- `src/map.js:217-222`: every roll a hash of tile and seed
+- `data/tuning.json:73`, `src/game.js:410-414`, `src/game.js:511-520`: the far dead and villagers stand still
+- `data/tuning.json:74`, `src/map.js:841-862`, `src/game.js:443-460`: unchanged wild chunks dropped when far from every player with no villager in them, the dead kept on record
+- `src/map.js:637-667`: any play change marks a chunk for keeps
+- `src/main.js:882`, `src/map.js:931`, `src/net.js:732`, `src/net.js:806`, `src/net.js:1043-1047`: only the host grows; grown and changed chunks sent whole to guests

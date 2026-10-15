@@ -49,3 +49,18 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 - [[Carrying furniture]]
 - [[Building]]
 - [[Controls]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/placement.js:402-415`: the furniture ghost centred on the cursor
+- `src/placement.js:160-175`: a built piece snapped to the nearest edge
+- `src/placement.js:253-268`: R steps the facing or swaps the footprint
+- `src/placement.js:97-113`: the put-down rules
+- `src/placement.js:24`, `src/placement.js:402-415`: the reach to put down
+- `src/placement.js:270-282`, `src/placement.js:116-119`, `src/interact.js:292-311`: a click, or E on the tile in front
+- `src/map.js:369-392`: a lit prop lights again when put down
+- `src/map.js:1495`, `src/map.js:1114-1117`: props solid by default, a solid tile never walked
+- `src/map.js:1155-1209`, `data/sprites/barrel.json`: round props block only a circle
+- `src/placement.js:25`: the build reach
+- `src/placement.js:488-508`: a guest's put-down as a command with its turns, turned back on a refusal

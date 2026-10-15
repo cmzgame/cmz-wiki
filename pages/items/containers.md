@@ -63,3 +63,30 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - [[Inventory]]
 - [[Developer chest]]
 - [[Crafting]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/chest.json`: a container prop with a loot table
+- `src/interact.js:323-345`: Search, then Open
+- `src/interact.js:43`: the search time
+- `src/items.js:76-101`: rolling a loot table; what does not fit is never made
+- `src/interact.js:314-321`: a container's grid from its table
+- `data/tuning.json:75`: the close distance
+- `src/main.js:762-767`: the container closes when you walk away
+- `src/interact.js:1015-1090`: eat, drink, wear, apply from a container; equip only from your bag; Take and Store in
+- `src/ui/inventory-panel.js:75-89`: double-click sends across
+- `src/ui/inventory-panel.js:667`: shift-click sends across, with the container rule
+- `src/inventory.js:159-173`: the one container rule
+- `data/sprites/barrel.json`: barrels roll the barrel table
+- `data/sprites/wheelbarrow.json`: the wheelbarrow rolls the dev kit
+- `data/recipes.json:125-152`: the chest and shelf recipes
+- `data/recipes.json:229-246`: the wheelbarrow recipe
+- `data/loot.json:2-4`: the chest, barrel, and body tables, their rolls and weights
+- `src/entities/character.js:139-162`: a body's grid of 6 x 6, its hands, garments, pockets, and what is lodged
+- `src/interact.js:1334-1358`: searching a body; villagers have no search entry
+- `data/wardrobes.json`: village wardrobes have no loot
+- `src/placement.js:69-75`: what can be carried
+- `data/sprites/shelf.json`: a carry flag (likewise barrel, chest, cupboard, desk, strongbox, woodpile, bookcase)
+- `data/maps/valley.json`: where the chests stand
+- `src/host.js:212-215`: a guest's search runs on the host and its panel opens

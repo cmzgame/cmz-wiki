@@ -57,3 +57,20 @@ Each player has their own health. A sleeper among players who are awake still re
 ## See also
 
 - [[Stamina]], [[Bleeding]], [[Hunger]], [[Thirst]], [[Death]], [[Moodles]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json:38`: the maximum health
+- `src/ui/hud.js:90-93`: the bar, its colours by fraction, and the current / max text
+- `data/tuning.json:11-12`: a bite's damage and the time between bites
+- `src/game.js:294-301`, `src/combat.js:134-143`: a bite through the shield guard, and the bleed and infection hooks
+- `data/combat.json:4`: the bleeding drain by stacks
+- `data/tuning.json:49-50`, `src/entities/player.js:131-132`: starving and dehydration damage, which add up
+- `src/settings.js:12`, `src/entities/zombie.js:233,296`: the dead bite only with Zombie aggro on
+- `src/entities/player.js:133-138`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), and the awake and asleep rates
+- `src/moodles.js:55-78`: hunger and thirst stage 2 begins below 35
+- `src/entities/player.js:120-126`: with Survival off the step returns before regeneration
+- `data/tuning.json:59-60`: the regeneration rates, per sim minute
+- `src/entities/player.js:102`, `data/items.json`: `eat` adds `heal`, but no food has one
+- `src/entities/player.js:184-191`: a sleeper regenerates at the sleeping rate whatever the time scale

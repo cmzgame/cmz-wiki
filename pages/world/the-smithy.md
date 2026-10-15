@@ -15,4 +15,14 @@ summary: The smithy south-east of the square by the river, with the forge and th
 
 One of the dead stands outside the smithy's open doors at the start.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:356-365`: the smithy south-east of the square by the river, the forge room and the home beside it
+- `data/maps/valley.json:3694-3778`: the forge room's stone floor, forge, anvil, grindstone, barrel, shelf, and chest; its two south doors authored open
+- `data/maps/valley.json:3723-3733`, `data/sprites/forge.json`: the forge starts unlit and burns charcoal
+- `data/maps/valley.json:3779-3827`: the home's bed, chest, and cupboard
+- `data/maps/valley.json:3831-3850`: the woodpile and the cart outside
+- `tools/mapgen/valley.py:409`, `data/maps/valley.json:5246-5249`: one of the dead outside the open doors
+
 {{navbox places}}

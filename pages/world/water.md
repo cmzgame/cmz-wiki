@@ -47,3 +47,19 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 - [[Waterskin]]
 - [[The valley]]
 - [[Player]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/floor_water.json`, `src/map.js:1114-1117`, `src/map.js:1164-1171`: wholly water is walked by nobody
+- `tools/mapgen/valley.py:154-158`: the river, the stone bridge on the high street, the ford where the drove crosses
+- `data/sprites/floor_water_shallow.json`, `src/map.js:1120-1123`, `src/entities/player.js:250`, `src/entities/movement.js:51`, `src/entities/zombie.js:329`: shallow water walked by everyone at its speed factor
+- `src/map.js:1131-1141`: paths treat shallow water as ordinary ground
+- `src/interact.js:537-572`, `src/interact.js:579-581`, `src/interact.js:729-734`: drinking and filling beside any water tile; E drinks when thirst is under 90
+- `src/interact.js:47-48`: the drink's and the fill's times
+- `src/interact.js:538`, `src/interact.js:564-568`, `data/items.json:19`: every waterskin in the bag (not the belt) filled to 100
+- `src/interact.js:42`: the reach
+- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:574-576`, `src/interact.js:614`: wells, troughs, and the font give the same actions; the well's bucket
+- `tools/mapgen/valley.py:186`, `tools/mapgen/valley.py:193`, `tools/mapgen/valley.py:197`, `tools/mapgen/valley.py:238`, `tools/mapgen/valley.py:242`, `tools/mapgen/valley.py:253`, `tools/mapgen/valley.py:303`: where the wells, troughs, and the font stand
+- `src/interact.js:550-553`, `data/tuning.json:46`: thirst set to its maximum
+- `src/interact.js:61-83`: a guest's drink or fill run on the host by the tile

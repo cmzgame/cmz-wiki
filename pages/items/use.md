@@ -39,3 +39,20 @@ A guest's Use is sent to the host with the item and the target, and the host car
 
 - [[Inventory]]
 - [[Crafting]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/interact.js:1015-1090`: Use on an item's menu
+- `src/interact.js:1095-1147`: Use on a slot's menu
+- `src/use.js:42-104`: the Use mode: the outline, the label, the next click, cancelling, no range
+- `src/ui/inventory-panel.js:476-478`: a click on an item in a panel is the target
+- `src/main.js:649-657`: a character, else a prop, else the tile
+- `src/main.js:932-938`: a click on the world applies while the panels are closed
+- `src/interactions.js:1-49`: rows by item id or tag and target; the default "Nothing interesting happens."
+- `data/interactions.json:4-5`: the two rows, both messages
+- `src/interact.js:537-581`: the well's own menu fills waterskins
+- `src/interact.js:350-380`: fires lit and fed from their menus
+- `src/use.js:81-87`: a guest's Use sent to the host
+- `src/ui/inventory-actions.js:364-392`: the host runs it as that player
+- `src/host.js:225-229`: the line goes to the guest's log

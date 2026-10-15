@@ -40,10 +40,25 @@ The three torch posts in the square start empty and give no light until someone 
 
 ## With friends
 
-Taking and mounting a torch are performed by the host for whoever asked, and the holder's state reaches every player with the changed part of the map.
+Taking and mounting a torch are performed by the host for whoever asked. The change to the holder is not marked as a change to the map, so a guest's view of the post or bracket may not update until something else changes on that tile.
 
 ## See also
 
 - [[Torch]]
 - [[Light]]
 - [[Fire]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:2`: the torch's radius
+- `src/map.js:137-150`, `src/light.js:59-64`: a bracket on a wall edge, its torch 0.3 tiles off it on its side, with the torch's radius
+- `src/light.js:191-227`: the light stopped by walls, shut doors, and shutters
+- `data/sprites/torch_post.json`, `src/map.js:181-187`: a post lit only while it holds a torch, its radius and collision circle
+- `src/interact.js:42`, `src/interact.js:742`: E's reach to a bracket
+- `src/interact.js:401-440`, `src/interact.js:157-162`: Take the torch (into a hand, else the bag), Mount the torch, and the greyed empty holder
+- `src/inventory.js:125-133`: a torch to mount is found in the hands, the belt, or the bag
+- `data/maps/valley.json:2270-2281`, `data/maps/valley.json:2347-2352`, `data/maps/valley.json:4868-4873`: the chapel's two, the crypt's one, and the shut cottage's one start empty
+- `data/maps/valley.json:1900-1905`, `data/maps/valley.json:3918-3923`: the inn's and the toll house's torches outside
+- `tools/mapgen/valley.py:200-201`: the square's three posts placed with no torch
+- `src/interact.js:61-83`: a guest's take or mount run on the host by address

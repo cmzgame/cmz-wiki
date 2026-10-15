@@ -20,4 +20,15 @@ The stab lasts about {{n items.spear.weapon.kills}} kills (see [[Durability]]); 
 
 {{item-sections spear}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json`: the spear: main hand, `noDual`, the stab's `weapon` block, the `thrown` block
+- `src/items.js:112-133`: refused beside another weapon; a shield or torch allowed
+- `src/combat.js:37`, `src/combat.js:343`: the stab's default knockdown chance
+- `src/player-controller.js:39-45`: middle or Q throws; no brace
+- `src/archery.js:475`, `src/archery.js:556-559`: the spear thrown with the bow's draw, leaving the hand empty with its wear
+- `src/archery.js:244-259`: damage by draw, never a knockdown, the break roll, lodging or lying where it fell
+- `src/entities/character.js:139-162`: a lodged spear comes out on the search
+
 {{navbox weapons}}

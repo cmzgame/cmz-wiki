@@ -11,4 +11,13 @@ An **iron bar** is smelted from [[Iron ore]] at the [[Forge]], and is what the [
 
 {{item-sections iron_bar}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:42`: the iron bar
+- `data/recipes.json:247-262`: smelted from ore at the forge
+- `data/recipes.json:263-421`: the anvil's recipes take it
+- `data/recipes.json:229-246`: the wheelbarrow takes one
+- `data/loot.json`: no table, the dev chest's included, holds ore, charcoal, or bars
+
 {{navbox items}}

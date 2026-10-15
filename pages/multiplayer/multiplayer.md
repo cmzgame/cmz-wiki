@@ -70,3 +70,24 @@ The {{n census.counts.rules}} world rules above, set by the host.
 - [[Worlds]], [[Saving]], [[Identities]], [[Characters]]
 - [[Hosting]], [[Joining]], [[Dormancy]], [[Server worlds]]
 - [[Log and chat]], [[Screens]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/save.js:143-164`, `src/main.js:558-576`: a world of the browser, opened and closed to friends as a switch
+- `src/net.js:712`, `src/net.js:717-824`: the host runs the world and sends it every `FRAME_EVERY` steps; a guest's walk predicted and corrected
+- `src/net.js:1156-1193`: a guest's say, act, item, craft, place, and use commands, performed on the host
+- `src/ui/screens.js:724-736`: Open to friends shows the code
+- `src/main.js:534-555`: Join a game takes the code
+- `server/relay.js`, `src/net.js:181-337`: the relay passes messages between host and guests
+- `src/host.js:30`, `src/host.js:54-80`: the browsers a world remembers by hash, at most `MAX_OWNERS`, the next refused as full
+- `src/rules.js:109-119`, `src/ui/screens.js:373-382`, `server/world.js:337-344`: the five world rules, in the save, greyed for a guest, set by a server world's owner
+- `src/main.js:667-670`, `src/ui/screens.js:663-665`, `src/main.js:1063-1084`: no screen pauses a world on the wire; "Menu"; your player fed an idle input
+- `src/main.js:880`, `src/loop.js:66-74`: hit-stop off on the wire
+- `src/main.js:1605`, `src/main.js:1620-1625`, `src/loop.js:138-186`: a hidden tab keeps a shared world running; the host's tab title
+- `src/game.js:257-264`, `src/main.js:1464-1465`, `data/tuning.json`: time fast only when every living player sleeps, `player.sleepTimeScale`, the message
+- `src/net.js:109`, `src/net.js:619-636`, `src/host.js:95-101`: the grace and dormancy
+- `src/main.js:130-209`: stepping away
+- `src/ui/names.js:10-35`, `src/ui/screens.js:753-768`: other players' names in sight, never your own, no Settings row to hide them
+- `src/ui/log.js`, `src/ui/speech.js`: talking
+- `src/ui/screens.js:785-791`, `src/main.js:869-875`: the dead screen, a guest's from the host

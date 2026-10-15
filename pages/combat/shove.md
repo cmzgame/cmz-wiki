@@ -40,3 +40,12 @@ A guest's shove is not shown ahead on their own screen: the host performs it fro
 
 - [[Combat]]
 - [[Stagger and knockdown]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/combat.js:376-394`: the shove: the wedge, line of sight, downed targets skipped, multi-hit, no damage, stagger forced with `interrupts`
+- `data/combat.json`: the `shove` numbers
+- `src/combat.js:362-372`: wear only from weapon hits
+- `src/player-controller.js:53`: performed on the host, not predicted on a guest
+- `src/settings.js:19`: Multi-hit, off by default

@@ -56,3 +56,16 @@ The clock belongs to the host. A guest's clock is set from every frame the host 
 - [[Sleep]]
 - [[Fire]]
 - [[The dead]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/clock.js:5-19`, `src/map.js:84`: the day's length, the game hour, the start hour, the phases' hours and brightness
+- `src/clock.js:86-94`, `src/ui/hud.js:118-122`: the clock's "Day N, HH:MM"
+- `src/clock.js:60-66`, `src/clock.js:83-85`: the phases and the night factor
+- `src/light.js:113-149`: the sky is the outdoor ambient; rooms take theirs from fires and openings
+- `src/entities/zombie.js:232-237`, `src/entities/zombie.js:295-311`: the dead's sight by light, and flames seen only at night
+- `src/map.js:87-103`: fires burn by game hours
+- `data/tuning.json:57`, `src/game.js:254-264`: the world's speed while every living player sleeps
+- `src/main.js:909-910`, `src/clock.js:41-44`: the hour keys, within the day
+- `src/net.js:1040`: a guest's clock set from every frame

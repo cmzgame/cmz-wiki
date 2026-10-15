@@ -37,3 +37,21 @@ Each browser has its own character in a friend's world. The world knows whose is
 ## See also
 
 - [[Identities]], [[Worlds]], [[Player]], [[Death]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/save.js:143-164`: a world keeps its own characters; the index row names my character
+- `src/identities.js:38-72`: the name and look are stamped from an identity at creation
+- `src/ui/screens.js:63`: `CREATION_STEPS`, two steps
+- `src/ui/screens.js:277`: Next on the first step needs an identity chosen
+- `src/ui/screens.js:301-320`: the identity step (Choose, Edit, New identity), the placeholder second step, Back, and the last button's words
+- `src/ui/screens.js:631-644`: Into the valley or Join as this
+- `src/ui/screens.js:737-747`: the pause menu's Character screen: the name, "A survivor of", the figure, read only
+- `src/ui/screens.js:785-791`: the dead screen, its words and its two buttons
+- `src/main.js:291-319`: New character: creation again and a new survivor at the spawn of the same world
+- `src/main.js:335-349`: Leave world returns to the title
+- `src/ui/screens.js:474-485`: a dead character's row, "Name died", and its New character button
+- `src/identities.js:77-98`, `src/host.js:54-80`: a world knows each browser's character by a hash of the browser's id
+- `src/host.js:95-101`: a returning browser's dormant character comes back where it stood
+- `src/ui/screens.js:634`: "Your survivor there died. A new one, from any identity."

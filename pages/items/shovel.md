@@ -12,4 +12,13 @@ The **shovel** is a tool made at the [[Workbench]] from a [[Stick]] and a [[Plan
 
 {{item-sections shovel}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/recipes.json:57-75`: the shovel from a stick and a plank
+- `data/recipes.json:23-37`: sticks from a plank
+- `data/items.json:4`: planks from a log
+- `data/items.json:38`: the shovel: either hand, a weapon, its kills, its unused verb
+- `src/items.js:27-37`: wear per hit from kills
+
 {{navbox items}}

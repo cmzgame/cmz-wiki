@@ -37,3 +37,14 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 - [[The dead]]
 - [[Inventory]]
 - [[Archery]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/entities/zombie.js:113-123`, `src/entities/zombie.js:357-364`: the fall, then a still body
+- `src/entities/character.js:139-185`: a body as a container: worn clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped
+- `src/interact.js:43`, `src/interact.js:1333-1355`: the first search's time and the pockets rolled
+- `data/wardrobes.json`: the dead's pockets
+- `src/game.js:524-535`: corpses leave the thinking list
+- `data/loot.json`: the `body` table and its rolls
+- `src/archery.js:244-259`: arrows and spears lodge in a body hit

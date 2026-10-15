@@ -19,4 +19,13 @@ The [[Apprentice]] stands in the storehouse.
 
 One of the dead starts inside the house, and another in the storehouse with the Apprentice.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:305-306`: the merchant's house west of the nobles' street
+- `data/maps/valley.json:2861-3061`: the stone house and its partitions: the living room (fireplace, table, chairs), the counting room (desk, strongbox, bookcase), the bedroom; doors east and south
+- `data/maps/valley.json:3062-3176`: the fenced yard with its east gate, the cart, and the wooden storehouse with shelves, barrels, chests, and a cupboard
+- `data/maps/valley.json:5654-5662`: the Apprentice in the storehouse
+- `tools/mapgen/valley.py:410`, `data/maps/valley.json:5262-5265`, `data/maps/valley.json:5266-5269`: one of the dead in the house, one in the storehouse
+
 {{navbox places}}

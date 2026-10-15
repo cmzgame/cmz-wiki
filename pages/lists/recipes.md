@@ -8,4 +8,10 @@ Every recipe the game has, generated from its data. Every recipe is known from t
 
 {{recipe-table}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/recipes.json`: every recipe by station, its materials, output, and time (the table)
+- `src/stations.js:32-56`: the recipes loaded whole, with no unlocking
+
 {{navbox making}}

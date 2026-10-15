@@ -36,7 +36,7 @@ The host's clock is the world's clock.
 
 ### Closing and leaving
 
-**Close to friends** ends the session for everyone in: guests are sent back to their title screen, told the host closed the world, and their characters go dormant in the save. **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same.
+**Close to friends** ends the session for everyone in: guests are sent back to their title screen, told the host closed the world. **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same, and also makes their characters dormant in the save.
 
 ## Numbers
 
@@ -49,3 +49,26 @@ The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggr
 ## See also
 
 - [[Joining]], [[Multiplayer]], [[Server worlds]], [[Dormancy]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/main.js:558-576`: Open to friends as a switch, the code kept with the world and opened again when next played, the opening and closing messages
+- `src/ui/screens.js:724-736`, `src/ui/screens.js:115-123`: the host screen: the code, Copy, who is in, Open or Close
+- `src/net.js:91-100`: the code's shape, two tree words and four characters
+- `src/main.js:1577-1582`: a taken code retried, then cleared so the next opening draws a new one
+- `src/ui/screens.js:732`: without a relay, only another tab of the same browser
+- `src/main.js:667-670`: a world on the wire never pauses
+- `src/ui/screens.js:656-667`, `src/main.js:579-593`: the pause menu's first line
+- `src/net.js:541`, `src/net.js:626`: "Name joined." and "Name left."
+- `src/host.js:100`, `src/host.js:153-154`: saves on a join, a leave, and dormancy
+- `src/main.js:1605`, `src/main.js:1620-1625`, `src/loop.js:138-186`: a hidden host keeps running and renames its tab
+- `src/net.js:909-912`: "The host's game has gone quiet."
+- `src/rules.js:109-119`, `src/net.js:815`: the five world rules, sent to guests when they change
+- `src/ui/screens.js:373-382`, `src/main.js:591`: a guest's rows greyed as "(the host's)"
+- `src/net.js:803`, `src/net.js:1040`: the host's clock goes to every guest
+- `server/relay.js:840-852`, `src/main.js:1567`: closing sends every guest "The host closed the world."
+- `src/net.js:149-180`: closing to friends only closes the wire; it makes no guest dormant
+- `src/ui/screens.js:198-203`, `src/main.js:335-349`: Leave world asks a host with guests, makes them dormant, saves, and leaves
+- `src/host.js:30`, `src/host.js:74`: `MAX_OWNERS`, the browsers a world remembers
+- `src/settings.js:12-22`: the rules' defaults

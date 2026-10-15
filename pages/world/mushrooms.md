@@ -22,3 +22,12 @@ Mushrooms do not block anyone: you, the dead, and villagers walk straight throug
 - [[Gatherables]]
 - [[Trees]]
 - [[The wild]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/maps/valley.json:5597-5608`, `tools/mapgen/valley.py:399`: five kinds equally, the chance a tile, within 2 tiles of a tree
+- `src/map.js:1783-1796`: inside the valley only on plain grass with nothing authored
+- `src/map.js:301-310`: the offset in the tile, and the roll by tile and seed
+- `data/sprites/mushroom_0.json`: `interactable: true`, `carry: false`
+- `src/interact.js:1240-1272`, `src/game.js:505-519`: a click and anyone walking through sway them

@@ -13,4 +13,12 @@ summary: Ore smelted into iron bars at the forge. Not found anywhere in the vall
 
 {{item-sections iron_ore}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:41`: iron ore
+- `data/recipes.json:247-262`: smelted into bars at the forge
+- `data/loot.json`: no table, the dev chest's included, holds it
+- `data/items.json:35`: the pickaxe's `mine` verb, read by nothing in the code
+
 {{navbox items}}

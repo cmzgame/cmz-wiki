@@ -68,3 +68,30 @@ A guest's tap and hold of E are sent with its input and carried out by the host,
 - [[Fences]], whose gates are doors you can see through
 - [[Sight]]
 - [[Controls]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/map.js:490-500`: a wall record with its kind and state
+- `src/map.js:568-573`: a closed door blocks bodies
+- `src/map.js:1019-1032`: what a door and shutters pass of light and sight
+- `src/interact.js:443-472`: E and the menu open and close doors and shutters from either side
+- `src/interact.js:42`: E's reach
+- `src/map.js:1076-1081`: an open doorway passes across its whole width
+- `src/map.js:1211-1230`, `src/map.js:1260-1305`: the slide towards an open doorway
+- `src/entities/zombie.js:510-575`, `src/map.js:536-565`: the dead break closed doors and never open them
+- `src/map.js:568-573`: no body walks through a window
+- `src/interact.js:960-965`: hold E to climb, and the two refusals
+- `src/interact.js:49`: the hold time
+- `data/tuning.json`: `player.climbTime`; `src/entities/player.js:81-89`: the climb to the far tile
+- `src/combat.js:187`, `src/archery.js:523`, `src/game.js:274`: no swing or bow during a climb, and death ends it
+- `src/map.js:576-578`: what makes a window climbable
+- `src/entities/player.js:74-79`: no climbing while carrying
+- `src/interact.js:846-849`: hold E looks at the single nearest opening
+- `src/light.js:29`, `src/light.js:124-131`: a room's daylight from its openings
+- `src/map.js:551-559`: what a broken door and broken shutters become
+- `src/placement.js:186-187`: nothing built into the gap
+- `src/interact.js:458-459`: the menu's broken entries
+- `data/build.json`: the door and window in the palette
+- `src/map.js:432-433`: door and shutter health
+- `src/interact.js:934-990`, `src/interact.js:469`: a guest's E performed by the host, the change reaching guests and the save

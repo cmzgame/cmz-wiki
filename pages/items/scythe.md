@@ -12,4 +12,12 @@ The **scythe** is a tool made at the [[Anvil]] from an [[Iron bar]] and [[Stick|
 
 {{item-sections scythe}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/recipes.json:342-361`: the scythe from a bar and two sticks, with a hammer
+- `data/loot.json`: no table holds the scythe or iron bars
+- `data/items.json:37`: the scythe: either hand, a weapon, its kills, its unused verb
+- `src/items.js:27-37`: wear per hit from kills
+
 {{navbox items}}

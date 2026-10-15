@@ -34,3 +34,12 @@ Crops do not block anyone. You, the dead, and villagers walk through them, and e
 - [[Gatherables]]
 - [[Your cottage]]
 - [[Hoe]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/crop_cabbage_0.json` (and the other 14 `crop_*.json`): five crops at stages 0 to 2, `interactable`, `furrows`, `carry: false`
+- `src/map.js:1801-1817`: a crop's rows follow its soil's furrows
+- `src/interact.js:1240-1272`, `src/game.js:505`, `src/game.js:514`, `src/game.js:519`: a click sways them, and players, the dead, and villagers brush through them
+- `tools/mapgen/valley.py:185`, `tools/mapgen/mapgen.py:189-198`: the cottage plot, potatoes and cabbages at stages 1 and 2, placed `solid: false`
+- `data/maps/valley.json:1300-1610`: the 36 crops, the valley's only ones

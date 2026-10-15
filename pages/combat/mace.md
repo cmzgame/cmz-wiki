@@ -23,4 +23,11 @@ It may be held in either hand.
 
 {{item-sections mace}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json`: the mace: either hand, its `weapon` block (`staggerChance`, `interrupts`, `knockdown`, `kills`)
+- `src/entities/zombie.js:142-152`: `interrupts` cancels a bite under way
+- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance the mace overrides
+
 {{navbox weapons}}

@@ -10,4 +10,13 @@ summary: The forge's fuel. Not found anywhere in the valley yet.
 
 {{item-sections charcoal}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:3`: charcoal: a fuel material, its stack
+- `data/sprites/forge.json`: the forge burns charcoal
+- `data/loot.json`: no table, the dev chest's included, holds charcoal
+- `data/recipes.json`: no recipe makes charcoal
+- `data/maps/valley.json`: the forge starts cold
+
 {{navbox items}}

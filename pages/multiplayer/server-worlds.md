@@ -50,3 +50,22 @@ A server world is made for friends: nobody has to keep a browser open for the ot
 ## See also
 
 - [[Worlds]], [[Hosting]], [[Joining]], [[Saving]], [[Multiplayer]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `server/world.js`, `server/relay.js:73-110`: a world on the server, run while anyone is in it, held still when empty
+- `server/relay.js:777-797`: a guest's join wakes a sleeping world
+- `src/ui/screens.js:474-479`, `src/main.js:1372`: Move to the server on a browser world not in play
+- `src/ui/screens.js:572-585`, `src/main.js:380-400`, `src/identities.js:122-127`: the creator key asked once, kept, and forgotten when wrong
+- `server/relay.js:282-335`, `src/ui/screens.js:586-596`: the upload checked, a code and an owner key minted, the key shown once; the browser's copy a marker
+- `src/main.js:1345-1352`, `src/net.js:829-906`: Play joins it like a friend's world
+- `server/world.js:126`, `server/world.js:141-160`: saved as played and at every join, leave, dormancy, and death
+- `src/main.js:505-531`, `src/ui/screens.js:705-723`, `server/relay.js:346-359`: A world of mine on the server, and a new owner key with the creator key
+- `server/relay.js:303-318`: the owner's character filed under `owner`
+- `src/ui/screens.js:209-242`, `src/ui/screens.js:668-723`, `src/main.js:458-531`: the owner's screen and its powers
+- `server/relay.js:346-473`, `server/world.js:258-275`, `server/world.js:327-359`: change the code, the rules, remove, unbar
+- `src/main.js:1564`: "The world's owner removed you from it."
+- `src/main.js:406-453`, `server/relay.js:445-473`, `server/relay.js:546-559`: bringing it home in two phases, Finish bringing it home, the wait
+- `server/relay.js:783`: a join to a world on its way home told "moving"
+- `server/world.js:97-99`: a server world's rules from its own meta, set by the owner

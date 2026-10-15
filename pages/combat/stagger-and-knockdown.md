@@ -51,3 +51,18 @@ Any blow in hand on a zombie that is down or getting up is a finisher: {{n comba
 - [[Combat]]
 - [[Weapons]]
 - [[The dead]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/entities/zombie.js:142-152`, `src/entities/zombie.js:190-196`: stagger by chance, immunity, interrupts
+- `data/items.json`: each weapon's `staggerChance`, `interrupts`, and the mace's `knockdown`
+- `data/combat.json`: `stagger.chance`, `stagger.immunity`, `shove.*`, `fists.knockdown`, `finisher.mult`
+- `data/tuning.json`: `zombie.stagger`, `zombie.downTime`, `zombie.getUpTime`
+- `src/entities/zombie.js:105`, `src/entities/zombie.js:149-150`: the stagger's length and the immunity window
+- `src/combat.js:386`: the shove always interrupts
+- `src/entities/zombie.js:75-85`: a shield stagger ignores immunity and cancels the bite
+- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `src/archery.js:247`: arrows and thrown spears never floor
+- `src/entities/zombie.js:131-141`, `src/entities/zombie.js:166-189`: a knockdown cancels a bite and a breach; getting up; back to the chase or idle
+- `src/combat.js:329-356`: the finisher on a target down or rising

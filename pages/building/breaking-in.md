@@ -74,3 +74,23 @@ A guest sees a break-in only as each board, door, or set of shutters gives. The 
 - [[Boards]]
 - [[Rooms]]
 - [[Settings]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/entities/zombie.js:202-215`, `src/entities/zombie.js:488-506`: a breach starts when the path fails
+- `src/entities/zombie.js:233`, `src/settings.js:12`: hunting needs Zombie aggro, off by default
+- `src/map.js:598-624`: the room chosen (out of its own, else into the target's) and its nearest opening on the zombie's side
+- `data/tuning.json`: `zombie.breachReach`; `src/entities/zombie.js:530-540`: the reach to the edge's midpoint
+- `src/map.js:536-565`: the order of the stack: near boards, the leaf, far boards
+- `data/tuning.json`: `zombie.breachDamage` and `zombie.cooldown`; `src/entities/zombie.js:548-575`: the hit after the attack animation, then the cooldown
+- `data/poses.json`: the zombie attack, 4 frames at 12 fps (the times are inferred from it)
+- `src/map.js:431-434`: the health of a board, shutters, and a door
+- `src/map.js:563`: the chunk marked changed only when something gives
+- `src/map.js:551-559`: a broken door stays open, broken shutters stay open
+- `src/placement.js:186-187`: nothing can be built into the gap
+- `src/entities/zombie.js:217-222`, `src/entities/zombie.js:372-387`, `src/entities/zombie.js:542-546`: walking or climbing through once open
+- `data/tuning.json`: `zombie.climb`; `src/entities/zombie.js:92-99`: a hit cuts the climb short at the nearer end
+- `src/map.js:568-573`: windows never pass a walking body, so a chase never paths through one
+- `src/entities/zombie.js:510-575`: giving up on a bite, lost aggro, or a moved target
+- `src/rules.js:9-37`: Zombie aggro is a world rule, the host's on a guest

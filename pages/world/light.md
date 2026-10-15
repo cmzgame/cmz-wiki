@@ -82,3 +82,24 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - [[Torch posts and brackets]]
 - [[Rooms]]
 - [[Openings]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/light.js:415-427`: one light level: ambient, the static map, carried lights
+- `src/light.js:27`, `src/light.js:113-115`, `src/clock.js:7`: the outdoor cap and the night sky
+- `src/map.js:1341-1393`: rooms found by flood fill
+- `src/light.js:137-144`, `data/sprites/fireplace.json`, `data/sprites/hearth.json`: a room with a lit fireplace or hearth fully lit; the oven, forge, and campfire light no room
+- `src/light.js:26-31`, `src/light.js:124-144`, `src/map.js:1019-1028`: an unlit room's share of daylight through its openings, capped below the day; shut openings leave the night level; closed shutters a sliver
+- `src/light.js:21-23`, `src/light.js:65-95`: pools through openings, their offset and minimum difference; fence gates bound no room
+- `src/light.js:178-183`: the pools draw no dead
+- `src/light.js:51-64`, `src/light.js:191-227`: fires' and mounted torches' pools, stopped by walls and shut openings
+- `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/items.json:2`, `data/sprites/torch_post.json`, `data/sprites/pumpkin.json`: each fire's radius
+- `src/game.js:552-566`, `data/tuning.json:76-77`: the carried torch in hand, two in hand, on the belt; none from the bag or the ground
+- `src/interact.js:984-991`: the T key
+- `src/light.js:296-301`: flicker only in the picture
+- `src/visibility.js:10-67`: darkness does not shorten your sight
+- `src/light.js:18`: the light grid's resolution
+- `data/tuning.json:5-7`, `src/entities/zombie.js:232-237`, `src/entities/zombie.js:295-311`: the dead's light-scaled sight and flame range
+- `src/settings.js:12`: Zombie aggro off by default
+- `src/net.js:1145-1152`, `src/net.js:814`, `src/light.js:161-164`: a guest rebuilds the light; each player's carried light sent when it changes

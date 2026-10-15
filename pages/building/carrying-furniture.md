@@ -56,3 +56,22 @@ The piece you carry is part of your character, so a save and a join keep it, and
 - [[Building]]
 - [[Workbench]]
 - [[Inventory]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/interact.js:259-312`: Pick up with both hands empty, and the carry menu (Put down, Walk here)
+- `src/entities/character.js:70-71`: the carried prop, contents and all, on the character
+- `src/entities/player.js:328`: no sprint, swing, bow, or block while carrying
+- `src/entities/player.js:74-79`: no climbing while carrying
+- `src/main.js:698-736`: no bag, character screen, building, or removal; "Your hands are full."
+- `src/placement.js:270-282`, `src/placement.js:253-268`: put down with a click, R turns it
+- `src/placement.js:116-119`, `src/interact.js:292-311`: E sets it on the tile in front
+- `src/game.js:276-285`: on death, set down on a free tile within 2
+- `src/placement.js:69-75`: the carry rule, the sprite's flag first, then trees, the well, and fires
+- `data/sprites/*.json`: each sprite's `carry` flag
+- `src/placement.js:320-363`: anything carryable can be removed
+- `src/stations.js:173-192`: a prop recipe set on a free tile near the station
+- `data/sprites/chest.json`, `data/sprites/workbench.json`: the chest carryable, the workbench not
+- `src/placement.js:24`: the reach to put down
+- `src/render/entities.js:233`: the carried piece drawn over the head

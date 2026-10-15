@@ -22,4 +22,12 @@ It does not interrupt a bite already under way.
 
 {{item-sections sword}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/loot.json`: the sword in the `chest` table
+- `data/items.json`: the sword's `weapon` block, and the other one-handers' `kills` it outlasts
+- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `src/entities/zombie.js:142-152`: no `interrupts`, so a bite under way goes on
+
 {{navbox weapons}}

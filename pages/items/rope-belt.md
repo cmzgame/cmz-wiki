@@ -12,4 +12,13 @@ Empty, it can be carried in a bag; with anything on it, it cannot.
 
 {{item-sections belt}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:29`: the rope belt's slots
+- `src/game.js:103-116`: every new character wears one
+- `data/items.json:30`: the good belt's slots
+- `data/loot.json:2`: the good belt in the chest table
+- `src/inventory.js:159-173`: a belt goes in a bag only empty
+
 {{navbox items}}

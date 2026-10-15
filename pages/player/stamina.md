@@ -55,3 +55,16 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 ## See also
 
 - [[Health]], [[Combat]], [[Shield]], [[Tiredness]], [[Player]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/ui/hud.js:95-101`: the bar, its percent, and the winded class
+- `data/tuning.json:39-43`: the maximum, the sprint multiplier, the drain, the recovery, and the winded threshold
+- `src/entities/player.js:325-335`: sprinting, its drain, winded, and the recovery
+- `src/entities/player.js:328`: no sprint when still, winded, carrying, guarding, or Exhausted
+- `data/combat.json:2,9`: the fists' and the shove's stamina
+- `data/items.json:34`, `src/combat.js:134-143`: a blocked blow costs the shield's stamina
+- `src/combat.js:48,311-314,345`: half damage at zero stamina; an emptying swing or shove leaves you winded
+- `src/entities/player.js:143-148`, `data/tuning.json:61-62`: no recovery with the guard up; the needs' multipliers, multiplied together
+- `src/entities/player.js:120-126`: Survival off holds the needs full, so they never slow it

@@ -12,4 +12,14 @@ Wear it from a chest's grid or from the floor: the old bag is dropped at your fe
 
 {{item-sections rucksack}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:32`: the rucksack: worn on the back, grid 8 x 5
+- `data/items.json:31`: the burlap sack's smaller grid
+- `data/loot.json:2`: the rucksack in the chest table
+- `src/interact.js:1015-1090`: Wear from a container's grid
+- `src/interact.js:168-189`: Wear from the floor; the old bag dropped at your feet
+- `src/inventory.js:159-173`: a bag goes in another only empty
+
 {{navbox items}}

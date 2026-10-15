@@ -47,3 +47,21 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 ## See also
 
 - [[Food]], [[Thirst]], [[Tiredness]], [[Moodles]], [[Health]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json:45,47`: the maximum and the drain time
+- `src/entities/player.js:127`: the drain, every step, awake or asleep
+- `src/map.js:84`: a game hour is 30 seconds
+- `src/entities/player.js:98-103`: eating raises hunger and thirst, capped
+- `src/interact.js:1046-1048`: the "Eat" entry uses one from the stack
+- `src/interact.js:994-1004`: the belt key eats a food on the belt
+- `data/tuning.json:52`, `src/entities/player.js:363-365`: the held-out pose
+- `src/moodles.js:55-61`: the hunger stages and their thresholds
+- `src/entities/player.js:134-135`: Hungry stops regeneration
+- `src/entities/player.js:143-148`, `data/tuning.json:61`: Very hungry slows stamina recovery
+- `src/entities/player.js:131`, `data/tuning.json:49`: starving damage
+- `data/items.json:16-17,50`: bread, apple, and stew
+- `src/ui/inventory-actions.js:216,343-351`: a guest's menu choice is run by the host
+- `src/entities/player.js:120-126`: Survival off holds hunger full

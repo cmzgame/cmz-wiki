@@ -15,4 +15,12 @@ summary: The weaver's house on the west road, with the loom and the dye vats.
 
 One of the dead stands in the yard at the start.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:346-355`: the weaver west of the square on the west road, the vats in the yard
+- `data/maps/valley.json:3536-3649`: a wooden house; the loom and spinning wheel; the partitioned room with a bed, chest, and fireplace; the door south
+- `data/maps/valley.json:3653-3682`: three dye vats and a woodpile east of the house
+- `tools/mapgen/valley.py:409`, `data/maps/valley.json:5258-5261`: one of the dead in the yard
+
 {{navbox places}}

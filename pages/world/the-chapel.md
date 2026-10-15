@@ -19,4 +19,18 @@ The [[Priest]] stands inside.
 
 The graveyard is full of the dead at the start, among the headstones on both sides. Some of them stand inside the chapel itself, at its south end by the door.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:244-258`: the chapel at the top of the nobles' street, inside the graveyard
+- `data/maps/valley.json:2115-2283`: stone walls; the pews, altar, lectern, chest, cupboard, and font; the partition in the north-east corner; the door south, two windows west, one east
+- `data/sprites/font.json`, `src/interact.js:574-576`, `src/interact.js:614`: the font is drunk from like a well
+- `data/maps/valley.json:2270-2281`: both brackets empty
+- `tools/mapgen/valley.py:246`, `tools/mapgen/valley.py:259-265`: the graveyard's fence with its south gate, and the headstones either side of the chapel
+- `data/sprites/wall_fence.json`, `src/map.js:1019-1028`: a fence is seen over and not walked through
+- `tools/mapgen/valley.py:266`, `tools/mapgen/valley.py:271-272`: the crypt in the graveyard's north-east corner, the priest's house to the east
+- `data/maps/valley.json:5636-5644`: the Priest inside
+- `tools/mapgen/valley.py:408`: the graveyard's dead
+- `data/maps/valley.json:5234-5237`, `data/maps/valley.json:5238-5241`: two of them inside the chapel at its south end
+
 {{navbox places}}

@@ -80,3 +80,31 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - [[Placement]]
 - [[Carrying furniture]]
 - [[Workbench]], which makes furniture
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
+- `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
+- `src/main.js:643`, `src/main.js:891`: the Build entry at the foot of every menu
+- `data/items.json`: the log's `splitsInto`; `src/interact.js:1053-1066`: splitting with no tool
+- `src/main.js:698-708`: N, refused while carrying or with the bag open
+- `src/placement.js:160-175`: the ghost snapped to the nearest edge
+- `src/placement.js:186-197`: the red reasons in order
+- `src/placement.js:25`, `src/placement.js:27`: the build reach and the edge clearance
+- `src/map.js:453-461`: what "No room" means for a wall, a door, a window
+- `src/placement.js:417-427`, `src/placement.js:556-582`: the timed build, spent and rechecked at the end, cancelled by moving
+- `src/placement.js:566`: the build lasts within the reach plus 0.6
+- `src/placement.js:466`: one build at a time
+- `src/map.js:1395-1457`: rooms refound on either side of a changed edge
+- `src/main.js:712-721`: X, refused while carrying or with the bag open
+- `src/placement.js:26`, `src/placement.js:365-371`: the removal reach
+- `src/placement.js:320-363`: what lights up: carryable props and built walls
+- `src/placement.js:69-75`: what can be carried
+- `src/map.js:469`: built walls marked `built`
+- `src/placement.js:389-400`: a removed container spills its bag, nothing refunded
+- `src/interact.js:314-320`: a container's bag made only on first search (the empty spill is inferred)
+- `src/map.js:479-488`: a removed wall takes its boards and bracket
+- `src/placement.js:509-551`: a guest's build and remove as commands, rechecked on the host
+- `src/rules.js:14`, `src/placement.js:124-127`: Free building makes costs free, the time stays
+- `src/rules.js:16-37`: Free building is a world rule, the host's on a guest

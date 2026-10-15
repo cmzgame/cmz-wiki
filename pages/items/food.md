@@ -60,4 +60,23 @@ Eating is sent to the host and done for that player; each player has their own h
 - [[Cooking]], [[Oven]]
 - [[Waterskin]]
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json:45-47`: hunger's most and its drain time
+- `src/entities/player.js:98-103`: eating adds hunger and thirst, capped
+- `src/entities/player.js:127`: hunger drains
+- `src/interact.js:1015-1090`: Eat from your bag or a container
+- `src/inventory.js:237-260`: food on the belt eaten by its key
+- `src/entities/player.js:133-138`: health comes back while fed and watered; no food carries `heal`
+- `src/game.js:103-116`: the starter bread and apples
+- `data/loot.json:2-4`: bread and cheese in chests, apples in barrels, apples and bread in the dead's pockets
+- `data/recipes.json:422-493`: the cooking and oven recipes
+- `data/loot.json`: no table gives potatoes, cabbages, garlic, grain, or flour
+- `data/items.json:16-18`: bread, apple, cheese
+- `data/items.json:43-51`: the other foods
+- `src/ui/inventory-actions.js:343-354`: a guest's Eat runs on the host
+- `src/settings.js:22`: Survival, on by default
+- `src/entities/player.js:121-126`: Survival off: no draining
+
 {{navbox items}}

@@ -32,3 +32,22 @@ Wearing and taking off are sent to the host and carried out for that player, and
 ## See also
 
 - [[Inventory]], [[Hands]], [[Belt]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/inventory.js:9`: the seven worn slots
+- `data/items.json:23-33`: each garment's `wear` slot
+- `src/interact.js:1015-1090`: Wear on an item's menu, in your bag or a container
+- `src/interact.js:168-189`: Wear on a garment on the floor, and swapping bags
+- `src/ui/inventory-actions.js:66`: a drag onto the wrong slot is refused
+- `src/interact.js:901-923`: wearing over a filled slot swaps; "No room to take the old one off."
+- `src/interact.js:1108-1122`: Take off: to the bag or the floor; the bag is set down
+- `data/items.json:23-30`: belts give slots; every garment but the belts and bags is tagged cloth
+- `data/recipes.json`: the recipes that take any cloth
+- `src/game.js:103-116`: the starter clothes, the head bare
+- `data/loot.json:2`: gloves and the hood in the chest table
+- `data/wardrobes.json`: what the dead wear
+- `src/entities/character.js:139-162`: a body's garments laid out on its grid
+- `src/ui/inventory-actions.js:200-358`: a guest's wear and take-off go to the host as commands
+- `src/net.js:223`: what each character wears travels in its record

@@ -71,3 +71,30 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - [[Health]], [[Stamina]], [[Hunger]], [[Thirst]], [[Tiredness]], [[Sleep]]
 - [[Bleeding]], [[Infection]], [[Death]], [[Survival]]
 - [[Moodles]], [[Inventory]], [[Combat]], [[Controls]], [[Characters]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json:38-39`: health and stamina
+- `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
+- `src/combat.js:134-143,311-314`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
+- `data/tuning.json:36-37,40`: walking speed, body radius, sprint multiplier
+- `src/entities/player.js:273-279,337-344`: keyed movement snapped to the eight directions
+- `src/entities/player.js:346`: facing follows the aim, not the walk
+- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1085-1094,1120-1123`: shallow water's speed and deep water's bar
+- `src/archery.js:37-38`: the draw and brace slowdowns
+- `data/items.json:34`: the raised shield's slowdown
+- `src/player-controller.js:52`: the multiplier picked in one place
+- `data/tuning.json:53`, `src/entities/player.js:74-89`: the window climb, refused while carrying
+- `src/entities/player.js:328`: no sprint while carrying
+- `src/entities/player.js:250,323`: auto-walk uses the same speeds; a movement key cancels it
+- `src/entities/player.js:120-138`: the needs, their damage, and regeneration's conditions; all held full with Survival off
+- `src/moodles.js:23-102`: the five moodles
+- `src/game.js:87,100-115,359`: the starter kit, given at create and to every added player
+- `data/items.json:29`: the rope belt's two slots
+- `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
+- `data/items.json`: no clothing has armour or warmth
+- `data/loot.json:5`, `src/settings.js:31`, `src/game.js:80-83`: the dev chest
+- `data/tuning.json:4,65`: the dead's and villagers' speeds
+- `src/rules.js:21-25`: a guest uses the host's rules
+- `src/game.js:254-264`: time runs fast only while every living player sleeps

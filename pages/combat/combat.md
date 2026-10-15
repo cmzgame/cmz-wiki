@@ -105,4 +105,34 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 - [[Fists]]
 - [[The dead]]
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/combat.js:305-357`: the swing decided on the click (`tryAttack`)
+- `src/combat.js:186-188`, `src/combat.js:166-176`: only the dead are targets; a swing refused while carrying, climbing, in a timed action, or dead
+- `src/buttons.js:10`, `src/buttons.js:24-47`: the roles and the tap time
+- `src/player-controller.js:17-55`: what each role does; the stance starts on the press; Space is the shove
+- `src/main.js:610-625`: a right tap: cancel a draw, else the menu
+- `src/combat.js:201-219`: the wedge: reach from the feet, inclusive; point blank; the down-screen slack
+- `data/tuning.json`: `player.aimY` (the chest), `player.sprintRecoverAt`, `player.stamina`, `player.staminaRegen`, `zombie.knockTime`
+- `src/combat.js:29-48`: point blank, slack, tired damage, hit-stop, kick constants
+- `src/combat.js:166-176`: line of sight to the target
+- `src/combat.js:305-323`, `src/combat.js:413-420`: cooldown, stamina cost, the tired blow
+- `src/ui/swing-timer.js`: the gold bars at bottom centre
+- `src/entities/player.js:325`: winded until stamina is back
+- `src/combat.js:329-356`: the damage formula, the finisher, hit-stop
+- `data/combat.json`: `finisher.mult`, `dual.offDamage`
+- `src/archery.js:247`: an arrow or thrown spear gets no finisher bonus
+- `src/combat.js:255-260`: the camera kick
+- `src/combat.js:346-347`, `src/entities/zombie.js:157-165`: knockback over time, stopped by walls, none on a downed target
+- `src/combat.js:171-175`, `src/settings.js:19`: multi-hit, off by default; the thrust's `multiHit: false`
+- `src/combat.js:354`: wear on a landed hit
+- `src/main.js:880`, `src/loop.js:66-74`: hit-stop off whenever the world is on the wire
+- `src/main.js:1454-1456`: the kick answered only by the striker's client
+- `src/player-controller.js:13-16`, `src/player-controller.js:43`, `src/player-controller.js:53`: a guest's swing and guard predicted; hits, shove, and draw on the host
+- `src/net.js:815`, `src/net.js:1038`, `src/rules.js:23-37`: the host's rules travel in frames and the save
+- `src/settings.js:12`, `src/settings.js:16`, `src/settings.js:18-20`: Zombie aggro, Swing timer, Swing targets, Multi-hit, Show hit shapes defaults
+- `src/combat.js:399-410`, `src/combat.js:431-443`: the swing targets outline and the hit shapes
+- `src/settings.js:15`, `src/settings.js:31`, `src/main.js:1189-1192`, `src/game.js:80-83`, `src/game.js:119-132`: Combat testing and the Dev chest
+
 {{navbox weapons}}

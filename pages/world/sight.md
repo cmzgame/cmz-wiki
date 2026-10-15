@@ -59,3 +59,18 @@ Each player's sight and fog are their own, worked out from their own character. 
 - [[Openings]]
 - [[Trees]]
 - [[The dead]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/visibility.js:10-67`, `src/camera.js:38-55`: rays from your tile over the viewport and a margin; the corner points
+- `src/main.js:990-997`: recomputed on a new tile, a world change, or a resize
+- `src/map.js:1019-1032`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not
+- `src/map.js:1500`: no prop blocks sight
+- `src/visibility.js`, `src/light.js:415-427`: sight has no light term
+- `src/render/scene.js:31-32`, `src/render/area.js:154-169`: the fog's colour and strength
+- `src/render/entities.js:182-186`: characters out of sight are not drawn
+- `src/render/props.js:142-148`: flames drawn only when seen
+- `src/render/scene.js:35-43`, `src/render/scene.js:97-121`, `src/render/props.js:156`: the tree hole, its sizes, trees alone, for your own character; near walls faded
+- `src/main.js:887`, `src/main.js:907`: V and L
+- `src/main.js:995`, `src/render/entities.js:184`: sight each player's own; another player drawn only in sight

@@ -65,3 +65,32 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 ## See also
 
 - [[Controls]], [[Settings]], [[Screens]], [[Log and chat]], [[Moodles]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/view.js:84-88`, `src/view.js:138`: the interface's own size, Interface size
+- `style.css:1108`: the HUD hidden while no world is chosen
+- `src/ui/hud.js:21-22`: the portrait cut from your own sprite, head to belt
+- `src/ui/hud.js:66`, `src/ui/hud.js:92-106`: the name, the health bar's colours, the stamina pulses, the hands line and its dash
+- `data/tuning.json`: `player.hp` and `player.stamina`
+- `src/ui/hud.js:118-122`, `src/clock.js:5`, `src/clock.js:88-94`: the clock, its format, the day's length
+- `src/ui/prompt.js:60`, `src/ui/log.js`: messages float and go to the log
+- `src/moodles.js:23-115`, `src/ui/moodles.js`, `style.css:317-321`: the five moodles on the right, their order, stages, names
+- `src/ui/prompt.js:41`, `src/interact.js:852-880`: the prompt, "E: Put down", the progress bar, greyed
+- `src/ui/zombie-bars.js:14-20`: health bars over hurt zombies and over you
+- `src/ui/swing-timer.js:16`, `src/ui/swing-timer.js:69`: the exposure bar over your head
+- `src/ui/speech.js`, `src/ui/names.js`: bubbles and names over heads
+- `style.css:561-565`, `src/ui/swing-timer.js:1-9`: the two swing bars at bottom centre
+- `src/settings.js:49`: the Swing timer setting
+- `src/interact.js:928-932`, `style.css:1321-1325`: the belt's slots and keys 1 to 4
+- `src/main.js:610-646`, `src/ui/context-menu.js`, `src/buttons.js:10`: the actions menu, Build last, greyed entries, what closes it
+- `src/interact.js:1015-1147`, `src/ui/inventory-panel.js:674-703`: the item and slot menus
+- `src/input.js:84-87`: no browser context menu except over the debug corner
+- `src/ui/inventory-panel.js`, `src/main.js:727-773`: the bag and character panels, X, dragging, containers closing at a distance
+- `data/tuning.json`: `world.containerCloseDist`
+- `src/view.js:118`: `BASE_CELL`
+- `src/ui/station-panel.js`, `style.css:887-891`: the station panel under the clock
+- `src/ui/build-palette.js`, `src/main.js:700-721`: the build palette
+- `src/ui/cursor.js:1-36`, `src/settings.js:29`, `src/settings.js:56`: the four cursors and the zombie hand
+- `src/main.js:1112-1122`, `style.css:81-84`, `src/settings.js:11`: the debug corner, its place, and its contents

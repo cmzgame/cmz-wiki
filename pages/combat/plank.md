@@ -22,4 +22,14 @@ In the off hand it counts as a weapon (see [[Dual wielding]]).
 
 {{item-sections plank}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/build.json`: doors and windows cost planks
+- `src/interact.js:485-496`: boarding an opening takes a plank
+- `src/game.js:113`: a plank in the starting bag
+- `data/items.json`: the plank's `weapon` block
+- `src/combat.js:37`, `src/combat.js:343`: the default knockdown chance
+- `src/combat.js:105-110`: in the off hand it is a weapon
+
 {{navbox weapons}}

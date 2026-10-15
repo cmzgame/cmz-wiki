@@ -17,6 +17,8 @@ Game `main` @ `9205ad7` (2026-10-14). The short list from the six fact sheets (`
 - **A guest sees "In <code>'s world"** on its pause screen: the host's name is never filled in (multiplayer-ui).
 - **Autosave runs every 60 seconds of sim time**, about once a real second while everyone sleeps (multiplayer-ui).
 - **`light.poolRays()` names an undefined variable** and would throw if called; nothing calls it (world).
+- **Switching Open to friends off does not make the guests dormant** (found by the sources pass): `setOpen` calls `net.close()`, which clears the guests without `dormantNow` (`src/net.js:149-180`); only Leave world does (`src/main.js:336`), so the guests' characters stay standing in the world and are saved as players.
+- **Taking or mounting a torch never marks the tile changed** (found by the sources pass): `map.setHolder` (`src/map.js:181-187`) calls no `map.touch`, unlike a door, so a guest's copy of a post or bracket may not update.
 - *Inferred:* **a guest's right tap may not cancel its bow draw on the host** (combat); **the Square surface setting changes the map on the client**, so a guest's square may differ from the host's until the chunk is resent (world).
 
 ## Surprises worth a ruling

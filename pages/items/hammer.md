@@ -12,4 +12,13 @@ The **hammer** is made at the [[Anvil]] from an [[Iron bar]] and a [[Stick]], an
 
 {{item-sections hammer}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/recipes.json:283-301`: the hammer's recipe, with no tool
+- `data/recipes.json:263-421`: every other anvil recipe needs the hammer
+- `data/loot.json`: no table holds the hammer or iron bars
+- `data/items.json:40`: the hammer: either hand, a weapon, its kills, its unused verbs
+- `src/items.js:27-37`: wear per hit from kills
+
 {{navbox items}}

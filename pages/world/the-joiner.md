@@ -15,4 +15,13 @@ summary: The joiner's workshop, home, and lumber yard south-west of the square.
 
 One of the dead stands just outside the workshop's door at the start.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:332-345`: the joiner south-west of the square: the workshop, the home behind, the lumber yard
+- `data/maps/valley.json:3307-3393`: the workshop's workbench, table, shelves, barrel, and chest, its door on the east side
+- `data/maps/valley.json:3394-3486`: the home's fireplace, table, bed, and chest
+- `data/maps/valley.json:3490-3524`: the sawpit, two woodpiles, and the wheelbarrow
+- `tools/mapgen/valley.py:409`, `data/maps/valley.json:5254-5257`: one of the dead outside the workshop's door
+
 {{navbox places}}

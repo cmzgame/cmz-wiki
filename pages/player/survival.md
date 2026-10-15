@@ -22,3 +22,14 @@ Survival is a world rule: the host's choice applies to everyone in the world, an
 ## See also
 
 - [[Settings]], [[Player]], [[Hunger]], [[Thirst]], [[Tiredness]], [[Health]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/settings.js:22,55`: on by default, and the two choices on the Settings screen
+- `src/rules.js:13,34-37`: the sim reads it as a world rule
+- `src/entities/player.js:120-126`: off holds hunger, thirst, and tiredness full and returns before need damage and regeneration
+- `src/entities/player.js:133-138`: regeneration comes after that return
+- `src/bleed.js`, `src/infection.js`: bleeding and infection live in their own modules
+- `src/rules.js:21-25`: a guest uses the host's rules
+- `src/ui/screens.js:682`: the owner's toggle on the Owner screen

@@ -25,4 +25,20 @@ Light the fire and keep it fed (see [[Fire]]), then choose **Cook here** or pres
 
 A guest cooks through the host like any station; the fire and the queue are the same for every player.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/campfire.json`: the campfire cooks
+- `data/sprites/hearth.json`: the hearth cooks
+- `data/sprites/fireplace.json:30-34`: the fireplace cooks
+- `src/interact.js:622-639`: Cook here on a cooking fire's menu
+- `src/stations.js:45-52`: the oven's own station wins; the forge does not cook
+- `data/recipes.json:422-477`: the cooking recipes, each needing fire
+- `data/loot.json`: no table gives potatoes, cabbages, garlic, or grain
+- `src/interact.js:350-380`: lighting and feeding a fire
+- `src/stations.js:168-191`: what is made goes to the output box
+- `src/stations.js:193-205`: a job waits while the fire is out
+- `data/maps/valley.json`: where the fireplaces are
+- `src/host.js:161-167`: a guest's Make runs on the host
+
 {{navbox making}}

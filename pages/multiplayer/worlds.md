@@ -51,3 +51,22 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 - [[Saving]], [[Characters]], [[Identities]]
 - [[Hosting]], [[Joining]], [[Server worlds]]
 - [[Screens]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/save.js`: a world as a save in the browser that made it
+- `src/ui/screens.js:550-557`, `style.css:1108`: nothing runs until a world is chosen
+- `src/ui/screens.js:467-531`, `src/ui/screens.js:558-571`: the Worlds screen's three lists, their rows and buttons, and the buttons below
+- `src/ui/screens.js:480-485`: a row's text
+- `src/ui/screens.js:474-479`: the buttons by where a world lives; a friend's row has Forget, not Delete
+- `src/main.js:1372`: Move to the server only with a relay
+- `src/ui/screens.js:483`, `src/main.js:1360`: a world from another map listed, not playable
+- `src/ui/screens.js:260-264`, `src/ui/screens.js:605-617`, `src/main.js:1367`: New world, the default name
+- `src/main.js:236-250`: the world made at the spawn and saved at once
+- `src/clock.js:18`: `START_HOUR`
+- `src/main.js:253-288`: Play loads the save, opens to friends again if it was open
+- `src/ui/screens.js:206`: Delete's confirmation
+- `src/main.js:335-349`, `src/ui/screens.js:198-203`: Leave world saves and returns to the title, asking a host with guests
+- `src/ui/screens.js:571`, `src/net.js:383-394`: the dots asked of the relay
+- `src/main.js:325-331`: a guest never saves

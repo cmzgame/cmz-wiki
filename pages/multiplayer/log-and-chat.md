@@ -37,3 +37,15 @@ A guest's line is said by their character on the host, so it reaches every playe
 ## See also
 
 - [[Interface]], [[Multiplayer]], [[Villagers]], [[Controls]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/ui/log.js`, `src/ui/log.js:12`: the log, every message and line said in sight, the lines kept
+- `src/ui/speech.js:74`: the speaker's label: You, the name, Villager, Someone
+- `src/ui/log.js:70-78`: resized by its corner, the size remembered in `logSize`
+- `src/main.js:889-890`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
+- `src/entities/character.js:117`: a bubble lasts longer for a longer line
+- `src/ui/speech.js:21`: `NEAR`, a bubble behind a canopy only within reach
+- `src/net.js:614-618`, `src/net.js:1156`: a guest's line said by its player on the host
+- `src/net.js:541`, `src/net.js:626`, `src/net.js:1295`: joined, left, stepped away, and back in the log

@@ -66,4 +66,31 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - [[Torch]]
 - [[Log]], [[Charcoal]]
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/campfire.json`: the campfire's fuel, hours a unit, most, cooking
+- `data/sprites/hearth.json`: the hearth's, and it lights its room
+- `data/sprites/fireplace.json:30-34`: the fireplace's
+- `data/sprites/oven.json`: the oven's
+- `data/sprites/forge.json`: the forge's: charcoal, no cooking
+- `src/stations.js:45-52`: the oven offers only its own recipe
+- `src/light.js:45-57`: lit fires give light; a room fire lights its room
+- `src/map.js:83`: a game hour in seconds
+- `src/interact.js:350-380`: Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only
+- `src/interact.js:358-363`: hours left rounded, or "under an hour"
+- `src/map.js:86-103`: a fire burns a unit every so many hours and goes out
+- `src/main.js:1466-1468`: "A fire has gone out." within 8 tiles
+- `data/maps/valley.json`: which fires start lit
+- `src/stations.js:193-205`: a job waits while the fire is out
+- `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
+- `src/map.js:125-183`: brackets and posts holding a torch
+- `src/interact.js:401-440`: Take the torch and Mount the torch
+- `src/items.js:187-194`: a held torch's light, with no fuel
+- `src/game.js:552-563`: two held torches
+- `src/interact.js:982-989`: `T`
+- `data/items.json:2`: the torch's radius
+- `data/tuning.json:76-77`: the belt torch and two torches
+- `src/map.js:93-95`: a guest's fuel refreshed at each whole unit
+
 {{navbox making}}

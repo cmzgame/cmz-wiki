@@ -42,3 +42,23 @@ The belt keys are part of each player's input, carried out by the host's world f
 
 - [[Hands]], [[Inventory]], [[Clothing]]
 - [[Controls]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/inventory.js:9`: the waist slot
+- `data/items.json:29-30`: the rope belt's and the good belt's slot counts
+- `src/game.js:103-116`: every new character wears a rope belt
+- `data/loot.json:2`: the good belt in the chest table
+- `src/ui/inventory-actions.js:67-73`: what a belt slot takes
+- `src/interact.js:928-932`: keys 1 to 4
+- `src/inventory.js:237-260`: a press: eat, drink, swap, a weapon to the main hand, an empty slot stows
+- `src/entities/player.js:106-113`: drinking a sip from a waterskin
+- `src/interact.js:994-1012`: the press and its messages ("No belt, or no such slot.")
+- `src/interact.js:1095-1147`: the slot menu: Equip, Put in bag, Use, Drop
+- `src/inventory.js:177-189`: putting away goes to the belt only when the bag will not take it and it can be held
+- `data/tuning.json:76`: the belt torch's strength
+- `src/game.js:417-424`: the belt torch's light
+- `src/inventory.js:159-173`: a belt is a container and goes in another only empty
+- `src/interact.js:946-950`: the belt keys are events in the player's input snapshot
+- `src/game.js:493`: the host's step performs them for each player

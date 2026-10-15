@@ -42,3 +42,17 @@ Each player has their own tiredness.
 ## See also
 
 - [[Sleep]], [[Stamina]], [[Hunger]], [[Thirst]], [[Moodles]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json:54-56`: the maximum, the awake drain, and the sleep restore
+- `src/entities/player.js:129-130`: drained awake, restored only asleep
+- `src/clock.js:18`: a new world starts at 08:00
+- `src/map.js:84`: a game hour is 30 seconds
+- `src/moodles.js:95-102`: the tiredness stages
+- `src/entities/player.js:203`: Yawning or worse allows sleep by day
+- `src/entities/player.js:146`, `data/tuning.json:62`: Tired slows stamina recovery
+- `src/entities/player.js:328`: Exhausted stops sprinting
+- `src/entities/player.js:135`: Falling asleep stops regeneration
+- `src/entities/player.js:120-126`: Survival off holds tiredness full

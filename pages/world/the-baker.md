@@ -15,4 +15,12 @@ summary: The bakery at the square's north-west corner, its oven lit at the start
 
 One of the dead stands at the shop's door at the start.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:325-331`: the baker at the square's north-west corner, the oven in the shop wall, a room behind
+- `data/maps/valley.json:3188-3291`: a wooden building; the door and a window on the north side; the partition; the oven, table, shelf, barrel, bed, and chest
+- `data/maps/valley.json:3226-3238`, `data/sprites/oven.json`: the oven lit at the start with its fuel of logs
+- `tools/mapgen/valley.py:409`, `data/maps/valley.json:5250-5253`: one of the dead at the shop's door
+
 {{navbox places}}

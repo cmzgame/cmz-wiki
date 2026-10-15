@@ -19,4 +19,17 @@ The [[Innkeeper]] stands in the taproom, the [[Child]] nearby, and the [[Guest]]
 
 The dead at the west end of the bridge, a knot of them by the toll gate, stand on the road just east of the inn's taproom, inside its ground. None start inside the building.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:212-213`: the inn on the square's east side
+- `data/maps/valley.json:1622-1907`: the taproom (counter, barrels, tables and chairs) and the kitchen behind a partition
+- `data/maps/valley.json:1827-1852`: both fireplaces lit at the start with 3 logs each
+- `data/maps/valley.json:1637-1660`: three windows boarded from the inside
+- `data/maps/valley.json:1894-1905`, `data/maps/valley.json:2026-2037`: the torch over the west door outside, and the torches inside
+- `data/maps/valley.json:1908-2039`: the guest wing: three rooms, each with a door off the taproom, a bed, and a chest
+- `tools/mapgen/valley.py:237-242`, `data/maps/valley.json:2043-2103`: the fenced yard with its west gate, well, trough, woodpile, cart, and privy
+- `data/maps/valley.json:5610-5635`: the Innkeeper and the Child in the taproom, the Guest in the guest wing
+- `tools/mapgen/valley.py:406`, `data/maps/valley.json:5174-5193`: the toll gate's knot of the dead, four of them inside the inn's ground east of the taproom, none in the building
+
 {{navbox places}}

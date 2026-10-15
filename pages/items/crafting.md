@@ -67,4 +67,35 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - [[Fire]]
 - [[Containers]]
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/stations.js:45-52`: which props are stations, and the cooking fires
+- `data/sprites/loom.json`: the loom is a station
+- `src/ui/station-panel.js:143`: "Nothing to make here yet."
+- `data/maps/valley.json`: the loom and dye vats in the village
+- `data/recipes.json`: every recipe, known from the start
+- `src/interact.js:622-639`: the station's menu entry and `E`
+- `src/stations.js:20`: the reach
+- `src/ui/station-panel.js`: the one panel: recipes greyed with their reason, ingredients, count, Make, queue
+- `src/stations.js:234`: the count clamped from 1 to 10
+- `src/ui/station-panel.js:92`: the output box closes beyond reach
+- `src/ui/station-panel.js:157`: the panel closes beyond reach
+- `src/stations.js:67-104`: where ingredients are counted from, searched containers only
+- `src/stations.js:108-124`: the order they are taken in
+- `data/items.json:15`: the bandage is cloth
+- `data/items.json:23-28`: the garments are cloth
+- `src/stations.js:146-154`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "Needs a hammer in hand.", "Short of ..."
+- `src/stations.js:193-205`: a job waits while its fire is out
+- `src/ui/station-panel.js:140`: "(the fire is out)" on a paused job
+- `data/recipes.json:263-421`: only the anvil's recipes ask for a tool, the hammer
+- `src/game.js:434`: the queues stepped in the world's step
+- `src/map.js:83`: a game hour in seconds
+- `src/stations.js:21`: the output box's size
+- `src/stations.js:168-191`: output to the box, or the floor beside when full; furniture placed beside the station
+- `src/ui/station-panel.js:60-73`: a guest's panel opens on its own screen
+- `src/net.js:813`: Make sent to the host
+- `src/host.js:161-167`: the host runs it as the craft verb for that player
+- `src/net.js:1183`: the queues in each frame
+
 {{navbox making}}

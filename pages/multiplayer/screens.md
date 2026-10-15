@@ -58,3 +58,17 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 ## See also
 
 - [[Interface]], [[Worlds]], [[Settings]], [[Controls]], [[Death]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/ui/screens.js:143-191`, `src/ui/screens.js:550-557`: the title's words and buttons; Escape does not close it
+- `style.css:1108`: the interface hidden while no world is chosen
+- `src/ui/screens.js:656-667`, `src/main.js:579-593`: the pause menu, its first line, "Paused" or "Menu", its buttons and who sees them
+- `src/main.js:325-331`: Save world
+- `src/ui/screens.js:737-747`: the Character screen
+- `src/ui/screens.js:198-203`, `src/main.js:335-349`: Leave world asks a host with guests, saves, and returns to the title
+- `src/ui/screens.js:785-791`, `src/main.js:291-319`: the dead screen and New character
+- `src/ui/screens.js:777-784`, `src/main.js:200-209`: the stepped-away screen and what closes it
+- `src/main.js:679-696`, `src/ui/screens.js:139-141`: Escape's order, a sub-screen stepping back to its opener
+- `src/main.js:667-670`: screens pause only off the wire

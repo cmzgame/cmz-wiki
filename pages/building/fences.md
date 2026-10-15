@@ -36,3 +36,17 @@ Fences cannot be built.
 - [[Rooms]]
 - [[Openings]]
 - [[Sight]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/wall_fence.json`: the fence's height, thickness, and `seeThrough`
+- `src/map.js:1103-1112`: a see-through wall passes sight and light and bounds no room
+- `src/map.js:1341-1393`: the room fill passes a see-through wall
+- `src/entities/player.js:201`: a bed outdoors says "Not out here."
+- `src/map.js:568-573`: a shut gate blocks bodies as a door does
+- `src/map.js:1021-1028`: a shut gate in a see-through fence still passes sight
+- `data/maps/valley.json:1110-1124`: the graveyard's fence feature and its gate
+- `data/maps/valley.json:1279-1290`, `data/maps/valley.json:2042-2053`, `data/maps/valley.json:2779-2790`, `data/maps/valley.json:3147-3158`: the fences of your cottage, the inn, the manor, and the merchant's house
+- `data/maps/valley.json:4099-4113`, `data/maps/valley.json:4655-4669`: fence partitions inside the cooper's long house and the second cottage on the lane
+- `data/build.json`: only the log wall, door, and window can be built

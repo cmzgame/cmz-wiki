@@ -55,3 +55,22 @@ A guest's tap and hold of B are carried out by the host. The plank spent is the 
 - [[Breaking in]]
 - [[Plank]]
 - [[Building]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/interact.js:44-45`: the nailing and pulling times
+- `src/map.js:431`: three boards per side
+- `src/map.js:512-533`: a board added on the near side, pulled from it
+- `src/interact.js:485-512`: the board and pull actions, from the side you stand on
+- `src/interact.js:494-497`, `src/inventory.js:99-115`: one plank spent, bag then belt then hands
+- `src/interact.js:970-983`: B and hold B, and "You need a plank."
+- `data/items.json`: the log's `splitsInto`; `src/interact.js:1053-1066`: splitting from the item menu
+- `src/interact.js:767-783`: moving or drifting out of reach cancels the bar
+- `src/map.js:568-578`: any board stops bodies and climbing
+- `src/map.js:1019-1032`: any board stops light and sight
+- `src/map.js:536-565`: a broken opening keeps its boards and the dead break them one at a time
+- `src/interact.js:453-457`: the menu's count of boards on each side
+- `src/render/walls.js:19-32`, `src/render/walls.js:159`: only the near face's boards are drawn
+- `src/map.js:434`: a board's health
+- `src/interact.js:934-990`: B's tap and hold performed by the host from the guest's snapshot

@@ -54,3 +54,22 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - [[Fences]]
 - [[Rooms]]
 - [[Building]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/map.js:441-451`, `src/map.js:993-1007`: walls on the `n` and `w` edges of a tile
+- `src/map.js:490-500`: doors and windows are walls with a kind
+- `src/map.js:1019-1032`, `src/map.js:1155-1209`: a wall blocks sight and bodies
+- `src/map.js:497`: a plain wall has unending health; `src/map.js:598-624`: the dead breach only openings
+- `src/render/walls.js`: corner posts take the heaviest material
+- `data/sprites/wall_wood.json`, `data/sprites/wall_stone.json`, `data/sprites/wall_log.json`, `data/sprites/wall_fence.json`: each material's height and thickness
+- `data/maps/valley.json:1130-4910`: which buildings are wood and which stone
+- `data/build.json`: the log wall is the only wall you can build
+- `src/map.js:1672`, `data/maps/valley.json:4906-4911`: a material per side
+- `src/placeholders.js:88-91`: openings and the bracket at fixed heights
+- `src/placement.js:320-363`, `src/map.js:469`: only built walls can be removed
+- `src/map.js:125-199`, `src/interact.js:401-440`: brackets, their torches, E to take or mount
+- `data/items.json`: the torch's `fire`; `src/light.js:59-64`: a mounted torch's light, never burning out
+- `src/map.js:1717-1724`: brackets only where the map authors them
+- `src/render/walls.js:354-370`: near walls faded

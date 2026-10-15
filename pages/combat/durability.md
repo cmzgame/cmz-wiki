@@ -42,4 +42,14 @@ Wear is kept on the item itself and travels with the hands, so it is the same fo
 - [[Weapons]]
 - [[Combat]]
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/items.js:27-37`: hits per kill and wear per hit from `data/tuning.json` (`zombie.hp`)
+- `src/combat.js:354`, `src/combat.js:362-372`: wear on each landed hit and target; the weapon gone with a word at full wear
+- `data/items.json`: each weapon's `kills`; the bow's `shots`
+- `src/combat.js:376-394`, `src/combat.js:73-77`: the shove and fists wear nothing
+- `src/archery.js:557`: a thrown spear carries its wear
+- `src/archery.js:564-573`, `src/items.js:39-41`: the bow wears per arrow loosed and leaves the hand at the last
+
 {{navbox weapons}}

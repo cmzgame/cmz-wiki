@@ -13,7 +13,7 @@ From the title, open [[Worlds]] and make a new world. Each world asks you to mak
 
 ## Where you start
 
-You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], at the southern end of the village: two rooms, a hearth, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
+You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], at the southern end of the village: two rooms, a fireplace, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
 
 You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]] and a [[Plank]], and a [[Torch]] in your hand. Press **Tab** for your bag and **C** for the character screen.
 
@@ -36,3 +36,23 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - [[Controls]] for every key.
 - [[Crafting]] for the workbench and the other stations.
 - [[Building]] for walls, doors, and windows of your own.
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/main.js:236-250`, `src/ui/screens.js:260-264`, `src/ui/screens.js:301-320`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
+- `src/game.js:171-176`: each world's save holds its own characters
+- `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
+- `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
+- `src/game.js:100-115`: the starter kit
+- `src/main.js:741-749`: Tab for the bag, C for the character screen
+- `src/main.js:610-646`, `src/interact.js:946-970`: right-click for the menu; E for the nearest simple action
+- `src/interact.js:323-339`: searching a chest
+- `src/interact.js:443-472`, `src/interact.js:960-965`, `src/map.js:1019-1032`: tap E to open or shut; hold E to climb an open window; shut shutters block sight
+- `src/entities/player.js:127-128`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
+- `src/interact.js:537-576`: drinking and filling at the well or any water
+- `src/map.js:87-117`, `src/interact.js:350-379`: fires burn down and are fed from their menu
+- `src/entities/player.js:193-210`, `src/entities/player.js:165-191`, `src/game.js:254-264`: sleep in a bed indoors; time runs fast; nothing wakes you
+- `data/tuning.json:4`, `data/tuning.json:36`: the dead walk at a third of your speed
+- `src/entities/zombie.js:232-237`, `src/entities/zombie.js:337-353`, `src/entities/zombie.js:295-311`: they see by the light on you, remember where they last saw you, and notice a flame at night
+- `src/buttons.js:24-44`, `src/player-controller.js:17-55`: left-click uses the main hand

@@ -13,4 +13,12 @@ The **Developer Bag** is a bag worn on the back with a grid of {{n items.dev_bag
 
 {{item-sections dev_bag}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:33`: the Developer Bag: worn on the back, grid 12 x 8
+- `data/loot.json:5`: two in the dev chest's fixed list
+- `data/sprites/wheelbarrow.json`: the wheelbarrow rolls the same list
+- `src/dev.js:115-141`: giveKit and giveDevBag
+
 {{navbox items}}

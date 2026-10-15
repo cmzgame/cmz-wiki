@@ -53,3 +53,22 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 ## See also
 
 - [[Waterskin]], [[Water]], [[Hunger]], [[Food]], [[Moodles]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json:46,48`: the maximum and the drain time
+- `src/entities/player.js:128`: the drain, awake or asleep
+- `src/clock.js:5`: a game day is 720 seconds
+- `src/interact.js:1049-1052`, `src/entities/player.js:105-113`, `data/tuning.json:51`: the "Drink" entry and the sip
+- `src/interact.js:994-1004`: the belt key drinks a waterskin on the belt
+- `data/items.json:17,50`: the apple's and the stew's thirst
+- `src/interact.js:534-582`, `src/map.js:1125-1127`: the well's and the water's actions; floors with `drink`
+- `src/interact.js:47,545,552-555`: drinking's time, the E action below 90, thirst set to full
+- `src/interact.js:48,538,566`: filling's time and every bag waterskin to full
+- `src/moodles.js:72-78`: the thirst stages
+- `src/entities/player.js:134-135`: Thirsty stops regeneration
+- `src/entities/player.js:143-148`, `data/tuning.json:61`: Parched slows stamina recovery
+- `src/entities/player.js:132`, `data/tuning.json:50`: dehydration damage
+- `src/ui/inventory-actions.js:216,343-351`: a guest's menu choice is run by the host
+- `src/entities/player.js:120-126`: Survival off holds thirst full

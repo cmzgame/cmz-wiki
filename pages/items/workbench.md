@@ -24,4 +24,21 @@ A workbench can be made at a workbench.
 
 A guest opens the workbench's panel on their own screen; Make is carried out by the host for that player, and the queue and the output box are shared.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/workbench.json`: the workbench: a station with no fire
+- `data/recipes.json:4-246`: the workbench's recipes, none with fire or tool
+- `data/recipes.json:23-37`: sticks from a plank
+- `data/items.json:4`: planks from a log
+- `data/items.json:15`: cloth: the bandage
+- `data/items.json:23-28`: cloth: the garments
+- `data/recipes.json:229-246`: the wheelbarrow needs an iron bar
+- `src/interact.js:622-639`: the station's menu entry and `E`
+- `src/stations.js:168-191`: items to the output box, furniture beside the station
+- `data/sprites/chest.json`: a made chest rolls the chest table (likewise shelf.json)
+- `data/recipes.json:207-228`: a workbench made at a workbench
+- `data/maps/valley.json`: where the workbenches stand
+- `src/host.js:161-167`: a guest's Make runs on the host
+
 {{navbox making}}

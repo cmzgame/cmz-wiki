@@ -56,3 +56,21 @@ Time runs fast only while **every living player** in the world is asleep. Player
 ## See also
 
 - [[Tiredness]], [[Health]], [[Multiplayer]], [[Light]], [[Crafting]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/bed.json:32`: a bed is a prop with `sleep`
+- `data/tuning.json:57`: the time scale
+- `src/entities/player.js:193-210`: the verb, its reach (1.6 tiles), indoors, free hands, and the refusals with the day window ending at 20:00
+- `src/interact.js:381-398`: Sleep as the E action from Yawning or from 20:00
+- `src/entities/player.js:165-191`: asleep, nothing moves you, needs drain, tiredness restores, health at the sleeping rate
+- `data/tuning.json:56,59-60`: the restore time and the regeneration rates
+- `src/game.js:257-264,496`, `src/world.js:25-29`, `src/loop.js:15,114-116`: the scale while every living player sleeps, re-evaluated each step, the loop running many steps a frame
+- `src/main.js:1464-1465`: the two lying-down messages
+- `src/entities/player.js:178,188-190`, `data/tuning.json:58`: waking when rested between the wake hour and 22:00, or when the bed is gone; the waking message's hours
+- `data/maps/valley.json`: the valley's beds
+- `data/recipes.json:186-205`: the bed recipe at the workbench
+- `src/map.js:84`: a game hour is 30 seconds
+- `src/game.js:254-263,270,368,383-386`: dead and dormant players do not count; the scale put right on a leave, a dormancy, or a death
+- `src/entities/player.js:120-126`: Survival off holds tiredness full

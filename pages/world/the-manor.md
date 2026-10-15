@@ -17,4 +17,15 @@ South of the house is the garden, fenced with gates to the west and east. It hol
 
 One of the dead stands in the garden at the start, and more walk the nobles' street outside.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:279-280`: a stone house in a walled garden, east of the nobles' street
+- `data/maps/valley.json:2491-2748`: three rooms: the hall (fireplace, table and chairs, cupboard), the kitchen to the south (a second fireplace), the solar and bedroom to the east (bed, bookcase, desk, strongbox); doors west and south, windows on three sides, two brackets with torches
+- `data/maps/valley.json:2568-2578`, `data/maps/valley.json:2636-2646`: both fireplaces with no `lit`
+- `data/maps/valley.json:2751-2849`: the garden's fence with gates west and east, two benches, three beehives, the small pond, the trough
+- `data/sprites/trough.json`: the trough is water to drink
+- `data/maps/valley.json:5270-5273`: one of the dead in the garden
+- `tools/mapgen/valley.py:404`: more of the dead on the nobles' street
+
 {{navbox places}}

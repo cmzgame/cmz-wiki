@@ -20,4 +20,15 @@ The bow wears per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Dura
 
 {{item-sections bow}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json`: the bow: both hands, `drawTime`, `braceDrawTime`, `damage`, `knockback`, `shots`
+- `src/archery.js:522-575`, `src/archery.js:578-617`: the draw, release, cancel, and the brace
+- `src/main.js:610-625`: a right tap cancels a draw
+- `src/player-controller.js:52`: the crawl while braced
+- `src/archery.js:234-261`: the landing: hit radius, push, the default stagger, no knockdown
+- `src/archery.js:141-202`: walls, boards, trees, and props stop a shot
+- `src/archery.js:564-573`, `src/items.js:39-41`: wear per arrow loosed
+
 {{navbox weapons}}

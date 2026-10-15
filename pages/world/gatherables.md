@@ -46,3 +46,17 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - [[Mushrooms]]
 - [[Crops]]
 - [[Log]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/tree_oak_m.json`, `data/sprites/rock_0.json`, `data/sprites/mushroom_0.json`, `data/sprites/crop_potato_1.json`, `data/sprites/pumpkin.json`: each `interactable: true`
+- `src/interact.js:1152-1157`, `src/interact.js:1240-1248`: a click within reach stamps a sway, no restamp inside the cooldown
+- `src/render/props.js:94-104`: the sway's length and lean
+- `src/interact.js:1177-1201`: found by drawn pixels, crowns included
+- `data/sprites/well.json`, `src/interact.js:1395-1403`: the well's click animation instead
+- `src/interact.js:1256-1272`, `src/game.js:505`, `src/game.js:514`, `src/game.js:519`: walking through a crop or mushroom sways it, one full sway at a time, only while moving
+- `data/ground.json`: flowers and leaves are baked decals, not props
+- `src/interact.js:46`, `src/interact.js:515-532`, `src/interact.js:607-619`: chopping a tree with no tool; nothing else has an action
+- `src/interact.js:1211-1238`, `src/net.js:812`, `src/net.js:1049-1053`: the sways sent in frames; a guest's click checked by the host
+- `src/interact.js:61-83`, `src/map.js:660-667`: a guest's chop run on the host by address; the change travels in the touched chunk

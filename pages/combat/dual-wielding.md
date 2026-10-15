@@ -48,3 +48,18 @@ Each player's cooldowns and exposure travel exactly to the guest, so a guest's s
 - [[Combat]]
 - [[Shield]]
 - [[Weapons]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/combat.js:267-283`: the left click swings the main hand when ready, else the off hand
+- `src/combat.js:305-323`: each hand's cooldown; the lockout after a swing with two weapons
+- `data/combat.json`: `dual.offDamage`, `lockout`, `window`, `front`, `arc`, `side`, `sideArc`, `behind`
+- `src/combat.js:105-110`: any item with a weapon block in the off hand is an off-hand weapon; a shield never
+- `src/combat.js:320`: each off-hand swing restarts the exposure
+- `src/ui/swing-timer.js`: the red exposure bar over the head
+- `src/combat.js:289-298`: the bite multipliers by direction
+- `src/game.js:294-302`: exposure applied after the guard
+- `src/items.js:112-133`: which hands may hold what; the spear refused beside a weapon, a torch not counted
+- `src/inventory.js:219-220`: the off-hand item remembered and put back
+- `src/net.js:222`: cooldowns and exposure travel exactly

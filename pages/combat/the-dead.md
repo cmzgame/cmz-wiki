@@ -88,3 +88,28 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - [[Openings]]
 - [[Sight]]
 - [[Light]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, breach, climb, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
+- `data/wardrobes.json`: the dead's ten wardrobes
+- `src/entities/zombie.js:36-71`, `src/entities/movement.js:65-70`: the body, separation
+- `src/map.js:938-947`: wild chunks bring the dead per `data/maps/valley.json` (`wild.zombiesPerChunk`)
+- `src/game.js:410-414`: only the dead in the active box think
+- `src/entities/zombie.js:232-266`, `src/entities/zombie.js:393-403`: sight scaled by the light at the player, the look's interval, the nearest player seen
+- `src/entities/zombie.js:295-311`, `src/entities/zombie.js:417-429`, `src/game.js:561`: flames at night, two torches, the belt
+- `src/entities/zombie.js:337-353`, `src/entities/zombie.js:468-509`, `src/entities/zombie.js:577-602`: memory, the walk to the last sighting, the search, giving up
+- `src/entities/zombie.js:124-129`: a hit tells a hunting zombie where the blow came from
+- `src/entities/zombie.js:449`: idle wandering within the room
+- `src/entities/zombie.js:603-616`, `src/game.js:294-302`: the bite, its landing, the guard and exposure
+- `data/combat.json`: `bleed.chance`, `infection.chance`
+- `src/bleed.js:59`, `src/infection.js:48`: a blocked bite neither wounds nor infects
+- `src/entities/zombie.js:489-576`, `src/map.js:431-434`, `src/map.js:536-622`: breaching openings, their health, boards per side
+- `src/entities/zombie.js:372-388`, `src/entities/zombie.js:92-99`: the climb, and a hit ending it
+- `src/entities/zombie.js:48`, `src/entities/zombie.js:366-370`: the groan
+- `src/entities/zombie.js:113-123`, `src/entities/zombie.js:357-364`: death and the still body
+- `src/entities/zombie.js:131-141`: a floored zombie takes finishers
+- `src/main.js:1443-1447`: the bite's words on the victim's client alone
+- `src/settings.js:12-13`, `src/entities/zombie.js:268-289`, `src/entities/zombie.js:296`, `src/entities/zombie.js:404-416`, `src/entities/villager.js:100-136`: Zombie aggro, Zombies attack villagers, a bitten villager turning
+- `src/settings.js:15`, `src/main.js:1189-1192`, `src/game.js:119-132`: Combat testing

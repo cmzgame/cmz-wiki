@@ -12,4 +12,12 @@ The **pickaxe** is a tool made at the [[Anvil]] from [[Iron bar|iron bars]] and 
 
 {{item-sections pickaxe}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/recipes.json:322-341`: the pickaxe from bars and a stick, with a hammer
+- `data/loot.json`: no table holds the pickaxe or iron bars
+- `data/items.json:35`: the pickaxe: either hand, a weapon, its kills, its unused verb
+- `src/items.js:27-37`: wear per hit from kills
+
 {{navbox items}}

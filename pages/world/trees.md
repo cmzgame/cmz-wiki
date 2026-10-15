@@ -39,3 +39,17 @@ Chopping is a menu action the host performs for whoever asked. The tree's remova
 - [[Log]]
 - [[The wild]]
 - [[Sight]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/map.js:1731-1767`, `data/maps/valley.json:5082-5097`: trees scattered over the valley except the village and the reserves
+- `data/maps/valley.json:5051-5081`: the biome's green, orange, red, and yellow oaks and spires; blue and purple in no map
+- `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_old.json`: per size the collision radius, wood, canopy reach, shadow, and leaf colour
+- `src/map.js:1172-1183`, `src/map.js:1238-1280`: only a circle at the trunk blocks, and a body slides round it
+- `src/map.js:1131-1141`: a path treats a tree's whole tile as blocked
+- `data/ground.json`, `src/ground.js`: the canopy's darkening and the shadow
+- `src/render/scene.js:97-121`: the hole in the canopy
+- `src/interact.js:46`, `src/interact.js:515-532`: Chop down with the count of logs; no tool; the tree removed and its logs dropped on its tile; "logs on the ground."
+- `data/items.json:4`, `data/sprites/fireplace.json`: logs split into planks and feed a fireplace
+- `src/interact.js:61-83`, `src/map.js:660-667`: a guest's chop run on the host; the change travels in the touched chunk

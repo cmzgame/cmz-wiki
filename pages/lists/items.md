@@ -8,4 +8,10 @@ Everything you can carry is an item: it sits in a bag's grid by its size, in a h
 
 {{item-table}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json`: every item, its kind, size, and hands (the table)
+- `src/inventory.js`, `src/grid.js`: a bag's grid by size, the hands, the belt, the worn slots
+
 {{navbox items}}

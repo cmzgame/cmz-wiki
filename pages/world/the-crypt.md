@@ -15,4 +15,12 @@ summary: A small stone crypt in the graveyard's north-east corner.
 
 None of the dead start inside the crypt, but the graveyard round it is full of them.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `tools/mapgen/valley.py:266-269`: the crypt in the graveyard's north-east corner
+- `data/maps/valley.json:2299-2354`: stone, one room, a door on the west side and no windows, two coffins and a chest, its one bracket empty
+- `data/maps/valley.json:5125-5286`: none of the dead placed inside it
+- `tools/mapgen/valley.py:408`: the graveyard's dead round it
+
 {{navbox places}}

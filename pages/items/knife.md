@@ -12,4 +12,12 @@ The **knife** is a small tool made at the [[Anvil]] from an [[Iron bar]] and a [
 
 {{item-sections knife}}
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/recipes.json:263-282`: the knife from a bar and a stick, with a hammer
+- `data/loot.json`: no table holds the knife or iron bars
+- `data/items.json:39`: the knife: either hand, a weapon, its kills, its unused verbs
+- `src/items.js:27-37`: wear per hit from kills
+
 {{navbox items}}

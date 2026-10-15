@@ -28,4 +28,19 @@ A fully blocked bite opens no wound and gives no infection (see [[Bleeding]] and
 
 A guest's guard shows at once on their screen, and the host applies it to the bite.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json`: the shield: off hand, its `shield` block
+- `src/combat.js:105-110`: a shield is never an off-hand weapon
+- `src/player-controller.js:23-24`: holding right raises the guard, with the bag or a menu open too
+- `src/combat.js:113-151`: front block, side through, behind whole, the stamina cost, the guard breaking
+- `src/entities/zombie.js:75-85`: a shield stagger ignores immunity and cancels the bite
+- `src/entities/player.js:328-334`: no regeneration and no sprint while blocking
+- `src/player-controller.js:52`: walking speed with the guard up
+- `src/combat.js:155-158`, `src/combat.js:345`, `src/archery.js:560`: the attack multiplier on blows and throws
+- `src/bleed.js:59`, `src/infection.js:48`: a blocked bite opens no wound and gives no infection
+- `src/game.js:294-302`: the guard, then the exposure
+- `src/net.js:675`: `blocking` in every character record
+
 {{navbox weapons}}

@@ -22,7 +22,7 @@ The body keeps your clothes, your bag, and everything in it. It can be searched 
 The screen says that your character died, the time, and "The body stays where it fell." It offers two buttons:
 
 - **New character** makes a fresh survivor in the same world. Character creation has {{n census.constants.ui_screens.CREATION_STEPS}} steps: pick an [[Identities|identity]], then a step kept for skills and a profession, not built yet. The new survivor has the starter kit (see [[Player]]) and appears beside the map's spawn, in your cottage, on the nearest free tile.
-- **Leave world** goes back to the [[Worlds]] screen.
+- **Leave world** saves and goes back to the title screen.
 
 If you reload a world whose character is dead, the dead screen shows again.
 
@@ -35,3 +35,20 @@ Each death belongs to its own player; only that player sees the dead screen. The
 ## See also
 
 - [[Health]], [[Characters]], [[Identities]], [[Worlds]], [[The dead]], [[Multiplayer]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/game.js:541-548`: the death check at zero health
+- `src/game.js:269-288`: the fall stops sleep, actions, auto-walk, the guard, a climb, and a draw, and sets a carried prop down within 2 tiles
+- `src/game.js:478-485,535-538`: the body dressed in the fallen player's gear and kept as a corpse
+- `src/host.js:216-218`: the world saved at a death
+- `src/ui/screens.js:785-791`: the dead screen's text and its two buttons
+- `src/ui/screens.js:63`: `CREATION_STEPS`: the identity step and the placeholder for skills
+- `src/main.js:291-320`: the respawn with the starter kit, on the nearest free walkable tile to spawn + (1, 1)
+- `data/maps/valley.json`: the valley's spawn, in your cottage
+- `src/main.js:335-349`: Leave world saves and returns to the title screen
+- `src/main.js:280`: the dead screen shown again on a reload
+- `src/main.js:293-306,867-875`: a guest's dead screen from the host's record, and its New character as a leave and rejoin
+- `src/entities/zombie.js:259`: the dead stop hunting a fallen player
+- `src/game.js:254-263`: only living players count toward everyone asleep

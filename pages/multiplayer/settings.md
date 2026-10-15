@@ -51,3 +51,19 @@ The game's full list of stored settings and their defaults, including the ones t
 ## See also
 
 - [[Controls]], [[Interface]], [[Multiplayer]], [[Screens]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/ui/screens.js:748-776`: the screen, "Kept in this browser", Defaults and Back
+- `src/settings.js:8-59`: every row's choices and defaults
+- `src/view.js:84-88`: `UI_SCALE_MAX` and Auto's fit
+- `src/view.js:28`, `src/view.js:70-79`, `src/main.js:898-906`: the zooms and Auto
+- `src/rules.js:109-115`: the five world rules
+- `style.css:561-565`, `src/ui/swing-timer.js:16`: the swing bars at the bottom, the exposure bar over the head
+- `src/ui/screens.js:454-463`: the Layer rows
+- `src/main.js:1190-1193`: combat testing at boot
+- `src/main.js:241-242`: the dev chest and combat testing read when a world is made
+- `src/ui/screens.js:373-382`, `src/main.js:591`, `server/world.js:97-99`: world rules greyed for a guest, a server world's from its owner
+- `src/settings.js:32-37`, `src/settings.js:92-94`, `src/ui/screens.js:773-776`: Defaults resets identities, the browser id, the bookmarks, the creator key, and the owner keys
+- `src/identities.js:91-98`: a new browser id drawn after the reset

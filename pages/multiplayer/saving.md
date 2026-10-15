@@ -48,3 +48,22 @@ A [[Server worlds|server world]] is saved by the server.
 ## See also
 
 - [[Worlds]], [[Characters]], [[Server worlds]], [[Dormancy]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/save.js:47-50`: worlds kept in the browser's IndexedDB with an index in localStorage
+- `src/main.js:109`, `src/main.js:1089`: `AUTOSAVE`, in seconds of game time
+- `src/map.js:84`: `HOUR_SECONDS`, the seconds of an in-game hour
+- `src/main.js:1611-1626`: saves when the tab is hidden and when the page is left
+- `src/main.js:1356`: Save world says "Saved."
+- `src/main.js:558-576`, `src/host.js:100`, `src/host.js:153-154`: saves on opening or closing to friends, a join, a leave, and dormancy
+- `src/host.js:216-218`: a save on any player's death
+- `src/main.js:249`: a save straight after a world is made
+- `src/main.js:329`: a failed save's message
+- `src/game.js:162-178`: what the save keeps: the clock, the rules, the map, every character
+- `src/main.js:325-331`: the save's wrapper keeps the dormant characters; never for a guest
+- `src/save.js:12-13`: what is not saved
+- `src/save.js:28-46`: the version, an older save brought up to date, a newer one refused
+- `src/identities.js:106-112`, `src/settings.js:32-34`: what a guest keeps: friends' bookmarks and identities
+- `server/world.js:126`, `server/world.js:141-160`: a server world saved by the server

@@ -22,3 +22,12 @@ A rock blocks a circle of {{n sprites.rock_0.collide.radius}} tiles, like a broa
 - [[Gatherables]]
 - [[The wild]]
 - [[Pickaxe]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/map.js:263-273`: rocks are rolled only in the wild, never inside the valley
+- `data/maps/valley.json:5098-5120`: the cell size, the chance, four kinds equally
+- `data/sprites/rock_0.json`: the collision radius, the shadow, `interactable`, `carry: false`
+- `src/interact.js:607-619`: no action for a rock
+- `src/map.js:1500`: `opaque` read only from map entries, so a rock blocks no sight or light

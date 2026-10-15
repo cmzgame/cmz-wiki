@@ -36,3 +36,17 @@ An infection belongs to whoever was bitten, and the host tells a guest when a bi
 ## See also
 
 - [[Bleeding]], [[Health]], [[The dead]], [[Moodles]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/combat.json:5`: the chance and the length in days
+- `src/game.js:300`: infection rolled on a bite that does damage, unless infected already
+- `src/main.js:1445`: "The bite broke the skin."
+- `src/infection.js:17-32`: four stages, each a quarter of the length, holding at the last
+- `src/moodles.js:36-45`: the stage names and the Turning text, "Nothing happens yet"
+- `src/infection.js:24`: the count reads the game clock, so it runs fast while everyone sleeps
+- `src/dev.js:50`: the console's cure
+- `src/clock.js:5`: a game day is 720 seconds
+- `src/host.js:187`: the host sends a guest its bite message
+- `src/settings.js:12`, `src/entities/zombie.js:233,296`: the dead bite only with Zombie aggro on

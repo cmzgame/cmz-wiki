@@ -25,3 +25,13 @@ The Swing targets setting works with fists too. Fists do not wear (see [[Durabil
 
 - [[Combat]]
 - [[Weapons]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/combat.js:50`, `src/combat.js:73-77`: fists when the main hand holds no weapon block
+- `data/items.json`: the Book of Fire, Staff of Fire, throwing knife, and throwing axe carry no weapon block
+- `data/combat.json`: the `fists` numbers
+- `src/combat.js:399-410`: swing targets work with fists
+- `src/combat.js:362-372`: wear applies only to a held weapon
+- `src/combat.js:376-394`: the shove with any hands

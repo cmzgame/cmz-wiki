@@ -22,4 +22,16 @@ Light it with charcoal and keep it fed (see [[Fire]]): it holds {{n sprites.forg
 
 A guest feeds the forge and makes bars through the host like any station; the fire and the queue are the same for every player.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/sprites/forge.json`: the forge burns charcoal, holds and burns its units, gives light, does not cook
+- `data/recipes.json:247-262`: iron bar from iron ore, fire needed
+- `data/loot.json`: nothing gives charcoal or ore
+- `data/maps/valley.json`: the forge starts cold
+- `src/interact.js:350-380`: lighting and feeding
+- `src/interact.js:622-639`: the station's menu entry and `E`
+- `src/stations.js:193-205`: a job waits while the fire is out
+- `src/host.js:161-167`: a guest's Make runs on the host
+
 {{navbox making}}

@@ -71,3 +71,35 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - [[Containers]]
 - [[Use]]
 - [[Items]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/inventory.js:43`: your grid is the bag on your back
+- `src/inventory.js:27-32`: a bag's grid travels with the bag
+- `src/grid.js:45-56`: the placement scan, unrotated first
+- `src/ui/inventory-panel.js:117-125`: R, a right click, or the wheel turns a dragged item
+- `src/ui/inventory-panel.js:676-690`: Rotate for non-square items, greyed when it will not fit
+- `data/items.json`: each item's `stack`
+- `src/grid.js:58-84`: stacks merge on equal fill and top up first
+- `src/grid.js:155-178`: Tidy, biggest first, nothing moves on failure
+- `src/main.js:735-749`: Tab and C, "No bag on your back.", "Your hands are full."
+- `src/ui/inventory-panel.js:334-353`: panels dragged by the header, remembered
+- `src/ui/inventory-panel.js:75-89`: double-click equips, wears, or sends across
+- `src/ui/inventory-panel.js:667`: shift-click sends across
+- `src/interact.js:1015-1090`: the item menu's entries
+- `src/ui/inventory-panel.js:237-238`: the wear bar and "(N% left)"
+- `src/inventory.js:159-173`: the one container rule and its labels
+- `data/items.json:31-33`: the three bags' grids
+- `src/game.js:103-116`: the starting sack
+- `data/loot.json:2`: the rucksack in the chest table
+- `src/interact.js:168-189`: wearing a new bag drops the old one; Wear on the floor
+- `src/interact.js:323-345`: a bag on the floor opens as a container
+- `src/map.js:335-362`: items lie on tiles
+- `src/interact.js:1095-1147`: a dropped bag or belt keeps its contents
+- `src/interact.js:42`: E's reach
+- `src/interact.js:713-726`: a loose item beats a container
+- `src/interact.js:192-261`: Pick up and Wear on the floor; only an empty bag is picked up
+- `src/interact.js:157-162`: a free hand first; "No room in your bag.", "You have no bag."
+- `src/ui/inventory-actions.js:200-358`: a guest's panel actions run on the host
+- `src/ui/inventory-actions.js:276-284`: a container not the guest's own must be within reach

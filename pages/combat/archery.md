@@ -83,4 +83,28 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - [[Throwing spear]]
 - [[Combat]]
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/archery.js:468-477`: the bow and the spear share the launcher and the draw
+- `src/archery.js:578-617`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
+- `data/items.json`: the bow's `drawTime` and `braceDrawTime`, `damage`, `knockback`, `shots`; the spear's `thrown` block
+- `src/archery.js:27-52`: the tunables: range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights
+- `src/archery.js:522-575`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the bag and belt hold none
+- `src/main.js:610-625`: a right tap during a draw cancels it
+- `src/archery.js:595-597`: sprinting, a panel, climbing, or a pause cancels a draw
+- `src/archery.js:602-603`: the braced draw time
+- `src/player-controller.js:52`: walking speed while drawing and braced
+- `src/archery.js:88-129`: the shot fixed at release, travelling along the ground with the arc above
+- `src/archery.js:234-261`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
+- `src/archery.js:273-285`: only the dead are hit
+- `src/archery.js:141-202`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot
+- `src/entities/character.js:139-162`: lodged arrows come out in the body's loot, the rest at its feet
+- `src/archery.js:564-573`, `src/items.js:39-41`: the bow wears per arrow loosed
+- `src/player-controller.js:39-45`: middle or Q throws the spear; no brace for a throw
+- `src/archery.js:245`: the spear's break chance rolled on every landing
+- `src/archery.js:556-560`: the thrown spear leaves the hand with its wear; the guard's attack multiplier on a throw
+- `src/archery.js:491-492`, `src/archery.js:299-303`, `src/archery.js:608`: a guest's draw and aim point on the host, arrows in flight sent each frame
+- `src/settings.js:17`: the Bow aim guide setting, on by default
+
 {{navbox weapons}}

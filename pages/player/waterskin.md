@@ -26,4 +26,18 @@ A waterskin found in a barrel or on a body may hold 0, 25, 50, 75, or 100 percen
 
 A guest drinks and fills through the same actions; the host performs them.
 
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/items.json:19`: the waterskin, its size, and its capacity
+- `src/game.js:110`: the starter waterskin, full
+- `data/loot.json:3-4`: waterskins in barrels and on bodies
+- `src/interact.js:1049-1052`: "Drink (N%)" showing the fill
+- `src/interact.js:994-1004`: the belt key drinks it
+- `src/entities/player.js:105-113`, `data/tuning.json:51`: the sip, with a +1 that takes water at full thirst
+- `src/interact.js:48,534-582`: "Fill waterskins" at a well or water, its time, filling to 100
+- `src/inventory.js:80-82`: only the bag's waterskins are filled
+- `src/items.js:93`: a found waterskin's random fill
+- `src/ui/inventory-actions.js:216,343-351`: a guest's menu choice is run by the host
+
 {{navbox items}}

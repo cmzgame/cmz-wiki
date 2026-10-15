@@ -44,3 +44,22 @@ A guest's equips, unequips, and swaps are sent to the host by the item's id and 
 
 - [[Inventory]], [[Belt]], [[Clothing]]
 - [[Combat]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/ui/hud.js:111-116`: the "Hands" line
+- `data/items.json`: each item's `hands`
+- `src/items.js:112-172`: canHold, pickHand, hold, release
+- `src/inventory.js:199`: either with no choice: main, else off, else main
+- `src/interact.js:1015-1090`: the Equip entries, only in your own bag
+- `src/inventory.js:194-224`: equip stows the old item or refuses
+- `src/interact.js:890-898`: "Your hands are full."
+- `src/interact.js:877-887`: Unequip, "Nowhere to put it."
+- `src/ui/inventory-actions.js:89-98`: hand to hand swaps
+- `src/interact.js:1095-1147`: Drop on a hand's menu
+- `src/inventory.js:226-234`: the off hand's item brought back once
+- `src/combat.js:272-283`: two weapons swing in turn
+- `src/items.js:121-123`: what counts as a weapon for the spear's rule; a torch does not
+- `src/interact.js:157-162`: a single holdable item goes to a free hand first
+- `src/ui/inventory-actions.js:200-358`: a guest's equips sent by uid and slot

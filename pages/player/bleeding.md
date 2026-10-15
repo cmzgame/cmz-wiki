@@ -48,3 +48,17 @@ A wound belongs to whoever was bitten, and the host tells a guest when they star
 ## See also
 
 - [[Bandage]], [[Health]], [[Infection]], [[Combat]], [[Moodles]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `data/combat.json:4`: the wound chance, the most stacks, the timer, and the drain by stacks
+- `src/bleed.js:12`: the code's defaults match the data
+- `src/bleed.js:45-60`: each bite opens or widens a wound and resets the timer; the drain; the wound closing by itself
+- `src/game.js:294-301`: the bite hook, only for a bite that does damage
+- `src/main.js:1446`: "You are bleeding. A bandage will stop it."
+- `src/entities/player.js:134-135`: no health regeneration while any stack is open
+- `src/moodles.js:23-34`: the bleed moodle's stage names, capped at stage 4, so four and five stacks look alike
+- `src/interact.js:1037-1045`: "Apply" stops all bleeding and uses one bandage
+- `src/game.js:488`, `src/host.js:185-189`: bleeding stepped per player; the host sends a guest its bite messages
+- `src/settings.js:12`, `src/entities/zombie.js:233,296`: Zombie aggro off by default; the dead bite only with it on

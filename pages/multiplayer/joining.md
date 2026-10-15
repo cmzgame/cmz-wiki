@@ -32,7 +32,7 @@ The browser keeps the most recent friends' worlds.
 
 ### When the host is away
 
-A friend's world exists only while its host has it open. If the host closes it or leaves, you are returned to the title, told "The host closed the world.", and your character goes [[Dormancy|dormant]] in their save. When they open it again, Rejoin brings you back.
+A friend's world exists only while its host has it open. If the host closes it or leaves, you are returned to the title, told "The host closed the world."; when the host leaves the world, your character goes [[Dormancy|dormant]] in their save. When they open it again, Rejoin brings you back.
 
 ### Why a join can fail
 
@@ -58,3 +58,21 @@ As a guest, the world's rules are the host's (see [[Hosting]]), screens never pa
 ## See also
 
 - [[Hosting]], [[Dormancy]], [[Multiplayer]], [[Worlds]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/main.js:534-555`, `src/ui/screens.js:271`, `src/ui/screens.js:624`: Join a game, the code field, "Joining" and the code
+- `src/host.js:54-80`: a living character of this browser's comes back; otherwise the host asks who
+- `src/ui/screens.js:631-644`, `src/main.js:310-311`: creation runs with Join as this; the new survivor at the spawn
+- `src/net.js:145`, `src/net.js:829-906`: the stand-in world and the join's give-up after `JOIN_WAIT_MS`
+- `src/identities.js:106-112`, `src/main.js:538`: the bookmark written at the first try, the most recent kept
+- `src/ui/screens.js:521-525`, `src/ui/screens.js:571`, `src/net.js:383-394`: the dot, its tooltip, polled from the relay
+- `src/ui/screens.js:324-348`, `src/ui/screens.js:597-604`: Rejoin, the wait with Cancel, giving up after a minute
+- `src/ui/screens.js:474-479`: Forget on a friend's row
+- `server/relay.js:840-852`, `src/main.js:1567`: "The host closed the world."
+- `src/main.js:336`: a host leaving makes guests dormant
+- `src/main.js:1557-1573`, `src/net.js:253-277`, `src/net.js:473-508`: the reasons a join fails, the version checks, a newer tab replacing the older
+- `src/host.js:30`, `src/host.js:74`: `MAX_OWNERS`, the next browser refused as full
+- `src/rules.js:109-115`, `src/main.js:667-670`, `src/main.js:325-331`: a guest under the host's rules, never paused, never saving
+- `src/ui/screens.js:656-667`, `src/main.js:583-590`: a guest's pause menu without Save world and Open to friends; its line names the world by the code

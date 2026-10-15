@@ -38,3 +38,14 @@ These change only the game they are typed into; on a guest's game they change on
 
 - [[Containers]]
 - [[Settings]]
+
+## Sources
+
+<!-- sources at 9205ad7 -->
+- `src/settings.js:31`: the devChest setting, on by default
+- `data/sprites/dev_chest.json`: the dev chest rolls the dev kit
+- `data/loot.json:5`: its fixed contents
+- `data/sprites/wheelbarrow.json`: the wheelbarrow rolls the same list
+- `src/placement.js:69-75`: a prop with no carry flag can be carried
+- `src/game.js:80-83`: placed beside the spawn of a new world
+- `src/dev.js:115-141`: giveKit, give, and giveDevBag, all on the local client
