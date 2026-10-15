@@ -40,7 +40,7 @@ The three torch posts in the square start empty and give no light until someone 
 
 ## With friends
 
-Taking and mounting a torch are performed by the host for whoever asked. The change to the holder is not marked as a change to the map, so a guest's view of the post or bracket may not update until something else changes on that tile.
+Taking and mounting a torch are performed by the host for whoever asked, and the change reaches every player at once.
 
 ## See also
 
@@ -50,7 +50,7 @@ Taking and mounting a torch are performed by the host for whoever asked. The cha
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 3c70aa7 -->
 - `data/items.json:2`: the torch's radius
 - `src/map.js:137-150`, `src/light.js:59-64`: a bracket on a wall edge, its torch 0.3 tiles off it on its side, with the torch's radius
 - `src/light.js:191-227`: the light stopped by walls, shut doors, and shutters
@@ -62,3 +62,5 @@ Taking and mounting a torch are performed by the host for whoever asked. The cha
 - `data/maps/valley.json:1900-1905`, `data/maps/valley.json:3918-3923`: the inn's and the toll house's torches outside
 - `tools/mapgen/valley.py:200-201`: the square's three posts placed with no torch
 - `src/interact.js:61-83`: a guest's take or mount run on the host by address
+- `src/map.js`: `setHolder` marks the holder's tile changed, so the frame carries it to guests (game commit 8f5d996)
+

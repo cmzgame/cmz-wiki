@@ -4,6 +4,8 @@ Everything about [the game](https://github.com/michaeldippold/cozy-medieval-zomb
 
 Half of every page is generated from the game's own data (items, recipes, loot, stations, places, villagers, numbers); the other half is prose. Every number in prose is a reference to the data, so a retune in the game changes the wiki on the next sync with nobody rewriting a sentence.
 
+**For Claude sessions:** `CLAUDE.md` is the whole method (the sync, the census, writing, sources, verification, and the bug pipeline to the game's `docs/bugs.md`).
+
 ## Editing a page
 
 Press **Edit this page** on any page: it opens the page's markdown in GitHub's editor, and a commit rebuilds the site. A page that is generated from the data alone says **Write this page** instead, which starts a file of its own in `pages/`.

@@ -23,7 +23,7 @@ Every small "Planned" note across the wiki is listed on [[Special:Planned notes|
 - **Villagers who flee, follow, and stay** (`docs/04`).
 - **Infection's effects and cures** (a marker today).
 - **Better animations** (`docs/32`): sleeping in a bed, sitting, deaths.
-- **Throwing knives and axes, and fire magic** (`docs/24`).
+- **Throwing knives and axes, and more magic** (`docs/24`): the [[Fireball]] is built; costs, bursts, and other spells are not.
 - **A demo** (`docs/36`).
 
 ## Sources

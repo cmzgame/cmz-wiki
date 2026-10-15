@@ -40,7 +40,7 @@ The {{n census.counts.rules}} rows marked as world rules belong to the world, no
 
 ## Defaults
 
-**Defaults** resets everything the browser keeps in its settings, which includes more than this screen shows: your [[Identities|identities]], the browser's own id (by which friends' worlds know your characters), the list of friends' worlds, the creator key, and the owner keys of [[Server worlds|server worlds]]. After Defaults, friends' worlds no longer recognise this browser as the owner of its characters there.
+**Defaults** resets only what the Settings screen shows: its choices and the painted layers. It never touches your [[Identities|identities]], the browser's own id, the list of friends' worlds, the creator and owner keys, or where the panels were dragged to.
 
 ## Every setting the game keeps
 
@@ -65,5 +65,5 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/main.js:1190-1193`: combat testing at boot
 - `src/main.js:241-242`: the dev chest and combat testing read when a world is made
 - `src/ui/screens.js:373-382`, `src/main.js:591`, `server/world.js:97-99`: world rules greyed for a guest, a server world's from its owner
-- `src/settings.js:32-37`, `src/settings.js:92-94`, `src/ui/screens.js:773-776`: Defaults resets identities, the browser id, the bookmarks, the creator key, and the owner keys
+- `src/settings.js`: Defaults resets only the screen's own choices and the painted layers (game commit 3c70aa7)
 - `src/identities.js:91-98`: a new browser id drawn after the reset

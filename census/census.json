@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "9205ad7e7119ce705b06bab7a47d76974b2f5fbd",
-  "short": "9205ad7",
-  "date": "2026-10-14T20:18:10-05:00",
-  "subject": "Merge item 5's step 6, the owner's powers (294d8ed, 7bf2511), reviewed: the owner's character taken only with the owner key (a stranger with the code got its own; a second device with the key took the owner's back), owner endpoints behind the key, the code moved with whoever is in, removal barring by hash, step 5's three points closed, no key in the log. Headless 7 of 7, hashes unchanged. Step 7 may begin. Docs: 02",
+  "commit": "3c70aa734b1fe3e2da812904adba1f171f910c0c",
+  "short": "3c70aa7",
+  "date": "2026-10-14T22:40:03-05:00",
+  "subject": "Bugs: Settings' Defaults resets only what the Settings screen shows (its choices and the painted layers), never the identities, the browser id, the friends' worlds, the creator and owner keys, or the panels' places (the wiki census's first item; tried under Node with a stand-in store). The torch holders' sync moved to Fixed (8f5d996). Docs: bugs",
   "ref": "origin/main"
  },
  "counts": {
@@ -25,7 +25,7 @@
   "menuLabels": 40,
   "events": 24,
   "checks": 20,
-  "modules": 80
+  "modules": 81
  },
  "items": [
   {
@@ -404,7 +404,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "art only for now: it does nothing yet (docs/24)"
+   "note": "a spellbook: held with a staff in the other hand, its spell is cast (docs/24)"
   },
   {
    "id": "staff_of_fire",
@@ -425,7 +425,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "art only for now: it does nothing yet (docs/24)"
+   "note": "a magic staff: held with a spellbook in the other hand, casts the book's spell on the left button (docs/24)"
   },
   {
    "id": "throwing_knife",
@@ -4251,6 +4251,7 @@
   "thrust",
   "zombie",
   "bow",
+  "bow_rest",
   "throw"
  ],
  "hairStyles": {
@@ -4426,44 +4427,44 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:910"
+    "main.js:915"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:909"
+    "main.js:914"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:889"
+    "main.js:894"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:735",
-    "main.js:749"
+    "main.js:740",
+    "main.js:754"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:938"
+    "interact.js:939"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:907"
+    "main.js:912"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:891"
+    "main.js:896"
    ]
   },
   {
@@ -4482,62 +4483,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:939"
+    "interact.js:940"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:887"
+    "main.js:892"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:892"
+    "main.js:897"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:898"
+    "main.js:903"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:889"
+    "main.js:894"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:966"
+    "main.js:971"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:966"
+    "main.js:971"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:890"
+    "main.js:895"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:977"
+    "main.js:982"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:735",
-    "main.js:741"
+    "main.js:740",
+    "main.js:746"
    ]
   }
  ],
@@ -4545,7 +4546,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:228"
+    "stations.js:232"
    ]
   },
   {
@@ -4559,13 +4560,13 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1264"
+    "main.js:1275"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:643"
+    "main.js:648"
    ]
   },
   {
@@ -4577,97 +4578,97 @@
   {
    "key": "Climb through",
    "at": [
-    "interact.js:478"
+    "interact.js:479"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1199"
+    "main.js:1204"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1101"
+    "interact.js:1102"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1047"
+    "interact.js:1048"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1024"
+    "interact.js:1025"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1025"
+    "interact.js:1026"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1127"
+    "interact.js:1128"
    ]
   },
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1228"
+    "main.js:1239"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1185"
+    "main.js:1190"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1218"
+    "main.js:1229"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1277"
+    "main.js:1288"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1129"
+    "interact.js:1130"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1162"
+    "main.js:1167"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1159"
+    "main.js:1164"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1187"
+    "main.js:1192"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1186"
+    "main.js:1191"
    ]
   },
   {
@@ -4679,50 +4680,50 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1286"
+    "main.js:1297"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:388"
+    "interact.js:389"
    ]
   },
   {
    "key": "Take off",
    "at": [
-    "interact.js:1112"
+    "interact.js:1113"
    ]
   },
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:411"
+    "interact.js:412"
    ]
   },
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1143"
+    "interact.js:1144"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1020",
-    "interact.js:1099"
+    "interact.js:1021",
+    "interact.js:1100"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:586"
+    "interact.js:587"
    ]
   },
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:457"
+    "interact.js:458"
    ]
   },
   {
@@ -4734,7 +4735,7 @@
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:519"
+    "interact.js:520"
    ]
   },
   {
@@ -4752,25 +4753,25 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1051"
+    "interact.js:1052"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:543"
+    "interact.js:544"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:873"
+    "interact.js:874"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1028"
+    "interact.js:1029"
    ]
   },
   {
@@ -4782,19 +4783,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1362"
+    "interact.js:1364"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:505"
+    "interact.js:506"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1056"
+    "interact.js:1057"
    ]
   }
  ],
@@ -4802,25 +4803,25 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:260"
+    "archery.js:263"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:563"
+    "archery.js:614"
    ]
   },
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1089"
+    "main.js:1094"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:301"
+    "game.js:353"
    ]
   },
   {
@@ -4833,8 +4834,8 @@
    "key": "containerOpened",
    "at": [
     "interact.js:209",
-    "interact.js:341",
-    "interact.js:1347",
+    "interact.js:342",
+    "interact.js:1349",
     "ui/station-panel.js:67",
     "ui/station-panel.js:92"
    ]
@@ -4842,7 +4843,7 @@
   {
    "key": "craftDone",
    "at": [
-    "stations.js:204"
+    "stations.js:208"
    ]
   },
   {
@@ -4854,19 +4855,19 @@
   {
    "key": "fireFed",
    "at": [
-    "map.js:115"
+    "map.js:116"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:100"
+    "map.js:101"
    ]
   },
   {
    "key": "gameOver",
    "at": [
-    "game.js:546"
+    "game.js:598"
    ]
   },
   {
@@ -4938,7 +4939,7 @@
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:571",
+    "archery.js:622",
     "combat.js:370"
    ]
   },
@@ -5081,15 +5082,15 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 1818
+   "lines": 1888
   },
   {
    "path": "main.js",
-   "lines": 1666
+   "lines": 1678
   },
   {
    "path": "interact.js",
-   "lines": 1418
+   "lines": 1420
   },
   {
    "path": "placeholders.js",
@@ -5097,7 +5098,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1299
+   "lines": 1366
   },
   {
    "path": "ground.js",
@@ -5112,6 +5113,10 @@
    "lines": 704
   },
   {
+   "path": "archery.js",
+   "lines": 669
+  },
+  {
    "path": "assets.js",
    "lines": 636
   },
@@ -5120,8 +5125,8 @@
    "lines": 621
   },
   {
-   "path": "archery.js",
-   "lines": 618
+   "path": "game.js",
+   "lines": 620
   },
   {
    "path": "placement.js",
@@ -5133,11 +5138,7 @@
   },
   {
    "path": "figure/draw.js",
-   "lines": 571
-  },
-  {
-   "path": "game.js",
-   "lines": 568
+   "lines": 594
   },
   {
    "path": "render/walls.js",
@@ -5156,12 +5157,12 @@
    "lines": 393
   },
   {
-   "path": "entities/player.js",
-   "lines": 368
+   "path": "figure/rig.js",
+   "lines": 378
   },
   {
-   "path": "figure/rig.js",
-   "lines": 339
+   "path": "entities/player.js",
+   "lines": 368
   },
   {
    "path": "figure/raster.js",
@@ -5169,7 +5170,7 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 275
+   "lines": 284
   },
   {
    "path": "inventory.js",
@@ -5177,19 +5178,23 @@
   },
   {
    "path": "stations.js",
-   "lines": 244
+   "lines": 248
+  },
+  {
+   "path": "save.js",
+   "lines": 241
   },
   {
    "path": "host.js",
    "lines": 232
   },
   {
-   "path": "save.js",
-   "lines": 232
-  },
-  {
    "path": "loop.js",
    "lines": 225
+  },
+  {
+   "path": "figure/held.js",
+   "lines": 223
   },
   {
    "path": "render/props.js",
@@ -5232,10 +5237,6 @@
    "lines": 160
   },
   {
-   "path": "figure/held.js",
-   "lines": 158
-  },
-  {
    "path": "identities.js",
    "lines": 155
   },
@@ -5276,16 +5277,16 @@
    "lines": 109
   },
   {
+   "path": "settings.js",
+   "lines": 106
+  },
+  {
    "path": "use.js",
    "lines": 105
   },
   {
    "path": "pathfind.js",
    "lines": 102
-  },
-  {
-   "path": "settings.js",
-   "lines": 101
   },
   {
    "path": "clock.js",
@@ -5398,6 +5399,10 @@
   {
    "path": "render.js",
    "lines": 14
+  },
+  {
+   "path": "build.js",
+   "lines": 7
   }
  ],
  "problems": [],
@@ -5573,7 +5578,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 3,
+   "PROTOCOL": 4,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -5581,7 +5586,8 @@
    "MAX_RUN": 600,
    "SYNC_EVERY_FRAMES": 10,
    "JOIN_WAIT_MS": 10000,
-   "FRAME_EVERY": 3
+   "FRAME_EVERY": 3,
+   "EARLY_MAX": 600
   },
   "pathfind": {
    "KEY_OFF": 32768

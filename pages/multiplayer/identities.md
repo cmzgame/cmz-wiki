@@ -31,7 +31,7 @@ The last identity chosen is offered first next time.
 
 Identities live in the browser's settings. They are not part of any world and do not travel with a world to another device.
 
-The **Defaults** button on the [[Settings]] screen resets the identities along with the settings.
+The **Defaults** button on the [[Settings]] screen does not touch the identities: it resets only the screen's own choices.
 
 ## With friends
 
@@ -53,5 +53,5 @@ Joining a friend's world for the first time asks for an identity; your new chara
 - `src/ui/screens.js:426-446`, `src/main.js:1333`: the preview in the starting clothes, turning through the facings
 - `src/ui/screens.js:301-305`: the last identity chosen is preselected
 - `src/settings.js:32-33`: identities kept in the browser's settings, not in a world
-- `src/settings.js:92-94`, `src/ui/screens.js:773-776`: Defaults resets them
+- `src/settings.js`: Defaults leaves the identities alone (game commit 3c70aa7)
 - `src/host.js:54-80`, `src/ui/screens.js:631-644`: a first join asks for an identity and stamps a character from it
