@@ -13,7 +13,7 @@ An **identity** is a name and a look, kept in the browser and used again and aga
 
 **Identities** on the title screen, and the first step of character creation, list the browser's identities with **Choose**, **Edit**, and **New identity**. The editor has:
 
-- **Name**: what others see over your head and in the log.
+- **Name**: what others see over your head and in the [[Chat log|chat log]].
 - **Skin**: {{n looks.skins.living.length}} living tones and {{n looks.skins.dead.length}} dead ones.
 - **Hair style**: bald, short, and the painted styles.
 - **Hair colour**: {{n looks.hair.length}} colours.

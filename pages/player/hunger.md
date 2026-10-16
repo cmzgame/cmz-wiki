@@ -1,7 +1,7 @@
 ---
 title: Hunger
 categories: [Player, Needs]
-aliases: [Eating, Starving, Starvation]
+aliases: [Starving, Starvation]
 summary: The need that food fills; empty, it costs health.
 numbersOk: true
 ---

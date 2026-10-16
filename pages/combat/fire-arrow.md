@@ -11,9 +11,9 @@ The **Fire arrow** is an [[Arrow]] dipped in a lit [[Fire]]. A [[Bow]] shoots fi
 
 ## Creation
 
-[[Use]] arrows you carry (in a hand, on the [[Belt]], or in the bag) on any lit fire that burns fuel: a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]. The whole stack becomes fire arrows at once, in the same place, and the log says "You dip the arrows in the fire." You must stand within {{n census.constants.burn.DIP_REACH tiles}} of the fire.
+[[Use]] arrows you carry (in a hand, on the [[Belt]], or in the bag) on any lit fire that burns fuel: a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]. The whole stack becomes fire arrows at once, in the same place, and the chat log says "You dip the arrows in the fire." You must stand within {{n census.constants.burn.DIP_REACH tiles}} of the fire.
 
-The game refuses, with a line in the log, when:
+The game refuses, with a line in the [[Chat log|chat log]], when:
 
 - the fire is out: "The fire is out." (light it first; see [[Fire]]);
 - you stand too far from it: "Too far from the fire.";

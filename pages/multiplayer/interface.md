@@ -1,7 +1,7 @@
 ---
 title: Interface
 categories: [Interface]
-aliases: [HUD, UI, Health bar, Stamina bar, Clock, Prompt, Context menu, Actions menu, Cursor, Debug corner]
+aliases: [HUD, UI, Health bar, Stamina bar, Prompt, Context menu, Actions menu, Cursor, Debug corner]
 summary: What is on the screen while playing: the portrait and bars, the clock, the moodles, the swing bars, the prompt, menus, panels, and the cursor.
 ---
 
@@ -17,7 +17,7 @@ The **interface** is everything drawn over the world: the bars, the clock, the i
 
 ## Top centre: the clock
 
-"Day N, HH:MM". A day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of game time. Short messages float under the clock and are copied into the log.
+"Day N, HH:MM". A day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of game time. Short messages float under the clock and are copied into the chat log.
 
 ## Right edge: moodles
 
@@ -28,16 +28,16 @@ Five icons always shown, in a fixed order: bleeding, infection, hunger, thirst, 
 - **The prompt**: over the target of the nearest simple action, "E: action" (for example "E: Put down" while carrying furniture). During a timed action it shows the action with a progress bar. It is greyed when the action is not possible.
 - **Health bars over heads**: a small bar over any hurt, living zombie in sight, and over your own head while you are hurt.
 - **The exposure bar**: a red bar over your head for the moment in which a blow against you is amplified. See [[Combat]].
-- **Speech bubbles** over anyone who speaks, and **names** over other players (see [[Log and chat]], [[Multiplayer]]).
+- **Speech bubbles** over anyone who speaks, and **names** over other players (see [[Chat log]], [[Multiplayer]]).
 
 ## Bottom centre: the swing bars and the belt
 
 - **Swing bars**: two gold bars above the belt, the main hand on top and the off hand below. They are empty at rest and fill while a swing recovers. The **Swing timer** setting hides them.
 - **The belt**: while a belt is worn, its slots show here; keys `1` to `4` use them.
 
-## Bottom left: the log
+## Bottom left: the chat log
 
-Every message and every line said within sight, with the chat box at its foot. See [[Log and chat]].
+Every message and every line said within sight, with the chat box at its foot. See [[Chat log]].
 
 ## Menus
 
@@ -66,7 +66,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 
 ## See also
 
-- [[Controls]], [[Settings]], [[Screens]], [[Log and chat]], [[Moodles]]
+- [[Controls]], [[Settings]], [[Screens]], [[Chat log]], [[Moodles]]
 
 ## Sources
 
@@ -78,7 +78,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/ui/hud.js:66`, `src/ui/hud.js:92-106`: the name, the health bar's colours, the stamina pulses, the hands line and its dash
 - `data/tuning.json`: `player.hp` and `player.stamina`
 - `src/ui/hud.js:118-122`, `src/clock.js:5`, `src/clock.js:88-94`: the clock, its format, the day's length
-- `src/ui/prompt.js:60`, `src/ui/log.js`: messages float and go to the log
+- `src/ui/prompt.js:60`, `src/ui/log.js`: messages float and go to the chat log
 - `src/moodles.js:23-115`, `src/ui/moodles.js`, `style.css:317-321`: the five moodles on the right, their order, stages, names
 - `src/ui/prompt.js:41`, `src/interact.js:852-880`: the prompt, "E: Put down", the progress bar, greyed
 - `src/ui/zombie-bars.js:14-20`: health bars over hurt zombies and over you

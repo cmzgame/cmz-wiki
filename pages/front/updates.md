@@ -7,6 +7,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-15: one name, one page
+
+- **Fixed:** every link to [[Log]] went to the page about the log at the bottom left of the screen instead of the item. Now a page's title always wins over another page's alias, and the build refuses a name two pages claim.
+- **Renamed:** the page "Log and chat" is now [[Chat log]], and the wiki calls it the chat log wherever "the log" meant it ([[Controls]], [[Interface]], [[Multiplayer]], [[Hosting]], [[Identities]], [[Dormancy]], [[Use]], [[Fire arrow]]).
+- **Names given to one page each:** Off hand to [[Hands]], Wear to [[Clothing]], Eating to [[Food]], Survivor to [[Player]], New character to [[Characters]], Clock to [[The day]], Dead screen to [[Death]], Drinking to [[Thirst]]; [[Dual wielding]] is its own page's alone.
+
 ## 2026-10-15: synced to `57df52e`
 
 - **Changed in the game, corrected here:** only the pause menu stops the game (game #64). With the bag, a container or body, a station, or the character screen open, a left click on the world swings, casts, draws a bow, or lands a [[Use]] (a Use begun from the bag is aimed with the bag still up); `E`, `B`, and `T` work; the wheel zooms except while an item is dragged. A click on a panel stays the panel's, and a right-click menu still takes the click that closes it and ends a draw ([[Controls]], [[Archery]], [[Use]], [[Inventory]], [[Interface]], [[Crafting]], [[Getting started]]).

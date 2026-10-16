@@ -47,7 +47,7 @@ Another living player's name floats over their head while they are in your [[Sig
 
 ### Talking
 
-Press `Enter` to type a line; your character says it in a speech bubble, and it appears in the log of everyone who can see you. See [[Log and chat]].
+Press `Enter` to type a line; your character says it in a speech bubble, and it appears in the chat log of everyone who can see you. See [[Chat log]].
 
 ### Death
 
@@ -69,7 +69,7 @@ The {{n census.counts.rules}} world rules above, set by the host.
 
 - [[Worlds]], [[Saving]], [[Identities]], [[Characters]]
 - [[Hosting]], [[Joining]], [[Dormancy]], [[Server worlds]]
-- [[Log and chat]], [[Screens]]
+- [[Chat log]], [[Screens]]
 
 ## Sources
 

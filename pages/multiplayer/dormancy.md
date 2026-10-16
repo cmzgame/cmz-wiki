@@ -26,7 +26,7 @@ When the host leaves the world or closes it to friends, every guest goes dormant
 
 ### Stepping away
 
-In a world shared with friends, five minutes of real time with no input takes your character out of the world in the same way. The screen says "You stepped away"; any key, click, mouse move, or wheel brings you back, and that first press is spent on returning. Others' logs read "Name stepped away." and "Name is back."
+In a world shared with friends, five minutes of real time with no input takes your character out of the world in the same way. The screen says "You stepped away"; any key, click, mouse move, or wheel brings you back, and that first press is spent on returning. Others' chat logs read "Name stepped away." and "Name is back."
 
 You never step away while asleep, dead, or climbing, or when playing alone. A host who steps away with no guests in holds their world still until they return.
 
@@ -54,6 +54,6 @@ Dormancy exists only with friends; a world played alone has nobody to keep.
 - `src/main.js:346`, `src/main.js:583`: the host leaving or closing to friends makes every guest dormant before saving (game commit 2c70942)
 - `src/host.js:54-80`: a rejoin from the same browser brings back the same character
 - `src/main.js:130-209`, `src/main.js:134`: stepping away after `AWAY_AFTER_MS` (300000 real ms), "You stepped away", any input brings you back
-- `src/net.js:453-472`, `src/net.js:1295`: others' logs told of stepping away and coming back
+- `src/net.js:453-472`, `src/net.js:1295`: others' chat logs told of stepping away and coming back
 - `src/host.js:106-137`, `src/main.js:145`: never while asleep, dead, climbing, or alone
 - `src/main.js:674-677`: a host away with no guests holds the world still

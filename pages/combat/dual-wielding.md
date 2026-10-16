@@ -1,7 +1,7 @@
 ---
 title: Dual wielding
 categories: [Combat, Mechanics]
-aliases: [Exposure, Off hand, Two weapons]
+aliases: [Exposure, Two weapons]
 summary: Fighting with a weapon in each hand, and the exposure each off-hand swing leaves you in.
 ---
 

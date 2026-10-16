@@ -1,7 +1,7 @@
 ---
 title: Screens
 categories: [Interface]
-aliases: [Title screen, Pause menu, Pause, Menu, Dead screen, Leave world]
+aliases: [Title screen, Pause menu, Pause, Menu, Leave world]
 summary: The title screen, the pause menu, and the dead screen, and how Escape moves between them.
 ---
 
