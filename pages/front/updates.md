@@ -7,6 +7,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-15: synced to `9a81879`
+
+- **Changed in the game, corrected here:** equipping a garment over a filled slot with no room in the bag now says "No room in your bag to unequip the old one." (game #67; [[Clothing]]).
+
 ## 2026-10-15: synced to `9a450f2`
 
 - **Changed in the game, corrected here:** the word "wear" is gone from the game's screens (game #66). Putting anything on is **Equip**, garments and bags included (a bag's says its grid, as **Equip (8×5)**; a garment on the floor, **Equip cap** or **Equip cap (swap)**), and taking it off is **Unequip** where a slot's menu said Take off. A full bag's refusals say "or equip it", and the Controls screen says "Equip or unequip a thing" ([[Clothing]], [[Inventory]], [[Hands]], [[Containers]], [[Rucksack]], [[Interface]], [[Controls]]).
