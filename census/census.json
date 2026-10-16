@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "19a1c189cb86356477d077abb22672e77691ba10",
-  "short": "19a1c18",
-  "date": "2026-10-16T15:55:02-05:00",
-  "subject": "Merge #115, reviewed: a loading screen for entering and leaving a world and for a guest's join, and the entry stall gone (the ground baked two chunks a frame behind it) (closes #107)",
+  "commit": "1c7ed26f4f9079ba79824366516d2495b30159f0",
+  "short": "1c7ed26",
+  "date": "2026-10-16T17:00:14-05:00",
+  "subject": "Merge #121, reviewed, Michael's ruling: auto-drinking from any waterskin carried, belt or bag, at Thirsty, the emptiest first, never mid-fight (closes #96)",
   "ref": "origin/main"
  },
  "counts": {
@@ -23,7 +23,7 @@
   "keys": 19,
   "verbs": 3,
   "menuLabels": 56,
-  "events": 25,
+  "events": 26,
   "checks": 21,
   "modules": 82
  },
@@ -4121,6 +4121,7 @@
    "starveDamage": 1.5,
    "dehydrateDamage": 2,
    "drinkSip": 50,
+   "autoDrinkStage": 2,
    "presentTime": 0.6,
    "climbTime": 0.9,
    "tiredMax": 100,
@@ -4646,7 +4647,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:194"
+    "entities/player.js:215"
    ]
   }
  ],
@@ -5050,6 +5051,12 @@
    ]
   },
   {
+   "key": "drank",
+   "at": [
+    "game.js:550"
+   ]
+  },
+  {
    "key": "fireFed",
    "at": [
     "map.js:116"
@@ -5064,7 +5071,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:610"
+    "game.js:613"
    ]
   },
   {
@@ -5106,13 +5113,13 @@
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:182"
+    "entities/player.js:203"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:173"
+    "entities/player.js:194"
    ]
   },
   {
@@ -5280,11 +5287,11 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 1888
+   "lines": 1889
   },
   {
    "path": "main.js",
-   "lines": 1801
+   "lines": 1804
   },
   {
    "path": "placeholders.js",
@@ -5324,7 +5331,7 @@
   },
   {
    "path": "game.js",
-   "lines": 632
+   "lines": 635
   },
   {
    "path": "gl.js",
@@ -5355,12 +5362,12 @@
    "lines": 396
   },
   {
-   "path": "figure/rig.js",
-   "lines": 389
+   "path": "entities/player.js",
+   "lines": 390
   },
   {
-   "path": "entities/player.js",
-   "lines": 369
+   "path": "figure/rig.js",
+   "lines": 389
   },
   {
    "path": "figure/raster.js",
@@ -5384,7 +5391,7 @@
   },
   {
    "path": "host.js",
-   "lines": 232
+   "lines": 236
   },
   {
    "path": "loop.js",
@@ -5480,7 +5487,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 106
+   "lines": 107
   },
   {
    "path": "use.js",

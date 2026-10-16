@@ -7,6 +7,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-16: synced to `1c7ed26`
+
+- **New in the game:** a waterskin drinks by itself (game #121). Once thirst falls to Thirsty, a sip is taken from a waterskin you carry, on the belt or in the bag, the emptiest that still holds water first, with "You drink from your waterskin."; never while you swing, draw, cast, guard, climb, or sleep, or are already holding a drink out, and only with Survival on. With every skin empty nothing happens, so the Thirsty moodle means you are out of water. For a guest the host's world takes the sip and the word goes to the guest. [[Thirst]] has a new section, [[Waterskin]] and [[Survival]] no longer say a skin is drunk only by hand.
+- Not visible on the wiki's pages: a default in the game's map code made to match the ruling every caller already followed (game #119); the game's testing notes on the browser pane's shared tabs (game #116); the menus and the game's site scoped and ruled for building, not yet built (game #81, the game's `docs/38`).
+
 ## 2026-10-16: synced to `19a1c18`
 
 - **Changed in the game, corrected here:** the Settings screen is three tabs, **Display**, **World rules**, and **Testing**, and every row has a line under it saying what it does; an on-or-off row is a switch with its answer beside it, any other a dropdown, so only the chosen answer shows (game #114). The relay's address and **Reload hair** moved to the Testing tab, the Join screen now says "Type the code your friend gave you", the identity editor's hair style is a dropdown, and a guest's World rules tab shows the host's rules locked rather than greyed. The owner's screen sets a server world's rules with the same switches ([[Settings]], rewritten by tab; [[Survival]], [[Hosting]], [[Multiplayer]], [[Server worlds]], [[Identities]], [[Joining]]).

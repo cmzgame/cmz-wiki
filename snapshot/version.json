@@ -1,7 +1,7 @@
 {
-  "commit": "19a1c189cb86356477d077abb22672e77691ba10",
-  "short": "19a1c18",
-  "date": "2026-10-16T15:55:02-05:00",
-  "subject": "Merge #115, reviewed: a loading screen for entering and leaving a world and for a guest's join, and the entry stall gone (the ground baked two chunks a frame behind it) (closes #107)",
+  "commit": "1c7ed26f4f9079ba79824366516d2495b30159f0",
+  "short": "1c7ed26",
+  "date": "2026-10-16T17:00:14-05:00",
+  "subject": "Merge #121, reviewed, Michael's ruling: auto-drinking from any waterskin carried, belt or bag, at Thirsty, the emptiest first, never mid-fight (closes #96)",
   "ref": "origin/main"
 }
