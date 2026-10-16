@@ -1,7 +1,7 @@
 {
-  "commit": "9a450f2a27754d61ba49ed0a87915fac5e5c1fed",
-  "short": "9a450f2",
-  "date": "2026-10-15T22:47:26-05:00",
-  "subject": "Merge #66, reviewed: Equip and Unequip for everything, Durability for the mechanic, no more \"wear\" on screen; a double-click on a slot really unequips",
+  "commit": "9a81879bc3543c6421b7b738e978063f08562340",
+  "short": "9a81879",
+  "date": "2026-10-15T22:54:23-05:00",
+  "subject": "Merge #67, reviewed: the last \"take off\" on screen says unequip",
   "ref": "origin/main"
 }

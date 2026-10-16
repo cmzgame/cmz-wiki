@@ -13,7 +13,7 @@ summary: Seven slots for what you have on: head, chest, hands, legs, feet, the w
 
 **Equip** is on a garment's menu in your bag or an open container; on a bag it names the bag's grid, as **Equip ({{n items.rucksack.bag.0}}×{{n items.rucksack.bag.1}})** for the [[Rucksack]]. A garment lying on the floor offers **Equip** with its name in its right-click menu (**Equip cap**, or **Equip cap (swap)** when that slot is filled); `E` picks it up instead. A bag on the floor offers **Equip** the same way, or **Swap bags** when you already have one on your back. Double-clicking a garment in your bag equips it. Dragging a garment onto the wrong slot is refused.
 
-Equipping over a filled slot swaps the old garment into your bag; with no room the game says "No room to take the old one off." A new bag on the back drops the old bag at your feet with everything in it.
+Equipping over a filled slot swaps the old garment into your bag; with no room the game says "No room in your bag to unequip the old one." A new bag on the back drops the old bag at your feet with everything in it.
 
 ### Unequipping
 
@@ -46,7 +46,7 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `src/interact.js:165-190`, `src/interact.js:192-218`: Equip cap and Equip cap (swap) on a garment on the floor, Swap bags for a bag; not a simple action, so `E` picks the garment up (game commit 9a450f2)
 - `src/ui/inventory-actions.js:166-172`: a double-click in your bag equips a garment (game commit 9a450f2)
 - `src/ui/inventory-actions.js:66`: a drag onto the wrong slot is refused
-- `src/interact.js:899-921`: equipping over a filled slot swaps; "No room to take the old one off." (game commit 9a450f2)
+- `src/interact.js:899-921`: equipping over a filled slot swaps; "No room in your bag to unequip the old one." (game commit 9a81879)
 - `src/interact.js:1111-1124`: Unequip: to the bag or the floor; the bag is set down; Drop (game commit 9a450f2)
 - `src/ui/inventory-actions.js:173-182`, `src/ui/inventory-panel.js:75-89`: a double-click on a slot runs its Equip or Unequip (game commit 9a450f2)
 - `data/items.json:23-30`: belts give slots; every garment but the belts and bags is tagged cloth
