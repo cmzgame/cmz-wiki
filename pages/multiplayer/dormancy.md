@@ -38,7 +38,7 @@ You never step away while asleep, dead, or climbing, or when playing alone. A ho
 
 ## With friends
 
-Dormancy exists only with friends; a world played alone has nobody to keep.
+Dormancy exists only with friends; a world played alone has nobody to keep. Each player's own screen counts their idle time; stepping away and coming back are commands the host performs, so a guest's character leaves and returns through the host as a leave and a rejoin would.
 
 ## See also
 
@@ -53,7 +53,9 @@ Dormancy exists only with friends; a world played alone has nobody to keep.
 - `src/net.js:113`, `src/net.js:650`: held keys released after `SILENT_STEPS` silent steps
 - `src/main.js:346`, `src/main.js:583`: the host leaving or closing to friends makes every guest dormant before saving (game commit 2c70942)
 - `src/host.js:54-80`: a rejoin from the same browser brings back the same character
-- `src/main.js:130-209`, `src/main.js:134`: stepping away after `AWAY_AFTER_MS` (300000 real ms), "You stepped away", any input brings you back
-- `src/net.js:453-472`, `src/net.js:1295`: others' chat logs told of stepping away and coming back
-- `src/host.js:106-137`, `src/main.js:145`: never while asleep, dead, climbing, or alone
-- `src/main.js:674-677`: a host away with no guests holds the world still
+- `src/main.js:131-181`, `src/main.js:136`: stepping away after `AWAY_AFTER_MS` (five minutes of real time), the idle clock each client's own, "You stepped away" (the `away` screen), and coming back (game commit 0bd3f9c)
+- `src/main.js:204-213`: any key, click, mouse move, or wheel brings you back, the first one spent on it (game commit 0bd3f9c)
+- `src/host.js:103-138`: the host takes the character out (`awayNow`) and puts it back where it stood (`backNow`); "Name stepped away." and "Name is back." in every log (game commit 0bd3f9c)
+- `src/main.js:144-152`, `src/host.js:107`: never while asleep, dead, or climbing, and never in a solo world (game commit 0bd3f9c)
+- `src/main.js:690-696`: a host away with no guests holds the world still; a friend's join starts it again (game commit 0bd3f9c)
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)

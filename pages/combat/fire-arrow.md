@@ -38,7 +38,7 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 
 ## Sources
 
-<!-- sources at 4bd976a -->
+<!-- sources at 0bd3f9c -->
 - `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; placeholder art
 - `data/interactions.json`: the row: arrows used on `fire`, the `dip` verb, its line
 - `src/interactions.js:34-42`: `fire` matches any prop whose fire burns fuel
@@ -52,5 +52,6 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 - `src/archery.js:267-282`: a hit sets alight before the damage and lodges a plain arrow; a miss lands as a plain arrow
 - `src/ui/inventory-actions.js:364-389`: a guest's Use on a prop run on the host as that player
 - `src/net.js:867`, `src/net.js:1106`: arrows in flight sent to guests by projectile, and drawn there
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 
 {{navbox weapons}}

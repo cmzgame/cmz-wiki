@@ -1,7 +1,7 @@
 ---
 title: Water
 categories: [Mechanics, The world]
-aliases: [Shallow water, The river, The ford, Wells]
+aliases: [Shallow water, The river, The ford, Well, Wells]
 summary: Deep water stops every body, shallow water is slow, and any water can be drunk from.
 ---
 
