@@ -15,6 +15,10 @@ Each time the wiki is synced with the game, an entry goes here, newest first, wi
 - A stub item page prints the data's own note on the item ([[Throwing Knife]], [[Throwing Axe]]: art only, they do not throw yet).
 - Not visible on the pages: the build's Sources-drift report, the snapshot kept without the game's art, the first census's records dated under `census/history/9205ad7/` and the discrepancies list rewritten short.
 
+## 2026-10-16: synced to `636acc4`
+
+- Not visible on the wiki's pages: the game's vision doc ruled on by Michael (game #113): it no longer says "not an RPG", and its world is "hand-authored, with procedural filling of the spaces it leaves empty", a direction rather than a wall. No rule of play changed. The new page [[Things left behind]] (what the game swears off from Zomboid) follows in its own change.
+
 ## 2026-10-16: synced to `50c3126`
 
 - Not visible on the wiki's pages: the game's docs sweep, wave 3 and its index (game #82 to #86, #97): every spec trimmed to what is true with its history under `docs/history/`, a new `docs/sprite-definitions.md`, `docs/README.md` the index of every doc. The game's `docs/bugs.md` keeps only its open and closed lists now; its Fixed up to 2026-10-15 is `docs/history/bugs-fixed-2026-10-15.md`, which this wiki's method names. No rule of play changed.
