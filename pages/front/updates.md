@@ -7,6 +7,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-16: synced to `19a1c18`
+
+- **Changed in the game, corrected here:** the Settings screen is three tabs, **Display**, **World rules**, and **Testing**, and every row has a line under it saying what it does; an on-or-off row is a switch with its answer beside it, any other a dropdown, so only the chosen answer shows (game #114). The relay's address and **Reload hair** moved to the Testing tab, the Join screen now says "Type the code your friend gave you", the identity editor's hair style is a dropdown, and a guest's World rules tab shows the host's rules locked rather than greyed. The owner's screen sets a server world's rules with the same switches ([[Settings]], rewritten by tab; [[Survival]], [[Hosting]], [[Multiplayer]], [[Server worlds]], [[Identities]], [[Joining]]).
+- **New in the game:** a loading screen into and out of a world (game #115): "Making" or "Reading" and the world's name while a world is made or played, "Saving" or "Leaving" until the save is written, and "Joining" and the code with **Cancel** for a join, giving way to character creation when the host asks who you are, then "Receiving the world". It stays up at least half a second, and the stall of about a second just after entering a world is gone. A new section on [[Screens]]; [[Worlds]] and [[Joining]] say where it shows.
+- **Changed in the game, said here:** with no world in, the menus sit over black instead of the last picture of the world just left, and the chat box and the debug corner hide with the rest of the interface (game #80). No page described the old backdrop; [[Screens]] and [[Interface]] now say it.
+
 ## 2026-10-16: the wiki's own fixes (sweep 3f, game #87), still at `0bd3f9c`
 
 - **New pages:** every piece of furniture and every fitting the valley places or a recipe makes now has a page made from its definition ([[Shelf]], [[Bench]], [[Table]], [[Wheelbarrow]], [[Loom]], [[Dye vat]], [[Chair]], [[Well]], and the rest, in the navbox Furniture and fittings), and a place's list of what is there links them.

@@ -15,7 +15,7 @@ An **identity** is a name and a look, kept in the browser and used again and aga
 
 - **Name**: what others see over your head and in the [[Chat log|chat log]].
 - **Skin**: {{n looks.skins.living.length}} living tones and {{n looks.skins.dead.length}} dead ones.
-- **Hair style**: bald, short, and the painted styles.
+- **Hair style**: a dropdown of bald, short, and the painted styles.
 - **Hair colour**: {{n looks.hair.length}} colours.
 - **Eyes**: {{n looks.eyes.length}} colours.
 
@@ -50,6 +50,7 @@ Joining a friend's world for the first time asks for an identity; your new chara
 - `src/ui/names.js`: the name over a head
 - `data/looks.json`, `src/ui/screens.js:414-418`: skins living and dead, hair colours, eyes
 - `src/figure/draw.js:63-66`, `data/hair/index.json`: bald, short, then the painted styles
+- `src/ui/screens.js:435`, `src/ui/screens.js:445`: the hair style a dropdown (game commit 19a1c18)
 - `src/ui/screens.js:426-446`, `src/main.js:1333`: the preview in the starting clothes, turning through the facings
 - `src/ui/screens.js:301-305`: the last identity chosen is preselected
 - `src/settings.js:32-33`: identities kept in the browser's settings, not in a world

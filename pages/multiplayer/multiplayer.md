@@ -28,7 +28,7 @@ A world remembers which survivor belongs to which browser, so a friend who comes
 
 ### The host's rules
 
-The {{n census.counts.rules}} world rules belong to the world, not to each player: **Zombie aggro**, **Zombies attack villagers**, **Survival**, **Free building**, and **Multi-hit**. In a world of your browser they come from the host's [[Settings]] and are kept in the save. A guest's Settings screen shows the same rows greyed, marked "(the host's)". In a [[Server worlds|server world]] the owner sets them.
+The {{n census.counts.rules}} world rules belong to the world, not to each player: **Zombie aggro**, **Zombies attack villagers**, **Survival**, **Free building**, and **Multi-hit**. In a world of your browser they come from the host's [[Settings]] and are kept in the save. A guest's Settings screen shows the same rows on its World rules tab as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
 
 ### The world never pauses
 
@@ -84,7 +84,7 @@ The {{n census.counts.rules}} world rules above, set by the host.
 - `src/main.js:534-555`: Join a game takes the code
 - `server/relay.js`, `src/net.js:181-337`: the relay passes messages between host and guests
 - `src/host.js:30`, `src/host.js:54-80`: the browsers a world remembers by hash, at most `MAX_OWNERS`, the next refused as full
-- `src/rules.js:109-119`, `src/ui/screens.js:373-382`, `server/world.js:337-344`: the five world rules, in the save, greyed for a guest, set by a server world's owner
+- `src/rules.js:9-37`, `src/ui/screens.js:401-412`, `server/world.js:337-344`: the five world rules, in the save, locked as the host's for a guest (game commit 19a1c18), set by a server world's owner
 - `src/main.js:667-670`, `src/ui/screens.js:663-665`, `src/main.js:1063-1084`: no screen pauses a world on the wire; "Menu"; your player fed an idle input
 - `src/main.js:880`, `src/loop.js:66-74`: hit-stop off on the wire
 - `src/main.js:1605`, `src/main.js:1620-1625`, `src/loop.js:138-186`: a hidden tab keeps a shared world running; the host's tab title

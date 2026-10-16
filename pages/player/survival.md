@@ -13,7 +13,7 @@ With Survival **on**, [[Hunger]], [[Thirst]], and [[Tiredness]] drain, their [[M
 
 With Survival **off**, all three are held full every moment, so their moodles stay green and nobody starves or dies of thirst. Health still comes back by itself, as it does for anyone fed, watered, and awake enough (see [[Health]]). [[Bleeding]] and [[Infection]] are not needs and still work as usual.
 
-The Settings screen offers "On (hunger, thirst, tiredness)" and "Off (no needs)".
+On the Settings screen it is a switch on the World rules tab, explained as "Hunger, thirst, and tiredness. Off, the body has no needs."
 
 ## With friends
 
@@ -25,11 +25,11 @@ Survival is a world rule: the host's choice applies to everyone in the world, an
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/settings.js:22,55`: on by default, and the two choices on the Settings screen
-- `src/rules.js:13,34-37`: the sim reads it as a world rule
-- `src/entities/player.js:120-125`: off holds hunger, thirst, and tiredness full, with no need damage (game commit 2c70942)
+<!-- sources at 19a1c18 -->
+- `src/settings.js:22`, `src/settings.js:56`: on by default; a switch on the World rules tab and its line (game #114)
+- `src/rules.js:9-15`, `src/rules.js:33-37`: the sim reads it as a world rule
+- `src/entities/player.js:120-133`: off holds hunger, thirst, and tiredness full, with no need damage
 - `src/entities/player.js:134-139`: regeneration runs either way
 - `src/bleed.js`, `src/infection.js`: bleeding and infection live in their own modules
 - `src/rules.js:21-25`: a guest uses the host's rules
-- `src/ui/screens.js:682`: the owner's toggle on the Owner screen
+- `src/ui/screens.js:720-724`: the owner's switch on the Owner screen (game #114)

@@ -30,7 +30,7 @@ Without a relay, a friend can join only from another tab of the same browser; th
 
 ### What the host decides
 
-The host's [[Settings]] decide the {{n census.counts.rules}} world rules for everyone: Zombie aggro, Zombies attack villagers, Survival, Free building, and Multi-hit. Changing one reaches every guest at once. A guest sees them greyed as "(the host's)". Everything else in Settings (zoom, cursor, the swing timer, and so on) is each player's own.
+The host's [[Settings]] decide the {{n census.counts.rules}} world rules for everyone: Zombie aggro, Zombies attack villagers, Survival, Free building, and Multi-hit. Changing one reaches every guest at once. A guest's World rules tab shows them as the host set them, each marked "(the host's)" and locked. Everything else in Settings (zoom, cursor, the swing timer, and so on) is each player's own.
 
 The host's clock is the world's clock.
 
@@ -57,15 +57,15 @@ The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggr
 - `src/ui/screens.js:724-736`, `src/ui/screens.js:115-123`: the host screen: the code, Copy, who is in, Open or Close
 - `src/net.js:91-100`: the code's shape, two tree words and four characters
 - `src/main.js:1577-1582`: a taken code retried, then cleared so the next opening draws a new one
-- `src/ui/screens.js:732`: without a relay, only another tab of the same browser
+- `src/ui/screens.js:770`: without a relay, only another tab of the same browser (game commit 19a1c18)
 - `src/main.js:667-670`: a world on the wire never pauses
 - `src/ui/screens.js:656-667`, `src/main.js:579-593`: the pause menu's first line
 - `src/net.js:541`, `src/net.js:626`: "Name joined." and "Name left."
 - `src/host.js:100`, `src/host.js:153-154`: saves on a join, a leave, and dormancy
 - `src/main.js:1605`, `src/main.js:1620-1625`, `src/loop.js:138-186`: a hidden host keeps running and renames its tab
 - `src/net.js:909-912`: "The host's game has gone quiet."
-- `src/rules.js:109-119`, `src/net.js:815`: the five world rules, sent to guests when they change
-- `src/ui/screens.js:373-382`, `src/main.js:591`: a guest's rows greyed as "(the host's)"
+- `src/rules.js:9-37`, `src/net.js:815`: the five world rules (the module's lines corrected at 19a1c18), sent to guests when they change
+- `src/ui/screens.js:401-412`, `src/main.js:689`: a guest's World rules rows the host's, marked "(the host's)" and locked (game commit 19a1c18)
 - `src/net.js:803`, `src/net.js:1040`: the host's clock goes to every guest
 - `server/relay.js:840-852`, `src/main.js:1567`: closing sends every guest "The host closed the world."
 - `src/main.js:568-590`: closing to friends makes every guest's character dormant, closes the wire, and saves (game commit 2c70942)

@@ -2,46 +2,55 @@
 title: Settings
 categories: [Interface]
 aliases: [Options, Settings screen, Defaults, World rules]
-summary: The Settings screen, every choice on it with its default, and which ones are the world's rules.
+summary: The Settings screen, its three tabs, every row on it with its default, and which ones are the world's rules.
 ---
 
-The **Settings** screen is opened from the title screen or the pause menu. Its heading says the settings are kept in this browser. Each row is a set of buttons, one per choice; the one in use is lit. **Defaults** resets them and **Back** returns.
+The **Settings** screen is opened from the title screen or the pause menu. Its heading says the settings are kept in this browser. It has three tabs: **Display**, **World rules**, and **Testing**; Display is open first. Each row has a label and a line under it explaining what it does. A row whose answers are on and off is a switch, with its answer written beside it ("On", "Shown"); any other row is a dropdown. Either way only the chosen answer shows. **Defaults** resets them and **Back** returns.
 
 ## The rows
 
-In the order the screen shows them, with the default first:
+In the order the screen shows them, with the default first.
+
+### Display
 
 - **Interface size**: Auto, or a fixed size in quarter steps up to {{n census.constants.view.UI_SCALE_MAX}}x. Auto fits the interface to the window.
 - **Zoom**: Auto, Wide, Middle, or Close. Auto picks the level that suits the window's size. `Z` and the wheel change it too, and the choice is kept here.
-- **Zombie aggro**: On (they hunt you) or Off (they ignore you). On by default; a browser that saved its settings before that keeps its own. *A world rule.*
-- **Zombies attack villagers**: Off (villagers are safe), or "On (they hunt villagers, whatever aggro says; with aggro on, you first)". It is a separate knob from Zombie aggro on purpose: with aggro off and this on, the dead leave you alone and still go after villagers. *A world rule.*
-- **Survival**: On (hunger, thirst, tiredness) or Off (no needs). *A world rule.*
-- **Free building**: Off (costs apply) or On (no costs). *A world rule.*
 - **Cursor**: Default, A hand, A severed hand, or A zombie hand.
 - **Names over heads**: Shown or Hidden: another player's name over their head while they are in sight.
-- **Debug corner**: Shown or Hidden.
-- **Square and paths**: Cobble or Dirt, the surface of the village square and its paths. It changes only a world your browser runs: in a friend's world the square is the host's.
-- **Bow aim guide**: On (the landing marker and a dotted line while drawing) or Off. See [[Archery]].
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
-- **Swing targets**: Off or On (a green outline on what your next swing would hit).
-- **Multi-hit**: Off (a blow hits the nearest only: the intended way) or On (everything in the wedge: the easy button). *A world rule.* See [[Combat]].
-- **Layer** rows: one per slot that has painted clothing layers, to try one on in place of what is equipped (the button **item** shows the item's own art).
+- **Bow aim guide**: On or Off: the landing marker and a dotted line while drawing a bow. See [[Archery]].
 
-### Testing rows
+### World rules
 
-{{devonly note="These rows are for testing the game."}}
+- **Zombie aggro**: On, the dead hunt you; Off, they wander and ignore you. On by default; a browser that saved its settings before that keeps its own.
+- **Zombies attack villagers**: Off by default. On, the dead hunt villagers whatever aggro says, and with aggro on they go for you first. It is a separate switch from Zombie aggro on purpose: with aggro off and this on, the dead leave you alone and still go after villagers.
+- **Survival**: On: hunger, thirst, and tiredness. Off, the body has no needs. See [[Survival]].
+- **Free building**: Off by default. On, building costs nothing.
+- **Multi-hit**: Off by default: a blow hits the nearest only, the intended way. On, it reaches everything in its wedge: the easy button. See [[Combat]].
 
-- **Combat testing**: Off or On (no trees and a crowd of extra dead in a ring round the spawn; reload the page).
-- **Dev chest**: On (a chest of every item by the spawn) or Off. It is read when a world is made.
-- **Show hit shapes**: Off or On (draws the dead's body samples).
+### Testing
+
+{{devonly note="This tab is for testing the game."}}
+
+- **Debug corner**: Shown or Hidden: the numbers and keys in the top-left corner.
+- **Swing targets**: Off or On: a green outline on what your next swing would hit.
+- **Hit shapes**: Off or On: draws the dead's body samples, green when the next swing reaches them.
+- **Combat testing**: Off or On: no trees and a crowd of extra dead in a ring round the spawn. It is read when a world is made; the row's line says to reload the page.
+- **Dev chest**: On or Off: a chest of every item by the spawn. It is read when a world is made.
+- **Square and paths**: Cobble or Dirt, the surface of the village square and its paths. It changes only a world your browser runs: in a friend's world the square is the host's.
+- **Layer** rows: one per slot that has painted clothing layers, a dropdown to try one on in place of what is equipped (the answer **item** shows the item's own art).
+- **Painted hair**: a **Reload hair** button that picks up hair styles just saved in the hair editor.
+- **Relay**: where Open to friends and Join go, or "none: only this browser's own tabs".
+
+A dropdown with the focus keeps the keys to itself: a letter typed on it never reaches the world, and `Escape` still goes through.
 
 ## World rules
 
-The {{n census.counts.rules}} rows marked as world rules belong to the world, not to the player. In your own world they come from your settings and are saved with the world. In a friend's world they are the host's: the rows are greyed and marked "(the host's)". In a [[Server worlds|server world]] the owner sets them. See [[Multiplayer]].
+The {{n census.counts.rules}} rows on the World rules tab belong to the world, not to the player. In your own world they come from your settings and are saved with the world. In a friend's world they are the host's: the tab shows the host's answers, each row marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them, with the same switches on the owner's screen. See [[Multiplayer]].
 
 ## Defaults
 
-**Defaults** resets only what the Settings screen shows: its choices and the painted layers. It never touches your [[Identities|identities]], the browser's own id, the list of friends' worlds, the creator and owner keys, or where the panels were dragged to.
+**Defaults** resets only what the Settings screen shows: its rows and the painted layers. The open tab stays open. It never touches your [[Identities|identities]], the browser's own id, the list of friends' worlds, the creator and owner keys, or where the panels were dragged to.
 
 ## Every setting the game keeps
 
@@ -55,18 +64,22 @@ The game's full list of stored settings and their defaults, including the ones t
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/ui/screens.js:748-776`: the screen, "Kept in this browser", Defaults and Back
-- `src/settings.js:8-59`: every row's choices and defaults; Zombie aggro on, the villagers row's label (game commit 2c70942)
-- `src/ui/screens.js:754-772`, `src/ui/names.js:35`: the rows in order, Names over heads among them (game commit 2c70942)
-- `src/main.js:1025-1032`: the square's surface never laid on a guest's copy of the host's world (game commit 2c70942)
-- `src/view.js:84-88`: `UI_SCALE_MAX` and Auto's fit
-- `src/view.js:28`, `src/view.js:70-79`, `src/main.js:898-906`: the zooms and Auto
-- `src/rules.js:109-115`: the five world rules
-- `style.css:561-565`, `src/ui/swing-timer.js:16`: the swing bars at the bottom, the exposure bar over the head
-- `src/ui/screens.js:454-463`: the Layer rows, the first button **item** (game commit 9a450f2)
-- `src/game.js:123-139`: combat testing's crowd in a ring round the spawn (game commit 2c70942)
-- `src/main.js:241-242`: the dev chest and combat testing read when a world is made
-- `src/ui/screens.js:373-382`, `src/main.js:591`, `server/world.js:97-99`: world rules greyed for a guest, a server world's from its owner
-- `src/settings.js`: Defaults resets only the screen's own choices and the painted layers (game commit 3c70aa7)
-- `src/identities.js:91-98`: a new browser id drawn after the reset
+<!-- sources at 19a1c18 -->
+- `src/ui/screens.js:787-800`: the screen, "Kept in this browser", the three tabs, Defaults and Back
+- `src/settings.js:40-73`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown
+- `src/ui/screens.js:387-412`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
+- `src/ui/screens.js:68`, `src/ui/screens.js:105-108`: Display open first; a click on a tab opens it
+- `src/settings.js:8-38`: the defaults, Zombie aggro on
+- `src/view.js:80-87`: `UI_SCALE_MAX` and Auto's fit
+- `src/view.js:28`, `src/view.js:70-79`: the zooms and Auto
+- `src/main.js:1110-1118`: the square's surface never laid on a guest's copy of the host's world
+- `src/rules.js:9-37`: the five world rules
+- `src/ui/swing-timer.js:16`: the exposure bar over the head, apart from the swing bars
+- `src/game.js:97`, `src/game.js:126-131`: combat testing's crowd in a ring round the spawn
+- `src/main.js:292-299`: the dev chest and combat testing read when a world is made
+- `src/ui/screens.js:483-501`: the Testing tab's Layer rows (the first answer **item**), Painted hair with Reload hair, and the relay
+- `src/ui/screens.js:123-127`: a focused dropdown keeps its keys, Escape through
+- `src/ui/screens.js:401-412`, `src/main.js:689`, `server/world.js:95-98`: world rules shown as the host's and locked for a guest; a server world's from its owner
+- `src/ui/screens.js:720-724`: the owner's screen's rules as the same switches
+- `src/settings.js:106-113`, `src/ui/screens.js:797-800`: Defaults resets only the screen's own rows and the painted layers; the tab is kept
+- `src/identities.js:90-97`: a new browser id drawn after the reset

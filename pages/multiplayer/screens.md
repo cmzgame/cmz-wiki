@@ -1,11 +1,14 @@
 ---
 title: Screens
 categories: [Interface]
-aliases: [Title screen, Pause menu, Pause, Menu, Leave world]
-summary: The title screen, the pause menu, and the dead screen, and how Escape moves between them.
+aliases: [Title screen, Pause menu, Pause, Menu, Leave world, Loading screen]
+summary: The title screen, the pause menu, the dead screen, the loading screen into and out of a world, and how Escape moves between them.
+numbersOk: true
 ---
 
-The **screens** are the full-window menus over the world: the title, the pause menu, and the dead screen, with the screens they lead to (Worlds, Identities, Settings, Controls).
+<!-- typed: the loading screen's least time up, half a second, is a literal in src/boot.js worldEnd, neither data nor a named constant -->
+
+The **screens** are the full-window menus over the world: the title, the pause menu, and the dead screen, with the screens they lead to (Worlds, Identities, Settings, Controls), and the loading screen shown while a world is made, read, left, or joined.
 
 ## The title screen
 
@@ -16,7 +19,7 @@ Shown when the game loads: "Cozy Medieval Zombies" and "A village of the dead. K
 - **Settings**: see [[Settings]].
 - **Controls**: the list of keys. See [[Controls]].
 
-No world runs behind the title until one is chosen; the interface is hidden until then. The title stays up until a choice is made: `Escape` does not close it.
+No world runs behind the title until one is chosen. With no world in, the title and the screens it leads to sit over black, never over the last picture of a world just left, and the interface is hidden, the chat box and the debug corner with it. The title stays up until a choice is made: `Escape` does not close it.
 
 ## The pause menu
 
@@ -43,9 +46,20 @@ When your character dies: their name and "died", the day and hour, and "The body
 
 The dead screen stays until a choice is made. See [[Death]] and [[Characters]].
 
+## The loading screen
+
+The screen the game boots behind comes back while a world is entered or left: the game's name, what is happening under it ("Making" and the world's name, say), a bar, and a line naming each stage:
+
+- **Making** and the world's name, for **New world**: the world is made and its ground drawn round you.
+- **Reading** and the world's name, for **Play**: the save is read, the world put back, and its ground drawn round you.
+- **Saving** and the world's name, for **Leave world** in a world of yours; **Leaving** for a guest. It stays until the save is written, then the [[Worlds]] screen shows.
+- **Joining** and the code, for a join of a friend's world or a server world (Join a game, Rejoin, or a guest's new character after a death), with a **Cancel** button. When the host asks who you are, it gives way to character creation, and **Join as this** brings it back. Then "Receiving the world", the ground, and the world. **Cancel** leaves the join and shows the Worlds screen. See [[Joining]].
+
+It stays up at least half a second, so it never flickers, and goes once the world draws smoothly. A world played alone stands still behind it. A tab in the background shows it not at all.
+
 ## Stepped away
 
-In a world shared with friends, a screen saying "You stepped away" covers the game after a long time without input; any key, click, or mouse move closes it. See [[Dormancy]].
+In a world shared with friends, a screen saying "You stepped away" covers the game after a long time without input; any key, click, or mouse move closes it, and so does its **Come back** button. See [[Dormancy]].
 
 ## Escape
 
@@ -53,22 +67,26 @@ In a world shared with friends, a screen saying "You stepped away" covers the ga
 
 ## With friends
 
-Played alone, every screen pauses the game. In a world open to friends, as host or guest, no screen pauses it: your character stands still while the world goes on. Save world and Open to friends are not on a guest's pause menu.
+Played alone, every screen pauses the game. In a world open to friends, as host or guest, no screen pauses it: your character stands still while the world goes on. Save world and Open to friends are not on a guest's pause menu. A guest's join is under the loading screen until the host's world arrives.
 
 ## See also
 
-- [[Interface]], [[Worlds]], [[Settings]], [[Controls]], [[Death]]
+- [[Interface]], [[Worlds]], [[Settings]], [[Controls]], [[Death]], [[Joining]]
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/ui/screens.js:143-191`, `src/ui/screens.js:550-557`: the title's words and buttons; Escape does not close it
-- `style.css:1108`: the interface hidden while no world is chosen
-- `src/ui/screens.js:656-667`, `src/main.js:592-609`: the pause menu, its first line (a guest's naming the host and the world (game commit 2c70942)), "Paused" or "Menu", its buttons and who sees them
-- `src/main.js:325-331`: Save world
-- `src/ui/screens.js:737-747`: the Character screen
-- `src/ui/screens.js:198-203`, `src/main.js:345-359`: Leave world asks a host with guests, saves, and shows the Worlds screen (game commit 2c70942)
-- `src/ui/screens.js:785-791`, `src/main.js:291-319`: the dead screen and New character
-- `src/ui/screens.js:777-784`, `src/main.js:200-209`: the stepped-away screen and what closes it
-- `src/main.js:679-696`, `src/ui/screens.js:139-141`: Escape's order, a sub-screen stepping back to its opener
-- `src/main.js:667-670`: screens pause only off the wire
+<!-- sources at 19a1c18 -->
+- `src/ui/screens.js:589-595`, `src/ui/screens.js:176-184`, `src/main.js:781-782`: the title's words and buttons; Escape does not close it
+- `src/main.js:98-104`, `src/main.js:1195-1197`, `style.css:1104`: no world in: the canvas cleared to black, the interface hidden, the chat box and the debug corner with it (game #80)
+- `src/ui/screens.js:694-705`, `src/main.js:676-691`: the pause menu, its first line (a guest's naming the host and the world), "Paused" or "Menu", its buttons and who sees them
+- `src/main.js:1478-1480`, `src/main.js:403-417`: Save world
+- `src/ui/screens.js:775-784`: the Character screen
+- `src/ui/screens.js:211-216`, `src/main.js:418-442`: Leave world asks a host with guests, saves, and shows the Worlds screen
+- `src/ui/screens.js:810-816`, `src/main.js:368-397`: the dead screen and New character
+- `index.html:12-17`, `src/boot.js:101-151`: the loading screen: the title under the name, the bar and the line, Cancel, at least half a second up, nothing in a hidden tab (game #115)
+- `src/main.js:236-263`: the ground round you baked behind it, a lone world held still, closed once frames run smoothly
+- `src/main.js:283-311`, `src/main.js:314-322`, `src/main.js:420-424`: Making, Reading, Saving or Leaving
+- `src/main.js:267-281`, `src/main.js:627-637`, `src/main.js:1467-1474`, `src/main.js:1642-1664`: Joining with Cancel, giving way to creation when the host asks who, back on Join as this, Receiving the world, the ground, then the world
+- `src/ui/screens.js:802-809`, `src/main.js:200-211`: the stepped-away screen and what closes it
+- `src/main.js:761-798`, `src/ui/screens.js:176-206`: Escape's order, a sub-screen stepping back to its opener
+- `src/main.js:766-771`, `src/main.js:1458`: screens pause only off the wire

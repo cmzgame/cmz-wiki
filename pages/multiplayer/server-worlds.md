@@ -32,7 +32,7 @@ A lost owner key can be replaced from the same screen with the creator key: the 
 **Owner**, on the world's row or on the pause menu while in it, opens the owner's screen:
 
 - **Change the code**: the old code stops working at once; whoever is in stays.
-- **The world rules**: the {{n census.counts.rules}} rules (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit), set for the world and reaching everyone in it at once.
+- **The world rules**: the {{n census.counts.rules}} rules (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit), each a switch with the same label and line as on the [[Settings]] screen, set for the world and reaching everyone in it at once.
 - **Remove** a player: they are told "The world's owner removed you from it.", their character goes dormant, and their browser is barred from the world.
 - **Remove and change the code**: the same, with a new code.
 - **Let back in**: lifts a bar.
@@ -64,6 +64,7 @@ A server world is made for friends: nobody has to keep a browser open for the ot
 - `src/main.js:505-531`, `src/ui/screens.js:705-723`, `server/relay.js:346-359`: A world of mine on the server, and a new owner key with the creator key
 - `server/relay.js:303-318`: the owner's character filed under `owner`
 - `src/ui/screens.js:209-242`, `src/ui/screens.js:668-723`, `src/main.js:458-531`: the owner's screen and its powers
+- `src/ui/screens.js:720-724`, `src/settings.js:54-58`: the owner's rules as switches, labelled and explained from the settings' registry (game commit 19a1c18)
 - `server/relay.js:346-473`, `server/world.js:258-275`, `server/world.js:327-359`: change the code, the rules, remove, unbar
 - `src/main.js:1564`: "The world's owner removed you from it."
 - `src/main.js:406-453`, `server/relay.js:445-473`, `server/relay.js:546-559`: bringing it home in two phases, Finish bringing it home, the wait

@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "636acc497980b9ed1a3188839528c4c30c03561d",
-  "short": "636acc4",
-  "date": "2026-10-16T14:28:42-05:00",
-  "subject": "Merge #113, reviewed, Michael's word: 00-vision's four lines ruled (Not Zomboid stands, Not an RPG goes, a hand-authored world with procedural filling as a direction, real time as drafted); no more laws about what the game is not",
+  "commit": "19a1c189cb86356477d077abb22672e77691ba10",
+  "short": "19a1c18",
+  "date": "2026-10-16T15:55:02-05:00",
+  "subject": "Merge #115, reviewed: a loading screen for entering and leaving a world and for a guest's join, and the entry stall gone (the ground baked two chunks a frame behind it) (closes #107)",
   "ref": "origin/main"
  },
  "counts": {
@@ -22,7 +22,7 @@
   "rules": 5,
   "keys": 19,
   "verbs": 3,
-  "menuLabels": 39,
+  "menuLabels": 56,
   "events": 25,
   "checks": 21,
   "modules": 82
@@ -4515,26 +4515,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:930"
+    "main.js:1013"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:929"
+    "main.js:1012"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:908"
+    "main.js:991"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:754",
-    "main.js:768"
+    "main.js:837",
+    "main.js:851"
    ]
   },
   {
@@ -4546,13 +4546,13 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:927"
+    "main.js:1010"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:910"
+    "main.js:993"
    ]
   },
   {
@@ -4577,56 +4577,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:906"
+    "main.js:989"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:911"
+    "main.js:994"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:918"
+    "main.js:1001"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:908"
+    "main.js:991"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:989"
+    "main.js:1072"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:989"
+    "main.js:1072"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:909"
+    "main.js:992"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1000"
+    "main.js:1083"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:754",
-    "main.js:760"
+    "main.js:837",
+    "main.js:843"
    ]
   }
  ],
@@ -4654,13 +4654,19 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1303"
+    "main.js:1386"
+   ]
+  },
+  {
+   "key": "Bow aim guide",
+   "at": [
+    "settings.js:53"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:662"
+    "main.js:745"
    ]
   },
   {
@@ -4676,9 +4682,33 @@
    ]
   },
   {
+   "key": "Combat testing",
+   "at": [
+    "settings.js:62"
+   ]
+  },
+  {
+   "key": "Cursor",
+   "at": [
+    "settings.js:50"
+   ]
+  },
+  {
+   "key": "Debug corner",
+   "at": [
+    "settings.js:59"
+   ]
+  },
+  {
+   "key": "Dev chest",
+   "at": [
+    "settings.js:63"
+   ]
+  },
+  {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1231"
+    "main.js:1314"
    ]
   },
   {
@@ -4712,27 +4742,57 @@
    ]
   },
   {
+   "key": "Free building",
+   "at": [
+    "settings.js:57"
+   ]
+  },
+  {
    "key": "Growing the world",
    "at": [
-    "main.js:1267"
+    "main.js:1350"
+   ]
+  },
+  {
+   "key": "Hit shapes",
+   "at": [
+    "settings.js:61"
+   ]
+  },
+  {
+   "key": "Interface size",
+   "at": [
+    "settings.js:48"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1217"
+    "main.js:1300"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1257"
+    "main.js:1340"
+   ]
+  },
+  {
+   "key": "Multi-hit",
+   "at": [
+    "settings.js:58"
+   ]
+  },
+  {
+   "key": "Names over heads",
+   "at": [
+    "settings.js:51"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1316"
+    "main.js:1399"
    ]
   },
   {
@@ -4744,25 +4804,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1193"
+    "main.js:1276"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1190"
+    "main.js:1273"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1219"
+    "main.js:1302"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1218"
+    "main.js:1301"
    ]
   },
   {
@@ -4774,13 +4834,37 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1325"
+    "main.js:1408"
    ]
   },
   {
    "key": "Sleep",
    "at": [
     "interact.js:389"
+   ]
+  },
+  {
+   "key": "Square and paths",
+   "at": [
+    "settings.js:64"
+   ]
+  },
+  {
+   "key": "Survival",
+   "at": [
+    "settings.js:56"
+   ]
+  },
+  {
+   "key": "Swing targets",
+   "at": [
+    "settings.js:60"
+   ]
+  },
+  {
+   "key": "Swing timer",
+   "at": [
+    "settings.js:52"
    ]
   },
   {
@@ -4807,6 +4891,24 @@
    "key": "Walk here",
    "at": [
     "interact.js:587"
+   ]
+  },
+  {
+   "key": "Zombie aggro",
+   "at": [
+    "settings.js:54"
+   ]
+  },
+  {
+   "key": "Zombies attack villagers",
+   "at": [
+    "settings.js:55"
+   ]
+  },
+  {
+   "key": "Zoom",
+   "at": [
+    "settings.js:49"
    ]
   },
   {
@@ -4904,7 +5006,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1119"
+    "main.js:1202"
    ]
   },
   {
@@ -5182,7 +5284,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1710
+   "lines": 1801
   },
   {
    "path": "placeholders.js",
@@ -5198,11 +5300,11 @@
   },
   {
    "path": "ground.js",
-   "lines": 977
+   "lines": 983
   },
   {
    "path": "ui/screens.js",
-   "lines": 805
+   "lines": 828
   },
   {
    "path": "archery.js",
@@ -5225,15 +5327,15 @@
    "lines": 632
   },
   {
+   "path": "gl.js",
+   "lines": 610
+  },
+  {
    "path": "placement.js",
    "lines": 610
   },
   {
    "path": "figure/draw.js",
-   "lines": 601
-  },
-  {
-   "path": "gl.js",
    "lines": 601
   },
   {
@@ -5333,6 +5435,10 @@
    "lines": 168
   },
   {
+   "path": "boot.js",
+   "lines": 162
+  },
+  {
    "path": "identities.js",
    "lines": 155
   },
@@ -5361,20 +5467,16 @@
    "lines": 124
   },
   {
+   "path": "settings.js",
+   "lines": 120
+  },
+  {
    "path": "entities/movement.js",
    "lines": 111
   },
   {
-   "path": "boot.js",
-   "lines": 110
-  },
-  {
    "path": "ui/log.js",
    "lines": 110
-  },
-  {
-   "path": "settings.js",
-   "lines": 106
   },
   {
    "path": "tuning.js",
