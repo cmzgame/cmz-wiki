@@ -11,7 +11,7 @@ An **identity** is a name and a look, kept in the browser and used again and aga
 
 ### Making and editing
 
-**Identities** on the title screen, and the first step of character creation, list the browser's identities with **Choose**, **Edit**, and **New identity**. The editor has:
+**Identities** on the game's site menu (a page of the site, see [[Screens]]) lists the browser's identities with **Edit**, **Delete**, and **New identity**; the first step of character creation lists them with **Choose** and **Edit**, and **New identity** below. The editor, **New identity** or **Edit identity**, has:
 
 - **Name**: what others see over your head and in the [[Chat log|chat log]].
 - **Skin**: {{n looks.skins.living.length}} living tones and {{n looks.skins.dead.length}} dead ones.
@@ -35,7 +35,7 @@ The **Defaults** button on the [[Settings]] screen does not touch the identities
 
 ## With friends
 
-Joining a friend's world for the first time asks for an identity; your new character in their world is stamped from it. The friend's world keeps the character, not the identity.
+Joining a friend's world for the first time asks for an identity, on a page of the site before their world arrives; your new character in their world is stamped from it. The friend's world keeps the character, not the identity.
 
 ## See also
 
@@ -45,14 +45,14 @@ Joining a friend's world for the first time asks for an identity; your new chara
 
 <!-- sources at 9205ad7 -->
 - `src/identities.js:38-72`: an identity is a name and a look, kept and reused; a character is stamped from it
-- `src/ui/screens.js:397-423`, `src/ui/screens.js:645-655`: the identities list (Choose, Edit, New identity) and the editor
+- `index.html:52`, `src/ui/screens.js:664-673`, `src/ui/screens.js:823-830`, `src/ui/screens.js:811-815`, `src/ui/screens.js:511-532`: Identities on the site's menu, the lists (Edit and Delete; in creation Choose and Edit) and the editor (game commit 02dfcc2)
 - `src/identities.js:48`, `src/ui/screens.js:413`: the name field
 - `src/ui/names.js`: the name over a head
 - `data/looks.json`, `src/ui/screens.js:414-418`: skins living and dead, hair colours, eyes
 - `src/figure/draw.js:63-66`, `data/hair/index.json`: bald, short, then the painted styles
-- `src/ui/screens.js:435`, `src/ui/screens.js:445`: the hair style a dropdown (game commit 19a1c18)
-- `src/ui/screens.js:426-446`, `src/main.js:1333`: the preview in the starting clothes, turning through the facings
-- `src/ui/screens.js:301-305`: the last identity chosen is preselected
+- `src/ui/screens.js:514`, `src/ui/screens.js:525`: the hair style a dropdown (game commit 02dfcc2)
+- `src/ui/screens.js:535-555`, `src/main.js:1467-1468`: the preview in the starting clothes, turning through the facings (game commit 02dfcc2)
+- `src/ui/screens.js:372-375`: the last identity chosen is preselected (game commit 02dfcc2)
 - `src/settings.js:32-33`: identities kept in the browser's settings, not in a world
 - `src/settings.js`: Defaults leaves the identities alone (game commit 3c70aa7)
-- `src/host.js:54-80`, `src/ui/screens.js:631-644`: a first join asks for an identity and stamps a character from it
+- `src/host.js:54-80`, `src/main.js:1681`, `src/ui/screens.js:809-822`: a first join asks for an identity and stamps a character from it

@@ -41,7 +41,7 @@ In the browser's own storage, on that one device and in that one browser. Anothe
 
 ## With friends
 
-Only the host's browser saves. A guest never saves a friend's world; the host's save keeps the guest's character, so they come back as it. What a guest keeps in their own browser is the row under Friends' worlds on the Worlds screen and their [[Identities|identities]].
+Only the host's browser saves. A guest never saves a friend's world; the host's save keeps the guest's character, so they come back as it. What a guest keeps in their own browser is the card under Friends' worlds on the Worlds page and their [[Identities|identities]].
 
 A [[Server worlds|server world]] is saved by the server.
 

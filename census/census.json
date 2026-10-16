@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "1c7ed26f4f9079ba79824366516d2495b30159f0",
-  "short": "1c7ed26",
-  "date": "2026-10-16T17:00:14-05:00",
-  "subject": "Merge #121, reviewed, Michael's ruling: auto-drinking from any waterskin carried, belt or bag, at Thirsty, the emptiest first, never mid-fight (closes #96)",
+  "commit": "02dfcc28145f665d3947291d7bdcd8117c894a79",
+  "short": "02dfcc2",
+  "date": "2026-10-16T17:56:18-05:00",
+  "subject": "Merge #120, reviewed, Michael's word: the game's site out of a world (the wordmark, the stone menu with Play and Wiki, every out-of-world screen as a page over the blurred shots, the Worlds rows as cards, Controls grouped) (closes #111)",
   "ref": "origin/main"
  },
  "counts": {
@@ -4516,26 +4516,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1013"
+    "main.js:1025"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1012"
+    "main.js:1024"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:991"
+    "main.js:1003"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:837",
-    "main.js:851"
+    "main.js:849",
+    "main.js:863"
    ]
   },
   {
@@ -4547,13 +4547,13 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1010"
+    "main.js:1022"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:993"
+    "main.js:1005"
    ]
   },
   {
@@ -4578,56 +4578,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:989"
+    "main.js:1001"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:994"
+    "main.js:1006"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1001"
+    "main.js:1013"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:991"
+    "main.js:1003"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1072"
+    "main.js:1084"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1072"
+    "main.js:1084"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:992"
+    "main.js:1004"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1083"
+    "main.js:1095"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:837",
-    "main.js:843"
+    "main.js:849",
+    "main.js:855"
    ]
   }
  ],
@@ -4655,7 +4655,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1386"
+    "main.js:1398"
    ]
   },
   {
@@ -4667,7 +4667,7 @@
   {
    "key": "Build",
    "at": [
-    "main.js:745"
+    "main.js:757"
    ]
   },
   {
@@ -4709,7 +4709,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1314"
+    "main.js:1326"
    ]
   },
   {
@@ -4751,7 +4751,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1350"
+    "main.js:1362"
    ]
   },
   {
@@ -4769,13 +4769,13 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1300"
+    "main.js:1312"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1340"
+    "main.js:1352"
    ]
   },
   {
@@ -4793,7 +4793,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1399"
+    "main.js:1411"
    ]
   },
   {
@@ -4805,25 +4805,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1276"
+    "main.js:1288"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1273"
+    "main.js:1285"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1302"
+    "main.js:1314"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1301"
+    "main.js:1313"
    ]
   },
   {
@@ -4835,7 +4835,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1408"
+    "main.js:1420"
    ]
   },
   {
@@ -5007,7 +5007,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1202"
+    "main.js:1214"
    ]
   },
   {
@@ -5291,7 +5291,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1804
+   "lines": 1820
   },
   {
    "path": "placeholders.js",
@@ -5311,7 +5311,7 @@
   },
   {
    "path": "ui/screens.js",
-   "lines": 828
+   "lines": 969
   },
   {
    "path": "archery.js",
@@ -5438,12 +5438,12 @@
    "lines": 170
   },
   {
-   "path": "input.js",
-   "lines": 168
+   "path": "boot.js",
+   "lines": 169
   },
   {
-   "path": "boot.js",
-   "lines": 162
+   "path": "input.js",
+   "lines": 168
   },
   {
    "path": "identities.js",
@@ -5563,7 +5563,7 @@
   },
   {
    "path": "ui/kit.js",
-   "lines": 52
+   "lines": 53
   },
   {
    "path": "ui/moodles.js",

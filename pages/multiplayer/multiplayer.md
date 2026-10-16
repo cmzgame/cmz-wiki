@@ -21,7 +21,7 @@ Everything a guest can do, they do through the same actions as the host: opening
 ### Getting together
 
 - The host opens the world from the pause menu with **Open to friends**, which shows the world's code. See [[Hosting]].
-- A friend types the code under **Join a game** on the Worlds screen. See [[Joining]].
+- A friend types the code under **Join a game** on the Worlds page (**Play** on the game's site). See [[Joining]].
 - Friends anywhere meet through the relay, a small server that passes messages between the host and the guests. It keeps nothing of the world.
 
 A world remembers which survivor belongs to which browser, so a friend who comes back returns as the same [[Characters|character]]. A world remembers at most {{n census.constants.host.MAX_OWNERS}} browsers; after that it refuses new ones as full.

@@ -5,7 +5,7 @@ aliases: [Options, Settings screen, Defaults, World rules]
 summary: The Settings screen, its three tabs, every row on it with its default, and which ones are the world's rules.
 ---
 
-The **Settings** screen is opened from the title screen or the pause menu. Its heading says the settings are kept in this browser. It has three tabs: **Display**, **World rules**, and **Testing**; Display is open first. Each row has a label and a line under it explaining what it does. A row whose answers are on and off is a switch, with its answer written beside it ("On", "Shown"); any other row is a dropdown. Either way only the chosen answer shows. **Defaults** resets them and **Back** returns.
+The **Settings** screen is opened from the game's site menu out of a world, where it is a page of the site, or from the pause menu in one, where it sits over the world (see [[Screens]]). Its heading says the settings are kept in this browser. It has three tabs: **Display**, **World rules**, and **Testing**; Display is open first. Each row has a label and a line under it explaining what it does. A row whose answers are on and off is a switch, with its answer written beside it ("On", "Shown"); any other row is a dropdown. Either way only the chosen answer shows. **Defaults** resets them and **Back** returns to where Settings was opened from.
 
 ## The rows
 
@@ -64,22 +64,23 @@ The game's full list of stored settings and their defaults, including the ones t
 
 ## Sources
 
-<!-- sources at 19a1c18 -->
-- `src/ui/screens.js:787-800`: the screen, "Kept in this browser", the three tabs, Defaults and Back
+<!-- sources at 02dfcc2 -->
+- `src/ui/screens.js:926-941`, `index.html:53`, `src/ui/screens.js:844`: the screen, "Kept in this browser", the three tabs, Defaults and Back; opened from the site's menu or the pause menu
+- `src/ui/screens.js:177-200`, `src/ui/screens.js:206-220`, `src/ui/screens.js:233-235`: a page of the site out of a world, over the world in one; Back returns to where it was opened from (game #120)
 - `src/settings.js:40-73`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown
-- `src/ui/screens.js:387-412`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
-- `src/ui/screens.js:68`, `src/ui/screens.js:105-108`: Display open first; a click on a tab opens it
+- `src/ui/screens.js:466-492`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
+- `src/ui/screens.js:83`, `src/ui/screens.js:137-141`: Display open first; a click on a tab opens it
 - `src/settings.js:8-38`: the defaults, Zombie aggro on
 - `src/view.js:80-87`: `UI_SCALE_MAX` and Auto's fit
 - `src/view.js:28`, `src/view.js:70-79`: the zooms and Auto
-- `src/main.js:1110-1118`: the square's surface never laid on a guest's copy of the host's world
+- `src/main.js:1124-1130`: the square's surface never laid on a guest's copy of the host's world
 - `src/rules.js:9-37`: the five world rules
 - `src/ui/swing-timer.js:16`: the exposure bar over the head, apart from the swing bars
 - `src/game.js:97`, `src/game.js:126-131`: combat testing's crowd in a ring round the spawn
-- `src/main.js:292-299`: the dev chest and combat testing read when a world is made
-- `src/ui/screens.js:483-501`: the Testing tab's Layer rows (the first answer **item**), Painted hair with Reload hair, and the relay
-- `src/ui/screens.js:123-127`: a focused dropdown keeps its keys, Escape through
-- `src/ui/screens.js:401-412`, `src/main.js:689`, `server/world.js:95-98`: world rules shown as the host's and locked for a guest; a server world's from its owner
-- `src/ui/screens.js:720-724`: the owner's screen's rules as the same switches
-- `src/settings.js:106-113`, `src/ui/screens.js:797-800`: Defaults resets only the screen's own rows and the painted layers; the tab is kept
+- `src/main.js:302-308`: the dev chest and combat testing read when a world is made
+- `src/ui/screens.js:562-581`: the Testing tab's Layer rows (the first answer **item**), Painted hair with Reload hair, and the relay
+- `src/ui/screens.js:155-159`: a focused dropdown keeps its keys, Escape through
+- `src/ui/screens.js:480-492`, `src/main.js:701`, `server/world.js:95-98`: world rules shown as the host's and locked for a guest; a server world's from its owner
+- `src/ui/screens.js:860-864`: the owner's screen's rules as the same switches
+- `src/settings.js:106-113`, `src/ui/screens.js:938-941`: Defaults resets only the screen's own rows and the painted layers; the tab is kept
 - `src/identities.js:90-97`: a new browser id drawn after the reset

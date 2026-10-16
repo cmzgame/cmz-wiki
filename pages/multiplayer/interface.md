@@ -5,7 +5,7 @@ aliases: [HUD, UI, Health bar, Stamina bar, Prompt, Context menu, Actions menu, 
 summary: What is on the screen while playing: the portrait and bars, the clock, the moodles, the swing bars, the prompt, menus, panels, and the cursor.
 ---
 
-The **interface** is everything drawn over the world: the bars, the clock, the icons, the menus, and the panels. It is drawn at its own size, set by **Interface size** in [[Settings]], separately from the world's zoom. It is hidden whenever no [[Worlds|world]] is in, before one is chosen and after one is left, the chat box and the debug corner with it; the menus then sit over black.
+The **interface** is everything drawn over the world: the bars, the clock, the icons, the menus, and the panels. It is drawn at its own size, set by **Interface size** in [[Settings]], separately from the world's zoom. It is hidden whenever no [[Worlds|world]] is in, before one is chosen and after one is left, the chat box and the debug corner with it; the game is then its site, a page of menus with nothing of a world drawn (see [[Screens#The site|Screens]]).
 
 ## Top left: you
 
@@ -73,7 +73,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 <!-- sources at 9205ad7 -->
 - `src/main.js:918-1001`: an open panel stops no click, key, or zoom (game commit 57df52e)
 - `src/view.js:84-88`, `src/view.js:138`: the interface's own size, Interface size
-- `style.css:1104`, `src/main.js:98-104`, `src/main.js:1195-1197`: the interface, the chat box, and the debug corner hidden while no world is in; the canvas black (game #80, at 19a1c18)
+- `style.css:1104`, `src/main.js:100-104`, `src/main.js:1207-1209`, `src/ui/screens.js:187-200`: the interface, the chat box, and the debug corner hidden while no world is in; nothing of a world drawn, the game's stage hidden behind the site (game #80, #120, at 02dfcc2)
 - `src/ui/hud.js:21-22`: the portrait cut from your own sprite, head to belt
 - `src/ui/hud.js:66`, `src/ui/hud.js:92-106`: the name, the health bar's colours, the stamina pulses, the hands line and its dash
 - `data/tuning.json`: `player.hp` and `player.stamina`

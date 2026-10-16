@@ -9,6 +9,8 @@ The game is in development, and this wiki describes it as it is today, true to i
 
 ## Start here
 
+The game plays in a web browser, alone or with friends: press **Play** on its site, make a world, and see [[Getting started]] for what comes next.
+
 - [[Getting started]]: your first day in the valley.
 - [[Controls]]: every key and button.
 - [[The valley]]: the map, its places, and its people.

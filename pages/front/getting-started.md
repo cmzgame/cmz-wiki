@@ -9,7 +9,7 @@ This guide walks through a first day in [[The valley]], in the order you will me
 
 ## Making a world
 
-From the title, open [[Worlds]] and make a new world. Each world asks you to make a [[Characters|character]] for it from an [[Identities|identity]]: a name and a look kept in your browser. Your character belongs to that world alone. A friend can join you later; see [[Multiplayer]].
+The game opens on its site. Press **Play** on its menu to open the [[Worlds]] page, then **New world** to make a world. Each world asks you to make a [[Characters|character]] for it from an [[Identities|identity]]: a name and a look kept in your browser. Your character belongs to that world alone. A friend can join you later; see [[Multiplayer]].
 
 ## Where you start
 
@@ -40,7 +40,8 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 ## Sources
 
 <!-- sources at 9205ad7 -->
-- `src/main.js:236-250`, `src/ui/screens.js:260-264`, `src/ui/screens.js:301-320`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
+- `index.html:51`, `src/ui/screens.js:737-750`: the site's Play opens the Worlds page, New world on it (game commit 02dfcc2)
+- `src/main.js:295-321`, `src/ui/screens.js:331-336`, `src/ui/screens.js:372-391`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser (game commit 02dfcc2)
 - `src/game.js:171-176`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
 - `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot

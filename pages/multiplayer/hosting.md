@@ -36,7 +36,7 @@ The host's clock is the world's clock.
 
 ### Closing and leaving
 
-**Close to friends** ends the session for everyone in: their characters go [[Dormancy|dormant]], kept in the world for their owners and back where they stood on a rejoin, the world saves, and the guests are sent back to their title screen, told the host closed the world. **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same and goes to the [[Worlds]] screen.
+**Close to friends** ends the session for everyone in: their characters go [[Dormancy|dormant]], kept in the world for their owners and back where they stood on a rejoin, the world saves, and the guests are sent back to the game's site, whose Home page tells them the host closed the world (see [[Screens#The site|Screens]]). **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same and goes back to the site's [[Worlds]] page.
 
 ## Numbers
 
@@ -69,6 +69,7 @@ The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggr
 - `src/net.js:803`, `src/net.js:1040`: the host's clock goes to every guest
 - `server/relay.js:840-852`, `src/main.js:1567`: closing sends every guest "The host closed the world."
 - `src/main.js:568-590`: closing to friends makes every guest's character dormant, closes the wire, and saves (game commit 2c70942)
-- `src/ui/screens.js:198-203`, `src/main.js:345-359`: Leave world asks a host with guests, makes them dormant, saves, and shows the Worlds screen (game commit 2c70942)
+- `src/ui/screens.js:269-274`, `src/main.js:429-455`: Leave world asks a host with guests, makes them dormant, saves, and shows the site's Worlds page (game commit 02dfcc2)
+- `src/main.js:1736-1740`, `src/ui/screens.js:686-690`: a guest sent out is shown the site's Home page with the reason (game commit 02dfcc2)
 - `src/host.js:30`, `src/host.js:74`: `MAX_OWNERS`, the browsers a world remembers
 - `src/settings.js:12-22`: the rules' defaults, Zombie aggro on (game commit 2c70942)

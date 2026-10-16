@@ -23,7 +23,7 @@ After a confirmation the world is sent up. The server checks it, gives it a code
 
 ### The owner key
 
-The owner key proves the world is yours from any device. Joining with it brings back the owner's own character. **A world of mine on the server** on the Worlds screen takes a code and an owner key, checks them with the server, and lists the world under My worlds on the server on that device too.
+The owner key proves the world is yours from any device. Joining with it brings back the owner's own character. **A world of mine on the server** on the Worlds page takes a code and an owner key, checks them with the server, and lists the world under My worlds on the server on that device too.
 
 A lost owner key can be replaced from the same screen with the creator key: the server issues a new one, the old one stops working, and the owner's character stays where it is.
 

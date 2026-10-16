@@ -26,9 +26,9 @@ The last button reads **Into the valley** for a new world or a new survivor, or 
 
 ### After a death
 
-When your character dies, the dead screen names them, gives the day and hour, and says the body stays where it fell. The body is a corpse that anyone can search. **New character** runs creation again and puts a new survivor at the world's spawn, in the same world, from any identity. **Leave world** goes to the [[Worlds]] screen. See [[Death]].
+When your character dies, the dead screen names them, gives the day and hour, and says the body stays where it fell. The body is a corpse that anyone can search. **New character** runs creation again and puts a new survivor at the world's spawn, in the same world, from any identity. **Leave world** goes back to the game's site, on the [[Worlds]] page. See [[Death]].
 
-A dead character's row on the Worlds screen reads "Name died", and its button is **New character**.
+A dead character's card on the Worlds page reads "Name died", and its button is **New character**.
 
 ## With friends
 
@@ -50,7 +50,7 @@ Each browser has its own character in a friend's world. The world knows whose is
 - `src/ui/screens.js:737-747`: the pause menu's Character screen: the name, "A survivor of", the figure, read only
 - `src/ui/screens.js:785-791`: the dead screen, its words and its two buttons
 - `src/main.js:291-319`: New character: creation again and a new survivor at the spawn of the same world
-- `src/main.js:345-359`: Leave world shows the Worlds screen (game commit 2c70942)
+- `src/main.js:429-455`, `src/ui/screens.js:608`: Leave world shows the site's Worlds page; a dead character's card (game commit 02dfcc2)
 - `src/ui/screens.js:474-485`: a dead character's row, "Name died", and its New character button
 - `src/identities.js:77-98`, `src/host.js:54-80`: a world knows each browser's character by a hash of the browser's id
 - `src/host.js:95-101`: a returning browser's dormant character comes back where it stood

@@ -5,7 +5,7 @@ aliases: [Keys, Keyboard, Mouse, Key bindings, Hotkeys]
 summary: Every key and mouse button and what it does.
 ---
 
-The game is played with the keyboard and a three-button mouse. Keys cannot be changed yet. The **Controls** screen (title screen or pause menu) shows a short list; this page is the full one.
+The game is played with the keyboard and a three-button mouse. Keys cannot be changed yet. The **Controls** screen, on the game's site menu out of a world or on the pause menu in one (see [[Screens]]), shows a short list in six groups: Moving and doing, Fighting, Your things, Building, Talking, and Testing (the debug keys, kept apart from the rest). `R` is written there once, for turning what you are placing or the item you are dragging, and the screen ends with a link to this wiki. This page is the full list.
 
 Only the pause menu and its screens take the keys and the mouse from the world (see [[Screens]]). With the bag, a container, a station's panel, or the character screen open, every button and key below still works on the world, and the world goes on; a click or a wheel turn over a panel stays the panel's.
 
@@ -49,7 +49,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - `Z`: the next zoom level (Wide, Middle, Close, then Wide again).
 - `Enter`: open the chat box; in it, `Enter` says the line. See [[Chat log]].
 - `/`: open the chat box with a slash typed (there are no commands yet).
-- `Escape`: close the top thing in this order: the actions menu, Use mode, the station panel, a screen, the build palette, placement or removal, the bag and character panels. With nothing open, the pause menu. In the chat box it only leaves the box.
+- `Escape`: close the top thing in this order: the actions menu, Use mode, the station panel, a screen, the build palette, placement or removal, the bag and character panels. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
 
 In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button.
 
@@ -83,7 +83,8 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 ## Sources
 
 <!-- sources at 9205ad7 -->
-- `src/ui/screens.js:20-46`, `src/settings.js:41-59`: the Controls screen is a fixed list (with Q or the middle button, the right button held, and the held left click; no K) and no setting rebinds a key (game commit 2c70942)
+- `src/ui/screens.js:20-58`, `src/ui/screens.js:957-964`, `src/settings.js:41-59`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot (game commit 02dfcc2), and no setting rebinds a key
+- `index.html:50`, `src/ui/screens.js:844`: Controls on the site's menu and on the pause menu (game commit 02dfcc2)
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
 - `src/main.js:926-940`: the left button: placement's confirm, Use mode's target, else the swing
 - `src/main.js:947`, `src/main.js:976-980`, `src/main.js:1001`: an open panel stops no click and no key; an open actions menu takes the click that closes it and ends a draw (game commit 57df52e)
@@ -106,9 +107,10 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:898`, `src/view.js:95-109`: Z cycles the zooms, wrapping
 - `src/main.js:889-890`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
 - `src/main.js:679-696`, `src/ui/log.js:55`: Escape's order, and in the chat box
-- `src/ui/screens.js:583`, `src/ui/screens.js:614`, `src/ui/screens.js:628`: Enter in a screen's text field presses its button
+- `src/main.js:793-794`, `src/ui/screens.js:233-262`: Escape out of a world steps back through the site (game commit 02dfcc2)
+- `src/ui/screens.js:764`, `src/ui/screens.js:794`, `src/ui/screens.js:807`: Enter in a screen's text field presses its button (game commit 02dfcc2)
 - `src/ui/inventory-panel.js:75-126`, `src/ui/inventory-panel.js:632`: drag, rotate, shift-click, double-click, right-click in the panels
-- `src/ui/inventory-actions.js:166-182`, `src/ui/screens.js:25`: a double-click equips from the bag and runs a slot's Equip or Unequip; the Controls screen's line (game commit 9a450f2)
+- `src/ui/inventory-actions.js:166-182`, `src/ui/screens.js:40`: a double-click equips from the bag and runs a slot's Equip or Unequip; the Controls screen's line (game commit 9a450f2)
 - `src/ui/station-panel.js:34-43`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it (game commit 57df52e)
 - `src/main.js:887`, `src/main.js:907-910`: V, L, ] and [
 - `src/clock.js:41-44`: the hour moved keeping the day
