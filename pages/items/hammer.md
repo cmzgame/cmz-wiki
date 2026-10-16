@@ -6,7 +6,7 @@ summary: The smith's tool, made at the anvil and held for every other anvil reci
 
 {{infobox-item hammer}}
 
-The **hammer** is made at the [[Anvil]] from an [[Iron bar]] and a [[Stick]], and is the one anvil recipe that needs no hammer in hand. Every other anvil recipe needs it held. Nothing in the valley gives iron bars yet, so it cannot be made in play, and it is not found anywhere. It can be held in either hand and swung as a weak weapon that wears out in {{n items.hammer.weapon.kills}} kills.
+The **hammer** is made at the [[Anvil]] from an [[Iron bar]] and a [[Stick]], and is the one anvil recipe that needs no hammer in hand. Every other anvil recipe needs it held. Nothing in the valley gives iron bars yet, so it cannot be made in play, and it is not found anywhere. It can be held in either hand and swung as a weak weapon that breaks after about {{n items.hammer.weapon.kills}} kills.
 
 {{planned doc=30 step=4 note="The hammer's other verbs, smithing and building."}}
 
@@ -19,6 +19,6 @@ The **hammer** is made at the [[Anvil]] from an [[Iron bar]] and a [[Stick]], an
 - `data/recipes.json:263-421`: every other anvil recipe needs the hammer
 - `data/loot.json`: no table holds the hammer or iron bars
 - `data/items.json:40`: the hammer: either hand, a weapon, its kills, its unused verbs
-- `src/items.js:27-37`: wear per hit from kills
+- `src/items.js:27-37`: durability per hit from kills
 
 {{navbox items}}

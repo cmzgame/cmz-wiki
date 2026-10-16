@@ -62,9 +62,9 @@ A hit may stop one of the dead for a moment, or floor it. Heavier weapons do bot
 
 By default a swing hits only the nearest of the dead in the wedge. With the Multi-hit setting on, it hits everything in the wedge. The halberd's thrust always hits only the nearest.
 
-### Wear
+### Durability
 
-Weapons wear out by landed hits. See [[Durability]].
+Weapons lose [[Durability|durability]] by landed hits and break when it runs out.
 
 ## Numbers
 
@@ -128,7 +128,7 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 - `src/combat.js:255-260`: the camera kick
 - `src/combat.js:346-347`, `src/entities/zombie.js:157-165`: knockback over time, stopped by walls, none on a downed target
 - `src/combat.js:171-175`, `src/settings.js:19`: multi-hit, off by default; the thrust's `multiHit: false`
-- `src/combat.js:354`: wear on a landed hit
+- `src/combat.js:354`: durability spent on a landed hit
 - `src/main.js:880`, `src/loop.js:66-74`: hit-stop off whenever the world is on the wire
 - `src/main.js:1454-1456`: the kick answered only by the striker's client
 - `src/player-controller.js:13-16`, `src/player-controller.js:43`, `src/player-controller.js:53`: a guest's swing and guard predicted; hits, shove, and draw on the host

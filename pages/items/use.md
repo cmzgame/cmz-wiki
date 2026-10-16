@@ -5,7 +5,7 @@ aliases: [Use mode, Interactions, Nothing interesting happens, Use item on]
 summary: Use on any item's menu, then click anything: if the game has a rule for the pair it happens, and otherwise "Nothing interesting happens."
 ---
 
-**Use** is on every item's menu, wherever the item is: in your bag, in a container, in a hand, worn, or on the belt. It picks the item as the thing you are about to use, and your next click is what you use it on. Anything can be used on anything; where the game has no rule for the pair, the chat log says "Nothing interesting happens."
+**Use** is on every item's menu, wherever the item is: in your bag, in a container, in a hand, equipped as clothing, or on the belt. It picks the item as the thing you are about to use, and your next click is what you use it on. Anything can be used on anything; where the game has no rule for the pair, the chat log says "Nothing interesting happens."
 
 ## How it works
 

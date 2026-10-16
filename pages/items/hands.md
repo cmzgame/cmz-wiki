@@ -18,13 +18,13 @@ Every item that can be held says where it may go:
 - **Both**: it takes both hands (the [[Bow]], the [[Halberd]]).
 - **Either**: whichever hand you choose. Its menu offers **Equip (main hand)** and **Equip (off hand)**. Equipped with no choice (a double-click, or picking it up), it goes to the main hand if that is free, else the off hand if that is free, else it swaps with what is in the main hand.
 
-Items that cannot be held (food, materials, clothing, bags) have no Equip entry.
+Items that cannot be held (food, materials) have no hand Equip entry. Clothing and bags have an **Equip** of their own, which puts them on rather than in a hand (see [[Clothing]]).
 
 ### Equipping and unequipping
 
 **Equip** is on an item's menu in your own bag. Whatever was in that hand goes into your bag, or onto your [[Belt]]; if there is nowhere to put it, the equip is refused ("Your hands are full."). An item in a container must be taken into your bag first.
 
-**Unequip** on a hand's menu puts the item away in the bag or on the belt ("Nowhere to put it." if neither has room). Dragging one hand's item onto the other hand swaps them. **Drop** on a hand's menu drops the item at your feet.
+**Unequip** on a hand's menu, or a double-click on the hand, puts the item away in the bag or on the belt ("Nowhere to put it." if neither has room). Dragging one hand's item onto the other hand swaps them. **Drop** on a hand's menu drops the item at your feet.
 
 ### Two-handed items
 

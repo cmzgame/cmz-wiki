@@ -11,7 +11,7 @@ A **corpse** is the body of one of [[The dead]], or of a fallen player, once it 
 
 The first search takes {{n census.constants.interact.SEARCH_TIME seconds}} and rolls the body's pockets. Everything on it is then laid out on the body's own grid:
 
-- the clothes it wears,
+- the clothes it has on,
 - what is in its hands,
 - its pockets ({{n wardrobes.zombie.0.pockets.0}} × {{n wardrobes.zombie.0.pockets.1}}),
 - any [[Arrow|arrows]] and [[Throwing spear|spears]] lodged in it.
@@ -46,7 +46,7 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 
 <!-- sources at 9205ad7 -->
 - `src/entities/zombie.js:113-123`, `src/entities/zombie.js:357-364`: the fall, then a still body
-- `src/entities/character.js:139-185`: a body as a container: worn clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped
+- `src/entities/character.js:139-185`: a body as a container: its clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped
 - `src/interact.js:43`, `src/interact.js:1333-1355`: the first search's time and the pockets rolled
 - `data/wardrobes.json`: the dead's pockets
 - `src/game.js:524-535`: corpses leave the thinking list

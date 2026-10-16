@@ -5,7 +5,7 @@ aliases: [Bag, Bags, The bag, Grid, Tetris grid, Floor items, Picking up, Droppi
 summary: The bag on your back is a grid of cells; every item is a rectangle in it, can be turned, and stacks with its like. There is no weight.
 ---
 
-Your **inventory** is the bag on your back. You carry nothing in yourself: what you carry is in the bag's grid, in your [[Hands]], on your [[Belt]], or worn as [[Clothing]]. With no bag on your back you have no grid at all.
+Your **inventory** is the bag on your back. You carry nothing in yourself: what you carry is in the bag's grid, in your [[Hands]], on your [[Belt]], or equipped as [[Clothing]]. With no bag on your back you have no grid at all.
 
 ## How it works
 
@@ -29,37 +29,37 @@ The **Tidy** button repacks the bag, the biggest items first. If the repack woul
 
 ### The panels
 
-`Tab` opens the bag; `C` opens the character screen, with your worn slots and your two hands. They open and close separately, and each can be dragged by its header to where you want it (the game remembers). With no bag worn, `Tab` opens the character screen and says "No bag on your back." While you are carrying furniture, both say "Your hands are full."
+`Tab` opens the bag; `C` opens the character screen, with your clothing slots and your two hands. They open and close separately, and each can be dragged by its header to where you want it (the game remembers). With no bag on your back, `Tab` opens the character screen and says "No bag on your back." While you are carrying furniture, both say "Your hands are full."
 
 An open panel does not stop the game or make you safe. The dead keep coming, and with the bag or a container open you can still fight, shoot, cast, aim a [[Use]], press `E`, `B`, and `T`, and zoom; only a click on a panel is the panel's. Only the pause menu stops play (see [[Controls]]).
 
 In a panel:
 
 - Drag an item to move it; drop it outside every panel to drop it on the floor.
-- Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it (if it can be held) or wears it.
-- Right-click for the item's menu: **Use**, the **Equip** and **Wear** entries, **Eat**, **Drink**, **Apply**, **Split**, **Store** or **Take**, **Drop** or **Drop all**, and **Rotate**, each where it applies.
+- Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot. Double-clicking a filled slot on the character screen or the belt runs its **Equip** or **Unequip**: a hand or clothing slot unequips, a belt slot equips into a hand.
+- Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Apply**, **Split**, **Store** or **Take**, **Drop** or **Drop all**, and **Rotate**, each where it applies.
 
-An item that has been worn down shows a bar on its icon and "(N% left)" in its name.
+An item that has lost [[Durability|durability]] shows a bar on its icon and "(N% left)" in its name.
 
 ### The one container rule
 
-A container (any item with a grid or belt slots, so every bag and every belt) can go inside another container only while it is empty. A full bag must be worn or dropped. The menus say so: "(empty it first)", or "(empty it first, or wear it)".
+A container (any item with a grid or belt slots, so every bag and every belt) can go inside another container only while it is empty. A full bag must be equipped or dropped. The menus say so: "(empty it first)", or "(empty it first, or equip it)"; dragging a full one into a grid says "Empty it first, or equip it."
 
 ### Bags
 
-Three bags exist. Each is worn on the back and gives a grid of its own size:
+Three bags exist. Each is equipped on the back and gives a grid of its own size:
 
 - [[Burlap sack]]: {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}}. Every new character starts with one.
 - [[Rucksack]]: {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}}. Found in chests.
 - [[Developer Bag]]: {{n items.dev_bag.bag.0}} × {{n items.dev_bag.bag.1}}. A testing item.
 
-Wearing a new bag swaps bags: the old one is dropped at your feet with everything still in it. A bag on the floor is a container you can **Open**; you can **Wear** it, and **Pick up** it while it is empty.
+Equipping a new bag swaps bags: the old one is dropped at your feet with everything still in it. A bag on the floor is a container you can **Open**; you can **Equip** it (**Swap bags** if you have one on), and **Pick up** it while it is empty.
 
 ### Dropping and picking up
 
-Dropped items lie on the tile where they fell. **Drop** on an item's menu drops it at your feet; **Drop all** drops the whole stack. A worn bag or belt dropped from its slot keeps everything in it.
+Dropped items lie on the tile where they fell. **Drop** on an item's menu drops it at your feet; **Drop all** drops the whole stack. A bag or belt dropped from its slot keeps everything in it.
 
-`E` picks up the nearest thing within {{n census.constants.interact.INTERACT_RANGE tiles}}; a loose item beats a container on the same tile. Right-clicking a tile with items on it offers **Pick up** for each, and **Wear** for clothing.
+`E` picks up the nearest thing within {{n census.constants.interact.INTERACT_RANGE tiles}}; a loose item beats a container on the same tile. Right-clicking a tile with items on it offers **Pick up** for each, and **Equip** for clothing (as **Equip cap**).
 
 A single item that can be held goes into a free hand first, then the bag, then the belt. A stack goes into the bag; if only part of it fits, the rest stays on the floor. With no room the game says "No room in your bag."; with no bag, "You have no bag."
 
@@ -88,21 +88,21 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/grid.js:155-178`: Tidy, biggest first, nothing moves on failure
 - `src/main.js:735-749`: Tab and C, "No bag on your back.", "Your hands are full."
 - `src/ui/inventory-panel.js:334-353`: panels dragged by the header, remembered
-- `src/ui/inventory-panel.js:75-89`: double-click equips, wears, or sends across
+- `src/ui/inventory-panel.js:75-89`, `src/ui/inventory-actions.js:166-182`: double-click equips from the bag, runs a slot's Equip or Unequip, or sends across (game commit 9a450f2)
 - `src/ui/inventory-panel.js:667`: shift-click sends across
-- `src/interact.js:1015-1090`: the item menu's entries
-- `src/ui/inventory-panel.js:237-238`: the wear bar and "(N% left)"
-- `src/inventory.js:159-173`: the one container rule and its labels
+- `src/interact.js:1016-1091`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
+- `src/ui/inventory-panel.js:237-238`: the durability bar (the code's `wear`) and "(N% left)"
+- `src/inventory.js:159-173`, `src/interact.js:232`, `src/ui/inventory-actions.js:129`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
 - `data/items.json:31-33`: the three bags' grids
 - `src/game.js:103-116`: the starting sack
 - `data/loot.json:2`: the rucksack in the chest table
-- `src/interact.js:168-189`: wearing a new bag drops the old one; Wear on the floor
+- `src/interact.js:168-190`: equipping a new bag drops the old one; Equip and Swap bags on the floor (game commit 9a450f2)
 - `src/interact.js:323-345`: a bag on the floor opens as a container
 - `src/map.js:335-362`: items lie on tiles
 - `src/interact.js:1095-1147`: a dropped bag or belt keeps its contents
 - `src/interact.js:42`: E's reach
 - `src/interact.js:713-726`: a loose item beats a container
-- `src/interact.js:192-261`: Pick up and Wear on the floor; only an empty bag is picked up
+- `src/interact.js:192-261`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
 - `src/interact.js:157-162`: a free hand first; "No room in your bag.", "You have no bag."
 - `src/ui/inventory-actions.js:200-358`: a guest's panel actions run on the host
 - `src/ui/inventory-actions.js:276-284`: a container not the guest's own must be within reach

@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "57df52ea00cf6396d96fb375100f7dbc474cb14b",
-  "short": "57df52e",
-  "date": "2026-10-15T21:41:56-05:00",
-  "subject": "Merge #63, reviewed: check(\"save\") reads the mess's hp at the save (health regenerates with survival off; the save was right, the check's expectation stale)",
+  "commit": "9a450f2a27754d61ba49ed0a87915fac5e5c1fed",
+  "short": "9a450f2",
+  "date": "2026-10-15T22:47:26-05:00",
+  "subject": "Merge #66, reviewed: Equip and Unequip for everything, Durability for the mechanic, no more \"wear\" on screen; a double-click on a slot really unequips",
   "ref": "origin/main"
  },
  "counts": {
@@ -22,7 +22,7 @@
   "rules": 5,
   "keys": 19,
   "verbs": 3,
-  "menuLabels": 40,
+  "menuLabels": 39,
   "events": 25,
   "checks": 21,
   "modules": 82
@@ -4684,13 +4684,13 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1102"
+    "interact.js:1103"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1048"
+    "interact.js:1049"
    ]
   },
   {
@@ -4708,7 +4708,7 @@
   {
    "key": "Equip",
    "at": [
-    "interact.js:1128"
+    "interact.js:1129"
    ]
   },
   {
@@ -4738,7 +4738,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1130"
+    "interact.js:1131"
    ]
   },
   {
@@ -4784,12 +4784,6 @@
    ]
   },
   {
-   "key": "Take off",
-   "at": [
-    "interact.js:1113"
-   ]
-  },
-  {
    "key": "Take the torch",
    "at": [
     "interact.js:412"
@@ -4798,14 +4792,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1144"
+    "interact.js:1114",
+    "interact.js:1145"
    ]
   },
   {
    "key": "Use",
    "at": [
     "interact.js:1021",
-    "interact.js:1100"
+    "interact.js:1101"
    ]
   },
   {
@@ -4847,7 +4842,7 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1052"
+    "interact.js:1053"
    ]
   },
   {
@@ -4877,7 +4872,7 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1364"
+    "interact.js:1365"
    ]
   },
   {
@@ -4889,7 +4884,7 @@
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1057"
+    "interact.js:1058"
    ]
   }
  ],
@@ -4935,7 +4930,7 @@
    "at": [
     "interact.js:209",
     "interact.js:342",
-    "interact.js:1349",
+    "interact.js:1350",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5195,7 +5190,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1409
+   "lines": 1410
   },
   {
    "path": "net.js",
@@ -5255,7 +5250,7 @@
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 393
+   "lines": 396
   },
   {
    "path": "figure/rig.js",
@@ -5375,7 +5370,7 @@
   },
   {
    "path": "ui/log.js",
-   "lines": 109
+   "lines": 110
   },
   {
    "path": "settings.js",

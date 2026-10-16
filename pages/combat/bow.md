@@ -18,7 +18,7 @@ An arrow hurts the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles
 
 With [[Fire arrow|fire arrows]] carried, the bow shoots those first, and the one of the dead a fire arrow hits is set alight (see [[Burning]]); it lodges or lands as a plain arrow.
 
-The bow wears per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Durability]]).
+The bow loses durability per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Durability]]).
 
 {{item-sections bow}}
 
@@ -34,6 +34,6 @@ The bow wears per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Dura
 - `src/archery.js:141-212`: walls, boards, trees, and props stop a shot
 - `src/archery.js:264`, `src/archery.js:295-334`: the landing's hit never through a wall or a closed door
 - `src/archery.js:568-572`, `src/archery.js:267-282`: fire arrows drawn first, setting alight what they hit, lodging or landing as plain arrows
-- `src/archery.js:681-690`, `src/items.js:39-41`: wear per arrow loosed
+- `src/archery.js:681-690`, `src/items.js:39-41`: durability per arrow loosed
 
 {{navbox weapons}}

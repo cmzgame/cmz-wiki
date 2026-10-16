@@ -19,7 +19,7 @@ The [[Bow]] has its own numbers (draw times, damage, shots before the string goe
 <!-- sources at 9205ad7 -->
 - `data/items.json`: every weapon block's numbers (the table)
 - `src/combat.js:305-357`: anything with a weapon block swings
-- `src/items.js:27-37`, `data/tuning.json:13`: hits per kill from the damage and the standard dead one's health; the wear by kills
+- `src/items.js:27-37`, `data/tuning.json:13`: hits per kill from the damage and the standard dead one's health; durability by kills
 - `data/items.json:21`, `data/items.json:34`: the bow's and the shield's own numbers
 
 {{navbox weapons}}

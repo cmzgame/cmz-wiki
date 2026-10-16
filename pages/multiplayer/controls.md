@@ -38,7 +38,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 
 ### Panels and building
 
-- `Tab`: the bag (or the character panel if you wear no bag). Also closes the actions menu.
+- `Tab`: the bag (or the character panel if you have no bag on your back). Also closes the actions menu.
 - `C`: the character panel.
 - `N`: the build palette (see [[Building]]). Not with the bag open: the game says "Close your bag to build."
 - `X`: removal mode, for taking down what players built or made (see [[Building]]). Not with the bag open, as `N`.
@@ -58,7 +58,7 @@ In a screen with a text box (a world's name, a join code, the creator key), `Ent
 - Drag an item to move it; drop it outside the panels to put it on the floor.
 - `R`, a right click, or the wheel while dragging: rotate it.
 - Shift-click: send an item across (bag to container and back).
-- Double-click: use it (equip, wear, take from the belt, unequip, take off), otherwise send it across.
+- Double-click: equip or unequip it, otherwise send it across. In your bag it equips the item (into a hand, or a garment into its slot); on a hand or clothing slot it unequips; on a belt slot it equips into a hand. The Controls screen says "Equip or unequip a thing; else move it across".
 - Right-click: the item's menu.
 - Typing in a station's count goes to the count alone, never to the keys above; `Enter` or `Escape` leaves it.
 
@@ -108,6 +108,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:679-696`, `src/ui/log.js:55`: Escape's order, and in the chat box
 - `src/ui/screens.js:583`, `src/ui/screens.js:614`, `src/ui/screens.js:628`: Enter in a screen's text field presses its button
 - `src/ui/inventory-panel.js:75-126`, `src/ui/inventory-panel.js:632`: drag, rotate, shift-click, double-click, right-click in the panels
+- `src/ui/inventory-actions.js:166-182`, `src/ui/screens.js:25`: a double-click equips from the bag and runs a slot's Equip or Unequip; the Controls screen's line (game commit 9a450f2)
 - `src/ui/station-panel.js:34-43`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it (game commit 57df52e)
 - `src/main.js:887`, `src/main.js:907-910`: V, L, ] and [
 - `src/clock.js:41-44`: the hour moved keeping the day

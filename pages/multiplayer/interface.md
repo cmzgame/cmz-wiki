@@ -9,7 +9,7 @@ The **interface** is everything drawn over the world: the bars, the clock, the i
 
 ## Top left: you
 
-- A **portrait** cut from your own figure, head to belt, so it shows what you wear.
+- A **portrait** cut from your own figure, head to belt, so it shows what you have on.
 - Your **name**.
 - **Health**: a labelled bar ("Health" with the current and the most, {{n tuning.player.hp}} at full). It is green when high, yellow lower, red when low. See [[Health]].
 - **Stamina**: a labelled bar in percent, out of {{n tuning.player.stamina}}. It pulses gold when a block lands and red when a guard breaks. See [[Stamina]].
@@ -33,7 +33,7 @@ Five icons always shown, in a fixed order: bleeding, infection, hunger, thirst, 
 ## Bottom centre: the swing bars and the belt
 
 - **Swing bars**: two gold bars above the belt, the main hand on top and the off hand below. They are empty at rest and fill while a swing recovers. The **Swing timer** setting hides them.
-- **The belt**: while a belt is worn, its slots show here; keys `1` to `4` use them.
+- **The belt**: while a belt is equipped, its slots show here; keys `1` to `4` use them.
 
 ## Bottom left: the chat log
 
@@ -42,7 +42,7 @@ Every message and every line said within sight, with the chat box at its foot. S
 ## Menus
 
 - **The actions menu**: a tap of the right mouse button opens a menu of everything you can do to what is under the cursor, with **Build** always last. A greyed entry cannot be done now. A click outside closes it without acting on the world, as do `Escape`, `Tab`, and walking.
-- **Item menus**: right-clicking an item in a panel offers what can be done with it: Use, Equip, Wear, Apply, Eat, Drink, Split, Store in or Take, Drop, Rotate, and so on. Right-clicking a slot offers Use, Take off, Unequip, Put in bag, and Drop. See [[Inventory]].
+- **Item menus**: right-clicking an item in a panel offers what can be done with it: Use, Equip, Apply, Eat, Drink, Split, Store in or Take, Drop, Rotate, and so on. Right-clicking a slot offers Use, Equip or Unequip, Put in bag, and Drop, as the slot allows; a double-click on a slot runs its Equip or Unequip. See [[Inventory]].
 
 The browser's own right-click menu is switched off everywhere except over the debug corner.
 
@@ -50,7 +50,7 @@ The browser's own right-click menu is switched off everywhere except over the de
 
 The game goes on while any panel is open, and the world's keys and clicks still work (see [[Controls]]).
 
-- **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the worn slots and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
+- **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the clothing slots and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
 - **The station panel**: using a station opens one panel under the clock with its recipes, the chosen recipe's ingredients, a count, **Make**, the queue, and **Output**. See [[Crafting]].
 - **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Remove row. See [[Building]].
 

@@ -16,7 +16,7 @@ A **container** is a piece of furniture that holds items in a grid: chests, barr
 
 Right-click a container, or press `E` beside it, and choose **Search**. A bar fills over {{n census.constants.interact.SEARCH_TIME}} second, and then the container's loot table is rolled into its grid. What does not fit is never made. After that first search the container just **Open**s, and holds whatever was left in it.
 
-An open container's grid shows beside your bag. It stays open while you are within {{n tuning.world.containerCloseDist}} tiles and closes when you walk away. From an open container you can eat, drink, wear, and apply bandages directly; to equip something, take it into your bag first. **Take** on an item's menu moves it to your bag; **Store in** on an item in your bag moves it across. Shift-click and double-click send items across too.
+An open container's grid shows beside your bag. It stays open while you are within {{n tuning.world.containerCloseDist}} tiles and closes when you walk away. From an open container you can eat, drink, equip clothing and bags, and apply bandages directly; to equip something into a hand, take it into your bag first. **Take** on an item's menu moves it to your bag; **Store in** on an item in your bag moves it across. Shift-click and double-click send items across too.
 
 A container can hold a bag or a belt only while that bag or belt is empty (the one container rule; see [[Inventory]]).
 
@@ -74,7 +74,7 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `src/interact.js:314-321`: a container's grid from its table
 - `data/tuning.json:75`: the close distance
 - `src/main.js:762-767`: the container closes when you walk away
-- `src/interact.js:1015-1090`: eat, drink, wear, apply from a container; equip only from your bag; Take and Store in
+- `src/interact.js:1016-1091`: eat, drink, equip clothing, apply from a container; a hand's Equip only from your bag; Take and Store in (game commit 9a450f2)
 - `src/ui/inventory-panel.js:75-89`: double-click sends across
 - `src/ui/inventory-panel.js:667`: shift-click sends across, with the container rule
 - `src/inventory.js:159-173`: the one container rule

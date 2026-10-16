@@ -2,10 +2,10 @@
 title: Belt
 categories: [Items, Mechanics]
 aliases: [Belts, Belt slots, Hotbar, Belt keys]
-summary: A worn belt gives slots at the bottom of the screen, pressed with the number keys to eat, drink, or swap an item into your hand.
+summary: An equipped belt gives slots at the bottom of the screen, pressed with the number keys to eat, drink, or swap an item into your hand.
 ---
 
-The **belt** is worn at the waist and gives **belt slots**, shown at the bottom of the screen. Each slot is pressed with its number key, `1` to `4`. Without a belt you have no slots. There are two belts: the [[Rope belt]] with {{n items.belt.beltSlots}} slots, which every new character wears, and the [[Good belt]] with {{n items.good_belt.beltSlots}}, found in chests.
+The **belt** is equipped at the waist and gives **belt slots**, shown at the bottom of the screen. Each slot is pressed with its number key, `1` to `4`. Without a belt you have no slots. There are two belts: the [[Rope belt]] with {{n items.belt.beltSlots}} slots, which every new character starts with, and the [[Good belt]] with {{n items.good_belt.beltSlots}}, found in chests.
 
 ## How it works
 
@@ -48,7 +48,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 <!-- sources at 9205ad7 -->
 - `src/inventory.js:9`: the waist slot
 - `data/items.json:29-30`: the rope belt's and the good belt's slot counts
-- `src/game.js:103-116`: every new character wears a rope belt
+- `src/game.js:103-116`: every new character starts with a rope belt on
 - `data/loot.json:2`: the good belt in the chest table
 - `src/ui/inventory-actions.js:67-73`: what a belt slot takes
 - `src/interact.js:928-932`: keys 1 to 4

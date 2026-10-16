@@ -50,7 +50,7 @@ A stopped arrow falls at the foot of what stopped it and hits nothing.
 
 An arrow that hits one of the dead stays in the body. Arrows stack in a body, and come out with its loot when it is killed and searched (see [[Corpses]]). What does not fit on the body falls at its feet. A miss, or a shot stopped by a wall or a tree, lies where it came down as an item on the floor, picked up with E. Arrows do not break.
 
-The bow itself wears with each arrow loosed (see [[Durability]]).
+The bow itself loses durability with each arrow loosed (see [[Durability]]).
 
 ### The thrown spear
 
@@ -62,7 +62,7 @@ With the [[Throwing spear]] in the main hand, middle or Q draws a throw with the
 - Its hit where it comes down follows the arrow's rule: never through a wall or a closed door to one of the dead past it.
 - Each time it comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone. Otherwise it lodges in the body it hit or lies where it fell.
 
-A thrown spear keeps its wear. With the [[Shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
+A thrown spear keeps its durability. With the [[Shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
 
 ## Numbers
 
@@ -111,10 +111,10 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:267-269`, `src/burn.js:25-32`: a fire arrow's hit sets alight before the damage
 - `src/archery.js:272-282`: a fire arrow lodges or lands as a plain arrow
 - `src/archery.js:356-364`, `src/archery.js:520-523`: the fire arrow's light in flight and its burning head
-- `src/archery.js:681-690`, `src/items.js:39-41`: the bow wears per arrow loosed
+- `src/archery.js:681-690`, `src/items.js:39-41`: the bow loses durability per arrow loosed
 - `src/player-controller.js:39-45`: middle or Q throws the spear; no brace for a throw
 - `src/archery.js:266`: the spear's break chance rolled on every landing
-- `src/archery.js:673-677`: the thrown spear leaves the hand with its wear; the guard's attack multiplier on a throw
+- `src/archery.js:673-677`: the thrown spear leaves the hand with its durability; the guard's attack multiplier on a throw
 - `src/archery.js:603-609`, `src/net.js:867`, `src/net.js:1106`, `src/archery.js:349-352`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
 - `src/settings.js:17`: the Bow aim guide setting, on by default
 

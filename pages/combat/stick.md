@@ -18,7 +18,7 @@ Left swings it. It has no other mode.
 - Stagger chance {{n items.stick.weapon.staggerChance}}; it floors on the default chance (see [[Stagger and knockdown]]).
 - It lasts about {{n items.stick.weapon.kills}} kills (see [[Durability]]).
 
-It is light and quick to find, but weak, and it wears out fast.
+It is light and quick to find, but weak, and it breaks fast.
 
 {{item-sections stick}}
 

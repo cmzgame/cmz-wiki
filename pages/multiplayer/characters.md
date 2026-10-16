@@ -5,7 +5,7 @@ aliases: [Character, Character creation, New character]
 summary: A character is one survivor in one world, made from an identity in two steps; after a death the next one starts at the spawn.
 ---
 
-A **character** is one survivor in one [[Worlds|world]]: their body, what they carry and wear, their wounds and needs. A character belongs to the world it was made in and never moves to another. Its name and look come from an [[Identities|identity]] at creation and do not change afterwards.
+A **character** is one survivor in one [[Worlds|world]]: their body, what they carry and have on, their wounds and needs. A character belongs to the world it was made in and never moves to another. Its name and look come from an [[Identities|identity]] at creation and do not change afterwards.
 
 ## How it works
 
@@ -22,7 +22,7 @@ The last button reads **Into the valley** for a new world or a new survivor, or 
 
 ### The character screen
 
-**Character** on the pause menu shows this world's character: their name, "A survivor of" the world's name, and the figure as they are dressed now. It is for looking only. The bag and worn slots are on the in-game character panel (`C`): see [[Inventory]].
+**Character** on the pause menu shows this world's character: their name, "A survivor of" the world's name, and the figure as they are dressed now. It is for looking only. The bag and clothing slots are on the in-game character panel (`C`): see [[Inventory]].
 
 ### After a death
 

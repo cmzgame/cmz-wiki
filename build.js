@@ -76,7 +76,7 @@ const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const article = (w) => (/^[aeiou]/i.test(w) ? "an" : "a");
 for (const it of data.items) {
   const kind = it.kind;
-  const lead = `The **${it.name}** is ${article(kind)} ${kind}${it.hands ? `, held in ${it.hands === "both" ? "both hands" : it.hands === "either" ? "either hand" : `the ${it.hands} hand`}` : ""}${it.wear ? `, worn on the ${it.wear}` : ""}.`;
+  const lead = `The **${it.name}** is ${article(kind)} ${kind}${it.hands ? `, held in ${it.hands === "both" ? "both hands" : it.hands === "either" ? "either hand" : `the ${it.hands} hand`}` : ""}${it.wear ? `, equipped on the ${it.wear}` : ""}.`;
   const cats = ["Items", KIND_TITLES[kind] || cap(kind)];
   if (it.weapon || it.bow) cats.push("Weapons");
   generate(it.name, `{{infobox-item ${it.id}}}\n\n${lead}\n\n{{stub}}\n\n{{item-sections ${it.id}}}\n\n{{navbox items}}\n`, cats, lead.replace(/\*\*/g, ""));

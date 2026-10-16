@@ -44,7 +44,7 @@ Two more moodles are not needs: [[Bleeding]], from bites, and [[Infection]], a m
 
 Every new character, including one made after a death and every friend who joins, starts with the same kit:
 
-- Worn: a [[Tunic]], [[Breeches]], [[Boots]], a [[Rope belt]] ({{n items.belt.beltSlots}} belt slots), and a [[Burlap sack]] on the back.
+- Equipped: a [[Tunic]], [[Breeches]], [[Boots]], a [[Rope belt]] ({{n items.belt.beltSlots}} belt slots), and a [[Burlap sack]] on the back.
 - In the sack: a full [[Waterskin]], a [[Loaf of bread]], two [[Apple|apples]], and a [[Plank]].
 - In hand: a lit [[Torch]].
 

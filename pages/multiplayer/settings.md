@@ -25,7 +25,7 @@ In the order the screen shows them, with the default first:
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
 - **Swing targets**: Off or On (a green outline on what your next swing would hit).
 - **Multi-hit**: Off (a blow hits the nearest only: the intended way) or On (everything in the wedge: the easy button). *A world rule.* See [[Combat]].
-- **Layer** rows: one per slot that has painted clothing layers, to try one on in place of what is worn.
+- **Layer** rows: one per slot that has painted clothing layers, to try one on in place of what is equipped (the button **item** shows the item's own art).
 
 ### Testing rows
 
@@ -64,7 +64,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/view.js:28`, `src/view.js:70-79`, `src/main.js:898-906`: the zooms and Auto
 - `src/rules.js:109-115`: the five world rules
 - `style.css:561-565`, `src/ui/swing-timer.js:16`: the swing bars at the bottom, the exposure bar over the head
-- `src/ui/screens.js:454-463`: the Layer rows
+- `src/ui/screens.js:454-463`: the Layer rows, the first button **item** (game commit 9a450f2)
 - `src/game.js:123-139`: combat testing's crowd in a ring round the spawn (game commit 2c70942)
 - `src/main.js:241-242`: the dev chest and combat testing read when a world is made
 - `src/ui/screens.js:373-382`, `src/main.js:591`, `server/world.js:97-99`: world rules greyed for a guest, a server world's from its owner
