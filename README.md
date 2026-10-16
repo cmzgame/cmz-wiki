@@ -18,13 +18,7 @@ Press **Edit this page** on any page: it opens the page's markdown in GitHub's e
 
 ## Keeping it current (the rule)
 
-A feature is not called done until the wiki is checked and updated for it, in the same session as its push to the game's `main` (Michael, 2026-10-14; the order 2026-10-15: the sync reads `origin/main`, so it follows the push, once for a batch). A sync:
-
-1. `node sync.js`: snapshot the game's `origin/main` (data into `snapshot/`, committed; code into `.game/`, ignored). Read-only on the game's repository.
-2. `node census/census.js`: the automatic inventory (`census/census.md`): what the game contains, and any problem the data shows by itself.
-3. `node build.js --check`: build `site/`; it fails on a template naming something the data no longer has, and reports red links, planned notes, and generated-only pages.
-4. Fix what the report names, write a Changes entry, commit, push. The site rebuilds itself on GitHub.
-5. Anything found on the way that looks like a bug in the game goes to the game's `docs/bugs.md` (marked with the commit it was read at), not into a wiki page as a choice.
+A feature is not done until the wiki is checked and updated for it, in the same session as its merge to the game's `main` (Michael, 2026-10-14; the order 2026-10-15: the sync reads `origin/main`, so it follows the merge, once for a batch). The sync's nine steps are `CLAUDE.md`, "A sync": the snapshot, the log, the census, the bug list, the pages, `node build.js --check`, an Updates entry, bugs to the game's `docs/bugs.md`, push.
 
 `node serve.js` previews the built site at http://localhost:8020.
 
