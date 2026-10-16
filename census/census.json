@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "0bd3f9c9482df4831e023ab836de06c465cf58a5",
-  "short": "0bd3f9c",
-  "date": "2026-10-16T11:59:33-05:00",
-  "subject": "Merge #74, reviewed, Michael's word: the sweep's wave 2 (docs/02 is rulings again: the build log to docs/history/, 49 overturned sentences struck where they sit, the open questions only the open ones, a topic index of the standing rulings)",
+  "commit": "50c31265f1e131c164e4348b60f4439d5bea0bc5",
+  "short": "50c3126",
+  "date": "2026-10-16T13:27:23-05:00",
+  "subject": "Merge #97, reviewed: the sweep's index pass (docs/README.md for the tree as it is, citations repointed, the rulings the trims forced in 02, TODO's Status)",
   "ref": "origin/main"
  },
  "counts": {

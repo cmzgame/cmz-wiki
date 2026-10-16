@@ -15,6 +15,10 @@ Each time the wiki is synced with the game, an entry goes here, newest first, wi
 - A stub item page prints the data's own note on the item ([[Throwing Knife]], [[Throwing Axe]]: art only, they do not throw yet).
 - Not visible on the pages: the build's Sources-drift report, the snapshot kept without the game's art, the first census's records dated under `census/history/9205ad7/` and the discrepancies list rewritten short.
 
+## 2026-10-16: synced to `50c3126`
+
+- Not visible on the wiki's pages: the game's docs sweep, wave 3 and its index (game #82 to #86, #97): every spec trimmed to what is true with its history under `docs/history/`, a new `docs/sprite-definitions.md`, `docs/README.md` the index of every doc. The game's `docs/bugs.md` keeps only its open and closed lists now; its Fixed up to 2026-10-15 is `docs/history/bugs-fixed-2026-10-15.md`, which this wiki's method names. No rule of play changed.
+
 ## 2026-10-16: synced to `0bd3f9c`
 
 - Not visible on the wiki's pages: the game's docs sweep, waves 1 and 2 (game #73, #74): the file every agent loads made lean, the decision log split into its rulings and a build log, every doc indexed as a rule, a reference, a spec, or a record. No rule of play changed; the rulings themselves are unchanged.
