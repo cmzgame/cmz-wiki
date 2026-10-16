@@ -23,7 +23,7 @@ Without a relay, a friend can join only from another tab of the same browser; th
 
 - The world never pauses, even with nobody else in it (see [[Multiplayer]]).
 - The pause menu's first line reads the world's name, your character, and "Open to friends, code" with how many are with you.
-- The log says "Name joined." and "Name left." as friends come and go.
+- The [[Chat log|chat log]] says "Name joined." and "Name left." as friends come and go.
 - The world saves when friends join, leave, or go [[Dormancy|dormant]] (see [[Saving]]).
 - Hiding the tab keeps the world running; the tab's title becomes "Hosting: friends are playing".
 - If the host's window stops sending for a moment (covered or in the background), guests are told "The host's game has gone quiet."

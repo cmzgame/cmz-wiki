@@ -17,7 +17,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - **Right button, tapped** (let go within {{n census.constants.buttons.TAP_TIME}} seconds): the actions menu for whatever is under the cursor. During a bow's draw a tap cancels the draw; in Use mode it puts the item away.
 - **Right button, held**: the off hand's stance: block with a [[Shield|shield]], brace, or an off-hand swing.
 - **Middle button**: the main hand's other mode (also `Q`).
-- **Wheel**: zoom one step in or out, with the panels open or closed (not while an item is being dragged, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the log it scrolls the log, over a panel it does nothing to the world, and while dragging an item it rotates it.
+- **Wheel**: zoom one step in or out, with the panels open or closed (not while an item is being dragged, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the chat log it scrolls the chat log, over a panel it does nothing to the world, and while dragging an item it rotates it.
 
 ## The keyboard
 
@@ -47,7 +47,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 ### The screen
 
 - `Z`: the next zoom level (Wide, Middle, Close, then Wide again).
-- `Enter`: open the chat box; in it, `Enter` says the line. See [[Log and chat]].
+- `Enter`: open the chat box; in it, `Enter` says the line. See [[Chat log]].
 - `/`: open the chat box with a slash typed (there are no commands yet).
 - `Escape`: close the top thing in this order: the actions menu, Use mode, the station panel, a screen, the build palette, placement or removal, the bag and character panels. With nothing open, the pause menu. In the chat box it only leaves the box.
 

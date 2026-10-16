@@ -102,7 +102,14 @@ for (const p of pages) {
   if (bySlug.has(p.slug)) errors.push(`two pages share the address ${p.slug}: "${bySlug.get(p.slug).title}" and "${p.title}"`);
   bySlug.set(p.slug, p);
   byTitle.set(p.title.toLowerCase(), p);
-  for (const a of [].concat(p.meta.aliases || [])) byTitle.set(a.toLowerCase(), p);
+}
+// Aliases after every title, so a title always wins; a name two pages claim is an error, never a silent choice.
+for (const p of pages) {
+  for (const a of [].concat(p.meta.aliases || [])) {
+    const had = byTitle.get(a.toLowerCase());
+    if (had && had !== p) errors.push(`two pages answer to "${a}": "${had.title}" (its ${had.title.toLowerCase() === a.toLowerCase() ? "title" : "alias"}) and "${p.title}" (its alias)`);
+    else byTitle.set(a.toLowerCase(), p);
+  }
 }
 // The special pages answer to [[Special:Name]] (they are made after the pages, so their addresses are known here).
 for (const [t, slug] of [["Special:Verification", "special-verification"], ["Special:Red links", "special-red-links"], ["Special:Planned notes", "special-planned-notes"], ["Special:All pages", "special-all-pages"], ["Special:Categories", "special-categories"]]) byTitle.set(t.toLowerCase(), { title: t, slug });

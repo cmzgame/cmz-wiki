@@ -5,7 +5,7 @@ aliases: [Use mode, Interactions, Nothing interesting happens, Use item on]
 summary: Use on any item's menu, then click anything: if the game has a rule for the pair it happens, and otherwise "Nothing interesting happens."
 ---
 
-**Use** is on every item's menu, wherever the item is: in your bag, in a container, in a hand, worn, or on the belt. It picks the item as the thing you are about to use, and your next click is what you use it on. Anything can be used on anything; where the game has no rule for the pair, the log says "Nothing interesting happens."
+**Use** is on every item's menu, wherever the item is: in your bag, in a container, in a hand, worn, or on the belt. It picks the item as the thing you are about to use, and your next click is what you use it on. Anything can be used on anything; where the game has no rule for the pair, the chat log says "Nothing interesting happens."
 
 ## How it works
 
@@ -24,7 +24,7 @@ The panels may stay open: a Use begun from the bag can be aimed at anything in t
 
 ### What happens
 
-The game looks for a rule naming the item (or one of its tags) and the target; the first that matches is used. A rule's target may be one kind of thing (a campfire) or any lit fire that burns fuel. If one matches, it happens: its line is printed in the log, or its action is carried out and its line printed if the action succeeds; if the action refuses, the log gives the reason. If none matches, the log says "Nothing interesting happens."
+The game looks for a rule naming the item (or one of its tags) and the target; the first that matches is used. A rule's target may be one kind of thing (a campfire) or any lit fire that burns fuel. If one matches, it happens: its line is printed in the chat log, or its action is carried out and its line printed if the action succeeds; if the action refuses, the chat log gives the reason. If none matches, the chat log says "Nothing interesting happens."
 
 Three rules exist today:
 
@@ -36,7 +36,7 @@ Everything else (lighting and feeding fires, filling waterskins, crafting) is do
 
 ## With friends
 
-A guest's Use is sent to the host with the item and the target, and the host carries it out as that player, a dip at a fire included. The line goes to the guest's log.
+A guest's Use is sent to the host with the item and the target, and the host carries it out as that player, a dip at a fire included. The line goes to the guest's [[Chat log|chat log]].
 
 ## See also
 
@@ -60,4 +60,4 @@ A guest's Use is sent to the host with the item and the target, and the host car
 - `src/interact.js:350-380`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
 - `src/ui/inventory-actions.js:364-392`: the host runs it as that player
-- `src/host.js:225-229`: the line goes to the guest's log
+- `src/host.js:225-229`: the line goes to the guest's chat log

@@ -1,7 +1,7 @@
 ---
 title: Characters
 categories: [Multiplayer, Player]
-aliases: [Character, Survivor, Character creation, New character]
+aliases: [Character, Character creation, New character]
 summary: A character is one survivor in one world, made from an identity in two steps; after a death the next one starts at the spawn.
 ---
 

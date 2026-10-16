@@ -1,7 +1,7 @@
 ---
 title: Hands
 categories: [Items, Mechanics]
-aliases: [Main hand, Off hand, Equipping, Equip, Two-handed, Dual wielding]
+aliases: [Main hand, Off hand, Equipping, Equip, Two-handed]
 summary: You have two hands, the main and the off; an item says which it may go in, and a two-handed item takes both.
 ---
 

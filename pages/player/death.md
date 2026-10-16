@@ -1,7 +1,7 @@
 ---
 title: Death
 categories: [Player, Mechanics]
-aliases: [Dying, Dead screen, Respawn, New character]
+aliases: [Dying, Dead screen, Respawn]
 summary: What happens at zero health: the fall, the body left behind, and the next survivor in the same world.
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Durability
 categories: [Combat, Mechanics]
-aliases: [Wear, Weapon durability, Breaking]
+aliases: [Weapon wear, Weapon durability, Breaking]
 summary: Weapons wear out by landed hits, sized so each lasts about its listed number of kills.
 ---
 
