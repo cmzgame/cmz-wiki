@@ -7,7 +7,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
-## 2026-10-15: one name, one page
+## 2026-10-15: synced to `9a450f2`
+
+- **Changed in the game, corrected here:** the word "wear" is gone from the game's screens (game #66). Putting anything on is **Equip**, garments and bags included (a bag's says its grid, as **Equip (8×5)**; a garment on the floor, **Equip cap** or **Equip cap (swap)**), and taking it off is **Unequip** where a slot's menu said Take off. A full bag's refusals say "or equip it", and the Controls screen says "Equip or unequip a thing" ([[Clothing]], [[Inventory]], [[Hands]], [[Containers]], [[Rucksack]], [[Interface]], [[Controls]]).
+- **Fixed in the game, corrected here:** a double-click on a filled slot really equips or unequips (it used to begin a [[Use]]): a hand or a clothing slot unequips, a belt slot equips into a hand, for host and guests alike ([[Controls]], [[Inventory]], [[Hands]], [[Clothing]], [[Interface]]).
+- **Durability:** how used up a weapon is was called wear on some pages; it is [[Durability]] everywhere now ([[Combat]], [[Archery]], [[Bow]], [[Fists]], [[Halberd]], [[Shove]], [[Stick]], [[Throwing spear]], [[Torch]], the tools). The page no longer answers to "Weapon wear", and [[Clothing]] answers to "Equipped slots" and "Clothing slots" instead of "Worn slots" and "Wearing". Item boxes say "Equipped on" for a garment's slot.
+- **Also:** the developer layer try-on's first button says "item" ([[Settings]]); a key held while the chat box or a station's count took the focus no longer keeps the player walking (game #65).
 
 - **Fixed:** every link to [[Log]] went to the page about the log at the bottom left of the screen instead of the item. Now a page's title always wins over another page's alias, and the build refuses a name two pages claim.
 - **Renamed:** the page "Log and chat" is now [[Chat log]], and the wiki calls it the chat log wherever "the log" meant it ([[Controls]], [[Interface]], [[Multiplayer]], [[Hosting]], [[Identities]], [[Dormancy]], [[Use]], [[Fire arrow]]).
