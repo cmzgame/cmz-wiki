@@ -14,8 +14,8 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, copyFile
 import { execFileSync } from "node:child_process";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadData } from "./lib/data.js";
-import { expand, STATION_TITLES, KIND_TITLES, placeTitle } from "./lib/templates.js";
+import { loadData, propIds } from "./lib/data.js";
+import { expand, STATION_TITLES, KIND_TITLES, placeTitle, propTitle, propKind } from "./lib/templates.js";
 import { render, slugify, escapeHtml } from "./lib/markdown.js";
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -79,7 +79,9 @@ for (const it of data.items) {
   const lead = `The **${it.name}** is ${article(kind)} ${kind}${it.hands ? `, held in ${it.hands === "both" ? "both hands" : it.hands === "either" ? "either hand" : `the ${it.hands} hand`}` : ""}${it.wear ? `, equipped on the ${it.wear}` : ""}.`;
   const cats = ["Items", KIND_TITLES[kind] || cap(kind)];
   if (it.weapon || it.bow) cats.push("Weapons");
-  generate(it.name, `{{infobox-item ${it.id}}}\n\n${lead}\n\n{{stub}}\n\n{{item-sections ${it.id}}}\n\n{{navbox items}}\n`, cats, lead.replace(/\*\*/g, ""));
+  // The data's own note on the item ("art only for now: it does not throw yet") is printed, so a stub never says less than the data.
+  const note = it.note ? `The game's data notes: “${it.note}”.\n\n` : "";
+  generate(it.name, `{{infobox-item ${it.id}}}\n\n${lead}\n\n${note}{{stub}}\n\n{{item-sections ${it.id}}}\n\n{{navbox items}}\n`, cats, lead.replace(/\*\*/g, ""));
 }
 for (const st of [...new Set(data.recipes.map((r) => r.station))]) {
   const title = STATION_TITLES[st] || cap(st);
@@ -92,6 +94,24 @@ for (const s of data.valley.sets || []) {
 }
 for (const v of data.valley.villagers || []) {
   generate(v.name, `{{infobox-villager "${v.name}"}}\n\nThe **${v.name}** is one of the valley's villagers. Poked, they say: “${v.line || "Hey!"}”\n\n{{stub}}\n\n{{navbox places}}\n`, ["Villagers"], `${v.name}, a villager.`);
+}
+// Props: the furniture and fittings the map places or a recipe makes (sweep 3f, game #87), one page each, unless a
+// written page has the title or answers to it as an alias (Chest is Containers', Bed is Sleep's, Fireplace is Fire's).
+{
+  const claimed = new Set([...have, ...pages.flatMap((p) => [].concat(p.meta.aliases || []).map((a) => a.toLowerCase()))]);
+  const KIND_WORDS = { station: "a station", fire: "a fire", container: "a [[Containers|container]]", water: "a source of [[Water|water]]", bed: "a bed", furniture: "a piece of furniture", fitting: "a fitting" };
+  for (const [id, def] of propIds(data)) {
+    const title = propTitle(id, def);
+    if (claimed.has(title.toLowerCase())) continue;
+    const kind = propKind(def);
+    const recipes = data.recipes.filter((r) => r.station === def.station).length;
+    const lead = `The **${title}** is ${KIND_WORDS[kind]} in [[The valley]]${def.carry ? ", picked up and carried like any furniture (see [[Carrying furniture]])" : ", fixed where it stands"}${kind === "station" && !recipes ? "; it has no recipes yet, so using it does nothing" : ""}${kind === "water" ? "; drink from it, or fill a [[Waterskin]] at it" : ""}.`;
+    const label = def.placeholder && def.placeholder.label;
+    const aliases = label && label.toLowerCase() !== title.toLowerCase() && !claimed.has(label.toLowerCase()) ? [label] : [];
+    pages.push({ title, meta: { categories: ["Props", `Props: ${cap(kind)}`], summary: lead.replace(/\*\*/g, "").replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2").replace(/\[\[([^\]]+)\]\]/g, "$1"), aliases }, body: `{{infobox-prop ${id}}}\n\n${lead}\n\n{{stub}}\n\n{{prop-sections ${id}}}\n\n{{navbox props}}\n`, written: false });
+    have.add(title.toLowerCase());
+    for (const al of aliases) claimed.add(al.toLowerCase());
+  }
 }
 
 // ---------- titles, links, and the first pass ----------
@@ -155,6 +175,8 @@ function sourcesBox(text, p) {
   if (!m) return text;
   const at = (/<!--\s*sources at ([0-9a-f]{7,40})\s*-->/.exec(m[1]) || [])[1] || data.version.commit;
   p.sourcesAt = at;
+  // Every `path:first-last` the page cites, for the drift report.
+  p.sourceRefs = [...m[1].replace(/<!--[\s\S]*?-->/g, "").matchAll(/`((?:src|data|tools|server)\/[^`:\s]+)(?::(\d+)(?:-(\d+))?)?`/g)].map(([, path, a, b]) => ({ path, first: a ? +a : null, last: b ? +b : a ? +a : null }));
   const body = m[1].replace(/<!--[\s\S]*?-->/g, "").trim().replace(/`((?:src|data|tools|server)\/[^`:\s]+)(?::(\d+)(?:-(\d+))?)?`/g, (all, path, a, b) => {
     const label = `<code>${escapeHtml(path)}${a ? `:${a}${b ? `-${b}` : ""}` : ""}</code>`;
     if (!LINK_SOURCES) return label;
@@ -264,6 +286,58 @@ if (existsSync(fontDir)) for (const f of readdirSync(fontDir)) copyFileSync(join
 writeFileSync(join(OUT, ".nojekyll"), "");
 for (const [path, buf] of assets) { mkdirSync(dirname(join(OUT, path)), { recursive: true }); writeFileSync(join(OUT, path), buf); }
 
+// ---------- the Sources-drift report (--check only; sweep 3f, game #87) ----------
+// A written page's Sources cite lines of the game at the commit they were read from (`<!-- sources at ... -->`).
+// Between that commit and the snapshot's, the game may have changed those very lines: the page may still be right,
+// but nobody has looked. The report names each page whose cited lines changed, with the path and the range, from a
+// read-only `git diff` of the game's repository (`../cozy-medieval-zombies`, or `CMZ_GAME`). It reports; it does
+// not fail the build, and without the game's repository (the Action) it says so and skips.
+function driftReport() {
+  const game = process.env.CMZ_GAME || join(root, "..", "cozy-medieval-zombies");
+  if (!existsSync(join(game, ".git"))) { console.log(`sources drift: not checked (no game repository at ${game}; set CMZ_GAME)`); return; }
+  const now = data.version.commit;
+  const diffs = new Map(); // sources commit -> Map(path -> [[first, last], ...] of the old lines each hunk touched), or null when the commit is unknown
+  const changesSince = (at) => {
+    if (diffs.has(at)) return diffs.get(at);
+    let files = null;
+    try {
+      // --unified=0: every hunk names exactly the old lines it replaces; `-a,0` is an insertion after old line a, which
+      // changes a range it falls inside, so it counts as touching a and a+1. --no-renames: a moved file reads as changed.
+      const out = execFileSync("git", ["-C", game, "diff", "--unified=0", "--no-renames", "--no-color", at, now], { encoding: "utf8", maxBuffer: 1 << 28 });
+      files = new Map();
+      let path = null;
+      for (const line of out.split("\n")) {
+        const f = /^diff --git a\/(\S+) b\//.exec(line);
+        if (f) { path = f[1]; files.set(path, []); continue; }
+        const h = /^@@ -(\d+)(?:,(\d+))? /.exec(line);
+        if (h && path) { const a = +h[1]; const n = h[2] == null ? 1 : +h[2]; files.get(path).push(n === 0 ? [a, a + 1] : [a, a + n - 1]); }
+      }
+    } catch { files = null; }
+    diffs.set(at, files);
+    return files;
+  };
+  const drifted = [];
+  const unknown = [];
+  let noSources = 0;
+  for (const p of pages.filter((q) => q.written).sort((a, b) => a.title.localeCompare(b.title))) {
+    if (!p.sourceRefs) { noSources++; continue; }
+    if (p.sourcesAt.slice(0, 7) === data.version.short) continue;
+    const files = changesSince(p.sourcesAt);
+    if (!files) { unknown.push(`${p.title} (at ${p.sourcesAt.slice(0, 7)})`); continue; }
+    const hits = [];
+    for (const r of p.sourceRefs) {
+      const hunks = files.get(r.path);
+      if (!hunks) continue;
+      if (r.first == null) hits.push(`${r.path} (whole file)`);
+      else if (hunks.some(([a, b]) => a <= r.last && b >= r.first)) hits.push(`${r.path}:${r.first}${r.last !== r.first ? `-${r.last}` : ""}`);
+    }
+    if (hits.length) drifted.push(`  - ${p.title} (at ${p.sourcesAt.slice(0, 7)}): ${[...new Set(hits)].join(", ")}`);
+  }
+  const written = pages.filter((q) => q.written).length;
+  console.log(`sources drift: ${drifted.length} of ${written} written pages cite lines the game changed between their sources commit and ${data.version.short}${noSources ? `; ${noSources} with no Sources section` : ""}${unknown.length ? `; a commit the game's repository lacks on ${unknown.length}: ${unknown.join(", ")}` : ""}`);
+  if (drifted.length) console.log(drifted.join("\n"));
+}
+
 // ---------- the report ----------
 const written = pages.filter((p) => p.written).length;
 console.log(`built ${pages.length} pages (${written} written, ${pages.length - written} generated) and ${specials.length} special pages for game ${v.short}`);
@@ -273,6 +347,7 @@ if (errors.length) {
   console.error(`\n${errors.length} error(s):\n${errors.map((e) => `  - ${e}`).join("\n")}`);
   process.exit(1);
 }
+if (strict) driftReport();
 if (strict && pages.some((p) => p.written && /\d/.test(p.body.replace(/\{\{[^}]*\}\}/g, "").replace(/`[^`]*`/g, "").replace(/\[\[[^\]]*\]\]/g, "")) && !p.meta.numbersOk)) {
   // A typed number in prose goes stale; the check names the pages so they can be turned into {{n ...}}.
   const flagged = pages.filter((p) => p.written && !p.meta.numbersOk && /\b\d+(\.\d+)?\b/.test(p.body.replace(/^---[\s\S]*?---/, "").replace(/^## Sources[\s\S]*$/m, "").replace(/\{\{[^}]*\}\}/g, "").replace(/`[^`]*`/g, "").replace(/\[\[[^\]]*\]\]/g, "").replace(/\(docs\/[^)]*\)/g, "").replace(/^\s*\d+\.\s/gm, "").replace(/\d{4}-\d{2}-\d{2}/g, "").replace(/<!--[\s\S]*?-->/g, "")));
