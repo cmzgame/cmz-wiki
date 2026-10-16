@@ -42,7 +42,7 @@ extract(["data"], join(here, "snapshot"));
 extract(["src", "tools", "docs", "server", "index.html", "style.css", "CLAUDE.md", "TODO.md"], join(here, ".game"));
 
 // The art out of the snapshot, but for what is read (the header): the icons and the hair index.
-const ART_DIRS = ["data/art", "data/hair", "data/layers"];
+const ART_DIRS = ["data/art", "data/hair", "data/layers", "data/site"]; // data/site: the game's site shots (game #125), read by no page
 const kept = new Set(["data/hair/index.json"]);
 for (const it of JSON.parse(readFileSync(join(here, "snapshot", "data", "items.json"), "utf8"))) if (it.icon && it.icon.src) kept.add(it.icon.src);
 function prune(dir, rel) {
