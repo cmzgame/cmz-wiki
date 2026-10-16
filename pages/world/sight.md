@@ -31,6 +31,8 @@ Lines are drawn from the middle of your tile to every tile on screen, plus a mar
 
 Darkness does not shorten your sight. At night you see just as far by line of sight; the world is only drawn darker and tinted. A [[Torch]] lights the way but does not widen your view. The dead are different: their sight does shrink in the dark. See [[Light]].
 
+{{planned doc=07 note="Darkness shortening your sight (ruled 2026-10-16, game issue #88): with no light you would see a short way, the dead fading to hidden past a soft edge unless they stand in light, and a carried torch giving sight back. Daytime unchanged."}}
+
 ### The fog
 
 Tiles out of sight are drawn under a purple fog at {{n census.constants.render_scene.FOG_ALPHA}} strength. The ground and the buildings still show through it, but characters there, the dead, villagers, and other players alike, are hidden. A fire's flames are drawn only when you can see it.

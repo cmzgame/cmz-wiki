@@ -1,7 +1,7 @@
 {
-  "commit": "02dfcc28145f665d3947291d7bdcd8117c894a79",
-  "short": "02dfcc2",
-  "date": "2026-10-16T17:56:18-05:00",
-  "subject": "Merge #120, reviewed, Michael's word: the game's site out of a world (the wordmark, the stone menu with Play and Wiki, every out-of-world screen as a page over the blurred shots, the Worlds rows as cards, Controls grouped) (closes #111)",
+  "commit": "a3fdd7c75a67e1aaf0494fd22873fb46c535a599",
+  "short": "a3fdd7c",
+  "date": "2026-10-16T18:16:51-05:00",
+  "subject": "Merge #125, reviewed: the site's two shots move from data/art/site to data/site (data/art is the design agent's)",
   "ref": "origin/main"
 }

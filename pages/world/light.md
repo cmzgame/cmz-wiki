@@ -55,7 +55,7 @@ One of the dead that is [[Burning]], and a [[Fireball]] or a [[Fire arrow]] in f
 
 ### The night tint
 
-At night the world is drawn darker and tinted, but you still see as far: darkness never shortens your own sight. See [[Sight]]. Light flickers only in the picture; the light level the game reads is steady.
+At night the world is drawn darker and tinted, but you still see as far: darkness does not shorten your own sight (a change to that is planned; see [[Sight]]). Light flickers only in the picture; the light level the game reads is steady.
 
 ### Light and the dead
 

@@ -7,6 +7,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-16: synced to `a3fdd7c`
+
+- Not visible to a player: the pictures behind the game's site moved to a folder of their own (game #125); the wiki's snapshot leaves them out, as it does the rest of the game's art.
+- Not visible to a player: Michael's rulings on the questions waiting for him (game #126): the guide beside the spawn on every map, talk entirely by clicks, a cap on players, one-offs that never stack, the willow cut, a shed as one room, and darkness shortening the player's sight. None is built yet; [[Sight]] carries a planned note for the darkness ruling, and [[Light]] no longer says darkness will never shorten your sight.
+- Not visible to a player: the design agent's art scripts archived in the game's tools, kept and never run (game #127).
+
 ## 2026-10-16: synced to `02dfcc2`
 
 - **Changed in the game, corrected here:** out of a world the game is now its own site (game #120). Over a blurred picture of the game sit the name in stone and timber letters between autumn trees and a stone menu: Home, About, Controls, a big gold **Play**, Identities, Settings, and **Wiki** (this wiki, in a new tab). Play opens the Worlds page, where every world is a card with its survivor, day, last played, and code, one big button (Play, New character, Rejoin) and small ones (Delete, Move to the server, Owner, Forget). Worlds, New world, Join a game, character creation, Identities, Settings, Controls, and the server's key screens are all pages of the site. In a world the pause menu, the dead screen, and their Settings and Controls stay over the world, and Leave world goes back to the site. The site shows before the game has finished loading. A guest sent out of a friend's world sees the reason on Home. The Controls screen is grouped (Moving and doing, Fighting, Your things, Building, Talking, Testing), with R written once and a link to this wiki. [[Screens]] has a new section on the site; [[Worlds]] describes the cards; [[Joining]], [[Settings]], [[Controls]], [[Identities]], [[Hosting]], [[Interface]], [[Characters]], [[Death]], [[Multiplayer]], [[Saving]], [[Server worlds]], and [[Getting started]] say "the site" and "the Worlds page" where they said the title screen; the [[Main page]] has a line on how to start playing. Exit game and a Fullscreen choice are a planned note on [[Screens]].
