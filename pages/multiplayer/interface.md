@@ -48,6 +48,8 @@ The browser's own right-click menu is switched off everywhere except over the de
 
 ## Panels
 
+The game goes on while any panel is open, and the world's keys and clicks still work (see [[Controls]]).
+
 - **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the worn slots and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
 - **The station panel**: using a station opens one panel under the clock with its recipes, the chosen recipe's ingredients, a count, **Make**, the queue, and **Output**. See [[Crafting]].
 - **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Remove row. See [[Building]].
@@ -69,6 +71,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/main.js:918-1001`: an open panel stops no click, key, or zoom (game commit 57df52e)
 - `src/view.js:84-88`, `src/view.js:138`: the interface's own size, Interface size
 - `style.css:1108`: the HUD hidden while no world is chosen
 - `src/ui/hud.js:21-22`: the portrait cut from your own sprite, head to belt

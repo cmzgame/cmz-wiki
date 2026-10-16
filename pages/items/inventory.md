@@ -31,6 +31,8 @@ The **Tidy** button repacks the bag, the biggest items first. If the repack woul
 
 `Tab` opens the bag; `C` opens the character screen, with your worn slots and your two hands. They open and close separately, and each can be dragged by its header to where you want it (the game remembers). With no bag worn, `Tab` opens the character screen and says "No bag on your back." While you are carrying furniture, both say "Your hands are full."
 
+An open panel does not stop the game or make you safe. The dead keep coming, and with the bag or a container open you can still fight, shoot, cast, aim a [[Use]], press `E`, `B`, and `T`, and zoom; only a click on a panel is the panel's. Only the pause menu stops play (see [[Controls]]).
+
 In a panel:
 
 - Drag an item to move it; drop it outside every panel to drop it on the floor.
@@ -75,6 +77,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/main.js:918-1001`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
 - `src/inventory.js:43`: your grid is the bag on your back
 - `src/inventory.js:27-32`: a bag's grid travels with the bag
 - `src/grid.js:45-56`: the placement scan, unrotated first

@@ -18,6 +18,8 @@ After **Use**, the item stays where it is, outlined, and a label follows the cur
 - a piece of furniture or anything standing in the world;
 - a bare tile.
 
+The panels may stay open: a Use begun from the bag can be aimed at anything in the world with the bag still up.
+
 `Escape` or a right click cancels. Use itself has no range: anything on screen can be the target, though a rule's action may have its own reach (dipping arrows needs you beside the fire).
 
 ### What happens
@@ -49,7 +51,7 @@ A guest's Use is sent to the host with the item and the target, and the host car
 - `src/use.js:42-104`: the Use mode: the outline, the label, the next click, cancelling, no range
 - `src/ui/inventory-panel.js:476-478`: a click on an item in a panel is the target
 - `src/main.js:649-657`: a character, else a prop, else the tile
-- `src/main.js:932-938`: a click on the world applies while the panels are closed
+- `src/main.js:953-960`: a click on the world is the target, the panels open or not (game commit 57df52e)
 - `src/interactions.js:1-49`: rows by item id or tag and target, `fire` for any that burns fuel, the first match wins; the default "Nothing interesting happens." (game commit 3b7cb9a)
 - `data/interactions.json`: the three rows (game commit 3b7cb9a)
 - `src/use.js:94-104`: a row's action run, its line said on success, the reason on a refusal (game commit 3b7cb9a)

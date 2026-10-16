@@ -22,7 +22,7 @@ Choose the station's entry on its right-click menu, or press `E` beside it, from
 - **Make**;
 - the queue, with a bar for the job in progress.
 
-The panel and the station's output box close when you walk a little beyond reach.
+The panel and the station's output box close when you walk a little beyond reach. The game goes on while the panel is open, and you can fight with it up. Typing in the count goes to the count alone, not to the game's keys; `Enter` or `Escape` leaves it.
 
 ### Ingredients
 
@@ -81,6 +81,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/stations.js:234`: the count clamped from 1 to 10
 - `src/ui/station-panel.js:92`: the output box closes beyond reach
 - `src/ui/station-panel.js:157`: the panel closes beyond reach
+- `src/main.js:976-1001`, `src/ui/station-panel.js:34-43`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
 - `src/stations.js:67-104`: where ingredients are counted from, searched containers only
 - `src/stations.js:108-124`: the order they are taken in
 - `data/items.json:15`: the bandage is not cloth (game commit 2c70942)

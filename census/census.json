@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "3b7cb9a1f9051d0153ff1340c68cdeb84c6d6895",
-  "short": "3b7cb9a",
-  "date": "2026-10-15T21:21:41-05:00",
-  "subject": "Merge #62, reviewed: burning made real (the torch by chance, the fireball and fire arrows always set the dead alight; capped at one, never more than 10 a burn; a body killed burning burns on; arrows dipped at any lit fire; the test toggle gone) (closes #14)",
+  "commit": "57df52ea00cf6396d96fb375100f7dbc474cb14b",
+  "short": "57df52e",
+  "date": "2026-10-15T21:41:56-05:00",
+  "subject": "Merge #63, reviewed: check(\"save\") reads the mess's hp at the save (health regenerates with survival off; the save was right, the check's expectation stale)",
   "ref": "origin/main"
  },
  "counts": {
@@ -4515,13 +4515,13 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:929"
+    "main.js:930"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:928"
+    "main.js:929"
    ]
   },
   {
@@ -4546,7 +4546,7 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:926"
+    "main.js:927"
    ]
   },
   {
@@ -4589,7 +4589,7 @@
   {
    "key": "KeyZ",
    "at": [
-    "main.js:917"
+    "main.js:918"
    ]
   },
   {
@@ -4601,13 +4601,13 @@
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:986"
+    "main.js:989"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:986"
+    "main.js:989"
    ]
   },
   {
@@ -4619,7 +4619,7 @@
   {
    "key": "Space",
    "at": [
-    "main.js:997"
+    "main.js:1000"
    ]
   },
   {
@@ -4654,7 +4654,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1300"
+    "main.js:1303"
    ]
   },
   {
@@ -4678,7 +4678,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1228"
+    "main.js:1231"
    ]
   },
   {
@@ -4714,25 +4714,25 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1264"
+    "main.js:1267"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1214"
+    "main.js:1217"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1254"
+    "main.js:1257"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1313"
+    "main.js:1316"
    ]
   },
   {
@@ -4744,37 +4744,37 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1190"
+    "main.js:1193"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1187"
+    "main.js:1190"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1216"
+    "main.js:1219"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1215"
+    "main.js:1218"
    ]
   },
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:682"
+    "ui/inventory-panel.js:687"
    ]
   },
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1322"
+    "main.js:1325"
    ]
   },
   {
@@ -4909,7 +4909,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1116"
+    "main.js:1119"
    ]
   },
   {
@@ -4936,8 +4936,8 @@
     "interact.js:209",
     "interact.js:342",
     "interact.js:1349",
-    "ui/station-panel.js:67",
-    "ui/station-panel.js:92"
+    "ui/station-panel.js:77",
+    "ui/station-panel.js:102"
    ]
   },
   {
@@ -5187,7 +5187,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1707
+   "lines": 1710
   },
   {
    "path": "placeholders.js",
@@ -5215,7 +5215,7 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 704
+   "lines": 709
   },
   {
    "path": "entities/zombie.js",
@@ -5326,16 +5326,16 @@
    "lines": 173
   },
   {
+   "path": "ui/station-panel.js",
+   "lines": 170
+  },
+  {
    "path": "view.js",
    "lines": 170
   },
   {
    "path": "input.js",
    "lines": 168
-  },
-  {
-   "path": "ui/station-panel.js",
-   "lines": 160
   },
   {
    "path": "identities.js",

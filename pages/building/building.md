@@ -19,7 +19,7 @@ N opens a short list on the left of the screen. It has three pieces and a Remove
 
 A piece you cannot afford is greyed. Every right-click menu also ends in a "Build" entry, which opens the same list. A door or a window is built in the log material. A log splits into {{n items.log.splitsInto.count}} planks from its item menu, with no tool.
 
-N does nothing while you are [[Carrying furniture|carrying furniture]] ("Your hands are full.") or while the bag is open.
+N does nothing while you are [[Carrying furniture|carrying furniture]] ("Your hands are full.") or while the bag is open ("Close your bag to build."); the menu's Build entry is greyed then too. The palette and the bag take turns on the screen: opening the bag closes the palette. This is a matter of room on the screen, not of safety: with the bag open the game goes on (see [[Controls]]).
 
 ### Laying a piece
 
@@ -50,7 +50,7 @@ The village's own furniture never lights up, even after it has been carried some
 
 Nothing is refunded. A removed container spills what it held onto its tile, and a removed station spills its output box too. A removed wall takes its [[Boards|boards]] and any torch bracket with it.
 
-The removal tool cannot be used while carrying furniture ("Your hands are full.") or with the bag open.
+The removal tool cannot be used while carrying furniture ("Your hands are full.") or with the bag open ("Close your bag to build.").
 
 ## Numbers
 
@@ -88,7 +88,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
 - `src/main.js:643`, `src/main.js:891`: the Build entry at the foot of every menu
 - `data/items.json`: the log's `splitsInto`; `src/interact.js:1053-1066`: splitting with no tool
-- `src/main.js:698-708`: N, refused while carrying or with the bag open
+- `src/main.js:719-728`, `src/main.js:662`, `src/main.js:940-941`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette (game commit 57df52e)
 - `src/placement.js:160-175`: the ghost snapped to the nearest edge
 - `src/placement.js:186-197`: the red reasons in order
 - `src/placement.js:25`, `src/placement.js:27`: the build reach and the edge clearance
@@ -97,7 +97,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:566`: the build lasts within the reach plus 0.6
 - `src/placement.js:466`: one build at a time
 - `src/map.js:1395-1457`: rooms refound on either side of a changed edge
-- `src/main.js:712-721`: X, refused while carrying or with the bag open
+- `src/main.js:731-740`: X, refused while carrying or with the bag open, with the same line (game commit 57df52e)
 - `src/placement.js:26`, `src/placement.js:365-371`: the removal reach
 - `src/placement.js:316-365`: what lights up: props made at a station (`made`) and built walls (game commit 2c70942)
 - `src/stations.js:183-184`: a prop made at a station marked `made` (game commit 2c70942)

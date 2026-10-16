@@ -15,7 +15,7 @@ From the title, open [[Worlds]] and make a new world. Each world asks you to mak
 
 You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], at the southern end of the village: two rooms, a fireplace, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
 
-You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]] and a [[Plank]], and a [[Torch]] in your hand. Press **Tab** for your bag and **C** for the character screen.
+You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]] and a [[Plank]], and a [[Torch]] in your hand. Press **Tab** for your bag and **C** for the character screen. The game does not stop while they are open, and you can fight with them up; only the pause menu (**Escape** with nothing open) stops it.
 
 ## The first things to do
 
@@ -46,6 +46,7 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
 - `src/game.js:100-115`: the starter kit
 - `src/main.js:741-749`: Tab for the bag, C for the character screen
+- `src/main.js:918-1001`: an open panel stops nothing in the world (game commit 57df52e)
 - `src/main.js:610-646`, `src/interact.js:946-970`: right-click for the menu; E for the nearest simple action
 - `src/interact.js:323-339`: searching a chest
 - `src/interact.js:443-472`, `src/interact.js:960-965`, `src/map.js:1019-1032`: tap E to open or shut; hold E to climb an open window; shut shutters block sight

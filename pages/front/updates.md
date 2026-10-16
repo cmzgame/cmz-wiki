@@ -7,6 +7,13 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-15: synced to `57df52e`
+
+- **Changed in the game, corrected here:** only the pause menu stops the game (game #64). With the bag, a container or body, a station, or the character screen open, a left click on the world swings, casts, draws a bow, or lands a [[Use]] (a Use begun from the bag is aimed with the bag still up); `E`, `B`, and `T` work; the wheel zooms except while an item is dragged. A click on a panel stays the panel's, and a right-click menu still takes the click that closes it and ends a draw ([[Controls]], [[Archery]], [[Use]], [[Inventory]], [[Interface]], [[Crafting]], [[Getting started]]).
+- **Building:** `N` and `X` with the bag open now say "Close your bag to build."; the palette and the bag take turns on the screen ([[Building]], [[Controls]]).
+- **Stations:** typing in a station's count no longer reaches the game's keys; `Enter` or `Escape` leaves the field ([[Crafting]], [[Controls]]).
+- Not visible on the wiki's pages: a test check's expectation corrected (game #63).
+
 ## 2026-10-15: synced to `3b7cb9a`
 
 - **New in the game:** burning is real (game #14, #62). A [[Torch]]'s blow may set one of the dead alight by its chance, and the [[Fireball]] and the new [[Fire arrow]] always do; a burning body loses a little health a second for a few seconds, never stacks, never takes more than a cap over one burn, and burns on as a corpse if it dies. Only the dead burn. New pages: [[Burning]] and [[Fire arrow]].

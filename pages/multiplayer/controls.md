@@ -7,15 +7,17 @@ summary: Every key and mouse button and what it does.
 
 The game is played with the keyboard and a three-button mouse. Keys cannot be changed yet. The **Controls** screen (title screen or pause menu) shows a short list; this page is the full one.
 
+Only the pause menu and its screens take the keys and the mouse from the world (see [[Screens]]). With the bag, a container, a station's panel, or the character screen open, every button and key below still works on the world, and the world goes on; a click or a wheel turn over a panel stays the panel's.
+
 ## The mouse
 
 The three buttons are roles, not fixed actions (see [[Combat]]):
 
-- **Left button**: the main hand. With a weapon it swings; with nothing in hand, fists. When placing something it confirms the spot, and in Use mode it picks the target. Clicking a gatherable within {{n census.constants.interact.CLICK_REACH}} tiles makes it sway. With a weapon in each hand, the two take turns.
+- **Left button**: the main hand. With a weapon it swings; with nothing in hand, fists. When placing something it confirms the spot, and in Use mode it picks the target. With an actions menu open, a left click only closes the menu. Clicking a gatherable within {{n census.constants.interact.CLICK_REACH}} tiles makes it sway. With a weapon in each hand, the two take turns.
 - **Right button, tapped** (let go within {{n census.constants.buttons.TAP_TIME}} seconds): the actions menu for whatever is under the cursor. During a bow's draw a tap cancels the draw; in Use mode it puts the item away.
 - **Right button, held**: the off hand's stance: block with a [[Shield|shield]], brace, or an off-hand swing.
 - **Middle button**: the main hand's other mode (also `Q`).
-- **Wheel**: zoom one step in or out (not while a panel is open, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the log it scrolls the log; while dragging an item it rotates it.
+- **Wheel**: zoom one step in or out, with the panels open or closed (not while an item is being dragged, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the log it scrolls the log, over a panel it does nothing to the world, and while dragging an item it rotates it.
 
 ## The keyboard
 
@@ -38,8 +40,8 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 
 - `Tab`: the bag (or the character panel if you wear no bag). Also closes the actions menu.
 - `C`: the character panel.
-- `N`: the build palette (see [[Building]]).
-- `X`: removal mode, for taking down what players built or made (see [[Building]]).
+- `N`: the build palette (see [[Building]]). Not with the bag open: the game says "Close your bag to build."
+- `X`: removal mode, for taking down what players built or made (see [[Building]]). Not with the bag open, as `N`.
 - `R`: turn the thing being placed; rotate an item being dragged.
 
 ### The screen
@@ -58,6 +60,7 @@ In a screen with a text box (a world's name, a join code, the creator key), `Ent
 - Shift-click: send an item across (bag to container and back).
 - Double-click: use it (equip, wear, take from the belt, unequip, take off), otherwise send it across.
 - Right-click: the item's menu.
+- Typing in a station's count goes to the count alone, never to the keys above; `Enter` or `Escape` leaves it.
 
 See [[Inventory]].
 
@@ -83,10 +86,11 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/ui/screens.js:20-46`, `src/settings.js:41-59`: the Controls screen is a fixed list (with Q or the middle button, the right button held, and the held left click; no K) and no setting rebinds a key (game commit 2c70942)
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
 - `src/main.js:926-940`: the left button: placement's confirm, Use mode's target, else the swing
+- `src/main.js:947`, `src/main.js:976-980`, `src/main.js:1001`: an open panel stops no click and no key; an open actions menu takes the click that closes it and ends a draw (game commit 57df52e)
 - `src/interact.js:1156`: `CLICK_REACH`, a gatherable sways when clicked within reach
 - `src/main.js:625-643`: a right tap opens the menu, cancels a draw, puts the item down in Use mode (game commit 2c70942)
 - `src/input.js:69-73`: the middle button read
-- `src/main.js:71`, `src/main.js:898-906`: the wheel's zoom step, its pace, not with a panel open
+- `src/main.js:71`, `src/main.js:918-925`, `src/input.js:88`: the wheel's zoom step and its pace, held only while an item is dragged, and taken by the world only from the canvas (game commit 57df52e)
 - `src/ui/inventory-panel.js:123`: the wheel rotates a dragged item
 - `src/input.js:150-158`: W A S D and the arrows walk in screen directions
 - `src/main.js:966`, `src/entities/player.js:326-330`: Shift sprints, and sprinting drains stamina
@@ -97,12 +101,14 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/interact.js:928-932`, `src/interact.js:994-1010`: keys 1 to 4 eat, drink, or swap the belt slot
 - `src/main.js:741-749`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
 - `src/main.js:891-892`: N and X
+- `src/main.js:719-740`: N and X refused with the bag open, "Close your bag to build." (game commit 57df52e)
 - `src/placement.js:274`, `src/ui/inventory-panel.js:117`: R turns a prop being placed or a dragged item
 - `src/main.js:898`, `src/view.js:95-109`: Z cycles the zooms, wrapping
 - `src/main.js:889-890`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
 - `src/main.js:679-696`, `src/ui/log.js:55`: Escape's order, and in the chat box
 - `src/ui/screens.js:583`, `src/ui/screens.js:614`, `src/ui/screens.js:628`: Enter in a screen's text field presses its button
 - `src/ui/inventory-panel.js:75-126`, `src/ui/inventory-panel.js:632`: drag, rotate, shift-click, double-click, right-click in the panels
+- `src/ui/station-panel.js:34-43`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it (game commit 57df52e)
 - `src/main.js:887`, `src/main.js:907-910`: V, L, ] and [
 - `src/clock.js:41-44`: the hour moved keeping the day
 - `src/net.js:803`, `src/net.js:1040`: the host sends its clock in every frame and a guest takes it
