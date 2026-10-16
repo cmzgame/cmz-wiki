@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "9a81879bc3543c6421b7b738e978063f08562340",
-  "short": "9a81879",
-  "date": "2026-10-15T22:54:23-05:00",
-  "subject": "Merge #67, reviewed: the last \"take off\" on screen says unequip",
+  "commit": "4bd976a463435096b1cb5c649c07c7a6f8540a32",
+  "short": "4bd976a",
+  "date": "2026-10-16T01:58:05-05:00",
+  "subject": "Merge #72, reviewed: the sweep's wave 0 (the lines that said owed of built things; 27 D applied to docs/art; CI once per push; the second law in CLAUDE.md; the plan and Michael's six calls in 02)",
   "ref": "origin/main"
  },
  "counts": {
@@ -4396,7 +4396,7 @@
   {
    "key": "swingTimer",
    "default": "true",
-   "note": "a bar over your head while a swing recovers (World of Warcraft's swing timer; docs/21)"
+   "note": "a bar at the bottom centre of the screen while a swing recovers (World of Warcraft's swing timer; docs/21)"
   },
   {
    "key": "aimGuide",
@@ -5398,7 +5398,7 @@
   },
   {
    "path": "burn.js",
-   "lines": 94
+   "lines": 95
   },
   {
    "path": "ui/speech.js",

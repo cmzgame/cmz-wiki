@@ -17,7 +17,7 @@ The game refuses, with a line in the [[Chat log|chat log]], when:
 
 - the fire is out: "The fire is out." (light it first; see [[Fire]]);
 - you stand too far from it: "Too far from the fire.";
-- the arrows are not on you, in an open chest for instance: "You have no arrows." Take them out first.
+- the arrows are not on you, in an open chest or a searched body for instance: "Take the arrows out first." Only arrows in a hand, on the belt, or in your bag are dipped.
 
 A fire that burns no fuel, such as a jack-o'-lantern or a torch in a bracket, does not count: using arrows on it does nothing.
 
@@ -38,13 +38,13 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 
 ## Sources
 
-<!-- sources at 3b7cb9a -->
+<!-- sources at 4bd976a -->
 - `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; placeholder art
 - `data/interactions.json`: the row: arrows used on `fire`, the `dip` verb, its line
 - `src/interactions.js:34-42`: `fire` matches any prop whose fire burns fuel
 - `data/sprites/campfire.json`, `data/sprites/hearth.json`, `data/sprites/fireplace.json`, `data/sprites/oven.json`, `data/sprites/forge.json`: the fires that burn fuel
 - `src/burn.js:55-65`: only arrows carried in the hands, the belt, or the bag
-- `src/burn.js:73-93`: the dip: refused for an unlit fire, from too far, or with no arrows carried; the whole stack changed in place
+- `src/burn.js:73-94`: the dip: refused for an unlit fire, from too far, or with the arrows not carried ("Take the arrows out first.", game commit 8bacbff); the whole stack changed in place
 - `src/use.js:94-104`: a row's verb run, its line said on success, the refusal said otherwise
 - `src/archery.js:568-572`: fire arrows drawn before plain ones, as their own projectile, setting alight
 - `src/inventory.js:87-95`: arrows counted in the hands, the belt, and the bag

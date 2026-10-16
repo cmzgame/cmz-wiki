@@ -7,6 +7,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-16: synced to `4bd976a`
+
+- **Changed in the game, corrected here:** arrows used on a fire while they still sit in an open chest or a searched body now say "Take the arrows out first." instead of "You have no arrows." (game #69; [[Fire arrow]], [[Use]]).
+- Not visible on the wiki's pages: the game's own docs corrected where they said a thing was still owed that the code already had, and its CI runs once per push (game #72). No rule of play changed.
+
 ## 2026-10-15: synced to `9a81879`
 
 - **Changed in the game, corrected here:** equipping a garment over a filled slot with no room in the bag now says "No room in your bag to unequip the old one." (game #67; [[Clothing]]).

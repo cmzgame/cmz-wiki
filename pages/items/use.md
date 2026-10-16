@@ -29,7 +29,7 @@ The game looks for a rule naming the item (or one of its tags) and the target; t
 Three rules exist today:
 
 - A [[Torch]] on a campfire: "You hold the torch to the fire. It is already burning."
-- [[Arrow|Arrows]] on any fire that burns fuel: the whole stack you carry becomes [[Fire arrow|fire arrows]], "You dip the arrows in the fire." It refuses when the fire is out, when you are too far from it, or when the arrows are not on you.
+- [[Arrow|Arrows]] on any fire that burns fuel: the whole stack you carry becomes [[Fire arrow|fire arrows]], "You dip the arrows in the fire." It refuses when the fire is out, when you are too far from it, or when the arrows are not on you (in an open chest or a body: "Take the arrows out first.").
 - A [[Waterskin]] on a well: a line saying the rule works. The well's own menu is what fills a waterskin.
 
 Everything else (lighting and feeding fires, filling waterskins, crafting) is done through the menus of the things themselves.
@@ -55,7 +55,7 @@ A guest's Use is sent to the host with the item and the target, and the host car
 - `src/interactions.js:1-49`: rows by item id or tag and target, `fire` for any that burns fuel, the first match wins; the default "Nothing interesting happens." (game commit 3b7cb9a)
 - `data/interactions.json`: the three rows (game commit 3b7cb9a)
 - `src/use.js:94-104`: a row's action run, its line said on success, the reason on a refusal (game commit 3b7cb9a)
-- `src/burn.js:73-93`: the dip's reach, its refusals, the whole stack changed (game commit 3b7cb9a)
+- `src/burn.js:73-94`: the dip's reach, its refusals (arrows not carried: "Take the arrows out first."), the whole stack changed (game commit 8bacbff)
 - `src/interact.js:537-581`: the well's own menu fills waterskins
 - `src/interact.js:350-380`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
