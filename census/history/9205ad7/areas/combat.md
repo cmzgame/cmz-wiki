@@ -1,3 +1,5 @@
+> **A record, not kept up** (filed under `census/history/9205ad7/` by the sweep, 2026-10-16; game #87): the combat fact sheet of the first census, read from the game at `9205ad7` (2026-10-14). Its line numbers are that commit's; the live list is `census/discrepancies.md`, and a redone sheet goes beside the census, dated (`CLAUDE.md`, "The census").
+
 # Census: combat, weapons, and the dead
 
 Game commit `9205ad7` (9205ad7e7119ce705b06bab7a47d76974b2f5fbd, 2026-10-14). Code paths are under `.game/src/`, data under `snapshot/data/`.

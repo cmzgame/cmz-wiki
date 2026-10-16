@@ -1,3 +1,5 @@
+> **A record, not kept up** (filed under `census/history/9205ad7/` by the sweep, 2026-10-16; game #87): the first census's docs-versus-code list, amended in place until 2c70942, read from the game at `9205ad7` (2026-10-14). Its line numbers are that commit's; the live list is `census/discrepancies.md`, and a redone sheet goes beside the census, dated (`CLAUDE.md`, "The census").
+
 # Discrepancies: where the game's docs and its code disagree
 
 Game `main` @ `9205ad7` (2026-10-14). Collected from the census fact sheets (`census/areas/`), each read from the code. The wiki follows the code; these are for Michael and the coding agent to rule on or fix. Some are bugs in the code, not stale docs: they are marked so in the sheets.

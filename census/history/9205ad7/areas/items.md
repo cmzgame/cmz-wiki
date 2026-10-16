@@ -1,3 +1,5 @@
+> **A record, not kept up** (filed under `census/history/9205ad7/` by the sweep, 2026-10-16; game #87): the items fact sheet of the first census, read from the game at `9205ad7` (2026-10-14). Its line numbers are that commit's; the live list is `census/discrepancies.md`, and a redone sheet goes beside the census, dated (`CLAUDE.md`, "The census").
+
 # Items, the inventory, and making things
 
 Game commit `9205ad7` (main, 2026-10-14). Code read at `.game/src`, data at `snapshot/data`. Line numbers are that commit's.

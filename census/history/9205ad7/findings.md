@@ -1,3 +1,5 @@
+> **A record, not kept up** (filed under `census/history/9205ad7/` by the sweep, 2026-10-16; game #87): the first census's findings, read from the game at `9205ad7` (2026-10-14). Its line numbers are that commit's; the live list is `census/discrepancies.md`, and a redone sheet goes beside the census, dated (`CLAUDE.md`, "The census").
+
 # Findings: what the census turned up that a player would notice
 
 **Moved:** the living list is now the game's `docs/bugs.md`, where the coding agents work it (Michael, 2026-10-14). This file is the census's record as of `9205ad7` and is not kept up; new findings go to `docs/bugs.md`.

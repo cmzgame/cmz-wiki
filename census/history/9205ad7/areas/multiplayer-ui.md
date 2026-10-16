@@ -1,3 +1,5 @@
+> **A record, not kept up** (filed under `census/history/9205ad7/` by the sweep, 2026-10-16; game #87): the multiplayer-ui fact sheet of the first census, read from the game at `9205ad7` (2026-10-14). Its line numbers are that commit's; the live list is `census/discrepancies.md`, and a redone sheet goes beside the census, dated (`CLAUDE.md`, "The census").
+
 # Census: multiplayer, worlds, and the interface
 
 Game commit `9205ad7` (origin/main, 2026-10-14 20:18 -05:00, "Merge item 5's step 6, the owner's powers"). Code paths are relative to `.game/` (`src/`, `server/`); data paths to `snapshot/data/`. Line numbers are at that commit.
