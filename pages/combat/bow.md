@@ -16,21 +16,24 @@ The **Bow** is held in both hands and shoots [[Arrow|arrows]] from the bag or th
 
 An arrow hurts the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of where it lands, never through a wall or a closed door, pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance, and never floors. Walls, boards, trees, and solid props stop it. See [[Archery]] for the draw, the arc, and what stops a shot.
 
+With [[Fire arrow|fire arrows]] carried, the bow shoots those first, and the one of the dead a fire arrow hits is set alight (see [[Burning]]); it lodges or lands as a plain arrow.
+
 The bow wears per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Durability]]).
 
 {{item-sections bow}}
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 3b7cb9a -->
 - `data/items.json`: the bow: both hands, `drawTime`, `braceDrawTime`, `damage`, `knockback`, `shots`
-- `src/archery.js:522-575`, `src/archery.js:578-617`: the draw, release, cancel, and the brace
-- `src/main.js:625-640`, `src/game.js:553`: a right tap cancels a draw in the world's step, a guest's too (game commit 2c70942)
-- `data/combat.json` `bow`: the flight's numbers (game commit 2c70942)
+- `src/archery.js:635-692`, `src/archery.js:695-735`: the draw, release, cancel, and the brace
+- `src/main.js:625-640`, `src/game.js:554`: a right tap cancels a draw in the world's step, a guest's too
+- `data/combat.json` `bow`: the flight's numbers
 - `src/player-controller.js:52`: the crawl while braced
-- `src/archery.js:234-261`: the landing: hit radius, push, the default stagger, no knockdown
-- `src/archery.js:141-202`: walls, boards, trees, and props stop a shot
-- `src/archery.js:262`, `src/archery.js:297-331`: the landing's hit never through a wall or a closed door (game commit ac596bd, #13)
-- `src/archery.js:564-573`, `src/items.js:39-41`: wear per arrow loosed
+- `src/archery.js:254-284`: the landing: hit radius, push, the default stagger, no knockdown
+- `src/archery.js:141-212`: walls, boards, trees, and props stop a shot
+- `src/archery.js:264`, `src/archery.js:295-334`: the landing's hit never through a wall or a closed door
+- `src/archery.js:568-572`, `src/archery.js:267-282`: fire arrows drawn first, setting alight what they hit, lodging or landing as plain arrows
+- `src/archery.js:681-690`, `src/items.js:39-41`: wear per arrow loosed
 
 {{navbox weapons}}

@@ -7,6 +7,14 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-15: synced to `3b7cb9a`
+
+- **New in the game:** burning is real (game #14, #62). A [[Torch]]'s blow may set one of the dead alight by its chance, and the [[Fireball]] and the new [[Fire arrow]] always do; a burning body loses a little health a second for a few seconds, never stacks, never takes more than a cap over one burn, and burns on as a corpse if it dies. Only the dead burn. New pages: [[Burning]] and [[Fire arrow]].
+- **Fire arrows:** arrows used on any lit fire that burns fuel become fire arrows, the whole stack at once; a bow shoots them first; they lodge or land as plain arrows ([[Arrow]], [[Bow]], [[Archery]], [[Fire]], [[Use]], which now lists three rules).
+- **Also touched:** [[Book of Fire]], [[The dead]], [[Corpses]], [[Light]] (burning bodies and fire arrows as moving lights), [[Combat]], [[Planned]] (what burning still lacks). The sources of [[Archery]], [[Bow]], [[Throwing spear]], and [[Arrow]] rechecked against this commit.
+- **Removed in the game:** the character menu's Set on fire and Put out, a test toggle the wiki never described.
+- Not visible on the wiki's pages: the process documents (pushing as Michael's account while the agents' account is flagged; Primary's reviewing agents) and the Actions moved off Node 20.
+
 ## 2026-10-15: synced to `ac596bd`
 
 - **Fixed in the game, corrected here:** an arrow or a thrown spear that comes down just short of a wall no longer hits one of the dead past it: the landing's hit is never through a wall, a fence, boards, or a closed door, as the fireball's already was (game #13, #58; [[Archery]], [[Bow]], [[Throwing spear]]).

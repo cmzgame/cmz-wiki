@@ -26,7 +26,11 @@ Each of the dead rolls {{n loot.body.rolls.0}} to {{n loot.body.rolls.1}} times 
 
 ## Lodged arrows
 
-An arrow or thrown spear that hits one of the dead stays in the body, and arrows stack there. They come out with the loot on the first search (see [[Archery]]).
+An arrow or thrown spear that hits one of the dead stays in the body, and arrows stack there. A [[Fire arrow]] stays as a plain arrow. They come out with the loot on the first search (see [[Archery]]).
+
+## A burning body
+
+One of the dead that dies while [[Burning]] burns on as a corpse until its fire's timer runs out, its flames lying low along the body. A corpse loses nothing to the fire.
 
 ## With friends
 
@@ -48,3 +52,5 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 - `src/game.js:524-535`: corpses leave the thinking list
 - `data/loot.json`: the `body` table and its rolls
 - `src/archery.js:244-259`: arrows and spears lodge in a body hit
+- `src/archery.js:272-276`: a fire arrow lodges as a plain arrow (game commit 3b7cb9a)
+- `src/burn.js:34-51`, `src/fire.js:48-49`: a corpse burns on until its timer runs out, losing nothing; its flames low and spread (game commit 3b7cb9a)

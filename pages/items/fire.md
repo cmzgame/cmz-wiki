@@ -33,6 +33,10 @@ Right-click a fire, or press `E` beside it:
 
 The entry is greyed, with "(need a log)", when you have none. Feeding takes one unit from your bag, your [[Belt]], or your [[Hands]] (not from containers nearby), and lights the fire if it was out. The hours left are shown rounded, or "under an hour".
 
+### Dipping arrows
+
+[[Use]] arrows you carry on any lit fire in this table and the whole stack becomes [[Fire arrow|fire arrows]]: "You dip the arrows in the fire." An unlit fire says "The fire is out." See [[Fire arrow]].
+
 ### Going out
 
 A fire burns one unit every so many game hours. When the last unit burns, it goes out, and players nearby read "A fire has gone out." Most fires in the valley start cold; a few fireplaces and the baker's oven start lit.
@@ -64,6 +68,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - [[Light]]
 - [[Crafting]], [[Cooking]]
 - [[Torch]]
+- [[Fire arrow]], [[Burning]]
 - [[Log]], [[Charcoal]]
 
 ## Sources
@@ -92,5 +97,6 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `data/items.json:2`: the torch's radius
 - `data/tuning.json:76-77`: the belt torch and two torches
 - `src/map.js:93-95`: a guest's fuel refreshed at each whole unit
+- `data/interactions.json`, `src/interactions.js:34-42`, `src/burn.js:73-93`: arrows used on any fire that burns fuel, refused when it is out (game commit 3b7cb9a)
 
 {{navbox making}}

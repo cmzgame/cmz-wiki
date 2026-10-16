@@ -49,6 +49,10 @@ A [[Torch]] never burns out. Where you carry it decides how much light it gives:
 
 The T key takes a torch from what you carry into a hand, or puts it away. A torch cannot be set down lit on the ground; it can be mounted in a bracket or on a post.
 
+### Moving lights
+
+One of the dead that is [[Burning]], and a [[Fireball]] or a [[Fire arrow]] in flight, each carry a small flickering light with them, so they light the ground they pass at night. The dead are not drawn to these lights.
+
 ### The night tint
 
 At night the world is drawn darker and tinted, but you still see as far: darkness never shortens your own sight. See [[Sight]]. Light flickers only in the picture; the light level the game reads is steady.
@@ -80,6 +84,7 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - [[Fire]]
 - [[Torch]]
 - [[Torch posts and brackets]]
+- [[Burning]]
 - [[Rooms]]
 - [[Openings]]
 
@@ -103,3 +108,4 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `data/tuning.json:5-7`, `src/entities/zombie.js:232-237`, `src/entities/zombie.js:295-311`: the dead's light-scaled sight and flame range
 - `src/settings.js:12`: Zombie aggro on by default (game commit 2c70942)
 - `src/net.js:1145-1152`, `src/net.js:814`, `src/light.js:161-164`: a guest rebuilds the light; each player's carried light sent when it changes
+- `src/fire.js:85-90`, `src/archery.js:356-364`, `src/game.js:629`, `src/light.js:165-182`: burning bodies and a fireball or fire arrow in flight as moving lights, not among the flames the dead notice (game commit 3b7cb9a)

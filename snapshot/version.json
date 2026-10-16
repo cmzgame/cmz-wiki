@@ -1,7 +1,7 @@
 {
-  "commit": "ac596bdd18bcb8a43fb4ce854cd8b0b51394c0f2",
-  "short": "ac596bd",
-  "date": "2026-10-15T13:06:00-05:00",
-  "subject": "Merge #58, reviewed: an arrow or a thrown spear landing just short of a wall no longer hits one of the dead past it (closes #13)",
+  "commit": "3b7cb9a1f9051d0153ff1340c68cdeb84c6d6895",
+  "short": "3b7cb9a",
+  "date": "2026-10-15T21:21:41-05:00",
+  "subject": "Merge #62, reviewed: burning made real (the torch by chance, the fireball and fire arrows always set the dead alight; capped at one, never more than 10 a burn; a body killed burning burns on; arrows dipped at any lit fire; the test toggle gone) (closes #14)",
   "ref": "origin/main"
 }

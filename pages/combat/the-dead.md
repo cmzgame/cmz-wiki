@@ -58,6 +58,10 @@ See [[Openings]].
 
 Now and then each of the dead says "{{n tuning.zombie.groanText}}" in a speech bubble, every {{n tuning.zombie.groanMin}} to {{n tuning.zombie.groanMax seconds}}. It does not groan while on the floor, and the fallen are silent.
 
+### Burning
+
+A [[Torch]]'s blow (by chance), the [[Fireball]], and a [[Fire arrow]] set the dead alight. A burning body loses a little health a second for a few seconds, with no push or stagger, so it keeps coming; one that dies burning burns on as a corpse. The dead do not notice the fire. See [[Burning]].
+
 ### Death
 
 At no health one of the dead falls, and once the fall has played its body stays as a still picture that can be searched. See [[Corpses]].
@@ -85,6 +89,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 
 - [[Corpses]]
 - [[Combat]]
+- [[Burning]]
 - [[Openings]]
 - [[Sight]]
 - [[Light]]
@@ -113,3 +118,4 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/main.js:1443-1447`: the bite's words on the victim's client alone
 - `src/settings.js:12-13`, `src/settings.js:46`, `src/entities/zombie.js:268-289`, `src/entities/zombie.js:296`, `src/entities/zombie.js:404-416`, `src/entities/villager.js:100-136`: Zombie aggro, Zombies attack villagers, a bitten villager turning
 - `src/settings.js:15`, `src/game.js:123-139`: Combat testing, its crowd in a ring round the spawn (game commit 2c70942)
+- `src/burn.js:25-51`, `src/entities/zombie.js:162-170`, `src/combat.js:359-361`, `src/archery.js:267-269`: burning: who sets it, a burn taking health alone, a corpse burning on (game commit 3b7cb9a)

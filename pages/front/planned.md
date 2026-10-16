@@ -24,6 +24,7 @@ Every small "Planned" note across the wiki is listed on [[Special:Planned notes|
 - **Infection's effects and cures** (a marker today).
 - **Better animations** (`docs/32`): sleeping in a bed, sitting, deaths.
 - **Throwing knives and axes, and more magic** (`docs/24`): the [[Fireball]] is built; a cost for casting and other spells are not.
+- **More of burning** (`docs/05`): [[Burning]] is built for the dead; the dead noticing it, a way to put a fire out, a player burning, and fire spreading are not.
 - **A demo** (`docs/36`).
 
 ## Sources
@@ -40,4 +41,5 @@ Every small "Planned" note across the wiki is listed on [[Special:Planned notes|
 - `docs/02-decisions.md:568`, `docs/02-decisions.md:576`: the infection left as a marker; a cure when it is made real
 - `docs/32-better-animations.md:45-56`: sleep, sit, and the death
 - `docs/24-throwables-and-fire-magic.md:7-54`: throwing knives and axes, fire magic
+- `docs/05-someday.md:27`: what burning still lacks (game commit 3b7cb9a)
 - `docs/36-the-horde-demo.md:1-3`: the horde demo

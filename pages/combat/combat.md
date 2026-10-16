@@ -101,6 +101,7 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 - [[Dual wielding]]
 - [[Shove]]
 - [[Archery]]
+- [[Burning]]
 - [[Durability]]
 - [[Fists]]
 - [[The dead]]

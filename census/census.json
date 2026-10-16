@@ -1,15 +1,15 @@
 {
  "version": {
-  "commit": "ac596bdd18bcb8a43fb4ce854cd8b0b51394c0f2",
-  "short": "ac596bd",
-  "date": "2026-10-15T13:06:00-05:00",
-  "subject": "Merge #58, reviewed: an arrow or a thrown spear landing just short of a wall no longer hits one of the dead past it (closes #13)",
+  "commit": "3b7cb9a1f9051d0153ff1340c68cdeb84c6d6895",
+  "short": "3b7cb9a",
+  "date": "2026-10-15T21:21:41-05:00",
+  "subject": "Merge #62, reviewed: burning made real (the torch by chance, the fireball and fire arrows always set the dead alight; capped at one, never more than 10 a burn; a body killed burning burns on; arrows dipped at any lit fire; the test toggle gone) (closes #14)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 50,
+  "items": 51,
   "recipes": 27,
-  "interactions": 2,
+  "interactions": 3,
   "lootTables": 6,
   "sprites": 137,
   "places": 20,
@@ -21,11 +21,11 @@
   "settings": 29,
   "rules": 5,
   "keys": 19,
-  "verbs": 2,
+  "verbs": 3,
   "menuLabels": 40,
   "events": 25,
-  "checks": 20,
-  "modules": 81
+  "checks": 21,
+  "modules": 82
  },
  "items": [
   {
@@ -49,7 +49,8 @@
     "knockback": 0.13,
     "stamina": 3,
     "style": "one_handed",
-    "kills": 5
+    "kills": 5,
+    "ignite": 0.25
    },
    "fire": {
     "radius": 3,
@@ -684,7 +685,32 @@
    ],
    "usedIn": [],
    "foundIn": [],
-   "interactions": []
+   "interactions": [
+    "arrow on fire: Dip"
+   ]
+  },
+  {
+   "id": "fire_arrow",
+   "name": "Fire arrow",
+   "kind": "ammo",
+   "size": [
+    1,
+    2
+   ],
+   "stack": 20,
+   "tags": [
+    "wood"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "an arrow dipped in a lit fire (#14: Use arrows on a campfire, a hearth, the forge, the oven); a bow draws these before plain arrows, and what it hits is set alight; it lands or lodges as a plain arrow. Placeholder art, the drawn pair owed (docs/26)"
   },
   {
    "id": "cap",
@@ -2027,6 +2053,17 @@
    "on": "campfire",
    "verb": "Light",
    "message": "You hold the torch to the fire. It is already burning."
+  },
+  {
+   "use": "arrow",
+   "on": "fire",
+   "verb": "Dip",
+   "action": "dip",
+   "args": {
+    "from": "arrow",
+    "to": "fire_arrow"
+   },
+   "message": "You dip the arrows in the fire."
   },
   {
    "use": "waterskin",
@@ -4143,6 +4180,12 @@
    "duration": 12,
    "note": "a landed bite opens a wound with this chance, one more stack each (to max); the wound drains dpsByStacks[stacks - 1] a second, the timer is refreshed by each new bite and runs out by itself after duration seconds; a bandage stops it. Michael's bounds: five fresh stacks kill from full health in 10 s (not under 8 to 10 s), and one stack is a nuisance (under 5 health in all)"
   },
+  "burn": {
+   "dps": 0.8,
+   "duration": 10,
+   "cap": 10,
+   "note": "burning (#14, Michael 2026-10-15): like bleeding but capped at one; a body burning loses dps a second for duration seconds, a new source refreshing the timer and never stacking, and never more than cap over one burn however often refreshed (Michael: never more than 10 against 100). Only the dead burn, never a player. Sources: a weapon's `ignite` chance (the torch's 0.25 in data/items.json), the fireball and a fire arrow always (their `ignite`)"
+  },
   "infection": {
    "chance": 0.2,
    "days": 1.5,
@@ -4595,6 +4638,12 @@
    ]
   },
   {
+   "key": "dip",
+   "at": [
+    "burn.js:78"
+   ]
+  },
+  {
    "key": "sleep",
    "at": [
     "entities/player.js:194"
@@ -4605,7 +4654,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1299"
+    "main.js:1300"
    ]
   },
   {
@@ -4665,7 +4714,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1263"
+    "main.js:1264"
    ]
   },
   {
@@ -4677,13 +4726,13 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1253"
+    "main.js:1254"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1312"
+    "main.js:1313"
    ]
   },
   {
@@ -4725,7 +4774,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1321"
+    "main.js:1322"
    ]
   },
   {
@@ -4848,13 +4897,13 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:280"
+    "archery.js:283"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:657"
+    "archery.js:680"
    ]
   },
   {
@@ -4866,13 +4915,13 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:360"
+    "game.js:361"
    ]
   },
   {
    "key": "blocked",
    "at": [
-    "combat.js:159"
+    "combat.js:161"
    ]
   },
   {
@@ -4918,43 +4967,43 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:608"
+    "game.js:610"
    ]
   },
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:150"
+    "combat.js:152"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:269"
+    "combat.js:271"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:363"
+    "combat.js:368"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:334"
+    "combat.js:336"
    ]
   },
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:607"
+    "entities/zombie.js:624"
    ]
   },
   {
    "key": "shove",
    "at": [
-    "combat.js:398"
+    "combat.js:403"
    ]
   },
   {
@@ -4984,20 +5033,20 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:608"
+    "entities/zombie.js:625"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:665",
-    "combat.js:380"
+    "archery.js:688",
+    "combat.js:385"
    ]
   },
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:121"
+    "entities/zombie.js:156"
    ]
   }
  ],
@@ -5109,6 +5158,7 @@
   }
  ],
  "checks": [
+  "burn",
   "craft",
   "determinism",
   "eviction",
@@ -5137,15 +5187,15 @@
   },
   {
    "path": "main.js",
-   "lines": 1706
-  },
-  {
-   "path": "interact.js",
-   "lines": 1420
+   "lines": 1707
   },
   {
    "path": "placeholders.js",
    "lines": 1417
+  },
+  {
+   "path": "interact.js",
+   "lines": 1409
   },
   {
    "path": "net.js",
@@ -5161,11 +5211,15 @@
   },
   {
    "path": "archery.js",
-   "lines": 713
+   "lines": 736
   },
   {
    "path": "ui/inventory-panel.js",
    "lines": 704
+  },
+  {
+   "path": "entities/zombie.js",
+   "lines": 638
   },
   {
    "path": "assets.js",
@@ -5173,11 +5227,7 @@
   },
   {
    "path": "game.js",
-   "lines": 630
-  },
-  {
-   "path": "entities/zombie.js",
-   "lines": 621
+   "lines": 632
   },
   {
    "path": "placement.js",
@@ -5193,7 +5243,7 @@
   },
   {
    "path": "combat.js",
-   "lines": 454
+   "lines": 459
   },
   {
    "path": "render/walls.js",
@@ -5273,7 +5323,7 @@
   },
   {
    "path": "fire.js",
-   "lines": 172
+   "lines": 173
   },
   {
    "path": "view.js",
@@ -5301,7 +5351,7 @@
   },
   {
    "path": "dev.js",
-   "lines": 145
+   "lines": 147
   },
   {
    "path": "moodles.js",
@@ -5337,7 +5387,7 @@
   },
   {
    "path": "use.js",
-   "lines": 105
+   "lines": 106
   },
   {
    "path": "pathfind.js",
@@ -5350,6 +5400,10 @@
   {
    "path": "iso.js",
    "lines": 98
+  },
+  {
+   "path": "burn.js",
+   "lines": 94
   },
   {
    "path": "ui/speech.js",
@@ -5389,7 +5443,7 @@
   },
   {
    "path": "interactions.js",
-   "lines": 61
+   "lines": 62
   },
   {
    "path": "ui/names.js",
@@ -5487,6 +5541,9 @@
   "assets": {
    "TILE_HH": 16,
    "SLICE_INSET": 9
+  },
+  "burn": {
+   "DIP_REACH": 2.6
   },
   "buttons": {
    "TAP_TIME": 0.2

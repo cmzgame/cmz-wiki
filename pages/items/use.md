@@ -18,22 +18,23 @@ After **Use**, the item stays where it is, outlined, and a label follows the cur
 - a piece of furniture or anything standing in the world;
 - a bare tile.
 
-`Escape` or a right click cancels. There is no range: anything on screen can be the target.
+`Escape` or a right click cancels. Use itself has no range: anything on screen can be the target, though a rule's action may have its own reach (dipping arrows needs you beside the fire).
 
 ### What happens
 
-The game looks for a rule naming the item (or one of its tags) and the target. If one matches, it happens: its line is printed in the log, or its action is carried out. If none matches, the log says "Nothing interesting happens."
+The game looks for a rule naming the item (or one of its tags) and the target; the first that matches is used. A rule's target may be one kind of thing (a campfire) or any lit fire that burns fuel. If one matches, it happens: its line is printed in the log, or its action is carried out and its line printed if the action succeeds; if the action refuses, the log gives the reason. If none matches, the log says "Nothing interesting happens."
 
-Two rules exist today, both lines only:
+Three rules exist today:
 
 - A [[Torch]] on a campfire: "You hold the torch to the fire. It is already burning."
+- [[Arrow|Arrows]] on any fire that burns fuel: the whole stack you carry becomes [[Fire arrow|fire arrows]], "You dip the arrows in the fire." It refuses when the fire is out, when you are too far from it, or when the arrows are not on you.
 - A [[Waterskin]] on a well: a line saying the rule works. The well's own menu is what fills a waterskin.
 
 Everything else (lighting and feeding fires, filling waterskins, crafting) is done through the menus of the things themselves.
 
 ## With friends
 
-A guest's Use is sent to the host with the item and the target, and the host carries it out as that player. The line goes to the guest's log.
+A guest's Use is sent to the host with the item and the target, and the host carries it out as that player, a dip at a fire included. The line goes to the guest's log.
 
 ## See also
 
@@ -49,8 +50,10 @@ A guest's Use is sent to the host with the item and the target, and the host car
 - `src/ui/inventory-panel.js:476-478`: a click on an item in a panel is the target
 - `src/main.js:649-657`: a character, else a prop, else the tile
 - `src/main.js:932-938`: a click on the world applies while the panels are closed
-- `src/interactions.js:1-49`: rows by item id or tag and target; the default "Nothing interesting happens."
-- `data/interactions.json:4-5`: the two rows, both messages
+- `src/interactions.js:1-49`: rows by item id or tag and target, `fire` for any that burns fuel, the first match wins; the default "Nothing interesting happens." (game commit 3b7cb9a)
+- `data/interactions.json`: the three rows (game commit 3b7cb9a)
+- `src/use.js:94-104`: a row's action run, its line said on success, the reason on a refusal (game commit 3b7cb9a)
+- `src/burn.js:73-93`: the dip's reach, its refusals, the whole stack changed (game commit 3b7cb9a)
 - `src/interact.js:537-581`: the well's own menu fills waterskins
 - `src/interact.js:350-380`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host

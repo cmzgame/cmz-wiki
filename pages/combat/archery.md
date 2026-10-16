@@ -19,7 +19,7 @@ With the bow in both hands, the left button draws. The cursor sets the direction
 - A tap of right during a draw cancels it and keeps the arrow. Sprinting, opening a panel, climbing, or a pause also cancel it.
 - After a shot there is {{n combat.bow.recoverTime seconds}} before the next draw.
 
-Arrows are taken from the bag or the belt. With none, the game says "No arrows."
+Arrows are taken from the bag or the belt. With none, the game says "No arrows." With [[Fire arrow|fire arrows]] carried, the bow shoots those first and plain arrows after.
 
 ### The brace
 
@@ -30,6 +30,10 @@ Holding right while drawing braces the bow: a full draw takes {{n items.bow.bow.
 The arrow travels along the ground at {{n combat.bow.speed tiles a second}}, with the arc drawn above it, out to at most {{n combat.bow.range tiles}}. The arc rises from {{n combat.bow.arcMin}} to {{n combat.bow.arcMax}} pixels high with the distance.
 
 It hurts only where it comes down: the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of the landing point, with nothing between it and that point. The test is made at the arrow's height as it lands, which is the ground, so a wall, a fence, boards, a closed door, or any window (even an open one, whose sill is above the ground) between the landing point and the body means no hit; an open or broken doorway does not. An arrow that comes down just short of a wall never hits one of the dead standing just past it. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
+
+### Fire arrows
+
+A fire arrow flies as an arrow does, with its head burning and a small light moving with it. The one of the dead it hits is always set alight before the damage, so a body it kills burns on (see [[Burning]]). It lodges in the body, or lies where it came down, as a plain arrow. Fire arrows are made by using arrows on a lit fire (see [[Fire arrow]]).
 
 ### What stops a shot
 
@@ -71,7 +75,7 @@ A thrown spear keeps its wear. With the [[Shield]]'s guard raised, a throw does 
 
 ## With friends
 
-A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, and arrows on the floor or lodged in bodies travel with the world.
+A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, a fire arrow burning and lit there too, and arrows on the floor or lodged in bodies travel with the world.
 
 ## Settings that change it
 
@@ -80,34 +84,38 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## See also
 
 - [[Bow]]
-- [[Arrow]]
+- [[Arrow]], [[Fire arrow]]
 - [[Throwing spear]]
 - [[Combat]]
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/archery.js:468-477`: the bow and the spear share the launcher and the draw
-- `src/archery.js:578-617`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
+<!-- sources at 3b7cb9a -->
+- `src/archery.js:560-575`: the bow and the spear share the launcher and the draw
+- `src/archery.js:62-64`, `src/archery.js:603-623`, `src/archery.js:719-721`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
 - `data/items.json`: the bow's `drawTime` and `braceDrawTime`, `damage`, `knockback`, `shots`; the spear's `thrown` block
-- `data/combat.json` `bow`, `src/archery.js:27-56`: the bow's and the flight's numbers as data (range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights) (game commit 2c70942)
-- `src/archery.js:522-575`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the bag and belt hold none
-- `src/main.js:625-640`, `src/game.js:553`, `src/net.js:418`: a right tap during a draw cancels it in the world's step, a guest's too (game commit 2c70942)
-- `src/archery.js:595-597`: sprinting, a panel, climbing, or a pause cancels a draw
-- `src/archery.js:602-603`: the braced draw time
+- `data/combat.json` `bow`, `src/archery.js:29-57`: the bow's and the flight's numbers as data (range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights)
+- `src/archery.js:635-692`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the hands, belt, and bag hold none
+- `src/main.js:625-640`, `src/game.js:554`, `src/net.js:418`: a right tap during a draw cancels it in the world's step, a guest's too
+- `src/archery.js:713`: sprinting, a panel, climbing, or a pause cancels a draw
+- `src/archery.js:719-720`: the braced draw time
 - `src/player-controller.js:52`: walking speed while drawing and braced
-- `src/archery.js:88-129`: the shot fixed at release, travelling along the ground with the arc above
-- `src/archery.js:234-261`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
-- `src/archery.js:252-262`, `src/archery.js:297-331`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not (game commit ac596bd, #13)
-- `src/archery.js:151-157`, `src/placeholders.js:88-90`: the wall test by height: a door passes open or broken below its top, a window open or broken between its sill and its top (game commit ac596bd)
-- `src/archery.js:273-285`: only the dead are hit
-- `src/archery.js:141-202`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot
+- `src/archery.js:93-139`: the shot fixed at release, travelling along the ground with the arc above
+- `src/archery.js:254-284`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
+- `src/archery.js:264`, `src/archery.js:300-334`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not
+- `src/archery.js:153-159`, `src/placeholders.js:88-90`: the wall test by height: a door passes open or broken below its top, a window open or broken between its sill and its top
+- `src/archery.js:286-293`, `src/archery.js:300-315`: only the dead are hit
+- `src/archery.js:141-212`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot
 - `src/entities/character.js:139-162`: lodged arrows come out in the body's loot, the rest at its feet
-- `src/archery.js:564-573`, `src/items.js:39-41`: the bow wears per arrow loosed
+- `src/archery.js:568-572`: fire arrows before plain ones, as their own projectile, setting alight
+- `src/archery.js:267-269`, `src/burn.js:25-32`: a fire arrow's hit sets alight before the damage
+- `src/archery.js:272-282`: a fire arrow lodges or lands as a plain arrow
+- `src/archery.js:356-364`, `src/archery.js:520-523`: the fire arrow's light in flight and its burning head
+- `src/archery.js:681-690`, `src/items.js:39-41`: the bow wears per arrow loosed
 - `src/player-controller.js:39-45`: middle or Q throws the spear; no brace for a throw
-- `src/archery.js:245`: the spear's break chance rolled on every landing
-- `src/archery.js:556-560`: the thrown spear leaves the hand with its wear; the guard's attack multiplier on a throw
-- `src/archery.js:491-492`, `src/archery.js:299-303`, `src/archery.js:608`: a guest's draw and aim point on the host, arrows in flight sent each frame
+- `src/archery.js:266`: the spear's break chance rolled on every landing
+- `src/archery.js:673-677`: the thrown spear leaves the hand with its wear; the guard's attack multiplier on a throw
+- `src/archery.js:603-609`, `src/net.js:867`, `src/net.js:1106`, `src/archery.js:349-352`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
 - `src/settings.js:17`: the Bow aim guide setting, on by default
 
 {{navbox weapons}}
