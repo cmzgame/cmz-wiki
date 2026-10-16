@@ -7,6 +7,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-16: synced to `0bd3f9c`
+
+- Not visible on the wiki's pages: the game's docs sweep, waves 1 and 2 (game #73, #74): the file every agent loads made lean, the decision log split into its rulings and a build log, every doc indexed as a rule, a reference, a spec, or a record. No rule of play changed; the rulings themselves are unchanged.
+
 ## 2026-10-16: synced to `4bd976a`
 
 - **Changed in the game, corrected here:** arrows used on a fire while they still sit in an open chest or a searched body now say "Take the arrows out first." instead of "You have no arrows." (game #69; [[Fire arrow]], [[Use]]).
