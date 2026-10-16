@@ -6,9 +6,14 @@
 //
 // Defaults: ../cozy-medieval-zombies, origin/main. Writes snapshot/ (data and
 // version.json) and .game/ (src, tools, docs; ignored by git).
+//
+// The snapshot is the game's data/ without its art (sweep 3f, game #87): data/art/**,
+// data/hair/**, and data/layers/** are left out (some three hundred PNGs, churned by
+// every art delivery, that nothing here reads) but for the files the build and the
+// census read: the item icons data/items.json names, and data/hair/index.json.
 
 import { execFileSync } from "node:child_process";
-import { mkdirSync, rmSync, writeFileSync, existsSync } from "node:fs";
+import { mkdirSync, rmSync, writeFileSync, existsSync, readFileSync, readdirSync, statSync, unlinkSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -35,5 +40,25 @@ function extract(paths, into) {
 
 extract(["data"], join(here, "snapshot"));
 extract(["src", "tools", "docs", "server", "index.html", "style.css", "CLAUDE.md", "TODO.md"], join(here, ".game"));
+
+// The art out of the snapshot, but for what is read (the header): the icons and the hair index.
+const ART_DIRS = ["data/art", "data/hair", "data/layers"];
+const kept = new Set(["data/hair/index.json"]);
+for (const it of JSON.parse(readFileSync(join(here, "snapshot", "data", "items.json"), "utf8"))) if (it.icon && it.icon.src) kept.add(it.icon.src);
+function prune(dir, rel) {
+  if (!existsSync(dir)) return 0;
+  let n = 0;
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    const r = `${rel}/${name}`;
+    if (statSync(p).isDirectory()) {
+      n += prune(p, r);
+      if (!readdirSync(p).length) rmSync(p, { recursive: true });
+    } else if (!kept.has(r)) { unlinkSync(p); n++; }
+  }
+  return n;
+}
+let pruned = 0;
+for (const d of ART_DIRS) pruned += prune(join(here, "snapshot", d), d);
 writeFileSync(join(here, "snapshot", "version.json"), JSON.stringify({ commit, short: commit.slice(0, 7), date, subject, ref }, null, 2) + "\n");
-console.log(`snapshot of ${ref} @ ${commit.slice(0, 7)} (${date.slice(0, 10)})`);
+console.log(`snapshot of ${ref} @ ${commit.slice(0, 7)} (${date.slice(0, 10)}); ${pruned} art files left out, ${kept.size} kept`);
