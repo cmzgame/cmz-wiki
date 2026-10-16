@@ -75,7 +75,7 @@ A thrown spear keeps its durability. With the [[Shield]]'s guard raised, a throw
 
 ## With friends
 
-A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, a fire arrow burning and lit there too, and arrows on the floor or lodged in bodies travel with the world.
+A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, a fire arrow burning and lit there too, and arrows on the floor or lodged in bodies travel with the world. An arrow never hurts another player: on the host the dead are its only targets.
 
 ## Settings that change it
 
@@ -100,6 +100,8 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:713`, `src/main.js:1001`: sprinting, a right-click menu, climbing, or a pause cancels a draw; an open panel does not (game commit 57df52e)
 - `src/archery.js:719-720`: the braced draw time
 - `src/player-controller.js:52`: walking speed while drawing and braced
+- `src/game.js:93`, `src/archery.js:288-312`: what a shot can hit is what `setTargets` hands in, the dead; never a villager, a player, or the archer (game commit 0bd3f9c)
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/archery.js:93-139`: the shot fixed at release, travelling along the ground with the arc above
 - `src/archery.js:254-284`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
 - `src/archery.js:264`, `src/archery.js:300-334`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not

@@ -47,7 +47,7 @@ Beds stand in the valley's houses, and a bed can be made at the [[Workbench]] (s
 
 ## With friends
 
-Time runs fast only while **every living player** in the world is asleep. Players who have died, or who have stepped away and gone dormant, do not count. Until the last one lies down, the game says "You lie down. Time will pass faster once everyone in the world is asleep.", and you sleep at normal speed, still restoring tiredness and health at the sleeping rate. If a sleeper leaves, goes dormant, or dies, the speed is put right at once. A guest lies down through the same Sleep action as the host.
+Time runs fast only while **every living player** in the world is asleep. Players who have died, or who have stepped away and gone dormant, do not count. Until the last one lies down, the game says "You lie down. Time will pass faster once everyone in the world is asleep.", and you sleep at normal speed, still restoring tiredness and health at the sleeping rate; the last one into bed is told "You lie down. The night goes on without you." instead. If a sleeper leaves, goes dormant, or dies, the speed is put right at once. A guest lies down through the same Sleep action as the host.
 
 ## Settings that change it
 
@@ -67,10 +67,11 @@ Time runs fast only while **every living player** in the world is asleep. Player
 - `src/entities/player.js:165-191`: asleep, nothing moves you, needs drain, tiredness restores, health at the sleeping rate
 - `data/tuning.json:56,59-60`: the restore time and the regeneration rates
 - `src/game.js:257-264,496`, `src/world.js:25-29`, `src/loop.js:15,114-116`: the scale while every living player sleeps, re-evaluated each step, the loop running many steps a frame
-- `src/main.js:1464-1465`: the two lying-down messages
+- `src/main.js:1464-1465`: the two lying-down messages (`src/main.js:1502-1503` at game commit 0bd3f9c: by whether everyone is already asleep)
 - `src/entities/player.js:178,188-190`, `data/tuning.json:58`: waking when rested between the wake hour and 22:00, or when the bed is gone; the waking message's hours
 - `data/maps/valley.json`: the valley's beds
 - `data/recipes.json:186-205`: the bed recipe at the workbench
 - `src/map.js:84`: a game hour is 30 seconds
 - `src/game.js:254-263,270,368,383-386`: dead and dormant players do not count; the scale put right on a leave, a dormancy, or a death
 - `src/entities/player.js:120-126`: Survival off holds tiredness full
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)

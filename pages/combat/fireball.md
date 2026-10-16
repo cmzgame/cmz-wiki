@@ -15,6 +15,7 @@ The **Fireball** is the game's one spell. It is cast by holding the [[Staff of F
 - **The burst on the way.** As it flies, the ball bursts on the first of [[The dead]] within {{n items.book_of_fire.book.spell.contact tiles}} of it, and the flight ends there. Only a body ahead of where it was cast counts, so nothing behind the caster is hit as the ball leaves, and never one with a wall or a closed door between it and the ball.
 - **The hit where it lands.** A ball that meets no one on the way hits the nearest of the dead within {{n items.book_of_fire.book.spell.landRadius tiles}} of where it comes down, a wider reach than an arrow's, again never through a wall or a closed door. At chest height, an open door or an open window between them does not stop it.
 - **The damage.** Either way it hits one body: {{n items.book_of_fire.book.spell.damage}} damage at a full draw and less for a partial one, a push of {{n items.book_of_fire.book.spell.knockback tiles}}, and it always staggers and interrupts a bite. It always sets the body alight, before the damage, so a body it kills burns on (see [[Burning]]). Nothing is left behind: no ball on the ground, nothing lodged in the body.
+- **Who it can hit.** One of the dead, and not a corpse: it passes over a [[Villagers|villager]], another player, and the caster, as every shot does (see [[Combat]]).
 - **No cost** beyond the draw and the recovery after it.
 
 ## Numbers
@@ -27,7 +28,7 @@ The **Fireball** is the game's one spell. It is cast by holding the [[Staff of F
 
 ## With friends
 
-A guest's cast is its draw and release, worked out on the host as the bow's shot is, and the burst and the hit are decided there too; the ball reaches every screen with the arrows in flight, drawn and lit there. The burn it starts runs on the host, and every screen sees the body burn.
+A guest's cast is its draw and release, worked out on the host as the bow's shot is, and the burst and the hit are decided there too; the ball reaches every screen with the arrows in flight, drawn and lit there. The burn it starts runs on the host, and every screen sees the body burn. The ball never hurts another player.
 
 {{planned doc=24 note="A cost for casting, other spells and a choice among them, and a burst of flame drawn where it hits."}}
 
@@ -39,7 +40,7 @@ A guest's cast is its draw and release, worked out on the host as the bow's shot
 
 ## Sources
 
-<!-- sources at 3b7cb9a -->
+<!-- sources at 0bd3f9c -->
 - `data/items.json`: the spell's numbers on the book (`book.spell`: `drawTime`, `speed`, `range`, `contact`, `landRadius`, `damage`, `knockback`), `staff: true` on the staff, `castStyle` on both
 - `src/archery.js:581-590`: `spellOf`, both items make a launcher of the kind `spell`, one alone refuses; the flight flat and vanishing
 - `data/poses.json` `cast_staff`, `cast_book`: the cast's pose by which hand holds the staff (game PR #9)
@@ -50,4 +51,6 @@ A guest's cast is its draw and release, worked out on the host as the bow's shot
 - `data/combat.json` `burn`: the burn's numbers
 - `src/archery.js:295-334`: only a body ahead of the cast counts on the way, and none with a wall or closed door between it and the ball, at the ball's height
 - `src/archery.js:354-364`: the moving light
+- `src/game.js:93`, `src/archery.js:288-312`: what it can hit is what `setTargets` hands in, the dead; never a villager, a player, or the caster
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/render/entities.js`: the fireball drawn by direction with its flicker

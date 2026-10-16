@@ -28,6 +28,7 @@ A click swings at once. The hit is decided on the click; the arm's animation is 
 - One of the dead drawn below the player on screen gets a little extra reach, up to {{n census.constants.combat.BODY_SLACK tiles}}.
 - The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]).
 - A swing is refused while carrying a prop, climbing, during a timed action, or when dead.
+- Only [[The dead]] can be hit, and not a corpse: a swing, the [[Shove|shove]], an arrow, a thrown spear, and the [[Fireball]] never hurt a [[Villagers|villager]], another player, or the one who struck. There is no friendly fire, and no setting turns it on.
 
 The wedge itself is not drawn. Each weapon's reach and arc are on its page and in [[Weapons]].
 
@@ -82,6 +83,8 @@ Whenever a world is open to friends, hit-stop is switched off for everyone, host
 
 The mouse roles are read on each player's own machine and sent to the host. A guest's own swing and guard show at once on their screen, but the hits, the shove, and the bow's draw are worked out on the host; a guest's right tap during a draw ends the draw on the host too. The rules (Multi-hit, Zombie aggro) are the host's, and a world keeps them in its save. See [[Multiplayer]].
 
+Players never hurt players, whatever they swing, shoot, or cast: on the host the dead are the only targets, so a friend standing in the wedge is passed over as a villager is.
+
 ## Settings that change it
 
 - **Multi-hit** (default off): on, a blow reaches everything in its wedge.
@@ -111,6 +114,8 @@ The mouse roles are read on each player's own machine and sent to the host. A gu
 <!-- sources at 9205ad7 -->
 - `src/combat.js:305-357`: the swing decided on the click (`tryAttack`)
 - `src/combat.js:186-188`, `src/combat.js:166-176`: only the dead are targets; a swing refused while carrying, climbing, in a timed action, or dead
+- `src/combat.js:178-189`, `src/game.js:93`, `src/archery.js:288-312`: no friendly fire: a blow and the shove pick from the dead alone (`targetsIn`, the dead one not yet dead), and an arrow, a spear, or the fireball lands on what `setTargets` hands in, the dead (game commit 0bd3f9c)
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/buttons.js:10`, `src/buttons.js:24-47`: the roles and the tap time
 - `src/player-controller.js:17-55`: what each role does; the stance starts on the press; Space is the shove
 - `src/main.js:625-640`, `src/game.js:553`: a right tap: cancel a draw (an event in the player's snapshot, ended in the world's step), else the menu (game commit 2c70942)

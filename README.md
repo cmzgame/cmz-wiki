@@ -1,6 +1,6 @@
 # The Cozy Medieval Zombies wiki
 
-Everything about [the game](https://github.com/cmzgame/cozy-medieval-zombies), true to its code: published at **https://cmzgame.github.io/cmz-wiki/**. The plan behind it is the game's `docs/37-the-wiki.md`.
+Everything about [the game](https://github.com/cmzgame/cozy-medieval-zombies), true to its code: published at **https://cmzgame.github.io/cmz-wiki/**. The plan behind it is the game's `docs/history/37-the-wiki-plan.md`.
 
 Half of every page is generated from the game's own data (items, recipes, loot, stations, places, villagers, numbers); the other half is prose. Every number in prose is a reference to the data, so a retune in the game changes the wiki on the next sync with nobody rewriting a sentence.
 
@@ -25,7 +25,7 @@ A feature is not done until the wiki is checked and updated for it, in the same 
 ## Layout
 
 - `pages/` the written pages (markdown). `lib/` the markdown renderer, the data loader, the templates. `assets/` the style and the search. `build.js` the build, `sync.js` the snapshot, `serve.js` the preview.
-- `census/` the census of what is in the game: `census.js` (the automatic inventory), `areas/` (the fact sheets by area, read from the code), `discrepancies.md` (where the game's docs and its code disagree).
-- `snapshot/` the game's data at the commit in `snapshot/version.json`.
+- `census/` the census of what is in the game: `census.js` (the automatic inventory), `discrepancies.md` (where the game's docs and its code still disagree, at the snapshot's commit), `history/<commit>/` (the dated records: the fact sheets by area, read from the code, and the lists as they stood).
+- `snapshot/` the game's data at the commit in `snapshot/version.json`, without the art (the item icons the data names excepted).
 
 No dependencies: Node 20 or later and nothing else.

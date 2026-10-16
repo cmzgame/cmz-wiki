@@ -32,7 +32,7 @@ The browser keeps the most recent friends' worlds.
 
 ### When the host is away
 
-A friend's world exists only while its host has it open. If the host closes it or leaves, you are returned to the title, told "The host closed the world.", and your character goes [[Dormancy|dormant]] in their save. When they open it again, Rejoin brings you back.
+A friend's world hosted from a browser exists only while its host has it open (a [[Server worlds|server world]] has no host to wait for). If the host closes it or leaves, you are returned to the title, told "The host closed the world.", and your character goes [[Dormancy|dormant]] in their save. When they open it again, Rejoin brings you back.
 
 ### Why a join can fail
 
@@ -76,3 +76,4 @@ As a guest, the world's rules are the host's (see [[Hosting]]), screens never pa
 - `src/host.js:30`, `src/host.js:74`: `MAX_OWNERS`, the next browser refused as full
 - `src/rules.js:109-115`, `src/main.js:667-670`, `src/main.js:325-331`: a guest under the host's rules, never paused, never saving
 - `src/ui/screens.js:656-667`, `src/main.js:592-609`: a guest's pause menu without Save world and Open to friends; its line names the host and the world from the welcome (game commit 2c70942)
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)

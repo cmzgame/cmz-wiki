@@ -30,7 +30,7 @@ If you reload a world whose character is dead, the dead screen shows again.
 
 ## With friends
 
-Each death belongs to its own player; only that player sees the dead screen. The dead stop hunting a player who has fallen. A guest's New character leaves and rejoins the world with the chosen identity, and the host makes the new survivor. A fallen player does not count toward everyone being asleep (see [[Sleep]]).
+Each death belongs to its own player; only that player sees the dead screen. The dead stop hunting a player who has fallen. A guest's New character leaves and rejoins the world with the chosen identity, and the host makes the new survivor. A fallen player does not count toward everyone being asleep (see [[Sleep]]). With every player in the world dead, the world runs on until someone takes a new character: nothing pauses a world on the wire.
 
 ## See also
 
@@ -52,3 +52,5 @@ Each death belongs to its own player; only that player sees the dead screen. The
 - `src/main.js:293-306,867-875`: a guest's dead screen from the host's record, and its New character as a leave and rejoin
 - `src/entities/zombie.js:259`: the dead stop hunting a fallen player
 - `src/game.js:254-263`: only living players count toward everyone asleep
+- `src/main.js:686-689`: nothing pauses a world on the wire, the dead screen included (game commit 0bd3f9c)
+- `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)

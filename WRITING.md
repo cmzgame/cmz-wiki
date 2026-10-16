@@ -35,6 +35,7 @@ Use `##` for sections. Leave out a section with nothing in it.
 - **Mechanic** (combat, sight, fire, sleep, openings): lead · How it works (subsections as needed) · Numbers (a short list of the values, all references) · With friends · Settings that change it · See also.
 - **Creature:** infobox · lead · Behaviour · Fighting them · With friends · See also.
 - **Place:** `{{infobox-place "name"}}` · lead · What is there (`{{place-contents "name"}}`) · The dead · `{{navbox places}}`.
+- **Prop** (furniture, a fitting, a container, a well, a station with no recipes; generated for every prop the map places or a recipe makes, unless written): `{{infobox-prop id}}` · lead · `{{prop-sections id}}` (Creation, Where found, generated) · With friends · `{{navbox props}}`.
 - **Guide:** prose for a new player, in order of what they will meet.
 - **List:** a lead and generated tables.
 
@@ -58,7 +59,7 @@ summary: One sentence for search results and link previews.
 
 ## Where the facts come from
 
-The census: `census/census.md` (the automatic inventory) and `census/areas/*.md` (the fact sheets, read from the code, with file and line). **The code is the truth.** Where a game doc and the code disagree, the wiki follows the code and the disagreement goes in `census/discrepancies.md`, never into a page as a choice.
+The census: `census/census.md` (the automatic inventory) and the fact sheets read from the code, with file and line, dated under `census/history/<commit>/areas/` (the first census's at `9205ad7`; a sheet's lines are its commit's). **The code is the truth.** Where a game doc and the code disagree, the wiki follows the code and the disagreement goes in `census/discrepancies.md`, never into a page as a choice.
 
 ## Sources
 
@@ -72,7 +73,7 @@ Every written page ends (before its navbox) with a **Sources** section: the code
 - `data/items.json`: each weapon's numbers
 ```
 
-One line per claim or group of claims, in the page's order, as `path` or `path:line` or `path:first-last`, then a colon and what it proves. The commit is the one the facts were read from (`snapshot/version.json`); when a page is rechecked against a newer game, update it.
+One line per claim or group of claims, in the page's order, as `path` or `path:line` or `path:first-last`, then a colon and what it proves. The commit is the one the facts were read from (`snapshot/version.json`); when a page is rechecked against a newer game, update it. `node build.js --check` prints the Sources-drift report: the pages whose cited lines the game changed since their commit, each with the path and the range, so a line range is the form that gets a page rechecked when its lines move.
 
 ## Verifying
 
