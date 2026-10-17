@@ -20,17 +20,17 @@ The Priest stands inside [[The chapel]], in the small room in its north-east cor
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
 - `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1310`, `src/interact.js:1476-1489`, `src/interact.js:1516-1530`: a left click within reach, or Poke on the menu
+- `src/interact.js:1343`, `src/interact.js:1509-1522`, `src/interact.js:1549-1563`: a left click within reach, or Poke on the menu
 - `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
-- `data/maps/valley.json:5834-5843`, `src/game.js:100`, `src/entities/villager.js:32`: the Priest flagged `immune` in the map (game #187)
+- `data/maps/valley.json:12315-12324`, `src/game.js:100`, `src/entities/villager.js:32`: the Priest flagged `immune` in the map (game #187)
 - `src/entities/zombie.js:352-367`, `src/entities/villager.js:101-102`, `src/game.js:367`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
-- `tools/mapgen/valley.py:425`: the graveyard's eight dead, the largest group placed
-- `data/maps/valley.json:5834-5843`: the Priest's line and tile
-- `tools/mapgen/valley.py:436`, `data/maps/valley.json:2194-2207`: they stand in the chapel's north-east room, behind its partition
+- `tools/mapgen/valley.py:592`: the graveyard's eight dead, the largest group placed
+- `data/maps/valley.json:12315-12324`: the Priest's line and tile
+- `tools/mapgen/valley.py:608`, `data/maps/valley.json:2314-2327`: they stand in the chapel's north-east room, behind its partition
 - `tools/mapgen/valley.py:279-280`: the priest's house next door, east of the chapel
 
 {{navbox places}}

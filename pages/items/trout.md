@@ -12,11 +12,11 @@ A **trout** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the 
 
 ## Sources
 
-<!-- sources at 8e7538f -->
-- `data/items.json:40-45`: the trout and its grilled kind: hunger, heal, stack, tags
+<!-- sources at cfe0203 -->
+- `data/items.json:41-46`: the trout and its grilled kind: hunger, heal, stack, tags
 - `data/fishing.json`: the waters that catch it, and how often
 - `src/fishing.js:57-81`: a catch into the bag, or at your feet when it is full
-- `data/recipes.json:497-544`: grilled at a cooking fire, the fire lit
+- `data/recipes.json:705-752`: grilled at a cooking fire, the fire lit
 - `src/entities/player.js:89-101`: eating adds its hunger and its heal
 
 {{navbox items}}

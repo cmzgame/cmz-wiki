@@ -76,33 +76,33 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/main.js:1078-1163`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
 - `src/inventory.js:43`: your grid is the bag on your back
 - `src/inventory.js:27-32`: a bag's grid travels with the bag
 - `src/grid.js:45-56`: the placement scan, unrotated first
 - `src/ui/inventory-panel.js:117-125`: R, a right click, or the wheel turns a dragged item
-- `src/ui/inventory-panel.js:681-695`: Rotate for non-square items, greyed when it will not fit
+- `src/ui/inventory-panel.js:682-696`: Rotate for non-square items, greyed when it will not fit
 - `data/items.json`: each item's `stack`
 - `src/grid.js:58-84`: stacks merge on equal fill and top up first
 - `src/grid.js:158-181`: Tidy, biggest first, nothing moves on failure
 - `src/main.js:892-906`: Tab and C, "No bag on your back.", "Your hands are full."
-- `src/ui/inventory-panel.js:339-358`: panels dragged by the header, remembered
-- `src/ui/inventory-panel.js:75-89`, `src/ui/inventory-actions.js:166-182`, `src/interact.js:1267-1279`: double-click equips from the bag, runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186), or sends across
-- `src/ui/inventory-panel.js:672`: shift-click sends across
-- `src/interact.js:1160-1235`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
-- `src/ui/inventory-panel.js:242-243`: the durability bar (the code's `wear`) and "(N% left)"
-- `src/inventory.js:159-173`, `src/interact.js:241`, `src/ui/inventory-actions.js:129`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
-- `data/items.json:33-35`: the three bags' grids
+- `src/ui/inventory-panel.js:340-359`: panels dragged by the header, remembered
+- `src/ui/inventory-panel.js:75-89`, `src/ui/inventory-actions.js:166-182`, `src/interact.js:1300-1312`: double-click equips from the bag, runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186), or sends across
+- `src/ui/inventory-panel.js:673`: shift-click sends across
+- `src/interact.js:1193-1268`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
+- `src/ui/inventory-panel.js:243-244`: the durability bar (the code's `wear`) and "(N% left)"
+- `src/inventory.js:159-173`, `src/interact.js:243`, `src/ui/inventory-actions.js:129`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
+- `data/items.json:34-36`: the three bags' grids
 - `data/kit.json:3`: the starting sack
 - `data/loot.json:2`: the rucksack in the chest table
-- `src/interact.js:173-197`: equipping a new bag drops the old one; Equip and Swap bags on the floor (game commit 9a450f2)
-- `src/interact.js:331-353`: a bag on the floor opens as a container
+- `src/interact.js:175-199`: equipping a new bag drops the old one; Equip and Swap bags on the floor (game commit 9a450f2)
+- `src/interact.js:333-355`: a bag on the floor opens as a container
 - `src/map.js:461-492`: items lie on tiles
-- `src/interact.js:1219-1235`, `src/interact.js:1241-1301`: a dropped bag or belt keeps its contents
-- `src/interact.js:49`: E's reach
-- `src/interact.js:842-855`: a loose item beats a container
-- `src/interact.js:199-265`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
-- `src/interact.js:164-169`: a free hand first; "No room in your bag.", "You have no bag."
+- `src/interact.js:1252-1268`, `src/interact.js:1274-1334`: a dropped bag or belt keeps its contents
+- `src/interact.js:51`: E's reach
+- `src/interact.js:875-888`: a loose item beats a container
+- `src/interact.js:201-267`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
+- `src/interact.js:166-171`: a free hand first; "No room in your bag.", "You have no bag."
 - `src/ui/inventory-actions.js:203-366`: a guest's panel actions run on the host
 - `src/ui/inventory-actions.js:280-288`: a container not the guest's own must be within reach

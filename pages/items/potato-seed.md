@@ -12,10 +12,10 @@ A **potato seed** is planted in tilled soil to grow potato (see [[Farming]]). It
 
 ## Sources
 
-<!-- sources at 8e7538f -->
-- `data/items.json:58-62`: the five seeds, tagged `seed`, and their stacks
+<!-- sources at cfe0203 -->
+- `data/items.json:60-64`: the five seeds, tagged `seed`, and their stacks
 - `data/crops.json`: the potato crop: its seed, its harvest, its seeds back
-- `src/farming.js:167-190`, `src/farming.js:227-251`: planted on tilled soil; the harvest gives the seeds back
-- `tools/mapgen/valley.py:190`, `data/loot.json`: only potatoes and cabbages grow in the valley, and no loot table gives a seed
+- `src/farming.js:179-202`, `src/farming.js:233-262`: planted on tilled soil; the harvest gives the seeds back
+- `tools/mapgen/valley.py:190`, `data/loot.json:9-10`: the cottage's plot, and the two granaries' seed of every crop (game #219)
 
 {{navbox items}}

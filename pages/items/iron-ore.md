@@ -2,23 +2,21 @@
 title: Iron ore
 categories: [Items, Materials]
 aliases: [Ore]
-summary: Ore smelted into iron bars at the forge. Not found anywhere in the valley yet.
+summary: Mined from the ore rocks of the iron workings with a pickaxe, and smelted into iron bars at the forge.
 ---
 
 {{infobox-item iron_ore}}
 
-**Iron ore** is smelted into [[Iron bar|iron bars]] at the [[Forge]]. Not found anywhere in the valley yet: no container holds it, nothing can be mined, and the dev chest does not have it.
-
-{{planned doc=30 step=4 note="Mining rocks with the pickaxe, which would give iron ore."}}
+**Iron ore** is smelted into [[Iron bar|iron bars]] at the [[Forge]] (the recipe is below). It is mined from the ore rocks of [[The iron workings]] with a [[Pickaxe]] in hand (see [[Mining]]): a rock gives {{n sprites.ore_rock.mine.count.0}} and then stands mined out for {{n sprites.ore_rock.mine.days}} days before it bears ore again, so iron never runs out. The ore cart at the workings and the miners' hut's chest hold some from the start. It stacks to {{n items.iron_ore.stack}}.
 
 {{item-sections iron_ore}}
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/items.json:41`: iron ore
-- `data/recipes.json:247-262`: smelted into bars at the forge
-- `data/loot.json`: no table, the dev chest's included, holds it
-- `data/items.json:35`: the pickaxe's `mine` verb, read by nothing in the code
+<!-- sources at cfe0203 -->
+- `data/items.json:51`: iron ore, its stack
+- `data/sprites/ore_rock.json`, `src/mining.js:42-55`: an ore rock mined for ore, then spent for its days (game #210)
+- `data/loot.json:12`, `data/loot.json:14`: the miners' chest and the ore cart
+- `data/recipes.json:474-489`: a bar at the forge from iron ore
 
 {{navbox items}}

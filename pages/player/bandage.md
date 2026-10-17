@@ -1,23 +1,23 @@
 ---
 title: Bandage
-categories: [Items, Medicine, Player]
-aliases: [Bandages]
-summary: A strip of cloth that stops all bleeding at once.
+categories: [Items, Medicine]
+aliases: [Bandages, Apply]
+summary: A strip of linen that stops all bleeding at once; woven at the loom from linen cloth.
 ---
 
 {{infobox-item bandage}}
 
-A **bandage** is a strip of cloth that stops [[Bleeding]]. It stacks to {{n items.bandage.stack}} in one bag cell. No chest, barrel, or body has one, and no recipe makes one.
+A **bandage** stops [[Bleeding]]. The [[Loom]] makes them from [[Linen cloth]], two to a cloth. It stacks to {{n items.bandage.stack}} in one bag cell.
 
 ## Effects
 
 Choose "Apply" on a bandage in your bag while bleeding. It stops all bleeding at once, however many stacks, and uses one bandage. The game says "The bleeding stops." While you are not bleeding, the entry reads "Apply (not bleeding)" and cannot be chosen.
 
-A bandage is not cloth: no recipe takes one.
+A bandage is not cloth: no recipe that wants cloth takes one.
 
 {{item-sections bandage}}
 
-{{devonly note="The dev chest by the spawn holds a stack of bandages, the only place they come from."}}
+{{devonly note="The dev chest by the spawn holds a stack of bandages."}}
 
 ## With friends
 
@@ -25,14 +25,12 @@ A guest applies a bandage through the same menu entry; the host performs it.
 
 ## Sources
 
-<!-- sources at 2a9a308 -->
-- `data/items.json:15`: the bandage, its stack of 5, its `bandage` flag, and no `cloth` tag
-- `data/loot.json:2-4`: no chest, barrel, or body loot table holds a bandage
-- `data/recipes.json`: no recipe outputs a bandage
-- `src/interact.js:1039-1047`: "Apply" only while bleeding, "Apply (not bleeding)" otherwise; it clears every stack, says "The bleeding stops.", and uses one
-- `src/bleed.js:30-36`: applying a bandage clears the wound
-- `data/recipes.json`: the torch, bow, and bed recipes take any `tag:cloth`, which a bandage does not satisfy
-- `data/loot.json:6`, `src/settings.js:31`, `src/game.js:84-88`: the dev chest's five bandages, on by default at New world, placed by the spawn
-- `src/ui/inventory-actions.js:216,343-351`: a guest's menu choice is sent by label and run by the host
+<!-- sources at cfe0203 -->
+- `data/items.json:15`: the bandage, its stack, its `bandage` flag, and no `cloth` tag
+- `data/recipes.json:140-154`: two bandages from a linen cloth at the loom (game #216)
+- `src/interact.js:1216-1224`: "Apply" only while bleeding, "Apply (not bleeding)" otherwise; it clears every stack, says "The bleeding stops.", and uses one
+- `src/bleed.js:31-36`: applying a bandage clears the wound
+- `data/loot.json:18`: the dev chest's bandages
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is sent by label and run by the host
 
 {{navbox items}}

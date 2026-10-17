@@ -8,7 +8,7 @@ numbersOk: true
 
 <!-- typed: the output box's size and the most a single Make can queue (src/stations.js) are neither data nor named constants -->
 
-**Crafting** is done at **stations**: a [[Workbench]], an [[Anvil]], a [[Forge]], an [[Oven]], and any lit fire that cooks ([[Cooking]]). A loom and a dye vat stand in the village too, but have nothing to make yet ("Nothing to make here yet."). Every recipe is known from the start; the full list is on [[Recipes]].
+**Crafting** is done at **stations**: a [[Workbench]], an [[Anvil]], a [[Forge]], an [[Oven]], a [[Loom]], a [[Charcoal clamp]], and any lit fire that cooks ([[Cooking]]). The [[Loom]] and the [[Charcoal clamp]] are stations too; a dye vat stands in the village but has nothing to make yet ("Nothing to make here yet."). Every recipe is known from the start; the full list is on [[Recipes]].
 
 ## How it works
 
@@ -40,6 +40,7 @@ All the ingredients for the count are taken when you press Make. If anything is 
 
 - A recipe that needs **the fire lit** cannot be started at a station whose fire is out ("The fire is out."). If the fire goes out during the job, the job waits, marked "(the fire is out)", and goes on when the fire is fed. Nothing is lost. See [[Fire]].
 - A recipe that needs **a tool in hand** needs it held when you press Make ("Needs a hammer in hand."). Only the [[Anvil]]'s smithing asks for one, the [[Smith's hammer]].
+- A recipe that needs **a tool on you** wants it anywhere you carry it: in a hand, on the belt, or in the bag ("Needs a belt knife on you."). Tearing a garment into [[Rag|rags]] at the [[Workbench]] asks for a [[Belt knife]] this way.
 
 Pressing Make away from the station refuses with "Not at this station." or "Too far from it."
 
@@ -70,35 +71,35 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at cfe0203 -->
 - `src/stations.js:45-52`: which props are stations, and the cooking fires
-- `data/sprites/loom.json`: the loom is a station
-- `src/ui/station-panel.js:143`: "Nothing to make here yet."
+- `data/sprites/loom.json`, `data/sprites/charcoal_clamp.json`: the loom and the clamp are stations (game #210, #216)
+- `src/ui/station-panel.js:154`: "Nothing to make here yet."
 - `data/maps/valley.json`: the loom and dye vats in the village
 - `data/recipes.json`: every recipe, known from the start
-- `src/interact.js:622-639`: the station's menu entry and `E`
+- `src/interact.js:772-789`: the station's menu entry and `E`
 - `src/stations.js:20`: the reach
 - `src/ui/station-panel.js`: the one panel: recipes greyed with their reason, ingredients, count, Make, queue
-- `src/stations.js:234`: the count clamped from 1 to 10
-- `src/ui/station-panel.js:92`: the output box closes beyond reach
-- `src/ui/station-panel.js:157`: the panel closes beyond reach
-- `src/main.js:976-1001`, `src/ui/station-panel.js:34-43`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
+- `src/stations.js:251`: the count clamped from 1 to 10
+- `src/ui/station-panel.js:102`: the output box closes beyond reach
+- `src/ui/station-panel.js:168`: the panel closes beyond reach
+- `src/main.js:1077-1162`, `src/ui/station-panel.js:44-53`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
 - `src/stations.js:67-104`: where ingredients are counted from, searched containers only
-- `src/stations.js:108-124`: the order they are taken in
+- `src/stations.js:84-129`: the order, plain cloth before a garment for a cloth want (game #216) they are taken in
 - `data/items.json:15`: the bandage is not cloth (game commit 2c70942)
-- `data/items.json:23-28`: the garments are cloth
-- `src/stations.js:146-154`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "Needs a hammer in hand.", "Short of ..."
-- `src/stations.js:193-205`: a job waits while its fire is out
-- `src/ui/station-panel.js:140`: "(the fire is out)" on a paused job
-- `data/recipes.json:263-421`: only the anvil's recipes ask for a tool, the hammer
-- `src/game.js:434`: the queues stepped in the world's step
-- `src/map.js:83`: a game hour in seconds
+- `data/items.json:26-31`: the garments are cloth
+- `src/stations.js:150-160`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "Needs a hammer in hand.", "Needs a belt knife on you." (`carry`, game #216), "Short of ..."
+- `src/stations.js:210-230`: a job waits while its fire is out
+- `src/ui/station-panel.js:151`: "(the fire is out)" on a paused job
+- `data/recipes.json:490-648`: only the anvil's recipes ask for a tool in hand, the hammer; `data/recipes.json:23-124`: the tears ask for a knife on you
+- `src/game.js:529`: the queues stepped in the world's step
+- `src/map.js:94`: a game hour in seconds
 - `src/stations.js:21`: the output box's size
-- `src/stations.js:168-191`: output to the box, or the floor beside when full; furniture placed beside the station
-- `src/stations.js:178-181`: never on a door's tiles (game commit 82106de)
-- `src/ui/station-panel.js:60-73`: a guest's panel opens on its own screen
-- `src/net.js:813`: Make sent to the host
-- `src/host.js:161-167`: the host runs it as the craft verb for that player
-- `src/net.js:1183`: the queues in each frame
+- `src/stations.js:173-209`: output to the box, or the floor beside when full; furniture placed beside the station
+- `src/stations.js:183-209`: never on a door's tiles (game commit 82106de)
+- `src/ui/station-panel.js:70-83`: a guest's panel opens on its own screen
+- `src/net.js:1250-1264`: Make sent to the host
+- `src/host.js:183-189`: the host runs it as the craft verb for that player
+- `src/net.js:866`: the queues in each frame
 
 {{navbox making}}

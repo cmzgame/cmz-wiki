@@ -9,25 +9,26 @@ Crops stand in furrowed farm soil, their rows following the furrows. They are [[
 
 ## The crops
 
-There are five crops, each drawn at three stages from young to ready:
+There are six crops, each drawn at three stages from young to ready:
 
 - Cabbage (see [[Cabbage]])
 - Garlic (see [[Garlic]])
 - Potato (see [[Potato]])
 - Pumpkin (see [[Pumpkin]])
-- Rye
+- Rye (its harvest is [[Grain]])
+- Flax (see [[Flax]])
 
 A crop's picture follows its stage as it grows. Its right-click menu says how long it has to go, offers Water, and offers Harvest once it is ready.
 
 ## Where they are
 
-In [[The valley]], the only crops the map places are in the farm plot of [[Your cottage]]: potatoes and cabbages at the middle and last stages, so some are ready to harvest from the start. They are the only source of seeds today, so only potatoes and cabbages can be grown in play.
+In [[The valley]], crops stand in the farm plot of [[Your cottage]] (potatoes and cabbages), the fields of [[Hollow Farm]] (pumpkins, potatoes, cabbages, and garlic), and those of [[Long Acre]] (rye, flax, and a kitchen garden), at mixed stages with many ready to harvest from the start. The farms' granaries hold seed of every crop, so every crop can be grown in play.
 
 ## What they do
 
 Crops do not block anyone. You, the dead, and villagers walk through them, and each plant sways as someone passes, so a walk through a field sets it rippling. They cannot be picked up or carried, only harvested.
 
-{{planned doc=30 note="Seeds for garlic, pumpkins, and rye, from the farms and the granaries (game issue 201)."}}
+
 
 ## See also
 
@@ -37,10 +38,10 @@ Crops do not block anyone. You, the dead, and villagers walk through them, and e
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/sprites/crop_cabbage_0.json` (and the other 14 `crop_*.json`): five crops at stages 0 to 2, `interactable`, `furrows`, `carry: false`, each naming its crop and stage
-- `src/map.js:2202-2217`: a crop's rows follow its soil's furrows
-- `src/farming.js:87-93`, `src/farming.js:253-274`, `src/interact.js:532-553`: the picture follows the stage; the menu's days, Water, and Harvest (game #206)
-- `src/interact.js:1395-1427`, `src/game.js:607`, `src/game.js:616`, `src/game.js:621`: a click sways them, and players, the dead, and villagers brush through them
-- `tools/mapgen/valley.py:190`, `tools/mapgen/mapgen.py:196-205`: the cottage plot, potatoes and cabbages at stages 1 and 2, placed `solid: false`
-- `data/maps/valley.json:1347-1657`: the 36 crops, the valley's only ones
+- `src/map.js:2203-2218`: a crop's rows follow its soil's furrows
+- `src/farming.js:89-95`, `src/farming.js:296-317`, `src/interact.js:534-555`: the picture follows the stage; the menu's days, Water, and Harvest (game #206)
+- `src/interact.js:1428-1460`, `src/game.js:607`, `src/game.js:616`, `src/game.js:621`: a click sways them, and players, the dead, and villagers brush through them
+- `tools/mapgen/valley.py:190`, `tools/mapgen/mapgen.py:199-214`: the cottage plot, potatoes and cabbages at stages 1 and 2, placed `solid: false`
+- `data/maps/valley.json:1467-1777`: the 36 crops, the valley's only ones

@@ -95,7 +95,7 @@ Light belongs to the world: the host works it out, and each guest works out the 
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/light.js:427-439`: one light level: ambient, the static map, carried lights
 - `src/light.js:29`, `src/light.js:120-122`, `src/clock.js:7`: the outdoor cap and the night sky
 - `src/map.js:1721-1773`: rooms found by flood fill
@@ -106,7 +106,7 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `src/light.js:53-71`, `src/light.js:215-251`: fires', lanterns', and lit mounted torches' pools, stopped by walls and shut openings; a lantern steady, at the lantern post's radius
 - `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/items.json:2`, `data/sprites/torch_post.json`, `data/sprites/lantern_post.json`, `data/sprites/pumpkin.json`: each fire's radius
 - `src/game.js:654-666`, `data/tuning.json:84-85`: the carried torch in hand, two in hand, on the belt; none from the bag or the ground
-- `src/interact.js:1108-1129`, `src/items.js:186-206`: the T key; a torch lit only with a tinderbox, giving light only while lit, out when it leaves a hand, the belt, or a holder
+- `src/interact.js:1141-1162`, `src/items.js:186-206`: the T key; a torch lit only with a tinderbox, giving light only while lit, out when it leaves a hand, the belt, or a holder
 - `src/light.js:308-313`: flicker only in the picture
 - `src/sight.js:18-34`, `data/tuning.json:102`: in the dark the dead seen near you, to your torch's reach (a belt torch's past `darkRadius`, game #173), or in light (game #150)
 - `src/light.js:20`: the light grid's resolution

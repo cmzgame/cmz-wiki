@@ -20,16 +20,16 @@ The Apprentice stands in the wooden storehouse in the yard of [[The merchant's h
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
 - `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1310`, `src/interact.js:1476-1489`, `src/interact.js:1516-1530`: a left click within reach, or Poke on the menu
+- `src/interact.js:1343`, `src/interact.js:1509-1522`, `src/interact.js:1549-1563`: a left click within reach, or Poke on the menu
 - `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
 - `src/game.js:367`, `src/entities/villager.js:101-137`, `src/game.js:622-626`: one bitten to death gets up as one of the dead in their clothes
-- `data/maps/valley.json:5853-5861`: the Apprentice's line and tile
-- `tools/mapgen/valley.py:438`, `data/maps/valley.json:3110-3192`: they stand in the wooden storehouse in the merchant's yard
-- `data/maps/valley.json:5505-5508`: one of the dead in the storehouse with them
+- `data/maps/valley.json:12334-12342`: the Apprentice's line and tile
+- `tools/mapgen/valley.py:610`, `data/maps/valley.json:3230-3312`: they stand in the wooden storehouse in the merchant's yard
+- `data/maps/valley.json:11830-11833`: one of the dead in the storehouse with them
 
 {{navbox places}}

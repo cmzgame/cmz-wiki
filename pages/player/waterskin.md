@@ -32,19 +32,19 @@ A guest drinks and fills through the same actions; the host performs them. A gue
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/items.json:20`: the waterskin, its size, and its capacity
 - `data/kit.json:5`: the starter waterskin, full
 - `data/loot.json:3-4`: waterskins in barrels and on bodies
-- `src/interact.js:1196-1197`: "Drink (N%)" showing the fill
-- `src/interact.js:1141-1155`, `src/interact.js:1267-1279`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
+- `src/interact.js:1229-1230`: "Drink (N%)" showing the fill
+- `src/interact.js:1174-1188`, `src/interact.js:1300-1312`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
 - `src/entities/player.js:104-112`, `data/tuning.json:59`: the sip, with a +1 that takes water at full thirst
 - `src/entities/player.js:113-131`, `data/tuning.json:60`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/game.js:582-585`, `src/main.js:1643-1645`, `src/host.js:239-242`: in the world's step on the host, the word to whoever drank
-- `src/interact.js:54`, `src/interact.js:635-674`: "Fill waterskins" at a well or water, its time, filling to 100
+- `src/interact.js:56`, `src/interact.js:665-704`: "Fill waterskins" at a well or water, its time, filling to 100
 - `src/inventory.js:80-82`: only the bag's waterskins are filled
 - `src/items.js:93`: a found waterskin's random fill
-- `src/farming.js:128-137`, `src/farming.js:204-225`, `data/interactions.json:20-22`: watering a crop takes the fill a watering costs, from the fullest skin with enough (game #206)
+- `src/farming.js:140-149`, `src/farming.js:216-231`, `data/interactions.json:20-22`: watering a crop takes the fill a watering costs, from the fullest skin with enough (game #206)
 - `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
 
 {{navbox items}}

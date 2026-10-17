@@ -42,7 +42,7 @@ A guest's line is said by their character on the host, so it reaches every playe
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/ui/log.js`, `src/ui/log.js:12`: the chat log, every message and line said in sight, the lines kept
 - `src/ui/speech.js:97-98`: the speaker's label: You, the name, Villager, Someone; the dead's groans not logged
 - `src/ui/speech.js:69-90`, `data/tuning.json:102`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)

@@ -95,11 +95,11 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
 - `src/main.js:798`, `src/main.js:1049`: the Build entry at the foot of every menu
-- `data/items.json`: the log's `splitsInto`; `src/interact.js:1199-1212`: splitting with no tool
+- `data/items.json`: the log's `splitsInto`; `src/interact.js:1232-1245`: splitting with no tool
 - `src/main.js:857-866`, `src/main.js:798`, `src/main.js:1079-1080`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
 - `src/placement.js:162-177`: the ghost snapped to the nearest edge
 - `src/placement.js:188-200`: the red reasons in order
@@ -115,7 +115,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/main.js:869-878`: X, refused while carrying or with the bag open, with the same line
 - `src/placement.js:28`, `src/placement.js:370-376`: the removal reach
 - `src/placement.js:319-368`: what lights up: props made at a station (`made`) and built walls
-- `src/stations.js:183-184`: a prop made at a station marked `made`
+- `src/stations.js:188-189`: a prop made at a station marked `made`
 - `src/map.js:651`: built walls marked `built`
 - `src/placement.js:392-410`: a removed container spills its bag and a station its output, nothing refunded
 - `src/map.js:661-676`, `src/placement.js:408`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built

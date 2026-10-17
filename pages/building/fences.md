@@ -80,7 +80,7 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/sprites/wall_fence.json`: the fence's height, thickness, `seeThrough`, and `fence`
 - `src/map.js:1421-1433`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what the dead can break
 - `src/map.js:1721-1773`: the room fill passes a see-through wall
@@ -102,8 +102,8 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:408`: a gate built over a fence, no window over one; removing it puts the fence back
 - `data/build.json`: only the log wall, door, and window can be built
 - `data/maps/valley.json:1156-1170`: the graveyard's fence feature and its gate
-- `data/maps/valley.json:1326-1337`, `data/maps/valley.json:2089-2100`, `data/maps/valley.json:2827-2838`, `data/maps/valley.json:3195-3206`: the fences of your cottage, the inn, the manor, and the merchant's house
-- `data/maps/valley.json:4155-4169`, `data/maps/valley.json:4725-4739`: fence partitions inside the cooper's long house and the second cottage on the lane
+- `data/maps/valley.json:1446-1457`, `data/maps/valley.json:2209-2220`, `data/maps/valley.json:2947-2958`, `data/maps/valley.json:3315-3326`: the fences of your cottage, the inn, the manor, and the merchant's house
+- `data/maps/valley.json:4288-4302`, `data/maps/valley.json:4858-4872`: fence partitions inside the cooper's long house and the second cottage on the lane
 - `src/host.js:218-225`, `src/main.js:1612-1614`, `src/main.js:1715-1718`: the jolt and the splinters drawn on every player's screen
 - `src/map.js:724-729`, `src/game.js:390`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
 

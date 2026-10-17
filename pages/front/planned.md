@@ -13,14 +13,13 @@ Every small "Planned" note across the wiki is listed on [[Special:Planned notes|
 
 ## The big pass (the game's `docs/30`)
 
-The valley's next work is filed as the game's issues #194 to #204, each named below.
+The valley's next work was filed as the game's issues #194 to #204; what is left of the big pass:
 
-- **Farming:** seeds for every crop, the farms, and the mill that turns grain to flour (#201); the bucket (#199); the scythe (#200).
-- **The castle** across the river, then **the forest places** (the woodcutters, the witch, the quarry, the charcoal burners, the iron workings, the hunter, the bandits); charcoal from the burners' clamp (#197).
-- **Tools' verbs:** mining with the pickaxe (#196), digging with the shovel, harvesting with the scythe.
+- **The castle** across the river, then the rest of **the forest places** (the woodcutters, the witch, the hunter, the bandits).
+- **Tools' verbs:** digging with the shovel, and the knife's butchering and skinning.
 - **Animals:** chickens and deer, leather, the tannery.
 
-Fishing, apple trees, farming by hand, and the hatchet's felling, once planned here, are built: see [[Fishing]], [[Trees]], [[Farming]], and [[Stump]].
+Fishing, apple trees, farming, the farms and the mill, the bucket and the scythe, the hatchet's felling, mining, charcoal, and cloth, once planned here, are built: see [[Fishing]], [[Trees]], [[Farming]], [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Bucket]], [[Scythe]], [[Stump]], [[Mining]], [[Charcoal clamp]], and [[Linen cloth]].
 
 ## Other plans
 
@@ -35,17 +34,17 @@ Fishing, apple trees, farming by hand, and the hatchet's felling, once planned h
 
 ## Sources
 
-<!-- sources at 8e7538f -->
-- `docs/30-the-big-pass-spec.md:122-139`, `docs/30-the-big-pass-spec.md:152`: farming built in part (game #206); the bucket, the scythe, the farms and the mill to come (step 4)
-- `docs/30-the-big-pass-spec.md:153-154`: the castle (step 5) and the forest places (step 6)
-- `docs/30-the-big-pass-spec.md:140-143`: the tools' verbs; the hatchet's built (game #207)
-- `docs/30-the-big-pass-spec.md:23`, `docs/30-the-big-pass-spec.md:156`: animals last: chickens, deer, leather, the tannery
-- `docs/30-the-big-pass-spec.md:157`: fishing moved into valley 1.0 and built (game #193); apple trees built (game #192)
+<!-- sources at cfe0203 -->
+- `docs/30-the-big-pass-spec.md:122-141`, `docs/30-the-big-pass-spec.md:154`: farming, the bucket, the scythe, the farms and the mill built (step 4; game #206, #211, #213, #219)
+- `docs/30-the-big-pass-spec.md:155-156`: the castle (step 5) and the forest places (step 6), the iron workings, the quarry, and the burners built (game #210)
+- `docs/30-the-big-pass-spec.md:142-145`: the tools' verbs; the hatchet's, the pickaxe's, and the scythe's built (game #207, #210, #213)
+- `docs/30-the-big-pass-spec.md:23`, `docs/30-the-big-pass-spec.md:158`: animals last: chickens, deer, leather, the tannery
+- `docs/30-the-big-pass-spec.md:159`: fishing moved into valley 1.0 and built (game #193); apple trees built (game #192)
 - `docs/02-decisions.md`: the valley's issues filed again as #194 to #204 (2026-10-18, game #205)
 - `docs/33-the-map.md:1-10`: the map on M
 - `docs/34-talk.md:1-10`, `docs/34-talk.md:63-71`: talk, and the guide
 - `docs/04-npcs.md:3`, `docs/04-npcs.md:11`: villagers who flee, follow, and stay
-- `docs/02-decisions.md:92`, `docs/02-decisions.md:95`: the infection left as a marker
+- `docs/02-decisions.md:94`, `docs/02-decisions.md:97`: the infection left as a marker
 - `docs/32-better-animations.md:44-56`: sleep, sit, and the death
 - `docs/24-throwables-and-fire-magic.md:5-36`: throwing knives and axes, fire magic
 - `docs/05-someday.md:9`: what burning still lacks
