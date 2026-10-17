@@ -55,17 +55,17 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 
 ## Sources
 
-<!-- sources at 64cc711 -->
-- `src/map.js:1718-1770`: the flood fill, stopped by walls, doors, and windows in any state
+<!-- sources at 5baaa63 -->
+- `src/map.js:1701-1753`: the flood fill, stopped by walls, doors, and windows in any state
 - `src/map.js:25`: the largest room
-- `src/map.js:1429-1441`, `src/map.js:1751-1753`: a see-through wall bounds no room
-- `src/map.js:1806-1834`: rooms refound only on either side of a changed edge
+- `src/map.js:1412-1424`, `src/map.js:1734-1736`: a see-through wall bounds no room
+- `src/map.js:1789-1817`: rooms refound only on either side of a changed edge
 - `src/entities/player.js:212-213`: a bed outdoors says "Not out here."; a siege held on the player refuses it
-- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:84`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
-- `src/map.js:851-886`: the dead choose a room to break
-- `src/entities/zombie.js:411-450`, `src/entities/zombie.js:807-874`: the siege, about a house the dead saw a player go into, until dawn
-- `src/map.js:741-751`, `src/map.js:827-834`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered
+- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:87`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
+- `src/map.js:834-869`: the dead choose a room to break
+- `src/entities/zombie.js:421-460`, `src/entities/zombie.js:847-914`: the siege, about a house the dead saw a player go into, until dawn
+- `src/map.js:724-735`, `src/map.js:810-817`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered
 - `src/render/walls.js:355-371`, `src/render/walls.js:163-169`, `src/render/walls.js:306-316`: near walls faded, posts only when every wall is near
 - `src/render/scene.js:38-43`: only trees open the hole round the player
-- `src/map.js:836-850`, `src/main.js:1276`: sealed, computed only for the debug corner
+- `src/map.js:819-833`, `src/main.js:1277`: sealed, computed only for the debug corner
 - `src/render/scene.js:35`: the faded walls' opacity

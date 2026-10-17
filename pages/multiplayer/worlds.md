@@ -62,7 +62,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 82a5763 -->
+<!-- sources at 5baaa63 -->
 - `src/save.js`: a world as a save in the browser that made it
 - `src/ui/screens.js:196-219`, `src/main.js:1240-1242`: nothing runs until a world is chosen; out of a world, the site
 - `index.html:51`, `src/ui/screens.js:777`: Play and Play in your browser open the Worlds page (game #120)
@@ -76,7 +76,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 - `src/ui/screens.js:265-266`: Back goes to Home
 - `src/ui/screens.js:357`, `src/ui/screens.js:871-886`, `src/main.js:1521`: New world, its line, the default name
 - `src/ui/screens.js:871-899`, `src/main.js:289-295`: the Sandbox step, its two parts and Next; the choices offered as last chosen
-- `src/settings.js:70-72`, `src/ui/screens.js:360-366`, `src/kit.js:44-55`: Dev bag and Extra starting items at the Sandbox step, a list that does not fit refused at Next
+- `src/settings.js:70-72`, `src/ui/screens.js:360-366`, `src/kit.js:46-61`: Dev bag and Extra starting items at the Sandbox step, a list that does not fit refused at Next
 - `src/ui/screens.js:924`: Into the valley
 - `src/main.js:311-345`, `src/ui/screens.js:241-249`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
 - `src/clock.js:18`: `START_HOUR`

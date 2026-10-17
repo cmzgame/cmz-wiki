@@ -1,11 +1,11 @@
 ---
 title: Fences
 categories: [Building, Mechanics]
-aliases: [Fence, Gate, Gates, See-through walls, Splinters, Bursting a fence]
-summary: Fences are low walls you can see and light through; they bound no room, their gates are doors, and a crowd of the dead bursts them into splinters.
+aliases: [Fence, Gate, Gates, See-through walls, Splinters, Bursting a fence, Striking a fence]
+summary: Fences are low walls you can see and light through; they bound no room, their gates are doors, and the dead strike them down into splinters.
 ---
 
-**Fences** are low [[Walls|walls]] you cannot walk through but can see through. Light passes them too, and they never make a [[Rooms|room]]: a fenced yard or field stays outdoors. A **gate** is a door in a fence. Unlike any other wall, a fence can be broken: one of [[The dead]] pressing on it does nothing, but a crowd bursts it into splinters.
+**Fences** are low [[Walls|walls]] you cannot walk through but can see through. Light passes them too, and they never make a [[Rooms|room]]: a fenced yard or field stays outdoors. A **gate** is a door in a fence. Unlike any other wall, a fence can be broken: [[The dead]] strike it as they would bite you, one alone slowly and a crowd faster, until it bursts into splinters.
 
 ## How it works
 
@@ -17,30 +17,32 @@ A fence is {{n sprites.wall_fence.wall.height}} pixels tall and {{n sprites.wall
 
 ### Fighting across a fence
 
-A fence stops bodies, not reach. A blow is stopped only by what blocks [[Sight|sight]], and sight passes a fence, so you can hit one of the dead on the other side with a torch or any weapon. The same holds the other way: one of the dead that sees you and comes within {{n tuning.zombie.contact tiles}} can bite you across it (see [[The dead]]). A fence keeps the dead from walking in; it does not keep you out of reach.
+A fence stops bodies, not reach. A blow is stopped only by what blocks [[Sight|sight]], and sight passes a fence, so you can hit one of the dead on the other side with a torch or any weapon. The same holds the other way: one of the dead that sees you and comes within {{n tuning.zombie.contact tiles}} can bite you across it, and one striking the fence reaches a little further (below; see [[The dead]]). A fence keeps the dead from walking in; it does not keep you out of reach.
 
-### A crowd bursts a fence
+### The dead strike a fence down
 
-When one of the dead is hunting a player it cannot walk to, and a fence stands in its way, it goes to the fence and presses on it:
+When one of the dead is hunting a player it cannot walk to, and a fence stands in its way, it goes to the fence and strikes it:
 
-- Pressed against a fence with you in sight beyond it, it presses where it stands.
-- With no path to you, or no door of your house that it can walk to, it looks for the fence across its way, **a gate first**: if a gate would let it through, it goes and presses that gate; otherwise it presses the first stretch of fence on its way.
+- Against a fence with you in sight beyond it and no way round, it strikes the fence where it stands.
+- With no path to you, or no door of your house that it can walk to, it looks for the fence across its way, **a gate first**: if a gate would let it through, it goes and strikes that gate; otherwise it strikes the first stretch of fence on its way.
 
 It does this in a chase and while it holds a [[Breaking in#The siege|siege]] on you.
 
-- **It bites over the fence.** One pressing a fence that sees you within {{n tuning.zombie.contact tiles}} across it bites you, as it would in a chase, and goes back to pressing when you are out of its reach.
-- **It does not give up while it knows you are in a room**: while the last place it saw you is inside a house, or it holds a siege on you, it presses on without seeing you, by day or by night. So a house inside a fenced yard is no safe place.
+A stretch of fence has {{n tuning.world.fenceHp}} hit points, and **a gate {{n tuning.world.fenceGateFactor}} of that**, so a gate goes first. One of the dead comes to within {{n tuning.zombie.fenceReach tiles}} of the middle of the stretch, faces it, and strikes it with the same attack it bites with: each strike takes {{n tuning.zombie.fenceStrike}} of its hit points, and it waits {{n tuning.zombie.cooldown seconds}} after the strike before the next, standing still between. A crowd is only more strikers, each on its own clock, so more of the dead bring a fence down faster, whether they arrive together or spread out.
+
+One of the dead alone takes about two and a half minutes to break a stretch of fence, and about half that for a gate. Two take about half as long as one, and three about a third. Only about three can strike one stretch at a time; the rest wait their turn or strike the stretch beside it, so even a large crowd takes over half a minute. That is time to run, or to arm yourself.
+
+- **It bites over the fence.** One striking a fence that sees you within {{n tuning.zombie.contact tiles}} across it bites you, as it would in a chase, and goes back to striking when you are out of its reach. Across the fence it is striking, from within {{n tuning.zombie.fenceReach tiles}} of it, its bite reaches {{n tuning.zombie.fenceBiteExtra tiles}} further, so standing right against the fence gets you bitten.
+- **It does not give up while it knows you are in a room**: while the last place it saw you is inside a house, or it holds a siege on you, it strikes on without seeing you, by day or by night. So a house inside a fenced yard is no safe place.
 - Only one that last saw you out in the open, in the yard, gives up after {{n tuning.zombie.pressGiveUp seconds}} without seeing you, and searches.
 
-**One of the dead pressing a fence does nothing.** {{n tuning.world.fenceCrowd}} or more pressing the same stretch together wear it down by {{n tuning.world.fenceDps}} a second, and by that again for each one more, so a larger crowd brings it down far faster. A stretch of fence gives way when its wear reaches {{n tuning.world.fenceHp}}; **a gate gives way at {{n tuning.world.fenceGateFactor}} of that**, so a gate goes first. A stretch that fewer press recovers {{n tuning.world.fenceRecover}} a second.
+Each strike gives the fence one small jolt, so you can see it being struck. The damage stays: nothing mends a fence, and one the dead have worn stays worn. When its hit points are gone it **bursts into a cloud of splinters and a puff of dust** and is gone: that edge is open ground, and the rooms round it are worked out again.
 
-While a crowd presses it, the fence shakes, so you have warning. When it gives way it **bursts into a cloud of splinters and a puff of dust** and is gone: that edge is open ground, and the rooms round it are worked out again.
-
-Only fences break this way. A plain wall of wood, stone, or logs is never broken by anything, and doors and windows are broken by the dead's blows instead (see [[Breaking in]]).
+Only fences break this way. A plain wall of wood, stone, or logs is never broken by anything, and doors and windows are broken by the same kind of strike, with their own damage and health (see [[Breaking in]]).
 
 ### Gates
 
-A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A shut gate blocks bodies, but you can still see through it. An open gate is no fence to press.
+A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A shut gate blocks bodies, but you can still see through it. An open gate is no fence to strike.
 
 ### Building
 
@@ -56,15 +58,17 @@ The valley has fences round the graveyard, your cottage's garden, the inn's yard
 
 - Height: {{n sprites.wall_fence.wall.height}} pixels.
 - Thickness: {{n sprites.wall_fence.wall.thickness}} pixels.
-- The dead it takes to wear a fence: {{n tuning.world.fenceCrowd}}.
-- Wear a second: {{n tuning.world.fenceDps}} for that many, and {{n tuning.world.fenceDps}} more for each one beyond.
-- A stretch of fence gives way at {{n tuning.world.fenceHp}}; a gate at {{n tuning.world.fenceGateFactor}} of that.
-- Recovery while fewer press it: {{n tuning.world.fenceRecover}} a second.
-- One pressing gives up on a player last seen in the open after {{n tuning.zombie.pressGiveUp seconds}} unseen.
+- Hit points of a stretch of fence: {{n tuning.world.fenceHp}}; of a gate, {{n tuning.world.fenceGateFactor}} of that.
+- Hit points a strike takes: {{n tuning.zombie.fenceStrike}}.
+- Wait after a strike: {{n tuning.zombie.cooldown seconds}}, after the attack itself.
+- Reach to the fence: {{n tuning.zombie.fenceReach tiles}} from the middle of the stretch.
+- A bite's extra reach across the fence being struck: {{n tuning.zombie.fenceBiteExtra tiles}}.
+- The jolt of a strike lasts {{n census.constants.render_walls.SHAKE_MS}} milliseconds.
+- One striking gives up on a player last seen in the open after {{n tuning.zombie.pressGiveUp seconds}} unseen.
 
 ## With friends
 
-The wear is kept on the host, and it is not saved. Every player sees a pressed fence shake and a burst fence's splinters, and the fence's going reaches every player and the save like any other change to the map.
+The strikes are the host's. A fence's damage is kept on the host and saved with the world, but not sent to guests: every player sees each strike's jolt and a burst fence's splinters, and the fence's going reaches every player and the save like any other change to the map.
 
 ## See also
 
@@ -76,26 +80,30 @@ The wear is kept on the host, and it is not saved. Every player sees a pressed f
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at 5baaa63 -->
 - `data/sprites/wall_fence.json`: the fence's height, thickness, `seeThrough`, and `fence`
-- `src/map.js:1429-1441`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what a crowd can burst
-- `src/map.js:1718-1770`: the room fill passes a see-through wall
+- `src/map.js:1412-1424`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what the dead can break
+- `src/map.js:1701-1753`: the room fill passes a see-through wall
 - `src/entities/player.js:212`: a bed outdoors says "Not out here."
-- `src/map.js:827-834`: a shut gate blocks bodies as a door does
-- `src/map.js:1352-1359`: a shut gate in a see-through fence still passes sight
+- `src/map.js:810-817`: a shut gate blocks bodies as a door does
+- `src/map.js:1335-1342`: a shut gate in a see-through fence still passes sight
 - `src/combat.js:176-183`: a blow reaches the dead in its wedge in line of sight, which a fence passes
-- `src/entities/zombie.js:597-601`: a bite needs the contact distance and a clear line of sight
-- `src/entities/zombie.js:619-624`: pressed against a fence with the player in sight beyond it, a chase presses it
-- `src/entities/zombie.js:648-661`, `src/entities/zombie.js:244-279`, `src/map.js:1459-1470`: with no path, or no door of the house it can reach, the fence across its way is sought, a gate first, and pressed
-- `src/entities/zombie.js:766-806`, `src/entities/zombie.js:212-215`, `data/tuning.json:26`: the press state: at the fence, pressing; a player in reach bitten across it by the chase's bite (game #171); giving up unseen after `pressGiveUp` only for a player last seen outside a room and with no siege held
-- `src/entities/zombie.js:860-872`: the siege presses too
-- `src/map.js:669-739`, `data/tuning.json:88-92`: the wear: one does nothing, a crowd wears it, a gate at a fraction, recovery, the burst; not saved
-- `src/game.js:621`: the wear worked out on the world's step, after the dead have moved
-- `src/render/walls.js:374-400`, `src/fire.js:81-83`: the shake, and the splinters and dust
-- `src/map.js:652-671`: the burst edge emptied and the rooms found again
-- `src/map.js:587-597`, `src/map.js:622-671`, `src/placement.js:408`: a gate built over a fence, no window over one; removing it puts the fence back
+- `src/entities/zombie.js:607-622`, `src/entities/zombie.js:915-928`: a bite needs the contact distance and a clear line of sight
+- `src/entities/zombie.js:629-637`, `src/map.js:681-700`: against a fence with the player in sight beyond it and no way round, a chase strikes it (game #185)
+- `src/entities/zombie.js:661-674`, `src/entities/zombie.js:244-278`, `src/map.js:1442-1453`: with no path, or no door of the house it can reach, the fence across its way is sought, a gate first, and struck
+- `src/entities/zombie.js:780-828`, `src/entities/zombie.js:212-215`, `data/tuning.json:29`: the press state: to within `fenceReach` of the fence, then a strike when the cooldown allows, standing still between; a player in reach bitten across it by the chase's bite; giving up unseen after `pressGiveUp` only for a player last seen outside a room and with no siege held
+- `src/entities/zombie.js:829-846`, `data/tuning.json:12-15`: the strike at the attack's active frame, `fenceStrike` a strike, then the bite's `cooldown` (game #185)
+- `src/entities/zombie.js:290-298`: a bite reaches `fenceBiteExtra` further across the fence its dead one strikes from within `fenceReach` (game #185)
+- `src/entities/zombie.js:900-912`: the siege strikes too
+- `src/map.js:669-722`, `src/map.js:724-735`, `data/tuning.json:91-92`: a fence's and a gate's hit points, a strike, the jolt, the burst; the damage saved and never mended (game #185)
+- `data/poses.json`, `docs/09-openings.md:52`, `tools/checks/fence.js:74-101`: the attack's length, and the seconds measured with real bodies (one alone about 140, two 71, three 48, eight 37; a gate half); the times on this page are from them
+- `src/render/walls.js:373-391`, `src/fire.js:81-83`: the jolt of a strike, and the splinters and dust
+- `src/map.js:652-667`: the burst edge emptied and the rooms found again
+- `src/map.js:587-597`, `src/map.js:622-667`, `src/placement.js:408`: a gate built over a fence, no window over one; removing it puts the fence back
 - `data/build.json`: only the log wall, door, and window can be built
 - `data/maps/valley.json:1110-1124`: the graveyard's fence feature and its gate
 - `data/maps/valley.json:1279-1290`, `data/maps/valley.json:2042-2053`, `data/maps/valley.json:2779-2790`, `data/maps/valley.json:3147-3158`: the fences of your cottage, the inn, the manor, and the merchant's house
 - `data/maps/valley.json:4099-4113`, `data/maps/valley.json:4655-4669`: fence partitions inside the cooper's long house and the second cottage on the lane
-- `src/host.js:218-225`, `src/main.js:1606-1608`, `src/main.js:1709-1712`: the shake and the splinters drawn on every player's screen
+- `src/host.js:218-225`, `src/main.js:1608-1610`, `src/main.js:1711-1714`: the jolt and the splinters drawn on every player's screen
+- `src/map.js:715-720`, `src/game.js:384`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
+

@@ -71,29 +71,29 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 82a5763 -->
-- `data/tuning.json:42-43`: health and stamina
+<!-- sources at 5baaa63 -->
+- `data/tuning.json:45-46`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
-- `data/tuning.json:40-41`, `data/tuning.json:44`: walking speed, body radius, sprint multiplier
+- `data/tuning.json:43-44`, `data/tuning.json:47`: walking speed, body radius, sprint multiplier
 - `src/entities/player.js:326-328`, `src/entities/player.js:342-346`: keyed movement snapped to the eight directions
 - `src/entities/player.js:351`: facing follows the aim, not the walk
-- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1425`, `src/map.js:1450-1453`: shallow water's speed and deep water's bar
+- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1408`, `src/map.js:1433-1436`: shallow water's speed and deep water's bar
 - `data/combat.json` `bow.drawSpeed`, `bow.braceMove`: the draw and brace slowdowns
 - `data/items.json:36`: the raised shield's slowdown
 - `src/player-controller.js:52`: the multiplier picked in one place
-- `src/map.js:825-833`: no body passes a window
+- `src/map.js:808-816`: no body passes a window
 - `src/entities/player.js:333`: no sprint while carrying
 - `src/entities/player.js:249-250`, `src/entities/player.js:325-328`: auto-walk uses the same speeds; a movement key cancels it
 - `src/entities/player.js:121-160`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
 - `src/moodles.js:23-102`: the five moodles
 - `data/kit.json`: the default starting kit, what is worn, in the sack, and in hand, the torch out and a tinderbox in the sack
-- `src/game.js:93`, `src/game.js:105-109`, `src/game.js:417`, `src/kit.js:56-69`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
+- `src/game.js:93`, `src/game.js:105-109`, `src/game.js:417`, `src/kit.js:62-75`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
 - `src/rules.js:21-22`, `src/rules.js:30`, `src/settings.js:70-72`: Extra starting items and Dev bag, world rules chosen once at the Sandbox step
 - `data/items.json:31`: the rope belt's two slots
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
 - `data/loot.json:6`, `src/settings.js:33`, `src/game.js:85-91`: the dev chest, chosen at New world
-- `data/tuning.json:4`, `data/tuning.json:69`: the dead's and villagers' speeds
+- `data/tuning.json:4`, `data/tuning.json:72`: the dead's and villagers' speeds
 - `src/rules.js:44-49`: a guest uses the host's rules
 - `src/game.js:312-322`: time runs fast only while every living player sleeps

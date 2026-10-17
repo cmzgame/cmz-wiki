@@ -95,7 +95,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 82a5763 -->
+<!-- sources at 5baaa63 -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
 - `src/main.js:796`, `src/main.js:1047`: the Build entry at the foot of every menu
@@ -107,18 +107,18 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/map.js:601-609`: what "No room" means for a wall, a door, a window
 - `src/map.js:599-609`: a door refused with a prop on either tile
 - `src/map.js:587-597`, `src/map.js:622-650`: a door or window over a plain wall, of its material and remembering it; a door over a fence; a new one over a broken one of its kind; the bracket of the wall built over forgotten
-- `src/map.js:741-751`: a door and a window always have health, whatever their material
+- `src/map.js:724-735`: a door and a window always have health, whatever their material
 - `src/placement.js:427-437`, `src/placement.js:566-592`: the timed build, spent and rechecked at the end, cancelled by moving
 - `src/placement.js:576`: the build lasts within the reach plus 0.6
 - `src/placement.js:476`: one build at a time
-- `src/map.js:1806-1834`: rooms refound on either side of a changed edge
+- `src/map.js:1789-1817`: rooms refound on either side of a changed edge
 - `src/main.js:867-876`: X, refused while carrying or with the bag open, with the same line
 - `src/placement.js:28`, `src/placement.js:370-376`: the removal reach
 - `src/placement.js:319-368`: what lights up: props made at a station (`made`) and built walls
 - `src/stations.js:183-184`: a prop made at a station marked `made`
 - `src/map.js:642`: built walls marked `built`
 - `src/placement.js:392-410`: a removed container spills its bag and a station its output, nothing refunded
-- `src/map.js:652-671`, `src/placement.js:408`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
+- `src/map.js:652-667`, `src/placement.js:408`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
 - `src/placement.js:498-561`: a guest's build and remove as commands, rechecked on the host
 - `src/rules.js:18`, `src/placement.js:126-129`: Free building makes costs free, the time stays
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest

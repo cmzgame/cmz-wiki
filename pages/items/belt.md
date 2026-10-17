@@ -45,7 +45,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 
 ## Sources
 
-<!-- sources at 82a5763 -->
+<!-- sources at 5baaa63 -->
 - `src/inventory.js:9`: the waist slot
 - `data/items.json:31-32`: the rope belt's and the good belt's slot counts
 - `data/kit.json`: every new character starts with a rope belt on
@@ -57,11 +57,11 @@ The belt keys are part of each player's input, carried out by the host's world f
 - `src/interact.js:1021-1039`: the press and its messages ("No belt, or no such slot.")
 - `src/interact.js:1123-1175`: the slot menu: Equip, Put in bag, Use, Drop
 - `src/inventory.js:177-189`: putting away goes to the belt only when the bag will not take it and it can be held
-- `data/tuning.json:80`: the belt torch's strength
-- `src/game.js:475-482`, `src/game.js:647-659`: the belt torch's light, only while lit and none held
-- `src/sight.js:18-29`, `data/tuning.json:95`, `src/entities/zombie.js:357-376`: its reach past `darkRadius` gives sight of the dead (game #173); the dead see it by its strength
+- `data/tuning.json:83`: the belt torch's strength
+- `src/game.js:475-482`, `src/game.js:646-658`: the belt torch's light, only while lit and none held
+- `src/sight.js:18-29`, `data/tuning.json:95`, `src/entities/zombie.js:367-386`: its reach past `darkRadius` gives sight of the dead (game #173); the dead see it by its strength
 - `src/inventory.js:278-292`, `src/interact.js:352-385`: a lit belt torch a flame for a fire's menu (game #169)
-- `src/game.js:483-509`, `data/tuning.json:85`: a lit belt torch burns at the wall rate, held or not
+- `src/game.js:483-509`, `data/tuning.json:88`: a lit belt torch burns at the wall rate, held or not
 - `src/interact.js:998-1019`: `T` on the belt's torch when none is held
 - `src/items.js:193-206`, `src/map.js:472-484`: a belt dropped puts out a torch on it
 - `src/inventory.js:159-173`: a belt is a container and goes in another only empty

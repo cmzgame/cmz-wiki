@@ -25,7 +25,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 - **Starting population**: **None**, **Low**, **Standard** (the default), or **High**: how many of [[The dead]] the world starts with. Each level is a factor on the map's own number: at Standard the valley holds exactly the dead its map places, at None it holds none, at Low some of the map's dead are left out, and at High each of them stands more than once. An extra one stands on a free open tile close to where the map put it, never on the far side of a wall or a door. Every chunk of the wild grown later brings its usual number of the dead times the same factor, so a None world grows no dead in the wild either. The factor is read once, when the world is made: the dead never grow in number with time.
 
 - **Dev bag** (default Off): every new character starts wearing the [[Developer Bag]] in place of the [[Burlap sack]], with the starting kit in it, so a large list of extra items fits.
-- **Extra starting items** (default empty): items every new character starts with on top of the default kit (see [[Player#The starter kit|the starter kit]]), typed in a box one item a line, as an item id and an optional count: `sword`, or `arrow 20`. They go in the bag, each where it first fits, after the default kit. The list is checked as it is typed, and the first thing wrong with it is said under the box: an item the game does not have ("There is no item called "nonesuch"."), a count that is not a whole number in range, or more than the starting bag holds ("The starting bag is full: ..."). Turning **Dev bag** on gives the list the bigger bag's room. While something is wrong, **Next** does nothing.
+- **Extra starting items** (default empty): items every new character starts with on top of the default kit (see [[Player#The starter kit|the starter kit]]), typed in a box one item a line, as an item id and an optional count: `sword`, or `arrow 20`. They go in the bag, each where it first fits, after the default kit. The list is checked as it is typed, and the first thing wrong with it is said under the box: an item the game does not have ("There is no item called "nonesuch"."), a count that is not a whole number written in digits, or is out of range, or more than the starting bag holds ("The starting bag is full: ..."). Turning **Dev bag** on gives the list the bigger bag's room. While something is wrong, **Next** does nothing.
 
 The kit's two rules hold for every character the world makes, after a death and for every friend who joins as well as the first.
 
@@ -35,7 +35,7 @@ A world without trees has a few more of the dead in the wild than one with them 
 
 ### The Sandbox step
 
-**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are baked into the world and cannot be changed afterwards; the pause menu shows them locked.") with Trees, Starting population (a dropdown), the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
+**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
 
 The choices are offered first as this browser last chose them when it made a world; the very first time, at their defaults. Changing a rule in a world later does not change what the next Sandbox step offers.
 
@@ -66,17 +66,17 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at 82a5763 -->
+<!-- sources at 5baaa63 -->
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
 - `src/settings.js:60-72`: each rule's label and line, Starting population's answers, the Dev chest, Dev bag, and Extra starting items
-- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1986-1994`, `src/map.js:2157`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
+- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1969-1977`, `src/map.js:2139`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
 - `data/tuning.json:94`, `src/game.js:111-140`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
-- `src/map.js:1651-1680`: an extra stands on an open tile by the authored map, never across a wall or a door
-- `src/map.js:1265-1278`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
+- `src/map.js:1634-1663`: an extra stands on an open tile by the authored map, never across a wall or a door
+- `src/map.js:1248-1261`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
 - `src/ui/screens.js:871-899`, `src/ui/screens.js:560-567`: the Sandbox step's two parts, their lines, Next; Extra starting items a text box
-- `data/kit.json`, `src/kit.js:22-55`, `src/ui/screens.js:360-366`, `src/ui/screens.js:417-431`: the extra items parsed and checked as typed, the first thing wrong said under the box, Next refused while it stands; the dev bag's room
-- `src/kit.js:56-69`, `src/game.js:105-109`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
+- `data/kit.json`, `src/kit.js:24-61`, `src/ui/screens.js:360-366`, `src/ui/screens.js:417-431`: the extra items parsed and checked as typed, the first thing wrong said under the box, Next refused while it stands; the dev bag's room
+- `src/kit.js:62-75`, `src/game.js:105-109`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
 - `src/main.js:289-308`, `src/main.js:311-319`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
 - `src/ui/screens.js:1019-1035`, `src/main.js:738-740`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
 - `src/game.js:74-79`, `src/game.js:185`, `src/game.js:251-252`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
