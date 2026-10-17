@@ -15,6 +15,10 @@ A fence blocks bodies like any wall, but [[Sight|sight]] and [[Light|light]] pas
 
 A fence is {{n sprites.wall_fence.wall.height}} pixels tall and {{n sprites.wall_fence.wall.thickness}} thick. It is still placeholder art.
 
+### Fighting across a fence
+
+A fence stops bodies, not reach. A blow is stopped only by what blocks [[Sight|sight]], and sight passes a fence, so you can hit one of the dead on the other side with a torch or any weapon. The same holds the other way: one of the dead that sees you and comes within {{n tuning.zombie.contact tiles}} can bite you across it (see [[The dead]]). A fence keeps the dead from walking in; it does not keep you out of reach.
+
 ### Gates
 
 A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A shut gate blocks bodies, but you can still see through it.
@@ -50,3 +54,5 @@ Fences cannot be built.
 - `data/maps/valley.json:1279-1290`, `data/maps/valley.json:2042-2053`, `data/maps/valley.json:2779-2790`, `data/maps/valley.json:3147-3158`: the fences of your cottage, the inn, the manor, and the merchant's house
 - `data/maps/valley.json:4099-4113`, `data/maps/valley.json:4655-4669`: fence partitions inside the cooper's long house and the second cottage on the lane
 - `data/build.json`: only the log wall, door, and window can be built
+- `src/combat.js:178-182`: a blow reaches the dead in its wedge in line of sight, which a fence passes (game commit e991905)
+- `src/entities/zombie.js:475-477`: a bite needs the contact distance and a clear line of sight (game commit e991905)

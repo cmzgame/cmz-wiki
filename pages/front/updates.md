@@ -7,6 +7,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-17: Fences corrected
+
+- **Missing here, found by Michael in play:** [[Fences]] now says that a fence stops bodies, not reach: you can hit the dead across one, and they can bite you across it. Nothing changed in the game.
+
 ## 2026-10-17: synced to `9d9a5b5`
 
 - **Changed in the game, corrected here:** darkness shortens your sight of the dead (game #150, closing #88). In the dark you see them whole only within {{n tuning.sight.darkRadius tiles}}, fading to hidden over {{n tuning.sight.edge tiles}} past it, unless they stand in light, where they are seen from any distance; a torch you carry gives your sight back to its own reach, and each player sees by their own light and their own torch. The dark hides what you know, never what happens: one hidden by the dark is not drawn, has no swing-target outline or health bar, gives no zombie hand and cannot be clicked, and its groan shows no bubble ("Something groans in the dark." goes to the chat log instead), but swings and shots still hit it. A shuttered room is dark by day, and open shutters fill it with daylight: each open door or window lights {{n tuning.world.daylightTiles}} tiles of its room fully. The planned note on [[Sight]] is replaced by its Darkness section; [[Light]], [[The dead]], [[Chat log]], [[Interface]], [[Combat]], [[Torch]], [[The day]], [[Openings]], [[Rooms]], and [[Getting started]] corrected.
