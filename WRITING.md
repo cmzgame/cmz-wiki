@@ -44,6 +44,7 @@ Use `##` for sections. Leave out a section with nothing in it.
 - **With friends:** only where multiplayer changes the rule (sleep needs everyone in bed; on the wire the world never pauses; a guest's dormancy). Like the OSRS wiki's Ironman notes.
 - **Settings that change it:** name each setting as the Settings screen names it, with its default.
 - `{{devonly note="..."}}` before anything that exists only for testing (the dev chest, Combat testing, the console).
+- **The sound it makes** (Michael, 2026-10-17, the game's `docs/02`, The roadmap, and sound): anything in the game that makes a sound has that sound as a playable file on its page, when its license allows the wiki to host it; the sound's source and license go in the Sources section. The game has no sounds yet; the template (an `<audio>` element from the game's own sound files) is written when the first sounds land.
 - `{{planned doc=30 step=4 note="..."}}` for anything not built. Every build lists them; when the thing is built, replace the note with the real section.
 
 ## Front matter
