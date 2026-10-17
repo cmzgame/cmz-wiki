@@ -57,7 +57,7 @@ A world made before each world kept its own rules plays by the rules saved with 
 
 The rules are the host's. A change the host makes from World rules reaches every guest at once, and a guest's own copy of the world is made with the host's trees and the host's dead. A guest's World rules screen shows the same rows, every one locked and marked "(the host's)", with the line "How this world plays. They are the host's to change." A guest cannot change them.
 
-In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules, which its owner cannot set.
+In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
 
 ## See also
 
@@ -81,4 +81,5 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 - `src/ui/screens.js:1019-1035`, `src/main.js:738-740`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
 - `src/game.js:74-79`, `src/game.js:185`, `src/game.js:251-252`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
 - `src/net.js:868`, `src/net.js:1117`, `src/game.js:392`: sent to guests when they change, in the sync check
-- `src/ui/screens.js:962-968`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's two kept in its meta
+- `src/ui/screens.js:962-968`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
+- `src/game.js:251-252`: a world's rules, the kit's two among them, restored from its save, a server world's too
