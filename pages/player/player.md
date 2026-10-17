@@ -45,8 +45,8 @@ Two more moodles are not needs: [[Bleeding]], from bites, and [[Infection]], a m
 Every new character, including one made after a death and every friend who joins, starts with the same kit:
 
 - Equipped: a [[Tunic]], [[Breeches]], [[Boots]], a [[Rope belt]] ({{n items.belt.beltSlots}} belt slots), and a [[Burlap sack]] on the back.
-- In the sack: a full [[Waterskin]], a [[Loaf of bread]], two [[Apple|apples]], and a [[Plank]].
-- In hand: a lit [[Torch]].
+- In the sack: a full [[Waterskin]], a [[Loaf of bread]], two [[Apple|apples]], a [[Plank]], and a [[Tinderbox]].
+- In hand: a [[Torch]], not lit. `T` lights it with the tinderbox (see [[Torch]]).
 
 The head and glove slots start empty. Better belts and bags, hoods, and gloves turn up in chests (see [[Inventory]]). Clothing carries no armour or warmth.
 
@@ -73,27 +73,27 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 2a9a308 -->
-- `data/tuning.json:38-39`: health and stamina
+<!-- sources at 2a97f49 -->
+- `data/tuning.json:41-42`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
-- `src/combat.js:134-143,311-314`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
-- `data/tuning.json:36-37,40`: walking speed, body radius, sprint multiplier
-- `src/entities/player.js:273-279,337-344`: keyed movement snapped to the eight directions
-- `src/entities/player.js:368`: facing follows the aim, not the walk
-- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1085-1094,1120-1123`: shallow water's speed and deep water's bar
+- `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
+- `data/tuning.json:39-40`, `data/tuning.json:43`: walking speed, body radius, sprint multiplier
+- `src/entities/player.js:326-328`, `src/entities/player.js:342-346`: keyed movement snapped to the eight directions
+- `src/entities/player.js:351`: facing follows the aim, not the walk
+- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1407`, `src/map.js:1432-1435`: shallow water's speed and deep water's bar
 - `data/combat.json` `bow.drawSpeed`, `bow.braceMove`: the draw and brace slowdowns
-- `data/items.json:35`: the raised shield's slowdown
+- `data/items.json:36`: the raised shield's slowdown
 - `src/player-controller.js:52`: the multiplier picked in one place
-- `src/map.js:600-609`: no body passes a window (game commit 82106de)
-- `src/entities/player.js:350`: no sprint while carrying
-- `src/entities/player.js:250,323`: auto-walk uses the same speeds; a movement key cancels it
-- `src/entities/player.js:141-160`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
+- `src/map.js:807-815`: no body passes a window
+- `src/entities/player.js:333`: no sprint while carrying
+- `src/entities/player.js:249-250`, `src/entities/player.js:325-328`: auto-walk uses the same speeds; a movement key cancels it
+- `src/entities/player.js:121-160`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
 - `src/moodles.js:23-102`: the five moodles
-- `src/game.js:87,100-115,359`: the starter kit, given at create and to every added player
-- `data/items.json:30`: the rope belt's two slots
+- `src/game.js:92`, `src/game.js:104-120`, `src/game.js:428`: the starter kit, its torch out and a tinderbox in the sack, given at create and to every added player
+- `data/items.json:31`: the rope belt's two slots
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
-- `data/loot.json:6`, `src/settings.js:31`, `src/game.js:84-88`: the dev chest, chosen at New world
-- `data/tuning.json:4,65`: the dead's and villagers' speeds
+- `data/loot.json:6`, `src/settings.js:31`, `src/game.js:84-90`: the dev chest, chosen at New world
+- `data/tuning.json:4`, `data/tuning.json:68`: the dead's and villagers' speeds
 - `src/rules.js:38-43`: a guest uses the host's rules
-- `src/game.js:322-332`: time runs fast only while every living player sleeps
+- `src/game.js:323-333`: time runs fast only while every living player sleeps

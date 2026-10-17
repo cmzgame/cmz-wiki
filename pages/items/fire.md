@@ -33,6 +33,8 @@ Right-click a fire, or press `E` beside it:
 
 The entry is greyed, with "(need a log)", when you have none. Feeding takes one unit from your bag, your [[Belt]], or your [[Hands]] (not from containers nearby), and lights the fire if it was out. The hours left are shown rounded, or "under an hour".
 
+A [[Fireball]] that comes down within {{n combat.bow.kindleRadius tiles}} of a campfire that is out but has fuel in it, with no wall between, lights it. It never lights a hearth, a fireplace, an oven, or a forge, and a campfire with no fuel stays out.
+
 ### Dipping arrows
 
 [[Use]] arrows you carry on any lit fire in this table and the whole stack becomes [[Fire arrow|fire arrows]]: "You dip the arrows in the fire." An unlit fire says "The fire is out." See [[Fire arrow]].
@@ -46,11 +48,12 @@ A recipe that needs the fire waits while it is out and carries on when it is fed
 ### Fires that do not burn fuel
 
 - A jack-o'-lantern is always lit.
-- A wall bracket or a torch post holds a [[Torch]]: **Take the torch** and **Mount the torch**.
+- A lantern, in a wall bracket or on a lantern post, is always lit and never goes out. The village's own lights are lanterns.
+- An empty wall bracket or a torch post holds a [[Torch]]: **Take the torch** and **Mount the torch**. A mounted torch burns down while it is lit (see [[Torch posts and brackets]]).
 
 ### Torches
 
-A [[Torch]] is a light you carry, in either hand, and it never burns out. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` takes a torch out of your bag or belt into a hand, or puts the held one away.
+A [[Torch]] is a light you carry, in either hand, while it is lit. It is lit with a [[Tinderbox]] and burns down while it is lit, faster in a hand than on the belt. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` lights or douses the torch in your hand, or else on your belt; with none there, it takes one from the bag into a hand.
 
 ## Numbers
 
@@ -73,30 +76,32 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 2a97f49 -->
 - `data/sprites/campfire.json`: the campfire's fuel, hours a unit, most, cooking
 - `data/sprites/hearth.json`: the hearth's, and it lights its room
 - `data/sprites/fireplace.json:30-34`: the fireplace's
 - `data/sprites/oven.json`: the oven's
 - `data/sprites/forge.json`: the forge's: charcoal, no cooking
 - `src/stations.js:45-52`: the oven offers only its own recipe
-- `src/light.js:45-57`: lit fires give light; a room fire lights its room
-- `src/map.js:83`: a game hour in seconds
-- `src/interact.js:350-380`: Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only
-- `src/interact.js:358-363`: hours left rounded, or "under an hour"
-- `src/map.js:86-103`: a fire burns a unit every so many hours and goes out
-- `src/main.js:1466-1468`: "A fire has gone out." within 8 tiles
+- `src/light.js:47-59`: lit fires give light; a room fire lights its room
+- `src/map.js:95`: a game hour in seconds
+- `src/interact.js:352-382`: Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only
+- `src/interact.js:360-365`: hours left rounded, or "under an hour"
+- `src/map.js:97-115`: a fire burns a unit every so many hours and goes out
+- `src/main.js:1619-1621`: "A fire has gone out." within 8 tiles
 - `data/maps/valley.json`: which fires start lit
-- `src/stations.js:193-205`: a job waits while the fire is out
+- `src/stations.js:204-217`: a job waits while the fire is out
 - `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
-- `src/map.js:125-183`: brackets and posts holding a torch
-- `src/interact.js:401-440`: Take the torch and Mount the torch
-- `src/items.js:187-194`: a held torch's light, with no fuel
-- `src/game.js:552-563`: two held torches
-- `src/interact.js:982-989`: `T`
+- `data/sprites/lantern_post.json`, `src/map.js:218-225`, `src/light.js:63-67`: lanterns, never out; the village's lights
+- `src/map.js:137-293`, `src/map.js:149-184`: brackets and posts holding a torch, which burns down while lit
+- `src/interact.js:402-445`: Take the torch and Mount the torch
+- `src/items.js:186-215`, `src/game.js:494-520`: a torch's light only while lit, no fuel; it burns down
+- `src/game.js:658-670`: two held torches
+- `src/interact.js:972-993`: `T`
+- `src/archery.js:289-292`, `src/map.js:186-215`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel, never a hearth, fireplace, oven, or forge
 - `data/items.json:2`: the torch's radius
-- `data/tuning.json:76-77`: the belt torch and two torches
-- `src/map.js:93-95`: a guest's fuel refreshed at each whole unit
-- `data/interactions.json`, `src/interactions.js:34-42`, `src/burn.js:73-93`: arrows used on any fire that burns fuel, refused when it is out (game commit 3b7cb9a)
+- `data/tuning.json:79-80`: the belt torch and two torches
+- `src/map.js:104-106`: a guest's fuel refreshed at each whole unit
+- `data/interactions.json`, `src/interactions.js:34-42`, `src/burn.js:73-94`: arrows used on any fire that burns fuel, refused when it is out
 
 {{navbox making}}

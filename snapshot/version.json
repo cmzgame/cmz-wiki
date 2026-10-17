@@ -1,7 +1,7 @@
 {
-  "commit": "9d9a5b5a777ffd09909a26b87cf424ded1925cbd",
-  "short": "9d9a5b5",
-  "date": "2026-10-17T00:58:22-05:00",
-  "subject": "Merge #150, reviewed, Michael's rulings: darkness shortens sight, the dead fading to hidden past a soft edge unless in light; the dark hides information, never physics; a shuttered room is dark by day and open shutters fill it with daylight (closes #88)",
+  "commit": "2a97f494a2a4a4e3d68621659e1d2754b2bb88d8",
+  "short": "2a97f49",
+  "date": "2026-10-17T02:48:27-05:00",
+  "subject": "Merge #164, reviewed, Michael's rulings: the village's lights become lanterns that never go out; the fireball a flare (light in flight and where it lands), lighting a campfire or a torch its landing reaches with no wall between, its damage 45 for Michael to tune; a dropped or looted belt's torch doused (#156 step 2, closes #162)",
   "ref": "origin/main"
 }

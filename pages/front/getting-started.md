@@ -15,7 +15,7 @@ The game opens on its site. Press **Play** on its menu (or `Enter` on Home) to o
 
 You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], at the southern end of the village: two rooms, a fireplace, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
 
-You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]] and a [[Plank]], and a [[Torch]] in your hand. Press **Tab** for your bag and **C** for the character screen. The game does not stop while they are open, and you can fight with them up; only the pause menu (**Escape** with nothing open) stops it.
+You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]], a [[Plank]], and a [[Tinderbox]], and a [[Torch]] in your hand. The torch is not lit: press **T** to light it with the tinderbox, and again to douse it. A lit torch burns down, faster in your hand than on your belt, so douse it when you do not need it. Press **Tab** for your bag and **C** for the character screen. The game does not stop while they are open, and you can fight with them up; only the pause menu (**Escape** with nothing open) stops it.
 
 ## The first things to do
 
@@ -23,11 +23,11 @@ You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back ho
 2. **Learn the doors and shutters.** Tap **E** at a door or a window to open or shut it. Nobody passes through a window, you or the dead: a door is the only way in or out, and the dead who see you through a window come round to the door. Shut shutters block sight both ways. See [[Openings]].
 3. **Keep fed and watered.** [[Hunger]] and [[Thirst]] fall over the day and show as [[Moodles]] down the right of the screen. Drink at the well or any water, and fill your waterskin there.
 4. **Mind your fires.** A fire burns its fuel down over game hours and goes out. Feed it [[Log|logs]] from its menu. See [[Fire]].
-5. **Sleep in a bed, indoors,** when you are tired. The night passes quickly while you sleep, and nothing wakes you, so shut the door first. See [[Sleep]].
+5. **Sleep in a bed, indoors,** when you are tired. The night passes quickly while you sleep, and nothing wakes you, so shut the door first. If the dead saw you go in at night, they wait about the house until dawn, and you cannot sleep while they are near. See [[Sleep]].
 
 ## The dead
 
-The dead walk slowly, see you by the light you stand in, and remember only where they last saw you. At night you see them only close by or where they stand in light, and a torch in your hand lets you see them farther; but they notice a flame from far away, so a torch is a lantern for them too. A shuttered room is dark by day as well; open its shutters to let the daylight in. Left-click swings what is in your main hand; see [[Combat]] and [[The dead]].
+The dead walk slowly, see you by the light you stand in, and remember only where they last saw you; at night, the ones that see you go into a house remember the door and wait about it until dawn (see [[Breaking in#The siege|Breaking in]]). At night you see them only close by or where they stand in light, and a torch in your hand lets you see them farther; but they notice a flame from far away, so a lit torch is a beacon for them too. A shuttered room is dark by day as well; open its shutters to let the daylight in. Left-click swings what is in your main hand; see [[Combat]] and [[The dead]].
 
 {{planned doc=30 step=4 note="Farming: tilling, planting, watering, and harvesting the plot by your cottage."}}
 
@@ -39,24 +39,26 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `index.html:51`, `src/ui/screens.js:737-750`: the site's Play opens the Worlds page, New world on it (game commit 02dfcc2)
-- `src/main.js:295-321`, `src/ui/screens.js:331-336`, `src/ui/screens.js:372-391`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser (game commit 02dfcc2)
-- `src/game.js:171-176`: each world's save holds its own characters
+<!-- sources at 2a97f49 -->
+- `index.html:51`, `src/ui/screens.js:797-810`: the site's Play opens the Worlds page, New world on it
+- `src/main.js:308-344`, `src/ui/screens.js:350-363`, `src/ui/screens.js:415-434`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
+- `src/game.js:198-203`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
 - `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
-- `src/game.js:100-115`: the starter kit
-- `src/main.js:741-749`: Tab for the bag, C for the character screen
-- `src/main.js:918-1001`: an open panel stops nothing in the world (game commit 57df52e)
-- `src/main.js:610-646`, `src/interact.js:946-970`: right-click for the menu; E for the nearest simple action
-- `src/interact.js:323-339`: searching a chest
-- `src/interact.js:443-472`, `src/map.js:1019-1032`: tap E to open or shut; shut shutters block sight
-- `src/map.js:600-609`, `src/entities/zombie.js:211-233`: no one passes a window; the dead go for a door (game commit 82106de)
-- `src/entities/player.js:127-128`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
-- `src/interact.js:537-576`: drinking and filling at the well or any water
-- `src/map.js:87-117`, `src/interact.js:350-379`: fires burn down and are fed from their menu
-- `src/entities/player.js:193-210`, `src/entities/player.js:165-191`, `src/game.js:254-264`: sleep in a bed indoors; time runs fast; nothing wakes you
-- `data/tuning.json:4`, `data/tuning.json:36`: the dead walk at a third of your speed
-- `src/entities/zombie.js:232-237`, `src/entities/zombie.js:337-353`, `src/entities/zombie.js:295-311`: they see by the light on you, remember where they last saw you, and notice a flame at night
-- `src/sight.js:16-27`, `src/light.js:149-162`: you see them at night near you, to your torch's reach, or in light; a shut room dark by day, an open one lit (game commit 9d9a5b5)
+- `src/game.js:104-120`: the starter kit, its torch out and a tinderbox in the sack
+- `src/interact.js:972-993`, `src/game.js:494-520`, `data/tuning.json:83-84`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/main.js:893-901`: Tab for the bag, C for the character screen
+- `src/main.js:1051-1134`: an open panel stops nothing in the world
+- `src/main.js:759-798`, `src/interact.js:938-956`: right-click for the menu; E for the nearest simple action
+- `src/interact.js:325-341`: searching a chest
+- `src/interact.js:447-476`, `src/map.js:1332-1345`: tap E to open or shut; shut shutters block sight
+- `src/map.js:807-816`, `src/entities/zombie.js:215-240`: no one passes a window; the dead go for a door
+- `src/entities/player.js:130-132`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
+- `src/interact.js:530-569`: drinking and filling at the well or any water
+- `src/map.js:98-129`, `src/interact.js:352-381`: fires burn down and are fed from their menu
+- `src/entities/player.js:204-222`, `src/entities/player.js:176-202`, `src/game.js:323-333`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
+- `data/tuning.json:4`, `data/tuning.json:39`: the dead walk at a third of your speed
+- `src/entities/zombie.js:297-302`, `src/entities/zombie.js:505-545`, `src/entities/zombie.js:360-376`: they see by the light on you, remember where they last saw you, and notice a flame at night
+- `src/entities/zombie.js:410-463`, `src/entities/zombie.js:792-859`: at night the dead that see you go in remember the door and wait about the house until dawn
+- `src/sight.js:16-27`, `src/light.js:155-168`: you see them at night near you, to your torch's reach, or in light; a shut room dark by day, an open one lit
 - `src/buttons.js:24-44`, `src/player-controller.js:17-55`: left-click uses the main hand

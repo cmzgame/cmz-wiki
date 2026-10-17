@@ -28,7 +28,8 @@ The sky's brightness is the outdoor part of [[Light]]. Indoors, a room's light c
 - How far [[The dead]] can see you: they see farther in brighter light.
 - How far you can see the dead: by day everything in your line of sight, at night only close by, to your torch's reach, or where they stand in light (see [[Sight#Darkness|Sight]]). A room with its shutters and doors shut is dark by day too.
 - How far the dead notice a flame: a lit [[Torch]] or a fire draws them only at night, and from farthest at full night.
-- [[Fire|Fires]] burn their fuel by game hours, so a fire's hours left are counted on this clock.
+- [[Fire|Fires]] burn their fuel by game hours, so a fire's hours left are counted on this clock. A lit [[Torch]] burns down on this clock too.
+- The siege: from dusk, the dead that see you go into a house wait about it until {{n tuning.zombie.siegeEndHour}} o'clock, and you cannot sleep while they are near; by day there is no siege (see [[Breaking in#The siege|Breaking in]]).
 
 ### Sleeping through the night
 
@@ -60,14 +61,16 @@ The clock belongs to the host. A guest's clock is set from every frame the host 
 
 ## Sources
 
-<!-- sources at 9d9a5b5 -->
-- `src/clock.js:5-19`, `src/map.js:93`: the day's length, the game hour, the start hour, the phases' hours and brightness
-- `src/clock.js:86-94`, `src/ui/hud.js:118-122`: the clock's "Day N, HH:MM"
-- `src/clock.js:60-66`, `src/clock.js:83-85`: the phases and the night factor
-- `src/light.js:114-116`, `src/light.js:149-167`: the sky is the outdoor ambient; rooms take theirs from fires and openings
-- `src/sight.js:16-27`, `src/light.js:124-162`: the dead seen in the dark by light and nearness; a shut room dark by day (game #150)
-- `src/entities/zombie.js:254-259`, `src/entities/zombie.js:317-333`: the dead's sight by light, and flames seen only at night
-- `src/map.js:96-112`: fires burn by game hours
-- `data/tuning.json:57`, `src/game.js:322-332`: the world's speed while every living player sleeps
+<!-- sources at 2a97f49 -->
+- `src/clock.js:5-19`, `src/map.js:95`: the day's length, the game hour, the start hour, the phases' hours and brightness
+- `src/clock.js:94-102`, `src/ui/hud.js:118-122`: the clock's "Day N, HH:MM"
+- `src/clock.js:68-74`, `src/clock.js:91-93`: the phases and the night factor
+- `src/light.js:120-122`, `src/light.js:155-173`: the sky is the outdoor ambient; rooms take theirs from fires and openings
+- `src/sight.js:16-27`, `src/light.js:130-168`: the dead seen in the dark by light and nearness; a shut room dark by day (game #150)
+- `src/entities/zombie.js:297-302`, `src/entities/zombie.js:360-376`: the dead's sight by light, and flames seen only at night
+- `src/map.js:98-114`: fires burn by game hours
+- `src/game.js:494-520`: a lit torch burns down in the world's time
+- `src/entities/zombie.js:423-445`, `src/entities/zombie.js:547-555`, `data/tuning.json:27`: a siege starts only at dusk or night and ends at `siegeEndHour`
+- `data/tuning.json:60`, `src/game.js:323-333`: the world's speed while every living player sleeps
 - `src/main.js:1062-1063`, `src/clock.js:41-44`: the hour keys, within the day
-- `src/net.js:1115`: a guest's clock set from every frame
+- `src/net.js:1120`: a guest's clock set from every frame

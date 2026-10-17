@@ -15,7 +15,7 @@ A closed door blocks bodies and [[Sight|sight]]. Tap E near it, or choose the en
 
 An open door with no boards lets bodies through across the whole width of the edge. Walking into the wall right beside an open doorway slides you towards the doorway, so you do not catch on the frame.
 
-A door is the only way through a wall. [[The dead]] never open doors. They walk through open ones and break closed ones (see [[Breaking in]]).
+A door is the only way through a wall. [[The dead]] never open doors. They walk through open ones and break closed ones (see [[Breaking in]]). Every door and every window can be broken, whatever its wall is made of: a door in a stone wall has the same health as one in a wooden wall, and so does one you build.
 
 ### A door's tiles stay clear
 
@@ -41,11 +41,11 @@ The daylight in a [[Rooms|room]] comes in through its openings. By day each open
 
 ### Broken openings
 
-A door or shutters the dead break are gone for good. A broken door stays open as a doorway. Broken shutters are a hole, drawn as open shutters with no leaves; still nothing passes through it. Nothing repairs them, and you cannot build a new door or window into the gap, because the edge already holds a wall. A broken opening can still be boarded. Its menu shows "A broken doorway" or "Broken shutters".
+A door or shutters the dead break are gone for good. A broken door stays open as a doorway. Broken shutters are a hole, drawn as open shutters with no leaves; still nothing passes through it. Its menu shows "A broken doorway" or "Broken shutters". Nothing repairs them, but a broken opening can still be boarded, and a new one can be built over it: a new door over a broken door, a new window over broken shutters, whole, shut, and at full health. It is a new opening, not a repair, and it costs what a new one costs (see [[Building]]).
 
 ### Building openings
 
-A door or window can be built with the palette on N. See [[Building]].
+A door or window can be built with the palette on N, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. A door or window you built into a wall is removed with the removal tool, and the wall is back, never a hole. See [[Building]].
 
 ## Numbers
 
@@ -67,26 +67,27 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 9d9a5b5 -->
-- `src/map.js:529-539`: a wall record with its kind and state
-- `src/map.js:613-622`: only a door, open or broken and unboarded, passes a body; a window never does
-- `src/map.js:1133-1147`: what a door and shutters pass of light and sight
-- `src/interact.js:444-474`: E and the menu open and close doors and shutters from either side
+<!-- sources at 2a97f49 -->
+- `src/map.js:723-733`: a wall record with its kind and state
+- `src/map.js:807-816`: only a door, open or broken and unboarded, passes a body; a window never does
+- `src/map.js:1327-1341`: what a door and shutters pass of light and sight
+- `src/interact.js:446-476`: E and the menu open and close doors and shutters from either side
 - `src/interact.js:43`: E's reach
-- `src/map.js:1190-1199`: an open doorway passes across its whole width
-- `src/map.js:1327-1345`, `src/map.js:1351-1354`, `src/map.js:1403-1418`: the slide towards an open doorway
-- `src/entities/zombie.js:531-595`, `src/map.js:573-604`: the dead break closed doors and never open them
-- `src/map.js:478-500`: a door is not built where either tile holds a prop; the two tiles beside a door
+- `src/map.js:1384-1393`: an open doorway passes across its whole width
+- `src/map.js:1534-1552`, `src/map.js:1558-1561`, `src/map.js:1610-1625`: the slide towards an open doorway
+- `src/entities/zombie.js:669-733`, `src/map.js:767-798`: the dead break closed doors and never open them
+- `src/map.js:569-602`: a door is not built where either tile holds a prop; the two tiles beside a door
 - `src/placement.js:95-115`: nothing put down on a door's tiles
 - `src/stations.js:178-185`: made furniture lands off a door's tiles
-- `src/map.js:1808-1816`: a fence's gates are doors
+- `src/map.js:2016-2024`: a fence's gates are doors
 - `tools/check.js:135-205`, `tools/mapgen/valley.py:106-112`: every map's door tiles clear and reachable on foot
-- `src/interact.js:821-834`, `src/interact.js:924-931`: E acts on its release however long it was held; no hold of E
-- `src/map.js:607-613`, `src/map.js:638-681`: the dead batter a shut or boarded window from outside, never pass it
-- `src/light.js:30`, `src/light.js:124-162`, `data/tuning.json:80`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
-- `src/map.js:588-593`: what a broken door and broken shutters become
-- `src/placement.js:188-190`: nothing built into the gap
-- `src/interact.js:460-461`: the menu's broken entries
+- `src/interact.js:823-836`, `src/interact.js:926-933`: E acts on its release however long it was held; no hold of E
+- `src/map.js:801-807`, `src/map.js:832-875`: the dead batter a shut or boarded window from outside, never pass it
+- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:83`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
+- `src/map.js:782-787`: what a broken door and broken shutters become
+- `src/map.js:569-579`, `src/map.js:604-632`, `src/placement.js:188-194`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
+- `src/map.js:634-649`, `src/placement.js:408`: the removal tool puts the wall back
+- `src/interact.js:462-463`: the menu's broken entries
 - `data/build.json`: the door and window in the palette
-- `src/map.js:460-461`: door and shutter health
-- `src/interact.js:936-956`, `src/interact.js:471`: a guest's E performed by the host, the change reaching guests and the save
+- `src/map.js:551-552`, `src/map.js:723-733`: door and shutter health, whatever the material
+- `src/interact.js:938-958`, `src/interact.js:473`: a guest's E performed by the host, the change reaching guests and the save

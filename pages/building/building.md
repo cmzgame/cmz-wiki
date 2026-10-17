@@ -2,10 +2,10 @@
 title: Building
 categories: [Building, Mechanics]
 aliases: [Build, Build palette, Build mode, Removal, Removal tool, Remove]
-summary: Building log walls, doors, and windows from the palette on N, and removing what players built or made with X.
+summary: Building log walls, doors, and windows from the palette on N, doors and windows over walls and broken openings, and removing what players built or made with X.
 ---
 
-**Building** is how you put up walls, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Everything you build is a [[Walls|wall]] on a tile's edge, made of logs.
+**Building** is how you put up walls, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Everything you build is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there.
 
 ## How it works
 
@@ -17,7 +17,7 @@ N opens a short list on the left of the screen. It has three pieces and a Remove
 - **Door**, costing {{n build.door.cost.plank}} [[Plank|planks]], built in {{n build.door.seconds seconds}}.
 - **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}.
 
-A piece you cannot afford is greyed. Every right-click menu also ends in a "Build" entry, which opens the same list. A door or a window is built in the log material. A log splits into {{n items.log.splitsInto.count}} planks from its item menu, with no tool.
+A piece you cannot afford is greyed. Every right-click menu also ends in a "Build" entry, which opens the same list. On an empty edge a door or a window is built of logs; built into a wall, it is made of that wall's material (see below). A log splits into {{n items.log.splitsInto.count}} planks from its item menu, with no tool.
 
 N does nothing while you are [[Carrying furniture|carrying furniture]] ("Your hands are full.") or while the bag is open ("Close your bag to build."); the menu's Build entry is greyed then too. The palette and the bag take turns on the screen: opening the bag closes the palette. This is a matter of room on the screen, not of safety: with the bag open the game goes on (see [[Controls]]).
 
@@ -26,7 +26,7 @@ N does nothing while you are [[Carrying furniture|carrying furniture]] ("Your ha
 Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest edge of the tile under it. The ghost is green where the piece can go and red where it cannot, with the reason:
 
 - **Too far**: the edge's midpoint is more than {{n census.constants.placement.BUILD_REACH tiles}} from you.
-- **Already a wall**: the edge already holds a wall, door, or window. This includes a doorway the dead have broken open.
+- **Already a wall**: the edge already holds something this piece cannot be built over (see below).
 - **No room**: a single solid piece of furniture spans both tiles of the edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
 - **Need**: you lack the materials, and it names them.
@@ -37,18 +37,30 @@ Build mode stays on after a piece is finished, so a run of wall can be laid clic
 
 When a wall goes up or comes down, the [[Rooms|rooms]] on either side of it are worked out again, so closing the last gap in a ring of walls makes a room.
 
+### Building over a wall or a broken opening
+
+A log wall needs an empty edge. A door or a window may also be built over what stands on the edge:
+
+- **Over a plain wall**, authored or built: the door or window takes the wall's place, shut, and is made of the wall's material, so a door built into a stone wall is a stone door. The wall it replaced is remembered.
+- **Over a fence**, a door only: it is a gate in the fence. A window cannot be built into a fence (see [[Fences]]).
+- **Over a broken door**, a new door; **over broken shutters**, a new window: whole, shut, and at full health. It is a new one, at a new one's cost, never a repair.
+
+Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch bracket on a wall built over is lost with it. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
+
 ### Removal
 
 X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
 
 Only what players made can be removed:
 
-- any wall, door, or window a player built
+- any wall, door, or window a player built, including a door or window built into a wall of the village
 - any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
 The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map, trees, the well, fires, or torch posts.
 
 Nothing is refunded. A removed container spills what it held onto its tile, and a removed station spills its output box too. A removed wall takes its [[Boards|boards]] and any torch bracket with it.
+
+Removing a door or a window that was built into a wall puts the wall back, never a hole. If that wall was one a player built, it is still theirs to remove; a wall of the village comes back as the village's. A new door built over a broken one still remembers the wall the first was built into.
 
 The removal tool cannot be used while carrying furniture ("Your hands are full.") or with the bag open ("Close your bag to build.").
 
@@ -83,28 +95,30 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 2a97f49 -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
-- `src/main.js:643`, `src/main.js:891`: the Build entry at the foot of every menu
-- `data/items.json`: the log's `splitsInto`; `src/interact.js:1053-1066`: splitting with no tool
-- `src/main.js:719-728`, `src/main.js:662`, `src/main.js:940-941`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette (game commit 57df52e)
-- `src/placement.js:160-175`: the ghost snapped to the nearest edge
-- `src/placement.js:186-197`: the red reasons in order
-- `src/placement.js:25`, `src/placement.js:27`: the build reach and the edge clearance
-- `src/map.js:453-461`: what "No room" means for a wall, a door, a window
-- `src/map.js:465-476`: a door refused with a prop on either tile (game commit 82106de)
-- `src/placement.js:417-427`, `src/placement.js:556-582`: the timed build, spent and rechecked at the end, cancelled by moving
-- `src/placement.js:566`: the build lasts within the reach plus 0.6
-- `src/placement.js:466`: one build at a time
-- `src/map.js:1395-1457`: rooms refound on either side of a changed edge
-- `src/main.js:731-740`: X, refused while carrying or with the bag open, with the same line (game commit 57df52e)
-- `src/placement.js:26`, `src/placement.js:365-371`: the removal reach
-- `src/placement.js:316-365`: what lights up: props made at a station (`made`) and built walls (game commit 2c70942)
-- `src/stations.js:183-184`: a prop made at a station marked `made` (game commit 2c70942)
-- `src/map.js:469`: built walls marked `built`
-- `src/placement.js:389-404`: a removed container spills its bag and a station its output, nothing refunded (game commit 2c70942)
-- `src/map.js:479-488`: a removed wall takes its boards and bracket
-- `src/placement.js:509-551`: a guest's build and remove as commands, rechecked on the host
-- `src/rules.js:14`, `src/placement.js:124-127`: Free building makes costs free, the time stays
-- `src/rules.js:16-37`: Free building is a world rule, the host's on a guest
+- `src/main.js:795`, `src/main.js:1043`: the Build entry at the foot of every menu
+- `data/items.json`: the log's `splitsInto`; `src/interact.js:1055-1068`: splitting with no tool
+- `src/main.js:852-861`, `src/main.js:795`, `src/main.js:1073-1074`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
+- `src/placement.js:162-177`: the ghost snapped to the nearest edge
+- `src/placement.js:188-200`: the red reasons in order
+- `src/placement.js:27`, `src/placement.js:29`: the build reach and the edge clearance
+- `src/map.js:583-591`: what "No room" means for a wall, a door, a window
+- `src/map.js:581-591`: a door refused with a prop on either tile
+- `src/map.js:569-579`, `src/map.js:604-632`: a door or window over a plain wall, of its material and remembering it; a door over a fence; a new one over a broken one of its kind; the bracket of the wall built over forgotten
+- `src/map.js:723-733`: a door and a window always have health, whatever their material
+- `src/placement.js:427-437`, `src/placement.js:566-592`: the timed build, spent and rechecked at the end, cancelled by moving
+- `src/placement.js:576`: the build lasts within the reach plus 0.6
+- `src/placement.js:476`: one build at a time
+- `src/map.js:1788-1816`: rooms refound on either side of a changed edge
+- `src/main.js:864-873`: X, refused while carrying or with the bag open, with the same line
+- `src/placement.js:28`, `src/placement.js:370-376`: the removal reach
+- `src/placement.js:319-368`: what lights up: props made at a station (`made`) and built walls
+- `src/stations.js:183-184`: a prop made at a station marked `made`
+- `src/map.js:624`: built walls marked `built`
+- `src/placement.js:392-410`: a removed container spills its bag and a station its output, nothing refunded
+- `src/map.js:634-653`, `src/placement.js:408`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
+- `src/placement.js:498-561`: a guest's build and remove as commands, rechecked on the host
+- `src/rules.js:18`, `src/placement.js:126-129`: Free building makes costs free, the time stays
+- `src/rules.js:13-21`, `src/rules.js:38-40`: Free building is a world rule, the host's on a guest

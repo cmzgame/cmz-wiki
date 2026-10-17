@@ -1,17 +1,17 @@
 {
  "version": {
-  "commit": "9d9a5b5a777ffd09909a26b87cf424ded1925cbd",
-  "short": "9d9a5b5",
-  "date": "2026-10-17T00:58:22-05:00",
-  "subject": "Merge #150, reviewed, Michael's rulings: darkness shortens sight, the dead fading to hidden past a soft edge unless in light; the dark hides information, never physics; a shuttered room is dark by day and open shutters fill it with daylight (closes #88)",
+  "commit": "2a97f494a2a4a4e3d68621659e1d2754b2bb88d8",
+  "short": "2a97f49",
+  "date": "2026-10-17T02:48:27-05:00",
+  "subject": "Merge #164, reviewed, Michael's rulings: the village's lights become lanterns that never go out; the fireball a flare (light in flight and where it lands), lighting a campfire or a torch its landing reaches with no wall between, its damage 45 for Michael to tune; a dropped or looted belt's torch doused (#156 step 2, closes #162)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 51,
+  "items": 52,
   "recipes": 27,
   "interactions": 3,
   "lootTables": 6,
-  "sprites": 137,
+  "sprites": 138,
   "places": 20,
   "villagers": 7,
   "authoredDead": 40,
@@ -25,8 +25,8 @@
   "keys": 19,
   "verbs": 3,
   "menuLabels": 55,
-  "events": 26,
-  "checks": 24,
+  "events": 30,
+  "checks": 30,
   "modules": 83
  },
  "items": [
@@ -59,7 +59,8 @@
     "flicker": {
      "amp": 0.14,
      "speed": 9
-    }
+    },
+    "burnsDown": true
    },
    "art": {
     "icon": false,
@@ -575,6 +576,28 @@
     "chest"
    ],
    "interactions": []
+  },
+  {
+   "id": "tinderbox",
+   "name": "Tinderbox",
+   "kind": "tool",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "tool"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "never wears out: T lights a torch with it (docs/07, Michael 2026-10-17, #156)"
   },
   {
    "id": "waterskin",
@@ -2715,6 +2738,18 @@
    }
   },
   {
+   "id": "lantern_post",
+   "kind": "fire",
+   "drawn": false,
+   "fire": {
+    "radius": 3.4
+   },
+   "carry": false,
+   "collide": {
+    "radius": 0.12
+   }
+  },
+  {
    "id": "lectern",
    "kind": "furniture",
    "label": "Lectern",
@@ -3383,7 +3418,7 @@
    "id": "wall_fence",
    "kind": "wall",
    "drawn": false,
-   "note": "a post-and-rail fence as a wall material (docs/30 step 0; docs/29/09 request 1.1): sight and light pass, bodies do not, it bounds no room; a gate is its door; a dev wall until drawn"
+   "note": "a post-and-rail fence as a wall material (docs/30 step 0; docs/29/09 request 1.1): sight and light pass, bodies do not, it bounds no room; a gate is its door; a crowd of the dead bursts it into splinters (#147); a dev wall until drawn"
   },
   {
    "id": "wall_log",
@@ -4092,6 +4127,9 @@
    "knockTime": 0.15,
    "breachReach": 1.1,
    "noWayTime": 8,
+   "siegeEndHour": 6,
+   "siegeSwitch": 25,
+   "siegeSleepRadius": 14,
    "searchRadius": 3,
    "wanderIdleMin": 1.5,
    "wanderIdleMax": 4,
@@ -4145,7 +4183,14 @@
    "twoTorches": 1.35,
    "playerCapBrowser": 4,
    "playerCapServer": 8,
-   "daylightTiles": 30
+   "torchHeldLife": 1440,
+   "torchWallLife": 2880,
+   "daylightTiles": 30,
+   "fenceHp": 90,
+   "fenceGateFactor": 0.5,
+   "fenceCrowd": 2,
+   "fenceDps": 1,
+   "fenceRecover": 0.5
   },
   "population": {
    "none": 0,
@@ -4256,7 +4301,11 @@
    "shadowRx": 7,
    "shadowRy": 3.5,
    "shadowAlpha": 0.55,
-   "note": "the bow's draw and every arrow's and thrown thing's flight (archery.js tunables; a bow's own drawTime, braceDrawTime, damage, and a thrown block override them): range and speed in tiles, heights in px; drawSpeed and braceMove the walk while drawing and braced; recoverTime the pause after a shot"
+   "fireballGlow": 6,
+   "flareRadius": 7,
+   "flareSeconds": 3,
+   "kindleRadius": 1,
+   "note": "the fireball as a flare (#156, Michael 2026-10-17): fireballGlow its light in flight, flareRadius and flareSeconds the light where it lands (light only), kindleRadius how near it lights a campfire or mounted torch; the bow's draw and every arrow's and thrown thing's flight (archery.js tunables; a bow's own drawTime, braceDrawTime, damage, and a thrown block override them): range and speed in tiles, heights in px; drawSpeed and braceMove the walk while drawing and braced; recoverTime the pause after a shot"
   },
   "shove": {
    "range": 1,
@@ -4557,7 +4606,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:928"
+    "interact.js:930"
    ]
   },
   {
@@ -4582,13 +4631,13 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:276"
+    "placement.js:277"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:929"
+    "interact.js:931"
    ]
   },
   {
@@ -4663,7 +4712,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:197"
+    "entities/player.js:204"
    ]
   }
  ],
@@ -4689,7 +4738,7 @@
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:599"
+    "placement.js:600"
    ]
   },
   {
@@ -4719,31 +4768,31 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1086"
+    "interact.js:1103"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1032"
+    "interact.js:1049"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1008"
+    "interact.js:1025"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1009"
+    "interact.js:1026"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1112"
+    "interact.js:1129"
    ]
   },
   {
@@ -4803,7 +4852,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1114"
+    "interact.js:1131"
    ]
   },
   {
@@ -4875,7 +4924,7 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:413"
+    "interact.js:414"
    ]
   },
   {
@@ -4887,21 +4936,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1097",
-    "interact.js:1128"
+    "interact.js:1114",
+    "interact.js:1145"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1004",
-    "interact.js:1084"
+    "interact.js:1021",
+    "interact.js:1101"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:577"
+    "interact.js:579"
    ]
   },
   {
@@ -4925,55 +4974,55 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:459"
+    "interact.js:461"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:571"
+    "placement.js:572"
    ]
   },
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:510"
+    "interact.js:512"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:609"
+    "placement.js:610"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:605"
+    "placement.js:606"
    ]
   },
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1036"
+    "interact.js:1053"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:534"
+    "interact.js:536"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:863"
+    "interact.js:865"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1012"
+    "interact.js:1029"
    ]
   },
   {
@@ -4985,19 +5034,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1353"
+    "interact.js:1370"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:496"
+    "interact.js:498"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1041"
+    "interact.js:1058"
    ]
   }
  ],
@@ -5005,13 +5054,13 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:283"
+    "archery.js:295"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:680"
+    "archery.js:709"
    ]
   },
   {
@@ -5023,7 +5072,7 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:368"
+    "game.js:370"
    ]
   },
   {
@@ -5035,7 +5084,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:405"
+    "placement.js:406"
    ]
   },
   {
@@ -5043,7 +5092,7 @@
    "at": [
     "interact.js:210",
     "interact.js:343",
-    "interact.js:1338",
+    "interact.js:1355",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5063,25 +5112,44 @@
   {
    "key": "drank",
    "at": [
-    "game.js:557"
+    "game.js:588"
+   ]
+  },
+  {
+   "key": "fenceBurst",
+   "at": [
+    "map.js:716"
+   ]
+  },
+  {
+   "key": "fenceShake",
+   "at": [
+    "map.js:706"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:125"
+    "map.js:127"
+   ]
+  },
+  {
+   "key": "fireLit",
+   "at": [
+    "map.js:201",
+    "map.js:212"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:110"
+    "map.js:112"
    ]
   },
   {
    "key": "gameOver",
    "at": [
-    "game.js:620"
+    "game.js:652"
    ]
   },
   {
@@ -5099,7 +5167,7 @@
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:367"
+    "combat.js:370"
    ]
   },
   {
@@ -5111,31 +5179,38 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:626"
+    "entities/zombie.js:864"
    ]
   },
   {
    "key": "shove",
    "at": [
-    "combat.js:402"
+    "combat.js:405"
    ]
   },
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:185"
+    "entities/player.js:192"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:176"
+    "entities/player.js:183"
    ]
   },
   {
    "key": "timeScale",
    "at": [
     "world.js:28"
+   ]
+  },
+  {
+   "key": "torchSpent",
+   "at": [
+    "map.js:166",
+    "map.js:180"
    ]
   },
   {
@@ -5147,20 +5222,21 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:627"
+    "entities/zombie.js:865"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:688",
-    "combat.js:384"
+    "archery.js:717",
+    "combat.js:387",
+    "game.js:506"
    ]
   },
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:145"
+    "entities/zombie.js:149"
    ]
   }
  ],
@@ -5272,14 +5348,18 @@
   }
  ],
  "checks": [
+  "build",
   "burn",
   "cap",
   "craft",
   "determinism",
   "eviction",
+  "fence",
+  "flare",
   "frame",
   "ground",
   "growth",
+  "lantern",
   "layers",
   "light",
   "players",
@@ -5287,10 +5367,12 @@
   "rooms",
   "save",
   "sheets",
+  "siege",
   "sight",
   "sleep",
   "sway",
   "sync",
+  "torch",
   "water",
   "wear",
   "windows",
@@ -5300,23 +5382,23 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 1986
+   "lines": 2194
   },
   {
    "path": "main.js",
-   "lines": 1831
+   "lines": 1841
   },
   {
    "path": "placeholders.js",
-   "lines": 1417
+   "lines": 1465
   },
   {
    "path": "interact.js",
-   "lines": 1398
+   "lines": 1415
   },
   {
    "path": "net.js",
-   "lines": 1374
+   "lines": 1379
   },
   {
    "path": "ui/screens.js",
@@ -5327,8 +5409,12 @@
    "lines": 983
   },
   {
+   "path": "entities/zombie.js",
+   "lines": 878
+  },
+  {
    "path": "archery.js",
-   "lines": 733
+   "lines": 762
   },
   {
    "path": "ui/inventory-panel.js",
@@ -5336,19 +5422,15 @@
   },
   {
    "path": "game.js",
-   "lines": 642
-  },
-  {
-   "path": "entities/zombie.js",
-   "lines": 640
+   "lines": 674
   },
   {
    "path": "assets.js",
-   "lines": 636
+   "lines": 637
   },
   {
    "path": "placement.js",
-   "lines": 611
+   "lines": 612
   },
   {
    "path": "gl.js",
@@ -5359,20 +5441,20 @@
    "lines": 601
   },
   {
-   "path": "combat.js",
-   "lines": 458
+   "path": "render/walls.js",
+   "lines": 476
   },
   {
-   "path": "render/walls.js",
-   "lines": 449
+   "path": "combat.js",
+   "lines": 461
   },
   {
    "path": "light.js",
-   "lines": 434
+   "lines": 440
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 396
+   "lines": 397
   },
   {
    "path": "figure/rig.js",
@@ -5380,7 +5462,7 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 365
+   "lines": 373
   },
   {
    "path": "figure/raster.js",
@@ -5388,15 +5470,15 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 290
+   "lines": 293
+  },
+  {
+   "path": "host.js",
+   "lines": 274
   },
   {
    "path": "inventory.js",
    "lines": 261
-  },
-  {
-   "path": "host.js",
-   "lines": 257
   },
   {
    "path": "stations.js",
@@ -5415,8 +5497,12 @@
    "lines": 223
   },
   {
+   "path": "items.js",
+   "lines": 216
+  },
+  {
    "path": "entities/character.js",
-   "lines": 208
+   "lines": 209
   },
   {
    "path": "render/props.js",
@@ -5427,20 +5513,16 @@
    "lines": 203
   },
   {
-   "path": "items.js",
-   "lines": 195
+   "path": "fire.js",
+   "lines": 197
   },
   {
    "path": "grid.js",
-   "lines": 187
+   "lines": 190
   },
   {
    "path": "render/area.js",
    "lines": 175
-  },
-  {
-   "path": "fire.js",
-   "lines": 173
   },
   {
    "path": "ui/station-panel.js",
@@ -5472,7 +5554,11 @@
   },
   {
    "path": "dev.js",
-   "lines": 147
+   "lines": 151
+  },
+  {
+   "path": "tuning.js",
+   "lines": 130
   },
   {
    "path": "moodles.js",
@@ -5491,10 +5577,6 @@
    "lines": 124
   },
   {
-   "path": "tuning.js",
-   "lines": 120
-  },
-  {
    "path": "entities/movement.js",
    "lines": 116
   },
@@ -5507,16 +5589,20 @@
    "lines": 110
   },
   {
+   "path": "visibility.js",
+   "lines": 110
+  },
+  {
+   "path": "clock.js",
+   "lines": 107
+  },
+  {
    "path": "use.js",
    "lines": 106
   },
   {
    "path": "pathfind.js",
    "lines": 102
-  },
-  {
-   "path": "clock.js",
-   "lines": 99
   },
   {
    "path": "iso.js",
@@ -5533,10 +5619,6 @@
   {
    "path": "ui/context-menu.js",
    "lines": 82
-  },
-  {
-   "path": "visibility.js",
-   "lines": 77
   },
   {
    "path": "ui/prompt.js",
@@ -5624,7 +5706,7 @@
   },
   {
    "path": "render.js",
-   "lines": 14
+   "lines": 15
   },
   {
    "path": "build.js",
@@ -5657,7 +5739,11 @@
    "tunables_aimLift": 22,
    "tunables_shadowRx": 7,
    "tunables_shadowRy": 3.5,
-   "tunables_shadowAlpha": 0.55
+   "tunables_shadowAlpha": 0.55,
+   "tunables_fireballGlow": 6,
+   "tunables_flareRadius": 7,
+   "tunables_flareSeconds": 3,
+   "tunables_kindleRadius": 1
   },
   "assets": {
    "TILE_HH": 16,
@@ -5848,7 +5934,8 @@
    "HOLE_OUTER": 78
   },
   "render_walls": {
-   "CAP_MARGIN": 1
+   "CAP_MARGIN": 1,
+   "SHAKE_MS": 400
   },
   "save": {
    "VERSION": 2

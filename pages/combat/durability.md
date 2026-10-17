@@ -21,7 +21,7 @@ So a weapon breaks on the landed hit numbered its kills times its hits per kill.
 - A miss costs nothing.
 - A swing that hits several of the dead (with Multi-hit on) costs durability once for each.
 - The [[Halberd]]'s thrust and an off-hand swing cost durability at the weapon's own rate per hit.
-- The [[Torch]] loses durability like any weapon and breaks the same way.
+- The [[Torch]] loses durability like any weapon and breaks the same way. It also burns down while it is lit, on the same meter, faster in a hand than on the belt or in a holder, so a lit torch runs out without a blow struck (see [[Torch#Burning down|Torch]]).
 - [[Fists]] and the [[Shove]] cost no durability.
 - A thrown [[Throwing spear]] keeps its durability.
 
@@ -44,12 +44,13 @@ Durability is kept on the item itself and travels with the hands, so it is the s
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 2a97f49 -->
 - `src/items.js:27-37`: hits per kill and the durability each hit costs (the code's `wearPerHit`) from `data/tuning.json` (`zombie.hp`)
-- `src/combat.js:354`, `src/combat.js:362-372`: durability spent on each landed hit and target; the weapon gone with a word when none is left
+- `src/combat.js:371`, `src/combat.js:377-389`: durability spent on each landed hit and target; the weapon gone with a word when none is left
 - `data/items.json`: each weapon's `kills`; the bow's `shots`
-- `src/combat.js:376-394`, `src/combat.js:73-77`: the shove and fists cost no durability
-- `src/archery.js:557`: a thrown spear keeps its durability
-- `src/archery.js:564-573`, `src/items.js:39-41`: the bow loses durability per arrow loosed and leaves the hand at the last
+- `src/game.js:494-520`, `data/tuning.json:83-84`: a lit torch burns down on the same `wear`, spent with the same word
+- `src/combat.js:393-411`, `src/combat.js:76-80`: the shove and fists cost no durability
+- `src/archery.js:702-704`: a thrown spear keeps its durability (the entry itself thrown)
+- `src/archery.js:710-719`, `src/items.js:39-41`: the bow loses durability per arrow loosed and leaves the hand at the last
 
 {{navbox weapons}}
