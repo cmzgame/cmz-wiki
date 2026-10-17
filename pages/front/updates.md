@@ -7,6 +7,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-17: synced to `cf81e0d`
+
+- **New on the wiki:** [[Production chains]], a page generated from the game's data each build: every chain from raw material to product, each material a chip joined by arrows, marked works (can be had in normal play), blocked (in the game, but cannot be reached), or planned (in a design doc, not built yet, with the doc and section). It works out what can be had from the starter kit, the loot the valley's containers and the dead roll, the dead's clothes, and felling trees, then every recipe whose inputs, tool, station, and fire can be had; and lists the dead ends, the stations, the skills and the villagers the plan names for them, food, and item art. Linked from the [[Main page]], [[Recipes]], [[Crafting]], the sidebar, and the item and station navboxes.
+- **Changed in the game's docs, nothing visible in play:** Michael's rulings for the valley first (game #178): food is to heal a little and only potions much, a villager who teaches a skill is to be immune to the dead by a flag on each villager, a friendly wizard is to teach magic and potions, the dead are to strike what they break, and recipes are to be learned and earned rather than all known from the start. None is built yet, so no page changes; [[Production chains]] shows the skills, the wizard, and the planned villagers as planned.
+- On the wiki: the census also reads the starter kit (from `src/game.js` until the game makes it data) and what felling a tree drops, for the new page.
+
 ## 2026-10-17: synced to `64cc711`
 
 - **Changed in the game, corrected here:** lighting a fire that is out from its own menu needs a flame (game #169). A campfire, a hearth, a fireplace, an [[Oven]], or a [[Forge]] that is out is lit from its menu only with a [[Tinderbox]] anywhere you carry it, or a lit [[Torch]] in a hand or on the belt, as well as its fuel; without one the entry reads "(need a tinderbox or a flame)", `E` passes it by, and a click says "You need a tinderbox or a lit torch to light it." Feeding a fire that is burning needs no flame. [[Fire]] and [[Tinderbox]] say how; [[Oven]], [[Forge]], [[Torch]], [[Belt]], [[Controls]], [[Your cottage]], and [[Getting started]] corrected.

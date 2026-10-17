@@ -1,7 +1,7 @@
 {
-  "commit": "64cc71172d8f26c0212a47c06ae8192a2aa762d1",
-  "short": "64cc711",
-  "date": "2026-10-17T03:39:46-05:00",
-  "subject": "Merge #173, reviewed: darkness's loose ends (the groan line only for one the dark hides, sight's literals to data, a belt torch at 0.6 seeing a little past the dark radius per Michael's ruling, check(\"sight\") and check(\"ground\") repaired after the unlit starting torch) (closes #158)",
+  "commit": "cf81e0d7060d74d8d8a46ae43abdd737e0c4b61b",
+  "short": "cf81e0d",
+  "date": "2026-10-17T12:57:39-05:00",
+  "subject": "Merge #178, reviewed, Michael's word: the valley first; food heals a little and potions big; teachers immune by a flag, some villagers at risk; the wizard; the dead strike what they break; recipes learned and earned",
   "ref": "origin/main"
 }

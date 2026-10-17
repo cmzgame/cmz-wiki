@@ -142,6 +142,49 @@ for (const f of srcFiles) {
 }
 const modules = srcFiles.map((f) => ({ path: f.path, lines: f.text.split("\n").length })).sort((a, b) => b.lines - a.lines);
 
+// A top-level function's text, from `function name` to the brace that closes it at the start of a line (either line
+// ending), and the line range it spans, for a citation.
+function functionAt(file, name) {
+  const f = srcFiles.find((s) => s.path === file);
+  const start = f ? f.text.indexOf(`function ${name}`) : -1;
+  if (start < 0) return null;
+  const end = /\r?\n\}\r?\n/.exec(f.text.slice(start));
+  const body = f.text.slice(start, end ? start + end.index + end[0].length : f.text.length);
+  const first = f.text.slice(0, start).split("\n").length;
+  return { body, at: `src/${file}:${first}-${first + body.trimEnd().split("\n").length - 1}` };
+}
+
+// The starter kit, for the Production chains page: what every new character starts with. It lives in data/kit.json
+// once the game makes it data (game #136); until then it is read by pattern from giveStarterKit in src/game.js
+// (worn ids in a list, `addItem(bag, "id", n)`, `entry("id")` into a hand). Null when neither is found.
+function readStarterKit() {
+  const kitFile = join(D, "kit.json");
+  if (existsSync(kitFile)) {
+    const k = json(kitFile);
+    const rows = Array.isArray(k) ? k : k.items || k.rows || k.kit || [];
+    const out = rows.map((r) => (typeof r === "string" ? { id: r, count: 1 } : { id: r.id || r.item, count: r.count || 1 })).filter((r) => itemIds.has(r.id));
+    if (out.length) return { from: "data/kit.json", items: out };
+  }
+  const fn = functionAt("game.js", "giveStarterKit");
+  if (!fn) return null;
+  const body = fn.body;
+  const counts = new Map();
+  const add = (id, n) => { if (itemIds.has(id)) counts.set(id, (counts.get(id) || 0) + n); };
+  for (const m of body.matchAll(/\[((?:\s*"[a-z_]+"\s*,?)+)\]/g)) for (const s of m[1].matchAll(/"([a-z_]+)"/g)) add(s[1], 1);
+  for (const m of body.matchAll(/addItem\(\s*\w+,\s*"([a-z_]+)",\s*(\d+)/g)) add(m[1], +m[2]);
+  for (const m of body.matchAll(/entry\("([a-z_]+)"\)/g)) add(m[1], 1);
+  return { from: fn.at, items: [...counts].map(([id, count]) => ({ id, count })) };
+}
+const starterKit = readStarterKit();
+
+// What felling a tree gives, from the tree's action in src/interact.js (a tree's sprite says how many: its `wood`).
+function readChop() {
+  const fn = functionAt("interact.js", "treeActions");
+  const m = fn && /dropItem\([^{]*\{\s*id:\s*"([a-z_]+)"/.exec(fn.body);
+  return m ? { gives: m[1], field: "wood", at: fn.at } : null;
+}
+const chop = readChop();
+
 // ---------- items, cross-referenced ----------
 const itemRows = items.map((i) => ({
   id: i.id, name: i.name, kind: i.kind, size: i.size, hands: i.hands, stack: i.stack, tags: i.tags || [],
@@ -176,6 +219,7 @@ const census = {
   tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
   wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
   settings, rules, fixedRules, keys, verbs, menuLabels, events, moodles, checks, modules, problems, constants,
+  starterKit, chop,
 };
 writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
 
@@ -240,6 +284,10 @@ h("Menu entry labels (by pattern)");
 L.push(...menuLabels.map((k) => `- ${k.key}  (${k.at[0]}${k.at.length > 1 ? ` +${k.at.length - 1}` : ""})`));
 h("Events on the bus (by pattern)");
 L.push(menuLabels.length ? events.map((e) => `\`${e.key}\``).join(", ") : "");
+h("The starter kit (by pattern, or data/kit.json)");
+L.push(starterKit ? `${starterKit.items.map((k) => `${k.count} ${k.id}`).join(", ")} (from ${starterKit.from})` : "- not found");
+h("Felling a tree (by pattern)");
+L.push(chop ? `a tree with \`${chop.field}\` drops that many \`${chop.gives}\` (${chop.at})` : "- not found");
 h("Checks (tools/checks)");
 L.push(checks.map((c) => `\`${c}\``).join(", "));
 h("Modules by size");

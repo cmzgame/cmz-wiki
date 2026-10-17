@@ -95,6 +95,9 @@ for (const s of data.valley.sets || []) {
 for (const v of data.valley.villagers || []) {
   generate(v.name, `{{infobox-villager "${v.name}"}}\n\nThe **${v.name}** is one of the valley's villagers. Poked, they say: “${v.line || "Hey!"}”\n\n{{stub}}\n\n{{navbox places}}\n`, ["Villagers"], `${v.name}, a villager.`);
 }
+// Production chains (lib/chains.js): every chain from raw material to product, computed from the data at build time.
+generate("Production chains", "Every production chain in the game, from raw material to product, worked out from the game's data each time the wiki is built: what can be had in normal play, what is built but cannot be reached, and what the design docs plan. See [[Crafting]] for how a station is used and [[Recipes]] for the plain list.\n\n{{production-chains}}\n\n{{navbox making}}\n", ["Crafting", "Lists"], "Every production chain from raw material to product: what works in normal play, what is blocked, and what is planned.");
+
 // Props: the furniture and fittings the map places or a recipe makes (sweep 3f, game #87), one page each, unless a
 // written page has the title or answers to it as an alias (Chest is Containers', Bed is Sleep's, Fireplace is Fire's).
 {
@@ -217,7 +220,7 @@ special("Planned notes", "special-planned-notes", `<p>Every note on the wiki abo
 const v = data.version;
 const NAV = [
   ["The game", ["Main page", "Getting started", "Controls", "The valley", "Updates", "Planned"]],
-  ["Playing", ["Player", "The dead", "Combat", "Weapons", "Items", "Crafting", "Fire", "Building", "Openings", "Villagers", "Multiplayer"]],
+  ["Playing", ["Player", "The dead", "Combat", "Weapons", "Items", "Crafting", "Production chains", "Fire", "Building", "Openings", "Villagers", "Multiplayer"]],
 ];
 function navHtml() {
   return NAV.map(([h, ts]) => `<h3>${h}</h3><ul>${ts.map((t) => { const p = byTitle.get(t.toLowerCase()); return p ? `<li><a href="${p.slug}.html">${escapeHtml(t)}</a></li>` : `<li><a class="new" href="special-red-links.html">${escapeHtml(t)}</a></li>`; }).join("")}</ul>`).join("") +
