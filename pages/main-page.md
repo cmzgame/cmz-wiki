@@ -7,6 +7,8 @@ summary: The wiki of Cozy Medieval Zombies, a cute isometric medieval village ov
 
 The game is in development, and this wiki describes it as it is today, true to its code. Every table here is generated from the game's own data, so the numbers are the game's numbers.
 
+**New on valley day:** [[Valley day]] lists everything added or changed since the valley became the game's focus (farming, the hatchet and stumps, apple trees, fishing, food that heals, the dead striking fences, and more), with the pages to read before you play.
+
 ## Start here
 
 The game plays in a web browser, alone or with friends: press **Play** on its site, make a world, and see [[Getting started]] for what comes next.
@@ -20,7 +22,7 @@ The game plays in a web browser, alone or with friends: press **Play** on its si
 - **You:** [[Player]], [[Health]], [[Stamina]], [[Moodles]], [[Sleep]], [[Death]].
 - **The dead:** [[The dead]], how they see, hunt, and break in.
 - **Fighting:** [[Combat]], [[Weapons]], [[Archery]], [[Durability]].
-- **Things:** [[Items]], [[Inventory]], [[Crafting]], [[Recipes]], [[Production chains]], [[Fire]], [[Food]], [[Fishing]].
+- **Things:** [[Items]], [[Inventory]], [[Crafting]], [[Recipes]], [[Production chains]], [[Fire]], [[Food]], [[Fishing]], [[Farming]].
 - **Home:** [[Building]], [[Openings]], [[Placement]].
 - **The world:** [[Light]], [[Sight]], [[Water]], [[Gatherables]], [[Villagers]].
 - **With friends:** [[Multiplayer]], [[Worlds]].

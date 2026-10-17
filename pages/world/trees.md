@@ -1,11 +1,11 @@
 ---
 title: Trees
 categories: [Gatherables, The world]
-aliases: [Tree, Oak, Spire, Chopping, Woodcutting, Apple tree, Apple trees, Fruit trees, Picking, Pick apples]
-summary: The forest's trees, oaks and spires in three sizes, and the apple trees picked for apples; any tree can be chopped down for logs with no tool.
+aliases: [Tree, Oak, Spire, Chopping, Woodcutting, Felling, Chop down, Apple tree, Apple trees, Fruit trees, Picking, Pick apples]
+summary: The forest's trees, oaks and spires in three sizes, and the apple trees picked for apples; a hatchet fells any tree for logs and leaves a stump.
 ---
 
-Trees stand all over [[The valley]] outside the village and its reserves, and fill [[The wild]] beyond it. They are [[Gatherables]]: a click sways them, and any tree can be chopped down for [[Log|logs]] with no tool at all.
+Trees stand all over [[The valley]] outside the village and its reserves, and fill [[The wild]] beyond it. They are [[Gatherables]]: a click sways them, and any tree can be chopped down for [[Log|logs]] with a [[Hatchet]] in hand, leaving a [[Stump]].
 
 ## Kinds
 
@@ -21,7 +21,7 @@ The forest has two shapes, the round oak and the tall spire, each in six colours
 
 An **apple tree** is a short, round tree with red apples in its canopy. [[The orchard]] is planted with them in staggered rows, and three cottage gardens have one each: those of the cottage by the merchant's, the cottage by the baker's, and the first cottage on the lane. Like any tree it sways when clicked, blocks a circle of {{n sprites.tree_apple.collide.radius}} tiles, and gives {{n sprites.tree_apple.wood}} logs when chopped.
 
-Right-click a laden tree and pick **Pick apples**, standing within {{n tuning.world.pickReach tiles}} of its trunk. It takes {{n sprites.tree_apple.pick.seconds}} seconds and gives between {{n sprites.tree_apple.pick.count.0}} and {{n sprites.tree_apple.pick.count.1}} [[Apple|apples]], and says how many ("You pick ... apples."). They go into your bag, and any that do not fit fall at your feet, and the line says how many fell.
+Right-click a laden tree and pick **Pick apples**, standing within {{n tuning.world.pickReach tiles}} of its trunk with nothing that blocks sight between you (a wall, a shut door, or closed shutters; a fence or an open window does not). It takes {{n sprites.tree_apple.pick.seconds}} seconds and gives between {{n sprites.tree_apple.pick.count.0}} and {{n sprites.tree_apple.pick.count.1}} [[Apple|apples]], and says how many ("You pick ... apples."). They go into your bag, and any that do not fit fall at your feet, and the line says how many fell.
 
 A picked tree is **bare**: its menu shows "Bare (fruit in about N days)", greyed, and it bears again {{n sprites.tree_apple.pick.days}} days of the world's clock after it was picked, at the next check of the bare trees (every {{n tuning.world.fruitCheckSeconds seconds}}). Time asleep counts, since sleep runs the clock fast. A bare tree can still be chopped down; chopping a laden one loses its apples.
 
@@ -33,7 +33,9 @@ When you walk behind a tall tree, a soft hole opens in its canopy so you can see
 
 ## Chopping
 
-Right-click a tree and pick **Chop down**; the menu names how many logs it will give. It takes {{n census.constants.interact.CHOP_TIME}} seconds and needs no [[Hatchet]] or other tool. The tree is gone, no stump is left, and its logs lie on the ground on its tile: "logs on the ground."
+Chopping needs a [[Hatchet]] in a hand. With one, a tree's menu offers **Chop down**, naming how many logs it will give; without one the entry reads "Chop down (need a hatchet)" and is greyed. You must stand within {{n tuning.world.pickReach tiles}} of the trunk. It takes {{n tuning.world.chopSeconds seconds}}. The tree is gone, its logs lie on the ground on its tile, and a [[Stump]] stands where it stood: "... logs on the ground, and a stump." An apple tree leaves a stump too, and chopping a laden one loses its apples.
+
+The stump is chopped up the same way, with the hatchet, for {{n sprites.stump.wood}} more log, and then the tile is clear. Felled logs are the wood that comes back: the forest does not regrow, so a stump is only a last log.
 
 Logs are fuel for a [[Fire|fireplace]], and can be split into [[Plank|planks]].
 
@@ -43,35 +45,36 @@ Logs are fuel for a [[Fire|fireplace]], and can be split into [[Plank|planks]].
 
 ## With friends
 
-Chopping and picking are menu actions the host performs for whoever asked. The tree's removal and the logs, a picked tree going bare, and a bare one bearing again reach every player with the changed part of the map, and the day a bare tree bears again is saved with it. Whether the world has trees is the host's choice, made with the world; a guest's copy has the host's.
+Chopping and picking are menu actions the host performs for whoever asked, the hatchet checked in that player's own hands. The tree's removal, the logs, and the stump, a picked tree going bare, and a bare one bearing again reach every player with the changed part of the map, and the day a bare tree bears again is saved with it. Whether the world has trees is the host's choice, made with the world; a guest's copy has the host's.
 
 ## See also
 
 - [[Gatherables]]
-- [[Log]], [[Apple]]
+- [[Log]], [[Apple]], [[Hatchet]], [[Stump]]
 - [[The orchard]]
 - [[The wild]]
 - [[Sight]]
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
-- `src/map.js:2127-2166`, `data/maps/valley.json:5319-5334`: trees scattered over the valley except the village and the reserves
-- `data/maps/valley.json:5288-5318`: the biome's green, orange, red, and yellow oaks and spires; blue and purple in no map
+<!-- sources at 8e7538f -->
+- `src/map.js:2129-2168`, `data/maps/valley.json:5321-5336`: trees scattered over the valley except the village and the reserves
+- `data/maps/valley.json:5290-5320`: the biome's green, orange, red, and yellow oaks and spires; blue and purple in no map
 - `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_old.json`: per size the collision radius, wood, canopy reach, shadow, and leaf colour
 - `src/map.js:1518-1529`, `src/map.js:1584-1626`: only a circle at the trunk blocks, and a body slides round it
 - `src/map.js:1477-1487`: a path treats a tree's whole tile as blocked
 - `data/ground.json`, `src/ground.js`: the canopy's darkening and the shadow
 - `src/render/scene.js:97-121`: the hole in the canopy
-- `src/interact.js:49`, `src/interact.js:555-572`: Chop down with the count of logs; no tool; the tree removed and its logs dropped on its tile; "logs on the ground."
+- `src/interact.js:608-630`, `data/tuning.json:95-97`: Chop down with the count of logs with a hatchet in a hand, else "(need a hatchet)" greyed; `chopSeconds`; the stump's entry (game #207)
+- `src/chop.js:13-50`, `data/items.json`: a chopper is any item in a hand listing the verb `chop` (the hatchet); within `pickReach`; the tree removed, its logs dropped on its tile, a stump placed where a tree with a canopy stood; the stump chopped for its log and the tile cleared
 - `data/items.json:4`, `data/sprites/fireplace.json`: logs split into planks and feed a fireplace
-- `src/interact.js:64-86`, `src/map.js:924-931`: a guest's chop run on the host; the change travels in the touched chunk
-- `src/rules.js:19`, `src/rules.js:28-30`, `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1989-1997`, `src/map.js:2162`: the Trees rule, fixed at creation: no tree in the scatter or the wild, the other picks as ever
+- `src/interact.js:67-89`, `src/map.js:924-931`: a guest's chop run on the host; the change travels in the touched chunk
+- `src/rules.js:19`, `src/rules.js:28-30`, `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1991-1999`, `src/map.js:2164`: the Trees rule, fixed at creation: no tree in the scatter or the wild, the other picks as ever
 - `data/sprites/tree_apple.json`, `data/sprites/tree_apple_bare.json`: the apple tree laden and bare: its collision, wood, canopy, and `pick` block (the apples, the count, the days, the seconds), and what the bare one ripens to (game #192)
 - `tools/mapgen/valley.py:101-117`, `tools/mapgen/valley.py:382-386`, `tools/mapgen/valley.py:397-404`, `data/maps/valley.json`: the orchard's rows and one tree in three cottage gardens
-- `src/interact.js:528-554`, `src/interact.js:673`, `data/tuning.json:95`: Pick apples, a timed action within `pickReach`; a bare tree's greyed entry with the days left; Chop down beside it
-- `src/fruit.js:29-50`: the pick: the count rolled, into the bag or at the feet, the tree turned bare with the day it bears again, and its line
-- `src/fruit.js:52-71`, `src/game.js:523`, `data/tuning.json:94`, `src/clock.js:5`: bare trees bear again at the first check at or after their day, in the world's clock
+- `src/interact.js:581-606`, `src/interact.js:731`, `data/tuning.json:95`: Pick apples, a timed action within `pickReach`; a bare tree's greyed entry with the days left; Chop down beside it
+- `src/fruit.js:30-52`: the pick: within reach and a clear line (game #206), the count rolled, into the bag or at the feet, the tree turned bare with the day it bears again, and its line
+- `src/fruit.js:54-73`, `src/game.js:526`, `data/tuning.json:94`, `src/clock.js:5`: bare trees bear again at the first check at or after their day, in the world's clock
 - `src/map.js:518-527`: a tree changed in place, its day saved with it and its chunk sent to guests
-- `src/map.js:2016`: Trees off: an authored tree, an orchard's or a garden's, is not placed either (game #192)
+- `src/map.js:2018`: Trees off: an authored tree, an orchard's or a garden's, is not placed either (game #192)
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, never on such a tile (game #149)

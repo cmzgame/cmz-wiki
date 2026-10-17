@@ -28,9 +28,11 @@ The heal is bounded by your appetite. A food heals all of its value only when yo
 
 A new character carries a [[Loaf of bread]] and [[Apple|apples]]. Bread and the [[Wheel of cheese]] turn up in chests, apples in barrels, and the dead carry apples and bread in their pockets (see [[Containers]]). Apples are also picked from the apple trees of [[The orchard]] and three cottage gardens (see [[Trees#Fruit trees|Trees]]). [[Perch]], [[Trout]], and [[Carp]] are caught with a [[Fishing rod]] (see [[Fishing]]).
 
-Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish grill at a fire. The other ingredients (potatoes, cabbages, garlic, grain, flour) are not found anywhere in the valley yet: the crops in the fields cannot be harvested, and no container holds them.
+[[Potato|Potatoes]] and [[Cabbage|cabbages]] are grown and harvested by [[Farming]], starting from the plot by [[Your cottage]].
 
-{{planned doc=30 note="Harvesting the fields' crops, so the cooking recipes can be made in play."}}
+Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish grill at a fire, and a potato roasts. The other ingredients (garlic, grain, flour) cannot be had in play yet: nothing gives their seeds, and no container holds them, so the stew, the porridge, and the bread cannot be made in play.
+
+{{planned doc=30 note="Seeds for garlic and rye, and the mill for flour (game issue 201)."}}
 
 ### Foods
 
@@ -77,21 +79,22 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `data/tuning.json:52-55`: hunger's most, its drain time, and `fullAt`
 - `src/entities/player.js:81-101`: full at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the heal times the share of its hunger the stomach has room for; the dead eat nothing (game #186)
 - `src/entities/player.js:138-150`: hunger drains, or stays full with Survival off
-- `src/interact.js:1069-1078`: every way of eating comes to one place, which says "You are full."
-- `src/interact.js:1099-1133`: Eat from your bag or a container
-- `src/interact.js:1080-1094`: a food on the belt eaten by its key
-- `src/interact.js:1206-1218`, `src/ui/inventory-actions.js:174-182`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
+- `src/interact.js:1130-1139`: every way of eating comes to one place, which says "You are full."
+- `src/interact.js:1160-1194`: Eat from your bag or a container
+- `src/interact.js:1141-1155`: a food on the belt eaten by its key
+- `src/interact.js:1267-1279`, `src/ui/inventory-actions.js:174-182`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
 - `src/entities/player.js:152-157`: health comes back while fed and watered
 - `data/kit.json:6-7`: the starter bread and apples
 - `data/loot.json:2-4`: bread and cheese in chests, apples in barrels, apples and bread in the dead's pockets
 - `data/sprites/tree_apple.json`, `data/fishing.json`: apples picked from trees; fish caught (game #192, #193)
 - `data/recipes.json:441-560`: the cooking and oven recipes, the grilled fish among them
-- `data/loot.json`: no table gives potatoes, cabbages, garlic, grain, or flour
-- `data/items.json:16-18`, `data/items.json:40-45`, `data/items.json:52-60`: the foods, each with its hunger, thirst, and heal (game #186)
+- `data/loot.json`: no table gives potatoes, cabbages, garlic, grain, flour, or a seed
+- `src/farming.js:227-251`, `tools/mapgen/valley.py:190`: potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
+- `data/items.json:16-18`, `data/items.json:40-45`, `data/items.json:52-55`, `data/items.json:63-65`: the foods, each with its hunger, thirst, and heal (game #186)
 - `src/ui/inventory-actions.js:258-264`, `src/ui/inventory-actions.js:347-358`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default
 

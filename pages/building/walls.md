@@ -57,7 +57,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `src/map.js:1-6`, `src/map.js:1324-1330`: walls on the `n` and `w` edges of a tile
 - `src/map.js:733-744`: doors and windows are walls with a kind
 - `src/map.js:1342-1355`, `src/map.js:1501-1555`: a wall blocks sight and bodies
@@ -65,13 +65,13 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - `src/map.js:678-744`: a fence, alone among walls, has hit points the dead strike away (game #185)
 - `src/render/walls.js`: corner posts take the heaviest material
 - `data/sprites/wall_wood.json`, `data/sprites/wall_stone.json`, `data/sprites/wall_log.json`, `data/sprites/wall_fence.json`: each material's height and thickness
-- `data/maps/valley.json:1175-5091`: which buildings are wood and which stone
+- `data/maps/valley.json:1175-5093`: which buildings are wood and which stone
 - `data/build.json`: the log wall is the only wall you can build
-- `src/map.js:2069`, `data/maps/valley.json:4974-4979`: a material per side
+- `src/map.js:2071`, `data/maps/valley.json:4976-4981`: a material per side
 - `src/placeholders.js:88-91`: openings and the bracket at fixed heights
 - `src/placement.js:319-368`, `src/map.js:651`: only built walls can be removed
 - `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:408`: a door or window built into a plain wall, of its material, a door into a fence; its bracket forgotten; removal puts the wall back
-- `src/map.js:137-283`, `src/interact.js:407-465`: brackets, a lantern or a torch; a lantern never out and not taken; E to take or mount a torch, which burns down
+- `src/map.js:137-283`, `src/interact.js:411-469`: brackets, a lantern or a torch; a lantern never out and not taken; E to take or mount a torch, which burns down
 - `data/items.json`: the torch's `fire`; `data/sprites/lantern_post.json`; `src/light.js:61-71`: a lantern's light, and a mounted torch's only while lit
-- `src/map.js:2118-2124`, `src/map.js:2199`: brackets only where the map authors them
+- `src/map.js:2120-2126`, `src/map.js:2201`: brackets only where the map authors them
 - `src/render/walls.js:164-170`, `src/render/walls.js:314-316`: near walls faded

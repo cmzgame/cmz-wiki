@@ -44,12 +44,12 @@ These change only the game they are typed into; on a guest's game they change on
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
-- `src/settings.js:33`, `src/settings.js:70`, `src/ui/screens.js:871-899`, `src/main.js:312-320`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
+<!-- sources at 8e7538f -->
+- `src/settings.js:33`, `src/settings.js:70`, `src/ui/screens.js:871-899`, `src/main.js:313-321`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
 - `src/settings.js:71-72`, `src/rules.js:21-22`: Dev bag and Extra starting items, world rules of the same step
 - `data/sprites/dev_chest.json`: the dev chest rolls the dev kit
-- `data/loot.json:6`: its fixed contents
+- `data/loot.json:8`: its fixed contents
 - `data/loot.json`: the dev kit is the dev chest's alone; the wheelbarrow has its own empty table
 - `src/placement.js:70-76`: a prop with no carry flag can be carried
-- `src/game.js:87-91`: placed beside the spawn of a new world made with it
+- `src/game.js:89-93`: placed beside the spawn of a new world made with it
 - `src/dev.js:133-150`: giveKit, give, and giveDevBag, all on the local client

@@ -7,11 +7,11 @@ summary: A log from a felled tree: split into planks, burned as fuel, or built i
 
 {{infobox-item log}}
 
-A **log** comes from chopping down a tree, and turns up in chests and barrels. It is split into [[Plank|planks]], burned in most fires, and built into log walls. It is large, and takes up a good part of a bag.
+A **log** comes from chopping down a tree, or the stump it leaves, with a [[Hatchet]], and turns up in chests and barrels. It is split into [[Plank|planks]], burned in most fires, and built into log walls. It is large, and takes up a good part of a bag.
 
 ## Getting logs
 
-Right-click a tree and choose **Chop down**. After {{n census.constants.interact.CHOP_TIME}} seconds the tree is gone and its logs lie on its tile. No tool is needed. The menu says how many logs a tree gives: a young tree {{n sprites.tree_oak_m.wood}}, a grown one {{n sprites.tree_oak_l.wood}}, and an old one {{n sprites.tree_oak_old.wood}}.
+With a [[Hatchet]] in a hand, right-click a tree and choose **Chop down**. After {{n tuning.world.chopSeconds seconds}} the tree is gone, its logs lie on its tile, and a [[Stump]] is left, which the hatchet chops up for {{n sprites.stump.wood}} more log. Without a hatchet the entry is greyed: "Chop down (need a hatchet)". The menu says how many logs a tree gives: a young tree {{n sprites.tree_oak_m.wood}}, a grown one {{n sprites.tree_oak_l.wood}}, and an old one {{n sprites.tree_oak_old.wood}}.
 
 ## Splitting
 
@@ -25,15 +25,15 @@ A log is the fuel of the campfire, the hearth, the fireplace, and the [[Oven]] (
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 8e7538f -->
 - `data/items.json:4`: the log: 2 x 3, fuel, splits into 3 planks
-- `src/interact.js:516-532`: Chop down, no tool needed, the logs on the tile, the count in the label
-- `src/interact.js:46`: the chop time
+- `src/interact.js:608-630`, `src/chop.js:25-50`: Chop down with a hatchet in a hand, the logs on the tile, the count in the label, the stump left and chopped for its log (game #207)
+- `data/tuning.json:96`, `data/sprites/stump.json`: the chop's seconds, the stump's log
 - `data/sprites/tree_oak_m.json`: a young tree's wood (likewise tree_oak_l, tree_oak_old)
 - `data/loot.json:2-3`: logs in the chest and barrel tables
-- `src/interact.js:1053-1066`: Split, in your own bag; "Some planks fell to the floor."
+- `src/interact.js:1199-1212`: Split, in your own bag; "Some planks fell to the floor."
 - `data/sprites/campfire.json`: log as fuel (likewise hearth, fireplace, oven)
 - `data/build.json:2-9`: a log wall's cost
-- `src/placement.js:144-150`: the cost taken from hands, belt, and bag
+- `src/placement.js:146-152`: the cost taken from hands, belt, and bag
 
 {{navbox items}}

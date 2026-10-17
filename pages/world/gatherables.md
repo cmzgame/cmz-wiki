@@ -23,17 +23,18 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 
 ### What can be gathered today
 
-- **Trees:** chop one down from the right-click menu. No tool is needed. It takes {{n census.constants.interact.CHOP_TIME}} seconds, the tree is gone, and its logs lie on the ground where it stood. An apple tree with fruit on it can also be picked for [[Apple|apples]], and is then bare for some days. See [[Trees]].
-- **Rocks, mushrooms, crops, and pumpkins:** they sway, and nothing more.
+- **Trees:** chop one down from the right-click menu with a [[Hatchet]] in a hand. It takes {{n tuning.world.chopSeconds seconds}}, the tree is gone, its logs lie on the ground where it stood, and a [[Stump]] is left, which the hatchet chops up for one more log. An apple tree with fruit on it can also be picked for [[Apple|apples]], and is then bare for some days. See [[Trees]].
+- **Crops:** harvested when ready, with E or the menu, for their food and seeds; see [[Farming]].
+- **Rocks, mushrooms, and pumpkins:** they sway, and nothing more.
 
-{{planned doc=30 step=4 note="Picking mushrooms, mining rocks with the pickaxe, and harvesting crops."}}
+{{planned doc=30 note="Picking mushrooms, and mining rocks with the pickaxe (game issue 196)."}}
 
 ## Numbers
 
 - Click reach: {{n census.constants.interact.CLICK_REACH}} tiles.
 - A sway lasts {{n census.constants.render_props.WIGGLE_MS}} ms.
 - A click restarts a sway only after {{n census.constants.interact.POKE_COOLDOWN_MS}} ms.
-- Chopping a tree: {{n census.constants.interact.CHOP_TIME}} seconds.
+- Chopping a tree or a stump: {{n tuning.world.chopSeconds seconds}}.
 
 ## With friends
 
@@ -49,15 +50,16 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `data/sprites/tree_oak_m.json`, `data/sprites/rock_0.json`, `data/sprites/mushroom_0.json`, `data/sprites/crop_potato_1.json`, `data/sprites/pumpkin.json`: each `interactable: true`
-- `src/interact.js:1245-1249`, `src/interact.js:1334-1342`: a click within reach stamps a sway, no restamp inside the cooldown
+- `src/interact.js:1306-1310`, `src/interact.js:1395-1403`: a click within reach stamps a sway, no restamp inside the cooldown
 - `src/render/props.js:94-104`: the sway's length and lean
-- `src/interact.js:1270-1294`: found by drawn pixels, crowns included
-- `data/sprites/well.json`, `src/interact.js:1483-1491`: the well's click animation instead
-- `src/interact.js:1350-1366`, `src/game.js:603`, `src/game.js:612`, `src/game.js:617`: walking through a crop or mushroom sways it, one full sway at a time, only while moving
+- `src/interact.js:1331-1355`: found by drawn pixels, crowns included
+- `data/sprites/well.json`, `src/interact.js:1544-1552`: the well's click animation instead
+- `src/interact.js:1411-1427`, `src/game.js:607`, `src/game.js:616`, `src/game.js:621`: walking through a crop or mushroom sways it, one full sway at a time, only while moving
 - `data/ground.json`: flowers and leaves are baked decals, not props
-- `data/sprites/tree_apple.json`, `src/interact.js:528-553`: an apple tree laden is picked for apples, then bare (game #192)
-- `src/interact.js:49`, `src/interact.js:555-572`, `src/interact.js:667-679`: chopping a tree with no tool, picking a fruit tree; nothing else has an action
-- `src/interact.js:1301-1333`, `src/net.js:865`, `src/net.js:1129-1133`: the sways sent in frames; a guest's click checked by the host
-- `src/interact.js:64-86`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk
+- `data/sprites/tree_apple.json`, `src/interact.js:581-606`: an apple tree laden is picked for apples, then bare (game #192)
+- `src/interact.js:608-630`, `src/chop.js:25-50`, `src/interact.js:725-738`, `data/sprites/stump.json`: chopping a tree or a stump with a hatchet, picking a fruit tree, a crop's actions; the stump gatherable and outlined (game #207); nothing else has an action
+- `src/interact.js:532-553`, `src/farming.js:227-251`: a ready crop harvested (game #206)
+- `src/interact.js:1362-1394`, `src/net.js:865`, `src/net.js:1129-1133`: the sways sent in frames; a guest's click checked by the host
+- `src/interact.js:67-89`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk

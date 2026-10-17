@@ -95,12 +95,12 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
-- `src/main.js:797`, `src/main.js:1048`: the Build entry at the foot of every menu
-- `data/items.json`: the log's `splitsInto`; `src/interact.js:1138-1151`: splitting with no tool
-- `src/main.js:856-865`, `src/main.js:797`, `src/main.js:1078-1079`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
+- `src/main.js:798`, `src/main.js:1049`: the Build entry at the foot of every menu
+- `data/items.json`: the log's `splitsInto`; `src/interact.js:1199-1212`: splitting with no tool
+- `src/main.js:857-866`, `src/main.js:798`, `src/main.js:1079-1080`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
 - `src/placement.js:162-177`: the ghost snapped to the nearest edge
 - `src/placement.js:188-200`: the red reasons in order
 - `src/placement.js:27`, `src/placement.js:29`: the build reach and the edge clearance
@@ -112,7 +112,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:576`: the build lasts within the reach plus 0.6
 - `src/placement.js:476`: one build at a time
 - `src/map.js:1809-1837`: rooms refound on either side of a changed edge
-- `src/main.js:868-877`: X, refused while carrying or with the bag open, with the same line
+- `src/main.js:869-878`: X, refused while carrying or with the bag open, with the same line
 - `src/placement.js:28`, `src/placement.js:370-376`: the removal reach
 - `src/placement.js:319-368`: what lights up: props made at a station (`made`) and built walls
 - `src/stations.js:183-184`: a prop made at a station marked `made`

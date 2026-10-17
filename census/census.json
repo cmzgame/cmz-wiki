@@ -1,16 +1,16 @@
 {
  "version": {
-  "commit": "4be64f21f76d3bcd4b1c5692d120ec509923b724",
-  "short": "4be64f2",
-  "date": "2026-10-17T14:20:44-05:00",
-  "subject": "Merge #193, reviewed, Michael's word on #190: fishing (a rod at the workbench, Cast the line at named waters, a table per water in data, three fish grilled at a fire) (closes #190)",
+  "commit": "8e7538f18ce1b776107981c705883b44f7e2b18c",
+  "short": "8e7538f",
+  "date": "2026-10-17T15:06:48-05:00",
+  "subject": "Merge #206, reviewed: farming (till, plant, water, harvest; growth from the clock while wet, dry pauses and never kills; seeds back), the farming verbs and the pick need a clear line (Primary's ruling), dryness on the crop (the builder's reading) (closes #194)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 59,
+  "items": 64,
   "recipes": 31,
-  "interactions": 13,
-  "lootTables": 6,
+  "interactions": 20,
+  "lootTables": 8,
   "sprites": 140,
   "places": 21,
   "villagers": 7,
@@ -23,11 +23,11 @@
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 19,
-  "verbs": 6,
-  "menuLabels": 61,
+  "verbs": 11,
+  "menuLabels": 63,
   "events": 30,
-  "checks": 36,
-  "modules": 86
+  "checks": 38,
+  "modules": 88
  },
  "items": [
   {
@@ -207,6 +207,9 @@
     "style": "one_handed",
     "kills": 20
    },
+   "verbs": [
+    "chop"
+   ],
    "art": {
     "icon": false,
     "held": true,
@@ -636,6 +639,9 @@
     "body"
    ],
    "interactions": [
+    "waterskin on crop: Water",
+    "waterskin on floor_farm: Water",
+    "waterskin on floor_farm_y: Water",
     "waterskin on well: Fill"
    ]
   },
@@ -1136,7 +1142,10 @@
    ],
    "usedIn": [],
    "foundIn": [],
-   "interactions": [],
+   "interactions": [
+    "hoe on floor_grass: Till",
+    "hoe on floor_dirt: Till"
+   ],
    "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
   },
   {
@@ -1722,6 +1731,121 @@
    "foundIn": [],
    "interactions": [],
    "note": "bread at an oven"
+  },
+  {
+   "id": "potato_seed",
+   "name": "Potato seed",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "seed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
+  },
+  {
+   "id": "cabbage_seed",
+   "name": "Cabbage seed",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "seed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
+  },
+  {
+   "id": "garlic_seed",
+   "name": "Garlic seed",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "seed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
+  },
+  {
+   "id": "pumpkin_seed",
+   "name": "Pumpkin seed",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "seed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
+  },
+  {
+   "id": "rye_seed",
+   "name": "Rye seed",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "seed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
   },
   {
    "id": "roast_potato",
@@ -2451,6 +2575,48 @@
    "message": "You dip the arrows in the fire."
   },
   {
+   "use": "hoe",
+   "on": "floor_grass",
+   "verb": "Till",
+   "action": "till"
+  },
+  {
+   "use": "hoe",
+   "on": "floor_dirt",
+   "verb": "Till",
+   "action": "till"
+  },
+  {
+   "use": "seed",
+   "on": "floor_farm",
+   "verb": "Plant",
+   "action": "plant"
+  },
+  {
+   "use": "seed",
+   "on": "floor_farm_y",
+   "verb": "Plant",
+   "action": "plant"
+  },
+  {
+   "use": "waterskin",
+   "on": "crop",
+   "verb": "Water",
+   "action": "water"
+  },
+  {
+   "use": "waterskin",
+   "on": "floor_farm",
+   "verb": "Water",
+   "action": "water"
+  },
+  {
+   "use": "waterskin",
+   "on": "floor_farm_y",
+   "verb": "Water",
+   "action": "water"
+  },
+  {
    "use": "waterskin",
    "on": "well",
    "verb": "Fill",
@@ -2634,6 +2800,30 @@
    "grid": [
     10,
     6
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "home_chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "joiner_chest",
+   "grid": [
+    4,
+    3
    ],
    "rolls": [
     0,
@@ -3369,11 +3559,16 @@
   },
   {
    "id": "stump",
-   "kind": "placeholder box",
+   "kind": "gatherable",
    "label": "Stump",
    "drawn": false,
    "carry": false,
-   "note": "a dev box for the stump (docs/30 step 1; docs/29/09 has its art request)"
+   "collide": {
+    "radius": 0.25
+   },
+   "interactable": true,
+   "wood": 1,
+   "note": "a dev box for the stump (docs/30 step 1; docs/29/09 has its art request): what a felled tree leaves (src/chop.js); a hatchet chops it up for one log and the tile is clear"
   },
   {
    "id": "table",
@@ -4594,6 +4789,8 @@
    "daylightTiles": 30,
    "fruitCheckSeconds": 30,
    "pickReach": 1.6,
+   "chopSeconds": 3,
+   "stumpSprite": "stump",
    "fenceHp": 90,
    "fenceGateFactor": 0.5
   },
@@ -5004,44 +5201,44 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1068"
+    "main.js:1069"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1067"
+    "main.js:1068"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1046"
+    "main.js:1047"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:891",
-    "main.js:905"
+    "main.js:892",
+    "main.js:906"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1005"
+    "interact.js:1066"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1065"
+    "main.js:1066"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1048"
+    "main.js:1049"
    ]
   },
   {
@@ -5060,66 +5257,72 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1006"
+    "interact.js:1067"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1044"
+    "main.js:1045"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1049"
+    "main.js:1050"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1056"
+    "main.js:1057"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1046"
+    "main.js:1047"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1127"
+    "main.js:1128"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1127"
+    "main.js:1128"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1047"
+    "main.js:1048"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1138"
+    "main.js:1139"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:891",
-    "main.js:897"
+    "main.js:892",
+    "main.js:898"
    ]
   }
  ],
  "verbs": [
+  {
+   "key": "chop",
+   "at": [
+    "chop.js:25"
+   ]
+  },
   {
    "key": "craft",
    "at": [
@@ -5139,6 +5342,12 @@
    ]
   },
   {
+   "key": "harvest",
+   "at": [
+    "farming.js:227"
+   ]
+  },
+  {
    "key": "light",
    "at": [
     "burn.js:170"
@@ -5147,13 +5356,31 @@
   {
    "key": "pick",
    "at": [
-    "fruit.js:29"
+    "fruit.js:30"
+   ]
+  },
+  {
+   "key": "plant",
+   "at": [
+    "farming.js:167"
    ]
   },
   {
    "key": "sleep",
    "at": [
     "entities/player.js:219"
+   ]
+  },
+  {
+   "key": "till",
+   "at": [
+    "farming.js:148"
+   ]
+  },
+  {
+   "key": "water",
+   "at": [
+    "farming.js:204"
    ]
   }
  ],
@@ -5167,19 +5394,19 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1417"
+    "main.js:1419"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:797"
+    "main.js:798"
    ]
   },
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:625"
+    "interact.js:683"
    ]
   },
   {
@@ -5215,38 +5442,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1355"
+    "main.js:1357"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1186"
+    "interact.js:1247"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1132",
-    "interact.js:1216"
+    "interact.js:1193",
+    "interact.js:1277"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1108"
+    "interact.js:1169"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1109"
+    "interact.js:1170"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1220"
+    "interact.js:1281"
    ]
   },
   {
@@ -5264,7 +5491,13 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1391"
+    "main.js:1393"
+   ]
+  },
+  {
+   "key": "Harvest",
+   "at": [
+    "interact.js:545"
    ]
   },
   {
@@ -5282,19 +5515,19 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:420"
+    "interact.js:424"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1345"
+    "main.js:1347"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1381"
+    "main.js:1383"
    ]
   },
   {
@@ -5312,37 +5545,37 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1430"
+    "main.js:1432"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1222"
+    "interact.js:1283"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1319"
+    "main.js:1320"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1316"
+    "main.js:1317"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1347"
+    "main.js:1349"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1346"
+    "main.js:1348"
    ]
   },
   {
@@ -5354,13 +5587,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1439"
+    "main.js:1441"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:395"
+    "interact.js:399"
    ]
   },
   {
@@ -5390,7 +5623,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:434"
+    "interact.js:438"
+   ]
+  },
+  {
+   "key": "Till the soil",
+   "at": [
+    "interact.js:570"
    ]
   },
   {
@@ -5402,21 +5641,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1197",
-    "interact.js:1236"
+    "interact.js:1258",
+    "interact.js:1297"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1104",
-    "interact.js:1184"
+    "interact.js:1165",
+    "interact.js:1245"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:646"
+    "interact.js:704"
    ]
   },
   {
@@ -5440,25 +5679,19 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:481"
+    "interact.js:485"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:535"
+    "interact.js:588"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
     "placement.js:572"
-   ]
-  },
-  {
-   "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
-   "at": [
-    "interact.js:559"
    ]
   },
   {
@@ -5476,56 +5709,62 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1136",
-    "interact.js:1219"
+    "interact.js:1197",
+    "interact.js:1280"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:583"
+    "interact.js:641"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:940"
+    "interact.js:1001"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1112"
+    "interact.js:1173"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:206"
+    "interact.js:210"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:542"
+    "interact.js:595"
+   ]
+  },
+  {
+   "key": "Plant ${kind}",
+   "at": [
+    "interact.js:575"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1461"
+    "interact.js:1522"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:518"
+    "interact.js:522"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1141"
+    "interact.js:1202"
    ]
   }
  ],
@@ -5545,13 +5784,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1248"
+    "main.js:1249"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:362"
+    "game.js:365"
    ]
   },
   {
@@ -5569,9 +5808,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:212",
-    "interact.js:345",
-    "interact.js:1446",
+    "interact.js:216",
+    "interact.js:349",
+    "interact.js:1507",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5591,7 +5830,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:581"
+    "game.js:585"
    ]
   },
   {
@@ -5622,7 +5861,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:644"
+    "game.js:648"
    ]
   },
   {
@@ -5710,7 +5949,7 @@
    "at": [
     "archery.js:717",
     "combat.js:387",
-    "game.js:498"
+    "game.js:501"
    ]
   },
   {
@@ -5832,9 +6071,11 @@
   "build",
   "burn",
   "cap",
+  "chop",
   "craft",
   "determinism",
   "eviction",
+  "farm",
   "fence",
   "fishing",
   "flare",
@@ -5868,19 +6109,19 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2217
+   "lines": 2219
   },
   {
    "path": "main.js",
-   "lines": 1848
+   "lines": 1850
   },
   {
    "path": "interact.js",
-   "lines": 1506
+   "lines": 1567
   },
   {
    "path": "placeholders.js",
-   "lines": 1483
+   "lines": 1491
   },
   {
    "path": "net.js",
@@ -5908,7 +6149,7 @@
   },
   {
    "path": "game.js",
-   "lines": 666
+   "lines": 670
   },
   {
    "path": "assets.js",
@@ -5943,12 +6184,12 @@
    "lines": 403
   },
   {
-   "path": "figure/rig.js",
+   "path": "entities/player.js",
    "lines": 389
   },
   {
-   "path": "entities/player.js",
-   "lines": 388
+   "path": "figure/rig.js",
+   "lines": 389
   },
   {
    "path": "figure/raster.js",
@@ -5961,6 +6202,10 @@
   {
    "path": "inventory.js",
    "lines": 293
+  },
+  {
+   "path": "farming.js",
+   "lines": 275
   },
   {
    "path": "host.js",
@@ -6048,7 +6293,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 141
+   "lines": 143
   },
   {
    "path": "settings.js",
@@ -6120,7 +6365,7 @@
   },
   {
    "path": "fruit.js",
-   "lines": 72
+   "lines": 74
   },
   {
    "path": "ui/swing-timer.js",
@@ -6165,6 +6410,10 @@
   {
    "path": "ui/moodles.js",
    "lines": 52
+  },
+  {
+   "path": "chop.js",
+   "lines": 51
   },
   {
    "path": "infection.js",
@@ -6336,7 +6585,6 @@
    "SEARCH_TIME": 1,
    "BOARD_TIME": 2,
    "PULL_TIME": 1.5,
-   "CHOP_TIME": 3,
    "DRINK_TIME": 1.5,
    "FILL_TIME": 2,
    "HOLD_TIME": 0.35,
@@ -6545,9 +6793,5 @@
   ],
   "unknown": []
  },
- "chop": {
-  "gives": "log",
-  "field": "wood",
-  "at": "src/interact.js:556-572"
- }
+ "chop": null
 }

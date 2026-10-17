@@ -16,13 +16,13 @@ Some villagers are **immune** to the dead, by a flag on each villager in the map
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
-- `data/maps/valley.json:5804-5869`: the villagers and their lines (the table)
+<!-- sources at 8e7538f -->
+- `data/maps/valley.json:5806-5871`: the villagers and their lines (the table)
 - `src/entities/villager.js:1-8`: no weapons, never fighting
 - `src/entities/villager.js:47-96`, `src/entities/villager.js:141-151`: standing, wandering near home, answering a poke
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/villager.js:122-137`: the dead hunt them behind a world rule; one bitten to death rises in their clothes
-- `src/entities/villager.js:26-32`, `src/game.js:98`, `src/entities/zombie.js:357`, `src/entities/villager.js:101-102`: the `immune` flag, read from the map; the dead never pick an immune villager as prey, and a blow to one does nothing (game #187)
-- `data/maps/valley.json:5805-5814`, `data/maps/valley.json:5832-5841`, `tools/mapgen/valley.py:433-439`: the Innkeeper and the Priest flagged immune, the others not
+- `src/entities/villager.js:26-32`, `src/game.js:100`, `src/entities/zombie.js:357`, `src/entities/villager.js:101-102`: the `immune` flag, read from the map; the dead never pick an immune villager as prey, and a blow to one does nothing (game #187)
+- `data/maps/valley.json:5807-5816`, `data/maps/valley.json:5834-5843`, `tools/mapgen/valley.py:433-439`: the Innkeeper and the Priest flagged immune, the others not
 - `docs/04-npcs.md:3`: fleeing, following, and staying not built
 - `docs/34-talk.md:67`: the guide, and every villager who teaches a skill, immune (not built)
 

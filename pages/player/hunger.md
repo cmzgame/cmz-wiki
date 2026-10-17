@@ -51,18 +51,18 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `data/tuning.json:52`, `data/tuning.json:54-55`: the maximum, the drain time, and `fullAt`
 - `src/entities/player.js:145`: the drain, every step, awake or asleep
 - `src/map.js:95`: a game hour is 30 seconds
 - `src/entities/player.js:81-101`: full at `fullAt`, nothing eaten; eating raises hunger and thirst, capped, and heals by the share it fills (game #186)
-- `src/interact.js:1069-1078`, `src/interact.js:1132`: the "Eat" entry uses one from the stack, or says "You are full."
-- `src/interact.js:1080-1094`, `src/interact.js:1206-1218`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
-- `data/tuning.json:61`, `src/entities/player.js:93`, `src/entities/player.js:383-384`: the held-out pose
+- `src/interact.js:1130-1139`, `src/interact.js:1193`: the "Eat" entry uses one from the stack, or says "You are full."
+- `src/interact.js:1141-1155`, `src/interact.js:1267-1279`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
+- `data/tuning.json:61`, `src/entities/player.js:93`, `src/entities/player.js:384-385`: the held-out pose
 - `src/moodles.js:55-59`: the hunger stages and their thresholds
 - `src/entities/player.js:152-157`: Hungry stops regeneration
 - `src/entities/player.js:162-167`, `data/tuning.json:69`: Very hungry slows stamina recovery
 - `src/entities/player.js:149`, `data/tuning.json:57`: starving damage
-- `data/items.json:16-17`, `data/items.json:59`: bread, apple, and stew
+- `data/items.json:16-17`, `data/items.json:64`: bread, apple, and stew
 - `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
 - `src/entities/player.js:139-143`: Survival off holds hunger full

@@ -12,7 +12,7 @@ A **trout** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the 
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `data/items.json:40-45`: the trout and its grilled kind: hunger, heal, stack, tags
 - `data/fishing.json`: the waters that catch it, and how often
 - `src/fishing.js:57-81`: a catch into the bag, or at your feet when it is full

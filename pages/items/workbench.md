@@ -26,14 +26,14 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `data/sprites/workbench.json`: the workbench: a station with no fire
 - `data/recipes.json:4-265`: the workbench's recipes, none with fire or tool
 - `data/recipes.json:23-37`: sticks from a plank
 - `data/items.json:4`: planks from a log
 - `data/items.json:25-30`: cloth: the garments
 - `data/recipes.json:248-265`: the wheelbarrow needs an iron bar
-- `src/interact.js:682-699`: the station's menu entry and `E`
+- `src/interact.js:741-758`: the station's menu entry and `E`
 - `src/stations.js:168-204`: items to the output box, furniture beside the station
 - `data/sprites/chest.json`: a made chest rolls the chest table (likewise shelf.json)
 - `data/recipes.json:226-247`: a workbench made at a workbench

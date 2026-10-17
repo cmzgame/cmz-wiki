@@ -25,11 +25,11 @@ A tree picked by one player is bare for everyone, and bears again for everyone o
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `tools/mapgen/valley.py:397-404`, `data/maps/valley.json`: the orchard at (38, 232): apple trees in five staggered rows of four, two barrels at the south edge, no building
 - `tools/mapgen/valley.py:101-117`, `tools/mapgen/valley.py:382-386`: an apple tree in three cottage gardens
 - `docs/29-world/05-the-farms.md:3`: the orchard built, the rest of Hollow Farm not
-- `data/sprites/tree_apple.json`, `src/fruit.js:29-71`: picked by hand, bare until it bears again
+- `data/sprites/tree_apple.json`, `src/fruit.js:30-73`: picked by hand, bare until it bears again
 - `src/map.js:518-527`: a picked tree's change reaches every player with its chunk
 
 {{navbox places}}

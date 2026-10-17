@@ -42,13 +42,13 @@ A guest's line is said by their character on the host, so it reaches every playe
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `src/ui/log.js`, `src/ui/log.js:12`: the chat log, every message and line said in sight, the lines kept
 - `src/ui/speech.js:97-98`: the speaker's label: You, the name, Villager, Someone; the dead's groans not logged
-- `src/ui/speech.js:69-90`, `data/tuning.json:100`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)
-- `src/main.js:1626-1634`, `src/host.js:244-251`, `data/tuning.json:90-91`: "A fire has gone out." within `fireOutRadius` on the host's own screen; "Made ..." within `craftDoneRadius`, to the host and to each guest (game #189)
+- `src/ui/speech.js:69-90`, `data/tuning.json:102`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)
+- `src/main.js:1628-1636`, `src/host.js:244-251`, `data/tuning.json:90-91`: "A fire has gone out." within `fireOutRadius` on the host's own screen; "Made ..." within `craftDoneRadius`, to the host and to each guest (game #189)
 - `src/ui/log.js:71-79`: resized by its corner, the size remembered in `logSize`
-- `src/main.js:1046-1047`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
+- `src/main.js:1047-1048`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
 - `src/entities/character.js:126`: a bubble lasts longer for a longer line
 - `src/ui/speech.js:24`: `NEAR`, a bubble behind a canopy only within reach
 - `src/net.js:632-636`, `src/net.js:1235-1237`: a guest's line said by its player on the host

@@ -1,7 +1,7 @@
 {
-  "commit": "4be64f21f76d3bcd4b1c5692d120ec509923b724",
-  "short": "4be64f2",
-  "date": "2026-10-17T14:20:44-05:00",
-  "subject": "Merge #193, reviewed, Michael's word on #190: fishing (a rod at the workbench, Cast the line at named waters, a table per water in data, three fish grilled at a fire) (closes #190)",
+  "commit": "8e7538f18ce1b776107981c705883b44f7e2b18c",
+  "short": "8e7538f",
+  "date": "2026-10-17T15:06:48-05:00",
+  "subject": "Merge #206, reviewed: farming (till, plant, water, harvest; growth from the clock while wet, dry pauses and never kills; seeds back), the farming verbs and the pick need a clear line (Primary's ruling), dryness on the crop (the builder's reading) (closes #194)",
   "ref": "origin/main"
 }

@@ -20,15 +20,15 @@ The Guest stands in the inn's guest wing, in the rooms south of the taproom.
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
 - `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1249`, `src/interact.js:1415-1428`, `src/interact.js:1455-1469`: a left click within reach, or Poke on the menu
+- `src/interact.js:1310`, `src/interact.js:1476-1489`, `src/interact.js:1516-1530`: a left click within reach, or Poke on the menu
 - `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
-- `src/game.js:364`, `src/entities/villager.js:101-137`, `src/game.js:618-622`: one bitten to death gets up as one of the dead in their clothes
-- `data/maps/valley.json:5815-5823`: the Guest's line and tile
-- `tools/mapgen/valley.py:434`, `data/maps/valley.json:1954-2085`: they stand in the guest wing south of the taproom
+- `src/game.js:367`, `src/entities/villager.js:101-137`, `src/game.js:622-626`: one bitten to death gets up as one of the dead in their clothes
+- `data/maps/valley.json:5817-5825`: the Guest's line and tile
+- `tools/mapgen/valley.py:434`, `data/maps/valley.json:1955-2086`: they stand in the guest wing south of the taproom
 
 {{navbox places}}

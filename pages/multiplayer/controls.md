@@ -81,40 +81,40 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 
 ## Sources
 
-<!-- sources at 4be64f2 -->
+<!-- sources at 8e7538f -->
 - `src/ui/screens.js:22-60`, `src/ui/screens.js:1078-1085`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:947`: Controls on the site's menu and on the pause menu
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
-- `src/main.js:1084-1099`: the left button: placement's confirm, Use mode's target, else the swing
-- `src/main.js:1085`, `src/main.js:1114-1118`, `src/main.js:1139`: an open panel stops no click and no key; an open actions menu takes the click that closes it and ends a draw
-- `src/interact.js:1249`: `CLICK_REACH`, a gatherable sways when clicked within reach
-- `src/main.js:760-778`: a right tap opens the menu, cancels a draw, puts the item down in Use mode
+- `src/main.js:1085-1100`: the left button: placement's confirm, Use mode's target, else the swing
+- `src/main.js:1086`, `src/main.js:1115-1119`, `src/main.js:1140`: an open panel stops no click and no key; an open actions menu takes the click that closes it and ends a draw
+- `src/interact.js:1310`: `CLICK_REACH`, a gatherable sways when clicked within reach
+- `src/main.js:761-779`: a right tap opens the menu, cancels a draw, puts the item down in Use mode
 - `src/input.js:69-73`: the middle button read
-- `src/main.js:73`, `src/main.js:1056-1063`, `src/input.js:88`: the wheel's zoom step and its pace, held only while an item is dragged, and taken by the world only from the canvas
+- `src/main.js:74`, `src/main.js:1057-1064`, `src/input.js:88`: the wheel's zoom step and its pace, held only while an item is dragged, and taken by the world only from the canvas
 - `src/ui/inventory-panel.js:123`: the wheel rotates a dragged item
 - `src/input.js:150-158`: W A S D and the arrows walk in screen directions
-- `src/main.js:1127`, `src/entities/player.js:346-350`: Shift sprints, and sprinting drains stamina
+- `src/main.js:1128`, `src/entities/player.js:347-351`: Shift sprints, and sprinting drains stamina
 - `src/player-controller.js:53`: Space shoves
-- `src/interact.js:897-905`, `src/interact.js:1001-1030`, `src/ui/screens.js:28`: E on its release however long it was held, no hold; E while carrying puts it down
-- `src/interact.js:770-789`, `src/interact.js:365-372`: E takes only a simple action; a fire's Light is one only with a flame carried (game #169)
-- `src/interact.js:1031-1043`: B boards up (needs a plank), held pulls a board
-- `src/interact.js:1006`, `src/interact.js:1045-1068`, `src/ui/screens.js:43`: T lights or douses the torch in hand, else on the belt, with a tinderbox; else takes one from the bag; the Controls screen's line
-- `src/interact.js:997`, `src/interact.js:1017`, `src/interact.js:1072-1094`: keys 1 to 4 eat, drink, or swap the belt slot
-- `src/main.js:897-905`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
-- `src/main.js:1048-1049`: N and X
-- `src/main.js:856-877`: N and X refused with the bag open, "Close your bag to build."
+- `src/interact.js:958-966`, `src/interact.js:1062-1091`, `src/ui/screens.js:28`: E on its release however long it was held, no hold; E while carrying puts it down
+- `src/interact.js:831-850`, `src/interact.js:369-376`: E takes only a simple action; a fire's Light is one only with a flame carried (game #169)
+- `src/interact.js:1092-1104`: B boards up (needs a plank), held pulls a board
+- `src/interact.js:1067`, `src/interact.js:1106-1129`, `src/ui/screens.js:43`: T lights or douses the torch in hand, else on the belt, with a tinderbox; else takes one from the bag; the Controls screen's line
+- `src/interact.js:1058`, `src/interact.js:1078`, `src/interact.js:1133-1155`: keys 1 to 4 eat, drink, or swap the belt slot
+- `src/main.js:898-906`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
+- `src/main.js:1049-1050`: N and X
+- `src/main.js:857-878`: N and X refused with the bag open, "Close your bag to build."
 - `src/placement.js:277`, `src/ui/inventory-panel.js:117`: R turns a prop being placed or a dragged item
-- `src/main.js:1056`, `src/view.js:95-109`: Z cycles the zooms, wrapping
-- `src/main.js:1046-1047`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
-- `src/main.js:835-852`, `src/ui/log.js:55`: Escape's order, and in the chat box
-- `src/main.js:835-836`, `src/ui/screens.js:252-281`: Escape out of a world steps back through the site
+- `src/main.js:1057`, `src/view.js:95-109`: Z cycles the zooms, wrapping
+- `src/main.js:1047-1048`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
+- `src/main.js:836-853`, `src/ui/log.js:55`: Escape's order, and in the chat box
+- `src/main.js:836-837`, `src/ui/screens.js:252-281`: Escape out of a world steps back through the site
 - `src/ui/screens.js:850`, `src/ui/screens.js:897`, `src/ui/screens.js:910`: Enter in a screen's text field presses its button
 - `src/ui/screens.js:104-111`, `src/ui/screens.js:571-578`: Enter on Home opens the Worlds page; the first Escape in fullscreen leaves it
 - `src/ui/inventory-panel.js:75-126`, `src/ui/inventory-panel.js:637`: drag, rotate, shift-click, double-click, right-click in the panels
-- `src/ui/inventory-actions.js:167-182`, `src/interact.js:1206-1218`, `src/ui/screens.js:42`: a double-click equips from the bag and runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186); the Controls screen's line
+- `src/ui/inventory-actions.js:167-182`, `src/interact.js:1267-1279`, `src/ui/screens.js:42`: a double-click equips from the bag and runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186); the Controls screen's line
 - `src/ui/station-panel.js:34-43`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it
-- `src/main.js:1044`, `src/main.js:1065-1068`: V, L, ] and [
+- `src/main.js:1045`, `src/main.js:1066-1069`: V, L, ] and [
 - `src/clock.js:41-44`: the hour moved keeping the day
 - `src/net.js:856`, `src/net.js:1120`: the host sends its clock in every frame and a guest takes it
 - `src/net.js:1236-1273`: a guest's inputs and commands go to the host
-- `src/main.js:204-213`: any input while stepped away brings you back and is spent on it
+- `src/main.js:205-214`: any input while stepped away brings you back and is spent on it
