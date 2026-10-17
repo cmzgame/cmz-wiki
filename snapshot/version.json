@@ -1,7 +1,7 @@
 {
-  "commit": "8e7538f18ce1b776107981c705883b44f7e2b18c",
-  "short": "8e7538f",
-  "date": "2026-10-17T15:06:48-05:00",
-  "subject": "Merge #206, reviewed: farming (till, plant, water, harvest; growth from the clock while wet, dry pauses and never kills; seeds back), the farming verbs and the pick need a clear line (Primary's ruling), dryness on the crop (the builder's reading) (closes #194)",
+  "commit": "2998f41a1573f765af4c90949c2a9925909f4126",
+  "short": "2998f41",
+  "date": "2026-10-17T15:29:08-05:00",
+  "subject": "Merge #218, reviewed, Michael's rulings: the Onion-head Hat, after Cake's Comfort Eagle; real-world references as data; specific item names (Primary's renames)",
   "ref": "origin/main"
 }

@@ -23,7 +23,7 @@ You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back ho
 2. **Learn the doors and shutters.** Tap **E** at a door or a window to open or shut it. Nobody passes through a window, you or the dead: a door is the only way in or out, and the dead who see you through a window come round to the door. Shut shutters block sight both ways. See [[Openings]].
 3. **Keep fed and watered.** [[Hunger]] and [[Thirst]] fall over the day and show as [[Moodles]] down the right of the screen. Drink at the well or any water, and fill your waterskin there.
 4. **Mind your fires.** A fire burns its fuel down over game hours and goes out. Feed it [[Log|logs]] from its menu; lighting one that is out also needs the tinderbox in your bag, or a lit torch. See [[Fire]].
-5. **Farm the plot.** The garden's potatoes and cabbages grow on their own while their soil is wet; harvest a ready one with **E** for food and two seeds, and plant the seeds again in the tilled soil. Water them from your waterskin, and till more ground with a [[Hoe]]. See [[Farming]].
+5. **Farm the plot.** The garden's potatoes and cabbages grow on their own while their soil is wet; harvest a ready one with **E** for food and {{n crops.crops.potato.seeds}} seeds, and plant the seeds again in the tilled soil. Water them from your waterskin, and till more ground with a [[Hoe]]. See [[Farming]].
 6. **Sleep in a bed, indoors,** when you are tired. The night passes quickly while you sleep, and nothing wakes you, so shut the door first. If the dead saw you go in at night, they wait about the house until dawn, and you cannot sleep while they are near. See [[Sleep]].
 
 ## The dead

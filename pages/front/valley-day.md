@@ -16,7 +16,7 @@ On 2026-10-17 [[The valley]] became the game's focus. This page lists every syst
 
 ### Farming (game #206)
 
-Till grass or dirt with a [[Hoe]] in hand, plant a seed, water it from a [[Waterskin]], and harvest it with E when it is ready, for its food and two seeds back. Crops grow on the clock only while their soil is wet; dry soil pauses them and never kills them. A wall or closed shutters stop farming, while a fence or an open window does not. Only potatoes and cabbages can be grown in play, from the plot by [[Your cottage]], until the farms bring the other seeds.
+Till grass or dirt with a [[Hoe]] in hand, plant a seed, water it from a [[Waterskin]], and harvest it with E when it is ready, for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the clock only while their soil is wet; dry soil pauses them and never kills them. A wall or closed shutters stop farming, while a fence or an open window does not. Only potatoes and cabbages can be grown in play, from the plot by [[Your cottage]], until the farms bring the other seeds.
 
 Read: [[Farming]], [[Crops]], [[Hoe]], [[Potato seed]].
 
