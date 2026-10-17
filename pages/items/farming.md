@@ -62,7 +62,7 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 <!-- sources at cfe0203 -->
 - `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
 - `src/farming.js:160-177`, `src/interact.js:557-581`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
-- `src/farming.js:179-202`, `data/items.json:60-64`: Plant for each seed carried, on empty soil; the crop starts wet; the five seeds
+- `src/farming.js:179-202`, `data/items.json:60-65`: Plant for each seed carried, on empty soil; the crop starts wet; the six seeds
 - `src/farming.js:216-231`, `src/farming.js:102-109`, `src/interact.js:536-557`: Water, from the fullest skin with enough; greyed without; "The water soaks in."
 - `src/farming.js:64-95`, `src/interact.js:547-550`: the stage and the days left read from the growth; "Growing (ready in about N days)", "Dry: waiting for water"
 - `src/farming.js:233-262`, `src/farming.js:255-290`: Harvest: the food and the seeds into the bag, the rest at your feet, the tile left as soil

@@ -3,7 +3,9 @@ title: Bucket
 categories: [Items, Tools, Farming]
 aliases: [Buckets, Fill the bucket, Pour the bucket]
 summary: An item that holds water: filled at any water or a well, poured on a plot to water every crop in the 3 by 3 round it. One waits in your cottage's chest.
+numbersOk: true
 ---
+<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:270`), not named numbers a lookup can read -->
 
 {{infobox-item bucket}}
 

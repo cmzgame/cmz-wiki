@@ -7,6 +7,7 @@ numbersOk: true
 ---
 
 <!-- typed: the game's pull request numbers, which are names, not the game's numbers -->
+<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:270`), not named numbers a lookup can read -->
 
 On 2026-10-17 [[The valley]] became the game's focus. This page lists every system added or changed since then, in the game's merged pull requests from #183 on, grouped by what it touches. Each says in a sentence or two what changed and names the pages to read before you play it. [[Updates]] has the same changes sync by sync; this page keeps the whole day on one screen.
 
@@ -34,7 +35,7 @@ Read: [[Trees]], [[Apple]], [[The orchard]].
 
 ### Fishing (game #193)
 
-Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch. Grill the fish at a fire.
+Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch, and the brook by [[Long Acre]] (game #219) mostly trout. Grill the fish at a fire.
 
 Read: [[Fishing]], [[Fishing rod]], [[Perch]], [[Trout]], [[Carp]].
 
@@ -46,7 +47,7 @@ Read: [[Mining]], [[Pickaxe]], [[Charcoal clamp]], [[Forge]], [[Anvil]].
 
 ### Cloth (game #216)
 
-[[Flax]] is a sixth crop, and the weaver's chest holds its first seed and a [[Belt knife]]. The [[Loom]] weaves flax into [[Linen cloth]], and cloth into [[Bandage|bandages]] and linen clothes. With a knife on you, any garment tears into [[Rag|rags]] at the workbench, and a recipe that wants cloth takes a rag or plain cloth before a garment. The cap, the breeches, and the tunic are now the Linen cap, Linen breeches, and Linen tunic.
+[[Flax]] is a sixth crop, and the weaver's chest holds its first seed and a [[Belt knife]]. The [[Loom]] weaves flax into [[Linen cloth]], and cloth into [[Bandage|bandages]] and linen clothes. With a knife on you, any garment tears into [[Rag|rags]] at the workbench, and a recipe that wants cloth takes a rag or plain cloth before a garment. The cap and the breeches are now the [[Linen cap]] and [[Linen breeches]], beside the [[Linen tunic]] (renamed in game #218), and cloth is the new [[Linen cloth]].
 
 Read: [[Flax]], [[Linen cloth]], [[Rag]], [[Loom]], [[Bandage]].
 
@@ -58,7 +59,7 @@ Read: [[Bucket]], [[Farming]].
 
 ### The scythe (game #213)
 
-A swing with the [[Scythe]] harvests the ready grain on the three tiles ahead. Only rye is grain, and nothing gives a rye seed yet, so it waits for the farms.
+A swing with the [[Scythe]] harvests the ready grain on the three tiles ahead. Only rye is grain: the rye fields of [[Long Acre]] are its work, and the farms' granaries hold rye seed for more.
 
 Read: [[Scythe]], [[Farming]].
 

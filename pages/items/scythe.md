@@ -3,7 +3,9 @@ title: Scythe
 categories: [Items, Tools]
 aliases: [Scythes]
 summary: A harvesting tool made at the anvil: a swing harvests the ready grain on the three tiles ahead; it fights as a weak weapon.
+numbersOk: true
 ---
+<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:270`), not named numbers a lookup can read -->
 
 {{infobox-item scythe}}
 

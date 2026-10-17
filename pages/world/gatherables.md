@@ -5,7 +5,7 @@ aliases: [Gathering, Wobble, Sway]
 summary: Trees, rocks, mushrooms, crops, and pumpkins: the things that sway when clicked or walked through.
 ---
 
-Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], and pumpkins. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Today the only one that gives anything is the tree, which can be chopped down for [[Log|logs]].
+Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], and pumpkins. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; mushrooms and pumpkins give nothing yet.
 
 ## How it works
 
@@ -60,7 +60,8 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - `src/interact.js:1444-1460`, `src/game.js:607`, `src/game.js:616`, `src/game.js:621`: walking through a crop or mushroom sways it, one full sway at a time, only while moving
 - `data/ground.json`: flowers and leaves are baked decals, not props
 - `data/sprites/tree_apple.json`, `src/interact.js:583-608`: an apple tree laden is picked for apples, then bare (game #192)
-- `src/interact.js:638-660`, `src/chop.js:25-50`, `src/interact.js:756-770`, `data/sprites/stump.json`: chopping a tree or a stump with a hatchet, picking a fruit tree, a crop's actions; the stump gatherable and outlined (game #207); nothing else has an action
+- `src/interact.js:638-660`, `src/chop.js:25-50`, `src/interact.js:756-770`, `data/sprites/stump.json`: chopping a tree or a stump with a hatchet, picking a fruit tree, a crop's actions; the stump gatherable and outlined (game #207); nothing else has an action but mining
+- `src/mining.js:1-54`: a rock or an ore rock mined with a pickaxe in hand (game #210)
 - `src/interact.js:534-555`, `src/farming.js:233-262`: a ready crop harvested (game #206)
 - `src/interact.js:1395-1427`, `src/net.js:865`, `src/net.js:1129-1133`: the sways sent in frames; a guest's click checked by the host
 - `src/interact.js:69-91`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk

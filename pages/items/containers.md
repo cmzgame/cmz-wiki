@@ -23,7 +23,9 @@ A container can hold a bag or a belt only while that bag or belt is empty (the o
 ### Which furniture rolls which table
 
 - **Barrels** roll the barrel table.
-- **Chests**, and every other container in the village (bookcases, carts, coffins, counters, cupboards, desks, haystacks, shelves, stalls, strongboxes, woodpiles), roll the chest table.
+- **Chests**, and the other furniture containers (bookcases, carts, coffins, counters, cupboards, desks, haystacks, shelves, stalls, strongboxes, woodpiles), roll the chest table, except where a place gives one its own.
+- **The farms' haystacks**, at [[Hollow Farm]] and [[Long Acre]], roll the wild table instead: a stick.
+- **Some containers hold a fixed set**, the same in every world, and roll nothing: the chest in [[Your cottage]], the joiner's, the weaver's, the smithy's, and the miners' and quarry huts' chests, the barn's tool rack, the two granaries, the ore cart, the stone stack, and the charcoal sacks. Each is on its place's page.
 - **Wheelbarrows** have their own table, which rolls nothing: an empty grid of {{n loot.wheelbarrow.grid.0}} × {{n loot.wheelbarrow.grid.1}}.
 
 Furniture you make is different: a chest, a shelf, or a wheelbarrow made at the [[Workbench]] appears already searched and empty, so nothing is ever rolled into it.
@@ -84,6 +86,7 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `data/recipes.json:229-246`: the wheelbarrow recipe
 - `src/stations.js:178-192`: a container made at a station starts with its bag made, searched and empty (game commit 2c70942)
 - `data/loot.json:2-4`: the chest, barrel, and body tables, their rolls and weights
+- `data/loot.json`: the fixed tables (`fixed`, no rolls) and the wild table; `tools/mapgen/valley.py`: the farms' haystacks placed with `loot="wild"`, the fixed chests with their own (game #210, #216, #219)
 - `src/entities/character.js:139-162`: a body's grid of 6 x 6, its hands, garments, pockets, and what is lodged
 - `src/interact.js:1334-1358`: searching a body; villagers have no search entry
 - `data/wardrobes.json`: village wardrobes have no loot

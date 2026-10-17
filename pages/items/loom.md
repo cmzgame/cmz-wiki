@@ -7,7 +7,7 @@ summary: The weaver's station: flax into linen cloth, and cloth into bandages an
 
 {{infobox-station loom}}
 
-The **loom** stands in [[The weaver]]'s workroom. It weaves [[Flax]] into [[Linen cloth]], and makes the cloth into [[Bandage|bandages]], the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]]. It needs no fire and no tool. The weaver's chest holds the first flax seed, so a whole run, from seed to cloth, can be had in play (see [[Farming]]).
+The **loom** stands in [[The weaver]]'s workroom. It weaves [[Flax]] into [[Linen cloth]], and makes the cloth into [[Bandage|bandages]], the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]]. It needs no fire and no tool. The weaver's chest and the farms' granaries hold flax seed, and [[Long Acre]] grows flax from the start, so a whole run, from seed to cloth, can be had in play (see [[Farming]]).
 
 ## Using it
 
