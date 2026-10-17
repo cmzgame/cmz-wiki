@@ -77,7 +77,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:52-55`: hunger's most, its drain time, and `fullAt`
 - `src/entities/player.js:81-101`: full at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the heal times the share of its hunger the stomach has room for; the dead eat nothing (game #186)
 - `src/entities/player.js:138-150`: hunger drains, or stays full with Survival off
@@ -94,7 +94,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `data/recipes.json`: flour at the millstones, the pumpkin pie at the oven (game #219)
 - `src/farming.js:233-259`, `tools/mapgen/valley.py:190`: potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
 - `data/items.json:16-18`, `data/items.json:41-46`, `data/items.json:54-57`, `data/items.json:63-65`: the foods, each with its hunger, thirst, and heal (game #186)
-- `src/ui/inventory-actions.js:258-264`, `src/ui/inventory-actions.js:347-358`: a guest's Eat, from a bag or a belt slot, runs on the host
+- `src/ui/inventory-actions.js:258-264`, `src/ui/inventory-actions.js:352-363`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default
 
 {{navbox items}}

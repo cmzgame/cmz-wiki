@@ -44,7 +44,7 @@ Talk runs on the host. A guest's poke goes to the host as a command, the host pi
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/talk.js:1-6`: talk reads the world and never writes it; no chance, the lines in turn (game #220)
 - `src/talk.js:33-47`, `src/talk.js:55-73`, `src/talk.js:100-122`: the conditions (time, the dead near or in the world, a villager alive or dead, indoors, hurt, what the talker holds, hungry, thirsty, tired, bleeding)
 - `src/talk.js:124-141`: the first group that holds, its lines in turn by a counter on the villager; an unprompted remark only from an `ambient` group

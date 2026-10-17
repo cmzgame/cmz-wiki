@@ -17,11 +17,11 @@ Poked, Wyn says a line for the moment (see [[Talk]]): the first group below that
 
 {{barks guide}}
 
-The first poke of a new world is a welcome: the dead who stood in the lane by your cottage now stand farther down it, out of Wyn's reach.
+By day, with none of the dead near, the first poke of a new world says "Ask me anything, if you are stuck.": the dead who stood in the lane by your cottage now stand farther down it, beyond the {{n tuning.villager.barkDeadRadius tiles}} that would make it a warning.
 
 ## What they know
 
-Wyn's talk holds a conversation that opens on these questions, each about a part of the game as it is built and each pointing to its page here:
+Wyn's talk holds a conversation that opens on these questions: who they are, why they are here, what happened, and then a part of the game as it is built, each of those pointing to its page here:
 
 {{talk-topics guide}}
 
@@ -33,7 +33,7 @@ A guest pokes Wyn as the host's player does, by the same command; the host picks
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:605-607`: Wyn by your cottage's door at (102, 218), wardrobe 6, their map line, `immune`, `talk: guide`, `guide` (game #220)
 - `tools/mapgen/mapgen.py:15`, `tools/mapgen/mapgen.py:146-150`: a guide on every map the generator makes, within three tiles of its spawn
 - `data/talk/guide.json`: the barks and the conversation's questions with their wiki links

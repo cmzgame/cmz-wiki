@@ -13,7 +13,7 @@ summary: Mined from the ore rocks of the iron workings with a pickaxe, and smelt
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:51`: iron ore, its stack
 - `data/sprites/ore_rock.json`, `src/mining.js:42-55`: an ore rock mined for ore, then spent for its days (game #210)
 - `data/loot.json:12`, `data/loot.json:14`: the miners' chest and the ore cart

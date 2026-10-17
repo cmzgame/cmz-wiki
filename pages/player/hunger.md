@@ -51,7 +51,7 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:52`, `data/tuning.json:54-55`: the maximum, the drain time, and `fullAt`
 - `src/entities/player.js:145`: the drain, every step, awake or asleep
 - `src/map.js:95`: a game hour is 30 seconds
@@ -64,5 +64,5 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 - `src/entities/player.js:162-167`, `data/tuning.json:69`: Very hungry slows stamina recovery
 - `src/entities/player.js:149`, `data/tuning.json:57`: starving damage
 - `data/items.json:16-17`, `data/items.json:70`: bread, apple, and stew
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
 - `src/entities/player.js:139-143`: Survival off holds hunger full

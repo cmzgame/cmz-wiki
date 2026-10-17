@@ -12,7 +12,7 @@ A **cabbage seed** is planted in tilled soil to grow cabbage (see [[Farming]]). 
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:60-65`: the six seeds, tagged `seed`, and their stacks
 - `data/crops.json`: the cabbage crop: its seed, its harvest, its seeds back, and its harvest tool (game #222)
 - `src/farming.js:179-202`, `src/farming.js:233-259`: planted on tilled soil; the harvest gives the seeds back

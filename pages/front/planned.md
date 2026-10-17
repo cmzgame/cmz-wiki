@@ -34,7 +34,7 @@ Fishing, apple trees, farming, the farms and the mill, the bucket and the scythe
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `docs/30-the-big-pass-spec.md:122-141`, `docs/30-the-big-pass-spec.md:154`: farming, the bucket, the scythe, the farms and the mill built (step 4; game #206, #211, #213, #219)
 - `docs/30-the-big-pass-spec.md:155-156`: the castle (step 5) and the forest places (step 6), the iron workings, the quarry, and the burners built (game #210)
 - `docs/30-the-big-pass-spec.md:142-145`: the tools' verbs; the hatchet's, the pickaxe's, and the scythe's built (game #207, #210, #213), and the tool rule (game #222); the shovel's graves and plots, the knife's butchering and skinning not

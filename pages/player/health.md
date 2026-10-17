@@ -61,7 +61,7 @@ Each player has their own health. A sleeper among players who are awake still re
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:45`: the maximum health
 - `src/ui/hud.js:90-93`: the bar, its colours by fraction, and the current / max text
 - `data/tuning.json:11-12`: a bite's damage and the time between bites

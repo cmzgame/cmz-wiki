@@ -95,7 +95,7 @@ Light belongs to the world: the host works it out, and each guest works out the 
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/light.js:427-439`: one light level: ambient, the static map, carried lights
 - `src/light.js:29`, `src/light.js:120-122`, `src/clock.js:7`: the outdoor cap and the night sky
 - `src/map.js:1721-1773`: rooms found by flood fill

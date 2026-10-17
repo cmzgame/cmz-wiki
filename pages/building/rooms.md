@@ -55,7 +55,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/map.js:1721-1773`: the flood fill, stopped by walls, doors, and windows in any state
 - `src/map.js:25`: the largest room
 - `src/map.js:1421-1433`, `src/map.js:1754-1756`: a see-through wall bounds no room

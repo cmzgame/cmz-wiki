@@ -58,7 +58,7 @@ A guest's tap and hold of B are carried out by the host, which checks that playe
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/interact.js:53-54`: the nailing and pulling times
 - `src/map.js:577-580`: a board's health, three boards per side
 - `src/map.js:760-778`: a board added on the near side, pulled from it

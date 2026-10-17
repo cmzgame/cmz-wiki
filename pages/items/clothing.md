@@ -39,7 +39,7 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/inventory.js:9`: the seven slots, the code's `worn` slots
 - `data/items.json:26-36`: each garment's `wear` slot
 - `src/interact.js:1207-1229`: Equip on an item's menu, Equip (W×H) for a bag, in your bag or a container (game commit 9a450f2)
@@ -56,5 +56,5 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `data/loot.json:2`: gloves and the hood in the chest table
 - `data/wardrobes.json`: what the dead have on
 - `src/entities/character.js:148-171`: a body's garments laid out on its grid
-- `src/ui/inventory-actions.js:203-366`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
+- `src/ui/inventory-actions.js:203-371`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
 - `src/net.js:229`: what each character has on travels in its record

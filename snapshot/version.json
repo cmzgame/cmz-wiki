@@ -1,7 +1,7 @@
 {
-  "commit": "0e765f7d7c87ef02dff6855845deebb0d3e54698",
-  "short": "0e765f7",
-  "date": "2026-10-17T17:07:20-05:00",
-  "subject": "Merge #222, reviewed, Michael's tool rule: every action that needs a tool asks for it carried (a hammer to build, board, pull, and remove; a hatchet for log walls, splitting, and sticks; workbench rows by verb; the scythe, shovel, and knife to harvest; Free building waives the build tools, not boards; a shovel and a bucket in your cottage's chest) (closes #215)",
+  "commit": "3f11fdbd861088513ace5b1bd03560e652db4cb1",
+  "short": "3f11fdb",
+  "date": "2026-10-17T17:29:42-05:00",
+  "subject": "Merge #226, reviewed: a guest's slot op meets the host's canPlace, and canPlace refuses slots that do not exist (a negative or non-number belt index, a hand not main or off) (closes #224)",
   "ref": "origin/main"
 }

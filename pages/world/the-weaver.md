@@ -17,7 +17,7 @@ One of the dead stands in the yard at the start.
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `tools/mapgen/valley.py:354-363`: the weaver west of the square on the west road, the vats in the yard
 - `data/maps/valley.json:3705-3819`, `data/loot.json:11`: the chest's own table, flax seed and a knife (game #216); a wooden house; the loom and spinning wheel; the partitioned room with a bed, chest, and fireplace; the door south
 - `data/maps/valley.json:3823-3852`: three dye vats and a woodpile east of the house

@@ -57,7 +57,7 @@ Chopping and picking are menu actions the host performs for whoever asked, the h
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/map.js:2130-2169`, `data/maps/valley.json:11646-11661`: trees scattered over the valley except the village and the reserves
 - `data/maps/valley.json:11615-11645`: the biome's green, orange, red, and yellow oaks and spires; blue and purple in no map
 - `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_old.json`: per size the collision radius, wood, canopy reach, shadow, and leaf colour

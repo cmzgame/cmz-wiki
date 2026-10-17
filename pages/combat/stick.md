@@ -24,11 +24,10 @@ It is light and quick to find, but weak, and it breaks fast.
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/recipes.json`: sticks from a plank at the workbench, with `split`, a hatchet, carried (game #222)
-- `data/loot.json`: the stick in the `body` and `wild` tables
-- `data/recipes.json`: the handle recipe (a plank into sticks at the workbench) and recipes that take sticks
-- `data/items.json`: the stick's `weapon` block
-- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
+<!-- sources at 3f11fdb -->
+- `data/loot.json:4`, `data/loot.json:19`: the stick in the `body` and `wild` tables
+- `data/recipes.json:200-215`: sticks from a plank at the workbench, with `split`, a hatchet, carried (game #222); the recipes that take sticks
+- `data/items.json:7`: the stick's `weapon` block, no `knockdown` of its own
+- `data/combat.json` `blow.knockdownChance`, `src/combat.js:354`: the default knockdown chance
 
 {{navbox weapons}}

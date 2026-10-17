@@ -67,7 +67,7 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/map.js:733-744`: a wall record with its kind and state
 - `src/map.js:817-826`: only a door, open or broken and unboarded, passes a body; a window never does
 - `src/map.js:1337-1351`: what a door and shutters pass of light and sight

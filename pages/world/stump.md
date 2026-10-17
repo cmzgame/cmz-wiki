@@ -21,7 +21,7 @@ Chopping a stump is a menu action the host performs for whoever asked. The stump
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/sprites/stump.json`: the stump: `interactable`, outlined, its collision, `wood`, `felled` (game #207)
 - `data/tuning.json:103`, `src/chop.js:40-45`: a felled tree with a canopy leaves the stump sprite on its tile
 - `src/chop.js:22-23`, `src/chop.js:25-50`: a stump is a prop marked `felled`; chopped, it gives its log and leaves nothing

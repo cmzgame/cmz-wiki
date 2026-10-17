@@ -21,7 +21,7 @@ The graveyard is full of the dead at the start, among the headstones on both sid
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `tools/mapgen/valley.py:249-263`: the chapel at the top of the nobles' street, inside the graveyard
 - `data/maps/valley.json:2282-2450`: stone walls; the pews, altar, lectern, chest, cupboard, and font; the partition in the north-east corner; the door south, two windows west, one east
 - `data/sprites/font.json`, `src/interact.js:715-717`, `src/interact.js:777`: the font is drunk from like a well

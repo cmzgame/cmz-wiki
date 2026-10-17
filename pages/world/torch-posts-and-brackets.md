@@ -67,7 +67,7 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/sprites/lantern_post.json`: the lantern post: its light's radius, the one number for every lantern, not carried
 - `src/map.js:138-141`, `src/map.js:208-215`, `src/light.js:63-67`: a bracket holds a lantern or a torch; a lantern's light steady, never out, at the post's radius
 - `src/interact.js:415`: a lantern bracket offers no action
@@ -92,5 +92,5 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `data/maps/valley.json:2061-2072`, `data/maps/valley.json:4100-4105`: the inn's and the toll house's lanterns outside
 - `data/maps/valley.json:12029-12050`: the square's three lantern posts
 - `src/interact.js:72-129`: a guest's take or mount run on the host by address
-- `src/main.js:1005-1016`, `src/ui/inventory-actions.js:383-385`: a guest's Use on a bracket by its tile and edge, run on the host
+- `src/main.js:1005-1016`, `src/ui/inventory-actions.js:388-390`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests

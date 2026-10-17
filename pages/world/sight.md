@@ -89,7 +89,7 @@ Each player sees the dead in the dark by their own sight and their own torch, fr
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/visibility.js:12-48`, `src/visibility.js:86-109`, `src/camera.js:38-55`: rays from your tile over the viewport and a margin; the corner points
 - `src/main.js:1151-1160`: recomputed on a new tile, a world change, or a resize
 - `src/map.js:1342-1355`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not

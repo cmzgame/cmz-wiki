@@ -65,7 +65,7 @@ A single item that can be held goes into a free hand first, then the bag, then t
 
 ## With friends
 
-A guest's panels show their own character's bag, and every drag, drop, double-click, Tidy, Rotate, and menu entry is sent to the host, who carries it out for that player. A container that is not the guest's own must be within reach of the guest's character on the host. Items on the floor are the same for everyone.
+A guest's panels show their own character's bag, and every drag, drop, double-click, Tidy, Rotate, and menu entry is sent to the host, who carries it out for that player, by the same rules as the host's own: an item dragged to a belt, worn, or hand slot it cannot go in is refused, with "That does not go there." A container that is not the guest's own must be within reach of the guest's character on the host. Items on the floor are the same for everyone.
 
 ## See also
 
@@ -76,7 +76,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/main.js:1079-1164`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
 - `src/inventory.js:43`: your grid is the bag on your back
 - `src/inventory.js:27-32`: a bag's grid travels with the bag
@@ -104,5 +104,6 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/interact.js:888-901`: a loose item beats a container
 - `src/interact.js:201-267`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
 - `src/interact.js:166-171`: a free hand first; "No room in your bag.", "You have no bag."
-- `src/ui/inventory-actions.js:203-366`: a guest's panel actions run on the host
+- `src/ui/inventory-actions.js:203-371`: a guest's panel actions run on the host
+- `src/ui/inventory-actions.js:62-76`, `src/ui/inventory-actions.js:318-326`: a guest's slot command meets the host's `canPlace`; "That does not go there." (game #226)
 - `src/ui/inventory-actions.js:280-288`: a container not the guest's own must be within reach

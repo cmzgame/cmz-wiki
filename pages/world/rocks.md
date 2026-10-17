@@ -22,7 +22,7 @@ A rock blocks a circle of {{n sprites.rock_0.collide.radius}} tiles, like a broa
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/maps/valley.json`: the wild's rock rule (`wild.rocks`: the cell, the chance, the four kinds)
 - `src/map.js`: the wild's rocks placed by the cell's own roll
 - `data/sprites/rock_0.json` (and `rock_1` to `rock_3`): the collision, the shadow, not carried, `interactable`, and the `mine` block

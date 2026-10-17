@@ -80,7 +80,7 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/sprites/wall_fence.json`: the fence's height, thickness, `seeThrough`, and `fence`
 - `src/map.js:1421-1433`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what the dead can break
 - `src/map.js:1721-1773`: the room fill passes a see-through wall

@@ -42,7 +42,7 @@ A guest's line is said by their character on the host, so it reaches every playe
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/ui/log.js`, `src/ui/log.js:12`: the chat log, every message and line said in sight, the lines kept
 - `src/ui/speech.js:96-97`: the speaker's label: You, the name, Villager, Someone; the dead's groans not logged
 - `src/entities/character.js:125-127`, `src/game.js:110-123`, `src/ui/speech.js:64-67`: a line's time from its length, aged in the world's step on the host and cleared when it runs out (game #220, closing game #154)

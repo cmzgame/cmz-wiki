@@ -27,7 +27,7 @@ A guest cooks through the host like any station; the fire and the queue are the 
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/sprites/campfire.json`: the campfire cooks
 - `data/sprites/hearth.json`: the hearth cooks
 - `data/sprites/fireplace.json:30-34`: the fireplace cooks

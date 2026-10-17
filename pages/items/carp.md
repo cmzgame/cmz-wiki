@@ -12,7 +12,7 @@ A **carp** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the p
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:41-46`: the carp and its grilled kind: hunger, heal, stack, tags
 - `data/fishing.json`: the waters that catch it, and how often
 - `src/fishing.js:57-81`: a catch into the bag, or at your feet when it is full

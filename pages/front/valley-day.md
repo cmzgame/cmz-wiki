@@ -112,7 +112,7 @@ Read: [[Villagers]], [[Innkeeper]], [[Priest]].
 
 ### Talk and the guide (game #220)
 
-Villagers now talk. A poke gets a line of their own for the moment (night, dawn, the dead close by), the lines taking turns, and with you near they now and then remark unprompted. [[Wyn]], the guide, stands just outside your cottage's door, immune to the dead, with a welcome for a new world; the dead who stood in the lane by your garden have moved farther down it. A speech bubble's time now runs in the world on the host, so a line ends on its own on a server world too (closing game #154). Conversations, where you ask the guide your questions, are still to come.
+Villagers now talk. A poke gets a line of their own for the moment (night, dawn, the dead close by), the lines taking turns, and with you near they now and then remark unprompted. [[Wyn]], the guide, stands just outside your cottage's door, immune to the dead; the dead who stood in the lane by your garden have moved farther down it, so a new world's first poke by day is "Ask me anything, if you are stuck.", not a warning. A speech bubble's time now runs in the world on the host, so a line ends on its own on a server world too (closing game #154). Conversations, where you ask the guide your questions, are still to come.
 
 Read: [[Talk]], [[Wyn]], [[Villagers]], [[Chat log]].
 
@@ -130,7 +130,13 @@ Read: [[Chat log]], [[Sight]].
 
 ## Coming next
 
-Nothing is in review in the game just now. [[Planned]] lists what is still to come.
+Built, and in review in the game, not merged yet; their pages come with their merge.
+
+- **Nothing in reach through a wall** (game #227): every action, from a door to a chest to a poke, needs a clear line as well as the distance, so a player behind a wall walks round instead of acting through it.
+- **The Onion-head Hat's painted art** (game #229), and hoods that take their wearer's dye.
+- **Talk, part 2: conversations** (game #230): the panel where you ask the guide your questions and read the answers.
+
+[[Planned]] lists what is further off.
 
 ## See also
 
@@ -138,7 +144,7 @@ Nothing is in review in the game just now. [[Planned]] lists what is still to co
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/entities/player.js:85-86`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:190`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-50`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
@@ -154,3 +160,4 @@ Nothing is in review in the game just now. [[Planned]] lists what is still to co
 - `tools/mapgen/valley.py:407-522`, `data/loot.json:8-10`: the farms and the mill (game #219)
 - `src/inventory.js:88-108`, `data/recipes.json`, `data/crops.json`, `data/build.json`, `data/loot.json:6-7`, `src/settings.js:63`: the tool rule, the cottage's shovel, the joiner's hammer, Free building (game #222)
 - `src/talk.js`, `data/talk/`, `data/maps/valley.json:12288-12299`, `src/game.js:110-123`: talk, Wyn, and the bubbles aged on the host (game #220)
+- The game's open pull requests #227, #229, and #230: what comes next

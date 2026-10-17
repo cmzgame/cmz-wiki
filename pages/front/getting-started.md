@@ -40,7 +40,7 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `index.html:51`, `src/ui/screens.js:823-836`: the site's Play opens the Worlds page, New world on it
 - `src/main.js:312-348`, `src/ui/screens.js:360-366`, `src/ui/screens.js:438-457`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
 - `src/game.js:214-219`: each world's save holds its own characters

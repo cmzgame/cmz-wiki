@@ -45,7 +45,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/inventory.js:9`: the waist slot
 - `data/items.json:32-33`: the rope belt's and the good belt's slot counts
 - `data/kit.json`: every new character starts with a rope belt on

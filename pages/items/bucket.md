@@ -33,7 +33,7 @@ A guest fills and pours through the same menu entries and Use, sent to the host 
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:21`: the bucket: either hand, `vessel` and its capacity (game #211)
 - `src/bucket.js:1-126`: the buckets you carry, the first that can serve; Fill at water, a well, a trough, or a font; Pour on the 3 by 3 where something needs water, one pour a fill; reach and a clear line; the menu's entries and their greyed forms
 - `src/farming.js:102-109`: a pour wets each crop as a waterskin does one

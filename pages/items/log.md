@@ -25,7 +25,7 @@ A log is the fuel of the campfire, the hearth, the fireplace, and the [[Oven]] (
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:4`: the log: 2 x 3, fuel, splits into 3 planks
 - `src/interact.js:651-673`, `src/chop.js:25-50`: Chop down with a hatchet in a hand, the logs on the tile, the count in the label, the stump left and chopped for its log (game #207)
 - `data/tuning.json:102`, `data/sprites/stump.json`: the chop's seconds, the stump's log

@@ -10,7 +10,7 @@ summary: The tool for smithing and building: held for the anvil's recipes, carri
 The **smith's hammer** (the hammer until the names were made specific) is the tool of two trades.
 
 - **Smithing:** every recipe at the [[Anvil]] but the hammer's own needs it **in a hand**.
-- **Building:** carried anywhere on you (a hand, the belt, or the bag), it is what building a door or a window, boarding up an opening, pulling a board off, and **Remove** ask for (see [[Building]] and [[Boards]]), and what most rows at the [[Workbench]] ask for: the furniture, the [[Wheelbarrow]], the [[Wooden shield]], the [[Hoe]], the [[Shovel]], and the [[Bucket]]. Without one they are greyed with "(need a smith's hammer)" and refuse with "You need a smith's hammer." With the world rule Free building on, building and Remove do not ask for it; boarding up and pulling a board still do.
+- **Building:** carried anywhere on you (a hand, the belt, or the bag), it is what building a door or a window, boarding up an opening, pulling a board off, and **Remove** ask for (see [[Building]] and [[Boards]]), and what most rows at the [[Workbench]] ask for: the furniture, the [[Wheelbarrow]], the [[Wooden shield]], the [[Hoe]], the [[Shovel]], and the [[Bucket]]. Without one, the opening's Board up and Pull a board entries read "(need a smith's hammer)", the palette greys a door and a window, the Remove ghost goes red, the workbench's rows say "needs a smith's hammer on you", and each refuses with "You need a smith's hammer." With the world rule Free building on, building and Remove do not ask for it; boarding up and pulling a board still do.
 
 It can be held in either hand and swung as a weak weapon that breaks after about {{n items.hammer.weapon.kills}} kills.
 
@@ -28,7 +28,7 @@ A guest's tool is checked on the host, from that player's own hands, belt, and b
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:50`: the hammer: either hand, its verbs `smith` and `build`, a weapon, its kills
 - `data/recipes.json:525-543`: the hammer's recipe, with no tool
 - `data/recipes.json:505-663`: every other anvil recipe needs the hammer in hand (`tool`)

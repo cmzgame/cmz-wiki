@@ -63,7 +63,7 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:53`, `data/tuning.json:56`: the maximum and the drain time
 - `src/entities/player.js:146`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
@@ -80,6 +80,6 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 - `src/entities/player.js:152-154`: Thirsty stops regeneration
 - `src/entities/player.js:160-165`, `data/tuning.json:69`: Parched slows stamina recovery
 - `src/entities/player.js:150`, `data/tuning.json:58`: dehydration damage
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
 - `src/host.js:239-242`: a guest's sip by itself, its word sent to the guest
 - `src/entities/player.js:138-143`: Survival off holds thirst full

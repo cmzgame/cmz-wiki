@@ -20,7 +20,7 @@ It also drinks by itself. Once your [[Thirst]] falls to **Thirsty** (the moodle'
 
 It also waters crops: **Water** on a crop's menu, or a [[Use]] of the skin on a crop or tilled soil, takes some of its water (see [[Farming]]).
 
-To fill it, stand at a well or beside any water tile and choose "Fill waterskins". It takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your [[Belt]] to full. Wells and water never run out.
+To fill it, stand at a well, a trough, or the chapel's font, or beside any water tile, and choose "Fill waterskins". It takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your [[Belt]] to full. Wells and water never run out.
 
 A waterskin found in a barrel or on a body may hold 0, 25, 50, 75, or 100 percent.
 
@@ -32,7 +32,7 @@ A guest drinks and fills through the same actions; the host performs them. A gue
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:20`: the waterskin, its size, and its capacity
 - `data/kit.json:5`: the starter waterskin, full
 - `data/loot.json:3-4`: waterskins in barrels and on bodies
@@ -45,6 +45,6 @@ A guest drinks and fills through the same actions; the host performs them. A gue
 - `src/inventory.js:80-87`: the bag's waterskins and the belt's are filled (the belt's game #222)
 - `src/items.js:98`: a found waterskin's random fill
 - `src/farming.js:140-149`, `src/farming.js:216-231`, `data/interactions.json:20-22`: watering a crop takes the fill a watering costs, from the fullest skin with enough (game #206)
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
 
 {{navbox items}}

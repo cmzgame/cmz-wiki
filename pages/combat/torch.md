@@ -58,7 +58,7 @@ In the off hand beside a weapon such as the [[Arming sword]] it counts as a weap
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json`: the torch: either hand, `fire.radius`, `fire.burnsDown`, its `weapon` block, `kills`, `ignite`
 - `data/recipes.json`: the torch recipe at the workbench
 - `data/kit.json`: the starter kit's torch in hand, out, and a tinderbox in the bag

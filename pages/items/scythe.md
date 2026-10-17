@@ -23,7 +23,7 @@ A guest's swing is carried out on the host, which harvests for that player; the 
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:47`: the scythe: either hand, its verb `harvest`, its weapon block
 - `src/farming.js:257-292`: a swing with an item listing `harvest`, in the hand that swung, harvests every ready grain crop on the three tiles ahead by the `harvest` verb; the message counts the rows and what fell (game #213)
 - `data/crops.json`: rye's `grain` flag, and its `tool`, `harvest`, carried for a hand harvest (game #222); flax has neither

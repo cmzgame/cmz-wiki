@@ -31,7 +31,7 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:19`: the tinderbox: a tool, 1 by 1, no wear, placeholder art; `belt`, so it may ride the belt (game #222)
 - `src/ui/inventory-actions.js:67-73`: a belt slot takes a food, a skin, or an item marked `belt`
 - `data/kit.json`: the starter kit's tinderbox in the bag beside the torch in hand, out
@@ -47,7 +47,7 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 - `src/interact.js:420-432`: Light the torch on a holder's menu
 - `src/map.js:284-312`: what can be lit, touched for the save and the wire
 - `src/items.js:198-211`: a torch out when it leaves a hand, the belt, or a holder
-- `src/ui/inventory-actions.js:368-402`, `src/main.js:1005-1016`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
+- `src/ui/inventory-actions.js:373-407`, `src/main.js:1005-1016`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
 - `src/net.js:590-598`: a guest's menu choice run on the host as that player
 
 {{navbox items}}

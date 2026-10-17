@@ -47,7 +47,7 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `src/interact.js:1207-1284`: Use on an item's menu
 - `src/interact.js:1290-1350`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
@@ -63,5 +63,5 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 - `src/interact.js:678-717`: the well's own menu fills waterskins
 - `src/interact.js:360-393`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
-- `src/ui/inventory-actions.js:368-402`, `src/main.js:1005-1016`: the host runs it as that player; a bracket sent by its tile and edge
+- `src/ui/inventory-actions.js:373-407`, `src/main.js:1005-1016`: the host runs it as that player; a bracket sent by its tile and edge
 - `src/host.js:268-272`: the line goes to the guest's chat log

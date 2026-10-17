@@ -16,7 +16,7 @@ Some villagers are **immune** to the dead, by a flag on each villager in the map
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/maps/valley.json:12287-12373`: the villagers and their map lines (the table)
 - `data/talk/`: the talk files, every villager's but the Miller's (game #220)
 - `src/entities/villager.js:1-8`: no weapons, never fighting

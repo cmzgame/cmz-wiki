@@ -37,7 +37,7 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 
 ## Sources
 
-<!-- sources at 0e765f7 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:6`: the hatchet: either hand, its verbs `chop`, `notch`, and `split`, its `weapon` block (the last two game #222)
 - `src/inventory.js:88-108`, `data/tuning.json:99`, `src/interact.js:1246-1262`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
 - `src/chop.js:13-50`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it
