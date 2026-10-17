@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "82106de6bde5afe5348969061e28c11dae539cb1",
-  "short": "82106de",
-  "date": "2026-10-17T00:20:30-05:00",
-  "subject": "Merge #140, reviewed, Michael's law: nobody climbs through a window, player or dead; the dead batter a window open to see in, never to pass, and come round to a door; every door's tiles kept clear (closes #134)",
+  "commit": "9d9a5b5a777ffd09909a26b87cf424ded1925cbd",
+  "short": "9d9a5b5",
+  "date": "2026-10-17T00:58:22-05:00",
+  "subject": "Merge #150, reviewed, Michael's rulings: darkness shortens sight, the dead fading to hidden past a soft edge unless in light; the dark hides information, never physics; a shuttered room is dark by day and open shutters fill it with daylight (closes #88)",
   "ref": "origin/main"
  },
  "counts": {
@@ -26,8 +26,8 @@
   "verbs": 3,
   "menuLabels": 55,
   "events": 26,
-  "checks": 23,
-  "modules": 82
+  "checks": 24,
+  "modules": 83
  },
  "items": [
   {
@@ -4144,13 +4144,20 @@
    "beltLight": 0.5,
    "twoTorches": 1.35,
    "playerCapBrowser": 4,
-   "playerCapServer": 8
+   "playerCapServer": 8,
+   "daylightTiles": 30
   },
   "population": {
    "none": 0,
    "low": 0.4,
    "standard": 1,
    "high": 2.5
+  },
+  "sight": {
+   "darkRadius": 1.5,
+   "edge": 2,
+   "litNone": 0.3,
+   "litFull": 0.45
   }
  },
  "combat": {
@@ -4475,7 +4482,7 @@
   {
    "key": "devChest",
    "default": "true",
-   "note": "the chest of every item placed by the spawn (read at load; docs/30 step 0: the map file stays clean)"
+   "note": "the chest of every item placed by the spawn: chosen at a new world's Sandbox step (docs/38), this is the next world's first choice; docs/30 step 0: the map file stays clean"
   },
   {
    "key": "identities",
@@ -4550,7 +4557,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:927"
+    "interact.js:928"
    ]
   },
   {
@@ -4581,7 +4588,7 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:928"
+    "interact.js:929"
    ]
   },
   {
@@ -4712,31 +4719,31 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1085"
+    "interact.js:1086"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1031"
+    "interact.js:1032"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1007"
+    "interact.js:1008"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1008"
+    "interact.js:1009"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1111"
+    "interact.js:1112"
    ]
   },
   {
@@ -4796,7 +4803,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1113"
+    "interact.js:1114"
    ]
   },
   {
@@ -4838,7 +4845,7 @@
   {
    "key": "Sleep",
    "at": [
-    "interact.js:389"
+    "interact.js:390"
    ]
   },
   {
@@ -4868,7 +4875,7 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:412"
+    "interact.js:413"
    ]
   },
   {
@@ -4880,21 +4887,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1096",
-    "interact.js:1127"
+    "interact.js:1097",
+    "interact.js:1128"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1003",
-    "interact.js:1083"
+    "interact.js:1004",
+    "interact.js:1084"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:576"
+    "interact.js:577"
    ]
   },
   {
@@ -4918,7 +4925,7 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:458"
+    "interact.js:459"
    ]
   },
   {
@@ -4930,7 +4937,7 @@
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:509"
+    "interact.js:510"
    ]
   },
   {
@@ -4948,49 +4955,49 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1035"
+    "interact.js:1036"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:533"
+    "interact.js:534"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:862"
+    "interact.js:863"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1011"
+    "interact.js:1012"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:203"
+    "interact.js:204"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1347"
+    "interact.js:1353"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:495"
+    "interact.js:496"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1040"
+    "interact.js:1041"
    ]
   }
  ],
@@ -5034,9 +5041,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:209",
-    "interact.js:342",
-    "interact.js:1332",
+    "interact.js:210",
+    "interact.js:343",
+    "interact.js:1338",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5062,13 +5069,13 @@
   {
    "key": "fireFed",
    "at": [
-    "map.js:124"
+    "map.js:125"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:109"
+    "map.js:110"
    ]
   },
   {
@@ -5280,6 +5287,7 @@
   "rooms",
   "save",
   "sheets",
+  "sight",
   "sleep",
   "sway",
   "sync",
@@ -5292,7 +5300,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 1971
+   "lines": 1986
   },
   {
    "path": "main.js",
@@ -5304,7 +5312,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1392
+   "lines": 1398
   },
   {
    "path": "net.js",
@@ -5360,7 +5368,7 @@
   },
   {
    "path": "light.js",
-   "lines": 416
+   "lines": 434
   },
   {
    "path": "ui/inventory-actions.js",
@@ -5380,7 +5388,7 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 284
+   "lines": 290
   },
   {
    "path": "inventory.js",
@@ -5483,12 +5491,16 @@
    "lines": 124
   },
   {
+   "path": "tuning.js",
+   "lines": 120
+  },
+  {
    "path": "entities/movement.js",
    "lines": 116
   },
   {
-   "path": "tuning.js",
-   "lines": 110
+   "path": "ui/speech.js",
+   "lines": 113
   },
   {
    "path": "ui/log.js",
@@ -5515,12 +5527,8 @@
    "lines": 95
   },
   {
-   "path": "ui/speech.js",
-   "lines": 92
-  },
-  {
    "path": "ui/zombie-bars.js",
-   "lines": 84
+   "lines": 86
   },
   {
    "path": "ui/context-menu.js",
@@ -5597,6 +5605,10 @@
   {
    "path": "verbs.js",
    "lines": 35
+  },
+  {
+   "path": "sight.js",
+   "lines": 33
   },
   {
    "path": "figure.js",

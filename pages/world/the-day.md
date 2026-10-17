@@ -26,6 +26,7 @@ The sky's brightness is the outdoor part of [[Light]]. Indoors, a room's light c
 
 - How bright the world is drawn, outside and in rooms lit only through their windows and doors.
 - How far [[The dead]] can see you: they see farther in brighter light.
+- How far you can see the dead: by day everything in your line of sight, at night only close by, to your torch's reach, or where they stand in light (see [[Sight#Darkness|Sight]]). A room with its shutters and doors shut is dark by day too.
 - How far the dead notice a flame: a lit [[Torch]] or a fire draws them only at night, and from farthest at full night.
 - [[Fire|Fires]] burn their fuel by game hours, so a fire's hours left are counted on this clock.
 
@@ -59,13 +60,14 @@ The clock belongs to the host. A guest's clock is set from every frame the host 
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/clock.js:5-19`, `src/map.js:84`: the day's length, the game hour, the start hour, the phases' hours and brightness
+<!-- sources at 9d9a5b5 -->
+- `src/clock.js:5-19`, `src/map.js:93`: the day's length, the game hour, the start hour, the phases' hours and brightness
 - `src/clock.js:86-94`, `src/ui/hud.js:118-122`: the clock's "Day N, HH:MM"
 - `src/clock.js:60-66`, `src/clock.js:83-85`: the phases and the night factor
-- `src/light.js:113-149`: the sky is the outdoor ambient; rooms take theirs from fires and openings
-- `src/entities/zombie.js:232-237`, `src/entities/zombie.js:295-311`: the dead's sight by light, and flames seen only at night
-- `src/map.js:87-103`: fires burn by game hours
-- `data/tuning.json:57`, `src/game.js:254-264`: the world's speed while every living player sleeps
-- `src/main.js:909-910`, `src/clock.js:41-44`: the hour keys, within the day
-- `src/net.js:1040`: a guest's clock set from every frame
+- `src/light.js:114-116`, `src/light.js:149-167`: the sky is the outdoor ambient; rooms take theirs from fires and openings
+- `src/sight.js:16-27`, `src/light.js:124-162`: the dead seen in the dark by light and nearness; a shut room dark by day (game #150)
+- `src/entities/zombie.js:254-259`, `src/entities/zombie.js:317-333`: the dead's sight by light, and flames seen only at night
+- `src/map.js:96-112`: fires burn by game hours
+- `data/tuning.json:57`, `src/game.js:322-332`: the world's speed while every living player sleeps
+- `src/main.js:1062-1063`, `src/clock.js:41-44`: the hour keys, within the day
+- `src/net.js:1115`: a guest's clock set from every frame

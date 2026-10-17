@@ -26,7 +26,7 @@ A click swings at once. The hit is decided on the click; the arm's animation is 
 
 - Anything within {{n combat.blow.pointBlank tiles}} is always hit, whatever the angle.
 - One of the dead drawn below the player on screen gets a little extra reach, up to {{n census.constants.combat.BODY_SLACK tiles}}.
-- The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]).
+- The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]). The dark does not count: one of the dead hidden by the dark is hit like any other, and so is one an arrow, a throw, or a fireball meets.
 - A swing is refused while carrying a prop, during a timed action, or when dead.
 - Only [[The dead]] can be hit, and not a corpse: a swing, the [[Shove|shove]], an arrow, a thrown spear, and the [[Fireball]] never hurt a [[Villagers|villager]], another player, or the one who struck. There is no friendly fire, and no setting turns it on.
 
@@ -88,7 +88,7 @@ Players never hurt players, whatever they swing, shoot, or cast: on the host the
 ## Settings that change it
 
 - **Multi-hit** (default off): on, a blow reaches everything in its wedge.
-- **Swing targets** (default off): a green outline on exactly the dead the next left click would hit. It follows the off hand when that hand would take the click.
+- **Swing targets** (default off): a green outline on exactly the dead the next left click would hit. It follows the off hand when that hand would take the click. One of the dead hidden by the dark gets no outline, though the swing still hits it.
 - **Show hit shapes** (default off): draws the points on each nearby body that the swing tests, green when in the wedge.
 - **Swing timer** (default on): the bars that fill over each hand's recovery.
 - **Zombie aggro** (default on): off, the dead ignore the player (see [[The dead]]).
@@ -125,7 +125,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - `data/tuning.json`: `player.aimY` (the chest), `player.sprintRecoverAt`, `player.stamina`, `player.staminaRegen`, `zombie.knockTime`
 - `data/combat.json`: `blow` (point blank, tired damage, the default knockdown, hit-stop), read by `src/combat.js:33`, `src/combat.js:67` (game commit 2c70942)
 - `src/combat.js:34`, `src/combat.js:45-46`: the slack and the kick constants
-- `src/combat.js:166-176`: line of sight to the target
+- `src/combat.js:166-176`: line of sight to the target, walls and shut openings alone, with no light in it, so the dark hides no target
 - `src/combat.js:305-323`, `src/combat.js:413-420`: cooldown, stamina cost, the tired blow
 - `src/ui/swing-timer.js`: the gold bars at bottom centre
 - `src/entities/player.js:325`: winded until stamina is back
@@ -142,6 +142,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - `src/net.js:815`, `src/net.js:1038`, `src/rules.js:23-37`: the host's rules travel in frames and the save
 - `src/settings.js:12`, `src/settings.js:16`, `src/settings.js:18-20`: Zombie aggro (on (game commit 2c70942)), Swing timer, Swing targets, Multi-hit, Show hit shapes defaults
 - `src/combat.js:399-410`, `src/combat.js:431-443`: the swing targets outline and the hit shapes
+- `src/render/entities.js:258`: no swing-target outline on one of the dead hidden by the dark (game commit 9d9a5b5)
 - `src/settings.js:31`, `src/settings.js:68`, `src/game.js:73-88`: the Dev chest chosen at New world (game commit f2b8062)
 - `src/rules.js:13-30`, `src/game.js:121-150`: Zombie aggro and Multi-hit the world's rules; the Starting population (game commit f2b8062)
 

@@ -26,7 +26,7 @@ Five icons always shown, in a fixed order: bleeding, infection, hunger, thirst, 
 ## Over the world
 
 - **The prompt**: over the target of the nearest simple action, "E: action" (for example "E: Put down" while carrying furniture). During a timed action it shows the action with a progress bar. It is greyed when the action is not possible.
-- **Health bars over heads**: a small bar over any hurt, living zombie in sight, and over your own head while you are hurt.
+- **Health bars over heads**: a small bar over any hurt, living zombie in sight, and over your own head while you are hurt. One of the dead hidden by the dark has none (see [[Sight#Darkness|Sight]]).
 - **The exposure bar**: a red bar over your head for the moment in which a blow against you is amplified. See [[Combat]].
 - **Speech bubbles** over anyone who speaks, and **names** over other players (see [[Chat log]], [[Multiplayer]]).
 
@@ -56,7 +56,7 @@ The game goes on while any panel is open, and the world's keys and clicks still 
 
 ## The cursor
 
-The **Cursor** setting picks the system's own pointer, a hand, a severed hand, or a zombie hand. With the hand, the pointer turns into the zombie hand over one of the living dead.
+The **Cursor** setting picks the system's own pointer, a hand, a severed hand, or a zombie hand. With the hand, the pointer turns into the zombie hand over one of the living dead, but not over one hidden by the dark.
 
 ## The debug corner
 
@@ -82,6 +82,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/moodles.js:23-115`, `src/ui/moodles.js`, `style.css:317-321`: the five moodles on the right, their order, stages, names
 - `src/ui/prompt.js:41`, `src/interact.js:852-880`: the prompt, "E: Put down", the progress bar, greyed
 - `src/ui/zombie-bars.js:14-20`: health bars over hurt zombies and over you
+- `src/ui/zombie-bars.js:56`, `src/main.js:1082-1083`, `src/interact.js:1272-1279`: no bar and no zombie hand over one of the dead hidden by the dark (game commit 9d9a5b5)
 - `src/ui/swing-timer.js:16`, `src/ui/swing-timer.js:69`: the exposure bar over your head
 - `src/ui/speech.js`, `src/ui/names.js`: bubbles and names over heads
 - `style.css:561-565`, `src/ui/swing-timer.js:1-9`: the two swing bars at bottom centre

@@ -37,7 +37,7 @@ A window is never a safe place to stand behind. The dead who see you through one
 
 ### Light through an opening
 
-The daylight in a [[Rooms|room]] comes in through its openings. Each open door or window adds daylight; closed shutters add only their sliver. See [[Light]].
+The daylight in a [[Rooms|room]] comes in through its openings. By day each open door or window, or a broken one, lights {{n tuning.world.daylightTiles}} tiles of the room fully, so one open window fills a small room with daylight and a large room needs more of them open. Closed shutters add only their sliver: a room with every door and shutter shut is dark by day, and the dead in it are hidden from you as at night (see [[Sight#Darkness|Sight]]). See [[Light]].
 
 ### Broken openings
 
@@ -67,26 +67,26 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 82106de -->
-- `src/map.js:516-526`: a wall record with its kind and state
-- `src/map.js:600-609`: only a door, open or broken and unboarded, passes a body; a window never does
-- `src/map.js:1120-1134`: what a door and shutters pass of light and sight
-- `src/interact.js:443-473`: E and the menu open and close doors and shutters from either side
-- `src/interact.js:42`: E's reach
-- `src/map.js:1177-1186`: an open doorway passes across its whole width
-- `src/map.js:1314-1332`, `src/map.js:1338-1341`, `src/map.js:1390-1405`: the slide towards an open doorway
-- `src/entities/zombie.js:531-595`, `src/map.js:560-591`: the dead break closed doors and never open them
-- `src/map.js:465-487`: a door is not built where either tile holds a prop; the two tiles beside a door
+<!-- sources at 9d9a5b5 -->
+- `src/map.js:529-539`: a wall record with its kind and state
+- `src/map.js:613-622`: only a door, open or broken and unboarded, passes a body; a window never does
+- `src/map.js:1133-1147`: what a door and shutters pass of light and sight
+- `src/interact.js:444-474`: E and the menu open and close doors and shutters from either side
+- `src/interact.js:43`: E's reach
+- `src/map.js:1190-1199`: an open doorway passes across its whole width
+- `src/map.js:1327-1345`, `src/map.js:1351-1354`, `src/map.js:1403-1418`: the slide towards an open doorway
+- `src/entities/zombie.js:531-595`, `src/map.js:573-604`: the dead break closed doors and never open them
+- `src/map.js:478-500`: a door is not built where either tile holds a prop; the two tiles beside a door
 - `src/placement.js:95-115`: nothing put down on a door's tiles
 - `src/stations.js:178-185`: made furniture lands off a door's tiles
-- `src/map.js:1793-1801`: a fence's gates are doors
+- `src/map.js:1808-1816`: a fence's gates are doors
 - `tools/check.js:135-205`, `tools/mapgen/valley.py:106-112`: every map's door tiles clear and reachable on foot
-- `src/interact.js:820-833`, `src/interact.js:923-930`: E acts on its release however long it was held; no hold of E
-- `src/map.js:594-600`, `src/map.js:625-668`: the dead batter a shut or boarded window from outside, never pass it
-- `src/light.js:29`, `src/light.js:124-131`: a room's daylight from its openings
-- `src/map.js:575-580`: what a broken door and broken shutters become
+- `src/interact.js:821-834`, `src/interact.js:924-931`: E acts on its release however long it was held; no hold of E
+- `src/map.js:607-613`, `src/map.js:638-681`: the dead batter a shut or boarded window from outside, never pass it
+- `src/light.js:30`, `src/light.js:124-162`, `data/tuning.json:80`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
+- `src/map.js:588-593`: what a broken door and broken shutters become
 - `src/placement.js:188-190`: nothing built into the gap
-- `src/interact.js:459-460`: the menu's broken entries
+- `src/interact.js:460-461`: the menu's broken entries
 - `data/build.json`: the door and window in the palette
-- `src/map.js:447-448`: door and shutter health
-- `src/interact.js:935-955`, `src/interact.js:470`: a guest's E performed by the host, the change reaching guests and the save
+- `src/map.js:460-461`: door and shutter health
+- `src/interact.js:936-956`, `src/interact.js:471`: a guest's E performed by the host, the change reaching guests and the save

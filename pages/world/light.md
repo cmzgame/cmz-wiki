@@ -5,7 +5,7 @@ aliases: [Lighting, Darkness]
 summary: How bright every place is, from the sky, rooms, fires, and torches, and what that changes.
 ---
 
-Every point in the world has one light level, worked out by one rule. It is made of the ambient light (the sky outdoors, the room indoors), the pools of fixed fires and mounted torches, and any torch someone carries. Light decides how the world is drawn and how far [[The dead]] can see you.
+Every point in the world has one light level, worked out by one rule. It is made of the ambient light (the sky outdoors, the room indoors), the pools of fixed fires and mounted torches, and any torch someone carries. Light decides how the world is drawn, how far [[The dead]] can see you, and how far you can see them in the dark.
 
 ## How it works
 
@@ -18,7 +18,7 @@ Outside, the ambient light is the sky's brightness for the hour (see [[The day]]
 A room's light depends on what is in it and how open it is. Rooms are found from the walls, never authored; see [[Rooms]].
 
 - **A room with a lit fireplace or hearth** is fully lit, every corner of it, day or night. Only fires that light their room do this: the fireplace and the hearth. An [[Oven]], a [[Forge]], or a campfire lights only the pool round it.
-- **A room without such a fire** gets a share of the daylight through its open doors and open shutters. The more of its openings stand open, the brighter it is, up to a cap below the outdoor day. Shut every door and shutter and noon inside is as dark as midnight. Closed shutters let through only a sliver. See [[Openings]].
+- **A room without such a fire** takes its daylight through its open doors and open shutters; a broken door or broken shutters count as open. By day each open one lights {{n tuning.world.daylightTiles}} tiles of the room fully, so one open window fills a small room with daylight and a larger room needs more of them open, in proportion to its size. Fully lit by day is {{n census.constants.light.tunables_unlitRoomCap}}, a little below the open sky. Closed shutters let through only a sliver, so with every door and shutter shut, noon inside is barely brighter than midnight, and the dead in the room are hidden as they are at night (see [[Sight]]). At night a room without a fire is dark however open it stands. See [[Openings]].
 
 ### Light through doors and windows
 
@@ -55,7 +55,7 @@ One of the dead that is [[Burning]], and a [[Fireball]] or a [[Fire arrow]] in f
 
 ### The night tint
 
-At night the world is drawn darker and tinted, but you still see as far: darkness does not shorten your own sight (a change to that is planned; see [[Sight]]). Light flickers only in the picture; the light level the game reads is steady.
+At night the world is drawn darker and tinted. The ground and the buildings are drawn as far as your line of sight reaches, but the dead are not: in the dark you see them whole only close to you, or to the reach of a torch you carry, unless they stand in light, where they are seen from any distance. See [[Sight#Darkness|Sight]]. Light flickers only in the picture; the light level the game reads is steady.
 
 ### Light and the dead
 
@@ -67,11 +67,13 @@ The dead see you farther the brighter the light on you. Their reach is {{n tunin
 - Light worked out on a grid of {{n census.constants.light.RES}} cells a tile.
 - Torch in hand: {{n items.torch.fire.radius tiles}}; two torches {{n tuning.world.twoTorches}} times; on the belt {{n tuning.world.beltLight}} times.
 - Pools through openings need a difference of {{n census.constants.light.PORTAL_MIN}}.
+- An open door or window lights {{n tuning.world.daylightTiles}} tiles of its room fully by day; fully lit is {{n census.constants.light.tunables_unlitRoomCap}}.
+- You see the dead in the dark whole within {{n tuning.sight.darkRadius tiles}} or your carried light's radius, and the dead standing in light of {{n tuning.sight.litFull}} or more from any distance.
 - The dead's sight: {{n tuning.zombie.sight tiles}}, {{n tuning.zombie.sightDarkFraction}} of it in darkness; flames seen from {{n tuning.zombie.flameRange tiles}} at night.
 
 ## With friends
 
-Light belongs to the world: the host works it out, and each guest works out the same light from its copy of the world. Every player carries their own torch light, and the host sends each player's torches to the others when they change, so everyone sees each other's light.
+Light belongs to the world: the host works it out, and each guest works out the same light from its copy of the world. Every player carries their own torch light, and the host sends each player's torches to the others when they change, so everyone sees each other's light. How far you see the dead in the dark is your own: it is read from your copy of the light and the torch you carry, so the dead in a friend's torchlight are seen by everyone, but only your own torch lengthens your reach.
 
 ## Settings that change it
 
@@ -90,22 +92,23 @@ Light belongs to the world: the host works it out, and each guest works out the 
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/light.js:415-427`: one light level: ambient, the static map, carried lights
-- `src/light.js:27`, `src/light.js:113-115`, `src/clock.js:7`: the outdoor cap and the night sky
-- `src/map.js:1341-1393`: rooms found by flood fill
-- `src/light.js:137-144`, `data/sprites/fireplace.json`, `data/sprites/hearth.json`: a room with a lit fireplace or hearth fully lit; the oven, forge, and campfire light no room
-- `src/light.js:26-31`, `src/light.js:124-144`, `src/map.js:1019-1028`: an unlit room's share of daylight through its openings, capped below the day; shut openings leave the night level; closed shutters a sliver
-- `src/light.js:21-23`, `src/light.js:65-95`: pools through openings, their offset and minimum difference; fence gates bound no room
-- `src/light.js:178-183`: the pools draw no dead
-- `src/light.js:51-64`, `src/light.js:191-227`: fires' and mounted torches' pools, stopped by walls and shut openings
+<!-- sources at 9d9a5b5 -->
+- `src/light.js:421-433`: one light level: ambient, the static map, carried lights
+- `src/light.js:28`, `src/light.js:114-116`, `src/clock.js:7`: the outdoor cap and the night sky
+- `src/map.js:1493-1545`: rooms found by flood fill
+- `src/light.js:52-58`, `src/light.js:153`, `data/sprites/fireplace.json`, `data/sprites/hearth.json`: a room with a lit fireplace or hearth fully lit; the oven, forge, and campfire light no room
+- `src/light.js:27-32`, `src/light.js:124-162`, `data/tuning.json:80`, `src/map.js:1138-1147`: an unlit room's daylight: each open or broken opening lights `daylightTiles` tiles to the window-lit cap, closed shutters only their leak, nothing by night (game #150)
+- `src/light.js:22-24`, `src/light.js:66-96`: pools through openings, their offset and minimum difference; fence gates bound no room
+- `src/light.js:196-201`: the pools draw no dead
+- `src/light.js:52-65`, `src/light.js:209-245`: fires' and mounted torches' pools, stopped by walls and shut openings
 - `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/items.json:2`, `data/sprites/torch_post.json`, `data/sprites/pumpkin.json`: each fire's radius
-- `src/game.js:552-566`, `data/tuning.json:76-77`: the carried torch in hand, two in hand, on the belt; none from the bag or the ground
-- `src/interact.js:984-991`: the T key
-- `src/light.js:296-301`: flicker only in the picture
-- `src/visibility.js:10-67`: darkness does not shorten your sight
-- `src/light.js:18`: the light grid's resolution
-- `data/tuning.json:5-7`, `src/entities/zombie.js:232-237`, `src/entities/zombie.js:295-311`: the dead's light-scaled sight and flame range
-- `src/settings.js:12`: Zombie aggro on by default (game commit 2c70942)
-- `src/net.js:1145-1152`, `src/net.js:814`, `src/light.js:161-164`: a guest rebuilds the light; each player's carried light sent when it changes
-- `src/fire.js:85-90`, `src/archery.js:356-364`, `src/game.js:629`, `src/light.js:165-182`: burning bodies and a fireball or fire arrow in flight as moving lights, not among the flames the dead notice (game commit 3b7cb9a)
+- `src/game.js:626-638`, `data/tuning.json:76-77`: the carried torch in hand, two in hand, on the belt; none from the bag or the ground
+- `src/interact.js:968-975`: the T key
+- `src/light.js:302-307`: flicker only in the picture
+- `src/sight.js:16-32`, `data/tuning.json:83`: in the dark the dead seen near you, to your torch's reach, or in light (game #150)
+- `src/light.js:19`: the light grid's resolution
+- `data/tuning.json:5-7`, `src/entities/zombie.js:254-259`, `src/entities/zombie.js:317-333`: the dead's light-scaled sight and flame range
+- `src/settings.js:12`: Zombie aggro on by default
+- `src/net.js:1220-1227`, `src/net.js:864`, `src/light.js:179-182`: a guest rebuilds the light; each player's carried light sent when it changes, with its owner
+- `src/sight.js:24`: only the viewer's own carried light lengthens its reach (game #150)
+- `src/fire.js:86-91`, `src/archery.js:432-440`, `src/game.js:639`, `src/light.js:184-194`: burning bodies and a fireball or fire arrow in flight as moving lights, not among the flames the dead notice

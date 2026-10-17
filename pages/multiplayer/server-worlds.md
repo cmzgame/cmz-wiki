@@ -45,7 +45,7 @@ The owner cannot be removed.
 
 ## With friends
 
-A server world is made for friends: nobody has to keep a browser open for the others to play. The rules are the owner's, set from the owner's screen rather than from anyone's pause menu; joined as the owner, the pause menu's World rules shows them locked, "yours to change from the Owner screen".
+A server world is made for friends: nobody has to keep a browser open for the others to play. The rules are the owner's, set from the owner's screen rather than from anyone's pause menu; joined as the owner, the pause menu's World rules shows them locked, "yours to change from the Owner screen". Anyone else sees them locked and marked "(the world's owner's)", since a server world has no host.
 
 ## See also
 
@@ -68,6 +68,7 @@ A server world is made for friends: nobody has to keep a browser open for the ot
 - `server/relay.js:243-257`, `server/world.js:97`, `server/world.js:367-374`: an owner sets only the five; a moved world's two kept in its meta (game commit f2b8062)
 - `server/world.js:245`, `data/tuning.json:80`, `src/main.js:1733`: a server world's cap, `world.playerCapServer`, and "This world is full." (game commit f2b8062)
 - `src/ui/screens.js:1000`: the owner's World rules line (game commit f2b8062)
+- `src/ui/screens.js:998-1000`, `src/main.js:737`: anyone else's rows and line "the world's owner's", a server world having no host player (game commit 9d9a5b5)
 - `server/relay.js:346-473`, `server/world.js:258-275`, `server/world.js:327-359`: change the code, the rules, remove, unbar
 - `src/main.js:1564`: "The world's owner removed you from it."
 - `src/main.js:406-453`, `server/relay.js:445-473`, `server/relay.js:546-559`: bringing it home in two phases, Finish bringing it home, the wait

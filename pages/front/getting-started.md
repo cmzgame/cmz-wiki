@@ -27,7 +27,7 @@ You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back ho
 
 ## The dead
 
-The dead walk slowly, see you by the light you stand in, and remember only where they last saw you. At night they notice a flame from far away, so a torch in your hand is a lantern for them too. Left-click swings what is in your main hand; see [[Combat]] and [[The dead]].
+The dead walk slowly, see you by the light you stand in, and remember only where they last saw you. At night you see them only close by or where they stand in light, and a torch in your hand lets you see them farther; but they notice a flame from far away, so a torch is a lantern for them too. A shuttered room is dark by day as well; open its shutters to let the daylight in. Left-click swings what is in your main hand; see [[Combat]] and [[The dead]].
 
 {{planned doc=30 step=4 note="Farming: tilling, planting, watering, and harvesting the plot by your cottage."}}
 
@@ -58,4 +58,5 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `src/entities/player.js:193-210`, `src/entities/player.js:165-191`, `src/game.js:254-264`: sleep in a bed indoors; time runs fast; nothing wakes you
 - `data/tuning.json:4`, `data/tuning.json:36`: the dead walk at a third of your speed
 - `src/entities/zombie.js:232-237`, `src/entities/zombie.js:337-353`, `src/entities/zombie.js:295-311`: they see by the light on you, remember where they last saw you, and notice a flame at night
+- `src/sight.js:16-27`, `src/light.js:149-162`: you see them at night near you, to your torch's reach, or in light; a shut room dark by day, an open one lit (game commit 9d9a5b5)
 - `src/buttons.js:24-44`, `src/player-controller.js:17-55`: left-click uses the main hand

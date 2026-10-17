@@ -21,7 +21,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 
 **Chosen once, when the world is made**, never changed after:
 
-- **Trees** (default On): trees in the forests and the wild. Off, no tree is made anywhere, inside [[The valley]] or out in [[The wild]], however far anyone walks. Since [[Mushrooms]] grow only near trees, a world without trees has none of them either. The rocks and the ground are as they would be.
+- **Trees** (default On): trees in the forests and the wild. Off, no tree is made anywhere, inside [[The valley]] or out in [[The wild]], however far anyone walks. The rocks, the ground, and the [[Mushrooms]] are as they would be: the mushrooms grow beside where the trees would have stood, the same ones in the same places as with trees.
 - **Starting population**: **None**, **Low**, **Standard** (the default), or **High**: how many of [[The dead]] the world starts with. Each level is a factor on the map's own number: at Standard the valley holds exactly the dead its map places, at None it holds none, at Low some of the map's dead are left out, and at High each of them stands more than once. An extra one stands on a free open tile close to where the map put it, never on the far side of a wall or a door. Every chunk of the wild grown later brings its usual number of the dead times the same factor, so a None world grows no dead in the wild either. The factor is read once, when the world is made: the dead never grow in number with time.
 
 Which of the dead a factor keeps or doubles is settled by each one's own tile and each chunk's own roll, so two worlds made with the same rules start the same.
@@ -52,7 +52,7 @@ A world made before each world kept its own rules plays by the rules saved with 
 
 The rules are the host's. A change the host makes from World rules reaches every guest at once, and a guest's own copy of the world is made with the host's trees and the host's dead. A guest's World rules screen shows the same rows, every one locked and marked "(the host's)", with the line "How this world plays. They are the host's to change." A guest cannot change them.
 
-In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." A world moved to the server keeps the Trees and Starting population it was made with.
+In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with.
 
 ## See also
 
@@ -61,17 +61,17 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at 2a9a308 -->
+<!-- sources at 9d9a5b5 -->
 - `src/rules.js:1-7`, `src/rules.js:13-30`: the rules are the world's own, their defaults, Starting population's four words, Trees and Starting population fixed at creation
 - `src/settings.js:58-68`: each rule's label and line, Starting population's answers, the Dev chest
-- `src/map.js:44-51`, `src/map.js:290-296`, `src/map.js:1722-1728`, `src/map.js:1889`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
-- `src/map.js:314-325`: mushrooms only near a tree, so none in a world without trees
+- `src/map.js:44-52`, `src/map.js:290-302`, `src/map.js:1761-1769`, `src/map.js:1931`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
+- `src/map.js:304-338`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
 - `data/tuning.json:82`, `src/game.js:121-150`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
-- `src/map.js:1386-1415`: an extra stands on an open tile by the authored map, never across a wall or a door
-- `src/map.js:1012-1025`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
+- `src/map.js:1426-1455`: an extra stands on an open tile by the authored map, never across a wall or a door
+- `src/map.js:1053-1066`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
 - `src/ui/screens.js:845-873`: the Sandbox step's two parts, their lines, Next
 - `src/main.js:288-307`, `src/main.js:310-318`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
-- `src/ui/screens.js:992-1008`, `src/main.js:739`: World rules on the pause menu: the line, the switches, the fixed two locked, a guest's all locked as the host's
+- `src/ui/screens.js:992-1008`, `src/main.js:737-739`: World rules on the pause menu: the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
 - `src/game.js:73-78`, `src/game.js:195`, `src/game.js:261-262`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
-- `src/net.js:865`, `src/net.js:1113`, `src/game.js:402`: sent to guests when they change, in the sync check
+- `src/net.js:865`, `src/net.js:1113`, `src/game.js:401`: sent to guests when they change, in the sync check
 - `src/ui/screens.js:935-941`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's two kept in its meta

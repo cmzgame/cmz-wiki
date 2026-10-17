@@ -1,7 +1,7 @@
 {
-  "commit": "82106de6bde5afe5348969061e28c11dae539cb1",
-  "short": "82106de",
-  "date": "2026-10-17T00:20:30-05:00",
-  "subject": "Merge #140, reviewed, Michael's law: nobody climbs through a window, player or dead; the dead batter a window open to see in, never to pass, and come round to a door; every door's tiles kept clear (closes #134)",
+  "commit": "9d9a5b5a777ffd09909a26b87cf424ded1925cbd",
+  "short": "9d9a5b5",
+  "date": "2026-10-17T00:58:22-05:00",
+  "subject": "Merge #150, reviewed, Michael's rulings: darkness shortens sight, the dead fading to hidden past a soft edge unless in light; the dark hides information, never physics; a shuttered room is dark by day and open shutters fill it with daylight (closes #88)",
   "ref": "origin/main"
 }

@@ -23,7 +23,7 @@ Chunks are grown only round players and where something changes the world. Every
 
 - **Trees** of the valley's kinds, thicker in some places than others, never in straight rows; none in a world made with Trees off. See [[Trees]].
 - **Rocks:** one in some of the squares of {{n valley.wild.rocks.cell}} by {{n valley.wild.rocks.cell}} tiles. See [[Rocks]].
-- **Mushrooms** near the trees, so none where there are no trees. See [[Mushrooms]].
+- **Mushrooms** near the trees. In a world made with Trees off they grow where they would beside the trees that are not there, so the wild has the same mushrooms with or without trees. See [[Mushrooms]].
 - **The dead:** from {{n valley.wild.zombiesPerChunk.0}} to {{n valley.wild.zombiesPerChunk.1}} in each chunk at the Standard Starting population, standing idle where they were placed on tiles with nothing on them. The world's Starting population scales that number: none at None, fewer at Low, more at High (see [[World rules]]).
 
 Every roll for the wild comes from the tile and the map's seed, so a chunk grows the same whatever order chunks are grown in, and the same forest is there every time you come back.
@@ -58,17 +58,17 @@ Only the host grows chunks, and it grows them round every player, guests include
 
 ## Sources
 
-<!-- sources at 2a9a308 -->
-- `data/maps/valley.json:4-9`, `src/map.js:990-995`: the valley's bounds; every chunk past them is wild
+<!-- sources at 9d9a5b5 -->
+- `data/maps/valley.json:4-9`, `src/map.js:1031-1036`: the valley's bounds; every chunk past them is wild
 - `src/map.js:16`: the chunk's size
-- `src/game.js:508`, `src/map.js:1039-1049`: growth round each player four chunks out; reads never grow
-- `src/map.js:256-260`, `src/map.js:292-296`, `data/maps/valley.json:5098-5120`: wild trees by density noise, the rocks' cells, and the dead per chunk
-- `src/map.js:277-287`: a rock in some cells
-- `src/map.js:316-325`: mushrooms near trees
-- `src/map.js:1013-1025`, `src/entities/zombie.js:36-41`: the dead placed on a hashed tile, idle
-- `src/map.js:290-296`, `src/map.js:1012-1025`, `src/map.js:314-325`: Trees off grows no wild tree and so no mushroom; each chunk's dead scaled by the Starting population, on free tiles only
-- `src/map.js:231-236`: every roll a hash of tile and seed
-- `data/tuning.json:74`, `src/game.js:478-482`, `src/game.js:586-595`: the far dead and villagers stand still
-- `data/tuning.json:75`, `src/map.js:916-937`, `src/game.js:511-528`: unchanged wild chunks dropped when far from every player with no villager in them, the dead kept on record
-- `src/map.js:653-686`: any play change marks a chunk for keeps
-- `src/main.js:1034`, `src/map.js:1006`, `src/net.js:782`, `src/net.js:856`, `src/net.js:1118-1122`: only the host grows; grown and changed chunks sent whole to guests
+- `src/game.js:507`, `src/map.js:1080-1090`: growth round each player four chunks out; reads never grow
+- `src/map.js:257-261`, `src/map.js:290-296`, `data/maps/valley.json:5098-5120`: wild trees by density noise, the rocks' cells, and the dead per chunk
+- `src/map.js:278-288`: a rock in some cells
+- `src/map.js:326-350`: mushrooms near trees
+- `src/map.js:1054-1066`, `src/entities/zombie.js:36-41`: the dead placed on a hashed tile, idle
+- `src/map.js:298-315`, `src/map.js:332`, `src/map.js:1053-1066`: Trees off grows no wild tree, and the mushrooms still grow against where the trees would stand, never on such a tile (game #149); each chunk's dead scaled by the Starting population, on free tiles only
+- `src/map.js:232-237`: every roll a hash of tile and seed
+- `data/tuning.json:73`, `src/game.js:477-481`, `src/game.js:585-594`: the far dead and villagers stand still
+- `data/tuning.json:74`, `src/map.js:957-978`, `src/game.js:510-527`: unchanged wild chunks dropped when far from every player with no villager in them, the dead kept on record
+- `src/map.js:694-727`: any play change marks a chunk for keeps
+- `src/main.js:1034`, `src/map.js:1047`, `src/net.js:782`, `src/net.js:856`, `src/net.js:1118-1122`: only the host grows; grown and changed chunks sent whole to guests
