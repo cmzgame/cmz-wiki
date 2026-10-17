@@ -25,9 +25,9 @@ There are five seeds: [[Potato seed]], [[Cabbage seed]], [[Garlic seed]], [[Pump
 
 ### Watering and growing
 
-A crop's soil stays wet for some days after it is planted or watered. Growth runs only while the soil is wet: a crop with dry soil stops where it is, its menu says "Dry: waiting for water", and it waits as long as it must. Nothing kills it.
+A crop's soil stays wet for {{n crops.soil.wetDays}} days after it is planted or watered. Growth runs only while the soil is wet: a crop with dry soil stops where it is, its menu says "Dry: waiting for water", and it waits as long as it must. Nothing kills it.
 
-**Water** on a crop's menu, or a [[Use]] of a waterskin on it, takes some of the water from a skin you carry, the fullest that has enough, and wets the soil again: "The water soaks in." With no skin that has enough, the entry reads "Water (no water in a skin)", greyed.
+**Water** on a crop's menu, or a [[Use]] of a waterskin on it, takes {{n crops.soil.fillCost}} of the water from a skin you carry, the fullest that has enough, and wets the soil again: "The water soaks in." With no skin that has enough, the entry reads "Water (no water in a skin)", greyed.
 
 Each crop has three stages: young, growing, and ready. While it grows, its menu says how long it has to go: "Growing (ready in about N days)". Time asleep counts, since sleep runs the clock fast.
 
@@ -41,8 +41,14 @@ Every farming action needs you within {{n tuning.world.pickReach tiles}} of the 
 
 ## Numbers
 
+{{crops-table}}
+
+The days count only while the soil is wet.
+
+- Soil stays wet after planting or watering: {{n crops.soil.wetDays}} days.
+- A watering takes {{n crops.soil.fillCost}} of a waterskin's water.
+- Tilling takes {{n crops.soil.seconds.till seconds}}, planting {{n crops.soil.seconds.plant seconds}}, watering {{n crops.soil.seconds.water seconds}}, harvesting {{n crops.soil.seconds.harvest seconds}}.
 - Reach: {{n tuning.world.pickReach tiles}}.
-- The crops' days, the harvests, the soil's wet days, and the water a watering takes are the game's crop data (`data/crops.json`).
 
 ## With friends
 

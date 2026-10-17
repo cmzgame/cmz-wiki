@@ -167,8 +167,21 @@ function readStarterKit() {
 }
 const starterKit = readStarterKit();
 
-// What felling a tree gives, from the tree's action in src/interact.js (a tree's sprite says how many: its `wood`).
+// What felling a tree gives (a tree's sprite says how many: its `wood`): from the `chop` verb in src/chop.js (game #207, a hatchet in
+// hand; a stump left, which gives its own `wood`), or before it from the tree's action in src/interact.js. `tool` is the verb an item
+// must list to chop, when chopping needs one.
 function readChop() {
+  const f = srcFiles.find((s) => s.path === "chop.js");
+  if (f) {
+    const start = f.text.indexOf('verbs.define("chop"');
+    const end = start < 0 ? null : /\r?\n\}\);\r?\n/.exec(f.text.slice(start));
+    const body = start < 0 ? "" : f.text.slice(start, end ? start + end.index + end[0].length : f.text.length);
+    const m = /dropItem\([^{]*\{\s*id:\s*"([a-z_]+)"/.exec(body);
+    if (m) {
+      const first = f.text.slice(0, start).split("\n").length;
+      return { gives: m[1], field: "wood", tool: "chop", at: `src/chop.js:${first}-${first + body.trimEnd().split("\n").length - 1}` };
+    }
+  }
   const fn = functionAt("interact.js", "treeActions");
   const m = fn && /dropItem\([^{]*\{\s*id:\s*"([a-z_]+)"/.exec(fn.body);
   return m ? { gives: m[1], field: "wood", at: fn.at } : null;

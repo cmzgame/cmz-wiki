@@ -6793,5 +6793,10 @@
   ],
   "unknown": []
  },
- "chop": null
+ "chop": {
+  "gives": "log",
+  "field": "wood",
+  "tool": "chop",
+  "at": "src/chop.js:25-50"
+ }
 }
