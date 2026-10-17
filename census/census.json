@@ -1,21 +1,21 @@
 {
  "version": {
-  "commit": "2998f41a1573f765af4c90949c2a9925909f4126",
-  "short": "2998f41",
-  "date": "2026-10-17T15:29:08-05:00",
-  "subject": "Merge #218, reviewed, Michael's rulings: the Onion-head Hat, after Cake's Comfort Eagle; real-world references as data; specific item names (Primary's renames)",
+  "commit": "cfe0203e7452652af9256625b8d265b54353266e",
+  "short": "cfe0203",
+  "date": "2026-10-17T16:13:15-05:00",
+  "subject": "Merge #219, reviewed: the farms and the mill (Hollow Farm, Long Acre, the millstones, the granaries with every seed, a pumpkin pie so no crop dead-ends, the miller, the brook and its footbridge, the lanes) (closes #201)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 64,
-  "recipes": 31,
-  "interactions": 20,
-  "lootTables": 8,
-  "sprites": 140,
-  "places": 21,
-  "villagers": 7,
-  "authoredDead": 40,
-  "mapProps": 34,
+  "items": 71,
+  "recipes": 46,
+  "interactions": 28,
+  "lootTables": 18,
+  "sprites": 156,
+  "places": 42,
+  "villagers": 8,
+  "authoredDead": 62,
+  "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 6,
   "settings": 31,
@@ -23,11 +23,11 @@
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 19,
-  "verbs": 11,
-  "menuLabels": 63,
+  "verbs": 14,
+  "menuLabels": 64,
   "events": 30,
-  "checks": 38,
-  "modules": 88
+  "checks": 42,
+  "modules": 90
  },
  "items": [
   {
@@ -99,7 +99,9 @@
     "held": false,
     "drawn": false
    },
-   "madeBy": [],
+   "madeBy": [
+    "clamp"
+   ],
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
@@ -128,7 +130,8 @@
    },
    "madeBy": [],
    "usedIn": [
-    "workbench: prop:workbench"
+    "workbench: prop:workbench",
+    "clamp: charcoal"
    ],
    "foundIn": [
     "chest",
@@ -173,6 +176,7 @@
     "workbench: prop:chest",
     "workbench: prop:shelf",
     "workbench: prop:bench",
+    "workbench: bucket",
     "workbench: prop:table",
     "workbench: prop:bed",
     "workbench: prop:workbench",
@@ -501,7 +505,9 @@
     "held": false,
     "drawn": false
    },
-   "madeBy": [],
+   "madeBy": [
+    "loom"
+   ],
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
@@ -646,6 +652,41 @@
    ]
   },
   {
+   "id": "bucket",
+   "name": "Bucket",
+   "kind": "tool",
+   "size": [
+    2,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "container"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [
+    "bucket on floor_water: Fill",
+    "bucket on floor_water_shallow: Fill",
+    "bucket on well: Fill",
+    "bucket on trough: Fill",
+    "bucket on font: Fill",
+    "bucket on crop: Pour",
+    "bucket on floor_farm: Pour",
+    "bucket on floor_farm_y: Pour"
+   ],
+   "note": "an item that holds water in its entry's `fill` (#199; Michael, 2026-10-18: the bucket goes in the bag): Fill at any water, Pour on a plot to water the 3 by 3 round it (src/bucket.js); a dev placeholder until its art pair and portrait are drawn"
+  },
+  {
    "id": "spear",
    "name": "Throwing spear",
    "kind": "tool",
@@ -758,7 +799,7 @@
   },
   {
    "id": "cap",
-   "name": "Wool cap",
+   "name": "Linen cap",
    "kind": "clothing",
    "size": [
     1,
@@ -773,9 +814,12 @@
     "held": false,
     "drawn": true
    },
-   "madeBy": [],
+   "madeBy": [
+    "loom"
+   ],
    "usedIn": [
     "workbench: torch",
+    "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -803,6 +847,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -829,9 +874,12 @@
     "held": false,
     "drawn": true
    },
-   "madeBy": [],
+   "madeBy": [
+    "loom"
+   ],
    "usedIn": [
     "workbench: torch",
+    "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -859,6 +907,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -870,7 +919,7 @@
   },
   {
    "id": "breeches",
-   "name": "Wool breeches",
+   "name": "Linen breeches",
    "kind": "clothing",
    "size": [
     2,
@@ -885,9 +934,12 @@
     "held": false,
     "drawn": true
    },
-   "madeBy": [],
+   "madeBy": [
+    "loom"
+   ],
    "usedIn": [
     "workbench: torch",
+    "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -915,6 +967,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -1116,7 +1169,7 @@
    "hands": "either",
    "tags": [
     "tool",
-    "metal"
+    "wood"
    ],
    "weapon": {
     "staggerChance": 0.3,
@@ -1577,6 +1630,30 @@
    "note": "smelted at the forge; the smith's stock"
   },
   {
+   "id": "stone",
+   "name": "Stone",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "stone",
+    "raw"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "mined from a rock with a pickaxe (src/mining.js, #196); the material stone walls wait for (#104)"
+  },
+  {
    "id": "potato",
    "name": "Potato",
    "kind": "food",
@@ -1677,7 +1754,9 @@
     "drawn": false
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "oven: pumpkin_pie"
+   ],
    "foundIn": [],
    "interactions": []
   },
@@ -1701,7 +1780,8 @@
    },
    "madeBy": [],
    "usedIn": [
-    "cooking: porridge"
+    "cooking: porridge",
+    "millstones: flour"
    ],
    "foundIn": [],
    "interactions": [],
@@ -1724,9 +1804,12 @@
     "held": false,
     "drawn": false
    },
-   "madeBy": [],
+   "madeBy": [
+    "millstones"
+   ],
    "usedIn": [
-    "oven: bread"
+    "oven: bread",
+    "oven: pumpkin_pie"
    ],
    "foundIn": [],
    "interactions": [],
@@ -1848,6 +1931,124 @@
    "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
   },
   {
+   "id": "flax_seed",
+   "name": "Flax seed",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "seed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "planted on tilled soil (data/crops.json; #212); a harvest gives two back"
+  },
+  {
+   "id": "flax",
+   "name": "Flax",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "raw",
+    "fibre"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "loom: cloth"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the flax crop's harvest (#212); cloth at the loom"
+  },
+  {
+   "id": "cloth",
+   "name": "Linen cloth",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "cloth"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "loom"
+   ],
+   "usedIn": [
+    "workbench: torch",
+    "loom: bandage",
+    "loom: cap",
+    "loom: breeches",
+    "loom: tunic",
+    "workbench: fishing_rod",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "woven at the loom from flax (#212); every recipe that asks for the cloth tag takes it, a garment, or a rag"
+  },
+  {
+   "id": "rag",
+   "name": "Rag",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "cloth"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench",
+    "workbench",
+    "workbench",
+    "workbench",
+    "workbench",
+    "workbench"
+   ],
+   "usedIn": [
+    "workbench: torch",
+    "workbench: fishing_rod",
+    "workbench: bow",
+    "workbench: prop:bed"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "torn from a garment at the workbench with a knife on you (#212); a rag is never torn again, and a recipe that wants the cloth tag takes it"
+  },
+  {
    "id": "roast_potato",
    "name": "Roast potato",
    "kind": "food",
@@ -1901,6 +2102,33 @@
    "interactions": []
   },
   {
+   "id": "pumpkin_pie",
+   "name": "Pumpkin pie",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 3,
+   "tags": [
+    "food",
+    "cooked"
+   ],
+   "hunger": 45,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "oven"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "baked at an oven from a pumpkin and flour (#201): the pumpkin feeds a recipe, so no crop is a dead end"
+  },
+  {
    "id": "porridge",
    "name": "Porridge",
    "kind": "food",
@@ -1946,6 +2174,183 @@
     }
    ],
    "seconds": 4
+  },
+  {
+   "id": "tear_cap",
+   "station": "workbench",
+   "out": {
+    "id": "rag",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "cap",
+     "count": 1
+    }
+   ],
+   "seconds": 2,
+   "carry": "knife",
+   "label": "Rags from the linen cap"
+  },
+  {
+   "id": "tear_hood",
+   "station": "workbench",
+   "out": {
+    "id": "rag",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "hood",
+     "count": 1
+    }
+   ],
+   "seconds": 2,
+   "carry": "knife",
+   "label": "Rags from the onion-head hat"
+  },
+  {
+   "id": "tear_tunic",
+   "station": "workbench",
+   "out": {
+    "id": "rag",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "tunic",
+     "count": 1
+    }
+   ],
+   "seconds": 2,
+   "carry": "knife",
+   "label": "Rags from the linen tunic"
+  },
+  {
+   "id": "tear_gloves",
+   "station": "workbench",
+   "out": {
+    "id": "rag",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "gloves",
+     "count": 1
+    }
+   ],
+   "seconds": 2,
+   "carry": "knife",
+   "label": "Rags from the work gloves"
+  },
+  {
+   "id": "tear_breeches",
+   "station": "workbench",
+   "out": {
+    "id": "rag",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "breeches",
+     "count": 1
+    }
+   ],
+   "seconds": 2,
+   "carry": "knife",
+   "label": "Rags from the linen breeches"
+  },
+  {
+   "id": "tear_boots",
+   "station": "workbench",
+   "out": {
+    "id": "rag",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "boots",
+     "count": 1
+    }
+   ],
+   "seconds": 2,
+   "carry": "knife",
+   "label": "Rags from the hobnail boots"
+  },
+  {
+   "id": "cloth",
+   "station": "loom",
+   "out": {
+    "id": "cloth",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "flax",
+     "count": 2
+    }
+   ],
+   "seconds": 8
+  },
+  {
+   "id": "bandage",
+   "station": "loom",
+   "out": {
+    "id": "bandage",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 4
+  },
+  {
+   "id": "weave_cap",
+   "station": "loom",
+   "out": {
+    "id": "cap",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 6
+  },
+  {
+   "id": "weave_breeches",
+   "station": "loom",
+   "out": {
+    "id": "breeches",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "cloth",
+     "count": 2
+    }
+   ],
+   "seconds": 10
+  },
+  {
+   "id": "weave_tunic",
+   "station": "loom",
+   "out": {
+    "id": "tunic",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "cloth",
+     "count": 3
+    }
+   ],
+   "seconds": 14
   },
   {
    "id": "handle",
@@ -2111,6 +2516,21 @@
    "seconds": 6
   },
   {
+   "id": "bucket",
+   "station": "workbench",
+   "out": {
+    "id": "bucket",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 3
+    }
+   ],
+   "seconds": 6
+  },
+  {
    "id": "table",
    "station": "workbench",
    "out": {
@@ -2189,6 +2609,22 @@
     }
    ],
    "seconds": 16
+  },
+  {
+   "id": "charcoal",
+   "station": "clamp",
+   "out": {
+    "id": "charcoal",
+    "count": 3
+   },
+   "in": [
+    {
+     "id": "log",
+     "count": 4
+    }
+   ],
+   "seconds": 360,
+   "fire": true
   },
   {
    "id": "iron_bar",
@@ -2484,6 +2920,41 @@
    ],
    "seconds": 10,
    "fire": true
+  },
+  {
+   "id": "flour",
+   "station": "millstones",
+   "out": {
+    "id": "flour",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "grain",
+     "count": 2
+    }
+   ],
+   "seconds": 8
+  },
+  {
+   "id": "pumpkin_pie",
+   "station": "oven",
+   "out": {
+    "id": "pumpkin_pie",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "pumpkin",
+     "count": 1
+    },
+    {
+     "id": "flour",
+     "count": 1
+    }
+   ],
+   "seconds": 12,
+   "fire": true
   }
  ],
  "interactions": [
@@ -2615,6 +3086,54 @@
    "on": "floor_farm_y",
    "verb": "Water",
    "action": "water"
+  },
+  {
+   "use": "bucket",
+   "on": "floor_water",
+   "verb": "Fill",
+   "action": "fill"
+  },
+  {
+   "use": "bucket",
+   "on": "floor_water_shallow",
+   "verb": "Fill",
+   "action": "fill"
+  },
+  {
+   "use": "bucket",
+   "on": "well",
+   "verb": "Fill",
+   "action": "fill"
+  },
+  {
+   "use": "bucket",
+   "on": "trough",
+   "verb": "Fill",
+   "action": "fill"
+  },
+  {
+   "use": "bucket",
+   "on": "font",
+   "verb": "Fill",
+   "action": "fill"
+  },
+  {
+   "use": "bucket",
+   "on": "crop",
+   "verb": "Pour",
+   "action": "pour"
+  },
+  {
+   "use": "bucket",
+   "on": "floor_farm",
+   "verb": "Pour",
+   "action": "pour"
+  },
+  {
+   "use": "bucket",
+   "on": "floor_farm_y",
+   "verb": "Pour",
+   "action": "pour"
   },
   {
    "use": "waterskin",
@@ -2832,6 +3351,126 @@
    "entries": []
   },
   {
+   "name": "barn_rack",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "granary_hollow",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "granary_mill",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "weaver_chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "miners_chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "quarry_chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "ore_cart",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "stone_stack",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "smithy_chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "charcoal_sacks",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
    "name": "dev_kit",
    "grid": [
     10,
@@ -2953,6 +3592,31 @@
    "note": "the drawn chair (docs/17): facings name where the seat faces; two drawings and their mirrors"
   },
   {
+   "id": "charcoal_clamp",
+   "kind": "station",
+   "label": "Clamp",
+   "drawn": false,
+   "station": "clamp",
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 24,
+    "maxFuel": 1,
+    "radius": 0.8,
+    "cooks": false
+   },
+   "carry": false,
+   "note": "a charcoal clamp (docs/30 section 7; docs/29-world/06; #197): a mound of logs under turf that burns slowly, with smoke and almost no light; a dev box until drawn; logs to charcoal (data/recipes.json)"
+  },
+  {
+   "id": "charcoal_sack",
+   "kind": "container",
+   "label": "Charcoal",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "sacks of charcoal at the burners (docs/29-world/06; #197), a container; a dev box until drawn"
+  },
+  {
    "id": "chest",
    "kind": "container",
    "drawn": false,
@@ -2978,6 +3642,14 @@
    "note": "a dev box for the counter (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
+   "id": "crane",
+   "kind": "placeholder box",
+   "label": "Crane",
+   "drawn": false,
+   "carry": false,
+   "note": "the quarry's crane, a dev box (docs/29-world/06; #196) until drawn"
+  },
+  {
    "id": "crop_cabbage_0",
    "kind": "crop",
    "drawn": true,
@@ -3000,6 +3672,33 @@
    "carry": false,
    "interactable": true,
    "note": "cabbage, ready to harvest (Claude Design, 2026-10-11): one farm tile's plants in rows along world x or y; the facing follows the soil's furrows"
+  },
+  {
+   "id": "crop_flax_0",
+   "kind": "gatherable",
+   "label": "Flax",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "flax, stage 0 (#212): a dev box until drawn (docs/29-world/09 has the crop art asks); one farm tile's plants, ripe at stage 2"
+  },
+  {
+   "id": "crop_flax_1",
+   "kind": "gatherable",
+   "label": "Flax",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "flax, stage 1 (#212): a dev box until drawn (docs/29-world/09 has the crop art asks); one farm tile's plants, ripe at stage 2"
+  },
+  {
+   "id": "crop_flax_2",
+   "kind": "gatherable",
+   "label": "Flax",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "flax, stage 2 (#212): a dev box until drawn (docs/29-world/09 has the crop art asks); one farm tile's plants, ripe at stage 2"
   },
   {
    "id": "crop_garlic_0",
@@ -3333,6 +4032,31 @@
    "note": "a dev box for the maypole (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
+   "id": "millstones",
+   "kind": "station",
+   "label": "Millstones",
+   "drawn": false,
+   "station": "millstones",
+   "carry": false,
+   "note": "a dev box for the millstones (docs/30 step 4, #201; docs/29/09 has its art request): grain to flour at the mill, no fire"
+  },
+  {
+   "id": "millwheel",
+   "kind": "placeholder box",
+   "label": "Mill wheel",
+   "drawn": false,
+   "carry": false,
+   "note": "the mill's wheel (#201), a labelled box against the mill's river wall until it is drawn (docs/29/09 request 1.5)"
+  },
+  {
+   "id": "mine_mouth",
+   "kind": "placeholder box",
+   "label": "Mine",
+   "drawn": false,
+   "carry": false,
+   "note": "the iron workings' mine mouth, a dev box (docs/29-world/06; #196) until drawn"
+  },
+  {
    "id": "mushroom_0",
    "kind": "gatherable",
    "drawn": true,
@@ -3379,6 +4103,39 @@
    "drawn": false,
    "carry": false,
    "note": "a dev box for the notices (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "ore_cart",
+   "kind": "container",
+   "label": "Ore cart",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "the iron workings' ore cart, a container, a dev box (docs/29-world/06; #196) until drawn"
+  },
+  {
+   "id": "ore_rock",
+   "kind": "gatherable",
+   "label": "Iron ore",
+   "drawn": false,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "an ore rock (dev box until the four rocks are drawn with rust streaks, docs/29-world/06; #196): a pickaxe gives iron ore and the rock stands spent for days, then comes back, so iron never runs out"
+  },
+  {
+   "id": "ore_rock_spent",
+   "kind": "gatherable",
+   "label": "Mined out",
+   "drawn": false,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "an ore rock mined out: it comes back on its clock day (fruit.js), as a picked apple tree does"
   },
   {
    "id": "oven",
@@ -3515,6 +4272,14 @@
    "note": "a dev box for the sawpit (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
+   "id": "scarecrow",
+   "kind": "placeholder box",
+   "label": "Scarecrow",
+   "drawn": false,
+   "carry": false,
+   "note": "Hollow Farm's scarecrow (#201), in the middle of the pumpkin field; a dev box until it is drawn (docs/29-world/05)"
+  },
+  {
    "id": "shelf",
    "kind": "container",
    "label": "Shelf",
@@ -3532,6 +4297,14 @@
    "note": "a dev box for the spinning (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
+   "id": "spoil_heap",
+   "kind": "placeholder box",
+   "label": "Spoil",
+   "drawn": false,
+   "carry": false,
+   "note": "the iron workings' spoil heap, a dev box (docs/29-world/06; #196) until drawn"
+  },
+  {
    "id": "stall",
    "kind": "container",
    "label": "Stall",
@@ -3547,6 +4320,15 @@
    "drawn": false,
    "carry": false,
    "note": "a dev box for the stocks (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "stone_stack",
+   "kind": "container",
+   "label": "Cut stone",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "cut stone in blocks, a container that gives stone, a dev box (docs/29-world/06; #196) until drawn"
   },
   {
    "id": "strongbox",
@@ -4049,6 +4831,14 @@
    "container": true,
    "carry": true,
    "note": "the wheelbarrow (docs/30 section 9.1: one big grid; carried like a barrel since 2026-10-15, Michael: the immovable one is the horse-drawn cart, a different thing); an empty grid of its own (data/loot.json wheelbarrow)"
+  },
+  {
+   "id": "winch",
+   "kind": "placeholder box",
+   "label": "Winch",
+   "drawn": false,
+   "carry": false,
+   "note": "the mine's winch, a dev box (docs/29-world/06; #196) until drawn"
   },
   {
    "id": "woodpile",
@@ -4602,6 +5392,375 @@
     "dead": 0,
     "villagers": [],
     "props": []
+   },
+   {
+    "name": "Hollow Farm's great barn",
+    "rect": [
+     56,
+     228,
+     16,
+     10
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "barrel",
+     "cart",
+     "haystack",
+     "haystack",
+     "haystack",
+     "shelf",
+     "shelf"
+    ]
+   },
+   {
+    "name": "Hollow Farm's farmhouse",
+    "rect": [
+     74,
+     228,
+     14,
+     10
+    ],
+    "buildings": 1,
+    "rooms": 3,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "bed",
+     "chair",
+     "chair",
+     "chest",
+     "chest",
+     "chest",
+     "cupboard",
+     "fireplace",
+     "shelf",
+     "shelf",
+     "table"
+    ]
+   },
+   {
+    "name": "Hollow Farm's granary",
+    "rect": [
+     92,
+     228,
+     8,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "barrel",
+     "chest"
+    ]
+   },
+   {
+    "name": "Hollow Farm's pumpkin field",
+    "rect": [
+     67,
+     241,
+     20,
+     14
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Hollow Farm's potatoes",
+    "rect": [
+     89,
+     241,
+     10,
+     7
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Hollow Farm's cabbages",
+    "rect": [
+     89,
+     249,
+     10,
+     6
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Hollow Farm's garlic",
+    "rect": [
+     57,
+     250,
+     10,
+     5
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Long Acre's farmhouse",
+    "rect": [
+     66,
+     39,
+     12,
+     9
+    ],
+    "buildings": 1,
+    "rooms": 2,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "chair",
+     "chest",
+     "chest",
+     "cupboard",
+     "fireplace",
+     "shelf",
+     "table"
+    ]
+   },
+   {
+    "name": "Long Acre's barn",
+    "rect": [
+     83,
+     38,
+     14,
+     10
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "barrel",
+     "cart",
+     "haystack",
+     "haystack"
+    ]
+   },
+   {
+    "name": "Long Acre's west rye",
+    "rect": [
+     66,
+     52,
+     13,
+     9
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 1,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Long Acre's east rye",
+    "rect": [
+     82,
+     52,
+     13,
+     9
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 1,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Long Acre's flax",
+    "rect": [
+     67,
+     30,
+     8,
+     9
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "Long Acre's kitchen garden",
+    "rect": [
+     83,
+     30,
+     10,
+     7
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "the mill",
+    "rect": [
+     98,
+     54,
+     12,
+     9
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [
+     "Miller"
+    ],
+    "props": [
+     "barrel",
+     "barrel",
+     "barrel",
+     "chest",
+     "millstones",
+     "shelf"
+    ]
+   },
+   {
+    "name": "the mill's granary",
+    "rect": [
+     98,
+     43,
+     8,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "barrel",
+     "barrel",
+     "chest"
+    ]
+   },
+   {
+    "name": "the iron workings",
+    "rect": [
+     214,
+     140,
+     30,
+     16
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 3,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "the miners' hut",
+    "rect": [
+     232,
+     148,
+     10,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "bed",
+     "chest",
+     "table"
+    ]
+   },
+   {
+    "name": "the quarry",
+    "rect": [
+     184,
+     36,
+     36,
+     24
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 5,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "the quarryman's hut",
+    "rect": [
+     186,
+     50,
+     10,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 1,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "chest",
+     "table"
+    ]
+   },
+   {
+    "name": "the charcoal burners",
+    "rect": [
+     212,
+     168,
+     24,
+     14
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 3,
+    "villagers": [],
+    "props": []
+   },
+   {
+    "name": "the burners' hut",
+    "rect": [
+     234,
+     168,
+     8,
+     8
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "barrel",
+     "bed",
+     "chest"
+    ]
    }
   ],
   "villagers": [
@@ -4668,6 +5827,15 @@
     "name": "Neighbour",
     "wardrobe": 1,
     "line": "Go away."
+   },
+   {
+    "tile": [
+     103,
+     58
+    ],
+    "name": "Miller",
+    "wardrobe": 4,
+    "line": "Grain is grain. Bring it, I will grind it."
    }
   ],
   "wild": {
@@ -5226,7 +6394,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1066"
+    "interact.js:1099"
    ]
   },
   {
@@ -5257,7 +6425,7 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1067"
+    "interact.js:1100"
    ]
   },
   {
@@ -5326,13 +6494,19 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:240"
+    "stations.js:245"
    ]
   },
   {
    "key": "dip",
    "at": [
     "burn.js:67"
+   ]
+  },
+  {
+   "key": "fill",
+   "at": [
+    "bucket.js:70"
    ]
   },
   {
@@ -5344,13 +6518,19 @@
   {
    "key": "harvest",
    "at": [
-    "farming.js:227"
+    "farming.js:233"
    ]
   },
   {
    "key": "light",
    "at": [
     "burn.js:170"
+   ]
+  },
+  {
+   "key": "mine",
+   "at": [
+    "mining.js:32"
    ]
   },
   {
@@ -5362,7 +6542,13 @@
   {
    "key": "plant",
    "at": [
-    "farming.js:167"
+    "farming.js:179"
+   ]
+  },
+  {
+   "key": "pour",
+   "at": [
+    "bucket.js:87"
    ]
   },
   {
@@ -5374,13 +6560,13 @@
   {
    "key": "till",
    "at": [
-    "farming.js:148"
+    "farming.js:160"
    ]
   },
   {
    "key": "water",
    "at": [
-    "farming.js:204"
+    "farming.js:216"
    ]
   }
  ],
@@ -5398,10 +6584,22 @@
    ]
   },
   {
+   "key": "harvest",
+   "at": [
+    "farming.js:293"
+   ]
+  },
+  {
+   "key": "mine",
+   "at": [
+    "mining.js:24"
+   ]
+  },
+  {
    "key": "till",
    "at": [
-    "farming.js:151",
-    "interact.js:569"
+    "farming.js:163",
+    "interact.js:571"
    ]
   }
  ],
@@ -5427,7 +6625,7 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:683"
+    "interact.js:713"
    ]
   },
   {
@@ -5469,32 +6667,32 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1247"
+    "interact.js:1280"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1193",
-    "interact.js:1277"
+    "interact.js:1226",
+    "interact.js:1310"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1169"
+    "interact.js:1202"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1170"
+    "interact.js:1203"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1281"
+    "interact.js:1314"
    ]
   },
   {
@@ -5518,7 +6716,7 @@
   {
    "key": "Harvest",
    "at": [
-    "interact.js:545"
+    "interact.js:547"
    ]
   },
   {
@@ -5536,7 +6734,7 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:424"
+    "interact.js:426"
    ]
   },
   {
@@ -5572,7 +6770,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1283"
+    "interact.js:1316"
    ]
   },
   {
@@ -5602,7 +6800,7 @@
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:687"
+    "ui/inventory-panel.js:688"
    ]
   },
   {
@@ -5614,7 +6812,7 @@
   {
    "key": "Sleep",
    "at": [
-    "interact.js:399"
+    "interact.js:401"
    ]
   },
   {
@@ -5644,13 +6842,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:438"
+    "interact.js:440"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:570"
+    "interact.js:572"
    ]
   },
   {
@@ -5662,21 +6860,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1258",
-    "interact.js:1297"
+    "interact.js:1291",
+    "interact.js:1330"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1165",
-    "interact.js:1245"
+    "interact.js:1198",
+    "interact.js:1278"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:704"
+    "interact.js:734"
    ]
   },
   {
@@ -5700,13 +6898,13 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:485"
+    "interact.js:487"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:588"
+    "interact.js:590"
    ]
   },
   {
@@ -5730,62 +6928,68 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1197",
-    "interact.js:1280"
+    "interact.js:1230",
+    "interact.js:1313"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:641"
+    "interact.js:671"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1001"
+    "interact.js:1034"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1173"
+    "interact.js:1206"
+   ]
+  },
+  {
+   "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
+   "at": [
+    "interact.js:620"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:210"
+    "interact.js:212"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:595"
+    "interact.js:597"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:575"
+    "interact.js:577"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1522"
+    "interact.js:1555"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:522"
+    "interact.js:524"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1202"
+    "interact.js:1235"
    ]
   }
  ],
@@ -5829,9 +7033,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:216",
-    "interact.js:349",
-    "interact.js:1507",
+    "interact.js:218",
+    "interact.js:351",
+    "interact.js:1540",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5839,13 +7043,13 @@
   {
    "key": "craftDone",
    "at": [
-    "stations.js:216"
+    "stations.js:221"
    ]
   },
   {
    "key": "craftStarted",
    "at": [
-    "stations.js:163"
+    "stations.js:168"
    ]
   },
   {
@@ -6092,11 +7296,14 @@
   "build",
   "burn",
   "cap",
+  "charcoal",
   "chop",
+  "cloth",
   "craft",
   "determinism",
   "eviction",
   "farm",
+  "farms",
   "fence",
   "fishing",
   "flare",
@@ -6110,6 +7317,7 @@
   "lantern",
   "layers",
   "light",
+  "mine",
   "players",
   "poses",
   "rooms",
@@ -6130,7 +7338,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2219
+   "lines": 2220
   },
   {
    "path": "main.js",
@@ -6138,7 +7346,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1567
+   "lines": 1600
   },
   {
    "path": "placeholders.js",
@@ -6166,7 +7374,7 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 709
+   "lines": 710
   },
   {
    "path": "game.js",
@@ -6217,6 +7425,10 @@
    "lines": 329
   },
   {
+   "path": "farming.js",
+   "lines": 318
+  },
+  {
    "path": "render/entities.js",
    "lines": 294
   },
@@ -6225,16 +7437,12 @@
    "lines": 293
   },
   {
-   "path": "farming.js",
-   "lines": 275
-  },
-  {
    "path": "host.js",
    "lines": 275
   },
   {
    "path": "stations.js",
-   "lines": 256
+   "lines": 261
   },
   {
    "path": "save.js",
@@ -6282,7 +7490,7 @@
   },
   {
    "path": "ui/station-panel.js",
-   "lines": 170
+   "lines": 171
   },
   {
    "path": "view.js",
@@ -6319,6 +7527,10 @@
   {
    "path": "settings.js",
    "lines": 128
+  },
+  {
+   "path": "bucket.js",
+   "lines": 127
   },
   {
    "path": "moodles.js",
@@ -6411,6 +7623,10 @@
   {
    "path": "bleed.js",
    "lines": 62
+  },
+  {
+   "path": "mining.js",
+   "lines": 57
   },
   {
    "path": "ui/names.js",

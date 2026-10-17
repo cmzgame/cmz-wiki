@@ -7,6 +7,7 @@ numbersOk: true
 ---
 
 <!-- typed: the game's pull request numbers, which are names, not the game's numbers -->
+<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:270`), not named numbers a lookup can read -->
 
 On 2026-10-17 [[The valley]] became the game's focus. This page lists every system added or changed since then, in the game's merged pull requests from #183 on, grouped by what it touches. Each says in a sentence or two what changed and names the pages to read before you play it. [[Updates]] has the same changes sync by sync; this page keeps the whole day on one screen.
 
@@ -16,7 +17,7 @@ On 2026-10-17 [[The valley]] became the game's focus. This page lists every syst
 
 ### Farming (game #206)
 
-Till grass or dirt with a [[Hoe]] in hand, plant a seed, water it from a [[Waterskin]], and harvest it with E when it is ready, for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the clock only while their soil is wet; dry soil pauses them and never kills them. A wall or closed shutters stop farming, while a fence or an open window does not. Only potatoes and cabbages can be grown in play, from the plot by [[Your cottage]], until the farms bring the other seeds.
+Till grass or dirt with a [[Hoe]] in hand, plant a seed, water it from a [[Waterskin]], and harvest it with E when it is ready, for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the clock only while their soil is wet; dry soil pauses them and never kills them. A wall or closed shutters stop farming, while a fence or an open window does not. The farms' granaries hold seed of every crop.
 
 Read: [[Farming]], [[Crops]], [[Hoe]], [[Potato seed]].
 
@@ -34,9 +35,39 @@ Read: [[Trees]], [[Apple]], [[The orchard]].
 
 ### Fishing (game #193)
 
-Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch. Grill the fish at a fire.
+Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch, and the brook by [[Long Acre]] (game #219) mostly trout. Grill the fish at a fire.
 
 Read: [[Fishing]], [[Fishing rod]], [[Perch]], [[Trout]], [[Carp]].
+
+### Mining, iron, and charcoal (game #210)
+
+A [[Pickaxe]] in hand mines a rock for [[Stone]], and the rock is gone; an ore rock gives [[Iron ore]], stands mined out for {{n sprites.ore_rock.mine.days}} days, and comes back, so iron never runs out. Two new places hold them: [[The iron workings]] in the east woods and [[The quarry]] in the north-east, each with a hut whose chest holds a pickaxe. A [[Charcoal clamp]] burns logs into [[Charcoal]]: one stands in the smithy's yard, three at [[The charcoal burners]]. The smithy's chest holds the first iron bars and charcoal, so the forge and the anvil work from the first day.
+
+Read: [[Mining]], [[Pickaxe]], [[Charcoal clamp]], [[Forge]], [[Anvil]].
+
+### Cloth (game #216)
+
+[[Flax]] is a sixth crop, and the weaver's chest holds its first seed and a [[Belt knife]]. The [[Loom]] weaves flax into [[Linen cloth]], and cloth into [[Bandage|bandages]] and linen clothes. With a knife on you, any garment tears into [[Rag|rags]] at the workbench, and a recipe that wants cloth takes a rag or plain cloth before a garment. The cap and the breeches are now the [[Linen cap]] and [[Linen breeches]], beside the [[Linen tunic]] (renamed in game #218), and cloth is the new [[Linen cloth]].
+
+Read: [[Flax]], [[Linen cloth]], [[Rag]], [[Loom]], [[Bandage]].
+
+### The bucket (game #211)
+
+An item you carry: fill it at any water or a well, and pour it on a plot to water every crop in the three by three round it. One waits in your cottage's chest, and the workbench makes more from planks.
+
+Read: [[Bucket]], [[Farming]].
+
+### The scythe (game #213)
+
+A swing with the [[Scythe]] harvests the ready grain on the three tiles ahead. Only rye is grain: the rye fields of [[Long Acre]] are its work, and the farms' granaries hold rye seed for more.
+
+Read: [[Scythe]], [[Farming]].
+
+### The farms and the mill (game #219)
+
+[[Hollow Farm]], south of the lane, has the great barn with a [[Hoe]] on its rack, the farmhouse, a granary with seed of every crop, the pumpkin field with its scarecrow, plots of potatoes, cabbages, and garlic, and the farm pond. [[Long Acre]], in the north, has two rye fields, a flax strip, and a kitchen garden, with the brook and its plank footbridge beside it. [[The mill]] grinds grain into flour at its [[Millstones]], and the [[Miller]] lives there, alive and at risk. Every crop can now be grown, so bread, porridge, the stew, and a new [[Pumpkin pie]] can all be made.
+
+Read: [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Millstones]], [[Farming]].
 
 ## Food and the body
 
@@ -82,9 +113,7 @@ Read: [[Chat log]], [[Sight]].
 
 Built, and in review in the game, not merged yet; their pages come with their merge.
 
-- **Mining and charcoal** (game #210): a pickaxe breaks rocks into stone, and ore rocks give iron ore and come back after some days; the iron workings and the quarry as new places; a charcoal clamp that turns logs into charcoal, at the charcoal burners' clearing and in the smithy's yard; iron bars in the smithy's chest, so the anvil works from the first day.
-- **The bucket** (game #211): an item in the bag, filled at any water or a well and poured on a plot to water the tiles round it; made of planks at the workbench, with one in your cottage's chest.
-- **The scythe** (game #213): a swing harvests the ready rye on the tiles ahead. It needs iron, so it follows mining.
+- **Talk, part 1** (game #220): the talk data and the barks, and the guide who stands beside the spawn.
 
 ## See also
 
@@ -92,7 +121,7 @@ Built, and in review in the game, not merged yet; their pages come with their me
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/entities/player.js:85-86`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:190`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-50`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
@@ -104,4 +133,6 @@ Built, and in review in the game, not merged yet; their pages come with their me
 - `src/entities/villager.js:32`, `src/entities/zombie.js:357`: immune villagers (game #187)
 - `src/burn.js:85-190`, `src/interactions.js:58`: lanterns and torches (game #188, #189)
 - `src/ui/speech.js:69-90`, `data/tuning.json:102`: the groan's radius and gap (game #189)
-- The game's open pull requests #210, #211, and #213: what comes next
+- `src/mining.js`, `src/bucket.js`, `src/farming.js:255-290`, `data/recipes.json`, `data/loot.json`: mining, charcoal, cloth, the bucket, and the scythe (game #210, #216, #211, #213)
+- `tools/mapgen/valley.py:407-522`, `data/loot.json:8-10`: the farms and the mill (game #219)
+- The game's open pull request #220: what comes next

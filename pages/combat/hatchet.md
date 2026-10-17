@@ -35,13 +35,13 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/items.json`: the hatchet: either hand, its verb `chop`, its `weapon` block
 - `src/chop.js:13-50`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it
-- `src/interact.js:608-630`: "Chop down (need a hatchet)" greyed without one
-- `data/loot.json:6-7`, `data/maps/valley.json:1277`, `data/maps/valley.json:3431`, `src/map.js:1885`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
+- `src/interact.js:638-660`: "Chop down (need a hatchet)" greyed without one
+- `data/loot.json:6-7`, `data/maps/valley.json:1397`, `data/maps/valley.json:3551`, `src/map.js:1885`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
 - `data/loot.json:2`: the hatchet in the `chest` table
-- `data/recipes.json:321-340`: the hatchet at the anvil from an iron bar and a stick, the hammer in hand
+- `data/recipes.json:529-548`: the hatchet at the anvil from an iron bar and a stick, the hammer in hand
 - `src/items.js:24-37`: wear comes only from a weapon's hits
 - `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
 

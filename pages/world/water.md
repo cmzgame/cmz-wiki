@@ -28,7 +28,7 @@ You must be within {{n census.constants.interact.INTERACT_RANGE}} tiles of the w
 
 ### Fishing
 
-With a [[Fishing rod]] in hand, a water tile's menu also offers **Cast the line**. The map names its waters, and each has its own fish: **the river**, the ford included, and **the pond**, which is both the duck pond on the green and the small pool in [[The manor]]'s garden. See [[Fishing]].
+With a [[Fishing rod]] in hand, a water tile's menu also offers **Cast the line**. The map names its waters, and each has its own fish: **the river**, the ford included; **the pond**, which is the duck pond on the green, the manor's pool, the farm pond at [[Hollow Farm]], and the quarry's flooded pit; and **the brook** north of [[Long Acre]], which the lane to the mere crosses on a plank footbridge. See [[Fishing]].
 
 ### Wells, troughs, and the font
 
@@ -54,17 +54,17 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/sprites/floor_water.json`, `src/map.js:1436-1439`, `src/map.js:1510-1517`: wholly water is walked by nobody
 - `tools/mapgen/valley.py:159-163`: the river, the stone bridge on the high street, the ford where the drove crosses
 - `data/sprites/floor_water_shallow.json`, `src/map.js:1442-1445`, `src/entities/player.js:278`, `src/entities/movement.js:56`, `src/entities/zombie.js:405`: shallow water walked by everyone at its speed factor
 - `src/map.js:1477-1487`: paths treat shallow water as ordinary ground
-- `src/interact.js:635-670`, `src/interact.js:676-699`, `src/interact.js:858-863`: drinking and filling beside any water tile; E drinks when thirst is under 90
-- `src/interact.js:53-54`: the drink's and the fill's times
-- `src/interact.js:636`, `src/interact.js:662-666`, `data/items.json:20`: every waterskin in the bag (not the belt) filled to 100
-- `src/interact.js:49`: the reach
-- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:672-674`, `src/interact.js:733`: wells, troughs, and the font give the same actions, each named for the prop; the well's bucket (game commit 2c70942)
+- `src/interact.js:665-700`, `src/interact.js:706-729`, `src/interact.js:891-896`: drinking and filling beside any water tile; E drinks when thirst is under 90
+- `src/interact.js:55-56`: the drink's and the fill's times
+- `src/interact.js:666`, `src/interact.js:692-696`, `data/items.json:20`: every waterskin in the bag (not the belt) filled to 100
+- `src/interact.js:51`: the reach
+- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:702-704`, `src/interact.js:764`: wells, troughs, and the font give the same actions, each named for the prop; the well's bucket (game commit 2c70942)
 - `tools/mapgen/valley.py:191`, `tools/mapgen/valley.py:198`, `tools/mapgen/valley.py:202`, `tools/mapgen/valley.py:243`, `tools/mapgen/valley.py:247`, `tools/mapgen/valley.py:258`, `tools/mapgen/valley.py:311`: where the wells, troughs, and the font stand
-- `src/interact.js:648-651`, `data/tuning.json:53`: thirst set to its maximum
-- `src/interact.js:67-89`: a guest's drink or fill run on the host by the tile
-- `src/interact.js:676-699`, `tools/mapgen/mapgen.py:77-87`, `tools/mapgen/valley.py:211`, `tools/mapgen/valley.py:310`, `src/map.js:1451-1460`: Cast the line with a rod in hand; the river and the ford named `river`, the duck pond and the manor's pool `pond` (game #193)
+- `src/interact.js:678-681`, `data/tuning.json:53`: thirst set to its maximum
+- `src/interact.js:69-91`: a guest's drink or fill run on the host by the tile
+- `src/interact.js:706-729`, `tools/mapgen/mapgen.py:77-87`, `tools/mapgen/valley.py:211`, `tools/mapgen/valley.py:310`, `src/map.js:1451-1460`: Cast the line with a rod in hand; the river and the ford named `river`, the duck pond and the manor's pool `pond` (game #193)

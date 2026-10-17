@@ -66,10 +66,10 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
 - `src/settings.js:60-72`: each rule's label and line, Starting population's answers, the Dev chest, Dev bag, and Extra starting items
-- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1991-1999`, `src/map.js:2164`, `src/map.js:2018`: Trees off: no tree placed in the scatter or the wild, nor an authored one, an orchard's or a garden's (game #192), the other picks as ever
+- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1991-1999`, `src/map.js:2165`, `src/map.js:2018`: Trees off: no tree placed in the scatter or the wild, nor an authored one, an orchard's or a garden's (game #192), the other picks as ever
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
 - `data/tuning.json:101`, `src/game.js:115-144`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
 - `src/map.js:1654-1683`: an extra stands on an open tile by the authored map, never across a wall or a door

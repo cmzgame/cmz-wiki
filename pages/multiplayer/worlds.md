@@ -62,7 +62,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/save.js`: a world as a save in the browser that made it
 - `src/ui/screens.js:196-219`, `src/main.js:1242-1244`: nothing runs until a world is chosen; out of a world, the site
 - `index.html:51`, `src/ui/screens.js:777`: Play and Play in your browser open the Worlds page (game #120)

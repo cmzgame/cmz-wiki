@@ -6,7 +6,7 @@ summary: The smith's station: tools and weapons from iron bars and sticks, with 
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Belt knife]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. Nothing in the valley gives iron bars yet, so the anvil cannot be used in play.
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Belt knife]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]].
 
 ## Using it
 
@@ -24,16 +24,16 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at cfe0203 -->
 - `src/stations.js:45-52`: which prop is which station
 - `data/sprites/anvil.json`: the anvil is a station, not carried, with no fire
-- `data/recipes.json:263-421`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`
-- `data/loot.json`: no loot table holds iron bars
-- `src/interact.js:622-639`: the station's menu entry and `E`
-- `src/stations.js:146-154`: the refusals, "Needs a hammer in hand." among them
-- `src/stations.js:168-191`: what is made goes to the output box
+- `data/recipes.json:490-648`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`
+- `data/loot.json:13`, `data/loot.json:16`: the quarryman's chest's hammer and the smithy's chest's iron bars (game #210)
+- `src/interact.js:772-789`: the station's menu entry and `E`
+- `src/stations.js:150-160`: the refusals, "Needs a hammer in hand." among them
+- `src/stations.js:173-209`: what is made goes to the output box
 - `data/maps/valley.json`: where the anvil stands
-- `src/ui/station-panel.js:60-73`: a guest's panel opens on its own screen
-- `src/host.js:161-167`: a guest's Make runs on the host as the craft verb, for that player
+- `src/ui/station-panel.js:70-83`: a guest's panel opens on its own screen
+- `src/host.js:183-189`: a guest's Make runs on the host as the craft verb, for that player
 
 {{navbox making}}

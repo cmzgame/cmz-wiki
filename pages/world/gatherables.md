@@ -5,7 +5,7 @@ aliases: [Gathering, Wobble, Sway]
 summary: Trees, rocks, mushrooms, crops, and pumpkins: the things that sway when clicked or walked through.
 ---
 
-Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], and pumpkins. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Today the only one that gives anything is the tree, which can be chopped down for [[Log|logs]].
+Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], and pumpkins. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; mushrooms and pumpkins give nothing yet.
 
 ## How it works
 
@@ -25,9 +25,10 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 
 - **Trees:** chop one down from the right-click menu with a [[Hatchet]] in a hand. It takes {{n tuning.world.chopSeconds seconds}}, the tree is gone, its logs lie on the ground where it stood, and a [[Stump]] is left, which the hatchet chops up for one more log. An apple tree with fruit on it can also be picked for [[Apple|apples]], and is then bare for some days. See [[Trees]].
 - **Crops:** harvested when ready, with E or the menu, for their food and seeds; see [[Farming]].
-- **Rocks, mushrooms, and pumpkins:** they sway, and nothing more.
+- **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], and gone; the ore rocks of [[The iron workings]] give [[Iron ore]] and come back after some days. See [[Mining]].
+- **Mushrooms and pumpkins:** they sway, and nothing more.
 
-{{planned doc=30 note="Picking mushrooms, and mining rocks with the pickaxe (game issue 196)."}}
+{{planned doc=30 note="Picking mushrooms."}}
 
 ## Numbers
 
@@ -50,16 +51,17 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/sprites/tree_oak_m.json`, `data/sprites/rock_0.json`, `data/sprites/mushroom_0.json`, `data/sprites/crop_potato_1.json`, `data/sprites/pumpkin.json`: each `interactable: true`
-- `src/interact.js:1306-1310`, `src/interact.js:1395-1403`: a click within reach stamps a sway, no restamp inside the cooldown
+- `src/interact.js:1339-1343`, `src/interact.js:1428-1436`: a click within reach stamps a sway, no restamp inside the cooldown
 - `src/render/props.js:94-104`: the sway's length and lean
-- `src/interact.js:1331-1355`: found by drawn pixels, crowns included
-- `data/sprites/well.json`, `src/interact.js:1544-1552`: the well's click animation instead
-- `src/interact.js:1411-1427`, `src/game.js:607`, `src/game.js:616`, `src/game.js:621`: walking through a crop or mushroom sways it, one full sway at a time, only while moving
+- `src/interact.js:1364-1388`: found by drawn pixels, crowns included
+- `data/sprites/well.json`, `src/interact.js:1577-1585`: the well's click animation instead
+- `src/interact.js:1444-1460`, `src/game.js:607`, `src/game.js:616`, `src/game.js:621`: walking through a crop or mushroom sways it, one full sway at a time, only while moving
 - `data/ground.json`: flowers and leaves are baked decals, not props
-- `data/sprites/tree_apple.json`, `src/interact.js:581-606`: an apple tree laden is picked for apples, then bare (game #192)
-- `src/interact.js:608-630`, `src/chop.js:25-50`, `src/interact.js:725-738`, `data/sprites/stump.json`: chopping a tree or a stump with a hatchet, picking a fruit tree, a crop's actions; the stump gatherable and outlined (game #207); nothing else has an action
-- `src/interact.js:532-553`, `src/farming.js:227-251`: a ready crop harvested (game #206)
-- `src/interact.js:1362-1394`, `src/net.js:865`, `src/net.js:1129-1133`: the sways sent in frames; a guest's click checked by the host
-- `src/interact.js:67-89`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk
+- `data/sprites/tree_apple.json`, `src/interact.js:583-608`: an apple tree laden is picked for apples, then bare (game #192)
+- `src/interact.js:638-660`, `src/chop.js:25-50`, `src/interact.js:756-770`, `data/sprites/stump.json`: chopping a tree or a stump with a hatchet, picking a fruit tree, a crop's actions; the stump gatherable and outlined (game #207); nothing else has an action but mining
+- `src/mining.js:1-54`: a rock or an ore rock mined with a pickaxe in hand (game #210)
+- `src/interact.js:534-555`, `src/farming.js:233-262`: a ready crop harvested (game #206)
+- `src/interact.js:1395-1427`, `src/net.js:865`, `src/net.js:1129-1133`: the sways sent in frames; a guest's click checked by the host
+- `src/interact.js:69-91`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk

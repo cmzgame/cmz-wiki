@@ -63,19 +63,19 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/tuning.json:53`, `data/tuning.json:56`: the maximum and the drain time
 - `src/entities/player.js:146`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
-- `src/interact.js:1196-1197`, `src/entities/player.js:104-112`, `data/tuning.json:59`: the "Drink" entry and the sip
-- `src/interact.js:1141-1155`, `src/interact.js:1267-1279`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
+- `src/interact.js:1229-1230`, `src/entities/player.js:104-112`, `data/tuning.json:59`: the "Drink" entry and the sip
+- `src/interact.js:1174-1188`, `src/interact.js:1300-1312`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
 - `src/entities/player.js:113-131`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
 - `src/game.js:582-585`, `src/main.js:1643-1645`: in the world's step, the word on the drinker's screen
-- `data/items.json:17`, `data/items.json:64`: the apple's and the stew's thirst
-- `src/interact.js:635-674`, `src/map.js:1447-1448`: the well's and the water's actions, named for the prop; floors with `drink`
-- `src/interact.js:53`, `src/interact.js:640`, `src/interact.js:646-651`: drinking's time, the E action below 90, thirst set to full
-- `src/interact.js:54`, `src/interact.js:636`, `src/interact.js:655-665`: filling's time and every bag waterskin to full
+- `data/items.json:17`, `data/items.json:70`: the apple's and the stew's thirst
+- `src/interact.js:665-704`, `src/map.js:1447-1448`: the well's and the water's actions, named for the prop; floors with `drink`
+- `src/interact.js:55`, `src/interact.js:670`, `src/interact.js:676-681`: drinking's time, the E action below 90, thirst set to full
+- `src/interact.js:56`, `src/interact.js:666`, `src/interact.js:685-695`: filling's time and every bag waterskin to full
 - `src/moodles.js:64-78`: the thirst stages
 - `src/entities/player.js:152-154`: Thirsty stops regeneration
 - `src/entities/player.js:160-165`, `data/tuning.json:69`: Parched slows stamina recovery

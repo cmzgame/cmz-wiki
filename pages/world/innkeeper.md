@@ -20,16 +20,16 @@ The Innkeeper stands in the taproom of [[The inn]], near the counter, and wander
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
 - `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1310`, `src/interact.js:1476-1489`, `src/interact.js:1516-1530`: a left click within reach, or Poke on the menu
+- `src/interact.js:1343`, `src/interact.js:1509-1522`, `src/interact.js:1549-1563`: a left click within reach, or Poke on the menu
 - `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
-- `data/maps/valley.json:5807-5816`, `src/game.js:100`, `src/entities/villager.js:32`: the Innkeeper flagged `immune` in the map (game #187)
+- `data/maps/valley.json:12288-12297`, `src/game.js:100`, `src/entities/villager.js:32`: the Innkeeper flagged `immune` in the map (game #187)
 - `src/entities/zombie.js:352-367`, `src/entities/villager.js:101-102`, `src/game.js:367`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
 - `data/maps/valley.json:5806-5871`: seven villagers in the valley
-- `data/maps/valley.json:5807-5816`: the Innkeeper's line and tile
-- `tools/mapgen/valley.py:433`, `data/maps/valley.json:1736-1746`: they stand in the taproom near the counter
+- `data/maps/valley.json:12288-12297`: the Innkeeper's line and tile
+- `tools/mapgen/valley.py:605`, `data/maps/valley.json:1856-1866`: they stand in the taproom near the counter
 
 {{navbox places}}

@@ -1,22 +1,23 @@
 ---
 title: Charcoal
 categories: [Items, Materials]
-summary: The forge's fuel. Not found anywhere in the valley yet.
+aliases: [Coal]
+summary: The forge's fuel: burned from logs in a charcoal clamp, and found in the smithy's chest and at the charcoal burners.
 ---
 
 {{infobox-item charcoal}}
 
-**Charcoal** is the fuel of the [[Forge]]. Not found anywhere in the valley yet: no container holds it, no recipe makes it, and the dev chest does not have it, so the forge cannot be lit in play. It stacks to {{n items.charcoal.stack}}.
+**Charcoal** is the fuel of the [[Forge]]. It is burned from [[Log|logs]] in a [[Charcoal clamp]]: one stands in the yard of [[The smithy]], and three at [[The charcoal burners]] in the east woods. The smithy's chest holds some from the start, and the burners' sacks and their hut's chest hold more. It stacks to {{n items.charcoal.stack}}.
 
 {{item-sections charcoal}}
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/items.json:3`: charcoal: a fuel material, its stack
+<!-- sources at cfe0203 -->
+- `data/items.json:3`: charcoal, its stack
+- `data/recipes.json:458-473`, `data/sprites/charcoal_clamp.json`: charcoal from logs at a clamp, its fire lit (game #210)
 - `data/sprites/forge.json`: the forge burns charcoal
-- `data/loot.json`: no table, the dev chest's included, holds charcoal
-- `data/recipes.json`: no recipe makes charcoal
-- `data/maps/valley.json`: the forge starts cold
+- `data/loot.json:16-17`, `tools/mapgen/valley.py:368`, `tools/mapgen/valley.py:560-570`: the smithy's chest, the burners' sacks and their hut's chest
+- `tools/mapgen/valley.py:373`, `tools/mapgen/valley.py:562-563`: a clamp in the smithy's yard, three at the burners
 
 {{navbox items}}

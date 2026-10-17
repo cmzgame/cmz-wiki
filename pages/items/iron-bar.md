@@ -1,23 +1,22 @@
 ---
 title: Iron bar
 categories: [Items, Materials]
-aliases: [Iron bars, Bar]
-summary: Smelted from iron ore at the forge; the anvil's material for every tool and weapon it makes.
+aliases: [Iron bars, Iron]
+summary: Smelted from iron ore at the forge; the anvil's material for every tool and weapon it makes. The smithy's chest holds the first three.
 ---
 
 {{infobox-item iron_bar}}
 
-An **iron bar** is smelted from [[Iron ore]] at the [[Forge]], and is what the [[Anvil]] makes its tools and weapons from. A wheelbarrow at the [[Workbench]] takes one too. Since nothing in the valley gives iron ore or the forge's [[Charcoal]] yet, iron bars cannot be had in play, and the dev chest does not have them.
+An **iron bar** is smelted from [[Iron ore]] at the [[Forge]], and is what the [[Anvil]] makes its tools and weapons from. A wheelbarrow at the [[Workbench]] takes one too. The chest in [[The smithy]] holds the first bars, with charcoal for the forge, so the anvil works from the first day; after that, ore comes from [[Mining]] and the forge's fire from a [[Charcoal clamp]].
 
 {{item-sections iron_bar}}
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/items.json:42`: the iron bar
-- `data/recipes.json:247-262`: smelted from ore at the forge
-- `data/recipes.json:263-421`: the anvil's recipes take it
-- `data/recipes.json:229-246`: the wheelbarrow takes one
-- `data/loot.json`: no table, the dev chest's included, holds ore, charcoal, or bars
+<!-- sources at cfe0203 -->
+- `data/items.json:52`: the iron bar
+- `data/recipes.json:474-489`: a bar at the forge from iron ore, the fire lit
+- `data/loot.json:16`, `tools/mapgen/valley.py:368`: the smithy's chest with iron bars and charcoal (game #210)
+- `data/recipes.json`: the anvil's recipes, and the wheelbarrow's, take iron bars
 
 {{navbox items}}

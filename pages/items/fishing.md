@@ -25,7 +25,8 @@ Without a rod in hand the water's menu has no Cast the line. Other refusals: "Yo
 The map names its waters, and the table goes by the water the tile belongs to:
 
 - **The river**, top to bottom of [[The valley]], with the ford where the drove crosses.
-- **The pond**: both the duck pond on the green and the small pool in [[The manor]]'s garden.
+- **The pond**: the duck pond on the green, the small pool in [[The manor]]'s garden, the farm pond at [[Hollow Farm]], and the flooded pit of [[The quarry]].
+- **The brook**, along the north edge of [[Long Acre]] to the river.
 
 Water the map does not name uses the river's table.
 
@@ -56,13 +57,13 @@ A guest casts the same way: their Cast the line is sent to the host with the wat
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/fishing.json`: the cast's reach and wait, a table per named water (each one's miss chance and weighted catch), the default table
 - `src/fishing.js:1-81`: the rod is any item in a hand listing the verb `fish`; the table by the water's body, else the default; the wait rolled; the `fish` verb: the refusals, the miss, the weighted catch into the bag or at the feet, and its line
-- `src/interact.js:676-699`: Cast the line on a water tile's menu only with a rod in hand, a timed action whose wait is rolled as it starts; the timed action ends if you walk away
+- `src/interact.js:706-729`: Cast the line on a water tile's menu only with a rod in hand, a timed action whose wait is rolled as it starts; the timed action ends if you walk away
 - `src/map.js:1451-1460`, `src/map.js:2024-2028`: a water floor's `group` kept as a named body, read from the map file and never saved
 - `tools/mapgen/mapgen.py:77-87`, `tools/mapgen/valley.py:159-161`, `tools/mapgen/valley.py:211`, `tools/mapgen/valley.py:310`: the river and its ford named `river`, the duck pond and the manor's pool `pond`
-- `data/items.json:39-45`, `data/recipes.json:76-94`, `data/recipes.json:497-544`: the rod, the three fish, and their grilled kinds; the rod at the workbench, the fish grilled at a fire
+- `data/items.json:40-46`, `data/recipes.json:253-271`, `data/recipes.json:705-752`: the rod, the three fish, and their grilled kinds; the rod at the workbench, the fish grilled at a fire
 - `docs/30-the-big-pass-spec.md`: no fishing skill yet (game #193)
 
 {{navbox making}}

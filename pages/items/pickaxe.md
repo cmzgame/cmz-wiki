@@ -1,23 +1,28 @@
 ---
 title: Pickaxe
 categories: [Items, Tools]
-summary: A tool for mining, made at the anvil; mining is not in the game yet, and it fights as a weak weapon.
+aliases: [Pickaxes, Pick]
+summary: A tool for mining: in hand, it mines rocks for stone and ore rocks for iron ore; found in the miners' and the quarryman's huts, and made at the anvil.
 ---
 
 {{infobox-item pickaxe}}
 
-The **pickaxe** is a tool made at the [[Anvil]] from [[Iron bar|iron bars]] and a [[Stick]]. Nothing in the valley gives iron bars yet, so it cannot be made in play, and it is not found anywhere. It can be held in either hand and swung as a weak weapon that breaks after about {{n items.pickaxe.weapon.kills}} kills.
+The **pickaxe** is the tool for [[Mining]]. Held in either hand, it adds **Mine stone** to a rock's menu and **Mine iron ore** to an ore rock's: a rock gives [[Stone]] and is gone, an ore rock gives [[Iron ore]] and stands mined out for some days. Mining does not wear it. It can also be swung as a weak weapon that breaks after about {{n items.pickaxe.weapon.kills}} kills.
 
-{{planned doc=30 step=4 note="The pickaxe's verb, mining rocks."}}
+## Where to find one
+
+- The chest in the miners' hut by [[The iron workings]], with some iron ore.
+- The chest in the quarryman's hut by [[The quarry]], with a [[Smith's hammer]].
+- The [[Anvil]] makes one from [[Iron bar|iron bars]] and a [[Stick]], with a hammer in hand.
 
 {{item-sections pickaxe}}
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/recipes.json:322-341`: the pickaxe from bars and a stick, with a hammer
-- `data/loot.json`: no table holds the pickaxe or iron bars
-- `data/items.json:35`: the pickaxe: either hand, a weapon, its kills, its unused verb
-- `src/items.js:27-37`: durability per hit from kills
+<!-- sources at cfe0203 -->
+- `data/items.json:38`: the pickaxe: either hand, its verb `mine`, its weapon block
+- `src/mining.js:20-27`, `src/interact.js:610-635`: a pickaxe in a hand mines; without one the entries are greyed (game #210)
+- `data/loot.json:12-13`, `tools/mapgen/valley.py:535-537`, `tools/mapgen/valley.py:553-556`: the miners' hut's chest and the quarryman's
+- `data/recipes.json`: the pickaxe at the anvil, the hammer in hand
 
 {{navbox items}}

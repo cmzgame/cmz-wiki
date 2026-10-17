@@ -108,7 +108,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
 - `data/wardrobes.json`: the dead's ten wardrobes
 - `src/entities/zombie.js:37-76`, `src/entities/movement.js:70-75`: the body, separation
@@ -133,7 +133,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/ui/speech.js:69-90`, `data/tuning.json:102`: a groan from one hidden by the dark goes to the log, not a bubble (game #150), only within `groanRadius` and once in `groanGap` (game #189); one hidden only by a canopy, none (game #173)
 - `src/entities/zombie.js:107-110`, `src/entities/zombie.js:143-151`, `src/entities/zombie.js:502-509`: death and the still body
 - `src/entities/zombie.js:118-128`: a floored zombie takes finishers
-- `src/sight.js:18-34`, `src/ui/zombie-bars.js:56`, `src/render/entities.js:262`, `src/interact.js:1441-1448`: seen in the dark near you, to your torch's reach, or in light; one not seen has no bar or outline and cannot be pointed at; nothing in a blow reads it (game #150)
+- `src/sight.js:18-34`, `src/ui/zombie-bars.js:56`, `src/render/entities.js:262`, `src/interact.js:1474-1481`: seen in the dark near you, to your torch's reach, or in light; one not seen has no bar or outline and cannot be pointed at; nothing in a blow reads it (game #150)
 - `src/main.js:1602-1606`: the bite's words on the victim's client alone
 - `src/entities/zombie.js:446-449`: the siege held on the last player seen inside
 - `src/settings.js:12-13`, `src/settings.js:60-61`, `src/rules.js:14-15`, `src/entities/zombie.js:305-312`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:372`, `src/entities/zombie.js:534-546`, `src/entities/villager.js:101-137`: Zombie aggro, Zombies attack villagers, an immune villager never prey nor harmed (game #187), a bitten villager turning

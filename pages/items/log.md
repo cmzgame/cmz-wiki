@@ -25,13 +25,13 @@ A log is the fuel of the campfire, the hearth, the fireplace, and the [[Oven]] (
 
 ## Sources
 
-<!-- sources at 8e7538f -->
+<!-- sources at cfe0203 -->
 - `data/items.json:4`: the log: 2 x 3, fuel, splits into 3 planks
-- `src/interact.js:608-630`, `src/chop.js:25-50`: Chop down with a hatchet in a hand, the logs on the tile, the count in the label, the stump left and chopped for its log (game #207)
+- `src/interact.js:638-660`, `src/chop.js:25-50`: Chop down with a hatchet in a hand, the logs on the tile, the count in the label, the stump left and chopped for its log (game #207)
 - `data/tuning.json:96`, `data/sprites/stump.json`: the chop's seconds, the stump's log
 - `data/sprites/tree_oak_m.json`: a young tree's wood (likewise tree_oak_l, tree_oak_old)
 - `data/loot.json:2-3`: logs in the chest and barrel tables
-- `src/interact.js:1199-1212`: Split, in your own bag; "Some planks fell to the floor."
+- `src/interact.js:1232-1245`: Split, in your own bag; "Some planks fell to the floor."
 - `data/sprites/campfire.json`: log as fuel (likewise hearth, fireplace, oven)
 - `data/build.json:2-9`: a log wall's cost
 - `src/placement.js:146-152`: the cost taken from hands, belt, and bag
