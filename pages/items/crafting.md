@@ -64,6 +64,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 ## See also
 
 - [[Recipes]]
+- [[Production chains]], every chain from raw material to product, and what can be made in normal play today
 - [[Fire]]
 - [[Containers]]
 

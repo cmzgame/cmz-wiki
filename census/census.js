@@ -142,6 +142,39 @@ for (const f of srcFiles) {
 }
 const modules = srcFiles.map((f) => ({ path: f.path, lines: f.text.split("\n").length })).sort((a, b) => b.lines - a.lines);
 
+// A top-level function's text, from `function name` to the brace that closes it at the start of a line (either line
+// ending), and the line range it spans, for a citation.
+function functionAt(file, name) {
+  const f = srcFiles.find((s) => s.path === file);
+  const start = f ? f.text.indexOf(`function ${name}`) : -1;
+  if (start < 0) return null;
+  const end = /\r?\n\}\r?\n/.exec(f.text.slice(start));
+  const body = f.text.slice(start, end ? start + end.index + end[0].length : f.text.length);
+  const first = f.text.slice(0, start).split("\n").length;
+  return { body, at: `src/${file}:${first}-${first + body.trimEnd().split("\n").length - 1}` };
+}
+
+// The default starting kit, for the Production chains page: what every new character starts with, from
+// data/kit.json (game #136): `worn` (ids, each into its slot) and `items` (`item`, `count`, `fill`, `hold`). A world may
+// add to it or wear the Developer Bag in place of the sack (the rules extraKit and devBag, chosen at the Sandbox
+// step); those are a world's testing choices, not normal play, so they are not read here. Null without the file.
+function readStarterKit() {
+  const kitFile = join(D, "kit.json");
+  if (!existsSync(kitFile)) return null;
+  const k = json(kitFile);
+  const rows = [...(k.worn || []).map((id) => ({ id, count: 1, worn: true })), ...(k.items || []).map((r) => ({ id: r.item, count: r.count || 1, ...(r.hold ? { hold: r.hold } : {}), ...(r.fill != null ? { fill: r.fill } : {}) }))];
+  return { from: "data/kit.json", items: rows.filter((r) => itemIds.has(r.id)), unknown: rows.filter((r) => !itemIds.has(r.id)).map((r) => r.id) };
+}
+const starterKit = readStarterKit();
+
+// What felling a tree gives, from the tree's action in src/interact.js (a tree's sprite says how many: its `wood`).
+function readChop() {
+  const fn = functionAt("interact.js", "treeActions");
+  const m = fn && /dropItem\([^{]*\{\s*id:\s*"([a-z_]+)"/.exec(fn.body);
+  return m ? { gives: m[1], field: "wood", at: fn.at } : null;
+}
+const chop = readChop();
+
 // ---------- items, cross-referenced ----------
 const itemRows = items.map((i) => ({
   id: i.id, name: i.name, kind: i.kind, size: i.size, hands: i.hands, stack: i.stack, tags: i.tags || [],
@@ -162,6 +195,8 @@ for (const t of lootTables) for (const e of t.entries) if (e.item !== "nothing" 
 for (const r of recipes) if (r.out && r.out.prop && !sprites[r.out.prop]) problems.push(`recipe at ${r.station} makes unknown prop ${r.out.prop}`);
 const stationsInData = new Set(spriteList.filter((s) => s.station).map((s) => s.station).concat(["cooking"]));
 for (const r of recipes) if (!stationsInData.has(r.station)) problems.push(`recipe names station ${r.station} that no sprite definition is`);
+for (const id of (starterKit && starterKit.unknown) || []) problems.push(`data/kit.json names unknown item ${id}`);
+if (!starterKit) problems.push("no data/kit.json: the starting kit is unknown");
 
 const census = {
   version,
@@ -176,6 +211,7 @@ const census = {
   tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
   wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
   settings, rules, fixedRules, keys, verbs, menuLabels, events, moodles, checks, modules, problems, constants,
+  starterKit, chop,
 };
 writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
 
@@ -240,6 +276,10 @@ h("Menu entry labels (by pattern)");
 L.push(...menuLabels.map((k) => `- ${k.key}  (${k.at[0]}${k.at.length > 1 ? ` +${k.at.length - 1}` : ""})`));
 h("Events on the bus (by pattern)");
 L.push(menuLabels.length ? events.map((e) => `\`${e.key}\``).join(", ") : "");
+h("The starting kit (data/kit.json)");
+L.push(starterKit ? `${starterKit.items.map((k) => `${k.count} ${k.id}`).join(", ")} (from ${starterKit.from})` : "- not found");
+h("Felling a tree (by pattern)");
+L.push(chop ? `a tree with \`${chop.field}\` drops that many \`${chop.gives}\` (${chop.at})` : "- not found");
 h("Checks (tools/checks)");
 L.push(checks.map((c) => `\`${c}\``).join(", "));
 h("Modules by size");

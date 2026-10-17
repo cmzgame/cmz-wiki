@@ -1,7 +1,7 @@
 {
-  "commit": "64cc71172d8f26c0212a47c06ae8192a2aa762d1",
-  "short": "64cc711",
-  "date": "2026-10-17T03:39:46-05:00",
-  "subject": "Merge #173, reviewed: darkness's loose ends (the groan line only for one the dark hides, sight's literals to data, a belt torch at 0.6 seeing a little past the dark radius per Michael's ruling, check(\"sight\") and check(\"ground\") repaired after the unlit starting torch) (closes #158)",
+  "commit": "82a5763fdc359ea791e5f7e66b078fa3f9b0c16d",
+  "short": "82a5763",
+  "date": "2026-10-17T13:08:17-05:00",
+  "subject": "Merge #183, reviewed, Michael's word: the starting kit as data and a world choice (extra items added to the default kit, a dev bag in place of the sack, chosen once at the Sandbox step) (closes #136)",
   "ref": "origin/main"
 }

@@ -40,15 +40,13 @@ Two more moodles are not needs: [[Bleeding]], from bites, and [[Infection]], a m
 
 ### The starter kit
 
-<!-- typed: the starter kit's counts are written in src/game.js giveStarterKit, not in data -->
+Every new character, including one made after a death and every friend who joins, starts with the world's kit. The default kit, the game's own data:
 
-Every new character, including one made after a death and every friend who joins, starts with the same kit:
+{{starting-kit}}
 
-- Equipped: a [[Tunic]], [[Breeches]], [[Boots]], a [[Rope belt]] ({{n items.belt.beltSlots}} belt slots), and a [[Burlap sack]] on the back.
-- In the sack: a full [[Waterskin]], a [[Loaf of bread]], two [[Apple|apples]], a [[Plank]], and a [[Tinderbox]].
-- In hand: a [[Torch]], not lit. `T` lights it with the tinderbox (see [[Torch]]).
+The torch is not lit: `T` lights it with the tinderbox (see [[Torch]]). The head and glove slots start empty. Better belts and bags, hoods, and gloves turn up in chests (see [[Inventory]]). Clothing carries no armour or warmth.
 
-The head and glove slots start empty. Better belts and bags, hoods, and gloves turn up in chests (see [[Inventory]]). Clothing carries no armour or warmth.
+A world can change the kit when it is made, at the Sandbox step of New world, for testing (see [[World rules]]): **Extra starting items** adds items to the default kit, and **Dev bag** starts everyone wearing the [[Developer Bag]] in place of the sack. Both are chosen once, never changed after, and hold for every character the world makes.
 
 {{devonly note="In a world made with the Dev chest (on by default at New world), a chest of every weapon, two Developer Bags, and bandages stands beside the spawn."}}
 
@@ -63,7 +61,7 @@ The head and glove slots start empty. Better belts and bags, hoods, and gloves t
 
 ## With friends
 
-Every friend has their own survivor with their own health, stamina, and needs, and the same starter kit. The world's rules, [[Survival]] among them, are the host's. Time runs fast during [[Sleep]] only while every living player is asleep.
+Every friend has their own survivor with their own health, stamina, and needs, and the world's starter kit, made by the host with the world's extra items and dev bag if it has them. The world's rules, [[Survival]] among them, are the host's. Time runs fast during [[Sleep]] only while every living player is asleep.
 
 ## See also
 
@@ -73,7 +71,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at 82a5763 -->
 - `data/tuning.json:42-43`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
@@ -89,11 +87,13 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `src/entities/player.js:249-250`, `src/entities/player.js:325-328`: auto-walk uses the same speeds; a movement key cancels it
 - `src/entities/player.js:121-160`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
 - `src/moodles.js:23-102`: the five moodles
-- `src/game.js:92`, `src/game.js:104-120`, `src/game.js:428`: the starter kit, its torch out and a tinderbox in the sack, given at create and to every added player
+- `data/kit.json`: the default starting kit, what is worn, in the sack, and in hand, the torch out and a tinderbox in the sack
+- `src/game.js:93`, `src/game.js:105-109`, `src/game.js:417`, `src/kit.js:56-69`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
+- `src/rules.js:21-22`, `src/rules.js:30`, `src/settings.js:70-72`: Extra starting items and Dev bag, world rules chosen once at the Sandbox step
 - `data/items.json:31`: the rope belt's two slots
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
-- `data/loot.json:6`, `src/settings.js:31`, `src/game.js:84-90`: the dev chest, chosen at New world
+- `data/loot.json:6`, `src/settings.js:33`, `src/game.js:85-91`: the dev chest, chosen at New world
 - `data/tuning.json:4`, `data/tuning.json:69`: the dead's and villagers' speeds
-- `src/rules.js:38-43`: a guest uses the host's rules
-- `src/game.js:323-333`: time runs fast only while every living player sleeps
+- `src/rules.js:44-49`: a guest uses the host's rules
+- `src/game.js:312-322`: time runs fast only while every living player sleeps

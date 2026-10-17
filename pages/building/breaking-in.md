@@ -118,7 +118,7 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at 82a5763 -->
 - `src/entities/zombie.js:625-646`: a way in chosen on the step the path fails; out of the zombie's own room, else into the target's
 - `src/entities/zombie.js:297-299`, `src/rules.js:13-14`, `src/settings.js:12`: hunting needs Zombie aggro, on by default
 - `src/map.js:851-886`: a room's openings to break, nearest first, the door towards the target's room first from inside, shut or boarded windows only from outside, an opening already open never one
@@ -140,10 +140,10 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 - `src/clock.js:12`, `src/clock.js:68-74`, `data/tuning.json:28-30`: dusk and night, and the siege's end hour, switch, and sleep radius
 - `src/entities/zombie.js:411-450`: a sighting inside a room at night starts or renews a siege and remembers the door crossed (the one on the line from where it last saw the player outside, else the door nearest them, game #171) and the window seen through; out in the open or by day it ends
 - `src/entities/zombie.js:807-874`: the siege state: between the openings it knows, breaking the shut ones, another every `siegeSwitch`, in when all are open, waiting at the opening with nothing to break and no way in
-- `src/entities/zombie.js:452-468`, `src/entities/player.js:204-216`, `src/game.js:334`: the siege held until its dawn on a living player; the sleep refused within `siegeSleepRadius`
+- `src/entities/zombie.js:452-468`, `src/entities/player.js:204-216`, `src/game.js:323`: the siege held until its dawn on a living player; the sleep refused within `siegeSleepRadius`
 - `src/entities/zombie.js:552-560`, `src/entities/zombie.js:478-488`: at the dawn, or the player's death, it loses interest and wanders, unless it sees someone
 - `src/entities/character.js:61-68`: the siege is kept with the dead in the save; the pressing and the breach are not
 - `src/placement.js:188-194`, `src/map.js:587-597`: no build refuses a doorless room; a new door or window built over a broken one
 - `src/entities/zombie.js:674-704`: giving up on a bite, lost aggro, a moved target, or an opening it cannot reach
-- `src/rules.js:13-21`, `src/rules.js:38-40`: Zombie aggro is a world rule, the host's on a guest
+- `src/rules.js:13-23`, `src/rules.js:44-46`: Zombie aggro is a world rule, the host's on a guest
 - `src/entities/zombie.js:510-524`: any player seen, a guest's as the host's, and the siege's player the last seen

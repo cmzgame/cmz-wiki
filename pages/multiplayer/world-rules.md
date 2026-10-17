@@ -1,11 +1,11 @@
 ---
 title: World rules
 categories: [Mechanics, Multiplayer, Settings]
-aliases: [World rule, Sandbox, Sandbox step, Rules, Starting population, Population, Trees rule]
-summary: Each world keeps its own rules, chosen at the Sandbox step of New world; the host changes most of them from the pause menu, and two are fixed when the world is made.
+aliases: [World rule, Sandbox, Sandbox step, Rules, Starting population, Population, Trees rule, Extra starting items, Starting kit]
+summary: Each world keeps its own rules, chosen at the Sandbox step of New world; the host changes most of them from the pause menu, and the rest are fixed when the world is made.
 ---
 
-The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you, whether the body has needs, whether building costs anything, whether the world has trees, and how many of the dead it starts with. There are {{n census.counts.rules}} of them. They belong to the world, not to the player or the browser: each world keeps its own in its save, and a rule set in one world does not follow you into the next. They are not on the [[Settings]] screen.
+The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you, whether the body has needs, whether building costs anything, whether the world has trees, how many of the dead it starts with, and, for testing, what every character starts with. There are {{n census.counts.rules}} of them. They belong to the world, not to the player or the browser: each world keeps its own in its save, and a rule set in one world does not follow you into the next. They are not on the [[Settings]] screen.
 
 ## How it works
 
@@ -24,23 +24,28 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 - **Trees** (default On): trees in the forests and the wild. Off, no tree is made anywhere, inside [[The valley]] or out in [[The wild]], however far anyone walks. The rocks, the ground, and the [[Mushrooms]] are as they would be: the mushrooms grow beside where the trees would have stood, the same ones in the same places as with trees.
 - **Starting population**: **None**, **Low**, **Standard** (the default), or **High**: how many of [[The dead]] the world starts with. Each level is a factor on the map's own number: at Standard the valley holds exactly the dead its map places, at None it holds none, at Low some of the map's dead are left out, and at High each of them stands more than once. An extra one stands on a free open tile close to where the map put it, never on the far side of a wall or a door. Every chunk of the wild grown later brings its usual number of the dead times the same factor, so a None world grows no dead in the wild either. The factor is read once, when the world is made: the dead never grow in number with time.
 
+- **Dev bag** (default Off): every new character starts wearing the [[Developer Bag]] in place of the [[Burlap sack]], with the starting kit in it, so a large list of extra items fits.
+- **Extra starting items** (default empty): items every new character starts with on top of the default kit (see [[Player#The starter kit|the starter kit]]), typed in a box one item a line, as an item id and an optional count: `sword`, or `arrow 20`. They go in the bag, each where it first fits, after the default kit. The list is checked as it is typed, and the first thing wrong with it is said under the box: an item the game does not have ("There is no item called "nonesuch"."), a count that is not a whole number in range, or more than the starting bag holds ("The starting bag is full: ..."). Turning **Dev bag** on gives the list the bigger bag's room. While something is wrong, **Next** does nothing.
+
+The kit's two rules hold for every character the world makes, after a death and for every friend who joins as well as the first.
+
 Which of the dead a factor keeps or doubles is settled by each one's own tile and each chunk's own roll, so two worlds made with the same rules start the same.
 
 A world without trees has a few more of the dead in the wild than one with them at the same population, since a chunk's dead stand only on tiles with nothing on them.
 
 ### The Sandbox step
 
-**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are baked into the world and cannot be changed afterwards; the pause menu shows them locked.") with Trees, Starting population (a dropdown), and the **Dev chest** (see [[Developer chest]]). **Next** goes on to [[Characters|character creation]].
+**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are baked into the world and cannot be changed afterwards; the pause menu shows them locked.") with Trees, Starting population (a dropdown), the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
 
 The choices are offered first as this browser last chose them when it made a world; the very first time, at their defaults. Changing a rule in a world later does not change what the next Sandbox step offers.
 
 ### World rules on the pause menu
 
-**World rules** on the pause menu opens a screen of the same rows, over the world, with the line "How this world plays. A change is made at once, for everyone in it." In your own world the five are switches: a change applies at once and the world is saved with it. Trees and Starting population are shown locked, marked "(set when the world was made)". **Back** returns to the pause menu.
+**World rules** on the pause menu opens a screen of the same rows, over the world, with the line "How this world plays. A change is made at once, for everyone in it." In your own world the five are switches: a change applies at once and the world is saved with it. Trees and Starting population are shown locked, marked "(set when the world was made)". The kit's two rules are not on this screen at all, since nothing about them can change once the world is made. **Back** returns to the pause menu.
 
 ### Worlds made before the rules were per world
 
-A world made before each world kept its own rules plays by the rules saved with it, which were its host's settings at the time. One whose save has no Trees or Starting population plays with trees and at Standard, exactly as it always did.
+A world made before each world kept its own rules plays by the rules saved with it, which were its host's settings at the time. One whose save has no Trees or Starting population plays with trees and at Standard, and one with no kit rules starts its characters with the default kit in the sack, exactly as it always did.
 
 ## Numbers
 
@@ -52,7 +57,7 @@ A world made before each world kept its own rules plays by the rules saved with 
 
 The rules are the host's. A change the host makes from World rules reaches every guest at once, and a guest's own copy of the world is made with the host's trees and the host's dead. A guest's World rules screen shows the same rows, every one locked and marked "(the host's)", with the line "How this world plays. They are the host's to change." A guest cannot change them.
 
-In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with.
+In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
 
 ## See also
 
@@ -61,17 +66,20 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at 9d9a5b5 -->
-- `src/rules.js:1-7`, `src/rules.js:13-30`: the rules are the world's own, their defaults, Starting population's four words, Trees and Starting population fixed at creation
-- `src/settings.js:58-68`: each rule's label and line, Starting population's answers, the Dev chest
-- `src/map.js:44-52`, `src/map.js:290-302`, `src/map.js:1761-1769`, `src/map.js:1931`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
-- `src/map.js:304-338`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
-- `data/tuning.json:82`, `src/game.js:121-150`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
-- `src/map.js:1426-1455`: an extra stands on an open tile by the authored map, never across a wall or a door
-- `src/map.js:1053-1066`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
-- `src/ui/screens.js:845-873`: the Sandbox step's two parts, their lines, Next
-- `src/main.js:288-307`, `src/main.js:310-318`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
-- `src/ui/screens.js:992-1008`, `src/main.js:737-739`: World rules on the pause menu: the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
-- `src/game.js:73-78`, `src/game.js:195`, `src/game.js:261-262`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
-- `src/net.js:865`, `src/net.js:1113`, `src/game.js:401`: sent to guests when they change, in the sync check
-- `src/ui/screens.js:935-941`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's two kept in its meta
+<!-- sources at 82a5763 -->
+- `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
+- `src/settings.js:60-72`: each rule's label and line, Starting population's answers, the Dev chest, Dev bag, and Extra starting items
+- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1986-1994`, `src/map.js:2157`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
+- `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
+- `data/tuning.json:94`, `src/game.js:111-140`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
+- `src/map.js:1651-1680`: an extra stands on an open tile by the authored map, never across a wall or a door
+- `src/map.js:1265-1278`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
+- `src/ui/screens.js:871-899`, `src/ui/screens.js:560-567`: the Sandbox step's two parts, their lines, Next; Extra starting items a text box
+- `data/kit.json`, `src/kit.js:22-55`, `src/ui/screens.js:360-366`, `src/ui/screens.js:417-431`: the extra items parsed and checked as typed, the first thing wrong said under the box, Next refused while it stands; the dev bag's room
+- `src/kit.js:56-69`, `src/game.js:105-109`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
+- `src/main.js:289-308`, `src/main.js:311-319`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
+- `src/ui/screens.js:1019-1035`, `src/main.js:738-740`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
+- `src/game.js:74-79`, `src/game.js:185`, `src/game.js:251-252`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
+- `src/net.js:868`, `src/net.js:1117`, `src/game.js:392`: sent to guests when they change, in the sync check
+- `src/ui/screens.js:962-968`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
+- `src/game.js:251-252`: a world's rules, the kit's two among them, restored from its save, a server world's too
