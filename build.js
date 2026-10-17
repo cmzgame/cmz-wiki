@@ -70,18 +70,27 @@ for (const file of walk(join(root, "pages"))) {
   pages.push({ title: meta.title, meta, body, source: relative(root, file).replace(/\\/g, "/"), written: true });
 }
 const have = new Set(pages.map((p) => p.title.toLowerCase()));
-const generate = (title, body, categories, summary) => { if (!have.has(title.toLowerCase())) { pages.push({ title, meta: { categories, summary }, body, written: false }); have.add(title.toLowerCase()); } };
+const generate = (title, body, categories, summary, aliases = []) => { if (!have.has(title.toLowerCase())) { pages.push({ title, meta: { categories, summary, ...(aliases.length ? { aliases } : {}) }, body, written: false }); have.add(title.toLowerCase()); } };
+// Every name a written page answers to (its title or an alias): a generated page never claims one.
+const claimedNames = new Set(pages.flatMap((p) => [p.title, ...[].concat(p.meta.aliases || [])]).map((n) => n.toLowerCase()));
 
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const article = (w) => (/^[aeiou]/i.test(w) ? "an" : "a");
+// What an item is, in words, by its kind: "a piece of clothing", not "a clothing".
+const KIND_PHRASE = { clothing: "a piece of clothing", ammo: "ammunition", magic: "a magic item", art: "an art item", food: "food", drink: "a drink", medicine: "medicine" };
 for (const it of data.items) {
   const kind = it.kind;
-  const lead = `The **${it.name}** is ${article(kind)} ${kind}${it.hands ? `, held in ${it.hands === "both" ? "both hands" : it.hands === "either" ? "either hand" : `the ${it.hands} hand`}` : ""}${it.wear ? `, equipped on the ${it.wear}` : ""}.`;
+  // A generated item page answers to its id as words ("Hood" for the Onion-head Hat), so an item the game renames keeps its old links, as a
+  // written page keeps its old name as an alias (game #218); never a name a written page or another item already has.
+  const idName = cap(it.id.replace(/_/g, " "));
+  const idAlias = idName.toLowerCase() !== it.name.toLowerCase() && !claimedNames.has(idName.toLowerCase()) && !data.items.some((o) => o !== it && o.name.toLowerCase() === idName.toLowerCase()) ? [idName] : [];
+  for (const a of idAlias) claimedNames.add(a.toLowerCase());
+  const lead = `The **${it.name}** is ${KIND_PHRASE[kind] || `${article(kind)} ${kind}`}${it.hands ? `, held in ${it.hands === "both" ? "both hands" : it.hands === "either" ? "either hand" : `the ${it.hands} hand`}` : ""}${it.wear ? `, equipped on the ${it.wear}` : ""}.`;
   const cats = ["Items", KIND_TITLES[kind] || cap(kind)];
   if (it.weapon || it.bow) cats.push("Weapons");
   // The data's own note on the item ("art only for now: it does not throw yet") is printed, so a stub never says less than the data.
   const note = it.note ? `The game's data notes: “${it.note}”.\n\n` : "";
-  generate(it.name, `{{infobox-item ${it.id}}}\n\n${lead}\n\n${note}{{stub}}\n\n{{item-sections ${it.id}}}\n\n{{navbox items}}\n`, cats, lead.replace(/\*\*/g, ""));
+  generate(it.name, `{{infobox-item ${it.id}}}\n\n${lead}\n\n${note}{{stub}}\n\n{{item-sections ${it.id}}}\n\n{{navbox items}}\n`, cats, lead.replace(/\*\*/g, ""), idAlias);
 }
 for (const st of [...new Set(data.recipes.map((r) => r.station))]) {
   const title = STATION_TITLES[st] || cap(st);
