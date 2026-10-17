@@ -19,7 +19,7 @@ After a confirmation the world is sent up. The server checks it, gives it a code
 
 ### Playing it
 
-**Play** on its row joins it like any friend's world. Friends join with its code as usual (see [[Joining]]); if the world is asleep, their join wakes it. The server saves it as it is played and whenever someone joins, leaves, goes [[Dormancy|dormant]], or dies.
+**Play** on its row joins it like any friend's world. Friends join with its code as usual (see [[Joining]]); if the world is asleep, their join wakes it. It holds {{n tuning.world.playerCapServer}} players at once, the owner among them when in; a join past that is told "This world is full." The server saves it as it is played and whenever someone joins, leaves, goes [[Dormancy|dormant]], or dies.
 
 ### The owner key
 
@@ -32,7 +32,7 @@ A lost owner key can be replaced from the same screen with the creator key: the 
 **Owner**, on the world's row or on the pause menu while in it, opens the owner's screen:
 
 - **Change the code**: the old code stops working at once; whoever is in stays.
-- **The world rules**: the {{n census.counts.rules}} rules (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit), each a switch with the same label and line as on the [[Settings]] screen, set for the world and reaching everyone in it at once.
+- **The world's rules**: the [[World rules|world rules]], each with the same label and line as at New world. The {{n census.counts.liveRules}} that play can change (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit) are switches, set for the world and reaching everyone in it at once; Trees and Starting population are shown locked, "(set when the world was made)". A world moved up from a browser keeps the ones it was made with.
 - **Remove** a player: they are told "The world's owner removed you from it.", their character goes dormant, and their browser is barred from the world.
 - **Remove and change the code**: the same, with a new code.
 - **Let back in**: lifts a bar.
@@ -45,7 +45,7 @@ The owner cannot be removed.
 
 ## With friends
 
-A server world is made for friends: nobody has to keep a browser open for the others to play. The rules are the owner's, set from the owner's screen rather than from anyone's [[Settings]].
+A server world is made for friends: nobody has to keep a browser open for the others to play. The rules are the owner's, set from the owner's screen rather than from anyone's pause menu; joined as the owner, the pause menu's World rules shows them locked, "yours to change from the Owner screen".
 
 ## See also
 
@@ -64,7 +64,10 @@ A server world is made for friends: nobody has to keep a browser open for the ot
 - `src/main.js:505-531`, `src/ui/screens.js:705-723`, `server/relay.js:346-359`: A world of mine on the server, and a new owner key with the creator key
 - `server/relay.js:303-318`: the owner's character filed under `owner`
 - `src/ui/screens.js:209-242`, `src/ui/screens.js:668-723`, `src/main.js:458-531`: the owner's screen and its powers
-- `src/ui/screens.js:720-724`, `src/settings.js:54-58`: the owner's rules as switches, labelled and explained from the settings' registry (game commit 19a1c18)
+- `src/ui/screens.js:935-941`, `src/settings.js:58-64`: the owner's rules from the settings' registry, Trees and Starting population locked (game commit f2b8062)
+- `server/relay.js:243-257`, `server/world.js:97`, `server/world.js:367-374`: an owner sets only the five; a moved world's two kept in its meta (game commit f2b8062)
+- `server/world.js:245`, `data/tuning.json:80`, `src/main.js:1733`: a server world's cap, `world.playerCapServer`, and "This world is full." (game commit f2b8062)
+- `src/ui/screens.js:1000`: the owner's World rules line (game commit f2b8062)
 - `server/relay.js:346-473`, `server/world.js:258-275`, `server/world.js:327-359`: change the code, the rules, remove, unbar
 - `src/main.js:1564`: "The world's owner removed you from it."
 - `src/main.js:406-453`, `server/relay.js:445-473`, `server/relay.js:546-559`: bringing it home in two phases, Finish bringing it home, the wait

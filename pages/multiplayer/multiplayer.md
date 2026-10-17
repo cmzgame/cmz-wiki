@@ -24,11 +24,13 @@ Everything a guest can do, they do through the same actions as the host: opening
 - A friend types the code under **Join a game** on the Worlds page (**Play** on the game's site). See [[Joining]].
 - Friends anywhere meet through the relay, a small server that passes messages between the host and the guests. It keeps nothing of the world.
 
-A world remembers which survivor belongs to which browser, so a friend who comes back returns as the same [[Characters|character]]. A world remembers at most {{n census.constants.host.MAX_OWNERS}} browsers; after that it refuses new ones as full.
+A world holds {{n tuning.world.playerCapBrowser}} players at once when a browser hosts it, the host among them, and {{n tuning.world.playerCapServer}} as a [[Server worlds|server world]]. A friend who stepped away holds their place, and so does a browser world's host whatever they are doing; a character gone dormant holds none. A join past that is refused with "This world is full." See [[Hosting#How many can play|Hosting]].
+
+A world remembers which survivor belongs to which browser, so a friend who comes back returns as the same [[Characters|character]]. A world remembers at most {{n census.constants.host.MAX_OWNERS}} browsers; after that it refuses new ones with the same word.
 
 ### The host's rules
 
-The {{n census.counts.rules}} world rules belong to the world, not to each player: **Zombie aggro**, **Zombies attack villagers**, **Survival**, **Free building**, and **Multi-hit**. In a world of your browser they come from the host's [[Settings]] and are kept in the save. A guest's Settings screen shows the same rows on its World rules tab as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
+The [[World rules|world rules]] belong to the world, not to each player: **Zombie aggro**, **Zombies attack villagers**, **Survival**, **Free building**, and **Multi-hit**, which the host changes from **World rules** on the pause menu, and **Trees** and **Starting population**, chosen when the world was made. They are kept in the world's save. A guest's World rules screen shows them as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
 
 ### The world never pauses
 
@@ -61,12 +63,13 @@ When your character dies, the body stays where it fell and you may make a new ch
 ## Numbers
 
 - World sent to guests every {{n census.constants.net.FRAME_EVERY}} steps.
+- Players at once: {{n tuning.world.playerCapBrowser}} in a world hosted in a browser, {{n tuning.world.playerCapServer}} in a server world.
 - Browsers a world remembers: {{n census.constants.host.MAX_OWNERS}}.
 - Time while everyone sleeps: {{n tuning.player.sleepTimeScale}} times normal speed.
 
 ## Settings that change it
 
-The {{n census.counts.rules}} world rules above, set by the host.
+The [[World rules|world rules]] above, set by the host.
 
 ## See also
 
@@ -76,23 +79,24 @@ The {{n census.counts.rules}} world rules above, set by the host.
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/save.js:143-164`, `src/main.js:558-576`: a world of the browser, opened and closed to friends as a switch
-- `src/net.js:712`, `src/net.js:717-824`: the host runs the world and sends it every `FRAME_EVERY` steps; a guest's walk predicted and corrected
-- `src/net.js:1156-1193`: a guest's say, act, item, craft, place, and use commands, performed on the host
-- `src/ui/screens.js:724-736`: Open to friends shows the code
-- `src/main.js:534-555`: Join a game takes the code
-- `server/relay.js`, `src/net.js:181-337`: the relay passes messages between host and guests
-- `src/host.js:30`, `src/host.js:54-80`: the browsers a world remembers by hash, at most `MAX_OWNERS`, the next refused as full
-- `src/rules.js:9-37`, `src/ui/screens.js:401-412`, `server/world.js:337-344`: the five world rules, in the save, locked as the host's for a guest (game commit 19a1c18), set by a server world's owner
-- `src/main.js:667-670`, `src/ui/screens.js:663-665`, `src/main.js:1063-1084`: no screen pauses a world on the wire; "Menu"; your player fed an idle input
-- `src/main.js:880`, `src/loop.js:66-74`: hit-stop off on the wire
-- `src/main.js:1605`, `src/main.js:1620-1625`, `src/loop.js:138-186`: a hidden tab keeps a shared world running; the host's tab title
-- `src/game.js:257-264`, `src/main.js:1464-1465`, `data/tuning.json`: time fast only when every living player sleeps, `player.sleepTimeScale`, the message
-- `src/net.js:109`, `src/net.js:619-636`, `src/host.js:95-101`: the grace and dormancy
-- `src/main.js:131-181`, `src/host.js:103-138`: stepping away after `AWAY_AFTER_MS`, never a sleeper, and coming back (game commit 0bd3f9c)
-- `src/main.js:686-689`: nothing pauses a world on the wire, the dead screen included, so a world with everyone dead runs on (game commit 0bd3f9c)
-- `src/ui/names.js:10-35`, `src/ui/screens.js:761`, `src/settings.js:26`: other players' names in sight, never your own, the Settings row that hides them (game commit 2c70942)
+<!-- sources at 2a9a308 -->
+- `src/save.js:152-173`, `src/main.js:699-720`: a world of the browser, opened and closed to friends as a switch
+- `src/net.js:730`, `src/net.js:767-874`: the host runs the world and sends it every `FRAME_EVERY` steps; a guest's walk predicted and corrected
+- `src/net.js:1231-1268`: a guest's say, act, item, craft, place, and use commands, performed on the host
+- `src/ui/screens.js:979-991`: Open to friends shows the code
+- `src/main.js:674-685`: Join a game takes the code
+- `server/relay.js`, `src/net.js:187-343`: the relay passes messages between host and guests
+- `src/host.js:30`, `src/host.js:94`: the browsers a world remembers by hash, at most `MAX_OWNERS`, the next refused as full
+- `data/tuning.json:79-80`, `src/main.js:1643`, `server/world.js:245`, `src/host.js:49-63`, `src/main.js:1733`: the players a world holds at once, a browser's and a server's; what holds a place; "This world is full."
+- `src/rules.js:13-30`, `src/ui/screens.js:992-1008`, `server/world.js:367-374`: the world rules, in the save, changed from the pause menu, two fixed at creation, locked as the host's for a guest, set by a server world's owner
+- `src/main.js:819-822`, `src/ui/screens.js:917-919`, `src/main.js:1213-1234`: no screen pauses a world on the wire; "Menu"; your player fed an idle input
+- `src/main.js:1032`, `src/loop.js:66-74`: hit-stop off on the wire
+- `src/main.js:1767`, `src/main.js:1783-1788`, `src/loop.js:138-186`: a hidden tab keeps a shared world running; the host's tab title
+- `src/game.js:325-332`, `src/main.js:1614-1615`, `data/tuning.json`: time fast only when every living player sleeps, `player.sleepTimeScale`, the message
+- `src/net.js:113`, `src/net.js:637-654`, `src/host.js:116-122`: the grace and dormancy
+- `src/main.js:131-181`, `src/host.js:124-159`: stepping away after `AWAY_AFTER_MS`, never a sleeper, and coming back
+- `src/main.js:819-822`: nothing pauses a world on the wire, the dead screen included, so a world with everyone dead runs on
+- `src/ui/names.js:10-35`, `src/settings.js:26`, `src/settings.js:55`: other players' names in sight, never your own, the Settings row that hides them
 - `src/ui/log.js`, `src/ui/speech.js`: talking
-- `src/ui/screens.js:785-791`, `src/main.js:869-875`: the dead screen, a guest's from the host
+- `src/ui/screens.js:1044-1050`, `src/main.js:1021-1027`: the dead screen, a guest's from the host
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; every section of this page checked against it (game commit 490addf)

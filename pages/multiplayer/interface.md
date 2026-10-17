@@ -62,7 +62,7 @@ The **Cursor** setting picks the system's own pointer, a hand, a severed hand, o
 
 {{devonly note="The debug corner is for testing; the Debug corner setting hides it."}}
 
-Under the portrait, a block of text: frames a second, your position and needs, the clock and the light, the chunk and room, timings, the world's counts, and the wire's traffic when playing with friends.
+Under the portrait, a block of text: frames a second, your position and needs, the clock and the light, the chunk and room, timings, the world's counts, and the wire's traffic when playing with friends. It sits under everything else of the interface: an open panel or screen covers it.
 
 ## See also
 
@@ -97,3 +97,4 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/ui/build-palette.js`, `src/main.js:700-721`: the build palette
 - `src/ui/cursor.js:1-36`, `src/settings.js:29`, `src/settings.js:56`: the four cursors and the zombie hand
 - `src/main.js:1112-1122`, `style.css:81-84`, `src/settings.js:11`: the debug corner, its place, and its contents
+- `style.css:69-75`: the interface over the debug corner, so a panel or screen covers it (game commit f2b8062)

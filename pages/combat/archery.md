@@ -79,7 +79,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 
 ## Settings that change it
 
-- **Bow aim guide** (default on): a landing marker and a dotted line while drawing.
+- **Aim guide** (default off): a landing marker and a dotted line while you draw a bow, wind up a throw, or cast. It is each player's own: it changes only what their own screen draws, never the shot. A browser that saved its settings before it went off by default keeps its own choice.
 
 ## See also
 
@@ -90,17 +90,17 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 
 ## Sources
 
-<!-- sources at 3b7cb9a -->
+<!-- sources at 2a9a308 -->
 - `src/archery.js:560-575`: the bow and the spear share the launcher and the draw
 - `src/archery.js:62-64`, `src/archery.js:603-623`, `src/archery.js:719-721`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
 - `data/items.json`: the bow's `drawTime` and `braceDrawTime`, `damage`, `knockback`, `shots`; the spear's `thrown` block
 - `data/combat.json` `bow`, `src/archery.js:29-57`: the bow's and the flight's numbers as data (range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights)
 - `src/archery.js:635-692`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the hands, belt, and bag hold none
-- `src/main.js:625-640`, `src/game.js:554`, `src/net.js:418`: a right tap during a draw cancels it in the world's step, a guest's too
-- `src/archery.js:713`, `src/main.js:1001`: sprinting, a right-click menu, climbing, or a pause cancels a draw; an open panel does not (game commit 57df52e)
+- `src/main.js:758-773`, `src/game.js:565`, `src/net.js:418`: a right tap during a draw cancels it in the world's step, a guest's too
+- `src/archery.js:713`, `src/main.js:1134`: sprinting, a right-click menu, climbing, or a pause cancels a draw; an open panel does not
 - `src/archery.js:719-720`: the braced draw time
 - `src/player-controller.js:52`: walking speed while drawing and braced
-- `src/game.js:93`, `src/archery.js:288-312`: what a shot can hit is what `setTargets` hands in, the dead; never a villager, a player, or the archer (game commit 0bd3f9c)
+- `src/game.js:97`, `src/archery.js:288-312`: what a shot can hit is what `setTargets` hands in, the dead; never a villager, a player, or the archer
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/archery.js:93-139`: the shot fixed at release, travelling along the ground with the arc above
 - `src/archery.js:254-284`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
@@ -117,7 +117,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/player-controller.js:39-45`: middle or Q throws the spear; no brace for a throw
 - `src/archery.js:266`: the spear's break chance rolled on every landing
 - `src/archery.js:673-677`: the thrown spear leaves the hand with its durability; the guard's attack multiplier on a throw
-- `src/archery.js:603-609`, `src/net.js:867`, `src/net.js:1106`, `src/archery.js:349-352`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
-- `src/settings.js:17`: the Bow aim guide setting, on by default
+- `src/archery.js:603-609`, `src/net.js:867`, `src/net.js:1114`, `src/archery.js:349-352`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
+- `src/settings.js:15`, `src/settings.js:57`, `src/main.js:1253`, `src/archery.js:723-727`: the Aim guide, off by default, read only where the viewer's own screen is drawn; the marker always computed
 
 {{navbox weapons}}

@@ -51,7 +51,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - `/`: open the chat box with a slash typed (there are no commands yet).
 - `Escape`: close the top thing in this order: the actions menu, Use mode, the station panel, a screen, the build palette, placement or removal, the bag and character panels. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
 
-In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button.
+In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button. On the site's Home, `Enter` opens the Worlds page, unless a button, link, or field has the focus. In fullscreen the browser takes the first `Escape` to leave fullscreen.
 
 ### In the panels
 
@@ -109,6 +109,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:679-696`, `src/ui/log.js:55`: Escape's order, and in the chat box
 - `src/main.js:793-794`, `src/ui/screens.js:233-262`: Escape out of a world steps back through the site (game commit 02dfcc2)
 - `src/ui/screens.js:764`, `src/ui/screens.js:794`, `src/ui/screens.js:807`: Enter in a screen's text field presses its button (game commit 02dfcc2)
+- `src/ui/screens.js:103-110`, `src/ui/screens.js:545-552`: Enter on Home opens the Worlds page; the first Escape in fullscreen leaves it (game commit f2b8062)
 - `src/ui/inventory-panel.js:75-126`, `src/ui/inventory-panel.js:632`: drag, rotate, shift-click, double-click, right-click in the panels
 - `src/ui/inventory-actions.js:166-182`, `src/ui/screens.js:40`: a double-click equips from the bag and runs a slot's Equip or Unequip; the Controls screen's line (game commit 9a450f2)
 - `src/ui/station-panel.js:34-43`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it (game commit 57df52e)

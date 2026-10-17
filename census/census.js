@@ -122,7 +122,11 @@ const settingsText = readFileSync(join(SRC, "settings.js"), "utf8");
 const defaultsBlock = settingsText.slice(settingsText.indexOf("export const DEFAULTS"), settingsText.indexOf("};", settingsText.indexOf("export const DEFAULTS")));
 const settings = [...defaultsBlock.matchAll(/^\s*([a-zA-Z]+):\s*([^,]+),\s*(?:\/\/\s*(.*))?$/gm)].map((m) => ({ key: m[1], default: m[2].trim(), note: (m[3] || "").trim() }));
 const rulesText = readFileSync(join(SRC, "rules.js"), "utf8");
-const rules = [...rulesText.slice(rulesText.indexOf("export const rules")).split("};")[0].matchAll(/^\s*([a-zA-Z]+):\s*([^,]+),/gm)].map((m) => m[1]);
+// The world's rules are the keys of rules.js's DEFAULTS (since game #128 the live object is a copy of it); FIXED names
+// the ones chosen once, when a world is made (game #131).
+const rulesBlock = rulesText.includes("export const DEFAULTS") ? rulesText.slice(rulesText.indexOf("export const DEFAULTS")).split("};")[0] : rulesText.slice(rulesText.indexOf("export const rules")).split("};")[0];
+const rules = [...rulesBlock.matchAll(/^\s*([a-zA-Z]+):\s*([^,]+),/gm)].map((m) => m[1]);
+const fixedRules = [...((/export const FIXED\s*=\s*\[([^\]]*)\]/.exec(rulesText) || [])[1] || "").matchAll(/"([a-zA-Z]+)"/g)].map((m) => m[1]);
 const moodleText = readFileSync(join(SRC, "moodles.js"), "utf8");
 const moodles = [...moodleText.matchAll(/id:\s*"([a-z]+)",[\s\S]*?stages:\s*\[([\s\S]*?)\]/g)].map((m) => ({ id: m[1], stages: [...m[2].matchAll(/name:\s*"([^"]+)",\s*text:\s*"([^"]+)"/g)].map((s) => ({ name: s[1], text: s[2] })) }));
 const checks = existsSync(join(TOOLS, "checks")) ? readdirSync(join(TOOLS, "checks")).filter((f) => f.endsWith(".js")).map((f) => basename(f, ".js")) : [];
@@ -165,13 +169,13 @@ const census = {
     items: items.length, recipes: recipes.length, interactions: interactions.length, lootTables: lootTables.length, sprites: spriteList.length,
     places: places.length, villagers: (valley.villagers || []).length, authoredDead: (valley.zombies || []).length, mapProps: (valley.props || []).length,
     zombieWardrobes: (wardrobes.zombie || []).length, villageWardrobes: (wardrobes.village || []).length,
-    settings: settings.length, rules: rules.length, keys: keys.length, verbs: verbs.length, menuLabels: menuLabels.length, events: events.length, checks: checks.length, modules: modules.length,
+    settings: settings.length, rules: rules.length, fixedRules: fixedRules.length, liveRules: rules.length - fixedRules.length, keys: keys.length, verbs: verbs.length, menuLabels: menuLabels.length, events: events.length, checks: checks.length, modules: modules.length,
   },
   items: itemRows, recipes, interactions, lootTables, sprites: spriteList,
   map: { name: valley.name, spawn: valley.spawn, bounds: valley.bounds, places, villagers: valley.villagers, wild: valley.wild },
   tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
   wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
-  settings, rules, keys, verbs, menuLabels, events, moodles, checks, modules, problems, constants,
+  settings, rules, fixedRules, keys, verbs, menuLabels, events, moodles, checks, modules, problems, constants,
 };
 writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
 
@@ -227,7 +231,7 @@ for (const m of moodles) L.push(`- **${m.id}**: ${m.stages.map((s) => s.name).jo
 h("Settings (src/settings.js DEFAULTS)");
 L.push(...settings.map((s) => `- \`${s.key}\` = ${s.default}${s.note ? `: ${s.note}` : ""}`));
 h("World rules (src/rules.js)");
-L.push(rules.map((r) => `\`${r}\``).join(", "));
+L.push(rules.map((r) => `\`${r}\`${fixedRules.includes(r) ? " (fixed at creation)" : ""}`).join(", "));
 h("Keys the game reads (by pattern)");
 L.push(...keys.map((k) => `- \`${k.key}\`: ${k.at.join(", ")}`));
 h("Verbs in the table (by pattern)");

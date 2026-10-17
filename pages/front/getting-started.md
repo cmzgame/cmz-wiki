@@ -9,7 +9,7 @@ This guide walks through a first day in [[The valley]], in the order you will me
 
 ## Making a world
 
-The game opens on its site. Press **Play** on its menu to open the [[Worlds]] page, then **New world** to make a world. Each world asks you to make a [[Characters|character]] for it from an [[Identities|identity]]: a name and a look kept in your browser. Your character belongs to that world alone. A friend can join you later; see [[Multiplayer]].
+The game opens on its site. Press **Play** on its menu (or `Enter` on Home) to open the [[Worlds]] page, then **New world** to make a world: a name, then how it plays, with the [[World rules|world rules]] at their defaults unless you change them. Each world asks you to make a [[Characters|character]] for it from an [[Identities|identity]]: a name and a look kept in your browser. Your character belongs to that world alone. A friend can join you later; see [[Multiplayer]].
 
 ## Where you start
 

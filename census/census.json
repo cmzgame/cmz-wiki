@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "a3fdd7c75a67e1aaf0494fd22873fb46c535a599",
-  "short": "a3fdd7c",
-  "date": "2026-10-16T18:16:51-05:00",
-  "subject": "Merge #125, reviewed: the site's two shots move from data/art/site to data/site (data/art is the design agent's)",
+  "commit": "2a9a308856c963b411ddb861e944e430995f908b",
+  "short": "2a9a308",
+  "date": "2026-10-16T23:47:32-05:00",
+  "subject": "Merge #141, reviewed, Michael's word: the aim guide is off by default, and the setting works again (each viewer's own, gating only what their screen draws)",
   "ref": "origin/main"
  },
  "counts": {
@@ -19,12 +19,14 @@
   "zombieWardrobes": 10,
   "villageWardrobes": 6,
   "settings": 29,
-  "rules": 5,
+  "rules": 7,
+  "fixedRules": 2,
+  "liveRules": 5,
   "keys": 19,
   "verbs": 3,
   "menuLabels": 56,
   "events": 26,
-  "checks": 21,
+  "checks": 22,
   "modules": 82
  },
  "items": [
@@ -4147,7 +4149,15 @@
    "evictChunks": 8,
    "containerCloseDist": 2,
    "beltLight": 0.5,
-   "twoTorches": 1.35
+   "twoTorches": 1.35,
+   "playerCapBrowser": 4,
+   "playerCapServer": 8
+  },
+  "population": {
+   "none": 0,
+   "low": 0.4,
+   "standard": 1,
+   "high": 2.5
   }
  },
  "combat": {
@@ -4385,24 +4395,14 @@
    "note": "on: the dead hunt villagers, whatever aggro says; with aggro on, the player first when both are in sight (two knobs on purpose, Michael 2026-10-15; docs/19)"
   },
   {
-   "key": "squareSurface",
-   "default": "\"cobble\"",
-   "note": "the square and its two paths: \"cobble\" or \"dirt\", to compare (docs/15, for now)"
-  },
-  {
-   "key": "combatTesting",
-   "default": "false",
-   "note": "on (read at load): no trees, a hundred more of the dead in a ring round the spawn (docs/21; 2026-10-15)"
-  },
-  {
    "key": "swingTimer",
    "default": "true",
    "note": "a bar at the bottom centre of the screen while a swing recovers (World of Warcraft's swing timer; docs/21)"
   },
   {
    "key": "aimGuide",
-   "default": "true",
-   "note": "the bow's landing marker and dotted line while you draw (docs/20); Michael wants the weapon to feel right without it, so it is a setting, on for now"
+   "default": "false",
+   "note": "the landing marker and dotted line while you draw a bow, wind up a throw, or cast (docs/20); off by default since 2026-10-16 (Michael: you learn by trial and error how long to hold). A browser that saved its settings keeps its own"
   },
   {
    "key": "showSwingTargets",
@@ -4423,6 +4423,16 @@
    "key": "freeBuilding",
    "default": "false",
    "note": "on: building costs nothing (docs/13), for testing structures"
+  },
+  {
+   "key": "trees",
+   "default": "true",
+   "note": "the world has trees: the last choice at a Sandbox step (a world's own rule since #130; it replaced Combat testing's tree strip)"
+  },
+  {
+   "key": "population",
+   "default": "\"standard\"",
+   "note": "how many of the dead a world starts with, \"none\", \"low\", \"standard\" or \"high\": the last choice at a Sandbox step (#130)"
   },
   {
    "key": "survival",
@@ -4510,32 +4520,38 @@
   "zombiesAttackVillagers",
   "multiHit",
   "survival",
-  "freeBuilding"
+  "freeBuilding",
+  "trees",
+  "population"
+ ],
+ "fixedRules": [
+  "trees",
+  "population"
  ],
  "keys": [
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1025"
+    "main.js:1063"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1024"
+    "main.js:1062"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1003"
+    "main.js:1041"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:849",
-    "main.js:863"
+    "main.js:887",
+    "main.js:901"
    ]
   },
   {
@@ -4547,13 +4563,13 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1022"
+    "main.js:1060"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1005"
+    "main.js:1043"
    ]
   },
   {
@@ -4578,56 +4594,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1001"
+    "main.js:1039"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1006"
+    "main.js:1044"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1013"
+    "main.js:1051"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1003"
+    "main.js:1041"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1084"
+    "main.js:1122"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1084"
+    "main.js:1122"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1004"
+    "main.js:1042"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1095"
+    "main.js:1133"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:849",
-    "main.js:855"
+    "main.js:887",
+    "main.js:893"
    ]
   }
  ],
@@ -4653,21 +4669,21 @@
  ],
  "menuLabels": [
   {
-   "key": "Baking the ground",
+   "key": "Aim guide",
    "at": [
-    "main.js:1398"
+    "settings.js:57"
    ]
   },
   {
-   "key": "Bow aim guide",
+   "key": "Baking the ground",
    "at": [
-    "settings.js:53"
+    "main.js:1410"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:757"
+    "main.js:795"
    ]
   },
   {
@@ -4683,33 +4699,27 @@
    ]
   },
   {
-   "key": "Combat testing",
-   "at": [
-    "settings.js:62"
-   ]
-  },
-  {
    "key": "Cursor",
    "at": [
-    "settings.js:50"
+    "settings.js:54"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:59"
+    "settings.js:65"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:63"
+    "settings.js:68"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1326"
+    "main.js:1348"
    ]
   },
   {
@@ -4745,55 +4755,55 @@
   {
    "key": "Free building",
    "at": [
-    "settings.js:57"
+    "settings.js:61"
    ]
   },
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1362"
+    "main.js:1384"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:61"
+    "settings.js:67"
    ]
   },
   {
    "key": "Interface size",
    "at": [
-    "settings.js:48"
+    "settings.js:52"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1312"
+    "main.js:1338"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1352"
+    "main.js:1374"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:58"
+    "settings.js:62"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:51"
+    "settings.js:55"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1411"
+    "main.js:1423"
    ]
   },
   {
@@ -4805,25 +4815,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1288"
+    "main.js:1314"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1285"
+    "main.js:1311"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1314"
+    "main.js:1340"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1313"
+    "main.js:1339"
    ]
   },
   {
@@ -4835,7 +4845,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1420"
+    "main.js:1432"
    ]
   },
   {
@@ -4845,7 +4855,7 @@
    ]
   },
   {
-   "key": "Square and paths",
+   "key": "Starting population",
    "at": [
     "settings.js:64"
    ]
@@ -4853,25 +4863,31 @@
   {
    "key": "Survival",
    "at": [
-    "settings.js:56"
+    "settings.js:60"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:60"
+    "settings.js:66"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:52"
+    "settings.js:56"
    ]
   },
   {
    "key": "Take the torch",
    "at": [
     "interact.js:412"
+   ]
+  },
+  {
+   "key": "Trees",
+   "at": [
+    "settings.js:63"
    ]
   },
   {
@@ -4897,19 +4913,19 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:54"
+    "settings.js:58"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:55"
+    "settings.js:59"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:49"
+    "settings.js:53"
    ]
   },
   {
@@ -5007,13 +5023,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1214"
+    "main.js:1243"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:361"
+    "game.js:369"
    ]
   },
   {
@@ -5053,25 +5069,25 @@
   {
    "key": "drank",
    "at": [
-    "game.js:550"
+    "game.js:558"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:116"
+    "map.js:124"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:101"
+    "map.js:109"
    ]
   },
   {
    "key": "gameOver",
    "at": [
-    "game.js:613"
+    "game.js:621"
    ]
   },
   {
@@ -5263,6 +5279,7 @@
  ],
  "checks": [
   "burn",
+  "cap",
   "craft",
   "determinism",
   "eviction",
@@ -5287,11 +5304,11 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 1889
+   "lines": 1944
   },
   {
    "path": "main.js",
-   "lines": 1820
+   "lines": 1831
   },
   {
    "path": "placeholders.js",
@@ -5303,23 +5320,27 @@
   },
   {
    "path": "net.js",
-   "lines": 1366
+   "lines": 1374
+  },
+  {
+   "path": "ui/screens.js",
+   "lines": 1063
   },
   {
    "path": "ground.js",
    "lines": 983
   },
   {
-   "path": "ui/screens.js",
-   "lines": 969
-  },
-  {
    "path": "archery.js",
-   "lines": 736
+   "lines": 733
   },
   {
    "path": "ui/inventory-panel.js",
    "lines": 709
+  },
+  {
+   "path": "game.js",
+   "lines": 643
   },
   {
    "path": "entities/zombie.js",
@@ -5328,10 +5349,6 @@
   {
    "path": "assets.js",
    "lines": 636
-  },
-  {
-   "path": "game.js",
-   "lines": 635
   },
   {
    "path": "gl.js",
@@ -5382,16 +5399,16 @@
    "lines": 261
   },
   {
+   "path": "host.js",
+   "lines": 257
+  },
+  {
    "path": "stations.js",
    "lines": 256
   },
   {
    "path": "save.js",
    "lines": 241
-  },
-  {
-   "path": "host.js",
-   "lines": 236
   },
   {
    "path": "loop.js",
@@ -5470,12 +5487,16 @@
    "lines": 125
   },
   {
+   "path": "settings.js",
+   "lines": 124
+  },
+  {
    "path": "ui/hud.js",
    "lines": 124
   },
   {
-   "path": "settings.js",
-   "lines": 120
+   "path": "tuning.js",
+   "lines": 113
   },
   {
    "path": "entities/movement.js",
@@ -5484,10 +5505,6 @@
   {
    "path": "ui/log.js",
    "lines": 110
-  },
-  {
-   "path": "tuning.js",
-   "lines": 107
   },
   {
    "path": "use.js",
@@ -5550,6 +5567,10 @@
    "lines": 62
   },
   {
+   "path": "rules.js",
+   "lines": 61
+  },
+  {
    "path": "ui/names.js",
    "lines": 57
   },
@@ -5576,10 +5597,6 @@
   {
    "path": "buttons.js",
    "lines": 50
-  },
-  {
-   "path": "rules.js",
-   "lines": 38
   },
   {
    "path": "ui/cursor.js",
@@ -5706,9 +5723,6 @@
    "tunables_emberChance": 0.3,
    "tunables_smokeChance": 0.18,
    "tunables_lightRadius": 2.4
-  },
-  "game": {
-   "TESTING_DEAD": 100
   },
   "gl": {
    "FLAG_UNLIT": 1,

@@ -18,6 +18,8 @@ A world of your browser saves:
 - on **Save world** in the pause menu, which says "Saved." on the button;
 - when it is opened or closed to friends, when a friend joins or leaves, and when a friend goes [[Dormancy|dormant]];
 - whenever any player dies;
+- when its host changes one of its [[World rules|world rules]];
+- on **Exit game**, before the site comes back;
 - straight after it is made.
 
 The autosave needs both a stretch of game time and the same stretch of real time, so a night slept through at speed saves about once a real minute, not every second.
@@ -26,7 +28,7 @@ If a save fails, a message says so on screen: "The world could not be saved", wi
 
 ### What is kept
 
-Everything in the world: the map as it now stands, the dead, the villagers, the bodies and what is on them, fires and their fuel, the clock, the [[Multiplayer|world rules]], every character (each player's bag, belt, hands, wounds, and needs), and the dormant characters of friends who are away.
+Everything in the world: the map as it now stands, the dead, the villagers, the bodies and what is on them, fires and their fuel, the clock, the [[World rules|world rules]], every character (each player's bag, belt, hands, wounds, and needs), and the dormant characters of friends who are away.
 
 A few things in motion are not kept: an automatic walk, a timed action's progress (searching, boarding), a bow's draw, and arrows in flight. They are simply stopped when the world loads.
 
@@ -51,19 +53,20 @@ A [[Server worlds|server world]] is saved by the server.
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 2a9a308 -->
 - `src/save.js:47-50`: worlds kept in the browser's IndexedDB with an index in localStorage
-- `src/main.js:109-110`, `src/main.js:1112-1115`: `AUTOSAVE`, in seconds of game time and as many of real time (game commit 2c70942)
-- `src/map.js:84`: `HOUR_SECONDS`, the seconds of an in-game hour
-- `src/main.js:1611-1626`: saves when the tab is hidden and when the page is left
-- `src/main.js:1356`: Save world says "Saved."
-- `src/main.js:558-576`, `src/host.js:100`, `src/host.js:153-154`: saves on opening or closing to friends, a join, a leave, and dormancy
-- `src/host.js:216-218`: a save on any player's death
-- `src/main.js:249`: a save straight after a world is made
-- `src/main.js:329`: a failed save's message
-- `src/game.js:162-178`: what the save keeps: the clock, the rules, the map, every character
-- `src/main.js:325-331`: the save's wrapper keeps the dormant characters; never for a guest
+- `src/main.js:109-110`, `src/main.js:1239-1242`: `AUTOSAVE`, in seconds of game time and as many of real time
+- `src/map.js:92`: `HOUR_SECONDS`, the seconds of an in-game hour
+- `src/main.js:1774-1789`: saves when the tab is hidden and when the page is left
+- `src/main.js:1503`: Save world says "Saved."
+- `src/main.js:699-720`, `src/host.js:121`, `src/host.js:174-175`: saves on opening or closing to friends, a join, a leave, and dormancy
+- `src/host.js:241-243`: a save on any player's death
+- `src/main.js:338`: a save straight after a world is made
+- `src/main.js:446`: a failed save's message
+- `src/game.js:189-210`: what the save keeps: the clock, the rules, the map, every character
+- `src/main.js:299-305`, `src/main.js:475-489`: saved when the host changes a rule, and on Exit game
+- `src/main.js:435-448`: the save's wrapper keeps the dormant characters; never for a guest
 - `src/save.js:12-13`: what is not saved
 - `src/save.js:28-46`: the version, an older save brought up to date, a newer one refused
 - `src/identities.js:106-112`, `src/settings.js:32-34`: what a guest keeps: friends' bookmarks and identities
-- `server/world.js:126`, `server/world.js:141-160`: a server world saved by the server
+- `server/world.js:130`, `server/world.js:144-160`: a server world saved by the server

@@ -93,7 +93,9 @@ Players never hurt players, whatever they swing, shoot, or cast: on the host the
 - **Swing timer** (default on): the bars that fill over each hand's recovery.
 - **Zombie aggro** (default on): off, the dead ignore the player (see [[The dead]]).
 
-{{devonly note="Combat testing (default off, read when the page loads) removes the scattered and wild trees and stands a crowd of extra dead in a ring round the spawn. The Dev chest setting (default on) puts a chest of every weapon beside the spawn."}}
+Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A world made at a High Starting population has more of the dead to fight.
+
+{{devonly note="The Dev chest, chosen at New world (default on), puts a chest of every weapon beside the spawn."}}
 
 {{planned doc=02 note="A cap on how fast the player can turn while a swing recovers, against spinning and clicking (question 29b)."}}
 
@@ -140,6 +142,7 @@ Players never hurt players, whatever they swing, shoot, or cast: on the host the
 - `src/net.js:815`, `src/net.js:1038`, `src/rules.js:23-37`: the host's rules travel in frames and the save
 - `src/settings.js:12`, `src/settings.js:16`, `src/settings.js:18-20`: Zombie aggro (on (game commit 2c70942)), Swing timer, Swing targets, Multi-hit, Show hit shapes defaults
 - `src/combat.js:399-410`, `src/combat.js:431-443`: the swing targets outline and the hit shapes
-- `src/settings.js:15`, `src/settings.js:31`, `src/game.js:72-96`, `src/game.js:123-139`: Combat testing and the Dev chest (game commit 2c70942)
+- `src/settings.js:31`, `src/settings.js:68`, `src/game.js:73-88`: the Dev chest chosen at New world (game commit f2b8062)
+- `src/rules.js:13-30`, `src/game.js:121-150`: Zombie aggro and Multi-hit the world's rules; the Starting population (game commit f2b8062)
 
 {{navbox weapons}}

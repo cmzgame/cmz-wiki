@@ -29,7 +29,9 @@ A world made on another map is listed but cannot be played here; its card says i
 
 ### Making a world
 
-**New world** asks for a name, with one offered: the map's name and the day's date. Then comes [[Characters|character creation]]: an identity, then a second step. **Into the valley** makes the world behind the [[Screens#The loading screen|loading screen]] ("Making" and its name), puts your character at the spawn, saves it at once, and draws the ground round you before the screen goes. The site goes and the game fills the window. A new world starts at {{n census.constants.clock.START_HOUR}} o'clock in the morning on day one.
+**New world** says "A name for it, how it plays, then a character for it." It asks for a name, with one offered: the map's name and the day's date. Under the name is the Sandbox: the world's rules, in two parts. **How it plays** has the five that can be changed later from the pause menu (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit); **Chosen once, when the world is made** has **Trees**, **Starting population**, and the **Dev chest**, which are baked into the world and never change. They are offered as you last chose them. See [[World rules]].
+
+**Next** goes on to [[Characters|character creation]]: an identity, then a second step. **Into the valley** makes the world behind the [[Screens#The loading screen|loading screen]] ("Making" and its name), puts your character at the spawn, saves it at once, and draws the ground round you before the screen goes. The site goes and the game fills the window. A new world starts at {{n census.constants.clock.START_HOUR}} o'clock in the morning on day one.
 
 ### Playing a world
 
@@ -39,9 +41,9 @@ A world made on another map is listed but cannot be played here; its card says i
 
 **Delete** asks "Delete this world and every character in it?" and, if confirmed, removes it from the browser for good. A friend's world cannot be deleted from here, only forgotten.
 
-### Leaving a world
+### Exit game
 
-**Leave world**, on the pause menu or the dead screen, saves the world under the loading screen ("Saving" and its name), which stays until the save is written, then goes back to the site's Worlds page. A host with friends in is asked first, since leaving closes the world to them.
+**Exit game**, on the pause menu or the dead screen, saves the world under the loading screen ("Saving" and its name), which stays until the save is written, then goes back to the site's Worlds page. A host with friends in is asked first, since exiting closes the world to them: "Exiting closes the world to the friend with you. Exit?", or with more than one, the number of them. A guest's Exit game asks nothing.
 
 ## Numbers
 
@@ -50,7 +52,7 @@ A world made on another map is listed but cannot be played here; its card says i
 
 ## With friends
 
-A world is the host's: it lives in their browser, and friends play in it only while it is open. A guest keeps nothing of a friend's world but its card under Friends' worlds. See [[Saving]].
+A world is the host's: it lives in their browser, and friends play in it only while it is open, by its host's [[World rules|rules]]. A guest keeps nothing of a friend's world but its card under Friends' worlds. See [[Saving]].
 
 ## See also
 
@@ -60,24 +62,25 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 02dfcc2 -->
+<!-- sources at 2a9a308 -->
 - `src/save.js`: a world as a save in the browser that made it
-- `src/ui/screens.js:177-200`, `src/main.js:1207-1209`: nothing runs until a world is chosen; out of a world, the site
-- `index.html:51`, `src/ui/screens.js:691`: Play and Play in your browser open the Worlds page (game #120)
-- `src/ui/screens.js:737-750`: the Worlds page's line, its three lists, and the buttons below
-- `src/ui/screens.js:445-464`, `src/ui/screens.js:585-613`, `src/save.js:155-170`, `src/clock.js:88-94`: a card: the name and its mark, the survivor, the day and hour, when last played, the code; the main button big and the rest small (game #120)
-- `src/ui/screens.js:593-603`: the buttons by where a world lives
-- `src/ui/screens.js:635-645`: my worlds on the server with no copy here
-- `src/ui/screens.js:647-662`: a friend's card: the dot, the survivor, the host, the code, Rejoin and Forget
-- `src/main.js:1507`, `src/ui/screens.js:747`: Move to the server and A world of mine on the server only with a relay
-- `src/main.js:1495`, `src/ui/screens.js:596`, `src/ui/screens.js:609`: a world from another map listed, not playable
-- `src/ui/screens.js:246-247`: Back goes to Home
-- `src/ui/screens.js:331-336`, `src/ui/screens.js:785-796`, `src/main.js:1502`: New world, the default name
-- `src/ui/screens.js:821`: Into the valley
-- `src/main.js:295-321`, `src/ui/screens.js:222-230`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
+- `src/ui/screens.js:189-212`, `src/main.js:1236-1238`: nothing runs until a world is chosen; out of a world, the site
+- `index.html:51`, `src/ui/screens.js:751`: Play and Play in your browser open the Worlds page (game #120)
+- `src/ui/screens.js:797-810`: the Worlds page's line, its three lists, and the buttons below
+- `src/ui/screens.js:488-507`, `src/ui/screens.js:645-673`, `src/save.js:155-170`, `src/clock.js:88-94`: a card: the name and its mark, the survivor, the day and hour, when last played, the code; the main button big and the rest small (game #120)
+- `src/ui/screens.js:653-663`: the buttons by where a world lives
+- `src/ui/screens.js:695-705`: my worlds on the server with no copy here
+- `src/ui/screens.js:707-722`: a friend's card: the dot, the survivor, the host, the code, Rejoin and Forget
+- `src/main.js:1522`, `src/ui/screens.js:807`: Move to the server and A world of mine on the server only with a relay
+- `src/main.js:1507`, `src/ui/screens.js:656`, `src/ui/screens.js:669`: a world from another map listed, not playable
+- `src/ui/screens.js:258-259`: Back goes to Home
+- `src/ui/screens.js:350`, `src/ui/screens.js:845-860`, `src/main.js:1516`: New world, its line, the default name
+- `src/ui/screens.js:845-873`, `src/main.js:288-294`: the Sandbox step, its two parts and Next; the choices offered as last chosen
+- `src/ui/screens.js:897`: Into the valley
+- `src/main.js:310-344`, `src/ui/screens.js:234-242`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
 - `src/clock.js:18`: `START_HOUR`
-- `src/main.js:324-375`: Play reads the save behind the loading screen, opens to friends again if it was open
-- `src/ui/screens.js:277`: Delete's confirmation
-- `src/ui/screens.js:269-274`, `src/main.js:429-455`: Leave world asks a host with guests, saves under the loading screen until written, and shows the Worlds page
-- `src/ui/screens.js:422-438`, `src/ui/screens.js:650-654`, `src/net.js:389-396`: the dots asked of the relay
-- `src/main.js:412-413`: a guest never saves
+- `src/main.js:347-398`: Play reads the save behind the loading screen, opens to friends again if it was open
+- `src/ui/screens.js:296`: Delete's confirmation
+- `src/ui/screens.js:281-287`, `src/main.js:456-489`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
+- `src/ui/screens.js:465-481`, `src/ui/screens.js:710-714`, `src/net.js:389-396`: the dots asked of the relay
+- `src/main.js:435-436`: a guest never saves

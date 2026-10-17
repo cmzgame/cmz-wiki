@@ -26,7 +26,7 @@ The last button reads **Into the valley** for a new world or a new survivor, or 
 
 ### After a death
 
-When your character dies, the dead screen names them, gives the day and hour, and says the body stays where it fell. The body is a corpse that anyone can search. **New character** runs creation again and puts a new survivor at the world's spawn, in the same world, from any identity. **Leave world** goes back to the game's site, on the [[Worlds]] page. See [[Death]].
+When your character dies, the dead screen names them, gives the day and hour, and says the body stays where it fell. The body is a corpse that anyone can search. **New character** runs creation again and puts a new survivor at the world's spawn, in the same world, from any identity. **Exit game** goes back to the game's site, on the [[Worlds]] page. See [[Death]].
 
 A dead character's card on the Worlds page reads "Name died", and its button is **New character**.
 
@@ -40,18 +40,18 @@ Each browser has its own character in a friend's world. The world knows whose is
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/save.js:143-164`: a world keeps its own characters; the index row names my character
+<!-- sources at 2a9a308 -->
+- `src/save.js:152-173`: a world keeps its own characters; the index row names my character
 - `src/identities.js:38-72`: the name and look are stamped from an identity at creation
-- `src/ui/screens.js:63`: `CREATION_STEPS`, two steps
-- `src/ui/screens.js:277`: Next on the first step needs an identity chosen
-- `src/ui/screens.js:301-320`: the identity step (Choose, Edit, New identity), the placeholder second step, Back, and the last button's words
-- `src/ui/screens.js:631-644`: Into the valley or Join as this
-- `src/ui/screens.js:737-747`: the pause menu's Character screen: the name, "A survivor of", the figure, read only
-- `src/ui/screens.js:785-791`: the dead screen, its words and its two buttons
-- `src/main.js:291-319`: New character: creation again and a new survivor at the spawn of the same world
-- `src/main.js:429-455`, `src/ui/screens.js:608`: Leave world shows the site's Worlds page; a dead character's card (game commit 02dfcc2)
-- `src/ui/screens.js:474-485`: a dead character's row, "Name died", and its New character button
-- `src/identities.js:77-98`, `src/host.js:54-80`: a world knows each browser's character by a hash of the browser's id
-- `src/host.js:95-101`: a returning browser's dormant character comes back where it stood
-- `src/ui/screens.js:634`: "Your survivor there died. A new one, from any identity."
+- `src/ui/screens.js:80`: `CREATION_STEPS`, two steps
+- `src/ui/screens.js:375`: Next on the first step needs an identity chosen
+- `src/ui/screens.js:415-435`: the identity step (Choose, Edit, New identity), the placeholder second step, Back, and the last button's words
+- `src/ui/screens.js:885-898`: Into the valley or Join as this
+- `src/ui/screens.js:1008-1018`: the pause menu's Character screen: the name, "A survivor of", the figure, read only
+- `src/ui/screens.js:1044-1050`: the dead screen, its words and its two buttons
+- `src/main.js:400-429`: New character: creation again and a new survivor at the spawn of the same world
+- `src/main.js:475-489`, `src/ui/screens.js:668`: Exit game shows the site's Worlds page; a dead character's card
+- `src/ui/screens.js:656`: a dead character's row, "Name died", and its New character button
+- `src/identities.js:77-98`, `src/host.js:71-91`: a world knows each browser's character by a hash of the browser's id
+- `src/host.js:116-122`: a returning browser's dormant character comes back where it stood
+- `src/ui/screens.js:888`: "Your survivor there died. A new one, from any identity."

@@ -30,21 +30,28 @@ Without a relay, a friend can join only from another tab of the same browser; th
 
 ### What the host decides
 
-The host's [[Settings]] decide the {{n census.counts.rules}} world rules for everyone: Zombie aggro, Zombies attack villagers, Survival, Free building, and Multi-hit. Changing one reaches every guest at once. A guest's World rules tab shows them as the host set them, each marked "(the host's)" and locked. Everything else in Settings (zoom, cursor, the swing timer, and so on) is each player's own.
+The world's [[World rules|rules]] are the host's: Zombie aggro, Zombies attack villagers, Survival, Free building, and Multi-hit, changed from **World rules** on the pause menu, and Trees and Starting population, chosen when the world was made and never changed. A change reaches every guest at once. A guest's World rules screen shows them as the host set them, each marked "(the host's)" and locked. Everything in [[Settings]] (zoom, cursor, the swing timer, and so on) is each player's own.
 
 The host's clock is the world's clock.
 
+### How many can play
+
+A world hosted in a browser holds {{n tuning.world.playerCapBrowser}} players at once, the host among them. A friend who joins a full world is sent back to the site's Home page with "This world is full.", before anything of them is made in the world.
+
+A place is held by every character standing in the world, by a friend who has [[Dormancy#Stepping away|stepped away]] and is still connected, and always by the host, even while the host is stepped away or on the dead screen, so nobody can take the host's place. A friend whose character has gone dormant holds none: their character waits in the save, and if the world is full when they come back, they are told it is full and can come back as the same character once there is room.
+
 ### Closing and leaving
 
-**Close to friends** ends the session for everyone in: their characters go [[Dormancy|dormant]], kept in the world for their owners and back where they stood on a rejoin, the world saves, and the guests are sent back to the game's site, whose Home page tells them the host closed the world (see [[Screens#The site|Screens]]). **Leave world** with friends in asks "Leaving closes the world to the" number with you, then does the same and goes back to the site's [[Worlds]] page.
+**Close to friends** ends the session for everyone in: their characters go [[Dormancy|dormant]], kept in the world for their owners and back where they stood on a rejoin, the world saves, and the guests are sent back to the game's site, whose Home page tells them the host closed the world (see [[Screens#The site|Screens]]). **Exit game** with friends in asks "Exiting closes the world to the friend with you. Exit?" (with more than one, the number of them), then does the same and goes back to the site's [[Worlds]] page.
 
 ## Numbers
 
+- Players at once in a world hosted in a browser, the host included: {{n tuning.world.playerCapBrowser}}.
 - Browsers a world remembers: {{n census.constants.host.MAX_OWNERS}}.
 
 ## Settings that change it
 
-The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggro On, Zombies attack villagers Off, Survival On, Free building Off, Multi-hit Off.
+The world rules, as above: see [[World rules]] for each and its default.
 
 ## See also
 
@@ -52,24 +59,25 @@ The {{n census.counts.rules}} world rules, as above. Their defaults: Zombie aggr
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/main.js:558-576`: Open to friends as a switch, the code kept with the world and opened again when next played, the opening and closing messages
-- `src/ui/screens.js:724-736`, `src/ui/screens.js:115-123`: the host screen: the code, Copy, who is in, Open or Close
-- `src/net.js:91-100`: the code's shape, two tree words and four characters
-- `src/main.js:1577-1582`: a taken code retried, then cleared so the next opening draws a new one
-- `src/ui/screens.js:770`: without a relay, only another tab of the same browser (game commit 19a1c18)
-- `src/main.js:667-670`: a world on the wire never pauses
-- `src/ui/screens.js:656-667`, `src/main.js:579-593`: the pause menu's first line
-- `src/net.js:541`, `src/net.js:626`: "Name joined." and "Name left."
-- `src/host.js:100`, `src/host.js:153-154`: saves on a join, a leave, and dormancy
-- `src/main.js:1605`, `src/main.js:1620-1625`, `src/loop.js:138-186`: a hidden host keeps running and renames its tab
-- `src/net.js:909-912`: "The host's game has gone quiet."
-- `src/rules.js:9-37`, `src/net.js:815`: the five world rules (the module's lines corrected at 19a1c18), sent to guests when they change
-- `src/ui/screens.js:401-412`, `src/main.js:689`: a guest's World rules rows the host's, marked "(the host's)" and locked (game commit 19a1c18)
-- `src/net.js:803`, `src/net.js:1040`: the host's clock goes to every guest
-- `server/relay.js:840-852`, `src/main.js:1567`: closing sends every guest "The host closed the world."
-- `src/main.js:568-590`: closing to friends makes every guest's character dormant, closes the wire, and saves (game commit 2c70942)
-- `src/ui/screens.js:269-274`, `src/main.js:429-455`: Leave world asks a host with guests, makes them dormant, saves, and shows the site's Worlds page (game commit 02dfcc2)
-- `src/main.js:1736-1740`, `src/ui/screens.js:686-690`: a guest sent out is shown the site's Home page with the reason (game commit 02dfcc2)
-- `src/host.js:30`, `src/host.js:74`: `MAX_OWNERS`, the browsers a world remembers
-- `src/settings.js:12-22`: the rules' defaults, Zombie aggro on (game commit 2c70942)
+<!-- sources at 2a9a308 -->
+- `src/main.js:699-720`: Open to friends as a switch, the code kept with the world and opened again when next played, the opening and closing messages
+- `src/ui/screens.js:979-991`, `src/ui/screens.js:156-164`: the host screen: the code, Copy, who is in, Open or Close
+- `src/net.js:92-101`: the code's shape, two tree words and four characters
+- `src/main.js:1741-1746`: a taken code retried, then cleared so the next opening draws a new one
+- `src/ui/screens.js:987`: without a relay, only another tab of the same browser
+- `src/main.js:819-822`: a world on the wire never pauses
+- `src/ui/screens.js:910-916`, `src/main.js:724-743`: the pause menu's first line
+- `src/net.js:559`, `src/net.js:644`: "Name joined." and "Name left."
+- `src/host.js:121`, `src/host.js:174-175`: saves on a join, a leave, and dormancy
+- `src/main.js:1767`, `src/main.js:1783-1788`, `src/loop.js:138-186`: a hidden host keeps running and renames its tab
+- `src/net.js:967-970`: "The host's game has gone quiet."
+- `src/rules.js:13-30`, `src/net.js:865`, `src/main.js:296-305`: the world's rules, the host's from the pause menu, two fixed at creation, sent to guests when they change
+- `src/ui/screens.js:992-1008`, `src/main.js:739`: a guest's World rules rows the host's, marked "(the host's)" and locked
+- `src/net.js:853`, `src/net.js:1115`: the host's clock goes to every guest
+- `server/relay.js:851-863`, `src/main.js:1731`: closing sends every guest "The host closed the world."
+- `src/main.js:711-719`: closing to friends makes every guest's character dormant, closes the wire, and saves
+- `src/ui/screens.js:281-287`, `src/main.js:475-489`: Exit game asks a host with guests, makes them dormant, saves, and shows the site's Worlds page
+- `src/main.js:1749-1751`, `src/ui/screens.js:746-750`: a guest sent out is shown the site's Home page with the reason
+- `data/tuning.json:79`, `src/main.js:1643`, `src/host.js:49-63`, `src/host.js:80-95`, `src/net.js:1029-1033`: the cap, `world.playerCapBrowser`; the places held by the standing, the connected stepped-away, and the host always; a join refused before anything is made, a dormant character kept in the save
+- `src/net.js:533-536`, `src/main.js:1733`: a refused join told "This world is full." on Home
+- `src/host.js:30`, `src/host.js:94`: `MAX_OWNERS`, the browsers a world remembers

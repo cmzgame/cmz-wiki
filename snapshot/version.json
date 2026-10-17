@@ -1,7 +1,7 @@
 {
-  "commit": "a3fdd7c75a67e1aaf0494fd22873fb46c535a599",
-  "short": "a3fdd7c",
-  "date": "2026-10-16T18:16:51-05:00",
-  "subject": "Merge #125, reviewed: the site's two shots move from data/art/site to data/site (data/art is the design agent's)",
+  "commit": "2a9a308856c963b411ddb861e944e430995f908b",
+  "short": "2a9a308",
+  "date": "2026-10-16T23:47:32-05:00",
+  "subject": "Merge #141, reviewed, Michael's word: the aim guide is off by default, and the setting works again (each viewer's own, gating only what their screen draws)",
   "ref": "origin/main"
 }
