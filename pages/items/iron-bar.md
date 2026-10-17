@@ -13,9 +13,9 @@ An **iron bar** is smelted from [[Iron ore]] at the [[Forge]], and is what the [
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:52`: the iron bar
-- `data/recipes.json:474-489`: a bar at the forge from iron ore, the fire lit
+- `data/recipes.json:489-504`: a bar at the forge from iron ore, the fire lit
 - `data/loot.json:16`, `tools/mapgen/valley.py:368`: the smithy's chest with iron bars and charcoal (game #210)
 - `data/recipes.json`: the anvil's recipes, and the wheelbarrow's, take iron bars
 

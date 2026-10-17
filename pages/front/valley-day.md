@@ -7,7 +7,7 @@ numbersOk: true
 ---
 
 <!-- typed: the game's pull request numbers, which are names, not the game's numbers -->
-<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:270`), not named numbers a lookup can read -->
+<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:272`), not named numbers a lookup can read -->
 
 On 2026-10-17 [[The valley]] became the game's focus. This page lists every system added or changed since then, in the game's merged pull requests from #183 on, grouped by what it touches. Each says in a sentence or two what changed and names the pages to read before you play it. [[Updates]] has the same changes sync by sync; this page keeps the whole day on one screen.
 
@@ -17,7 +17,7 @@ On 2026-10-17 [[The valley]] became the game's focus. This page lists every syst
 
 ### Farming (game #206)
 
-Till grass or dirt with a [[Hoe]] in hand, plant a seed, water it from a [[Waterskin]], and harvest it with E when it is ready, for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the clock only while their soil is wet; dry soil pauses them and never kills them. A wall or closed shutters stop farming, while a fence or an open window does not. The farms' granaries hold seed of every crop.
+Till grass or dirt with a [[Hoe]] in hand, plant a seed, water it from a [[Waterskin]], and harvest it with E when it is ready, with its tool on you (game #222, below), for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the clock only while their soil is wet; dry soil pauses them and never kills them. A wall or closed shutters stop farming, while a fence or an open window does not. The farms' granaries hold seed of every crop.
 
 Read: [[Farming]], [[Crops]], [[Hoe]], [[Potato seed]].
 
@@ -35,7 +35,7 @@ Read: [[Trees]], [[Apple]], [[The orchard]].
 
 ### Fishing (game #193)
 
-Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch, and the brook by [[Long Acre]] (game #219) mostly trout. Grill the fish at a fire.
+Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, with a [[Belt knife]] on you, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch, and the brook by [[Long Acre]] (game #219) mostly trout. Grill the fish at a fire.
 
 Read: [[Fishing]], [[Fishing rod]], [[Perch]], [[Trout]], [[Carp]].
 
@@ -69,6 +69,19 @@ Read: [[Scythe]], [[Farming]].
 
 Read: [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Millstones]], [[Farming]].
 
+### The tools you carry (game #222)
+
+An action that would need a tool asks for it **on you**: in a hand, on the belt, or in the bag. Without it the entry is greyed and names the tool, and the action says "You need a smith's hammer." (or whichever it is).
+
+- **A [[Smith's hammer]]:** building a door or a window, boarding up, pulling a board (which now gives the plank back), Remove, and the workbench's furniture, wheelbarrow, shield, bucket, hoe, and shovel.
+- **A [[Hatchet]]:** a log wall, splitting a log into planks, and sticks from a plank.
+- **A [[Belt knife]]:** the bow, the arrows, the rod, and tearing a garment into rags.
+- **Harvest by crop:** rye with the [[Scythe]], potatoes and garlic with the [[Shovel]], cabbages and pumpkins with the knife; flax and apples by hand.
+
+Your cottage's chest now holds a shovel too, and the joiner's a hammer, so the first potatoes, the first hoe, and the first furniture need no iron. The world rule Free building waives the hammer and the hatchet for building and Remove, but not for boards. A waterskin on the belt is now filled at water like one in the bag, and the [[Tinderbox]] can ride the belt.
+
+Read: [[Smith's hammer]], [[Crafting]], [[Building]], [[Boards]], [[Farming]], [[Shovel]].
+
 ## Food and the body
 
 ### Food heals a little (game #186)
@@ -97,6 +110,12 @@ A villager can be flagged immune: the dead never hunt or harm them, whatever the
 
 Read: [[Villagers]], [[Innkeeper]], [[Priest]].
 
+### Talk and the guide (game #220)
+
+Villagers now talk. A poke gets a line of their own for the moment (night, dawn, the dead close by), the lines taking turns, and with you near they now and then remark unprompted. [[Wyn]], the guide, stands just outside your cottage's door, immune to the dead; the dead who stood in the lane by your garden have moved farther down it, so a new world's first poke by day is "Ask me anything, if you are stuck.", not a warning. A speech bubble's time now runs in the world on the host, so a line ends on its own on a server world too (closing game #154). Conversations, where you ask the guide your questions, are still to come.
+
+Read: [[Talk]], [[Wyn]], [[Villagers]], [[Chat log]].
+
 ### Lanterns and torches (game #188, #189)
 
 Hold an unlit torch to a lantern, in a bracket or on a post, to light it. A lantern is always lit and says so to a tinderbox or a lit torch. In Use mode the label over a wall bracket names what is on it.
@@ -113,7 +132,11 @@ Read: [[Chat log]], [[Sight]].
 
 Built, and in review in the game, not merged yet; their pages come with their merge.
 
-- **Talk, part 1** (game #220): the talk data and the barks, and the guide who stands beside the spawn.
+- **Nothing in reach through a wall** (game #227): every action, from a door to a chest to a poke, needs a clear line as well as the distance, so a player behind a wall walks round instead of acting through it.
+- **The Onion-head Hat's painted art** (game #229), and hoods that take their wearer's dye.
+- **Talk, part 2: conversations** (game #230): the panel where you ask the guide your questions and read the answers.
+
+[[Planned]] lists what is further off.
 
 ## See also
 
@@ -121,7 +144,7 @@ Built, and in review in the game, not merged yet; their pages come with their me
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `src/entities/player.js:85-86`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:190`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-50`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
@@ -130,9 +153,11 @@ Built, and in review in the game, not merged yet; their pages come with their me
 - `src/entities/player.js:81-101`, `data/tuning.json:55`: food's heal and `fullAt` (game #186)
 - `data/kit.json`, `src/kit.js`: the starting kit (game #183, #191)
 - `src/map.js:709-735`, `docs/09-openings.md`: the dead strike fences (game #185)
-- `src/entities/villager.js:32`, `src/entities/zombie.js:357`: immune villagers (game #187)
+- `src/entities/villager.js:44`, `src/entities/zombie.js:357`: immune villagers (game #187)
 - `src/burn.js:85-190`, `src/interactions.js:58`: lanterns and torches (game #188, #189)
-- `src/ui/speech.js:69-90`, `data/tuning.json:102`: the groan's radius and gap (game #189)
-- `src/mining.js`, `src/bucket.js`, `src/farming.js:255-290`, `data/recipes.json`, `data/loot.json`: mining, charcoal, cloth, the bucket, and the scythe (game #210, #216, #211, #213)
+- `src/ui/speech.js:68-89`, `data/tuning.json:108`: the groan's radius and gap (game #189)
+- `src/mining.js`, `src/bucket.js`, `src/farming.js:257-292`, `data/recipes.json`, `data/loot.json`: mining, charcoal, cloth, the bucket, and the scythe (game #210, #216, #211, #213)
 - `tools/mapgen/valley.py:407-522`, `data/loot.json:8-10`: the farms and the mill (game #219)
-- The game's open pull request #220: what comes next
+- `src/inventory.js:88-108`, `data/recipes.json`, `data/crops.json`, `data/build.json`, `data/loot.json:6-7`, `src/settings.js:63`: the tool rule, the cottage's shovel, the joiner's hammer, Free building (game #222)
+- `src/talk.js`, `data/talk/`, `data/maps/valley.json:12288-12299`, `src/game.js:110-123`: talk, Wyn, and the bubbles aged on the host (game #220)
+- The game's open pull requests #227, #229, and #230: what comes next

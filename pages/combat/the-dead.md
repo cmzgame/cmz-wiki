@@ -108,34 +108,34 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
 - `data/wardrobes.json`: the dead's ten wardrobes
 - `src/entities/zombie.js:37-76`, `src/entities/movement.js:70-75`: the body, separation
 - `src/map.js:1258-1270`: wild chunks bring the dead per `data/maps/valley.json` (`wild.zombiesPerChunk`)
-- `src/game.js:474-478`: only the dead in the active box think
+- `src/game.js:498-502`: only the dead in the active box think
 - `src/entities/zombie.js:308-342`, `src/entities/zombie.js:522-532`: sight scaled by the light at the player, the look's interval, the nearest player seen
-- `src/entities/zombie.js:371-387`, `src/entities/zombie.js:547-559`, `src/game.js:663`: flames at night, two torches, the belt
+- `src/entities/zombie.js:371-387`, `src/entities/zombie.js:547-559`, `src/game.js:688`: flames at night, two torches, the belt
 - `src/entities/zombie.js:520-560`, `src/entities/zombie.js:607-686`, `src/entities/zombie.js:753-779`, `src/entities/zombie.js:488-498`: memory, the walk to the last sighting, the search, giving up, or a siege
 - `src/entities/zombie.js:111-116`: a hit tells a hunting zombie where the blow came from
 - `src/entities/zombie.js:588`: idle wandering within the room
-- `src/entities/zombie.js:915-928`, `src/game.js:358-366`: the bite, its landing, the guard and exposure
+- `src/entities/zombie.js:915-928`, `src/game.js:382-390`: the bite, its landing, the guard and exposure
 - `data/combat.json`: `bleed.chance`, `infection.chance`
 - `src/bleed.js:59`, `src/infection.js:48`: a blocked bite neither wounds nor infects
 - `src/entities/zombie.js:687-752`, `src/map.js:577-580`, `src/map.js:755-829`: breaching openings, their health, boards per side; a jolt each hit (game #185)
 - `src/entities/zombie.js:217-242`, `src/entities/zombie.js:638-726`, `src/map.js:811-878`: a door the way in, the remembered one first, a shut window battered only to see in, never passed; no way in, a fence struck or a search
 - `src/map.js:733-744`: a door and a window always have health, whatever their material
-- `src/entities/zombie.js:629-637`, `src/entities/zombie.js:661-674`, `src/entities/zombie.js:780-846`, `src/map.js:678-744`, `data/tuning.json:12-15`, `data/tuning.json:98-99`: a fence struck, a gate first; its hit points, a strike on the bite's cooldown, a crowd only more strikers (game #185)
+- `src/entities/zombie.js:629-637`, `src/entities/zombie.js:661-674`, `src/entities/zombie.js:780-846`, `src/map.js:678-744`, `data/tuning.json:12-15`, `data/tuning.json:104-105`: a fence struck, a gate first; its hit points, a strike on the bite's cooldown, a crowd only more strikers (game #185)
 - `src/entities/zombie.js:790-805`, `src/entities/zombie.js:290-298`, `src/entities/zombie.js:212-215`, `data/tuning.json:29`: a striking one bites a player in reach across the fence, `fenceBiteExtra` further (game #185); it gives up after `pressGiveUp` unseen only on a player last seen outside a room, with no siege (game #171)
 - `src/entities/zombie.js:607-622`, `src/visibility.js:12-48`: a bite needs the contact distance and a clear line, which an open window passes (game #171)
 - `src/clock.js:12`, `src/entities/zombie.js:421-478`, `src/entities/zombie.js:562-570`, `src/entities/zombie.js:847-914`, `data/tuning.json:31-33`: the siege: from dusk on a player seen inside, the openings remembered (the door on the line from the last sighting outside, else the nearest, `src/entities/zombie.js:434-457`, game #171), waiting about the house, ended at its dawn; no sleep within `siegeSleepRadius`
 - `src/entities/zombie.js:49`, `src/entities/zombie.js:511-515`: the groan
-- `src/ui/speech.js:69-90`, `data/tuning.json:102`: a groan from one hidden by the dark goes to the log, not a bubble (game #150), only within `groanRadius` and once in `groanGap` (game #189); one hidden only by a canopy, none (game #173)
+- `src/ui/speech.js:68-89`, `data/tuning.json:108`: a groan from one hidden by the dark goes to the log, not a bubble (game #150), only within `groanRadius` and once in `groanGap` (game #189); one hidden only by a canopy, none (game #173)
 - `src/entities/zombie.js:107-110`, `src/entities/zombie.js:143-151`, `src/entities/zombie.js:502-509`: death and the still body
 - `src/entities/zombie.js:118-128`: a floored zombie takes finishers
-- `src/sight.js:18-34`, `src/ui/zombie-bars.js:56`, `src/render/entities.js:262`, `src/interact.js:1474-1481`: seen in the dark near you, to your torch's reach, or in light; one not seen has no bar or outline and cannot be pointed at; nothing in a blow reads it (game #150)
-- `src/main.js:1602-1606`: the bite's words on the victim's client alone
+- `src/sight.js:18-34`, `src/ui/zombie-bars.js:56`, `src/render/entities.js:262`, `src/interact.js:1490-1497`: seen in the dark near you, to your torch's reach, or in light; one not seen has no bar or outline and cannot be pointed at; nothing in a blow reads it (game #150)
+- `src/main.js:1609-1613`: the bite's words on the victim's client alone
 - `src/entities/zombie.js:446-449`: the siege held on the last player seen inside
-- `src/settings.js:12-13`, `src/settings.js:60-61`, `src/rules.js:14-15`, `src/entities/zombie.js:305-312`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:372`, `src/entities/zombie.js:534-546`, `src/entities/villager.js:101-137`: Zombie aggro, Zombies attack villagers, an immune villager never prey nor harmed (game #187), a bitten villager turning
-- `src/game.js:115-144`, `src/map.js:1257-1270`, `data/tuning.json:101`: the Starting population's factor on the map's dead and each wild chunk's, read once when the world is made
+- `src/settings.js:12-13`, `src/settings.js:60-61`, `src/rules.js:14-15`, `src/entities/zombie.js:305-312`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:372`, `src/entities/zombie.js:534-546`, `src/entities/villager.js:118-154`: Zombie aggro, Zombies attack villagers, an immune villager never prey nor harmed (game #187), a bitten villager turning
+- `src/game.js:138-167`, `src/map.js:1257-1270`, `data/tuning.json:107`: the Starting population's factor on the map's dead and each wild chunk's, read once when the world is made
 - `src/burn.js:26-52`, `src/entities/zombie.js:156-163`, `src/combat.js:358-363`, `src/archery.js:275-277`: burning: who sets it (a torch only while lit), a burn taking health alone, a corpse burning on

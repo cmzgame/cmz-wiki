@@ -1,7 +1,7 @@
 {
-  "commit": "cfe0203e7452652af9256625b8d265b54353266e",
-  "short": "cfe0203",
-  "date": "2026-10-17T16:13:15-05:00",
-  "subject": "Merge #219, reviewed: the farms and the mill (Hollow Farm, Long Acre, the millstones, the granaries with every seed, a pumpkin pie so no crop dead-ends, the miller, the brook and its footbridge, the lanes) (closes #201)",
+  "commit": "3f11fdbd861088513ace5b1bd03560e652db4cb1",
+  "short": "3f11fdb",
+  "date": "2026-10-17T17:29:42-05:00",
+  "subject": "Merge #226, reviewed: a guest's slot op meets the host's canPlace, and canPlace refuses slots that do not exist (a negative or non-number belt index, a hand not main or off) (closes #224)",
   "ref": "origin/main"
 }

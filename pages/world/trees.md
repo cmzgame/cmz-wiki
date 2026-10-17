@@ -57,7 +57,7 @@ Chopping and picking are menu actions the host performs for whoever asked, the h
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `src/map.js:2130-2169`, `data/maps/valley.json:11646-11661`: trees scattered over the valley except the village and the reserves
 - `data/maps/valley.json:11615-11645`: the biome's green, orange, red, and yellow oaks and spires; blue and purple in no map
 - `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_old.json`: per size the collision radius, wood, canopy reach, shadow, and leaf colour
@@ -65,16 +65,16 @@ Chopping and picking are menu actions the host performs for whoever asked, the h
 - `src/map.js:1477-1487`: a path treats a tree's whole tile as blocked
 - `data/ground.json`, `src/ground.js`: the canopy's darkening and the shadow
 - `src/render/scene.js:97-121`: the hole in the canopy
-- `src/interact.js:638-660`, `data/tuning.json:95-97`: Chop down with the count of logs with a hatchet in a hand, else "(need a hatchet)" greyed; `chopSeconds`; the stump's entry (game #207)
+- `src/interact.js:651-673`, `data/tuning.json:101-103`: Chop down with the count of logs with a hatchet in a hand, else "(need a hatchet)" greyed; `chopSeconds`; the stump's entry (game #207)
 - `src/chop.js:13-50`, `data/items.json`: a chopper is any item in a hand listing the verb `chop` (the hatchet); within `pickReach`; the tree removed, its logs dropped on its tile, a stump placed where a tree with a canopy stood; the stump chopped for its log and the tile cleared
 - `data/items.json:4`, `data/sprites/fireplace.json`: logs split into planks and feed a fireplace
 - `src/interact.js:69-91`, `src/map.js:924-931`: a guest's chop run on the host; the change travels in the touched chunk
 - `src/rules.js:19`, `src/rules.js:28-30`, `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1991-1999`, `src/map.js:2165`: the Trees rule, fixed at creation: no tree in the scatter or the wild, the other picks as ever
 - `data/sprites/tree_apple.json`, `data/sprites/tree_apple_bare.json`: the apple tree laden and bare: its collision, wood, canopy, and `pick` block (the apples, the count, the days, the seconds), and what the bare one ripens to (game #192)
 - `tools/mapgen/valley.py:101-117`, `tools/mapgen/valley.py:383-387`, `tools/mapgen/valley.py:398-405`, `data/maps/valley.json`: the orchard's rows and one tree in three cottage gardens
-- `src/interact.js:583-608`, `src/interact.js:761`, `data/tuning.json:95`: Pick apples, a timed action within `pickReach`; a bare tree's greyed entry with the days left; Chop down beside it
+- `src/interact.js:596-621`, `src/interact.js:774`, `data/tuning.json:101`: Pick apples, a timed action within `pickReach`; a bare tree's greyed entry with the days left; Chop down beside it
 - `src/fruit.js:30-52`: the pick: within reach and a clear line (game #206), the count rolled, into the bag or at the feet, the tree turned bare with the day it bears again, and its line
-- `src/fruit.js:54-73`, `src/game.js:526`, `data/tuning.json:94`, `src/clock.js:5`: bare trees bear again at the first check at or after their day, in the world's clock
+- `src/fruit.js:54-73`, `src/game.js:550`, `data/tuning.json:100`, `src/clock.js:5`: bare trees bear again at the first check at or after their day, in the world's clock
 - `src/map.js:518-527`: a tree changed in place, its day saved with it and its chunk sent to guests
 - `src/map.js:2018`: Trees off: an authored tree, an orchard's or a garden's, is not placed either (game #192)
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, never on such a tile (game #149)

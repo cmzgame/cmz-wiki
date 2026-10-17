@@ -20,7 +20,7 @@ It also drinks by itself. Once your [[Thirst]] falls to **Thirsty** (the moodle'
 
 It also waters crops: **Water** on a crop's menu, or a [[Use]] of the skin on a crop or tilled soil, takes some of its water (see [[Farming]]).
 
-To fill it, stand at a well or beside any water tile and choose "Fill waterskins". It takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag to full. A waterskin on the belt is not filled; put it in the bag first. Wells and water never run out.
+To fill it, stand at a well, a trough, or the chapel's font, or beside any water tile, and choose "Fill waterskins". It takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your [[Belt]] to full. Wells and water never run out.
 
 A waterskin found in a barrel or on a body may hold 0, 25, 50, 75, or 100 percent.
 
@@ -32,19 +32,19 @@ A guest drinks and fills through the same actions; the host performs them. A gue
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:20`: the waterskin, its size, and its capacity
 - `data/kit.json:5`: the starter waterskin, full
 - `data/loot.json:3-4`: waterskins in barrels and on bodies
-- `src/interact.js:1229-1230`: "Drink (N%)" showing the fill
-- `src/interact.js:1174-1188`, `src/interact.js:1300-1312`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
+- `src/interact.js:1243-1244`: "Drink (N%)" showing the fill
+- `src/interact.js:1188-1202`, `src/interact.js:1316-1328`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
 - `src/entities/player.js:104-112`, `data/tuning.json:59`: the sip, with a +1 that takes water at full thirst
 - `src/entities/player.js:113-131`, `data/tuning.json:60`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
-- `src/game.js:582-585`, `src/main.js:1643-1645`, `src/host.js:239-242`: in the world's step on the host, the word to whoever drank
-- `src/interact.js:56`, `src/interact.js:665-704`: "Fill waterskins" at a well or water, its time, filling to 100
-- `src/inventory.js:80-82`: only the bag's waterskins are filled
-- `src/items.js:93`: a found waterskin's random fill
+- `src/game.js:607-610`, `src/main.js:1650-1652`, `src/host.js:239-242`: in the world's step on the host, the word to whoever drank
+- `src/interact.js:56`, `src/interact.js:678-713`: "Fill waterskins" at a well or water, its time, filling to 100
+- `src/inventory.js:80-87`: the bag's waterskins and the belt's are filled (the belt's game #222)
+- `src/items.js:98`: a found waterskin's random fill
 - `src/farming.js:140-149`, `src/farming.js:216-231`, `data/interactions.json:20-22`: watering a crop takes the fill a watering costs, from the fullest skin with enough (game #206)
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
 
 {{navbox items}}

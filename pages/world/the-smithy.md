@@ -17,7 +17,7 @@ One of the dead stands outside the smithy's open doors at the start.
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `tools/mapgen/valley.py:364-374`: the smithy south-east of the square by the river, the forge room and the home beside it
 - `data/maps/valley.json:3864-3949`, `data/loot.json:16`: the forge room's stone floor, forge, anvil, grindstone, barrel, shelf, and chest, the chest's own table iron bars and charcoal (game #210); its two south doors authored open
 - `data/maps/valley.json:3893-3903`, `data/sprites/forge.json`: the forge starts unlit and burns charcoal

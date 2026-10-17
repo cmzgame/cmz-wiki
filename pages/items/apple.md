@@ -13,12 +13,12 @@ An **apple** is [[Food]]. Eating one adds {{n items.apple.hunger}} to your [[Hun
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:17`: the apple: hunger, thirst, heal, stack, kind
 - `src/entities/player.js:89-101`: eating adds the item's hunger and thirst, capped, and its heal (game #186)
 - `data/kit.json:7`: the starter kit: two apples in the sack
 - `data/sprites/tree_apple.json`, `src/fruit.js:30-52`: apples picked from an apple tree, the count, the days it is bare (game #192)
 - `data/loot.json:3-4`: apples in the barrel table and the body table
-- `src/interact.js:1174-1188`, `src/interact.js:1300-1312`: a food on the belt eaten from its slot
+- `src/interact.js:1188-1202`, `src/interact.js:1316-1328`: a food on the belt eaten from its slot
 
 {{navbox items}}

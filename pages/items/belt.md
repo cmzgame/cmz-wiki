@@ -11,7 +11,7 @@ The **belt** is equipped at the waist and gives **belt slots**, shown at the bot
 
 ### What goes on a belt
 
-A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a stack of [[Food]], or a [[Waterskin]]. Drag it onto the slot on the character screen. Anything else is refused.
+A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a stack of [[Food]], a [[Waterskin]], or a [[Tinderbox]]. Drag it onto the slot on the character screen. Anything else is refused.
 
 ### Pressing a slot
 
@@ -45,25 +45,25 @@ The belt keys are part of each player's input, carried out by the host's world f
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `src/inventory.js:9`: the waist slot
 - `data/items.json:32-33`: the rope belt's and the good belt's slot counts
 - `data/kit.json`: every new character starts with a rope belt on
 - `data/loot.json:2`: the good belt in the chest table
-- `src/ui/inventory-actions.js:67-73`: what a belt slot takes
-- `src/interact.js:1091`: keys 1 to 4
-- `src/inventory.js:237-260`: a press: eat, drink, swap, a weapon to the main hand, an empty slot stows
+- `src/ui/inventory-actions.js:67-73`, `data/items.json:19`: what a belt slot takes; an item marked `belt`, the tinderbox (game #222)
+- `src/interact.js:1104`: keys 1 to 4
+- `src/inventory.js:263-286`: a press: eat, drink, swap, a weapon to the main hand, an empty slot stows
 - `src/entities/player.js:105-112`: drinking a sip from a waterskin
-- `src/interact.js:1166-1188`: the press and its messages ("No belt, or no such slot.", "You are full.", game #186)
-- `src/interact.js:1274-1334`, `src/ui/inventory-actions.js:174-182`: the slot menu: Equip, or Eat for a food and Drink for a skin (game #186), Put in bag, Use, Drop; a double-click does the first
-- `src/inventory.js:177-189`: putting away goes to the belt only when the bag will not take it and it can be held
-- `data/tuning.json:84`: the belt torch's strength
-- `src/game.js:481-488`, `src/game.js:654-666`: the belt torch's light, only while lit and none held
-- `src/sight.js:18-29`, `data/tuning.json:102`, `src/entities/zombie.js:367-386`: its reach past `darkRadius` gives sight of the dead (game #173); the dead see it by its strength
-- `src/inventory.js:278-292`, `src/interact.js:360-393`: a lit belt torch a flame for a fire's menu (game #169)
-- `src/game.js:489-515`, `data/tuning.json:89`: a lit belt torch burns at the wall rate, held or not
-- `src/interact.js:1141-1162`: `T` on the belt's torch when none is held
-- `src/items.js:193-206`, `src/map.js:472-484`: a belt dropped puts out a torch on it
-- `src/inventory.js:159-173`: a belt is a container and goes in another only empty
-- `src/interact.js:1091`, `src/interact.js:1111`: the belt keys are events in the player's input snapshot
-- `src/game.js:594`: the host's step performs them for each player
+- `src/interact.js:1180-1202`: the press and its messages ("No belt, or no such slot.", "You are full.", game #186)
+- `src/interact.js:1290-1350`, `src/ui/inventory-actions.js:174-182`: the slot menu: Equip, or Eat for a food and Drink for a skin (game #186), Put in bag, Use, Drop; a double-click does the first
+- `src/inventory.js:203-215`: putting away goes to the belt only when the bag will not take it and it can be held
+- `data/tuning.json:88`: the belt torch's strength
+- `src/game.js:505-512`, `src/game.js:679-691`: the belt torch's light, only while lit and none held
+- `src/sight.js:18-29`, `data/tuning.json:108`, `src/entities/zombie.js:367-386`: its reach past `darkRadius` gives sight of the dead (game #173); the dead see it by its strength
+- `src/inventory.js:304-318`, `src/interact.js:360-393`: a lit belt torch a flame for a fire's menu (game #169)
+- `src/game.js:513-539`, `data/tuning.json:93`: a lit belt torch burns at the wall rate, held or not
+- `src/interact.js:1155-1176`: `T` on the belt's torch when none is held
+- `src/items.js:198-211`, `src/map.js:472-484`: a belt dropped puts out a torch on it
+- `src/inventory.js:185-199`: a belt is a container and goes in another only empty
+- `src/interact.js:1104`, `src/interact.js:1124`: the belt keys are events in the player's input snapshot
+- `src/game.js:619`: the host's step performs them for each player

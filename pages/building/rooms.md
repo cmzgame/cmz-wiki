@@ -55,17 +55,17 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `src/map.js:1721-1773`: the flood fill, stopped by walls, doors, and windows in any state
 - `src/map.js:25`: the largest room
 - `src/map.js:1421-1433`, `src/map.js:1754-1756`: a see-through wall bounds no room
 - `src/map.js:1809-1837`: rooms refound only on either side of a changed edge
 - `src/entities/player.js:227-228`: a bed outdoors says "Not out here."; a siege held on the player refuses it
-- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:88`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
+- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:92`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
 - `src/map.js:843-878`: the dead choose a room to break
 - `src/entities/zombie.js:421-460`, `src/entities/zombie.js:847-914`: the siege, about a house the dead saw a player go into, until dawn
 - `src/map.js:733-744`, `src/map.js:819-826`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered
 - `src/render/walls.js:355-371`, `src/render/walls.js:163-169`, `src/render/walls.js:306-316`: near walls faded, posts only when every wall is near
 - `src/render/scene.js:38-43`: only trees open the hole round the player
-- `src/map.js:828-842`, `src/main.js:1279`: sealed, computed only for the debug corner
+- `src/map.js:828-842`, `src/main.js:1280`: sealed, computed only for the debug corner
 - `src/render/scene.js:35`: the faded walls' opacity

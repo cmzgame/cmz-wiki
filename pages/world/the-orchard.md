@@ -23,7 +23,7 @@ A tree picked by one player is bare for everyone, and bears again for everyone o
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `tools/mapgen/valley.py:398-405`, `data/maps/valley.json`: the orchard at (38, 232): apple trees in five staggered rows of four, two barrels at the south edge, no building
 - `tools/mapgen/valley.py:101-117`, `tools/mapgen/valley.py:383-387`: an apple tree in three cottage gardens
 - `docs/29-world/05-the-farms.md:3`: the orchard built, the rest of Hollow Farm not

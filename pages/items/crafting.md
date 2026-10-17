@@ -39,8 +39,8 @@ All the ingredients for the count are taken when you press Make. If anything is 
 ### Fire and tools
 
 - A recipe that needs **the fire lit** cannot be started at a station whose fire is out ("The fire is out."). If the fire goes out during the job, the job waits, marked "(the fire is out)", and goes on when the fire is fed. Nothing is lost. See [[Fire]].
-- A recipe that needs **a tool in hand** needs it held when you press Make ("Needs a hammer in hand."). Only the [[Anvil]]'s smithing asks for one, the [[Smith's hammer]].
-- A recipe that needs **a tool on you** wants it anywhere you carry it: in a hand, on the belt, or in the bag ("Needs a belt knife on you."). Tearing a garment into [[Rag|rags]] at the [[Workbench]] asks for a [[Belt knife]] this way.
+- A recipe that needs **a tool in hand** needs it held when you press Make ("Needs a smith's hammer in hand."). Only the [[Anvil]]'s smithing asks for one, the [[Smith's hammer]].
+- A recipe that needs **a tool on you** wants it anywhere you carry it: in a hand, on the belt, or in the bag. The panel marks the row "needs a belt knife on you", and Make without it refuses with "You need a belt knife." The tool is found by what it does, not by name, so any tool that does that work will do. At the [[Workbench]], most rows ask for one this way: a [[Smith's hammer]] for the furniture, the wheelbarrow, the shield, the hoe, the shovel, and the bucket; a [[Belt knife]] for the bow, the arrows, the rod, and tearing a garment into [[Rag|rags]]; a [[Hatchet]] for sticks from a plank.
 
 Pressing Make away from the station refuses with "Not at this station." or "Too far from it."
 
@@ -71,28 +71,29 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `src/stations.js:45-52`: which props are stations, and the cooking fires
 - `data/sprites/loom.json`, `data/sprites/charcoal_clamp.json`: the loom and the clamp are stations (game #210, #216)
 - `src/ui/station-panel.js:154`: "Nothing to make here yet."
 - `data/maps/valley.json`: the loom and dye vats in the village
 - `data/recipes.json`: every recipe, known from the start
-- `src/interact.js:772-789`: the station's menu entry and `E`
+- `src/interact.js:785-802`: the station's menu entry and `E`
 - `src/stations.js:20`: the reach
 - `src/ui/station-panel.js`: the one panel: recipes greyed with their reason, ingredients, count, Make, queue
 - `src/stations.js:251`: the count clamped from 1 to 10
 - `src/ui/station-panel.js:102`: the output box closes beyond reach
 - `src/ui/station-panel.js:168`: the panel closes beyond reach
-- `src/main.js:1077-1162`, `src/ui/station-panel.js:44-53`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
+- `src/main.js:1078-1163`, `src/ui/station-panel.js:44-53`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
 - `src/stations.js:67-104`: where ingredients are counted from, searched containers only
 - `src/stations.js:84-129`: the order, plain cloth before a garment for a cloth want (game #216) they are taken in
 - `data/items.json:15`: the bandage is not cloth (game commit 2c70942)
 - `data/items.json:26-31`: the garments are cloth
-- `src/stations.js:150-160`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "Needs a hammer in hand.", "Needs a belt knife on you." (`carry`, game #216), "Short of ..."
+- `src/stations.js:150-159`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "You need a ..." (a recipe's `uses`, game #222), "Needs a ... in hand.", "Short of ..."
+- `src/inventory.js:88-108`, `src/ui/station-panel.js:144`: a tool carried in a hand, on the belt, or in the bag, found by its verb; "needs a ... on you" on the row
 - `src/stations.js:210-230`: a job waits while its fire is out
 - `src/ui/station-panel.js:151`: "(the fire is out)" on a paused job
-- `data/recipes.json:490-648`: only the anvil's recipes ask for a tool in hand, the hammer; `data/recipes.json:23-124`: the tears ask for a knife on you
-- `src/game.js:529`: the queues stepped in the world's step
+- `data/recipes.json:505-663`: only the anvil's recipes ask for a tool in hand, the hammer; `data/recipes.json:4-472`: the workbench's rows ask by verb, `uses`: `build` a hammer, `cut` a knife, `split` a hatchet (game #222)
+- `src/game.js:553`: the queues stepped in the world's step
 - `src/map.js:94`: a game hour in seconds
 - `src/stations.js:21`: the output box's size
 - `src/stations.js:173-209`: output to the box, or the floor beside when full; furniture placed beside the station

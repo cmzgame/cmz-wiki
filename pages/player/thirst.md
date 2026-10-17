@@ -24,7 +24,7 @@ There are three ways to drink:
 - **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, [[Stew]] +{{n items.stew.thirst}}.
 - **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well" (or the trough, or the font) or "Drink from the water". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
 
-At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag. Wells and water never run out.
+At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your belt. Wells and water never run out.
 
 ### Drinking by itself
 
@@ -63,23 +63,23 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:53`, `data/tuning.json:56`: the maximum and the drain time
 - `src/entities/player.js:146`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
-- `src/interact.js:1229-1230`, `src/entities/player.js:104-112`, `data/tuning.json:59`: the "Drink" entry and the sip
-- `src/interact.js:1174-1188`, `src/interact.js:1300-1312`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
+- `src/interact.js:1243-1244`, `src/entities/player.js:104-112`, `data/tuning.json:59`: the "Drink" entry and the sip
+- `src/interact.js:1188-1202`, `src/interact.js:1316-1328`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
 - `src/entities/player.js:113-131`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
-- `src/game.js:582-585`, `src/main.js:1643-1645`: in the world's step, the word on the drinker's screen
+- `src/game.js:607-610`, `src/main.js:1650-1652`: in the world's step, the word on the drinker's screen
 - `data/items.json:17`, `data/items.json:70`: the apple's and the stew's thirst
-- `src/interact.js:665-704`, `src/map.js:1447-1448`: the well's and the water's actions, named for the prop; floors with `drink`
-- `src/interact.js:55`, `src/interact.js:670`, `src/interact.js:676-681`: drinking's time, the E action below 90, thirst set to full
-- `src/interact.js:56`, `src/interact.js:666`, `src/interact.js:685-695`: filling's time and every bag waterskin to full
+- `src/interact.js:678-717`, `src/map.js:1408-1417`: the well's and the water's actions, named for the prop; floors with `drink`
+- `src/interact.js:55`, `src/interact.js:683`, `src/interact.js:689-694`: drinking's time, the E action below 90, thirst set to full
+- `src/interact.js:56`, `src/interact.js:679`, `src/interact.js:697-711`, `src/inventory.js:85-87`: filling's time and every waterskin in the bag and on the belt to full (the belt's game #222)
 - `src/moodles.js:64-78`: the thirst stages
 - `src/entities/player.js:152-154`: Thirsty stops regeneration
 - `src/entities/player.js:160-165`, `data/tuning.json:69`: Parched slows stamina recovery
 - `src/entities/player.js:150`, `data/tuning.json:58`: dehydration damage
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
 - `src/host.js:239-242`: a guest's sip by itself, its word sent to the guest
 - `src/entities/player.js:138-143`: Survival off holds thirst full

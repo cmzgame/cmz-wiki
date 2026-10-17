@@ -71,7 +71,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:45-46`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
@@ -88,7 +88,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `src/entities/player.js:136-175`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
 - `src/moodles.js:23-102`: the five moodles
 - `data/kit.json`: the default starting kit, what is worn, in the sack, and in hand, the torch out and a tinderbox in the sack
-- `src/game.js:97`, `src/game.js:109-113`, `src/game.js:423`, `src/kit.js:62-75`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
+- `src/game.js:97`, `src/game.js:132-136`, `src/game.js:447`, `src/kit.js:62-75`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
 - `src/rules.js:21-22`, `src/rules.js:30`, `src/settings.js:70-72`: Extra starting items and Dev bag, world rules chosen once at the Sandbox step
 - `data/items.json:32`: the rope belt's two slots
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
@@ -96,4 +96,4 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/loot.json:18`, `src/settings.js:33`, `src/game.js:89-95`: the dev chest, chosen at New world
 - `data/tuning.json:4`, `data/tuning.json:73`: the dead's and villagers' speeds
 - `src/rules.js:44-49`: a guest uses the host's rules
-- `src/game.js:318-328`: time runs fast only while every living player sleeps
+- `src/game.js:342-352`: time runs fast only while every living player sleeps

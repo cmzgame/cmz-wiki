@@ -47,21 +47,21 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 
 ## Sources
 
-<!-- sources at cfe0203 -->
-- `src/interact.js:1193-1268`: Use on an item's menu
-- `src/interact.js:1274-1334`: Use on a slot's menu
+<!-- sources at 3f11fdb -->
+- `src/interact.js:1207-1284`: Use on an item's menu
+- `src/interact.js:1290-1350`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
 - `src/ui/inventory-panel.js:482-484`: a click on an item in a panel is the target
-- `src/main.js:804-814`, `src/interact.js:815-822`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
-- `src/main.js:1092-1099`: a click on the world is the target, the panels open or not
+- `src/main.js:805-815`, `src/interact.js:828-835`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
+- `src/main.js:1093-1100`: a click on the world is the target, the panels open or not
 - `src/interactions.js:1-50`: rows by item id or tag and target, `fire` for any that burns fuel, `bracket` for a wall bracket, the first match wins; the default "Nothing interesting happens."
 - `data/interactions.json`: the rows: light (a tinderbox or a torch on a campfire, a torch post, a torch, a bracket, a fire), dip, till, plant, water (game #206), and the well's note
 - `src/interactions.js:34-43`: `crop` matches any crop
 - `src/burn.js:62`, `src/burn.js:85-190`: the `light` verb: what it lights, the torch lit at a fire or a lantern (game #188), the reach and the line of sight, the refusals
 - `src/use.js:94-104`: a row's action run, its line said on success, the reason on a refusal
 - `src/burn.js:62-83`: the dip's reach, its refusals (arrows not carried: "Take the arrows out first."), the whole stack changed
-- `src/interact.js:665-704`: the well's own menu fills waterskins
+- `src/interact.js:678-717`: the well's own menu fills waterskins
 - `src/interact.js:360-393`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
-- `src/ui/inventory-actions.js:368-402`, `src/main.js:1004-1015`: the host runs it as that player; a bracket sent by its tile and edge
+- `src/ui/inventory-actions.js:373-407`, `src/main.js:1005-1016`: the host runs it as that player; a bracket sent by its tile and edge
 - `src/host.js:268-272`: the line goes to the guest's chat log

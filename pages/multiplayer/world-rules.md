@@ -16,7 +16,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 - **Zombie aggro** (default On): on, the dead hunt you. Off, they wander and ignore you. See [[The dead]].
 - **Zombies attack villagers** (default Off): on, the dead hunt villagers whatever aggro says; with aggro on, you first. A separate switch from Zombie aggro on purpose.
 - **Survival** (default On): hunger, thirst, and tiredness. Off, the body has no needs. See [[Survival]].
-- **Free building** (default Off): building costs nothing, for trying out structures. See [[Building]].
+- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. See [[Building]].
 - **Multi-hit** (default Off): on, a blow reaches everything in its wedge, "the easy button"; off, only the nearest, the intended way. See [[Combat]].
 
 **Chosen once, when the world is made**, never changed after:
@@ -66,20 +66,20 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
-- `src/settings.js:60-72`: each rule's label and line, Starting population's answers, the Dev chest, Dev bag, and Extra starting items
+- `src/settings.js:60-72`: each rule's label and line (Free building's, game #222), Starting population's answers, the Dev chest, Dev bag, and Extra starting items
 - `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1991-1999`, `src/map.js:2165`, `src/map.js:2018`: Trees off: no tree placed in the scatter or the wild, nor an authored one, an orchard's or a garden's (game #192), the other picks as ever
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
-- `data/tuning.json:101`, `src/game.js:115-144`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
+- `data/tuning.json:107`, `src/game.js:138-167`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
 - `src/map.js:1654-1683`: an extra stands on an open tile by the authored map, never across a wall or a door
 - `src/map.js:1257-1270`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
 - `src/ui/screens.js:871-899`, `src/ui/screens.js:560-567`: the Sandbox step's two parts, their lines, Next; Extra starting items a text box
 - `data/kit.json`, `src/kit.js:24-61`, `src/ui/screens.js:360-366`, `src/ui/screens.js:417-431`: the extra items parsed and checked as typed, the first thing wrong said under the box, Next refused while it stands; the dev bag's room
-- `src/kit.js:62-75`, `src/game.js:109-113`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
-- `src/main.js:291-310`, `src/main.js:313-321`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
-- `src/ui/screens.js:1019-1035`, `src/main.js:740-742`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
-- `src/game.js:76-81`, `src/game.js:189`, `src/game.js:255-256`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
-- `src/net.js:868`, `src/net.js:1117`, `src/game.js:398`: sent to guests when they change, in the sync check
+- `src/kit.js:62-75`, `src/game.js:132-136`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
+- `src/main.js:292-311`, `src/main.js:314-322`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
+- `src/ui/screens.js:1019-1035`, `src/main.js:741-743`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
+- `src/game.js:76-81`, `src/game.js:212`, `src/game.js:278-279`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
+- `src/net.js:868`, `src/net.js:1117`, `src/game.js:422`: sent to guests when they change, in the sync check
 - `src/ui/screens.js:962-968`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
-- `src/game.js:255-256`: a world's rules, the kit's two among them, restored from its save, a server world's too
+- `src/game.js:278-279`: a world's rules, the kit's two among them, restored from its save, a server world's too

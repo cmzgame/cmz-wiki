@@ -61,11 +61,11 @@ Each player has their own health. A sleeper among players who are awake still re
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/tuning.json:45`: the maximum health
 - `src/ui/hud.js:90-93`: the bar, its colours by fraction, and the current / max text
 - `data/tuning.json:11-12`: a bite's damage and the time between bites
-- `src/game.js:358-366`, `src/combat.js:131-163`: a bite through the shield guard, and the bleed and infection hooks
+- `src/game.js:382-390`, `src/combat.js:131-163`: a bite through the shield guard, and the bleed and infection hooks
 - `data/combat.json:4`: the bleeding drain by stacks
 - `data/tuning.json:57-58`, `src/entities/player.js:149-150`: starving and dehydration damage, which add up
 - `src/settings.js:12`, `src/entities/zombie.js:307-308`: the dead bite only with Zombie aggro on

@@ -5,9 +5,18 @@ summary: What changed in the game, and when the wiki caught up with it.
 numbersOk: true
 ---
 
-<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:270`), not named numbers a lookup can read -->
+<!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:272`), not named numbers a lookup can read -->
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
+
+## 2026-10-17: synced to `3f11fdb`
+
+- **New in the game:** talk, part 1 (game #220). Villagers say a line of their own when poked, suited to the moment (night, dawn, the dead close by), the lines taking turns, and now and then remark unprompted when you are near. [[Wyn]], the guide, stands just outside your cottage's door, immune to the dead; the lane's dead who stood by your garden have moved farther down it, so a new world's first poke by day is "Ask me anything, if you are stuck.", not a warning. A speech bubble's time now runs in the world on the host, so it ends on its own on a server world too (closing game #154). Conversations are still to come (game #202). New pages: [[Talk]] and [[Wyn]]; every villager's page now lists their lines, and [[Villagers]], [[Chat log]], [[Your cottage]], and [[Planned]] are corrected.
+- **Changed in the game, corrected here:** the tool rule (game #222). An action that would need a tool asks for it on you, in a hand, on the belt, or in the bag: a [[Smith's hammer]] for a door, a window, boarding up, pulling a board (which now gives the plank back), Remove, and most of the workbench's rows; a [[Hatchet]] for a log wall, splitting a log, and sticks from a plank; a [[Belt knife]] for the bow, the arrows, the rod, and tearing a garment; and each crop's own tool at harvest, rye the [[Scythe]], potatoes and garlic the [[Shovel]], cabbages and pumpkins the knife. Your cottage's chest gains a shovel and the joiner's a hammer; Free building waives the build tools but not the boards'; a waterskin on the belt fills at water; the tinderbox rides the belt. [[Smith's hammer]] and [[Shovel]] rewritten; [[Hatchet]], [[Belt knife]], [[Scythe]], [[Hoe]], [[Bucket]], [[Fishing rod]], [[Tinderbox]], [[Building]], [[Openings]], [[Boards]], [[Crafting]], [[Workbench]], [[Rag]], [[Log]], [[Stick]], [[Farming]], [[Crops]], the seed pages, [[Belt]], [[Waterskin]], [[Thirst]], [[Water]], [[World rules]], [[Controls]], [[The joiner]], and [[Getting started]] corrected.
+- **Changed in the game:** the site's loading screen shows only for Play while the game loads (game #225). Nothing on the wiki describes it.
+- **Changed in the game, corrected here:** a guest's drag to a belt, worn, or hand slot meets the host's own rules (game #226): one that would not fit is refused, with "That does not go there." [[Inventory]] says so.
+- **Changed in the game:** a test of sight made steadier (game #228); no page changes.
+- **On the wiki:** [[Valley day]] has talk and the tools, and Coming next has what is in review now: reach through walls (game #227), the Onion-head Hat's art (game #229), and conversations (game #230). [[Production chains]] reads the tools a recipe, a harvest, a split, and a build ask for, and its stations table has a column for the tool on you; every recipe still can be made. A villager's box and the villagers' table say who has talk of their own, and two new templates list a villager's lines and the guide's questions from the game's talk files. The [[Workbench]] page no longer says a chest made there rolls loot. The pages of the last sync had their Sources moved on to the new game.
 
 ## 2026-10-17: synced to `cfe0203`
 

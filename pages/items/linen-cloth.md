@@ -15,7 +15,7 @@ A recipe that wants cloth takes plain cloth first, a rag or this, before it take
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 3f11fdb -->
 - `data/items.json:67`: linen cloth, tagged `cloth` (game #216)
 - `data/recipes.json:125-199`: cloth from flax, and bandages, a cap, breeches, and a tunic from cloth, at the loom
 - `src/stations.js:84-130`: a tag want takes plain cloth before a garment
