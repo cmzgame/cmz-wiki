@@ -18,7 +18,6 @@ With both hands empty, right-click a piece of furniture and choose "Pick up" fol
 While you carry something you can only walk. You cannot:
 
 - sprint, swing, draw a bow, or block
-- climb through a window
 - open the bag or the character screen
 - build, or use the removal tool ("Your hands are full.")
 
@@ -26,9 +25,9 @@ The right-click menu offers only Put down and Walk here.
 
 ### Putting down
 
-A left click on a green ghost puts the piece down, and R turns it first. E puts it on the tile in front of you. Escape does not drop it. See [[Placement]].
+A left click on a green ghost puts the piece down, and R turns it first. E puts it on the tile in front of you. Escape does not drop it. Nothing can be put down on either tile of a door or a gate. See [[Placement]].
 
-If you die while carrying, the piece is set down on a free tile close by, if there is one.
+If you die while carrying, the piece is set down on a free tile close by, if there is one, by the same rules.
 
 ### What can be carried
 
@@ -40,7 +39,7 @@ Carrying and removal are separate: the removal tool takes only what players made
 
 ### Furniture you make
 
-Some [[Workbench]] recipes make furniture rather than an item. The piece appears on a free tile near the station. It can be carried only if its kind can: a crafted chest can, a crafted workbench cannot.
+Some [[Workbench]] recipes make furniture rather than an item. The piece appears on a free tile near the station, never on a door's tiles. It can be carried only if its kind can: a crafted chest can, a crafted workbench cannot.
 
 ## Numbers
 
@@ -63,16 +62,17 @@ The piece you carry is part of your character, so a save and a join keep it, and
 - `src/interact.js:259-312`: Pick up with both hands empty, and the carry menu (Put down, Walk here)
 - `src/entities/character.js:70-71`: the carried prop, contents and all, on the character
 - `src/entities/player.js:328`: no sprint, swing, bow, or block while carrying
-- `src/entities/player.js:74-79`: no climbing while carrying
 - `src/main.js:698-736`: no bag, character screen, building, or removal; "Your hands are full."
 - `src/placement.js:270-282`, `src/placement.js:253-268`: put down with a click, R turns it
 - `src/placement.js:116-119`, `src/interact.js:292-311`: E sets it on the tile in front
 - `src/game.js:276-285`: on death, set down on a free tile within 2
+- `src/placement.js:95-115`, `src/game.js:343-350`: never on a door's tiles, on death too (game commit 82106de)
 - `src/placement.js:69-75`: the carry rule, the sprite's flag first, then trees, the well, and fires
 - `data/sprites/*.json`: each sprite's `carry` flag
 - `src/placement.js:316-336`: removal takes only what players made, carryable or not (game commit 2c70942)
 - `data/sprites/wheelbarrow.json`: the wheelbarrow's `carry` flag (game commit 2c70942)
 - `src/stations.js:173-192`: a prop recipe set on a free tile near the station
+- `src/stations.js:178-181`: never on a door's tiles (game commit 82106de)
 - `data/sprites/chest.json`, `data/sprites/workbench.json`: the chest carryable, the workbench not
 - `src/placement.js:24`: the reach to put down
 - `src/render/entities.js:233`: the carried piece drawn over the head

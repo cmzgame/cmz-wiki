@@ -27,7 +27,7 @@ A click swings at once. The hit is decided on the click; the arm's animation is 
 - Anything within {{n combat.blow.pointBlank tiles}} is always hit, whatever the angle.
 - One of the dead drawn below the player on screen gets a little extra reach, up to {{n census.constants.combat.BODY_SLACK tiles}}.
 - The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]).
-- A swing is refused while carrying a prop, climbing, during a timed action, or when dead.
+- A swing is refused while carrying a prop, during a timed action, or when dead.
 - Only [[The dead]] can be hit, and not a corpse: a swing, the [[Shove|shove]], an arrow, a thrown spear, and the [[Fireball]] never hurt a [[Villagers|villager]], another player, or the one who struck. There is no friendly fire, and no setting turns it on.
 
 The wedge itself is not drawn. Each weapon's reach and arc are on its page and in [[Weapons]].
@@ -115,7 +115,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 
 <!-- sources at 9205ad7 -->
 - `src/combat.js:305-357`: the swing decided on the click (`tryAttack`)
-- `src/combat.js:186-188`, `src/combat.js:166-176`: only the dead are targets; a swing refused while carrying, climbing, in a timed action, or dead
+- `src/combat.js:186-188`, `src/combat.js:166-176`: only the dead are targets; a swing refused while carrying, in a timed action, or dead
 - `src/combat.js:178-189`, `src/game.js:93`, `src/archery.js:288-312`: no friendly fire: a blow and the shove pick from the dead alone (`targetsIn`, the dead one not yet dead), and an arrow, a spear, or the fireball lands on what `setTargets` hands in, the dead (game commit 0bd3f9c)
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/buttons.js:10`, `src/buttons.js:24-47`: the roles and the tap time

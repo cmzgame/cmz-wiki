@@ -30,7 +30,7 @@ At the same well or water, "Fill waterskins" takes {{n census.constants.interact
 
 Once thirst falls to **Thirsty** (stage {{n tuning.player.autoDrinkStage}} below), you take a sip by yourself from a waterskin you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. It is the same sip as one taken by hand. The emptiest skin that still holds water goes first, so one skin is finished before the next is started.
 
-It waits while you swing, draw a bow or a throw, cast, hold a guard, climb through a window, or sleep, and while you are already holding a drink or food out; it comes as soon as that ends. With no water in any skin nothing happens, so the Thirsty moodle means you are out of water. With [[Survival]] off, thirst is held full and it never comes.
+It waits while you swing, draw a bow or a throw, cast, hold a guard, or sleep, and while you are already holding a drink or food out; it comes as soon as that ends. With no water in any skin nothing happens, so the Thirsty moodle means you are out of water. With [[Survival]] off, thirst is held full and it never comes.
 
 ### Stages
 

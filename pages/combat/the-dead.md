@@ -46,13 +46,14 @@ A bite fully blocked by the [[Shield]] does neither. A bite on an exposed player
 
 ### Breaking in
 
-When a hunting zombie cannot find a path to where it last saw the player, it goes to the nearest door or window of the room it wants into (or the room it is shut in) and hits it: boards on its side first, then the door or shutters, then the boards on the far side. Each hit does {{n tuning.zombie.breachDamage}} damage, at the pace of its bites.
+When a hunting zombie cannot find a path to where it last saw the player, it goes to the nearest door it can walk to of the room it wants into (or of the room it is shut in) and hits it: boards on its side first, then the door or shutters, then the boards on the far side. Each hit does {{n tuning.zombie.breachDamage}} damage, at the pace of its bites.
 
 - A board has {{n census.constants.map.BOARD_HP}} health, a door {{n census.constants.map.DOOR_HP}}, shutters {{n census.constants.map.SHUTTER_HP}}. Up to {{n census.constants.map.BOARDS_PER_SIDE}} boards go on each side.
 - A broken door is a doorway for good; broken shutters leave an open hole.
-- At an open or broken window with no boards, it climbs through, slowly ({{n tuning.zombie.climb seconds}}), unable to bite until through. A hit on a climbing zombie ends the climb at the nearer side.
+- The dead never come through a window, open, shut, or broken. From outside they may batter a window's closed shutters or boards open to see in, then go on to a door. One that sees the player through an open window walks round to a door and breaks it, so a window is never a safe place to stand behind.
+- With no door it can reach, a zombie batters what windows it can and then searches, and does not look for a way in again for {{n tuning.zombie.noWayTime seconds}}.
 
-See [[Openings]].
+See [[Breaking in]] and [[Openings]].
 
 ### The groan
 
@@ -97,7 +98,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 ## Sources
 
 <!-- sources at 2a9a308 -->
-- `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, breach, climb, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
+- `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
 - `data/wardrobes.json`: the dead's ten wardrobes
 - `src/entities/zombie.js:36-71`, `src/entities/movement.js:65-70`: the body, separation
 - `src/map.js:1013-1025`: wild chunks bring the dead per `data/maps/valley.json` (`wild.zombiesPerChunk`)
@@ -111,7 +112,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `data/combat.json`: `bleed.chance`, `infection.chance`
 - `src/bleed.js:59`, `src/infection.js:48`: a blocked bite neither wounds nor infects
 - `src/entities/zombie.js:506-593`, `src/map.js:446-449`, `src/map.js:551-638`: breaching openings, their health, boards per side
-- `src/entities/zombie.js:389-405`, `src/entities/zombie.js:92-99`: the climb, and a hit ending it
+- `src/entities/zombie.js:211-233`, `src/entities/zombie.js:488-570`, `src/map.js:594-668`: a door the way in, a shut window battered only to see in, never passed; no way in, a search (game commit 82106de)
 - `src/entities/zombie.js:48`, `src/entities/zombie.js:383-387`: the groan
 - `src/entities/zombie.js:113-116`, `src/entities/zombie.js:149-157`, `src/entities/zombie.js:374-381`: death and the still body
 - `src/entities/zombie.js:124-134`: a floored zombie takes finishers

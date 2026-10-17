@@ -11,7 +11,7 @@ summary: What happens at zero health: the fall, the body left behind, and the ne
 
 ### The fall
 
-At zero health, whatever you were doing stops: [[Sleep]], an action, a walk, a raised shield, a climb, a drawn bow. A prop you were carrying is set down nearby if there is room. Your character plays the fall, and the body then lies there as a corpse.
+At zero health, whatever you were doing stops: [[Sleep]], an action, a walk, a raised shield, a drawn bow. A prop you were carrying is set down nearby if there is room. Your character plays the fall, and the body then lies there as a corpse.
 
 ### The body
 
@@ -40,7 +40,7 @@ Each death belongs to its own player; only that player sees the dead screen. The
 
 <!-- sources at 2a9a308 -->
 - `src/game.js:616-623`: the death check at zero health
-- `src/game.js:337-356`: the fall stops sleep, actions, auto-walk, the guard, a climb, and a draw, and sets a carried prop down within 2 tiles
+- `src/game.js:337-356`: the fall stops sleep, actions, auto-walk, the guard, and a draw, and sets a carried prop down within 2 tiles
 - `src/game.js:478-485,535-538`: the body dressed in the fallen player's gear and kept as a corpse
 - `src/host.js:241-243`: the world saved at a death
 - `src/ui/screens.js:1044-1050`: the dead screen's text and its two buttons, New character and Exit game

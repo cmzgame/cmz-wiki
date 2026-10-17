@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "2a9a308856c963b411ddb861e944e430995f908b",
-  "short": "2a9a308",
-  "date": "2026-10-16T23:47:32-05:00",
-  "subject": "Merge #141, reviewed, Michael's word: the aim guide is off by default, and the setting works again (each viewer's own, gating only what their screen draws)",
+  "commit": "82106de6bde5afe5348969061e28c11dae539cb1",
+  "short": "82106de",
+  "date": "2026-10-17T00:20:30-05:00",
+  "subject": "Merge #140, reviewed, Michael's law: nobody climbs through a window, player or dead; the dead batter a window open to see in, never to pass, and come round to a door; every door's tiles kept clear (closes #134)",
   "ref": "origin/main"
  },
  "counts": {
@@ -15,7 +15,7 @@
   "places": 20,
   "villagers": 7,
   "authoredDead": 40,
-  "mapProps": 40,
+  "mapProps": 34,
   "zombieWardrobes": 10,
   "villageWardrobes": 6,
   "settings": 29,
@@ -24,9 +24,9 @@
   "liveRules": 5,
   "keys": 19,
   "verbs": 3,
-  "menuLabels": 56,
+  "menuLabels": 55,
   "events": 26,
-  "checks": 22,
+  "checks": 23,
   "modules": 82
  },
  "items": [
@@ -3610,12 +3610,6 @@
      "chair",
      "chest",
      "fireplace",
-     "headstone",
-     "headstone",
-     "headstone",
-     "headstone",
-     "headstone",
-     "headstone",
      "table"
     ]
    },
@@ -4089,7 +4083,6 @@
    "radius": 0.3,
    "searchTime": 10,
    "breachDamage": 5,
-   "climb": 1.6,
    "groanText": "Braaaains",
    "groanMin": 20,
    "groanMax": 60,
@@ -4098,6 +4091,7 @@
    "getUpTime": 0.6,
    "knockTime": 0.15,
    "breachReach": 1.1,
+   "noWayTime": 8,
    "searchRadius": 3,
    "wanderIdleMin": 1.5,
    "wanderIdleMax": 4,
@@ -4125,7 +4119,6 @@
    "drinkSip": 50,
    "autoDrinkStage": 2,
    "presentTime": 0.6,
-   "climbTime": 0.9,
    "tiredMax": 100,
    "tiredDrainSeconds": 900,
    "sleepRestoreSeconds": 240,
@@ -4557,7 +4550,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:939"
+    "interact.js:927"
    ]
   },
   {
@@ -4582,13 +4575,13 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:275"
+    "placement.js:276"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:940"
+    "interact.js:928"
    ]
   },
   {
@@ -4663,7 +4656,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:215"
+    "entities/player.js:197"
    ]
   }
  ],
@@ -4689,13 +4682,7 @@
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:598"
-   ]
-  },
-  {
-   "key": "Climb through",
-   "at": [
-    "interact.js:479"
+    "placement.js:599"
    ]
   },
   {
@@ -4725,31 +4712,31 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1103"
+    "interact.js:1085"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1049"
+    "interact.js:1031"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1025"
+    "interact.js:1007"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1026"
+    "interact.js:1008"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1129"
+    "interact.js:1111"
    ]
   },
   {
@@ -4809,7 +4796,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1131"
+    "interact.js:1113"
    ]
   },
   {
@@ -4893,21 +4880,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1114",
-    "interact.js:1145"
+    "interact.js:1096",
+    "interact.js:1127"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1021",
-    "interact.js:1101"
+    "interact.js:1003",
+    "interact.js:1083"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:587"
+    "interact.js:576"
    ]
   },
   {
@@ -4937,49 +4924,49 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:570"
+    "placement.js:571"
    ]
   },
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:520"
+    "interact.js:509"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:608"
+    "placement.js:609"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:604"
+    "placement.js:605"
    ]
   },
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1053"
+    "interact.js:1035"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:544"
+    "interact.js:533"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:874"
+    "interact.js:862"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1029"
+    "interact.js:1011"
    ]
   },
   {
@@ -4991,19 +4978,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1365"
+    "interact.js:1347"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:506"
+    "interact.js:495"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1058"
+    "interact.js:1040"
    ]
   }
  ],
@@ -5029,7 +5016,7 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:369"
+    "game.js:368"
    ]
   },
   {
@@ -5041,7 +5028,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:404"
+    "placement.js:405"
    ]
   },
   {
@@ -5049,7 +5036,7 @@
    "at": [
     "interact.js:209",
     "interact.js:342",
-    "interact.js:1350",
+    "interact.js:1332",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5069,7 +5056,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:558"
+    "game.js:557"
    ]
   },
   {
@@ -5087,7 +5074,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:621"
+    "game.js:620"
    ]
   },
   {
@@ -5099,43 +5086,43 @@
   {
    "key": "kicked",
    "at": [
-    "combat.js:271"
+    "combat.js:270"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:368"
+    "combat.js:367"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:336"
+    "combat.js:335"
    ]
   },
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:624"
+    "entities/zombie.js:626"
    ]
   },
   {
    "key": "shove",
    "at": [
-    "combat.js:403"
+    "combat.js:402"
    ]
   },
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:203"
+    "entities/player.js:185"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:194"
+    "entities/player.js:176"
    ]
   },
   {
@@ -5153,20 +5140,20 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:625"
+    "entities/zombie.js:627"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
     "archery.js:688",
-    "combat.js:385"
+    "combat.js:384"
    ]
   },
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:156"
+    "entities/zombie.js:145"
    ]
   }
  ],
@@ -5298,13 +5285,14 @@
   "sync",
   "water",
   "wear",
+  "windows",
   "wire",
   "worlds"
  ],
  "modules": [
   {
    "path": "map.js",
-   "lines": 1944
+   "lines": 1971
   },
   {
    "path": "main.js",
@@ -5316,7 +5304,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1410
+   "lines": 1392
   },
   {
    "path": "net.js",
@@ -5340,22 +5328,22 @@
   },
   {
    "path": "game.js",
-   "lines": 643
+   "lines": 642
   },
   {
    "path": "entities/zombie.js",
-   "lines": 638
+   "lines": 640
   },
   {
    "path": "assets.js",
    "lines": 636
   },
   {
-   "path": "gl.js",
-   "lines": 610
+   "path": "placement.js",
+   "lines": 611
   },
   {
-   "path": "placement.js",
+   "path": "gl.js",
    "lines": 610
   },
   {
@@ -5364,7 +5352,7 @@
   },
   {
    "path": "combat.js",
-   "lines": 459
+   "lines": 458
   },
   {
    "path": "render/walls.js",
@@ -5379,12 +5367,12 @@
    "lines": 396
   },
   {
-   "path": "entities/player.js",
-   "lines": 390
-  },
-  {
    "path": "figure/rig.js",
    "lines": 389
+  },
+  {
+   "path": "entities/player.js",
+   "lines": 365
   },
   {
    "path": "figure/raster.js",
@@ -5419,16 +5407,16 @@
    "lines": 223
   },
   {
+   "path": "entities/character.js",
+   "lines": 208
+  },
+  {
    "path": "render/props.js",
    "lines": 208
   },
   {
    "path": "render/scene.js",
    "lines": 203
-  },
-  {
-   "path": "entities/character.js",
-   "lines": 199
   },
   {
    "path": "items.js",
@@ -5495,12 +5483,12 @@
    "lines": 124
   },
   {
-   "path": "tuning.js",
-   "lines": 113
+   "path": "entities/movement.js",
+   "lines": 116
   },
   {
-   "path": "entities/movement.js",
-   "lines": 111
+   "path": "tuning.js",
+   "lines": 110
   },
   {
    "path": "ui/log.js",

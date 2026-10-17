@@ -19,7 +19,7 @@ Moving cancels the bar, as does drifting out of reach.
 
 ### What a board does
 
-Any single board, on either side, makes the opening solid and opaque. Nothing walks through it, climbs through it, or sees through it, and the door or shutters behind it can no longer be opened or closed. An opening the dead have broken can still be boarded.
+Any single board, on either side, makes the opening solid and opaque. Nothing walks through it or sees through it, and the door or shutters behind it can no longer be opened or closed. An opening the dead have broken can still be boarded.
 
 The opening's right-click menu shows how many boards are on this side and on the far side.
 
@@ -67,7 +67,7 @@ A guest's tap and hold of B are carried out by the host. The plank spent is the 
 - `src/interact.js:970-983`: B and hold B, and "You need a plank."
 - `data/items.json`: the log's `splitsInto`; `src/interact.js:1053-1066`: splitting from the item menu
 - `src/interact.js:767-783`: moving or drifting out of reach cancels the bar
-- `src/map.js:568-578`: any board stops bodies and climbing
+- `src/map.js:602-609`: any board stops bodies (game commit 82106de)
 - `src/map.js:1019-1032`: any board stops light and sight
 - `src/map.js:536-565`: a broken opening keeps its boards and the dead break them one at a time
 - `src/interact.js:453-457`: the menu's count of boards on each side

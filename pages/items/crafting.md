@@ -51,7 +51,7 @@ After Make, the work runs on the station's own queue in the world's time. You ma
 
 What a recipe makes lands in the station's **output box**, a grid of 3 × 2 that opens beside your bag. If the output box is full, the item is put on the floor beside the station. The output box counts as one of the places ingredients are taken from, so a chain (planks to sticks to a bow) can be made without emptying it.
 
-A recipe for **furniture** (a chest, a shelf, a bench, a table, a bed, a workbench, a wheelbarrow) makes no item: the furniture is placed as a prop on a free tile beside the station. A container made this way starts searched and empty, and anything made at a station can be taken down again with the removal tool (see [[Building]]).
+A recipe for **furniture** (a chest, a shelf, a bench, a table, a bed, a workbench, a wheelbarrow) makes no item: the furniture is placed as a prop on a free tile beside the station, never on either tile of a door, so the dead can still stand at the door (see [[Openings]]). A container made this way starts searched and empty, and anything made at a station can be taken down again with the removal tool (see [[Building]]).
 
 ## Recipes
 
@@ -94,6 +94,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/map.js:83`: a game hour in seconds
 - `src/stations.js:21`: the output box's size
 - `src/stations.js:168-191`: output to the box, or the floor beside when full; furniture placed beside the station
+- `src/stations.js:178-181`: never on a door's tiles (game commit 82106de)
 - `src/ui/station-panel.js:60-73`: a guest's panel opens on its own screen
 - `src/net.js:813`: Make sent to the host
 - `src/host.js:161-167`: the host runs it as the craft verb for that player

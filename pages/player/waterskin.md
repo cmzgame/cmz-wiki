@@ -16,7 +16,7 @@ A **waterskin** holds water for [[Thirst]], shown as a percent. Every survivor s
 
 Choose "Drink" on it in your bag, or press its belt key when it sits on the belt. The menu shows how full it is. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water.
 
-It also drinks by itself. Once your [[Thirst]] falls to **Thirsty** (the moodle's stage {{n tuning.player.autoDrinkStage}}), you take the same sip from a waterskin you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. The emptiest skin that still holds water goes first, so one is finished before the next is started. It waits until you are not swinging, drawing, casting, guarding, climbing, or asleep, and not already holding a drink or food out. It needs [[Survival]] on.
+It also drinks by itself. Once your [[Thirst]] falls to **Thirsty** (the moodle's stage {{n tuning.player.autoDrinkStage}}), you take the same sip from a waterskin you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. The emptiest skin that still holds water goes first, so one is finished before the next is started. It waits until you are not swinging, drawing, casting, guarding, or asleep, and not already holding a drink or food out. It needs [[Survival]] on.
 
 To fill it, stand at a well or beside any water tile and choose "Fill waterskins". It takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag to full. A waterskin on the belt is not filled; put it in the bag first. Wells and water never run out.
 

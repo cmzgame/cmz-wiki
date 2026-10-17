@@ -28,7 +28,7 @@ When the host leaves the world or closes it to friends, every guest goes dormant
 
 In a world shared with friends, five minutes of real time with no input takes your character out of the world in the same way. The screen says "You stepped away"; any key, click, mouse move, or wheel brings you back, and that first press is spent on returning. Others' chat logs read "Name stepped away." and "Name is back."
 
-You never step away while asleep, dead, or climbing, or when playing alone. A host who steps away with no guests in holds their world still until they return.
+You never step away while asleep or dead, or when playing alone. A host who steps away with no guests in holds their world still until they return.
 
 ## Numbers
 
@@ -56,6 +56,6 @@ Dormancy exists only with friends; a world played alone has nobody to keep. Each
 - `src/main.js:131-181`, `src/main.js:136`: stepping away after `AWAY_AFTER_MS` (five minutes of real time), the idle clock each client's own, "You stepped away" (the `away` screen), and coming back (game commit 0bd3f9c)
 - `src/main.js:204-213`: any key, click, mouse move, or wheel brings you back, the first one spent on it (game commit 0bd3f9c)
 - `src/host.js:103-138`: the host takes the character out (`awayNow`) and puts it back where it stood (`backNow`); "Name stepped away." and "Name is back." in every log (game commit 0bd3f9c)
-- `src/main.js:144-152`, `src/host.js:107`: never while asleep, dead, or climbing, and never in a solo world (game commit 0bd3f9c)
+- `src/main.js:144-152`, `src/host.js:107`: never while asleep or dead, and never in a solo world (game commit 0bd3f9c)
 - `src/main.js:690-696`: a host away with no guests holds the world still; a friend's join starts it again (game commit 0bd3f9c)
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)

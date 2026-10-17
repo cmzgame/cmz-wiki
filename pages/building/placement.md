@@ -27,6 +27,7 @@ R turns a carried piece of furniture. A piece drawn with facings, such as a chai
 A carried piece goes down where:
 
 - every tile of its footprint is free of furniture and walkable
+- none of its tiles is either of the two tiles a door or a gate stands between, so [[The dead|the dead]] can always stand at a door (see [[Openings]])
 - none of its tiles is too close to you
 - no wall runs between two of its own tiles
 - the tile under the cursor is within {{n census.constants.placement.PLACE_REACH tiles}} of you
@@ -57,6 +58,7 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 - `src/placement.js:160-175`: a built piece snapped to the nearest edge
 - `src/placement.js:253-268`: R steps the facing or swaps the footprint
 - `src/placement.js:97-113`: the put-down rules
+- `src/placement.js:95-115`, `src/map.js:478-487`: not on a door's tiles (game commit 82106de)
 - `src/placement.js:24`, `src/placement.js:402-415`: the reach to put down
 - `src/placement.js:270-282`, `src/placement.js:116-119`, `src/interact.js:292-311`: a click, or E on the tile in front
 - `src/map.js:369-392`: a lit prop lights again when put down

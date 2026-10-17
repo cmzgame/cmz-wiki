@@ -27,7 +27,7 @@ Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest
 
 - **Too far**: the edge's midpoint is more than {{n census.constants.placement.BUILD_REACH tiles}} from you.
 - **Already a wall**: the edge already holds a wall, door, or window. This includes a doorway the dead have broken open.
-- **No room**: a single solid piece of furniture spans both tiles of the edge. A door also needs both tiles walkable, so it cannot stand in water or against a solid prop. A wall or a window may be built over water or beside furniture.
+- **No room**: a single solid piece of furniture spans both tiles of the edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
 - **Need**: you lack the materials, and it names them.
 
@@ -93,6 +93,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:186-197`: the red reasons in order
 - `src/placement.js:25`, `src/placement.js:27`: the build reach and the edge clearance
 - `src/map.js:453-461`: what "No room" means for a wall, a door, a window
+- `src/map.js:465-476`: a door refused with a prop on either tile (game commit 82106de)
 - `src/placement.js:417-427`, `src/placement.js:556-582`: the timed build, spent and rechecked at the end, cancelled by moving
 - `src/placement.js:566`: the build lasts within the reach plus 0.6
 - `src/placement.js:466`: one build at a time

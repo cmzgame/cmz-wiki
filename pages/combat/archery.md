@@ -16,7 +16,7 @@ With the bow in both hands, the left button draws. The cursor sets the direction
 - A full free draw takes {{n items.bow.bow.drawTime seconds}}.
 - While drawing, the player walks at {{n combat.bow.drawSpeed}} of their speed.
 - A release before {{n combat.bow.minDraw}} of a full draw is dry: nothing flies and nothing is spent.
-- A tap of right during a draw cancels it and keeps the arrow. Sprinting, opening a right-click menu, climbing, or a pause also cancel it. An open bag, container, station, or character screen does not: a bow can be drawn and loosed with any of them up.
+- A tap of right during a draw cancels it and keeps the arrow. Sprinting, opening a right-click menu, or a pause also cancel it. An open bag, container, station, or character screen does not: a bow can be drawn and loosed with any of them up.
 - After a shot there is {{n combat.bow.recoverTime seconds}} before the next draw.
 
 Arrows are taken from the bag or the belt. With none, the game says "No arrows." With [[Fire arrow|fire arrows]] carried, the bow shoots those first and plain arrows after.
@@ -97,7 +97,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `data/combat.json` `bow`, `src/archery.js:29-57`: the bow's and the flight's numbers as data (range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights)
 - `src/archery.js:635-692`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the hands, belt, and bag hold none
 - `src/main.js:758-773`, `src/game.js:565`, `src/net.js:418`: a right tap during a draw cancels it in the world's step, a guest's too
-- `src/archery.js:713`, `src/main.js:1134`: sprinting, a right-click menu, climbing, or a pause cancels a draw; an open panel does not
+- `src/archery.js:713`, `src/main.js:1134`: sprinting, a right-click menu, or a pause cancels a draw; an open panel does not
 - `src/archery.js:719-720`: the braced draw time
 - `src/player-controller.js:52`: walking speed while drawing and braced
 - `src/game.js:97`, `src/archery.js:288-312`: what a shot can hit is what `setTargets` hands in, the dead; never a villager, a player, or the archer

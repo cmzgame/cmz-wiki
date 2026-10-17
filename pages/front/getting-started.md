@@ -20,7 +20,7 @@ You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back ho
 ## The first things to do
 
 1. **Look round the cottage.** Right-click anything for what you can do with it; **E** does the nearest simple thing. Search the [[Containers|chests]].
-2. **Learn the doors and shutters.** Tap **E** at a door or a window to open or shut it; hold **E** at an open window to climb through. Shut shutters block sight both ways. See [[Openings]].
+2. **Learn the doors and shutters.** Tap **E** at a door or a window to open or shut it. Nobody passes through a window, you or the dead: a door is the only way in or out, and the dead who see you through a window come round to the door. Shut shutters block sight both ways. See [[Openings]].
 3. **Keep fed and watered.** [[Hunger]] and [[Thirst]] fall over the day and show as [[Moodles]] down the right of the screen. Drink at the well or any water, and fill your waterskin there.
 4. **Mind your fires.** A fire burns its fuel down over game hours and goes out. Feed it [[Log|logs]] from its menu. See [[Fire]].
 5. **Sleep in a bed, indoors,** when you are tired. The night passes quickly while you sleep, and nothing wakes you, so shut the door first. See [[Sleep]].
@@ -50,7 +50,8 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `src/main.js:918-1001`: an open panel stops nothing in the world (game commit 57df52e)
 - `src/main.js:610-646`, `src/interact.js:946-970`: right-click for the menu; E for the nearest simple action
 - `src/interact.js:323-339`: searching a chest
-- `src/interact.js:443-472`, `src/interact.js:960-965`, `src/map.js:1019-1032`: tap E to open or shut; hold E to climb an open window; shut shutters block sight
+- `src/interact.js:443-472`, `src/map.js:1019-1032`: tap E to open or shut; shut shutters block sight
+- `src/map.js:600-609`, `src/entities/zombie.js:211-233`: no one passes a window; the dead go for a door (game commit 82106de)
 - `src/entities/player.js:127-128`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
 - `src/interact.js:537-576`: drinking and filling at the well or any water
 - `src/map.js:87-117`, `src/interact.js:350-379`: fires burn down and are fed from their menu

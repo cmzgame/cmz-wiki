@@ -29,8 +29,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 
 ### Acting
 
-- `E`, tapped: the nearest simple action (open a door or shutter, search, drink, and so on), shown over its target as "E: action". While carrying furniture: put it down.
-- `E`, held for {{n census.constants.interact.HOLD_TIME}} seconds: climb through the nearest window.
+- `E`: the nearest simple action (open a door or shutter, search, drink, and so on), shown over its target as "E: action". It acts when the key is let go, however long it was held; holding it does nothing more. While carrying furniture: put it down.
 - `B`, tapped: board up the nearest opening (needs a [[Plank|plank]]). Held: pull a board off.
 - `T`: take a [[Torch|torch]] into the hand or put it away.
 - `Q`: the main hand's other mode, as the middle button.
@@ -96,7 +95,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/input.js:150-158`: W A S D and the arrows walk in screen directions
 - `src/main.js:966`, `src/entities/player.js:326-330`: Shift sprints, and sprinting drains stamina
 - `src/player-controller.js:53`: Space shoves
-- `src/interact.js:49`, `src/interact.js:946-970`: E tapped, E held to climb, E while carrying puts it down
+- `src/interact.js:820-833`, `src/interact.js:923-955`, `src/ui/screens.js:27`: E on its release however long it was held, no hold; E while carrying puts it down (game commit 82106de)
 - `src/interact.js:971-982`: B boards up (needs a plank), held pulls a board
 - `src/interact.js:984-992`: T, the torch
 - `src/interact.js:928-932`, `src/interact.js:994-1010`: keys 1 to 4 eat, drink, or swap the belt slot

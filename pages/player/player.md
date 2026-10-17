@@ -25,7 +25,7 @@ Some things slow you:
 - A drawn bow: {{n combat.bow.drawSpeed}} of your speed, or {{n combat.bow.braceMove}} while braced (see [[Archery]]).
 - A raised [[Shield]]: {{n items.shield.shield.moveMult}} of your speed.
 
-Climbing through an open window takes {{n tuning.player.climbTime}} seconds. You cannot climb or sprint while carrying a prop. Right-click "Walk here", and the walk to any action's target, use the same speeds; any movement key stops it.
+Nobody passes through a window; a door is the only way through a wall (see [[Openings]]). You cannot sprint while carrying a prop. Right-click "Walk here", and the walk to any action's target, use the same speeds; any movement key stops it.
 
 ### Needs
 
@@ -59,7 +59,6 @@ The head and glove slots start empty. Better belts and bags, hoods, and gloves t
 - Walking speed: {{n tuning.player.speed tiles a second}}
 - Sprint: ×{{n tuning.player.sprintMult}}
 - Body radius: {{n tuning.player.radius tiles}}
-- Window climb: {{n tuning.player.climbTime}} seconds
 - For comparison: the dead walk at {{n tuning.zombie.speed tiles a second}}, villagers at {{n tuning.villager.speed}}
 
 ## With friends
@@ -85,7 +84,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/combat.json` `bow.drawSpeed`, `bow.braceMove`: the draw and brace slowdowns
 - `data/items.json:35`: the raised shield's slowdown
 - `src/player-controller.js:52`: the multiplier picked in one place
-- `data/tuning.json:54`, `src/entities/player.js:76-91`: the window climb, refused while carrying
+- `src/map.js:600-609`: no body passes a window (game commit 82106de)
 - `src/entities/player.js:350`: no sprint while carrying
 - `src/entities/player.js:250,323`: auto-walk uses the same speeds; a movement key cancels it
 - `src/entities/player.js:141-160`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
