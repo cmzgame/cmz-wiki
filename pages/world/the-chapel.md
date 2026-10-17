@@ -21,15 +21,15 @@ The graveyard is full of the dead at the start, among the headstones on both sid
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `tools/mapgen/valley.py:249-263`: the chapel at the top of the nobles' street, inside the graveyard
 - `data/maps/valley.json:2282-2450`: stone walls; the pews, altar, lectern, chest, cupboard, and font; the partition in the north-east corner; the door south, two windows west, one east
-- `data/sprites/font.json`, `src/interact.js:702-704`, `src/interact.js:764`: the font is drunk from like a well
+- `data/sprites/font.json`, `src/interact.js:715-717`, `src/interact.js:777`: the font is drunk from like a well
 - `data/maps/valley.json:2437-2448`: both brackets empty
 - `tools/mapgen/valley.py:251`, `tools/mapgen/valley.py:264-272`: the graveyard's fence with its south gate, and the headstones either side of the chapel
 - `data/sprites/wall_fence.json`, `src/map.js:1342-1351`: a fence is seen over and not walked through
 - `tools/mapgen/valley.py:274`, `tools/mapgen/valley.py:279-280`: the crypt in the graveyard's north-east corner, the priest's house to the east
-- `data/maps/valley.json:12315-12324`: the Priest inside
+- `data/maps/valley.json:12327-12336`: the Priest inside
 - `tools/mapgen/valley.py:592`: the graveyard's dead
 - `data/maps/valley.json:11798-11801`, `data/maps/valley.json:11802-11805`: two of them inside the chapel at its south end
 

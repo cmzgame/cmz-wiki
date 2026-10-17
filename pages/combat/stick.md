@@ -7,7 +7,7 @@ summary: The basic found weapon, from the pockets of the dead and the wild.
 
 {{infobox-item stick}}
 
-The **Stick** is the basic found weapon. It turns up in the pockets of [[The dead]] and in the wild, and can be made from a [[Plank]] at the [[Workbench]]. It is also a material for other things.
+The **Stick** is the basic found weapon. It turns up in the pockets of [[The dead]] and in the wild, and can be made from a [[Plank]] at the [[Workbench]], with a [[Hatchet]] on you. It is also a material for other things.
 
 ## Combat
 
@@ -25,6 +25,7 @@ It is light and quick to find, but weak, and it breaks fast.
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `data/recipes.json`: sticks from a plank at the workbench, with `split`, a hatchet, carried (game #222)
 - `data/loot.json`: the stick in the `body` and `wild` tables
 - `data/recipes.json`: the handle recipe (a plank into sticks at the workbench) and recipes that take sticks
 - `data/items.json`: the stick's `weapon` block

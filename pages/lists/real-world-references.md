@@ -17,7 +17,7 @@ Each entry names what in the game carries the reference (an item, so far), its n
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `data/references.json`: the references, one entry each: the thing, its name, the work (title, by, kind, year), how, since, from (game #218)
 - `tools/validate-data.py`: each entry's name is kept equal to its item's name
 

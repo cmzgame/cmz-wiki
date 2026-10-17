@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "cfe0203e7452652af9256625b8d265b54353266e",
-  "short": "cfe0203",
-  "date": "2026-10-17T16:13:15-05:00",
-  "subject": "Merge #219, reviewed: the farms and the mill (Hollow Farm, Long Acre, the millstones, the granaries with every seed, a pumpkin pie so no crop dead-ends, the miller, the brook and its footbridge, the lanes) (closes #201)",
+  "commit": "0e765f7d7c87ef02dff6855845deebb0d3e54698",
+  "short": "0e765f7",
+  "date": "2026-10-17T17:07:20-05:00",
+  "subject": "Merge #222, reviewed, Michael's tool rule: every action that needs a tool asks for it carried (a hammer to build, board, pull, and remove; a hatchet for log walls, splitting, and sticks; workbench rows by verb; the scythe, shovel, and knife to harvest; Free building waives the build tools, not boards; a shovel and a bucket in your cottage's chest) (closes #215)",
   "ref": "origin/main"
  },
  "counts": {
@@ -13,21 +13,21 @@
   "lootTables": 18,
   "sprites": 156,
   "places": 42,
-  "villagers": 8,
+  "villagers": 9,
   "authoredDead": 62,
   "mapProps": 42,
   "zombieWardrobes": 10,
-  "villageWardrobes": 6,
+  "villageWardrobes": 7,
   "settings": 31,
   "rules": 9,
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 19,
   "verbs": 14,
-  "menuLabels": 64,
+  "menuLabels": 62,
   "events": 30,
-  "checks": 42,
-  "modules": 90
+  "checks": 44,
+  "modules": 91
  },
  "items": [
   {
@@ -212,7 +212,9 @@
     "kills": 20
    },
    "verbs": [
-    "chop"
+    "chop",
+    "notch",
+    "split"
    ],
    "art": {
     "icon": false,
@@ -2189,8 +2191,8 @@
     }
    ],
    "seconds": 2,
-   "carry": "knife",
-   "label": "Rags from the linen cap"
+   "label": "Rags from the linen cap",
+   "uses": "cut"
   },
   {
    "id": "tear_hood",
@@ -2206,8 +2208,8 @@
     }
    ],
    "seconds": 2,
-   "carry": "knife",
-   "label": "Rags from the onion-head hat"
+   "label": "Rags from the onion-head hat",
+   "uses": "cut"
   },
   {
    "id": "tear_tunic",
@@ -2223,8 +2225,8 @@
     }
    ],
    "seconds": 2,
-   "carry": "knife",
-   "label": "Rags from the linen tunic"
+   "label": "Rags from the linen tunic",
+   "uses": "cut"
   },
   {
    "id": "tear_gloves",
@@ -2240,8 +2242,8 @@
     }
    ],
    "seconds": 2,
-   "carry": "knife",
-   "label": "Rags from the work gloves"
+   "label": "Rags from the work gloves",
+   "uses": "cut"
   },
   {
    "id": "tear_breeches",
@@ -2257,8 +2259,8 @@
     }
    ],
    "seconds": 2,
-   "carry": "knife",
-   "label": "Rags from the linen breeches"
+   "label": "Rags from the linen breeches",
+   "uses": "cut"
   },
   {
    "id": "tear_boots",
@@ -2274,8 +2276,8 @@
     }
    ],
    "seconds": 2,
-   "carry": "knife",
-   "label": "Rags from the hobnail boots"
+   "label": "Rags from the hobnail boots",
+   "uses": "cut"
   },
   {
    "id": "cloth",
@@ -2365,7 +2367,8 @@
      "count": 1
     }
    ],
-   "seconds": 3
+   "seconds": 3,
+   "uses": "split"
   },
   {
    "id": "hoe",
@@ -2384,7 +2387,8 @@
      "count": 1
     }
    ],
-   "seconds": 8
+   "seconds": 8,
+   "uses": "build"
   },
   {
    "id": "shovel",
@@ -2403,7 +2407,8 @@
      "count": 1
     }
    ],
-   "seconds": 8
+   "seconds": 8,
+   "uses": "build"
   },
   {
    "id": "fishing_rod",
@@ -2422,7 +2427,8 @@
      "count": 1
     }
    ],
-   "seconds": 6
+   "seconds": 6,
+   "uses": "cut"
   },
   {
    "id": "bow",
@@ -2441,7 +2447,8 @@
      "count": 1
     }
    ],
-   "seconds": 12
+   "seconds": 12,
+   "uses": "cut"
   },
   {
    "id": "arrows",
@@ -2456,7 +2463,8 @@
      "count": 1
     }
    ],
-   "seconds": 5
+   "seconds": 5,
+   "uses": "cut"
   },
   {
    "id": "shield",
@@ -2471,7 +2479,8 @@
      "count": 3
     }
    ],
-   "seconds": 12
+   "seconds": 12,
+   "uses": "build"
   },
   {
    "id": "chest",
@@ -2485,7 +2494,8 @@
      "count": 4
     }
    ],
-   "seconds": 10
+   "seconds": 10,
+   "uses": "build"
   },
   {
    "id": "shelf",
@@ -2499,7 +2509,8 @@
      "count": 3
     }
    ],
-   "seconds": 8
+   "seconds": 8,
+   "uses": "build"
   },
   {
    "id": "bench",
@@ -2513,7 +2524,8 @@
      "count": 2
     }
    ],
-   "seconds": 6
+   "seconds": 6,
+   "uses": "build"
   },
   {
    "id": "bucket",
@@ -2528,7 +2540,8 @@
      "count": 3
     }
    ],
-   "seconds": 6
+   "seconds": 6,
+   "uses": "build"
   },
   {
    "id": "table",
@@ -2546,7 +2559,8 @@
      "count": 4
     }
    ],
-   "seconds": 10
+   "seconds": 10,
+   "uses": "build"
   },
   {
    "id": "bed",
@@ -2568,7 +2582,8 @@
      "count": 1
     }
    ],
-   "seconds": 16
+   "seconds": 16,
+   "uses": "build"
   },
   {
    "id": "workbench",
@@ -2590,7 +2605,8 @@
      "count": 1
     }
    ],
-   "seconds": 14
+   "seconds": 14,
+   "uses": "build"
   },
   {
    "id": "wheelbarrow",
@@ -2608,7 +2624,8 @@
      "count": 1
     }
    ],
-   "seconds": 16
+   "seconds": 16,
+   "uses": "build"
   },
   {
    "id": "charcoal",
@@ -4887,8 +4904,10 @@
     ],
     "buildings": 1,
     "rooms": 2,
-    "dead": 1,
-    "villagers": [],
+    "dead": 0,
+    "villagers": [
+     "Wyn"
+    ],
     "props": [
      "bed",
      "chair",
@@ -5766,6 +5785,18 @@
   "villagers": [
    {
     "tile": [
+     102,
+     218
+    ],
+    "name": "Wyn",
+    "wardrobe": 6,
+    "line": "Ask me anything, if you are stuck.",
+    "immune": true,
+    "talk": "guide",
+    "guide": true
+   },
+   {
+    "tile": [
      104,
      153
     ],
@@ -5939,7 +5970,11 @@
    "wanderRadius": 4,
    "talkTime": 2,
    "pokeCooldownMs": 600,
-   "hurtTime": 0.35
+   "hurtTime": 0.35,
+   "barkRadius": 6,
+   "barkCooldown": 60,
+   "barkDeadRadius": 8,
+   "barkMaxLength": 70
   },
   "world": {
    "activeTiles": 40,
@@ -5955,6 +5990,8 @@
    "craftDoneRadius": 12,
    "torchSpentRadius": 12,
    "daylightTiles": 30,
+   "boardTool": "build",
+   "splitTool": "split",
    "fruitCheckSeconds": 30,
    "pickReach": 1.6,
    "chopSeconds": 3,
@@ -6099,7 +6136,8 @@
    "cost": {
     "log": 1
    },
-   "seconds": 3
+   "seconds": 3,
+   "tool": "notch"
   },
   "door": {
    "label": "Door",
@@ -6107,7 +6145,8 @@
    "cost": {
     "plank": 3
    },
-   "seconds": 4
+   "seconds": 4,
+   "tool": "build"
   },
   "window": {
    "label": "Window",
@@ -6115,7 +6154,8 @@
    "cost": {
     "plank": 2
    },
-   "seconds": 3
+   "seconds": 3,
+   "tool": "build"
   }
  },
  "looks": {
@@ -6189,7 +6229,7 @@
  },
  "wardrobes": {
   "zombie": 10,
-  "village": 6
+  "village": 7
  },
  "settings": [
   {
@@ -6369,44 +6409,44 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1069"
+    "main.js:1070"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1068"
+    "main.js:1069"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1047"
+    "main.js:1048"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:892",
-    "main.js:906"
+    "main.js:893",
+    "main.js:907"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1099"
+    "interact.js:1112"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1066"
+    "main.js:1067"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1049"
+    "main.js:1050"
    ]
   },
   {
@@ -6419,68 +6459,68 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:277"
+    "placement.js:287"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1100"
+    "interact.js:1113"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1045"
+    "main.js:1046"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1050"
+    "main.js:1051"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1057"
+    "main.js:1058"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1047"
+    "main.js:1048"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1128"
+    "main.js:1129"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1128"
+    "main.js:1129"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1048"
+    "main.js:1049"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1139"
+    "main.js:1140"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:892",
-    "main.js:898"
+    "main.js:893",
+    "main.js:899"
    ]
   }
  ],
@@ -6586,7 +6626,7 @@
   {
    "key": "harvest",
    "at": [
-    "farming.js:293"
+    "farming.js:295"
    ]
   },
   {
@@ -6599,7 +6639,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:571"
+    "interact.js:584"
    ]
   }
  ],
@@ -6613,25 +6653,25 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1419"
+    "main.js:1426"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:798"
+    "main.js:799"
    ]
   },
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:713"
+    "interact.js:726"
    ]
   },
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:600"
+    "placement.js:616"
    ]
   },
   {
@@ -6661,38 +6701,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1357"
+    "main.js:1364"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1280"
+    "interact.js:1296"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1226",
-    "interact.js:1310"
+    "interact.js:1240",
+    "interact.js:1326"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1202"
+    "interact.js:1216"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1203"
+    "interact.js:1217"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1314"
+    "interact.js:1330"
    ]
   },
   {
@@ -6710,13 +6750,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1393"
-   ]
-  },
-  {
-   "key": "Harvest",
-   "at": [
-    "interact.js:547"
+    "main.js:1400"
    ]
   },
   {
@@ -6740,13 +6774,13 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1347"
+    "main.js:1354"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1383"
+    "main.js:1390"
    ]
   },
   {
@@ -6764,37 +6798,37 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1432"
+    "main.js:1439"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1316"
+    "interact.js:1332"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1320"
+    "main.js:1323"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1317"
+    "main.js:1319"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1349"
+    "main.js:1356"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1348"
+    "main.js:1355"
    ]
   },
   {
@@ -6806,7 +6840,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1441"
+    "main.js:1448"
    ]
   },
   {
@@ -6848,7 +6882,7 @@
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:572"
+    "interact.js:585"
    ]
   },
   {
@@ -6860,21 +6894,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1291",
-    "interact.js:1330"
+    "interact.js:1307",
+    "interact.js:1346"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1198",
-    "interact.js:1278"
+    "interact.js:1212",
+    "interact.js:1294"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:734"
+    "interact.js:747"
    ]
   },
   {
@@ -6898,62 +6932,62 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:487"
+    "interact.js:490"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:590"
+    "interact.js:603"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:572"
+    "placement.js:588"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:610"
+    "placement.js:626"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:606"
+    "placement.js:622"
    ]
   },
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1230",
-    "interact.js:1313"
+    "interact.js:1244",
+    "interact.js:1329"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:671"
+    "interact.js:684"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1034"
+    "interact.js:1047"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1206"
+    "interact.js:1220"
    ]
   },
   {
    "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:620"
+    "interact.js:633"
    ]
   },
   {
@@ -6965,31 +6999,25 @@
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:597"
+    "interact.js:610"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:577"
+    "interact.js:590"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1555"
+    "interact.js:1571"
    ]
   },
   {
-   "key": "Pull a board (${mine.length} this side, gone)",
+   "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:524"
-   ]
-  },
-  {
-   "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
-   "at": [
-    "interact.js:1235"
+    "interact.js:1250"
    ]
   }
  ],
@@ -7009,13 +7037,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1249"
+    "main.js:1250"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:365"
+    "game.js:389"
    ]
   },
   {
@@ -7027,7 +7055,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:406"
+    "placement.js:417"
    ]
   },
   {
@@ -7035,7 +7063,7 @@
    "at": [
     "interact.js:218",
     "interact.js:351",
-    "interact.js:1540",
+    "interact.js:1556",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -7055,7 +7083,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:585"
+    "game.js:610"
    ]
   },
   {
@@ -7086,7 +7114,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:648"
+    "game.js:673"
    ]
   },
   {
@@ -7153,7 +7181,7 @@
   {
    "key": "villagerDied",
    "at": [
-    "entities/villager.js:135"
+    "entities/villager.js:152"
    ]
   },
   {
@@ -7174,7 +7202,7 @@
    "at": [
     "archery.js:717",
     "combat.js:387",
-    "game.js:501"
+    "game.js:525"
    ]
   },
   {
@@ -7328,6 +7356,8 @@
   "sleep",
   "sway",
   "sync",
+  "talk",
+  "tools",
   "torch",
   "water",
   "wear",
@@ -7342,11 +7372,11 @@
   },
   {
    "path": "main.js",
-   "lines": 1850
+   "lines": 1857
   },
   {
    "path": "interact.js",
-   "lines": 1600
+   "lines": 1616
   },
   {
    "path": "placeholders.js",
@@ -7378,7 +7408,7 @@
   },
   {
    "path": "game.js",
-   "lines": 670
+   "lines": 695
   },
   {
    "path": "assets.js",
@@ -7386,7 +7416,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 612
+   "lines": 628
   },
   {
    "path": "gl.js",
@@ -7426,15 +7456,15 @@
   },
   {
    "path": "farming.js",
-   "lines": 318
+   "lines": 320
+  },
+  {
+   "path": "inventory.js",
+   "lines": 319
   },
   {
    "path": "render/entities.js",
    "lines": 294
-  },
-  {
-   "path": "inventory.js",
-   "lines": 293
   },
   {
    "path": "host.js",
@@ -7458,7 +7488,7 @@
   },
   {
    "path": "items.js",
-   "lines": 216
+   "lines": 221
   },
   {
    "path": "entities/character.js",
@@ -7475,6 +7505,10 @@
   {
    "path": "fire.js",
    "lines": 197
+  },
+  {
+   "path": "entities/villager.js",
+   "lines": 193
   },
   {
    "path": "burn.js",
@@ -7505,6 +7539,10 @@
    "lines": 168
   },
   {
+   "path": "talk.js",
+   "lines": 158
+  },
+  {
    "path": "identities.js",
    "lines": 155
   },
@@ -7513,16 +7551,12 @@
    "lines": 153
   },
   {
-   "path": "entities/villager.js",
-   "lines": 153
-  },
-  {
    "path": "figure/wardrobe.js",
    "lines": 153
   },
   {
    "path": "tuning.js",
-   "lines": 143
+   "lines": 149
   },
   {
    "path": "settings.js",
@@ -7545,11 +7579,11 @@
    "lines": 124
   },
   {
-   "path": "ui/speech.js",
-   "lines": 117
+   "path": "entities/movement.js",
+   "lines": 116
   },
   {
-   "path": "entities/movement.js",
+   "path": "ui/speech.js",
    "lines": 116
   },
   {

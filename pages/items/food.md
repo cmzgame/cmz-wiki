@@ -77,22 +77,22 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `data/tuning.json:52-55`: hunger's most, its drain time, and `fullAt`
 - `src/entities/player.js:81-101`: full at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the heal times the share of its hunger the stomach has room for; the dead eat nothing (game #186)
 - `src/entities/player.js:138-150`: hunger drains, or stays full with Survival off
-- `src/interact.js:1163-1172`: every way of eating comes to one place, which says "You are full."
-- `src/interact.js:1193-1227`: Eat from your bag or a container
-- `src/interact.js:1174-1188`: a food on the belt eaten by its key
-- `src/interact.js:1300-1312`, `src/ui/inventory-actions.js:174-182`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
+- `src/interact.js:1177-1186`: every way of eating comes to one place, which says "You are full."
+- `src/interact.js:1207-1241`: Eat from your bag or a container
+- `src/interact.js:1188-1202`: a food on the belt eaten by its key
+- `src/interact.js:1316-1328`, `src/ui/inventory-actions.js:174-182`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
 - `src/entities/player.js:152-157`: health comes back while fed and watered
 - `data/kit.json:6-7`: the starter bread and apples
 - `data/loot.json:2-4`: bread and cheese in chests, apples in barrels, apples and bread in the dead's pockets
 - `data/sprites/tree_apple.json`, `data/fishing.json`: apples picked from trees; fish caught (game #192, #193)
-- `data/recipes.json:441-560`: the cooking and oven recipes, the grilled fish among them
+- `data/recipes.json:664-818`: the cooking, oven, and millstones recipes, the grilled fish among them
 - `data/loot.json:9-10`: the granaries' seed of every crop, so every ingredient can be grown (game #219)
 - `data/recipes.json`: flour at the millstones, the pumpkin pie at the oven (game #219)
-- `src/farming.js:233-262`, `tools/mapgen/valley.py:190`: potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
+- `src/farming.js:233-259`, `tools/mapgen/valley.py:190`: potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
 - `data/items.json:16-18`, `data/items.json:41-46`, `data/items.json:54-57`, `data/items.json:63-65`: the foods, each with its hunger, thirst, and heal (game #186)
 - `src/ui/inventory-actions.js:258-264`, `src/ui/inventory-actions.js:347-358`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default

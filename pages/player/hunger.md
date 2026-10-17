@@ -51,13 +51,13 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `data/tuning.json:52`, `data/tuning.json:54-55`: the maximum, the drain time, and `fullAt`
 - `src/entities/player.js:145`: the drain, every step, awake or asleep
 - `src/map.js:95`: a game hour is 30 seconds
 - `src/entities/player.js:81-101`: full at `fullAt`, nothing eaten; eating raises hunger and thirst, capped, and heals by the share it fills (game #186)
-- `src/interact.js:1163-1172`, `src/interact.js:1226`: the "Eat" entry uses one from the stack, or says "You are full."
-- `src/interact.js:1174-1188`, `src/interact.js:1300-1312`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
+- `src/interact.js:1177-1186`, `src/interact.js:1240`: the "Eat" entry uses one from the stack, or says "You are full."
+- `src/interact.js:1188-1202`, `src/interact.js:1316-1328`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
 - `data/tuning.json:61`, `src/entities/player.js:93`, `src/entities/player.js:384-385`: the held-out pose
 - `src/moodles.js:55-59`: the hunger stages and their thresholds
 - `src/entities/player.js:152-157`: Hungry stops regeneration

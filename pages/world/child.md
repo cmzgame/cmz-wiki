@@ -12,7 +12,11 @@ Like every villager, they carry no weapon and never fight. They wander a little,
 
 ## What they say
 
-The Child has no line of their own, so poked they say the villagers' default: “Hey!”
+Poked, the Child says a line of their own for the moment, from their talk (see [[Talk]]): the first group below that holds, its lines taken in turn. With a player within {{n tuning.villager.barkRadius tiles}}, they also remark unprompted, from a group marked so, at most once every {{n tuning.villager.barkCooldown seconds}} of game time, and never while hurt or talking.
+
+{{barks child}}
+
+The last group always holds, so their map line (in the box above) is not heard.
 
 ## Where they stand
 
@@ -20,16 +24,18 @@ The Child stands in the taproom of [[The inn]], not far from the Innkeeper.
 
 ## Sources
 
-<!-- sources at cfe0203 -->
-- `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
-- `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
-- `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1343`, `src/interact.js:1509-1522`, `src/interact.js:1549-1563`: a left click within reach, or Poke on the menu
-- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
+<!-- sources at 0e765f7 -->
+- `src/entities/villager.js:1-8`, `src/entities/villager.js:36-61`: villagers carry no weapon and never fight; a swing passes through them
+- `data/tuning.json:75`, `src/entities/villager.js:71-84`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
+- `src/entities/movement.js:14`, `src/entities/villager.js:67-85`: standing idle between walks
+- `src/interact.js:1359`, `src/interact.js:1525-1538`, `src/interact.js:1565-1579`: a left click within reach, or Poke on the menu
+- `src/entities/villager.js:178-192`, `src/entities/villager.js:101-110`, `data/tuning.json:76`: the poke stops them, turns them to you, says a line, and holds them for the talk time
+- `data/talk/child.json`, `src/talk.js:124-141`: their bark groups, the first that holds, its lines in turn (game #220)
+- `src/entities/villager.js:156-176`, `data/tuning.json:79-80`: a remark unprompted, from an `ambient` group, with a living player within `barkRadius`, not twice inside `barkCooldown`, never hurt, talking, or dead
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
-- `src/game.js:367`, `src/entities/villager.js:101-137`, `src/game.js:622-626`: one bitten to death gets up as one of the dead in their clothes
-- `data/maps/valley.json:12307-12314`: the Child has no line of their own
-- `src/entities/villager.js:24-31`: a villager with no line says "Hey!"
-- `tools/mapgen/valley.py:605-607`, `data/maps/valley.json:1789-2074`: the Child stands in the taproom (west of the kitchen's partition), near the Innkeeper
+- `src/game.js:391`, `src/entities/villager.js:118-154`, `src/game.js:647-651`: one bitten to death gets up as one of the dead in their clothes
+- `data/maps/valley.json:12319-12326`: the Child has no map line of their own
+- `src/entities/villager.js:43`: a villager with no map line falls back on "Hey!"
+- `tools/mapgen/valley.py:608-610`, `data/maps/valley.json:1789-2074`: the Child stands in the taproom (west of the kitchen's partition), near the Innkeeper
 
 {{navbox places}}

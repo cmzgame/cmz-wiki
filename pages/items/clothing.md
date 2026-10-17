@@ -39,18 +39,18 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `src/inventory.js:9`: the seven slots, the code's `worn` slots
 - `data/items.json:26-36`: each garment's `wear` slot
-- `src/interact.js:1193-1215`: Equip on an item's menu, Equip (W×H) for a bag, in your bag or a container (game commit 9a450f2)
+- `src/interact.js:1207-1229`: Equip on an item's menu, Equip (W×H) for a bag, in your bag or a container (game commit 9a450f2)
 - `src/interact.js:177-199`, `src/interact.js:201-227`: Equip cap and Equip cap (swap) on a garment on the floor, Swap bags for a bag; not a simple action, so `E` picks the garment up (game commit 9a450f2)
 - `src/ui/inventory-actions.js:167-173`: a double-click in your bag equips a garment (game commit 9a450f2)
 - `src/ui/inventory-actions.js:66`: a drag onto the wrong slot is refused
-- `src/interact.js:1051-1090`: equipping over a filled slot swaps; "No room in your bag to unequip the old one." (game commit 9a81879)
-- `src/interact.js:1274-1334`: Unequip: to the bag or the floor; the bag is set down; Drop (game commit 9a450f2)
+- `src/interact.js:1064-1103`: equipping over a filled slot swaps; "No room in your bag to unequip the old one." (game commit 9a81879)
+- `src/interact.js:1290-1350`: Unequip: to the bag or the floor; the bag is set down; Drop (game commit 9a450f2)
 - `src/ui/inventory-actions.js:174-182`, `src/ui/inventory-panel.js:75-89`: a double-click on a slot runs its Equip or Unequip (game commit 9a450f2)
 - `data/items.json:26-36`: belts give slots; every garment but the belts and bags is tagged cloth
-- `data/recipes.json:23-124`, `data/recipes.json:155-199`: a garment torn into rags with a knife carried; the linen clothes at the loom (game #216)
+- `data/recipes.json:23-124`, `data/recipes.json:155-199`: a garment torn into rags with a knife carried (`uses: cut`, game #222); the linen clothes at the loom (game #216)
 - `data/recipes.json`: the recipes that take any cloth
 - `data/kit.json:3`: the starter clothes, the head bare
 - `data/loot.json:2`: gloves and the hood in the chest table

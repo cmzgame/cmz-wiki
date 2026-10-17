@@ -13,9 +13,9 @@ summary: The mill on the river's west bank: the millstones that grind grain into
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `tools/mapgen/valley.py:507-522`, `data/maps/valley.json:10784-10964`: the mill, its millstones and wheel, the granary beside it (game #219)
 - `data/loot.json:10`: the mill's granary's seed
-- `data/maps/valley.json:12352-12360`: the miller
+- `data/maps/valley.json:12364-12372`: the miller
 
 {{navbox places}}

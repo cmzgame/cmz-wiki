@@ -11,7 +11,7 @@ The **chat log** sits at the bottom left of the screen. It keeps every message t
 
 ### The chat log
 
-Each line said by someone appears as "Name: line": your own as "You", another player's by their name, a villager's as "Villager", and anyone unnamed as "Someone". The groans of the dead are not logged, with one exception: when one of the dead in your line of sight and within {{n tuning.sight.groanRadius tiles}} of you groans but the dark hides it from you, the log says "Something groans in the dark.", with no name and nothing to say where. It says so for a groan at most once every {{n tuning.sight.groanGap seconds}}, however many groan; one farther off is not heard at all. One behind a tree's canopy by day, farther off than a bubble shows there, puts no line in the log. Messages from the game (what you found, what you cannot do) are logged too, among them "A fire has gone out." for a fire within {{n tuning.world.fireOutRadius tiles}} of you and "Made ..." for something finished at a station within {{n tuning.world.craftDoneRadius tiles}}.
+Each line said by someone appears as "Name: line": your own as "You", another player's and a villager's by their name ("Wyn: ..."), an unnamed villager as "Villager", and anyone else unnamed as "Someone". The groans of the dead are not logged, with one exception: when one of the dead in your line of sight and within {{n tuning.sight.groanRadius tiles}} of you groans but the dark hides it from you, the log says "Something groans in the dark.", with no name and nothing to say where. It says so for a groan at most once every {{n tuning.sight.groanGap seconds}}, however many groan; one farther off is not heard at all. One behind a tree's canopy by day, farther off than a bubble shows there, puts no line in the log. Messages from the game (what you found, what you cannot do) are logged too, among them "A fire has gone out." for a fire within {{n tuning.world.fireOutRadius tiles}} of you and "Made ..." for something finished at a station within {{n tuning.world.craftDoneRadius tiles}}.
 
 The chat log keeps the last {{n census.constants.ui_log.KEEP}} lines. The wheel scrolls it while the pointer is over it. It can be resized by dragging its corner, and the browser remembers the size.
 
@@ -23,7 +23,7 @@ The chat log keeps the last {{n census.constants.ui_log.KEEP}} lines. The wheel 
 
 ### Speech bubbles
 
-Anyone who speaks, players and villagers alike, gets a bubble over their head. Behind a tree's canopy a bubble shows only within {{n census.constants.ui_speech.NEAR}} tiles. One of the dead hidden by the dark shows no bubble (see [[Sight#Darkness|Sight]]).
+Anyone who speaks, players and villagers alike, gets a bubble over their head, for longer the longer the line. Its time runs in the world itself, on the host, so a line ends on its own on every kind of world, a [[Server worlds|server world]] included; a paused world keeps its bubbles. What villagers say, and when, is [[Talk]]. Behind a tree's canopy a bubble shows only within {{n census.constants.ui_speech.NEAR}} tiles. One of the dead hidden by the dark shows no bubble (see [[Sight#Darkness|Sight]]).
 
 ## Numbers
 
@@ -38,17 +38,18 @@ A guest's line is said by their character on the host, so it reaches every playe
 
 ## See also
 
-- [[Interface]], [[Multiplayer]], [[Villagers]], [[Controls]]
+- [[Interface]], [[Multiplayer]], [[Villagers]], [[Talk]], [[Controls]]
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `src/ui/log.js`, `src/ui/log.js:12`: the chat log, every message and line said in sight, the lines kept
-- `src/ui/speech.js:97-98`: the speaker's label: You, the name, Villager, Someone; the dead's groans not logged
-- `src/ui/speech.js:69-90`, `data/tuning.json:102`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)
-- `src/main.js:1628-1636`, `src/host.js:244-251`, `data/tuning.json:90-91`: "A fire has gone out." within `fireOutRadius` on the host's own screen; "Made ..." within `craftDoneRadius`, to the host and to each guest (game #189)
+- `src/ui/speech.js:96-97`: the speaker's label: You, the name, Villager, Someone; the dead's groans not logged
+- `src/entities/character.js:125-127`, `src/game.js:110-123`, `src/ui/speech.js:64-67`: a line's time from its length, aged in the world's step on the host and cleared when it runs out (game #220, closing game #154)
+- `src/ui/speech.js:68-89`, `data/tuning.json:108`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)
+- `src/main.js:1635-1643`, `src/host.js:244-251`, `data/tuning.json:94-95`: "A fire has gone out." within `fireOutRadius` on the host's own screen; "Made ..." within `craftDoneRadius`, to the host and to each guest (game #189)
 - `src/ui/log.js:71-79`: resized by its corner, the size remembered in `logSize`
-- `src/main.js:1047-1048`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
+- `src/main.js:1048-1049`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
 - `src/entities/character.js:126`: a bubble lasts longer for a longer line
 - `src/ui/speech.js:24`: `NEAR`, a bubble behind a canopy only within reach
 - `src/net.js:632-636`, `src/net.js:1235-1237`: a guest's line said by its player on the host

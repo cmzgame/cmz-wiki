@@ -38,10 +38,10 @@ A guest mines through the same menu entry, sent to the host with the rock, and c
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `src/mining.js:1-56`: a pickaxe is any item in a hand listing `mine`; the verb's reach and clear line; the count rolled into the bag or at the feet; a rock gone, an ore rock restaged spent with its day (game #210)
 - `data/sprites/rock_0.json` (and `rock_1` to `rock_3`), `data/sprites/ore_rock.json`, `data/sprites/ore_rock_spent.json`: each `mine` block (item, count, seconds, gone or spent and days); the spent kind ripens back
-- `src/interact.js:610-635`: Mine stone or Mine iron ore, greyed without a pickaxe; "Mined out (more in about N days)"
+- `src/interact.js:623-648`: Mine stone or Mine iron ore, greyed without a pickaxe; "Mined out (more in about N days)"
 - `src/fruit.js`: the spent rock turned back on its day, as a picked tree is
 - `tools/mapgen/valley.py:524-557`: the iron workings' six ore rocks, the quarry's eight rocks, the two huts' chests
 - `data/loot.json:12-13`: a pickaxe in each hut's chest

@@ -67,7 +67,7 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `data/sprites/lantern_post.json`: the lantern post: its light's radius, the one number for every lantern, not carried
 - `src/map.js:138-141`, `src/map.js:208-215`, `src/light.js:63-67`: a bracket holds a lantern or a torch; a lantern's light steady, never out, at the post's radius
 - `src/interact.js:415`: a lantern bracket offers no action
@@ -82,15 +82,15 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `data/interactions.json`, `src/burn.js:62`, `src/burn.js:85-190`, `src/map.js:284-312`: the `light` verb on a mounted torch: a tinderbox or a lit torch, within reach and in sight; an unlit torch lit from a lit one on a post or in a bracket, at the bracket's own point (game #172), or from a lantern in a bracket or on a post, the lantern unchanged (game #188); a lantern itself never lit, an empty bracket refused
 - `data/interactions.json:12-13`, `src/burn.js:112`: a tinderbox and a lit torch on a lantern post say "A lantern is always lit.", as on a lantern in a bracket (game #189)
 - `src/interactions.js:58`: the Use label names a bracket's torch, its lantern, or the empty bracket (game #189)
-- `src/interactions.js:34-43`, `src/interact.js:815-822`, `src/main.js:804-814`: Use mode aims at any bracket near the cursor, after a character and a prop (game #172)
+- `src/interactions.js:34-43`, `src/interact.js:828-835`, `src/main.js:805-815`: Use mode aims at any bracket near the cursor, after a character and a prop (game #172)
 - `src/map.js:253-283`: what a mounted torch keeps: its wear and whether it is lit
-- `src/inventory.js:125-135`: a torch to mount is found in the hands, the belt, or the bag
+- `src/inventory.js:151-161`: a torch to mount is found in the hands, the belt, or the bag
 - `src/map.js:186-205`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
-- `src/map.js:149-184`, `data/tuning.json:89`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
-- `src/host.js:232-237`, `src/main.js:1637-1639`, `data/tuning.json:92`: "A torch burns out." to players within `torchSpentRadius`
+- `src/map.js:149-184`, `data/tuning.json:93`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
+- `src/host.js:232-237`, `src/main.js:1644-1646`, `data/tuning.json:96`: "A torch burns out." to players within `torchSpentRadius`
 - `tools/mapgen/valley.py:101-113`, `tools/mapgen/valley.py:206`, `tools/mapgen/valley.py:262`, `tools/mapgen/valley.py:277`, `tools/mapgen/valley.py:389`: the village's lights lanterns, the square's three lamps, the chapel's, the crypt's, and the shut cottage's brackets empty
 - `data/maps/valley.json:2061-2072`, `data/maps/valley.json:4100-4105`: the inn's and the toll house's lanterns outside
 - `data/maps/valley.json:12029-12050`: the square's three lantern posts
 - `src/interact.js:72-129`: a guest's take or mount run on the host by address
-- `src/main.js:1004-1015`, `src/ui/inventory-actions.js:383-385`: a guest's Use on a bracket by its tile and edge, run on the host
+- `src/main.js:1005-1016`, `src/ui/inventory-actions.js:383-385`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests

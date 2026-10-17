@@ -12,7 +12,11 @@ Like every villager, they carry no weapon and never fight. They wander a little,
 
 ## What they say
 
-Poked, the Innkeeper says: “Shut that behind you.”
+Poked, the Innkeeper says a line of their own for the moment, from their talk (see [[Talk]]): the first group below that holds, its lines taken in turn. With a player within {{n tuning.villager.barkRadius tiles}}, they also remark unprompted, from a group marked so, at most once every {{n tuning.villager.barkCooldown seconds}} of game time, and never while hurt or talking.
+
+{{barks innkeeper}}
+
+The last group always holds, so their map line (in the box above) is not heard.
 
 ## Where they stand
 
@@ -20,16 +24,18 @@ The Innkeeper stands in the taproom of [[The inn]], near the counter, and wander
 
 ## Sources
 
-<!-- sources at cfe0203 -->
-- `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
-- `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
-- `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1343`, `src/interact.js:1509-1522`, `src/interact.js:1549-1563`: a left click within reach, or Poke on the menu
-- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
-- `data/maps/valley.json:12288-12297`, `src/game.js:100`, `src/entities/villager.js:32`: the Innkeeper flagged `immune` in the map (game #187)
-- `src/entities/zombie.js:352-367`, `src/entities/villager.js:101-102`, `src/game.js:367`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
+<!-- sources at 0e765f7 -->
+- `src/entities/villager.js:1-8`, `src/entities/villager.js:36-61`: villagers carry no weapon and never fight; a swing passes through them
+- `data/tuning.json:75`, `src/entities/villager.js:71-84`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
+- `src/entities/movement.js:14`, `src/entities/villager.js:67-85`: standing idle between walks
+- `src/interact.js:1359`, `src/interact.js:1525-1538`, `src/interact.js:1565-1579`: a left click within reach, or Poke on the menu
+- `src/entities/villager.js:178-192`, `src/entities/villager.js:101-110`, `data/tuning.json:76`: the poke stops them, turns them to you, says a line, and holds them for the talk time
+- `data/talk/innkeeper.json`, `src/talk.js:124-141`: their bark groups, the first that holds, its lines in turn (game #220)
+- `src/entities/villager.js:156-176`, `data/tuning.json:79-80`: a remark unprompted, from an `ambient` group, with a living player within `barkRadius`, not twice inside `barkCooldown`, never hurt, talking, or dead
+- `data/maps/valley.json:12300-12309`, `src/game.js:100`, `src/entities/villager.js:44`: the Innkeeper flagged `immune` in the map (game #187)
+- `src/entities/zombie.js:352-367`, `src/entities/villager.js:118-119`, `src/game.js:391`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
 - `data/maps/valley.json:5806-5871`: seven villagers in the valley
-- `data/maps/valley.json:12288-12297`: the Innkeeper's line and tile
-- `tools/mapgen/valley.py:605`, `data/maps/valley.json:1856-1866`: they stand in the taproom near the counter
+- `data/maps/valley.json:12300-12309`: the Innkeeper's line and tile
+- `tools/mapgen/valley.py:608`, `data/maps/valley.json:1856-1866`: they stand in the taproom near the counter
 
 {{navbox places}}

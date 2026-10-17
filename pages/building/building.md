@@ -5,7 +5,7 @@ aliases: [Build, Build palette, Build mode, Removal, Removal tool, Remove]
 summary: Building log walls, doors, and windows from the palette on N, doors and windows over walls and broken openings, and removing what players built or made with X.
 ---
 
-**Building** is how you put up walls, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Everything you build is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there.
+**Building** is how you put up walls, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Building and removing ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a door, a window, and Remove. Everything you build is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there.
 
 ## How it works
 
@@ -13,11 +13,13 @@ summary: Building log walls, doors, and windows from the palette on N, doors and
 
 N opens a short list on the left of the screen. It has three pieces and a Remove row:
 
-- **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built in {{n build.wall.seconds seconds}}.
-- **Door**, costing {{n build.door.cost.plank}} [[Plank|planks]], built in {{n build.door.seconds seconds}}.
-- **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}.
+- **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built in {{n build.wall.seconds seconds}}, with a [[Hatchet]] on you.
+- **Door**, costing {{n build.door.cost.plank}} [[Plank|planks]], built in {{n build.door.seconds seconds}}, with a [[Smith's hammer]] on you.
+- **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}, with a smith's hammer on you.
 
-A piece you cannot afford is greyed. Every right-click menu also ends in a "Build" entry, which opens the same list. On an empty edge a door or a window is built of logs; built into a wall, it is made of that wall's material (see below). A log splits into {{n items.log.splitsInto.count}} planks from its item menu, with no tool.
+"On you" is anywhere you carry it: a hand, the belt, or the bag.
+
+A piece you cannot afford, or lack the tool for, is greyed. Every right-click menu also ends in a "Build" entry, which opens the same list. On an empty edge a door or a window is built of logs; built into a wall, it is made of that wall's material (see below). A log splits into {{n items.log.splitsInto.count}} planks from its item menu, with a hatchet on you (see [[Log]]).
 
 N does nothing while you are [[Carrying furniture|carrying furniture]] ("Your hands are full.") or while the bag is open ("Close your bag to build."); the menu's Build entry is greyed then too. The palette and the bag take turns on the screen: opening the bag closes the palette. This is a matter of room on the screen, not of safety: with the bag open the game goes on (see [[Controls]]).
 
@@ -29,6 +31,7 @@ Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest
 - **Already a wall**: the edge already holds something this piece cannot be built over (see below).
 - **No room**: a single solid piece of furniture spans both tiles of the edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
+- **You need a ...**: you lack the piece's tool, and it names it ("You need a smith's hammer.").
 - **Need**: you lack the materials, and it names them.
 
 A click on a green ghost starts the build. A bar runs for the piece's time. Nothing is spent until the bar finishes, and every rule is checked again then. Moving cancels the build, as does going a little beyond the build reach. Only one build runs at a time.
@@ -49,7 +52,7 @@ Never over a door or a window that is whole. A door still needs both its tiles c
 
 ### Removal
 
-X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
+X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "You need a smith's hammer." without a hammer on you, or with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
 
 Only what players made can be removed:
 
@@ -75,13 +78,13 @@ The removal tool cannot be used while carrying furniture ("Your hands are full."
 
 ## With friends
 
-A guest's click is sent to the host as a build command. The host checks the guest's reach and materials again and runs the timed build on the guest's own character, spending the guest's own items. Removal works the same way: the guest names what it clicked, and the host checks that it can be removed and that it is in reach.
+A guest's click is sent to the host as a build command. The host checks the guest's reach, tool, and materials again and runs the timed build on the guest's own character, spending the guest's own items. Removal works the same way: the guest names what it clicked, and the host checks that it can be removed, that the guest carries a hammer, and that it is in reach.
 
 ## Settings that change it
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free. The build time still applies. It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Remove do not ask for the hammer or the hatchet. The build time still applies. Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
@@ -95,30 +98,31 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
-- `data/build.json`: each piece's name, sprite (`wall_log`), cost, and seconds
-- `src/main.js:798`, `src/main.js:1049`: the Build entry at the foot of every menu
-- `data/items.json`: the log's `splitsInto`; `src/interact.js:1232-1245`: splitting with no tool
-- `src/main.js:857-866`, `src/main.js:798`, `src/main.js:1079-1080`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
-- `src/placement.js:162-177`: the ghost snapped to the nearest edge
-- `src/placement.js:188-200`: the red reasons in order
-- `src/placement.js:27`, `src/placement.js:29`: the build reach and the edge clearance
+- `data/build.json`: each piece's name, sprite (`wall_log`), cost, seconds, and tool: `notch` for the log wall, `build` for a door and a window (game #222)
+- `src/placement.js:143-160`, `src/inventory.js:88-108`, `src/ui/build-palette.js:43`: the tool carried in a hand, on the belt, or in the bag, asked first, "You need a ..."; the palette greys a piece that falls short
+- `src/main.js:799`, `src/main.js:1050`: the Build entry at the foot of every menu
+- `data/items.json:4`: the log's `splitsInto`; `src/interact.js:1246-1262`: splitting with a hatchet carried
+- `src/main.js:858-867`, `src/main.js:799`, `src/main.js:1080-1081`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
+- `src/placement.js:172-187`: the ghost snapped to the nearest edge
+- `src/placement.js:198-210`: the red reasons in order
+- `src/placement.js:28`, `src/placement.js:30`: the build reach and the edge clearance
 - `src/map.js:610-618`: what "No room" means for a wall, a door, a window
 - `src/map.js:608-618`: a door refused with a prop on either tile
 - `src/map.js:596-606`, `src/map.js:631-659`: a door or window over a plain wall, of its material and remembering it; a door over a fence; a new one over a broken one of its kind; the bracket of the wall built over forgotten
 - `src/map.js:733-744`: a door and a window always have health, whatever their material
-- `src/placement.js:427-437`, `src/placement.js:566-592`: the timed build, spent and rechecked at the end, cancelled by moving
-- `src/placement.js:576`: the build lasts within the reach plus 0.6
-- `src/placement.js:476`: one build at a time
+- `src/placement.js:438-448`, `src/placement.js:582-608`: the timed build, spent and rechecked at the end, cancelled by moving
+- `src/placement.js:592`: the build lasts within the reach plus 0.6
+- `src/placement.js:487`: one build at a time
 - `src/map.js:1809-1837`: rooms refound on either side of a changed edge
-- `src/main.js:869-878`: X, refused while carrying or with the bag open, with the same line
-- `src/placement.js:28`, `src/placement.js:370-376`: the removal reach
-- `src/placement.js:319-368`: what lights up: props made at a station (`made`) and built walls
+- `src/main.js:870-879`: X, refused while carrying or with the bag open, with the same line
+- `src/placement.js:29`, `src/placement.js:388-397`, `src/placement.js:565-575`: the removal reach; Remove asks for the board tool, a hammer, red with its line (game #222)
+- `src/placement.js:329-378`: what lights up: props made at a station (`made`) and built walls
 - `src/stations.js:188-189`: a prop made at a station marked `made`
 - `src/map.js:651`: built walls marked `built`
-- `src/placement.js:392-410`: a removed container spills its bag and a station its output, nothing refunded
-- `src/map.js:661-676`, `src/placement.js:408`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
-- `src/placement.js:498-561`: a guest's build and remove as commands, rechecked on the host
-- `src/rules.js:18`, `src/placement.js:126-129`: Free building makes costs free, the time stays
+- `src/placement.js:403-421`: a removed container spills its bag and a station its output, nothing refunded
+- `src/map.js:661-676`, `src/placement.js:419`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
+- `src/placement.js:509-578`: a guest's build and remove as commands, rechecked on the host, the tool too
+- `src/rules.js:18`, `src/placement.js:127-130`, `src/placement.js:143-149`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest

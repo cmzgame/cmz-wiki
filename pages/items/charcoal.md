@@ -13,9 +13,9 @@ summary: The forge's fuel: burned from logs in a charcoal clamp, and found in th
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `data/items.json:3`: charcoal, its stack
-- `data/recipes.json:458-473`, `data/sprites/charcoal_clamp.json`: charcoal from logs at a clamp, its fire lit (game #210)
+- `data/recipes.json:473-488`, `data/sprites/charcoal_clamp.json`: charcoal from logs at a clamp, its fire lit (game #210)
 - `data/sprites/forge.json`: the forge burns charcoal
 - `data/loot.json:16-17`, `tools/mapgen/valley.py:368`, `tools/mapgen/valley.py:560-570`: the smithy's chest, the burners' sacks and their hut's chest
 - `tools/mapgen/valley.py:373`, `tools/mapgen/valley.py:562-563`: a clamp in the smithy's yard, three at the burners

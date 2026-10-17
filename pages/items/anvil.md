@@ -10,7 +10,7 @@ The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|st
 
 ## Using it
 
-Right-click it and choose its entry, or press `E` beside it, and pick a recipe in the panel (see [[Crafting]]). Make the hammer first, then hold it while you make the rest ("Needs a hammer in hand." otherwise). What it makes goes into the anvil's output box.
+Right-click it and choose its entry, or press `E` beside it, and pick a recipe in the panel (see [[Crafting]]). Make the hammer first, then hold it while you make the rest ("Needs a smith's hammer in hand." otherwise). What it makes goes into the anvil's output box.
 
 ## Recipes
 
@@ -24,13 +24,13 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `src/stations.js:45-52`: which prop is which station
 - `data/sprites/anvil.json`: the anvil is a station, not carried, with no fire
-- `data/recipes.json:490-648`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`
+- `data/recipes.json:505-663`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`
 - `data/loot.json:13`, `data/loot.json:16`: the quarryman's chest's hammer and the smithy's chest's iron bars (game #210)
-- `src/interact.js:772-789`: the station's menu entry and `E`
-- `src/stations.js:150-160`: the refusals, "Needs a hammer in hand." among them
+- `src/interact.js:785-802`: the station's menu entry and `E`
+- `src/stations.js:150-159`: the refusals, "Needs a smith's hammer in hand." among them
 - `src/stations.js:173-209`: what is made goes to the output box
 - `data/maps/valley.json`: where the anvil stands
 - `src/ui/station-panel.js:70-83`: a guest's panel opens on its own screen

@@ -2,7 +2,7 @@
 title: Farming
 categories: [Mechanics, The world]
 aliases: [Farm, Till, Tilling, Till the soil, Plant, Planting, Watering crops, Harvest, Harvesting, Growing]
-summary: Till grass or dirt with a hoe, plant a seed, keep it watered, and harvest it with E when it is ready, with seeds back.
+summary: Till grass or dirt with a hoe, plant a seed, keep it watered, and harvest it with E when it is ready, with the crop's tool on you, for seeds back.
 ---
 
 **Farming** is growing [[Crops|crops]]: till bare ground with a [[Hoe]], plant a seed in the soil, keep it watered from a [[Waterskin]] or a [[Bucket]], and harvest it when it is ready, for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the world's clock, and only while their soil is wet; dry soil pauses them and never kills them. The plot by [[Your cottage]] has potatoes and cabbages already growing, some of them ready.
@@ -31,7 +31,7 @@ Each crop has three stages: young, growing, and ready. While it grows, its menu 
 
 ### Harvesting
 
-A ready crop's menu offers **Harvest**, and E does it. It gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed. A [[Scythe]] harvests the ready grain on the three tiles ahead at a swing.
+A ready crop's menu offers **Harvest**, and E does it, with the crop's tool anywhere on you (a hand, the belt, or the bag): a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Belt knife]] for cabbages and pumpkins, and nothing for flax (the table below). Without the tool, the entry reads "Harvest (need a shovel)", or whichever tool it is, greyed, and E passes it by. A harvest gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed. A [[Scythe]] harvests the ready grain on the three tiles ahead at a swing.
 
 ### Reach and walls
 
@@ -59,16 +59,17 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 
 ## Sources
 
-<!-- sources at cfe0203 -->
+<!-- sources at 0e765f7 -->
 - `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
-- `src/farming.js:160-177`, `src/interact.js:557-581`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
+- `src/farming.js:160-177`, `src/interact.js:570-594`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
 - `src/farming.js:179-202`, `data/items.json:60-65`: Plant for each seed carried, on empty soil; the crop starts wet; the six seeds
-- `src/farming.js:216-231`, `src/farming.js:102-109`, `src/interact.js:536-557`: Water, from the fullest skin with enough; greyed without; "The water soaks in."
-- `src/farming.js:64-95`, `src/interact.js:547-550`: the stage and the days left read from the growth; "Growing (ready in about N days)", "Dry: waiting for water"
-- `src/farming.js:233-262`, `src/farming.js:255-290`: Harvest: the food and the seeds into the bag, the rest at your feet, the tile left as soil
-- `src/farming.js:111-118`, `data/tuning.json:95`: every farming verb within `pickReach` and with a clear line (game #206)
-- `src/farming.js:296-317`, `src/game.js:527`: the crops' pictures follow their stages at each check
-- `tools/mapgen/valley.py:190`, `tools/mapgen/mapgen.py:199-214`: the cottage's plot, potatoes and cabbages at the middle and last stages, the valley's only crops
+- `src/farming.js:216-231`, `src/farming.js:102-109`, `src/interact.js:547-568`: Water, from the fullest skin with enough; greyed without; "The water soaks in."
+- `src/farming.js:64-95`, `src/interact.js:559-564`: the stage and the days left read from the growth; "Growing (ready in about N days)", "Dry: waiting for water"
+- `src/farming.js:233-259`, `src/farming.js:261-296`: Harvest: the food and the seeds into the bag, the rest at your feet, the tile left as soil; the scythe's swing
+- `data/crops.json`, `src/farming.js:240-241`, `src/interact.js:557-559`, `src/inventory.js:88-108`: each crop's `tool`, a verb, carried: rye `harvest` (a scythe), potato and garlic `dig` (a shovel), cabbage and pumpkin `cut` (a knife), flax none; "Harvest (need a ...)" greyed without it (game #222)
+- `src/farming.js:111-118`, `data/tuning.json:101`: every farming verb within `pickReach` and with a clear line (game #206)
+- `src/farming.js:298-319`, `src/game.js:551`: the crops' pictures follow their stages at each check
+- `tools/mapgen/valley.py:190`, `tools/mapgen/mapgen.py:216-231`: the cottage's plot, potatoes and cabbages at the middle and last stages
 - `data/loot.json:8-11`: the barn rack's hoe and the two granaries' seed of every crop (game #219), the weaver's chest's flax seed (game #216)
 - `tools/mapgen/valley.py:407-522`: Hollow Farm's and Long Acre's fields at mixed stages
 - `src/bucket.js:1-126`: the bucket's fill and pour (game #211)

@@ -12,7 +12,7 @@ Like every villager, they carry no weapon and never fight. They wander a little,
 
 ## What they say
 
-Poked, the Miller says: “Grain is grain. Bring it, I will grind it.”
+Poked, the Miller says: “Grain is grain. Bring it, I will grind it.” They have no talk of their own yet, so it is their map line, every time, and they make no remark unprompted (see [[Talk]]).
 
 ## Where they stand
 
@@ -20,9 +20,10 @@ The Miller stands inside [[The mill]], by the [[Millstones]].
 
 ## Sources
 
-<!-- sources at cfe0203 -->
-- `data/maps/valley.json:12352-12360`: the Miller's line and tile, no `immune` flag (game #219)
-- `src/entities/villager.js:26-45`, `src/entities/villager.js:141-151`: a villager's wander and poke
+<!-- sources at 0e765f7 -->
+- `data/maps/valley.json:12364-12372`: the Miller's line and tile, no `immune` flag (game #219)
+- `src/entities/villager.js:36-61`, `src/entities/villager.js:178-192`: a villager's wander and poke; with no talk file, the map line
+- `data/talk/`: no file for the Miller (game #220)
 - `src/settings.js:13`, `src/entities/zombie.js:345-367`: the dead hunt villagers behind the world rule
 
 {{navbox places}}
