@@ -10,7 +10,7 @@ The **forge** smelts [[Iron ore]] into [[Iron bar|iron bars]] for the [[Anvil]].
 
 ## Using it
 
-Light it with charcoal and keep it fed (see [[Fire]]): it holds {{n sprites.forge.fire.maxFuel}} units and burns one every {{n sprites.forge.fire.hoursPerUnit}} game hours. Then open its panel from its menu or with `E` and pick a recipe (see [[Crafting]]). If the fire goes out during a job, the job waits until the fire is fed again. A forge's fire gives light but does not cook.
+Light it with charcoal and a flame, a [[Tinderbox]] or a lit [[Torch]] on you, and keep it fed (see [[Fire]]): it holds {{n sprites.forge.fire.maxFuel}} units and burns one every {{n sprites.forge.fire.hoursPerUnit}} game hours. Then open its panel from its menu or with `E` and pick a recipe (see [[Crafting]]). If the fire goes out during a job, the job waits until the fire is lit again. A forge's fire gives light but does not cook.
 
 ## Recipes
 
@@ -24,14 +24,14 @@ A guest feeds the forge and makes bars through the host like any station; the fi
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 64cc711 -->
 - `data/sprites/forge.json`: the forge burns charcoal, holds and burns its units, gives light, does not cook
 - `data/recipes.json:247-262`: iron bar from iron ore, fire needed
 - `data/loot.json`: nothing gives charcoal or ore
 - `data/maps/valley.json`: the forge starts cold
-- `src/interact.js:350-380`: lighting and feeding
-- `src/interact.js:622-639`: the station's menu entry and `E`
-- `src/stations.js:193-205`: a job waits while the fire is out
-- `src/host.js:161-167`: a guest's Make runs on the host
+- `src/interact.js:352-385`: lighting with a flame on you, and feeding (game #169)
+- `src/interact.js:633-648`: the station's menu entry and `E`
+- `src/stations.js:204-212`: a job waits while the fire is out
+- `src/host.js:184-191`: a guest's Make runs on the host
 
 {{navbox making}}

@@ -87,16 +87,16 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `index.html:36-67`, `style.css:1602-1623`, `style.css:10-24`, `style.css:1642-1673`, `data/fonts/PirataOne-Regular.ttf`: the site: the blurred picture behind, the wordmark between the autumn trees (Pirata One, its dark backing, the big line flat zombie green), the menu with Play and Wiki, the footer (game #120)
 - `src/ui/screens.js:189-212`, `src/ui/screens.js:234-242`: out of a world, and during a join waiting for its welcome, a screen is drawn as a page of the site with the game's stage hidden; in a world, over the world
 - `src/ui/screens.js:117-127`, `src/ui/screens.js:738-744`: the menu's lit button, Play lit for its pages; a menu button drops a creation or an identity half edited, Settings and Controls excepted
-- `src/ui/screens.js:746-773`, `src/ui/screens.js:785-788`, `src/main.js:1761`: Home, its Play in your browser and the wiki line, a reason shown on it; About
-- `index.html:68-88`, `src/main.js:1779-1783`, `src/boot.js:58-65`: the site at the first paint; a button pressed before the game is ready shows the loading screen and its page opens when boot is done; a failure always shows
-- `src/main.js:100-104`, `src/main.js:1236-1238`, `style.css:1115`: no world in: nothing of a world drawn, the interface hidden, the chat box and the debug corner with it
-- `src/ui/screens.js:245-274`, `src/main.js:831-832`: Escape out of a world steps back; Home stays
+- `src/ui/screens.js:746-773`, `src/ui/screens.js:785-788`, `src/main.js:1764`: Home, its Play in your browser and the wiki line, a reason shown on it; About
+- `index.html:68-88`, `src/main.js:1782-1786`, `src/boot.js:58-65`: the site at the first paint; a button pressed before the game is ready shows the loading screen and its page opens when boot is done; a failure always shows
+- `src/main.js:100-104`, `src/main.js:1239-1241`, `style.css:1115`: no world in: nothing of a world drawn, the interface hidden, the chat box and the debug corner with it
+- `src/ui/screens.js:245-274`, `src/main.js:833-834`: Escape out of a world steps back; Home stays
 - `src/ui/screens.js:910-921`, `src/main.js:724-743`: the pause menu, its first line (a guest's naming the host and the world), "Paused" or "Menu", its buttons and who sees them
-- `src/main.js:1502-1504`, `src/main.js:435-448`: Save world
+- `src/main.js:1505-1507`, `src/main.js:435-448`: Save world
 - `src/ui/screens.js:1008-1018`: the Character screen
 - `src/ui/screens.js:218-232`: Settings and Controls return to where they were opened from
 - `src/ui/screens.js:912-921`: the pause menu's buttons, World rules and Exit game among them
@@ -106,10 +106,10 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 - `index.html:12-23`, `src/boot.js:103-158`: the loading screen: the title under the name, the bar and the line, Cancel, at least half a second up, nothing in a hidden tab
 - `src/main.js:241-267`: the ground round you baked behind it, the bar going on from where it stands, a lone world held still, closed once frames run smoothly (game #117)
 - `src/main.js:310-355`, `src/main.js:475-479`: Making, Reading, Saving or Leaving
-- `src/main.js:269-286`, `src/main.js:674-685`, `src/main.js:1491-1499`, `src/main.js:1678-1702`: Joining with Cancel, giving way to creation when the host asks who, back on Join as this, Receiving the world, the ground, then the world
-- `src/main.js:1680`, `src/boot.js:137-139`: Cancel goes once the welcome arrives (game #117)
+- `src/main.js:269-286`, `src/main.js:674-685`, `src/main.js:1494-1502`, `src/main.js:1681-1705`: Joining with Cancel, giving way to creation when the host asks who, back on Join as this, Receiving the world, the ground, then the world
+- `src/main.js:1683`, `src/boot.js:137-139`: Cancel goes once the welcome arrives (game #117)
 - `src/ui/screens.js:1036-1043`, `src/main.js:154-180`: the stepped-away screen and what closes it
-- `src/main.js:831-850`, `src/ui/screens.js:245-274`: Escape's order, a screen stepping back to its opener
+- `src/main.js:833-852`, `src/ui/screens.js:245-274`: Escape's order, a screen stepping back to its opener
 - `src/ui/screens.js:545-552`: in fullscreen the first Escape leaves it, the second pauses, as the Fullscreen row says
-- `src/main.js:819-822`, `src/main.js:1482`: screens pause only off the wire
+- `src/main.js:821-824`, `src/main.js:1485`: screens pause only off the wire
 - `src/main.js:400-417`: a guest's new character after a death is chosen while still in the world

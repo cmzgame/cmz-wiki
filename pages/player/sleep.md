@@ -62,17 +62,17 @@ A siege is held on the player the dead saw go in, so it refuses only that player
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `data/sprites/bed.json:32`: a bed is a prop with `sleep`
-- `data/tuning.json:60`: the time scale
+- `data/tuning.json:61`: the time scale
 - `src/entities/player.js:204-222`: the verb, its reach (1.6 tiles), indoors, free hands, the siege, and the refusals with the day window ending at 20:00
-- `src/entities/player.js:168-174`, `src/game.js:334`, `src/entities/zombie.js:447-463`, `data/tuning.json:27-29`: the siege query: any of the dead holding a siege on that player, before its dawn, within `siegeSleepRadius`
-- `src/interact.js:383-400`: Sleep as the E action from Yawning or from 20:00
+- `src/entities/player.js:168-174`, `src/game.js:334`, `src/entities/zombie.js:452-468`, `data/tuning.json:28-30`: the siege query: any of the dead holding a siege on that player, before its dawn, within `siegeSleepRadius`
+- `src/interact.js:386-403`: Sleep as the E action from Yawning or from 20:00
 - `src/entities/player.js:176-184`, `src/entities/player.js:195-202`, `src/entities/player.js:123-150`: asleep, nothing moves you, nothing wakes you but the morning or the bed's going; needs drain, tiredness restores, health at the sleeping rate
-- `data/tuning.json:59`, `data/tuning.json:62-63`: the restore time and the regeneration rates
+- `data/tuning.json:60`, `data/tuning.json:63-64`: the restore time and the regeneration rates
 - `src/game.js:323-333`, `src/game.js:600`, `src/world.js:25-29`, `src/loop.js:15`, `src/loop.js:114-116`: the scale while every living player sleeps, re-evaluated each step, the loop running many steps a frame
-- `src/main.js:1617`: the two lying-down messages, by whether everyone is already asleep
-- `src/entities/player.js:186-202`, `data/tuning.json:61`: waking when rested between the wake hour and 22:00, or when the bed is gone; the waking message's hours
+- `src/main.js:1620`: the two lying-down messages, by whether everyone is already asleep
+- `src/entities/player.js:186-202`, `data/tuning.json:62`: waking when rested between the wake hour and 22:00, or when the bed is gone; the waking message's hours
 - `data/maps/valley.json`: the valley's beds
 - `data/recipes.json:186-205`: the bed recipe at the workbench
 - `src/map.js:95`: a game hour is 30 seconds

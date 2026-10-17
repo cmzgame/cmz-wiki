@@ -57,7 +57,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `src/map.js:1-6`, `src/map.js:1332-1338`: walls on the `n` and `w` edges of a tile
 - `src/map.js:741-751`: doors and windows are walls with a kind
 - `src/map.js:1350-1363`, `src/map.js:1498-1552`: a wall blocks sight and bodies
@@ -71,7 +71,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - `src/placeholders.js:88-91`: openings and the bracket at fixed heights
 - `src/placement.js:319-368`, `src/map.js:642`: only built walls can be removed
 - `src/map.js:587-597`, `src/map.js:622-671`, `src/placement.js:408`: a door or window built into a plain wall, of its material, a door into a fence; its bracket forgotten; removal puts the wall back
-- `src/map.js:137-283`, `src/interact.js:402-460`: brackets, a lantern or a torch; a lantern never out and not taken; E to take or mount a torch, which burns down
+- `src/map.js:137-283`, `src/interact.js:405-463`: brackets, a lantern or a torch; a lantern never out and not taken; E to take or mount a torch, which burns down
 - `data/items.json`: the torch's `fire`; `data/sprites/lantern_post.json`; `src/light.js:61-71`: a lantern's light, and a mounted torch's only while lit
 - `src/map.js:2113-2119`, `src/map.js:2194`: brackets only where the map authors them
 - `src/render/walls.js:164-170`, `src/render/walls.js:314-316`: near walls faded

@@ -10,7 +10,7 @@ The **oven** bakes a [[Loaf of bread]] from [[Flour]]. Its fire burns [[Log|logs
 
 ## Using it
 
-Keep its fire fed (see [[Fire]]): it holds {{n sprites.oven.fire.maxFuel}} logs and burns one every {{n sprites.oven.fire.hoursPerUnit}} game hours. Open its panel from its menu or with `E` and pick a recipe (see [[Crafting]]). If the fire goes out during a job, the job waits until the fire is fed again.
+Keep its fire fed (see [[Fire]]); lighting it when it is out needs a [[Tinderbox]] or a lit [[Torch]] on you as well as a log. It holds {{n sprites.oven.fire.maxFuel}} logs and burns one every {{n sprites.oven.fire.hoursPerUnit}} game hours. Open its panel from its menu or with `E` and pick a recipe (see [[Crafting]]). If the fire goes out during a job, the job waits until the fire is lit again.
 
 ## Recipes
 
@@ -24,15 +24,15 @@ A guest feeds the oven and bakes through the host like any station; the fire and
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 64cc711 -->
 - `data/sprites/oven.json`: the oven: a station whose fire burns logs, its most and hours a unit
 - `data/recipes.json:478-493`: bread from flour, fire needed
 - `data/maps/valley.json`: the baker's oven starts lit
 - `data/loot.json`: no table gives flour
 - `src/stations.js:45-52`: the oven's own station wins over cooking
-- `src/interact.js:350-380`: feeding its fire
-- `src/interact.js:622-639`: the station's menu entry and `E`
-- `src/stations.js:193-205`: a job waits while the fire is out
-- `src/host.js:161-167`: a guest's Make runs on the host
+- `src/interact.js:352-385`: lighting its fire with a flame on you, and feeding it (game #169)
+- `src/interact.js:633-648`: the station's menu entry and `E`
+- `src/stations.js:204-212`: a job waits while the fire is out
+- `src/host.js:184-191`: a guest's Make runs on the host
 
 {{navbox making}}

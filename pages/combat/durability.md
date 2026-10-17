@@ -44,11 +44,11 @@ Durability is kept on the item itself and travels with the hands, so it is the s
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `src/items.js:27-37`: hits per kill and the durability each hit costs (the code's `wearPerHit`) from `data/tuning.json` (`zombie.hp`)
 - `src/combat.js:371`, `src/combat.js:377-389`: durability spent on each landed hit and target; the weapon gone with a word when none is left
 - `data/items.json`: each weapon's `kills`; the bow's `shots`
-- `src/game.js:494-520`, `data/tuning.json:83-84`: a lit torch burns down on the same `wear`, spent with the same word
+- `src/game.js:494-520`, `data/tuning.json:84-85`: a lit torch burns down on the same `wear`, spent with the same word
 - `src/combat.js:393-411`, `src/combat.js:76-80`: the shove and fists cost no durability
 - `src/archery.js:702-704`: a thrown spear keeps its durability (the entry itself thrown)
 - `src/archery.js:710-719`, `src/items.js:39-41`: the bow loses durability per arrow loosed and leaves the hand at the last

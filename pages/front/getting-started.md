@@ -22,7 +22,7 @@ You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back ho
 1. **Look round the cottage.** Right-click anything for what you can do with it; **E** does the nearest simple thing. Search the [[Containers|chests]].
 2. **Learn the doors and shutters.** Tap **E** at a door or a window to open or shut it. Nobody passes through a window, you or the dead: a door is the only way in or out, and the dead who see you through a window come round to the door. Shut shutters block sight both ways. See [[Openings]].
 3. **Keep fed and watered.** [[Hunger]] and [[Thirst]] fall over the day and show as [[Moodles]] down the right of the screen. Drink at the well or any water, and fill your waterskin there.
-4. **Mind your fires.** A fire burns its fuel down over game hours and goes out. Feed it [[Log|logs]] from its menu. See [[Fire]].
+4. **Mind your fires.** A fire burns its fuel down over game hours and goes out. Feed it [[Log|logs]] from its menu; lighting one that is out also needs the tinderbox in your bag, or a lit torch. See [[Fire]].
 5. **Sleep in a bed, indoors,** when you are tired. The night passes quickly while you sleep, and nothing wakes you, so shut the door first. If the dead saw you go in at night, they wait about the house until dawn, and you cannot sleep while they are near. See [[Sleep]].
 
 ## The dead
@@ -39,26 +39,26 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `index.html:51`, `src/ui/screens.js:797-810`: the site's Play opens the Worlds page, New world on it
 - `src/main.js:308-344`, `src/ui/screens.js:350-363`, `src/ui/screens.js:415-434`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
 - `src/game.js:198-203`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
 - `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
 - `src/game.js:104-120`: the starter kit, its torch out and a tinderbox in the sack
-- `src/interact.js:987-1008`, `src/game.js:494-520`, `data/tuning.json:83-84`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
-- `src/main.js:893-901`: Tab for the bag, C for the character screen
-- `src/main.js:1051-1134`: an open panel stops nothing in the world
-- `src/main.js:759-798`, `src/interact.js:953-971`: right-click for the menu; E for the nearest simple action
+- `src/interact.js:998-1019`, `src/game.js:494-520`, `data/tuning.json:84-85`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/main.js:895-903`: Tab for the bag, C for the character screen
+- `src/main.js:1054-1137`: an open panel stops nothing in the world
+- `src/main.js:759-798`, `src/interact.js:964-982`: right-click for the menu; E for the nearest simple action
 - `src/interact.js:325-341`: searching a chest
-- `src/interact.js:462-491`, `src/map.js:1350-1363`: tap E to open or shut; shut shutters block sight
-- `src/map.js:825-834`, `src/entities/zombie.js:215-240`: no one passes a window; the dead go for a door
+- `src/interact.js:465-494`, `src/map.js:1350-1363`: tap E to open or shut; shut shutters block sight
+- `src/map.js:825-834`, `src/entities/zombie.js:216-241`: no one passes a window; the dead go for a door
 - `src/entities/player.js:130-132`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
-- `src/interact.js:545-584`: drinking and filling at the well or any water
-- `src/map.js:98-129`, `src/interact.js:352-381`: fires burn down and are fed from their menu
+- `src/interact.js:548-587`: drinking and filling at the well or any water
+- `src/map.js:98-129`, `src/interact.js:352-385`: fires burn down and are fed from their menu; lit with a flame carried (game #169)
 - `src/entities/player.js:204-222`, `src/entities/player.js:176-202`, `src/game.js:323-333`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
-- `data/tuning.json:4`, `data/tuning.json:39`: the dead walk at a third of your speed
-- `src/entities/zombie.js:297-302`, `src/entities/zombie.js:505-545`, `src/entities/zombie.js:360-376`: they see by the light on you, remember where they last saw you, and notice a flame at night
-- `src/entities/zombie.js:410-463`, `src/entities/zombie.js:792-859`: at night the dead that see you go in remember the door and wait about the house until dawn
-- `src/sight.js:16-27`, `src/light.js:155-168`: you see them at night near you, to your torch's reach, or in light; a shut room dark by day, an open one lit
+- `data/tuning.json:4`, `data/tuning.json:40`: the dead walk at a third of your speed
+- `src/entities/zombie.js:298-303`, `src/entities/zombie.js:510-550`, `src/entities/zombie.js:361-377`: they see by the light on you, remember where they last saw you, and notice a flame at night
+- `src/entities/zombie.js:411-468`, `src/entities/zombie.js:807-874`: at night the dead that see you go in remember the door and wait about the house until dawn
+- `src/sight.js:18-29`, `src/light.js:155-168`: you see them at night near you, to your torch's reach, or in light; a shut room dark by day, an open one lit
 - `src/buttons.js:24-44`, `src/player-controller.js:17-55`: left-click uses the main hand

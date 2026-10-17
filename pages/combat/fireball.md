@@ -44,7 +44,7 @@ A guest's cast is its draw and release, worked out on the host as the bow's shot
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `data/items.json`: the spell's numbers on the book (`book.spell`: `drawTime`, `speed`, `range`, `contact`, `landRadius`, `damage`, `knockback`), `staff: true` on the staff, `castStyle` on both
 - `src/archery.js:610-619`: `spellOf`, both items make a launcher of the kind `spell`, one alone refuses; the flight flat and vanishing
 - `data/poses.json` `cast_staff`, `cast_book`: the cast's pose by which hand holds the staff (game PR #9)

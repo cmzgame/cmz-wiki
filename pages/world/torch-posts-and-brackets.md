@@ -32,14 +32,14 @@ Stand within {{n census.constants.interact.INTERACT_RANGE}} tiles of an empty br
 A mounted torch cannot be lit or doused where it hangs with `T`. One that is out is lit by:
 
 - **Light the torch** on its menu, with a [[Tinderbox]] on you, or else a lit torch in a hand or on the belt ("You light the torch."; with neither, "You have no flame (a tinderbox, or a lit torch)."); it is not the E action, so choose it from the menu;
-- on a post, [[Use]] of a tinderbox or a lit torch on it (a bracket cannot be the target of a Use);
+- [[Use]] of a tinderbox or a lit torch on it, on a post or in a bracket ("You light the torch."). In Use mode a click near a wall bracket aims at the bracket, after any character or furniture under the cursor;
 - a [[Fireball]] that comes down within reach of it.
 
-Each needs no wall between: the menu and Use reach {{n census.constants.burn.DIP_REACH tiles}}, in sight. A lit torch on a post is a flame in its turn: an unlit torch in your hand used on it is lit from it (not so one in a bracket). A lantern cannot be lit or put out ("A lantern is always lit.").
+Each needs no wall between: the menu and Use reach {{n census.constants.burn.DIP_REACH tiles}}, in sight, so a bracket's torch is never lit from the far side of its wall. A lit torch on a post or in a bracket is a flame in its turn: an unlit torch in your hand or on your belt used on it is lit from it ("You light the torch at the fire."), with the same reach and never through its wall. A lantern is not lit or put out: a Use of a tinderbox or a lit torch on one says "A lantern is always lit.", and an unlit torch used on one is not lit from it ("That gives no flame (a tinderbox, or a lit torch)."). A Use on an empty bracket says "There is no torch there."
 
 ### Burning down
 
-A lit torch in a bracket or on a post burns down at the slower rate a torch has on the belt: it lasts {{n tuning.world.torchWallLife seconds}} of the world's time. When it is used up it is gone from its holder, and players nearby read "A torch burns out." A mounted torch burns only while its part of the world is loaded, near some player. See [[Torch#Burning down|Torch]].
+A lit torch in a bracket or on a post burns down at the slower rate a torch has on the belt: it lasts {{n tuning.world.torchWallLife seconds}} of the world's time. When it is used up it is gone from its holder, and players within {{n tuning.world.torchSpentRadius tiles}} of it read "A torch burns out." A mounted torch burns only while its part of the world is loaded, near some player. See [[Torch#Burning down|Torch]].
 
 ### In the valley
 
@@ -52,11 +52,12 @@ Most buildings in [[The valley]] have a lantern in a wall bracket, and [[The inn
 - A mounted torch's reach: {{n items.torch.fire.radius tiles}}.
 - A torch post's reach: {{n sprites.torch_post.fire.radius tiles}}.
 - A mounted torch lasts {{n tuning.world.torchWallLife seconds}} lit.
+- "A torch burns out." reaches players within {{n tuning.world.torchSpentRadius tiles}}.
 - Reach to take or mount: {{n census.constants.interact.INTERACT_RANGE}} tiles.
 
 ## With friends
 
-Taking and mounting a torch are performed by the host for whoever asked, and the change reaches every player at once. A mounted torch burns down on the host; a guest's copy of how far it has burned catches up each time it burns another hundredth.
+Taking and mounting a torch are performed by the host for whoever asked, and the change reaches every player at once. So is a guest's Use on a bracket, which names the bracket by its tile and the wall edge it is on. A mounted torch burns down on the host; a guest's copy of how far it has burned catches up each time it burns another hundredth.
 
 ## See also
 
@@ -66,10 +67,10 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `data/sprites/lantern_post.json`: the lantern post: its light's radius, the one number for every lantern, not carried
 - `src/map.js:138-141`, `src/map.js:208-215`, `src/light.js:63-67`: a bracket holds a lantern or a torch; a lantern's light steady, never out, at the post's radius
-- `src/interact.js:404`: a lantern bracket offers no action
+- `src/interact.js:407`: a lantern bracket offers no action
 - `src/render/walls.js:461-466`, `src/placeholders.js:1088-1130`: the lantern drawn as placeholder art
 - `data/items.json:2`: the torch's radius
 - `src/map.js:218-222`, `src/light.js:68-71`: a bracket on a wall edge, its torch 0.3 tiles off it on its side, with the torch's radius, only while lit
@@ -77,15 +78,17 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `src/light.js:209-250`: the light stopped by walls, shut doors, and shutters
 - `data/sprites/torch_post.json`, `src/light.js:52-60`: a post lit only while it holds a lit torch, its radius and collision circle
 - `src/interact.js:43`: E's reach to a bracket
-- `src/interact.js:402-460`, `src/interact.js:158-163`: Light the torch (not the E action), Take the torch (into a hand, else the bag, out, its wear kept), Mount the torch (as it is), and the greyed empty holder
-- `data/interactions.json`, `src/burn.js:74`, `src/burn.js:97-199`, `src/map.js:284-312`: the `light` verb on a mounted torch: a tinderbox or a lit torch, within reach and in sight; an unlit torch lit from a lit one; a lantern refused
+- `src/interact.js:405-463`, `src/interact.js:158-163`: Light the torch (not the E action), Take the torch (into a hand, else the bag, out, its wear kept), Mount the torch (as it is), and the greyed empty holder
+- `data/interactions.json`, `src/burn.js:62`, `src/burn.js:85-184`, `src/map.js:284-312`: the `light` verb on a mounted torch: a tinderbox or a lit torch, within reach and in sight; an unlit torch lit from a lit one on a post or in a bracket, at the bracket's own point (game #172); a lantern refused, an empty bracket refused, an unlit torch on a lantern no flame
+- `src/interactions.js:34-43`, `src/interact.js:676-683`, `src/main.js:801-811`: Use mode aims at any bracket near the cursor, after a character and a prop (game #172)
 - `src/map.js:253-283`: what a mounted torch keeps: its wear and whether it is lit
 - `src/inventory.js:125-135`: a torch to mount is found in the hands, the belt, or the bag
 - `src/map.js:186-205`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
-- `src/map.js:149-184`, `data/tuning.json:84`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
-- `src/host.js:231-236`, `src/main.js:1628-1630`: "A torch burns out." to players nearby
+- `src/map.js:149-184`, `data/tuning.json:85`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
+- `src/host.js:232-237`, `src/main.js:1631-1633`, `data/tuning.json:86`: "A torch burns out." to players within `torchSpentRadius`
 - `tools/mapgen/valley.py:101-113`, `tools/mapgen/valley.py:204`, `tools/mapgen/valley.py:260`, `tools/mapgen/valley.py:275`, `tools/mapgen/valley.py:386`: the village's lights lanterns, the square's three lamps, the chapel's, the crypt's, and the shut cottage's brackets empty
 - `data/maps/valley.json:1894-1905`, `data/maps/valley.json:3918-3923`: the inn's and the toll house's lanterns outside
 - `data/maps/valley.json:5377-5398`: the square's three lantern posts
 - `src/interact.js:70-105`: a guest's take or mount run on the host by address
+- `src/main.js:1001-1012`, `src/ui/inventory-actions.js:383-385`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests

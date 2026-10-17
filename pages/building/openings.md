@@ -33,7 +33,7 @@ Windows have wooden shutters, not glass. Tap E to open or close them. Closed shu
 
 **Nobody passes through a window**, open, shut, or broken: not you, not a guest, not the dead. A window is for sight and light only. There is no climb, and a long press of E does nothing more than a tap.
 
-A window is never a safe place to stand behind. The dead who see you through one go round to a door and break it. A window whose shutters are closed, or that is boarded, the dead may batter open to see in, but they never come through it. See [[Breaking in]].
+A window is never a safe place to stand behind. The dead who see you through one go round to a door and break it, and one of the dead just outside an open window bites you if you stand right at it (a step back is out of its reach). A window whose shutters are closed, or that is boarded, the dead may batter open to see in, but they never come through it. See [[Breaking in]].
 
 ### Light through an opening
 
@@ -67,27 +67,28 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `src/map.js:741-751`: a wall record with its kind and state
 - `src/map.js:825-834`: only a door, open or broken and unboarded, passes a body; a window never does
 - `src/map.js:1345-1359`: what a door and shutters pass of light and sight
-- `src/interact.js:461-491`: E and the menu open and close doors and shutters from either side
+- `src/interact.js:464-494`: E and the menu open and close doors and shutters from either side
 - `src/interact.js:43`: E's reach
 - `src/map.js:1402-1411`: an open doorway passes across its whole width
 - `src/map.js:1552-1570`, `src/map.js:1576-1579`, `src/map.js:1628-1643`: the slide towards an open doorway
-- `src/entities/zombie.js:669-733`, `src/map.js:785-816`: the dead break closed doors and never open them
+- `src/entities/zombie.js:674-738`, `src/map.js:785-816`: the dead break closed doors and never open them
 - `src/map.js:587-620`: a door is not built where either tile holds a prop; the two tiles beside a door
 - `src/placement.js:95-115`: nothing put down on a door's tiles
 - `src/stations.js:178-185`: made furniture lands off a door's tiles
 - `src/map.js:2034-2042`: a fence's gates are doors
 - `tools/check.js:135-205`, `tools/mapgen/valley.py:106-112`: every map's door tiles clear and reachable on foot
-- `src/interact.js:838-851`, `src/interact.js:941-948`: E acts on its release however long it was held; no hold of E
+- `src/interact.js:849-862`, `src/interact.js:952-959`: E acts on its release however long it was held; no hold of E
 - `src/map.js:819-825`, `src/map.js:850-893`: the dead batter a shut or boarded window from outside, never pass it
-- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:83`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
+- `src/entities/zombie.js:597-611`, `src/visibility.js:12-48`, `data/tuning.json`: `zombie.contact`: a bite needs the contact distance and a clear line, which an open window passes (game #171)
+- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:84`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
 - `src/map.js:800-805`: what a broken door and broken shutters become
 - `src/map.js:587-597`, `src/map.js:622-650`, `src/placement.js:188-194`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
 - `src/map.js:652-667`, `src/placement.js:408`: the removal tool puts the wall back
-- `src/interact.js:477-478`: the menu's broken entries
+- `src/interact.js:480-481`: the menu's broken entries
 - `data/build.json`: the door and window in the palette
 - `src/map.js:569-570`, `src/map.js:741-751`: door and shutter health, whatever the material
-- `src/interact.js:953-973`, `src/interact.js:488`: a guest's E performed by the host, the change reaching guests and the save
+- `src/interact.js:964-984`, `src/interact.js:491`: a guest's E performed by the host, the change reaching guests and the save

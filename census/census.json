@@ -1,15 +1,15 @@
 {
  "version": {
-  "commit": "2ea0d24837d2532761e4a0daa2fff81dfef01c52",
-  "short": "2ea0d24",
-  "date": "2026-10-17T02:57:21-05:00",
-  "subject": "Merge #165, reviewed: the light verb (a tinderbox or a lit torch lights a campfire with fuel, a torch in a holder, or an unlit torch in hand or on the belt, in sight and in reach, never through a wall; a burning fire lights a torch, Primary's reading; host and guest alike) (#156 step 3)",
+  "commit": "64cc71172d8f26c0212a47c06ae8192a2aa762d1",
+  "short": "64cc711",
+  "date": "2026-10-17T03:39:46-05:00",
+  "subject": "Merge #173, reviewed: darkness's loose ends (the groan line only for one the dark hides, sight's literals to data, a belt torch at 0.6 seeing a little past the dark radius per Michael's ruling, check(\"sight\") and check(\"ground\") repaired after the unlit starting torch) (closes #158)",
   "ref": "origin/main"
  },
  "counts": {
   "items": 52,
   "recipes": 27,
-  "interactions": 9,
+  "interactions": 11,
   "lootTables": 6,
   "sprites": 138,
   "places": 20,
@@ -77,6 +77,7 @@
     "torch on campfire: Light",
     "torch on torch_post: Light",
     "torch on torch: Light",
+    "torch on bracket: Light",
     "torch on fire: Light"
    ]
   },
@@ -603,7 +604,8 @@
    "interactions": [
     "tinderbox on campfire: Light",
     "tinderbox on torch_post: Light",
-    "tinderbox on torch: Light"
+    "tinderbox on torch: Light",
+    "tinderbox on bracket: Light"
    ],
    "note": "never wears out: T lights a torch with it (docs/07, Michael 2026-10-17, #156)"
   },
@@ -2119,6 +2121,20 @@
   {
    "use": "torch",
    "on": "torch",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
+  },
+  {
+   "use": "tinderbox",
+   "on": "bracket",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
+  },
+  {
+   "use": "torch",
+   "on": "bracket",
    "verb": "Light",
    "action": "light",
    "message": "You light the torch."
@@ -4177,6 +4193,7 @@
    "getUpTime": 0.6,
    "knockTime": 0.15,
    "breachReach": 1.1,
+   "pressGiveUp": 20,
    "noWayTime": 8,
    "siegeEndHour": 6,
    "siegeSwitch": 25,
@@ -4230,12 +4247,13 @@
    "activeTiles": 40,
    "evictChunks": 8,
    "containerCloseDist": 2,
-   "beltLight": 0.5,
+   "beltLight": 0.6,
    "twoTorches": 1.35,
    "playerCapBrowser": 4,
    "playerCapServer": 8,
    "torchHeldLife": 1440,
    "torchWallLife": 2880,
+   "torchSpentRadius": 12,
    "daylightTiles": 30,
    "fenceHp": 90,
    "fenceGateFactor": 0.5,
@@ -4253,7 +4271,10 @@
    "darkRadius": 1.5,
    "edge": 2,
    "litNone": 0.3,
-   "litFull": 0.45
+   "litFull": 0.45,
+   "seenAt": 0.5,
+   "drawCutoff": 0.02,
+   "groanGap": 3
   }
  },
  "combat": {
@@ -4632,44 +4653,44 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1063"
+    "main.js:1066"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1062"
+    "main.js:1065"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1041"
+    "main.js:1044"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:887",
-    "main.js:901"
+    "main.js:889",
+    "main.js:903"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:945"
+    "interact.js:956"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1060"
+    "main.js:1063"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1043"
+    "main.js:1046"
    ]
   },
   {
@@ -4688,62 +4709,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:946"
+    "interact.js:957"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1039"
+    "main.js:1042"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1044"
+    "main.js:1047"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1051"
+    "main.js:1054"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1041"
+    "main.js:1044"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1122"
+    "main.js:1125"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1122"
+    "main.js:1125"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1042"
+    "main.js:1045"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1133"
+    "main.js:1136"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:887",
-    "main.js:893"
+    "main.js:889",
+    "main.js:895"
    ]
   }
  ],
@@ -4757,13 +4778,13 @@
   {
    "key": "dip",
    "at": [
-    "burn.js:79"
+    "burn.js:67"
    ]
   },
   {
    "key": "light",
    "at": [
-    "burn.js:181"
+    "burn.js:166"
    ]
   },
   {
@@ -4783,7 +4804,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1410"
+    "main.js:1413"
    ]
   },
   {
@@ -4819,37 +4840,37 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1348"
+    "main.js:1351"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1118"
+    "interact.js:1129"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1064"
+    "interact.js:1075"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1040"
+    "interact.js:1051"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1041"
+    "interact.js:1052"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1144"
+    "interact.js:1155"
    ]
   },
   {
@@ -4861,7 +4882,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1384"
+    "main.js:1387"
    ]
   },
   {
@@ -4879,19 +4900,19 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:415"
+    "interact.js:418"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1338"
+    "main.js:1341"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1374"
+    "main.js:1377"
    ]
   },
   {
@@ -4909,37 +4930,37 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1423"
+    "main.js:1426"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1146"
+    "interact.js:1157"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1314"
+    "main.js:1317"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1311"
+    "main.js:1314"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1340"
+    "main.js:1343"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1339"
+    "main.js:1342"
    ]
   },
   {
@@ -4951,13 +4972,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1432"
+    "main.js:1435"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:390"
+    "interact.js:393"
    ]
   },
   {
@@ -4987,7 +5008,7 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:429"
+    "interact.js:432"
    ]
   },
   {
@@ -4999,21 +5020,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1129",
-    "interact.js:1160"
+    "interact.js:1140",
+    "interact.js:1171"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1036",
-    "interact.js:1116"
+    "interact.js:1047",
+    "interact.js:1127"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:594"
+    "interact.js:597"
    ]
   },
   {
@@ -5037,7 +5058,7 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:476"
+    "interact.js:479"
    ]
   },
   {
@@ -5049,7 +5070,7 @@
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:527"
+    "interact.js:530"
    ]
   },
   {
@@ -5067,25 +5088,25 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1068"
+    "interact.js:1079"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:551"
+    "interact.js:554"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:880"
+    "interact.js:891"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1044"
+    "interact.js:1055"
    ]
   },
   {
@@ -5097,19 +5118,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1385"
+    "interact.js:1396"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:513"
+    "interact.js:516"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1073"
+    "interact.js:1084"
    ]
   }
  ],
@@ -5129,7 +5150,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1243"
+    "main.js:1246"
    ]
   },
   {
@@ -5155,7 +5176,7 @@
    "at": [
     "interact.js:210",
     "interact.js:343",
-    "interact.js:1370",
+    "interact.js:1381",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5242,7 +5263,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:864"
+    "entities/zombie.js:879"
    ]
   },
   {
@@ -5285,7 +5306,7 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:865"
+    "entities/zombie.js:880"
    ]
   },
   {
@@ -5299,7 +5320,7 @@
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:149"
+    "entities/zombie.js:150"
    ]
   }
  ],
@@ -5450,7 +5471,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1841
+   "lines": 1844
   },
   {
    "path": "placeholders.js",
@@ -5458,7 +5479,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1430
+   "lines": 1441
   },
   {
    "path": "net.js",
@@ -5474,7 +5495,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 878
+   "lines": 893
   },
   {
    "path": "archery.js",
@@ -5518,7 +5539,7 @@
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 400
+   "lines": 403
   },
   {
    "path": "figure/rig.js",
@@ -5534,15 +5555,15 @@
   },
   {
    "path": "render/entities.js",
+   "lines": 294
+  },
+  {
+   "path": "inventory.js",
    "lines": 293
   },
   {
    "path": "host.js",
-   "lines": 274
-  },
-  {
-   "path": "inventory.js",
-   "lines": 261
+   "lines": 275
   },
   {
    "path": "stations.js",
@@ -5577,16 +5598,16 @@
    "lines": 203
   },
   {
-   "path": "burn.js",
-   "lines": 201
-  },
-  {
    "path": "fire.js",
    "lines": 197
   },
   {
    "path": "grid.js",
    "lines": 190
+  },
+  {
+   "path": "burn.js",
+   "lines": 186
   },
   {
    "path": "render/area.js",
@@ -5626,7 +5647,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 130
+   "lines": 135
   },
   {
    "path": "moodles.js",
@@ -5650,7 +5671,7 @@
   },
   {
    "path": "ui/speech.js",
-   "lines": 113
+   "lines": 116
   },
   {
    "path": "ui/log.js",
@@ -5701,11 +5722,11 @@
    "lines": 67
   },
   {
-   "path": "bleed.js",
-   "lines": 62
+   "path": "interactions.js",
+   "lines": 64
   },
   {
-   "path": "interactions.js",
+   "path": "bleed.js",
    "lines": 62
   },
   {
@@ -5749,12 +5770,12 @@
    "lines": 36
   },
   {
-   "path": "verbs.js",
+   "path": "sight.js",
    "lines": 35
   },
   {
-   "path": "sight.js",
-   "lines": 33
+   "path": "verbs.js",
+   "lines": 35
   },
   {
    "path": "figure.js",

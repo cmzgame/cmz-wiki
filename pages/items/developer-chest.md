@@ -42,7 +42,7 @@ These change only the game they are typed into; on a guest's game they change on
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `src/settings.js:31`, `src/settings.js:68`, `src/ui/screens.js:845-873`, `src/main.js:310-318`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
 - `data/sprites/dev_chest.json`: the dev chest rolls the dev kit
 - `data/loot.json:6`: its fixed contents

@@ -73,11 +73,11 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
-- `data/tuning.json:41-42`: health and stamina
+<!-- sources at 64cc711 -->
+- `data/tuning.json:42-43`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
-- `data/tuning.json:39-40`, `data/tuning.json:43`: walking speed, body radius, sprint multiplier
+- `data/tuning.json:40-41`, `data/tuning.json:44`: walking speed, body radius, sprint multiplier
 - `src/entities/player.js:326-328`, `src/entities/player.js:342-346`: keyed movement snapped to the eight directions
 - `src/entities/player.js:351`: facing follows the aim, not the walk
 - `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1425`, `src/map.js:1450-1453`: shallow water's speed and deep water's bar
@@ -94,6 +94,6 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
 - `data/loot.json:6`, `src/settings.js:31`, `src/game.js:84-90`: the dev chest, chosen at New world
-- `data/tuning.json:4`, `data/tuning.json:68`: the dead's and villagers' speeds
+- `data/tuning.json:4`, `data/tuning.json:69`: the dead's and villagers' speeds
 - `src/rules.js:38-43`: a guest uses the host's rules
 - `src/game.js:323-333`: time runs fast only while every living player sleeps

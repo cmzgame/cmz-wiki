@@ -17,7 +17,7 @@ None of the dead start inside. A knot of them stands to the north at the bridge'
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `tools/mapgen/valley.py:160`, `tools/mapgen/valley.py:373-377`: the toll house south of the high street by the bridge's west end
 - `data/maps/valley.json:3862-3925`: a wooden house with a bed, chest, shelf, and strongbox; the door west; a lantern in a bracket on the outside of that wall
 - `tools/mapgen/valley.py:412-413`: the toll gate's knot at the bridge's west end, and more at the castle end

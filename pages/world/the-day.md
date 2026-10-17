@@ -61,16 +61,16 @@ The clock belongs to the host. A guest's clock is set from every frame the host 
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `src/clock.js:5-19`, `src/map.js:95`: the day's length, the game hour, the start hour, the phases' hours and brightness
 - `src/clock.js:94-102`, `src/ui/hud.js:118-122`: the clock's "Day N, HH:MM"
 - `src/clock.js:68-74`, `src/clock.js:91-93`: the phases and the night factor
 - `src/light.js:120-122`, `src/light.js:155-173`: the sky is the outdoor ambient; rooms take theirs from fires and openings
-- `src/sight.js:16-27`, `src/light.js:130-168`: the dead seen in the dark by light and nearness; a shut room dark by day (game #150)
-- `src/entities/zombie.js:297-302`, `src/entities/zombie.js:360-376`: the dead's sight by light, and flames seen only at night
+- `src/sight.js:18-29`, `src/light.js:130-168`: the dead seen in the dark by light and nearness; a shut room dark by day (game #150)
+- `src/entities/zombie.js:298-303`, `src/entities/zombie.js:361-377`: the dead's sight by light, and flames seen only at night
 - `src/map.js:98-114`: fires burn by game hours
 - `src/game.js:494-520`: a lit torch burns down in the world's time
-- `src/entities/zombie.js:423-445`, `src/entities/zombie.js:547-555`, `data/tuning.json:27`: a siege starts only at dusk or night and ends at `siegeEndHour`
-- `data/tuning.json:60`, `src/game.js:323-333`: the world's speed while every living player sleeps
-- `src/main.js:1062-1063`, `src/clock.js:41-44`: the hour keys, within the day
+- `src/entities/zombie.js:424-450`, `src/entities/zombie.js:552-560`, `data/tuning.json:28`: a siege starts only at dusk or night and ends at `siegeEndHour`
+- `data/tuning.json:61`, `src/game.js:323-333`: the world's speed while every living player sleeps
+- `src/main.js:1065-1066`, `src/clock.js:41-44`: the hour keys, within the day
 - `src/net.js:1120`: a guest's clock set from every frame

@@ -17,7 +17,7 @@ None of the dead start inside the crypt, but the graveyard round it is full of t
 
 ## Sources
 
-<!-- sources at 2ea0d24 -->
+<!-- sources at 64cc711 -->
 - `tools/mapgen/valley.py:272-276`: the crypt in the graveyard's north-east corner
 - `data/maps/valley.json:2299-2354`: stone, one room, a door on the west side and no windows, two coffins and a chest, its one bracket empty
 - `data/maps/valley.json:5125-5286`: none of the dead placed inside it
