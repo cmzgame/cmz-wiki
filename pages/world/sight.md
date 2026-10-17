@@ -46,12 +46,11 @@ The dark hides what you know, never what happens. One of the dead seen less than
 
 - has no swing-target outline and no health bar over its head;
 - cannot be pointed at: the pointer does not turn into the zombie hand over it, and a click, a right-click, or a [[Use]] passes it by, to whatever is beneath;
-- shows no speech bubble. When it groans, the [[Chat log]] says "Something groans in the dark." instead, with nothing to say where, at most once in {{n tuning.sight.groanGap seconds}} of the world's time.
+- shows no speech bubble. When it groans within {{n tuning.sight.groanRadius tiles}} of you, the [[Chat log]] says "Something groans in the dark." instead, with nothing to say where, at most once in {{n tuning.sight.groanGap seconds}} of the world's time however many groan; farther off, you hear nothing.
 
 The line is for the dark alone. One of the dead whose bubble a tree's canopy hides by day (behind it, farther off than a bubble shows there) puts no line in the log.
 
 A blow still lands on it: a swing hits whatever is in its wedge, and an arrow, a throw, or a fireball hits what it meets, seen or not. The dead's own sight of you is a separate rule, by the light you stand in; see [[Light#Light and the dead|Light]].
-<!-- the swing-target outline's threshold is its own literal 0.5 in render/entities.js, equal to seenAt today -->
 
 ### The fog
 
@@ -73,7 +72,7 @@ When you walk behind a tall tree, a soft round hole opens in its canopy so you c
 - In the dark, the dead seen whole within {{n tuning.sight.darkRadius tiles}}, or the radius of the light you carry; hidden {{n tuning.sight.edge tiles}} past it.
 - In light from {{n tuning.sight.litFull}} at their feet; not at all below {{n tuning.sight.litNone}}.
 - Counted as seen from {{n tuning.sight.seenAt}} of whole; not drawn below {{n tuning.sight.drawCutoff}}.
-- "Something groans in the dark." at most every {{n tuning.sight.groanGap seconds}}.
+- "Something groans in the dark.": only within {{n tuning.sight.groanRadius tiles}}, at most every {{n tuning.sight.groanGap seconds}}.
 
 ## With friends
 
@@ -90,23 +89,23 @@ Each player sees the dead in the dark by their own sight and their own torch, fr
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at 4be64f2 -->
 - `src/visibility.js:12-48`, `src/visibility.js:86-109`, `src/camera.js:38-55`: rays from your tile over the viewport and a margin; the corner points
-- `src/main.js:1147-1156`: recomputed on a new tile, a world change, or a resize
-- `src/map.js:1350-1363`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not
-- `src/visibility.js:39-42`, `src/map.js:1877`: only a prop marked opaque blocks sight, and no prop's definition is
-- `src/sight.js:18-34`, `data/tuning.json:95`: how much of a dead one is seen: the light at its feet between `litNone` and `litFull`, or whole within `darkRadius` or the viewer's own carried light's radius, fading over `edge`; a burning one whole; seen from `seenAt` (game #173)
-- `src/light.js:427-439`, `src/game.js:658-670`, `data/tuning.json:80-81`: the light at a point includes every carried light; a torch's radius in hand, two in hand, and on the belt at `beltLight` (game #173)
+- `src/main.js:1149-1158`: recomputed on a new tile, a world change, or a resize
+- `src/map.js:1342-1355`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not
+- `src/visibility.js:39-42`, `src/map.js:1880`: only a prop marked opaque blocks sight, and no prop's definition is
+- `src/sight.js:18-34`, `data/tuning.json:100`: how much of a dead one is seen: the light at its feet between `litNone` and `litFull`, or whole within `darkRadius` or the viewer's own carried light's radius, fading over `edge`; a burning one whole; seen from `seenAt` (game #173)
+- `src/light.js:427-439`, `src/game.js:650-662`, `data/tuning.json:84-85`: the light at a point includes every carried light; a torch's radius in hand, two in hand, and on the belt at `beltLight` (game #173)
 - `src/light.js:120-122`, `src/light.js:155-168`: the sky's light out of doors; a shuttered room at the night's level by day, an open one filled (game #150)
-- `src/render/entities.js:196-204`, `src/render/entities.js:262`: the dead drawn faded, or not at all below `drawCutoff` (game #173), not the fallen, your own player, or a debug draw-all; the swing outline only at 0.5 or more
+- `src/render/entities.js:196-204`, `src/render/entities.js:262`: the dead drawn faded, or not at all below `drawCutoff` (game #173), not the fallen, your own player, or a debug draw-all; the swing outline only at `seenAt` or more (game #189)
 - `src/ui/zombie-bars.js:56`: no health bar on one not seen
-- `src/interact.js:1315-1322`, `src/interact.js:714`, `src/interact.js:1361`, `src/main.js:802`, `src/main.js:1085-1086`, `src/main.js:1107`: one not seen cannot be pointed at: the hover hand, the actions menu, Use, and a click, the clicking player's own sight
-- `src/ui/speech.js:69-89`: a hidden one's groan shows no bubble, and "Something groans in the dark." goes to the log only for one the dark hides, not a canopy, at most every `groanGap` (game #173)
+- `src/interact.js:1380-1387`, `src/interact.js:763`, `src/interact.js:1426`, `src/main.js:804`, `src/main.js:1087-1088`, `src/main.js:1109`: one not seen cannot be pointed at: the hover hand, the actions menu, Use, and a click, the clicking player's own sight
+- `src/ui/speech.js:69-90`: a hidden one's groan shows no bubble, and "Something groans in the dark." goes to the log only for one the dark hides, not a canopy (game #173), within `groanRadius`, at most every `groanGap` (game #189)
 - `src/sight.js:1-11`: sight read by what a client draws and points at, and by the host's step only to choose what a click lands on; the swing, the shot, and the dead's sight of you never read it
 - `src/render/scene.js:31-32`, `src/render/area.js:154-169`: the fog's colour and strength
 - `src/render/entities.js:198-199`: characters out of sight are not drawn
 - `src/render/props.js:142-148`: flames drawn only when seen
 - `src/render/scene.js:35-43`, `src/render/scene.js:97-121`, `src/render/props.js:156`: the tree hole, its sizes, trees alone, for your own character; near walls faded
-- `src/main.js:1042`, `src/main.js:1063`: V and L
-- `src/main.js:1154`, `src/render/entities.js:198`: sight each player's own; another player drawn only in sight
+- `src/main.js:1044`, `src/main.js:1065`: V and L
+- `src/main.js:1156`, `src/render/entities.js:198`: sight each player's own; another player drawn only in sight
 - `src/net.js:867`, `src/net.js:1225`: every player's carried light sent to every guest, each with its owner

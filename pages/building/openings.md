@@ -67,28 +67,28 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
-- `src/map.js:724-735`: a wall record with its kind and state
-- `src/map.js:808-817`: only a door, open or broken and unboarded, passes a body; a window never does
-- `src/map.js:1328-1342`: what a door and shutters pass of light and sight
-- `src/interact.js:464-494`: E and the menu open and close doors and shutters from either side
-- `src/interact.js:43`: E's reach
-- `src/map.js:1385-1394`: an open doorway passes across its whole width
-- `src/map.js:1535-1553`, `src/map.js:1559-1562`, `src/map.js:1611-1626`: the slide towards an open doorway
-- `src/entities/zombie.js:687-752`, `src/map.js:768-799`: the dead break closed doors and never open them
-- `src/map.js:587-620`: a door is not built where either tile holds a prop; the two tiles beside a door
+<!-- sources at 4be64f2 -->
+- `src/map.js:733-744`: a wall record with its kind and state
+- `src/map.js:817-826`: only a door, open or broken and unboarded, passes a body; a window never does
+- `src/map.js:1337-1351`: what a door and shutters pass of light and sight
+- `src/interact.js:466-496`: E and the menu open and close doors and shutters from either side
+- `src/interact.js:45`: E's reach
+- `src/map.js:1394-1403`: an open doorway passes across its whole width
+- `src/map.js:1555-1573`, `src/map.js:1579-1582`, `src/map.js:1631-1646`: the slide towards an open doorway
+- `src/entities/zombie.js:687-752`, `src/map.js:777-808`: the dead break closed doors and never open them
+- `src/map.js:596-629`: a door is not built where either tile holds a prop; the two tiles beside a door
 - `src/placement.js:95-115`: nothing put down on a door's tiles
 - `src/stations.js:178-185`: made furniture lands off a door's tiles
-- `src/map.js:2016-2024`: a fence's gates are doors
-- `tools/check.js:137-139`, `tools/check.js:157-220`, `tools/mapgen/valley.py:106-112`: every map's door tiles clear and reachable on foot
-- `src/interact.js:849-862`, `src/interact.js:952-959`: E acts on its release however long it was held; no hold of E
-- `src/map.js:802-808`, `src/map.js:833-876`: the dead batter a shut or boarded window from outside, never pass it
+- `src/map.js:2039-2047`: a fence's gates are doors
+- `tools/check.js:137-139`, `tools/check.js:179-242`, `tools/mapgen/valley.py:106-112`: every map's door tiles clear and reachable on foot
+- `src/interact.js:898-911`, `src/interact.js:1001-1008`: E acts on its release however long it was held; no hold of E
+- `src/map.js:811-817`, `src/map.js:842-885`: the dead batter a shut or boarded window from outside, never pass it
 - `src/entities/zombie.js:607-622`, `src/visibility.js:12-48`, `data/tuning.json`: `zombie.contact`: a bite needs the contact distance and a clear line, which an open window passes (game #171)
-- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:87`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
-- `src/map.js:783-788`: what a broken door and broken shutters become
-- `src/map.js:587-597`, `src/map.js:622-650`, `src/placement.js:188-194`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
-- `src/map.js:652-667`, `src/placement.js:408`: the removal tool puts the wall back
-- `src/interact.js:480-481`: the menu's broken entries
+- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:88`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
+- `src/map.js:792-797`: what a broken door and broken shutters become
+- `src/map.js:596-606`, `src/map.js:631-659`, `src/placement.js:188-194`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
+- `src/map.js:661-676`, `src/placement.js:408`: the removal tool puts the wall back
+- `src/interact.js:482-483`: the menu's broken entries
 - `data/build.json`: the door and window in the palette
-- `src/map.js:569-570`, `src/map.js:724-735`: door and shutter health, whatever the material
-- `src/interact.js:964-984`, `src/interact.js:491`: a guest's E performed by the host, the change reaching guests and the save
+- `src/map.js:578-579`, `src/map.js:733-744`: door and shutter health, whatever the material
+- `src/interact.js:1013-1033`, `src/interact.js:493`: a guest's E performed by the host, the change reaching guests and the save

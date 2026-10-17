@@ -49,7 +49,7 @@ Neither lights a hearth, a fireplace, an oven, or a forge ("That cannot be lit."
 
 ### Going out
 
-A fire burns one unit every so many game hours. When the last unit burns, it goes out, and players nearby read "A fire has gone out." Most fires in the valley start cold; a few fireplaces and the baker's oven start lit.
+A fire burns one unit every so many game hours. When the last unit burns, it goes out, and the host's own player, within {{n tuning.world.fireOutRadius tiles}} of it, reads "A fire has gone out." (a guest is not told). Most fires in the valley start cold; a few fireplaces and the baker's oven start lit.
 
 A recipe that needs the fire waits while it is out and carries on when it is lit again (see [[Crafting]]).
 
@@ -84,7 +84,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `data/sprites/campfire.json`: the campfire's fuel, hours a unit, most, cooking
 - `data/sprites/hearth.json`: the hearth's, and it lights its room
 - `data/sprites/fireplace.json:30-34`: the fireplace's
@@ -93,25 +93,25 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `src/stations.js:45-52`: the oven offers only its own recipe
 - `src/light.js:47-59`: lit fires give light; a room fire lights its room
 - `src/map.js:95`: a game hour in seconds
-- `src/interact.js:352-385`: Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only; lighting one that is out needs a flame ("(need a tinderbox or a flame)", the refusal, not E's), feeding one that burns does not (game #169)
+- `src/interact.js:354-387`: Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only; lighting one that is out needs a flame ("(need a tinderbox or a flame)", the refusal, not E's), feeding one that burns does not (game #169)
 - `src/inventory.js:125-135`, `src/inventory.js:278-292`: the flame: a tinderbox in a hand, on the belt, or in the bag, else a lit torch in a hand or on the belt; the refusal's words
-- `src/interact.js:721-740`: E takes only a simple action
-- `src/interact.js:360-361`: hours left rounded, or "under an hour"
+- `src/interact.js:770-789`: E takes only a simple action
+- `src/interact.js:362-363`: hours left rounded, or "under an hour"
 - `src/map.js:97-115`: a fire burns a unit every so many hours and goes out
-- `src/main.js:1624-1626`: "A fire has gone out." within 8 tiles
+- `src/main.js:1626-1628`, `data/tuning.json:90`: "A fire has gone out." within `fireOutRadius`, on the host's own screen only (game #189)
 - `data/maps/valley.json`: which fires start lit
 - `src/stations.js:204-217`: a job waits while the fire is out
 - `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
 - `data/sprites/lantern_post.json`, `src/map.js:208-215`, `src/light.js:63-67`: lanterns, never out; the village's lights
 - `src/map.js:137-283`, `src/map.js:149-184`: brackets and posts holding a torch, which burns down while lit
-- `src/interact.js:405-463`: Light the torch, Take the torch, and Mount the torch
-- `src/items.js:186-215`, `src/game.js:483-509`: a torch's light only while lit, no fuel; it burns down
-- `src/game.js:646-658`: two held torches
-- `src/interact.js:998-1019`: `T`
+- `src/interact.js:407-465`: Light the torch, Take the torch, and Mount the torch
+- `src/items.js:186-215`, `src/game.js:486-512`: a torch's light only while lit, no fuel; it burns down
+- `src/game.js:650-662`: two held torches
+- `src/interact.js:1047-1068`: `T`
 - `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel, never a hearth, fireplace, oven, or forge
-- `data/interactions.json`, `src/burn.js:62`, `src/burn.js:85-189`, `src/map.js:284-312`: the `light` verb: a tinderbox or a lit torch lights a campfire with fuel, in reach and sight; never a hearth, an oven, or a forge; an unlit torch lit from any burning fire, a lit torch on a post or in a bracket (game #172), or a lantern (game #188); the refusals
+- `data/interactions.json`, `src/burn.js:62`, `src/burn.js:85-190`, `src/map.js:284-312`: the `light` verb: a tinderbox or a lit torch lights a campfire with fuel, in reach and sight; never a hearth, an oven, or a forge; an unlit torch lit from any burning fire, a lit torch on a post or in a bracket (game #172), or a lantern (game #188); the refusals
 - `data/items.json:2`: the torch's radius
-- `data/tuning.json:83-84`: the belt torch and two torches
+- `data/tuning.json:84-85`: the belt torch and two torches
 - `src/map.js:104-106`: a guest's fuel refreshed at each whole unit
 - `src/net.js:590-598`, `src/host.js:264-268`: a guest's menu choice performed on the host as that player, its refusal to their screen
 - `data/interactions.json`, `src/interactions.js:34-43`, `src/burn.js:62-83`: arrows used on any fire that burns fuel, refused when it is out

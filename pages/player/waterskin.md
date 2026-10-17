@@ -14,7 +14,7 @@ A **waterskin** holds water for [[Thirst]], shown as a percent. Every survivor s
 
 ## Effects
 
-Choose "Drink" on it in your bag, or press its belt key when it sits on the belt. The menu shows how full it is. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water.
+Choose "Drink" on it in your bag; when it sits on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. The menu shows how full it is. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water.
 
 It also drinks by itself. Once your [[Thirst]] falls to **Thirsty** (the moodle's stage {{n tuning.player.autoDrinkStage}}), you take the same sip from a waterskin you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. The emptiest skin that still holds water goes first, so one is finished before the next is started. It waits until you are not swinging, drawing, casting, guarding, or asleep, and not already holding a drink or food out. It needs [[Survival]] on.
 
@@ -30,18 +30,18 @@ A guest drinks and fills through the same actions; the host performs them. A gue
 
 ## Sources
 
-<!-- sources at 1c7ed26 -->
-- `data/items.json:19`: the waterskin, its size, and its capacity
-- `src/game.js:111`: the starter waterskin, full
+<!-- sources at 4be64f2 -->
+- `data/items.json:20`: the waterskin, its size, and its capacity
+- `data/kit.json:5`: the starter waterskin, full
 - `data/loot.json:3-4`: waterskins in barrels and on bodies
-- `src/interact.js:1052-1053`: "Drink (N%)" showing the fill
-- `src/interact.js:995-1006`: the belt key drinks it
-- `src/entities/player.js:107-115`, `data/tuning.json:51`: the sip, with a +1 that takes water at full thirst
-- `src/entities/player.js:117-134`, `data/tuning.json:52`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
-- `src/game.js:547-550`, `src/main.js:1601-1603`, `src/host.js:200-203`: in the world's step on the host, the word to whoever drank
-- `src/interact.js:48,535-582`: "Fill waterskins" at a well or water, its time, filling to 100
+- `src/interact.js:1135-1136`: "Drink (N%)" showing the fill
+- `src/interact.js:1080-1094`, `src/interact.js:1206-1218`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
+- `src/entities/player.js:104-112`, `data/tuning.json:59`: the sip, with a +1 that takes water at full thirst
+- `src/entities/player.js:113-131`, `data/tuning.json:60`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
+- `src/game.js:578-581`, `src/main.js:1641-1643`, `src/host.js:239-242`: in the world's step on the host, the word to whoever drank
+- `src/interact.js:51`, `src/interact.js:577-616`: "Fill waterskins" at a well or water, its time, filling to 100
 - `src/inventory.js:80-82`: only the bag's waterskins are filled
-- `src/items.js:92-93`: a found waterskin's random fill
-- `src/ui/inventory-actions.js:218,346-352`: a guest's menu choice is run by the host
+- `src/items.js:93`: a found waterskin's random fill
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
 
 {{navbox items}}

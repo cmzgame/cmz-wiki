@@ -21,16 +21,16 @@ The graveyard is full of the dead at the start, among the headstones on both sid
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
-- `tools/mapgen/valley.py:247-261`: the chapel at the top of the nobles' street, inside the graveyard
-- `data/maps/valley.json:2115-2283`: stone walls; the pews, altar, lectern, chest, cupboard, and font; the partition in the north-east corner; the door south, two windows west, one east
-- `data/sprites/font.json`, `src/interact.js:585-587`, `src/interact.js:625`: the font is drunk from like a well
-- `data/maps/valley.json:2270-2281`: both brackets empty
-- `tools/mapgen/valley.py:249`, `tools/mapgen/valley.py:262-270`: the graveyard's fence with its south gate, and the headstones either side of the chapel
-- `data/sprites/wall_fence.json`, `src/map.js:1333-1342`: a fence is seen over and not walked through
-- `tools/mapgen/valley.py:272`, `tools/mapgen/valley.py:277-278`: the crypt in the graveyard's north-east corner, the priest's house to the east
-- `data/maps/valley.json:5595-5604`: the Priest inside
-- `tools/mapgen/valley.py:414`: the graveyard's dead
-- `data/maps/valley.json:5234-5237`, `data/maps/valley.json:5238-5241`: two of them inside the chapel at its south end
+<!-- sources at 4be64f2 -->
+- `tools/mapgen/valley.py:249-263`: the chapel at the top of the nobles' street, inside the graveyard
+- `data/maps/valley.json:2161-2329`: stone walls; the pews, altar, lectern, chest, cupboard, and font; the partition in the north-east corner; the door south, two windows west, one east
+- `data/sprites/font.json`, `src/interact.js:614-616`, `src/interact.js:674`: the font is drunk from like a well
+- `data/maps/valley.json:2316-2327`: both brackets empty
+- `tools/mapgen/valley.py:251`, `tools/mapgen/valley.py:264-272`: the graveyard's fence with its south gate, and the headstones either side of the chapel
+- `data/sprites/wall_fence.json`, `src/map.js:1342-1351`: a fence is seen over and not walked through
+- `tools/mapgen/valley.py:274`, `tools/mapgen/valley.py:279-280`: the crypt in the graveyard's north-east corner, the priest's house to the east
+- `data/maps/valley.json:5832-5841`: the Priest inside
+- `tools/mapgen/valley.py:425`: the graveyard's dead
+- `data/maps/valley.json:5471-5474`, `data/maps/valley.json:5475-5478`: two of them inside the chapel at its south end
 
 {{navbox places}}

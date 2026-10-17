@@ -39,24 +39,24 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `index.html:51`, `src/ui/screens.js:823-836`: the site's Play opens the Worlds page, New world on it
-- `src/main.js:309-345`, `src/ui/screens.js:360-366`, `src/ui/screens.js:438-457`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
-- `src/game.js:187-192`: each world's save holds its own characters
+- `src/main.js:310-346`, `src/ui/screens.js:360-366`, `src/ui/screens.js:438-457`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
+- `src/game.js:189-194`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
-- `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
-- `data/kit.json`, `src/game.js:105-109`: the starter kit, its torch out and a tinderbox in the sack
-- `src/interact.js:998-1019`, `src/game.js:483-509`, `data/tuning.json:87-88`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
-- `src/main.js:896-904`: Tab for the bag, C for the character screen
-- `src/main.js:1055-1138`: an open panel stops nothing in the world
-- `src/main.js:760-799`, `src/interact.js:964-982`: right-click for the menu; E for the nearest simple action
-- `src/interact.js:325-341`: searching a chest
-- `src/interact.js:465-494`, `src/map.js:1333-1346`: tap E to open or shut; shut shutters block sight
-- `src/map.js:808-817`, `src/entities/zombie.js:216-241`: no one passes a window; the dead go for a door
-- `src/entities/player.js:130-132`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
-- `src/interact.js:548-587`: drinking and filling at the well or any water
-- `src/map.js:98-129`, `src/interact.js:352-385`: fires burn down and are fed from their menu; lit with a flame carried (game #169)
-- `src/entities/player.js:204-222`, `src/entities/player.js:176-202`, `src/game.js:312-322`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
+- `data/maps/valley.json:5358-5361`, `data/maps/valley.json:1185-1656`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
+- `data/kit.json`, `src/game.js:107-111`: the starter kit, its torch out and a tinderbox in the sack
+- `src/interact.js:1047-1068`, `src/game.js:486-512`, `data/tuning.json:88-89`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/main.js:897-905`: Tab for the bag, C for the character screen
+- `src/main.js:1056-1139`: an open panel stops nothing in the world
+- `src/main.js:761-800`, `src/interact.js:1013-1031`: right-click for the menu; E for the nearest simple action
+- `src/interact.js:327-343`: searching a chest
+- `src/interact.js:467-496`, `src/map.js:1342-1355`: tap E to open or shut; shut shutters block sight
+- `src/map.js:817-826`, `src/entities/zombie.js:216-241`: no one passes a window; the dead go for a door
+- `src/entities/player.js:145-147`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
+- `src/interact.js:577-616`: drinking and filling at the well or any water
+- `src/map.js:98-129`, `src/interact.js:354-387`: fires burn down and are fed from their menu; lit with a flame carried (game #169)
+- `src/entities/player.js:219-237`, `src/entities/player.js:191-217`, `src/game.js:315-325`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
 - `data/tuning.json:4`, `data/tuning.json:43`: the dead walk at a third of your speed
 - `src/entities/zombie.js:308-313`, `src/entities/zombie.js:520-560`, `src/entities/zombie.js:371-387`: they see by the light on you, remember where they last saw you, and notice a flame at night
 - `src/entities/zombie.js:421-478`, `src/entities/zombie.js:847-914`: at night the dead that see you go in remember the door and wait about the house until dawn

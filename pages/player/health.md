@@ -34,7 +34,7 @@ With the [[Survival]] setting off the needs are held full, so health comes back 
 
 Awake, you regain {{n tuning.player.healthRegenPerMinute}} health a minute. Asleep in a bed, you regain {{n tuning.player.sleepRegenPerMinute}} a minute (see [[Sleep]]). A minute here is a minute of the world's own clock, so while everyone sleeps it passes much faster.
 
-[[Food]] does not heal. Eating only raises hunger and thirst, which lets regeneration start again.
+[[Food]] heals a little: each food adds its heal value when eaten, a stopgap, and only the share whose hunger your stomach has room for; a full stomach eats nothing (see [[Food]]). Eating also raises hunger and thirst, which lets regeneration start again.
 
 ## Numbers
 
@@ -61,17 +61,16 @@ Each player has their own health. A sleeper among players who are awake still re
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/tuning.json:38`: the maximum health
+<!-- sources at 4be64f2 -->
+- `data/tuning.json:45`: the maximum health
 - `src/ui/hud.js:90-93`: the bar, its colours by fraction, and the current / max text
 - `data/tuning.json:11-12`: a bite's damage and the time between bites
-- `src/game.js:294-301`, `src/combat.js:134-143`: a bite through the shield guard, and the bleed and infection hooks
+- `src/game.js:355-363`, `src/combat.js:131-163`: a bite through the shield guard, and the bleed and infection hooks
 - `data/combat.json:4`: the bleeding drain by stacks
-- `data/tuning.json:49-50`, `src/entities/player.js:131-132`: starving and dehydration damage, which add up
-- `src/settings.js:12`, `src/entities/zombie.js:233,296`: the dead bite only with Zombie aggro on
-- `src/entities/player.js:134-139`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), and the awake and asleep rates
-- `src/moodles.js:55-78`: hunger and thirst stage 2 begins below 35
-- `src/entities/player.js:120-125`: with Survival off the needs are held full and regeneration still runs (game commit 2c70942)
-- `data/tuning.json:59-60`: the regeneration rates, per sim minute
-- `src/entities/player.js:102`, `data/items.json`: `eat` adds `heal`, but no food has one
-- `src/entities/player.js:184-191`: a sleeper regenerates at the sleeping rate whatever the time scale
+- `data/tuning.json:57-58`, `src/entities/player.js:149-150`: starving and dehydration damage, which add up
+- `src/settings.js:12`, `src/entities/zombie.js:307-308`: the dead bite only with Zombie aggro on
+- `src/entities/player.js:152-157`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), and the awake and asleep rates, in the world's time
+- `src/moodles.js:47-78`: hunger and thirst stage 2 begins below 35
+- `src/entities/player.js:139-143`: with Survival off the needs are held full and regeneration still runs
+- `data/tuning.json:67-68`: the regeneration rates, per sim minute
+- `src/entities/player.js:81-101`, `data/items.json`: `eat` adds each food's `heal`, times the share of its hunger that fills, and nothing at `fullAt` (game #186)

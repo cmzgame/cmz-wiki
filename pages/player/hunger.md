@@ -18,7 +18,7 @@ Hunger empties from full in {{n tuning.player.hungerDrainSeconds}} seconds of th
 
 ### Eating
 
-Choose "Eat" on food in your bag or in an open container, or press its belt key when the food sits on your belt. Eating is instant: hunger (and thirst, for some foods) rises by the food's value, capped at the maximum, and one is used from the stack. Your character holds the food out for a moment. Nothing stops you eating when full; the extra is wasted. Food does not heal.
+Choose "Eat" on food in your bag or in an open container, or eat a food on your belt from its slot: its belt key, Eat on the slot's menu, or a double-click. Eating is instant: hunger (and thirst, for some foods) rises by the food's value, capped at the maximum, health rises a little by the food's heal, and one is used from the stack. Your character holds the food out for a moment. **At {{n tuning.player.fullAt}} hunger or more you are full**: you cannot eat, and trying says "You are full." Below that, a food that gives more hunger than you have room for heals only the share that fills (see [[Food]]).
 
 ### Stages
 
@@ -33,6 +33,7 @@ The hunger moodle shows the stage:
 
 - Maximum: {{n tuning.player.hungerMax}}
 - Full to empty: {{n tuning.player.hungerDrainSeconds}} seconds
+- Full, and eating refused, at: {{n tuning.player.fullAt}}
 - Starving: {{n tuning.player.starveDamage}} health a second
 - A [[Loaf of bread]]: +{{n items.bread.hunger}}; an [[Apple]]: +{{n items.apple.hunger}}; [[Stew]]: +{{n items.stew.hunger}}. Every food is listed under [[Food]].
 
@@ -42,7 +43,7 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 
 ## Settings that change it
 
-- **Survival** (default On): off, hunger is held full.
+- **Survival** (default On): off, hunger is held full, so you are always full and eat nothing.
 
 ## See also
 
@@ -50,18 +51,18 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/tuning.json:45,47`: the maximum and the drain time
-- `src/entities/player.js:127`: the drain, every step, awake or asleep
-- `src/map.js:84`: a game hour is 30 seconds
-- `src/entities/player.js:98-103`: eating raises hunger and thirst, capped
-- `src/interact.js:1046-1048`: the "Eat" entry uses one from the stack
-- `src/interact.js:994-1004`: the belt key eats a food on the belt
-- `data/tuning.json:52`, `src/entities/player.js:363-365`: the held-out pose
-- `src/moodles.js:55-61`: the hunger stages and their thresholds
-- `src/entities/player.js:134-135`: Hungry stops regeneration
-- `src/entities/player.js:143-148`, `data/tuning.json:61`: Very hungry slows stamina recovery
-- `src/entities/player.js:131`, `data/tuning.json:49`: starving damage
-- `data/items.json:16-17,50`: bread, apple, and stew
-- `src/ui/inventory-actions.js:216,343-351`: a guest's menu choice is run by the host
-- `src/entities/player.js:120-126`: Survival off holds hunger full
+<!-- sources at 4be64f2 -->
+- `data/tuning.json:52`, `data/tuning.json:54-55`: the maximum, the drain time, and `fullAt`
+- `src/entities/player.js:145`: the drain, every step, awake or asleep
+- `src/map.js:95`: a game hour is 30 seconds
+- `src/entities/player.js:81-101`: full at `fullAt`, nothing eaten; eating raises hunger and thirst, capped, and heals by the share it fills (game #186)
+- `src/interact.js:1069-1078`, `src/interact.js:1132`: the "Eat" entry uses one from the stack, or says "You are full."
+- `src/interact.js:1080-1094`, `src/interact.js:1206-1218`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
+- `data/tuning.json:61`, `src/entities/player.js:93`, `src/entities/player.js:383-384`: the held-out pose
+- `src/moodles.js:55-59`: the hunger stages and their thresholds
+- `src/entities/player.js:152-157`: Hungry stops regeneration
+- `src/entities/player.js:162-167`, `data/tuning.json:69`: Very hungry slows stamina recovery
+- `src/entities/player.js:149`, `data/tuning.json:57`: starving damage
+- `data/items.json:16-17`, `data/items.json:59`: bread, apple, and stew
+- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:347-358`: a guest's menu choice is run by the host
+- `src/entities/player.js:139-143`: Survival off holds hunger full

@@ -20,17 +20,17 @@ The Neighbour stands inside [[The shut cottage]], next door but one to [[Your co
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
-- `data/tuning.json:74`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
+- `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1184`, `src/interact.js:1350-1363`, `src/interact.js:1390-1404`: a left click within reach, or Poke on the menu
-- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:75`: the poke stops them, turns them to you, says the line, and holds them for the talk time
+- `src/interact.js:1249`, `src/interact.js:1415-1428`, `src/interact.js:1455-1469`: a left click within reach, or Poke on the menu
+- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
-- `src/game.js:361`, `src/entities/villager.js:101-137`, `src/game.js:614-618`: one bitten to death gets up as one of the dead in their clothes
-- `data/maps/valley.json:5623-5631`: the Neighbour's line and tile
-- `tools/mapgen/valley.py:386`, `tools/mapgen/valley.py:428`: inside the shut cottage, "a neighbour inside who will not open"
-- `data/maps/valley.json:1129-1611`, `data/maps/valley.json:4889-5023`, `data/maps/valley.json:4757-4888`: your cottage at x 98, the reeve's house at 90, the shut cottage at 80: next door but one
-- `data/maps/valley.json:4777-4782`, `data/maps/valley.json:4868-4873`: its door closed and its one bracket empty
+- `src/game.js:364`, `src/entities/villager.js:101-137`, `src/game.js:618-622`: one bitten to death gets up as one of the dead in their clothes
+- `data/maps/valley.json:5860-5868`: the Neighbour's line and tile
+- `tools/mapgen/valley.py:388`, `tools/mapgen/valley.py:439`: inside the shut cottage, "a neighbour inside who will not open"
+- `data/maps/valley.json:1175-1657`, `data/maps/valley.json:4957-5091`, `data/maps/valley.json:4825-4956`: your cottage at x 98, the reeve's house at 90, the shut cottage at 80: next door but one
+- `data/maps/valley.json:4845-4850`, `data/maps/valley.json:4936-4941`: its door closed and its one bracket empty
 
 {{navbox places}}

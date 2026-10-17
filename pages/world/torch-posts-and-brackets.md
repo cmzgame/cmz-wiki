@@ -32,10 +32,10 @@ Stand within {{n census.constants.interact.INTERACT_RANGE}} tiles of an empty br
 A mounted torch cannot be lit or doused where it hangs with `T`. One that is out is lit by:
 
 - **Light the torch** on its menu, with a [[Tinderbox]] on you, or else a lit torch in a hand or on the belt ("You light the torch."; with neither, "You have no flame (a tinderbox, or a lit torch)."); it is not the E action, so choose it from the menu;
-- [[Use]] of a tinderbox or a lit torch on it, on a post or in a bracket ("You light the torch."). In Use mode a click near a wall bracket aims at the bracket, after any character or furniture under the cursor;
+- [[Use]] of a tinderbox or a lit torch on it, on a post or in a bracket ("You light the torch."). In Use mode a click near a wall bracket aims at the bracket, after any character or furniture under the cursor, and the label names what is there: "the torch in the bracket", "the lantern", or "the empty bracket";
 - a [[Fireball]] that comes down within reach of it.
 
-Each needs no wall between: the menu and Use reach {{n census.constants.burn.DIP_REACH tiles}}, in sight, so a bracket's torch is never lit from the far side of its wall. A lit torch on a post or in a bracket is a flame in its turn: an unlit torch in your hand or on your belt used on it is lit from it ("You light the torch at the fire."), with the same reach and never through its wall. A lantern is a flame too: an unlit torch in your hand or on your belt used on a lantern, in a wall bracket or on a lantern post, is lit from it ("You light the torch at the lantern."), with the same reach and never through its wall, and the lantern stays as it was. A lantern itself is never lit or put out: a Use of a tinderbox or a lit torch on a lantern in a bracket says "A lantern is always lit.", a lit torch on a lantern post "That cannot be lit.", and a tinderbox on a lantern post does nothing. A Use on an empty bracket says "There is no torch there."
+Each needs no wall between: the menu and Use reach {{n census.constants.burn.DIP_REACH tiles}}, in sight, so a bracket's torch is never lit from the far side of its wall. A lit torch on a post or in a bracket is a flame in its turn: an unlit torch in your hand or on your belt used on it is lit from it ("You light the torch at the fire."), with the same reach and never through its wall. A lantern is a flame too: an unlit torch in your hand or on your belt used on a lantern, in a wall bracket or on a lantern post, is lit from it ("You light the torch at the lantern."), with the same reach and never through its wall, and the lantern stays as it was. A lantern itself is never lit or put out: a Use of a tinderbox or a lit torch on a lantern, in a bracket or on a post, says "A lantern is always lit." A Use on an empty bracket says "There is no torch there."
 
 ### Burning down
 
@@ -67,29 +67,30 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `data/sprites/lantern_post.json`: the lantern post: its light's radius, the one number for every lantern, not carried
 - `src/map.js:138-141`, `src/map.js:208-215`, `src/light.js:63-67`: a bracket holds a lantern or a torch; a lantern's light steady, never out, at the post's radius
-- `src/interact.js:407`: a lantern bracket offers no action
-- `src/render/walls.js:461-466`, `src/placeholders.js:1088-1130`: the lantern drawn as placeholder art
+- `src/interact.js:409`: a lantern bracket offers no action
+- `src/render/walls.js:461-466`, `src/placeholders.js:1106-1148`: the lantern drawn as placeholder art
 - `data/items.json:2`: the torch's radius
 - `src/map.js:218-222`, `src/light.js:68-71`: a bracket on a wall edge, its torch 0.3 tiles off it on its side, with the torch's radius, only while lit
-- `src/map.js:589-617`: a door or window built into a wall forgets its bracket
+- `src/map.js:598-626`: a door or window built into a wall forgets its bracket
 - `src/light.js:209-250`: the light stopped by walls, shut doors, and shutters
 - `data/sprites/torch_post.json`, `src/light.js:52-60`: a post lit only while it holds a lit torch, its radius and collision circle
-- `src/interact.js:43`: E's reach to a bracket
-- `src/interact.js:405-463`, `src/interact.js:158-163`: Light the torch (not the E action), Take the torch (into a hand, else the bag, out, its wear kept), Mount the torch (as it is), and the greyed empty holder
-- `data/interactions.json`, `src/burn.js:62`, `src/burn.js:85-189`, `src/map.js:284-312`: the `light` verb on a mounted torch: a tinderbox or a lit torch, within reach and in sight; an unlit torch lit from a lit one on a post or in a bracket, at the bracket's own point (game #172), or from a lantern in a bracket or on a post, the lantern unchanged (game #188); a lantern itself never lit, an empty bracket refused
-- `src/use.js:94-105`, `src/interactions.js:16`: a Use with no row for the pair (a tinderbox on a lantern post) says "Nothing interesting happens."
-- `src/interactions.js:34-43`, `src/interact.js:676-683`, `src/main.js:802-812`: Use mode aims at any bracket near the cursor, after a character and a prop (game #172)
+- `src/interact.js:45`: E's reach to a bracket
+- `src/interact.js:407-465`, `src/interact.js:160-165`: Light the torch (not the E action), Take the torch (into a hand, else the bag, out, its wear kept), Mount the torch (as it is), and the greyed empty holder
+- `data/interactions.json`, `src/burn.js:62`, `src/burn.js:85-190`, `src/map.js:284-312`: the `light` verb on a mounted torch: a tinderbox or a lit torch, within reach and in sight; an unlit torch lit from a lit one on a post or in a bracket, at the bracket's own point (game #172), or from a lantern in a bracket or on a post, the lantern unchanged (game #188); a lantern itself never lit, an empty bracket refused
+- `data/interactions.json:12-13`, `src/burn.js:112`: a tinderbox and a lit torch on a lantern post say "A lantern is always lit.", as on a lantern in a bracket (game #189)
+- `src/interactions.js:58`: the Use label names a bracket's torch, its lantern, or the empty bracket (game #189)
+- `src/interactions.js:34-43`, `src/interact.js:725-732`, `src/main.js:803-813`: Use mode aims at any bracket near the cursor, after a character and a prop (game #172)
 - `src/map.js:253-283`: what a mounted torch keeps: its wear and whether it is lit
 - `src/inventory.js:125-135`: a torch to mount is found in the hands, the belt, or the bag
 - `src/map.js:186-205`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
-- `src/map.js:149-184`, `data/tuning.json:88`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
-- `src/host.js:232-237`, `src/main.js:1633-1635`, `data/tuning.json:89`: "A torch burns out." to players within `torchSpentRadius`
-- `tools/mapgen/valley.py:101-113`, `tools/mapgen/valley.py:204`, `tools/mapgen/valley.py:260`, `tools/mapgen/valley.py:275`, `tools/mapgen/valley.py:386`: the village's lights lanterns, the square's three lamps, the chapel's, the crypt's, and the shut cottage's brackets empty
-- `data/maps/valley.json:1894-1905`, `data/maps/valley.json:3918-3923`: the inn's and the toll house's lanterns outside
-- `data/maps/valley.json:5377-5398`: the square's three lantern posts
-- `src/interact.js:70-105`: a guest's take or mount run on the host by address
-- `src/main.js:1002-1013`, `src/ui/inventory-actions.js:383-385`: a guest's Use on a bracket by its tile and edge, run on the host
+- `src/map.js:149-184`, `data/tuning.json:89`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
+- `src/host.js:232-237`, `src/main.js:1635-1637`, `data/tuning.json:92`: "A torch burns out." to players within `torchSpentRadius`
+- `tools/mapgen/valley.py:101-113`, `tools/mapgen/valley.py:206`, `tools/mapgen/valley.py:262`, `tools/mapgen/valley.py:277`, `tools/mapgen/valley.py:388`: the village's lights lanterns, the square's three lamps, the chapel's, the crypt's, and the shut cottage's brackets empty
+- `data/maps/valley.json:1940-1951`, `data/maps/valley.json:3965-3970`: the inn's and the toll house's lanterns outside
+- `data/maps/valley.json:5614-5635`: the square's three lantern posts
+- `src/interact.js:72-107`: a guest's take or mount run on the host by address
+- `src/main.js:1003-1014`, `src/ui/inventory-actions.js:383-385`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests

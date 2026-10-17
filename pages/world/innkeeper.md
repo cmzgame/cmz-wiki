@@ -20,16 +20,16 @@ The Innkeeper stands in the taproom of [[The inn]], near the counter, and wander
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
-- `data/tuning.json:74`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
+- `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1184`, `src/interact.js:1350-1363`, `src/interact.js:1390-1404`: a left click within reach, or Poke on the menu
-- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:75`: the poke stops them, turns them to you, says the line, and holds them for the talk time
-- `data/maps/valley.json:5568-5577`, `src/game.js:96`, `src/entities/villager.js:32`: the Innkeeper flagged `immune` in the map (game #187)
-- `src/entities/zombie.js:352-367`, `src/entities/villager.js:101-102`, `src/game.js:361`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
-- `data/maps/valley.json:5567-5632`: seven villagers in the valley
-- `data/maps/valley.json:5568-5577`: the Innkeeper's line and tile
-- `tools/mapgen/valley.py:422`, `data/maps/valley.json:1689-1699`: they stand in the taproom near the counter
+- `src/interact.js:1249`, `src/interact.js:1415-1428`, `src/interact.js:1455-1469`: a left click within reach, or Poke on the menu
+- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
+- `data/maps/valley.json:5805-5814`, `src/game.js:98`, `src/entities/villager.js:32`: the Innkeeper flagged `immune` in the map (game #187)
+- `src/entities/zombie.js:352-367`, `src/entities/villager.js:101-102`, `src/game.js:364`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
+- `data/maps/valley.json:5804-5869`: seven villagers in the valley
+- `data/maps/valley.json:5805-5814`: the Innkeeper's line and tile
+- `tools/mapgen/valley.py:433`, `data/maps/valley.json:1735-1745`: they stand in the taproom near the counter
 
 {{navbox places}}

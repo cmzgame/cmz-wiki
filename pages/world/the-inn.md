@@ -21,15 +21,15 @@ The dead at the west end of the bridge, a knot of them by the toll gate, stand o
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
-- `tools/mapgen/valley.py:216`: the inn on the square's east side
-- `data/maps/valley.json:1622-1907`: the taproom (counter, barrels, tables and chairs) and the kitchen behind a partition
-- `data/maps/valley.json:1827-1852`: both fireplaces lit at the start with 3 logs each
-- `data/maps/valley.json:1637-1660`: three windows boarded from the inside
-- `data/maps/valley.json:1894-1905`, `data/maps/valley.json:2026-2037`: the lantern over the west door outside, and the lanterns inside
-- `data/maps/valley.json:1908-2039`: the guest wing: three rooms, each with a door off the taproom, a bed, and a chest
-- `tools/mapgen/valley.py:240-245`, `data/maps/valley.json:2043-2103`: the fenced yard with its west gate, well, trough, woodpile, cart, and privy
-- `data/maps/valley.json:5568-5594`: the Innkeeper and the Child in the taproom, the Guest in the guest wing
-- `tools/mapgen/valley.py:412`, `data/maps/valley.json:5174-5193`: the toll gate's knot of the dead, four of them inside the inn's ground east of the taproom, none in the building
+<!-- sources at 4be64f2 -->
+- `tools/mapgen/valley.py:218`: the inn on the square's east side
+- `data/maps/valley.json:1668-1953`: the taproom (counter, barrels, tables and chairs) and the kitchen behind a partition
+- `data/maps/valley.json:1873-1898`: both fireplaces lit at the start with 3 logs each
+- `data/maps/valley.json:1683-1706`: three windows boarded from the inside
+- `data/maps/valley.json:1940-1951`, `data/maps/valley.json:2072-2083`: the lantern over the west door outside, and the lanterns inside
+- `data/maps/valley.json:1954-2085`: the guest wing: three rooms, each with a door off the taproom, a bed, and a chest
+- `tools/mapgen/valley.py:242-247`, `data/maps/valley.json:2089-2149`: the fenced yard with its west gate, well, trough, woodpile, cart, and privy
+- `data/maps/valley.json:5805-5831`: the Innkeeper and the Child in the taproom, the Guest in the guest wing
+- `tools/mapgen/valley.py:423`, `data/maps/valley.json:5411-5430`: the toll gate's knot of the dead, four of them inside the inn's ground east of the taproom, none in the building
 
 {{navbox places}}

@@ -36,7 +36,7 @@ An open panel does not stop the game or make you safe. The dead keep coming, and
 In a panel:
 
 - Drag an item to move it; drop it outside every panel to drop it on the floor.
-- Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot. Double-clicking a filled slot on the character screen or the belt runs its **Equip** or **Unequip**: a hand or clothing slot unequips, a belt slot equips into a hand.
+- Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot. Double-clicking a filled slot on the character screen or the belt runs its first entry: a hand or clothing slot unequips; a belt slot eats a food, drinks from a waterskin, or else equips into a hand.
 - Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Apply**, **Split**, **Store** or **Take**, **Drop** or **Drop all**, and **Rotate**, each where it applies.
 
 An item that has lost [[Durability|durability]] shows a bar on its icon and "(N% left)" in its name.
@@ -76,33 +76,33 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/main.js:918-1001`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
+<!-- sources at 4be64f2 -->
+- `src/main.js:1077-1162`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
 - `src/inventory.js:43`: your grid is the bag on your back
 - `src/inventory.js:27-32`: a bag's grid travels with the bag
 - `src/grid.js:45-56`: the placement scan, unrotated first
 - `src/ui/inventory-panel.js:117-125`: R, a right click, or the wheel turns a dragged item
-- `src/ui/inventory-panel.js:676-690`: Rotate for non-square items, greyed when it will not fit
+- `src/ui/inventory-panel.js:681-695`: Rotate for non-square items, greyed when it will not fit
 - `data/items.json`: each item's `stack`
 - `src/grid.js:58-84`: stacks merge on equal fill and top up first
-- `src/grid.js:155-178`: Tidy, biggest first, nothing moves on failure
-- `src/main.js:735-749`: Tab and C, "No bag on your back.", "Your hands are full."
-- `src/ui/inventory-panel.js:334-353`: panels dragged by the header, remembered
-- `src/ui/inventory-panel.js:75-89`, `src/ui/inventory-actions.js:166-182`: double-click equips from the bag, runs a slot's Equip or Unequip, or sends across (game commit 9a450f2)
-- `src/ui/inventory-panel.js:667`: shift-click sends across
-- `src/interact.js:1016-1091`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
-- `src/ui/inventory-panel.js:237-238`: the durability bar (the code's `wear`) and "(N% left)"
-- `src/inventory.js:159-173`, `src/interact.js:232`, `src/ui/inventory-actions.js:129`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
-- `data/items.json:31-33`: the three bags' grids
-- `src/game.js:103-116`: the starting sack
+- `src/grid.js:158-181`: Tidy, biggest first, nothing moves on failure
+- `src/main.js:891-905`: Tab and C, "No bag on your back.", "Your hands are full."
+- `src/ui/inventory-panel.js:339-358`: panels dragged by the header, remembered
+- `src/ui/inventory-panel.js:75-89`, `src/ui/inventory-actions.js:166-182`, `src/interact.js:1206-1218`: double-click equips from the bag, runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186), or sends across
+- `src/ui/inventory-panel.js:672`: shift-click sends across
+- `src/interact.js:1099-1174`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
+- `src/ui/inventory-panel.js:242-243`: the durability bar (the code's `wear`) and "(N% left)"
+- `src/inventory.js:159-173`, `src/interact.js:237`, `src/ui/inventory-actions.js:129`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
+- `data/items.json:33-35`: the three bags' grids
+- `data/kit.json:3`: the starting sack
 - `data/loot.json:2`: the rucksack in the chest table
-- `src/interact.js:168-190`: equipping a new bag drops the old one; Equip and Swap bags on the floor (game commit 9a450f2)
-- `src/interact.js:323-345`: a bag on the floor opens as a container
-- `src/map.js:335-362`: items lie on tiles
-- `src/interact.js:1095-1147`: a dropped bag or belt keeps its contents
-- `src/interact.js:42`: E's reach
-- `src/interact.js:713-726`: a loose item beats a container
-- `src/interact.js:192-261`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
-- `src/interact.js:157-162`: a free hand first; "No room in your bag.", "You have no bag."
-- `src/ui/inventory-actions.js:200-358`: a guest's panel actions run on the host
-- `src/ui/inventory-actions.js:276-284`: a container not the guest's own must be within reach
+- `src/interact.js:169-193`: equipping a new bag drops the old one; Equip and Swap bags on the floor (game commit 9a450f2)
+- `src/interact.js:327-349`: a bag on the floor opens as a container
+- `src/map.js:461-492`: items lie on tiles
+- `src/interact.js:1158-1174`, `src/interact.js:1180-1240`: a dropped bag or belt keeps its contents
+- `src/interact.js:45`: E's reach
+- `src/interact.js:781-794`: a loose item beats a container
+- `src/interact.js:195-261`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
+- `src/interact.js:160-165`: a free hand first; "No room in your bag.", "You have no bag."
+- `src/ui/inventory-actions.js:203-366`: a guest's panel actions run on the host
+- `src/ui/inventory-actions.js:280-288`: a container not the guest's own must be within reach

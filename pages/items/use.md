@@ -11,7 +11,7 @@ summary: Use on any item's menu, then click anything: if the game has a rule for
 
 ### Picking a target
 
-After **Use**, the item stays where it is, outlined, and a label follows the cursor: "Use (item) → (what is under it)". The next left click is the target:
+After **Use**, the item stays where it is, outlined, and a label follows the cursor: "Use (item) → (what is under it)"; over a wall bracket it names what is there: "the torch in the bracket", "the lantern", or "the empty bracket". The next left click is the target:
 
 - an item in a bag or a container (with the panels open);
 - a character, a living one or one of the dead;
@@ -46,20 +46,20 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
-- `src/interact.js:1042-1118`: Use on an item's menu
-- `src/interact.js:1123-1175`: Use on a slot's menu
+<!-- sources at 4be64f2 -->
+- `src/interact.js:1099-1174`: Use on an item's menu
+- `src/interact.js:1180-1240`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
 - `src/ui/inventory-panel.js:481-483`: a click on an item in a panel is the target
-- `src/main.js:802-812`, `src/interact.js:676-683`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
-- `src/main.js:1090-1097`: a click on the world is the target, the panels open or not
+- `src/main.js:803-813`, `src/interact.js:725-732`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
+- `src/main.js:1091-1098`: a click on the world is the target, the panels open or not
 - `src/interactions.js:1-50`: rows by item id or tag and target, `fire` for any that burns fuel, `bracket` for a wall bracket, the first match wins; the default "Nothing interesting happens."
 - `data/interactions.json`: the rows: light (a tinderbox or a torch on a campfire, a torch post, a torch, a bracket, a fire), dip, and the well's note
-- `src/burn.js:62`, `src/burn.js:85-189`: the `light` verb: what it lights, the torch lit at a fire or a lantern (game #188), the reach and the line of sight, the refusals
+- `src/burn.js:62`, `src/burn.js:85-190`: the `light` verb: what it lights, the torch lit at a fire or a lantern (game #188), the reach and the line of sight, the refusals
 - `src/use.js:94-104`: a row's action run, its line said on success, the reason on a refusal
 - `src/burn.js:62-83`: the dip's reach, its refusals (arrows not carried: "Take the arrows out first."), the whole stack changed
-- `src/interact.js:548-592`: the well's own menu fills waterskins
-- `src/interact.js:352-385`: fires lit and fed from their menus
+- `src/interact.js:577-616`: the well's own menu fills waterskins
+- `src/interact.js:354-387`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
-- `src/ui/inventory-actions.js:368-402`, `src/main.js:1002-1013`: the host runs it as that player; a bracket sent by its tile and edge
+- `src/ui/inventory-actions.js:368-402`, `src/main.js:1003-1014`: the host runs it as that player; a bracket sent by its tile and edge
 - `src/host.js:268-272`: the line goes to the guest's chat log

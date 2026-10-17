@@ -1,18 +1,18 @@
 {
  "version": {
-  "commit": "5baaa63e93917b8de2f7bfcd39506c6e447c08aa",
-  "short": "5baaa63",
-  "date": "2026-10-17T13:44:15-05:00",
-  "subject": "Merge #191, reviewed: the starting kit's loose ends (a trial placement no longer moves the id counter, the Sandbox step's wording true, docs/11, a CI check of the default kit by real placement, counts as digits only) (closes #184)",
+  "commit": "4be64f21f76d3bcd4b1c5692d120ec509923b724",
+  "short": "4be64f2",
+  "date": "2026-10-17T14:20:44-05:00",
+  "subject": "Merge #193, reviewed, Michael's word on #190: fishing (a rod at the workbench, Cast the line at named waters, a table per water in data, three fish grilled at a fire) (closes #190)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 52,
-  "recipes": 27,
-  "interactions": 12,
+  "items": 59,
+  "recipes": 31,
+  "interactions": 13,
   "lootTables": 6,
-  "sprites": 138,
-  "places": 20,
+  "sprites": 140,
+  "places": 21,
   "villagers": 7,
   "authoredDead": 40,
   "mapProps": 34,
@@ -23,11 +23,11 @@
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 19,
-  "verbs": 4,
-  "menuLabels": 58,
+  "verbs": 6,
+  "menuLabels": 61,
   "events": 30,
-  "checks": 33,
-  "modules": 84
+  "checks": 36,
+  "modules": 86
  },
  "items": [
   {
@@ -256,6 +256,7 @@
     "workbench: torch",
     "workbench: hoe",
     "workbench: shovel",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: arrow",
     "anvil: knife",
@@ -606,7 +607,8 @@
     "tinderbox on campfire: Light",
     "tinderbox on torch_post: Light",
     "tinderbox on torch: Light",
-    "tinderbox on bracket: Light"
+    "tinderbox on bracket: Light",
+    "tinderbox on lantern_post: Light"
    ],
    "note": "never wears out: T lights a torch with it (docs/07, Michael 2026-10-17, #156)"
   },
@@ -768,6 +770,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
    ],
@@ -794,6 +797,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
    ],
@@ -822,6 +826,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
    ],
@@ -848,6 +853,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
    ],
@@ -876,6 +882,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
    ],
@@ -902,6 +909,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: torch",
+    "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
    ],
@@ -1130,6 +1138,210 @@
    "foundIn": [],
    "interactions": [],
    "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
+  },
+  {
+   "id": "fishing_rod",
+   "name": "Fishing rod",
+   "kind": "tool",
+   "size": [
+    1,
+    3
+   ],
+   "hands": "either",
+   "tags": [
+    "tool"
+   ],
+   "weapon": {
+    "staggerChance": 0.2,
+    "damage": 6,
+    "range": 1.2,
+    "arc": 80,
+    "swing": 0.6,
+    "knockback": 0.1,
+    "stamina": 6,
+    "style": "one_handed",
+    "kills": 3
+   },
+   "verbs": [
+    "fish"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a tool (docs/30, section 10): cast at water beside you (src/fishing.js, #190); a poor weapon, three kills"
+  },
+  {
+   "id": "perch",
+   "name": "Perch",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "raw",
+    "fish"
+   ],
+   "hunger": 10,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: grilled_perch"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "caught in the river and the ponds (data/fishing.json); grilled it is a meal"
+  },
+  {
+   "id": "trout",
+   "name": "Trout",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "raw",
+    "fish"
+   ],
+   "hunger": 14,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: grilled_trout"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "caught in the river and the mere (data/fishing.json)"
+  },
+  {
+   "id": "carp",
+   "name": "Carp",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "raw",
+    "fish"
+   ],
+   "hunger": 12,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [
+    "cooking: grilled_carp"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "caught in the ponds and the mere (data/fishing.json)"
+  },
+  {
+   "id": "grilled_perch",
+   "name": "Grilled perch",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "cooked",
+    "fish"
+   ],
+   "hunger": 24,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "cooking"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "grilled_trout",
+   "name": "Grilled trout",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "cooked",
+    "fish"
+   ],
+   "hunger": 30,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "cooking"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "grilled_carp",
+   "name": "Grilled carp",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [
+    "food",
+    "cooked",
+    "fish"
+   ],
+   "hunger": 26,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "cooking"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
   },
   {
    "id": "scythe",
@@ -1665,6 +1877,25 @@
    "seconds": 8
   },
   {
+   "id": "fishing_rod",
+   "station": "workbench",
+   "out": {
+    "id": "fishing_rod",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 1
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 6
+  },
+  {
    "id": "bow",
    "station": "workbench",
    "out": {
@@ -2067,6 +2298,54 @@
    "fire": true
   },
   {
+   "id": "grilled_perch",
+   "station": "cooking",
+   "out": {
+    "id": "grilled_perch",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "perch",
+     "count": 1
+    }
+   ],
+   "seconds": 6,
+   "fire": true
+  },
+  {
+   "id": "grilled_trout",
+   "station": "cooking",
+   "out": {
+    "id": "grilled_trout",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "trout",
+     "count": 1
+    }
+   ],
+   "seconds": 6,
+   "fire": true
+  },
+  {
+   "id": "grilled_carp",
+   "station": "cooking",
+   "out": {
+    "id": "grilled_carp",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "carp",
+     "count": 1
+    }
+   ],
+   "seconds": 6,
+   "fire": true
+  },
+  {
    "id": "bread",
    "station": "oven",
    "out": {
@@ -2139,6 +2418,12 @@
    "verb": "Light",
    "action": "light",
    "message": "You light the torch."
+  },
+  {
+   "use": "tinderbox",
+   "on": "lantern_post",
+   "verb": "Light",
+   "action": "light"
   },
   {
    "use": "torch",
@@ -3107,6 +3392,28 @@
    "collide": {
     "radius": 0.12
    }
+  },
+  {
+   "id": "tree_apple",
+   "kind": "tree",
+   "drawn": false,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 2,
+   "note": "the apple tree, laden (#190; dev art, the art ask is #182: short and round, red apples; docs/29-world/09)"
+  },
+  {
+   "id": "tree_apple_bare",
+   "kind": "tree",
+   "drawn": false,
+   "collide": {
+    "radius": 0.18
+   },
+   "interactable": true,
+   "wood": 2,
+   "note": "the apple tree, picked: no fruit until it bears again (fruit.js; #190)"
   },
   {
    "id": "tree_blue_l",
@@ -4086,6 +4393,20 @@
      "fireplace",
      "table"
     ]
+   },
+   {
+    "name": "the orchard",
+    "rect": [
+     38,
+     232,
+     16,
+     18
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
    }
   ],
   "villagers": [
@@ -4232,6 +4553,7 @@
    "hungerMax": 100,
    "thirstMax": 100,
    "hungerDrainSeconds": 1080,
+   "fullAt": 90,
    "thirstDrainSeconds": 720,
    "starveDamage": 1.5,
    "dehydrateDamage": 2,
@@ -4266,8 +4588,12 @@
    "playerCapServer": 8,
    "torchHeldLife": 1440,
    "torchWallLife": 2880,
+   "fireOutRadius": 8,
+   "craftDoneRadius": 12,
    "torchSpentRadius": 12,
    "daylightTiles": 30,
+   "fruitCheckSeconds": 30,
+   "pickReach": 1.6,
    "fenceHp": 90,
    "fenceGateFactor": 0.5
   },
@@ -4284,7 +4610,8 @@
    "litFull": 0.45,
    "seenAt": 0.5,
    "drawCutoff": 0.02,
-   "groanGap": 3
+   "groanGap": 20,
+   "groanRadius": 6
   }
  },
  "combat": {
@@ -4677,44 +5004,44 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1067"
+    "main.js:1068"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1066"
+    "main.js:1067"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1045"
+    "main.js:1046"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:890",
-    "main.js:904"
+    "main.js:891",
+    "main.js:905"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:956"
+    "interact.js:1005"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1064"
+    "main.js:1065"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1047"
+    "main.js:1048"
    ]
   },
   {
@@ -4733,62 +5060,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:957"
+    "interact.js:1006"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1043"
+    "main.js:1044"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1048"
+    "main.js:1049"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1055"
+    "main.js:1056"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1045"
+    "main.js:1046"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1126"
+    "main.js:1127"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1126"
+    "main.js:1127"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1046"
+    "main.js:1047"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1137"
+    "main.js:1138"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:890",
-    "main.js:896"
+    "main.js:891",
+    "main.js:897"
    ]
   }
  ],
@@ -4806,15 +5133,27 @@
    ]
   },
   {
+   "key": "fish",
+   "at": [
+    "fishing.js:57"
+   ]
+  },
+  {
    "key": "light",
    "at": [
-    "burn.js:169"
+    "burn.js:170"
+   ]
+  },
+  {
+   "key": "pick",
+   "at": [
+    "fruit.js:29"
    ]
   },
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:204"
+    "entities/player.js:219"
    ]
   }
  ],
@@ -4828,13 +5167,19 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1415"
+    "main.js:1417"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:796"
+    "main.js:797"
+   ]
+  },
+  {
+   "key": "Cast the line",
+   "at": [
+    "interact.js:625"
    ]
   },
   {
@@ -4870,37 +5215,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1353"
+    "main.js:1355"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1129"
+    "interact.js:1186"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1075"
+    "interact.js:1132",
+    "interact.js:1216"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1051"
+    "interact.js:1108"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1052"
+    "interact.js:1109"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1155"
+    "interact.js:1220"
    ]
   },
   {
@@ -4918,7 +5264,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1389"
+    "main.js:1391"
    ]
   },
   {
@@ -4936,19 +5282,19 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:418"
+    "interact.js:420"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1343"
+    "main.js:1345"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1379"
+    "main.js:1381"
    ]
   },
   {
@@ -4966,37 +5312,37 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1428"
+    "main.js:1430"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1157"
+    "interact.js:1222"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1318"
+    "main.js:1319"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1315"
+    "main.js:1316"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1345"
+    "main.js:1347"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1344"
+    "main.js:1346"
    ]
   },
   {
@@ -5008,13 +5354,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1437"
+    "main.js:1439"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:393"
+    "interact.js:395"
    ]
   },
   {
@@ -5044,7 +5390,7 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:432"
+    "interact.js:434"
    ]
   },
   {
@@ -5056,21 +5402,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1140",
-    "interact.js:1171"
+    "interact.js:1197",
+    "interact.js:1236"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1047",
-    "interact.js:1127"
+    "interact.js:1104",
+    "interact.js:1184"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:597"
+    "interact.js:646"
    ]
   },
   {
@@ -5094,7 +5440,13 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:479"
+    "interact.js:481"
+   ]
+  },
+  {
+   "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
+   "at": [
+    "interact.js:535"
    ]
   },
   {
@@ -5106,7 +5458,7 @@
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:530"
+    "interact.js:559"
    ]
   },
   {
@@ -5124,49 +5476,56 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1079"
+    "interact.js:1136",
+    "interact.js:1219"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:554"
+    "interact.js:583"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:891"
+    "interact.js:940"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1055"
+    "interact.js:1112"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:204"
+    "interact.js:206"
+   ]
+  },
+  {
+   "key": "Pick ${name}s",
+   "at": [
+    "interact.js:542"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1396"
+    "interact.js:1461"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:516"
+    "interact.js:518"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1084"
+    "interact.js:1141"
    ]
   }
  ],
@@ -5186,13 +5545,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1247"
+    "main.js:1248"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:359"
+    "game.js:362"
    ]
   },
   {
@@ -5210,9 +5569,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:210",
-    "interact.js:343",
-    "interact.js:1381",
+    "interact.js:212",
+    "interact.js:345",
+    "interact.js:1446",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5232,13 +5591,13 @@
   {
    "key": "drank",
    "at": [
-    "game.js:577"
+    "game.js:581"
    ]
   },
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:717"
+    "map.js:726"
    ]
   },
   {
@@ -5263,7 +5622,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:640"
+    "game.js:644"
    ]
   },
   {
@@ -5305,13 +5664,13 @@
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:192"
+    "entities/player.js:207"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:183"
+    "entities/player.js:198"
    ]
   },
   {
@@ -5343,7 +5702,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:745",
-    "map.js:713"
+    "map.js:722"
    ]
   },
   {
@@ -5351,7 +5710,7 @@
    "at": [
     "archery.js:717",
     "combat.js:387",
-    "game.js:495"
+    "game.js:498"
    ]
   },
   {
@@ -5469,6 +5828,7 @@
   }
  ],
  "checks": [
+  "apples",
   "build",
   "burn",
   "cap",
@@ -5476,7 +5836,9 @@
   "determinism",
   "eviction",
   "fence",
+  "fishing",
   "flare",
+  "food",
   "frame",
   "ground",
   "growth",
@@ -5506,19 +5868,19 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2194
+   "lines": 2217
   },
   {
    "path": "main.js",
-   "lines": 1846
-  },
-  {
-   "path": "placeholders.js",
-   "lines": 1465
+   "lines": 1848
   },
   {
    "path": "interact.js",
-   "lines": 1441
+   "lines": 1506
+  },
+  {
+   "path": "placeholders.js",
+   "lines": 1483
   },
   {
    "path": "net.js",
@@ -5546,7 +5908,7 @@
   },
   {
    "path": "game.js",
-   "lines": 662
+   "lines": 666
   },
   {
    "path": "assets.js",
@@ -5586,7 +5948,7 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 373
+   "lines": 388
   },
   {
    "path": "figure/raster.js",
@@ -5641,12 +6003,12 @@
    "lines": 197
   },
   {
-   "path": "grid.js",
+   "path": "burn.js",
    "lines": 190
   },
   {
-   "path": "burn.js",
-   "lines": 189
+   "path": "grid.js",
+   "lines": 190
   },
   {
    "path": "render/area.js",
@@ -5686,7 +6048,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 135
+   "lines": 141
   },
   {
    "path": "settings.js",
@@ -5705,11 +6067,11 @@
    "lines": 124
   },
   {
-   "path": "entities/movement.js",
-   "lines": 116
+   "path": "ui/speech.js",
+   "lines": 117
   },
   {
-   "path": "ui/speech.js",
+   "path": "entities/movement.js",
    "lines": 116
   },
   {
@@ -5741,6 +6103,10 @@
    "lines": 86
   },
   {
+   "path": "fishing.js",
+   "lines": 82
+  },
+  {
    "path": "ui/context-menu.js",
    "lines": 82
   },
@@ -5751,6 +6117,10 @@
   {
    "path": "ui/prompt.js",
    "lines": 76
+  },
+  {
+   "path": "fruit.js",
+   "lines": 72
   },
   {
    "path": "ui/swing-timer.js",
@@ -6178,6 +6548,6 @@
  "chop": {
   "gives": "log",
   "field": "wood",
-  "at": "src/interact.js:527-543"
+  "at": "src/interact.js:556-572"
  }
 }

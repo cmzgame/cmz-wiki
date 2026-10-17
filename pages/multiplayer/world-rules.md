@@ -21,7 +21,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 
 **Chosen once, when the world is made**, never changed after:
 
-- **Trees** (default On): trees in the forests and the wild. Off, no tree is made anywhere, inside [[The valley]] or out in [[The wild]], however far anyone walks. The rocks, the ground, and the [[Mushrooms]] are as they would be: the mushrooms grow beside where the trees would have stood, the same ones in the same places as with trees.
+- **Trees** (default On): every tree, in the forests, the wild, and the orchards; its line says "(so no apples from trees)". Off, no tree is made anywhere, inside [[The valley]], [[The orchard]] and the cottage gardens included, or out in [[The wild]], however far anyone walks, so no apples can be picked. The rocks, the ground, and the [[Mushrooms]] are as they would be: the mushrooms grow beside where the trees would have stood, the same ones in the same places as with trees.
 - **Starting population**: **None**, **Low**, **Standard** (the default), or **High**: how many of [[The dead]] the world starts with. Each level is a factor on the map's own number: at Standard the valley holds exactly the dead its map places, at None it holds none, at Low some of the map's dead are left out, and at High each of them stands more than once. An extra one stands on a free open tile close to where the map put it, never on the far side of a wall or a door. Every chunk of the wild grown later brings its usual number of the dead times the same factor, so a None world grows no dead in the wild either. The factor is read once, when the world is made: the dead never grow in number with time.
 
 - **Dev bag** (default Off): every new character starts wearing the [[Developer Bag]] in place of the [[Burlap sack]], with the starting kit in it, so a large list of extra items fits.
@@ -66,20 +66,20 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
 - `src/settings.js:60-72`: each rule's label and line, Starting population's answers, the Dev chest, Dev bag, and Extra starting items
-- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1969-1977`, `src/map.js:2139`: Trees off: no tree placed in the scatter or the wild, the other picks as ever
+- `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1989-1997`, `src/map.js:2162`, `src/map.js:2016`: Trees off: no tree placed in the scatter or the wild, nor an authored one, an orchard's or a garden's (game #192), the other picks as ever
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
-- `data/tuning.json:94`, `src/game.js:111-140`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
-- `src/map.js:1634-1663`: an extra stands on an open tile by the authored map, never across a wall or a door
-- `src/map.js:1248-1261`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
+- `data/tuning.json:99`, `src/game.js:113-142`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
+- `src/map.js:1654-1683`: an extra stands on an open tile by the authored map, never across a wall or a door
+- `src/map.js:1257-1270`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
 - `src/ui/screens.js:871-899`, `src/ui/screens.js:560-567`: the Sandbox step's two parts, their lines, Next; Extra starting items a text box
 - `data/kit.json`, `src/kit.js:24-61`, `src/ui/screens.js:360-366`, `src/ui/screens.js:417-431`: the extra items parsed and checked as typed, the first thing wrong said under the box, Next refused while it stands; the dev bag's room
-- `src/kit.js:62-75`, `src/game.js:105-109`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
-- `src/main.js:289-308`, `src/main.js:311-319`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
-- `src/ui/screens.js:1019-1035`, `src/main.js:738-740`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
-- `src/game.js:74-79`, `src/game.js:185`, `src/game.js:251-252`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
-- `src/net.js:868`, `src/net.js:1117`, `src/game.js:392`: sent to guests when they change, in the sync check
+- `src/kit.js:62-75`, `src/game.js:107-111`: the default kit, the dev bag in place of the sack, then the extra items by first fit, for every new character
+- `src/main.js:290-309`, `src/main.js:312-320`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
+- `src/ui/screens.js:1019-1035`, `src/main.js:739-741`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
+- `src/game.js:75-80`, `src/game.js:187`, `src/game.js:253-254`, `src/save.js:33`: set at creation, kept in the save, restored from it with the defaults for any missing
+- `src/net.js:868`, `src/net.js:1117`, `src/game.js:395`: sent to guests when they change, in the sync check
 - `src/ui/screens.js:962-968`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
-- `src/game.js:251-252`: a world's rules, the kit's two among them, restored from its save, a server world's too
+- `src/game.js:253-254`: a world's rules, the kit's two among them, restored from its save, a server world's too

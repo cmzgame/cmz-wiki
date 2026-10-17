@@ -20,16 +20,16 @@ The Child stands in the taproom of [[The inn]], not far from the Innkeeper.
 
 ## Sources
 
-<!-- sources at 5baaa63 -->
+<!-- sources at 4be64f2 -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:26-45`: villagers carry no weapon and never fight; a swing passes through them
-- `data/tuning.json:74`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
+- `data/tuning.json:75`, `src/entities/villager.js:54-67`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:50-68`: standing idle between walks
-- `src/interact.js:1184`, `src/interact.js:1350-1363`, `src/interact.js:1390-1404`: a left click within reach, or Poke on the menu
-- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:75`: the poke stops them, turns them to you, says the line, and holds them for the talk time
+- `src/interact.js:1249`, `src/interact.js:1415-1428`, `src/interact.js:1455-1469`: a left click within reach, or Poke on the menu
+- `src/entities/villager.js:141-151`, `src/entities/villager.js:84-93`, `data/tuning.json:76`: the poke stops them, turns them to you, says the line, and holds them for the talk time
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
-- `src/game.js:361`, `src/entities/villager.js:101-137`, `src/game.js:614-618`: one bitten to death gets up as one of the dead in their clothes
-- `data/maps/valley.json:5587-5594`: the Child has no line of their own
+- `src/game.js:364`, `src/entities/villager.js:101-137`, `src/game.js:618-622`: one bitten to death gets up as one of the dead in their clothes
+- `data/maps/valley.json:5824-5831`: the Child has no line of their own
 - `src/entities/villager.js:24-31`: a villager with no line says "Hey!"
-- `tools/mapgen/valley.py:422-424`, `data/maps/valley.json:1622-1907`: the Child stands in the taproom (west of the kitchen's partition), near the Innkeeper
+- `tools/mapgen/valley.py:433-435`, `data/maps/valley.json:1668-1953`: the Child stands in the taproom (west of the kitchen's partition), near the Innkeeper
 
 {{navbox places}}

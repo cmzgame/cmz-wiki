@@ -1,7 +1,7 @@
 {
-  "commit": "5baaa63e93917b8de2f7bfcd39506c6e447c08aa",
-  "short": "5baaa63",
-  "date": "2026-10-17T13:44:15-05:00",
-  "subject": "Merge #191, reviewed: the starting kit's loose ends (a trial placement no longer moves the id counter, the Sandbox step's wording true, docs/11, a CI check of the default kit by real placement, counts as digits only) (closes #184)",
+  "commit": "4be64f21f76d3bcd4b1c5692d120ec509923b724",
+  "short": "4be64f2",
+  "date": "2026-10-17T14:20:44-05:00",
+  "subject": "Merge #193, reviewed, Michael's word on #190: fishing (a rod at the workbench, Cast the line at named waters, a table per water in data, three fish grilled at a fire) (closes #190)",
   "ref": "origin/main"
 }
