@@ -73,18 +73,18 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/tuning.json:41-42`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
 - `data/tuning.json:39-40`, `data/tuning.json:43`: walking speed, body radius, sprint multiplier
 - `src/entities/player.js:326-328`, `src/entities/player.js:342-346`: keyed movement snapped to the eight directions
 - `src/entities/player.js:351`: facing follows the aim, not the walk
-- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1407`, `src/map.js:1432-1435`: shallow water's speed and deep water's bar
+- `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1425`, `src/map.js:1450-1453`: shallow water's speed and deep water's bar
 - `data/combat.json` `bow.drawSpeed`, `bow.braceMove`: the draw and brace slowdowns
 - `data/items.json:36`: the raised shield's slowdown
 - `src/player-controller.js:52`: the multiplier picked in one place
-- `src/map.js:807-815`: no body passes a window
+- `src/map.js:825-833`: no body passes a window
 - `src/entities/player.js:333`: no sprint while carrying
 - `src/entities/player.js:249-250`, `src/entities/player.js:325-328`: auto-walk uses the same speeds; a movement key cancels it
 - `src/entities/player.js:121-160`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running

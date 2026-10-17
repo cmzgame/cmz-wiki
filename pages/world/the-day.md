@@ -61,7 +61,7 @@ The clock belongs to the host. A guest's clock is set from every frame the host 
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `src/clock.js:5-19`, `src/map.js:95`: the day's length, the game hour, the start hour, the phases' hours and brightness
 - `src/clock.js:94-102`, `src/ui/hud.js:118-122`: the clock's "Day N, HH:MM"
 - `src/clock.js:68-74`, `src/clock.js:91-93`: the phases and the night factor

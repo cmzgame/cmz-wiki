@@ -33,7 +33,12 @@ Right-click a fire, or press `E` beside it:
 
 The entry is greyed, with "(need a log)", when you have none. Feeding takes one unit from your bag, your [[Belt]], or your [[Hands]] (not from containers nearby), and lights the fire if it was out. The hours left are shown rounded, or "under an hour".
 
-A [[Fireball]] that comes down within {{n combat.bow.kindleRadius tiles}} of a campfire that is out but has fuel in it, with no wall between, lights it. It never lights a hearth, a fireplace, an oven, or a forge, and a campfire with no fuel stays out.
+A campfire that is out but has fuel in it can also be lit with a flame:
+
+- [[Use]] a [[Tinderbox]] or a lit [[Torch]] on it ("You light the fire."), from within {{n census.constants.burn.DIP_REACH tiles}} and in sight, never through a wall. One already burning says "It is already burning.", one with no fuel "It has nothing to burn.".
+- A [[Fireball]] that comes down within {{n combat.bow.kindleRadius tiles}} of it, with no wall between, lights it.
+
+Neither lights a hearth, a fireplace, an oven, or a forge ("That cannot be lit."): those are lit only from their own menus. The other way round, any burning fire is a flame: an unlit torch in your hand or on your belt used on it is lit from it ("You light the torch at the fire.").
 
 ### Dipping arrows
 
@@ -53,7 +58,7 @@ A recipe that needs the fire waits while it is out and carries on when it is fed
 
 ### Torches
 
-A [[Torch]] is a light you carry, in either hand, while it is lit. It is lit with a [[Tinderbox]] and burns down while it is lit, faster in a hand than on the belt. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` lights or douses the torch in your hand, or else on your belt; with none there, it takes one from the bag into a hand.
+A [[Torch]] is a light you carry, in either hand, while it is lit. It is lit with a [[Tinderbox]] and burns down while it is lit, faster in a hand than on the belt. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` lights or douses the torch in your hand, or else on your belt; with none there, it takes one from the bag into a hand. A torch is also lit by Use of a tinderbox or a lit torch on it, or at a burning fire (see [[Torch#Lit or out|Torch]]).
 
 ## Numbers
 
@@ -76,7 +81,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/sprites/campfire.json`: the campfire's fuel, hours a unit, most, cooking
 - `data/sprites/hearth.json`: the hearth's, and it lights its room
 - `data/sprites/fireplace.json:30-34`: the fireplace's
@@ -92,16 +97,17 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `data/maps/valley.json`: which fires start lit
 - `src/stations.js:204-217`: a job waits while the fire is out
 - `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
-- `data/sprites/lantern_post.json`, `src/map.js:218-225`, `src/light.js:63-67`: lanterns, never out; the village's lights
-- `src/map.js:137-293`, `src/map.js:149-184`: brackets and posts holding a torch, which burns down while lit
-- `src/interact.js:402-445`: Take the torch and Mount the torch
+- `data/sprites/lantern_post.json`, `src/map.js:208-215`, `src/light.js:63-67`: lanterns, never out; the village's lights
+- `src/map.js:137-283`, `src/map.js:149-184`: brackets and posts holding a torch, which burns down while lit
+- `src/interact.js:402-460`: Light the torch, Take the torch, and Mount the torch
 - `src/items.js:186-215`, `src/game.js:494-520`: a torch's light only while lit, no fuel; it burns down
 - `src/game.js:658-670`: two held torches
-- `src/interact.js:972-993`: `T`
-- `src/archery.js:289-292`, `src/map.js:186-215`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel, never a hearth, fireplace, oven, or forge
+- `src/interact.js:987-1008`: `T`
+- `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel, never a hearth, fireplace, oven, or forge
+- `data/interactions.json`, `src/burn.js:74`, `src/burn.js:97-199`, `src/map.js:284-312`: the `light` verb: a tinderbox or a lit torch lights a campfire with fuel, in reach and sight; never a hearth, an oven, or a forge; an unlit torch lit from any burning fire; the refusals
 - `data/items.json:2`: the torch's radius
 - `data/tuning.json:79-80`: the belt torch and two torches
 - `src/map.js:104-106`: a guest's fuel refreshed at each whole unit
-- `data/interactions.json`, `src/interactions.js:34-42`, `src/burn.js:73-94`: arrows used on any fire that burns fuel, refused when it is out
+- `data/interactions.json`, `src/interactions.js:34-42`, `src/burn.js:74-95`: arrows used on any fire that burns fuel, refused when it is out
 
 {{navbox making}}

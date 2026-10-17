@@ -44,19 +44,19 @@ A guest's cast is its draw and release, worked out on the host as the bow's shot
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/items.json`: the spell's numbers on the book (`book.spell`: `drawTime`, `speed`, `range`, `contact`, `landRadius`, `damage`, `knockback`), `staff: true` on the staff, `castStyle` on both
 - `src/archery.js:610-619`: `spellOf`, both items make a launcher of the kind `spell`, one alone refuses; the flight flat and vanishing
 - `data/poses.json` `cast_staff`, `cast_book`: the cast's pose by which hand holds the staff (game PR #9)
 - `src/archery.js:155-216`: walls, doors, trunks, and props stop the flat flight, scanned once at release
 - `src/archery.js:238-257`: the burst on the way: the first of the dead within the contact radius, before any wall stop (game PR #12)
 - `src/archery.js:262-296`: the landing: the hit met on the way, or the nearest within the landing radius; damage scaled by the draw; nothing lands or lodges
-- `data/items.json` `book.spell.ignite`, `src/archery.js:275-277`, `src/burn.js:25-32`: the body hit is set alight before the damage
+- `data/items.json` `book.spell.ignite`, `src/archery.js:275-277`, `src/burn.js:26-33`: the body hit is set alight before the damage
 - `data/combat.json` `burn`: the burn's numbers
 - `src/archery.js:307-346`: only a body ahead of the cast counts on the way, and none with a wall or closed door between it and the ball, at the ball's height
 - `src/archery.js:366-381`, `data/combat.json` `bow.fireballGlow`, `bow.flareRadius`, `bow.flareSeconds`: the moving light, and the flare where it lands, shrinking, light only
 - `src/archery.js:233-237`, `src/archery.js:383-393`, `src/net.js:871`, `src/net.js:1119`: the flares aged on the host and sent in each frame
-- `src/archery.js:289-292`, `src/map.js:186-215`, `data/combat.json` `bow.kindleRadius`: the landing lights an unlit campfire with fuel, or a mounted torch that is out, within reach and with no wall between; never a hearth, an oven, or a forge
+- `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: the landing lights an unlit campfire with fuel, or a mounted torch that is out, within reach and with no wall between; never a hearth, an oven, or a forge
 - `src/light.js:184-200`: the flare among the moving lights, not among the flames the dead notice
 - `src/game.js:97`, `src/archery.js:300-324`: what it can hit is what `setTargets` hands in, the dead; never a villager, a player, or the caster
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it

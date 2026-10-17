@@ -95,18 +95,18 @@ Light belongs to the world: the host works it out, and each guest works out the 
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `src/light.js:427-439`: one light level: ambient, the static map, carried lights
 - `src/light.js:29`, `src/light.js:120-122`, `src/clock.js:7`: the outdoor cap and the night sky
-- `src/map.js:1700-1752`: rooms found by flood fill
+- `src/map.js:1718-1770`: rooms found by flood fill
 - `src/light.js:53-59`, `src/light.js:159`, `data/sprites/fireplace.json`, `data/sprites/hearth.json`: a room with a lit fireplace or hearth fully lit; the oven, forge, and campfire light no room
-- `src/light.js:28-33`, `src/light.js:130-168`, `data/tuning.json:83`, `src/map.js:1332-1341`: an unlit room's daylight: each open or broken opening lights `daylightTiles` tiles to the window-lit cap, closed shutters only their leak, nothing by night (game #150)
+- `src/light.js:28-33`, `src/light.js:130-168`, `data/tuning.json:83`, `src/map.js:1350-1359`: an unlit room's daylight: each open or broken opening lights `daylightTiles` tiles to the window-lit cap, closed shutters only their leak, nothing by night (game #150)
 - `src/light.js:23-25`, `src/light.js:72-102`: pools through openings, their offset and minimum difference; fence gates bound no room
 - `src/light.js:202-207`: the pools draw no dead
 - `src/light.js:53-71`, `src/light.js:215-251`: fires', lanterns', and lit mounted torches' pools, stopped by walls and shut openings; a lantern steady, at the lantern post's radius
 - `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/items.json:2`, `data/sprites/torch_post.json`, `data/sprites/lantern_post.json`, `data/sprites/pumpkin.json`: each fire's radius
 - `src/game.js:658-670`, `data/tuning.json:79-80`: the carried torch in hand, two in hand, on the belt; none from the bag or the ground
-- `src/interact.js:972-993`, `src/items.js:186-206`: the T key; a torch lit only with a tinderbox, giving light only while lit, out when it leaves a hand, the belt, or a holder
+- `src/interact.js:987-1008`, `src/items.js:186-206`: the T key; a torch lit only with a tinderbox, giving light only while lit, out when it leaves a hand, the belt, or a holder
 - `src/light.js:308-313`: flicker only in the picture
 - `src/sight.js:16-32`, `data/tuning.json:93`: in the dark the dead seen near you, to your torch's reach, or in light (game #150)
 - `src/light.js:20`: the light grid's resolution

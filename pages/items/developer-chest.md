@@ -42,11 +42,11 @@ These change only the game they are typed into; on a guest's game they change on
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `src/settings.js:31`, `src/settings.js:68`, `src/ui/screens.js:845-873`, `src/main.js:310-318`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
 - `data/sprites/dev_chest.json`: the dev chest rolls the dev kit
 - `data/loot.json:6`: its fixed contents
 - `data/loot.json`: the dev kit is the dev chest's alone; the wheelbarrow has its own empty table
 - `src/placement.js:70-76`: a prop with no carry flag can be carried
 - `src/game.js:84-88`: placed beside the spawn of a new world made with it
-- `src/dev.js:131-148`: giveKit, give, and giveDevBag, all on the local client
+- `src/dev.js:132-149`: giveKit, give, and giveDevBag, all on the local client

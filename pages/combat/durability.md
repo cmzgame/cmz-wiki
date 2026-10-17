@@ -44,7 +44,7 @@ Durability is kept on the item itself and travels with the hands, so it is the s
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `src/items.js:27-37`: hits per kill and the durability each hit costs (the code's `wearPerHit`) from `data/tuning.json` (`zombie.hp`)
 - `src/combat.js:371`, `src/combat.js:377-389`: durability spent on each landed hit and target; the weapon gone with a word when none is left
 - `data/items.json`: each weapon's `kills`; the bow's `shots`

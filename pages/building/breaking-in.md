@@ -118,20 +118,20 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `src/entities/zombie.js:620-641`: a way in chosen on the step the path fails; out of the zombie's own room, else into the target's
 - `src/entities/zombie.js:296-298`, `src/rules.js:13-14`, `src/settings.js:12`: hunting needs Zombie aggro, on by default
-- `src/map.js:833-868`: a room's openings to break, nearest first, the door towards the target's room first from inside, shut or boarded windows only from outside, an opening already open never one
+- `src/map.js:851-886`: a room's openings to break, nearest first, the door towards the target's room first from inside, shut or boarded windows only from outside, an opening already open never one
 - `src/entities/zombie.js:216-241`: the remembered opening first, else the nearest door or shut window the zombie can walk to; through a closed outer room's door first, a few rooms deep
 - `data/tuning.json`: `zombie.breachReach`; `src/entities/zombie.js:688-700`: the reach to the edge's midpoint
-- `src/map.js:767-798`: the order of the stack: near boards, the leaf, far boards
+- `src/map.js:785-816`: the order of the stack: near boards, the leaf, far boards
 - `data/tuning.json`: `zombie.breachDamage` and `zombie.cooldown`; `src/entities/zombie.js:709-732`: the hit after the attack animation, then the cooldown
 - `data/poses.json`: the zombie attack, 4 frames at 12 fps (the times are inferred from it)
-- `src/map.js:550-553`: the health of a board, shutters, and a door, and boards per side
-- `src/map.js:723-733`: a door and a window always have health, whatever their material; a plain wall none
-- `src/map.js:796-797`: the chunk marked changed only when something gives
-- `src/map.js:782-787`: a broken door stays open, broken shutters stay open
-- `src/map.js:801-816`: a window needs breaking while shut or boarded, and never passes a body
+- `src/map.js:568-571`: the health of a board, shutters, and a door, and boards per side
+- `src/map.js:741-751`: a door and a window always have health, whatever their material; a plain wall none
+- `src/map.js:814-815`: the chunk marked changed only when something gives
+- `src/map.js:800-805`: a broken door stays open, broken shutters stay open
+- `src/map.js:819-834`: a window needs breaking while shut or boarded, and never passes a body
 - `src/entities/zombie.js:701-708`: through a door once open; a window open is the end of it
 - `src/entities/zombie.js:642-664`, `src/entities/zombie.js:243-278`: no door it can reach: a fence across the way pressed, a gate first; else a search
 - `src/entities/zombie.js:734-760`, `data/tuning.json`: `zombie.noWayTime`: a search, no chase on sight while it lasts, then giving up, or the siege
@@ -141,7 +141,7 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 - `src/entities/zombie.js:447-463`, `src/entities/player.js:204-216`, `src/game.js:334`: the siege held until its dawn on a living player; the sleep refused within `siegeSleepRadius`
 - `src/entities/zombie.js:547-555`, `src/entities/zombie.js:473-483`: at the dawn, or the player's death, it loses interest and wanders, unless it sees someone
 - `src/entities/character.js:61-68`: the siege is kept with the dead in the save; the pressing and the breach are not
-- `src/placement.js:188-194`, `src/map.js:569-579`: no build refuses a doorless room; a new door or window built over a broken one
+- `src/placement.js:188-194`, `src/map.js:587-597`: no build refuses a doorless room; a new door or window built over a broken one
 - `src/entities/zombie.js:669-699`: giving up on a bite, lost aggro, a moved target, or an opening it cannot reach
 - `src/rules.js:13-21`, `src/rules.js:38-40`: Zombie aggro is a world rule, the host's on a guest
 - `src/entities/zombie.js:505-519`: any player seen, a guest's as the host's, and the siege's player the last seen

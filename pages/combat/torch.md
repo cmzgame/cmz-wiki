@@ -18,9 +18,9 @@ A torch is either lit or out. **A new torch is out**: one made at the workbench,
 - With a torch in a hand, or else on the belt, `T` lights it if you carry a [[Tinderbox]] ("You light the torch."), and puts it out if it is lit ("You douse the torch."). With no tinderbox it says "You need a tinderbox to light it." A tinderbox never wears out.
 - With no torch in a hand or on the belt, `T` takes one from your bag into a hand, still out ("You take the torch in hand. T lights it."). With none at all, "No torch on you."
 
-A [[Fireball]] that comes down within reach of a torch mounted in a bracket or on a post, with no wall between, lights it too.
+A torch can also be lit by [[Use]]: use a [[Tinderbox]] or a lit torch on an unlit torch in your hand or on your belt, or on a torch post's torch that is out ("You light the torch."). An unlit torch in your hand or on your belt used on a burning fire, a campfire, a hearth, an oven, the forge, or a lit torch on a post, is lit from it ("You light the torch at the fire."). The target must be within {{n census.constants.burn.DIP_REACH tiles}}, in sight, never through a wall, and a torch in the bag cannot be lit this way ("Only a torch in a hand or on the belt can be lit that way."). A mounted torch that is out, in a bracket or on a post, also has **Light the torch** on its menu, and a [[Fireball]] that comes down within reach of one, with no wall between, lights it too.
 
-Only a lit torch gives light, gives back your sight in the dark, draws the dead at night, and can set the dead alight. A torch that is out is a stick with a weapon's numbers.
+A lit torch is a flame: used on a campfire with fuel in it, it lights the fire (see [[Fire]]). Only a lit torch gives light, gives back your sight in the dark, draws the dead at night, and can set the dead alight. A torch that is out is a stick with a weapon's numbers.
 
 **A torch goes out when it leaves a hand, the belt, or a holder**: put in the bag or a container, dropped on the ground, or taken down from a bracket or a post. A torch on a belt or in a bag that is dropped goes out with it, and so does every torch on a body when it falls. Moving a torch between a hand and the belt keeps it lit. Mounting it in a bracket or on a post keeps it as it was, lit or out (see [[Torch posts and brackets]]).
 
@@ -58,29 +58,31 @@ In the off hand beside a weapon such as the [[Sword]] it counts as a weapon: cli
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/items.json`: the torch: either hand, `fire.radius`, `fire.burnsDown`, its `weapon` block, `kills`, `ignite`
 - `data/recipes.json`: the torch recipe at the workbench
 - `src/game.js:104-120`: the starter kit's torch in hand, out, and a tinderbox in the bag
 - `src/items.js:20-22`, `src/items.js:186-206`: a new entry has no `lit`; a torch gives light only while lit; doused on leaving, with what a belt or a bag carries
-- `src/interact.js:972-993`: `T`: the torch in hand, else on the belt, lit with a tinderbox carried, doused when lit; else the bag's taken into a hand; the messages
+- `src/interact.js:987-1008`: `T`: the torch in hand, else on the belt, lit with a tinderbox carried, doused when lit; else the bag's taken into a hand; the messages
 - `src/inventory.js:87-96`: a tinderbox counted in the hands, the belt, or the bag
-- `src/grid.js:99`, `src/grid.js:128-131`, `src/grid.js:150-153`, `src/map.js:460`, `src/ui/inventory-actions.js:137`, `src/interact.js:420`, `src/entities/character.js:190`: doused into a bag, a container, or onto the floor, when taken from a holder, and on a body
-- `src/map.js:263-293`: a mounted torch keeps its wear and whether it is lit
-- `src/map.js:186-215`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
+- `src/grid.js:99`, `src/grid.js:128-131`, `src/grid.js:150-153`, `src/map.js:478`, `src/ui/inventory-actions.js:137`, `src/interact.js:435`, `src/entities/character.js:190`: doused into a bag, a container, or onto the floor, when taken from a holder, and on a body
+- `src/map.js:253-283`: a mounted torch keeps its wear and whether it is lit
+- `data/interactions.json`, `src/burn.js:97-199`, `src/burn.js:74`: the `light` verb: a tinderbox or a lit torch lights an unlit torch in a hand or on the belt, a mounted torch, or a campfire with fuel; an unlit torch is lit from a burning fire; within reach and in sight; not a torch in the bag
+- `src/interact.js:409-421`: Light the torch on a holder's menu
+- `src/map.js:186-205`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
 - `src/game.js:494-520`, `src/game.js:531`, `data/tuning.json:83-84`: a lit torch burns down in the step, in a hand at `torchHeldLife`, on the belt at `torchWallLife`; spent, gone with the weapon's word
 - `src/map.js:149-184`: a mounted torch burns at the wall rate; "A torch burns out."
 - `src/clock.js:5`: the day's length
 - `src/main.js:1628-1633`, `src/host.js:224-236`: "Your torch is spent." to its owner, "A torch burns out." to players nearby
 - `data/combat.json` `blow.knockdownChance`, `src/combat.js:354`: the default knockdown chance
-- `src/combat.js:320`, `src/combat.js:358-363`, `src/burn.js:25-32`: the blow's `ignite` chance rolled on each body it lands on, in the off hand too, before the damage, only while lit
+- `src/combat.js:320`, `src/combat.js:358-363`, `src/burn.js:26-33`: the blow's `ignite` chance rolled on each body it lands on, in the off hand too, before the damage, only while lit
 - `src/combat.js:371`, `src/combat.js:377-389`, `src/items.js:24-37`: it loses durability and breaks like any weapon, on the same `wear`
 - `src/combat.js:113-122`, `src/combat.js:285-294`: in the off hand it swings when the main hand is recovering, never beside the spear
 - `src/items.js:112-133`: a torch is not a weapon beside the spear
 - `src/game.js:658-670`, `src/game.js:486-493`, `src/items.js:209-216`: the carried light: a lit torch in hand, two in hand, else a lit one on the belt
 - `src/entities/zombie.js:356-375`: a torch seen at night, two torches, the belt
 - `src/sight.js:16-27`: the carrier's own torch sets how far it sees the dead in the dark
-- `src/interact.js:931`, `src/interact.js:970`: `T` an event in the player's input, performed by the host's step
+- `src/interact.js:946`, `src/interact.js:985`: `T` an event in the player's input, performed by the host's step
 - `src/game.js:386-394`, `src/map.js:149-160`: a torch's lit state and wear reach every player; a mounted torch's wear sent at each hundredth
 
 {{navbox weapons}}

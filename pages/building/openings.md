@@ -67,27 +67,27 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
-- `src/map.js:723-733`: a wall record with its kind and state
-- `src/map.js:807-816`: only a door, open or broken and unboarded, passes a body; a window never does
-- `src/map.js:1327-1341`: what a door and shutters pass of light and sight
-- `src/interact.js:446-476`: E and the menu open and close doors and shutters from either side
+<!-- sources at 2ea0d24 -->
+- `src/map.js:741-751`: a wall record with its kind and state
+- `src/map.js:825-834`: only a door, open or broken and unboarded, passes a body; a window never does
+- `src/map.js:1345-1359`: what a door and shutters pass of light and sight
+- `src/interact.js:461-491`: E and the menu open and close doors and shutters from either side
 - `src/interact.js:43`: E's reach
-- `src/map.js:1384-1393`: an open doorway passes across its whole width
-- `src/map.js:1534-1552`, `src/map.js:1558-1561`, `src/map.js:1610-1625`: the slide towards an open doorway
-- `src/entities/zombie.js:669-733`, `src/map.js:767-798`: the dead break closed doors and never open them
-- `src/map.js:569-602`: a door is not built where either tile holds a prop; the two tiles beside a door
+- `src/map.js:1402-1411`: an open doorway passes across its whole width
+- `src/map.js:1552-1570`, `src/map.js:1576-1579`, `src/map.js:1628-1643`: the slide towards an open doorway
+- `src/entities/zombie.js:669-733`, `src/map.js:785-816`: the dead break closed doors and never open them
+- `src/map.js:587-620`: a door is not built where either tile holds a prop; the two tiles beside a door
 - `src/placement.js:95-115`: nothing put down on a door's tiles
 - `src/stations.js:178-185`: made furniture lands off a door's tiles
-- `src/map.js:2016-2024`: a fence's gates are doors
+- `src/map.js:2034-2042`: a fence's gates are doors
 - `tools/check.js:135-205`, `tools/mapgen/valley.py:106-112`: every map's door tiles clear and reachable on foot
-- `src/interact.js:823-836`, `src/interact.js:926-933`: E acts on its release however long it was held; no hold of E
-- `src/map.js:801-807`, `src/map.js:832-875`: the dead batter a shut or boarded window from outside, never pass it
+- `src/interact.js:838-851`, `src/interact.js:941-948`: E acts on its release however long it was held; no hold of E
+- `src/map.js:819-825`, `src/map.js:850-893`: the dead batter a shut or boarded window from outside, never pass it
 - `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:83`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
-- `src/map.js:782-787`: what a broken door and broken shutters become
-- `src/map.js:569-579`, `src/map.js:604-632`, `src/placement.js:188-194`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
-- `src/map.js:634-649`, `src/placement.js:408`: the removal tool puts the wall back
-- `src/interact.js:462-463`: the menu's broken entries
+- `src/map.js:800-805`: what a broken door and broken shutters become
+- `src/map.js:587-597`, `src/map.js:622-650`, `src/placement.js:188-194`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
+- `src/map.js:652-667`, `src/placement.js:408`: the removal tool puts the wall back
+- `src/interact.js:477-478`: the menu's broken entries
 - `data/build.json`: the door and window in the palette
-- `src/map.js:551-552`, `src/map.js:723-733`: door and shutter health, whatever the material
-- `src/interact.js:938-958`, `src/interact.js:473`: a guest's E performed by the host, the change reaching guests and the save
+- `src/map.js:569-570`, `src/map.js:741-751`: door and shutter health, whatever the material
+- `src/interact.js:953-973`, `src/interact.js:488`: a guest's E performed by the host, the change reaching guests and the save

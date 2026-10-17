@@ -1,15 +1,15 @@
 {
  "version": {
-  "commit": "2a97f494a2a4a4e3d68621659e1d2754b2bb88d8",
-  "short": "2a97f49",
-  "date": "2026-10-17T02:48:27-05:00",
-  "subject": "Merge #164, reviewed, Michael's rulings: the village's lights become lanterns that never go out; the fireball a flare (light in flight and where it lands), lighting a campfire or a torch its landing reaches with no wall between, its damage 45 for Michael to tune; a dropped or looted belt's torch doused (#156 step 2, closes #162)",
+  "commit": "2ea0d24837d2532761e4a0daa2fff81dfef01c52",
+  "short": "2ea0d24",
+  "date": "2026-10-17T02:57:21-05:00",
+  "subject": "Merge #165, reviewed: the light verb (a tinderbox or a lit torch lights a campfire with fuel, a torch in a holder, or an unlit torch in hand or on the belt, in sight and in reach, never through a wall; a burning fire lights a torch, Primary's reading; host and guest alike) (#156 step 3)",
   "ref": "origin/main"
  },
  "counts": {
   "items": 52,
   "recipes": 27,
-  "interactions": 3,
+  "interactions": 9,
   "lootTables": 6,
   "sprites": 138,
   "places": 20,
@@ -23,10 +23,10 @@
   "fixedRules": 2,
   "liveRules": 5,
   "keys": 19,
-  "verbs": 3,
-  "menuLabels": 55,
+  "verbs": 4,
+  "menuLabels": 56,
   "events": 30,
-  "checks": 30,
+  "checks": 31,
   "modules": 83
  },
  "items": [
@@ -73,7 +73,11 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [
-    "torch on campfire: Light"
+    "tinderbox on torch: Light",
+    "torch on campfire: Light",
+    "torch on torch_post: Light",
+    "torch on torch: Light",
+    "torch on fire: Light"
    ]
   },
   {
@@ -596,7 +600,11 @@
    "madeBy": [],
    "usedIn": [],
    "foundIn": [],
-   "interactions": [],
+   "interactions": [
+    "tinderbox on campfire: Light",
+    "tinderbox on torch_post: Light",
+    "tinderbox on torch: Light"
+   ],
    "note": "never wears out: T lights a torch with it (docs/07, Michael 2026-10-17, #156)"
   },
   {
@@ -2074,10 +2082,53 @@
  ],
  "interactions": [
   {
+   "use": "tinderbox",
+   "on": "campfire",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the fire."
+  },
+  {
+   "use": "tinderbox",
+   "on": "torch_post",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
+  },
+  {
+   "use": "tinderbox",
+   "on": "torch",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
+  },
+  {
    "use": "torch",
    "on": "campfire",
    "verb": "Light",
-   "message": "You hold the torch to the fire. It is already burning."
+   "action": "light",
+   "message": "You light the fire."
+  },
+  {
+   "use": "torch",
+   "on": "torch_post",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
+  },
+  {
+   "use": "torch",
+   "on": "torch",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
+  },
+  {
+   "use": "torch",
+   "on": "fire",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the torch."
   },
   {
    "use": "arrow",
@@ -4606,7 +4657,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:930"
+    "interact.js:945"
    ]
   },
   {
@@ -4637,7 +4688,7 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:931"
+    "interact.js:946"
    ]
   },
   {
@@ -4706,7 +4757,13 @@
   {
    "key": "dip",
    "at": [
-    "burn.js:78"
+    "burn.js:79"
+   ]
+  },
+  {
+   "key": "light",
+   "at": [
+    "burn.js:181"
    ]
   },
   {
@@ -4768,31 +4825,31 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1103"
+    "interact.js:1118"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1049"
+    "interact.js:1064"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1025"
+    "interact.js:1040"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1026"
+    "interact.js:1041"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1129"
+    "interact.js:1144"
    ]
   },
   {
@@ -4817,6 +4874,12 @@
    "key": "Interface size",
    "at": [
     "settings.js:52"
+   ]
+  },
+  {
+   "key": "Light the torch",
+   "at": [
+    "interact.js:415"
    ]
   },
   {
@@ -4852,7 +4915,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1131"
+    "interact.js:1146"
    ]
   },
   {
@@ -4924,7 +4987,7 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:414"
+    "interact.js:429"
    ]
   },
   {
@@ -4936,21 +4999,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1114",
-    "interact.js:1145"
+    "interact.js:1129",
+    "interact.js:1160"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1021",
-    "interact.js:1101"
+    "interact.js:1036",
+    "interact.js:1116"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:579"
+    "interact.js:594"
    ]
   },
   {
@@ -4974,7 +5037,7 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:461"
+    "interact.js:476"
    ]
   },
   {
@@ -4986,7 +5049,7 @@
   {
    "key": "Chop down (${prop.wood} log${prop.wood > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:512"
+    "interact.js:527"
    ]
   },
   {
@@ -5004,25 +5067,25 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1053"
+    "interact.js:1068"
    ]
   },
   {
    "key": "Drink from the ${source.name}",
    "at": [
-    "interact.js:536"
+    "interact.js:551"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:865"
+    "interact.js:880"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1029"
+    "interact.js:1044"
    ]
   },
   {
@@ -5034,19 +5097,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1370"
+    "interact.js:1385"
    ]
   },
   {
    "key": "Pull a board (${mine.length} this side, gone)",
    "at": [
-    "interact.js:498"
+    "interact.js:513"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s",
    "at": [
-    "interact.js:1058"
+    "interact.js:1073"
    ]
   }
  ],
@@ -5092,7 +5155,7 @@
    "at": [
     "interact.js:210",
     "interact.js:343",
-    "interact.js:1355",
+    "interact.js:1370",
     "ui/station-panel.js:77",
     "ui/station-panel.js:102"
    ]
@@ -5118,13 +5181,13 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:716"
+    "map.js:734"
    ]
   },
   {
    "key": "fenceShake",
    "at": [
-    "map.js:706"
+    "map.js:724"
    ]
   },
   {
@@ -5136,8 +5199,8 @@
   {
    "key": "fireLit",
    "at": [
-    "map.js:201",
-    "map.js:212"
+    "map.js:300",
+    "map.js:309"
    ]
   },
   {
@@ -5359,6 +5422,7 @@
   "frame",
   "ground",
   "growth",
+  "kindle",
   "lantern",
   "layers",
   "light",
@@ -5382,7 +5446,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2194
+   "lines": 2212
   },
   {
    "path": "main.js",
@@ -5394,7 +5458,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1415
+   "lines": 1430
   },
   {
    "path": "net.js",
@@ -5454,7 +5518,7 @@
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 397
+   "lines": 400
   },
   {
    "path": "figure/rig.js",
@@ -5513,6 +5577,10 @@
    "lines": 203
   },
   {
+   "path": "burn.js",
+   "lines": 201
+  },
+  {
    "path": "fire.js",
    "lines": 197
   },
@@ -5549,12 +5617,12 @@
    "lines": 153
   },
   {
-   "path": "entities/villager.js",
+   "path": "dev.js",
    "lines": 152
   },
   {
-   "path": "dev.js",
-   "lines": 151
+   "path": "entities/villager.js",
+   "lines": 152
   },
   {
    "path": "tuning.js",
@@ -5607,10 +5675,6 @@
   {
    "path": "iso.js",
    "lines": 98
-  },
-  {
-   "path": "burn.js",
-   "lines": 95
   },
   {
    "path": "ui/zombie-bars.js",

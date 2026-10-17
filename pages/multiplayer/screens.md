@@ -12,7 +12,7 @@ The **screens** are the game's menus. Out of a world the game is **a site**: ful
 
 ## The site
 
-When the game loads, and whenever no world is in, the game is a web page rather than a box over a world. Behind it is a blurred picture of the game. At the top is the name between autumn trees, its first line in timber letters and its big line in banded zombie green, with a stone menu bar under it. Each page sits in a stone frame below. At the foot is "A village of the dead. Keep the shutters closed." and a link to this wiki.
+When the game loads, and whenever no world is in, the game is a web page rather than a box over a world. Behind it is a blurred picture of the game. At the top is the name between autumn trees, in the Pirata One typeface on a thin dark backing that fills the letters' holes: "Cozy Medieval" small, in timber colours, over "Zombies" large, in flat zombie green, with a stone menu bar under it. Each page sits in a stone frame below. At the foot is "A village of the dead. Keep the shutters closed." and a link to this wiki.
 
 The menu's buttons:
 
@@ -87,13 +87,13 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
-- `index.html:36-67`, `style.css:1593-1614`, `style.css:1630-1667`: the site: the blurred picture behind, the wordmark between the autumn trees (its big line zombie green, game #163), the menu with Play and Wiki, the footer (game #120)
+<!-- sources at 2ea0d24 -->
+- `index.html:36-67`, `style.css:1602-1623`, `style.css:10-24`, `style.css:1642-1673`, `data/fonts/PirataOne-Regular.ttf`: the site: the blurred picture behind, the wordmark between the autumn trees (Pirata One, its dark backing, the big line flat zombie green), the menu with Play and Wiki, the footer (game #120)
 - `src/ui/screens.js:189-212`, `src/ui/screens.js:234-242`: out of a world, and during a join waiting for its welcome, a screen is drawn as a page of the site with the game's stage hidden; in a world, over the world
 - `src/ui/screens.js:117-127`, `src/ui/screens.js:738-744`: the menu's lit button, Play lit for its pages; a menu button drops a creation or an identity half edited, Settings and Controls excepted
 - `src/ui/screens.js:746-773`, `src/ui/screens.js:785-788`, `src/main.js:1761`: Home, its Play in your browser and the wiki line, a reason shown on it; About
 - `index.html:68-88`, `src/main.js:1779-1783`, `src/boot.js:58-65`: the site at the first paint; a button pressed before the game is ready shows the loading screen and its page opens when boot is done; a failure always shows
-- `src/main.js:100-104`, `src/main.js:1236-1238`, `style.css:1106`: no world in: nothing of a world drawn, the interface hidden, the chat box and the debug corner with it
+- `src/main.js:100-104`, `src/main.js:1236-1238`, `style.css:1115`: no world in: nothing of a world drawn, the interface hidden, the chat box and the debug corner with it
 - `src/ui/screens.js:245-274`, `src/main.js:831-832`: Escape out of a world steps back; Home stays
 - `src/ui/screens.js:910-921`, `src/main.js:724-743`: the pause menu, its first line (a guest's naming the host and the world), "Paused" or "Menu", its buttons and who sees them
 - `src/main.js:1502-1504`, `src/main.js:435-448`: Save world

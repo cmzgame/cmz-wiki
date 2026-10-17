@@ -62,7 +62,7 @@ A siege is held on the player the dead saw go in, so it refuses only that player
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/sprites/bed.json:32`: a bed is a prop with `sleep`
 - `data/tuning.json:60`: the time scale
 - `src/entities/player.js:204-222`: the verb, its reach (1.6 tiles), indoors, free hands, the siege, and the refusals with the day window ending at 20:00

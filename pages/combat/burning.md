@@ -56,11 +56,11 @@ The burn runs on the host alone: who is set alight, the timer, and the damage ar
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/combat.json` `burn`: `dps`, `duration`, `cap`
-- `src/burn.js:19-23`: the code's defaults match the data, loaded by `src/combat.js:67`
-- `src/burn.js:25-32`: only a living one of the dead can be set alight; a new spark puts the timer back to full, and a fresh burn starts its count from nothing
-- `src/burn.js:34-51`: every step, the timer runs down, a living body takes its share up to the cap, a corpse only burns down, and the fire goes out at zero
+- `src/burn.js:20-24`: the code's defaults match the data, loaded by `src/combat.js:67`
+- `src/burn.js:26-33`: only a living one of the dead can be set alight; a new spark puts the timer back to full, and a fresh burn starts its count from nothing
+- `src/burn.js:35-52`: every step, the timer runs down, a living body takes its share up to the cap, a corpse only burns down, and the fire goes out at zero
 - `data/items.json`: the torch's `weapon.ignite`; the Book of Fire's `book.spell.ignite`
 - `src/combat.js:320`, `src/combat.js:358-363`: a blow's weapon (a torch only while lit), the off hand's too, rolls its `ignite` chance on each body it lands on, before the damage
 - `src/archery.js:610-619`: the fireball's launcher carries its spell's `ignite`
@@ -71,7 +71,7 @@ The burn runs on the host alone: who is set alight, the timer, and the damage ar
 - `src/fire.js:40-60`, `src/fire.js:96-101`: the flames, embers, and smoke, lower and wider on a corpse; the burning body as a light
 - `src/render/entities.js:148-190`, `src/render/entities.js:274`: the flames drawn and the orange pulse on the sprite
 - `src/net.js:693`, `src/net.js:1226-1231`: the burning flag in the frame; a guest's replica makes the same flames and light from it
-- `docs/02-decisions.md:347-356`: Michael's rules and the build's: one burn's cap across refreshes, the spark before the damage, a burn not a blow
-- `docs/05-someday.md:38`, `src/burn.js:25-51`: spreading fire is not built; nothing in the burn reads the dead noticing it, puts it out, or burns a player
+- `docs/02-decisions.md:348-357`: Michael's rules and the build's: one burn's cap across refreshes, the spark before the damage, a burn not a blow
+- `docs/05-someday.md:38`, `src/burn.js:26-52`: spreading fire is not built; nothing in the burn reads the dead noticing it, puts it out, or burns a player
 
 {{navbox weapons}}

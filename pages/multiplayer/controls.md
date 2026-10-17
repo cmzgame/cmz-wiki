@@ -81,13 +81,13 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `src/ui/screens.js:21-59`, `src/ui/screens.js:1051-1058`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:920`: Controls on the site's menu and on the pause menu
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
 - `src/main.js:1079-1094`: the left button: placement's confirm, Use mode's target, else the swing
 - `src/main.js:1080`, `src/main.js:1109-1113`, `src/main.js:1134`: an open panel stops no click and no key; an open actions menu takes the click that closes it and ends a draw
-- `src/interact.js:1158`: `CLICK_REACH`, a gatherable sways when clicked within reach
+- `src/interact.js:1173`: `CLICK_REACH`, a gatherable sways when clicked within reach
 - `src/main.js:758-776`: a right tap opens the menu, cancels a draw, puts the item down in Use mode
 - `src/input.js:69-73`: the middle button read
 - `src/main.js:71`, `src/main.js:1051-1058`, `src/input.js:88`: the wheel's zoom step and its pace, held only while an item is dragged, and taken by the world only from the canvas
@@ -95,10 +95,10 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/input.js:150-158`: W A S D and the arrows walk in screen directions
 - `src/main.js:1122`, `src/entities/player.js:331-335`: Shift sprints, and sprinting drains stamina
 - `src/player-controller.js:53`: Space shoves
-- `src/interact.js:822-830`, `src/interact.js:926-955`, `src/ui/screens.js:27`: E on its release however long it was held, no hold; E while carrying puts it down
-- `src/interact.js:956-968`: B boards up (needs a plank), held pulls a board
-- `src/interact.js:931`, `src/interact.js:970-993`, `src/ui/screens.js:42`: T lights or douses the torch in hand, else on the belt, with a tinderbox; else takes one from the bag; the Controls screen's line
-- `src/interact.js:922`, `src/interact.js:942`, `src/interact.js:995-1011`: keys 1 to 4 eat, drink, or swap the belt slot
+- `src/interact.js:837-845`, `src/interact.js:941-970`, `src/ui/screens.js:27`: E on its release however long it was held, no hold; E while carrying puts it down
+- `src/interact.js:971-983`: B boards up (needs a plank), held pulls a board
+- `src/interact.js:946`, `src/interact.js:985-1008`, `src/ui/screens.js:42`: T lights or douses the torch in hand, else on the belt, with a tinderbox; else takes one from the bag; the Controls screen's line
+- `src/interact.js:937`, `src/interact.js:957`, `src/interact.js:1010-1026`: keys 1 to 4 eat, drink, or swap the belt slot
 - `src/main.js:893-901`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
 - `src/main.js:1043-1044`: N and X
 - `src/main.js:852-873`: N and X refused with the bag open, "Close your bag to build."

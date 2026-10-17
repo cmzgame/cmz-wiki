@@ -1,7 +1,7 @@
 {
-  "commit": "2a97f494a2a4a4e3d68621659e1d2754b2bb88d8",
-  "short": "2a97f49",
-  "date": "2026-10-17T02:48:27-05:00",
-  "subject": "Merge #164, reviewed, Michael's rulings: the village's lights become lanterns that never go out; the fireball a flare (light in flight and where it lands), lighting a campfire or a torch its landing reaches with no wall between, its damage 45 for Michael to tune; a dropped or looted belt's torch doused (#156 step 2, closes #162)",
+  "commit": "2ea0d24837d2532761e4a0daa2fff81dfef01c52",
+  "short": "2ea0d24",
+  "date": "2026-10-17T02:57:21-05:00",
+  "subject": "Merge #165, reviewed: the light verb (a tinderbox or a lit torch lights a campfire with fuel, a torch in a holder, or an unlit torch in hand or on the belt, in sight and in reach, never through a wall; a burning fire lights a torch, Primary's reading; host and guest alike) (#156 step 3)",
   "ref": "origin/main"
 }

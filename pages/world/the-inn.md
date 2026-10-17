@@ -21,7 +21,7 @@ The dead at the west end of the bridge, a knot of them by the toll gate, stand o
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `tools/mapgen/valley.py:216`: the inn on the square's east side
 - `data/maps/valley.json:1622-1907`: the taproom (counter, barrels, tables and chairs) and the kitchen behind a partition
 - `data/maps/valley.json:1827-1852`: both fireplaces lit at the start with 3 logs each

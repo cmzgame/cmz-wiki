@@ -71,24 +71,24 @@ The wear is kept on the host, and it is not saved. Every player sees a pressed f
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `data/sprites/wall_fence.json`: the fence's height, thickness, `seeThrough`, and `fence`
-- `src/map.js:1411-1423`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what a crowd can burst
-- `src/map.js:1700-1752`: the room fill passes a see-through wall
+- `src/map.js:1429-1441`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what a crowd can burst
+- `src/map.js:1718-1770`: the room fill passes a see-through wall
 - `src/entities/player.js:212`: a bed outdoors says "Not out here."
-- `src/map.js:809-816`: a shut gate blocks bodies as a door does
-- `src/map.js:1334-1341`: a shut gate in a see-through fence still passes sight
+- `src/map.js:827-834`: a shut gate blocks bodies as a door does
+- `src/map.js:1352-1359`: a shut gate in a see-through fence still passes sight
 - `src/combat.js:176-183`: a blow reaches the dead in its wedge in line of sight, which a fence passes
 - `src/entities/zombie.js:592-596`: a bite needs the contact distance and a clear line of sight
 - `src/entities/zombie.js:614-619`: pressed against a fence with the player in sight beyond it, a chase presses it
-- `src/entities/zombie.js:643-656`, `src/entities/zombie.js:243-278`, `src/map.js:1441-1452`: with no path, or no door of the house it can reach, the fence across its way is sought, a gate first, and pressed
+- `src/entities/zombie.js:643-656`, `src/entities/zombie.js:243-278`, `src/map.js:1459-1470`: with no path, or no door of the house it can reach, the fence across its way is sought, a gate first, and pressed
 - `src/entities/zombie.js:761-791`: the press state: at the fence, pressing; giving up unseen after a while, unless a siege is held
 - `src/entities/zombie.js:845-857`: the siege presses too
-- `src/map.js:651-721`, `data/tuning.json:86-90`: the wear: one does nothing, a crowd wears it, a gate at a fraction, recovery, the burst; not saved
+- `src/map.js:669-739`, `data/tuning.json:86-90`: the wear: one does nothing, a crowd wears it, a gate at a fraction, recovery, the burst; not saved
 - `src/game.js:621`: the wear worked out on the world's step, after the dead have moved
 - `src/render/walls.js:374-400`, `src/fire.js:81-83`: the shake, and the splinters and dust
-- `src/map.js:634-653`: the burst edge emptied and the rooms found again
-- `src/map.js:569-579`, `src/map.js:604-653`, `src/placement.js:408`: a gate built over a fence, no window over one; removing it puts the fence back
+- `src/map.js:652-671`: the burst edge emptied and the rooms found again
+- `src/map.js:587-597`, `src/map.js:622-671`, `src/placement.js:408`: a gate built over a fence, no window over one; removing it puts the fence back
 - `data/build.json`: only the log wall, door, and window can be built
 - `data/maps/valley.json:1110-1124`: the graveyard's fence feature and its gate
 - `data/maps/valley.json:1279-1290`, `data/maps/valley.json:2042-2053`, `data/maps/valley.json:2779-2790`, `data/maps/valley.json:3147-3158`: the fences of your cottage, the inn, the manor, and the merchant's house

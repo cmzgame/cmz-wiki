@@ -39,22 +39,22 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 2a97f49 -->
+<!-- sources at 2ea0d24 -->
 - `index.html:51`, `src/ui/screens.js:797-810`: the site's Play opens the Worlds page, New world on it
 - `src/main.js:308-344`, `src/ui/screens.js:350-363`, `src/ui/screens.js:415-434`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
 - `src/game.js:198-203`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
 - `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
 - `src/game.js:104-120`: the starter kit, its torch out and a tinderbox in the sack
-- `src/interact.js:972-993`, `src/game.js:494-520`, `data/tuning.json:83-84`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/interact.js:987-1008`, `src/game.js:494-520`, `data/tuning.json:83-84`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
 - `src/main.js:893-901`: Tab for the bag, C for the character screen
 - `src/main.js:1051-1134`: an open panel stops nothing in the world
-- `src/main.js:759-798`, `src/interact.js:938-956`: right-click for the menu; E for the nearest simple action
+- `src/main.js:759-798`, `src/interact.js:953-971`: right-click for the menu; E for the nearest simple action
 - `src/interact.js:325-341`: searching a chest
-- `src/interact.js:447-476`, `src/map.js:1332-1345`: tap E to open or shut; shut shutters block sight
-- `src/map.js:807-816`, `src/entities/zombie.js:215-240`: no one passes a window; the dead go for a door
+- `src/interact.js:462-491`, `src/map.js:1350-1363`: tap E to open or shut; shut shutters block sight
+- `src/map.js:825-834`, `src/entities/zombie.js:215-240`: no one passes a window; the dead go for a door
 - `src/entities/player.js:130-132`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
-- `src/interact.js:530-569`: drinking and filling at the well or any water
+- `src/interact.js:545-584`: drinking and filling at the well or any water
 - `src/map.js:98-129`, `src/interact.js:352-381`: fires burn down and are fed from their menu
 - `src/entities/player.js:204-222`, `src/entities/player.js:176-202`, `src/game.js:323-333`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
 - `data/tuning.json:4`, `data/tuning.json:39`: the dead walk at a third of your speed
