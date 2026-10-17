@@ -31,22 +31,22 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at 82a5763 -->
 - `data/items.json:19`: the tinderbox: a tool, 1 by 1, no wear, placeholder art
-- `src/game.js:104-120`: the starter kit's tinderbox in the bag beside the torch in hand, out
+- `data/kit.json`: the starter kit's tinderbox in the bag beside the torch in hand, out
 - `data/loot.json`: the dev kit's tinderbox; no other table holds one
 - `data/recipes.json`: no recipe makes one
 - `src/interact.js:998-1019`: `T` lights a torch only with a tinderbox carried, douses without one; its messages
 - `src/inventory.js:87-96`: a tinderbox counted in the hands, the belt, or the bag
 - `data/interactions.json`, `src/burn.js:85-184`: the `light` verb: a tinderbox or a lit torch used on a campfire with fuel, a torch on a post or in a bracket, or an unlit torch in a hand or on the belt; never a hearth, an oven, or a forge; its refusals, a lantern's and an empty bracket's among them; within `DIP_REACH` and in sight
-- `src/interactions.js:34-43`, `src/interact.js:676-683`, `src/main.js:801-811`: a Use on a wall bracket, any bracket under the cursor, after a character and a prop (game #172)
+- `src/interactions.js:34-43`, `src/interact.js:676-683`, `src/main.js:802-812`: a Use on a wall bracket, any bracket under the cursor, after a character and a prop (game #172)
 - `src/inventory.js:278-292`, `src/interact.js:352-385`: a fire's menu lights one that is out only with a flame on you, the tinderbox anywhere carried; the label, the refusal, not E's (game #169)
 - `src/burn.js:62`: the reach
 - `src/use.js:94-104`: a Use runs the verb and says its line, or the reason
 - `src/interact.js:412-424`: Light the torch on a holder's menu
 - `src/map.js:284-312`: what can be lit, touched for the save and the wire
 - `src/items.js:193-206`: a torch out when it leaves a hand, the belt, or a holder
-- `src/ui/inventory-actions.js:368-402`, `src/main.js:1001-1012`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
+- `src/ui/inventory-actions.js:368-402`, `src/main.js:1002-1013`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
 - `src/net.js:590-598`: a guest's menu choice run on the host as that player
 
 {{navbox items}}

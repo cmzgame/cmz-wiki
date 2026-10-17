@@ -15,7 +15,7 @@ The game opens on its site. Press **Play** on its menu (or `Enter` on Home) to o
 
 You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], at the southern end of the village: two rooms, a fireplace, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
 
-You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]], a [[Plank]], and a [[Tinderbox]], and a [[Torch]] in your hand. The torch is not lit: press **T** to light it with the tinderbox, and again to douse it. A lit torch burns down, faster in your hand than on your belt, so douse it when you do not need it. Press **Tab** for your bag and **C** for the character screen. The game does not stop while they are open, and you can fight with them up; only the pause menu (**Escape** with nothing open) stops it.
+You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]], a [[Plank]], and a [[Tinderbox]], and a [[Torch]] in your hand: the game's default kit, which a world made for testing can add to (see [[Player#The starter kit|the starter kit]]). The torch is not lit: press **T** to light it with the tinderbox, and again to douse it. A lit torch burns down, faster in your hand than on your belt, so douse it when you do not need it. Press **Tab** for your bag and **C** for the character screen. The game does not stop while they are open, and you can fight with them up; only the pause menu (**Escape** with nothing open) stops it.
 
 ## The first things to do
 
@@ -39,24 +39,24 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 64cc711 -->
-- `index.html:51`, `src/ui/screens.js:797-810`: the site's Play opens the Worlds page, New world on it
-- `src/main.js:308-344`, `src/ui/screens.js:350-363`, `src/ui/screens.js:415-434`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
-- `src/game.js:198-203`: each world's save holds its own characters
+<!-- sources at 82a5763 -->
+- `index.html:51`, `src/ui/screens.js:823-836`: the site's Play opens the Worlds page, New world on it
+- `src/main.js:309-345`, `src/ui/screens.js:360-366`, `src/ui/screens.js:438-457`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
+- `src/game.js:187-192`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
 - `data/maps/valley.json:5121-5124`, `data/maps/valley.json:1139-1610`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
-- `src/game.js:104-120`: the starter kit, its torch out and a tinderbox in the sack
-- `src/interact.js:998-1019`, `src/game.js:494-520`, `data/tuning.json:84-85`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
-- `src/main.js:895-903`: Tab for the bag, C for the character screen
-- `src/main.js:1054-1137`: an open panel stops nothing in the world
-- `src/main.js:759-798`, `src/interact.js:964-982`: right-click for the menu; E for the nearest simple action
+- `data/kit.json`, `src/game.js:105-109`: the starter kit, its torch out and a tinderbox in the sack
+- `src/interact.js:998-1019`, `src/game.js:483-509`, `data/tuning.json:84-85`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/main.js:896-904`: Tab for the bag, C for the character screen
+- `src/main.js:1055-1138`: an open panel stops nothing in the world
+- `src/main.js:760-799`, `src/interact.js:964-982`: right-click for the menu; E for the nearest simple action
 - `src/interact.js:325-341`: searching a chest
 - `src/interact.js:465-494`, `src/map.js:1350-1363`: tap E to open or shut; shut shutters block sight
 - `src/map.js:825-834`, `src/entities/zombie.js:216-241`: no one passes a window; the dead go for a door
 - `src/entities/player.js:130-132`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
 - `src/interact.js:548-587`: drinking and filling at the well or any water
 - `src/map.js:98-129`, `src/interact.js:352-385`: fires burn down and are fed from their menu; lit with a flame carried (game #169)
-- `src/entities/player.js:204-222`, `src/entities/player.js:176-202`, `src/game.js:323-333`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
+- `src/entities/player.js:204-222`, `src/entities/player.js:176-202`, `src/game.js:312-322`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
 - `data/tuning.json:4`, `data/tuning.json:40`: the dead walk at a third of your speed
 - `src/entities/zombie.js:298-303`, `src/entities/zombie.js:510-550`, `src/entities/zombie.js:361-377`: they see by the light on you, remember where they last saw you, and notice a flame at night
 - `src/entities/zombie.js:411-468`, `src/entities/zombie.js:807-874`: at night the dead that see you go in remember the door and wait about the house until dawn

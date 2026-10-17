@@ -7,11 +7,13 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
-## 2026-10-17: synced to `cf81e0d`
+## 2026-10-17: synced to `82a5763`
+
+- **New in the game:** the starting kit is data and a world choice (game #183). Every new character starts with the default kit, now the game's data, as before. A world can add to it when it is made, for testing: at the Sandbox step of New world, under "Chosen once, when the world is made", **Extra starting items** takes a typed list of items (`sword`, `arrow 20`) put in the bag after the default kit, checked as it is typed, with **Next** refusing a list that names an unknown item, has a bad count, or does not fit; **Dev bag** starts everyone wearing the [[Developer Bag]] in place of the sack. Both hold for every character the world makes, a guest's too, and are not on the pause menu's World rules. [[World rules]] has both; [[Player]] lists the kit from the data; [[Worlds]], [[Developer chest]], [[Developer Bag]], and [[Getting started]] say what changed; the Sources of [[Belt]], [[Tinderbox]], [[Torch]], [[Your cottage]], [[Breaking in]], [[Building]], and [[Trees]] moved on to the new game.
 
 - **New on the wiki:** [[Production chains]], a page generated from the game's data each build: every chain from raw material to product, each material a chip joined by arrows, marked works (can be had in normal play), blocked (in the game, but cannot be reached), or planned (in a design doc, not built yet, with the doc and section). It works out what can be had from the starter kit, the loot the valley's containers and the dead roll, the dead's clothes, and felling trees, then every recipe whose inputs, tool, station, and fire can be had; and lists the dead ends, the stations, the skills and the villagers the plan names for them, food, and item art. Linked from the [[Main page]], [[Recipes]], [[Crafting]], the sidebar, and the item and station navboxes.
 - **Changed in the game's docs, nothing visible in play:** Michael's rulings for the valley first (game #178): food is to heal a little and only potions much, a villager who teaches a skill is to be immune to the dead by a flag on each villager, a friendly wizard is to teach magic and potions, the dead are to strike what they break, and recipes are to be learned and earned rather than all known from the start. None is built yet, so no page changes; [[Production chains]] shows the skills, the wizard, and the planned villagers as planned.
-- On the wiki: the census also reads the starter kit (from `src/game.js` until the game makes it data) and what felling a tree drops, for the new page.
+- On the wiki: the census also reads the starting kit (`data/kit.json`) and what felling a tree drops, for the new page; a new template, `starting-kit`, lists the default kit from the data on [[Player]].
 
 ## 2026-10-17: synced to `64cc711`
 

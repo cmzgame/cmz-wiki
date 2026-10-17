@@ -46,16 +46,16 @@ Chopping is a menu action the host performs for whoever asked. The tree's remova
 
 ## Sources
 
-<!-- sources at 9d9a5b5 -->
-- `src/map.js:1896-1935`, `data/maps/valley.json:5082-5097`: trees scattered over the valley except the village and the reserves
+<!-- sources at 82a5763 -->
+- `src/map.js:2122-2161`, `data/maps/valley.json:5082-5097`: trees scattered over the valley except the village and the reserves
 - `data/maps/valley.json:5051-5081`: the biome's green, orange, red, and yellow oaks and spires; blue and purple in no map
 - `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_old.json`: per size the collision radius, wood, canopy reach, shadow, and leaf colour
-- `src/map.js:1290-1301`, `src/map.js:1356-1398`: only a circle at the trunk blocks, and a body slides round it
-- `src/map.js:1249-1259`: a path treats a tree's whole tile as blocked
+- `src/map.js:1515-1526`, `src/map.js:1581-1623`: only a circle at the trunk blocks, and a body slides round it
+- `src/map.js:1474-1484`: a path treats a tree's whole tile as blocked
 - `data/ground.json`, `src/ground.js`: the canopy's darkening and the shadow
 - `src/render/scene.js:97-121`: the hole in the canopy
-- `src/interact.js:47`, `src/interact.js:506-523`: Chop down with the count of logs; no tool; the tree removed and its logs dropped on its tile; "logs on the ground."
+- `src/interact.js:47`, `src/interact.js:526-543`: Chop down with the count of logs; no tool; the tree removed and its logs dropped on its tile; "logs on the ground."
 - `data/items.json:4`, `data/sprites/fireplace.json`: logs split into planks and feed a fireplace
-- `src/interact.js:62-84`, `src/map.js:720-727`: a guest's chop run on the host; the change travels in the touched chunk
-- `src/rules.js:20-28`, `src/map.js:44-52`, `src/map.js:290-302`, `src/map.js:1761-1769`, `src/map.js:1931`: the Trees rule, fixed at creation: no tree in the scatter or the wild, the other picks as ever
-- `src/map.js:304-338`: the mushrooms placed against where the trees would have stood, never on such a tile (game #149)
+- `src/interact.js:62-84`, `src/map.js:932-939`: a guest's chop run on the host; the change travels in the touched chunk
+- `src/rules.js:19`, `src/rules.js:28-30`, `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:1986-1994`, `src/map.js:2157`: the Trees rule, fixed at creation: no tree in the scatter or the wild, the other picks as ever
+- `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, never on such a tile (game #149)

@@ -154,26 +154,16 @@ function functionAt(file, name) {
   return { body, at: `src/${file}:${first}-${first + body.trimEnd().split("\n").length - 1}` };
 }
 
-// The starter kit, for the Production chains page: what every new character starts with. It lives in data/kit.json
-// once the game makes it data (game #136); until then it is read by pattern from giveStarterKit in src/game.js
-// (worn ids in a list, `addItem(bag, "id", n)`, `entry("id")` into a hand). Null when neither is found.
+// The default starting kit, for the Production chains page: what every new character starts with, from
+// data/kit.json (game #136): `worn` (ids, each into its slot) and `items` (`item`, `count`, `fill`, `hold`). A world may
+// add to it or wear the Developer Bag in place of the sack (the rules extraKit and devBag, chosen at the Sandbox
+// step); those are a world's testing choices, not normal play, so they are not read here. Null without the file.
 function readStarterKit() {
   const kitFile = join(D, "kit.json");
-  if (existsSync(kitFile)) {
-    const k = json(kitFile);
-    const rows = Array.isArray(k) ? k : k.items || k.rows || k.kit || [];
-    const out = rows.map((r) => (typeof r === "string" ? { id: r, count: 1 } : { id: r.id || r.item, count: r.count || 1 })).filter((r) => itemIds.has(r.id));
-    if (out.length) return { from: "data/kit.json", items: out };
-  }
-  const fn = functionAt("game.js", "giveStarterKit");
-  if (!fn) return null;
-  const body = fn.body;
-  const counts = new Map();
-  const add = (id, n) => { if (itemIds.has(id)) counts.set(id, (counts.get(id) || 0) + n); };
-  for (const m of body.matchAll(/\[((?:\s*"[a-z_]+"\s*,?)+)\]/g)) for (const s of m[1].matchAll(/"([a-z_]+)"/g)) add(s[1], 1);
-  for (const m of body.matchAll(/addItem\(\s*\w+,\s*"([a-z_]+)",\s*(\d+)/g)) add(m[1], +m[2]);
-  for (const m of body.matchAll(/entry\("([a-z_]+)"\)/g)) add(m[1], 1);
-  return { from: fn.at, items: [...counts].map(([id, count]) => ({ id, count })) };
+  if (!existsSync(kitFile)) return null;
+  const k = json(kitFile);
+  const rows = [...(k.worn || []).map((id) => ({ id, count: 1, worn: true })), ...(k.items || []).map((r) => ({ id: r.item, count: r.count || 1, ...(r.hold ? { hold: r.hold } : {}), ...(r.fill != null ? { fill: r.fill } : {}) }))];
+  return { from: "data/kit.json", items: rows.filter((r) => itemIds.has(r.id)), unknown: rows.filter((r) => !itemIds.has(r.id)).map((r) => r.id) };
 }
 const starterKit = readStarterKit();
 
@@ -205,6 +195,8 @@ for (const t of lootTables) for (const e of t.entries) if (e.item !== "nothing" 
 for (const r of recipes) if (r.out && r.out.prop && !sprites[r.out.prop]) problems.push(`recipe at ${r.station} makes unknown prop ${r.out.prop}`);
 const stationsInData = new Set(spriteList.filter((s) => s.station).map((s) => s.station).concat(["cooking"]));
 for (const r of recipes) if (!stationsInData.has(r.station)) problems.push(`recipe names station ${r.station} that no sprite definition is`);
+for (const id of (starterKit && starterKit.unknown) || []) problems.push(`data/kit.json names unknown item ${id}`);
+if (!starterKit) problems.push("no data/kit.json: the starting kit is unknown");
 
 const census = {
   version,
@@ -284,7 +276,7 @@ h("Menu entry labels (by pattern)");
 L.push(...menuLabels.map((k) => `- ${k.key}  (${k.at[0]}${k.at.length > 1 ? ` +${k.at.length - 1}` : ""})`));
 h("Events on the bus (by pattern)");
 L.push(menuLabels.length ? events.map((e) => `\`${e.key}\``).join(", ") : "");
-h("The starter kit (by pattern, or data/kit.json)");
+h("The starting kit (data/kit.json)");
 L.push(starterKit ? `${starterKit.items.map((k) => `${k.count} ${k.id}`).join(", ")} (from ${starterKit.from})` : "- not found");
 h("Felling a tree (by pattern)");
 L.push(chop ? `a tree with \`${chop.field}\` drops that many \`${chop.gives}\` (${chop.at})` : "- not found");

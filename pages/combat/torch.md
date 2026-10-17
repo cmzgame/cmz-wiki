@@ -58,10 +58,10 @@ In the off hand beside a weapon such as the [[Sword]] it counts as a weapon: cli
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at 82a5763 -->
 - `data/items.json`: the torch: either hand, `fire.radius`, `fire.burnsDown`, its `weapon` block, `kills`, `ignite`
 - `data/recipes.json`: the torch recipe at the workbench
-- `src/game.js:104-120`: the starter kit's torch in hand, out, and a tinderbox in the bag
+- `data/kit.json`: the starter kit's torch in hand, out, and a tinderbox in the bag
 - `src/items.js:20-22`, `src/items.js:186-206`: a new entry has no `lit`; a torch gives light only while lit; doused on leaving, with what a belt or a bag carries
 - `src/interact.js:998-1019`: `T`: the torch in hand, else on the belt, lit with a tinderbox carried, doused when lit; else the bag's taken into a hand; the messages
 - `src/inventory.js:87-96`: a tinderbox counted in the hands, the belt, or the bag
@@ -71,19 +71,19 @@ In the off hand beside a weapon such as the [[Sword]] it counts as a weapon: cli
 - `src/inventory.js:278-292`, `src/interact.js:352-385`: a lit torch in a hand or on the belt a flame for a fire's menu (game #169)
 - `src/interact.js:412-424`: Light the torch on a holder's menu
 - `src/map.js:186-205`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
-- `src/game.js:494-520`, `src/game.js:531`, `data/tuning.json:84-85`: a lit torch burns down in the step, in a hand at `torchHeldLife`, on the belt at `torchWallLife`; spent, gone with the weapon's word
+- `src/game.js:483-509`, `src/game.js:520`, `data/tuning.json:84-85`: a lit torch burns down in the step, in a hand at `torchHeldLife`, on the belt at `torchWallLife`; spent, gone with the weapon's word
 - `src/map.js:149-184`: a mounted torch burns at the wall rate; "A torch burns out."
 - `src/clock.js:5`: the day's length
-- `src/main.js:1631-1636`, `src/host.js:225-237`: "Your torch is spent." to its owner, "A torch burns out." to players within `torchSpentRadius` (`data/tuning.json:86`)
+- `src/main.js:1633-1638`, `src/host.js:225-237`: "Your torch is spent." to its owner, "A torch burns out." to players within `torchSpentRadius` (`data/tuning.json:86`)
 - `data/combat.json` `blow.knockdownChance`, `src/combat.js:354`: the default knockdown chance
 - `src/combat.js:320`, `src/combat.js:358-363`, `src/burn.js:26-33`: the blow's `ignite` chance rolled on each body it lands on, in the off hand too, before the damage, only while lit
 - `src/combat.js:371`, `src/combat.js:377-389`, `src/items.js:24-37`: it loses durability and breaks like any weapon, on the same `wear`
 - `src/combat.js:113-122`, `src/combat.js:285-294`: in the off hand it swings when the main hand is recovering, never beside the spear
 - `src/items.js:112-133`: a torch is not a weapon beside the spear
-- `src/game.js:658-670`, `src/game.js:486-493`, `src/items.js:209-216`: the carried light: a lit torch in hand, two in hand, else a lit one on the belt
+- `src/game.js:647-659`, `src/game.js:475-482`, `src/items.js:209-216`: the carried light: a lit torch in hand, two in hand, else a lit one on the belt
 - `src/entities/zombie.js:357-376`: a torch seen at night, two torches, the belt
 - `src/sight.js:18-29`, `data/tuning.json:80`, `data/tuning.json:95`: the carrier's own torch sets how far it sees the dead in the dark; a belt torch's `beltLight` reach past `darkRadius` (game #173)
 - `src/interact.js:957`, `src/interact.js:996`: `T` an event in the player's input, performed by the host's step
-- `src/game.js:386-394`, `src/map.js:149-160`: a torch's lit state and wear reach every player; a mounted torch's wear sent at each hundredth
+- `src/game.js:375-383`, `src/map.js:149-160`: a torch's lit state and wear reach every player; a mounted torch's wear sent at each hundredth
 
 {{navbox weapons}}

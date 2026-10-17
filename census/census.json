@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "cf81e0d7060d74d8d8a46ae43abdd737e0c4b61b",
-  "short": "cf81e0d",
-  "date": "2026-10-17T12:57:39-05:00",
-  "subject": "Merge #178, reviewed, Michael's word: the valley first; food heals a little and potions big; teachers immune by a flag, some villagers at risk; the wizard; the dead strike what they break; recipes learned and earned",
+  "commit": "82a5763fdc359ea791e5f7e66b078fa3f9b0c16d",
+  "short": "82a5763",
+  "date": "2026-10-17T13:08:17-05:00",
+  "subject": "Merge #183, reviewed, Michael's word: the starting kit as data and a world choice (extra items added to the default kit, a dev bag in place of the sack, chosen once at the Sandbox step) (closes #136)",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,16 +18,16 @@
   "mapProps": 34,
   "zombieWardrobes": 10,
   "villageWardrobes": 6,
-  "settings": 29,
-  "rules": 7,
-  "fixedRules": 2,
+  "settings": 31,
+  "rules": 9,
+  "fixedRules": 4,
   "liveRules": 5,
   "keys": 19,
   "verbs": 4,
-  "menuLabels": 56,
+  "menuLabels": 58,
   "events": 30,
-  "checks": 31,
-  "modules": 83
+  "checks": 32,
+  "modules": 84
  },
  "items": [
   {
@@ -4601,6 +4601,16 @@
    "note": "{ w, h } in UI pixels the text log was resized to (ui/log.js)"
   },
   {
+   "key": "extraKit",
+   "default": "\"\"",
+   "note": "items added to the starting kit, one `item_id count` a line (#136): chosen at a new world's Sandbox step"
+  },
+  {
+   "key": "devBag",
+   "default": "false",
+   "note": "start wearing the Developer Bag in place of the sack (#136): chosen at a new world's Sandbox step"
+  },
+  {
    "key": "devChest",
    "default": "true",
    "note": "the chest of every item placed by the spawn: chosen at a new world's Sandbox step (docs/38), this is the next world's first choice; docs/30 step 0: the map file stays clean"
@@ -4643,36 +4653,40 @@
   "survival",
   "freeBuilding",
   "trees",
-  "population"
+  "population",
+  "extraKit",
+  "devBag"
  ],
  "fixedRules": [
   "trees",
-  "population"
+  "population",
+  "extraKit",
+  "devBag"
  ],
  "keys": [
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1066"
+    "main.js:1067"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1065"
+    "main.js:1066"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1044"
+    "main.js:1045"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:889",
-    "main.js:903"
+    "main.js:890",
+    "main.js:904"
    ]
   },
   {
@@ -4684,13 +4698,13 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1063"
+    "main.js:1064"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1046"
+    "main.js:1047"
    ]
   },
   {
@@ -4715,56 +4729,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1042"
+    "main.js:1043"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1047"
+    "main.js:1048"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1054"
+    "main.js:1055"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1044"
+    "main.js:1045"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1125"
+    "main.js:1126"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1125"
+    "main.js:1126"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1045"
+    "main.js:1046"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1136"
+    "main.js:1137"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:889",
-    "main.js:895"
+    "main.js:890",
+    "main.js:896"
    ]
   }
  ],
@@ -4798,19 +4812,19 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:57"
+    "settings.js:59"
    ]
   },
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1413"
+    "main.js:1415"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:795"
+    "main.js:796"
    ]
   },
   {
@@ -4822,25 +4836,31 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:54"
+    "settings.js:56"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:65"
+    "settings.js:67"
+   ]
+  },
+  {
+   "key": "Dev bag",
+   "at": [
+    "settings.js:71"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:68"
+    "settings.js:70"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1351"
+    "main.js:1353"
    ]
   },
   {
@@ -4874,27 +4894,33 @@
    ]
   },
   {
+   "key": "Extra starting items",
+   "at": [
+    "settings.js:72"
+   ]
+  },
+  {
    "key": "Free building",
    "at": [
-    "settings.js:61"
+    "settings.js:63"
    ]
   },
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1387"
+    "main.js:1389"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:67"
+    "settings.js:69"
    ]
   },
   {
    "key": "Interface size",
    "at": [
-    "settings.js:52"
+    "settings.js:54"
    ]
   },
   {
@@ -4906,31 +4932,31 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1341"
+    "main.js:1343"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1377"
+    "main.js:1379"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:62"
+    "settings.js:64"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:55"
+    "settings.js:57"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1426"
+    "main.js:1428"
    ]
   },
   {
@@ -4942,25 +4968,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1317"
+    "main.js:1318"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1314"
+    "main.js:1315"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1343"
+    "main.js:1345"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1342"
+    "main.js:1344"
    ]
   },
   {
@@ -4972,7 +4998,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1435"
+    "main.js:1437"
    ]
   },
   {
@@ -4984,25 +5010,25 @@
   {
    "key": "Starting population",
    "at": [
-    "settings.js:64"
+    "settings.js:66"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:60"
+    "settings.js:62"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:66"
+    "settings.js:68"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:56"
+    "settings.js:58"
    ]
   },
   {
@@ -5014,7 +5040,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:63"
+    "settings.js:65"
    ]
   },
   {
@@ -5040,19 +5066,19 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:58"
+    "settings.js:60"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:59"
+    "settings.js:61"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:53"
+    "settings.js:55"
    ]
   },
   {
@@ -5150,13 +5176,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1246"
+    "main.js:1247"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:370"
+    "game.js:359"
    ]
   },
   {
@@ -5196,7 +5222,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:588"
+    "game.js:577"
    ]
   },
   {
@@ -5233,7 +5259,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:652"
+    "game.js:641"
    ]
   },
   {
@@ -5314,7 +5340,7 @@
    "at": [
     "archery.js:717",
     "combat.js:387",
-    "game.js:506"
+    "game.js:495"
    ]
   },
   {
@@ -5444,6 +5470,7 @@
   "ground",
   "growth",
   "kindle",
+  "kit",
   "lantern",
   "layers",
   "light",
@@ -5471,7 +5498,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1844
+   "lines": 1846
   },
   {
    "path": "placeholders.js",
@@ -5487,7 +5514,7 @@
   },
   {
    "path": "ui/screens.js",
-   "lines": 1063
+   "lines": 1090
   },
   {
    "path": "ground.js",
@@ -5507,7 +5534,7 @@
   },
   {
    "path": "game.js",
-   "lines": 674
+   "lines": 663
   },
   {
    "path": "assets.js",
@@ -5634,12 +5661,12 @@
    "lines": 155
   },
   {
-   "path": "figure/wardrobe.js",
+   "path": "dev.js",
    "lines": 153
   },
   {
-   "path": "dev.js",
-   "lines": 152
+   "path": "figure/wardrobe.js",
+   "lines": 153
   },
   {
    "path": "entities/villager.js",
@@ -5650,16 +5677,16 @@
    "lines": 135
   },
   {
+   "path": "settings.js",
+   "lines": 128
+  },
+  {
    "path": "moodles.js",
    "lines": 127
   },
   {
    "path": "sprites.js",
    "lines": 125
-  },
-  {
-   "path": "settings.js",
-   "lines": 124
   },
   {
    "path": "ui/hud.js",
@@ -5714,11 +5741,19 @@
    "lines": 72
   },
   {
+   "path": "kit.js",
+   "lines": 71
+  },
+  {
    "path": "camera.js",
    "lines": 67
   },
   {
    "path": "rng.js",
+   "lines": 67
+  },
+  {
+   "path": "rules.js",
    "lines": 67
   },
   {
@@ -5728,10 +5763,6 @@
   {
    "path": "bleed.js",
    "lines": 62
-  },
-  {
-   "path": "rules.js",
-   "lines": 61
   },
   {
    "path": "ui/names.js",
@@ -6076,31 +6107,37 @@
   }
  },
  "starterKit": {
-  "from": "src/game.js:107-120",
+  "from": "data/kit.json",
   "items": [
    {
     "id": "tunic",
-    "count": 1
+    "count": 1,
+    "worn": true
    },
    {
     "id": "breeches",
-    "count": 1
+    "count": 1,
+    "worn": true
    },
    {
     "id": "boots",
-    "count": 1
+    "count": 1,
+    "worn": true
    },
    {
     "id": "belt",
-    "count": 1
+    "count": 1,
+    "worn": true
    },
    {
     "id": "small_sack",
-    "count": 1
+    "count": 1,
+    "worn": true
    },
    {
     "id": "waterskin",
-    "count": 1
+    "count": 1,
+    "fill": 100
    },
    {
     "id": "bread",
@@ -6115,14 +6152,16 @@
     "count": 1
    },
    {
-    "id": "tinderbox",
-    "count": 1
+    "id": "torch",
+    "count": 1,
+    "hold": "main"
    },
    {
-    "id": "torch",
+    "id": "tinderbox",
     "count": 1
    }
-  ]
+  ],
+  "unknown": []
  },
  "chop": {
   "gives": "log",

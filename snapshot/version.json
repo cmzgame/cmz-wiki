@@ -1,7 +1,7 @@
 {
-  "commit": "cf81e0d7060d74d8d8a46ae43abdd737e0c4b61b",
-  "short": "cf81e0d",
-  "date": "2026-10-17T12:57:39-05:00",
-  "subject": "Merge #178, reviewed, Michael's word: the valley first; food heals a little and potions big; teachers immune by a flag, some villagers at risk; the wizard; the dead strike what they break; recipes learned and earned",
+  "commit": "82a5763fdc359ea791e5f7e66b078fa3f9b0c16d",
+  "short": "82a5763",
+  "date": "2026-10-17T13:08:17-05:00",
+  "subject": "Merge #183, reviewed, Michael's word: the starting kit as data and a world choice (extra items added to the default kit, a dev bag in place of the sack, chosen once at the Sandbox step) (closes #136)",
   "ref": "origin/main"
 }

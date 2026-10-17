@@ -29,7 +29,7 @@ A world made on another map is listed but cannot be played here; its card says i
 
 ### Making a world
 
-**New world** says "A name for it, how it plays, then a character for it." It asks for a name, with one offered: the map's name and the day's date. Under the name is the Sandbox: the world's rules, in two parts. **How it plays** has the five that can be changed later from the pause menu (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit); **Chosen once, when the world is made** has **Trees**, **Starting population**, and the **Dev chest**, which are baked into the world and never change. They are offered as you last chose them. See [[World rules]].
+**New world** says "A name for it, how it plays, then a character for it." It asks for a name, with one offered: the map's name and the day's date. Under the name is the Sandbox: the world's rules, in two parts. **How it plays** has the five that can be changed later from the pause menu (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit); **Chosen once, when the world is made** has **Trees**, **Starting population**, the **Dev chest**, **Dev bag**, and **Extra starting items**, which are baked into the world and never change. The last two set what every character starts with, for testing: the [[Developer Bag]] worn in place of the sack, and a typed list of items added to the default kit (see [[Player#The starter kit|the starter kit]]). A list with an unknown item, a bad count, or more than the starting bag holds is named under its box, and **Next** refuses it until it is put right. They are offered as you last chose them. See [[World rules]].
 
 **Next** goes on to [[Characters|character creation]]: an identity, then a second step. **Into the valley** makes the world behind the [[Screens#The loading screen|loading screen]] ("Making" and its name), puts your character at the spawn, saves it at once, and draws the ground round you before the screen goes. The site goes and the game fills the window. A new world starts at {{n census.constants.clock.START_HOUR}} o'clock in the morning on day one.
 
@@ -62,25 +62,26 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 2a9a308 -->
+<!-- sources at 82a5763 -->
 - `src/save.js`: a world as a save in the browser that made it
-- `src/ui/screens.js:189-212`, `src/main.js:1236-1238`: nothing runs until a world is chosen; out of a world, the site
-- `index.html:51`, `src/ui/screens.js:751`: Play and Play in your browser open the Worlds page (game #120)
-- `src/ui/screens.js:797-810`: the Worlds page's line, its three lists, and the buttons below
-- `src/ui/screens.js:488-507`, `src/ui/screens.js:645-673`, `src/save.js:155-170`, `src/clock.js:88-94`: a card: the name and its mark, the survivor, the day and hour, when last played, the code; the main button big and the rest small (game #120)
-- `src/ui/screens.js:653-663`: the buttons by where a world lives
-- `src/ui/screens.js:695-705`: my worlds on the server with no copy here
-- `src/ui/screens.js:707-722`: a friend's card: the dot, the survivor, the host, the code, Rejoin and Forget
-- `src/main.js:1522`, `src/ui/screens.js:807`: Move to the server and A world of mine on the server only with a relay
-- `src/main.js:1507`, `src/ui/screens.js:656`, `src/ui/screens.js:669`: a world from another map listed, not playable
-- `src/ui/screens.js:258-259`: Back goes to Home
-- `src/ui/screens.js:350`, `src/ui/screens.js:845-860`, `src/main.js:1516`: New world, its line, the default name
-- `src/ui/screens.js:845-873`, `src/main.js:288-294`: the Sandbox step, its two parts and Next; the choices offered as last chosen
-- `src/ui/screens.js:897`: Into the valley
-- `src/main.js:310-344`, `src/ui/screens.js:234-242`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
+- `src/ui/screens.js:196-219`, `src/main.js:1240-1242`: nothing runs until a world is chosen; out of a world, the site
+- `index.html:51`, `src/ui/screens.js:777`: Play and Play in your browser open the Worlds page (game #120)
+- `src/ui/screens.js:823-836`: the Worlds page's line, its three lists, and the buttons below
+- `src/ui/screens.js:511-530`, `src/ui/screens.js:671-699`, `src/save.js:155-170`, `src/clock.js:96-102`: a card: the name and its mark, the survivor, the day and hour, when last played, the code; the main button big and the rest small (game #120)
+- `src/ui/screens.js:679-689`: the buttons by where a world lives
+- `src/ui/screens.js:721-731`: my worlds on the server with no copy here
+- `src/ui/screens.js:733-748`: a friend's card: the dot, the survivor, the host, the code, Rejoin and Forget
+- `src/main.js:1527`, `src/ui/screens.js:833`: Move to the server and A world of mine on the server only with a relay
+- `src/main.js:1512`, `src/ui/screens.js:682`, `src/ui/screens.js:695`: a world from another map listed, not playable
+- `src/ui/screens.js:265-266`: Back goes to Home
+- `src/ui/screens.js:357`, `src/ui/screens.js:871-886`, `src/main.js:1521`: New world, its line, the default name
+- `src/ui/screens.js:871-899`, `src/main.js:289-295`: the Sandbox step, its two parts and Next; the choices offered as last chosen
+- `src/settings.js:70-72`, `src/ui/screens.js:360-366`, `src/kit.js:44-55`: Dev bag and Extra starting items at the Sandbox step, a list that does not fit refused at Next
+- `src/ui/screens.js:924`: Into the valley
+- `src/main.js:311-345`, `src/ui/screens.js:241-249`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
 - `src/clock.js:18`: `START_HOUR`
-- `src/main.js:347-398`: Play reads the save behind the loading screen, opens to friends again if it was open
-- `src/ui/screens.js:296`: Delete's confirmation
-- `src/ui/screens.js:281-287`, `src/main.js:456-489`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
-- `src/ui/screens.js:465-481`, `src/ui/screens.js:710-714`, `src/net.js:389-396`: the dots asked of the relay
-- `src/main.js:435-436`: a guest never saves
+- `src/main.js:348-399`: Play reads the save behind the loading screen, opens to friends again if it was open
+- `src/ui/screens.js:303`: Delete's confirmation
+- `src/ui/screens.js:288-294`, `src/main.js:457-490`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
+- `src/ui/screens.js:488-504`, `src/ui/screens.js:736-740`, `src/net.js:389-396`: the dots asked of the relay
+- `src/main.js:436-437`: a guest never saves
