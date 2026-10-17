@@ -52,6 +52,8 @@ The game goes on while any panel is open, and the world's keys and clicks still 
 
 - **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the clothing slots and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
 - **The station panel**: using a station opens one panel under the clock with its recipes, the chosen recipe's ingredients, a count, **Make**, the queue, and **Output**. See [[Crafting]].
+- **A conversation** (see [[Talk]]): talking to a villager opens a panel at the bottom centre, above the belt, with their lines, **Continue...**, the questions to choose, and **That's all for now**.
+- **The map** (`M`; see [[Map]]): the land seen so far and every player, over the world.
 - **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Remove row. See [[Building]].
 
 ## The cursor
@@ -71,6 +73,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/ui/talk-panel.js`, `src/ui/map-panel.js`: the conversation panel and the map (game #230, #235)
 - `src/main.js:918-1001`: an open panel stops no click, key, or zoom (game commit 57df52e)
 - `src/view.js:84-88`, `src/view.js:138`: the interface's own size, Interface size
 - `style.css:1104`, `src/main.js:100-104`, `src/main.js:1207-1209`, `src/ui/screens.js:187-200`: the interface, the chat box, and the debug corner hidden while no world is in; nothing of a world drawn, the game's stage hidden behind the site (game #80, #120, at 02dfcc2)

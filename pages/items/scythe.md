@@ -23,12 +23,12 @@ A guest's swing is carried out on the host, which harvests for that player; the 
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/items.json:47`: the scythe: either hand, its verb `harvest`, its weapon block
 - `src/farming.js:257-292`: a swing with an item listing `harvest`, in the hand that swung, harvests every ready grain crop on the three tiles ahead by the `harvest` verb; the message counts the rows and what fell (game #213)
 - `data/crops.json`: rye's `grain` flag, and its `tool`, `harvest`, carried for a hand harvest (game #222); flax has neither
-- `src/farming.js:233-243`, `src/interact.js:547-560`, `src/inventory.js:88-108`: a ripe crop's harvest refused without its tool, "Harvest (need a scythe)"
+- `src/farming.js:233-243`, `src/interact.js:550-563`, `src/inventory.js:88-108`: a ripe crop's harvest refused without its tool, "Harvest (need a scythe)"
 - `data/recipes.json:584-603`: the scythe at the anvil, the hammer in hand
-- `data/loot.json:9-10`, `tools/mapgen/valley.py:495-500`: rye seed in the granaries, and Long Acre's two rye fields (game #219)
+- `data/loot.json:9-10`, `tools/mapgen/valley.py:496-501`: rye seed in the granaries, and Long Acre's two rye fields (game #219)
 
 {{navbox items}}

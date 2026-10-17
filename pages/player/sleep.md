@@ -16,13 +16,13 @@ numbersOk: true
 
 You can sleep when:
 
-- You are within 1.6 tiles of the bed.
+- You are within 1.6 tiles of the bed, with a clear line to it.
 - The bed is indoors, in a room.
 - Your hands are free: you are not carrying a prop.
 - None of [[The dead]] holding a siege on you is within {{n tuning.zombie.siegeSleepRadius tiles}} of you, in any room of the house or outside it. At night the dead that saw you go in wait about the house until {{n tuning.zombie.siegeEndHour}}:00 (see [[Breaking in#The siege|Breaking in]]).
 - By day, you are at least "Yawning". From 20:00 until {{n tuning.player.wakeHour}}:00 you may sleep rested.
 
-Otherwise the game says why: "Too far from the bed.", "Not out here.", "Your hands are full.", "The dead that know you are in here are still about.", or "You are not tired."
+Otherwise the game says why: "Too far from the bed.", "There is a wall in the way.", "Not out here.", "Your hands are full.", "The dead that know you are in here are still about.", or "You are not tired."
 
 "Sleep" becomes the E action on a bed once you are Yawning or worse, or from 20:00 at night.
 
@@ -63,6 +63,7 @@ A siege is held on the player the dead saw go in, so it refuses only that player
 ## Sources
 
 <!-- sources at 64cc711 -->
+- `src/entities/player.js`, the `sleep` verb, `src/reach.js`: the bed's reach with a clear line, "There is a wall in the way." (game #227)
 - `data/sprites/bed.json:32`: a bed is a prop with `sleep`
 - `data/tuning.json:61`: the time scale
 - `src/entities/player.js:204-222`: the verb, its reach (1.6 tiles), indoors, free hands, the siege, and the refusals with the day window ending at 20:00

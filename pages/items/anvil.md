@@ -24,16 +24,16 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `src/stations.js:45-52`: which prop is which station
+<!-- sources at 015eabc -->
+- `src/stations.js:46-53`: which prop is which station
 - `data/sprites/anvil.json`: the anvil is a station, not carried, with no fire
 - `data/recipes.json:505-663`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`
 - `data/loot.json:13`, `data/loot.json:16`: the quarryman's chest's hammer and the smithy's chest's iron bars (game #210)
-- `src/interact.js:785-802`: the station's menu entry and `E`
-- `src/stations.js:150-159`: the refusals, "Needs a smith's hammer in hand." among them
-- `src/stations.js:173-209`: what is made goes to the output box
+- `src/interact.js:788-805`: the station's menu entry and `E`
+- `src/stations.js:145-154`: the refusals, "Needs a smith's hammer in hand." among them
+- `src/stations.js:168-204`: what is made goes to the output box
 - `data/maps/valley.json`: where the anvil stands
-- `src/ui/station-panel.js:70-83`: a guest's panel opens on its own screen
+- `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
 - `src/host.js:183-189`: a guest's Make runs on the host as the craft verb, for that player
 
 {{navbox making}}

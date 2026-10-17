@@ -25,12 +25,12 @@ A guest applies a bandage through the same menu entry; the host performs it.
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/items.json:15`: the bandage, its stack, its `bandage` flag, and no `cloth` tag
 - `data/recipes.json:140-154`: two bandages from a linen cloth at the loom (game #216)
-- `src/interact.js:1230-1238`: "Apply" only while bleeding, "Apply (not bleeding)" otherwise; it clears every stack, says "The bleeding stops.", and uses one
+- `src/interact.js:1235-1243`: "Apply" only while bleeding, "Apply (not bleeding)" otherwise; it clears every stack, says "The bleeding stops.", and uses one
 - `src/bleed.js:31-36`: applying a bandage clears the wound
 - `data/loot.json:18`: the dev chest's bandages
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is sent by label and run by the host
+- `src/ui/inventory-actions.js:220`, `src/ui/inventory-actions.js:353-364`: a guest's menu choice is sent by label and run by the host
 
 {{navbox items}}

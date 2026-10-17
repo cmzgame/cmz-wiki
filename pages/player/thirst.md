@@ -63,23 +63,23 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/tuning.json:53`, `data/tuning.json:56`: the maximum and the drain time
-- `src/entities/player.js:146`: the drain, awake or asleep
+- `src/entities/player.js:147`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
-- `src/interact.js:1243-1244`, `src/entities/player.js:104-112`, `data/tuning.json:59`: the "Drink" entry and the sip
-- `src/interact.js:1188-1202`, `src/interact.js:1316-1328`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
-- `src/entities/player.js:113-131`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
+- `src/interact.js:1248-1249`, `src/entities/player.js:105-113`, `data/tuning.json:59`: the "Drink" entry and the sip
+- `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:175-183`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
+- `src/entities/player.js:114-132`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
-- `src/game.js:607-610`, `src/main.js:1650-1652`: in the world's step, the word on the drinker's screen
+- `src/game.js:615-618`, `src/main.js:1671-1673`: in the world's step, the word on the drinker's screen
 - `data/items.json:17`, `data/items.json:70`: the apple's and the stew's thirst
-- `src/interact.js:678-717`, `src/map.js:1408-1417`: the well's and the water's actions, named for the prop; floors with `drink`
-- `src/interact.js:55`, `src/interact.js:683`, `src/interact.js:689-694`: drinking's time, the E action below 90, thirst set to full
-- `src/interact.js:56`, `src/interact.js:679`, `src/interact.js:697-711`, `src/inventory.js:85-87`: filling's time and every waterskin in the bag and on the belt to full (the belt's game #222)
+- `src/interact.js:681-720`, `src/map.js:1429-1438`: the well's and the water's actions, named for the prop; floors with `drink`
+- `src/interact.js:56`, `src/interact.js:686`, `src/interact.js:692-697`: drinking's time, the E action below 90, thirst set to full
+- `src/interact.js:57`, `src/interact.js:682`, `src/interact.js:700-714`, `src/inventory.js:85-87`: filling's time and every waterskin in the bag and on the belt to full (the belt's game #222)
 - `src/moodles.js:64-78`: the thirst stages
-- `src/entities/player.js:152-154`: Thirsty stops regeneration
-- `src/entities/player.js:160-165`, `data/tuning.json:69`: Parched slows stamina recovery
-- `src/entities/player.js:150`, `data/tuning.json:58`: dehydration damage
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
+- `src/entities/player.js:153-155`: Thirsty stops regeneration
+- `src/entities/player.js:161-166`, `data/tuning.json:69`: Parched slows stamina recovery
+- `src/entities/player.js:151`, `data/tuning.json:58`: dehydration damage
+- `src/ui/inventory-actions.js:220`, `src/ui/inventory-actions.js:353-364`: a guest's menu choice is run by the host
 - `src/host.js:239-242`: a guest's sip by itself, its word sent to the guest
-- `src/entities/player.js:138-143`: Survival off holds thirst full
+- `src/entities/player.js:139-144`: Survival off holds thirst full

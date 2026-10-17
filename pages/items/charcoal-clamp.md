@@ -25,10 +25,10 @@ A guest feeds, lights, and uses a clamp through the host like any station; the f
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/sprites/charcoal_clamp.json`: the clamp: a station `clamp`, its fire (fuel, hours per unit, the most it holds, its small radius), not carried (game #210)
 - `data/recipes.json:473-488`: logs to charcoal, the fire lit
-- `src/interact.js:360-400`, `src/stations.js:150-159`, `src/stations.js:210-230`: fed and lit like any fire; a job needs its station's fire burning
-- `tools/mapgen/valley.py:373`, `tools/mapgen/valley.py:562-563`: one in the smithy's yard, three at the burners
+- `src/interact.js:361-401`, `src/stations.js:145-154`, `src/stations.js:205-225`: fed and lit like any fire; a job needs its station's fire burning
+- `tools/mapgen/valley.py:374`, `tools/mapgen/valley.py:563-564`: one in the smithy's yard, three at the burners
 
 {{navbox making}}

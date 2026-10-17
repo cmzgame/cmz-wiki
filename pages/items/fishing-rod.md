@@ -21,10 +21,10 @@ A guest's rod casts through the host like any menu action; see [[Fishing]].
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/recipes.json:256-275`: the rod from a stick and one cloth at the workbench, with `cut`, a knife, carried (game #222)
 - `data/items.json:40`: the rod: either hand, its verb `fish`, its weapon block and kills
-- `src/fishing.js:25-32`, `src/interact.js:719-742`: any item in a hand that lists `fish` is a rod; with one, a water tile offers Cast the line
+- `src/fishing.js:25-32`, `src/interact.js:722-745`: any item in a hand that lists `fish` is a rod; with one, a water tile offers Cast the line
 - `src/items.js:24-37`: a weapon's wear comes only from its hits, by its kills; a cast costs none
 - `data/items.json`: the items tagged cloth are the clothes
 

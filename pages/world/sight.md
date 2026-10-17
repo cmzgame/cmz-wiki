@@ -89,23 +89,23 @@ Each player sees the dead in the dark by their own sight and their own torch, fr
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `src/visibility.js:12-48`, `src/visibility.js:86-109`, `src/camera.js:38-55`: rays from your tile over the viewport and a margin; the corner points
-- `src/main.js:1151-1160`: recomputed on a new tile, a world change, or a resize
-- `src/map.js:1342-1355`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not
-- `src/visibility.js:39-42`, `src/map.js:1880`: only a prop marked opaque blocks sight, and no prop's definition is
-- `src/sight.js:18-34`, `data/tuning.json:108`: how much of a dead one is seen: the light at its feet between `litNone` and `litFull`, or whole within `darkRadius` or the viewer's own carried light's radius, fading over `edge`; a burning one whole; seen from `seenAt` (game #173)
-- `src/light.js:427-439`, `src/game.js:679-691`, `data/tuning.json:88-89`: the light at a point includes every carried light; a torch's radius in hand, two in hand, and on the belt at `beltLight` (game #173)
+- `src/main.js:1166-1175`: recomputed on a new tile, a world change, or a resize
+- `src/map.js:1363-1376`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not
+- `src/visibility.js:39-42`, `src/map.js:1910`: only a prop marked opaque blocks sight, and no prop's definition is
+- `src/sight.js:18-34`, `data/tuning.json:115`: how much of a dead one is seen: the light at its feet between `litNone` and `litFull`, or whole within `darkRadius` or the viewer's own carried light's radius, fading over `edge`; a burning one whole; seen from `seenAt` (game #173)
+- `src/light.js:427-439`, `src/game.js:687-699`, `data/tuning.json:94-95`: the light at a point includes every carried light; a torch's radius in hand, two in hand, and on the belt at `beltLight` (game #173)
 - `src/light.js:120-122`, `src/light.js:155-168`: the sky's light out of doors; a shuttered room at the night's level by day, an open one filled (game #150)
 - `src/render/entities.js:196-204`, `src/render/entities.js:262`: the dead drawn faded, or not at all below `drawCutoff` (game #173), not the fallen, your own player, or a debug draw-all; the swing outline only at `seenAt` or more (game #189)
 - `src/ui/zombie-bars.js:56`: no health bar on one not seen
-- `src/interact.js:1490-1497`, `src/interact.js:870`, `src/interact.js:1536`, `src/main.js:806`, `src/main.js:1089-1090`, `src/main.js:1111`: one not seen cannot be pointed at: the hover hand, the actions menu, Use, and a click, the clicking player's own sight
+- `src/interact.js:1495-1502`, `src/interact.js:873`, `src/interact.js:1547`, `src/main.js:818`, `src/main.js:1104-1105`, `src/main.js:1126`: one not seen cannot be pointed at: the hover hand, the actions menu, Use, and a click, the clicking player's own sight
 - `src/ui/speech.js:68-89`: a hidden one's groan shows no bubble, and "Something groans in the dark." goes to the log only for one the dark hides, not a canopy (game #173), within `groanRadius`, at most every `groanGap` (game #189)
 - `src/sight.js:1-11`: sight read by what a client draws and points at, and by the host's step only to choose what a click lands on; the swing, the shot, and the dead's sight of you never read it
 - `src/render/scene.js:31-32`, `src/render/area.js:154-169`: the fog's colour and strength
 - `src/render/entities.js:198-199`: characters out of sight are not drawn
 - `src/render/props.js:142-148`: flames drawn only when seen
 - `src/render/scene.js:35-43`, `src/render/scene.js:97-121`, `src/render/props.js:156`: the tree hole, its sizes, trees alone, for your own character; near walls faded
-- `src/main.js:1046`, `src/main.js:1067`: V and L
-- `src/main.js:1158`, `src/render/entities.js:198`: sight each player's own; another player drawn only in sight
-- `src/net.js:867`, `src/net.js:1225`: every player's carried light sent to every guest, each with its owner
+- `src/main.js:1059`, `src/main.js:1081`: V and L
+- `src/main.js:1173`, `src/render/entities.js:198`: sight each player's own; another player drawn only in sight
+- `src/net.js:882`, `src/net.js:1247`: every player's carried light sent to every guest, each with its owner

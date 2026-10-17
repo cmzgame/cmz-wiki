@@ -31,23 +31,23 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/items.json:19`: the tinderbox: a tool, 1 by 1, no wear, placeholder art; `belt`, so it may ride the belt (game #222)
-- `src/ui/inventory-actions.js:67-73`: a belt slot takes a food, a skin, or an item marked `belt`
+- `src/ui/inventory-actions.js:68-74`: a belt slot takes a food, a skin, or an item marked `belt`
 - `data/kit.json`: the starter kit's tinderbox in the bag beside the torch in hand, out
 - `data/loot.json`: the dev kit's tinderbox; no other table holds one
 - `data/recipes.json`: no recipe makes one
-- `src/interact.js:1155-1176`: `T` lights a torch only with a tinderbox carried, douses without one; its messages
+- `src/interact.js:1160-1181`: `T` lights a torch only with a tinderbox carried, douses without one; its messages
 - `src/inventory.js:113-122`: a tinderbox counted in the hands, the belt, or the bag
-- `data/interactions.json`, `src/burn.js:85-190`: the `light` verb: a tinderbox or a lit torch used on a campfire with fuel, a torch on a post or in a bracket, or an unlit torch in a hand or on the belt; never a hearth, an oven, or a forge; its refusals, a lantern's and an empty bracket's among them; within `DIP_REACH` and in sight
-- `src/interactions.js:34-43`, `src/interact.js:828-835`, `src/main.js:805-815`: a Use on a wall bracket, any bracket under the cursor, after a character and a prop (game #172)
-- `src/inventory.js:304-318`, `src/interact.js:360-393`: a fire's menu lights one that is out only with a flame on you, the tinderbox anywhere carried; the label, the refusal, not E's (game #169)
-- `src/burn.js:62`: the reach
+- `data/interactions.json`, `src/burn.js:79-176`: the `light` verb: a tinderbox or a lit torch used on a campfire with fuel, a torch on a post or in a bracket, or an unlit torch in a hand or on the belt; never a hearth, an oven, or a forge; its refusals, a lantern's and an empty bracket's among them; within `DIP_REACH` and in sight
+- `src/interactions.js:34-43`, `src/interact.js:831-838`, `src/main.js:817-827`: a Use on a wall bracket, any bracket under the cursor, after a character and a prop (game #172)
+- `src/inventory.js:304-318`, `src/interact.js:361-394`: a fire's menu lights one that is out only with a flame on you, the tinderbox anywhere carried; the label, the refusal, not E's (game #169)
+- `src/burn.js:56`: the reach
 - `src/use.js:94-104`: a Use runs the verb and says its line, or the reason
-- `src/interact.js:420-432`: Light the torch on a holder's menu
+- `src/interact.js:423-435`: Light the torch on a holder's menu
 - `src/map.js:284-312`: what can be lit, touched for the save and the wire
 - `src/items.js:198-211`: a torch out when it leaves a hand, the belt, or a holder
-- `src/ui/inventory-actions.js:373-407`, `src/main.js:1005-1016`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
-- `src/net.js:590-598`: a guest's menu choice run on the host as that player
+- `src/ui/inventory-actions.js:374-408`, `src/main.js:1017-1028`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
+- `src/net.js:597-605`: a guest's menu choice run on the host as that player
 
 {{navbox items}}

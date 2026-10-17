@@ -27,19 +27,19 @@ A guest cooks through the host like any station; the fire and the queue are the 
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/sprites/campfire.json`: the campfire cooks
 - `data/sprites/hearth.json`: the hearth cooks
 - `data/sprites/fireplace.json:30-34`: the fireplace cooks
-- `src/interact.js:785-802`: Cook here on a cooking fire's menu
-- `src/stations.js:45-52`: the oven's own station wins; the forge does not cook
+- `src/interact.js:788-805`: Cook here on a cooking fire's menu
+- `src/stations.js:46-53`: the oven's own station wins; the forge does not cook
 - `data/recipes.json:664-767`: the cooking recipes, each needing fire, the grilled fish among them (game #193)
 - `data/fishing.json`: the fish caught at the waters
 - `data/loot.json`: no table gives potatoes, cabbages, garlic, or grain
 - `src/farming.js:233-259`, `data/loot.json:9-10`: crops harvested (game #206); the granaries' seed of every crop (game #219)
-- `src/interact.js:360-393`: lighting and feeding a fire
-- `src/stations.js:173-209`: what is made goes to the output box
-- `src/stations.js:210-230`: a job waits while the fire is out
+- `src/interact.js:361-394`: lighting and feeding a fire
+- `src/stations.js:168-204`: what is made goes to the output box
+- `src/stations.js:205-225`: a job waits while the fire is out
 - `data/maps/valley.json`: where the fireplaces are
 - `src/host.js:183-189`: a guest's Make runs on the host
 

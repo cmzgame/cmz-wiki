@@ -12,7 +12,7 @@ A **rye seed** is planted in tilled soil to grow rye (see [[Farming]]). Its harv
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/items.json:60-65`: the six seeds, tagged `seed`, and their stacks
 - `data/crops.json`: the rye crop: its seed, its harvest, its seeds back, and its harvest tool (game #222)
 - `src/farming.js:179-202`, `src/farming.js:233-259`: planted on tilled soil; the harvest gives the seeds back

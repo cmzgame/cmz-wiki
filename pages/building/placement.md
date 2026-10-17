@@ -30,7 +30,7 @@ A carried piece goes down where:
 - none of its tiles is either of the two tiles a door or a gate stands between, so [[The dead|the dead]] can always stand at a door (see [[Openings]])
 - none of its tiles is too close to you
 - no wall runs between two of its own tiles
-- the tile under the cursor is within {{n census.constants.placement.PLACE_REACH tiles}} of you
+- the tile under the cursor is within {{n census.constants.placement.PLACE_REACH tiles}} of you, with a clear line to it: through a wall, a shut door, or shutters the ghost is red with "There is a wall in the way."
 
 Put it down with a left click on a green ghost, or with E, which sets it on the tile in front of you. Escape does not drop it. A lit piece, such as a jack-o'-lantern, lights again when it is put down.
 
@@ -54,6 +54,7 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/placement.js`, `putDownReach`: putting down needs the reach and a clear line (game #227)
 - `src/placement.js:402-415`: the furniture ghost centred on the cursor
 - `src/placement.js:160-175`: a built piece snapped to the nearest edge
 - `src/placement.js:253-268`: R steps the facing or swaps the footprint

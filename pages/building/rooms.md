@@ -34,11 +34,15 @@ When a wall is built or removed, only the rooms on either side of it are worked 
 
 While you are inside a room, its walls on the camera's side are drawn faded, so you can see the room and the people in it. Its doors and windows still work as usual. A corner post fades only when every wall meeting at it is a near wall. Walls never get the soft hole round the player that tree canopies get.
 
+### Nothing in reach through a wall
+
+Whatever you do to a thing, you do with a clear line to it as well as within reach: a wall, a shut door, or closed shutters stop it, while a fence or an open window does not. You cannot open a chest, use a station, light a fire, sleep in a bed, chop a tree, farm, or poke or talk to a villager through a wall, and a station's ingredients come only from chests you can see. Choose an action behind a wall and you walk round to a place with a clear line, as you walk over to one out of reach; with no way round, the game says "Can't get there from here." An open chest or a station's panel closes when a wall comes between you. Building is the exception: a wall, a door, or a window is built or removed by distance alone, so a player shut in a room with no door can still build a door into a wall, or remove a wall they built, from inside (see [[Building]]).
+
 ### Sealed
 
 The debug corner says whether your room is sealed or open. A room is sealed when every door is shut and whole or boarded, and every window is shuttered and whole or boarded. Nothing in the game reads the mark itself: sleep and the dead do not change with it, and the dead still break a sealed room's doors.
 
-A room with **no door at all** is another matter: nothing breaks a plain wall and nobody passes a window, so the dead never get in, and you cannot walk out (see [[Breaking in#A room with no door|Breaking in]]). The light follows the openings, not the mark: a room with every door and shutter shut is dark by day (see [[Light]]).
+A room with **no door at all** is another matter: nothing breaks a plain wall and nobody passes a window, so the dead never get in, and you cannot walk out (see [[Breaking in#A room with no door|Breaking in]]), though you may build your own way out (above). The light follows the openings, not the mark: a room with every door and shutter shut is dark by day (see [[Light]]).
 
 ## Numbers
 
@@ -55,17 +59,21 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `src/map.js:1721-1773`: the flood fill, stopped by walls, doors, and windows in any state
+<!-- sources at 015eabc -->
+- `src/reach.js:1-33`: one reach test for every player action: distance to the nearest tile and a clear line (game #227)
+- `src/interact.js:946-1002`: a timed action cancelled when a wall comes between; an action behind a wall walks round to a tile with a clear line, "Can't get there from here." with none
+- `src/stations.js:62-80`, `src/main.js:935-938`: a station's ingredients only from chests in reach and sight; an open container closes behind a wall
+- `src/placement.js:389-401`, `docs/02-decisions.md:20`: building and removing walls stay distance only, a player's way out of a sealed room (Michael, 2026-10-18)
+- `src/map.js:1742-1794`: the flood fill, stopped by walls, doors, and windows in any state
 - `src/map.js:25`: the largest room
-- `src/map.js:1421-1433`, `src/map.js:1754-1756`: a see-through wall bounds no room
-- `src/map.js:1809-1837`: rooms refound only on either side of a changed edge
-- `src/entities/player.js:227-228`: a bed outdoors says "Not out here."; a siege held on the player refuses it
-- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:92`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
+- `src/map.js:1442-1454`, `src/map.js:1775-1777`: a see-through wall bounds no room
+- `src/map.js:1830-1858`: rooms refound only on either side of a changed edge
+- `src/entities/player.js:228-229`: a bed outdoors says "Not out here."; a siege held on the player refuses it
+- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:98`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
 - `src/map.js:843-878`: the dead choose a room to break
 - `src/entities/zombie.js:421-460`, `src/entities/zombie.js:847-914`: the siege, about a house the dead saw a player go into, until dawn
 - `src/map.js:733-744`, `src/map.js:819-826`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered
 - `src/render/walls.js:355-371`, `src/render/walls.js:163-169`, `src/render/walls.js:306-316`: near walls faded, posts only when every wall is near
 - `src/render/scene.js:38-43`: only trees open the hole round the player
-- `src/map.js:828-842`, `src/main.js:1280`: sealed, computed only for the debug corner
+- `src/map.js:828-842`, `src/main.js:1299`: sealed, computed only for the debug corner
 - `src/render/scene.js:35`: the faded walls' opacity

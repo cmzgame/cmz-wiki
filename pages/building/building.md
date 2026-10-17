@@ -52,7 +52,7 @@ Never over a door or a window that is whole. A door still needs both its tiles c
 
 ### Removal
 
-X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "You need a smith's hammer." without a hammer on you, or with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
+X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "You need a smith's hammer." without a hammer on you, or with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A piece of furniture needs a clear line as well, so it cannot be taken down through a wall ("There is a wall in the way."); a wall, a door, or a window is removed by distance alone, from either side. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
 
 Only what players made can be removed:
 
@@ -98,31 +98,31 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, seconds, and tool: `notch` for the log wall, `build` for a door and a window (game #222)
-- `src/placement.js:143-160`, `src/inventory.js:88-108`, `src/ui/build-palette.js:43`: the tool carried in a hand, on the belt, or in the bag, asked first, "You need a ..."; the palette greys a piece that falls short
-- `src/main.js:799`, `src/main.js:1050`: the Build entry at the foot of every menu
-- `data/items.json:4`: the log's `splitsInto`; `src/interact.js:1246-1262`: splitting with a hatchet carried
-- `src/main.js:858-867`, `src/main.js:799`, `src/main.js:1080-1081`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
-- `src/placement.js:172-187`: the ghost snapped to the nearest edge
-- `src/placement.js:198-210`: the red reasons in order
-- `src/placement.js:28`, `src/placement.js:30`: the build reach and the edge clearance
+- `src/placement.js:144-161`, `src/inventory.js:88-108`, `src/ui/build-palette.js:43`: the tool carried in a hand, on the belt, or in the bag, asked first, "You need a ..."; the palette greys a piece that falls short
+- `src/main.js:811`, `src/main.js:1063`: the Build entry at the foot of every menu
+- `data/items.json:4`: the log's `splitsInto`; `src/interact.js:1251-1267`: splitting with a hatchet carried
+- `src/main.js:872-881`, `src/main.js:811`, `src/main.js:1095-1096`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
+- `src/placement.js:173-188`: the ghost snapped to the nearest edge
+- `src/placement.js:199-211`: the red reasons in order
+- `src/placement.js:29`, `src/placement.js:31`: the build reach and the edge clearance
 - `src/map.js:610-618`: what "No room" means for a wall, a door, a window
 - `src/map.js:608-618`: a door refused with a prop on either tile
 - `src/map.js:596-606`, `src/map.js:631-659`: a door or window over a plain wall, of its material and remembering it; a door over a fence; a new one over a broken one of its kind; the bracket of the wall built over forgotten
 - `src/map.js:733-744`: a door and a window always have health, whatever their material
-- `src/placement.js:438-448`, `src/placement.js:582-608`: the timed build, spent and rechecked at the end, cancelled by moving
-- `src/placement.js:592`: the build lasts within the reach plus 0.6
-- `src/placement.js:487`: one build at a time
-- `src/map.js:1809-1837`: rooms refound on either side of a changed edge
-- `src/main.js:870-879`: X, refused while carrying or with the bag open, with the same line
-- `src/placement.js:29`, `src/placement.js:388-397`, `src/placement.js:565-575`: the removal reach; Remove asks for the board tool, a hammer, red with its line (game #222)
-- `src/placement.js:329-378`: what lights up: props made at a station (`made`) and built walls
-- `src/stations.js:188-189`: a prop made at a station marked `made`
+- `src/placement.js:455-465`, `src/placement.js:601-627`: the timed build, spent and rechecked at the end, cancelled by moving
+- `src/placement.js:611`: the build lasts within the reach plus 0.6
+- `src/placement.js:504`: one build at a time
+- `src/map.js:1830-1858`: rooms refound on either side of a changed edge
+- `src/main.js:884-893`: X, refused while carrying or with the bag open, with the same line
+- `src/placement.js:30`, `src/placement.js:389-413`, `src/placement.js:581-595`: the removal reach, a made prop's with a clear line (game #227), a wall's by distance alone; Remove asks for the board tool, a hammer, red with its line (game #222)
+- `src/placement.js:330-379`: what lights up: props made at a station (`made`) and built walls
+- `src/stations.js:183-184`: a prop made at a station marked `made`
 - `src/map.js:651`: built walls marked `built`
-- `src/placement.js:403-421`: a removed container spills its bag and a station its output, nothing refunded
-- `src/map.js:661-676`, `src/placement.js:419`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
-- `src/placement.js:509-578`: a guest's build and remove as commands, rechecked on the host, the tool too
-- `src/rules.js:18`, `src/placement.js:127-130`, `src/placement.js:143-149`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
+- `src/placement.js:419-437`: a removed container spills its bag and a station its output, nothing refunded
+- `src/map.js:661-676`, `src/placement.js:435`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
+- `src/placement.js:526-597`: a guest's build and remove as commands, rechecked on the host, the tool too
+- `src/rules.js:18`, `src/placement.js:128-131`, `src/placement.js:144-150`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest

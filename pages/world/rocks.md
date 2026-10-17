@@ -22,11 +22,11 @@ A rock blocks a circle of {{n sprites.rock_0.collide.radius}} tiles, like a broa
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/maps/valley.json`: the wild's rock rule (`wild.rocks`: the cell, the chance, the four kinds)
 - `src/map.js`: the wild's rocks placed by the cell's own roll
 - `data/sprites/rock_0.json` (and `rock_1` to `rock_3`): the collision, the shadow, not carried, `interactable`, and the `mine` block
 - `src/mining.js:42-55`: mined for stone and gone (game #210)
-- `tools/mapgen/valley.py:547-548`: the quarry's eight rocks
+- `tools/mapgen/valley.py:548-549`: the quarry's eight rocks
 
 {{navbox places}}

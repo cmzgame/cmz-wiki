@@ -19,9 +19,9 @@ The **shovel** digs. Carried anywhere on you (a hand, the belt, or the bag), it 
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/items.json:48`: the shovel: either hand, its verb `dig`, a weapon, its kills
-- `data/crops.json`, `src/farming.js:233-243`, `src/interact.js:547-560`: potatoes and garlic harvested with `dig`, carried; "Harvest (need a shovel)" greyed without one (game #222)
+- `data/crops.json`, `src/farming.js:233-243`, `src/interact.js:550-563`: potatoes and garlic harvested with `dig`, carried; "Harvest (need a shovel)" greyed without one (game #222)
 - `src/inventory.js:88-108`: a tool carried in a hand, on the belt, or in the bag, found by its verb
 - `data/loot.json:6`: a shovel in your cottage's chest (game #222)
 - `data/recipes.json:236-255`: the shovel from a stick and a plank, with `build` (a hammer) on you

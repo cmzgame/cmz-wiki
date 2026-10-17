@@ -16,7 +16,7 @@ The **Fire arrow** is an [[Arrow]] dipped in a lit [[Fire]]. A [[Hunting bow]] s
 The game refuses, with a line in the [[Chat log|chat log]], when:
 
 - the fire is out: "The fire is out." (light it first; see [[Fire]]);
-- you stand too far from it: "Too far from the fire.";
+- you stand too far from it: "Too far from the fire."; or a wall or a shut door is between you: "There is a wall in the way.";
 - the arrows are not on you, in an open chest or a searched body for instance: "Take the arrows out first." Only arrows in a hand, on the belt, or in your bag are dipped.
 
 A fire that burns no fuel, such as a jack-o'-lantern or a torch in a bracket, does not count: using arrows on it does nothing.
@@ -39,6 +39,7 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 ## Sources
 
 <!-- sources at 0bd3f9c -->
+- `src/burn.js`, the `dip` verb, `src/reach.js`: the fire within reach and with a clear line, "There is a wall in the way." (game #227)
 - `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; placeholder art
 - `data/interactions.json`: the row: arrows used on `fire`, the `dip` verb, its line
 - `src/interactions.js:34-42`: `fire` matches any prop whose fire burns fuel

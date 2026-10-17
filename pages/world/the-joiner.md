@@ -17,11 +17,11 @@ One of the dead stands just outside the workshop's door at the start.
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `tools/mapgen/valley.py:341-354`: the joiner south-west of the square: the workshop, the home behind, the lumber yard
+<!-- sources at 015eabc -->
+- `tools/mapgen/valley.py:342-355`: the joiner south-west of the square: the workshop, the home behind, the lumber yard
 - `data/maps/valley.json:3475-3562`, `data/loot.json:7`: the workshop's workbench, table, shelves, barrel, and chest, the chest's own table a hatchet (game #207) and a hammer (game #222), its door on the east side
 - `data/maps/valley.json:3563-3655`: the home's fireplace, table, bed, and chest
 - `data/maps/valley.json:3659-3693`: the sawpit, two woodpiles, and the wheelbarrow
-- `tools/mapgen/valley.py:593`, `data/maps/valley.json:11818-11821`: one of the dead outside the workshop's door
+- `tools/mapgen/valley.py:594`, `data/maps/valley.json:11818-11821`: one of the dead outside the workshop's door
 
 {{navbox places}}

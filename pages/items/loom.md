@@ -25,10 +25,10 @@ A guest opens the loom's panel on their own screen; Make is carried out by the h
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/sprites/loom.json`: the loom, a station with no fire
 - `data/recipes.json:125-199`: the loom's recipes: cloth from flax; bandages, a cap, breeches, and a tunic from cloth (game #216)
-- `tools/mapgen/valley.py:359`: the loom in the weaver's workroom, and the chest's flax seed
-- `src/interact.js:785-800`, `src/stations.js:150-207`: the station's entry and `E`; Make and the output box
+- `tools/mapgen/valley.py:360`: the loom in the weaver's workroom, and the chest's flax seed
+- `src/interact.js:788-803`, `src/stations.js:145-202`: the station's entry and `E`; Make and the output box
 
 {{navbox making}}

@@ -21,25 +21,25 @@ By day, with none of the dead near, the first poke of a new world says "Ask me a
 
 ## What they know
 
-Wyn's talk holds a conversation that opens on these questions: who they are, why they are here, what happened, and then a part of the game as it is built, each of those pointing to its page here:
+**Talk to Wyn**, from their menu or with `E` beside them, and a conversation opens (see [[Talk#Conversations|Talk]]). It opens on these questions: who they are, why they are here, what happened, and then a part of the game as it is built, each of those with a link to its page here:
 
 {{talk-topics guide}}
 
-{{planned doc=34 note="The conversation panel, where you ask the guide these questions and read the answers (game issue 202); today a poke gives a single line."}}
+Each answer comes a line at a time, with a question or two to follow it up, and **That's all for now** ends it. Wyn is the answer to "now what?": a question for each thing the game does, kept true to the game as it is.
 
 ## With friends
 
-A guest pokes Wyn as the host's player does, by the same command; the host picks the line, and the bubble and the chat log line reach everyone in sight.
+A guest pokes Wyn, or talks to them, as the host's player does, by the same command; the host picks a poke's line, and the bubble and the chat log line reach everyone in sight. A conversation opens on the guest's own screen, and several players can talk to Wyn at once.
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:605-607`: Wyn by your cottage's door at (102, 218), wardrobe 6, their map line, `immune`, `talk: guide`, `guide` (game #220)
+<!-- sources at 015eabc -->
+- `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:606-608`: Wyn by your cottage's door at (102, 218), wardrobe 6, their map line, `immune`, `talk: guide`, `guide` (game #220)
 - `tools/mapgen/mapgen.py:15`, `tools/mapgen/mapgen.py:146-150`: a guide on every map the generator makes, within three tiles of its spawn
 - `data/talk/guide.json`: the barks and the conversation's questions with their wiki links
-- `src/entities/villager.js:156-192`, `src/talk.js:124-141`: a poke's line and a remark unprompted
-- `data/maps/valley.json:11730-11733`: the lane's dead moved down to (86, 212), so the first poke is the welcome (game #220)
-- `docs/34-talk.md:3`: conversations not built (game issue 202)
-- `src/net.js:1254-1255`, `src/net.js:620-624`, `src/interact.js:1528-1531`: a guest's poke goes to the host as a command, which pokes the villager there
+- `src/entities/villager.js:224-260`, `src/talk.js:124-141`: a poke's line and a remark unprompted
+- `src/entities/villager.js:194-222`, `src/ui/talk-panel.js:1-12`: Talk to opens the conversation (game #230)
+- `data/maps/valley.json:11730-11733`: the lane's dead moved down to (86, 212), so the first poke by day is the plain line, not a warning (game #220)
+- `src/net.js:1287-1288`, `src/net.js:632-636`, `src/interact.js:1533-1538`: a guest's poke goes to the host as a command, which pokes the villager there
 
 {{navbox places}}

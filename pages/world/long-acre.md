@@ -23,9 +23,9 @@ Four of the dead: two in the rye, one in the yard, one in the barn.
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `tools/mapgen/valley.py:468-506`, `data/maps/valley.json:8459-10783`: the north lane and the lane to the mere, the brook and its footbridge, the farmhouse, the barn, the yard's well, the two rye fields on furrows along y, the flax strip, the kitchen garden (game #219)
+<!-- sources at 015eabc -->
+- `tools/mapgen/valley.py:469-507`, `data/maps/valley.json:8459-10783`: the north lane and the lane to the mere, the brook and its footbridge, the farmhouse, the barn, the yard's well, the two rye fields on furrows along y, the flax strip, the kitchen garden (game #219)
 - `data/fishing.json`: the brook's own table
-- `tools/mapgen/valley.py:597`: four of the dead
+- `tools/mapgen/valley.py:598`: four of the dead
 
 {{navbox places}}

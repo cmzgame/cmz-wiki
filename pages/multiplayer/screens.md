@@ -75,7 +75,7 @@ In a world shared with friends, a screen saying "You stepped away" covers the ga
 
 ## Escape
 
-`Escape` closes the top thing first: the actions menu, then Use mode, then the station panel, then a screen (which steps back to the one that opened it), then the build palette, then placement or removal, then the bag and character panels. With nothing open it opens the pause menu. In fullscreen (see [[Settings]]) the browser takes the first `Escape` to leave fullscreen; the next one pauses.
+`Escape` closes the top thing first: the actions menu, then Use mode, then the station panel, then a conversation, then a screen (which steps back to the one that opened it), then the build palette, then placement or removal, then the bag and character panels, then the map. With nothing open it opens the pause menu. In fullscreen (see [[Settings]]) the browser takes the first `Escape` to leave fullscreen; the next one pauses.
 
 ## With friends
 
@@ -88,6 +88,7 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 ## Sources
 
 <!-- sources at 64cc711 -->
+- `src/main.js`, `handleEscape`: a conversation after the station panel and the map last before the pause menu in Escape's order (game #230, #235)
 - `index.html:36-67`, `style.css:1602-1623`, `style.css:10-24`, `style.css:1642-1673`, `data/fonts/PirataOne-Regular.ttf`: the site: the blurred picture behind, the wordmark between the autumn trees (Pirata One, its dark backing, the big line flat zombie green), the menu with Play and Wiki, the footer (game #120)
 - `src/ui/screens.js:189-212`, `src/ui/screens.js:234-242`: out of a world, and during a join waiting for its welcome, a screen is drawn as a page of the site with the game's stage hidden; in a world, over the world
 - `src/ui/screens.js:117-127`, `src/ui/screens.js:738-744`: the menu's lit button, Play lit for its pages; a menu button drops a creation or an identity half edited, Settings and Controls excepted

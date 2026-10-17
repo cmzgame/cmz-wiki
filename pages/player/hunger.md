@@ -51,18 +51,18 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/tuning.json:52`, `data/tuning.json:54-55`: the maximum, the drain time, and `fullAt`
-- `src/entities/player.js:145`: the drain, every step, awake or asleep
+- `src/entities/player.js:146`: the drain, every step, awake or asleep
 - `src/map.js:95`: a game hour is 30 seconds
-- `src/entities/player.js:81-101`: full at `fullAt`, nothing eaten; eating raises hunger and thirst, capped, and heals by the share it fills (game #186)
-- `src/interact.js:1177-1186`, `src/interact.js:1240`: the "Eat" entry uses one from the stack, or says "You are full."
-- `src/interact.js:1188-1202`, `src/interact.js:1316-1328`, `src/ui/inventory-actions.js:174-182`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
-- `data/tuning.json:61`, `src/entities/player.js:93`, `src/entities/player.js:384-385`: the held-out pose
+- `src/entities/player.js:82-102`: full at `fullAt`, nothing eaten; eating raises hunger and thirst, capped, and heals by the share it fills (game #186)
+- `src/interact.js:1182-1191`, `src/interact.js:1245`: the "Eat" entry uses one from the stack, or says "You are full."
+- `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:175-183`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
+- `data/tuning.json:61`, `src/entities/player.js:94`, `src/entities/player.js:385-386`: the held-out pose
 - `src/moodles.js:55-59`: the hunger stages and their thresholds
-- `src/entities/player.js:152-157`: Hungry stops regeneration
-- `src/entities/player.js:162-167`, `data/tuning.json:69`: Very hungry slows stamina recovery
-- `src/entities/player.js:149`, `data/tuning.json:57`: starving damage
+- `src/entities/player.js:153-158`: Hungry stops regeneration
+- `src/entities/player.js:163-168`, `data/tuning.json:69`: Very hungry slows stamina recovery
+- `src/entities/player.js:150`, `data/tuning.json:57`: starving damage
 - `data/items.json:16-17`, `data/items.json:70`: bread, apple, and stew
-- `src/ui/inventory-actions.js:219`, `src/ui/inventory-actions.js:352-363`: a guest's menu choice is run by the host
-- `src/entities/player.js:139-143`: Survival off holds hunger full
+- `src/ui/inventory-actions.js:220`, `src/ui/inventory-actions.js:353-364`: a guest's menu choice is run by the host
+- `src/entities/player.js:140-144`: Survival off holds hunger full

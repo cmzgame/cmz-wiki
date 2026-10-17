@@ -82,6 +82,18 @@ Your cottage's chest now holds a shovel too, and the joiner's a hammer, so the f
 
 Read: [[Smith's hammer]], [[Crafting]], [[Building]], [[Boards]], [[Farming]], [[Shovel]].
 
+### The map on M (game #234, #235)
+
+`M` opens the map: everything anyone in your world has seen, one colour a tile, with the walls as lines and a marker for each player, yours gold. It is drawn from the screen's angle, so map north is up and to the right. The wheel zooms, a drag moves it, and Centre brings you back; place names appear once you have seen them. The world keeps running while it is open.
+
+Read: [[Map]], [[Controls]].
+
+### The Onion-head Hat and the mohawk (game #229, #231)
+
+The Onion-head Hat is now painted: a green hood with a brow over the eyes. A villager's or one of the dead's hood is drawn the same, in their own colour. The mohawk hairstyle was redrawn: a softer fin in the three-quarter views and a rounder side.
+
+Read: [[Clothing]], [[Identities]].
+
 ## Food and the body
 
 ### Food heals a little (game #186)
@@ -112,9 +124,25 @@ Read: [[Villagers]], [[Innkeeper]], [[Priest]].
 
 ### Talk and the guide (game #220)
 
-Villagers now talk. A poke gets a line of their own for the moment (night, dawn, the dead close by), the lines taking turns, and with you near they now and then remark unprompted. [[Wyn]], the guide, stands just outside your cottage's door, immune to the dead; the dead who stood in the lane by your garden have moved farther down it, so a new world's first poke by day is "Ask me anything, if you are stuck.", not a warning. A speech bubble's time now runs in the world on the host, so a line ends on its own on a server world too (closing game #154). Conversations, where you ask the guide your questions, are still to come.
+Villagers now talk. A poke gets a line of their own for the moment (night, dawn, the dead close by), the lines taking turns, and with you near they now and then remark unprompted. [[Wyn]], the guide, stands just outside your cottage's door, immune to the dead; the dead who stood in the lane by your garden have moved farther down it, so a new world's first poke by day is "Ask me anything, if you are stuck.", not a warning. A speech bubble's time now runs in the world on the host, so a line ends on its own on a server world too (closing game #154).
+
+### Conversations (game #230)
+
+Press E beside a villager, or choose **Talk to** on their menu, and a conversation opens in a panel above the belt: their lines one at a time, then questions to choose, and **That's all for now**. The villager stops and faces you while you talk. Wyn's questions cover each thing the game does, each with a link to its page here; the others have a few lines in their own voice. It is all clicks, and the world keeps running. Walking away, a wall between, or the villager struck ends it; with the dead close by, a villager gives a line instead. A wounded villager still talks.
 
 Read: [[Talk]], [[Wyn]], [[Villagers]], [[Chat log]].
+
+### Villagers heal (game #238)
+
+A villager the dead have hurt but not killed heals slowly, {{n tuning.villager.regenPerMinute}} health a minute as a player does, starting {{n tuning.villager.regenPause seconds}} after the last hit.
+
+Read: [[Villagers]].
+
+### Nothing in reach through a wall (game #227)
+
+Every action needs a clear line as well as the distance: a wall, a shut door, or closed shutters stop it, a fence or an open window does not. Choose something behind a wall and you walk round to it; a station's ingredients come only from chests you can see; an open chest or a station's panel closes when a wall comes between. Building or removing a wall, or building a door into one, still goes by distance alone, so you can always build your own way out of a sealed room. Three chests and a desk boxed in by furniture in the valley's cottages were moved to where they can be reached.
+
+Read: [[Rooms]], [[Openings]], [[Containers]], [[Crafting]], [[Building]].
 
 ### Lanterns and torches (game #188, #189)
 
@@ -132,9 +160,8 @@ Read: [[Chat log]], [[Sight]].
 
 Built, and in review in the game, not merged yet; their pages come with their merge.
 
-- **Nothing in reach through a wall** (game #227): every action, from a door to a chest to a poke, needs a clear line as well as the distance, so a player behind a wall walks round instead of acting through it.
-- **The Onion-head Hat's painted art** (game #229), and hoods that take their wearer's dye.
-- **Talk, part 2: conversations** (game #230): the panel where you ask the guide your questions and read the answers.
+- **Hide a worn item** (game #243): an eye on each worn slot of the character screen hides that item's look and keeps its use, seen by everyone.
+- **Movement that feels smoother** (game #244): your character drawn between the world's steps.
 
 [[Planned]] lists what is further off.
 
@@ -144,20 +171,24 @@ Built, and in review in the game, not merged yet; their pages come with their me
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `src/entities/player.js:85-86`: with Survival off a body is always full, so every food is refused
-- `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:190`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
-- `src/chop.js:1-50`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
+<!-- sources at 015eabc -->
+- `src/entities/player.js:86-87`: with Survival off a body is always full, so every food is refused
+- `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:191`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
+- `src/chop.js:1-51`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
 - `data/sprites/tree_apple.json`, `src/fruit.js:30-52`: apple trees (game #192)
 - `data/fishing.json`, `src/fishing.js:1-81`: fishing (game #193)
-- `src/entities/player.js:81-101`, `data/tuning.json:55`: food's heal and `fullAt` (game #186)
+- `src/entities/player.js:82-102`, `data/tuning.json:55`: food's heal and `fullAt` (game #186)
 - `data/kit.json`, `src/kit.js`: the starting kit (game #183, #191)
 - `src/map.js:709-735`, `docs/09-openings.md`: the dead strike fences (game #185)
-- `src/entities/villager.js:44`, `src/entities/zombie.js:357`: immune villagers (game #187)
-- `src/burn.js:85-190`, `src/interactions.js:58`: lanterns and torches (game #188, #189)
-- `src/ui/speech.js:68-89`, `data/tuning.json:108`: the groan's radius and gap (game #189)
+- `src/entities/villager.js:45`, `src/entities/zombie.js:357`: immune villagers (game #187)
+- `src/burn.js:79-176`, `src/interactions.js:58`: lanterns and torches (game #188, #189)
+- `src/ui/speech.js:68-89`, `data/tuning.json:115`: the groan's radius and gap (game #189)
 - `src/mining.js`, `src/bucket.js`, `src/farming.js:257-292`, `data/recipes.json`, `data/loot.json`: mining, charcoal, cloth, the bucket, and the scythe (game #210, #216, #211, #213)
-- `tools/mapgen/valley.py:407-522`, `data/loot.json:8-10`: the farms and the mill (game #219)
+- `tools/mapgen/valley.py:408-523`, `data/loot.json:8-10`: the farms and the mill (game #219)
 - `src/inventory.js:88-108`, `data/recipes.json`, `data/crops.json`, `data/build.json`, `data/loot.json:6-7`, `src/settings.js:63`: the tool rule, the cottage's shovel, the joiner's hammer, Free building (game #222)
-- `src/talk.js`, `data/talk/`, `data/maps/valley.json:12288-12299`, `src/game.js:110-123`: talk, Wyn, and the bubbles aged on the host (game #220)
-- The game's open pull requests #227, #229, and #230: what comes next
+- `src/talk.js`, `data/talk/`, `data/maps/valley.json:12288-12299`, `src/game.js:113-126`: talk, Wyn, and the bubbles aged on the host (game #220)
+- `src/talk.js`, `src/ui/talk-panel.js`, `src/entities/villager.js:66-71`: conversations and villagers' healing (game #230, #238)
+- `src/reach.js`, `tools/mapgen/valley.py:106-118`: one reach test; the boxed-in containers moved (game #227)
+- `src/chart.js`, `src/ui/map-panel.js`: the map (game #234, #235)
+- `data/items.json:27`, `data/hair/mohawk.json`: the hat's painted art, the mohawk redrawn (game #229, #231)
+- The game's open pull requests #243 and #244: what comes next

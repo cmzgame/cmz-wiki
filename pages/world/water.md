@@ -54,17 +54,17 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `data/sprites/floor_water.json`, `src/map.js:1436-1439`, `src/map.js:1510-1517`: wholly water is walked by nobody
-- `tools/mapgen/valley.py:159-163`: the river, the stone bridge on the high street, the ford where the drove crosses
-- `data/sprites/floor_water_shallow.json`, `src/map.js:1442-1445`, `src/entities/player.js:278`, `src/entities/movement.js:56`, `src/entities/zombie.js:405`: shallow water walked by everyone at its speed factor
-- `src/map.js:1477-1487`: paths treat shallow water as ordinary ground
-- `src/interact.js:678-713`, `src/interact.js:719-742`, `src/interact.js:904-909`: drinking and filling beside any water tile; E drinks when thirst is under 90
-- `src/interact.js:55-56`: the drink's and the fill's times
-- `src/interact.js:679`, `src/interact.js:705-709`, `src/inventory.js:85-87`, `data/items.json:20`: every waterskin in the bag and on the belt filled to 100 (the belt's game #222)
-- `src/interact.js:51`: the reach
-- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:715-717`, `src/interact.js:777`: wells, troughs, and the font give the same actions, each named for the prop; the well's bucket (game commit 2c70942)
-- `tools/mapgen/valley.py:191`, `tools/mapgen/valley.py:198`, `tools/mapgen/valley.py:202`, `tools/mapgen/valley.py:243`, `tools/mapgen/valley.py:247`, `tools/mapgen/valley.py:258`, `tools/mapgen/valley.py:311`: where the wells, troughs, and the font stand
-- `src/interact.js:691-694`, `data/tuning.json:53`: thirst set to its maximum
-- `src/interact.js:69-91`: a guest's drink or fill run on the host by the tile
-- `src/interact.js:719-742`, `tools/mapgen/mapgen.py:80-90`, `tools/mapgen/valley.py:211`, `tools/mapgen/valley.py:310`, `src/map.js:1451-1460`: Cast the line with a rod in hand; the river and the ford named `river`, the duck pond and the manor's pool `pond` (game #193)
+<!-- sources at 015eabc -->
+- `data/sprites/floor_water.json`, `src/map.js:1457-1460`, `src/map.js:1531-1538`: wholly water is walked by nobody
+- `tools/mapgen/valley.py:160-164`: the river, the stone bridge on the high street, the ford where the drove crosses
+- `data/sprites/floor_water_shallow.json`, `src/map.js:1463-1466`, `src/entities/player.js:279`, `src/entities/movement.js:56`, `src/entities/zombie.js:405`: shallow water walked by everyone at its speed factor
+- `src/map.js:1498-1508`: paths treat shallow water as ordinary ground
+- `src/interact.js:681-716`, `src/interact.js:722-745`, `src/interact.js:907-912`: drinking and filling beside any water tile; E drinks when thirst is under 90
+- `src/interact.js:56-57`: the drink's and the fill's times
+- `src/interact.js:682`, `src/interact.js:708-712`, `src/inventory.js:85-87`, `data/items.json:20`: every waterskin in the bag and on the belt filled to 100 (the belt's game #222)
+- `src/interact.js:52`: the reach
+- `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:718-720`, `src/interact.js:780`: wells, troughs, and the font give the same actions, each named for the prop; the well's bucket (game commit 2c70942)
+- `tools/mapgen/valley.py:192`, `tools/mapgen/valley.py:199`, `tools/mapgen/valley.py:203`, `tools/mapgen/valley.py:244`, `tools/mapgen/valley.py:248`, `tools/mapgen/valley.py:259`, `tools/mapgen/valley.py:312`: where the wells, troughs, and the font stand
+- `src/interact.js:694-697`, `data/tuning.json:53`: thirst set to its maximum
+- `src/interact.js:70-92`: a guest's drink or fill run on the host by the tile
+- `src/interact.js:722-745`, `tools/mapgen/mapgen.py:80-90`, `tools/mapgen/valley.py:212`, `tools/mapgen/valley.py:311`, `src/map.js:1472-1481`: Cast the line with a rod in hand; the river and the ford named `river`, the duck pond and the manor's pool `pond` (game #193)

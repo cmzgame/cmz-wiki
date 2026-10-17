@@ -15,10 +15,10 @@ The **belt knife** (the knife until the names were made specific) is a small too
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/recipes.json:505-524`: the knife from a bar and a stick, with a hammer
 - `data/loot.json:11`: the weaver's chest's knife (game #216)
-- `data/recipes.json:23-124`, `data/recipes.json:256-311`, `src/stations.js:150-159`, `src/inventory.js:88-108`: the tear, the rod, the bow, and the arrows use `cut`, a knife carried (game #222)
+- `data/recipes.json:23-124`, `data/recipes.json:256-311`, `src/stations.js:145-154`, `src/inventory.js:88-108`: the tear, the rod, the bow, and the arrows use `cut`, a knife carried (game #222)
 - `data/crops.json`, `src/farming.js:233-243`: cabbages and pumpkins harvested with `cut`, carried (game #222)
 - `data/items.json:49`: the knife: either hand, a weapon, its kills, its verbs `butcher`, `skin` (not built), and `cut`
 - `src/items.js:27-37`: durability per hit from kills

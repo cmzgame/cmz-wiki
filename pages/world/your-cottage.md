@@ -21,15 +21,15 @@ The nearest of the dead stands in the lane to the west of the garden at the star
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `tools/mapgen/valley.py:180-181`, `data/maps/valley.json:11685-11688`: the end cottage on the south lane, and the spawn inside it
+<!-- sources at 015eabc -->
+- `tools/mapgen/valley.py:181-182`, `data/maps/valley.json:11685-11688`: the end cottage on the south lane, and the spawn inside it
 - `data/maps/valley.json:1305-1433`, `data/loot.json:6`: the main room's chest's own table, a hatchet, a shovel, a loaf, and a bucket (game #207, #211, #222); wooden walls; the partition at x 4 making two rooms; the fireplace, table, two chairs, and a chest west of it; the bed, a chest, and the shelf east of it; the door south, windows south, north, and east; the bracket's lantern inside the west wall
-- `data/maps/valley.json:1353-1363`, `src/interact.js:360-393`, `data/kit.json`: the fireplace unlit; a log and a flame light it, and the starting kit has a tinderbox (game #169)
+- `data/maps/valley.json:1353-1363`, `src/interact.js:361-394`, `data/kit.json`: the fireplace unlit; a log and a flame light it, and the starting kit has a tinderbox (game #169)
 - `data/maps/valley.json:1436-1465`: the fenced garden with gates south and west, and the farm plot
 - `data/maps/valley.json:1467-1777`: the potatoes and cabbages, the well, the barrel, and the woodpile
-- `data/sprites/well.json`, `src/interact.js:678-717`: the well to drink from and fill waterskins at
+- `data/sprites/well.json`, `src/interact.js:681-720`: the well to drink from and fill waterskins at
 - `data/sprites/bed.json`: the bed (`sleep: true`)
-- `data/maps/valley.json:11730-11733`, `tools/mapgen/valley.py:589`: the lanes' dead, the nearest at (86, 212), moved from the garden's fence (game #220)
-- `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:605-607`: Wyn outside the door (game #220)
+- `data/maps/valley.json:11730-11733`, `tools/mapgen/valley.py:590`: the lanes' dead, the nearest at (86, 212), moved from the garden's fence (game #220)
+- `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:606-608`: Wyn outside the door (game #220)
 
 {{navbox places}}

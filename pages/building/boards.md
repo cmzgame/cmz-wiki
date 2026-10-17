@@ -58,19 +58,19 @@ A guest's tap and hold of B are carried out by the host, which checks that playe
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `src/interact.js:53-54`: the nailing and pulling times
+<!-- sources at 015eabc -->
+- `src/interact.js:54-55`: the nailing and pulling times
 - `src/map.js:577-580`: a board's health, three boards per side
 - `src/map.js:760-778`: a board added on the near side, pulled from it
-- `src/interact.js:476-543`: the board and pull actions, from the side you stand on; each asks for the board tool carried, greyed "(need a smith's hammer)" without it; one plank spent; the pulled plank back to the bag or at your feet (game #222)
-- `data/tuning.json:98`, `src/inventory.js:88-108`: the board tool, `build`, a smith's hammer carried in a hand, on the belt, or in the bag
+- `src/interact.js:479-546`: the board and pull actions, from the side you stand on; each asks for the board tool carried, greyed "(need a smith's hammer)" without it; one plank spent; the pulled plank back to the bag or at your feet (game #222)
+- `data/tuning.json:104`, `src/inventory.js:88-108`: the board tool, `build`, a smith's hammer carried in a hand, on the belt, or in the bag
 - `src/inventory.js:113-135`: a plank counted and taken, bag then belt then hands
-- `src/interact.js:1138-1152`: B and hold B; "You need a smith's hammer.", "You need a plank."
-- `src/placement.js:143-149`, `src/settings.js:63`: Free building waives the build tools, not the boards'
-- `data/items.json:4`, `src/interact.js:1246-1262`: the log's `splitsInto`, split from the item menu with a hatchet on you
-- `src/interact.js:941-957`: moving or drifting out of reach cancels the bar
-- `src/map.js:811-826`, `src/map.js:1353`: any board stops bodies and sight
+- `src/interact.js:1143-1157`: B and hold B; "You need a smith's hammer.", "You need a plank."
+- `src/placement.js:144-150`, `src/settings.js:63`: Free building waives the build tools, not the boards'
+- `data/items.json:4`, `src/interact.js:1251-1267`: the log's `splitsInto`, split from the item menu with a hatchet on you
+- `src/interact.js:945-961`: moving or drifting out of reach cancels the bar
+- `src/map.js:811-826`, `src/map.js:1374`: any board stops bodies and sight
 - `src/map.js:779-809`: a broken opening keeps its boards, and the dead break them one at a time
-- `src/interact.js:486-490`: the menu's count of boards on each side
+- `src/interact.js:489-493`: the menu's count of boards on each side
 - `src/render/walls.js:19-32`: only the near face's boards are drawn
-- `src/interact.js:1120-1152`, `src/net.js:418`: B's tap and hold, from a guest's snapshot, performed by the host
+- `src/interact.js:1125-1157`, `src/net.js:425`: B's tap and hold, from a guest's snapshot, performed by the host

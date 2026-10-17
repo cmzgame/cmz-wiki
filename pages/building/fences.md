@@ -80,30 +80,30 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/sprites/wall_fence.json`: the fence's height, thickness, `seeThrough`, and `fence`
-- `src/map.js:1421-1433`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what the dead can break
-- `src/map.js:1721-1773`: the room fill passes a see-through wall
-- `src/entities/player.js:227`: a bed outdoors says "Not out here."
+- `src/map.js:1442-1454`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what the dead can break
+- `src/map.js:1742-1794`: the room fill passes a see-through wall
+- `src/entities/player.js:228`: a bed outdoors says "Not out here."
 - `src/map.js:819-826`: a shut gate blocks bodies as a door does
-- `src/map.js:1344-1351`: a shut gate in a see-through fence still passes sight
+- `src/map.js:1365-1372`: a shut gate in a see-through fence still passes sight
 - `src/combat.js:176-183`: a blow reaches the dead in its wedge in line of sight, which a fence passes
 - `src/entities/zombie.js:607-622`, `src/entities/zombie.js:915-928`: a bite needs the contact distance and a clear line of sight
 - `src/entities/zombie.js:629-637`, `src/map.js:690-709`: against a fence with the player in sight beyond it and no way round, a chase strikes it (game #185)
-- `src/entities/zombie.js:661-674`, `src/entities/zombie.js:244-278`, `src/map.js:1462-1473`: with no path, or no door of the house it can reach, the fence across its way is sought, a gate first, and struck
+- `src/entities/zombie.js:661-674`, `src/entities/zombie.js:244-278`, `src/map.js:1483-1494`: with no path, or no door of the house it can reach, the fence across its way is sought, a gate first, and struck
 - `src/entities/zombie.js:780-828`, `src/entities/zombie.js:212-215`, `data/tuning.json:29`: the press state: to within `fenceReach` of the fence, then a strike when the cooldown allows, standing still between; a player in reach bitten across it by the chase's bite; giving up unseen after `pressGiveUp` only for a player last seen outside a room and with no siege held
 - `src/entities/zombie.js:829-846`, `data/tuning.json:12-15`: the strike at the attack's active frame, `fenceStrike` a strike, then the bite's `cooldown` (game #185)
 - `src/entities/zombie.js:290-298`: a bite reaches `fenceBiteExtra` further across the fence its dead one strikes from within `fenceReach` (game #185)
 - `src/entities/zombie.js:900-912`: the siege strikes too
-- `src/map.js:678-731`, `src/map.js:733-744`, `data/tuning.json:104-105`: a fence's and a gate's hit points, a strike, the jolt, the burst; the damage saved and never mended (game #185)
+- `src/map.js:678-731`, `src/map.js:733-744`, `data/tuning.json:111-112`: a fence's and a gate's hit points, a strike, the jolt, the burst; the damage saved and never mended (game #185)
 - `data/poses.json`, `docs/09-openings.md:52`, `tools/checks/fence.js:74-101`: the attack's length, and the seconds measured with real bodies (one alone about 140, two 71, three 48, eight 37; a gate half); the times on this page are from them
 - `src/render/walls.js:373-391`, `src/fire.js:81-83`: the jolt of a strike, and the splinters and dust
 - `src/map.js:661-676`: the burst edge emptied and the rooms found again
-- `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:419`: a gate built over a fence, no window over one; removing it puts the fence back
+- `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:435`: a gate built over a fence, no window over one; removing it puts the fence back
 - `data/build.json`: only the log wall, door, and window can be built
 - `data/maps/valley.json:1156-1170`: the graveyard's fence feature and its gate
 - `data/maps/valley.json:1446-1457`, `data/maps/valley.json:2209-2220`, `data/maps/valley.json:2947-2958`, `data/maps/valley.json:3315-3326`: the fences of your cottage, the inn, the manor, and the merchant's house
 - `data/maps/valley.json:4288-4302`, `data/maps/valley.json:4858-4872`: fence partitions inside the cooper's long house and the second cottage on the lane
-- `src/host.js:218-225`, `src/main.js:1619-1621`, `src/main.js:1722-1725`: the jolt and the splinters drawn on every player's screen
-- `src/map.js:724-729`, `src/game.js:414`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
+- `src/host.js:218-225`, `src/main.js:1640-1642`, `src/main.js:1747-1750`: the jolt and the splinters drawn on every player's screen
+- `src/map.js:724-729`, `src/game.js:420`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
 

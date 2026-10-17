@@ -57,12 +57,12 @@ A guest casts the same way: their Cast the line is sent to the host with the wat
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/fishing.json`: the cast's reach and wait, a table per named water (each one's miss chance and weighted catch), the default table
 - `src/fishing.js:1-81`: the rod is any item in a hand listing the verb `fish`; the table by the water's body, else the default; the wait rolled; the `fish` verb: the refusals, the miss, the weighted catch into the bag or at the feet, and its line
-- `src/interact.js:719-742`: Cast the line on a water tile's menu only with a rod in hand, a timed action whose wait is rolled as it starts; the timed action ends if you walk away
-- `src/map.js:1451-1460`, `src/map.js:2024-2028`: a water floor's `group` kept as a named body, read from the map file and never saved
-- `tools/mapgen/mapgen.py:80-90`, `tools/mapgen/valley.py:159-161`, `tools/mapgen/valley.py:211`, `tools/mapgen/valley.py:310`: the river and its ford named `river`, the duck pond and the manor's pool `pond`
+- `src/interact.js:722-745`: Cast the line on a water tile's menu only with a rod in hand, a timed action whose wait is rolled as it starts; the timed action ends if you walk away
+- `src/map.js:1472-1481`, `src/map.js:2052-2056`: a water floor's `group` kept as a named body, read from the map file and never saved
+- `tools/mapgen/mapgen.py:80-90`, `tools/mapgen/valley.py:160-162`, `tools/mapgen/valley.py:212`, `tools/mapgen/valley.py:311`: the river and its ford named `river`, the duck pond and the manor's pool `pond`
 - `data/items.json:40-46`, `data/recipes.json:256-275`, `data/recipes.json:720-767`: the rod, the three fish, and their grilled kinds; the rod at the workbench, the fish grilled at a fire
 - `docs/30-the-big-pass-spec.md`: no fishing skill yet (game #193)
 

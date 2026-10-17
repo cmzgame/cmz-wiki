@@ -28,9 +28,9 @@ The fields, the crops, and what the granary held are the world's, the same for e
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
-- `tools/mapgen/valley.py:407-466`, `data/maps/valley.json:5396-8458`: the farm's yard, the great barn and its tool rack, the farmhouse, the granary, the well, the pond, the pumpkin field and its scarecrow, the potato, cabbage, and garlic plots (game #219)
+<!-- sources at 015eabc -->
+- `tools/mapgen/valley.py:408-467`, `data/maps/valley.json:5396-8458`: the farm's yard, the great barn and its tool rack, the farmhouse, the granary, the well, the pond, the pumpkin field and its scarecrow, the potato, cabbage, and garlic plots (game #219)
 - `data/loot.json:8-9`: the barn rack's hoe; the granary's seed of every crop, fixed
-- `tools/mapgen/valley.py:596`: five of the dead in the yard
+- `tools/mapgen/valley.py:597`: five of the dead in the yard
 
 {{navbox places}}

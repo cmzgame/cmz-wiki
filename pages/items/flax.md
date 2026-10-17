@@ -15,12 +15,12 @@ Flax is not grain: the [[Scythe]] does not cut it.
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/items.json:65-66`: flax seed and flax, their tags and stacks
 - `data/crops.json`: the flax crop: its stage days, its harvest, its seed, two seeds back, no `grain` flag (game #216)
 - `data/sprites/crop_flax_0.json` (and `_1`, `_2`): its three stages, gatherables like the other crops
 - `data/loot.json:9-11`: flax seed in the two granaries (game #219) and the weaver's chest
-- `tools/mapgen/valley.py:502`: Long Acre's flax strip (game #219)
+- `tools/mapgen/valley.py:503`: Long Acre's flax strip (game #219)
 - `data/recipes.json:125-139`: linen cloth at the loom from flax
 
 {{navbox items}}

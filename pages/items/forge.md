@@ -24,15 +24,15 @@ A guest feeds the forge and makes bars through the host like any station; the fi
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `data/sprites/forge.json`: the forge burns charcoal, holds and burns its units, gives light, does not cook
 - `data/recipes.json:489-504`: iron bar from iron ore, fire needed
 - `data/loot.json:12`, `data/loot.json:14`, `data/loot.json:16-17`: charcoal and ore in the smithy's chest, the burners', the miners', and the ore cart (game #210)
 - `data/recipes.json:473-488`, `src/mining.js:42-55`: charcoal from a clamp, ore mined
 - `data/maps/valley.json`: the forge starts cold
-- `src/interact.js:360-393`: lighting with a flame on you, and feeding (game #169)
-- `src/interact.js:785-800`: the station's menu entry and `E`
-- `src/stations.js:209-217`: a job waits while the fire is out
+- `src/interact.js:361-394`: lighting with a flame on you, and feeding (game #169)
+- `src/interact.js:788-803`: the station's menu entry and `E`
+- `src/stations.js:204-212`: a job waits while the fire is out
 - `src/host.js:184-191`: a guest's Make runs on the host
 
 {{navbox making}}

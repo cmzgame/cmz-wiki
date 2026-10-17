@@ -23,7 +23,7 @@ The chat log keeps the last {{n census.constants.ui_log.KEEP}} lines. The wheel 
 
 ### Speech bubbles
 
-Anyone who speaks, players and villagers alike, gets a bubble over their head, for longer the longer the line. Its time runs in the world itself, on the host, so a line ends on its own on every kind of world, a [[Server worlds|server world]] included; a paused world keeps its bubbles. What villagers say, and when, is [[Talk]]. Behind a tree's canopy a bubble shows only within {{n census.constants.ui_speech.NEAR}} tiles. One of the dead hidden by the dark shows no bubble (see [[Sight#Darkness|Sight]]).
+Anyone who speaks, players and villagers alike, gets a bubble over their head, for longer the longer the line. Its time runs in the world itself, on the host, so a line ends on its own on every kind of world, a [[Server worlds|server world]] included; a paused world keeps its bubbles. What villagers say, and when, is [[Talk]]. A conversation's lines go into your own chat log alone, in the villager's name, with no bubble. Behind a tree's canopy a bubble shows only within {{n census.constants.ui_speech.NEAR}} tiles. One of the dead hidden by the dark shows no bubble (see [[Sight#Darkness|Sight]]).
 
 ## Numbers
 
@@ -42,15 +42,16 @@ A guest's line is said by their character on the host, so it reaches every playe
 
 ## Sources
 
-<!-- sources at 3f11fdb -->
+<!-- sources at 015eabc -->
 - `src/ui/log.js`, `src/ui/log.js:12`: the chat log, every message and line said in sight, the lines kept
 - `src/ui/speech.js:96-97`: the speaker's label: You, the name, Villager, Someone; the dead's groans not logged
-- `src/entities/character.js:125-127`, `src/game.js:110-123`, `src/ui/speech.js:64-67`: a line's time from its length, aged in the world's step on the host and cleared when it runs out (game #220, closing game #154)
-- `src/ui/speech.js:68-89`, `data/tuning.json:108`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)
-- `src/main.js:1635-1643`, `src/host.js:244-251`, `data/tuning.json:94-95`: "A fire has gone out." within `fireOutRadius` on the host's own screen; "Made ..." within `craftDoneRadius`, to the host and to each guest (game #189)
+- `src/ui/talk-panel.js:96`: a conversation's line in the talker's own log, in the villager's name (game #230)
+- `src/entities/character.js:125-127`, `src/game.js:113-126`, `src/ui/speech.js:64-67`: a line's time from its length, aged in the world's step on the host and cleared when it runs out (game #220, closing game #154)
+- `src/ui/speech.js:68-89`, `data/tuning.json:115`: a groan from one of the dead in line of sight but hidden by the dark, within `groanRadius`, logged as "Something groans in the dark.", at most once in `groanGap` seconds of game time (game #189); none for one hidden only by a canopy (game #173); no bubble for one hidden by the dark (game #150)
+- `src/main.js:1656-1664`, `src/host.js:244-251`, `data/tuning.json:100-101`: "A fire has gone out." within `fireOutRadius` on the host's own screen; "Made ..." within `craftDoneRadius`, to the host and to each guest (game #189)
 - `src/ui/log.js:71-79`: resized by its corner, the size remembered in `logSize`
-- `src/main.js:1048-1049`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
+- `src/main.js:1061-1062`, `src/ui/log.js:38-55`: Enter and / open the box; Enter says the line; a slash line answers "Commands are not here yet."; Escape leaves
 - `src/entities/character.js:126`: a bubble lasts longer for a longer line
 - `src/ui/speech.js:24`: `NEAR`, a bubble behind a canopy only within reach
-- `src/net.js:632-636`, `src/net.js:1235-1237`: a guest's line said by its player on the host
-- `src/net.js:559`, `src/net.js:644`, `src/host.js:143`, `src/host.js:157`, `src/net.js:1376`: joined, left, stepped away, and back in the chat log
+- `src/net.js:644-648`, `src/net.js:1257-1259`: a guest's line said by its player on the host
+- `src/net.js:566`, `src/net.js:656`, `src/host.js:143`, `src/host.js:157`, `src/net.js:1409`: joined, left, stepped away, and back in the chat log
