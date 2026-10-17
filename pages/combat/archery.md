@@ -5,7 +5,7 @@ aliases: [Shooting, Throwing, The draw, Brace]
 summary: The bow's draw and brace, the arc of a shot, what stops an arrow, getting arrows back, and the spear's throw.
 ---
 
-**Archery** covers the [[Bow]] and the thrown [[Throwing spear]], which share the same draw. Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
+**Archery** covers the [[Hunting bow]] and the thrown [[Throwing spear]], which share the same draw. Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
 
 ## How it works
 
@@ -62,7 +62,7 @@ With the [[Throwing spear]] in the main hand, middle or Q draws a throw with the
 - Its hit where it comes down follows the arrow's rule: never through a wall or a closed door to one of the dead past it.
 - Each time it comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone. Otherwise it lodges in the body it hit or lies where it fell.
 
-A thrown spear keeps its durability. With the [[Shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
+A thrown spear keeps its durability. With the [[Wooden shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
 
 ## Numbers
 
@@ -83,7 +83,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 
 ## See also
 
-- [[Bow]]
+- [[Hunting bow]]
 - [[Arrow]], [[Fire arrow]]
 - [[Throwing spear]]
 - [[Combat]]

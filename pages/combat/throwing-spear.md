@@ -7,7 +7,7 @@ summary: A main-hand spear that stabs at long reach, or is thrown with the bow's
 
 {{infobox-item spear}}
 
-The **Throwing spear** is held in the main hand only, and never beside another weapon (a [[Shield]] or a [[Torch]] is fine; a torch beside it is only a light and never swings). It stabs at a long, narrow reach, or it can be thrown.
+The **Throwing spear** is held in the main hand only, and never beside another weapon (a [[Wooden shield]] or a [[Torch]] is fine; a torch beside it is only a light and never swings). It stabs at a long, narrow reach, or it can be thrown.
 
 ## Combat
 

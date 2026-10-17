@@ -7,7 +7,7 @@ summary: An arrow dipped in a lit fire. A bow shoots these first, and the one of
 
 {{infobox-item fire_arrow}}
 
-The **Fire arrow** is an [[Arrow]] dipped in a lit [[Fire]]. A [[Bow]] shoots fire arrows before plain ones, and the one of [[The dead]] a fire arrow hits is set alight (see [[Burning]]). Fire arrows stack to {{n items.fire_arrow.stack}} and take the same room in the bag as arrows.
+The **Fire arrow** is an [[Arrow]] dipped in a lit [[Fire]]. A [[Hunting bow]] shoots fire arrows before plain ones, and the one of [[The dead]] a fire arrow hits is set alight (see [[Burning]]). Fire arrows stack to {{n items.fire_arrow.stack}} and take the same room in the bag as arrows.
 
 ## Creation
 

@@ -6,7 +6,7 @@ summary: The woodworker's station: sticks, torches, bows, arrows, shields, two t
 
 {{infobox-station workbench}}
 
-The **workbench** is the station for wood. From [[Plank|planks]], [[Stick|sticks]], and cloth it makes sticks, [[Torch|torches]], a [[Bow]] and [[Arrow|arrows]], a [[Shield]], a [[Hoe]] and a [[Shovel]], a [[Fishing rod]], and furniture. It needs no fire and no tool. Everything it takes can be had in play: planks come from splitting a [[Log]], sticks from planks, and cloth from a garment. The one exception is the wheelbarrow, which needs an [[Iron bar]].
+The **workbench** is the station for wood. From [[Plank|planks]], [[Stick|sticks]], and cloth it makes sticks, [[Torch|torches]], a [[Hunting bow]] and [[Arrow|arrows]], a [[Wooden shield]], a [[Hoe]] and a [[Shovel]], a [[Fishing rod]], and furniture. It needs no fire and no tool. Everything it takes can be had in play: planks come from splitting a [[Log]], sticks from planks, and cloth from a garment. The one exception is the wheelbarrow, which needs an [[Iron bar]].
 
 ## Using it
 

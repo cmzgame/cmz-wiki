@@ -116,6 +116,10 @@ const places = (valley.sets || []).map((s) => {
 // ---------- code, by pattern ----------
 const keys = found(/(?:wasPressed|isDown)\("([A-Za-z0-9]+)"\)/g);
 const verbs = found(/verbs?\.define\("([a-z_]+)"/g);
+// The verbs whose code asks for an item in hand that lists them (`(def.verbs || []).includes("chop")`, `heldWith(player, "till")`):
+// a tool's verb is built only when one of these asks for it, not because some verb of the same name exists (the hand harvest
+// is `harvest`, and so is the scythe's unbuilt one; the review of wiki #14).
+const toolVerbs = found(/(?:\.verbs \|\| \[\]\)\.includes\(|heldWith\([^,()]+,\s*)"([a-z_]+)"\)/g);
 const menuLabels = found(/label:\s*((?:`[^`]*`|"[^"]*"))/g).map((x) => ({ ...x, key: x.key.replace(/^[`"]|[`"]$/g, "") }));
 const events = found(/\bemit\("([a-zA-Z]+)"/g);
 const settingsText = readFileSync(join(SRC, "settings.js"), "utf8");
@@ -167,8 +171,22 @@ function readStarterKit() {
 }
 const starterKit = readStarterKit();
 
-// What felling a tree gives, from the tree's action in src/interact.js (a tree's sprite says how many: its `wood`).
+// What felling a tree gives (a tree's sprite says how many: its `wood`): from the `chop` verb in src/chop.js (game #207, a hatchet in
+// hand; a stump left, which gives its own `wood`), or before it from the tree's action in src/interact.js. `tool` is the verb an item
+// must list to chop, when chopping needs one.
 function readChop() {
+  const f = srcFiles.find((s) => s.path === "chop.js");
+  if (f) {
+    const start = f.text.indexOf('verbs.define("chop"');
+    const end = start < 0 ? null : /\r?\n\}\);\r?\n/.exec(f.text.slice(start));
+    const body = start < 0 ? "" : f.text.slice(start, end ? start + end.index + end[0].length : f.text.length);
+    const m = /dropItem\([^{]*\{\s*id:\s*"([a-z_]+)"/.exec(body);
+    if (m) {
+      const first = f.text.slice(0, start).split("\n").length;
+      const tool = toolVerbs.some((v) => v.key === "chop" && v.at.some((a) => a.startsWith("chop.js:"))) ? "chop" : undefined; // read from the code: chop.js asks for a held item listing `chop`
+      return { gives: m[1], field: "wood", ...(tool ? { tool } : {}), at: `src/chop.js:${first}-${first + body.trimEnd().split("\n").length - 1}` };
+    }
+  }
   const fn = functionAt("interact.js", "treeActions");
   const m = fn && /dropItem\([^{]*\{\s*id:\s*"([a-z_]+)"/.exec(fn.body);
   return m ? { gives: m[1], field: "wood", at: fn.at } : null;
@@ -210,7 +228,7 @@ const census = {
   map: { name: valley.name, spawn: valley.spawn, bounds: valley.bounds, places, villagers: valley.villagers, wild: valley.wild },
   tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
   wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
-  settings, rules, fixedRules, keys, verbs, menuLabels, events, moodles, checks, modules, problems, constants,
+  settings, rules, fixedRules, keys, verbs, toolVerbs, menuLabels, events, moodles, checks, modules, problems, constants,
   starterKit, chop,
 };
 writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
@@ -272,6 +290,8 @@ h("Keys the game reads (by pattern)");
 L.push(...keys.map((k) => `- \`${k.key}\`: ${k.at.join(", ")}`));
 h("Verbs in the table (by pattern)");
 L.push(...verbs.map((k) => `- \`${k.key}\`: ${k.at.join(", ")}`));
+h("Verbs that need a tool in hand (by pattern)");
+L.push(...toolVerbs.map((k) => `- \`${k.key}\`: ${k.at.join(", ")}`));
 h("Menu entry labels (by pattern)");
 L.push(...menuLabels.map((k) => `- ${k.key}  (${k.at[0]}${k.at.length > 1 ? ` +${k.at.length - 1}` : ""})`));
 h("Events on the bus (by pattern)");
@@ -279,7 +299,7 @@ L.push(menuLabels.length ? events.map((e) => `\`${e.key}\``).join(", ") : "");
 h("The starting kit (data/kit.json)");
 L.push(starterKit ? `${starterKit.items.map((k) => `${k.count} ${k.id}`).join(", ")} (from ${starterKit.from})` : "- not found");
 h("Felling a tree (by pattern)");
-L.push(chop ? `a tree with \`${chop.field}\` drops that many \`${chop.gives}\` (${chop.at})` : "- not found");
+L.push(chop ? `a tree with \`${chop.field}\` drops that many \`${chop.gives}\`${chop.tool ? `, with an item in hand that lists \`${chop.tool}\`, and leaves a stump with its own \`${chop.field}\`` : ""} (${chop.at})` : "- not found");
 h("Checks (tools/checks)");
 L.push(checks.map((c) => `\`${c}\``).join(", "));
 h("Modules by size");

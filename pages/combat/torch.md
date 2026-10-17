@@ -48,7 +48,7 @@ Left swings it. It has no other mode.
 - While it is lit, each of the dead a blow lands on has a {{n items.torch.weapon.ignite}} chance to be set alight, in either hand (see [[Burning]]). The spark comes before the damage, so a body the blow kills burns on. A torch that is out sets nothing alight.
 - It loses durability like any weapon: on its own it would be spent after about {{n items.torch.weapon.kills}} kills (see [[Durability]]). The kills and the burning (above) wear the same meter.
 
-In the off hand beside a weapon such as the [[Sword]] it counts as a weapon: clicking faster than the main weapon recovers swings the torch and leaves the player exposed (see [[Dual wielding]]). It may be held beside the [[Throwing spear]], and there it is only a light: it never swings.
+In the off hand beside a weapon such as the [[Arming sword]] it counts as a weapon: clicking faster than the main weapon recovers swings the torch and leaves the player exposed (see [[Dual wielding]]). It may be held beside the [[Throwing spear]], and there it is only a light: it never swings.
 
 {{item-sections torch}}
 

@@ -1,13 +1,13 @@
 ---
-title: Sword
+title: Arming sword
 categories: [Items, Weapons]
-aliases: [Swords]
+aliases: [Sword, Swords]
 summary: A one-handed blade with a wide arc and the longest life of the one-handers.
 ---
 
 {{infobox-item sword}}
 
-The **Sword** is a one-handed blade found in chests. It has a wide arc, a quick swing, and lasts longer than any other one-handed weapon.
+The **Arming sword** (the Sword until the names were made specific) is a one-handed blade found in chests. It has a wide arc, a quick swing, and lasts longer than any other one-handed weapon.
 
 ## Combat
 

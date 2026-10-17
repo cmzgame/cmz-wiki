@@ -19,7 +19,7 @@ You also cannot sprint while:
 
 - standing still
 - carrying a prop
-- holding a [[Shield]] up
+- holding a [[Wooden shield]] up
 - "Exhausted" or worse ([[Tiredness]])
 
 ### What else costs it
@@ -54,7 +54,7 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 
 ## See also
 
-- [[Health]], [[Combat]], [[Shield]], [[Tiredness]], [[Player]]
+- [[Health]], [[Combat]], [[Wooden shield]], [[Tiredness]], [[Player]]
 
 ## Sources
 

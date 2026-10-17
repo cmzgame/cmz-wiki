@@ -6,7 +6,7 @@ summary: The belt every new character starts with, with two belt slots.
 
 {{infobox-item belt}}
 
-The **rope belt** is equipped at the waist and gives {{n items.belt.beltSlots}} belt slots, pressed with the number keys (see [[Belt]]). Every new character starts with one on. The [[Good belt]], from chests, has more slots.
+The **rope belt** is equipped at the waist and gives {{n items.belt.beltSlots}} belt slots, pressed with the number keys (see [[Belt]]). Every new character starts with one on. The [[Leather belt]], from chests, has more slots.
 
 Empty, it can be carried in a bag; with anything on it, it cannot.
 

@@ -19,16 +19,16 @@ After a stagger ends there is a short window, {{n combat.stagger.immunity second
 
 A bite already under way is not cancelled by a stagger. The damage and the push still land, but the bite goes on. Only a blow that **interrupts** cancels it:
 
-- the [[Mace]]
+- the [[Flanged mace]]
 - the [[Halberd]]'s thrust
 - the thrown [[Throwing spear]]
 - the [[Shove]]
 
-A knockdown also cancels a bite. A front block with the [[Shield]] staggers the biter, ignores the window above, and always cancels its bite.
+A knockdown also cancels a bite. A front block with the [[Wooden shield]] staggers the biter, ignores the window above, and always cancels its bite.
 
 ### Knockdown
 
-Each hit may floor the target. The chance is the weapon's own where it has one: the [[Mace]] floors on {{n items.mace.weapon.knockdown}} of hits, and [[Fists]] on {{n combat.fists.knockdown}}. Every other weapon, the tools included, floors on the default {{n combat.blow.knockdownChance}} of hits. Arrows and thrown spears never floor. The shove floors on {{n combat.shove.knockdown}} of shoves.
+Each hit may floor the target. The chance is the weapon's own where it has one: the [[Flanged mace]] floors on {{n items.mace.weapon.knockdown}} of hits, and [[Fists]] on {{n combat.fists.knockdown}}. Every other weapon, the tools included, floors on the default {{n combat.blow.knockdownChance}} of hits. Arrows and thrown spears never floor. The shove floors on {{n combat.shove.knockdown}} of shoves.
 
 A knockdown cancels a bite and any attempt to break through an [[Openings|opening]].
 

@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "8e7538f18ce1b776107981c705883b44f7e2b18c",
-  "short": "8e7538f",
-  "date": "2026-10-17T15:06:48-05:00",
-  "subject": "Merge #206, reviewed: farming (till, plant, water, harvest; growth from the clock while wet, dry pauses and never kills; seeds back), the farming verbs and the pick need a clear line (Primary's ruling), dryness on the crop (the builder's reading) (closes #194)",
+  "commit": "2998f41a1573f765af4c90949c2a9925909f4126",
+  "short": "2998f41",
+  "date": "2026-10-17T15:29:08-05:00",
+  "subject": "Merge #218, reviewed, Michael's rulings: the Onion-head Hat, after Cake's Comfort Eagle; real-world references as data; specific item names (Primary's renames)",
   "ref": "origin/main"
  },
  "counts": {
@@ -279,7 +279,7 @@
   },
   {
    "id": "sword",
-   "name": "Sword",
+   "name": "Arming sword",
    "kind": "tool",
    "size": [
     1,
@@ -362,7 +362,7 @@
   },
   {
    "id": "mace",
-   "name": "Mace",
+   "name": "Flanged mace",
    "kind": "tool",
    "size": [
     1,
@@ -683,7 +683,7 @@
   },
   {
    "id": "bow",
-   "name": "Bow",
+   "name": "Hunting bow",
    "kind": "tool",
    "size": [
     2,
@@ -758,7 +758,7 @@
   },
   {
    "id": "cap",
-   "name": "Cap",
+   "name": "Wool cap",
    "kind": "clothing",
    "size": [
     1,
@@ -785,7 +785,7 @@
   },
   {
    "id": "hood",
-   "name": "Hood",
+   "name": "Onion-head Hat",
    "kind": "clothing",
    "size": [
     1,
@@ -814,7 +814,7 @@
   },
   {
    "id": "tunic",
-   "name": "Tunic",
+   "name": "Linen tunic",
    "kind": "clothing",
    "size": [
     2,
@@ -841,7 +841,7 @@
   },
   {
    "id": "gloves",
-   "name": "Gloves",
+   "name": "Work gloves",
    "kind": "clothing",
    "size": [
     1,
@@ -870,7 +870,7 @@
   },
   {
    "id": "breeches",
-   "name": "Breeches",
+   "name": "Wool breeches",
    "kind": "clothing",
    "size": [
     2,
@@ -897,7 +897,7 @@
   },
   {
    "id": "boots",
-   "name": "Boots",
+   "name": "Hobnail boots",
    "kind": "clothing",
    "size": [
     1,
@@ -945,7 +945,7 @@
   },
   {
    "id": "good_belt",
-   "name": "Good belt",
+   "name": "Leather belt",
    "kind": "clothing",
    "size": [
     2,
@@ -1042,7 +1042,7 @@
   },
   {
    "id": "shield",
-   "name": "Shield",
+   "name": "Wooden shield",
    "kind": "tool",
    "size": [
     2,
@@ -1434,7 +1434,7 @@
   },
   {
    "id": "knife",
-   "name": "Knife",
+   "name": "Belt knife",
    "kind": "tool",
    "size": [
     1,
@@ -1476,7 +1476,7 @@
   },
   {
    "id": "hammer",
-   "name": "Hammer",
+   "name": "Smith's hammer",
    "kind": "tool",
    "size": [
     1,
@@ -5384,6 +5384,27 @@
    ]
   }
  ],
+ "toolVerbs": [
+  {
+   "key": "chop",
+   "at": [
+    "chop.js:17"
+   ]
+  },
+  {
+   "key": "fish",
+   "at": [
+    "fishing.js:29"
+   ]
+  },
+  {
+   "key": "till",
+   "at": [
+    "farming.js:151",
+    "interact.js:569"
+   ]
+  }
+ ],
  "menuLabels": [
   {
    "key": "Aim guide",
@@ -6793,5 +6814,10 @@
   ],
   "unknown": []
  },
- "chop": null
+ "chop": {
+  "gives": "log",
+  "field": "wood",
+  "tool": "chop",
+  "at": "src/chop.js:25-50"
+ }
 }

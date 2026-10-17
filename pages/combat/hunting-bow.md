@@ -1,13 +1,13 @@
 ---
-title: Bow
+title: Hunting bow
 categories: [Items, Weapons]
-aliases: [Bows]
+aliases: [Bow, Bows]
 summary: A two-handed bow that shoots arrows in an arc, drawn with the left button.
 ---
 
 {{infobox-item bow}}
 
-The **Bow** is held in both hands and shoots [[Arrow|arrows]] from the bag or the belt. It hits only where the arrow comes down.
+The **Hunting bow** (the Bow until the names were made specific) is held in both hands and shoots [[Arrow|arrows]] from the bag or the belt. It hits only where the arrow comes down.
 
 ## Combat
 

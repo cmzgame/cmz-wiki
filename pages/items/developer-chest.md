@@ -12,9 +12,9 @@ The **developer chest** stands beside the spawn of a new world made with it, whi
 ## Contents
 
 - Two [[Developer Bag|Developer Bags]]
-- A [[Sword]], a [[Hatchet]], a [[Mace]], a [[Halberd]], and a [[Stick]]
+- An [[Arming sword]], a [[Hatchet]], a [[Flanged mace]], a [[Halberd]], and a [[Stick]]
 - {{n loot.dev_kit.fixed.7.count}} × [[Throwing spear]]
-- A [[Shield]] and a [[Bow]]
+- A [[Wooden shield]] and a [[Hunting bow]]
 - {{n loot.dev_kit.fixed.10.count}} × [[Arrow]]
 - {{n loot.dev_kit.fixed.11.count}} × [[Torch]]
 - A [[Tinderbox]]

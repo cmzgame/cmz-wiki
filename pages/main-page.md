@@ -29,4 +29,4 @@ The game plays in a web browser, alone or with friends: press **Play** on its si
 
 ## About this wiki
 
-[[Updates]] lists what changed and when. [[Planned]] lists what is not in the game yet. A red link is a page nobody has written yet: the [[Special:Red links|list of them]] is the list of what to write next.
+[[Updates]] lists what changed and when. [[Real-world references]] lists every nod in the game to something outside it. [[Planned]] lists what is not in the game yet. A red link is a page nobody has written yet: the [[Special:Red links|list of them]] is the list of what to write next.

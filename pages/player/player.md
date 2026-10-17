@@ -23,7 +23,7 @@ Some things slow you:
 
 - Shallow [[Water]]: {{n sprites.floor_water_shallow.walk}} of your speed. Deep water cannot be entered at all.
 - A drawn bow: {{n combat.bow.drawSpeed}} of your speed, or {{n combat.bow.braceMove}} while braced (see [[Archery]]).
-- A raised [[Shield]]: {{n items.shield.shield.moveMult}} of your speed.
+- A raised [[Wooden shield]]: {{n items.shield.shield.moveMult}} of your speed.
 
 Nobody passes through a window; a door is the only way through a wall (see [[Openings]]). You cannot sprint while carrying a prop. Right-click "Walk here", and the walk to any action's target, use the same speeds; any movement key stops it.
 

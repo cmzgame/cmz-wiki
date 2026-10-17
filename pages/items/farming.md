@@ -5,7 +5,7 @@ aliases: [Farm, Till, Tilling, Till the soil, Plant, Planting, Watering crops, H
 summary: Till grass or dirt with a hoe, plant a seed, keep it watered, and harvest it with E when it is ready, with seeds back.
 ---
 
-**Farming** is growing [[Crops|crops]]: till bare ground with a [[Hoe]], plant a seed in the soil, keep it watered from a [[Waterskin]], and harvest it when it is ready, for its food and two seeds back. Crops grow on the world's clock, and only while their soil is wet; dry soil pauses them and never kills them. The plot by [[Your cottage]] has potatoes and cabbages already growing, some of them ready.
+**Farming** is growing [[Crops|crops]]: till bare ground with a [[Hoe]], plant a seed in the soil, keep it watered from a [[Waterskin]], and harvest it when it is ready, for its food and {{n crops.crops.potato.seeds}} seeds back. Crops grow on the world's clock, and only while their soil is wet; dry soil pauses them and never kills them. The plot by [[Your cottage]] has potatoes and cabbages already growing, some of them ready.
 
 ## How it works
 
@@ -25,15 +25,15 @@ There are five seeds: [[Potato seed]], [[Cabbage seed]], [[Garlic seed]], [[Pump
 
 ### Watering and growing
 
-A crop's soil stays wet for some days after it is planted or watered. Growth runs only while the soil is wet: a crop with dry soil stops where it is, its menu says "Dry: waiting for water", and it waits as long as it must. Nothing kills it.
+A crop's soil stays wet for {{n crops.soil.wetDays}} days after it is planted or watered. Growth runs only while the soil is wet: a crop with dry soil stops where it is, its menu says "Dry: waiting for water", and it waits as long as it must. Nothing kills it.
 
-**Water** on a crop's menu, or a [[Use]] of a waterskin on it, takes some of the water from a skin you carry, the fullest that has enough, and wets the soil again: "The water soaks in." With no skin that has enough, the entry reads "Water (no water in a skin)", greyed.
+**Water** on a crop's menu, or a [[Use]] of a waterskin on it, takes {{n crops.soil.fillCost}} of the water from a skin you carry, the fullest that has enough, and wets the soil again: "The water soaks in." With no skin that has enough, the entry reads "Water (no water in a skin)", greyed.
 
 Each crop has three stages: young, growing, and ready. While it grows, its menu says how long it has to go: "Growing (ready in about N days)". Time asleep counts, since sleep runs the clock fast.
 
 ### Harvesting
 
-A ready crop's menu offers **Harvest**, and E does it. It gives the crop's food and two of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed.
+A ready crop's menu offers **Harvest**, and E does it. It gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed.
 
 ### Reach and walls
 
@@ -41,8 +41,14 @@ Every farming action needs you within {{n tuning.world.pickReach tiles}} of the 
 
 ## Numbers
 
+{{crops-table}}
+
+The days count only while the soil is wet.
+
+- Soil stays wet after planting or watering: {{n crops.soil.wetDays}} days.
+- A watering takes {{n crops.soil.fillCost}} of a waterskin's water.
+- Tilling takes {{n crops.soil.seconds.till seconds}}, planting {{n crops.soil.seconds.plant seconds}}, watering {{n crops.soil.seconds.water seconds}}, harvesting {{n crops.soil.seconds.harvest seconds}}.
 - Reach: {{n tuning.world.pickReach tiles}}.
-- The crops' days, the harvests, the soil's wet days, and the water a watering takes are the game's crop data (`data/crops.json`).
 
 ## With friends
 
@@ -56,7 +62,7 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 ## Sources
 
 <!-- sources at 8e7538f -->
-- `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and two seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
+- `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
 - `src/farming.js:148-165`, `src/interact.js:555-579`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
 - `src/farming.js:167-190`, `data/items.json:58-62`: Plant for each seed carried, on empty soil; the crop starts wet; the five seeds
 - `src/farming.js:204-225`, `src/farming.js:128-137`, `src/interact.js:532-553`: Water, from the fullest skin with enough; greyed without; "The water soaks in."

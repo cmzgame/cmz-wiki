@@ -5,7 +5,7 @@ aliases: [Fighting, Melee, Attacking]
 summary: How fighting the dead works: the three mouse roles, the swing, stamina, damage, the finisher, and knockback.
 ---
 
-**Combat** is how the [[Player]] fights [[The dead]]. There are no guns: the player swings what is in their hands, shoves with Space, or shoots a [[Bow]]. A blow is decided on the click, and only the dead can be hit: never [[Villagers]], never other players.
+**Combat** is how the [[Player]] fights [[The dead]]. There are no guns: the player swings what is in their hands, shoves with Space, or shoots a [[Hunting bow]]. A blow is decided on the click, and only the dead can be hit: never [[Villagers]], never other players.
 
 ## How it works
 
@@ -14,7 +14,7 @@ summary: How fighting the dead works: the three mouse roles, the swing, stamina,
 The mouse buttons are roles, not fixed actions:
 
 - **Left** is the main hand: a swing, a stab, or with a bow the draw. With a weapon in each hand, left swings whichever hand is ready (see [[Dual wielding]]).
-- **Right**, tapped (let go within {{n census.constants.buttons.TAP_TIME seconds}}), opens the actions menu where it was pressed, or cancels a bow draw in progress. **Right held** is the off hand's stance: it raises the [[Shield]] or braces the bow. The stance starts on the press, without waiting for the tap time.
+- **Right**, tapped (let go within {{n census.constants.buttons.TAP_TIME seconds}}), opens the actions menu where it was pressed, or cancels a bow draw in progress. **Right held** is the off hand's stance: it raises the [[Wooden shield]] or braces the bow. The stance starts on the press, without waiting for the tap time.
 - **Middle** or **Q** is the main hand's other mode: the [[Halberd]]'s thrust, or the [[Throwing spear]]'s throw.
 - **Space** is the [[Shove]].
 
