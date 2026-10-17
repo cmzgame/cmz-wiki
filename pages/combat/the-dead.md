@@ -40,7 +40,7 @@ A bite that gets through:
 - may open a wound, with a chance of {{n combat.bleed.chance}} (see [[Bleeding]]),
 - may infect, with a chance of {{n combat.infection.chance}} (see [[Infection]]).
 
-A bite fully blocked by the [[Shield]] does neither. A bite on an exposed player does more (see [[Dual wielding]]).
+A bite fully blocked by the [[Wooden shield]] does neither. A bite on an exposed player does more (see [[Dual wielding]]).
 
 {{planned doc=02 note="Infection marks the player and its moodle worsens over the days, but it has no other effect yet (question 29b)."}}
 
@@ -80,7 +80,7 @@ At no health one of the dead falls, and once the fall has played its body stays 
 
 - Hits, pushes, staggers, and knockdowns are on [[Combat]] and [[Stagger and knockdown]].
 - A floored zombie takes finishers until it is up.
-- A stagger does not stop a bite already under way; the [[Mace]], the [[Halberd]]'s thrust, the thrown [[Throwing spear]], and the [[Shove]] do.
+- A stagger does not stop a bite already under way; the [[Flanged mace]], the [[Halberd]]'s thrust, the thrown [[Throwing spear]], and the [[Shove]] do.
 - Light matters: in the dark they see the player from much less far, but a lit flame draws them at night.
 - In the dark you see them only close by, to the reach of a torch you carry, or where they stand in light (see [[Sight#Darkness|Sight]]). One lost in the dark has no health bar or swing-target outline and cannot be clicked, but a swing or a shot still hits it.
 - Doors, shutters, boards, and fences hold them off for a time (see [[Openings]], [[Fences]], and [[Building]]); a crowd breaks any of them faster than one alone.

@@ -27,7 +27,7 @@ So a weapon breaks on the landed hit numbered its kills times its hits per kill.
 
 ### The bow
 
-The [[Bow]] loses durability per arrow loosed instead: it lasts {{n items.bow.shots}} shots, and leaves the hand at the last.
+The [[Hunting bow]] loses durability per arrow loosed instead: it lasts {{n items.bow.shots}} shots, and leaves the hand at the last.
 
 ## Numbers
 

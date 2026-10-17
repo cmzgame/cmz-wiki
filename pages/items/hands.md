@@ -14,8 +14,8 @@ You have two **hands**: the **main hand** and the **off hand**. What you hold is
 Every item that can be held says where it may go:
 
 - **Main**: the main hand only (the [[Throwing spear]]).
-- **Off**: the off hand only (the [[Shield]]).
-- **Both**: it takes both hands (the [[Bow]], the [[Halberd]]).
+- **Off**: the off hand only (the [[Wooden shield]]).
+- **Both**: it takes both hands (the [[Hunting bow]], the [[Halberd]]).
 - **Either**: whichever hand you choose. Its menu offers **Equip (main hand)** and **Equip (off hand)**. Equipped with no choice (a double-click, or picking it up), it goes to the main hand if that is free, else the off hand if that is free, else it swaps with what is in the main hand.
 
 Items that cannot be held (food, materials) have no hand Equip entry. Clothing and bags have an **Equip** of their own, which puts them on rather than in a hand (see [[Clothing]]).

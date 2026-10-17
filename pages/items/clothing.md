@@ -23,7 +23,7 @@ Equipping over a filled slot swaps the old garment into your bag; with no room t
 
 Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks. Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]).
 
-A new character starts in a [[Tunic]], [[Breeches]], [[Boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. [[Gloves]] and a [[Hood]] turn up in chests. The dead are dressed too, and searching a body lays their clothes out to be taken.
+A new character starts in a [[Linen tunic]], [[Wool breeches]], [[Hobnail boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. [[Work gloves]] and an [[Onion-head Hat]] turn up in chests. The dead are dressed too, and searching a body lays their clothes out to be taken.
 
 ### Garments
 

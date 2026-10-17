@@ -12,7 +12,7 @@ Anything with a weapon block in the game's data can be swung. The numbers below 
 
 ## The bow and the shield
 
-The [[Bow]] has its own numbers (draw times, damage, shots before the string goes), and the [[Shield]] blocks rather than strikes. See [[Archery]] and [[Combat]].
+The [[Hunting bow]] has its own numbers (draw times, damage, shots before the string goes), and the [[Wooden shield]] blocks rather than strikes. See [[Archery]] and [[Combat]].
 
 ## Sources
 

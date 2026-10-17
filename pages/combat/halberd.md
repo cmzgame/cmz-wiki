@@ -7,7 +7,7 @@ summary: A two-handed polearm with a wide, slow sweep and a long, narrow thrust.
 
 {{infobox-item halberd}}
 
-The **Halberd** is a two-handed polearm. It leaves no hand for a [[Shield]] or a [[Torch]]. It has the longest reach of any weapon held in the hand, and the longest life.
+The **Halberd** is a two-handed polearm. It leaves no hand for a [[Wooden shield]] or a [[Torch]]. It has the longest reach of any weapon held in the hand, and the longest life.
 
 ## Combat
 

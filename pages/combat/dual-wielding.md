@@ -13,7 +13,7 @@ summary: Fighting with a weapon in each hand, and the exposure each off-hand swi
 
 Each hand has its own cooldown. After any swing with two weapons, the other hand waits {{n combat.dual.lockout}} of that swing's time before it may swing. An off-hand blow does {{n combat.dual.offDamage}} times its weapon's damage.
 
-Any item with a weapon block counts as an off-hand weapon, including the [[Torch]], the [[Plank]], and the tools. The [[Shield]] never does. So a weapon with a torch in the other hand is dual wielding as soon as the player clicks faster than the main weapon recovers.
+Any item with a weapon block counts as an off-hand weapon, including the [[Torch]], the [[Plank]], and the tools. The [[Wooden shield]] never does. So a weapon with a torch in the other hand is dual wielding as soon as the player clicks faster than the main weapon recovers.
 
 ### Exposure
 
@@ -29,7 +29,7 @@ Exposure is applied after the shield's guard.
 
 - An item for both hands needs two empty hands.
 - An item for either hand goes in the main hand first.
-- The [[Throwing spear]] is refused beside any other weapon. A torch does not count as a weapon for this rule, so a spear and a torch may be held together, but the torch is then only a light: it never takes the off hand's turn, and the spear is never dual wielded. Beside any other weapon, such as a [[Sword]], a torch does swing as the off hand when clicked faster than the main weapon recovers.
+- The [[Throwing spear]] is refused beside any other weapon. A torch does not count as a weapon for this rule, so a spear and a torch may be held together, but the torch is then only a light: it never takes the off hand's turn, and the spear is never dual wielded. Beside any other weapon, such as an [[Arming sword]], a torch does swing as the off hand when clicked faster than the main weapon recovers.
 - When a two-handed item pushes the off-hand item into the bag, the game remembers it and puts it back in the hand later.
 
 ## Numbers
@@ -46,7 +46,7 @@ Each player's cooldowns and exposure travel exactly to the guest, so a guest's s
 ## See also
 
 - [[Combat]]
-- [[Shield]]
+- [[Wooden shield]]
 - [[Weapons]]
 
 ## Sources

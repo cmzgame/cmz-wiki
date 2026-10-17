@@ -6,7 +6,7 @@ summary: The smith's station: tools and weapons from iron bars and sticks, with 
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Hammer]], the [[Knife]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Mace]], and the [[Sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. Nothing in the valley gives iron bars yet, so the anvil cannot be used in play.
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Belt knife]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. Nothing in the valley gives iron bars yet, so the anvil cannot be used in play.
 
 ## Using it
 

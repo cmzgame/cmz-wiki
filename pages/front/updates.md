@@ -7,6 +7,13 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-17: synced to `2998f41`
+
+- **Changed in the game, corrected here:** specific item names (game #218). Thirteen items have new names, their ids kept: the hood is the [[Onion-head Hat]], the cap the [[Wool cap]], the tunic the [[Linen tunic]], the gloves [[Work gloves]], the breeches [[Wool breeches]], the boots [[Hobnail boots]], the good belt the [[Leather belt]], the sword the [[Arming sword]], the mace the [[Flanged mace]], the shield the [[Wooden shield]], the bow the [[Hunting bow]], the knife the [[Belt knife]], and the hammer the [[Smith's hammer]]. Each page now has the new name as its title and answers to the old one, and every link points at the new name.
+- **New in the game, and on the wiki:** real-world references as data (game #218). The game keeps every reference to a real thing outside its world in one list, and a new page, [[Real-world references]], is generated from it, linked from the [[Main page]]. The first is the Onion-head Hat, after a line of Cake's song *Comfort Eagle*.
+- **Changed in the game's docs, nothing visible in play:** Michael's rule that an action that needs a tool needs the tool with you (game #214); the game still asks for the tool in a hand, as the pages say, so no page changed.
+- **On the wiki:** a date written in a page's prose no longer fails the build's check for typed numbers.
+
 ## 2026-10-17: synced to `8e7538f`
 
 - **New on the wiki:** [[Valley day]], one page of every system added or changed since the valley became the game's focus, each with the pages to read before playing it and what comes next, linked from the [[Main page]].

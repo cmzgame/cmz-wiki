@@ -14,7 +14,7 @@ numbersOk: true
 
 ### What takes it
 
-- **Bites.** A bite from [[The dead]] does {{n tuning.zombie.damage}} damage, with {{n tuning.zombie.cooldown}} seconds between bites from one of them. A [[Shield]] raised toward the bite reduces or stops it (see [[Combat]]). A bite may also open a wound ([[Bleeding]]) or leave an [[Infection]].
+- **Bites.** A bite from [[The dead]] does {{n tuning.zombie.damage}} damage, with {{n tuning.zombie.cooldown}} seconds between bites from one of them. A [[Wooden shield]] raised toward the bite reduces or stops it (see [[Combat]]). A bite may also open a wound ([[Bleeding]]) or leave an [[Infection]].
 - **Bleeding.** An open wound drains health every second, faster the more stacks it has.
 - **Starving.** At empty [[Hunger]] you lose {{n tuning.player.starveDamage}} health a second.
 - **Dying of thirst.** At empty [[Thirst]] you lose {{n tuning.player.dehydrateDamage}} health a second. Both together add up.

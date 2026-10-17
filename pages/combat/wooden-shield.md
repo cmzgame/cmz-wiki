@@ -1,13 +1,13 @@
 ---
-title: Shield
+title: Wooden shield
 categories: [Items, Weapons]
-aliases: [Shields, Guard, Block, Blocking]
+aliases: [Shield, Shields, Guard, Block, Blocking]
 summary: An off-hand shield: hold right to raise the guard and block bites from the front.
 ---
 
 {{infobox-item shield}}
 
-The **Shield** is held in the off hand. Holding right raises the guard, which blocks bites from the front and halves them from the sides. It never counts as a weapon.
+The **Wooden shield** (the Shield until the names were made specific) is held in the off hand. Holding right raises the guard, which blocks bites from the front and halves them from the sides. It never counts as a weapon.
 
 ## Combat
 

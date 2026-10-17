@@ -39,7 +39,7 @@ All the ingredients for the count are taken when you press Make. If anything is 
 ### Fire and tools
 
 - A recipe that needs **the fire lit** cannot be started at a station whose fire is out ("The fire is out."). If the fire goes out during the job, the job waits, marked "(the fire is out)", and goes on when the fire is fed. Nothing is lost. See [[Fire]].
-- A recipe that needs **a tool in hand** needs it held when you press Make ("Needs a hammer in hand."). Only the [[Anvil]]'s smithing asks for one, the [[Hammer]].
+- A recipe that needs **a tool in hand** needs it held when you press Make ("Needs a hammer in hand."). Only the [[Anvil]]'s smithing asks for one, the [[Smith's hammer]].
 
 Pressing Make away from the station refuses with "Not at this station." or "Too far from it."
 

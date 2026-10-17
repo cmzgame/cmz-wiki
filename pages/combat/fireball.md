@@ -5,7 +5,7 @@ aliases: [Spell, Casting, Magic, Flare]
 summary: The one spell in the game: a flat ball of fire cast with a staff and the Book of Fire held together, bursting on the first of the dead it meets, and a flare that lights the ground and kindles a campfire or a torch where it lands.
 ---
 
-The **Fireball** is the game's one spell. It is cast by holding the [[Staff of Fire]] and the [[Book of Fire]] together, one in each hand, and it works like the [[Bow]]'s draw without the arc: hold the left button to draw, let go to send it. It is a light as much as a weapon: it lights its way, leaves a short flare where it comes down, and lights a campfire or a mounted torch it lands by.
+The **Fireball** is the game's one spell. It is cast by holding the [[Staff of Fire]] and the [[Book of Fire]] together, one in each hand, and it works like the [[Hunting bow]]'s draw without the arc: hold the left button to draw, let go to send it. It is a light as much as a weapon: it lights its way, leaves a short flare where it comes down, and lights a campfire or a mounted torch it lands by.
 
 ## How it works
 

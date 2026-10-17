@@ -5,7 +5,7 @@ aliases: [Belts, Belt slots, Hotbar, Belt keys]
 summary: An equipped belt gives slots at the bottom of the screen, pressed with the number keys or double-clicked to eat, drink, or swap an item into your hand.
 ---
 
-The **belt** is equipped at the waist and gives **belt slots**, shown at the bottom of the screen. Each slot is pressed with its number key, `1` to `4`. Without a belt you have no slots. There are two belts: the [[Rope belt]] with {{n items.belt.beltSlots}} slots, which every new character starts with, and the [[Good belt]] with {{n items.good_belt.beltSlots}}, found in chests.
+The **belt** is equipped at the waist and gives **belt slots**, shown at the bottom of the screen. Each slot is pressed with its number key, `1` to `4`. Without a belt you have no slots. There are two belts: the [[Rope belt]] with {{n items.belt.beltSlots}} slots, which every new character starts with, and the [[Leather belt]] with {{n items.good_belt.beltSlots}}, found in chests.
 
 ## How it works
 

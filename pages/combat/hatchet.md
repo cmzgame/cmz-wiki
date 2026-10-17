@@ -14,7 +14,7 @@ The **Hatchet** is a one-handed tool, and a solid weapon in either hand. It is t
 - **The chest in the main room of [[Your cottage]]** holds a hatchet, and a [[Loaf of bread]], every time: it has a table of its own rather than a chest's random roll.
 - **The chest in [[The joiner]]'s workshop** holds a second, likewise.
 - Any other chest may roll one (the Item sources table below).
-- The [[Anvil]] makes one from [[Iron bar|iron bars]] and a [[Stick]], with a [[Hammer]] in hand, though nothing in the valley gives iron bars yet.
+- The [[Anvil]] makes one from [[Iron bar|iron bars]] and a [[Stick]], with a [[Smith's hammer]] in hand, though nothing in the valley gives iron bars yet.
 
 ## Combat
 
@@ -25,7 +25,7 @@ Left swings it. It has no other mode.
 - Stagger chance {{n items.hatchet.weapon.staggerChance}}; it floors on the default chance (see [[Stagger and knockdown]]).
 - It lasts about {{n items.hatchet.weapon.kills}} kills (see [[Durability]]). Only fighting wears it.
 
-Its arc is narrower than the [[Sword]]'s.
+Its arc is narrower than the [[Arming sword]]'s.
 
 {{item-sections hatchet}}
 
