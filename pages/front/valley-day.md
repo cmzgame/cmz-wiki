@@ -11,7 +11,7 @@ numbersOk: true
 
 On 2026-10-17 [[The valley]] became the game's focus. This page lists every system added or changed since then, in the game's merged pull requests from #183 on, grouped by what it touches. Each says in a sentence or two what changed and names the pages to read before you play it. [[Updates]] has the same changes sync by sync; this page keeps the whole day on one screen.
 
-**Worth knowing before you play:** with the [[Survival]] setting off, your body counts as always full, so every food is refused with "You are full." and food never heals in that mode (see [[Food]]).
+**Worth knowing before you play:** with the [[Survival]] setting off, your body counts as always well fed, so health comes back at the well-fed rate, and food still heals (see [[Food]]).
 
 ## Gathering and production
 
@@ -134,7 +134,7 @@ Read: [[Inventory]].
 
 ### Food heals a little (game #186)
 
-Each food heals a little, more if cooked, and only for the share of its hunger your stomach has room for, so it is never a way to top up. With your hunger at {{n tuning.player.fullAt}} or more you are full, and eating is refused: "You are full." A food on the belt is eaten from its slot, by its key, its menu, or a double-click.
+Each food heals a little, more if cooked, and heals exactly its value whenever you eat it, hungry or full (changed in game #259: it was refused when full). With your hunger at {{n tuning.player.fullAt}} or more you are well fed, and health comes back {{n tuning.player.wellFedRegenMult}} times as fast. A food on the belt is eaten from its slot, by its key, its menu, or a double-click.
 
 Read: [[Food]], [[Health]], [[Hunger]], [[Belt]].
 
@@ -208,7 +208,7 @@ Nothing is in review in the game just now. [[Planned]] lists what is to come.
 - `src/chop.js:1-51`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
 - `data/sprites/tree_apple.json`, `src/fruit.js:30-52`: apple trees (game #192)
 - `data/fishing.json`, `src/fishing.js:1-81`: fishing (game #193)
-- `src/entities/player.js:83-103`, `data/tuning.json:55`: food's heal and `fullAt` (game #186)
+- `src/entities/player.js:83-100`, `data/tuning.json:55`, `data/tuning.json:69`: food's heal, `fullAt`, and `wellFedRegenMult` (game #186, #259)
 - `data/kit.json`, `src/kit.js`: the starting kit (game #183, #191)
 - `src/map.js:709-735`, `docs/09-openings.md`: the dead strike fences (game #185)
 - `src/entities/villager.js:45`, `src/entities/zombie.js:357`: immune villagers (game #187)

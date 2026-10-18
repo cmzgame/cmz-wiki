@@ -18,7 +18,7 @@ Hunger empties from full in {{n tuning.player.hungerDrainSeconds}} seconds of th
 
 ### Eating
 
-Choose "Eat" on food in your bag or in an open container, or eat a food on your belt from its slot: its belt key, Eat on the slot's menu, or a double-click. Eating is instant: hunger (and thirst, for some foods) rises by the food's value, capped at the maximum, health rises a little by the food's heal, and one is used from the stack. Your character holds the food out for a moment. **At {{n tuning.player.fullAt}} hunger or more you are full**: you cannot eat, and trying says "You are full." Below that, a food that gives more hunger than you have room for heals only the share that fills (see [[Food]]).
+Choose "Eat" on food in your bag or in an open container, or eat a food on your belt from its slot: its belt key, Eat on the slot's menu, or a double-click. Eating is instant: hunger (and thirst, for some foods) rises by the food's value, capped at the maximum, health rises a little by the food's heal, and one is used from the stack. Your character holds the food out for a moment. You can eat whenever you like, hungry or full, and a food always heals its whole value. **At {{n tuning.player.fullAt}} hunger or more you are well fed**, and [[Health]] comes back {{n tuning.player.wellFedRegenMult}} times as fast (see [[Food]]).
 
 ### Stages
 
@@ -33,7 +33,7 @@ The hunger moodle shows the stage:
 
 - Maximum: {{n tuning.player.hungerMax}}
 - Full to empty: {{n tuning.player.hungerDrainSeconds}} seconds
-- Full, and eating refused, at: {{n tuning.player.fullAt}}
+- Well fed, and health back {{n tuning.player.wellFedRegenMult}} times as fast, at: {{n tuning.player.fullAt}}
 - Starving: {{n tuning.player.starveDamage}} health a second
 - A [[Loaf of bread]]: +{{n items.bread.hunger}}; an [[Apple]]: +{{n items.apple.hunger}}; [[Stew]]: +{{n items.stew.hunger}}. Every food is listed under [[Food]].
 
@@ -55,12 +55,12 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 - `data/tuning.json:52`, `data/tuning.json:54-55`: the maximum, the drain time, and `fullAt`
 - `src/entities/player.js:147`: the drain, every step, awake or asleep
 - `src/map.js:95`: a game hour is 30 seconds
-- `src/entities/player.js:83-103`: full at `fullAt`, nothing eaten; eating raises hunger and thirst, capped, and heals by the share it fills (game #186)
-- `src/interact.js:1182-1191`, `src/interact.js:1245`: the "Eat" entry uses one from the stack, or says "You are full."
+- `src/entities/player.js:83-100`: eating raises hunger and thirst, capped, and heals its whole value, full or not (game #259)
+- `src/interact.js:1183-1190`: the "Eat" entry uses one from the stack
 - `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: the belt key, the slot's Eat, and a double-click eat a food on the belt (game #186)
 - `data/tuning.json:61`, `src/entities/player.js:95`, `src/entities/player.js:386-387`: the held-out pose
 - `src/moodles.js:55-59`: the hunger stages and their thresholds
-- `src/entities/player.js:154-159`: Hungry stops regeneration
+- `src/entities/player.js:149-161`: Hungry stops regeneration; well fed speeds it (game #259)
 - `src/entities/player.js:164-169`, `data/tuning.json:69`: Very hungry slows stamina recovery
 - `src/entities/player.js:151`, `data/tuning.json:57`: starving damage
 - `data/items.json:16-17`, `data/items.json:70`: bread, apple, and stew

@@ -1,7 +1,7 @@
 {
-  "commit": "fe6db6c99926f491b2b73b3ba58f1033954ea918",
-  "short": "fe6db6c",
-  "date": "2026-10-17T21:09:31-05:00",
-  "subject": "Merge #258, reviewed: the bag's X works with a lit torch in hand (the panels compare wear and fill as they draw them)",
+  "commit": "63ea3be975aaa73fbd2a95090e2c566b3ab284b7",
+  "short": "63ea3be",
+  "date": "2026-10-18T01:23:10-05:00",
+  "subject": "Merge #259, reviewed: food heals what it says on the tin, full or not; a well-fed body heals twice as fast",
   "ref": "origin/main"
 }

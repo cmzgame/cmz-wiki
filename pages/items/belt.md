@@ -15,7 +15,7 @@ A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a s
 
 ### Pressing a slot
 
-- **Food**: one is eaten, unless you are full ("You are full."; see [[Food]]).
+- **Food**: one is eaten, hungry or full (see [[Food]]).
 - **A waterskin**: you drink a sip ("It is empty." if it is dry).
 - **Anything else**: it swaps between the slot and your hand. A weapon drawn from the belt always takes the main hand, so flipping through weapons never leaves you holding two by accident.
 - **An empty slot**: puts away what your main hand holds, or the off hand if the main is empty.
@@ -57,7 +57,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 - `src/interact.js:1109`: keys 1 to 4
 - `src/inventory.js:277-300`: a press: eat, drink, swap, a weapon to the main hand, an empty slot stows
 - `src/entities/player.js:107-114`: drinking a sip from a waterskin
-- `src/interact.js:1185-1207`: the press and its messages ("No belt, or no such slot.", "You are full.", game #186)
+- `src/interact.js:1185-1207`: the press and its messages ("No belt, or no such slot.")
 - `src/interact.js:1295-1355`, `src/ui/inventory-actions.js:221-229`: the slot menu: Equip, or Eat for a food and Drink for a skin (game #186), Put in bag, Use, Drop; a double-click does the first
 - `src/inventory.js:217-229`: putting away goes to the belt only when the bag will not take it and it can be held
 - `data/tuning.json:102`: the belt torch's strength

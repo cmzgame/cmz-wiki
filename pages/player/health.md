@@ -30,17 +30,18 @@ Health comes back by itself, slowly, only while all of these hold:
 - No wound is [[Bleeding]].
 - You are not "Falling asleep" ([[Tiredness]] above empty).
 
-With the [[Survival]] setting off the needs are held full, so health comes back at the same rates as long as nothing bleeds.
+With the [[Survival]] setting off the needs are held full, so you are always well fed and health comes back at the well-fed rates as long as nothing bleeds.
 
-Awake, you regain {{n tuning.player.healthRegenPerMinute}} health a minute. Asleep in a bed, you regain {{n tuning.player.sleepRegenPerMinute}} a minute (see [[Sleep]]). A minute here is a minute of the world's own clock, so while everyone sleeps it passes much faster.
+Awake, you regain {{n tuning.player.healthRegenPerMinute}} health a minute. Asleep in a bed, you regain {{n tuning.player.sleepRegenPerMinute}} a minute (see [[Sleep]]). **Well fed**, with hunger at {{n tuning.player.fullAt}} or more, either rate is {{n tuning.player.wellFedRegenMult}} times as fast. A minute here is a minute of the world's own clock, so while everyone sleeps it passes much faster.
 
-[[Food]] heals a little: each food adds its heal value when eaten, a stopgap, and only the share whose hunger your stomach has room for; a full stomach eats nothing (see [[Food]]). Eating also raises hunger and thirst, which lets regeneration start again.
+[[Food]] heals a little: each food adds its whole heal value when eaten, full or not, a stopgap (see [[Food]]). Eating also raises hunger and thirst, which lets regeneration start again.
 
 ## Numbers
 
 - Maximum: {{n tuning.player.hp}}
 - Regeneration awake: {{n tuning.player.healthRegenPerMinute}} a minute
 - Regeneration asleep: {{n tuning.player.sleepRegenPerMinute}} a minute
+- Well fed (hunger at {{n tuning.player.fullAt}} or more): either rate times {{n tuning.player.wellFedRegenMult}}
 - Starving: {{n tuning.player.starveDamage}} a second
 - Dying of thirst: {{n tuning.player.dehydrateDamage}} a second
 - A bite: {{n tuning.zombie.damage}}
@@ -52,7 +53,7 @@ Each player has their own health. A sleeper among players who are awake still re
 
 ## Settings that change it
 
-- **Survival** (default On): off, needs never drain, and health still regenerates as a fed body's does.
+- **Survival** (default On): off, needs never drain, and health regenerates as a well-fed body's does.
 - **Zombie aggro** (default On): on, the dead hunt and bite.
 
 ## See also
@@ -69,8 +70,8 @@ Each player has their own health. A sleeper among players who are awake still re
 - `data/combat.json:4`: the bleeding drain by stacks
 - `data/tuning.json:57-58`, `src/entities/player.js:151-152`: starving and dehydration damage, which add up
 - `src/settings.js:12`, `src/entities/zombie.js:307-308`: the dead bite only with Zombie aggro on
-- `src/entities/player.js:154-159`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), and the awake and asleep rates, in the world's time
+- `src/entities/player.js:149-161`: regeneration, its conditions (hunger and thirst stage below 2, no bleed stacks, tired stage below 4), the awake and asleep rates, and the well-fed multiplier, in the world's time (game #259)
 - `src/moodles.js:47-78`: hunger and thirst stage 2 begins below 35
-- `src/entities/player.js:141-145`: with Survival off the needs are held full and regeneration still runs
-- `data/tuning.json:67-68`: the regeneration rates, per sim minute
-- `src/entities/player.js:83-103`, `data/items.json`: `eat` adds each food's `heal`, times the share of its hunger that fills, and nothing at `fullAt` (game #186)
+- `src/entities/player.js:136-140`: with Survival off the needs are held full and regeneration still runs
+- `data/tuning.json:67-69`: the regeneration rates, per sim minute, and the well-fed multiplier
+- `src/entities/player.js:83-100`, `data/items.json`: `eat` adds each food's whole `heal`, full or not (game #259)

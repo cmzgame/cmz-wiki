@@ -1,7 +1,7 @@
 ---
 title: Food
 categories: [Items, Mechanics]
-aliases: [Eating, Eat, Foods, You are full]
+aliases: [Eating, Eat, Foods, Well fed]
 summary: Eating food fills hunger by the food's value, heals a little, and some foods fill thirst too; a full stomach eats nothing.
 ---
 
@@ -14,15 +14,15 @@ summary: Eating food fills hunger by the food's value, heals a little, and some 
 - **Eat** on a food's menu, in your bag or in an open container, eats one from the stack.
 - A food on your [[Belt]] is eaten from its slot: its belt key, **Eat** on the slot's menu, or a double-click on the slot.
 
-Eating is instant, and your character holds the food out for a moment. **A full stomach eats nothing:** with your hunger at {{n tuning.player.fullAt}} or more, every way of eating says "You are full." and the food stays where it was.
+Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals.
 
 ### Healing
 
 Each food heals a little, by its heal value below: raw food least, cooked food more, a [[Stew]] the most. It is a stopgap while you wait for your health to come back by itself or find something better; no food heals much.
 
-The heal is bounded by your appetite. A food heals all of its value only when your hunger has room for all the hunger it gives; with less room, it heals that share. A [[Stew]] eaten just below full fills only a few points of hunger, and heals only a fraction of its value.
+A food heals exactly its value, every time, however full you are. The cost of a heal is the food itself: the same food you would need for hunger later.
 
-[[Health]] also comes back slowly by itself while you are fed and watered (see [[Health]]).
+[[Health]] also comes back slowly by itself while you are fed and watered, and faster while you are **well fed**, with hunger at {{n tuning.player.fullAt}} or more (see [[Health]]).
 
 ### Where food comes from
 
@@ -58,16 +58,16 @@ Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish gril
 ## Numbers
 
 - Hunger at most: {{n tuning.player.hungerMax}}.
-- Full, and eating refused, at: {{n tuning.player.fullAt}}.
+- Well fed, and health back {{n tuning.player.wellFedRegenMult}} times as fast, at: {{n tuning.player.fullAt}}.
 - Full to empty: {{n tuning.player.hungerDrainSeconds}} seconds.
 
 ## With friends
 
-Eating is sent to the host and done for that player, from the bag, the belt's key, or the belt slot's menu or double-click; each player has their own hunger, and "You are full." goes to the player who tried.
+Eating is sent to the host and done for that player, from the bag, the belt's key, or the belt slot's menu or double-click; each player has their own hunger.
 
 ## Settings that change it
 
-- **Survival** (on by default): off, hunger does not drain and stays full, so every food is refused with "You are full."
+- **Survival** (on by default): off, hunger does not drain and stays full, so you are always well fed; food still heals.
 
 ## See also
 
@@ -79,13 +79,13 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 
 <!-- sources at 3c0a243 -->
 - `data/tuning.json:52-55`: hunger's most, its drain time, and `fullAt`
-- `src/entities/player.js:83-103`: full at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the heal times the share of its hunger the stomach has room for; the dead eat nothing (game #186)
+- `src/entities/player.js:83-100`: well fed at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the whole heal; the dead eat nothing (game #259)
 - `src/entities/player.js:140-152`: hunger drains, or stays full with Survival off
-- `src/interact.js:1182-1191`: every way of eating comes to one place, which says "You are full."
+- `src/interact.js:1183-1190`: every way of eating comes to one place
 - `src/interact.js:1212-1246`: Eat from your bag or a container
 - `src/interact.js:1193-1207`: a food on the belt eaten by its key
 - `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
-- `src/entities/player.js:154-159`: health comes back while fed and watered
+- `src/entities/player.js:149-161`: health comes back while fed and watered, faster well fed (game #259)
 - `data/kit.json:6-7`: the starter bread and apples
 - `data/loot.json:2-4`: bread and cheese in chests, apples in barrels, apples and bread in the dead's pockets
 - `data/sprites/tree_apple.json`, `data/fishing.json`: apples picked from trees; fish caught (game #192, #193)

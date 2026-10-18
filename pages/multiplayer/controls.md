@@ -33,7 +33,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you). Held: pull a board off, with the hammer, and get the plank back.
 - `T`: light or douse the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or douse the torch in hand (a tinderbox lights it)".
 - `Q`: the main hand's other mode, as the middle button.
-- `1` `2` `3` `4`: the belt's slots: eat or drink what is there (a food is refused with "You are full." when you are), otherwise swap it with your hand.
+- `1` `2` `3` `4`: the belt's slots: eat or drink what is there, otherwise swap it with your hand.
 
 ### Panels and building
 

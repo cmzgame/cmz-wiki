@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-18: synced to `63ea3be`
+
+- **Changed in the game:** food heals what it says on the tin (game #259, Michael's ruling from his playtest). You can eat whenever you like, hungry or full; each food heals its whole value and hunger stops at the top. "You are full." is gone, and so is the smaller heal near full. Natural healing is {{n tuning.player.wellFedRegenMult}} times as fast while you are well fed, hunger at {{n tuning.player.fullAt}} or more; with Survival off you are always well fed. [[Food]], [[Hunger]], [[Health]], [[Belt]], [[Controls]], and [[Valley day]] corrected.
+
 ## 2026-10-17: synced to `fe6db6c`
 
 - **Fixed in the game:** with a lit torch in hand or on the belt, the X on the bag and the character screen did nothing; only Escape closed them (game #258). The X works now. No page described the fault; [[Valley day]] lists the fix to check.
