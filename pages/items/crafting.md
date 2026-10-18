@@ -66,6 +66,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 
 - [[Recipes]]
 - [[Production chains]], every chain from raw material to product, and what can be made in normal play today
+- [[Dead ends]], the objects in the valley a player can use but cannot make
 - [[Fire]]
 - [[Containers]]
 

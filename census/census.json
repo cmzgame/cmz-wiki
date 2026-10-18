@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "3c0a24331c2c97beeb6083b63c951ec8b8ec1916",
-  "short": "3c0a243",
-  "date": "2026-10-17T19:50:31-05:00",
-  "subject": "Merge #254, reviewed: check(save) puts the world back (Survival as it found it); check(players)'s bite row tolerates regeneration (closes #132)",
+  "commit": "63ea3be975aaa73fbd2a95090e2c566b3ab284b7",
+  "short": "63ea3be",
+  "date": "2026-10-18T01:23:10-05:00",
+  "subject": "Merge #259, reviewed: food heals what it says on the tin, full or not; a well-fed body heals twice as fast",
   "ref": "origin/main"
  },
  "counts": {
@@ -5961,6 +5961,7 @@
    "wakeHour": 6,
    "healthRegenPerMinute": 1,
    "sleepRegenPerMinute": 4,
+   "wellFedRegenMult": 2,
    "needsStaminaRegenMult": 0.5,
    "tiredStaminaRegenMult": 0.75
   },
@@ -6728,32 +6729,32 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1301"
+    "interact.js:1300"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1245",
-    "interact.js:1331"
+    "interact.js:1244",
+    "interact.js:1330"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1221"
+    "interact.js:1220"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1222"
+    "interact.js:1221"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1335"
+    "interact.js:1334"
    ]
   },
   {
@@ -6825,7 +6826,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1337"
+    "interact.js:1336"
    ]
   },
   {
@@ -6855,7 +6856,7 @@
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:707"
+    "ui/inventory-panel.js:712"
    ]
   },
   {
@@ -6915,15 +6916,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1312",
-    "interact.js:1351"
+    "interact.js:1311",
+    "interact.js:1350"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1217",
-    "interact.js:1299"
+    "interact.js:1216",
+    "interact.js:1298"
    ]
   },
   {
@@ -6983,8 +6984,8 @@
   {
    "key": "Drink (${pct}%)",
    "at": [
-    "interact.js:1249",
-    "interact.js:1334"
+    "interact.js:1248",
+    "interact.js:1333"
    ]
   },
   {
@@ -7002,7 +7003,7 @@
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1225"
+    "interact.js:1224"
    ]
   },
   {
@@ -7032,19 +7033,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1596"
+    "interact.js:1595"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1255"
+    "interact.js:1254"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1584"
+    "interact.js:1583"
    ]
   }
  ],
@@ -7090,7 +7091,7 @@
    "at": [
     "interact.js:219",
     "interact.js:352",
-    "interact.js:1567",
+    "interact.js:1566",
     "ui/station-panel.js:78",
     "ui/station-panel.js:103"
    ]
@@ -7416,7 +7417,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1641
+   "lines": 1640
   },
   {
    "path": "placeholders.js",
@@ -7444,7 +7445,7 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 729
+   "lines": 734
   },
   {
    "path": "game.js",
@@ -7588,7 +7589,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 167
+   "lines": 168
   },
   {
    "path": "figure/wardrobe.js",
@@ -8144,5 +8145,122 @@
   "field": "wood",
   "tool": "chop",
   "at": "src/chop.js:26-51"
+ },
+ "valleyProps": {
+  "from": "src/map.js loadMap, inside data/maps/valley.json's bounds",
+  "bounds": [
+   0,
+   0,
+   256,
+   256
+  ],
+  "counts": {
+   "altar": 1,
+   "anvil": 1,
+   "barrel": 38,
+   "bed": 26,
+   "beehive": 3,
+   "bench": 4,
+   "bookcase": 4,
+   "cart": 6,
+   "chair": 33,
+   "charcoal_clamp": 4,
+   "charcoal_sack": 2,
+   "chest": 44,
+   "coffin": 2,
+   "counter": 1,
+   "crane": 1,
+   "crop_cabbage_0": 18,
+   "crop_cabbage_1": 14,
+   "crop_cabbage_2": 38,
+   "crop_flax_0": 10,
+   "crop_flax_1": 11,
+   "crop_flax_2": 21,
+   "crop_garlic_0": 6,
+   "crop_garlic_1": 16,
+   "crop_garlic_2": 22,
+   "crop_potato_0": 10,
+   "crop_potato_1": 16,
+   "crop_potato_2": 32,
+   "crop_pumpkin_0": 54,
+   "crop_pumpkin_1": 54,
+   "crop_pumpkin_2": 107,
+   "crop_rye_0": 38,
+   "crop_rye_1": 39,
+   "crop_rye_2": 77,
+   "cupboard": 12,
+   "desk": 3,
+   "dyevat": 3,
+   "fireplace": 19,
+   "font": 1,
+   "forge": 1,
+   "grindstone": 1,
+   "haystack": 9,
+   "headstone": 18,
+   "lantern_post": 3,
+   "lectern": 1,
+   "loom": 1,
+   "marketcross": 1,
+   "maypole": 1,
+   "millstones": 1,
+   "millwheel": 1,
+   "mine_mouth": 1,
+   "mushroom_0": 160,
+   "mushroom_1": 165,
+   "mushroom_2": 156,
+   "mushroom_3": 153,
+   "mushroom_4": 140,
+   "noticeboard": 1,
+   "ore_cart": 1,
+   "ore_rock": 6,
+   "oven": 1,
+   "pew": 6,
+   "privy": 1,
+   "rock_0": 2,
+   "rock_1": 2,
+   "rock_2": 2,
+   "rock_3": 2,
+   "sawpit": 1,
+   "scarecrow": 1,
+   "shelf": 20,
+   "spinningwheel": 1,
+   "spoil_heap": 2,
+   "stall": 4,
+   "stocks": 1,
+   "stone_stack": 4,
+   "strongbox": 3,
+   "table": 24,
+   "tree_apple": 23,
+   "tree_oak_l": 311,
+   "tree_oak_m": 300,
+   "tree_oak_old": 157,
+   "tree_orange_l": 292,
+   "tree_orange_m": 319,
+   "tree_orange_old": 156,
+   "tree_red_l": 301,
+   "tree_red_m": 281,
+   "tree_red_old": 160,
+   "tree_spire_green_l": 158,
+   "tree_spire_green_m": 167,
+   "tree_spire_green_old": 68,
+   "tree_spire_orange_l": 162,
+   "tree_spire_orange_m": 173,
+   "tree_spire_orange_old": 88,
+   "tree_spire_red_l": 143,
+   "tree_spire_red_m": 182,
+   "tree_spire_red_old": 77,
+   "tree_spire_yellow_l": 147,
+   "tree_spire_yellow_m": 158,
+   "tree_spire_yellow_old": 74,
+   "tree_yellow_l": 290,
+   "tree_yellow_m": 293,
+   "tree_yellow_old": 143,
+   "trough": 4,
+   "well": 5,
+   "wheelbarrow": 3,
+   "winch": 1,
+   "woodpile": 14,
+   "workbench": 2
+  }
  }
 }

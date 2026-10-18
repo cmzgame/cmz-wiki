@@ -9,7 +9,7 @@
 
 import { readFileSync, readdirSync, writeFileSync, existsSync, statSync } from "node:fs";
 import { join, dirname, basename } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const D = join(root, "snapshot", "data");
@@ -193,6 +193,34 @@ function readChop() {
 }
 const chop = readChop();
 
+// Every prop the game's own map loader places inside the valley's bounds, counted by sprite: the authored props and what
+// the scatter and forage passes grow, which the map file names only as rules (src/map.js loadMap, run headless on the
+// snapshot's data, as the game's server/boot.js runs it without the art). The wild beyond the bounds is grown as it is
+// walked, without end, so it is not counted. The Dead ends page reads it. Null, with a problem, if the loader cannot run.
+async function readValleyProps() {
+  try {
+    const url = (p) => pathToFileURL(join(SRC, p)).href;
+    const assets = await import(url("assets.js"));
+    assets.setHeadless(true);
+    assets.setJsonReader(async (p) => json(join(root, "snapshot", p)));
+    assets.setManifest(json(join(D, "manifest.json")));
+    await assets.loadAll();
+    const map = await import(url("map.js"));
+    map.loadMap(valley);
+    const [bx, by, bw, bh] = valley.bounds;
+    const counts = {};
+    for (const p of map.allProps()) {
+      const [x, y] = p.tile;
+      if (x >= bx && y >= by && x < bx + bw && y < by + bh) counts[p.sprite] = (counts[p.sprite] || 0) + 1;
+    }
+    return { from: "src/map.js loadMap, inside data/maps/valley.json's bounds", bounds: valley.bounds, counts: Object.fromEntries(Object.entries(counts).sort()) };
+  } catch (e) {
+    return { error: String((e && e.message) || e) };
+  }
+}
+const valleyPropsRead = await readValleyProps();
+const valleyProps = valleyPropsRead.error ? null : valleyPropsRead;
+
 // ---------- items, cross-referenced ----------
 const itemRows = items.map((i) => ({
   id: i.id, name: i.name, kind: i.kind, size: i.size, hands: i.hands, stack: i.stack, tags: i.tags || [],
@@ -215,6 +243,7 @@ const stationsInData = new Set(spriteList.filter((s) => s.station).map((s) => s.
 for (const r of recipes) if (!stationsInData.has(r.station)) problems.push(`recipe names station ${r.station} that no sprite definition is`);
 for (const id of (starterKit && starterKit.unknown) || []) problems.push(`data/kit.json names unknown item ${id}`);
 if (!starterKit) problems.push("no data/kit.json: the starting kit is unknown");
+if (valleyPropsRead.error) problems.push(`the valley's props could not be counted with the game's map loader: ${valleyPropsRead.error}`);
 
 const census = {
   version,
@@ -229,7 +258,7 @@ const census = {
   tuning, combat, build, looks, poseSets: Object.keys(poses), hairStyles: hair,
   wardrobes: { zombie: (wardrobes.zombie || []).length, village: (wardrobes.village || []).length },
   settings, rules, fixedRules, keys, verbs, toolVerbs, menuLabels, events, moodles, checks, modules, problems, constants,
-  starterKit, chop,
+  starterKit, chop, valleyProps,
 };
 writeFileSync(join(root, "census", "census.json"), JSON.stringify(census, null, 1) + "\n");
 
@@ -300,6 +329,8 @@ h("The starting kit (data/kit.json)");
 L.push(starterKit ? `${starterKit.items.map((k) => `${k.count} ${k.id}`).join(", ")} (from ${starterKit.from})` : "- not found");
 h("Felling a tree (by pattern)");
 L.push(chop ? `a tree with \`${chop.field}\` drops that many \`${chop.gives}\`${chop.tool ? `, with an item in hand that lists \`${chop.tool}\`, and leaves a stump with its own \`${chop.field}\`` : ""} (${chop.at})` : "- not found");
+h("The valley's props, counted by the game's map loader");
+L.push(valleyProps ? Object.entries(valleyProps.counts).map(([k, n]) => `${k} ${n}`).join(", ") + ` (${valleyProps.from})` : "- not counted");
 h("Checks (tools/checks)");
 L.push(checks.map((c) => `\`${c}\``).join(", "));
 h("Modules by size");
