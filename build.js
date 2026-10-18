@@ -378,6 +378,12 @@ const written = pages.filter((p) => p.written).length;
 console.log(`built ${pages.length} pages (${written} written, ${pages.length - written} generated) and ${specials.length} special pages for game ${v.short}`);
 console.log(`red links: ${redlinks.size}${redlinks.size ? ` (${[...redlinks.keys()].slice(0, 12).join(", ")}${redlinks.size > 12 ? ", ..." : ""})` : ""}`);
 console.log(`planned notes standing: ${planned.length}`);
+// The census (counts read from the game's own code, the Dead ends page's among them) must be rerun at every sync, or those pages go
+// stale without a word: say so when it was taken at another commit than the snapshot.
+{
+  const cv = data.census && data.census.version;
+  if (cv && cv.commit !== data.version.commit) console.log(`census: taken at ${cv.short}, the snapshot is ${data.version.short}; rerun node census/census.js (CLAUDE.md, a sync, step 3)`);
+}
 if (errors.length) {
   console.error(`\n${errors.length} error(s):\n${errors.map((e) => `  - ${e}`).join("\n")}`);
   process.exit(1);
