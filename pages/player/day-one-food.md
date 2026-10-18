@@ -81,4 +81,4 @@ The valley's food is the world's, not each player's: two or four players share t
 - `src/clock.js:5`: a game day's length, `DAY_LENGTH` (read through the census)
 - `src/game.js:356`: the clock runs `sleepTimeScale` times as fast while everyone sleeps
 - `src/entities/player.js:38`: a new character starts full
-- the game's `docs/02-decisions.md`, 2026-10-18, "Day-one food is a tracked statistic": why the page exists, the starting foods weak on purpose, and the regions' better foods as Michael's "could"
+- `docs/02-decisions.md` (the game's), 2026-10-18, "Day-one food is a tracked statistic": why the page exists, the starting foods weak on purpose, and the regions' better foods as Michael's "could"
