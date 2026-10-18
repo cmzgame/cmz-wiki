@@ -30,6 +30,8 @@ A new character carries a [[Loaf of bread]] and [[Apple|apples]]. Bread and the 
 
 [[Potato|Potatoes]] and [[Cabbage|cabbages]] are grown and harvested by [[Farming]], starting from the plot by [[Your cottage]].
 
+How long all the food the valley starts with would last, alone or with friends, is counted on [[Day-one food]].
+
 Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish grill at a fire, a potato roasts, and a stew takes potatoes, a cabbage, and garlic. Rye's [[Grain]] makes porridge, and ground into [[Flour]] at the [[Millstones]] it bakes into bread and, with a pumpkin, a [[Pumpkin pie]] at the oven. Every one of them can be made in play.
 
 ### Foods
@@ -72,6 +74,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 ## See also
 
 - [[Hunger]], [[Thirst]], [[Health]]
+- [[Day-one food]]
 - [[Cooking]], [[Oven]], [[Fishing]]
 - [[Waterskin]]
 
