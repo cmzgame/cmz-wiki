@@ -95,6 +95,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - [[Placement]]
 - [[Carrying furniture]]
 - [[Workbench]], which makes furniture
+- [[Dead ends]], the objects in the valley that cannot be made, and those that can
 
 ## Sources
 

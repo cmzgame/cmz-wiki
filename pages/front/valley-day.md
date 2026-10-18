@@ -214,6 +214,7 @@ Michael's playtest on 2026-10-18 produced rulings and ideas that change nothing 
 - [[Special:All pages]] lists every page by title, alphabetically, for reading them one at a time.
 - A page whose text has changed since Michael verified it shows **Changed since verified** in place of the green stamp (see [[Special:Verification]]).
 - [[Day-one food]] is new.
+- [[Dead ends]] is new: every object in the valley a player can use but cannot make (a cart, a well, an anvil), how many there are, and what is lost when the last one goes; beside it, the objects that can be made, and how.
 
 ## Coming next
 

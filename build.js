@@ -153,7 +153,7 @@ const redlinks = new Map(); // title -> pages linking it
 const backlinks = new Map(); // slug -> set of titles
 
 for (const p of pages) {
-  const ctx = { data, page: p, planned, assets };
+  const ctx = { data, page: p, planned, assets, hasPage: (t) => byTitle.has(String(t).toLowerCase()) }; // hasPage: whether a title or an alias names a page, so a template links only what exists
   let text;
   try {
     text = expand(p.body, ctx);
