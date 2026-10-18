@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-17: synced to `fe6db6c`
+
+- **Fixed in the game:** with a lit torch in hand or on the belt, the X on the bag and the character screen did nothing; only Escape closed them (game #258). The X works now. No page described the fault; [[Valley day]] lists the fix to check.
+
 ## 2026-10-17: synced to `3c0a243`
 
 - **New in the game:** Take All (game #251). A button on a container's panel (a chest, a bag on the ground, a searched body, a station's output) moves everything into your bag, top row first, then onto a free belt slot where it fits; what fits neither stays, "Your bag is full." or "Your bag is full: the rest stays."; a bag with things in it stays, "A bag with things in it stays: empty it first."; with no bag, "You have no bag." A guest's works through the host. [[Inventory]] has a section on it; [[Containers]] and [[Corpses]] point to it.

@@ -124,6 +124,12 @@ A guest within {{n tuning.world.fireOutRadius tiles}} of a fire that burns out n
 
 Read: [[Fire]], [[Chat log]].
 
+### Fixed: the bag's X with a lit torch (game #258)
+
+With a lit torch in hand or on the belt, the X on the bag (and the character screen) did nothing and only Escape closed it. The X works now, torch lit or not.
+
+Read: [[Inventory]].
+
 ## Food and the body
 
 ### Food heals a little (game #186)

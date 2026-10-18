@@ -1,7 +1,7 @@
 {
-  "commit": "3c0a24331c2c97beeb6083b63c951ec8b8ec1916",
-  "short": "3c0a243",
-  "date": "2026-10-17T19:50:31-05:00",
-  "subject": "Merge #254, reviewed: check(save) puts the world back (Survival as it found it); check(players)'s bite row tolerates regeneration (closes #132)",
+  "commit": "fe6db6c99926f491b2b73b3ba58f1033954ea918",
+  "short": "fe6db6c",
+  "date": "2026-10-17T21:09:31-05:00",
+  "subject": "Merge #258, reviewed: the bag's X works with a lit torch in hand (the panels compare wear and fill as they draw them)",
   "ref": "origin/main"
 }
