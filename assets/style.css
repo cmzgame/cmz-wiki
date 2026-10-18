@@ -122,6 +122,7 @@ ul.columns { columns: 16rem auto; }
 .verify-btn:hover { background: var(--th); text-decoration: none; }
 .verify.never .verify-when, .verify.old .verify-when { color: var(--link-new); }
 .verify.aging .verify-when { color: #b07a20; }
+.verify.changed .verify-when { color: var(--blocked); background: var(--blocked-bg); border: 1px solid var(--blocked); border-radius: 3px; padding: 0 6px; font-weight: bold; }
 .verify.fresh .verify-when { color: #4a7a3a; }
 details.sources { margin-top: 1.5rem; border: 1px solid var(--line); background: var(--note); padding: 0.4rem 0.75rem; font-size: 13px; }
 details.sources summary { font: 15px var(--font-ui); cursor: pointer; }
