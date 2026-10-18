@@ -132,7 +132,7 @@ Read: [[Inventory]].
 
 ## Food and the body
 
-### Food heals a little (game #186)
+### Food heals what it says, and a full belly heals faster (game #186, #259)
 
 Each food heals a little, more if cooked, and heals exactly its value whenever you eat it, hungry or full (changed in game #259: it was refused when full). With your hunger at {{n tuning.player.fullAt}} or more you are well fed, and health comes back {{n tuning.player.wellFedRegenMult}} times as fast. A food on the belt is eaten from its slot, by its key, its menu, or a double-click.
 
@@ -192,9 +192,32 @@ The dead you cannot see in the dark put "Something groans in the dark." in the c
 
 Read: [[Chat log]], [[Sight]].
 
+## Decided or filed, not built yet
+
+Michael's playtest on 2026-10-18 produced rulings and ideas that change nothing in the game yet. Each lives on the game's GitHub (its issue number below) and in its decisions log, `docs/02`; they are listed here so the day is on one page.
+
+- **Food rots** (ruled): rot is pacing, like a torch burning down, and not decay of the world; how fast, what preserves food, and whether food nobody has found rots are open (game #264).
+- **The valley's day-one food** is a statistic the wiki keeps current: [[Day-one food]]. Today it would keep one player from starving for about {{day-one-food n=days}} game days, far more than intended; a leaner start, rot, and balanced loot tables are the answers (game #264, #268).
+- **Health becomes a thousand** (ruled): every health number ten times larger, the game playing exactly as before, as the first step of the armour and difficulty pass; bosses may have far more, and a bar may show a percent (game #133).
+- **Gear can drop by chance** (ruled), a boss's best item not every kill; **regions are returned to** for what only they give; **armour stays modest**; **weapons differ by situation** through resistances (game #133, #268, #123).
+- **Loot tables balanced:** most containers roll the chest's table today, so a valley holds about fourteen rucksacks and fourteen swords; a table per kind of container, gear rare (game #268).
+- **Bags and stacking:** one thing a cell by default, and bag tiers from the valley and the regions (game #260).
+- **A hover card on every item in a grid** (ruled, a standing rule): its full name and what it does, with **Use** in the Use mode's gold (game #262).
+- **The map redrawn** with distinct areas and roomier buildings, and **a furniture and rugs pass** (game #92, #261).
+- **The regions feed the skills,** a rule drafted for Michael to edit (game #123).
+- **A dead-free first day** with an optional tutorial, then the dead arriving on a curve: Michael's middle ground, not ruled (game #123).
+- **Villagers all immune unless a script says otherwise,** hiding or cowering with a bark: Michael's leaning, not ruled (game #103).
+- **Scripting** means villagers on routines who react and may take commands, and **in-world cutscenes**, which meet an older "never a cutscene" and are open (game #103, #106).
+
+## On the wiki
+
+- [[Special:All pages]] lists every page by title, alphabetically, for reading them one at a time.
+- A page whose text has changed since Michael verified it shows **Changed since verified** in place of the green stamp (see [[Special:Verification]]).
+- [[Day-one food]] is new.
+
 ## Coming next
 
-Nothing is in review in the game just now. [[Planned]] lists what is to come.
+In review in the game: #255 (region and zone wording, waiting on Michael) and #256 (dead code), both held for after the playtest. [[Planned]] lists what is to come.
 
 ## See also
 
