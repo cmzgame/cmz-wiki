@@ -78,4 +78,4 @@ One line per claim or group of claims, in the page's order, as `path` or `path:l
 
 ## Verifying
 
-Michael's **Verify** button on every page opens a GitHub issue titled `Verify: <page title>`; submitting it stamps the page in `verified.json` (only the repository's owner can). `Special:Verification` lists the pages most in need of a look first: never verified, edited since their stamp, then the oldest stamps. `node build.js` also writes `verification.txt`, the same list as plain text.
+Michael's **Verify** button on every page opens a GitHub issue titled `Verify: <page title>`; submitting it stamps the page in `verified.json` with the time and a fingerprint of the page's text (only Michael's account can). When a later build finds the text different (a sync, an edit, or a change in the game's data on a generated page), the page's badge turns amber, "Changed since verified", until he verifies it again. `Special:Verification` lists the pages most in need of a look first: never verified, changed since their stamp, then the oldest stamps. `node build.js` also writes `verification.txt`, the same list as plain text.

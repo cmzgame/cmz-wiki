@@ -12,6 +12,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, copyFileSync, existsSync, rmSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { join, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadData, propIds } from "./lib/data.js";
@@ -28,7 +29,10 @@ const REPO = "https://github.com/cmzgame/cmz-wiki"; // the studio's organisation
 const GAME_REPO = "https://github.com/cmzgame/cozy-medieval-zombies";
 const LINK_SOURCES = true;
 // Verification: Michael's "I have checked this page" stamps, written by the verify workflow (.github/workflows/pages.yml).
+// A stamp is { at, print }: when, and the fingerprint of the page's text then (fingerprints.json, written below). A
+// stamp from before fingerprints is the bare time, and only a written page's git history can say it changed since.
 const verified = existsSync(join(root, "verified.json")) ? JSON.parse(readFileSync(join(root, "verified.json"), "utf8")) : {};
+const stampOf = (title) => { const s = verified[title]; return !s ? null : typeof s === "string" ? { at: s, print: null } : s; };
 const NOW = Date.now();
 const daysAgo = (iso) => Math.floor((NOW - Date.parse(iso)) / 86400000);
 // When a written page's file last changed, from git (the Action checks out the whole history); null without git.
@@ -199,6 +203,22 @@ function sourcesBox(text, p) {
   return text.slice(0, m.index) + `<details class="sources"><summary>Sources</summary>\n\n${body}\n\n${note}\n\n</details>\n\n` + text.slice(m.index + m[0].length);
 }
 
+// A page's fingerprint: its words, not its markup, so a change a reader would notice changes it. The Sources box is
+// left out (it names the game's commit, which moves with every sync), and so are the link targets.
+function fingerprint(p) {
+  const text = p.html.replace(/<details class="sources">[\s\S]*?<\/details>/g, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return createHash("sha256").update(text).digest("hex").slice(0, 16);
+}
+// Changed since verified: the text differs from the fingerprint stamped with it, or, for an old stamp without one,
+// a written page's file has a later commit.
+function changedSince(p) {
+  const s = stampOf(p.title);
+  if (!s) return false;
+  if (s.print) return s.print !== fingerprint(p);
+  const edited = p.written ? lastEdited(p.source) : null;
+  return !!(edited && Date.parse(edited) > Date.parse(s.at));
+}
+
 // ---------- special pages ----------
 const categories = new Map();
 for (const p of pages) for (const c of p.categories) { if (!categories.has(c)) categories.set(c, []); categories.get(c).push(p); }
@@ -210,18 +230,18 @@ special("All pages", "special-all-pages", `<p>${pages.length} pages: ${pages.fil
 special("Categories", "special-categories", `<ul class="columns">${[...categories.keys()].sort().map((c) => `<li><a href="category-${slugify(c)}.html">${escapeHtml(c)}</a> (${categories.get(c).length})</li>`).join("")}</ul>`);
 special("Red links", "special-red-links", `<p>Pages that are linked to but not written yet: the list of what to write next.</p><ul>${[...redlinks.entries()].sort((a, b) => b[1].size - a[1].size || a[0].localeCompare(b[0])).map(([t, from]) => `<li><strong>${escapeHtml(t)}</strong>, linked from ${[...from].map((f) => { const d = byTitle.get(f.toLowerCase()); return d ? `<a href="${d.slug}.html">${escapeHtml(f)}</a>` : escapeHtml(f); }).join(", ")}</li>`).join("")}</ul>`);
 {
-  // Verification: never verified first (written pages before generated), then the longest since a stamp.
+  // Verification: never verified first (written pages before generated), then pages changed since their stamp, then
+  // the longest since a stamp.
   const rows = pages.map((p) => {
-    const v = verified[p.title] || null;
-    const edited = p.written ? lastEdited(p.source) : null;
-    return { p, v, days: v ? daysAgo(v) : null, editedAfter: !!(v && edited && Date.parse(edited) > Date.parse(v)) };
+    const v = stampOf(p.title)?.at || null;
+    return { p, v, days: v ? daysAgo(v) : null, editedAfter: changedSince(p) };
   }).sort((a, b) => (a.v ? 1 : 0) - (b.v ? 1 : 0)
     || (a.v ? (b.editedAfter ? 1 : 0) - (a.editedAfter ? 1 : 0) || b.days - a.days : (b.p.written ? 1 : 0) - (a.p.written ? 1 : 0))
     || a.p.title.localeCompare(b.p.title));
   const never = rows.filter((r) => !r.v).length;
-  special("Verification", "special-verification", `<p>A page is verified when Michael has checked every claim on it against the game and pressed <strong>Verify</strong>. ${rows.length - never} of ${rows.length} pages verified; ${never} never. The pages most in need of a look come first: never verified, then pages edited since their stamp, then the longest since a stamp.</p>
-<table class="wikitable"><thead><tr><th>Page</th><th>Last verified</th><th>Days ago</th><th>Notes</th></tr></thead><tbody>${rows.map((r) => `<tr><td><a href="${r.p.slug}.html">${escapeHtml(r.p.title)}</a></td><td>${r.v ? r.v.slice(0, 10) : "Never"}</td><td>${r.v ? r.days : "-"}</td><td>${[r.p.written ? "" : "generated", r.editedAfter ? "edited since" : ""].filter(Boolean).join(", ")}</td></tr>`).join("")}</tbody></table>`);
-  writeFileSync(join(root, "verification.txt"), rows.map((r) => `${r.v ? `${r.days}d`.padStart(5) : "never"}  ${r.editedAfter ? "edited " : "       "}${r.p.written ? "" : "(generated) "}${r.p.title}`).join("\n") + "\n");
+  special("Verification", "special-verification", `<p>A page is verified when Michael has checked every claim on it against the game and pressed <strong>Verify</strong>. ${rows.length - never} of ${rows.length} pages verified; ${never} never. The pages most in need of a look come first: never verified, then pages whose text has changed since their stamp, then the longest since a stamp.</p>
+<table class="wikitable"><thead><tr><th>Page</th><th>Last verified</th><th>Days ago</th><th>Notes</th></tr></thead><tbody>${rows.map((r) => `<tr><td><a href="${r.p.slug}.html">${escapeHtml(r.p.title)}</a></td><td>${r.v ? r.v.slice(0, 10) : "Never"}</td><td>${r.v ? r.days : "-"}</td><td>${[r.p.written ? "" : "generated", r.editedAfter ? "changed since verified" : ""].filter(Boolean).join(", ")}</td></tr>`).join("")}</tbody></table>`);
+  writeFileSync(join(root, "verification.txt"), rows.map((r) => `${r.v ? `${r.days}d`.padStart(5) : "never"}  ${r.editedAfter ? "changed " : "        "}${r.p.written ? "" : "(generated) "}${r.p.title}`).join("\n") + "\n");
 }
 special("Planned notes", "special-planned-notes", `<p>Every note on the wiki about something not in the game yet. When the thing is built, its note is replaced with the real section.</p><ul>${planned.map((n) => `<li><a href="${byTitle.get(n.page.toLowerCase()).slug}.html">${escapeHtml(n.page)}</a>: ${escapeHtml(n.note)}${n.doc ? ` (docs/${escapeHtml(n.doc)})` : ""}</li>`).join("")}</ul>`);
 
@@ -266,12 +286,13 @@ ${cats}
 `;
 }
 function verifyHtml(p) {
-  const v = verified[p.title];
+  const v = stampOf(p.title)?.at;
   const d = v ? daysAgo(v) : null;
   const age = v ? (d === 0 ? "today" : d === 1 ? "yesterday" : `${d} days ago`) : null;
-  const cls = !v ? "never" : d > 60 ? "old" : d > 21 ? "aging" : "fresh";
+  const changed = changedSince(p);
+  const cls = !v ? "never" : changed ? "changed" : d > 60 ? "old" : d > 21 ? "aging" : "fresh";
   const issue = `${REPO}/issues/new?title=${encodeURIComponent(`Verify: ${p.title}`)}&body=${encodeURIComponent(`I have checked every claim on [${p.title}](https://cmzgame.github.io/cmz-wiki/${p.slug}.html) against the game.\n\nSubmitting this stamps the page as verified now. Only Michael can verify.`)}`;
-  return `<span class="verify ${cls}"><a class="verify-btn" href="${issue}" title="Opens a GitHub issue; submit it to stamp this page verified">Verify</a><span class="verify-when">${v ? `Last verified ${age} (${v.slice(0, 10)})` : "Never verified"}</span></span>`;
+  return `<span class="verify ${cls}"><a class="verify-btn" href="${issue}" title="Opens a GitHub issue; submit it to stamp this page verified">Verify</a><span class="verify-when"${changed ? ` title="The page's text has changed since Michael verified it; Verify again once it is checked"` : ""}>${!v ? "Never verified" : changed ? `Changed since verified ${age} (${v.slice(0, 10)})` : `Last verified ${age} (${v.slice(0, 10)})`}</span></span>`;
 }
 function insertToc(html, toc) {
   if (!toc) return html;
@@ -283,6 +304,8 @@ function insertToc(html, toc) {
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 for (const p of [...pages, ...specials]) writeFileSync(join(OUT, `${p.slug}.html`), layout(p));
+// Every page's fingerprint, which the verify workflow stamps beside the time.
+writeFileSync(join(OUT, "fingerprints.json"), JSON.stringify(Object.fromEntries(pages.map((p) => [p.title, fingerprint(p)])), null, 1));
 writeFileSync(join(OUT, "search.json"), JSON.stringify(pages.map((p) => ({ t: p.title, u: `${p.slug}.html`, s: p.summary || "" }))));
 for (const f of ["style.css", "search.js"]) copyFileSync(join(root, "assets", f), join(OUT, f));
 // Art: the item icons the data names, and the font.

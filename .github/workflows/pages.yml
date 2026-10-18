@@ -29,6 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
       - name: Stamp the page
         env:
           TITLE: ${{ github.event.issue.title }}
@@ -43,12 +46,16 @@ jobs:
           fi
           PAGE="${TITLE#Verify:}"
           PAGE="$(echo "$PAGE" | sed 's/^ *//;s/ *$//')"
+          # The build writes every page's fingerprint (its text, site/fingerprints.json); the stamp keeps it beside the
+          # time, and a later build that finds the page's text different shows "Changed since verified".
+          node build.js
           node -e '
             const fs = require("fs");
             const page = process.argv[1];
             const file = "verified.json";
             const v = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
-            v[page] = new Date().toISOString();
+            const prints = JSON.parse(fs.readFileSync("site/fingerprints.json", "utf8"));
+            v[page] = { at: new Date().toISOString(), print: prints[page] || null };
             const sorted = Object.fromEntries(Object.keys(v).sort().map((k) => [k, v[k]]));
             fs.writeFileSync(file, JSON.stringify(sorted, null, 2) + "\n");
           ' "$PAGE"

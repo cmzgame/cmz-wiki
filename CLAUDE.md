@@ -30,7 +30,7 @@ The census is the inventory of what the game contains, done once in full (2026-1
 
 ## Verification, and the game going private
 
-Every page shows **Verify** and how long since its stamp; Verify opens an issue `Verify: <page title>` that only Michael's account may submit (the workflow's `VERIFIER` stamps `verified.json` and republishes). **No agent ever opens a Verify issue.** `verification.txt` after a build lists the stalest pages. Sources link to the game's repository at the commit they were read from (`GAME_REPO`, `LINK_SOURCES` in `build.js`); when the game goes private, set `LINK_SOURCES = false` and this repository goes private with it (Michael, 2026-10-14).
+Every page shows **Verify** and how long since its stamp, or an amber "Changed since verified" once its text differs from the fingerprint stamped with it; Verify opens an issue `Verify: <page title>` that only Michael's account may submit (the workflow's `VERIFIER` stamps `verified.json` and republishes). **No agent ever opens a Verify issue.** `verification.txt` after a build lists the stalest pages. Sources link to the game's repository at the commit they were read from (`GAME_REPO`, `LINK_SOURCES` in `build.js`); when the game goes private, set `LINK_SOURCES = false` and this repository goes private with it (Michael, 2026-10-14).
 
 ## The tools
 
