@@ -16,6 +16,8 @@ numbersOk: true
 
 Hunger empties from full in {{n tuning.player.hungerDrainSeconds}} seconds of the world's clock, a steady drain awake or asleep. A game hour is {{n census.constants.map.HOUR_SECONDS}} seconds.
 
+How long the valley's food would hold off starving, from the day a world is made, is on [[Day-one food]].
+
 ### Eating
 
 Choose "Eat" on food in your bag or in an open container, or eat a food on your belt from its slot: its belt key, Eat on the slot's menu, or a double-click. Eating is instant: hunger (and thirst, for some foods) rises by the food's value, capped at the maximum, health rises a little by the food's heal, and one is used from the stack. Your character holds the food out for a moment. You can eat whenever you like, hungry or full, and a food always heals its whole value. **At {{n tuning.player.fullAt}} hunger or more you are well fed**, and [[Health]] comes back {{n tuning.player.wellFedRegenMult}} times as fast (see [[Food]]).
@@ -48,6 +50,7 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 ## See also
 
 - [[Food]], [[Thirst]], [[Tiredness]], [[Moodles]], [[Health]]
+- [[Day-one food]]
 
 ## Sources
 
