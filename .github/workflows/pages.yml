@@ -48,14 +48,18 @@ jobs:
           PAGE="$(echo "$PAGE" | sed 's/^ *//;s/ *$//')"
           # The build writes every page's fingerprint (its text, site/fingerprints.json); the stamp keeps it beside the
           # time, and a later build that finds the page's text different shows "Changed since verified".
-          node build.js
+          node build.js || { gh issue comment "$NUMBER" --body "The wiki failed to build, so **$PAGE** was not stamped; the Actions log has the error."; exit 1; }
+          if ! node -e 'const p = JSON.parse(require("fs").readFileSync("site/fingerprints.json", "utf8")); process.exit(process.argv[1] in p ? 0 : 1)' "$PAGE"; then
+            gh issue close "$NUMBER" --comment "No page is titled **$PAGE**; nothing was stamped. The Verify button on the page fills in its exact title." --reason "not planned"
+            exit 0
+          fi
           node -e '
             const fs = require("fs");
             const page = process.argv[1];
             const file = "verified.json";
             const v = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
             const prints = JSON.parse(fs.readFileSync("site/fingerprints.json", "utf8"));
-            v[page] = { at: new Date().toISOString(), print: prints[page] || null };
+            v[page] = { at: new Date().toISOString(), print: prints[page] };
             const sorted = Object.fromEntries(Object.keys(v).sort().map((k) => [k, v[k]]));
             fs.writeFileSync(file, JSON.stringify(sorted, null, 2) + "\n");
           ' "$PAGE"
