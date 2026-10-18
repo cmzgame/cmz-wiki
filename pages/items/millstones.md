@@ -25,7 +25,7 @@ A guest grinds through the host like any station.
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/sprites/millstones.json`: the millstones, a station with no fire (game #219)
 - `data/recipes.json`: flour from grain at the millstones
 - `tools/mapgen/valley.py:513`: the millstones in the mill

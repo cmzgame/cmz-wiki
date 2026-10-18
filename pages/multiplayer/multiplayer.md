@@ -16,6 +16,8 @@ numbersOk: true
 
 A world lives in the browser that made it. When it is open to friends, that browser is the **host**: it runs the dead, the villagers, the fire, the clock, and every player, guests included. A guest sends what they press and click; the host does it and sends the world back {{n census.constants.net.FRAME_EVERY}} steps at a time. A guest's own walking is predicted on their screen and corrected by the host.
 
+On a guest's screen the other players, the dead, and the villagers are drawn a few steps behind the host's frames and moved smoothly between them, so they walk evenly even when frames arrive unevenly; a body that jumps far, as at a respawn, is put straight where it is.
+
 Everything a guest can do, they do through the same actions as the host: opening doors, boarding windows, fighting, the bag and the character screen, building, and [[Crafting|crafting]] at a station.
 
 ### Getting together
@@ -80,6 +82,7 @@ The [[World rules|world rules]] above, set by the host.
 ## Sources
 
 <!-- sources at 2a9a308 -->
+- `src/netsmooth.js`, `data/tuning.json` `feel.netDelaySteps`, `netSlew`, `netJump`: remote bodies on a guest drawn a fixed delay behind the host's frames, smoothed, a far jump not (game #249)
 - `src/save.js:152-173`, `src/main.js:699-720`: a world of the browser, opened and closed to friends as a switch
 - `src/net.js:730`, `src/net.js:767-874`: the host runs the world and sends it every `FRAME_EVERY` steps; a guest's walk predicted and corrected
 - `src/net.js:1231-1268`: a guest's say, act, item, craft, place, and use commands, performed on the host

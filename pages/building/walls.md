@@ -57,7 +57,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/map.js:1-6`, `src/map.js:1345-1351`: walls on the `n` and `w` edges of a tile
 - `src/map.js:733-744`: doors and windows are walls with a kind
 - `src/map.js:1363-1376`, `src/map.js:1522-1576`: a wall blocks sight and bodies

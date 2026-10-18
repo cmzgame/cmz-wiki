@@ -13,7 +13,7 @@ The **hoe** is a tool made at the [[Workbench]] from a [[Stick]] and a [[Plank]]
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/recipes.json:216-235`: the hoe from a stick and a plank, with `build` (a hammer) carried (game #222)
 - `data/recipes.json:200-215`: sticks from a plank, with `split` (a hatchet) carried
 - `data/loot.json:7-8`: the joiner's hammer (game #222) and the barn rack's hoe

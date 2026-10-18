@@ -48,10 +48,10 @@ There are no pins or notes, no marker where you died, no map to carry, no sign o
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/ui/map-panel.js:1-5`, `src/main.js:1068`: M opens and shuts the map, a panel over the world; the world keeps running (game #235)
 - `src/chart.js:1-9`, `src/chart.js:64-73`, `src/chart.js:97-112`: the chart, a surface colour a tile from what stands on it or its floor, the walls by kind and a built one marked; a wall charted from either side (game #234)
-- `src/chart.js:136-154`, `src/chart.js:171-189`, `data/tuning.json:111`, `src/visibility.js`: the reveal, each tile within `chartRadius` a living player can see by the fog's rule, with no light needed; a touched chunk within reach charted again
+- `src/chart.js:136-154`, `src/chart.js:171-189`, `data/tuning.json:114`, `src/visibility.js`: the reveal, each tile within `chartRadius` a living player can see by the fog's rule, with no light needed; a touched chunk within reach charted again
 - `src/chart.js:208-248`, `src/game.js:216`: the chart in the save and the welcome, the changed cells in each frame (game #239); kept when the wild far away is set aside
 - `src/ui/map-panel.js:10-21`, `src/ui/map-panel.js:196-259`: three zooms, the colours of the walls, a built wall lighter
 - `src/ui/map-panel.js:275-380`: a marker for every living player, yours gold with an arrow and the others white, each named, never the dead or a villager; the place names once charted; the compass, "N" up and to the right

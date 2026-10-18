@@ -19,7 +19,7 @@ The **pickaxe** is the tool for [[Mining]]. Held in either hand, it adds **Mine 
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:38`: the pickaxe: either hand, its verb `mine`, its weapon block
 - `src/mining.js:20-27`, `src/interact.js:626-651`: a pickaxe in a hand mines; without one the entries are greyed (game #210)
 - `data/loot.json:12-13`, `tools/mapgen/valley.py:536-538`, `tools/mapgen/valley.py:554-557`: the miners' hut's chest and the quarryman's

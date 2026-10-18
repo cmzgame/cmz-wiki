@@ -66,12 +66,12 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
 - `src/settings.js:60-72`: each rule's label and line (Free building's, game #222), Starting population's answers, the Dev chest, Dev bag, and Extra starting items
 - `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:2019-2027`, `src/map.js:2193`, `src/map.js:2046`: Trees off: no tree placed in the scatter or the wild, nor an authored one, an orchard's or a garden's (game #192), the other picks as ever
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, so the same with or without trees (game #149)
-- `data/tuning.json:119`, `src/game.js:141-170`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
+- `data/tuning.json:122`, `src/game.js:141-170`: the factors; the map's dead each kept as many times as the factor says, by their own tile, an extra on a free tile near by
 - `src/map.js:1675-1704`: an extra stands on an open tile by the authored map, never across a wall or a door
 - `src/map.js:1278-1291`: a wild chunk's dead scaled by the same factor, by the chunk's own roll, on free tiles only
 - `src/ui/screens.js:872-900`, `src/ui/screens.js:561-568`: the Sandbox step's two parts, their lines, Next; Extra starting items a text box
@@ -80,6 +80,6 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 - `src/main.js:303-322`, `src/main.js:325-333`: the choices offered as last chosen, remembered when a world is made; the host's change between steps, the fixed two refused, the world saved
 - `src/ui/screens.js:1020-1036`, `src/main.js:755-757`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
 - `src/game.js:77-82`, `src/game.js:215`, `src/game.js:282-283`, `src/save.js:34`: set at creation, kept in the save, restored from it with the defaults for any missing
-- `src/net.js:883`, `src/net.js:1138`, `src/game.js:429`: sent to guests when they change, in the sync check
+- `src/net.js:885`, `src/net.js:1126`, `src/game.js:429`: sent to guests when they change, in the sync check
 - `src/ui/screens.js:963-969`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
 - `src/game.js:282-283`: a world's rules, the kit's two among them, restored from its save, a server world's too

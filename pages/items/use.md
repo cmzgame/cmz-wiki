@@ -47,11 +47,11 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/interact.js:1212-1289`: Use on an item's menu
 - `src/interact.js:1295-1355`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
-- `src/ui/inventory-panel.js:495-497`: a click on an item in a panel is the target
+- `src/ui/inventory-panel.js:501-503`: a click on an item in a panel is the target
 - `src/main.js:819-829`, `src/interact.js:831-838`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
 - `src/main.js:1112-1119`: a click on the world is the target, the panels open or not
 - `src/interactions.js:1-50`: rows by item id or tag and target, `fire` for any that burns fuel, `bracket` for a wall bracket, the first match wins; the default "Nothing interesting happens."
@@ -63,5 +63,5 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 - `src/interact.js:681-720`: the well's own menu fills waterskins
 - `src/interact.js:361-394`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
-- `src/ui/inventory-actions.js:382-416`, `src/main.js:1021-1032`: the host runs it as that player; a bracket sent by its tile and edge
-- `src/host.js:272-276`: the line goes to the guest's chat log
+- `src/ui/inventory-actions.js:442-476`, `src/main.js:1021-1032`: the host runs it as that player; a bracket sent by its tile and edge
+- `src/host.js:281-285`: the line goes to the guest's chat log

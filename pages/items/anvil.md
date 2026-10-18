@@ -24,7 +24,7 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/stations.js:46-53`: which prop is which station
 - `data/sprites/anvil.json`: the anvil is a station, not carried, with no fire
 - `data/recipes.json:505-663`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`

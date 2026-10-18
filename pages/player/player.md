@@ -71,7 +71,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/tuning.json:45-46`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
@@ -94,6 +94,6 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
 - `data/loot.json:18`, `src/settings.js:33`, `src/game.js:92-98`: the dev chest, chosen at New world
-- `data/tuning.json:4`, `data/tuning.json:78`: the dead's and villagers' speeds
+- `data/tuning.json:4`, `data/tuning.json:81`: the dead's and villagers' speeds
 - `src/rules.js:44-49`: a guest uses the host's rules
 - `src/game.js:348-358`: time runs fast only while every living player sleeps

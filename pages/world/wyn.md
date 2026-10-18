@@ -33,13 +33,13 @@ A guest pokes Wyn, or talks to them, as the host's player does, by the same comm
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:606-608`: Wyn by your cottage's door at (102, 218), wardrobe 6, their map line, `immune`, `talk: guide`, `guide` (game #220)
 - `tools/mapgen/mapgen.py:15`, `tools/mapgen/mapgen.py:146-150`: a guide on every map the generator makes, within three tiles of its spawn
 - `data/talk/guide.json`: the barks and the conversation's questions with their wiki links
 - `src/entities/villager.js:224-260`, `src/talk.js:124-141`: a poke's line and a remark unprompted
 - `src/entities/villager.js:194-222`, `src/ui/talk-panel.js:1-12`: Talk to opens the conversation (game #230)
 - `data/maps/valley.json:11730-11733`: the lane's dead moved down to (86, 212), so the first poke by day is the plain line, not a warning (game #220)
-- `src/net.js:1287-1288`, `src/net.js:632-636`, `src/interact.js:1533-1538`: a guest's poke goes to the host as a command, which pokes the villager there
+- `src/net.js:1279-1280`, `src/net.js:634-638`, `src/interact.js:1533-1538`: a guest's poke goes to the host as a command, which pokes the villager there
 
 {{navbox places}}

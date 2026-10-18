@@ -13,7 +13,7 @@ A **loaf of bread** is [[Food]]. Eating one adds {{n items.bread.hunger}} to you
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:16`: bread: its hunger and heal, no stack
 - `src/entities/player.js:91-103`: eating adds its hunger, and its heal (game #186)
 - `data/kit.json:6`: one in the starter sack

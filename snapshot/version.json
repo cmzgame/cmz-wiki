@@ -1,7 +1,7 @@
 {
-  "commit": "29a9f8ef29bde0cda3f6d55fe40eac6c056ad100",
-  "short": "29a9f8e",
-  "date": "2026-10-17T19:10:32-05:00",
-  "subject": "Merge #247, reviewed: the feel numbers in tuning (cameraFollow, blend, blendJump; validated), and arrows, thrown items, and the fireball drawn between steps with their height",
+  "commit": "3c0a24331c2c97beeb6083b63c951ec8b8ec1916",
+  "short": "3c0a243",
+  "date": "2026-10-17T19:50:31-05:00",
+  "subject": "Merge #254, reviewed: check(save) puts the world back (Survival as it found it); check(players)'s bite row tolerates regeneration (closes #132)",
   "ref": "origin/main"
 }

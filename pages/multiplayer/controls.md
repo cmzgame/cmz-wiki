@@ -82,7 +82,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/ui/screens.js:23-61`, `src/ui/screens.js:1079-1086`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:948`: Controls on the site's menu and on the pause menu
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
@@ -92,7 +92,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:776-794`: a right tap opens the menu, cancels a draw, puts the item down in Use mode
 - `src/input.js:69-73`: the middle button read
 - `src/main.js:80`, `src/main.js:1076-1083`, `src/input.js:88`: the wheel's zoom step and its pace, held only while an item is dragged, and taken by the world only from the canvas
-- `src/ui/inventory-panel.js:131`: the wheel rotates a dragged item
+- `src/ui/inventory-panel.js:137`: the wheel rotates a dragged item
 - `src/input.js:150-158`: W A S D and the arrows walk in screen directions
 - `src/main.js:1148`, `src/entities/player.js:349-353`: Shift sprints, and sprinting drains stamina
 - `src/player-controller.js:53`: Space shoves
@@ -104,18 +104,18 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:915-923`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
 - `src/main.js:1067-1069`, `src/ui/screens.js:30`: N, M, and X; the Controls screen's M line (game #235)
 - `src/main.js:874-895`: N and X refused with the bag open, "Close your bag to build."
-- `src/placement.js:288`, `src/ui/inventory-panel.js:125`: R turns a prop being placed or a dragged item
+- `src/placement.js:288`, `src/ui/inventory-panel.js:131`: R turns a prop being placed or a dragged item
 - `src/main.js:1076`, `src/view.js:95-109`: Z cycles the zooms, wrapping
 - `src/main.js:1065-1066`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
 - `src/main.js:851-869`, `src/ui/log.js:55`: Escape's order, a conversation and the map among the panels, and in the chat box
 - `src/main.js:851-852`, `src/ui/screens.js:253-282`: Escape out of a world steps back through the site
 - `src/ui/screens.js:851`, `src/ui/screens.js:898`, `src/ui/screens.js:911`: Enter in a screen's text field presses its button
 - `src/ui/screens.js:105-112`, `src/ui/screens.js:572-579`: Enter on Home opens the Worlds page; the first Escape in fullscreen leaves it
-- `src/ui/inventory-panel.js:75-134`, `src/ui/inventory-panel.js:651`: drag, rotate, shift-click, double-click, right-click in the panels
-- `src/ui/inventory-actions.js:168-183`, `src/interact.js:1321-1333`, `src/ui/screens.js:43`: a double-click equips from the bag and runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186); the Controls screen's line
+- `src/ui/inventory-panel.js:75-140`, `src/ui/inventory-panel.js:657`: drag, rotate, shift-click, double-click, right-click in the panels
+- `src/ui/inventory-actions.js:214-229`, `src/interact.js:1321-1333`, `src/ui/screens.js:43`: a double-click equips from the bag and runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186); the Controls screen's line
 - `src/ui/station-panel.js:35-44`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it
 - `src/main.js:1063`, `src/main.js:1085-1088`: V, L, ] and [
 - `src/clock.js:41-44`: the hour moved keeping the day
-- `src/net.js:870`, `src/net.js:1141`: the host sends its clock in every frame and a guest takes it
-- `src/net.js:1258-1298`: a guest's inputs and commands go to the host
+- `src/net.js:872`, `src/net.js:1129`: the host sends its clock in every frame and a guest takes it
+- `src/net.js:1250-1290`: a guest's inputs and commands go to the host
 - `src/main.js:214-223`: any input while stepped away brings you back and is spent on it

@@ -77,14 +77,14 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/tuning.json:52-55`: hunger's most, its drain time, and `fullAt`
 - `src/entities/player.js:83-103`: full at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the heal times the share of its hunger the stomach has room for; the dead eat nothing (game #186)
 - `src/entities/player.js:140-152`: hunger drains, or stays full with Survival off
 - `src/interact.js:1182-1191`: every way of eating comes to one place, which says "You are full."
 - `src/interact.js:1212-1246`: Eat from your bag or a container
 - `src/interact.js:1193-1207`: a food on the belt eaten by its key
-- `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:175-183`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
+- `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
 - `src/entities/player.js:154-159`: health comes back while fed and watered
 - `data/kit.json:6-7`: the starter bread and apples
 - `data/loot.json:2-4`: bread and cheese in chests, apples in barrels, apples and bread in the dead's pockets
@@ -94,7 +94,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `data/recipes.json`: flour at the millstones, the pumpkin pie at the oven (game #219)
 - `src/farming.js:233-259`, `tools/mapgen/valley.py:191`: potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
 - `data/items.json:16-18`, `data/items.json:41-46`, `data/items.json:54-57`, `data/items.json:63-65`: the foods, each with its hunger, thirst, and heal (game #186)
-- `src/ui/inventory-actions.js:263-269`, `src/ui/inventory-actions.js:361-372`: a guest's Eat, from a bag or a belt slot, runs on the host
+- `src/ui/inventory-actions.js:313-319`, `src/ui/inventory-actions.js:421-432`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default
 
 {{navbox items}}

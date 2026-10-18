@@ -9,6 +9,14 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-17: synced to `3c0a243`
+
+- **New in the game:** Take All (game #251). A button on a container's panel (a chest, a bag on the ground, a searched body, a station's output) moves everything into your bag, top row first, then onto a free belt slot where it fits; what fits neither stays, "Your bag is full." or "Your bag is full: the rest stays."; a bag with things in it stays, "A bag with things in it stays: empty it first."; with no bag, "You have no bag." A guest's works through the host. [[Inventory]] has a section on it; [[Containers]] and [[Corpses]] point to it.
+- **Changed in the game, corrected here:** a guest within reach of a fire that burns out is now told "A fire has gone out." (game #253). [[Fire]] and [[Chat log]] said a guest was not told.
+- **Changed in the game:** the other players, the dead, and the villagers on a guest's screen are drawn a few steps behind the host's frames and moved smoothly between them (game #249). [[Multiplayer]] says so.
+- **Changed in the game:** a note on a guest's held-out pose (game #252), and two of the game's own checks made to put the world back (game #254); nothing a player sees.
+- **On the wiki:** [[Valley day]] has Take All, smoother bodies on a guest, and the fire's word to a guest, and nothing is left under Coming next. The pages of the last sync had their Sources moved on to the new game.
+
 ## 2026-10-17: synced to `29a9f8e`
 
 - **New in the game:** hiding a worn item (game #243). An eye on each worn slot of the character screen hides that item's look on your figure, for everyone, and keeps every use: a belt's slots and keys, a belt torch's light, a bag's grid. The choice stays with the slot, and a guest's eye works through the host. [[Clothing]] has a section on it; [[Inventory]], [[Belt]], and [[Interface]] point to it.

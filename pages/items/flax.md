@@ -15,7 +15,7 @@ Flax is not grain: the [[Scythe]] does not cut it.
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:65-66`: flax seed and flax, their tags and stacks
 - `data/crops.json`: the flax crop: its stage days, its harvest, its seed, two seeds back, no `grain` flag (game #216)
 - `data/sprites/crop_flax_0.json` (and `_1`, `_2`): its three stages, gatherables like the other crops

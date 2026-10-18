@@ -57,7 +57,7 @@ A guest casts the same way: their Cast the line is sent to the host with the wat
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/fishing.json`: the cast's reach and wait, a table per named water (each one's miss chance and weighted catch), the default table
 - `src/fishing.js:1-81`: the rod is any item in a hand listing the verb `fish`; the table by the water's body, else the default; the wait rolled; the `fish` verb: the refusals, the miss, the weighted catch into the bag or at the feet, and its line
 - `src/interact.js:722-745`: Cast the line on a water tile's menu only with a rod in hand, a timed action whose wait is rolled as it starts; the timed action ends if you walk away

@@ -21,7 +21,7 @@ Some of the dead walk about the workings, and one stands by the miners' hut.
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `tools/mapgen/valley.py:525-540`, `data/maps/valley.json:5396-5720`: the cliff (stone wall until a cliff is drawn), the mine's mouth, spoil heaps, winch, tramway, ore cart, six ore rocks; the miners' hut, its chest naming its own table (game #210)
 - `data/loot.json:12`, `data/loot.json:14`: the hut's chest (a pickaxe and ore) and the ore cart's ore
 - `data/sprites/ore_rock.json`: an ore rock mined for ore, spent for days

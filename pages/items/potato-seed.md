@@ -12,7 +12,7 @@ A **potato seed** is planted in tilled soil to grow potato (see [[Farming]]). It
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:60-65`: the six seeds, tagged `seed`, and their stacks
 - `data/crops.json`: the potato crop: its seed, its harvest, its seeds back, and its harvest tool (game #222)
 - `src/farming.js:179-202`, `src/farming.js:233-259`: planted on tilled soil; the harvest gives the seeds back

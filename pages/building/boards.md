@@ -58,12 +58,12 @@ A guest's tap and hold of B are carried out by the host, which checks that playe
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/interact.js:54-55`: the nailing and pulling times
 - `src/map.js:577-580`: a board's health, three boards per side
 - `src/map.js:760-778`: a board added on the near side, pulled from it
 - `src/interact.js:479-546`: the board and pull actions, from the side you stand on; each asks for the board tool carried, greyed "(need a smith's hammer)" without it; one plank spent; the pulled plank back to the bag or at your feet (game #222)
-- `data/tuning.json:109`, `src/inventory.js:88-108`: the board tool, `build`, a smith's hammer carried in a hand, on the belt, or in the bag
+- `data/tuning.json:112`, `src/inventory.js:88-108`: the board tool, `build`, a smith's hammer carried in a hand, on the belt, or in the bag
 - `src/inventory.js:113-135`: a plank counted and taken, bag then belt then hands
 - `src/interact.js:1143-1157`: B and hold B; "You need a smith's hammer.", "You need a plank."
 - `src/placement.js:144-150`, `src/settings.js:63`: Free building waives the build tools, not the boards'
@@ -73,4 +73,4 @@ A guest's tap and hold of B are carried out by the host, which checks that playe
 - `src/map.js:779-809`: a broken opening keeps its boards, and the dead break them one at a time
 - `src/interact.js:489-493`: the menu's count of boards on each side
 - `src/render/walls.js:19-32`: only the near face's boards are drawn
-- `src/interact.js:1125-1157`, `src/net.js:425`: B's tap and hold, from a guest's snapshot, performed by the host
+- `src/interact.js:1125-1157`, `src/net.js:427`: B's tap and hold, from a guest's snapshot, performed by the host

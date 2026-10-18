@@ -12,7 +12,7 @@ A **flax seed** is planted in tilled soil to grow [[Flax]] (see [[Farming]]). It
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:65`: the flax seed, tagged `seed`
 - `data/crops.json`: the flax crop: its seed, its harvest, its seeds back (game #216)
 - `data/loot.json:11`, `tools/mapgen/valley.py:360`: the weaver's chest, with flax seed and a knife

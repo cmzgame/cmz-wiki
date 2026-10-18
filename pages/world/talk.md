@@ -58,22 +58,22 @@ Talk runs on the host. A guest's poke goes to the host as a command, the host pi
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/talk.js:1-6`: talk reads the world and never writes it; no chance, the lines in turn (game #220)
 - `src/talk.js:33-47`, `src/talk.js:55-73`, `src/talk.js:100-122`: the conditions (time, the dead near or in the world, a villager alive or dead, indoors, hurt, what the talker holds, hungry, thirsty, tired, bleeding)
 - `src/talk.js:124-141`: the first group that holds, its lines in turn by a counter on the villager; an unprompted remark only from an `ambient` group
-- `src/entities/villager.js:246-260`, `data/tuning.json:81-82`: a poke stops them, turns them to you, says a line or the map line, and holds them for the talk time or the line
-- `src/entities/villager.js:224-244`, `data/tuning.json:86-88`: a remark unprompted with a living player within `barkRadius`, not twice inside `barkCooldown`, never talking or dead, a wounded one too (game #230); turning toward the player when idle
+- `src/entities/villager.js:246-260`, `data/tuning.json:84-85`: a poke stops them, turns them to you, says a line or the map line, and holds them for the talk time or the line
+- `src/entities/villager.js:224-244`, `data/tuning.json:89-91`: a remark unprompted with a living player within `barkRadius`, not twice inside `barkCooldown`, never talking or dead, a wounded one too (game #230); turning toward the player when idle
 - `src/entities/villager.js:44`, `src/entities/villager.js:32-35`: the map line, "Hey!" without one; a villager's talk id is the map's `talk`, else the name lowercased
 - `src/entities/character.js:125-127`, `src/game.js:113-126`, `src/game.js:603`: a line's time from its length, aged in the world's step on the host and cleared when it runs out (game #220, closing game #154)
 - `data/talk/`: the guide's file and the seven others; no file for the Miller
 - `src/talk.js:143-157`: a conversation's node read from the file, its lines and the options whose `when` holds
 - `src/interact.js:1579-1595`, `src/interact.js:922-926`, `src/ui/screens.js:28`: Talk to on a villager's menu, a simple action, offered only with a clear line; E talks to the nearest villager (game #230)
-- `src/entities/villager.js:194-222`, `data/tuning.json:89-92`: Talk to starts a conversation unless the villager is dead, out of the clear line, or has the dead within `talkDeadRadius` or no file (then a bark); the villager stops, faces the talker, and holds them; a talker leaves
+- `src/entities/villager.js:194-222`, `data/tuning.json:92-95`: Talk to starts a conversation unless the villager is dead, out of the clear line, or has the dead within `talkDeadRadius` or no file (then a bark); the villager stops, faces the talker, and holds them; a talker leaves
 - `src/entities/villager.js:173-184`, `src/entities/villager.js:115-117`: the talkers kept: one past `talkReach` plus `talkWalkAway`, dead, or out of the line dropped; the villager stands while any talks, then idles `talkIdleSeconds`
 - `src/ui/talk-panel.js:1-12`, `src/ui/talk-panel.js:65-128`: the panel on the kit, Continue..., the options with their wiki links in a new tab, That's all for now, each line in the talker's log; it closes when the villager is hurt, turned, or dead, or another villager's talk opens
 - `src/main.js:851-862`: Escape closes it in the panels' order
-- `src/host.js:258-260`, `src/net.js:627-630`, `src/net.js:1277-1278`, `src/main.js:1780-1784`: a guest's conversation begun on the host, told to its screen; its panel's closing told back
-- `src/net.js:632-636`, `src/entities/villager.js:48-49`: a guest's poke on the host; the bark counter and clock kept with the villager
+- `src/host.js:267-269`, `src/net.js:629-632`, `src/net.js:1269-1270`, `src/main.js:1780-1784`: a guest's conversation begun on the host, told to its screen; its panel's closing told back
+- `src/net.js:634-638`, `src/entities/villager.js:48-49`: a guest's poke on the host; the bark counter and clock kept with the villager
 
 {{navbox places}}

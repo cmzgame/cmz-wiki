@@ -49,7 +49,7 @@ Neither lights a hearth, a fireplace, an oven, or a forge ("That cannot be lit."
 
 ### Going out
 
-A fire burns one unit every so many game hours. When the last unit burns, it goes out, and the host's own player, within {{n tuning.world.fireOutRadius tiles}} of it, reads "A fire has gone out." (a guest is not told). Most fires in the valley start cold; a few fireplaces and the baker's oven start lit.
+A fire burns one unit every so many game hours. When the last unit burns, it goes out, and the host's own player, within {{n tuning.world.fireOutRadius tiles}} of it, reads "A fire has gone out.", the host's own player and each guest alike. Most fires in the valley start cold; a few fireplaces and the baker's oven start lit.
 
 A recipe that needs the fire waits while it is out and carries on when it is lit again (see [[Crafting]]).
 
@@ -84,7 +84,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/sprites/campfire.json`: the campfire's fuel, hours a unit, most, cooking
 - `data/sprites/hearth.json`: the hearth's, and it lights its room
 - `data/sprites/fireplace.json:30-34`: the fireplace's
@@ -98,7 +98,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `src/interact.js:881-928`: E takes only a simple action
 - `src/interact.js:369-370`: hours left rounded, or "under an hour"
 - `src/map.js:97-115`: a fire burns a unit every so many hours and goes out
-- `src/main.js:1671-1673`, `data/tuning.json:105`: "A fire has gone out." within `fireOutRadius`, on the host's own screen only (game #189)
+- `src/main.js:1671-1673`, `src/host.js:239-247`, `data/tuning.json:108`: "A fire has gone out." within `fireOutRadius`, on the host's own screen (game #189) and each guest's (game #253)
 - `data/maps/valley.json`: which fires start lit
 - `src/stations.js:204-217`: a job waits while the fire is out
 - `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
@@ -111,9 +111,9 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel, never a hearth, fireplace, oven, or forge
 - `data/interactions.json`, `src/burn.js:56`, `src/burn.js:79-176`, `src/map.js:284-312`: the `light` verb: a tinderbox or a lit torch lights a campfire with fuel, in reach and sight; never a hearth, an oven, or a forge; an unlit torch lit from any burning fire, a lit torch on a post or in a bracket (game #172), or a lantern (game #188); the refusals
 - `data/items.json:2`: the torch's radius
-- `data/tuning.json:99-100`: the belt torch and two torches
+- `data/tuning.json:102-103`: the belt torch and two torches
 - `src/map.js:104-106`: a guest's fuel refreshed at each whole unit
-- `src/net.js:597-605`, `src/host.js:268-272`: a guest's menu choice performed on the host as that player, its refusal to their screen
+- `src/net.js:599-607`, `src/host.js:277-281`: a guest's menu choice performed on the host as that player, its refusal to their screen
 - `data/interactions.json`, `src/interactions.js:34-43`, `src/burn.js:56-77`: arrows used on any fire that burns fuel, refused when it is out
 
 {{navbox making}}

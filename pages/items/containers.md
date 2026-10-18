@@ -16,7 +16,7 @@ A **container** is a piece of furniture that holds items in a grid: chests, barr
 
 Right-click a container, or press `E` beside it, and choose **Search**; it must be in reach with a clear line, never through a wall (see [[Rooms#Nothing in reach through a wall|Rooms]]). A bar fills over {{n census.constants.interact.SEARCH_TIME}} second, and then the container's loot table is rolled into its grid. What does not fit is never made. After that first search the container just **Open**s, and holds whatever was left in it.
 
-An open container's grid shows beside your bag. It stays open while you are within {{n tuning.world.containerCloseDist}} tiles with a clear line to it, and closes when you walk away or a wall, a shut door, or shutters come between. From an open container you can eat, drink, equip clothing and bags, and apply bandages directly; to equip something into a hand, take it into your bag first. **Take** on an item's menu moves it to your bag; **Store in** on an item in your bag moves it across. Shift-click and double-click send items across too.
+An open container's grid shows beside your bag. It stays open while you are within {{n tuning.world.containerCloseDist}} tiles with a clear line to it, and closes when you walk away or a wall, a shut door, or shutters come between. From an open container you can eat, drink, equip clothing and bags, and apply bandages directly; to equip something into a hand, take it into your bag first. **Take All** in the panel's header takes everything that fits (see [[Inventory#Take All|Inventory]]). **Take** on an item's menu moves it to your bag; **Store in** on an item in your bag moves it across. Shift-click and double-click send items across too.
 
 A container can hold a bag or a belt only while that bag or belt is empty (the one container rule; see [[Inventory]]).
 
@@ -69,6 +69,7 @@ A search chosen by a guest is carried out by the host. What a container holds is
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/ui/inventory-actions.js`, `takeAllFrom`, `src/ui/inventory-panel.js`: Take All on a container's panel (game #251)
 - `src/reach.js`, `src/main.js`, `src/interact.js` `runAction`: a container searched or opened only within reach and a clear line, and closed when a wall comes between (game #227)
 - `data/sprites/chest.json`: a container prop with a loot table
 - `src/interact.js:323-345`: Search, then Open

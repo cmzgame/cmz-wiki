@@ -41,6 +41,10 @@ In a panel:
 
 An item that has lost [[Durability|durability]] shows a bar on its icon and "(N% left)" in its name.
 
+### Take All
+
+An open container's panel has a **Take All** button in its header, beside Tidy and the X: a chest, a shelf, or a barrel, a bag on the ground, a searched body, or a station's output. One click moves everything into your bag, top row first, left to right. What does not fit the bag but can go on the belt (something held in a hand, a food, a waterskin, the tinderbox) goes to a free belt slot, and what fits neither stays where it was: "Your bag is full.", or "Your bag is full: the rest stays." when some of it moved. A stack that fits in part goes in as far as it fits. A bag with things in it stays, because a bag holds a bag only when it is empty: "A bag with things in it stays: empty it first." With no bag on your back it says "You have no bag." It is never on your own bag or the character screen.
+
 ### The one container rule
 
 A container (any item with a grid or belt slots, so every bag and every belt) can go inside another container only while it is empty. A full bag must be equipped or dropped. The menus say so: "(empty it first)", or "(empty it first, or equip it)"; dragging a full one into a grid says "Empty it first, or equip it."
@@ -65,7 +69,7 @@ A single item that can be held goes into a free hand first, then the bag, then t
 
 ## With friends
 
-A guest's panels show their own character's bag, and every drag, drop, double-click, Tidy, Rotate, and menu entry is sent to the host, who carries it out for that player, by the same rules as the host's own: an item dragged to a belt, worn, or hand slot it cannot go in is refused, with "That does not go there." A container that is not the guest's own must be within reach of the guest's character on the host. Items on the floor are the same for everyone.
+A guest's panels show their own character's bag, and every drag, drop, double-click, Tidy, Take All, Rotate, and menu entry is sent to the host, who carries it out for that player, by the same rules as the host's own: an item dragged to a belt, worn, or hand slot it cannot go in is refused, with "That does not go there." A container that is not the guest's own must be within reach of the guest's character on the host. Items on the floor are the same for everyone.
 
 ## See also
 
@@ -76,24 +80,26 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
-- `src/inventory.js:184-198`, `src/ui/inventory-panel.js:283-291`: the eye on a worn slot (game #243)
+<!-- sources at 3c0a243 -->
+- `src/inventory.js:184-198`, `src/ui/inventory-panel.js:289-297`: the eye on a worn slot (game #243)
 - `src/main.js:1098-1183`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
 - `src/inventory.js:43`: your grid is the bag on your back
 - `src/inventory.js:27-32`: a bag's grid travels with the bag
 - `src/grid.js:45-56`: the placement scan, unrotated first
-- `src/ui/inventory-panel.js:125-133`: R, a right click, or the wheel turns a dragged item
-- `src/ui/inventory-panel.js:695-709`: Rotate for non-square items, greyed when it will not fit
+- `src/ui/inventory-panel.js:131-139`: R, a right click, or the wheel turns a dragged item
+- `src/ui/inventory-panel.js:701-715`: Rotate for non-square items, greyed when it will not fit
 - `data/items.json`: each item's `stack`
 - `src/grid.js:58-84`: stacks merge on equal fill and top up first
 - `src/grid.js:158-181`: Tidy, biggest first, nothing moves on failure
+- `src/ui/inventory-actions.js:46-83`, `src/ui/inventory-actions.js:188-194`, `src/ui/inventory-panel.js:107-112`, `src/ui/inventory-panel.js:279`: Take All on a container's panel: the grid's order into the bag, then a free belt slot that takes it; a stack in part; a bag with things in it stays; its words (game #251)
+- `src/ui/inventory-actions.js:300-303`, `src/ui/inventory-actions.js:370-379`: a guest's Take All by the container's address, run on the host with the same reach, a body redrawn, the chest's grid sent
 - `src/main.js:909-923`: Tab and C, "No bag on your back.", "Your hands are full."
-- `src/ui/inventory-panel.js:353-372`: panels dragged by the header, remembered
-- `src/ui/inventory-panel.js:75-90`, `src/ui/inventory-actions.js:167-183`, `src/interact.js:1321-1333`: double-click equips from the bag, runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186), or sends across
-- `src/ui/inventory-panel.js:686`: shift-click sends across
+- `src/ui/inventory-panel.js:359-378`: panels dragged by the header, remembered
+- `src/ui/inventory-panel.js:75-90`, `src/ui/inventory-actions.js:213-229`, `src/interact.js:1321-1333`: double-click equips from the bag, runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186), or sends across
+- `src/ui/inventory-panel.js:692`: shift-click sends across
 - `src/interact.js:1212-1289`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
-- `src/ui/inventory-panel.js:251-252`: the durability bar (the code's `wear`) and "(N% left)"
-- `src/inventory.js:199-213`, `src/interact.js:244`, `src/ui/inventory-actions.js:130`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
+- `src/ui/inventory-panel.js:257-258`: the durability bar (the code's `wear`) and "(N% left)"
+- `src/inventory.js:199-213`, `src/interact.js:244`, `src/ui/inventory-actions.js:169`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
 - `data/items.json:34-36`: the three bags' grids
 - `data/kit.json:3`: the starting sack
 - `data/loot.json:2`: the rucksack in the chest table
@@ -105,6 +111,6 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/interact.js:891-904`: a loose item beats a container
 - `src/interact.js:202-268`: Pick up and Equip on the floor; only an empty bag is picked up (game commit 9a450f2)
 - `src/interact.js:167-172`: a free hand first; "No room in your bag.", "You have no bag."
-- `src/ui/inventory-actions.js:208-380`: a guest's panel actions run on the host
-- `src/ui/inventory-actions.js:63-77`, `src/ui/inventory-actions.js:327-335`: a guest's slot command meets the host's `canPlace`; "That does not go there." (game #226)
-- `src/ui/inventory-actions.js:288-296`: a container not the guest's own must be within reach
+- `src/ui/inventory-actions.js:254-436`: a guest's panel actions run on the host
+- `src/ui/inventory-actions.js:102-116`, `src/ui/inventory-actions.js:387-395`: a guest's slot command meets the host's `canPlace`; "That does not go there." (game #226)
+- `src/ui/inventory-actions.js:338-346`: a container not the guest's own must be within reach

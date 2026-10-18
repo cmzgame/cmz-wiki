@@ -12,7 +12,7 @@ A **perch** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the 
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:41-46`: the perch and its grilled kind: hunger, heal, stack, tags
 - `data/fishing.json`: the waters that catch it, and how often
 - `src/fishing.js:57-81`: a catch into the bag, or at your feet when it is full

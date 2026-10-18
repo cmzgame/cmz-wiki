@@ -21,7 +21,7 @@ Some of the dead walk the quarry floor, and one stands by the hut.
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `tools/mapgen/valley.py:542-558`, `data/maps/valley.json:11194-11435`: the pit, the stone faces on three sides, the dirt floor, four stacks of cut stone, a crane, eight rocks, the flooded pit named a pond, a wheelbarrow; the quarryman's hut and its chest (game #210)
 - `data/loot.json:13`, `data/loot.json:15`: the hut's chest (a pickaxe and a hammer) and the stacks' stone
 - `tools/mapgen/valley.py:600`: the dead about the quarry

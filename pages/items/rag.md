@@ -13,7 +13,7 @@ A **rag** is torn from a garment at the [[Workbench]]: any cap, the hat, a tunic
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/items.json:68`: the rag, tagged `cloth` (game #216)
 - `data/recipes.json:23-124`: a garment torn into rags at the workbench, each with `uses: cut`, a knife carried (game #222)
 - `src/stations.js:145-154`, `src/inventory.js:88-108`, `src/ui/station-panel.js:145`: a recipe's `uses` wants a tool with that verb anywhere on you; "You need a belt knife."; the panel's "needs a ... on you"

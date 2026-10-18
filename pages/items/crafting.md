@@ -71,7 +71,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/stations.js:46-53`: which props are stations, and the cooking fires
 - `data/sprites/loom.json`, `data/sprites/charcoal_clamp.json`: the loom and the clamp are stations (game #210, #216)
 - `src/ui/station-panel.js:155`: "Nothing to make here yet."
@@ -99,8 +99,8 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/stations.js:168-204`: output to the box, or the floor beside when full; furniture placed beside the station
 - `src/stations.js:178-204`: never on a door's tiles (game commit 82106de)
 - `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
-- `src/net.js:1296-1298`: Make sent to the host
+- `src/net.js:1288-1290`: Make sent to the host
 - `src/host.js:183-189`: the host runs it as the craft verb for that player
-- `src/net.js:881`: the queues in each frame
+- `src/net.js:883`: the queues in each frame
 
 {{navbox making}}

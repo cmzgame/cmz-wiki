@@ -67,7 +67,7 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/sprites/lantern_post.json`: the lantern post: its light's radius, the one number for every lantern, not carried
 - `src/map.js:138-141`, `src/map.js:208-215`, `src/light.js:63-67`: a bracket holds a lantern or a torch; a lantern's light steady, never out, at the post's radius
 - `src/interact.js:416`: a lantern bracket offers no action
@@ -86,11 +86,11 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `src/map.js:253-283`: what a mounted torch keeps: its wear and whether it is lit
 - `src/inventory.js:151-161`: a torch to mount is found in the hands, the belt, or the bag
 - `src/map.js:186-205`, `src/archery.js:289-292`: a fireball's landing lights a mounted torch that is out, within reach, with no wall between
-- `src/map.js:149-184`, `data/tuning.json:104`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
-- `src/host.js:232-237`, `src/main.js:1680-1682`, `data/tuning.json:107`: "A torch burns out." to players within `torchSpentRadius`
+- `src/map.js:149-184`, `data/tuning.json:107`: a lit mounted torch burns at the wall rate, among the loaded chunks; spent, gone with "A torch burns out."
+- `src/host.js:232-237`, `src/main.js:1680-1682`, `data/tuning.json:110`: "A torch burns out." to players within `torchSpentRadius`
 - `tools/mapgen/valley.py:101-114`, `tools/mapgen/valley.py:207`, `tools/mapgen/valley.py:263`, `tools/mapgen/valley.py:278`, `tools/mapgen/valley.py:390`: the village's lights lanterns, the square's three lamps, the chapel's, the crypt's, and the shut cottage's brackets empty
 - `data/maps/valley.json:2061-2072`, `data/maps/valley.json:4100-4105`: the inn's and the toll house's lanterns outside
 - `data/maps/valley.json:12029-12050`: the square's three lantern posts
 - `src/interact.js:73-130`: a guest's take or mount run on the host by address
-- `src/main.js:1021-1032`, `src/ui/inventory-actions.js:397-399`: a guest's Use on a bracket by its tile and edge, run on the host
+- `src/main.js:1021-1032`, `src/ui/inventory-actions.js:457-459`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests

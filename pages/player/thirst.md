@@ -63,12 +63,12 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/tuning.json:53`, `data/tuning.json:56`: the maximum and the drain time
 - `src/entities/player.js:148`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
 - `src/interact.js:1248-1249`, `src/entities/player.js:106-114`, `data/tuning.json:59`: the "Drink" entry and the sip
-- `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:175-183`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
+- `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
 - `src/entities/player.js:115-133`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
 - `src/game.js:615-618`, `src/main.js:1686-1688`: in the world's step, the word on the drinker's screen
@@ -80,6 +80,6 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 - `src/entities/player.js:154-156`: Thirsty stops regeneration
 - `src/entities/player.js:162-167`, `data/tuning.json:69`: Parched slows stamina recovery
 - `src/entities/player.js:152`, `data/tuning.json:58`: dehydration damage
-- `src/ui/inventory-actions.js:224`, `src/ui/inventory-actions.js:361-372`: a guest's menu choice is run by the host
-- `src/host.js:239-242`: a guest's sip by itself, its word sent to the guest
+- `src/ui/inventory-actions.js:270`, `src/ui/inventory-actions.js:421-432`: a guest's menu choice is run by the host
+- `src/host.js:248-251`: a guest's sip by itself, its word sent to the guest
 - `src/entities/player.js:140-145`: Survival off holds thirst full

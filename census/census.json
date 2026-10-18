@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "29a9f8ef29bde0cda3f6d55fe40eac6c056ad100",
-  "short": "29a9f8e",
-  "date": "2026-10-17T19:10:32-05:00",
-  "subject": "Merge #247, reviewed: the feel numbers in tuning (cameraFollow, blend, blendJump; validated), and arrows, thrown items, and the fireball drawn between steps with their height",
+  "commit": "3c0a24331c2c97beeb6083b63c951ec8b8ec1916",
+  "short": "3c0a243",
+  "date": "2026-10-17T19:50:31-05:00",
+  "subject": "Merge #254, reviewed: check(save) puts the world back (Survival as it found it); check(players)'s bite row tolerates regeneration (closes #132)",
   "ref": "origin/main"
  },
  "counts": {
@@ -26,8 +26,8 @@
   "verbs": 14,
   "menuLabels": 63,
   "events": 31,
-  "checks": 50,
-  "modules": 96
+  "checks": 51,
+  "modules": 97
  },
  "items": [
   {
@@ -5967,7 +5967,10 @@
   "feel": {
    "cameraFollow": 10,
    "blend": true,
-   "blendJump": 1.5
+   "blendJump": 1.5,
+   "netDelaySteps": 4,
+   "netSlew": 0.1,
+   "netJump": 1.5
   },
   "villager": {
    "speed": 1.4,
@@ -6852,7 +6855,7 @@
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:701"
+    "ui/inventory-panel.js:707"
    ]
   },
   {
@@ -7391,6 +7394,7 @@
   "slots",
   "sway",
   "sync",
+  "takeall",
   "talk",
   "tools",
   "torch",
@@ -7420,7 +7424,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1412
+   "lines": 1404
   },
   {
    "path": "ui/screens.js",
@@ -7440,7 +7444,7 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 723
+   "lines": 729
   },
   {
    "path": "game.js",
@@ -7463,6 +7467,10 @@
    "lines": 610
   },
   {
+   "path": "ui/inventory-actions.js",
+   "lines": 477
+  },
+  {
    "path": "render/walls.js",
    "lines": 476
   },
@@ -7473,10 +7481,6 @@
   {
    "path": "light.js",
    "lines": 440
-  },
-  {
-   "path": "ui/inventory-actions.js",
-   "lines": 417
   },
   {
    "path": "ui/map-panel.js",
@@ -7508,7 +7512,7 @@
   },
   {
    "path": "host.js",
-   "lines": 279
+   "lines": 288
   },
   {
    "path": "entities/villager.js",
@@ -7584,7 +7588,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 164
+   "lines": 167
   },
   {
    "path": "figure/wardrobe.js",
@@ -7653,6 +7657,10 @@
   {
    "path": "pathfind.js",
    "lines": 102
+  },
+  {
+   "path": "netsmooth.js",
+   "lines": 101
   },
   {
    "path": "iso.js",
@@ -7967,6 +7975,9 @@
    "JOIN_WAIT_MS": 10000,
    "FRAME_EVERY": 3,
    "EARLY_MAX": 600
+  },
+  "netsmooth": {
+   "KEEP": 12
   },
   "pathfind": {
    "KEY_OFF": 32768

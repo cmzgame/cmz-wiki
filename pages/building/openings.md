@@ -67,7 +67,7 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/map.js:733-744`: a wall record with its kind and state
 - `src/map.js:817-826`: only a door, open or broken and unboarded, passes a body; a window never does
 - `src/map.js:1358-1372`: what a door and shutters pass of light and sight
@@ -80,11 +80,11 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 - `src/placement.js:97-117`: nothing put down on a door's tiles
 - `src/stations.js:178-185`: made furniture lands off a door's tiles
 - `src/map.js:2072-2080`: a fence's gates are doors
-- `tools/check.js:137-139`, `tools/check.js:205-296`, `tools/mapgen/valley.py:106-113`: every map's door tiles clear and reachable on foot, and every container, station, and bed with a tile to stand on (game #227)
+- `tools/check.js:137-139`, `tools/check.js:227-318`, `tools/mapgen/valley.py:106-113`: every map's door tiles clear and reachable on foot, and every container, station, and bed with a tile to stand on (game #227)
 - `src/interact.js:1010-1023`, `src/interact.js:1113-1120`: E acts on its release however long it was held; no hold of E
 - `src/map.js:811-817`, `src/map.js:842-885`: the dead batter a shut or boarded window from outside, never pass it
 - `src/entities/zombie.js:607-622`, `src/visibility.js:12-48`, `data/tuning.json`: `zombie.contact`: a bite needs the contact distance and a clear line, which an open window passes (game #171)
-- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:103`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
+- `src/light.js:31`, `src/light.js:130-168`, `data/tuning.json:106`: a room's daylight from its openings: each open or broken one lights `daylightTiles` tiles of the room fully by day, shut ones only their leak (game #150)
 - `src/map.js:792-797`: what a broken door and broken shutters become
 - `src/map.js:596-606`, `src/map.js:631-659`, `src/placement.js:199-205`: a door or window built over a plain wall, of its material, a door over a fence; a new one over a broken one of its kind, whole and shut; never over a whole one
 - `src/map.js:661-676`, `src/placement.js:435`: the removal tool puts the wall back

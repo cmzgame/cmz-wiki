@@ -100,11 +100,29 @@ An eye on each worn slot of the character screen hides that item's look on your 
 
 Read: [[Clothing]], [[Belt]].
 
+### Take All (game #251)
+
+A **Take All** button on a container's panel (a chest, a bag on the ground, a body, a station's output) moves everything into your bag, then onto a free belt slot where it fits; what fits neither stays, with a word to say so. A bag with things in it stays put.
+
+Read: [[Inventory]], [[Containers]], [[Corpses]].
+
 ### Smoother movement (game #244, #247)
 
 Characters, the camera, and arrows, thrown things, and the fireball are now drawn between the world's steps, so the world scrolls evenly on any display. The picture runs up to one step, a sixtieth of a second, behind the world.
 
 Read: [[Controls]].
+
+### Smoother bodies on a guest (game #249)
+
+On a guest's screen, the other players, the dead, and the villagers are drawn a few steps behind the host's frames and moved smoothly between them, so they walk evenly.
+
+Read: [[Multiplayer]].
+
+### A guest told when a fire goes out (game #253)
+
+A guest within {{n tuning.world.fireOutRadius tiles}} of a fire that burns out now reads "A fire has gone out.", as the host does.
+
+Read: [[Fire]], [[Chat log]].
 
 ## Food and the body
 
@@ -170,13 +188,7 @@ Read: [[Chat log]], [[Sight]].
 
 ## Coming next
 
-Built, and in review in the game, not merged yet; their pages come with their merge.
-
-- **Smoother bodies on a guest** (game #249): other players, the dead, and villagers drawn a fixed moment behind the host's frames, so they move evenly on a guest's screen.
-- **Take All** (game #251): one button on a container's panel takes everything that fits.
-- **A guest told when a fire goes out** (game #253).
-
-[[Planned]] lists what is further off.
+Nothing is in review in the game just now. [[Planned]] lists what is to come.
 
 ## See also
 
@@ -184,7 +196,7 @@ Built, and in review in the game, not merged yet; their pages come with their me
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/entities/player.js:87-88`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:191`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-51`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
@@ -195,7 +207,7 @@ Built, and in review in the game, not merged yet; their pages come with their me
 - `src/map.js:709-735`, `docs/09-openings.md`: the dead strike fences (game #185)
 - `src/entities/villager.js:45`, `src/entities/zombie.js:357`: immune villagers (game #187)
 - `src/burn.js:79-176`, `src/interactions.js:58`: lanterns and torches (game #188, #189)
-- `src/ui/speech.js:68-89`, `data/tuning.json:120`: the groan's radius and gap (game #189)
+- `src/ui/speech.js:68-89`, `data/tuning.json:123`: the groan's radius and gap (game #189)
 - `src/mining.js`, `src/bucket.js`, `src/farming.js:257-292`, `data/recipes.json`, `data/loot.json`: mining, charcoal, cloth, the bucket, and the scythe (game #210, #216, #211, #213)
 - `tools/mapgen/valley.py:408-523`, `data/loot.json:8-10`: the farms and the mill (game #219)
 - `src/inventory.js:88-108`, `data/recipes.json`, `data/crops.json`, `data/build.json`, `data/loot.json:6-7`, `src/settings.js:63`: the tool rule, the cottage's shovel, the joiner's hammer, Free building (game #222)
@@ -205,4 +217,4 @@ Built, and in review in the game, not merged yet; their pages come with their me
 - `src/chart.js`, `src/ui/map-panel.js`: the map (game #234, #235)
 - `data/items.json:27`, `data/hair/mohawk.json`: the hat's painted art, the mohawk redrawn (game #229, #231)
 - `src/inventory.js:184-198`, `src/interp.js`, `data/tuning.json`: hiding a worn item, the draw between steps and the feel numbers (game #243, #244, #247)
-- The game's open pull requests #249, #251, and #253: what comes next
+- `src/ui/inventory-actions.js:46-83`, `src/netsmooth.js`, `src/host.js:239-247`: Take All, smoother bodies on a guest, a guest told a fire has gone out (game #251, #249, #253)

@@ -59,7 +59,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/reach.js:1-33`: one reach test for every player action: distance to the nearest tile and a clear line (game #227)
 - `src/interact.js:946-1002`: a timed action cancelled when a wall comes between; an action behind a wall walks round to a tile with a clear line, "Can't get there from here." with none
 - `src/stations.js:62-80`, `src/main.js:937-940`: a station's ingredients only from chests in reach and sight; an open container closes behind a wall
@@ -69,7 +69,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 - `src/map.js:1442-1454`, `src/map.js:1775-1777`: a see-through wall bounds no room
 - `src/map.js:1830-1858`: rooms refound only on either side of a changed edge
 - `src/entities/player.js:229-230`: a bed outdoors says "Not out here."; a siege held on the player refuses it
-- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:103`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
+- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:106`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
 - `src/map.js:843-878`: the dead choose a room to break
 - `src/entities/zombie.js:421-460`, `src/entities/zombie.js:847-914`: the siege, about a house the dead saw a player go into, until dawn
 - `src/map.js:733-744`, `src/map.js:819-826`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered

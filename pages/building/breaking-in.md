@@ -118,7 +118,7 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/entities/zombie.js:638-659`: a way in chosen on the step the path fails; out of the zombie's own room, else into the target's
 - `src/entities/zombie.js:307-309`, `src/rules.js:13-14`, `src/settings.js:12`: hunting needs Zombie aggro, on by default
 - `src/map.js:843-878`: a room's openings to break, nearest first, the door towards the target's room first from inside, shut or boarded windows only from outside, an opening already open never one

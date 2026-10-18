@@ -24,7 +24,7 @@ It is light and quick to find, but weak, and it breaks fast.
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `data/loot.json:4`, `data/loot.json:19`: the stick in the `body` and `wild` tables
 - `data/recipes.json:200-215`: sticks from a plank at the workbench, with `split`, a hatchet, carried (game #222); the recipes that take sticks
 - `data/items.json:7`: the stick's `weapon` block, no `knockdown` of its own

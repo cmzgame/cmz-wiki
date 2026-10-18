@@ -62,7 +62,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `src/save.js`: a world as a save in the browser that made it
 - `src/ui/screens.js:197-220`, `src/main.js:1266-1268`: nothing runs until a world is chosen; out of a world, the site
 - `index.html:51`, `src/ui/screens.js:778`: Play and Play in your browser open the Worlds page (game #120)
@@ -83,5 +83,5 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 - `src/main.js:362-413`: Play reads the save behind the loading screen, opens to friends again if it was open
 - `src/ui/screens.js:304`: Delete's confirmation
 - `src/ui/screens.js:289-295`, `src/main.js:462-498`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
-- `src/ui/screens.js:489-505`, `src/ui/screens.js:737-741`, `src/net.js:396-403`: the dots asked of the relay
+- `src/ui/screens.js:489-505`, `src/ui/screens.js:737-741`, `src/net.js:398-405`: the dots asked of the relay
 - `src/main.js:450-451`: a guest never saves

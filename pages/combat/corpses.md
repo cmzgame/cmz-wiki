@@ -16,7 +16,7 @@ The first search takes {{n census.constants.interact.SEARCH_TIME seconds}} and r
 - its pockets ({{n wardrobes.zombie.0.pockets.0}} × {{n wardrobes.zombie.0.pockets.1}}),
 - any [[Arrow|arrows]] and [[Throwing spear|spears]] lodged in it.
 
-Anything that does not fit falls at its feet. Taking the clothes off changes the body's picture. The fallen stop thinking: a corpse no longer moves, groans, or bites.
+Anything that does not fit falls at its feet. Taking the clothes off changes the body's picture. **Take All** on the body's panel takes everything that fits your bag and belt at once, and the body is redrawn without it (see [[Inventory#Take All|Inventory]]). The fallen stop thinking: a corpse no longer moves, groans, or bites.
 
 ## The pockets
 
@@ -45,6 +45,7 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/ui/inventory-actions.js`, `takeAllFrom`, `performItemCommand`: Take All on a body, the body redrawn without what was taken (game #251)
 - `src/entities/zombie.js:113-123`, `src/entities/zombie.js:357-364`: the fall, then a still body
 - `src/entities/character.js:139-185`: a body as a container: its clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped
 - `src/interact.js:43`, `src/interact.js:1333-1355`: the first search's time and the pockets rolled

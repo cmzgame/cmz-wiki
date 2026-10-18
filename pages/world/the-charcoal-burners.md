@@ -19,7 +19,7 @@ Three of the dead stand about the clearing.
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `tools/mapgen/valley.py:560-572`, `data/maps/valley.json:11436-11587`: the clearing, three clamps, two sacks, a wheelbarrow; the hut and its chest (game #210)
 - `data/sprites/charcoal_sack.json`, `data/loot.json:17`: the sacks and the hut's chest give charcoal
 - `tools/mapgen/valley.py:601`: three of the dead

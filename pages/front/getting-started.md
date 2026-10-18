@@ -41,7 +41,7 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 29a9f8e -->
+<!-- sources at 3c0a243 -->
 - `index.html:51`, `src/ui/screens.js:824-837`: the site's Play opens the Worlds page, New world on it
 - `src/main.js:323-359`, `src/ui/screens.js:361-367`, `src/ui/screens.js:439-458`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
 - `src/game.js:218-223`: each world's save holds its own characters
@@ -52,7 +52,7 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `src/inventory.js:88-108`, `data/crops.json`: a tool carried anywhere, found by its verb, "You need a ..."; potatoes with a shovel, cabbages with a knife (game #222)
 - `data/maps/valley.json:12288-12299`, `src/interact.js:1576-1595`: Wyn by the door (game #220); E talks to a villager (game #230)
 - `src/main.js:1068`, `src/ui/map-panel.js:1-5`: M opens the map (game #235)
-- `src/interact.js:1160-1181`, `src/game.js:520-546`, `data/tuning.json:103-104`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/interact.js:1160-1181`, `src/game.js:520-546`, `data/tuning.json:106-107`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
 - `src/main.js:915-923`: Tab for the bag, C for the character screen
 - `src/main.js:1076-1160`: an open panel stops nothing in the world
 - `src/main.js:777-816`, `src/interact.js:1125-1143`: right-click for the menu; E for the nearest simple action
