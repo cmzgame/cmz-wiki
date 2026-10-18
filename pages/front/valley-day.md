@@ -94,6 +94,18 @@ The Onion-head Hat is now painted: a green hood with a brow over the eyes. A vil
 
 Read: [[Clothing]], [[Identities]].
 
+### Hiding a worn item (game #243)
+
+An eye on each worn slot of the character screen hides that item's look on your figure, for everyone who sees you, and keeps every use: a hidden belt keeps its slots and keys, a torch on it still lights, a bag keeps its grid. Click it again to show it.
+
+Read: [[Clothing]], [[Belt]].
+
+### Smoother movement (game #244, #247)
+
+Characters, the camera, and arrows, thrown things, and the fireball are now drawn between the world's steps, so the world scrolls evenly on any display. The picture runs up to one step, a sixtieth of a second, behind the world.
+
+Read: [[Controls]].
+
 ## Food and the body
 
 ### Food heals a little (game #186)
@@ -160,8 +172,9 @@ Read: [[Chat log]], [[Sight]].
 
 Built, and in review in the game, not merged yet; their pages come with their merge.
 
-- **Hide a worn item** (game #243): an eye on each worn slot of the character screen hides that item's look and keeps its use, seen by everyone.
-- **Movement that feels smoother** (game #244): your character drawn between the world's steps.
+- **Smoother bodies on a guest** (game #249): other players, the dead, and villagers drawn a fixed moment behind the host's frames, so they move evenly on a guest's screen.
+- **Take All** (game #251): one button on a container's panel takes everything that fits.
+- **A guest told when a fire goes out** (game #253).
 
 [[Planned]] lists what is further off.
 
@@ -171,18 +184,18 @@ Built, and in review in the game, not merged yet; their pages come with their me
 
 ## Sources
 
-<!-- sources at 015eabc -->
-- `src/entities/player.js:86-87`: with Survival off a body is always full, so every food is refused
+<!-- sources at 29a9f8e -->
+- `src/entities/player.js:87-88`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:191`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-51`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)
 - `data/sprites/tree_apple.json`, `src/fruit.js:30-52`: apple trees (game #192)
 - `data/fishing.json`, `src/fishing.js:1-81`: fishing (game #193)
-- `src/entities/player.js:82-102`, `data/tuning.json:55`: food's heal and `fullAt` (game #186)
+- `src/entities/player.js:83-103`, `data/tuning.json:55`: food's heal and `fullAt` (game #186)
 - `data/kit.json`, `src/kit.js`: the starting kit (game #183, #191)
 - `src/map.js:709-735`, `docs/09-openings.md`: the dead strike fences (game #185)
 - `src/entities/villager.js:45`, `src/entities/zombie.js:357`: immune villagers (game #187)
 - `src/burn.js:79-176`, `src/interactions.js:58`: lanterns and torches (game #188, #189)
-- `src/ui/speech.js:68-89`, `data/tuning.json:115`: the groan's radius and gap (game #189)
+- `src/ui/speech.js:68-89`, `data/tuning.json:120`: the groan's radius and gap (game #189)
 - `src/mining.js`, `src/bucket.js`, `src/farming.js:257-292`, `data/recipes.json`, `data/loot.json`: mining, charcoal, cloth, the bucket, and the scythe (game #210, #216, #211, #213)
 - `tools/mapgen/valley.py:408-523`, `data/loot.json:8-10`: the farms and the mill (game #219)
 - `src/inventory.js:88-108`, `data/recipes.json`, `data/crops.json`, `data/build.json`, `data/loot.json:6-7`, `src/settings.js:63`: the tool rule, the cottage's shovel, the joiner's hammer, Free building (game #222)
@@ -191,4 +204,5 @@ Built, and in review in the game, not merged yet; their pages come with their me
 - `src/reach.js`, `tools/mapgen/valley.py:106-118`: one reach test; the boxed-in containers moved (game #227)
 - `src/chart.js`, `src/ui/map-panel.js`: the map (game #234, #235)
 - `data/items.json:27`, `data/hair/mohawk.json`: the hat's painted art, the mohawk redrawn (game #229, #231)
-- The game's open pull requests #243 and #244: what comes next
+- `src/inventory.js:184-198`, `src/interp.js`, `data/tuning.json`: hiding a worn item, the draw between steps and the feel numbers (game #243, #244, #247)
+- The game's open pull requests #249, #251, and #253: what comes next

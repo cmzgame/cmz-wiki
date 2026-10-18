@@ -62,26 +62,26 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/save.js`: a world as a save in the browser that made it
-- `src/ui/screens.js:197-220`, `src/main.js:1262-1264`: nothing runs until a world is chosen; out of a world, the site
+- `src/ui/screens.js:197-220`, `src/main.js:1266-1268`: nothing runs until a world is chosen; out of a world, the site
 - `index.html:51`, `src/ui/screens.js:778`: Play and Play in your browser open the Worlds page (game #120)
 - `src/ui/screens.js:824-837`: the Worlds page's line, its three lists, and the buttons below
 - `src/ui/screens.js:512-531`, `src/ui/screens.js:672-700`, `src/save.js:157-172`, `src/clock.js:96-102`: a card: the name and its mark, the survivor, the day and hour, when last played, the code; the main button big and the rest small (game #120)
 - `src/ui/screens.js:680-690`: the buttons by where a world lives
 - `src/ui/screens.js:722-732`: my worlds on the server with no copy here
 - `src/ui/screens.js:734-749`: a friend's card: the dot, the survivor, the host, the code, Rejoin and Forget
-- `src/main.js:1559`, `src/ui/screens.js:834`: Move to the server and A world of mine on the server only with a relay
-- `src/main.js:1544`, `src/ui/screens.js:683`, `src/ui/screens.js:696`: a world from another map listed, not playable
+- `src/main.js:1574`, `src/ui/screens.js:834`: Move to the server and A world of mine on the server only with a relay
+- `src/main.js:1559`, `src/ui/screens.js:683`, `src/ui/screens.js:696`: a world from another map listed, not playable
 - `src/ui/screens.js:266-267`: Back goes to Home
-- `src/ui/screens.js:358`, `src/ui/screens.js:872-887`, `src/main.js:1553`: New world, its line, the default name
-- `src/ui/screens.js:872-900`, `src/main.js:301-307`: the Sandbox step, its two parts and Next; the choices offered as last chosen
+- `src/ui/screens.js:358`, `src/ui/screens.js:872-887`, `src/main.js:1568`: New world, its line, the default name
+- `src/ui/screens.js:872-900`, `src/main.js:303-309`: the Sandbox step, its two parts and Next; the choices offered as last chosen
 - `src/settings.js:70-72`, `src/ui/screens.js:361-367`, `src/kit.js:46-61`: Dev bag and Extra starting items at the Sandbox step, a list that does not fit refused at Next
 - `src/ui/screens.js:925`: Into the valley
-- `src/main.js:323-357`, `src/ui/screens.js:242-250`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
+- `src/main.js:325-359`, `src/ui/screens.js:242-250`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
 - `src/clock.js:18`: `START_HOUR`
-- `src/main.js:360-411`: Play reads the save behind the loading screen, opens to friends again if it was open
+- `src/main.js:362-413`: Play reads the save behind the loading screen, opens to friends again if it was open
 - `src/ui/screens.js:304`: Delete's confirmation
-- `src/ui/screens.js:289-295`, `src/main.js:460-496`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
+- `src/ui/screens.js:289-295`, `src/main.js:462-498`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
 - `src/ui/screens.js:489-505`, `src/ui/screens.js:737-741`, `src/net.js:396-403`: the dots asked of the relay
-- `src/main.js:448-449`: a guest never saves
+- `src/main.js:450-451`: a guest never saves

@@ -26,15 +26,15 @@ The Reeve stands inside [[The reeve's house]], next door to [[Your cottage]], to
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/entities/villager.js:1-8`, `src/entities/villager.js:39-64`: villagers carry no weapon and never fight; a swing passes through them
-- `data/tuning.json:75`, `src/entities/villager.js:83-96`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
+- `data/tuning.json:80`, `src/entities/villager.js:83-96`, `src/entities/movement.js:19`, `src/entities/movement.js:108`: the wander within the tether's radius of home, on their own side of the walls
 - `src/entities/movement.js:14`, `src/entities/villager.js:79-97`: standing idle between walks
 - `src/interact.js:1364`, `src/interact.js:1533-1550`, `src/interact.js:1576-1606`: a left click within reach, or Poke on the menu
-- `src/entities/villager.js:246-260`, `src/entities/villager.js:113-124`, `data/tuning.json:76`: the poke stops them, turns them to you, says a line, and holds them for the talk time
+- `src/entities/villager.js:246-260`, `src/entities/villager.js:113-124`, `data/tuning.json:81`: the poke stops them, turns them to you, says a line, and holds them for the talk time
 - `data/talk/reeve.json`, `src/talk.js:124-141`: their bark groups, the first that holds, its lines in turn (game #220)
 - `data/talk/reeve.json`, `src/entities/villager.js:194-222`: their conversation, on Talk to (game #230)
-- `src/entities/villager.js:224-244`, `data/tuning.json:81-82`: a remark unprompted, from an `ambient` group, with a living player within `barkRadius`, not twice inside `barkCooldown`, never talking or dead (a wounded one too, game #230)
+- `src/entities/villager.js:224-244`, `data/tuning.json:86-87`: a remark unprompted, from an `ambient` group, with a living player within `barkRadius`, not twice inside `barkCooldown`, never talking or dead (a wounded one too, game #230)
 - `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
 - `src/game.js:397`, `src/entities/villager.js:131-168`, `src/game.js:655-659`: one bitten to death gets up as one of the dead in their clothes
 - `tools/mapgen/valley.py:391-392`: the reeve's house at the row's end by the green

@@ -9,6 +9,13 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-17: synced to `29a9f8e`
+
+- **New in the game:** hiding a worn item (game #243). An eye on each worn slot of the character screen hides that item's look on your figure, for everyone, and keeps every use: a belt's slots and keys, a belt torch's light, a bag's grid. The choice stays with the slot, and a guest's eye works through the host. [[Clothing]] has a section on it; [[Inventory]], [[Belt]], and [[Interface]] point to it.
+- **Changed in the game:** movement drawn between the world's fixed steps (game #244), with the feel's numbers in the game's tuning and arrows, thrown things, and the fireball drawn smoothly along their arcs (game #247). The world scrolls evenly on any display, up to one step behind; no page covers the feel, so nothing else changed here.
+- **Changed in the game:** the game's own checks of its picture sheets and of talk made sturdier (game #241, #242, #246), and its rules' wording for the sealed room (game #240); nothing a player sees.
+- **On the wiki:** [[Valley day]] has hiding a worn item and smoother movement, and Coming next lists the game's open pull requests #249, #251, and #253. The pages of the last sync had their Sources moved on to the new game.
+
 ## 2026-10-17: synced to `015eabc`
 
 - **New in the game:** conversations (game #230). Press E beside a villager, or choose Talk to on their menu, and a panel opens with their lines, Continue..., the questions to choose, and That's all for now; the villager stops and faces you, and each line goes into your chat log. The guide's questions each link to their page here. Walking away, a wall between, or the villager struck ends it; with the dead close, a villager barks instead; a wounded one still talks, and barks too. [[Talk]] and [[Wyn]] rewritten for it; every villager's page, [[Villagers]], [[Controls]], [[Interface]], [[Screens]], [[Chat log]], and [[Getting started]] corrected.

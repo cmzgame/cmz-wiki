@@ -32,19 +32,19 @@ A guest drinks and fills through the same actions; the host performs them. A gue
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/items.json:20`: the waterskin, its size, and its capacity
 - `data/kit.json:5`: the starter waterskin, full
 - `data/loot.json:3-4`: waterskins in barrels and on bodies
 - `src/interact.js:1248-1249`: "Drink (N%)" showing the fill
 - `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:175-183`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
-- `src/entities/player.js:105-113`, `data/tuning.json:59`: the sip, with a +1 that takes water at full thirst
-- `src/entities/player.js:114-132`, `data/tuning.json:60`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
-- `src/game.js:615-618`, `src/main.js:1671-1673`, `src/host.js:239-242`: in the world's step on the host, the word to whoever drank
+- `src/entities/player.js:106-114`, `data/tuning.json:59`: the sip, with a +1 that takes water at full thirst
+- `src/entities/player.js:115-133`, `data/tuning.json:60`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
+- `src/game.js:615-618`, `src/main.js:1686-1688`, `src/host.js:239-242`: in the world's step on the host, the word to whoever drank
 - `src/interact.js:57`, `src/interact.js:681-716`: "Fill waterskins" at a well or water, its time, filling to 100
 - `src/inventory.js:80-87`: the bag's waterskins and the belt's are filled (the belt's game #222)
 - `src/items.js:98`: a found waterskin's random fill
 - `src/farming.js:140-149`, `src/farming.js:216-231`, `data/interactions.json:20-22`: watering a crop takes the fill a watering costs, from the fullest skin with enough (game #206)
-- `src/ui/inventory-actions.js:220`, `src/ui/inventory-actions.js:353-364`: a guest's menu choice is run by the host
+- `src/ui/inventory-actions.js:224`, `src/ui/inventory-actions.js:361-372`: a guest's menu choice is run by the host
 
 {{navbox items}}

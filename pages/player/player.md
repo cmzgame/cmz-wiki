@@ -71,21 +71,21 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/tuning.json:45-46`: health and stamina
 - `src/ui/hud.js:32-123`: the portrait, the name, the bars, the Hands line, the percent; the clock and the moodles placed
 - `src/combat.js:155`, `src/combat.js:324`, `src/combat.js:396`, `data/combat.json:2,9`: swings, shoves, and blocks spend stamina
 - `data/tuning.json:43-44`, `data/tuning.json:47`: walking speed, body radius, sprint multiplier
-- `src/entities/player.js:343-345`, `src/entities/player.js:359-363`: keyed movement snapped to the eight directions
-- `src/entities/player.js:368`: facing follows the aim, not the walk
+- `src/entities/player.js:344-346`, `src/entities/player.js:360-364`: keyed movement snapped to the eight directions
+- `src/entities/player.js:369`: facing follows the aim, not the walk
 - `data/sprites/floor_water_shallow.json`, `data/sprites/floor_water.json`, `src/map.js:1438`, `src/map.js:1463-1466`: shallow water's speed and deep water's bar
 - `data/combat.json` `bow.drawSpeed`, `bow.braceMove`: the draw and brace slowdowns
 - `data/items.json:37`: the raised shield's slowdown
 - `src/player-controller.js:52`: the multiplier picked in one place
 - `src/map.js:817-825`: no body passes a window
-- `src/entities/player.js:350`: no sprint while carrying
-- `src/entities/player.js:266-267`, `src/entities/player.js:342-345`: auto-walk uses the same speeds; a movement key cancels it
-- `src/entities/player.js:137-176`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
+- `src/entities/player.js:351`: no sprint while carrying
+- `src/entities/player.js:267-268`, `src/entities/player.js:343-346`: auto-walk uses the same speeds; a movement key cancels it
+- `src/entities/player.js:138-177`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
 - `src/moodles.js:23-102`: the five moodles
 - `data/kit.json`: the default starting kit, what is worn, in the sack, and in hand, the torch out and a tinderbox in the sack
 - `src/game.js:100`, `src/game.js:135-139`, `src/game.js:454`, `src/kit.js:62-75`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
@@ -94,6 +94,6 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
 - `data/loot.json:18`, `src/settings.js:33`, `src/game.js:92-98`: the dev chest, chosen at New world
-- `data/tuning.json:4`, `data/tuning.json:73`: the dead's and villagers' speeds
+- `data/tuning.json:4`, `data/tuning.json:78`: the dead's and villagers' speeds
 - `src/rules.js:44-49`: a guest uses the host's rules
 - `src/game.js:348-358`: time runs fast only while every living player sleeps

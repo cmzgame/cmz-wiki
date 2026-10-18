@@ -21,7 +21,7 @@ The nearest of the dead stands in the lane to the west of the garden at the star
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `tools/mapgen/valley.py:181-182`, `data/maps/valley.json:11685-11688`: the end cottage on the south lane, and the spawn inside it
 - `data/maps/valley.json:1305-1433`, `data/loot.json:6`: the main room's chest's own table, a hatchet, a shovel, a loaf, and a bucket (game #207, #211, #222); wooden walls; the partition at x 4 making two rooms; the fireplace, table, two chairs, and a chest west of it; the bed, a chest, and the shelf east of it; the door south, windows south, north, and east; the bracket's lantern inside the west wall
 - `data/maps/valley.json:1353-1363`, `src/interact.js:361-394`, `data/kit.json`: the fireplace unlit; a log and a flame light it, and the starting kit has a tinderbox (game #169)

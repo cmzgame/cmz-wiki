@@ -54,10 +54,10 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/sprites/floor_water.json`, `src/map.js:1457-1460`, `src/map.js:1531-1538`: wholly water is walked by nobody
 - `tools/mapgen/valley.py:160-164`: the river, the stone bridge on the high street, the ford where the drove crosses
-- `data/sprites/floor_water_shallow.json`, `src/map.js:1463-1466`, `src/entities/player.js:279`, `src/entities/movement.js:56`, `src/entities/zombie.js:405`: shallow water walked by everyone at its speed factor
+- `data/sprites/floor_water_shallow.json`, `src/map.js:1463-1466`, `src/entities/player.js:280`, `src/entities/movement.js:56`, `src/entities/zombie.js:405`: shallow water walked by everyone at its speed factor
 - `src/map.js:1498-1508`: paths treat shallow water as ordinary ground
 - `src/interact.js:681-716`, `src/interact.js:722-745`, `src/interact.js:907-912`: drinking and filling beside any water tile; E drinks when thirst is under 90
 - `src/interact.js:56-57`: the drink's and the fill's times

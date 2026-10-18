@@ -1,7 +1,7 @@
 {
-  "commit": "015eabcb472a0cbc7fdc2c62f9c587a9cc7f3fd1",
-  "short": "015eabc",
-  "date": "2026-10-17T18:40:59-05:00",
-  "subject": "Merge #239, reviewed: chart frames carry only the cells that changed (about 1.3 to 2 KB/s walking, from 12 to 17; whole chunks in the welcome; net.PROTOCOL 7) (closes #237)",
+  "commit": "29a9f8ef29bde0cda3f6d55fe40eac6c056ad100",
+  "short": "29a9f8e",
+  "date": "2026-10-17T19:10:32-05:00",
+  "subject": "Merge #247, reviewed: the feel numbers in tuning (cameraFollow, blend, blendJump; validated), and arrows, thrown items, and the fireball drawn between steps with their height",
   "ref": "origin/main"
 }

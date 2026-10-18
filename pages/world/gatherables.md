@@ -51,7 +51,7 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/sprites/tree_oak_m.json`, `data/sprites/rock_0.json`, `data/sprites/mushroom_0.json`, `data/sprites/crop_potato_1.json`, `data/sprites/pumpkin.json`: each `interactable: true`
 - `src/interact.js:1360-1364`, `src/interact.js:1449-1457`: a click within reach stamps a sway, no restamp inside the cooldown
 - `src/render/props.js:94-104`: the sway's length and lean

@@ -44,8 +44,8 @@ These change only the game they are typed into; on a guest's game they change on
 
 ## Sources
 
-<!-- sources at 015eabc -->
-- `src/settings.js:33`, `src/settings.js:70`, `src/ui/screens.js:872-900`, `src/main.js:323-331`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
+<!-- sources at 29a9f8e -->
+- `src/settings.js:33`, `src/settings.js:70`, `src/ui/screens.js:872-900`, `src/main.js:325-333`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
 - `src/settings.js:71-72`, `src/rules.js:21-22`: Dev bag and Extra starting items, world rules of the same step
 - `data/sprites/dev_chest.json`: the dev chest rolls the dev kit
 - `data/loot.json:18`: its fixed contents

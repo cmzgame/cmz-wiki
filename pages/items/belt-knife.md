@@ -15,7 +15,7 @@ The **belt knife** (the knife until the names were made specific) is a small too
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/recipes.json:505-524`: the knife from a bar and a stick, with a hammer
 - `data/loot.json:11`: the weaver's chest's knife (game #216)
 - `data/recipes.json:23-124`, `data/recipes.json:256-311`, `src/stations.js:145-154`, `src/inventory.js:88-108`: the tear, the rod, the bow, and the arrows use `cut`, a knife carried (game #222)

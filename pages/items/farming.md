@@ -59,7 +59,7 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
 - `src/farming.js:160-177`, `src/interact.js:573-597`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
 - `src/farming.js:179-202`, `data/items.json:60-65`: Plant for each seed carried, on empty soil; the crop starts wet; the six seeds
@@ -67,7 +67,7 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 - `src/farming.js:64-95`, `src/interact.js:562-567`: the stage and the days left read from the growth; "Growing (ready in about N days)", "Dry: waiting for water"
 - `src/farming.js:233-259`, `src/farming.js:261-296`: Harvest: the food and the seeds into the bag, the rest at your feet, the tile left as soil; the scythe's swing
 - `data/crops.json`, `src/farming.js:240-241`, `src/interact.js:560-562`, `src/inventory.js:88-108`: each crop's `tool`, a verb, carried: rye `harvest` (a scythe), potato and garlic `dig` (a shovel), cabbage and pumpkin `cut` (a knife), flax none; "Harvest (need a ...)" greyed without it (game #222)
-- `src/farming.js:111-118`, `data/tuning.json:108`: every farming verb within `pickReach` and with a clear line (game #206)
+- `src/farming.js:111-118`, `data/tuning.json:113`: every farming verb within `pickReach` and with a clear line (game #206)
 - `src/farming.js:298-319`, `src/game.js:558`: the crops' pictures follow their stages at each check
 - `tools/mapgen/valley.py:191`, `tools/mapgen/mapgen.py:216-231`: the cottage's plot, potatoes and cabbages at the middle and last stages
 - `data/loot.json:8-11`: the barn rack's hoe and the two granaries' seed of every crop (game #219), the weaver's chest's flax seed (game #216)

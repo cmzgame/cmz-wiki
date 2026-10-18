@@ -26,7 +26,7 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/sprites/workbench.json`: the workbench: a station with no fire
 - `data/recipes.json:4-124`, `data/recipes.json:200-472`: the workbench's recipes, none with fire or a tool in hand; each but the torch with a carried tool by its verb, `uses`: `build` (a hammer), `cut` (a knife), `split` (a hatchet) (game #222)
 - `src/stations.js:145-154`, `src/ui/station-panel.js:145`, `src/inventory.js:88-108`: a row's tool carried anywhere, "needs a ... on you"

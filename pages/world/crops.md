@@ -38,7 +38,7 @@ Crops do not block anyone. You, the dead, and villagers walk through them, and e
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/sprites/crop_cabbage_0.json` (and the other `crop_*.json`): six crops at stages 0 to 2, `interactable`, `furrows`, `carry: false`, each naming its crop and stage
 - `src/map.js:2231-2246`: a crop's rows follow its soil's furrows
 - `src/farming.js:89-95`, `src/farming.js:298-319`, `src/interact.js:550-571`: the picture follows the stage; the menu's days, Water, and Harvest (game #206), greyed without the crop's tool (game #222)

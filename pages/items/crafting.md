@@ -71,7 +71,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/stations.js:46-53`: which props are stations, and the cooking fires
 - `data/sprites/loom.json`, `data/sprites/charcoal_clamp.json`: the loom and the clamp are stations (game #210, #216)
 - `src/ui/station-panel.js:155`: "Nothing to make here yet."
@@ -83,7 +83,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/stations.js:246`: the count clamped from 1 to 10
 - `src/ui/station-panel.js:103`: the output box closes beyond reach
 - `src/ui/station-panel.js:167`: the panel closes beyond reach, or with a wall between (game #227)
-- `src/main.js:1093-1178`, `src/ui/station-panel.js:45-54`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
+- `src/main.js:1097-1182`, `src/ui/station-panel.js:45-54`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
 - `src/stations.js:62-99`: where ingredients are counted from, searched containers only
 - `src/stations.js:79-124`: the order, plain cloth before a garment for a cloth want (game #216) they are taken in
 - `data/items.json:15`: the bandage is not cloth (game commit 2c70942)

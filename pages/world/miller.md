@@ -20,7 +20,7 @@ The Miller stands inside [[The mill]], by the [[Millstones]].
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/maps/valley.json:12364-12372`: the Miller's line and tile, no `immune` flag (game #219)
 - `src/entities/villager.js:39-64`, `src/entities/villager.js:246-260`: a villager's wander and poke; with no talk file, the map line
 - `data/talk/`: no file for the Miller (game #220)

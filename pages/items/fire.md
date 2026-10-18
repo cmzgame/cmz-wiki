@@ -84,7 +84,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/sprites/campfire.json`: the campfire's fuel, hours a unit, most, cooking
 - `data/sprites/hearth.json`: the hearth's, and it lights its room
 - `data/sprites/fireplace.json:30-34`: the fireplace's
@@ -94,11 +94,11 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `src/light.js:47-59`: lit fires give light; a room fire lights its room
 - `src/map.js:95`: a game hour in seconds
 - `src/interact.js:361-394`: Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only; lighting one that is out needs a flame ("(need a tinderbox or a flame)", the refusal, not E's), feeding one that burns does not (game #169)
-- `src/inventory.js:151-161`, `src/inventory.js:304-318`: the flame: a tinderbox in a hand, on the belt, or in the bag, else a lit torch in a hand or on the belt; the refusal's words
+- `src/inventory.js:151-161`, `src/inventory.js:318-332`: the flame: a tinderbox in a hand, on the belt, or in the bag, else a lit torch in a hand or on the belt; the refusal's words
 - `src/interact.js:881-928`: E takes only a simple action
 - `src/interact.js:369-370`: hours left rounded, or "under an hour"
 - `src/map.js:97-115`: a fire burns a unit every so many hours and goes out
-- `src/main.js:1656-1658`, `data/tuning.json:100`: "A fire has gone out." within `fireOutRadius`, on the host's own screen only (game #189)
+- `src/main.js:1671-1673`, `data/tuning.json:105`: "A fire has gone out." within `fireOutRadius`, on the host's own screen only (game #189)
 - `data/maps/valley.json`: which fires start lit
 - `src/stations.js:204-217`: a job waits while the fire is out
 - `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
@@ -111,7 +111,7 @@ Feeding a fire and its going out change the world, so every player sees it. A gu
 - `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel, never a hearth, fireplace, oven, or forge
 - `data/interactions.json`, `src/burn.js:56`, `src/burn.js:79-176`, `src/map.js:284-312`: the `light` verb: a tinderbox or a lit torch lights a campfire with fuel, in reach and sight; never a hearth, an oven, or a forge; an unlit torch lit from any burning fire, a lit torch on a post or in a bracket (game #172), or a lantern (game #188); the refusals
 - `data/items.json:2`: the torch's radius
-- `data/tuning.json:94-95`: the belt torch and two torches
+- `data/tuning.json:99-100`: the belt torch and two torches
 - `src/map.js:104-106`: a guest's fuel refreshed at each whole unit
 - `src/net.js:597-605`, `src/host.js:268-272`: a guest's menu choice performed on the host as that player, its refusal to their screen
 - `data/interactions.json`, `src/interactions.js:34-43`, `src/burn.js:56-77`: arrows used on any fire that burns fuel, refused when it is out

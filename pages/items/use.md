@@ -47,13 +47,13 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/interact.js:1212-1289`: Use on an item's menu
 - `src/interact.js:1295-1355`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
-- `src/ui/inventory-panel.js:482-484`: a click on an item in a panel is the target
-- `src/main.js:817-827`, `src/interact.js:831-838`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
-- `src/main.js:1108-1115`: a click on the world is the target, the panels open or not
+- `src/ui/inventory-panel.js:495-497`: a click on an item in a panel is the target
+- `src/main.js:819-829`, `src/interact.js:831-838`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
+- `src/main.js:1112-1119`: a click on the world is the target, the panels open or not
 - `src/interactions.js:1-50`: rows by item id or tag and target, `fire` for any that burns fuel, `bracket` for a wall bracket, the first match wins; the default "Nothing interesting happens."
 - `data/interactions.json`: the rows: light (a tinderbox or a torch on a campfire, a torch post, a torch, a bracket, a fire), dip, till, plant, water (game #206), and the well's note
 - `src/interactions.js:34-43`: `crop` matches any crop
@@ -63,5 +63,5 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 - `src/interact.js:681-720`: the well's own menu fills waterskins
 - `src/interact.js:361-394`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
-- `src/ui/inventory-actions.js:374-408`, `src/main.js:1017-1028`: the host runs it as that player; a bracket sent by its tile and edge
+- `src/ui/inventory-actions.js:382-416`, `src/main.js:1021-1032`: the host runs it as that player; a bracket sent by its tile and edge
 - `src/host.js:272-276`: the line goes to the guest's chat log

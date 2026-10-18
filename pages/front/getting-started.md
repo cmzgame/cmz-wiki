@@ -41,9 +41,9 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `index.html:51`, `src/ui/screens.js:824-837`: the site's Play opens the Worlds page, New world on it
-- `src/main.js:321-357`, `src/ui/screens.js:361-367`, `src/ui/screens.js:439-458`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
+- `src/main.js:323-359`, `src/ui/screens.js:361-367`, `src/ui/screens.js:439-458`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
 - `src/game.js:218-223`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
 - `data/maps/valley.json:11685-11688`, `data/maps/valley.json:1305-1778`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
@@ -51,18 +51,18 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `data/loot.json:6-7`, `data/loot.json:11`: your cottage's chest's hatchet, shovel, loaf, and bucket; the joiner's hatchet and hammer; the weaver's knife (game #222)
 - `src/inventory.js:88-108`, `data/crops.json`: a tool carried anywhere, found by its verb, "You need a ..."; potatoes with a shovel, cabbages with a knife (game #222)
 - `data/maps/valley.json:12288-12299`, `src/interact.js:1576-1595`: Wyn by the door (game #220); E talks to a villager (game #230)
-- `src/main.js:1064`, `src/ui/map-panel.js:1-5`: M opens the map (game #235)
-- `src/interact.js:1160-1181`, `src/game.js:520-546`, `data/tuning.json:98-99`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
-- `src/main.js:913-921`: Tab for the bag, C for the character screen
-- `src/main.js:1072-1156`: an open panel stops nothing in the world
-- `src/main.js:775-814`, `src/interact.js:1125-1143`: right-click for the menu; E for the nearest simple action
+- `src/main.js:1068`, `src/ui/map-panel.js:1-5`: M opens the map (game #235)
+- `src/interact.js:1160-1181`, `src/game.js:520-546`, `data/tuning.json:103-104`: T lights and douses the torch with a tinderbox; a lit torch burns down, faster in hand than on the belt
+- `src/main.js:915-923`: Tab for the bag, C for the character screen
+- `src/main.js:1076-1160`: an open panel stops nothing in the world
+- `src/main.js:777-816`, `src/interact.js:1125-1143`: right-click for the menu; E for the nearest simple action
 - `src/interact.js:334-350`: searching a chest
 - `src/interact.js:479-508`, `src/map.js:1363-1376`: tap E to open or shut; shut shutters block sight
 - `src/map.js:817-826`, `src/entities/zombie.js:216-241`: no one passes a window; the dead go for a door
-- `src/entities/player.js:146-148`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
+- `src/entities/player.js:147-149`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
 - `src/interact.js:681-720`: drinking and filling at the well or any water
 - `src/map.js:98-129`, `src/interact.js:361-394`: fires burn down and are fed from their menu; lit with a flame carried (game #169)
-- `src/entities/player.js:220-238`, `src/entities/player.js:192-218`, `src/game.js:348-358`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
+- `src/entities/player.js:221-239`, `src/entities/player.js:193-219`, `src/game.js:348-358`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
 - `data/tuning.json:4`, `data/tuning.json:43`: the dead walk at a third of your speed
 - `src/entities/zombie.js:308-313`, `src/entities/zombie.js:520-560`, `src/entities/zombie.js:371-387`: they see by the light on you, remember where they last saw you, and notice a flame at night
 - `src/entities/zombie.js:421-478`, `src/entities/zombie.js:847-914`: at night the dead that see you go in remember the door and wait about the house until dawn

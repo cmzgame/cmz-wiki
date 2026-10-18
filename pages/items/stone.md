@@ -15,7 +15,7 @@ summary: Mined from a rock with a pickaxe, or taken from the quarry's stacks of 
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/items.json:53`: stone, its stack, its note
 - `data/sprites/rock_0.json`, `src/mining.js:42-55`: a rock mined for stone, then gone (game #210)
 - `data/sprites/stone_stack.json`, `data/loot.json:15`, `tools/mapgen/valley.py:546-547`: the quarry's stacks of cut stone, a container with stone

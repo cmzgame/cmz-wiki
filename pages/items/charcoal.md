@@ -13,7 +13,7 @@ summary: The forge's fuel: burned from logs in a charcoal clamp, and found in th
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/items.json:3`: charcoal, its stack
 - `data/recipes.json:473-488`, `data/sprites/charcoal_clamp.json`: charcoal from logs at a clamp, its fire lit (game #210)
 - `data/sprites/forge.json`: the forge burns charcoal

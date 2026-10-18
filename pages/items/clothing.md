@@ -29,6 +29,10 @@ A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots
 
 {{item-table kind=clothing}}
 
+### Hiding a worn item
+
+Each filled slot on the character screen that is drawn on your figure (head, chest, hands, legs, feet, waist, and back) has a small eye. A click on it hides that item's look: it is no longer drawn on you, for every player who sees you, but it is still worn and does all it did: a belt keeps its slots and their keys, a torch on it still gives its light, and a bag keeps its grid. Click the eye again to show it. The choice stays with the slot, so whatever you wear there next is hidden too until you show it. A click on the eye never drags or takes off the item under it.
+
 ## With friends
 
 Equipping and unequipping, the double-click included, are sent to the host and carried out for that player, and what each player has on is drawn for everyone.
@@ -39,7 +43,7 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/inventory.js:9`: the seven slots, the code's `worn` slots
 - `data/items.json:26-36`: each garment's `wear` slot
 - `src/interact.js:1212-1234`: Equip on an item's menu, Equip (W×H) for a bag, in your bag or a container (game commit 9a450f2)
@@ -48,14 +52,16 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `src/ui/inventory-actions.js:67`: a drag onto the wrong slot is refused
 - `src/interact.js:1069-1108`: equipping over a filled slot swaps; "No room in your bag to unequip the old one." (game commit 9a81879)
 - `src/interact.js:1295-1355`: Unequip: to the bag or the floor; the bag is set down; Drop (game commit 9a450f2)
-- `src/ui/inventory-actions.js:175-183`, `src/ui/inventory-panel.js:75-89`: a double-click on a slot runs its Equip or Unequip (game commit 9a450f2)
+- `src/ui/inventory-actions.js:175-183`, `src/ui/inventory-panel.js:75-90`: a double-click on a slot runs its Equip or Unequip (game commit 9a450f2)
 - `data/items.json:26-36`: belts give slots; every garment but the belts and bags is tagged cloth
 - `data/recipes.json:23-124`, `data/recipes.json:155-199`: a garment torn into rags with a knife carried (`uses: cut`, game #222); the linen clothes at the loom (game #216)
 - `data/recipes.json`: the recipes that take any cloth
 - `data/kit.json:3`: the starter clothes, the head bare
 - `data/loot.json:2`: gloves and the hood in the chest table
 - `data/wardrobes.json`: what the dead have on
+- `src/inventory.js:184-198`, `src/ui/inventory-panel.js:283-291`, `src/ui/inventory-panel.js:105-113`, `src/figure/wardrobe.js:80-82`, `src/entities/player.js:31`: the eye on each drawn worn slot; a hidden slot drawn as nothing, the item still worn; the choice kept on the player by slot (game #243)
+- `src/ui/inventory-actions.js:187-190`, `src/ui/inventory-actions.js:273-275`, `src/ui/inventory-actions.js:319`, `src/net.js:236`: a guest's eye run on the host; the hidden slots in the player's record
 - `data/items.json:27`, `src/figure/draw.js`, `src/figure/wardrobe.js`: the Onion-head Hat's painted layer, `onion`, in its greens; a worn one with a dye drawn in that dye; the dead draw it too (game #229)
 - `src/entities/character.js:148-171`: a body's garments laid out on its grid
-- `src/ui/inventory-actions.js:204-372`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
+- `src/ui/inventory-actions.js:208-380`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
 - `src/net.js:236`: what each character has on travels in its record

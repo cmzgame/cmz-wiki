@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "015eabcb472a0cbc7fdc2c62f9c587a9cc7f3fd1",
-  "short": "015eabc",
-  "date": "2026-10-17T18:40:59-05:00",
-  "subject": "Merge #239, reviewed: chart frames carry only the cells that changed (about 1.3 to 2 KB/s walking, from 12 to 17; whole chunks in the welcome; net.PROTOCOL 7) (closes #237)",
+  "commit": "29a9f8ef29bde0cda3f6d55fe40eac6c056ad100",
+  "short": "29a9f8e",
+  "date": "2026-10-17T19:10:32-05:00",
+  "subject": "Merge #247, reviewed: the feel numbers in tuning (cameraFollow, blend, blendJump; validated), and arrows, thrown items, and the fireball drawn between steps with their height",
   "ref": "origin/main"
  },
  "counts": {
@@ -26,8 +26,8 @@
   "verbs": 14,
   "menuLabels": 63,
   "events": 31,
-  "checks": 48,
-  "modules": 95
+  "checks": 50,
+  "modules": 96
  },
  "items": [
   {
@@ -5964,6 +5964,11 @@
    "needsStaminaRegenMult": 0.5,
    "tiredStaminaRegenMult": 0.75
   },
+  "feel": {
+   "cameraFollow": 10,
+   "blend": true,
+   "blendJump": 1.5
+  },
   "villager": {
    "speed": 1.4,
    "radius": 0.3,
@@ -6416,26 +6421,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1084"
+    "main.js:1088"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1083"
+    "main.js:1087"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1061"
+    "main.js:1065"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:907",
-    "main.js:921"
+    "main.js:909",
+    "main.js:923"
    ]
   },
   {
@@ -6447,19 +6452,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1081"
+    "main.js:1085"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1064"
+    "main.js:1068"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1063"
+    "main.js:1067"
    ]
   },
   {
@@ -6484,56 +6489,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1059"
+    "main.js:1063"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1065"
+    "main.js:1069"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1072"
+    "main.js:1076"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1061"
+    "main.js:1065"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1144"
+    "main.js:1148"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1144"
+    "main.js:1148"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1062"
+    "main.js:1066"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1155"
+    "main.js:1159"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:907",
-    "main.js:913"
+    "main.js:909",
+    "main.js:915"
    ]
   }
  ],
@@ -6607,7 +6612,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:220"
+    "entities/player.js:221"
    ]
   },
   {
@@ -6666,13 +6671,13 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1445"
+    "main.js:1460"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:811"
+    "main.js:813"
    ]
   },
   {
@@ -6714,7 +6719,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1383"
+    "main.js:1398"
    ]
   },
   {
@@ -6763,7 +6768,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1419"
+    "main.js:1434"
    ]
   },
   {
@@ -6787,13 +6792,13 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1373"
+    "main.js:1388"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1409"
+    "main.js:1424"
    ]
   },
   {
@@ -6811,7 +6816,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1458"
+    "main.js:1473"
    ]
   },
   {
@@ -6823,37 +6828,37 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1342"
+    "main.js:1357"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1338"
+    "main.js:1353"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1375"
+    "main.js:1390"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1374"
+    "main.js:1389"
    ]
   },
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:688"
+    "ui/inventory-panel.js:701"
    ]
   },
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1467"
+    "main.js:1482"
    ]
   },
   {
@@ -7056,7 +7061,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1269"
+    "main.js:1273"
    ]
   },
   {
@@ -7175,13 +7180,13 @@
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:208"
+    "entities/player.js:209"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:199"
+    "entities/player.js:200"
    ]
   },
   {
@@ -7358,6 +7363,7 @@
   "eviction",
   "farm",
   "farms",
+  "feel",
   "fence",
   "fishing",
   "flare",
@@ -7365,6 +7371,7 @@
   "frame",
   "ground",
   "growth",
+  "hidden",
   "immune",
   "kindle",
   "kit",
@@ -7401,7 +7408,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1887
+   "lines": 1902
   },
   {
    "path": "interact.js",
@@ -7433,19 +7440,19 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 710
+   "lines": 723
   },
   {
    "path": "game.js",
    "lines": 703
   },
   {
-   "path": "placement.js",
+   "path": "assets.js",
    "lines": 647
   },
   {
-   "path": "assets.js",
-   "lines": 642
+   "path": "placement.js",
+   "lines": 647
   },
   {
    "path": "figure/draw.js",
@@ -7469,7 +7476,7 @@
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 409
+   "lines": 417
   },
   {
    "path": "ui/map-panel.js",
@@ -7477,11 +7484,15 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 390
+   "lines": 391
   },
   {
    "path": "figure/rig.js",
    "lines": 389
+  },
+  {
+   "path": "inventory.js",
+   "lines": 333
   },
   {
    "path": "figure/raster.js",
@@ -7490,10 +7501,6 @@
   {
    "path": "farming.js",
    "lines": 320
-  },
-  {
-   "path": "inventory.js",
-   "lines": 319
   },
   {
    "path": "render/entities.js",
@@ -7521,7 +7528,7 @@
   },
   {
    "path": "loop.js",
-   "lines": 225
+   "lines": 233
   },
   {
    "path": "figure/held.js",
@@ -7576,16 +7583,16 @@
    "lines": 168
   },
   {
+   "path": "tuning.js",
+   "lines": 164
+  },
+  {
    "path": "figure/wardrobe.js",
    "lines": 158
   },
   {
    "path": "talk.js",
    "lines": 158
-  },
-  {
-   "path": "tuning.js",
-   "lines": 156
   },
   {
    "path": "identities.js",
@@ -7652,6 +7659,10 @@
    "lines": 98
   },
   {
+   "path": "camera.js",
+   "lines": 87
+  },
+  {
    "path": "ui/zombie-bars.js",
    "lines": 86
   },
@@ -7680,10 +7691,6 @@
    "lines": 72
   },
   {
-   "path": "camera.js",
-   "lines": 67
-  },
-  {
    "path": "rng.js",
    "lines": 67
   },
@@ -7693,6 +7700,10 @@
   },
   {
    "path": "interactions.js",
+   "lines": 64
+  },
+  {
+   "path": "interp.js",
    "lines": 64
   },
   {
@@ -7817,9 +7828,6 @@
   },
   "buttons": {
    "TAP_TIME": 0.2
-  },
-  "camera": {
-   "FOLLOW": 10
   },
   "clock": {
    "DAY_LENGTH": 720,

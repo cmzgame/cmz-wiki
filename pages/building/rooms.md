@@ -59,21 +59,21 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/reach.js:1-33`: one reach test for every player action: distance to the nearest tile and a clear line (game #227)
 - `src/interact.js:946-1002`: a timed action cancelled when a wall comes between; an action behind a wall walks round to a tile with a clear line, "Can't get there from here." with none
-- `src/stations.js:62-80`, `src/main.js:935-938`: a station's ingredients only from chests in reach and sight; an open container closes behind a wall
+- `src/stations.js:62-80`, `src/main.js:937-940`: a station's ingredients only from chests in reach and sight; an open container closes behind a wall
 - `src/placement.js:389-401`, `docs/02-decisions.md:20`: building and removing walls stay distance only, a player's way out of a sealed room (Michael, 2026-10-18)
 - `src/map.js:1742-1794`: the flood fill, stopped by walls, doors, and windows in any state
 - `src/map.js:25`: the largest room
 - `src/map.js:1442-1454`, `src/map.js:1775-1777`: a see-through wall bounds no room
 - `src/map.js:1830-1858`: rooms refound only on either side of a changed edge
-- `src/entities/player.js:228-229`: a bed outdoors says "Not out here."; a siege held on the player refuses it
-- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:98`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
+- `src/entities/player.js:229-230`: a bed outdoors says "Not out here."; a siege held on the player refuses it
+- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:103`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
 - `src/map.js:843-878`: the dead choose a room to break
 - `src/entities/zombie.js:421-460`, `src/entities/zombie.js:847-914`: the siege, about a house the dead saw a player go into, until dawn
 - `src/map.js:733-744`, `src/map.js:819-826`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered
 - `src/render/walls.js:355-371`, `src/render/walls.js:163-169`, `src/render/walls.js:306-316`: near walls faded, posts only when every wall is near
 - `src/render/scene.js:38-43`: only trees open the hole round the player
-- `src/map.js:828-842`, `src/main.js:1299`: sealed, computed only for the debug corner
+- `src/map.js:828-842`, `src/main.js:1314`: sealed, computed only for the debug corner
 - `src/render/scene.js:35`: the faded walls' opacity

@@ -25,13 +25,13 @@ A log is the fuel of the campfire, the hearth, the fireplace, and the [[Oven]] (
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/items.json:4`: the log: 2 x 3, fuel, splits into 3 planks
 - `src/interact.js:654-676`, `src/chop.js:26-51`: Chop down with a hatchet in a hand, the logs on the tile, the count in the label, the stump left and chopped for its log (game #207)
-- `data/tuning.json:109`, `data/sprites/stump.json`: the chop's seconds, the stump's log
+- `data/tuning.json:114`, `data/sprites/stump.json`: the chop's seconds, the stump's log
 - `data/sprites/tree_oak_m.json`: a young tree's wood (likewise tree_oak_l, tree_oak_old)
 - `data/loot.json:2-3`: logs in the chest and barrel tables
-- `src/interact.js:1251-1267`, `data/tuning.json:105`: Split, in your own bag, with the split tool, a hatchet, carried, greyed "(need a hatchet)" without it; "Some planks fell to the floor." (game #222)
+- `src/interact.js:1251-1267`, `data/tuning.json:110`: Split, in your own bag, with the split tool, a hatchet, carried, greyed "(need a hatchet)" without it; "Some planks fell to the floor." (game #222)
 - `data/sprites/campfire.json`: log as fuel (likewise hearth, fireplace, oven)
 - `data/build.json:2-10`: a log wall's cost, and its tool, `notch` (game #222)
 - `src/placement.js:157-163`: the cost taken from hands, belt, and bag

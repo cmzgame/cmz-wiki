@@ -24,7 +24,7 @@ A guest feeds the forge and makes bars through the host like any station; the fi
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/sprites/forge.json`: the forge burns charcoal, holds and burns its units, gives light, does not cook
 - `data/recipes.json:489-504`: iron bar from iron ore, fire needed
 - `data/loot.json:12`, `data/loot.json:14`, `data/loot.json:16-17`: charcoal and ore in the smithy's chest, the burners', the miners', and the ore cart (game #210)

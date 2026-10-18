@@ -38,7 +38,7 @@ A guest mines through the same menu entry, sent to the host with the rock, and c
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/mining.js:1-56`: a pickaxe is any item in a hand listing `mine`; the verb's reach and clear line; the count rolled into the bag or at the feet; a rock gone, an ore rock restaged spent with its day (game #210)
 - `data/sprites/rock_0.json` (and `rock_1` to `rock_3`), `data/sprites/ore_rock.json`, `data/sprites/ore_rock_spent.json`: each `mine` block (item, count, seconds, gone or spent and days); the spent kind ripens back
 - `src/interact.js:626-651`: Mine stone or Mine iron ore, greyed without a pickaxe; "Mined out (more in about N days)"

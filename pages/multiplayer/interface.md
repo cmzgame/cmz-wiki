@@ -50,7 +50,7 @@ The browser's own right-click menu is switched off everywhere except over the de
 
 The game goes on while any panel is open, and the world's keys and clicks still work (see [[Controls]]).
 
-- **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the clothing slots and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
+- **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the clothing slots, each worn one drawn on you with an eye that hides it (see [[Clothing#Hiding a worn item|Clothing]]), and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
 - **The station panel**: using a station opens one panel under the clock with its recipes, the chosen recipe's ingredients, a count, **Make**, the queue, and **Output**. See [[Crafting]].
 - **A conversation** (see [[Talk]]): talking to a villager opens a panel at the bottom centre, above the belt, with their lines, **Continue...**, the questions to choose, and **That's all for now**.
 - **The map** (`M`; see [[Map]]): the land seen so far and every player, over the world.
@@ -73,6 +73,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/ui/inventory-panel.js`, `src/inventory.js`: the eye on a worn slot, hiding its look (game #243)
 - `src/ui/talk-panel.js`, `src/ui/map-panel.js`: the conversation panel and the map (game #230, #235)
 - `src/main.js:918-1001`: an open panel stops no click, key, or zoom (game commit 57df52e)
 - `src/view.js:84-88`, `src/view.js:138`: the interface's own size, Interface size

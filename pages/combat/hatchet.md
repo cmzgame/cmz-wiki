@@ -37,9 +37,9 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `data/items.json:6`: the hatchet: either hand, its verbs `chop`, `notch`, and `split`, its `weapon` block (the last two game #222)
-- `src/inventory.js:88-108`, `data/tuning.json:105`, `src/interact.js:1251-1267`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
+- `src/inventory.js:88-108`, `data/tuning.json:110`, `src/interact.js:1251-1267`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
 - `src/chop.js:14-51`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it
 - `src/interact.js:654-676`: "Chop down (need a hatchet)" greyed without one
 - `data/loot.json:6-7`, `data/maps/valley.json:1397`, `data/maps/valley.json:3551`, `src/map.js:1915`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)

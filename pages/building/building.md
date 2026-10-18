@@ -98,13 +98,13 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 015eabc -->
+<!-- sources at 29a9f8e -->
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row
 - `data/build.json`: each piece's name, sprite (`wall_log`), cost, seconds, and tool: `notch` for the log wall, `build` for a door and a window (game #222)
 - `src/placement.js:144-161`, `src/inventory.js:88-108`, `src/ui/build-palette.js:43`: the tool carried in a hand, on the belt, or in the bag, asked first, "You need a ..."; the palette greys a piece that falls short
-- `src/main.js:811`, `src/main.js:1063`: the Build entry at the foot of every menu
+- `src/main.js:813`, `src/main.js:1067`: the Build entry at the foot of every menu
 - `data/items.json:4`: the log's `splitsInto`; `src/interact.js:1251-1267`: splitting with a hatchet carried
-- `src/main.js:872-881`, `src/main.js:811`, `src/main.js:1095-1096`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
+- `src/main.js:874-883`, `src/main.js:813`, `src/main.js:1099-1100`: N, refused while carrying or with the bag open and its line; the Build entry greyed; an open bag closes the palette
 - `src/placement.js:173-188`: the ghost snapped to the nearest edge
 - `src/placement.js:199-211`: the red reasons in order
 - `src/placement.js:29`, `src/placement.js:31`: the build reach and the edge clearance
@@ -116,7 +116,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:611`: the build lasts within the reach plus 0.6
 - `src/placement.js:504`: one build at a time
 - `src/map.js:1830-1858`: rooms refound on either side of a changed edge
-- `src/main.js:884-893`: X, refused while carrying or with the bag open, with the same line
+- `src/main.js:886-895`: X, refused while carrying or with the bag open, with the same line
 - `src/placement.js:30`, `src/placement.js:389-413`, `src/placement.js:581-595`: the removal reach, a made prop's with a clear line (game #227), a wall's by distance alone; Remove asks for the board tool, a hammer, red with its line (game #222)
 - `src/placement.js:330-379`: what lights up: props made at a station (`made`) and built walls
 - `src/stations.js:183-184`: a prop made at a station marked `made`
