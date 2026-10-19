@@ -198,7 +198,8 @@ Michael's playtest on 2026-10-18 produced rulings and ideas that change nothing 
 
 - **Food rots** (ruled): rot is pacing, like a torch burning down, and not decay of the world; how fast, what preserves food, and whether food nobody has found rots are open (game #264).
 - **The valley's day-one food** is a statistic the wiki keeps current: [[Day-one food]]. Today it would keep one player from starving for about {{day-one-food n=days}} game days, far more than intended; a leaner start, rot, and balanced loot tables are the answers (game #264, #268).
-- **Health becomes a thousand** (ruled): health numbers ten times larger, and bosses may have far more; scaling every health number together so the game plays exactly as before, as the first step of the armour and difficulty pass, is the plan for the build; bars shown as a percent is an idea (game #133).
+- **Health stays a hundred** (ruled 2026-10-19, withdrawing the day before's ten-times scale): a player starts at a hundred, which levels and gear may raise; the dead and bosses scale as far as they need, thousands for a boss (game #133, #275).
+- **Skills are being shaped** (game #275): ten levels each, unlocks at most levels and a capstone at ten, death taking them; combat skills (Melee, Ranged, Magic, Faith) are in the draft, and whether a skill may touch combat is open.
 - **Gear can drop by chance** (ruled), a boss's best item not every kill; **regions should keep drawing players back** (Michael's hope); **the least armour is just better than nothing**, with how strong the best gets open; **weapons differ by situation** through resistances (game #133, #268, #123).
 - **Loot tables balanced:** most containers roll the chest's table today, so a valley holds about fourteen rucksacks and fourteen swords; a table per kind of container, gear rare (game #268).
 - **Bags and stacking:** one thing a cell by default, and bag tiers from the valley and the regions (game #260).
