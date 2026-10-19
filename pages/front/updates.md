@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-19: synced to `5d07067`
+
+- **Changed in the game:** a new world's **Extra starting items** are picked from a search by name, each with its count and a cross, in place of a box typed with item ids (game #274). [[World rules]] says so. The game's other merges since the last sync were its decisions log and status, nothing a player sees.
+
 ## 2026-10-18: synced to `63ea3be`
 
 - **Changed in the game:** food heals what it says on the tin (game #259, Michael's ruling from his playtest). You can eat whenever you like, hungry or full; each food heals its whole value and hunger stops at the top. "You are full." is gone, and so is the smaller heal near full. Natural healing is {{n tuning.player.wellFedRegenMult}} times as fast while you are well fed, hunger at {{n tuning.player.fullAt}} or more; with Survival off you are always well fed. [[Food]], [[Hunger]], [[Health]], [[Belt]], [[Controls]], and [[Valley day]] corrected.

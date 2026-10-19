@@ -1,7 +1,7 @@
 {
-  "commit": "63ea3be975aaa73fbd2a95090e2c566b3ab284b7",
-  "short": "63ea3be",
-  "date": "2026-10-18T01:23:10-05:00",
-  "subject": "Merge #259, reviewed: food heals what it says on the tin, full or not; a well-fed body heals twice as fast",
+  "commit": "5d07067808d53570ce907601c5c012c02bfa674f",
+  "short": "5d07067",
+  "date": "2026-10-19T09:55:25-05:00",
+  "subject": "Merge #274, reviewed: the extra starting items are picked from a search, not typed",
   "ref": "origin/main"
 }
