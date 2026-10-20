@@ -7,7 +7,7 @@ summary: A chest of test items placed beside the spawn of every new world while 
 
 {{devonly note="The dev chest exists for testing. It is chosen when a world is made, and is not part of the valley."}}
 
-The **developer chest** stands beside the spawn of a new world made with it, while the game is in development. Unlike other [[Containers]], it holds the same things every time: weapons, ammunition, torches and a tinderbox, bandages, the fire items, and two [[Developer Bag|Developer Bags]]. It has no food, materials, clothing, or tools. It is searched and opened like any chest, and can be picked up and carried.
+The **developer chest** stands beside the spawn of a new world made with it, while the game is in development. Unlike other [[Containers]], it holds the same things every time: weapons, ammunition, torches and a tinderbox, bandages, the fire items, two [[Developer Bag|Developer Bags]], and the two [[Rugs|rugs]]. It has no food, materials, clothing, or tools. Its grid is {{n loot.dev_kit.grid.0}} by {{n loot.dev_kit.grid.1}}. It is searched and opened like any chest, and can be picked up and carried.
 
 ## Contents
 
@@ -22,6 +22,7 @@ The **developer chest** stands beside the spawn of a new world made with it, whi
 - The [[Book of Fire]] and the [[Staff of Fire]]
 - {{n loot.dev_kit.fixed.16.count}} × [[Throwing Knife]]
 - {{n loot.dev_kit.fixed.17.count}} × [[Throwing Axe]]
+- A [[Bearskin rug]] and a [[Regal red rug]], to try laying them (see [[Rugs]])
 
 ## Choosing it
 
@@ -48,8 +49,9 @@ These change only the game they are typed into; on a guest's game they change on
 - `src/settings.js:33`, `src/settings.js:70`, `src/ui/screens.js:872-900`, `src/main.js:325-333`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
 - `src/settings.js:71-72`, `src/rules.js:21-22`: Dev bag and Extra starting items, world rules of the same step
 - `data/sprites/dev_chest.json`: the dev chest rolls the dev kit
-- `data/loot.json:18`: its fixed contents
+- `data/loot.json:19`: its fixed contents
 - `data/loot.json`: the dev kit is the dev chest's alone; the wheelbarrow has its own empty table
 - `src/placement.js:72-78`: a prop with no carry flag can be carried
 - `src/game.js:92-96`: placed beside the spawn of a new world made with it
 - `src/dev.js:133-150`: giveKit, give, and giveDevBag, all on the local client
+- `data/loot.json:19`: the two rugs last, the grid grown to hold them (game #339, at 499e344)

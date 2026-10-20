@@ -74,6 +74,10 @@ Three bags exist. Each is equipped on the back and gives a grid of its own size:
 
 Equipping a new bag swaps bags: the old one is dropped at your feet with everything still in it. A bag on the floor is a container you can **Open**; you can **Equip** it (**Swap bags** if you have one on), and **Pick up** it while it is empty.
 
+### Placing a rug
+
+A [[Rugs|rug]] in your bag has **Place** on its menu, after Use: a ghost of the laid rug follows the cursor over the floor, `R` turns it, and a click lays it within reach, out of the bag. A laid rug's own menu has **Pick up**, which rolls it back into the bag, refused while furniture stands on it ("Move the chest off it first."). See [[Rugs]].
+
 ### Dropping and picking up
 
 Dropped items lie on the tile where they fell. **Drop** on an item's menu drops it at your feet; **Drop all** drops the whole stack. A bag or belt dropped from its slot keeps everything in it.
@@ -107,6 +111,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/grid.js:58-84`: stacks merge on equal fill and top up first
 - `src/grid.js:158-181`: Tidy, biggest first, nothing moves on failure
 - `src/ui/inventory-actions.js:46-83`, `src/ui/inventory-actions.js:188-194`, `src/ui/inventory-panel.js:107-112`, `src/ui/inventory-panel.js:279`: Take All on a container's panel: the grid's order into the bag, then a free belt slot that takes it; a stack in part; a bag with things in it stays; its words (game #251)
+- `src/interact.js:1307-1308`, `src/rugs.js:107-130`: a rug's Place, and its Pick up refused under furniture (game #339, at 499e344)
 - `src/ui/inventory-actions.js:300-303`, `src/ui/inventory-actions.js:370-379`: a guest's Take All by the container's address, run on the host with the same reach, a body redrawn, the chest's grid sent
 - `src/main.js:909-923`: Tab and C, "No bag on your back.", "Your hands are full."
 - `src/ui/inventory-panel.js:359-378`: panels dragged by the header, remembered

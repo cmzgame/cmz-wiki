@@ -5,15 +5,15 @@ aliases: [Ghost, Putting down, Put down, Placing]
 summary: The ghost that shows where a carried piece of furniture or a new wall will go, turning it with R, reach, and putting it down.
 ---
 
-**Placement** is how things are put into the world: a carried piece of furniture set down, or a wall, door, or window built. In both, a **ghost** of the thing follows the cursor, green where it can go and red where it cannot.
+**Placement** is how things are put into the world: a carried piece of furniture set down, a [[Rugs|rug]] laid from the bag, or a wall, door, or window built. In both, a **ghost** of the thing follows the cursor, green where it can go and red where it cannot.
 
 ## How it works
 
 ### The ghost
 
-While you carry furniture, or have a piece picked in the build palette, a see-through copy of it follows the cursor.
+While you carry furniture, have a piece picked in the build palette, or have chosen **Place** on a rug in your bag, a see-through copy of it follows the cursor.
 
-- A piece of furniture is centred on the tile under the cursor.
+- A piece of furniture is centred on the tile under the cursor, and so is a rug; a rug's own rules are on [[Rugs]].
 - A wall, door, or window snaps to the nearest edge of the tile under the cursor (see [[Building]]).
 
 The ghost is green when the thing can go there and red when it cannot.
@@ -26,7 +26,7 @@ R turns a carried piece of furniture. A piece drawn with facings, such as a chai
 
 A carried piece goes down where:
 
-- every tile of its footprint is free of furniture and walkable
+- every tile of its footprint is free of furniture and walkable (a laid rug is not furniture: a piece can stand on one)
 - none of its tiles is either of the two tiles a door or a gate stands between, so [[The dead|the dead]] can always stand at a door (see [[Openings]])
 - none of its tiles is too close to you
 - no wall runs between two of its own tiles
@@ -58,6 +58,7 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 - `src/placement.js:402-415`: the furniture ghost centred on the cursor
 - `src/placement.js:160-175`: a built piece snapped to the nearest edge
 - `src/placement.js:253-268`: R steps the facing or swaps the footprint
+- `src/placement.js:102-117`, `src/map.js:506-509`, `src/placement.js:480-491`: a laid rug is in its own slot on the tile, so furniture goes down over it; the rug's ghost centred as a prop's (game #339, at 499e344)
 - `src/placement.js:97-113`: the put-down rules
 - `src/placement.js:95-115`, `src/map.js:478-487`: not on a door's tiles (game commit 82106de)
 - `src/placement.js:24`, `src/placement.js:402-415`: the reach to put down

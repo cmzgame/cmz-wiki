@@ -35,7 +35,7 @@ In the order the screen shows them, with the default first.
 - **Debug corner**: Shown or Hidden: the numbers and keys in the top-left corner.
 - **Swing targets**: Off or On: a green outline on what your next swing would hit.
 - **Hit shapes**: Off or On: draws the dead's body samples, green when the next swing reaches them.
-- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, a body. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead (the swing's outline is theirs), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
+- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, a body, a laid [[Rugs|rug]]. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead (the swing's outline is theirs), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
 - **Layer** rows: one per slot that has painted clothing layers, a dropdown to try one on in place of what is equipped (the answer **item** shows the item's own art).
 - **Painted hair**: a **Reload hair** button that picks up hair styles just saved in the hair editor.
 - **Relay**: where Open to friends and Join go, or "none: only this browser's own tabs".
@@ -67,6 +67,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `style.css` (the `CMZ Digits` face), `src/ui/small-text.js`: every digit in the clear sans at any size, at the pixel font's line height; Pixel restores it (game #325, at ef0d378)
 - `src/settings.js:28`, `src/settings.js:61`, `src/ui/small-text.js`: Small text, Clear by default, for text at or under its threshold (game #322, at 5cf78a9)
 - `src/settings.js:27`, `src/settings.js:72`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17)
+- `src/render/rugs.js:43`: a laid rug outlined (game #339, at 499e344)
 - `src/settings.js:27`, `src/settings.js:59`: Floating numbers, shown by default (game #299, at 3331946)
 - `src/settings.js:8-38`: the defaults, the Aim guide off
 - `src/main.js:1253`: the Aim guide read where the viewer's own frame is drawn

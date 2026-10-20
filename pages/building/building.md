@@ -29,7 +29,7 @@ Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest
 
 - **Too far**: the edge's midpoint is more than {{n census.constants.placement.BUILD_REACH tiles}} from you.
 - **Already a wall**: the edge already holds something this piece cannot be built over (see below).
-- **No room**: a single solid piece of furniture spans both tiles of the edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
+- **No room**: a single solid piece of furniture spans both tiles of the edge, or a laid [[Rugs|rug]] does: a wall is never built through a rug, only along its outer edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
 - **You need a ...**: you lack the piece's tool, and it names it ("You need a smith's hammer.").
 - **Need**: you lack the materials, and it names them.
@@ -111,6 +111,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:29`, `src/placement.js:31`: the build reach and the edge clearance
 - `src/map.js:610-618`: what "No room" means for a wall, a door, a window
 - `src/map.js:608-618`: a door refused with a prop on either tile
+- `src/map.js:618-628`: no wall through a laid rug (game #339, at 499e344)
 - `src/map.js:596-606`, `src/map.js:631-659`: a door or window over a plain wall, of its material and remembering it; a door over a fence; a new one over a broken one of its kind; the bracket of the wall built over forgotten
 - `src/map.js:733-744`: a door and a window always have health, whatever their material
 - `src/placement.js:455-465`, `src/placement.js:601-627`: the timed build, spent and rechecked at the end, cancelled by moving

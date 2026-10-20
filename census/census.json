@@ -1,21 +1,21 @@
 {
  "version": {
-  "commit": "232d0fb8a58102df2287013b03cc989c7a6d9417",
-  "short": "232d0fb",
-  "date": "2026-10-20T12:12:16-05:00",
-  "subject": "Merge #337, reviewed: the everyday items' drawn art, the large icons, the belt in today's browns, the drawn torch and its flame (#331)",
+  "commit": "499e344e2eb069015a0e970557ee9cd97c7715b9",
+  "short": "499e344",
+  "date": "2026-10-20T12:49:24-05:00",
+  "subject": "Merge #339, reviewed: rugs as items, laid from the bag under carriable furniture and picked up again (#327)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 71,
+  "items": 73,
   "recipes": 46,
   "interactions": 28,
   "lootTables": 19,
-  "sprites": 157,
-  "places": 42,
+  "sprites": 159,
+  "places": 43,
   "villagers": 9,
   "authoredDead": 62,
-  "mapProps": 46,
+  "mapProps": 37,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
   "settings": 34,
@@ -24,10 +24,10 @@
   "liveRules": 5,
   "keys": 20,
   "verbs": 14,
-  "menuLabels": 66,
+  "menuLabels": 69,
   "events": 31,
-  "checks": 58,
-  "modules": 111
+  "checks": 59,
+  "modules": 113
  },
  "items": [
   {
@@ -2160,6 +2160,52 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": []
+  },
+  {
+   "id": "rug_bearskin",
+   "name": "Bearskin rug",
+   "kind": "decor",
+   "size": [
+    1,
+    4
+   ],
+   "tags": [
+    "decor",
+    "rug"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a rug rolled up (#327): Place lays it on the floor, a 2 by 3 prop that anyone walks on and furniture may stand on; Pick up rolls it back (src/rugs.js)"
+  },
+  {
+   "id": "rug_regal_red",
+   "name": "Regal red rug",
+   "kind": "decor",
+   "size": [
+    1,
+    4
+   ],
+   "tags": [
+    "decor",
+    "rug"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a rug rolled up, red with a gold border (#327)"
   }
  ],
  "recipes": [
@@ -3536,7 +3582,7 @@
    "name": "dev_kit",
    "grid": [
     10,
-    6
+    8
    ],
    "rolls": [
     0,
@@ -4333,6 +4379,20 @@
    },
    "interactable": true,
    "note": "a big rock (Michael, 2026-10-11): solid, not carried, wiggles when clicked; what it is for is question 27"
+  },
+  {
+   "id": "rug_bearskin",
+   "kind": "other",
+   "drawn": true,
+   "carry": false,
+   "note": "a laid rug (docs/02, 2026-10-20, \"Paintings and rugs are items\"; #327): a flat 2 by 3 drawing on the ground plane, long side along y as drawn, along x as its mirror, as the bed; no outline (you walk on it). `rug` puts it in the tile's rug slot, under whatever stands on it, so furniture may stand on it and it never blocks. It is made by placing the item of the same name from the bag and gives that item back (src/rugs.js)."
+  },
+  {
+   "id": "rug_regal_red",
+   "kind": "other",
+   "drawn": true,
+   "carry": false,
+   "note": "a laid rug (docs/02, 2026-10-20, \"Paintings and rugs are items\"; #327): a flat 2 by 3 drawing on the ground plane, long side along y as drawn, along x as its mirror, as the bed; no outline (you walk on it). `rug` puts it in the tile's rug slot, under whatever stands on it, so furniture may stand on it and it never blocks. It is made by placing the item of the same name from the bag and gives that item back (src/rugs.js)."
   },
   {
    "id": "sawpit",
@@ -5538,6 +5598,20 @@
     ]
    },
    {
+    "name": "Hollow Farm's yard",
+    "rect": [
+     56,
+     238,
+     44,
+     4
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 4,
+    "villagers": [],
+    "props": []
+   },
+   {
     "name": "Hollow Farm's pumpkin field",
     "rect": [
      67,
@@ -6570,7 +6644,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1170"
+    "interact.js:1207"
    ]
   },
   {
@@ -6601,13 +6675,14 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:288"
+    "placement.js:304",
+    "placement.js:312"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1171"
+    "interact.js:1208"
    ]
   },
   {
@@ -6781,7 +6856,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:627"
+    "interact.js:646"
    ]
   }
  ],
@@ -6795,7 +6870,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1488"
+    "main.js:1493"
    ]
   },
   {
@@ -6807,13 +6882,19 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:776"
+    "interact.js:795"
+   ]
+  },
+  {
+   "key": "Click to lay the rug · R turn · Esc cancel",
+   "at": [
+    "placement.js:700"
    ]
   },
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:635"
+    "placement.js:696"
    ]
   },
   {
@@ -6843,38 +6924,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1426"
+    "main.js:1431"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1353"
+    "interact.js:1392"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1297",
-    "interact.js:1383"
+    "interact.js:1336",
+    "interact.js:1422"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1273"
+    "interact.js:1312"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1274"
+    "interact.js:1313"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1387"
+    "interact.js:1426"
    ]
   },
   {
@@ -6898,7 +6979,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1462"
+    "main.js:1467"
    ]
   },
   {
@@ -6910,7 +6991,7 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:586"
+    "interact.js:605"
    ]
   },
   {
@@ -6922,7 +7003,7 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:430"
+    "interact.js:449"
    ]
   },
   {
@@ -6934,7 +7015,7 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1452"
+    "main.js:1457"
    ]
   },
   {
@@ -6958,13 +7039,19 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1501"
+    "main.js:1506"
+   ]
+  },
+  {
+   "key": "Place",
+   "at": [
+    "interact.js:1308"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1389"
+    "interact.js:1428"
    ]
   },
   {
@@ -7000,13 +7087,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1510"
+    "main.js:1515"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:403"
+    "interact.js:422"
    ]
   },
   {
@@ -7042,13 +7129,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:444"
+    "interact.js:463"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:628"
+    "interact.js:647"
    ]
   },
   {
@@ -7060,21 +7147,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1364",
-    "interact.js:1403"
+    "interact.js:1403",
+    "interact.js:1442"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1269",
-    "interact.js:1351"
+    "interact.js:1306",
+    "interact.js:1390"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:797"
+    "interact.js:816"
    ]
   },
   {
@@ -7098,91 +7185,97 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:494"
+    "interact.js:513"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:646"
+    "interact.js:665"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:607"
+    "placement.js:668"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:645"
+    "placement.js:710"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:641"
+    "placement.js:706"
    ]
   },
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:734"
+    "interact.js:753"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1105"
+    "interact.js:1142"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1277"
+    "interact.js:1316"
    ]
   },
   {
    "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:676"
+    "interact.js:695"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:214"
+    "interact.js:215"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:653"
+    "interact.js:672"
+   ]
+  },
+  {
+   "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
+   "at": [
+    "interact.js:308"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:633"
+    "interact.js:652"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1648"
+    "interact.js:1687"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1307"
+    "interact.js:1346"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1636"
+    "interact.js:1675"
    ]
   }
  ],
@@ -7220,15 +7313,15 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:433"
+    "placement.js:458"
    ]
   },
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:220",
-    "interact.js:353",
-    "interact.js:1619",
+    "interact.js:221",
+    "interact.js:372",
+    "interact.js:1658",
     "ui/station-panel.js:78",
     "ui/station-panel.js:103"
    ]
@@ -7254,7 +7347,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:726"
+    "map.js:736"
    ]
   },
   {
@@ -7365,7 +7458,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:747",
-    "map.js:722"
+    "map.js:732"
    ]
   },
   {
@@ -7481,6 +7574,7 @@
   "coop",
   "craft",
   "debuffs",
+  "decor",
   "determinism",
   "eviction",
   "farm",
@@ -7532,15 +7626,15 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2258
+   "lines": 2271
   },
   {
    "path": "main.js",
-   "lines": 1938
+   "lines": 1943
   },
   {
    "path": "interact.js",
-   "lines": 1693
+   "lines": 1732
   },
   {
    "path": "placeholders.js",
@@ -7571,16 +7665,16 @@
    "lines": 762
   },
   {
+   "path": "placement.js",
+   "lines": 712
+  },
+  {
    "path": "game.js",
    "lines": 703
   },
   {
    "path": "assets.js",
    "lines": 651
-  },
-  {
-   "path": "placement.js",
-   "lines": 647
   },
   {
    "path": "figure/draw.js",
@@ -7592,7 +7686,7 @@
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 477
+   "lines": 478
   },
   {
    "path": "render/walls.js",
@@ -7684,7 +7778,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 207
+   "lines": 209
   },
   {
    "path": "tuning.js",
@@ -7743,12 +7837,16 @@
    "lines": 153
   },
   {
+   "path": "rugs.js",
+   "lines": 137
+  },
+  {
    "path": "settings.js",
    "lines": 134
   },
   {
    "path": "item-info.js",
-   "lines": 129
+   "lines": 130
   },
   {
    "path": "bucket.js",
@@ -7913,6 +8011,10 @@
   {
    "path": "debuffs.js",
    "lines": 48
+  },
+  {
+   "path": "render/rugs.js",
+   "lines": 46
   },
   {
    "path": "world.js",
@@ -8210,6 +8312,9 @@
   "render_walls": {
    "CAP_MARGIN": 1,
    "SHAKE_MS": 110
+  },
+  "rugs": {
+   "REACH": 2.6
   },
   "save": {
    "VERSION": 3

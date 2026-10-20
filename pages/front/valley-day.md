@@ -142,6 +142,12 @@ Drawn straw beehives stand at [[Your cottage]] (two, along the south of the farm
 
 Read: [[Beehive]], [[Chicken coop]], [[Containers]], [[Gatherables]].
 
+### Rugs (game #339)
+
+Two rugs, the [[Bearskin rug]] and the [[Regal red rug]], are items you carry rolled up in the bag. **Place** on a rug's menu shows its outline on the floor; `R` turns it and a click lays it within reach, never over water, another rug, across a wall, or over something that cannot be carried, such as a tree or a crop. A laid rug lies under everything: you walk over it, things dropped on it lie on it, and the furniture you can carry may stand on it. **Pick up** rolls it back into the bag, but not while furniture stands on it ("Move the chest off it first."). A wall cannot be built through one. For now both are in the [[Developer chest]], and so can be added to Extra starting items.
+
+Read: [[Rugs]], [[Inventory]], [[Placement]].
+
 ### The row of buttons in one line (game #312)
 
 The row of buttons sits on the belt's stone, as one panel. Where there is room it is one line of eight along the bottom right, clear of the belt and the chat log; where not, two lines of four, and smaller buttons on a narrow interface. The skills panel stands above it.

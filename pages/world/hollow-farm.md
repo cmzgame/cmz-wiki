@@ -1,7 +1,7 @@
 ---
 title: Hollow Farm
 categories: [Places]
-aliases: [The farm, Hollow Farm's yard]
+aliases: [The farm]
 summary: The big farm south of the lane: the great barn with a hoe on its rack, the farmhouse, a granary of every seed, a chicken coop and beehives, the pumpkin field, and potato, cabbage, and garlic plots.
 ---
 
@@ -16,7 +16,7 @@ summary: The big farm south of the lane: the great barn with a hoe on its rack, 
 - **The pumpkin field**, the biggest field on the map, fenced with a gate on the yard, a scarecrow in its middle.
 - Fenced plots of **potatoes**, **cabbages**, and **garlic**, all at mixed stages.
 
-Each part is a place of its own on the map: [[Hollow Farm's great barn]], [[Hollow Farm's farmhouse]], [[Hollow Farm's granary]], [[Hollow Farm's pumpkin field]], [[Hollow Farm's potatoes]], [[Hollow Farm's cabbages]], and [[Hollow Farm's garlic]].
+Each part is a place of its own on the map: [[Hollow Farm's yard]] (its well, woodpiles, cart, trough, coop, and hives), [[Hollow Farm's great barn]], [[Hollow Farm's farmhouse]], [[Hollow Farm's granary]], [[Hollow Farm's pumpkin field]], [[Hollow Farm's potatoes]], [[Hollow Farm's cabbages]], and [[Hollow Farm's garlic]].
 
 ## The dead
 
@@ -33,5 +33,6 @@ The fields, the crops, and what the granary held are the world's, the same for e
 - `data/loot.json:8-9`: the barn rack's hoe; the granary's seed of every crop, fixed
 - `tools/mapgen/valley.py:453-457`, `data/loot.json:3`: the coop at the yard's west end with the coop table, and three hives east of the lane (game #338, at 232d0fb)
 - `tools/mapgen/valley.py:597`: five of the dead in the yard
+- `tools/mapgen/valley.py:449-462`: the yard's well, woodpiles, cart, trough, coop, and hives in a place of their own, Hollow Farm's yard, at the same tiles (game #340, at 499e344)
 
 {{navbox places}}
