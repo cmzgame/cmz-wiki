@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "2facd17ae12a2552d001f798592ebf09ef4d10f5",
-  "short": "2facd17",
-  "date": "2026-10-19T23:33:14-05:00",
-  "subject": "Merge #303, reviewed: Object Highlight, a dev setting that outlines the game object under the pointer (#301)",
+  "commit": "8af4eedc983c2d41a7dfb066dbd9f9dd4841df07",
+  "short": "8af4eed",
+  "date": "2026-10-20T00:07:53-05:00",
+  "subject": "Merge #314, reviewed: the sounds spec, docs/40 (#310)",
   "ref": "origin/main"
  },
  "counts": {
@@ -26,8 +26,8 @@
   "verbs": 14,
   "menuLabels": 65,
   "events": 31,
-  "checks": 54,
-  "modules": 105
+  "checks": 56,
+  "modules": 110
  },
  "items": [
   {
@@ -5965,6 +5965,10 @@
    "needsStaminaRegenMult": 0.5,
    "tiredStaminaRegenMult": 0.75
   },
+  "hoverCard": {
+   "delayMs": 60,
+   "gap": 14
+  },
   "objectHighlight": {
    "color": "#f4f0e6",
    "alpha": 1,
@@ -6482,26 +6486,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1101"
+    "main.js:1103"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1100"
+    "main.js:1102"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1078"
+    "main.js:1080"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:922",
-    "main.js:936"
+    "main.js:924",
+    "main.js:938"
    ]
   },
   {
@@ -6513,19 +6517,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1098"
+    "main.js:1100"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1081"
+    "main.js:1083"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1080"
+    "main.js:1082"
    ]
   },
   {
@@ -6550,56 +6554,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1076"
+    "main.js:1078"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1082"
+    "main.js:1084"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1089"
+    "main.js:1091"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1078"
+    "main.js:1080"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1161"
+    "main.js:1163"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1161"
+    "main.js:1163"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1079"
+    "main.js:1081"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1172"
+    "main.js:1174"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:922",
-    "main.js:928"
+    "main.js:924",
+    "main.js:930"
    ]
   }
  ],
@@ -6732,13 +6736,13 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1483"
+    "main.js:1486"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:825"
+    "main.js:827"
    ]
   },
   {
@@ -6780,7 +6784,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1421"
+    "main.js:1424"
    ]
   },
   {
@@ -6835,7 +6839,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1457"
+    "main.js:1460"
    ]
   },
   {
@@ -6865,13 +6869,13 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1411"
+    "main.js:1414"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1447"
+    "main.js:1450"
    ]
   },
   {
@@ -6895,7 +6899,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1496"
+    "main.js:1499"
    ]
   },
   {
@@ -6907,37 +6911,37 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1380"
+    "main.js:1383"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1376"
+    "main.js:1379"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1413"
+    "main.js:1416"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1412"
+    "main.js:1415"
    ]
   },
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:712"
+    "ui/inventory-panel.js:748"
    ]
   },
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1505"
+    "main.js:1508"
    ]
   },
   {
@@ -7133,7 +7137,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1293"
+    "main.js:1296"
    ]
   },
   {
@@ -7316,27 +7320,6 @@
  ],
  "moodles": [
   {
-   "id": "bleed",
-   "stages": [
-    {
-     "name": "Bleeding",
-     "text": "A wound is open. A bandage will close it."
-    },
-    {
-     "name": "Bleeding badly",
-     "text": "Two wounds. It will not stop by itself soon."
-    },
-    {
-     "name": "Bleeding heavily",
-     "text": "Three. Your hands are slick. Bandage it."
-    },
-    {
-     "name": "Bleeding out",
-     "text": "You are losing blood fast. Bandage it now."
-    }
-   ]
-  },
-  {
    "id": "infection",
    "stages": [
     {
@@ -7431,6 +7414,7 @@
   "chop",
   "cloth",
   "craft",
+  "debuffs",
   "determinism",
   "eviction",
   "farm",
@@ -7446,6 +7430,7 @@
   "growth",
   "hidden",
   "highlight",
+  "hovercard",
   "immune",
   "kindle",
   "kit",
@@ -7484,7 +7469,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1928
+   "lines": 1936
   },
   {
    "path": "interact.js",
@@ -7500,7 +7485,7 @@
   },
   {
    "path": "ui/screens.js",
-   "lines": 1232
+   "lines": 1251
   },
   {
    "path": "ground.js",
@@ -7511,12 +7496,12 @@
    "lines": 935
   },
   {
-   "path": "archery.js",
-   "lines": 762
+   "path": "ui/inventory-panel.js",
+   "lines": 770
   },
   {
-   "path": "ui/inventory-panel.js",
-   "lines": 734
+   "path": "archery.js",
+   "lines": 762
   },
   {
    "path": "game.js",
@@ -7583,6 +7568,10 @@
    "lines": 296
   },
   {
+   "path": "ui/nav-row.js",
+   "lines": 290
+  },
+  {
    "path": "host.js",
    "lines": 288
   },
@@ -7599,16 +7588,12 @@
    "lines": 256
   },
   {
-   "path": "ui/nav-row.js",
-   "lines": 252
+   "path": "ui/skill-icons.js",
+   "lines": 248
   },
   {
    "path": "save.js",
    "lines": 243
-  },
-  {
-   "path": "ui/skill-icons.js",
-   "lines": 239
   },
   {
    "path": "render/props.js",
@@ -7636,7 +7621,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 199
+   "lines": 205
   },
   {
    "path": "fire.js",
@@ -7695,11 +7680,11 @@
    "lines": 132
   },
   {
-   "path": "bucket.js",
-   "lines": 127
+   "path": "item-info.js",
+   "lines": 129
   },
   {
-   "path": "moodles.js",
+   "path": "bucket.js",
    "lines": 127
   },
   {
@@ -7723,6 +7708,10 @@
    "lines": 116
   },
   {
+   "path": "moodles.js",
+   "lines": 115
+  },
+  {
    "path": "ui/log.js",
    "lines": 115
   },
@@ -7736,6 +7725,10 @@
   },
   {
    "path": "floaters.js",
+   "lines": 107
+  },
+  {
+   "path": "ui/hover-card.js",
    "lines": 107
   },
   {
@@ -7753,6 +7746,10 @@
   {
    "path": "iso.js",
    "lines": 98
+  },
+  {
+   "path": "ui/debuff-row.js",
+   "lines": 88
   },
   {
    "path": "camera.js",
@@ -7847,6 +7844,10 @@
    "lines": 50
   },
   {
+   "path": "debuffs.js",
+   "lines": 48
+  },
+  {
    "path": "world.js",
    "lines": 41
   },
@@ -7873,6 +7874,10 @@
   {
    "path": "figure.js",
    "lines": 30
+  },
+  {
+   "path": "ui/debuff-icons.js",
+   "lines": 26
   },
   {
    "path": "inspect-mark.js",
@@ -8044,6 +8049,9 @@
    "TW": 64,
    "TH": 32
   },
+  "item-info": {
+   "MAX_LINES": 8
+  },
   "light": {
    "RES": 2,
    "CORE_GAIN": 1.4,
@@ -8164,7 +8172,9 @@
    "HEAD_TOP": 78
   },
   "ui_nav-row": {
-   "NARROW": 600
+   "NARROW": 600,
+   "ROW_RIGHT": 8,
+   "ROW_GAP": 8
   },
   "ui_screens": {
    "CREATION_STEPS": 2

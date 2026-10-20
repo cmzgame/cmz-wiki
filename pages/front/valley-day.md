@@ -130,6 +130,30 @@ With a lit torch in hand or on the belt, the X on the bag (and the character scr
 
 Read: [[Inventory]].
 
+### The row of buttons in one line (game #312)
+
+The row of buttons sits on the belt's stone, as one panel. Where there is room it is one line of eight along the bottom right, clear of the belt and the chat log; where not, two lines of four, and smaller buttons on a narrow interface. The skills panel stands above it.
+
+Read: [[Interface#The row of buttons|Interface]].
+
+### Bleeding as a debuff (game #315)
+
+Bleeding left the moodles. A wound shows as a red drop in a new row of debuffs at the top right, with its time left under it and its stacks in the corner from two on; hover over it for a card that says how fast it drains, that a bandage stops it, and that another bite makes it worse. The bag now opens a little lower, under the row. A guest's row is the same.
+
+Read: [[Bleeding]], [[Interface#Top right: debuffs|Interface]], [[Moodles]].
+
+### The item hover card (game #313)
+
+Rest the pointer on any item in a grid or slot, the bag, the belt, the hands, the worn slots, a chest, a body, or a station's output, and a small dark card in the style of WoW's tooltips shows its full name, its kind, and what it does, read from the game's data, with **Use** in gold. An empty slot shows its name. It replaces the browser's slow tooltip. Some cards do not yet say everything their item does (game #317).
+
+Read: [[Inventory#The hover card|Inventory]].
+
+### Durable fullscreen (game #311)
+
+In Chrome and Edge, fullscreen from the Settings switch keeps `Escape` for the game: a tap closes menus as in a window, and holding it leaves fullscreen. In Firefox and Safari the first `Escape` still leaves fullscreen. The Fullscreen row says which, and a held `Escape` closes one thing, once.
+
+Read: [[Settings]], [[Controls]].
+
 ### Object Highlight (game #303)
 
 Point at anything you can act on, a tree, a crop, a mushroom, a chest, an item on the ground, a villager, and a thin pale outline shows round it; leaf litter and headstones get none. It is a testing setting, on by default.
@@ -227,7 +251,6 @@ Michael's playtest on 2026-10-18 produced rulings and ideas that change nothing 
 - **Gear can drop by chance** (ruled), a boss's best item not every kill; **regions should keep drawing players back** (Michael's hope); **the least armour is just better than nothing**, with how strong the best gets open; **weapons differ by situation** through resistances (game #133, #268, #123).
 - **Loot tables balanced:** most containers roll the chest's table today, so a valley holds about fourteen rucksacks and fourteen swords; a table per kind of container, gear rare (game #268).
 - **Bags and stacking:** one thing a cell by default, and bag tiers from the valley and the regions (game #260).
-- **A hover card on every item in a grid** (ruled, a standing rule): its full name and what it does, with **Use** in the Use mode's gold (game #262).
 - **The map redrawn** with distinct areas and roomier buildings, and **a furniture and rugs pass** (game #92, #261).
 - **The regions feed the skills,** a rule drafted for Michael to edit (game #123).
 - **A dead-free first day** with an optional tutorial, then the dead arriving on a curve: Michael's middle ground, not ruled (game #123).
@@ -252,6 +275,7 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/ui/screens.js:714-732`, `src/main.js:1743`, `src/ui/nav-row.js:220-241`, `src/item-info.js`, `src/ui/hover-card.js`, `src/debuffs.js`, `src/ui/debuff-row.js`: durable fullscreen, the row in one line, the item hover card, bleeding as a debuff (game #311, #312, #313, #315, at 8af4eed)
 - `src/entities/player.js:87-88`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:191`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-51`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)

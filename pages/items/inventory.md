@@ -39,7 +39,22 @@ In a panel:
 - Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot. Double-clicking a filled slot on the character screen or the belt runs its first entry: a hand or clothing slot unequips; a belt slot eats a food, drinks from a waterskin, or else equips into a hand.
 - Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Apply**, **Split**, **Store** or **Take**, **Drop** or **Drop all**, and **Rotate**, each where it applies.
 
-An item that has lost [[Durability|durability]] shows a bar on its icon and "(N% left)" in its name.
+An item that has lost [[Durability|durability]] shows a bar on its icon, and its hover card says how much is left.
+
+### The hover card
+
+Every item drawn in a grid or a slot shows a card when the pointer rests on it: in your bag, on your [[Belt]], in your [[Hands]], in a worn slot of the character screen, in a chest or a bag on the ground, on a searched body, and in a station's output. It is a small, dark, rounded box with a thin light border, in the style of the item tooltips of World of Warcraft. It shows almost at once, follows the pointer, and flips up or to the left rather than leave the screen; it takes the place of the browser's slower tooltip. It hides while you drag an item, aim a [[Use]], or have a menu open.
+
+The card says, from the top:
+
+- The item's full **name**, in white.
+- Its **kind** (Food, Tool, Material, Clothing, Bag, Seed, Bow, Shield, "Tool, weapon", and so on), then the stack's count, a fill, and the durability left as a percentage, where they apply.
+- What it does, a short line each, read from the game's data and never written by hand per item: **Eat** with what it heals and how much hunger it fills; **Drink** with how full it is; **Apply** for a bandage; a weapon's damage and reach; **Equip** with the hand or hands it takes, or the slot it is worn on, with a bag's grid or a belt's slots; the actions a tool is for; whether it gives light; **Use** on what, and to do what (a tinderbox is Used on a campfire or a torch post, to light it); what a seed grows; what it splits into; where it is made; what it goes into; what it builds and how many it takes; and that it burns as fuel. The word **Use** is drawn in the Use mode's gold, the other menu words in bold white. A card holds at most {{n census.constants.item-info.MAX_LINES}} of these lines.
+- "Right-click for actions.", in small grey letters.
+
+An empty slot shows a card with its name (for example the belt's slots by number) and "Empty slot". The card changes as the item does: eat from a stack under the pointer and the count on the card goes down.
+
+Some items' cards do not yet say everything the item does.
 
 ### Take All
 
@@ -99,6 +114,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/ui/inventory-panel.js:692`: shift-click sends across
 - `src/interact.js:1212-1289`: the item menu's entries, Equip for garments and bags (game commit 9a450f2)
 - `src/ui/inventory-panel.js:257-258`: the durability bar (the code's `wear`) and "(N% left)"
+- `src/item-info.js:1-127`, `src/ui/hover-card.js`, `src/ui/inventory-panel.js:93-98`, `src/ui/inventory-panel.js:428-456`, `style.css:521-542`, `data/tuning.json`: `hoverCard`: the hover card over every item in a grid or slot and an empty slot's name; its look, its lines from the data, Use in gold, the count, fill, and wear; following the pointer, kept on screen, hidden while dragging, aiming, or in a menu; redrawn as the item changes; the browser's title tooltip gone (game #313, at 8af4eed)
 - `src/inventory.js:199-213`, `src/interact.js:244`, `src/ui/inventory-actions.js:169`: the one container rule and its labels, "or equip it" (game commit 9a450f2)
 - `data/items.json:34-36`: the three bags' grids
 - `data/kit.json:3`: the starting sack

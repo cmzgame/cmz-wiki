@@ -22,7 +22,7 @@ A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a s
 
 With no belt, or a key past the belt's last slot, the game says "No belt, or no such slot."
 
-A slot's menu offers **Equip**, **Put in bag** ("No room in your bag." if it is full), **Use**, and **Drop**. For a food it offers **Eat** in place of Equip, and for a waterskin **Drink** with how full it is. A double-click on a slot does the first of these: it equips, eats, or drinks.
+A slot's menu offers **Equip**, **Put in bag** ("No room in your bag." if it is full), **Use**, and **Drop**. For a food it offers **Eat** in place of Equip, and for a waterskin **Drink** with how full it is. A double-click on a slot does the first of these: it equips, eats, or drinks. Resting the pointer on a slot shows the item's hover card, or the slot's name ("Belt slot" and its key) when it is empty (see [[Inventory#The hover card|Inventory]]).
 
 When an item is put away and the bag has no room, it goes onto the belt if it can be held.
 
@@ -48,6 +48,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/ui/inventory-panel.js:320`, `src/ui/inventory-panel.js:428-441`, `src/item-info.js:120-122`: a belt slot's hover card, or its name when empty (game #313, at 8af4eed)
 - `src/inventory.js:184-198`, `src/figure/wardrobe.js:80-82`: a hidden belt drawn as nothing and still worn, its slots kept (game #243)
 - `src/inventory.js:9`: the waist slot
 - `data/items.json:32-33`: the rope belt's and the good belt's slot counts

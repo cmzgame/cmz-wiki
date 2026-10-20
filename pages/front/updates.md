@@ -9,6 +9,15 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `8af4eed`
+
+- **Changed in the game:** durable fullscreen (game #311). In a browser that can lock the keyboard (Chrome, Edge), fullscreen from the Settings switch keeps `Escape` for the game: a tap closes its menus as in a window and a held `Escape` leaves fullscreen, under the browser's own banner; elsewhere (Firefox, Safari) the first `Escape` still leaves fullscreen. The Fullscreen row's line says which, and `Escape` no longer acts on a key repeat, so a held one closes one thing once. [[Settings]], [[Controls]], and [[Screens]] say so.
+- **Changed in the game:** the row of buttons sits on the belt's stone plate, as one panel: one line of eight along the bottom right when it clears the belt and the chat log, two lines of four when not, and smaller buttons on a narrow interface, with the skills panel above it (game #312). [[Interface]] says so.
+- **New in the game:** the item hover card (game #313). Every item in a grid or slot (bag, belt, hands, worn slots, a chest, a body, a station's output) shows on hover a small dark rounded card, in the style of WoW's tooltips: its full name, its kind, and its uses read from the data (Eat with heal and hunger, Equip with the hand or slot, Use on what with Use in gold, what it goes into, what it builds, where it is made, a bag's size, wear left, the count). An empty slot shows its name. It replaces the browser's slow tooltip and changes as the item does. Some cards do not yet say everything (game #317). [[Inventory]] has a section on it; [[Interface]] and [[Belt]] point to it.
+- **Changed in the game:** bleeding is a debuff, no longer a moodle (game #315). A red drop shows in a new row of debuffs at the top right, growing leftward, with its time left under it (whole seconds under a minute, whole minutes rounded up from a minute), its stacks in the corner from two on, and a hover card; the bag opens a little lower, under the row. A guest's row is drawn from their own record, and the wound is in the multiplayer sync check. [[Bleeding]], [[Moodles]], [[Interface]], [[Player]], and [[Things left behind]] corrected; there are four moodles now.
+- **In the game's docs:** the sounds spec, the game's `docs/40` (game #314), a document only; nothing a player sees.
+- **On the wiki:** [[Valley day]] has the four changes, and the hover card leaves its list of things decided but not built.
+
 ## 2026-10-19: synced to `2facd17`
 
 - **New in the game:** **Object Highlight**, a testing setting on by default: a thin pale outline round the game object under the pointer that has an action, never plain scenery (game #303). [[Settings]] lists it with what it leaves out.

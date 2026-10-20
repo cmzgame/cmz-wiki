@@ -14,7 +14,7 @@ Cozy Medieval Zombies is a survival simulation in the spirit of Project Zomboid,
 - **No danger that grows with the days.** No world decay, no scheduled horde. Every rise in danger is one a player chose: you went to the bog and brought some of the bog home with you.
 - **No skill grind on the battlefield.** Skills, when they come, are off the battlefield and never make you hit harder; a sword does what a sword does ([[Combat]]).
 - **No guns.** Ever. Medieval, low-fantasy: a sword, a bow, a torch, and a book of fire ([[Weapons]]).
-- **A short moodle row.** The needs ([[Hunger]], [[Thirst]], [[Tiredness]]) and the wounds ([[Bleeding]], [[Infection]]), and never boredom or sanity; cold may come with seasons, if seasons come.
+- **A short moodle row.** The needs ([[Hunger]], [[Thirst]], [[Tiredness]]) and [[Infection]], and never boredom or sanity; a specific harm such as [[Bleeding]] is a debuff of its own, with its time left; cold may come with seasons, if seasons come.
 
 ## Kept
 
@@ -32,5 +32,5 @@ The same rules for everyone in a world; nothing above changes with more than one
 - `docs/00-vision.md`: "What it is not" (Not Zomboid with cute art) and the Laws (never harder on a clock; no guns).
 - `CLAUDE.md`: "The laws of the design".
 - `docs/02-decisions.md`: 2026-10-13, "What this game is"; 2026-10-12, the moodles (never boredom or sanity; cold kept for seasons); 2026-10-16, the four lines of `00` ruled.
-- `src/moodles.js`: the row as it is (hunger, thirst, tiredness, bleeding, infection).
+- `src/moodles.js:22-80`, `src/debuffs.js:1-5`: the row now infection, hunger, thirst, tiredness; bleeding a debuff (game #315, at 8af4eed)
 - `data/tuning.json`: `player.sprintMult`, the sprint that costs stamina and not sight.

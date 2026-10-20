@@ -75,7 +75,7 @@ In a world shared with friends, a screen saying "You stepped away" covers the ga
 
 ## Escape
 
-`Escape` closes the top thing first: the actions menu, then Use mode, then the station panel, then a conversation, then a screen (which steps back to the one that opened it), then the build palette, then placement or removal, then the bag and character panels, then the map. With nothing open it opens the pause menu. In fullscreen (see [[Settings]]) the browser takes the first `Escape` to leave fullscreen; the next one pauses.
+`Escape` closes the top thing first: the actions menu, then Use mode, then the station panel, then a conversation, then a screen (which steps back to the one that opened it), then the build palette, then placement or removal, then the bag and character panels, then the map. With nothing open it opens the pause menu. In fullscreen (see [[Settings]]), in a browser that can lock the keyboard (Chrome and Edge), `Escape` works as it does in a window and holding it leaves fullscreen; in any other browser the first `Escape` leaves fullscreen and the next one reaches the game. Holding `Escape` closes one thing, once.
 
 ## With friends
 
@@ -112,5 +112,6 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 - `src/ui/screens.js:1036-1043`, `src/main.js:154-180`: the stepped-away screen and what closes it
 - `src/main.js:833-852`, `src/ui/screens.js:245-274`: Escape's order, a screen stepping back to its opener
 - `src/ui/screens.js:545-552`: in fullscreen the first Escape leaves it, the second pauses, as the Fullscreen row says
+- `src/ui/screens.js:714-732`, `src/main.js:1743`: where the browser can lock the keyboard, Escape kept by the page in fullscreen and a hold leaving it; elsewhere the first Escape the browser's; a held Escape acting once (game #311, at 8af4eed)
 - `src/main.js:821-824`, `src/main.js:1485`: screens pause only off the wire
 - `src/main.js:400-417`: a guest's new character after a death is chosen while still in the world

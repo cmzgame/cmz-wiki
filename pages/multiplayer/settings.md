@@ -22,7 +22,9 @@ In the order the screen shows them, with the default first.
 - **Floating numbers**: Shown or Hidden: damage, healing, and what you gather float up over heads (see [[Interface#Floating numbers|Interface]]).
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
 - **Aim guide**: Off or On: the landing marker and a dotted line while you draw a bow, wind up a throw, or cast. It changes only what your own screen draws. A browser that saved its settings before it went off by default keeps its own choice. See [[Archery]].
-- **Fullscreen**: Off or On, at the foot of the tab: "The game fills the whole screen. Esc leaves fullscreen first; a second Esc pauses." It asks the browser for the whole screen when clicked and shows what the page is in now; it is not kept, since the browser decides when fullscreen ends. Playing never goes fullscreen by itself. Where the browser does not allow it, the row says so and cannot be switched.
+- **Fullscreen**: Off or On, at the foot of the tab. It asks the browser for the whole screen when clicked and shows what the page is in now; it is not kept, since the browser decides when fullscreen ends. Playing never goes fullscreen by itself. Where the browser does not allow it, the row says so and cannot be switched. What `Escape` does in fullscreen depends on the browser, and the row's line says which:
+  - In a browser that can lock the keyboard (Chrome and Edge), the game keeps `Escape` while fullscreen lasts: "The game fills the whole screen. Esc closes menus as usual; hold Esc to leave fullscreen." A tap of `Escape` closes the game's menus as it does in a window, and a held `Escape` leaves fullscreen; the browser shows its own banner saying so.
+  - In any other browser (Firefox, Safari), or where the browser refused the lock: "The game fills the whole screen. In this browser Esc leaves fullscreen first; the next one reaches the game."
 
 ### Testing
 
@@ -66,6 +68,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/main.js:1253`: the Aim guide read where the viewer's own frame is drawn
 - `src/view.js:80-87`: `UI_SCALE_MAX` and Auto's fit
 - `src/view.js:28`, `src/view.js:70-79`: the zooms and Auto
+- `src/ui/screens.js:714-732`, `src/ui/screens.js:333-337`, `src/ui/screens.js:114-117`: the Escape lock where the browser has one, the two help lines, the lock refused, the lock let go when fullscreen ends (game #311, at 8af4eed)
 - `src/ui/screens.js:545-552`, `src/ui/screens.js:288-293`, `src/ui/screens.js:111`: Fullscreen: its line, asked of the browser by a click, showing the page's state, disabled where not allowed (game #129)
 - `src/ui/screens.js:623-641`: the Testing tab's Layer rows (the first answer **item**), Painted hair with Reload hair, and the relay
 - `src/ui/screens.js:169`: a focused dropdown keeps its keys, Escape through

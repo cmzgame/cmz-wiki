@@ -55,7 +55,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `/`: open the chat box with a slash typed (there are no commands yet).
 - `Escape`: close the top thing in this order: the actions menu, a screen, Use mode, the station panel, a conversation, the skills panel, the build palette, placement or removal, the bag and character panels, the map. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
 
-In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button. On the site's Home, `Enter` opens the Worlds page, unless a button, link, or field has the focus. In fullscreen the browser takes the first `Escape` to leave fullscreen.
+In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button. On the site's Home, `Enter` opens the Worlds page, unless a button, link, or field has the focus. In fullscreen, in a browser that can lock the keyboard (Chrome and Edge), a tap of `Escape` does what it does in a window and a held `Escape` leaves fullscreen; in any other browser the first `Escape` leaves fullscreen and the next reaches the game (see [[Settings]]). A held `Escape` acts once: the game takes no notice of the key repeating.
 
 ### In the panels
 
@@ -116,6 +116,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:851-852`, `src/ui/screens.js:253-282`: Escape out of a world steps back through the site
 - `src/ui/screens.js:851`, `src/ui/screens.js:898`, `src/ui/screens.js:911`: Enter in a screen's text field presses its button
 - `src/ui/screens.js:105-112`, `src/ui/screens.js:572-579`: Enter on Home opens the Worlds page; the first Escape in fullscreen leaves it
+- `src/ui/screens.js:714-732`, `src/main.js:1743`: in fullscreen, Escape locked to the page where the browser can, a hold to leave; Escape acts once a press, never on a repeat (game #311, at 8af4eed)
 - `src/ui/inventory-panel.js:75-140`, `src/ui/inventory-panel.js:657`: drag, rotate, shift-click, double-click, right-click in the panels
 - `src/ui/inventory-actions.js:214-229`, `src/interact.js:1321-1333`, `src/ui/screens.js:43`: a double-click equips from the bag and runs a slot's Equip or Unequip, or a belt slot's Eat or Drink (game #186); the Controls screen's line
 - `src/ui/station-panel.js:35-44`: typing in a station's count is kept from the world's keys; Enter or Escape leaves it

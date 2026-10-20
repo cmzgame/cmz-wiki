@@ -36,7 +36,7 @@ Four slow needs run from full down to empty, each shown as a moodle that worsens
 - [[Tiredness]]: restored only by [[Sleep]] in a bed. It never kills, but it stops sprinting and then healing.
 - [[Health]] comes back by itself only while you are fed, watered, not [[Bleeding]], and not falling asleep.
 
-Two more moodles are not needs: [[Bleeding]], from bites, and [[Infection]], a marker from bites that does nothing yet. All of the needs switch off with the [[Survival]] setting.
+One more moodle is not a need: [[Infection]], a marker from bites that does nothing yet. [[Bleeding]], from bites, is a debuff, shown in a row of its own at the top right with its time left. All of the needs switch off with the [[Survival]] setting.
 
 ### The starter kit
 
@@ -86,7 +86,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `src/entities/player.js:351`: no sprint while carrying
 - `src/entities/player.js:267-268`, `src/entities/player.js:343-346`: auto-walk uses the same speeds; a movement key cancels it
 - `src/entities/player.js:138-177`: the needs, their damage, and regeneration's conditions; the needs held full with Survival off, regeneration still running
-- `src/moodles.js:23-102`: the five moodles
+- `src/moodles.js:22-80`, `src/debuffs.js:19-30`: four moodles now; bleeding a debuff (game #315, at 8af4eed)
 - `data/kit.json`: the default starting kit, what is worn, in the sack, and in hand, the torch out and a tinderbox in the sack
 - `src/game.js:100`, `src/game.js:135-139`, `src/game.js:454`, `src/kit.js:62-75`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
 - `src/rules.js:21-22`, `src/rules.js:30`, `src/settings.js:70-72`: Extra starting items and Dev bag, world rules chosen once at the Sandbox step
