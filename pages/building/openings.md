@@ -45,7 +45,7 @@ A door or shutters the dead break are gone for good. A broken door stays open as
 
 ### Building openings
 
-A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. The palette's Gate is built on an empty edge or into a fence (see [[Fences]]). A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
+A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. In a wall of wood, a door's leaves and a window's shutters may be of another wood than the wall's, chosen with R while building (see [[Woods]]). The palette's Gate is built on an empty edge or into a fence (see [[Fences]]). A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
 
 ## Numbers
 
@@ -68,6 +68,7 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/woods.js:41-67`, `src/woods.js:115-170`: a door or window in another wood than its wall, drawn in that wood shut and open (game #348, #351, at 9d1681f)
 - `src/map.js:733-744`: a wall record with its kind and state
 - `src/map.js:817-826`: only a door, open or broken and unboarded, passes a body; a window never does
 - `src/map.js:1358-1372`: what a door and shutters pass of light and sight

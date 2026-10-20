@@ -2,18 +2,19 @@
 title: Building
 categories: [Building, Mechanics]
 aliases: [Build, Build palette, Build mode, Removal, Removal tool, Remove]
-summary: Building log walls, fences, gates, doors, and windows from the palette on N, doors and windows over walls and broken openings, and removing what players built or made with X.
+summary: Building log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, doors and windows over walls and broken openings, and removing what players built or made with X.
 ---
 
-**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Building and removing ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a fence, a gate, a door, a window, and Remove. Everything you build is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there.
+**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Building and removing ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and Remove. Everything you build is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there.
 
 ## How it works
 
 ### The palette
 
-N opens a short list on the left of the screen. It has five pieces and a Remove row:
+N opens a short list on the left of the screen. It has a row for each piece and a Remove row:
 
 - **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built in {{n build.wall.seconds seconds}}, with a [[Hatchet]] on you.
+- **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each costing {{n build.wall_oak.cost.plank}} [[Plank|plank]], built in {{n build.wall_oak.seconds seconds}}, with a [[Smith's hammer]] on you. **Winter Pine wall** and **Bloodbark wall** are listed only while Free building is on (see [[Woods]]).
 - **Door**, costing {{n build.door.cost.plank}} [[Plank|planks]], built in {{n build.door.seconds seconds}}, with a [[Smith's hammer]] on you.
 - **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}, with a smith's hammer on you.
 - **Fence**, costing {{n build.fence.cost.plank}} plank a stretch, built in {{n build.fence.seconds seconds}}, with a smith's hammer on you.
@@ -44,11 +45,13 @@ When a wall goes up or comes down, the [[Rooms|rooms]] on either side of it are 
 
 ### Building over a wall or a broken opening
 
-A log wall or a fence needs an empty edge. A gate goes on an empty edge or into a fence, and nowhere else ("Only in a fence"; see [[Fences]]). A door or a window may also be built over what stands on the edge:
+A log wall, a wall of wood, or a fence needs an empty edge. A gate goes on an empty edge or into a fence, and nowhere else ("Only in a fence"; see [[Fences]]). A door or a window may also be built over what stands on the edge:
 
 - **Over a plain wall**, authored or built: the door or window takes the wall's place, shut, and is made of the wall's material, so a door built into a stone wall is a stone door. The wall it replaced is remembered.
 - **Over a fence**, a door only: it is a gate in the fence, as the palette's Gate is. A window cannot be built into a fence (see [[Fences]]).
 - **Over a broken door**, a new door; **over broken shutters**, a new window: whole, shut, and at full health. It is a new one, at a new one's cost, never a repair.
+
+While a Door or a Window is picked, **R** cycles the wood of its leaves and shutters, shown as "leaves: Spruce · R" under its row and beside the ghost; only a wall of wood takes another wood's door or window (see [[Woods]]).
 
 Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch bracket on a wall built over is lost with it; a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
 
@@ -72,6 +75,7 @@ The removal tool cannot be used while carrying furniture ("Your hands are full."
 ## Numbers
 
 - Log wall: {{n build.wall.cost.log}} log, {{n build.wall.seconds seconds}}.
+- A wall of any wood: {{n build.wall_oak.cost.plank}} plank, {{n build.wall_oak.seconds seconds}}.
 - Door: {{n build.door.cost.plank}} planks, {{n build.door.seconds seconds}}.
 - Window: {{n build.window.cost.plank}} planks, {{n build.window.seconds seconds}}.
 - Fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
@@ -104,6 +108,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/build.json`, `src/placement.js:86-96`, `src/placement.js:381`, `src/woods.js:41-67`: a row per wooden wall, the regions' two only with Free building; R for a door's or window's wood (game #348, #351, at 9d1681f)
 - `src/map.js:647`, `src/map.js:670`: a painting falls to the floor when its wall is removed or built over (game #344, at 9ac68a2)
 - `data/build.json`: the Fence (`wall_fence`, `kind` wall) and the Gate (`kind` door, `over` the fence), with the `build` tool (game #343, at b0df8fc)
 - `src/placement.js:204-212`, `src/placement.js:449-455`: a build entry's wall kind; a gate only in a fence; the Remove prompt names a fence and a gate (game #343, at b0df8fc)

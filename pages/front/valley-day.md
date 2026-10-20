@@ -160,6 +160,12 @@ Eight paintings, three small, two tall, and three wide, are items you carry in t
 
 Read: [[Paintings]], [[Inventory]], [[Placement]].
 
+### The woods (game #348, #351)
+
+The valley's houses are built in four woods now, mixed: oak, spruce, mahogany, and daub, the limewashed timber frame (the inn is mahogany, the baker's is daub, Hollow Farm's great barn is spruce). Two more, Winter Pine and Bloodbark, are the woods of regions beyond the valley. The build palette has a wall in each of the valley's woods, a plank apiece, and the regions' two while Free building is on. A door or a window may be of another wood than its wall: with a Door or a Window picked, **R** cycles its wood, so an oak house can have Winter Pine doors and shutters.
+
+Read: [[Woods]], [[Walls]], [[Building]].
+
 ### The row of buttons in one line (game #312)
 
 The row of buttons sits on the belt's stone, as one panel. Where there is room it is one line of eight along the bottom right, clear of the belt and the chat log; where not, two lines of four, and smaller buttons on a narrow interface. The skills panel stands above it.

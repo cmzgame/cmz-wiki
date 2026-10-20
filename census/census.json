@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "9ac68a28ca83aef454da3acc66e1ab63072b0555",
-  "short": "9ac68a2",
-  "date": "2026-10-20T14:11:49-05:00",
-  "subject": "Merge #344, reviewed: paintings as items, hung from the bag on a wall's face and taken down again (#326)",
+  "commit": "9d1681fd548efbb5437e3bbfb07ea114f41b7c05",
+  "short": "9d1681f",
+  "date": "2026-10-20T18:58:05-05:00",
+  "subject": "Merge #351, reviewed: a door or a window in another wood than its wall (#334, PR 2)",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 46,
   "interactions": 28,
   "lootTables": 19,
-  "sprites": 163,
+  "sprites": 177,
   "places": 43,
   "villagers": 9,
   "authoredDead": 62,
@@ -26,8 +26,8 @@
   "verbs": 14,
   "menuLabels": 71,
   "events": 31,
-  "checks": 60,
-  "modules": 115
+  "checks": 61,
+  "modules": 116
  },
  "items": [
   {
@@ -4467,6 +4467,18 @@
    "drawn": false
   },
   {
+   "id": "post_bloodbark",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
+   "id": "post_daub",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
    "id": "post_fence",
    "kind": "other",
    "drawn": true,
@@ -4479,7 +4491,25 @@
    "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
   },
   {
+   "id": "post_mahogany",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
+   "id": "post_spruce",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
    "id": "post_stone",
+   "kind": "other",
+   "drawn": true,
+   "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
+  },
+  {
+   "id": "post_winterpine",
    "kind": "other",
    "drawn": true,
    "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
@@ -5088,6 +5118,12 @@
    "note": "the UI kit (docs/23, step 4): the brick frame, the cutout well (and a thin one for the belt), the cell the bag's grid is tiled with, the flat plate (headers, the belt's bar), the button in three states; `slices` is each picture's corner in interface pixels (src/ui/kit.js); the colours are Michael's to tune"
   },
   {
+   "id": "wall_bloodbark",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side, the Bloodbark wall type (#334; the delivered files, anchors from anchors_woods.json); its doors and shutters are Bloodbark's (wall_parts_bloodbark)"
+  },
+  {
    "id": "wall_boards",
    "kind": "wall",
    "drawn": true,
@@ -5098,6 +5134,12 @@
    "kind": "wall",
    "drawn": true,
    "note": "boards across a shut fence gate (art round 3, #332), one to three, named as the house boards are so the wall renderer reads them by the fence's `wall.boards`"
+  },
+  {
+   "id": "wall_daub",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side, the daub wall type (#334; the delivered files, anchors from anchors_woods.json); daub is the limewashed timber frame, walls and post only, its leaves oak's (wall_parts_wood)"
   },
   {
    "id": "wall_fence",
@@ -5112,6 +5154,18 @@
    "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
   },
   {
+   "id": "wall_mahogany",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side, the mahogany wall type (#334; the delivered files, anchors from anchors_woods.json); its doors and shutters are mahogany's (wall_parts_mahogany)"
+  },
+  {
+   "id": "wall_parts_bloodbark",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side, in Bloodbark (docs/17; #334)"
+  },
+  {
    "id": "wall_parts_fence",
    "kind": "wall",
    "drawn": true,
@@ -5124,10 +5178,28 @@
    "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
   },
   {
+   "id": "wall_parts_mahogany",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side, in mahogany (docs/17; #334)"
+  },
+  {
+   "id": "wall_parts_spruce",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side, in spruce (docs/17; #334)"
+  },
+  {
    "id": "wall_parts_stone",
    "kind": "wall",
    "drawn": true,
    "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
+  },
+  {
+   "id": "wall_parts_winterpine",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall's open door leaves and shutters, near and far side, in Winter Pine (docs/17; #334)"
   },
   {
    "id": "wall_parts_wood",
@@ -5136,10 +5208,22 @@
    "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
   },
   {
+   "id": "wall_spruce",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side, the spruce wall type (#334; the delivered files, anchors from anchors_woods.json); its doors and shutters are spruce's (wall_parts_spruce)"
+  },
+  {
    "id": "wall_stone",
    "kind": "wall",
    "drawn": true,
    "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
+  },
+  {
+   "id": "wall_winterpine",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a drawn wall (docs/17), five variants per side, the Winter Pine wall type (#334; the delivered files, anchors from anchors_woods.json); its doors and shutters are Winter Pine's (wall_parts_winterpine)"
   },
   {
    "id": "wall_wood",
@@ -6535,6 +6619,68 @@
    "seconds": 3,
    "tool": "notch"
   },
+  "wall_oak": {
+   "label": "Oak wall",
+   "kind": "wall",
+   "sprite": "wall_wood",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 3,
+   "tool": "build"
+  },
+  "wall_spruce": {
+   "label": "Spruce wall",
+   "kind": "wall",
+   "sprite": "wall_spruce",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 3,
+   "tool": "build"
+  },
+  "wall_mahogany": {
+   "label": "Mahogany wall",
+   "kind": "wall",
+   "sprite": "wall_mahogany",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 3,
+   "tool": "build"
+  },
+  "wall_daub": {
+   "label": "Daub wall",
+   "kind": "wall",
+   "sprite": "wall_daub",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 3,
+   "tool": "build"
+  },
+  "wall_winterpine": {
+   "label": "Winter Pine wall",
+   "kind": "wall",
+   "sprite": "wall_winterpine",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 3,
+   "tool": "build",
+   "region": true
+  },
+  "wall_bloodbark": {
+   "label": "Bloodbark wall",
+   "kind": "wall",
+   "sprite": "wall_bloodbark",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 3,
+   "tool": "build",
+   "region": true
+  },
   "door": {
    "label": "Door",
    "sprite": "wall_log",
@@ -6841,26 +6987,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1104"
+    "main.js:1105"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1103"
+    "main.js:1104"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1081"
+    "main.js:1082"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:925",
-    "main.js:939"
+    "main.js:926",
+    "main.js:940"
    ]
   },
   {
@@ -6872,19 +7018,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1101"
+    "main.js:1102"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1084"
+    "main.js:1085"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1083"
+    "main.js:1084"
    ]
   },
   {
@@ -6897,8 +7043,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:331",
-    "placement.js:340"
+    "placement.js:368",
+    "placement.js:377",
+    "placement.js:381"
    ]
   },
   {
@@ -6910,56 +7057,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1079"
+    "main.js:1080"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1085"
+    "main.js:1086"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1092"
+    "main.js:1093"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1081"
+    "main.js:1082"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1164"
+    "main.js:1165"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1164"
+    "main.js:1165"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1082"
+    "main.js:1083"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1175"
+    "main.js:1176"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:925",
-    "main.js:931"
+    "main.js:926",
+    "main.js:932"
    ]
   }
  ],
@@ -7092,13 +7239,13 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1493"
+    "main.js:1495"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:828"
+    "main.js:829"
    ]
   },
   {
@@ -7110,19 +7257,19 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:778"
+    "placement.js:819"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:771"
+    "placement.js:812"
    ]
   },
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:767"
+    "placement.js:808"
    ]
   },
   {
@@ -7152,7 +7299,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1431"
+    "main.js:1433"
    ]
   },
   {
@@ -7207,7 +7354,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1467"
+    "main.js:1469"
    ]
   },
   {
@@ -7237,13 +7384,13 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1416"
+    "main.js:1418"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1457"
+    "main.js:1459"
    ]
   },
   {
@@ -7267,7 +7414,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1506"
+    "main.js:1508"
    ]
   },
   {
@@ -7286,25 +7433,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1385"
+    "main.js:1386"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1381"
+    "main.js:1382"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1418"
+    "main.js:1420"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1417"
+    "main.js:1419"
    ]
   },
   {
@@ -7316,7 +7463,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1515"
+    "main.js:1517"
    ]
   },
   {
@@ -7426,19 +7573,19 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:739"
+    "placement.js:780"
    ]
   },
   {
-   "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
+   "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:788"
+    "placement.js:830"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:784"
+    "placement.js:825"
    ]
   },
   {
@@ -7530,7 +7677,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1297"
+    "main.js:1298"
    ]
   },
   {
@@ -7548,7 +7695,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:490"
+    "placement.js:528"
    ]
   },
   {
@@ -7582,26 +7729,26 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:779"
+    "map.js:782"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:127"
+    "map.js:128"
    ]
   },
   {
    "key": "fireLit",
    "at": [
-    "map.js:300",
-    "map.js:309"
+    "map.js:301",
+    "map.js:310"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:112"
+    "map.js:113"
    ]
   },
   {
@@ -7673,8 +7820,8 @@
   {
    "key": "torchSpent",
    "at": [
-    "map.js:166",
-    "map.js:180"
+    "map.js:167",
+    "map.js:181"
    ]
   },
   {
@@ -7693,7 +7840,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:747",
-    "map.js:775"
+    "map.js:778"
    ]
   },
   {
@@ -7857,16 +8004,17 @@
   "wear",
   "windows",
   "wire",
+  "woods",
   "worlds"
  ],
  "modules": [
   {
    "path": "map.js",
-   "lines": 2314
+   "lines": 2317
   },
   {
    "path": "main.js",
-   "lines": 1943
+   "lines": 1945
   },
   {
    "path": "interact.js",
@@ -7894,7 +8042,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 790
+   "lines": 832
   },
   {
    "path": "ui/inventory-panel.js",
@@ -7910,7 +8058,7 @@
   },
   {
    "path": "assets.js",
-   "lines": 651
+   "lines": 656
   },
   {
    "path": "figure/draw.js",
@@ -7922,7 +8070,7 @@
   },
   {
    "path": "render/walls.js",
-   "lines": 504
+   "lines": 505
   },
   {
    "path": "ui/inventory-actions.js",
@@ -7993,12 +8141,12 @@
    "lines": 248
   },
   {
-   "path": "save.js",
+   "path": "render/props.js",
    "lines": 243
   },
   {
-   "path": "render/props.js",
-   "lines": 242
+   "path": "save.js",
+   "lines": 243
   },
   {
    "path": "loop.js",
@@ -8031,6 +8179,10 @@
   {
    "path": "grid.js",
    "lines": 190
+  },
+  {
+   "path": "woods.js",
+   "lines": 186
   },
   {
    "path": "burn.js",
@@ -8081,12 +8233,12 @@
    "lines": 143
   },
   {
-   "path": "settings.js",
-   "lines": 134
+   "path": "item-info.js",
+   "lines": 139
   },
   {
-   "path": "item-info.js",
-   "lines": 131
+   "path": "settings.js",
+   "lines": 134
   },
   {
    "path": "bucket.js",
@@ -8230,7 +8382,7 @@
   },
   {
    "path": "ui/build-palette.js",
-   "lines": 53
+   "lines": 56
   },
   {
    "path": "ui/kit.js",

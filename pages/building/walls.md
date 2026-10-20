@@ -17,18 +17,18 @@ On screen the north edge is the upper-right side of a tile's diamond, and the we
 
 Every wall has a material, which is its art. The corner posts take the heaviest material that meets there: stone over log over wood.
 
-- **Wood**: {{n sprites.wall_wood.wall.height}} pixels tall, {{n sprites.wall_wood.wall.thickness}} thick. The cottages and most houses of the village.
+- **Wood**: {{n sprites.wall_wood.wall.height}} pixels tall, {{n sprites.wall_wood.wall.thickness}} thick, in six kinds: oak, spruce, mahogany, and daub, which the village's cottages and most houses are built in, mixed, and Winter Pine and Bloodbark from beyond the valley. See [[Woods]].
 - **Stone**: {{n sprites.wall_stone.wall.height}} pixels tall, {{n sprites.wall_stone.wall.thickness}} thick. The manor, the crypt, and other stone buildings.
-- **Log**: {{n sprites.wall_log.wall.height}} pixels tall, {{n sprites.wall_log.wall.thickness}} thick. The only wall you can [[Building|build]].
+- **Log**: {{n sprites.wall_log.wall.height}} pixels tall, {{n sprites.wall_log.wall.thickness}} thick.
 - **Fence**: {{n sprites.wall_fence.wall.height}} pixels tall, {{n sprites.wall_fence.wall.thickness}} thick, and see-through. See [[Fences]].
 
-A building may mix materials, with a different wall on each side. A door or a window built into a wall is made of that wall's material.
+A building may mix materials, with a different wall on each side. A door or a window built into a wall is made of that wall's material; in a wall of wood its leaves and shutters may be of another wood (see [[Woods]]).
 
 Doors and windows sit at the same heights in every wall, whatever its material.
 
 ### Building and removing walls
 
-You can build log walls, fences, gates, doors, and windows from the palette on N, and remove what you built with X. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; removing it puts the wall back. Walls that are part of the map cannot be removed. See [[Building]].
+You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, and remove what you built with X. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; removing it puts the wall back. Walls that are part of the map cannot be removed. See [[Building]].
 
 ### Brackets
 
@@ -52,12 +52,14 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 
 - [[Openings]]
 - [[Fences]]
+- [[Woods]]
 - [[Rooms]]
 - [[Building]]
 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/sprites/wall_spruce.json`, `data/sprites/wall_mahogany.json`, `data/sprites/wall_daub.json`, `data/sprites/wall_winterpine.json`, `data/sprites/wall_bloodbark.json`, `data/build.json`, `src/woods.js`: the six woods, each buildable, and a door's or window's own wood (game #348, #351, at 9d1681f)
 - `src/map.js:1-6`, `src/map.js:1345-1351`: walls on the `n` and `w` edges of a tile
 - `src/map.js:733-744`: doors and windows are walls with a kind
 - `src/map.js:1363-1376`, `src/map.js:1522-1576`: a wall blocks sight and bodies

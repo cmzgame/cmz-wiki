@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `9d1681f`
+
+- **New in the game:** the woods (game #348, #351). Six wooden walls, each its own: oak, spruce, mahogany, and daub, which the valley's houses are now built in, mixed, and Winter Pine and Bloodbark, the woods of regions beyond the valley. The build palette has a wall of each valley wood ({{n build.wall_oak.cost.plank}} plank, {{n build.wall_oak.seconds seconds}}) and the regions' two while Free building is on. A door or a window may be of another wood than its wall: **R** cycles its wood while building, and a door rebuilt over a broken one starts in the broken one's wood. The plank's card now says it builds a wood wall, a door, a window, a fence, and a gate. [[Woods]] is new; [[Walls]], [[Building]], [[Openings]], and [[Valley day]] say so.
+
 ## 2026-10-20: synced to `9ac68a2`
 
 - **New in the game:** paintings (game #344). Eight paintings are items: three small ({{n items.painting_small_oak.size.0}} by {{n items.painting_small_oak.size.1}} in the bag), two tall, and three wide. **Place** on a painting's menu shows it on the face of the wall under the cursor, and a click hangs it within reach; only a plain wall takes one, on the face turned toward the camera, one to a stretch of wall, never at a corner, beside a bracket, or on a door, a window, or a fence, and a wide one spans two stretches. **Pick up** takes it down into the bag; `E` does not. A painting whose wall is removed or built over falls to the floor, whole. A guest hangs and takes them down too. All eight are in the Developer Chest, whose grid grew again. [[Paintings]] is new, each painting has a generated page, and [[Inventory]], [[Placement]], [[Building]], [[Developer chest]], and [[Valley day]] say so.
