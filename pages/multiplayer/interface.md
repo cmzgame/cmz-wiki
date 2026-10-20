@@ -52,9 +52,16 @@ The game goes on while any panel is open, and the world's keys and clicks still 
 
 - **The bag** (`Tab`) at the top right and **the character panel** (`C`) with the clothing slots, each worn one drawn on you with an eye that hides it (see [[Clothing#Hiding a worn item|Clothing]]), and both hands. Each opens and closes on its own, has an X, and can be dragged by its header to a place it remembers. An open container is its own panel beside the bag and closes when you walk more than {{n tuning.world.containerCloseDist}} tiles away. A bag cell is {{n census.constants.view.BASE_CELL}} interface pixels. Carrying furniture closes the panels. See [[Inventory]].
 - **The station panel**: using a station opens one panel under the clock with its recipes, the chosen recipe's ingredients, a count, **Make**, the queue, and **Output**. See [[Crafting]].
-- **A conversation** (see [[Talk]]): talking to a villager opens a panel at the bottom centre, above the belt, with their lines, **Continue...**, the questions to choose, and **That's all for now**.
+- **A conversation** (see [[Talk]]): talking to a villager opens a parchment panel at the bottom centre, above the belt, with their lines, **Click here to continue**, the questions to choose, and **That's all for now**, each a line of blue text to click.
+- **The skills panel** (from the row of buttons): the skills in their groups, Combat, Gathering, and Production, each at its first level, with a note that skills are not built yet. It has an X; `Escape` closes it.
 - **The map** (`M`; see [[Map]]): the land seen so far and every player, over the world.
 - **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Remove row. See [[Building]].
+
+## The row of buttons
+
+At the bottom right is a row of buttons, each with a small picture: **Bag**, **Character**, **Skills**, **Map**, **Build**, **Chat**, **Settings**, and **Menu**. Each does what its key does (`Tab`, `C`, `M`, `N`, `Enter`), so a panel opened by its button closes by its key and the other way round; Skills opens the skills panel, Settings the settings screen, and Menu the pause menu, as `Escape` does with nothing open. Hovering over a button names it and its key. A button whose panel is open is drawn pressed in.
+
+A click on the row is the row's, never the world's. Chat keeps anything already typed in the chat box; any other button hands the keys back to the world from the chat box. With a screen up the row does nothing. On a narrow screen, or with a large **Interface size**, the buttons are smaller and the skills panel stands higher, above the chat log.
 
 ## The cursor
 
@@ -74,7 +81,8 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 
 <!-- sources at 9205ad7 -->
 - `src/ui/inventory-panel.js`, `src/inventory.js`: the eye on a worn slot, hiding its look (game #243)
-- `src/ui/talk-panel.js`, `src/ui/map-panel.js`: the conversation panel and the map (game #230, #235)
+- `src/ui/talk-panel.js`, `src/ui/map-panel.js`: the conversation panel and the map (game #230, #235); the conversation on parchment with blue links (game #297, at 0362b89)
+- `src/ui/nav-row.js:130-139`, `src/ui/nav-row.js:167-249`, `src/input.js:105-107`, `src/main.js:1503`, `style.css:2164-2270`: the row of buttons, each tapping its key, Skills, Settings, Menu, Chat keeping a draft, the skills panel, the narrow layout (game #298, at 0362b89)
 - `src/main.js:918-1001`: an open panel stops no click, key, or zoom (game commit 57df52e)
 - `src/view.js:84-88`, `src/view.js:138`: the interface's own size, Interface size
 - `style.css:1104`, `src/main.js:100-104`, `src/main.js:1207-1209`, `src/ui/screens.js:187-200`: the interface, the chat box, and the debug corner hidden while no world is in; nothing of a world drawn, the game's stage hidden behind the site (game #80, #120, at 02dfcc2)

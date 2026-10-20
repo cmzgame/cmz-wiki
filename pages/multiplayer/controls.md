@@ -19,6 +19,10 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - **Middle button**: the main hand's other mode (also `Q`).
 - **Wheel**: zoom one step in or out, with the panels open or closed (not while an item is being dragged, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the chat log it scrolls the chat log, over a panel it does nothing to the world, and while dragging an item it rotates it.
 
+## The row of buttons
+
+The buttons at the bottom right (see [[Interface#The row of buttons|Interface]]) are the keys for the mouse: **Bag** is `Tab`, **Character** `C`, **Map** `M`, **Build** `N`, and **Chat** `Enter` (keeping anything already typed). **Skills** opens the skills panel, **Settings** the settings screen, and **Menu** the pause menu.
+
 ## The keyboard
 
 ### Moving
@@ -49,7 +53,7 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - `Z`: the next zoom level (Wide, Middle, Close, then Wide again).
 - `Enter`: open the chat box; in it, `Enter` says the line. See [[Chat log]].
 - `/`: open the chat box with a slash typed (there are no commands yet).
-- `Escape`: close the top thing in this order: the actions menu, Use mode, the station panel, a conversation, a screen, the build palette, placement or removal, the bag and character panels, the map. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
+- `Escape`: close the top thing in this order: the actions menu, a screen, Use mode, the station panel, a conversation, the skills panel, the build palette, placement or removal, the bag and character panels, the map. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
 
 In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button. On the site's Home, `Enter` opens the Worlds page, unless a button, link, or field has the focus. In fullscreen the browser takes the first `Escape` to leave fullscreen.
 
@@ -82,7 +86,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at 0362b89 -->
 - `src/ui/screens.js:23-61`, `src/ui/screens.js:1079-1086`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:948`: Controls on the site's menu and on the pause menu
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q
@@ -100,14 +104,15 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/interact.js:881-928`, `src/interact.js:372-379`, `src/ui/screens.js:28`: E takes only a simple action within reach and a clear line (game #227), a villager's Talk among them (game #230); a fire's Light is one only with a flame carried (game #169)
 - `src/interact.js:1143-1157`, `src/interact.js:479-546`: B boards up (needs a plank and a hammer carried), held pulls a board, the plank back (game #222)
 - `src/interact.js:1118`, `src/interact.js:1158-1181`, `src/ui/screens.js:44`: T lights or douses the torch in hand, else on the belt, with a tinderbox; else takes one from the bag; the Controls screen's line
-- `src/interact.js:1109`, `src/interact.js:1129`, `src/interact.js:1185-1207`: keys 1 to 4 eat, drink, or swap the belt slot
+- `src/interact.js:1109`, `src/interact.js:1129`, `src/interact.js:1185-1206`: keys 1 to 4 eat, drink, or swap the belt slot
 - `src/main.js:915-923`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
 - `src/main.js:1067-1069`, `src/ui/screens.js:30`: N, M, and X; the Controls screen's M line (game #235)
 - `src/main.js:874-895`: N and X refused with the bag open, "Close your bag to build."
 - `src/placement.js:288`, `src/ui/inventory-panel.js:131`: R turns a prop being placed or a dragged item
 - `src/main.js:1076`, `src/view.js:95-109`: Z cycles the zooms, wrapping
 - `src/main.js:1065-1066`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
-- `src/main.js:851-869`, `src/ui/log.js:55`: Escape's order, a conversation and the map among the panels, and in the chat box
+- `src/main.js:855-875`, `src/ui/log.js:60`: Escape's order, a screen first (game #298), a conversation, the skills panel, and the map among the panels, and in the chat box
+- `src/ui/nav-row.js:130-139`, `src/ui/nav-row.js:213-223`, `src/input.js:105-107`: the row of buttons, each tapping its key (game #298)
 - `src/main.js:851-852`, `src/ui/screens.js:253-282`: Escape out of a world steps back through the site
 - `src/ui/screens.js:851`, `src/ui/screens.js:898`, `src/ui/screens.js:911`: Enter in a screen's text field presses its button
 - `src/ui/screens.js:105-112`, `src/ui/screens.js:572-579`: Enter on Home opens the Worlds page; the first Escape in fullscreen leaves it

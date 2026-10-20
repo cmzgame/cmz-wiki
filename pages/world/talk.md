@@ -28,11 +28,11 @@ Every villager in [[The valley]] but the Miller has talk of their own: [[Wyn]], 
 
 ### Conversations
 
-**Talk to** a villager, from their right-click menu or with `E` when they are the nearest thing in reach, and a conversation opens: a panel at the bottom of your screen, above the belt, with their name and an X. It is offered only with a clear line to them, never through a wall.
+**Talk to** a villager, from their right-click menu or with `E` when they are the nearest thing in reach, and a conversation opens: a parchment panel at the bottom of your screen, above the belt, with their name in red at the top and an X. Every choice on it is a line of blue text, underlined under the pointer. It is offered only with a clear line to them, never through a wall.
 
 - The villager stops, turns to you, and stands while anyone is talking to them.
-- Their lines come one at a time; **Continue...** shows the next.
-- Then come the questions or replies you can choose, as buttons. A question about a part of the game has a link beside it to its page here, which opens in a new tab.
+- Their lines come one at a time; **Click here to continue** shows the next.
+- Then come the questions or replies you can choose, as blue links. A question about a part of the game has a link beside it, marked ↗, to its page here, which opens in a new tab.
 - **That's all for now**, always at the foot of the panel, ends it.
 
 Each line also goes into your own [[Chat log]] in the villager's name. Everything is a click: no key is taken from you while the panel is open, and the world keeps running, so you can still walk, fight, and use your belt.
@@ -58,7 +58,7 @@ Talk runs on the host. A guest's poke goes to the host as a command, the host pi
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at 0362b89 -->
 - `src/talk.js:1-6`: talk reads the world and never writes it; no chance, the lines in turn (game #220)
 - `src/talk.js:33-47`, `src/talk.js:55-73`, `src/talk.js:100-122`: the conditions (time, the dead near or in the world, a villager alive or dead, indoors, hurt, what the talker holds, hungry, thirsty, tired, bleeding)
 - `src/talk.js:124-141`: the first group that holds, its lines in turn by a counter on the villager; an unprompted remark only from an `ambient` group
@@ -71,8 +71,8 @@ Talk runs on the host. A guest's poke goes to the host as a command, the host pi
 - `src/interact.js:1579-1595`, `src/interact.js:922-926`, `src/ui/screens.js:28`: Talk to on a villager's menu, a simple action, offered only with a clear line; E talks to the nearest villager (game #230)
 - `src/entities/villager.js:194-222`, `data/tuning.json:92-95`: Talk to starts a conversation unless the villager is dead, out of the clear line, or has the dead within `talkDeadRadius` or no file (then a bark); the villager stops, faces the talker, and holds them; a talker leaves
 - `src/entities/villager.js:173-184`, `src/entities/villager.js:115-117`: the talkers kept: one past `talkReach` plus `talkWalkAway`, dead, or out of the line dropped; the villager stands while any talks, then idles `talkIdleSeconds`
-- `src/ui/talk-panel.js:1-12`, `src/ui/talk-panel.js:65-128`: the panel on the kit, Continue..., the options with their wiki links in a new tab, That's all for now, each line in the talker's log; it closes when the villager is hurt, turned, or dead, or another villager's talk opens
-- `src/main.js:851-862`: Escape closes it in the panels' order
+- `src/ui/talk-panel.js:1-8`, `src/ui/talk-panel.js:66-152`, `style.css:893-1036`: the panel on parchment with the name in red (game #297), Click here to continue, the options as blue links with their wiki links in a new tab, That's all for now, each line in the talker's log; it closes when the villager is hurt, turned, or dead, or another villager's talk opens
+- `src/main.js:855-875`: Escape closes it in the panels' order
 - `src/host.js:267-269`, `src/net.js:629-632`, `src/net.js:1269-1270`, `src/main.js:1780-1784`: a guest's conversation begun on the host, told to its screen; its panel's closing told back
 - `src/net.js:634-638`, `src/entities/villager.js:48-49`: a guest's poke on the host; the bark counter and clock kept with the villager
 

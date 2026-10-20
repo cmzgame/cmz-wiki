@@ -130,6 +130,12 @@ With a lit torch in hand or on the belt, the X on the bag (and the character scr
 
 Read: [[Inventory]].
 
+### The row of buttons (game #298)
+
+At the bottom right, a button for each panel that opens by a key: Bag, Character, Map, Build, and Chat do what `Tab`, `C`, `M`, `N`, and `Enter` do; Skills opens a panel of the skills to come, Settings the settings screen, and Menu the pause menu. A button is pressed in while its panel is open.
+
+Read: [[Interface#The row of buttons|Interface]], [[Controls]].
+
 ## Food and the body
 
 ### Food heals what it says, and a full belly heals faster (game #186, #259)
@@ -164,7 +170,7 @@ Villagers now talk. A poke gets a line of their own for the moment (night, dawn,
 
 ### Conversations (game #230)
 
-Press E beside a villager, or choose **Talk to** on their menu, and a conversation opens in a panel above the belt: their lines one at a time, then questions to choose, and **That's all for now**. The villager stops and faces you while you talk. Wyn's questions cover each thing the game does, each with a link to its page here; the others have a few lines in their own voice. It is all clicks, and the world keeps running. Walking away, a wall between, or the villager struck ends it; with the dead close by, a villager gives a line instead. A wounded villager still talks.
+Press E beside a villager, or choose **Talk to** on their menu, and a conversation opens in a parchment panel above the belt (game #297), every choice a line of blue text: their lines one at a time, then questions to choose, and **That's all for now**. The villager stops and faces you while you talk. Wyn's questions cover each thing the game does, each with a link to its page here; the others have a few lines in their own voice. It is all clicks, and the world keeps running. Walking away, a wall between, or the villager struck ends it; with the dead close by, a villager gives a line instead. A wounded villager still talks.
 
 Read: [[Talk]], [[Wyn]], [[Villagers]], [[Chat log]].
 
