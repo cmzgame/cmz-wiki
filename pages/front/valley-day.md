@@ -130,6 +130,12 @@ With a lit torch in hand or on the belt, the X on the bag (and the character scr
 
 Read: [[Inventory]].
 
+### Floating numbers (game #299)
+
+Numbers rise over heads: red for a hit, over whoever took it, you or the dead or a villager or a friend; green for what food heals; and for a gather, the skill's small picture with how many things you got (chopping, mining, fishing, picking, and harvesting). A number over one of the dead hidden by the dark stays hidden. **Floating numbers** in Settings turns them off.
+
+Read: [[Interface#Floating numbers|Interface]], [[Settings]].
+
 ### The row of buttons (game #298)
 
 At the bottom right, a button for each panel that opens by a key: Bag, Character, Map, Build, and Chat do what `Tab`, `C`, `M`, `N`, and `Enter` do; Skills opens a panel of the skills to come, Settings the settings screen, and Menu the pause menu. A button is pressed in while its panel is open.

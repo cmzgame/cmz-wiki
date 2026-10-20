@@ -49,7 +49,7 @@ The damage is multiplied by each of these that applies:
 - {{n items.shield.shield.attackMult}} with the shield's guard raised.
 - {{n combat.dual.offDamage}} for an off-hand blow.
 
-A landed blow briefly freezes the game (hit-stop: {{n combat.blow.hitStop seconds}}, {{n combat.blow.hitStopKill seconds}} on a kill) and kicks the striking player's view {{n census.constants.combat.KICK_PX}} pixels along the aim for {{n census.constants.combat.KICK_TIME seconds}}.
+Each hit floats its damage as a red number over the one struck (see [[Interface#Floating numbers|Interface]]). A landed blow briefly freezes the game (hit-stop: {{n combat.blow.hitStop seconds}}, {{n combat.blow.hitStopKill seconds}} on a kill) and kicks the striking player's view {{n census.constants.combat.KICK_PX}} pixels along the aim for {{n census.constants.combat.KICK_TIME seconds}}.
 
 ### Knockback
 

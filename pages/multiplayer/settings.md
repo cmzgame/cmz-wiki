@@ -19,6 +19,7 @@ In the order the screen shows them, with the default first.
 - **Zoom**: Auto, Wide, Middle, or Close. Auto picks the level that suits the window's size. `Z` and the wheel change it too, and the choice is kept here.
 - **Cursor**: Default, A hand, A severed hand, or A zombie hand.
 - **Names over heads**: Shown or Hidden: another player's name over their head while they are in sight.
+- **Floating numbers**: Shown or Hidden: damage, healing, and what you gather float up over heads (see [[Interface#Floating numbers|Interface]]).
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
 - **Aim guide**: Off or On: the landing marker and a dotted line while you draw a bow, wind up a throw, or cast. It changes only what your own screen draws. A browser that saved its settings before it went off by default keeps its own choice. See [[Archery]].
 - **Fullscreen**: Off or On, at the foot of the tab: "The game fills the whole screen. Esc leaves fullscreen first; a second Esc pauses." It asks the browser for the whole screen when clicked and shows what the page is in now; it is not kept, since the browser decides when fullscreen ends. Playing never goes fullscreen by itself. Where the browser does not allow it, the row says so and cannot be switched.
@@ -58,6 +59,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/settings.js:44-69`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown; the world's rules and the Dev chest in no tab (game #128)
 - `src/ui/screens.js:511-532`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
 - `src/ui/screens.js:84`, `src/ui/screens.js:148-151`: Display open first; a click on a tab opens it
+- `src/settings.js:27`, `src/settings.js:59`: Floating numbers, shown by default (game #299, at 3331946)
 - `src/settings.js:8-38`: the defaults, the Aim guide off
 - `src/main.js:1253`: the Aim guide read where the viewer's own frame is drawn
 - `src/view.js:80-87`: `UI_SCALE_MAX` and Auto's fit

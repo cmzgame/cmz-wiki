@@ -57,6 +57,18 @@ The game goes on while any panel is open, and the world's keys and clicks still 
 - **The map** (`M`; see [[Map]]): the land seen so far and every player, over the world.
 - **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Remove row. See [[Building]].
 
+## Floating numbers
+
+Numbers rise over heads as things happen, like the combat text of other games:
+
+- **A red number**, with a minus sign, over whoever is hit: you, one of the dead, a villager, or another player. The damage you take and the damage you deal both show, each over the head it was done to.
+- **A green number**, with a plus sign, over whoever is healed. For now only [[Food]] heals with a number; healing by itself over time, burning, bleeding, and starving show none.
+- **A skill's small picture and a number** over whoever gathers: the logs from chopping (Woodcutting), the ore and stone from mining (Mining), a fish caught (Fishing), and what is picked or harvested (Farming). Until skills are built, the number is how many things were gained. It is white with a black edge in the dark and black with a white edge in the light, so it is never taken for a red or a green one. Herbalism and Beastlore have no number yet.
+
+Each rises about {{n tuning.floaters.riseTiles tile}} over {{n tuning.floaters.life seconds}}, fading over its last half, a little to one side. Several at once over one body start a line apart. A number shows only over a body in your sight, and never over one of the living dead hidden by the dark. **Floating numbers** in [[Settings]] hides them all.
+
+With friends, the host notes each number where it happens and sends it to every player; each screen draws the ones in its own sight. Nothing of them is kept in the save.
+
 ## The row of buttons
 
 At the bottom right is a row of buttons, each with a small picture: **Bag**, **Character**, **Skills**, **Map**, **Build**, **Chat**, **Settings**, and **Menu**. Each does what its key does (`Tab`, `C`, `M`, `N`, `Enter`), so a panel opened by its button closes by its key and the other way round; Skills opens the skills panel, Settings the settings screen, and Menu the pause menu, as `Escape` does with nothing open. Hovering over a button names it and its key. A button whose panel is open is drawn pressed in.
@@ -94,6 +106,8 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/moodles.js:23-115`, `src/ui/moodles.js`, `style.css:317-321`: the five moodles on the right, their order, stages, names
 - `src/ui/prompt.js:41`, `src/interact.js:852-880`: the prompt, "E: Put down", the progress bar, greyed
 - `src/ui/zombie-bars.js:14-20`: health bars over hurt zombies and over you
+- `src/floaters.js:1-106`, `src/ui/floaters.js:1-121`, `data/tuning.json:73-95`, `src/entities/player.js:73`, `src/entities/player.js:101`, `src/entities/zombie.js:104`, `src/entities/villager.js:134`, `src/verbs.js:36`: the floating numbers: a hit, a heal from food, a gather by the verb's table, recorded on the host and drawn on every screen in sight, the dark rule for the living dead, the colours, the rise and fade (game #299, at 3331946)
+- `src/ui/skill-icons.js`: the skills' pictures (game #299, at 3331946)
 - `src/ui/zombie-bars.js:56`, `src/main.js:1082-1083`, `src/interact.js:1272-1279`: no bar and no zombie hand over one of the dead hidden by the dark (game commit 9d9a5b5)
 - `src/ui/swing-timer.js:16`, `src/ui/swing-timer.js:69`: the exposure bar over your head
 - `src/ui/speech.js`, `src/ui/names.js`: bubbles and names over heads

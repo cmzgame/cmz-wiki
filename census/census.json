@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "0362b8977f2cb47f0765005e21a27ea994ef0c64",
-  "short": "0362b89",
-  "date": "2026-10-19T21:50:37-05:00",
-  "subject": "Merge #298, reviewed: a navigation row bottom right, a button per panel tapping its key, and a skills panel (#295)",
+  "commit": "33319463ed9e537abd87babb9e7c64949d7bbf98",
+  "short": "3331946",
+  "date": "2026-10-19T22:06:39-05:00",
+  "subject": "Merge #299, reviewed: floating numbers over heads (red hits, green heals, a gather with its skill's icon), and an icon for every skill (#294)",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,16 +18,16 @@
   "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 31,
+  "settings": 32,
   "rules": 9,
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 20,
   "verbs": 14,
-  "menuLabels": 63,
+  "menuLabels": 64,
   "events": 31,
-  "checks": 52,
-  "modules": 98
+  "checks": 53,
+  "modules": 101
  },
  "items": [
   {
@@ -5965,6 +5965,44 @@
    "needsStaminaRegenMult": 0.5,
    "tiredStaminaRegenMult": 0.75
   },
+  "floaters": {
+   "life": 1.1,
+   "fadeFrom": 0.5,
+   "riseTiles": 1,
+   "drift": 12,
+   "startLift": 80,
+   "fontPx": 15,
+   "iconScale": 1,
+   "staggerLines": 1.1,
+   "maxActive": 40,
+   "damageColor": "#e23b3b",
+   "healColor": "#43d36b",
+   "gatherLight": "#ffffff",
+   "gatherDark": "#000000",
+   "lightAbove": 0.5,
+   "gathers": {
+    "chop": [
+     "woodcutting",
+     "logs"
+    ],
+    "mine": [
+     "mining",
+     "mined"
+    ],
+    "fish": [
+     "fishing",
+     "caught"
+    ],
+    "pick": [
+     "farming",
+     "picked"
+    ],
+    "harvest": [
+     "farming",
+     "harvested"
+    ]
+   }
+  },
   "feel": {
    "cameraFollow": 10,
    "blend": true,
@@ -6339,6 +6377,11 @@
    "note": "another player's name over their head while in sight (docs/31/03)"
   },
   {
+   "key": "floaters",
+   "default": "true",
+   "note": "the floating numbers over heads: damage, heals, and gathers (ui/floaters.js; #294)"
+  },
+  {
    "key": "paintedLayers",
    "default": "{}",
    "note": "slot -> painted layer name to try on, from the settings screen (docs/12)"
@@ -6425,26 +6468,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1093"
+    "main.js:1097"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1092"
+    "main.js:1096"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1070"
+    "main.js:1074"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:914",
-    "main.js:928"
+    "main.js:918",
+    "main.js:932"
    ]
   },
   {
@@ -6456,19 +6499,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1090"
+    "main.js:1094"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1073"
+    "main.js:1077"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1072"
+    "main.js:1076"
    ]
   },
   {
@@ -6493,56 +6536,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1068"
+    "main.js:1072"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1074"
+    "main.js:1078"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1081"
+    "main.js:1085"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1070"
+    "main.js:1074"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1153"
+    "main.js:1157"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1153"
+    "main.js:1157"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1071"
+    "main.js:1075"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1164"
+    "main.js:1168"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:914",
-    "main.js:920"
+    "main.js:918",
+    "main.js:924"
    ]
   }
  ],
@@ -6616,7 +6659,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:221"
+    "entities/player.js:225"
    ]
   },
   {
@@ -6669,19 +6712,19 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:59"
+    "settings.js:61"
    ]
   },
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1467"
+    "main.js:1474"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:817"
+    "main.js:821"
    ]
   },
   {
@@ -6699,31 +6742,31 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:56"
+    "settings.js:57"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:67"
+    "settings.js:69"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:71"
+    "settings.js:73"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:70"
+    "settings.js:72"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1405"
+    "main.js:1412"
    ]
   },
   {
@@ -6760,31 +6803,37 @@
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:72"
+    "settings.js:74"
+   ]
+  },
+  {
+   "key": "Floating numbers",
+   "at": [
+    "settings.js:59"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:63"
+    "settings.js:65"
    ]
   },
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1441"
+    "main.js:1448"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:69"
+    "settings.js:71"
    ]
   },
   {
    "key": "Interface size",
    "at": [
-    "settings.js:54"
+    "settings.js:55"
    ]
   },
   {
@@ -6796,31 +6845,31 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1395"
+    "main.js:1402"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1431"
+    "main.js:1438"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:64"
+    "settings.js:66"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:57"
+    "settings.js:58"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1480"
+    "main.js:1487"
    ]
   },
   {
@@ -6832,25 +6881,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1364"
+    "main.js:1371"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1360"
+    "main.js:1367"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1397"
+    "main.js:1404"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1396"
+    "main.js:1403"
    ]
   },
   {
@@ -6862,7 +6911,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1489"
+    "main.js:1496"
    ]
   },
   {
@@ -6874,25 +6923,25 @@
   {
    "key": "Starting population",
    "at": [
-    "settings.js:66"
+    "settings.js:68"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:62"
+    "settings.js:64"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:68"
+    "settings.js:70"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:58"
+    "settings.js:60"
    ]
   },
   {
@@ -6910,7 +6959,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:65"
+    "settings.js:67"
    ]
   },
   {
@@ -6936,19 +6985,19 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:60"
+    "settings.js:62"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:61"
+    "settings.js:63"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:55"
+    "settings.js:56"
    ]
   },
   {
@@ -7065,7 +7114,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1280"
+    "main.js:1287"
    ]
   },
   {
@@ -7172,7 +7221,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:919"
+    "entities/zombie.js:921"
    ]
   },
   {
@@ -7184,19 +7233,19 @@
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:209"
+    "entities/player.js:213"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:200"
+    "entities/player.js:204"
    ]
   },
   {
    "key": "talkStarted",
    "at": [
-    "entities/villager.js:208"
+    "entities/villager.js:210"
    ]
   },
   {
@@ -7215,19 +7264,19 @@
   {
    "key": "villagerDied",
    "at": [
-    "entities/villager.js:166"
+    "entities/villager.js:168"
    ]
   },
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:920"
+    "entities/zombie.js:922"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:745",
+    "entities/zombie.js:747",
     "map.js:722"
    ]
   },
@@ -7242,7 +7291,7 @@
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:150"
+    "entities/zombie.js:152"
    ]
   }
  ],
@@ -7371,6 +7420,7 @@
   "fence",
   "fishing",
   "flare",
+  "floaters",
   "food",
   "frame",
   "ground",
@@ -7414,7 +7464,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1910
+   "lines": 1919
   },
   {
    "path": "interact.js",
@@ -7426,7 +7476,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1404
+   "lines": 1410
   },
   {
    "path": "ui/screens.js",
@@ -7438,7 +7488,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 933
+   "lines": 935
   },
   {
    "path": "archery.js",
@@ -7490,7 +7540,7 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 391
+   "lines": 395
   },
   {
    "path": "figure/rig.js",
@@ -7518,7 +7568,7 @@
   },
   {
    "path": "entities/villager.js",
-   "lines": 261
+   "lines": 263
   },
   {
    "path": "chart.js",
@@ -7535,6 +7585,10 @@
   {
    "path": "save.js",
    "lines": 243
+  },
+  {
+   "path": "ui/skill-icons.js",
+   "lines": 239
   },
   {
    "path": "loop.js",
@@ -7565,6 +7619,10 @@
    "lines": 197
   },
   {
+   "path": "tuning.js",
+   "lines": 191
+  },
+  {
    "path": "grid.js",
    "lines": 190
   },
@@ -7593,10 +7651,6 @@
    "lines": 169
   },
   {
-   "path": "tuning.js",
-   "lines": 168
-  },
-  {
    "path": "figure/wardrobe.js",
    "lines": 158
   },
@@ -7618,7 +7672,7 @@
   },
   {
    "path": "settings.js",
-   "lines": 128
+   "lines": 130
   },
   {
    "path": "bucket.js",
@@ -7635,6 +7689,10 @@
   {
    "path": "ui/hud.js",
    "lines": 124
+  },
+  {
+   "path": "ui/floaters.js",
+   "lines": 122
   },
   {
    "path": "entities/movement.js",
@@ -7654,6 +7712,10 @@
   },
   {
    "path": "clock.js",
+   "lines": 107
+  },
+  {
+   "path": "floaters.js",
    "lines": 107
   },
   {
@@ -7765,15 +7827,15 @@
    "lines": 41
   },
   {
+   "path": "verbs.js",
+   "lines": 39
+  },
+  {
    "path": "ui/cursor.js",
    "lines": 37
   },
   {
    "path": "sight.js",
-   "lines": 35
-  },
-  {
-   "path": "verbs.js",
    "lines": 35
   },
   {
@@ -7895,6 +7957,12 @@
    "tunables_smokeChance": 0.18,
    "tunables_lightRadius": 2.4
   },
+  "floaters": {
+   "DAMAGE": 0,
+   "HEAL": 1,
+   "GATHER": 2,
+   "MAX_LOG": 300
+  },
   "gl": {
    "FLAG_UNLIT": 1,
    "FLAG_OCCLUDER": 2,
@@ -7971,7 +8039,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 7,
+   "PROTOCOL": 8,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -8060,6 +8128,9 @@
   },
   "ui_screens": {
    "CREATION_STEPS": 2
+  },
+  "ui_skill-icons": {
+   "SIZE": 16
   },
   "ui_speech": {
    "HEAD_TOP": 68,

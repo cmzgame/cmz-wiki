@@ -1,7 +1,7 @@
 {
-  "commit": "0362b8977f2cb47f0765005e21a27ea994ef0c64",
-  "short": "0362b89",
-  "date": "2026-10-19T21:50:37-05:00",
-  "subject": "Merge #298, reviewed: a navigation row bottom right, a button per panel tapping its key, and a skills panel (#295)",
+  "commit": "33319463ed9e537abd87babb9e7c64949d7bbf98",
+  "short": "3331946",
+  "date": "2026-10-19T22:06:39-05:00",
+  "subject": "Merge #299, reviewed: floating numbers over heads (red hits, green heals, a gather with its skill's icon), and an icon for every skill (#294)",
   "ref": "origin/main"
 }

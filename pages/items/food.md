@@ -2,7 +2,7 @@
 title: Food
 categories: [Items, Mechanics]
 aliases: [Eating, Eat, Foods, Well fed]
-summary: Eating food fills hunger by the food's value, heals a little, and some foods fill thirst too; a full stomach eats nothing.
+summary: Eating food fills hunger by the food's value and heals by its heal value, whenever you like; some foods fill thirst too.
 ---
 
 **Food** keeps away [[Hunger]]. Eating one adds the food's hunger value to your hunger, up to the full {{n tuning.player.hungerMax}}, and heals you a little; a few foods add to [[Thirst]] as well. A full stomach empties over {{n tuning.player.hungerDrainSeconds}} seconds of the world's time.
@@ -14,7 +14,7 @@ summary: Eating food fills hunger by the food's value, heals a little, and some 
 - **Eat** on a food's menu, in your bag or in an open container, eats one from the stack.
 - A food on your [[Belt]] is eaten from its slot: its belt key, **Eat** on the slot's menu, or a double-click on the slot.
 
-Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals.
+Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals. What it heals rises over your head as a green number (see [[Interface#Floating numbers|Interface]]).
 
 ### Healing
 
