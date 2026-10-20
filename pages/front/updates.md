@@ -9,6 +9,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `232d0fb`
+
+- **Changed in the game:** the everyday items are drawn (game #337): the apple, the loaf, the tinderbox (a matchbox), the bandage, the stone, the six seed pouches, the log, the tunic, the breeches, the boots, the rope belt, the burlap sack, and the waterskin have drawn icons and pictures in the world, and the plank, the stick, the torch, the hatchet, and the shovel are drawn at five angles in the hand, the long ones with large icons that fill their cells. The rope belt is in browns, close to the old belt. A lit torch shows a drawn flame on its head in the hand and in a wall bracket, and its icon and slot picture show the flame. Nothing the items do changed. The wiki shows each item's icon from the game's data, so the item pages, [[Items]], and [[Production chains]] show the new art, and their infoboxes say Drawn; [[Tinderbox]] says it is drawn as a matchbox.
+- **New in the game:** drawn beehives and chicken coops (game #338). A beehive, a straw skep on a stand, sways when clicked and does nothing more (there is no honey); two stand at your cottage, three at Hollow Farm, and the manor's three are drawn now. A chicken coop is a container, **Search chicken coop**, with a small placeholder table (rags, sticks, a little grain, often nothing; no eggs); one is by your cottage's well, one at the west end of Hollow Farm's yard. [[Containers]] has the coop's table; [[Your cottage]], [[Hollow Farm]], [[The manor]], [[Gatherables]], and [[Valley day]] say so; [[Beehive]] and [[Chicken coop]] are generated, and [[Dead ends]] counts both now, the beehive no longer as decoration.
+- **In the game's docs:** three Faith rulings (game #336), paintings and rugs as items (game #329), Decor only with Free building (game #328), art round 3 imported but not yet wired (game #330), and the status (game #335): nothing a player sees.
+
 ## 2026-10-20: synced to `ef0d378`
 
 - **Changed in the game:** every digit is in the clear sans at any size, so the pixel font's three and eight can't be confused anywhere, world names and the character screen's heading included (game #325); the text boxes on the screens follow Small text too (game #323). [[Settings]] says so.

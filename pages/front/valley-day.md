@@ -130,6 +130,18 @@ With a lit torch in hand or on the belt, the X on the bag (and the character scr
 
 Read: [[Inventory]].
 
+### The everyday items drawn (game #337)
+
+The [[Apple]], the [[Loaf of bread]], the [[Tinderbox]] (drawn as a matchbox), the [[Bandage]], the [[Stone]], the six seed pouches, the [[Log]], the [[Linen tunic]], the [[Linen breeches]], the [[Hobnail boots]], the [[Rope belt]], the [[Burlap sack]], and the [[Waterskin]] have drawn icons in the bag and drawn pictures in the world and in the hand. The [[Plank]], the [[Stick]], the [[Torch]], the [[Hatchet]], and the [[Shovel]] are drawn at five angles in the hand, and the long ones fill their cells in the bag with a large icon. The rope belt is in browns, close to the old belt. A lit torch shows a drawn flame on its head, in the hand and in a wall bracket, and its icon in the bag and its picture in a slot show the flame while it burns. What the items do is unchanged. The wiki's item pages show the new icons.
+
+Read: [[Torch]], [[Items]].
+
+### The beehive and the chicken coop (game #338)
+
+Drawn straw beehives stand at [[Your cottage]] (two, along the south of the farm plot), at [[Hollow Farm]] (three, east of the lane), and in [[The manor]]'s garden (three, drawn now). A click sways one, and that is all: there is no honey yet. A [[Chicken coop]] stands south of your cottage by the well and another at the west end of Hollow Farm's yard; **Search chicken coop** opens it like a chest, with a small placeholder table of rags, sticks, and a little grain, often nothing, and no eggs.
+
+Read: [[Beehive]], [[Chicken coop]], [[Containers]], [[Gatherables]].
+
 ### The row of buttons in one line (game #312)
 
 The row of buttons sits on the belt's stone, as one panel. Where there is room it is one line of eight along the bottom right, clear of the belt and the chat log; where not, two lines of four, and smaller buttons on a narrow interface. The skills panel stands above it.
@@ -276,6 +288,8 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 
 <!-- sources at 3c0a243 -->
 - `src/ui/screens.js:714-732`, `src/main.js:1743`, `src/ui/nav-row.js:220-241`, `src/item-info.js`, `src/ui/hover-card.js`, `src/debuffs.js`, `src/ui/debuff-row.js`: durable fullscreen, the row in one line, the item hover card, bleeding as a debuff (game #311, #312, #313, #315, at 8af4eed)
+- `data/items.json`, `data/sprites/flame.json`: the everyday items' drawn icons, world pictures, held angles, and the lit torch's flame, icon, and portrait (game #337, at 232d0fb)
+- `data/sprites/beehive.json`, `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:313`, `tools/mapgen/valley.py:453-457`: the hives and the coops, and where they stand (game #338, at 232d0fb)
 - `src/entities/player.js:87-88`: with Survival off a body is always full, so every food is refused
 - `src/farming.js:1-11`, `src/farming.js:99-106`, `tools/mapgen/valley.py:191`: farming, its reach and clear line, the cottage's potatoes and cabbages (game #206)
 - `src/chop.js:1-51`, `data/loot.json:6-7`: the hatchet, the stump, the two chests (game #207)

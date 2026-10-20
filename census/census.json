@@ -1,21 +1,21 @@
 {
  "version": {
-  "commit": "ef0d378fd3bac0401d2bb9c1a403ec4d26238dfe",
-  "short": "ef0d378",
-  "date": "2026-10-20T01:28:10-05:00",
-  "subject": "Merge #325, reviewed: every digit in the clear font at any size, at the pixel font's line height (Michael)",
+  "commit": "232d0fb8a58102df2287013b03cc989c7a6d9417",
+  "short": "232d0fb",
+  "date": "2026-10-20T12:12:16-05:00",
+  "subject": "Merge #337, reviewed: the everyday items' drawn art, the large icons, the belt in today's browns, the drawn torch and its flame (#331)",
   "ref": "origin/main"
  },
  "counts": {
   "items": 71,
   "recipes": 46,
   "interactions": 28,
-  "lootTables": 18,
-  "sprites": 156,
+  "lootTables": 19,
+  "sprites": 157,
   "places": 42,
   "villagers": 9,
   "authoredDead": 62,
-  "mapProps": 42,
+  "mapProps": 46,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
   "settings": 34,
@@ -26,7 +26,7 @@
   "verbs": 14,
   "menuLabels": 66,
   "events": 31,
-  "checks": 57,
+  "checks": 58,
   "modules": 111
  },
  "items": [
@@ -63,9 +63,9 @@
     "burnsDown": true
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -124,9 +124,9 @@
     "count": 3
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [
@@ -163,9 +163,9 @@
     "kills": 5
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [
@@ -217,9 +217,9 @@
     "split"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -254,9 +254,9 @@
     "kills": 5
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -278,6 +278,7 @@
     "anvil: sword"
    ],
    "foundIn": [
+    "coop",
     "body",
     "wild"
    ],
@@ -503,9 +504,9 @@
    "tags": [],
    "bandage": true,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "loom"
@@ -529,9 +530,9 @@
    ],
    "hunger": 40,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "oven"
@@ -559,9 +560,9 @@
    "hunger": 15,
    "thirst": 5,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -607,9 +608,9 @@
     "tool"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -636,9 +637,9 @@
     "drink"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -872,8 +873,8 @@
    ],
    "wear": "chest",
    "art": {
-    "icon": false,
-    "held": false,
+    "icon": true,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -932,8 +933,8 @@
    ],
    "wear": "legs",
    "art": {
-    "icon": false,
-    "held": false,
+    "icon": true,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -962,8 +963,8 @@
    ],
    "wear": "feet",
    "art": {
-    "icon": false,
-    "held": false,
+    "icon": true,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -989,8 +990,8 @@
    "beltSlots": 2,
    "wear": "waist",
    "art": {
-    "icon": false,
-    "held": false,
+    "icon": true,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -1036,8 +1037,8 @@
    ],
    "wear": "back",
    "art": {
-    "icon": false,
-    "held": false,
+    "icon": true,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -1475,9 +1476,9 @@
     "dig"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -1645,9 +1646,9 @@
     "raw"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1785,7 +1786,9 @@
     "cooking: porridge",
     "millstones: flour"
    ],
-   "foundIn": [],
+   "foundIn": [
+    "coop"
+   ],
    "interactions": [],
    "note": "rye or wheat; flour at the mill (step 4), porridge at a hearth"
   },
@@ -1830,9 +1833,9 @@
     "seed"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1853,9 +1856,9 @@
     "seed"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1876,9 +1879,9 @@
     "seed"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1899,9 +1902,9 @@
     "seed"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1922,9 +1925,9 @@
     "seed"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1945,9 +1948,9 @@
     "seed"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -2046,7 +2049,9 @@
     "workbench: bow",
     "workbench: prop:bed"
    ],
-   "foundIn": [],
+   "foundIn": [
+    "coop"
+   ],
    "interactions": [],
    "note": "torn from a garment at the workbench with a knife on you (#212); a rag is never torn again, and a recipe that wants the cloth tag takes it"
   },
@@ -3246,6 +3251,46 @@
    ]
   },
   {
+   "name": "coop",
+   "grid": [
+    3,
+    2
+   ],
+   "rolls": [
+    0,
+    2
+   ],
+   "entries": [
+    {
+     "item": "rag",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.2222
+    },
+    {
+     "item": "stick",
+     "count": [
+      1,
+      2
+     ],
+     "weight": 2,
+     "perRoll": 0.2222
+    },
+    {
+     "item": "grain",
+     "count": 1,
+     "weight": 1,
+     "perRoll": 0.1111
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.4444
+    }
+   ]
+  },
+  {
    "name": "barrel",
    "grid": [
     2,
@@ -3557,11 +3602,11 @@
   },
   {
    "id": "beehive",
-   "kind": "placeholder box",
-   "label": "Beehive",
-   "drawn": false,
+   "kind": "gatherable",
+   "drawn": true,
    "carry": false,
-   "note": "a dev box for the beehive (docs/30 step 1; docs/29/09 has its art request)"
+   "interactable": true,
+   "note": "a straw skep on a plank stand (docs/29-world/09, 1.5.11): a gatherable, outlined, sways on click. bees_1 and bees_2 are optional click frames (bees stirring at the entrance); to use them add clickAnim {frames: [bees_1, bees_2, bees_1], ms: [160, 260, 160]} and the sway stops, as the well's does"
   },
   {
    "id": "bench",
@@ -3639,6 +3684,14 @@
    "drawn": false,
    "container": true,
    "carry": true
+  },
+  {
+   "id": "chicken_coop",
+   "kind": "container",
+   "drawn": true,
+   "container": true,
+   "carry": false,
+   "note": "the drawn chicken coop (docs/29-world/09, 1.2.11; #333): a plank hut on legs with a ramp and a nesting box, long side along y as drawn, along x as its mirror, as the bed; a container (loot table coop, a placeholder: Michael, 2026-10-20, \"Coop as placeholder container is fine!\"), so no interactable: a container does not sway. chicken_coop_1 (door half open) and chicken_coop_2 (open) are spare click frames, drawn the y way: a clickAnim cannot play on a facings sprite yet"
   },
   {
    "id": "coffin",
@@ -3862,8 +3915,9 @@
   },
   {
    "id": "flame",
-   "kind": "placeholder box",
-   "drawn": false
+   "kind": "other",
+   "drawn": true,
+   "note": "the drawn torch flame (art round 3, #331): three flicker frames on a 28x32 cell, base (14, 28), unlit; used by a torch in the hand and in a wall bracket (the torch post draws its own)"
   },
   {
    "id": "floor_cobble",
@@ -6940,7 +6994,7 @@
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:749"
+    "ui/inventory-panel.js:755"
    ]
   },
   {
@@ -7424,6 +7478,7 @@
   "chart",
   "chop",
   "cloth",
+  "coop",
   "craft",
   "debuffs",
   "determinism",
@@ -7509,7 +7564,7 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 771
+   "lines": 777
   },
   {
    "path": "archery.js",
@@ -7521,7 +7576,7 @@
   },
   {
    "path": "assets.js",
-   "lines": 647
+   "lines": 651
   },
   {
    "path": "placement.js",
@@ -8307,7 +8362,7 @@
    "anvil": 1,
    "barrel": 38,
    "bed": 26,
-   "beehive": 3,
+   "beehive": 8,
    "bench": 4,
    "bookcase": 4,
    "cart": 6,
@@ -8315,6 +8370,7 @@
    "charcoal_clamp": 4,
    "charcoal_sack": 2,
    "chest": 44,
+   "chicken_coop": 2,
    "coffin": 2,
    "counter": 1,
    "crane": 1,

@@ -26,6 +26,7 @@ A container can hold a bag or a belt only while that bag or belt is empty (the o
 - **Chests**, and the other furniture containers (bookcases, carts, coffins, counters, cupboards, desks, haystacks, shelves, stalls, strongboxes, woodpiles), roll the chest table, except where a place gives one its own.
 - **The farms' haystacks**, at [[Hollow Farm]] and [[Long Acre]], roll the wild table instead: a stick.
 - **Some containers hold a fixed set**, the same in every world, and roll nothing: the chest in [[Your cottage]], the joiner's, the weaver's, the smithy's, and the miners' and quarry huts' chests, the barn's tool rack, the two granaries, the ore cart, the stone stack, and the charcoal sacks. Each is on its place's page.
+- **Chicken coops**, at [[Your cottage]] and [[Hollow Farm]], roll the coop table, a placeholder: rags, sticks, a little [[Grain]], and often nothing. There are no eggs. Its grid is {{n loot.coop.grid.0}} × {{n loot.coop.grid.1}}, and its menu reads **Search chicken coop**, then **Open chicken coop**.
 - **Wheelbarrows** have their own table, which rolls nothing: an empty grid of {{n loot.wheelbarrow.grid.0}} × {{n loot.wheelbarrow.grid.1}}.
 
 Furniture you make is different: a chest, a shelf, or a wheelbarrow made at the [[Workbench]] appears already searched and empty, so nothing is ever rolled into it.
@@ -43,6 +44,12 @@ Rolled {{n loot.chest.rolls.0}} to {{n loot.chest.rolls.1}} times.
 Rolled {{n loot.barrel.rolls.0}} to {{n loot.barrel.rolls.1}} times.
 
 {{loot-table barrel}}
+
+#### Chicken coop
+
+Rolled {{n loot.coop.rolls.0}} to {{n loot.coop.rolls.1}} times.
+
+{{loot-table coop}}
 
 ### The dead
 
@@ -96,3 +103,4 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `data/sprites/shelf.json`: a carry flag (likewise barrel, chest, cupboard, desk, strongbox, woodpile, bookcase)
 - `data/maps/valley.json`: where the chests stand
 - `src/host.js:212-215`: a guest's search runs on the host and its panel opens
+- `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:453-457`: the chicken coop, a container with the coop table (a placeholder, no eggs), at your cottage and Hollow Farm (game #338, at 232d0fb)

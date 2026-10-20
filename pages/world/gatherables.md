@@ -2,10 +2,10 @@
 title: Gatherables
 categories: [Mechanics, The world]
 aliases: [Gathering, Wobble, Sway]
-summary: Trees, rocks, mushrooms, crops, and pumpkins: the things that sway when clicked or walked through.
+summary: Trees, rocks, mushrooms, crops, pumpkins, and beehives: the things that sway when clicked or walked through.
 ---
 
-Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], and pumpkins. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; mushrooms and pumpkins give nothing yet.
+Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; mushrooms, pumpkins, and beehives give nothing yet.
 
 ## How it works
 
@@ -27,6 +27,7 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 - **Crops:** harvested when ready, with E or the menu, for their food and seeds, with the crop's tool on you (none for flax); see [[Farming]].
 - **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], and gone; the ore rocks of [[The iron workings]] give [[Iron ore]] and come back after some days. See [[Mining]].
 - **Mushrooms and pumpkins:** they sway, and nothing more.
+- **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: they sway, and nothing more; there is no honey yet.
 
 {{planned doc=30 note="Picking mushrooms."}}
 

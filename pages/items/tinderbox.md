@@ -7,7 +7,7 @@ summary: The tool that lights a torch with T, a campfire or a mounted torch when
 
 {{infobox-item tinderbox}}
 
-The **tinderbox** is a flame you carry. It lights a [[Torch]], a campfire, or a torch mounted in a bracket or on a post, and it is one of the two flames (with a lit torch) that a fire which is out needs to be lit from its own menu. Every new character starts with one in the bag, beside the torch in their hand, which starts out. It can also ride in a slot of the [[Belt]]. It never wears out and is never used up. Nothing makes one yet, and the only other is in the [[Developer chest]].
+The **tinderbox** is a flame you carry. It lights a [[Torch]], a campfire, or a torch mounted in a bracket or on a post, and it is one of the two flames (with a lit torch) that a fire which is out needs to be lit from its own menu. Every new character starts with one in the bag, beside the torch in their hand, which starts out. It can also ride in a slot of the [[Belt]]. It never wears out and is never used up. Nothing makes one yet, and the only other is in the [[Developer chest]]. It is drawn as a matchbox.
 
 ## Using it
 
@@ -32,7 +32,8 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 ## Sources
 
 <!-- sources at 3c0a243 -->
-- `data/items.json:19`: the tinderbox: a tool, 1 by 1, no wear, placeholder art; `belt`, so it may ride the belt (game #222)
+- `data/items.json:19`: the tinderbox: a tool, 1 by 1, no wear; `belt`, so it may ride the belt (game #222)
+- `data/items.json`: its drawn icon and world picture, a matchbox (game #337, at 232d0fb)
 - `src/ui/inventory-actions.js:107-113`: a belt slot takes a food, a skin, or an item marked `belt`
 - `data/kit.json`: the starter kit's tinderbox in the bag beside the torch in hand, out
 - `data/loot.json`: the dev kit's tinderbox; no other table holds one
