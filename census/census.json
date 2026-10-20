@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "ea2bba752a0dafa0d7b31a087b88a41a6ae5ea18",
-  "short": "ea2bba7",
-  "date": "2026-10-19T23:23:17-05:00",
-  "subject": "Merge #302, reviewed: Drink (tainted), a crop's Inspect with its tile marked, Harvest labels that name the crop (Michael's playtest)",
+  "commit": "2facd17ae12a2552d001f798592ebf09ef4d10f5",
+  "short": "2facd17",
+  "date": "2026-10-19T23:33:14-05:00",
+  "subject": "Merge #303, reviewed: Object Highlight, a dev setting that outlines the game object under the pointer (#301)",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,16 +18,16 @@
   "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 32,
+  "settings": 33,
   "rules": 9,
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 20,
   "verbs": 14,
-  "menuLabels": 64,
+  "menuLabels": 65,
   "events": 31,
-  "checks": 53,
-  "modules": 103
+  "checks": 54,
+  "modules": 105
  },
  "items": [
   {
@@ -5965,6 +5965,11 @@
    "needsStaminaRegenMult": 0.5,
    "tiredStaminaRegenMult": 0.75
   },
+  "objectHighlight": {
+   "color": "#f4f0e6",
+   "alpha": 1,
+   "refreshMs": 100
+  },
   "water": {
    "note": "Unsafe water (Michael, 2026-10-19, #279): every natural source, water tiles and wells, is unsafe until purified, and its Drink says \"(tainted)\" (Michael, 2026-10-19). `clean` lists the sprites of sources that are safe (none yet; how water is purified is open); a waterskin's water is tainted unless its entry is marked `clean`.",
    "clean": []
@@ -6381,6 +6386,11 @@
    "note": "another player's name over their head while in sight (docs/31/03)"
   },
   {
+   "key": "objectHighlight",
+   "default": "true",
+   "note": "outline the game object under the cursor that has an action (src/highlight.js; #301); a testing setting, on"
+  },
+  {
    "key": "floaters",
    "default": "true",
    "note": "the floating numbers over heads: damage, heals, and gathers (ui/floaters.js; #294)"
@@ -6472,26 +6482,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1099"
+    "main.js:1101"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1098"
+    "main.js:1100"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1076"
+    "main.js:1078"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:920",
-    "main.js:934"
+    "main.js:922",
+    "main.js:936"
    ]
   },
   {
@@ -6503,19 +6513,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1096"
+    "main.js:1098"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1079"
+    "main.js:1081"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1078"
+    "main.js:1080"
    ]
   },
   {
@@ -6540,56 +6550,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1074"
+    "main.js:1076"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1080"
+    "main.js:1082"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1087"
+    "main.js:1089"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1076"
+    "main.js:1078"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1159"
+    "main.js:1161"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1159"
+    "main.js:1161"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1077"
+    "main.js:1079"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1170"
+    "main.js:1172"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:920",
-    "main.js:926"
+    "main.js:922",
+    "main.js:928"
    ]
   }
  ],
@@ -6716,19 +6726,19 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:61"
+    "settings.js:62"
    ]
   },
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1478"
+    "main.js:1483"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:823"
+    "main.js:825"
    ]
   },
   {
@@ -6746,31 +6756,31 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:57"
+    "settings.js:58"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:69"
+    "settings.js:70"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:73"
+    "settings.js:75"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:72"
+    "settings.js:74"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1416"
+    "main.js:1421"
    ]
   },
   {
@@ -6807,31 +6817,31 @@
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:74"
+    "settings.js:76"
    ]
   },
   {
    "key": "Floating numbers",
    "at": [
-    "settings.js:59"
+    "settings.js:60"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:65"
+    "settings.js:66"
    ]
   },
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1452"
+    "main.js:1457"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:71"
+    "settings.js:73"
    ]
   },
   {
@@ -6843,7 +6853,7 @@
   {
    "key": "Interface size",
    "at": [
-    "settings.js:55"
+    "settings.js:56"
    ]
   },
   {
@@ -6855,31 +6865,37 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1406"
+    "main.js:1411"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1442"
+    "main.js:1447"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:66"
+    "settings.js:67"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:58"
+    "settings.js:59"
+   ]
+  },
+  {
+   "key": "Object Highlight",
+   "at": [
+    "settings.js:72"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1491"
+    "main.js:1496"
    ]
   },
   {
@@ -6891,25 +6907,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1375"
+    "main.js:1380"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1371"
+    "main.js:1376"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1408"
+    "main.js:1413"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1407"
+    "main.js:1412"
    ]
   },
   {
@@ -6921,7 +6937,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1500"
+    "main.js:1505"
    ]
   },
   {
@@ -6933,25 +6949,25 @@
   {
    "key": "Starting population",
    "at": [
-    "settings.js:68"
+    "settings.js:69"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:64"
+    "settings.js:65"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:70"
+    "settings.js:71"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:60"
+    "settings.js:61"
    ]
   },
   {
@@ -6969,7 +6985,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:67"
+    "settings.js:68"
    ]
   },
   {
@@ -6995,19 +7011,19 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:62"
+    "settings.js:63"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:63"
+    "settings.js:64"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:56"
+    "settings.js:57"
    ]
   },
   {
@@ -7117,7 +7133,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1290"
+    "main.js:1293"
    ]
   },
   {
@@ -7429,6 +7445,7 @@
   "ground",
   "growth",
   "hidden",
+  "highlight",
   "immune",
   "kindle",
   "kit",
@@ -7467,7 +7484,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1923
+   "lines": 1928
   },
   {
    "path": "interact.js",
@@ -7563,7 +7580,7 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 294
+   "lines": 296
   },
   {
    "path": "host.js",
@@ -7594,6 +7611,10 @@
    "lines": 239
   },
   {
+   "path": "render/props.js",
+   "lines": 237
+  },
+  {
    "path": "loop.js",
    "lines": 233
   },
@@ -7610,20 +7631,16 @@
    "lines": 209
   },
   {
-   "path": "render/props.js",
-   "lines": 208
+   "path": "render/scene.js",
+   "lines": 207
   },
   {
-   "path": "render/scene.js",
-   "lines": 205
+   "path": "tuning.js",
+   "lines": 199
   },
   {
    "path": "fire.js",
    "lines": 197
-  },
-  {
-   "path": "tuning.js",
-   "lines": 191
   },
   {
    "path": "grid.js",
@@ -7675,7 +7692,7 @@
   },
   {
    "path": "settings.js",
-   "lines": 130
+   "lines": 132
   },
   {
    "path": "bucket.js",
@@ -7770,6 +7787,10 @@
    "lines": 72
   },
   {
+   "path": "highlight.js",
+   "lines": 71
+  },
+  {
    "path": "rng.js",
    "lines": 67
   },
@@ -7844,6 +7865,10 @@
   {
    "path": "reach.js",
    "lines": 34
+  },
+  {
+   "path": "render/highlight.js",
+   "lines": 33
   },
   {
    "path": "figure.js",

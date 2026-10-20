@@ -1,7 +1,7 @@
 {
-  "commit": "ea2bba752a0dafa0d7b31a087b88a41a6ae5ea18",
-  "short": "ea2bba7",
-  "date": "2026-10-19T23:23:17-05:00",
-  "subject": "Merge #302, reviewed: Drink (tainted), a crop's Inspect with its tile marked, Harvest labels that name the crop (Michael's playtest)",
+  "commit": "2facd17ae12a2552d001f798592ebf09ef4d10f5",
+  "short": "2facd17",
+  "date": "2026-10-19T23:33:14-05:00",
+  "subject": "Merge #303, reviewed: Object Highlight, a dev setting that outlines the game object under the pointer (#301)",
   "ref": "origin/main"
 }

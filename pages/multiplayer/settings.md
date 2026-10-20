@@ -31,6 +31,7 @@ In the order the screen shows them, with the default first.
 - **Debug corner**: Shown or Hidden: the numbers and keys in the top-left corner.
 - **Swing targets**: Off or On: a green outline on what your next swing would hit.
 - **Hit shapes**: Off or On: draws the dead's body samples, green when the next swing reaches them.
+- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, a body. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead (the swing's outline is theirs), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
 - **Layer** rows: one per slot that has painted clothing layers, a dropdown to try one on in place of what is equipped (the answer **item** shows the item's own art).
 - **Painted hair**: a **Reload hair** button that picks up hair styles just saved in the hair editor.
 - **Relay**: where Open to friends and Join go, or "none: only this browser's own tabs".
@@ -59,6 +60,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/settings.js:44-69`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown; the world's rules and the Dev chest in no tab (game #128)
 - `src/ui/screens.js:511-532`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
 - `src/ui/screens.js:84`, `src/ui/screens.js:148-151`: Display open first; a click on a tab opens it
+- `src/settings.js:27`, `src/settings.js:72`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17)
 - `src/settings.js:27`, `src/settings.js:59`: Floating numbers, shown by default (game #299, at 3331946)
 - `src/settings.js:8-38`: the defaults, the Aim guide off
 - `src/main.js:1253`: the Aim guide read where the viewer's own frame is drawn

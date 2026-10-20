@@ -130,6 +130,12 @@ With a lit torch in hand or on the belt, the X on the bag (and the character scr
 
 Read: [[Inventory]].
 
+### Object Highlight (game #303)
+
+Point at anything you can act on, a tree, a crop, a mushroom, a chest, an item on the ground, a villager, and a thin pale outline shows round it; leaf litter and headstones get none. It is a testing setting, on by default.
+
+Read: [[Settings]].
+
 ### Inspect, tainted water, and Harvest by name (game #302)
 
 Right-click a crop and **Inspect** it: a line of what it is, how long until it is ready, whether it is watered, and what harvests it, with its tile outlined in gold. Every drink from natural water now says **(tainted)**, the well's and the river's and a waterskin's; the sickness is still to come. **Harvest** names the crop, so E beside the potatoes and the cabbages says which it will take.

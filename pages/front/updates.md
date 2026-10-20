@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-19: synced to `2facd17`
+
+- **New in the game:** **Object Highlight**, a testing setting on by default: a thin pale outline round the game object under the pointer that has an action, never plain scenery (game #303). [[Settings]] lists it with what it leaves out.
+
 ## 2026-10-19: synced to `ea2bba7`
 
 - **New in the game:** a crop's **Inspect**, a line of what it is and how it stands with its tile outlined in gold, on your screen alone; every drink from natural water says **(tainted)**; and **Harvest** names the crop (game #302). [[Farming]] has a section on Inspect and the named labels; [[Water]], [[Thirst]], and [[Waterskin]] say the water is tainted (and that its sickness is not built yet); [[Shovel]], [[Scythe]], and [[Valley day]] follow. [[Water]] no longer says water never makes you ill without saying that it is meant to.
