@@ -20,9 +20,9 @@ Thirst empties from full in {{n tuning.player.thirstDrainSeconds}} seconds of th
 
 There are three ways to drink:
 
-- **A [[Waterskin]].** Choose "Drink" on it in your bag; on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin you carry also sips by itself once you are Thirsty (below).
+- **A [[Waterskin]].** Choose "Drink" on it in your bag (it says "tainted" with how full it is, since its water came from a tainted source); on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin you carry also sips by itself once you are Thirsty (below).
 - **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, [[Stew]] +{{n items.stew.thirst}}.
-- **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well" (or the trough, or the font) or "Drink from the water". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
+- **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well (tainted)" (or the trough, or the font) or "Drink from the water (tainted)": all natural water is unsafe until purified, and says so, though the sickness it is to bring is not built yet (see [[Water]]). It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
 
 At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your belt. Wells and water never run out.
 

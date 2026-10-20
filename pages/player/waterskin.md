@@ -14,7 +14,7 @@ A **waterskin** holds water for [[Thirst]], shown as a percent. Every survivor s
 
 ## Effects
 
-Choose "Drink" on it in your bag; when it sits on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. The menu shows how full it is. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water.
+Choose "Drink" on it in your bag; when it sits on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. The menu shows how full it is and that its water is tainted, "Drink (tainted, 40%)": every source is, until water can be purified (see [[Water]]). One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water.
 
 It also drinks by itself. Once your [[Thirst]] falls to **Thirsty** (the moodle's stage {{n tuning.player.autoDrinkStage}}), you take the same sip from a waterskin you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. The emptiest skin that still holds water goes first, so one is finished before the next is started. It waits until you are not swinging, drawing, casting, guarding, or asleep, and not already holding a drink or food out. It needs [[Survival]] on.
 

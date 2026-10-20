@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "5e07a6df100441c3e130953eab8a48ee0f837cc0",
-  "short": "5e07a6d",
-  "date": "2026-10-19T22:14:42-05:00",
-  "subject": "Merge #300, reviewed: the skills panel shows each skill's picture (#295, #294)",
+  "commit": "ea2bba752a0dafa0d7b31a087b88a41a6ae5ea18",
+  "short": "ea2bba7",
+  "date": "2026-10-19T23:23:17-05:00",
+  "subject": "Merge #302, reviewed: Drink (tainted), a crop's Inspect with its tile marked, Harvest labels that name the crop (Michael's playtest)",
   "ref": "origin/main"
  },
  "counts": {
@@ -27,7 +27,7 @@
   "menuLabels": 64,
   "events": 31,
   "checks": 53,
-  "modules": 101
+  "modules": 103
  },
  "items": [
   {
@@ -5965,6 +5965,10 @@
    "needsStaminaRegenMult": 0.5,
    "tiredStaminaRegenMult": 0.75
   },
+  "water": {
+   "note": "Unsafe water (Michael, 2026-10-19, #279): every natural source, water tiles and wells, is unsafe until purified, and its Drink says \"(tainted)\" (Michael, 2026-10-19). `clean` lists the sprites of sources that are safe (none yet; how water is purified is open); a waterskin's water is tainted unless its entry is marked `clean`.",
+   "clean": []
+  },
   "floaters": {
    "life": 1.1,
    "fadeFrom": 0.5,
@@ -6468,50 +6472,50 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1097"
+    "main.js:1099"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1096"
+    "main.js:1098"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1074"
+    "main.js:1076"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:918",
-    "main.js:932"
+    "main.js:920",
+    "main.js:934"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1117"
+    "interact.js:1170"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1094"
+    "main.js:1096"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1077"
+    "main.js:1079"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1076"
+    "main.js:1078"
    ]
   },
   {
@@ -6530,62 +6534,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1118"
+    "interact.js:1171"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1072"
+    "main.js:1074"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1078"
+    "main.js:1080"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1085"
+    "main.js:1087"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1074"
+    "main.js:1076"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1157"
+    "main.js:1159"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1157"
+    "main.js:1159"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1075"
+    "main.js:1077"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1168"
+    "main.js:1170"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:918",
-    "main.js:924"
+    "main.js:920",
+    "main.js:926"
    ]
   }
  ],
@@ -6704,7 +6708,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:587"
+    "interact.js:627"
    ]
   }
  ],
@@ -6718,19 +6722,19 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1474"
+    "main.js:1478"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:821"
+    "main.js:823"
    ]
   },
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:729"
+    "interact.js:776"
    ]
   },
   {
@@ -6766,38 +6770,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1412"
+    "main.js:1416"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1300"
+    "interact.js:1353"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1244",
-    "interact.js:1330"
+    "interact.js:1297",
+    "interact.js:1383"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1220"
+    "interact.js:1273"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1221"
+    "interact.js:1274"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1334"
+    "interact.js:1387"
    ]
   },
   {
@@ -6821,13 +6825,19 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1448"
+    "main.js:1452"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
     "settings.js:71"
+   ]
+  },
+  {
+   "key": "Inspect",
+   "at": [
+    "interact.js:586"
    ]
   },
   {
@@ -6839,19 +6849,19 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:429"
+    "interact.js:430"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1402"
+    "main.js:1406"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1438"
+    "main.js:1442"
    ]
   },
   {
@@ -6869,37 +6879,37 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1487"
+    "main.js:1491"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1336"
+    "interact.js:1389"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1371"
+    "main.js:1375"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1367"
+    "main.js:1371"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1404"
+    "main.js:1408"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1403"
+    "main.js:1407"
    ]
   },
   {
@@ -6911,13 +6921,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1496"
+    "main.js:1500"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:402"
+    "interact.js:403"
    ]
   },
   {
@@ -6947,13 +6957,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:443"
+    "interact.js:444"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:588"
+    "interact.js:628"
    ]
   },
   {
@@ -6965,21 +6975,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1311",
-    "interact.js:1350"
+    "interact.js:1364",
+    "interact.js:1403"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1216",
-    "interact.js:1298"
+    "interact.js:1269",
+    "interact.js:1351"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:750"
+    "interact.js:797"
    ]
   },
   {
@@ -7003,13 +7013,13 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:493"
+    "interact.js:494"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:606"
+    "interact.js:646"
    ]
   },
   {
@@ -7031,70 +7041,63 @@
    ]
   },
   {
-   "key": "Drink (${pct}%)",
+   "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:1248",
-    "interact.js:1333"
-   ]
-  },
-  {
-   "key": "Drink from the ${source.name}",
-   "at": [
-    "interact.js:687"
+    "interact.js:734"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1052"
+    "interact.js:1105"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1224"
+    "interact.js:1277"
    ]
   },
   {
    "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:636"
+    "interact.js:676"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:213"
+    "interact.js:214"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:613"
+    "interact.js:653"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:593"
+    "interact.js:633"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1595"
+    "interact.js:1648"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1254"
+    "interact.js:1307"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1583"
+    "interact.js:1636"
    ]
   }
  ],
@@ -7114,7 +7117,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1287"
+    "main.js:1290"
    ]
   },
   {
@@ -7138,9 +7141,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:219",
-    "interact.js:352",
-    "interact.js:1566",
+    "interact.js:220",
+    "interact.js:353",
+    "interact.js:1619",
     "ui/station-panel.js:78",
     "ui/station-panel.js:103"
    ]
@@ -7464,11 +7467,11 @@
   },
   {
    "path": "main.js",
-   "lines": 1919
+   "lines": 1923
   },
   {
    "path": "interact.js",
-   "lines": 1640
+   "lines": 1693
   },
   {
    "path": "placeholders.js",
@@ -7612,7 +7615,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 203
+   "lines": 205
   },
   {
    "path": "fire.js",
@@ -7847,12 +7850,20 @@
    "lines": 30
   },
   {
+   "path": "inspect-mark.js",
+   "lines": 25
+  },
+  {
    "path": "render-util.js",
    "lines": 25
   },
   {
    "path": "events.js",
    "lines": 24
+  },
+  {
+   "path": "render/marks.js",
+   "lines": 21
   },
   {
    "path": "render.js",
@@ -7986,6 +7997,9 @@
   "host": {
    "MAX_OWNERS": 16
   },
+  "inspect-mark": {
+   "SHOW_MS": 6000
+  },
   "interact": {
    "INTERACT_RANGE": 1.15,
    "SEARCH_TIME": 1,
@@ -7994,6 +8008,7 @@
    "DRINK_TIME": 1.5,
    "FILL_TIME": 2,
    "HOLD_TIME": 0.35,
+   "INSPECT_RANGE": 12,
    "WALL_FACE": 80,
    "FACE_HALF_W": 26,
    "POKE_COOLDOWN_MS": 600,

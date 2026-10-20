@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-19: synced to `ea2bba7`
+
+- **New in the game:** a crop's **Inspect**, a line of what it is and how it stands with its tile outlined in gold, on your screen alone; every drink from natural water says **(tainted)**; and **Harvest** names the crop (game #302). [[Farming]] has a section on Inspect and the named labels; [[Water]], [[Thirst]], and [[Waterskin]] say the water is tainted (and that its sickness is not built yet); [[Shovel]], [[Scythe]], and [[Valley day]] follow. [[Water]] no longer says water never makes you ill without saying that it is meant to.
+
 ## 2026-10-19: synced to `5e07a6d`
 
 - **Changed in the game:** the skills panel shows each skill's picture beside its name, the same one that floats over a gatherer's head (game #300). [[Interface]] says so.

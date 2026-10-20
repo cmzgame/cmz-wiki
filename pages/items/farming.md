@@ -31,7 +31,11 @@ Each crop has three stages: young, growing, and ready. While it grows, its menu 
 
 ### Harvesting
 
-A ready crop's menu offers **Harvest**, and E does it, with the crop's tool anywhere on you (a hand, the belt, or the bag): a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Dirk]] for cabbages and pumpkins, and nothing for flax (the table below). Without the tool, the entry reads "Harvest (need a shovel)", or whichever tool it is, greyed, and E passes it by. A harvest gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed. A [[Scythe]] harvests the ready grain on the three tiles ahead at a swing.
+A ready crop's menu offers **Harvest** with the crop's name, "Harvest potatoes", and E does it, with the crop's tool anywhere on you (a hand, the belt, or the bag): a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Dirk]] for cabbages and pumpkins, and nothing for flax (the table below). Without the tool, the entry reads "Harvest potatoes (need a shovel)", or whichever crop and tool it is, greyed, and E passes it by. Your cottage's chest holds a shovel from the start, so its potatoes can be dug on day one; its cabbages wait for a dirk. A harvest gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed. A [[Scythe]] harvests the ready grain on the three tiles ahead at a swing.
+
+### Inspect
+
+Every crop's menu has **Inspect**: a line saying what it is, whether it is ready or how many days it has left, whether it is watered or dry, whether it is fertilized (nothing fertilizes yet, so never), and what harvests it; for example "Cabbage: ready to harvest; watered; not fertilized; harvest with a dirk." While the line shows, the crop's tile is outlined in gold on the ground, so you can tell which of a row of crops it speaks of. It works on any crop you can see within {{n census.constants.interact.INSPECT_RANGE tiles}}, without walking there, and only you see it.
 
 ### Reach and walls
 
@@ -60,6 +64,7 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/crops.json`, `src/interact.js:551-611`, `src/inspect-mark.js`, `src/render/marks.js`: the Harvest label names the crop; Inspect's line and its gold tile, this client's own, never sent (game #302, at ea2bba7)
 - `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
 - `src/farming.js:160-177`, `src/interact.js:573-597`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
 - `src/farming.js:179-202`, `data/items.json:60-65`: Plant for each seed carried, on empty soil; the crop starts wet; the six seeds

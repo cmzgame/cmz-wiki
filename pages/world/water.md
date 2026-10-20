@@ -21,10 +21,12 @@ Shallow water can be walked by everyone at {{n sprites.floor_water_shallow.walk}
 
 Standing beside any water tile, deep or shallow, the menu offers two actions. E does the first when you are thirsty.
 
-- **Drink from the water:** takes {{n census.constants.interact.DRINK_TIME}} seconds and fills your thirst to the top. "You drink your fill."
+- **Drink from the water (tainted):** takes {{n census.constants.interact.DRINK_TIME}} seconds and fills your thirst to the top. "You drink your fill."
 - **Fill waterskins:** takes {{n census.constants.interact.FILL_TIME}} seconds and fills every [[Waterskin]] in your bag and on your belt to its {{n items.waterskin.capacity}}%.
 
-You must be within {{n census.constants.interact.INTERACT_RANGE}} tiles of the water. Water never runs out and never makes you ill.
+You must be within {{n census.constants.interact.INTERACT_RANGE}} tiles of the water. Water never runs out.
+
+Every drink from natural water says **(tainted)**: all of it is unsafe until it can be purified, and nothing purifies water yet, so for now every source says so. The sickness unsafe water is to bring is not built yet: drinking it does no harm today.
 
 ### Fishing
 
@@ -32,7 +34,7 @@ With a [[Fishing rod]] in hand, a water tile's menu also offers **Cast the line*
 
 ### Wells, troughs, and the font
 
-A well, a trough, and the chapel's font give the same two actions, named for what they are: "Drink from the well", "Drink from the trough", "Drink from the font". The well also lowers its bucket and winds it back up when you drink from it or click it. The valley has wells in the square, at [[Your cottage]], and in [[The inn]]'s yard; troughs in the square, the inn's yard, and [[The manor]]'s garden; and the font in [[The chapel]].
+A well, a trough, and the chapel's font give the same two actions, named for what they are and tainted like all water: "Drink from the well (tainted)", "Drink from the trough (tainted)", "Drink from the font (tainted)". The well also lowers its bucket and winds it back up when you drink from it or click it. The valley has wells in the square, at [[Your cottage]], and in [[The inn]]'s yard; troughs in the square, the inn's yard, and [[The manor]]'s garden; and the font in [[The chapel]].
 
 ## Numbers
 
@@ -55,6 +57,7 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/interact.js:718-734`, `data/tuning.json`: every drink from natural water labelled "(tainted)"; `tuning.water.clean` lists the safe sources, none yet (game #302, at ea2bba7)
 - `data/sprites/floor_water.json`, `src/map.js:1457-1460`, `src/map.js:1531-1538`: wholly water is walked by nobody
 - `tools/mapgen/valley.py:160-164`: the river, the stone bridge on the high street, the ford where the drove crosses
 - `data/sprites/floor_water_shallow.json`, `src/map.js:1463-1466`, `src/entities/player.js:280`, `src/entities/movement.js:56`, `src/entities/zombie.js:405`: shallow water walked by everyone at its speed factor

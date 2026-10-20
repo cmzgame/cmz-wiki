@@ -1,7 +1,7 @@
 {
-  "commit": "5e07a6df100441c3e130953eab8a48ee0f837cc0",
-  "short": "5e07a6d",
-  "date": "2026-10-19T22:14:42-05:00",
-  "subject": "Merge #300, reviewed: the skills panel shows each skill's picture (#295, #294)",
+  "commit": "ea2bba752a0dafa0d7b31a087b88a41a6ae5ea18",
+  "short": "ea2bba7",
+  "date": "2026-10-19T23:23:17-05:00",
+  "subject": "Merge #302, reviewed: Drink (tainted), a crop's Inspect with its tile marked, Harvest labels that name the crop (Michael's playtest)",
   "ref": "origin/main"
 }

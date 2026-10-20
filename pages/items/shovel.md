@@ -6,7 +6,7 @@ summary: A digging tool made at the workbench: carried, it is what potatoes and 
 
 {{infobox-item shovel}}
 
-The **shovel** digs. Carried anywhere on you (a hand, the belt, or the bag), it is what a ripe [[Potato]] or [[Garlic]] crop asks for at harvest: without one, the crop's menu reads "Harvest (need a shovel)" and the harvest refuses with "You need a shovel." (see [[Farming]]). It can be held in either hand and swung as a weak weapon that breaks after about {{n items.shovel.weapon.kills}} kills.
+The **shovel** digs. Carried anywhere on you (a hand, the belt, or the bag), it is what a ripe [[Potato]] or [[Garlic]] crop asks for at harvest: without one, the crop's menu reads "Harvest potatoes (need a shovel)" (or garlic) and the harvest refuses with "You need a shovel." (see [[Farming]]). It can be held in either hand and swung as a weak weapon that breaks after about {{n items.shovel.weapon.kills}} kills.
 
 ## Where to find one
 

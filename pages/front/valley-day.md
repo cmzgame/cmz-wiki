@@ -130,6 +130,12 @@ With a lit torch in hand or on the belt, the X on the bag (and the character scr
 
 Read: [[Inventory]].
 
+### Inspect, tainted water, and Harvest by name (game #302)
+
+Right-click a crop and **Inspect** it: a line of what it is, how long until it is ready, whether it is watered, and what harvests it, with its tile outlined in gold. Every drink from natural water now says **(tainted)**, the well's and the river's and a waterskin's; the sickness is still to come. **Harvest** names the crop, so E beside the potatoes and the cabbages says which it will take.
+
+Read: [[Farming#Inspect|Farming]], [[Water]], [[Waterskin]].
+
 ### Floating numbers (game #299)
 
 Numbers rise over heads: red for a hit, over whoever took it, you or the dead or a villager or a friend; green for what food heals; and for a gather, the skill's small picture with how many things you got (chopping, mining, fishing, picking, and harvesting). A number over one of the dead hidden by the dark stays hidden. **Floating numbers** in Settings turns them off.
