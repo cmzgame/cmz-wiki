@@ -1,7 +1,7 @@
 {
-  "commit": "499e344e2eb069015a0e970557ee9cd97c7715b9",
-  "short": "499e344",
-  "date": "2026-10-20T12:49:24-05:00",
-  "subject": "Merge #339, reviewed: rugs as items, laid from the bag under carriable furniture and picked up again (#327)",
+  "commit": "b0df8fcba47aaecc13b9e37133c7bc7171bd16dc",
+  "short": "b0df8fc",
+  "date": "2026-10-20T13:19:57-05:00",
+  "subject": "Merge #343, reviewed: the drawn fence and its swinging gate, buildable (#332)",
   "ref": "origin/main"
 }

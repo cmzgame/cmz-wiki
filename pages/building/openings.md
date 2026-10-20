@@ -45,7 +45,7 @@ A door or shutters the dead break are gone for good. A broken door stays open as
 
 ### Building openings
 
-A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
+A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. The palette's Gate is built on an empty edge or into a fence (see [[Fences]]). A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
 
 ## Numbers
 

@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `b0df8fc`
+
+- **New in the game:** fences and gates are drawn and buildable (game #343). The fence is a rickety run of split rails with a post at its ends and corners; a gate swings open and shut through two drawn in-between positions, where a house door still snaps. The build palette has a **Fence** ({{n build.fence.cost.plank}} plank a stretch, {{n build.fence.seconds seconds}}) and a **Gate** ({{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}), with a smith's hammer on you; a gate goes on an empty edge or into a fence, never into another wall ("Only in a fence"). A guest builds them too, and every screen plays the swing. [[Fences]], [[Building]], [[Openings]], [[Walls]], and [[Valley day]] say so.
+
 ## 2026-10-20: synced to `499e344`
 
 - **New in the game:** rugs (game #339). The bearskin rug and the regal red rug are items, rolled up in the bag; **Place** on a rug's menu shows an outline over the floor, `R` turns it, and a click lays it within reach, refused over water, another rug, across a wall, or over anything that cannot be carried. A laid rug lies under the furniture you can carry and is drawn under everything; things dropped on it lie on it, and you walk over it. **Pick up** (and `E`, only when nothing else is in reach) rolls it back into the bag, refused while furniture stands on it ("Move the chest off it first."). Object Highlight outlines a laid rug, a wall cannot be built through one, and a guest can lay and pick up rugs. Both are in the Developer Chest, whose grid grew, and so can be Extra starting items; their hover cards say "Place: lay on the floor." [[Rugs]], [[Bearskin rug]], and [[Regal red rug]] are new; [[Inventory]], [[Placement]], [[Building]], [[Developer chest]], [[Settings]], and [[Valley day]] say so.

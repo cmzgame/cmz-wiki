@@ -148,6 +148,12 @@ Two rugs, the [[Bearskin rug]] and the [[Regal red rug]], are items you carry ro
 
 Read: [[Rugs]], [[Inventory]], [[Placement]].
 
+### Fences and gates, drawn and buildable (game #343)
+
+The valley's fences are drawn now: a rickety fence of split rails, with posts at its ends and corners. A gate swings open and shut through two drawn in-between positions; house doors still snap. The build palette on N has a **Fence**, {{n build.fence.cost.plank}} plank a stretch, and a **Gate**, {{n build.gate.cost.plank}} planks, both with a smith's hammer on you. A gate goes on an empty edge or into a fence, never into another wall ("Only in a fence"), and Remove names them as a fence and a gate.
+
+Read: [[Fences]], [[Building]], [[Openings]].
+
 ### The row of buttons in one line (game #312)
 
 The row of buttons sits on the belt's stone, as one panel. Where there is room it is one line of eight along the bottom right, clear of the belt and the chat log; where not, two lines of four, and smaller buttons on a narrow interface. The skills panel stands above it.

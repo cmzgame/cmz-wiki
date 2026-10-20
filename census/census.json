@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "499e344e2eb069015a0e970557ee9cd97c7715b9",
-  "short": "499e344",
-  "date": "2026-10-20T12:49:24-05:00",
-  "subject": "Merge #339, reviewed: rugs as items, laid from the bag under carriable furniture and picked up again (#327)",
+  "commit": "b0df8fcba47aaecc13b9e37133c7bc7171bd16dc",
+  "short": "b0df8fc",
+  "date": "2026-10-20T13:19:57-05:00",
+  "subject": "Merge #343, reviewed: the drawn fence and its swinging gate, buildable (#332)",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 46,
   "interactions": 28,
   "lootTables": 19,
-  "sprites": 159,
+  "sprites": 162,
   "places": 43,
   "villagers": 9,
   "authoredDead": 62,
@@ -4284,6 +4284,12 @@
    "drawn": false
   },
   {
+   "id": "post_fence",
+   "kind": "other",
+   "drawn": true,
+   "note": "the drawn fence post (art round 3, #332), at a fence's ends, corners, junctions, and where it meets another material"
+  },
+  {
    "id": "post_log",
    "kind": "other",
    "drawn": true,
@@ -4905,16 +4911,28 @@
    "note": "board overlays, one to three planks, the same on every wall material (docs/17)"
   },
   {
+   "id": "wall_boards_gate",
+   "kind": "wall",
+   "drawn": true,
+   "note": "boards across a shut fence gate (art round 3, #332), one to three, named as the house boards are so the wall renderer reads them by the fence's `wall.boards`"
+  },
+  {
    "id": "wall_fence",
    "kind": "wall",
-   "drawn": false,
-   "note": "a post-and-rail fence as a wall material (docs/30 step 0; docs/29/09 request 1.1): sight and light pass, bodies do not, it bounds no room; a gate is its door; a crowd of the dead bursts it into splinters (#147); a dev wall until drawn"
+   "drawn": true,
+   "note": "the drawn rickety fence (art round 3, docs/art/11, #332): each segment carries its post at its near end; sight and light pass, bodies do not, it bounds no room; a gate is its door, and swings open through two drawn in-between leaves (render/walls.js); a crowd of the dead bursts it into splinters (#147). No window: a window is no use in a fence (map.canStampOver)"
   },
   {
    "id": "wall_log",
    "kind": "wall",
    "drawn": true,
    "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
+  },
+  {
+   "id": "wall_parts_fence",
+   "kind": "wall",
+   "drawn": true,
+   "note": "the fence gate's leaves (art round 3, #332): open (leaf_<o>), and the swing's two in-between leaves (leaf_<o>_30, leaf_<o>_60); a fence's leaf always swings toward the camera, so there is no far leaf"
   },
   {
    "id": "wall_parts_log",
@@ -6351,6 +6369,27 @@
    },
    "seconds": 3,
    "tool": "build"
+  },
+  "fence": {
+   "label": "Fence",
+   "kind": "wall",
+   "sprite": "wall_fence",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 2,
+   "tool": "build"
+  },
+  "gate": {
+   "label": "Gate",
+   "kind": "door",
+   "sprite": "wall_fence",
+   "over": "wall_fence",
+   "cost": {
+    "plank": 2
+   },
+   "seconds": 3,
+   "tool": "build"
   }
  },
  "looks": {
@@ -6675,8 +6714,8 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:304",
-    "placement.js:312"
+    "placement.js:314",
+    "placement.js:322"
    ]
   },
   {
@@ -6888,13 +6927,13 @@
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:700"
+    "placement.js:717"
    ]
   },
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:696"
+    "placement.js:713"
    ]
   },
   {
@@ -7197,19 +7236,19 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:668"
+    "placement.js:685"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:710"
+    "placement.js:727"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:706"
+    "placement.js:723"
    ]
   },
   {
@@ -7313,7 +7352,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:458"
+    "placement.js:471"
    ]
   },
   {
@@ -7666,7 +7705,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 712
+   "lines": 729
   },
   {
    "path": "game.js",
@@ -7685,12 +7724,12 @@
    "lines": 610
   },
   {
-   "path": "ui/inventory-actions.js",
-   "lines": 478
+   "path": "render/walls.js",
+   "lines": 502
   },
   {
-   "path": "render/walls.js",
-   "lines": 476
+   "path": "ui/inventory-actions.js",
+   "lines": 478
   },
   {
    "path": "combat.js",
@@ -7838,7 +7877,7 @@
   },
   {
    "path": "rugs.js",
-   "lines": 137
+   "lines": 143
   },
   {
    "path": "settings.js",
@@ -8311,6 +8350,7 @@
   },
   "render_walls": {
    "CAP_MARGIN": 1,
+   "SWING_S": 0.24,
    "SHAKE_MS": 110
   },
   "rugs": {

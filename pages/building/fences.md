@@ -2,7 +2,7 @@
 title: Fences
 categories: [Building, Mechanics]
 aliases: [Fence, Gate, Gates, See-through walls, Splinters, Bursting a fence, Striking a fence]
-summary: Fences are low walls you can see and light through; they bound no room, their gates are doors, and the dead strike them down into splinters.
+summary: Fences are low walls you can see and light through, built from planks; they bound no room, their gates are doors that swing, and the dead strike them down into splinters.
 ---
 
 **Fences** are low [[Walls|walls]] you cannot walk through but can see through. Light passes them too, and they never make a [[Rooms|room]]: a fenced yard or field stays outdoors. A **gate** is a door in a fence. Unlike any other wall, a fence can be broken: [[The dead]] strike it as they would bite you, one alone slowly and a crowd faster, until it bursts into splinters.
@@ -13,7 +13,7 @@ summary: Fences are low walls you can see and light through; they bound no room,
 
 A fence blocks bodies like any wall, but [[Sight|sight]] and [[Light|light]] pass over it. Because it is see-through, the room fill passes it, so whatever it closes in is outdoors. A fenced plot is not somewhere to [[Sleep|sleep]].
 
-A fence is {{n sprites.wall_fence.wall.height}} pixels tall and {{n sprites.wall_fence.wall.thickness}} thick. It is still placeholder art.
+A fence is {{n sprites.wall_fence.wall.height}} pixels tall and {{n sprites.wall_fence.wall.thickness}} thick. It is drawn as a rickety fence of split rails, with a post wherever a run ends, turns, or meets another wall.
 
 ### Fighting across a fence
 
@@ -42,13 +42,18 @@ Only fences break this way. A plain wall of wood, stone, or logs is never broken
 
 ### Gates
 
-A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A shut gate blocks bodies, but you can still see through it. An open gate is no fence to strike.
+A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A gate swings: opening or shutting it plays two drawn in-between positions, over {{n census.constants.render_walls.SWING_S seconds}}, where a house door snaps open or shut. A shut gate blocks bodies, but you can still see through it. An open gate is no fence to strike.
 
 ### Building
 
-Fences cannot be built. A **gate can be built into a fence**: a Door from the build palette, laid on a stretch of fence, takes its place as a gate (see [[Building]]); a window cannot be built into a fence. Removing a gate you built that way puts the fence back.
+The build palette on N has a **Fence** and a **Gate**, both built with a [[Smith's hammer]] on you (see [[Building]]):
 
-A burst stretch of fence leaves an empty edge, where a log wall, a door, or a window can be built.
+- A **Fence** costs {{n build.fence.cost.plank}} [[Plank|plank]] a stretch and takes {{n build.fence.seconds seconds}}. It needs an empty edge.
+- A **Gate** costs {{n build.gate.cost.plank}} planks and takes {{n build.gate.seconds seconds}}. It goes on an empty edge or into a stretch of fence, and never into another wall: laid on a wall of wood, stone, or logs, it says "Only in a fence". Like any door, it needs both its tiles clear.
+
+A Door from the palette laid on a stretch of fence also becomes a gate, at a door's cost. A window cannot be built into a fence. Removing a gate built into a fence puts the fence back; removing one built on an empty edge leaves the edge empty.
+
+A burst stretch of fence leaves an empty edge, where a fence, a gate, a log wall, a door, or a window can be built.
 
 ### Where they are
 
@@ -58,6 +63,9 @@ The valley has fences round the graveyard, your cottage's garden, the inn's yard
 
 - Height: {{n sprites.wall_fence.wall.height}} pixels.
 - Thickness: {{n sprites.wall_fence.wall.thickness}} pixels.
+- To build a stretch of fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
+- To build a gate: {{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}.
+- A gate's swing: {{n census.constants.render_walls.SWING_S seconds}}.
 - Hit points of a stretch of fence: {{n tuning.world.fenceHp}}; of a gate, {{n tuning.world.fenceGateFactor}} of that.
 - Hit points a strike takes: {{n tuning.zombie.fenceStrike}}.
 - Wait after a strike: {{n tuning.zombie.cooldown seconds}}, after the attack itself.
@@ -68,7 +76,7 @@ The valley has fences round the graveyard, your cottage's garden, the inn's yard
 
 ## With friends
 
-The strikes are the host's. A fence's damage is kept on the host and saved with the world, but not sent to guests: every player sees each strike's jolt and a burst fence's splinters, and the fence's going reaches every player and the save like any other change to the map.
+The strikes are the host's. A fence's damage is kept on the host and saved with the world, but not sent to guests: every player sees each strike's jolt and a burst fence's splinters, and the fence's going reaches every player and the save like any other change to the map. A guest builds fences and gates as the host does, and each player's screen plays a gate's swing when it sees the gate open or shut.
 
 ## See also
 
@@ -81,6 +89,10 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/sprites/wall_fence.json`, `data/sprites/post_fence.json`, `data/sprites/wall_parts_fence.json`, `data/sprites/wall_boards_gate.json`: the drawn fence, its post, its gate's leaves, and the boards across a shut gate (game #343, at b0df8fc)
+- `data/build.json`: the Fence and the Gate, their costs, seconds, and tool; a gate `over` the fence (game #343, at b0df8fc)
+- `src/placement.js:204-212`: a build entry's wall kind, and a gate refused in any wall but a fence ("Only in a fence") (game #343, at b0df8fc)
+- `src/render/walls.js:133-159`: a gate's swing through its in-between leaves, `SWING_S`, on each screen from the gate's open state, never for a ghost, a broken gate, or a boarded one (game #343, at b0df8fc)
 - `data/sprites/wall_fence.json`: the fence's height, thickness, `seeThrough`, and `fence`
 - `src/map.js:1442-1454`: a see-through wall passes sight and light and bounds no room; `wall.fence` marks what the dead can break
 - `src/map.js:1742-1794`: the room fill passes a see-through wall
@@ -100,7 +112,6 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `src/render/walls.js:373-391`, `src/fire.js:81-83`: the jolt of a strike, and the splinters and dust
 - `src/map.js:661-676`: the burst edge emptied and the rooms found again
 - `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:435`: a gate built over a fence, no window over one; removing it puts the fence back
-- `data/build.json`: only the log wall, door, and window can be built
 - `data/maps/valley.json:1156-1170`: the graveyard's fence feature and its gate
 - `data/maps/valley.json:1446-1457`, `data/maps/valley.json:2209-2220`, `data/maps/valley.json:2947-2958`, `data/maps/valley.json:3315-3326`: the fences of your cottage, the inn, the manor, and the merchant's house
 - `data/maps/valley.json:4288-4302`, `data/maps/valley.json:4858-4872`: fence partitions inside the cooper's long house and the second cottage on the lane

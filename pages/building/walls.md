@@ -28,7 +28,7 @@ Doors and windows sit at the same heights in every wall, whatever its material.
 
 ### Building and removing walls
 
-You can build log walls, doors, and windows from the palette on N, and remove what you built with X. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; removing it puts the wall back. Walls that are part of the map cannot be removed. See [[Building]].
+You can build log walls, fences, gates, doors, and windows from the palette on N, and remove what you built with X. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; removing it puts the wall back. Walls that are part of the map cannot be removed. See [[Building]].
 
 ### Brackets
 
