@@ -25,6 +25,7 @@ In the order the screen shows them, with the default first.
 - **Fullscreen**: Off or On, at the foot of the tab. It asks the browser for the whole screen when clicked and shows what the page is in now; it is not kept, since the browser decides when fullscreen ends. Playing never goes fullscreen by itself. Where the browser does not allow it, the row says so and cannot be switched. What `Escape` does in fullscreen depends on the browser, and the row's line says which:
   - In a browser that can lock the keyboard (Chrome and Edge), the game keeps `Escape` while fullscreen lasts: "The game fills the whole screen. Esc closes menus as usual; hold Esc to leave fullscreen." A tap of `Escape` closes the game's menus as it does in a window, and a held `Escape` leaves fullscreen; the browser shows its own banner saying so.
   - In any other browser (Firefox, Safari), or where the browser refused the lock: "The game fills the whole screen. In this browser Esc leaves fullscreen first; the next one reaches the game."
+  - Chrome keeps a way out of its own: pressing `Escape` many times in quick succession still leaves fullscreen, even with the lock (seen in Michael's playtest, 2026-10-20). A firm fullscreen in every browser waits for the game's desktop build.
 
 ### Testing
 

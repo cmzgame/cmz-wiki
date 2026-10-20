@@ -18,6 +18,7 @@ Each time the wiki is synced with the game, an entry goes here, newest first, wi
 - **In the game's docs:** the sounds spec, the game's `docs/40` (game #314), a document only; nothing a player sees.
 - **On the wiki:** [[Valley day]] has the four changes, and the hover card leaves its list of things decided but not built.
 
+- **Seen in play:** in Chrome, pressing `Escape` many times quickly still leaves the locked fullscreen (Michael, 2026-10-20). [[Settings]] says so.
 ## 2026-10-19: synced to `2facd17`
 
 - **New in the game:** **Object Highlight**, a testing setting on by default: a thin pale outline round the game object under the pointer that has an action, never plain scenery (game #303). [[Settings]] lists it with what it leaves out.
