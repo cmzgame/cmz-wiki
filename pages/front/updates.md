@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-19: synced to `5e07a6d`
+
+- **Changed in the game:** the skills panel shows each skill's picture beside its name, the same one that floats over a gatherer's head (game #300). [[Interface]] says so.
+
 ## 2026-10-19: synced to `3331946`
 
 - **New in the game:** floating numbers over heads (game #299): a red number for each hit over whoever took it, a green one for what food heals, and for a gather the skill's small picture with how many things were gained; never over one of the living dead hidden by the dark. A new **Floating numbers** setting, shown by default, hides them. Each of the fourteen skills has a small picture of its own. [[Interface]] has a section on the numbers; [[Settings]], [[Combat]], [[Food]], and [[Valley day]] point to it. [[Food]]'s summary no longer says a full stomach eats nothing (it has not since game #259).

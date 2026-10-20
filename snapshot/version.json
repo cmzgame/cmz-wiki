@@ -1,7 +1,7 @@
 {
-  "commit": "33319463ed9e537abd87babb9e7c64949d7bbf98",
-  "short": "3331946",
-  "date": "2026-10-19T22:06:39-05:00",
-  "subject": "Merge #299, reviewed: floating numbers over heads (red hits, green heals, a gather with its skill's icon), and an icon for every skill (#294)",
+  "commit": "5e07a6df100441c3e130953eab8a48ee0f837cc0",
+  "short": "5e07a6d",
+  "date": "2026-10-19T22:14:42-05:00",
+  "subject": "Merge #300, reviewed: the skills panel shows each skill's picture (#295, #294)",
   "ref": "origin/main"
 }
