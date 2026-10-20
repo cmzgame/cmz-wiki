@@ -7,7 +7,7 @@ summary: A chest of test items placed beside the spawn of every new world while 
 
 {{devonly note="The dev chest exists for testing. It is chosen when a world is made, and is not part of the valley."}}
 
-The **developer chest** stands beside the spawn of a new world made with it, while the game is in development. Unlike other [[Containers]], it holds the same things every time: weapons, ammunition, torches and a tinderbox, bandages, the fire items, two [[Developer Bag|Developer Bags]], and the two [[Rugs|rugs]]. It has no food, materials, clothing, or tools. Its grid is {{n loot.dev_kit.grid.0}} by {{n loot.dev_kit.grid.1}}. It is searched and opened like any chest, and can be picked up and carried.
+The **developer chest** stands beside the spawn of a new world made with it, while the game is in development. Unlike other [[Containers]], it holds the same things every time: weapons, ammunition, torches and a tinderbox, bandages, the fire items, two [[Developer Bag|Developer Bags]], the two [[Rugs|rugs]], and the eight [[Paintings|paintings]]. It has no food, materials, clothing, or tools. Its grid is {{n loot.dev_kit.grid.0}} by {{n loot.dev_kit.grid.1}}. It is searched and opened like any chest, and can be picked up and carried.
 
 ## Contents
 
@@ -23,6 +23,7 @@ The **developer chest** stands beside the spawn of a new world made with it, whi
 - {{n loot.dev_kit.fixed.16.count}} × [[Throwing Knife]]
 - {{n loot.dev_kit.fixed.17.count}} × [[Throwing Axe]]
 - A [[Bearskin rug]] and a [[Regal red rug]], to try laying them (see [[Rugs]])
+- One of each of the eight paintings, to try hanging them: the [[Lone oak painting]], the [[Deer painting]], the [[Snow peak painting]], the [[Waterfall painting]], the [[Pines painting]], the [[Castle painting]], the [[Lake painting]], and the [[Sunset painting]] (see [[Paintings]])
 
 ## Choosing it
 
@@ -46,6 +47,7 @@ These change only the game they are typed into; on a guest's game they change on
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/loot.json:19`: the eight paintings after the rugs, the grid grown to hold them (game #344, at 9ac68a2)
 - `src/settings.js:33`, `src/settings.js:70`, `src/ui/screens.js:872-900`, `src/main.js:325-333`: the Dev chest, on by default, chosen at the Sandbox step and remembered as the next one's first choice
 - `src/settings.js:71-72`, `src/rules.js:21-22`: Dev bag and Extra starting items, world rules of the same step
 - `data/sprites/dev_chest.json`: the dev chest rolls the dev kit

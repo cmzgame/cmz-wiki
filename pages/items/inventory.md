@@ -78,6 +78,10 @@ Equipping a new bag swaps bags: the old one is dropped at your feet with everyth
 
 A [[Rugs|rug]] in your bag has **Place** on its menu, after Use: a ghost of the laid rug follows the cursor over the floor, `R` turns it, and a click lays it within reach, out of the bag. A laid rug's own menu has **Pick up**, which rolls it back into the bag, refused while furniture stands on it ("Move the chest off it first."). See [[Rugs]].
 
+### Hanging a painting
+
+A [[Paintings|painting]] in your bag has **Place** on its menu, after Use: a ghost of it follows the cursor onto the face of a wall, and a click hangs it within reach, out of the bag. A hung painting's own menu has **Pick up**, which takes it down into the bag. See [[Paintings]].
+
 ### Dropping and picking up
 
 Dropped items lie on the tile where they fell. **Drop** on an item's menu drops it at your feet; **Drop all** drops the whole stack. A bag or belt dropped from its slot keeps everything in it.
@@ -100,6 +104,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/interact.js:1336-1337`, `src/interact.js:324-337`: a painting's Place, and its Pick up (game #344, at 9ac68a2)
 - `src/inventory.js:184-198`, `src/ui/inventory-panel.js:289-297`: the eye on a worn slot (game #243)
 - `src/main.js:1098-1183`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)
 - `src/inventory.js:43`: your grid is the bag on your back

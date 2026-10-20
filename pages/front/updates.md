@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `9ac68a2`
+
+- **New in the game:** paintings (game #344). Eight paintings are items: three small ({{n items.painting_small_oak.size.0}} by {{n items.painting_small_oak.size.1}} in the bag), two tall, and three wide. **Place** on a painting's menu shows it on the face of the wall under the cursor, and a click hangs it within reach; only a plain wall takes one, on the face turned toward the camera, one to a stretch of wall, never at a corner, beside a bracket, or on a door, a window, or a fence, and a wide one spans two stretches. **Pick up** takes it down into the bag; `E` does not. A painting whose wall is removed or built over falls to the floor, whole. A guest hangs and takes them down too. All eight are in the Developer Chest, whose grid grew again. [[Paintings]] is new, each painting has a generated page, and [[Inventory]], [[Placement]], [[Building]], [[Developer chest]], and [[Valley day]] say so.
+
 ## 2026-10-20: synced to `b0df8fc`
 
 - **New in the game:** fences and gates are drawn and buildable (game #343). The fence is a rickety run of split rails with a post at its ends and corners; a gate swings open and shut through two drawn in-between positions, where a house door still snaps. The build palette has a **Fence** ({{n build.fence.cost.plank}} plank a stretch, {{n build.fence.seconds seconds}}) and a **Gate** ({{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}), with a smith's hammer on you; a gate goes on an empty edge or into a fence, never into another wall ("Only in a fence"). A guest builds them too, and every screen plays the swing. [[Fences]], [[Building]], [[Openings]], [[Walls]], and [[Valley day]] say so.

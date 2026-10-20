@@ -5,15 +5,16 @@ aliases: [Ghost, Putting down, Put down, Placing]
 summary: The ghost that shows where a carried piece of furniture or a new wall will go, turning it with R, reach, and putting it down.
 ---
 
-**Placement** is how things are put into the world: a carried piece of furniture set down, a [[Rugs|rug]] laid from the bag, or a wall, door, or window built. In both, a **ghost** of the thing follows the cursor, green where it can go and red where it cannot.
+**Placement** is how things are put into the world: a carried piece of furniture set down, a [[Rugs|rug]] laid from the bag, a [[Paintings|painting]] hung from the bag, or a wall, door, or window built. In both, a **ghost** of the thing follows the cursor, green where it can go and red where it cannot.
 
 ## How it works
 
 ### The ghost
 
-While you carry furniture, have a piece picked in the build palette, or have chosen **Place** on a rug in your bag, a see-through copy of it follows the cursor.
+While you carry furniture, have a piece picked in the build palette, or have chosen **Place** on a rug or a painting in your bag, a see-through copy of it follows the cursor.
 
 - A piece of furniture is centred on the tile under the cursor, and so is a rug; a rug's own rules are on [[Rugs]].
+- A painting goes on the face of the wall under the cursor; its own rules are on [[Paintings]].
 - A wall, door, or window snaps to the nearest edge of the tile under the cursor (see [[Building]]).
 
 The ghost is green when the thing can go there and red when it cannot.
@@ -54,6 +55,7 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/placement.js:250`, `src/placement.js:534-536`: a painting's ghost on the face of the wall under the cursor (game #344, at 9ac68a2)
 - `src/placement.js`, `putDownReach`: putting down needs the reach and a clear line (game #227)
 - `src/placement.js:402-415`: the furniture ghost centred on the cursor
 - `src/placement.js:160-175`: a built piece snapped to the nearest edge

@@ -1,17 +1,17 @@
 {
  "version": {
-  "commit": "b0df8fcba47aaecc13b9e37133c7bc7171bd16dc",
-  "short": "b0df8fc",
-  "date": "2026-10-20T13:19:57-05:00",
-  "subject": "Merge #343, reviewed: the drawn fence and its swinging gate, buildable (#332)",
+  "commit": "9ac68a28ca83aef454da3acc66e1ab63072b0555",
+  "short": "9ac68a2",
+  "date": "2026-10-20T14:11:49-05:00",
+  "subject": "Merge #344, reviewed: paintings as items, hung from the bag on a wall's face and taken down again (#326)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 73,
+  "items": 81,
   "recipes": 46,
   "interactions": 28,
   "lootTables": 19,
-  "sprites": 162,
+  "sprites": 163,
   "places": 43,
   "villagers": 9,
   "authoredDead": 62,
@@ -24,10 +24,10 @@
   "liveRules": 5,
   "keys": 20,
   "verbs": 14,
-  "menuLabels": 69,
+  "menuLabels": 71,
   "events": 31,
-  "checks": 59,
-  "modules": 113
+  "checks": 60,
+  "modules": 115
  },
  "items": [
   {
@@ -2206,6 +2206,183 @@
    "foundIn": [],
    "interactions": [],
    "note": "a rug rolled up, red with a gold border (#327)"
+  },
+  {
+   "id": "painting_small_oak",
+   "name": "Lone oak painting",
+   "kind": "decor",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a framed painting (#326): Place hangs it on a wall's face, Pick up takes it down (src/paintings.js); small takes one slot of one section, tall both slots of one, wide a slot of two sections"
+  },
+  {
+   "id": "painting_small_deer",
+   "name": "Deer painting",
+   "kind": "decor",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "painting_small_peak",
+   "name": "Snow peak painting",
+   "kind": "decor",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "painting_tall_waterfall",
+   "name": "Waterfall painting",
+   "kind": "decor",
+   "size": [
+    2,
+    3
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "painting_tall_pines",
+   "name": "Pines painting",
+   "kind": "decor",
+   "size": [
+    2,
+    3
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "painting_wide_castle",
+   "name": "Castle painting",
+   "kind": "decor",
+   "size": [
+    3,
+    2
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "painting_wide_lake",
+   "name": "Lake painting",
+   "kind": "decor",
+   "size": [
+    3,
+    2
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
+   "id": "painting_wide_sunset",
+   "name": "Sunset painting",
+   "kind": "decor",
+   "size": [
+    3,
+    2
+   ],
+   "tags": [
+    "decor",
+    "painting"
+   ],
+   "art": {
+    "icon": true,
+    "held": true,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
   }
  ],
  "recipes": [
@@ -3582,7 +3759,7 @@
    "name": "dev_kit",
    "grid": [
     10,
-    8
+    14
    ],
    "rolls": [
     0,
@@ -3920,6 +4097,12 @@
    "container": true,
    "carry": true,
    "note": "a dev box for the cupboard (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "decor_paintings",
+   "kind": "other",
+   "drawn": true,
+   "note": "the wall paintings, both orientations drawn (not mirrored), hung proud of the wall's face so one set serves wood, stone, and log walls; drawn after their wall segment (render/paintings.js; #326). The anchors are the wall convention, the tile's top vertex at ground level; a wide painting is anchored on its first, far, section."
   },
   {
    "id": "desk",
@@ -6683,7 +6866,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1207"
+    "interact.js:1234"
    ]
   },
   {
@@ -6714,14 +6897,14 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:314",
-    "placement.js:322"
+    "placement.js:331",
+    "placement.js:340"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1208"
+    "interact.js:1235"
    ]
   },
   {
@@ -6895,7 +7078,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:646"
+    "interact.js:670"
    ]
   }
  ],
@@ -6921,19 +7104,25 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:795"
+    "interact.js:819"
+   ]
+  },
+  {
+   "key": "Click to hang the painting · Esc cancel",
+   "at": [
+    "placement.js:778"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:717"
+    "placement.js:771"
    ]
   },
   {
    "key": "Click to place · R turn · E in front",
    "at": [
-    "placement.js:713"
+    "placement.js:767"
    ]
   },
   {
@@ -6969,32 +7158,32 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1392"
+    "interact.js:1421"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1336",
-    "interact.js:1422"
+    "interact.js:1365",
+    "interact.js:1451"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1312"
+    "interact.js:1341"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1313"
+    "interact.js:1342"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1426"
+    "interact.js:1455"
    ]
   },
   {
@@ -7030,7 +7219,7 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:605"
+    "interact.js:629"
    ]
   },
   {
@@ -7042,7 +7231,7 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:449"
+    "interact.js:473"
    ]
   },
   {
@@ -7084,13 +7273,14 @@
   {
    "key": "Place",
    "at": [
-    "interact.js:1308"
+    "interact.js:1335",
+    "interact.js:1337"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1428"
+    "interact.js:1457"
    ]
   },
   {
@@ -7132,7 +7322,7 @@
   {
    "key": "Sleep",
    "at": [
-    "interact.js:422"
+    "interact.js:446"
    ]
   },
   {
@@ -7168,13 +7358,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:463"
+    "interact.js:487"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:647"
+    "interact.js:671"
    ]
   },
   {
@@ -7186,21 +7376,21 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1403",
-    "interact.js:1442"
+    "interact.js:1432",
+    "interact.js:1471"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1306",
-    "interact.js:1390"
+    "interact.js:1333",
+    "interact.js:1419"
    ]
   },
   {
    "key": "Walk here",
    "at": [
-    "interact.js:816"
+    "interact.js:840"
    ]
   },
   {
@@ -7224,97 +7414,103 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:513"
+    "interact.js:537"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:665"
+    "interact.js:689"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:685"
+    "placement.js:739"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:727"
+    "placement.js:788"
    ]
   },
   {
    "key": "Click to remove ${targetName(t)} · Esc cancel",
    "at": [
-    "placement.js:723"
+    "placement.js:784"
    ]
   },
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:753"
+    "interact.js:777"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1142"
+    "interact.js:1169"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1316"
+    "interact.js:1345"
    ]
   },
   {
    "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:695"
+    "interact.js:719"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:215"
+    "interact.js:221"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:672"
+    "interact.js:696"
+   ]
+  },
+  {
+   "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
+   "at": [
+    "interact.js:331"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:308"
+    "interact.js:314"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:652"
+    "interact.js:676"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1687"
+    "interact.js:1716"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1346"
+    "interact.js:1375"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1675"
+    "interact.js:1704"
    ]
   }
  ],
@@ -7352,15 +7548,15 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:471"
+    "placement.js:490"
    ]
   },
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:221",
-    "interact.js:372",
-    "interact.js:1658",
+    "interact.js:227",
+    "interact.js:396",
+    "interact.js:1687",
     "ui/station-panel.js:78",
     "ui/station-panel.js:103"
    ]
@@ -7386,7 +7582,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:736"
+    "map.js:779"
    ]
   },
   {
@@ -7497,7 +7693,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:747",
-    "map.js:732"
+    "map.js:775"
    ]
   },
   {
@@ -7638,6 +7834,7 @@
   "light",
   "mine",
   "navrow",
+  "paintings",
   "players",
   "poses",
   "reach",
@@ -7665,7 +7862,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2271
+   "lines": 2314
   },
   {
    "path": "main.js",
@@ -7673,7 +7870,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1732
+   "lines": 1761
   },
   {
    "path": "placeholders.js",
@@ -7696,16 +7893,16 @@
    "lines": 935
   },
   {
+   "path": "placement.js",
+   "lines": 790
+  },
+  {
    "path": "ui/inventory-panel.js",
    "lines": 777
   },
   {
    "path": "archery.js",
    "lines": 762
-  },
-  {
-   "path": "placement.js",
-   "lines": 729
   },
   {
    "path": "game.js",
@@ -7725,7 +7922,7 @@
   },
   {
    "path": "render/walls.js",
-   "lines": 502
+   "lines": 504
   },
   {
    "path": "ui/inventory-actions.js",
@@ -7776,6 +7973,10 @@
    "lines": 288
   },
   {
+   "path": "paintings.js",
+   "lines": 283
+  },
+  {
    "path": "entities/villager.js",
    "lines": 263
   },
@@ -7797,7 +7998,7 @@
   },
   {
    "path": "render/props.js",
-   "lines": 237
+   "lines": 242
   },
   {
    "path": "loop.js",
@@ -7885,7 +8086,7 @@
   },
   {
    "path": "item-info.js",
-   "lines": 130
+   "lines": 131
   },
   {
    "path": "bucket.js",
@@ -7972,6 +8173,10 @@
    "lines": 82
   },
   {
+   "path": "render/paintings.js",
+   "lines": 78
+  },
+  {
    "path": "kit.js",
    "lines": 77
   },
@@ -7984,12 +8189,12 @@
    "lines": 74
   },
   {
-   "path": "ui/swing-timer.js",
-   "lines": 72
+   "path": "highlight.js",
+   "lines": 73
   },
   {
-   "path": "highlight.js",
-   "lines": 71
+   "path": "ui/swing-timer.js",
+   "lines": 72
   },
   {
    "path": "rng.js",
@@ -8060,6 +8265,10 @@
    "lines": 41
   },
   {
+   "path": "render/highlight.js",
+   "lines": 40
+  },
+  {
    "path": "verbs.js",
    "lines": 39
   },
@@ -8078,10 +8287,6 @@
   {
    "path": "reach.js",
    "lines": 34
-  },
-  {
-   "path": "render/highlight.js",
-   "lines": 33
   },
   {
    "path": "figure.js",
@@ -8313,6 +8518,11 @@
   "netsmooth": {
    "KEEP": 12
   },
+  "paintings": {
+   "REACH": 2.6,
+   "WALL_FACE": 80,
+   "FACE_T": 16
+  },
   "pathfind": {
    "KEY_OFF": 32768
   },
@@ -8337,6 +8547,9 @@
   },
   "render_entities": {
    "WALL_HALF": 0.28
+  },
+  "render_paintings": {
+   "PROUD": 8.5
   },
   "render_props": {
    "WIGGLE_MS": 560

@@ -50,7 +50,7 @@ A log wall or a fence needs an empty edge. A gate goes on an empty edge or into 
 - **Over a fence**, a door only: it is a gate in the fence, as the palette's Gate is. A window cannot be built into a fence (see [[Fences]]).
 - **Over a broken door**, a new door; **over broken shutters**, a new window: whole, shut, and at full health. It is a new one, at a new one's cost, never a repair.
 
-Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch bracket on a wall built over is lost with it. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
+Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch bracket on a wall built over is lost with it; a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
 
 ### Removal
 
@@ -63,7 +63,7 @@ Only what players made can be removed:
 
 The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map, trees, the well, fires, or torch posts.
 
-Nothing is refunded. A removed container spills what it held onto its tile, and a removed station spills its output box too. A removed wall takes its [[Boards|boards]] and any torch bracket with it.
+Nothing is refunded. A removed container spills what it held onto its tile, and a removed station spills its output box too. A removed wall takes its [[Boards|boards]] and any torch bracket with it; a painting hung on it falls to the floor, whole (see [[Paintings]]).
 
 Removing a door or a window that was built into a wall puts the wall back, never a hole. If that wall was one a player built, it is still theirs to remove; a wall of the village comes back as the village's. A new door built over a broken one still remembers the wall the first was built into.
 
@@ -104,6 +104,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:647`, `src/map.js:670`: a painting falls to the floor when its wall is removed or built over (game #344, at 9ac68a2)
 - `data/build.json`: the Fence (`wall_fence`, `kind` wall) and the Gate (`kind` door, `over` the fence), with the `build` tool (game #343, at b0df8fc)
 - `src/placement.js:204-212`, `src/placement.js:449-455`: a build entry's wall kind; a gate only in a fence; the Remove prompt names a fence and a gate (game #343, at b0df8fc)
 - `src/ui/build-palette.js`: the palette, its rows, costs greyed, and the Remove row

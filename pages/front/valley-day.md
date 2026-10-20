@@ -154,6 +154,12 @@ The valley's fences are drawn now: a rickety fence of split rails, with posts at
 
 Read: [[Fences]], [[Building]], [[Openings]].
 
+### Paintings (game #344)
+
+Eight paintings, three small, two tall, and three wide, are items you carry in the bag. **Place** on a painting's menu shows it on the face of the wall under the cursor, and a click hangs it within reach; only a plain wall takes one, one to a stretch of wall, never at a corner, by a torch bracket, or on a door, a window, or a fence, and a wide one needs two stretches side by side. **Pick up** takes one down into the bag. If its wall is removed or built over, the painting falls to the floor, whole. A guest can hang and take them down too. All eight are in the [[Developer chest]], and so can be added to Extra starting items.
+
+Read: [[Paintings]], [[Inventory]], [[Placement]].
+
 ### The row of buttons in one line (game #312)
 
 The row of buttons sits on the belt's stone, as one panel. Where there is room it is one line of eight along the bottom right, clear of the belt and the chat log; where not, two lines of four, and smaller buttons on a narrow interface. The skills panel stands above it.
