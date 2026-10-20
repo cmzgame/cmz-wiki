@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `5cf78a9`
+
+- **New in the game:** a **Small text** setting, Clear by default: the smallest text is drawn in a plain sans-serif, so a small 3 and 8 can be told apart (game #322). [[Settings]] lists it. The bleed row's numbers and badge are bigger and its frame bolder (game #320); [[Interface]]'s description still holds. The rule that any change to an item checks its hover card (game #319) is process, nothing a player sees.
+
 ## 2026-10-20: synced to `8af4eed`
 
 - **Changed in the game:** durable fullscreen (game #311). In a browser that can lock the keyboard (Chrome, Edge), fullscreen from the Settings switch keeps `Escape` for the game: a tap closes its menus as in a window and a held `Escape` leaves fullscreen, under the browser's own banner; elsewhere (Firefox, Safari) the first `Escape` still leaves fullscreen. The Fullscreen row's line says which, and `Escape` no longer acts on a key repeat, so a held one closes one thing once. [[Settings]], [[Controls]], and [[Screens]] say so.

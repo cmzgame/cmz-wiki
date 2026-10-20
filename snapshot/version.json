@@ -1,7 +1,7 @@
 {
-  "commit": "8af4eedc983c2d41a7dfb066dbd9f9dd4841df07",
-  "short": "8af4eed",
-  "date": "2026-10-20T00:07:53-05:00",
-  "subject": "Merge #314, reviewed: the sounds spec, docs/40 (#310)",
+  "commit": "5cf78a905a501f73e2f4f70f2c14560fcdb47b2e",
+  "short": "5cf78a9",
+  "date": "2026-10-20T00:58:23-05:00",
+  "subject": "Merge #322, reviewed: a clear sans for text at 15 px and under, and a Small text setting, Clear or Pixel (#321)",
   "ref": "origin/main"
 }
