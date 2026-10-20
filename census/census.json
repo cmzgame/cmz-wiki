@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "5cf78a905a501f73e2f4f70f2c14560fcdb47b2e",
-  "short": "5cf78a9",
-  "date": "2026-10-20T00:58:23-05:00",
-  "subject": "Merge #322, reviewed: a clear sans for text at 15 px and under, and a Small text setting, Clear or Pixel (#321)",
+  "commit": "ef0d378fd3bac0401d2bb9c1a403ec4d26238dfe",
+  "short": "ef0d378",
+  "date": "2026-10-20T01:28:10-05:00",
+  "subject": "Merge #325, reviewed: every digit in the clear font at any size, at the pixel font's line height (Michael)",
   "ref": "origin/main"
  },
  "counts": {

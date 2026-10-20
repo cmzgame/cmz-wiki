@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-20: synced to `ef0d378`
+
+- **Changed in the game:** every digit is in the clear sans at any size, so the pixel font's three and eight can't be confused anywhere, world names and the character screen's heading included (game #325); the text boxes on the screens follow Small text too (game #323). [[Settings]] says so.
+
 ## 2026-10-20: synced to `5cf78a9`
 
 - **New in the game:** a **Small text** setting, Clear by default: the smallest text is drawn in a plain sans-serif, so a small 3 and 8 can be told apart (game #322). [[Settings]] lists it. The bleed row's numbers and badge are bigger and its frame bolder (game #320); [[Interface]]'s description still holds. The rule that any change to an item checks its hover card (game #319) is process, nothing a player sees.
