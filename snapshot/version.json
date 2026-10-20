@@ -1,7 +1,7 @@
 {
-  "commit": "a9624fcabc7ffa85b0cacf56b12fbbd0e2bce838",
-  "short": "a9624fc",
-  "date": "2026-10-19T20:51:52-05:00",
-  "subject": "Merge #293, reviewed: the belt knife is the Dirk; debuffs apart from moodles, only pemmican stacks, hearty food carries buffs (Michael)",
+  "commit": "0362b8977f2cb47f0765005e21a27ea994ef0c64",
+  "short": "0362b89",
+  "date": "2026-10-19T21:50:37-05:00",
+  "subject": "Merge #298, reviewed: a navigation row bottom right, a button per panel tapping its key, and a skills panel (#295)",
   "ref": "origin/main"
 }
