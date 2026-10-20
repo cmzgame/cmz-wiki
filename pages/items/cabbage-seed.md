@@ -6,7 +6,7 @@ summary: A seed planted in tilled soil to grow cabbage; it can be had in play.
 
 {{infobox-item cabbage_seed}}
 
-A **cabbage seed** is planted in tilled soil to grow cabbage (see [[Farming]]). Its harvest gives [[Cabbage]] and {{n crops.crops.cabbage.seeds}} cabbage seeds back, harvested with a [[Belt knife]] on you. It stacks to {{n items.cabbage_seed.stack}}. It can be had in play: harvesting a cabbage gives {{n crops.crops.cabbage.seeds}} back, and the plot by [[Your cottage]] has cabbages from the start.
+A **cabbage seed** is planted in tilled soil to grow cabbage (see [[Farming]]). Its harvest gives [[Cabbage]] and {{n crops.crops.cabbage.seeds}} cabbage seeds back, harvested with a [[Dirk]] on you. It stacks to {{n items.cabbage_seed.stack}}. It can be had in play: harvesting a cabbage gives {{n crops.crops.cabbage.seeds}} back, and the plot by [[Your cottage]] has cabbages from the start.
 
 {{item-sections cabbage_seed}}
 

@@ -1,7 +1,7 @@
 {
-  "commit": "5d07067808d53570ce907601c5c012c02bfa674f",
-  "short": "5d07067",
-  "date": "2026-10-19T09:55:25-05:00",
-  "subject": "Merge #274, reviewed: the extra starting items are picked from a search, not typed",
+  "commit": "a9624fcabc7ffa85b0cacf56b12fbbd0e2bce838",
+  "short": "a9624fc",
+  "date": "2026-10-19T20:51:52-05:00",
+  "subject": "Merge #293, reviewed: the belt knife is the Dirk; debuffs apart from moodles, only pemmican stacks, hearty food carries buffs (Michael)",
   "ref": "origin/main"
 }

@@ -6,7 +6,7 @@ summary: A seed planted in tilled soil to grow pumpkin; the farms' granaries hol
 
 {{infobox-item pumpkin_seed}}
 
-A **pumpkin seed** is planted in tilled soil to grow pumpkin (see [[Farming]]). Its harvest gives [[Pumpkin]] and {{n crops.crops.pumpkin.seeds}} pumpkin seeds back, harvested with a [[Belt knife]] on you. It stacks to {{n items.pumpkin_seed.stack}}. It can be had in play: the granaries of [[Hollow Farm]] and [[The mill]] hold the first, and a harvest gives seeds back.
+A **pumpkin seed** is planted in tilled soil to grow pumpkin (see [[Farming]]). Its harvest gives [[Pumpkin]] and {{n crops.crops.pumpkin.seeds}} pumpkin seeds back, harvested with a [[Dirk]] on you. It stacks to {{n items.pumpkin_seed.stack}}. It can be had in play: the granaries of [[Hollow Farm]] and [[The mill]] hold the first, and a harvest gives seeds back.
 
 {{item-sections pumpkin_seed}}
 

@@ -7,7 +7,7 @@ summary: A tool made at the workbench from a stick and cloth; held in hand, it c
 
 {{infobox-item fishing_rod}}
 
-The **fishing rod** is a tool made at the [[Workbench]] from a [[Stick]] and any cloth (a piece of [[Clothing]] with the cloth tag), both of which can be had in play, with a [[Belt knife]] on you. Held in either hand, it adds **Cast the line** to the menu of a water tile within reach, which after a short wait catches a [[Perch]], a [[Trout]], or a [[Carp]], or nothing (see [[Fishing]]). Casting does not wear it.
+The **fishing rod** is a tool made at the [[Workbench]] from a [[Stick]] and any cloth (a piece of [[Clothing]] with the cloth tag), both of which can be had in play, with a [[Dirk]] on you. Held in either hand, it adds **Cast the line** to the menu of a water tile within reach, which after a short wait catches a [[Perch]], a [[Trout]], or a [[Carp]], or nothing (see [[Fishing]]). Casting does not wear it.
 
 ## Combat
 

@@ -7,7 +7,7 @@ summary: The weaver's house on the west road, with the loom and the dye vats.
 
 {{infobox-place "the weaver"}}
 
-**The weaver** is a wooden house west of the square, on the west road. Its workroom holds the [[Loom]] and a spinning wheel; a partition closes off a room with a bed, a chest, and a fireplace. The chest holds flax seed and a [[Belt knife]], so cloth can be begun on the first day (see [[Flax]] and [[Linen cloth]]). The door faces south. In the yard to the east stand three dye vats (see [[Dye vat]]) and a woodpile.
+**The weaver** is a wooden house west of the square, on the west road. Its workroom holds the [[Loom]] and a spinning wheel; a partition closes off a room with a bed, a chest, and a fireplace. The chest holds flax seed and a [[Dirk]], so cloth can be begun on the first day (see [[Flax]] and [[Linen cloth]]). The door faces south. In the yard to the east stand three dye vats (see [[Dye vat]]) and a woodpile.
 
 {{place-contents "the weaver"}}
 

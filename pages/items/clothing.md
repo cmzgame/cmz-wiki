@@ -21,7 +21,7 @@ Equipping over a filled slot swaps the old garment into your bag; with no room t
 
 ### What clothes do
 
-Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks. Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Belt knife]] on you, any of them tears into two [[Rag|rags]]; the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
+Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks. Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Dirk]] on you, any of them tears into two [[Rag|rags]]; the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
 
 A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. [[Work gloves]] and an [[Onion-head Hat]] turn up in chests. The Onion-head Hat is painted: a green hood with a brow over the eyes, drawn the same way on the dead and on villagers who wear one, in their own colours. The dead are dressed too, and searching a body lays their clothes out to be taken.
 

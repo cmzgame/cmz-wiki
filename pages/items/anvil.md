@@ -6,7 +6,7 @@ summary: The smith's station: tools and weapons from iron bars and sticks, with 
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Belt knife]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]].
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]].
 
 ## Using it
 

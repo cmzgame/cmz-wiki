@@ -16,7 +16,7 @@ Every small "Planned" note across the wiki is listed on [[Special:Planned notes|
 The valley's next work was filed as the game's issues #194 to #204; what is left of the big pass:
 
 - **The castle** across the river, then the rest of **the forest places** (the woodcutters, the witch, the hunter, the bandits).
-- **Tools' verbs:** the shovel's own digging (a grave, the buried chest, a plot dug up), and the knife's butchering and skinning.
+- **Tools' verbs:** the shovel's own digging (a grave, the buried chest, a plot dug up), and the dirk's butchering and skinning.
 - **Animals:** chickens and deer, leather, the tannery.
 
 Fishing, apple trees, farming, the farms and the mill, the bucket and the scythe, the hatchet's felling, mining, charcoal, cloth, and the tools an action asks for, once planned here, are built: see [[Fishing]], [[Trees]], [[Farming]], [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Bucket]], [[Scythe]], [[Stump]], [[Mining]], [[Charcoal clamp]], [[Linen cloth]], and [[Smith's hammer]].

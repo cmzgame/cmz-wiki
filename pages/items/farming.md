@@ -31,7 +31,7 @@ Each crop has three stages: young, growing, and ready. While it grows, its menu 
 
 ### Harvesting
 
-A ready crop's menu offers **Harvest**, and E does it, with the crop's tool anywhere on you (a hand, the belt, or the bag): a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Belt knife]] for cabbages and pumpkins, and nothing for flax (the table below). Without the tool, the entry reads "Harvest (need a shovel)", or whichever tool it is, greyed, and E passes it by. A harvest gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed. A [[Scythe]] harvests the ready grain on the three tiles ahead at a swing.
+A ready crop's menu offers **Harvest**, and E does it, with the crop's tool anywhere on you (a hand, the belt, or the bag): a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Dirk]] for cabbages and pumpkins, and nothing for flax (the table below). Without the tool, the entry reads "Harvest (need a shovel)", or whichever tool it is, greyed, and E passes it by. A harvest gives the crop's food and {{n crops.crops.potato.seeds}} of its seeds into your bag ("You harvest potato x3 and potato seed x2."), with anything that does not fit falling at your feet. The tile stays tilled soil, ready for the next seed. A [[Scythe]] harvests the ready grain on the three tiles ahead at a swing.
 
 ### Reach and walls
 

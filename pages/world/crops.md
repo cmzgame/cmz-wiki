@@ -18,7 +18,7 @@ There are six crops, each drawn at three stages from young to ready:
 - Rye (its harvest is [[Grain]])
 - Flax (see [[Flax]])
 
-A crop's picture follows its stage as it grows. Its right-click menu says how long it has to go, offers Water, and offers Harvest once it is ready, with the crop's tool on you: a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Belt knife]] for cabbages and pumpkins, none for flax (see [[Farming]]).
+A crop's picture follows its stage as it grows. Its right-click menu says how long it has to go, offers Water, and offers Harvest once it is ready, with the crop's tool on you: a [[Scythe]] for rye, a [[Shovel]] for potatoes and garlic, a [[Dirk]] for cabbages and pumpkins, none for flax (see [[Farming]]).
 
 ## Where they are
 

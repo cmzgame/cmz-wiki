@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-19: synced to `a9624fc`
+
+- **Changed in the game:** the belt knife is renamed the **Dirk** (game #293); refusals read "You need a dirk.", and Wyn's lines say "a dirk". The page is now [[Dirk]] (Belt knife still finds it), and every page that named it is corrected. The game's other merges since the last sync were its decisions log, its scope (`docs/39`), and its status, nothing a player sees.
+
 ## 2026-10-19: synced to `5d07067`
 
 - **Changed in the game:** a new world's **Extra starting items** are picked from a search by name, each with its count and a cross, in place of a box typed with item ids (game #274). [[World rules]] says so. The game's other merges since the last sync were its decisions log and status, nothing a player sees.

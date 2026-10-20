@@ -35,7 +35,7 @@ Read: [[Trees]], [[Apple]], [[The orchard]].
 
 ### Fishing (game #193)
 
-Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, with a [[Belt knife]] on you, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch, and the brook by [[Long Acre]] (game #219) mostly trout. Grill the fish at a fire.
+Make a [[Fishing rod]] at the [[Workbench]] from a stick and a piece of cloth, with a [[Dirk]] on you, hold it, and choose "Cast the line" at the water. A catch comes after {{n fishing.cast.waitMin}} to {{n fishing.cast.waitMax seconds}}, or nothing bites; walking away ends the cast. The river gives perch and trout, the pond carp and perch, and the brook by [[Long Acre]] (game #219) mostly trout. Grill the fish at a fire.
 
 Read: [[Fishing]], [[Fishing rod]], [[Perch]], [[Trout]], [[Carp]].
 
@@ -47,7 +47,7 @@ Read: [[Mining]], [[Pickaxe]], [[Charcoal clamp]], [[Forge]], [[Anvil]].
 
 ### Cloth (game #216)
 
-[[Flax]] is a sixth crop, and the weaver's chest holds its first seed and a [[Belt knife]]. The [[Loom]] weaves flax into [[Linen cloth]], and cloth into [[Bandage|bandages]] and linen clothes. With a knife on you, any garment tears into [[Rag|rags]] at the workbench, and a recipe that wants cloth takes a rag or plain cloth before a garment. The cap and the breeches are now the [[Linen cap]] and [[Linen breeches]], beside the [[Linen tunic]] (renamed in game #218), and cloth is the new [[Linen cloth]].
+[[Flax]] is a sixth crop, and the weaver's chest holds its first seed and a [[Dirk]]. The [[Loom]] weaves flax into [[Linen cloth]], and cloth into [[Bandage|bandages]] and linen clothes. With a knife on you, any garment tears into [[Rag|rags]] at the workbench, and a recipe that wants cloth takes a rag or plain cloth before a garment. The cap and the breeches are now the [[Linen cap]] and [[Linen breeches]], beside the [[Linen tunic]] (renamed in game #218), and cloth is the new [[Linen cloth]].
 
 Read: [[Flax]], [[Linen cloth]], [[Rag]], [[Loom]], [[Bandage]].
 
@@ -75,8 +75,8 @@ An action that would need a tool asks for it **on you**: in a hand, on the belt,
 
 - **A [[Smith's hammer]]:** building a door or a window, boarding up, pulling a board (which now gives the plank back), Remove, and the workbench's furniture, wheelbarrow, shield, bucket, hoe, and shovel.
 - **A [[Hatchet]]:** a log wall, splitting a log into planks, and sticks from a plank.
-- **A [[Belt knife]]:** the bow, the arrows, the rod, and tearing a garment into rags.
-- **Harvest by crop:** rye with the [[Scythe]], potatoes and garlic with the [[Shovel]], cabbages and pumpkins with the knife; flax and apples by hand.
+- **A [[Dirk]]:** the bow, the arrows, the rod, and tearing a garment into rags.
+- **Harvest by crop:** rye with the [[Scythe]], potatoes and garlic with the [[Shovel]], cabbages and pumpkins with the [[Dirk]]; flax and apples by hand.
 
 Your cottage's chest now holds a shovel too, and the joiner's a hammer, so the first potatoes, the first hoe, and the first furniture need no iron. The world rule Free building waives the hammer and the hatchet for building and Remove, but not for boards. A waterskin on the belt is now filled at water like one in the bag, and the [[Tinderbox]] can ride the belt.
 
