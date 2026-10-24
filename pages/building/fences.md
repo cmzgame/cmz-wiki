@@ -42,7 +42,7 @@ Only fences break this way. A plain wall of wood, stone, or logs is never broken
 
 ### Gates
 
-A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A gate swings: opening or shutting it plays two drawn in-between positions, over {{n census.constants.render_walls.SWING_S seconds}}, where a house door snaps open or shut. A shut gate blocks bodies, but you can still see through it. An open gate is no fence to strike.
+A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A gate swings: opening or shutting it plays two drawn in-between positions, over {{n census.constants.render_walls.SWING_S seconds}}, where a house door snaps open or shut. A shut gate blocks bodies, but you can still see through it. An open gate is no fence to strike: open a gate the dead are striking and they stop at once and walk through it, so opening it lets them in rather than having it broken.
 
 ### Building
 
@@ -118,4 +118,5 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `src/host.js:218-225`, `src/main.js:1655-1657`, `src/main.js:1762-1765`: the jolt and the splinters drawn on every player's screen
 - `src/map.js:724-729`, `src/game.js:420`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
 - `src/entities/zombie.js:679-693`, `src/entities/zombie.js:876-890`: the dead kept waiting for a bite strike the fence between; one with its target on its own side, at the fence, takes up the chase (game #389, at 9be007c)
+- `src/entities/zombie.js:865-871`, `src/entities/zombie.js:923-929`: a gate opened while the dead strike it ends their striking, and they take up the chase through it (game #397, at 82485c4)
 
