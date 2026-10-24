@@ -30,7 +30,7 @@ Four icons always shown, in a fixed order: infection, hunger, thirst, tiredness.
 ## Over the world
 
 - **The prompt**: over the target of the nearest simple action, "E: action" (for example "E: Put down" while carrying furniture). During a timed action it shows the action with a progress bar. It is greyed when the action is not possible.
-- **Health bars over heads**: a small bar over any hurt, living zombie in sight, and over your own head while you are hurt. One of the dead hidden by the dark has none (see [[Sight#Darkness|Sight]]).
+- **Health bars over heads**: a small bar over any hurt, living zombie in sight, and over your own head while you are hurt. One of the dead lying downed has its bar just over the body, not at a standing head's height. One of the dead hidden by the dark has none (see [[Sight#Darkness|Sight]]).
 - **The exposure bar**: a red bar over your head for the moment in which a blow against you is amplified. See [[Combat]].
 - **Speech bubbles** over anyone who speaks, and **names** over other players (see [[Chat log]], [[Multiplayer]]).
 
@@ -122,6 +122,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `style.css:732-737`: the bag's home under the row of debuffs (game #315, at 8af4eed)
 - `src/ui/prompt.js:41`, `src/interact.js:852-880`: the prompt, "E: Put down", the progress bar, greyed
 - `src/ui/zombie-bars.js:14-20`: health bars over hurt zombies and over you
+- `src/ui/zombie-bars.js:16-18`, `src/ui/zombie-bars.js:63`: a downed one's bar just over its body (game #390, at 9be007c)
 - `src/floaters.js:1-106`, `src/ui/floaters.js:1-121`, `data/tuning.json:73-95`, `src/entities/player.js:73`, `src/entities/player.js:101`, `src/entities/zombie.js:104`, `src/entities/villager.js:134`, `src/verbs.js:36`: the floating numbers: a hit, a heal from food, a gather by the verb's table, recorded on the host and drawn on every screen in sight, the dark rule for the living dead, the colours, the rise and fade (game #299, at 3331946)
 - `src/ui/skill-icons.js`: the skills' pictures (game #299, at 3331946)
 - `src/ui/zombie-bars.js:56`, `src/main.js:1082-1083`, `src/interact.js:1272-1279`: no bar and no zombie hand over one of the dead hidden by the dark (game commit 9d9a5b5)

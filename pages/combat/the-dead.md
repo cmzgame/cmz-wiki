@@ -38,7 +38,7 @@ One of the dead that can see the player and comes within {{n tuning.zombie.conta
 
 ### A few at a time
 
-Only a few of the dead in reach of one player bite at once: {{n tuning.zombie.biteTokens}}, and one more for every {{n tuning.zombie.biteTokensPer}} in reach beyond the first {{n tuning.zombie.biteTokensPer}}. With three in reach, two bite; with six, three; with nine, four. The rest stand pressed against the player, waiting, and still block the way and take hits.
+Only a few of the dead in reach of one player bite at once: {{n tuning.zombie.biteTokens}}, and one more for every {{n tuning.zombie.biteTokensPer}} in reach beyond the first {{n tuning.zombie.biteTokensPer}}. With three in reach, two bite; with six, three; with nine, four. The rest stand pressed against the player, waiting, and still block the way and take hits. One kept waiting by a shut fence or gate between it and the player strikes the fence instead of standing (see [[Fences]]).
 
 - One that has bitten, or is waiting out its cooldown, keeps its place among the biters until it is floored, killed, or pushed or left out of reach; a stagger does not cost it its place.
 - When a place comes free, the nearest waiter takes it and starts its own wind-up.
@@ -92,7 +92,8 @@ At no health one of the dead falls, and once the fall has played its body stays 
 - Hits, pushes, staggers, and knockdowns are on [[Combat]] and [[Stagger and knockdown]].
 - A floored zombie takes finishers while it lies, not while it gets up.
 - A hit during a bite's wind-up cancels it, whatever the weapon; a bite already landed cannot be cancelled.
-- Only a few of a crowd bite at once; the rest wait their turn, and a [[Shove]] that clears a biter hands its place on.
+- Only a few of a crowd bite at once; the rest wait their turn, or strike the fence between, and a [[Shove]] that clears a biter hands its place on.
+- A hit that staggers one makes it reel, arms flung up and leaning back, for the length of the stagger; a hit that does not stagger it only flinches. One lying downed has its health bar just over the body, and is outlined when the pointer is over it.
 - Light matters: in the dark they see the player from much less far, but a lit flame draws them at night.
 - In the dark you see them only close by, to the reach of a torch you carry, or where they stand in light (see [[Sight#Darkness|Sight]]). One lost in the dark has no health bar or swing-target outline and cannot be clicked, but a swing or a shot still hits it.
 - Doors, shutters, boards, and fences hold them off for a time (see [[Openings]], [[Fences]], and [[Building]]); a crowd breaks any of them faster than one alone.
@@ -159,3 +160,6 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/game.js:141-167`, `src/map.js:1338-1350`, `data/tuning.json:162`: the Starting population's factor on the map's dead and each wild chunk's, read once when the world is made
 - `src/burn.js:26-52`, `src/entities/zombie.js:176-186`, `src/combat.js:377-382`, `src/archery.js:275`: burning: who sets it (a torch only while lit), a burn taking health alone, a corpse burning on
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
+- `src/entities/zombie.js:679-693`, `src/entities/zombie.js:886-890`: a waiter with a shut fence between it and its target strikes the fence; the press hands back to the chase only one that may bite (game #389, at 9be007c)
+- `src/entities/zombie.js:151-165`, `src/figure/rig.js:21`, `data/poses.json`: a staggering hit reels, one that does not flinches (game #389, at 9be007c)
+- `src/ui/zombie-bars.js:16-18`, `src/highlight.js:32-34`: a downed one's bar over its body, and its outline under the pointer (game #390, at 9be007c)

@@ -12,7 +12,7 @@ Every hit on one of [[The dead]] makes it **flinch**. A hit may also **stagger**
 
 ### The flinch
 
-Every landed hit that neither kills nor floors plays the hurt pose, a short flash and a lean back, whatever the weapon and whether or not it staggers. A flinch does not stop the walk: one of the dead that only flinches keeps coming, and the pose plays out over its walk.
+Every landed hit that neither kills, floors, nor staggers plays the hurt pose, a short flash and a lean back, whatever the weapon. A flinch does not stop the walk: one of the dead that only flinches keeps coming, and the pose plays out over its walk.
 
 ### Cancelling a bite
 
@@ -22,7 +22,7 @@ A knockdown also cancels a bite. A front block with the [[Wooden shield]] stagge
 
 ### Stagger
 
-Each hit staggers with the weapon's stagger chance. A source that gives no chance (an arrow) uses the default, {{n combat.stagger.chance}}. A stagger stops the walk for {{n tuning.zombie.stagger seconds}} for every weapon; the [[Shove]] staggers for {{n combat.shove.stagger seconds}}. A stagger during a bite's recovery ends the attack, and the zombie waits out its cooldown.
+Each hit staggers with the weapon's stagger chance. A source that gives no chance (an arrow) uses the default, {{n combat.stagger.chance}}. A hit that staggers makes it **reel** instead, arms flung up and leaning back, at {{n poses.reel.fps}} frames a second, for as long as the stagger lasts; so does a front block with the shield. A stagger stops the walk for {{n tuning.zombie.stagger seconds}} for every weapon; the [[Shove]] staggers for {{n combat.shove.stagger seconds}}. A stagger during a bite's recovery ends the attack, and the zombie waits out its cooldown.
 
 After a stagger ends there is a short window, {{n combat.stagger.immunity seconds}}, in which that one cannot be staggered again. A stream of quick hits cannot hold it in place forever, though every hit still flinches it.
 
@@ -75,3 +75,4 @@ While it lies, any blow in hand is a **finisher**: {{n combat.finisher.mult}} ti
 - `src/combat.js:357-377`: the finisher only while the zombie lies; no push, stagger, or knockdown on a zombie down or rising; the knockdown by the weapon's chance or the default
 - `src/archery.js`: an arrow, a thrown spear, and the fireball pass no knockdown
 - `src/entities/zombie.js:190-231`: lying, getting up, back to the chase or idle
+- `src/entities/zombie.js:87-98`, `src/entities/zombie.js:151-165`, `src/figure/rig.js:21`, `data/poses.json`: a stagger, a shield's included, reels; a hit that does not stagger flinches (game #389, at 9be007c)

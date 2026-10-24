@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `9be007c`
+
+- **Changed in the game:** three rulings from Michael's first real melee test (game #389). **The dead kept waiting at a fence strike it:** only a few bite one player at once, and the rest at a fence or gate between them and the player now strike it instead of standing. **The shove pushes {{n combat.shove.knockback tiles}}** (it was twice that), and **a tired shove**, one the stamina bar cannot pay for, pushes, staggers, and floors at {{pct combat.blow.tiredDamage}}. **The dead reel** through a stagger, arms flung up, where a hit that does not stagger only flinches. [[Fences]], [[Shove]], [[The dead]], [[Stagger and knockdown]], [[Stamina]], [[Combat]], and [[Levers]] say so.
+- **Changed in the game:** three more (game #390). **One of the dead lying downed has its health bar just over the body**, and is **outlined under the pointer**, the moment for a finisher. **The Aim guide is on by default**, off for the challenge. **The browser now keeps only the settings changed from their defaults**, so a later change of default reaches anyone who never chose; a browser whose settings an older version saved keeps the Aim guide off until it changes it or presses Defaults. [[Settings]], [[Archery]], [[Interface]], and [[The dead]] say so; [[Levers]] reads the new default by itself.
+
 ## 2026-10-24: synced to `3c68f9c`
 
 - **New in the game's docs:** `docs/42`, the game's list of levers (game #388): every number still being balanced by play and every world or player setting, with the ruling behind each. [[Levers]] is new: it lists them with their values today, each read from the game's data. A lever that lives only in the code says so. [[Settings]], [[World rules]], [[The dead]], [[Shove]], [[Stamina]], [[Combat]], [[Stagger and knockdown]], [[Throwing spear]], and [[Infection]] link to it. Nothing else in the game changed: the rulings that #388 logs (a shorter shove, the aim guide on by default, a closing burst for the dead) are not yet built, and the pages follow them when they are.

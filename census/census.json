@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "3c68f9cdb2090800ebb702680ede01deab084b60",
-  "short": "3c68f9c",
-  "date": "2026-10-24T12:05:24-05:00",
-  "subject": "Merge #391, reviewed: sounds step 2, the shove, the bow, a spell's cast, the dead's death and fall, doors and shutters; the grass step deleted; F8 mutes (#386)",
+  "commit": "9be007c7a2977e65b3355f6c36b16f5866d01404",
+  "short": "9be007c",
+  "date": "2026-10-24T12:11:48-05:00",
+  "subject": "Merge #389, reviewed: the dead that wait strike the fence; the shove's push 0.4 and a tired shove; the dead reel through a stagger (#385)",
   "ref": "origin/main"
  },
  "counts": {
@@ -6604,7 +6604,7 @@
   "shove": {
    "range": 1,
    "arc": 100,
-   "knockback": 0.8,
+   "knockback": 0.4,
    "knockbackChance": 1,
    "stagger": 0.8,
    "knockdown": 0.1,
@@ -6778,6 +6778,7 @@
   "present",
   "thrust",
   "shove",
+  "reel",
   "zombie",
   "bow",
   "bow_rest",
@@ -6833,8 +6834,8 @@
   },
   {
    "key": "aimGuide",
-   "default": "false",
-   "note": "the landing marker and dotted line while you draw a bow, wind up a throw, or cast (docs/20); off by default since 2026-10-16 (Michael: you learn by trial and error how long to hold). A browser that saved its settings keeps its own"
+   "default": "true",
+   "note": "the landing marker and dotted line while you draw a bow, wind up a throw, or cast (docs/20); on by default since 2026-10-24 (Michael, #385: \"the little marker zipping down the line ... is like a loading bar\"), off for the challenge; it was off from 2026-10-16. A browser that saved its settings keeps its own"
   },
   {
    "key": "showSwingTargets",
@@ -7818,13 +7819,13 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:973"
+    "entities/zombie.js:1006"
    ]
   },
   {
    "key": "shove",
    "at": [
-    "combat.js:430"
+    "combat.js:434"
    ]
   },
   {
@@ -7867,13 +7868,13 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:974"
+    "entities/zombie.js:1007"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:799",
+    "entities/zombie.js:821",
     "map.js:778"
    ]
   },
@@ -7888,7 +7889,7 @@
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:173"
+    "entities/zombie.js:177"
    ]
   }
  ],
@@ -8071,7 +8072,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 987
+   "lines": 1020
   },
   {
    "path": "ground.js",
@@ -8111,7 +8112,7 @@
   },
   {
    "path": "combat.js",
-   "lines": 486
+   "lines": 490
   },
   {
    "path": "ui/inventory-actions.js",
@@ -8123,7 +8124,7 @@
   },
   {
    "path": "figure/rig.js",
-   "lines": 404
+   "lines": 422
   },
   {
    "path": "entities/player.js",
@@ -8287,7 +8288,7 @@
   },
   {
    "path": "settings.js",
-   "lines": 138
+   "lines": 143
   },
   {
    "path": "bucket.js",
@@ -8354,16 +8355,16 @@
    "lines": 98
   },
   {
+   "path": "ui/zombie-bars.js",
+   "lines": 89
+  },
+  {
    "path": "ui/debuff-row.js",
    "lines": 88
   },
   {
    "path": "camera.js",
    "lines": 87
-  },
-  {
-   "path": "ui/zombie-bars.js",
-   "lines": 86
   },
   {
    "path": "fishing.js",
@@ -8382,16 +8383,16 @@
    "lines": 77
   },
   {
+   "path": "highlight.js",
+   "lines": 76
+  },
+  {
    "path": "ui/prompt.js",
    "lines": 76
   },
   {
    "path": "fruit.js",
    "lines": 74
-  },
-  {
-   "path": "highlight.js",
-   "lines": 73
   },
   {
    "path": "ui/swing-timer.js",
@@ -8835,6 +8836,7 @@
   },
   "ui_zombie-bars": {
    "HEAD_CLEARANCE": 76,
+   "DOWN_CLEARANCE": 30,
    "NEAR": 3.5,
    "PLAYER_CLEARANCE": 66
   },

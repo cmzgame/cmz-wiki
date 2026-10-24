@@ -15,7 +15,9 @@ Each one shoved:
 
 - is pushed {{n combat.shove.knockback tiles}},
 - is staggered for {{n combat.shove.stagger seconds}}, and loses a bite it was winding up (see [[Stagger and knockdown]]),
-- is floored on {{n combat.shove.knockdown}} of shoves.
+- is floored on {{pct combat.shove.knockdown}} of shoves.
+
+A **tired shove**, one the [[Stamina]] bar cannot pay for, still happens, but pushes, staggers, and floors at {{pct combat.blow.tiredDamage}} of all three, as a tired blow lands at that share of its damage. So an empty bar cannot hold a crowd in a stagger for ever.
 
 A shove costs {{n combat.shove.stamina}} [[Stamina]]. Its cooldown, {{n combat.shove.cooldown seconds}}, is also a recovery: until it ends, a left click swings nothing and the next shove waits. The player draws a shove of their own, both arms out.
 
@@ -26,7 +28,8 @@ It costs a weapon no durability (see [[Durability]]).
 - Reach: {{n combat.shove.range tiles}}. Arc: {{n combat.shove.arc}} degrees. Targets: up to {{n combat.shove.targets}}.
 - Push: {{n combat.shove.knockback tiles}}.
 - Stagger: {{n combat.shove.stagger seconds}}.
-- Knockdown chance: {{n combat.shove.knockdown}}.
+- Knockdown chance: {{pct combat.shove.knockdown}}.
+- A tired shove: {{pct combat.blow.tiredDamage}} of the push, the stagger, and the knockdown chance.
 - Stamina: {{n combat.shove.stamina}}. Recovery: {{n combat.shove.cooldown seconds}}.
 
 ## The sound it makes
@@ -50,6 +53,7 @@ A guest's own shove shows at once on their screen, its pose and its recovery inc
 - `src/combat.js:183-194`: a cap on targets for the shove alone, ahead of the Multi-hit rule
 - `src/combat.js:329-333`: no swing starts while the shove's cooldown runs
 - `data/combat.json`: the `shove` numbers
+- `src/combat.js:418-421`, `src/combat.js:432`: a tired shove at `blow.tiredDamage` of its push, stagger, and knockdown (game #389, at 9be007c)
 - `src/figure/rig.js:19`, `data/poses.json`: the shove's own pose, the player's alone
 - `src/combat.js:390`, `src/combat.js:398-408`: durability spent only by a weapon's landed hits
 - `src/player-controller.js:28`: a guest predicts its own shove's pose and recovery; the push is the host's
