@@ -15,7 +15,7 @@ Left swings it. It has no other mode.
 
 - It does {{n items.stick.weapon.damage}} damage, with a reach of {{n items.stick.weapon.range tiles}} and an arc of {{n items.stick.weapon.arc}} degrees.
 - Swing {{n items.stick.weapon.swing seconds}}, stamina {{n items.stick.weapon.stamina}}.
-- Stagger chance {{n items.stick.weapon.staggerChance}}; it floors on the default chance (see [[Stagger and knockdown]]).
+- Stagger chance {{n items.stick.weapon.staggerChance}}; it never floors (see [[Stagger and knockdown]]).
 - It lasts about {{n items.stick.weapon.kills}} kills (see [[Durability]]).
 
 It is light and quick to find, but weak, and it breaks fast.
@@ -24,10 +24,10 @@ It is light and quick to find, but weak, and it breaks fast.
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
-- `data/loot.json:4`, `data/loot.json:19`: the stick in the `body` and `wild` tables
-- `data/recipes.json:200-215`: sticks from a plank at the workbench, with `split`, a hatchet, carried (game #222); the recipes that take sticks
+<!-- sources at 37e8726 -->
+- `data/loot.json:5`, `data/loot.json:20`: the stick in the `body` and `wild` tables
+- `data/recipes.json:200-215`, `src/stations.js:149`: sticks from a plank at the workbench, with `split`, a hatchet, carried (game #222); the recipes that take sticks
 - `data/items.json:7`: the stick's `weapon` block, no `knockdown` of its own
-- `data/combat.json` `blow.knockdownChance`, `src/combat.js:354`: the default knockdown chance
+- `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: the default knockdown chance, 0, so it never floors
 
 {{navbox weapons}}

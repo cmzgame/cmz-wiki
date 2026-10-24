@@ -28,7 +28,7 @@ You also cannot sprint while:
 - **A shove** costs {{n combat.shove.stamina}}.
 - **A blow taken on a shield** costs the shield's {{n items.shield.shield.stamina}}.
 
-A swing at zero stamina still lands, at ×{{n combat.blow.tiredDamage}} damage. A swing or shove that empties the bar leaves you winded.
+Stamina is the one thing that paces a fight: from a full bar, an [[Arming sword]] swung as fast as it allows runs it dry in about ten seconds, and a heavier weapon sooner. A swing the bar cannot pay for still lands, at ×{{n combat.blow.tiredDamage}} damage, so you are never locked out of hitting. A swing or shove that empties the bar leaves you winded, and the bar you fight with is the bar you sprint with.
 
 ### Recovery
 
@@ -46,7 +46,7 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - Recovery: {{n tuning.player.staminaRegen}} a second
 - Winded until: {{n tuning.player.sprintRecoverAt}}
 - Shove: {{n combat.shove.stamina}}
-- Damage at zero stamina: ×{{n combat.blow.tiredDamage}}
+- Damage when a swing cannot be paid for: ×{{n combat.blow.tiredDamage}}
 
 ## Settings that change it
 
@@ -58,13 +58,14 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/ui/hud.js:95-101`: the bar, its percent, and the winded class
-- `data/tuning.json:39-43`: the maximum, the sprint multiplier, the drain, the recovery, and the winded threshold
-- `src/entities/player.js:325-335`: sprinting, its drain, winded, and the recovery
-- `src/entities/player.js:328`: no sprint when still, winded, carrying, guarding, or Exhausted
-- `data/combat.json:2,9`: the fists' and the shove's stamina
-- `data/items.json:34`, `src/combat.js:134-143`: a blocked blow costs the shield's stamina
-- `data/combat.json` `blow.tiredDamage`, `src/combat.js:350`, `src/combat.js:311-314`: the tired blow at zero stamina (game commit 2c70942); an emptying swing or shove leaves you winded
-- `src/entities/player.js:143-148`, `data/tuning.json:61-62`: no recovery with the guard up; the needs' multipliers, multiplied together
-- `src/entities/player.js:120-126`: Survival off holds the needs full, so they never slow it
+<!-- sources at 37e8726 -->
+- `src/ui/hud.js:95-98`: the bar, its percent, and the winded class
+- `data/tuning.json:49-53`: the maximum, the sprint multiplier, the drain, the recovery, and the winded threshold
+- `src/entities/player.js:352-362`: sprinting, its drain, winded, and the recovery
+- `src/entities/player.js:355`: no sprint when still, winded, carrying, guarding, or Exhausted
+- `data/combat.json:2`, `data/combat.json:12`: the fists' and the shove's stamina
+- `data/items.json:37`, `src/combat.js:150-159`: a blocked blow costs the shield's stamina
+- `data/items.json:8`, `data/tuning.json:52`: an arming sword's cost and swing against the recovery, about ten seconds from a full bar
+- `data/combat.json:10`, `src/combat.js:336-341`, `src/combat.js:375`, `src/combat.js:419-420`: the tired blow, a swing the bar cannot pay for, at `blow.tiredDamage` (game commit 2c70942); an emptying swing or shove leaves you winded
+- `src/entities/player.js:359-361`, `src/entities/player.js:168-173`, `data/tuning.json:73-74`: no recovery with the guard up; the needs' multipliers, multiplied together
+- `src/entities/player.js:139-145`: Survival off holds the needs full, so they never slow it

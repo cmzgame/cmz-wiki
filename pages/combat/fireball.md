@@ -14,7 +14,7 @@ The **Fireball** is the game's one spell. It is cast by holding the [[Staff of F
 - **The flight.** The ball flies flat at chest height, at {{n items.book_of_fire.book.spell.speed tiles a second}}, out to {{n items.book_of_fire.book.spell.range tiles}}. It is not lobbed, so walls, shut doors, and tree trunks stop it, and a ball stopped that way hits nothing. A light out to {{n combat.bow.fireballGlow tiles}} moves with it, so it lights its path at night.
 - **The burst on the way.** As it flies, the ball bursts on the first of [[The dead]] within {{n items.book_of_fire.book.spell.contact tiles}} of it, and the flight ends there. Only a body ahead of where it was cast counts, so nothing behind the caster is hit as the ball leaves, and never one with a wall or a closed door between it and the ball.
 - **The hit where it lands.** A ball that meets no one on the way hits the nearest of the dead within {{n items.book_of_fire.book.spell.landRadius tiles}} of where it comes down, a wider reach than an arrow's, again never through a wall or a closed door. At chest height, an open door or an open window between them does not stop it.
-- **The damage.** Either way it hits one body: {{n items.book_of_fire.book.spell.damage}} damage at a full draw and less for a partial one, a push of {{n items.book_of_fire.book.spell.knockback tiles}}, and it always staggers and interrupts a bite. It always sets the body alight, before the damage, so a body it kills burns on (see [[Burning]]). Nothing is left behind: no ball on the ground, nothing lodged in the body.
+- **The damage.** Either way it hits one body: {{n items.book_of_fire.book.spell.damage}} damage at a full draw and less for a partial one, a push of {{n items.book_of_fire.book.spell.knockback tiles}}, and it always staggers. Like any hit, it cancels a bite being wound up. It always sets the body alight, before the damage, so a body it kills burns on (see [[Burning]]). Nothing is left behind: no ball on the ground, nothing lodged in the body.
 - **The flare.** Wherever it comes down, on a body, on the ground, or against a wall, it leaves a flare of light out to {{n combat.bow.flareRadius tiles}}, shrinking to nothing over {{n combat.bow.flareSeconds seconds}}. It is light only: it burns nothing, and the dead are not drawn to it.
 - **What it lights.** Where it comes down, it lights an unlit campfire with fuel in it, and a torch mounted in a bracket or on a post that is out, within {{n combat.bow.kindleRadius tiles}}, with no wall between. It never lights a fireplace, a hearth, an [[Oven]], or a [[Forge]], and a campfire with no fuel stays out (see [[Fire]] and [[Torch posts and brackets]]). Nothing else catches, and fire never spreads.
 - **Who it can hit.** One of the dead, and not a corpse: it passes over a [[Villagers|villager]], another player, and the caster, as every shot does (see [[Combat]]).
@@ -44,20 +44,22 @@ A guest's cast is its draw and release, worked out on the host as the bow's shot
 
 ## Sources
 
-<!-- sources at 64cc711 -->
-- `data/items.json`: the spell's numbers on the book (`book.spell`: `drawTime`, `speed`, `range`, `contact`, `landRadius`, `damage`, `knockback`), `staff: true` on the staff, `castStyle` on both
-- `src/archery.js:610-619`: `spellOf`, both items make a launcher of the kind `spell`, one alone refuses; the flight flat and vanishing
-- `data/poses.json` `cast_staff`, `cast_book`: the cast's pose by which hand holds the staff (game PR #9)
-- `src/archery.js:155-216`: walls, doors, trunks, and props stop the flat flight, scanned once at release
-- `src/archery.js:238-257`: the burst on the way: the first of the dead within the contact radius, before any wall stop (game PR #12)
-- `src/archery.js:262-296`: the landing: the hit met on the way, or the nearest within the landing radius; damage scaled by the draw; nothing lands or lodges
-- `data/items.json` `book.spell.ignite`, `src/archery.js:275-277`, `src/burn.js:26-33`: the body hit is set alight before the damage
-- `data/combat.json` `burn`: the burn's numbers
-- `src/archery.js:307-346`: only a body ahead of the cast counts on the way, and none with a wall or closed door between it and the ball, at the ball's height
-- `src/archery.js:366-381`, `data/combat.json` `bow.fireballGlow`, `bow.flareRadius`, `bow.flareSeconds`: the moving light, and the flare where it lands, shrinking, light only
-- `src/archery.js:233-237`, `src/archery.js:383-393`, `src/net.js:871`, `src/net.js:1119`: the flares aged on the host and sent in each frame
-- `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: the landing lights an unlit campfire with fuel, or a mounted torch that is out, within reach and with no wall between; never a hearth, an oven, or a forge
-- `src/light.js:184-200`: the flare among the moving lights, not among the flames the dead notice
-- `src/game.js:97`, `src/archery.js:300-324`: what it can hit is what `setTargets` hands in, the dead; never a villager, a player, or the caster
+<!-- sources at 37e8726 -->
+- `data/items.json:11-12`: the spell's numbers on the book (`book.spell`: `drawTime`, `speed`, `range`, `contact`, `landRadius`, `damage`, `knockback`), `staff: true` on the staff, `castStyle` on both
+- `src/archery.js:605-618`: `spellOf`, both items make a launcher of the kind `spell`, one alone refuses; the flight flat and vanishing
+- `data/poses.json:42-53` `cast_staff`, `cast_book`, `src/combat.js:91-99`: the cast's pose by which hand holds the staff (game PR #9)
+- `src/archery.js:135-139`, `src/archery.js:144-215`: walls, doors, trunks, and props stop the flat flight, scanned once at release
+- `src/archery.js:242-250`: the burst on the way: the first of the dead within the contact radius, before any wall stop (game PR #12)
+- `src/archery.js:261-295`: the landing: the hit met on the way, or the nearest within the landing radius; damage scaled by the draw; nothing lands or lodges
+- `data/items.json:11` `book.spell.staggerChance`, `src/archery.js:276`, `src/entities/zombie.js:149-160`: the hit always staggers (no knockdown is passed, so it never floors)
+- `src/archery.js:276`, `src/entities/zombie.js:140-148`: like any landed hit, it cancels a bite being wound up
+- `data/items.json:11` `book.spell.ignite`, `src/archery.js:275-276`, `src/burn.js:26-33`: the body hit is set alight before the damage
+- `data/combat.json:5` `burn`: the burn's numbers
+- `src/archery.js:306-345`: only a body ahead of the cast counts on the way, and none with a wall or closed door between it and the ball, at the ball's height
+- `src/archery.js:365-380`, `data/combat.json:11` `bow.fireballGlow`, `bow.flareRadius`, `bow.flareSeconds`: the moving light, and the flare where it lands, shrinking, light only
+- `src/archery.js:232-236`, `src/archery.js:382-390`, `src/game.js:631`, `src/net.js:893`, `src/net.js:1133`: the flares aged on the host and sent in each frame
+- `src/archery.js:288-291`, `src/map.js:186-207`, `src/map.js:286-294`, `data/combat.json:11` `bow.kindleRadius`: the landing lights an unlit campfire with fuel, or a mounted torch that is out, within reach and with no wall between; never a hearth, an oven, or a forge
+- `src/light.js:189-200`, `src/game.js:700`: the flare among the moving lights, not among the flames the dead notice
+- `src/game.js:106`, `src/archery.js:299-326`: what it can hit is what `setTargets` hands in, the dead; never a villager, a player, or the caster
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it
 - `src/render/entities.js`: the fireball drawn by direction with its flicker

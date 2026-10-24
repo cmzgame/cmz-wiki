@@ -24,7 +24,7 @@ Left swings it. It has no other mode.
 
 - It does {{n items.hatchet.weapon.damage}} damage, with a reach of {{n items.hatchet.weapon.range tiles}} and an arc of {{n items.hatchet.weapon.arc}} degrees.
 - Swing {{n items.hatchet.weapon.swing seconds}}, stamina {{n items.hatchet.weapon.stamina}}.
-- Stagger chance {{n items.hatchet.weapon.staggerChance}}; it floors on the default chance (see [[Stagger and knockdown]]).
+- Stagger chance {{n items.hatchet.weapon.staggerChance}}; it never floors (see [[Stagger and knockdown]]).
 - It lasts about {{n items.hatchet.weapon.kills}} kills (see [[Durability]]). Only fighting wears it.
 
 Its arc is narrower than the [[Arming sword]]'s.
@@ -37,15 +37,15 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at 37e8726 -->
 - `data/items.json:6`: the hatchet: either hand, its verbs `chop`, `notch`, and `split`, its `weapon` block (the last two game #222)
-- `src/inventory.js:88-108`, `data/tuning.json:113`, `src/interact.js:1251-1267`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
+- `src/inventory.js:89-108`, `data/tuning.json:153`, `src/interact.js:1371-1387`, `src/stations.js:149`, `src/placement.js:176-191`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
 - `src/chop.js:14-51`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it
-- `src/interact.js:654-676`: "Chop down (need a hatchet)" greyed without one
-- `data/loot.json:6-7`, `data/maps/valley.json:1397`, `data/maps/valley.json:3551`, `src/map.js:1915`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
+- `src/interact.js:737-759`: "Chop down (need a hatchet)" greyed without one
+- `data/loot.json:7-8`, `data/maps/valley.json:1397`, `data/maps/valley.json:3578`, `src/map.js:1974`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
 - `data/loot.json:2`: the hatchet in the `chest` table
-- `data/recipes.json:544-563`: the hatchet at the anvil from an iron bar and a stick, the hammer in hand
-- `src/items.js:24-37`: wear comes only from a weapon's hits
-- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
+- `data/recipes.json:544-563`: the hatchet at the anvil from two iron bars and a stick, the hammer in hand
+- `src/items.js:24-37`, `src/combat.js:390`: wear comes only from a weapon's hits
+- `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: no `knockdown` of its own, so the default chance, 0: it never floors
 
 {{navbox weapons}}
