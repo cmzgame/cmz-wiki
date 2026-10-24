@@ -20,6 +20,10 @@ The stab lasts about {{n items.spear.weapon.kills}} kills (see [[Durability]]); 
 
 {{item-sections spear}}
 
+## See also
+
+- [[Levers]]: the spear's break, still being balanced
+
 ## Sources
 
 <!-- sources at 125bffb -->

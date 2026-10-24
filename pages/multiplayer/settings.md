@@ -37,6 +37,8 @@ In the order the screen shows them, with the default first.
 - **Sound**: On or Off, On by default: "Every sound in the game. Nothing sounds until the page has been clicked once." The browser keeps a page silent until its first click or key, so the game never sounds on load.
 - **Volume**: Off, 25%, 50%, 75%, or 100%, 75% by default: "How loud the game is."
 
+`F8` switches the Sound row from anywhere in the game, with a line saying which (see [[Controls]]).
+
 See [[Sound]].
 
 ### Testing
@@ -65,6 +67,7 @@ The game's full list of stored settings and their defaults, including the ones t
 ## See also
 
 - [[Controls]], [[Interface]], [[Multiplayer]], [[Screens]]
+- [[Levers]]: every setting and tuning number still being balanced, with its value
 
 ## Sources
 
@@ -92,3 +95,4 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/identities.js:90-98`: the browser id, drawn once and kept: the reset never touches it
 - `src/settings.js:30-31`, `src/settings.js:54`, `src/settings.js:68-69`: the Sound tab, between Display and Testing, its two rows, Sound on and Volume 75% by default (game #379)
 - `src/main.js:1384-1385`, `src/audio.js:57-68`: a change applied at once; nothing sounds before the page's first click or key
+- `src/main.js:1924-1934`: F8 switches Sound, with its line (game #386, at 3c68f9c)

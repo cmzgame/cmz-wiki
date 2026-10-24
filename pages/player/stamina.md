@@ -55,6 +55,7 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 ## See also
 
 - [[Health]], [[Combat]], [[Wooden shield]], [[Tiredness]], [[Player]]
+- [[Levers]]: stamina's numbers still being balanced
 
 ## Sources
 

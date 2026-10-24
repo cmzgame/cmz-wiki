@@ -22,6 +22,10 @@ The bow loses durability per arrow loosed and lasts {{n items.bow.shots}} shots 
 
 {{item-sections bow}}
 
+## The sound it makes
+
+Drawn, it creaks for as long as it is held, rising as the draw fills; let go, it twangs, and the arrow thumps where it comes down. A draw let go too early makes no twang. See [[Sound]].
+
 ## Sources
 
 <!-- sources at 3b7cb9a -->
@@ -35,5 +39,6 @@ The bow loses durability per arrow loosed and lasts {{n items.bow.shots}} shots 
 - `src/archery.js:264`, `src/archery.js:295-334`: the landing's hit never through a wall or a closed door
 - `src/archery.js:568-572`, `src/archery.js:267-282`: fire arrows drawn first, setting alight what they hit, lodging or landing as plain arrows
 - `src/archery.js:681-690`, `src/items.js:39-41`: durability per arrow loosed
+- `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
 
 {{navbox weapons}}

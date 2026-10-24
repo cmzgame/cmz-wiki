@@ -80,6 +80,10 @@ Weapons lose [[Durability|durability]] by landed hits and break when it runs out
 - Stamina: {{n tuning.player.stamina}}, coming back at {{n tuning.player.staminaRegen}} a second.
 - Walk while a swing plays: {{n combat.blow.swingMove}} of normal.
 
+## The sound it makes
+
+A swing whooshes as it is made, heavier for a long swing such as the halberd's; a hit thuds where it lands; a shove has its own push; one of the dead falling or dying has its own sound. See [[Sound]].
+
 ## With friends
 
 Whenever a world is open to friends, hit-stop is switched off for everyone, host and guests. The view's kick is felt only by the player who struck.
@@ -111,6 +115,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - [[Durability]]
 - [[Fists]]
 - [[The dead]]
+- [[Levers]]: the fighting numbers still being balanced
 
 ## Sources
 
@@ -151,5 +156,6 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - `src/render/entities.js:263`: no swing-target outline on one of the dead hidden by the dark (game commit 9d9a5b5)
 - `src/settings.js:36`, `src/settings.js:76`, `src/game.js:77`, `src/game.js:93-96`: the Dev chest chosen at New world (game commit f2b8062)
 - `src/rules.js:13-30`, `src/game.js:77-85`, `src/game.js:141-167`: Zombie aggro and Multi-hit the world's rules; the Starting population (game commit f2b8062)
+- `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
 
 {{navbox weapons}}

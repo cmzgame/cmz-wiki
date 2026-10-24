@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "125bffbb16a8d091ce15b62c1e760059ddcdd5cf",
-  "short": "125bffb",
-  "date": "2026-10-24T03:33:57-05:00",
-  "subject": "Merge #383, reviewed: the spear breaks one throw in four, hit or miss, and says so; a spear that stays in a body keeps its wear",
+  "commit": "3c68f9cdb2090800ebb702680ede01deab084b60",
+  "short": "3c68f9c",
+  "date": "2026-10-24T12:05:24-05:00",
+  "subject": "Merge #391, reviewed: sounds step 2, the shove, the bow, a spell's cast, the dead's death and fall, doors and shutters; the grass step deleted; F8 mutes (#386)",
   "ref": "origin/main"
  },
  "counts": {
@@ -8051,7 +8051,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1976
+   "lines": 1986
   },
   {
    "path": "interact.js",
@@ -8067,7 +8067,7 @@
   },
   {
    "path": "ui/screens.js",
-   "lines": 1251
+   "lines": 1252
   },
   {
    "path": "entities/zombie.js",
@@ -8138,12 +8138,20 @@
    "lines": 333
   },
   {
+   "path": "sound-gen.js",
+   "lines": 332
+  },
+  {
    "path": "figure/raster.js",
    "lines": 329
   },
   {
    "path": "farming.js",
    "lines": 320
+  },
+  {
+   "path": "sound-cues.js",
+   "lines": 308
   },
   {
    "path": "render/entities.js",
@@ -8186,6 +8194,10 @@
    "lines": 243
   },
   {
+   "path": "audio.js",
+   "lines": 233
+  },
+  {
    "path": "loop.js",
    "lines": 233
   },
@@ -8202,10 +8214,6 @@
    "lines": 215
   },
   {
-   "path": "sound-gen.js",
-   "lines": 211
-  },
-  {
    "path": "render/scene.js",
    "lines": 209
   },
@@ -8220,10 +8228,6 @@
   {
    "path": "grid.js",
    "lines": 190
-  },
-  {
-   "path": "audio.js",
-   "lines": 187
   },
   {
    "path": "woods.js",
@@ -8260,10 +8264,6 @@
   {
    "path": "talk.js",
    "lines": 158
-  },
-  {
-   "path": "sound-cues.js",
-   "lines": 156
   },
   {
    "path": "identities.js",

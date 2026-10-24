@@ -98,6 +98,10 @@ At no health one of the dead falls, and once the fall has played its body stays 
 - Doors, shutters, boards, and fences hold them off for a time (see [[Openings]], [[Fences]], and [[Building]]); a crowd breaks any of them faster than one alone.
 - At night, being seen going into a house means the dead that saw you wait about it until dawn.
 
+## The sound it makes
+
+The dead shuffle as they walk, whatever the floor. One knocked down thumps to the ground, and one killed makes a heavier sound of its own. Their own voices are to come. See [[Sound]].
+
 ## With friends
 
 Each of the dead picks the nearest player it can see; a fallen player draws no one. With none seen, it chases toward the nearest living player. The bite names its victim: the wound, the infection, and the words about them belong to that player alone. A siege is held on one player, the last the zombie saw inside, and stops only that player's sleep.
@@ -117,6 +121,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - [[Openings]]
 - [[Sight]]
 - [[Light]]
+- [[Levers]]: the dead's numbers still being balanced
 
 ## Sources
 
@@ -153,3 +158,4 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/settings.js:12-13`, `src/settings.js:66-67`, `src/rules.js:14-15`, `src/entities/zombie.js:360-365`, `src/entities/zombie.js:403-417`, `src/entities/zombie.js:424`, `src/entities/zombie.js:586-598`, `src/entities/villager.js:132-170`: Zombie aggro, Zombies attack villagers, an immune villager never prey nor harmed (game #187), a bitten villager turning
 - `src/game.js:141-167`, `src/map.js:1338-1350`, `data/tuning.json:162`: the Starting population's factor on the map's dead and each wild chunk's, read once when the world is made
 - `src/burn.js:26-52`, `src/entities/zombie.js:176-186`, `src/combat.js:377-382`, `src/archery.js:275`: burning: who sets it (a torch only while lit), a burn taking health alone, a corpse burning on
+- `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)

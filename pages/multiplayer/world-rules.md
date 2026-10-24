@@ -63,6 +63,7 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 - [[Worlds]], [[Hosting]], [[Server worlds]], [[Settings]], [[Screens]]
 - [[The dead]], [[Trees]], [[Survival]]
+- [[Levers]]: every world rule and tuning number still being balanced, with its value
 
 ## Sources
 
