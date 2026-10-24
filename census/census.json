@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "37e8726d4e1b5ce053d9263915507067738f3b2b",
-  "short": "37e8726",
-  "date": "2026-10-24T02:43:15-05:00",
-  "subject": "Merge #377, reviewed: tools/status.html, where everything is, read live from GitHub (#358)",
+  "commit": "a6f79688a8338f8e4288cb4fe413d4d7b55ca1fc",
+  "short": "a6f7968",
+  "date": "2026-10-24T03:10:54-05:00",
+  "subject": "Merge #381, reviewed: sounds step 1, the module, the placeholders at boot, the ear (footsteps, the swing, the hit), the Sound tab (#379)",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,16 +18,16 @@
   "mapProps": 37,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 34,
+  "settings": 36,
   "rules": 9,
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 20,
   "verbs": 14,
-  "menuLabels": 71,
+  "menuLabels": 74,
   "events": 31,
-  "checks": 63,
-  "modules": 116
+  "checks": 64,
+  "modules": 119
  },
  "items": [
   {
@@ -6907,6 +6907,16 @@
    "note": "the floating numbers over heads: damage, heals, and gathers (ui/floaters.js; #294)"
   },
   {
+   "key": "soundOn",
+   "default": "true",
+   "note": "the master switch (docs/40, section 1): on by default, nothing sounds before the first click (the browser's autoplay rule)"
+  },
+  {
+   "key": "soundVolume",
+   "default": "0.75",
+   "note": "the master volume: 0, 0.25, 0.5, 0.75, or 1 (docs/40)"
+  },
+  {
    "key": "paintedLayers",
    "default": "{}",
    "note": "slot -> painted layer name to try on, from the settings screen (docs/12)"
@@ -6993,26 +7003,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1105"
+    "main.js:1110"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1104"
+    "main.js:1109"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1082"
+    "main.js:1087"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:926",
-    "main.js:940"
+    "main.js:930",
+    "main.js:944"
    ]
   },
   {
@@ -7024,19 +7034,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1102"
+    "main.js:1107"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1085"
+    "main.js:1090"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1084"
+    "main.js:1089"
    ]
   },
   {
@@ -7063,56 +7073,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1080"
+    "main.js:1085"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1086"
+    "main.js:1091"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1093"
+    "main.js:1098"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1082"
+    "main.js:1087"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1165"
+    "main.js:1170"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1165"
+    "main.js:1170"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1083"
+    "main.js:1088"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1176"
+    "main.js:1181"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:926",
-    "main.js:932"
+    "main.js:930",
+    "main.js:936"
    ]
   }
  ],
@@ -7239,19 +7249,19 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:65"
+    "settings.js:67"
    ]
   },
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1495"
+    "main.js:1519"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:829"
+    "main.js:833"
    ]
   },
   {
@@ -7281,31 +7291,31 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:59"
+    "settings.js:61"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:73"
+    "settings.js:77"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:77"
+    "settings.js:81"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:76"
+    "settings.js:80"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1433"
+    "main.js:1442"
    ]
   },
   {
@@ -7342,31 +7352,31 @@
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:78"
+    "settings.js:82"
    ]
   },
   {
    "key": "Floating numbers",
    "at": [
-    "settings.js:62"
+    "settings.js:64"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:69"
+    "settings.js:73"
    ]
   },
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1469"
+    "main.js:1493"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:75"
+    "settings.js:79"
    ]
   },
   {
@@ -7378,7 +7388,7 @@
   {
    "key": "Interface size",
    "at": [
-    "settings.js:57"
+    "settings.js:59"
    ]
   },
   {
@@ -7390,37 +7400,43 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1418"
+    "main.js:1427"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1459"
+    "main.js:1468"
+   ]
+  },
+  {
+   "key": "Making the sounds",
+   "at": [
+    "main.js:1480"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:70"
+    "settings.js:74"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:60"
+    "settings.js:62"
    ]
   },
   {
    "key": "Object Highlight",
    "at": [
-    "settings.js:74"
+    "settings.js:78"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1508"
+    "main.js:1532"
    ]
   },
   {
@@ -7439,25 +7455,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1386"
+    "main.js:1395"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1382"
+    "main.js:1391"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1420"
+    "main.js:1429"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1419"
+    "main.js:1428"
    ]
   },
   {
@@ -7469,7 +7485,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1517"
+    "main.js:1541"
    ]
   },
   {
@@ -7481,31 +7497,37 @@
   {
    "key": "Small text",
    "at": [
-    "settings.js:61"
+    "settings.js:63"
    ]
   },
   {
-   "key": "Starting population",
-   "at": [
-    "settings.js:72"
-   ]
-  },
-  {
-   "key": "Survival",
+   "key": "Sound",
    "at": [
     "settings.js:68"
    ]
   },
   {
+   "key": "Starting population",
+   "at": [
+    "settings.js:76"
+   ]
+  },
+  {
+   "key": "Survival",
+   "at": [
+    "settings.js:72"
+   ]
+  },
+  {
    "key": "Swing targets",
    "at": [
-    "settings.js:64"
+    "settings.js:66"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:63"
+    "settings.js:65"
    ]
   },
   {
@@ -7523,7 +7545,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:71"
+    "settings.js:75"
    ]
   },
   {
@@ -7541,6 +7563,12 @@
    ]
   },
   {
+   "key": "Volume",
+   "at": [
+    "settings.js:69"
+   ]
+  },
+  {
    "key": "Walk here",
    "at": [
     "interact.js:840"
@@ -7549,19 +7577,19 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:66"
+    "settings.js:70"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:67"
+    "settings.js:71"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:58"
+    "settings.js:60"
    ]
   },
   {
@@ -7683,7 +7711,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1298"
+    "main.js:1304"
    ]
   },
   {
@@ -8001,6 +8029,7 @@
   "sleep",
   "slots",
   "smalltext",
+  "sound",
   "sway",
   "sync",
   "takeall",
@@ -8022,7 +8051,7 @@
   },
   {
    "path": "main.js",
-   "lines": 1945
+   "lines": 1972
   },
   {
    "path": "interact.js",
@@ -8169,6 +8198,10 @@
    "lines": 221
   },
   {
+   "path": "sound-gen.js",
+   "lines": 211
+  },
+  {
    "path": "entities/character.js",
    "lines": 209
   },
@@ -8187,6 +8220,10 @@
   {
    "path": "grid.js",
    "lines": 190
+  },
+  {
+   "path": "audio.js",
+   "lines": 187
   },
   {
    "path": "woods.js",
@@ -8225,12 +8262,16 @@
    "lines": 158
   },
   {
+   "path": "sound-cues.js",
+   "lines": 156
+  },
+  {
    "path": "identities.js",
    "lines": 155
   },
   {
    "path": "dev.js",
-   "lines": 153
+   "lines": 154
   },
   {
    "path": "ui/talk-panel.js",
@@ -8246,7 +8287,7 @@
   },
   {
    "path": "settings.js",
-   "lines": 134
+   "lines": 138
   },
   {
    "path": "bucket.js",
@@ -8269,6 +8310,10 @@
    "lines": 116
   },
   {
+   "path": "floaters.js",
+   "lines": 116
+  },
+  {
    "path": "ui/speech.js",
    "lines": 116
   },
@@ -8286,10 +8331,6 @@
   },
   {
    "path": "clock.js",
-   "lines": 107
-  },
-  {
-   "path": "floaters.js",
    "lines": 107
   },
   {
@@ -8517,6 +8558,9 @@
    "TILE_HH": 16,
    "SLICE_INSET": 9
   },
+  "audio": {
+   "LOG_MAX": 200
+  },
   "burn": {
    "DIP_REACH": 2.6
   },
@@ -8730,6 +8774,9 @@
   },
   "save": {
    "VERSION": 3
+  },
+  "sound-cues": {
+   "FRESH": 0.25
   },
   "stations": {
    "REACH": 2.6

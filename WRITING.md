@@ -14,7 +14,7 @@ For anyone writing a page, Claude or Michael. The model is the Old School RuneSc
 
 Every number the game has goes in as a reference, so the wiki changes when the game does:
 
-- From the data: `{{n tuning.zombie.speed}}` (first segment names the file: `tuning`, `combat`, `build`, `items`, `looks`, `loot`, `valley`, `sprites`), items by id: `{{n items.sword.weapon.damage}}`.
+- From the data: `{{n tuning.zombie.speed}}` (first segment names the file: `tuning`, `combat`, `build`, `items`, `looks`, `loot`, `valley`, `sprites`, `sounds`), items by id: `{{n items.sword.weapon.damage}}`.
 - From the code's named constants, found by the census: `{{n census.constants.combat.POINT_BLANK}}` (module path with `/` as `_`, e.g. `entities_zombie`; an object called `tunables` appears as `tunables_<name>`).
 - A unit can follow: `{{n tuning.zombie.speed tiles a second}}`.
 - A number that is not the game's (a count of pages, "two hands", "the third hit") may be written as a word. A number the game has but that is neither in data nor a named constant: write it, and add `numbersOk: true` to the front matter with a comment line in the body `<!-- typed: why -->` so it can be found later.
@@ -44,7 +44,7 @@ Use `##` for sections. Leave out a section with nothing in it.
 - **With friends:** only where multiplayer changes the rule (sleep needs everyone in bed; on the wire the world never pauses; a guest's dormancy). Like the OSRS wiki's Ironman notes.
 - **Settings that change it:** name each setting as the Settings screen names it, with its default.
 - `{{devonly note="..."}}` before anything that exists only for testing (the dev chest, Combat testing, the console).
-- **The sound it makes** (Michael, 2026-10-17, the game's `docs/02`, The roadmap, and sound): anything in the game that makes a sound has that sound as a playable file on its page, when its license allows the wiki to host it; the sound's source and license go in the Sources section. The game has no sounds yet; the template (an `<audio>` element from the game's own sound files) is written when the first sounds land.
+- **The sound it makes** (Michael, 2026-10-17, the game's `docs/02`, The roadmap, and sound): anything in the game that makes a sound has that sound as a playable file on its page, when its license allows the wiki to host it; the sound's source and license go in the Sources section. The game's first sounds (game #379) are generated at boot, so they are ours and may all be hosted; the template (an `<audio>` element) waits for the game's tool page that renders each slot to a file (the game's `docs/40`, section 2). Until then a page names its sound in words and links [[Sound]].
 - `{{planned doc=30 step=4 note="..."}}` for anything not built. Every build lists them; when the thing is built, replace the note with the real section.
 
 ## Front matter
