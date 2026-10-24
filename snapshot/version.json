@@ -1,7 +1,7 @@
 {
-  "commit": "37e8726d4e1b5ce053d9263915507067738f3b2b",
-  "short": "37e8726",
-  "date": "2026-10-24T02:43:15-05:00",
-  "subject": "Merge #377, reviewed: tools/status.html, where everything is, read live from GitHub (#358)",
+  "commit": "a6f79688a8338f8e4288cb4fe413d4d7b55ca1fc",
+  "short": "a6f7968",
+  "date": "2026-10-24T03:10:54-05:00",
+  "subject": "Merge #381, reviewed: sounds step 1, the module, the placeholders at boot, the ear (footsteps, the swing, the hit), the Sound tab (#379)",
   "ref": "origin/main"
 }
