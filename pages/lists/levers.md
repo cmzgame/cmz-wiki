@@ -27,7 +27,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 
 - **Stamina's regeneration:** {{n tuning.player.staminaRegen}} a second. See [[Stamina]].
 - **Each weapon's swing cost:** the stamina each swing takes, on each weapon (the table below); [[Fists]] take {{n combat.fists.stamina}}.
-- **The tired blow:** a swing the stamina bar cannot pay for lands at {{pct combat.blow.tiredDamage}} of its damage.
+- **The tired blow:** a swing the stamina bar cannot pay for lands at {{pct combat.blow.tiredDamage}} of its damage; a shove the bar cannot pay for pushes, staggers, and floors at the same share.
 - **Knockdown:** an ordinary blow's chance to floor one of the dead is {{pct combat.blow.knockdownChance}}. The [[Flanged mace]]'s is {{pct items.mace.weapon.knockdown}}, the [[Halberd]]'s thrust's {{pct items.halberd.weapon.alt.knockdown}}, and the [[Shove|shove]]'s {{pct combat.shove.knockdown}}.
 - **The finisher:** a blow on one of the dead that is down does {{n combat.finisher.mult}} times its damage.
 - **The third-hit combo:** three hits on one of the dead within {{n combat.combo.window seconds}} always floor it. It is switched off and kept for testing.
@@ -73,13 +73,14 @@ On the [[Settings]] screen, kept in the browser.
 
 ## Sources
 
-<!-- sources at 3c68f9c -->
+<!-- sources at 9be007c -->
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each
 - `data/tuning.json`: the dead's health, the bite's cooldown, the bite tokens, the floor's times, stamina's regeneration
 - `src/entities/zombie.js:333-352`: the bite tokens' pool, one more for every `biteTokensPer` in reach beyond the first
 - `src/entities/zombie.js:140-148`: a landed hit during the wind-up cancels the bite and sets the bite's cooldown; every hit, a switch in code
 - `data/poses.json`: the dead's attack, its rate and the frame the bite lands on
 - `data/combat.json`: the tired blow, knockdown, the finisher, the combo and its switch (`combo.enabled`), the shove, hit stop, the swing's walk, fists, the infection chance
+- `src/combat.js:418-421`: the tired shove at the tired blow's share
 - `data/items.json`: each weapon's stamina and damage, the mace's and the thrust's knockdown, the spear's break
 - `src/settings.js:8-45`: every setting's default
 - `src/settings.js:59-82`: the Settings screen's rows and the world's rules, which are fixed when the world is made

@@ -26,7 +26,7 @@ In the order the screen shows them, with the default first.
 - **Floating numbers**: Shown or Hidden: damage, healing, and what you gather float up over heads (see [[Interface#Floating numbers|Interface]]).
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
 - **Swing targets**: On or Off, On by default: "A green outline on what your next swing would hit. Green means the swing lands." A browser that saved its settings before it came on by default keeps its own choice.
-- **Aim guide**: Off or On: the landing marker and a dotted line while you draw a bow, wind up a throw, or cast. It changes only what your own screen draws. A browser that saved its settings before it went off by default keeps its own choice. See [[Archery]].
+- **Aim guide**: On or Off, On by default: the landing marker and a dotted line while you draw a bow, wind up a throw, or cast. Off is for the challenge of learning the draw by feel. It changes only what your own screen draws. See [[Archery]].
 - **Fullscreen**: Off or On, at the foot of the tab. It asks the browser for the whole screen when clicked and shows what the page is in now; it is not kept, since the browser decides when fullscreen ends. Playing never goes fullscreen by itself. Where the browser does not allow it, the row says so and cannot be switched. What `Escape` does in fullscreen depends on the browser, and the row's line says which:
   - In a browser that can lock the keyboard (Chrome and Edge), the game keeps `Escape` while fullscreen lasts: "The game fills the whole screen. Esc closes menus as usual; hold Esc to leave fullscreen." A tap of `Escape` closes the game's menus as it does in a window, and a held `Escape` leaves fullscreen; the browser shows its own banner saying so.
   - In any other browser (Firefox, Safari), or where the browser refused the lock: "The game fills the whole screen. In this browser Esc leaves fullscreen first; the next one reaches the game."
@@ -47,7 +47,7 @@ See [[Sound]].
 
 - **Debug corner**: Shown or Hidden: the numbers and keys in the top-left corner.
 - **Hit shapes**: Off or On: draws the dead's body samples, green when the next swing reaches them.
-- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, a body, a laid [[Rugs|rug]]. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead (the swing's outline is theirs), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
+- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, a body, a laid [[Rugs|rug]]. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead on their feet (the swing's outline is theirs; one lying downed under the pointer is outlined, the moment for a finisher, though it has no menu action, and the green swing outline wins over it), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
 - **Layer** rows: one per slot that has painted clothing layers, a dropdown to try one on in place of what is equipped (the answer **item** shows the item's own art).
 - **Painted hair**: a **Reload hair** button that picks up hair styles just saved in the hair editor.
 - **Relay**: where Open to friends and Join go, or "none: only this browser's own tabs".
@@ -55,6 +55,8 @@ See [[Sound]].
 A dropdown with the focus keeps the keys to itself: a letter typed on it never reaches the world, and `Escape` still goes through.
 
 ## Defaults
+
+The browser keeps only the settings you have changed from their defaults, so a default the game changes later reaches every browser that never chose that setting. A browser whose settings an older version of the game saved kept every setting, chosen or not, and keeps those values until it changes them or presses **Defaults**: the Aim guide, on by default since 2026-10-24, stays off in such a browser.
 
 **Defaults** resets only what the Settings screen shows: its rows and the painted layers. The open tab stays open. It never touches a world's rules or the choices the next New world offers, your [[Identities|identities]], the browser's own id, the list of friends' worlds, the creator and owner keys, or where the panels were dragged to.
 
@@ -79,11 +81,12 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/ui/screens.js:87`, `src/ui/screens.js:159-163`: Display open first; a click on a tab opens it
 - `style.css` (the `CMZ Digits` face), `src/ui/small-text.js`: every digit in the clear sans at any size, at the pixel font's line height; Pixel restores it (game #325, at ef0d378)
 - `src/settings.js:28`, `src/settings.js:63`, `src/ui/small-text.js`: Small text, Clear by default, for text at or under its threshold (game #322, at 5cf78a9)
-- `src/settings.js:27`, `src/settings.js:78`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17)
+- `src/settings.js:27`, `src/settings.js:78`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17); one lying downed outlined, the swing outline winning over it (`src/highlight.js:30-34`, `src/render/entities.js:270`) (game #390, at 9be007c)
 - `src/render/rugs.js:43`: a laid rug outlined (game #339, at 499e344)
 - `src/settings.js:29`, `src/settings.js:64`: Floating numbers, shown by default (game #299, at 3331946)
 - `src/settings.js:16`, `src/settings.js:66`, `src/settings.js:96-107`: Swing targets, on by default, in the Display group, its line; a browser's saved choice kept over the default
-- `src/settings.js:8-45`: the defaults, the Aim guide off
+- `src/settings.js:8-45`: the defaults, the Aim guide on (game #390, at 9be007c)
+- `src/settings.js:113-126`: only what differs from the defaults is saved (game #390, at 9be007c)
 - `src/main.js:1314`: the Aim guide read where the viewer's own frame is drawn
 - `src/view.js:81-88`: `UI_SCALE_MAX` and Auto's fit
 - `src/view.js:28`, `src/view.js:70-79`: the zooms and Auto

@@ -32,7 +32,7 @@ A stretch of fence has {{n tuning.world.fenceHp}} hit points, and **a gate {{n t
 
 One of the dead alone takes about two and a half minutes to break a stretch of fence, and about half that for a gate. Two take about half as long as one, and three about a third. Only about three can strike one stretch at a time; the rest wait their turn or strike the stretch beside it, so even a large crowd takes over half a minute. That is time to run, or to arm yourself.
 
-- **It bites over the fence.** One striking a fence that sees you within {{n tuning.zombie.contact tiles}} across it bites you, as it would in a chase, and goes back to striking when you are out of its reach. Across the fence it is striking, from within {{n tuning.zombie.fenceReach tiles}} of it, its bite reaches {{n tuning.zombie.fenceBiteExtra tiles}} further, so standing right against the fence gets you bitten.
+- **It bites over the fence.** One striking a fence that sees you within {{n tuning.zombie.contact tiles}} across it bites you, as it would in a chase, and goes back to striking when you are out of its reach. Only a few of the dead bite one player at once (see [[The dead#A few at a time|The dead]]): the rest at the fence keep striking it rather than standing, so a crowd at a fence wears it down while you stand behind it. One that finds you on its own side of the fence, at the fence, gives up the fence for the chase. Across the fence it is striking, from within {{n tuning.zombie.fenceReach tiles}} of it, its bite reaches {{n tuning.zombie.fenceBiteExtra tiles}} further, so standing right against the fence gets you bitten.
 - **It does not give up while it knows you are in a room**: while the last place it saw you is inside a house, or it holds a siege on you, it strikes on without seeing you, by day or by night. So a house inside a fenced yard is no safe place.
 - Only one that last saw you out in the open, in the yard, gives up after {{n tuning.zombie.pressGiveUp seconds}} without seeing you, and searches.
 
@@ -117,4 +117,5 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `data/maps/valley.json:4288-4302`, `data/maps/valley.json:4858-4872`: fence partitions inside the cooper's long house and the second cottage on the lane
 - `src/host.js:218-225`, `src/main.js:1655-1657`, `src/main.js:1762-1765`: the jolt and the splinters drawn on every player's screen
 - `src/map.js:724-729`, `src/game.js:420`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
+- `src/entities/zombie.js:679-693`, `src/entities/zombie.js:876-890`: the dead kept waiting for a bite strike the fence between; one with its target on its own side, at the fence, takes up the chase (game #389, at 9be007c)
 

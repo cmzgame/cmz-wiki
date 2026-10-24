@@ -83,7 +83,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 
 ## Settings that change it
 
-- **Aim guide** (default off): a landing marker and a dotted line while you draw a bow, wind up a throw, or cast. It is each player's own: it changes only what their own screen draws, never the shot. A browser that saved its settings before it went off by default keeps its own choice.
+- **Aim guide** (default on): a landing marker and a dotted line while you draw a bow, wind up a throw, or cast. Turn it off for the challenge of learning the draw by feel. It is each player's own: it changes only what their own screen draws, never the shot. A browser that chose it keeps its own choice, and so does one whose settings an older version saved (see [[Settings#Defaults|Settings]]).
 
 ## See also
 
@@ -124,7 +124,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/main.js:1751-1754`, `src/host.js:230-234`: the thrower told the spear breaks, a guest's thrower by the host
 - `src/archery.js:705-709`: the thrown spear leaves the hand with its durability; the guard's attack multiplier on a throw
 - `src/archery.js:633-641`, `src/net.js:892`, `src/net.js:1132`, `src/archery.js:364-367`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
-- `src/settings.js:15`, `src/settings.js:67`, `src/main.js:1314`, `src/archery.js:755-759`: the Aim guide, off by default, read only where the viewer's own screen is drawn; the marker always computed
+- `src/settings.js:15`, `src/settings.js:67`, `src/main.js:1314`, `src/archery.js:755-759`: the Aim guide, on by default (game #390, at 9be007c), read only where the viewer's own screen is drawn; the marker always computed
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
 
 {{navbox weapons}}
