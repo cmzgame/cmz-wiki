@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "5830ac20351c101f1055a7334cfff585bcda0be4",
-  "short": "5830ac2",
-  "date": "2026-10-24T12:21:02-05:00",
-  "subject": "Merge #394, reviewed: the closing burst, a trial, the dead walk faster once close to a target they see (#385)",
+  "commit": "32ff419cf8d37ea8ebc3cebccaf950d494bafbac",
+  "short": "32ff419",
+  "date": "2026-10-24T16:55:22-05:00",
+  "subject": "Merge #396, reviewed: the shove pushes 0.65 tiles, a tired one 0.45 (Michael, 2026-10-24)",
   "ref": "origin/main"
  },
  "counts": {
@@ -6606,14 +6606,15 @@
   "shove": {
    "range": 1,
    "arc": 100,
-   "knockback": 0.4,
+   "knockback": 0.65,
    "knockbackChance": 1,
    "stagger": 0.8,
    "knockdown": 0.1,
    "stamina": 15,
    "cooldown": 0.5,
    "targets": 3,
-   "note": "Space (docs/41 step 2): no damage, a push of knockback tiles, a stagger of stagger seconds, a knockdown by chance, on up to targets of the dead in the wedge whatever the Multi-hit setting; cooldown is also the recovery in which no swing starts"
+   "tiredPush": 0.7,
+   "note": "Space (docs/41 step 2): no damage, a push of knockback tiles (0.65 since 2026-10-24; a tired shove, one the bar cannot pay for, pushes tiredPush of it and staggers and floors at blow.tiredDamage, its stagger kept under cooldown so an empty bar holds no crowd), a stagger of stagger seconds, a knockdown by chance, on up to targets of the dead in the wedge whatever the Multi-hit setting; cooldown is also the recovery in which no swing starts"
   }
  },
  "build": {
@@ -7827,7 +7828,7 @@
   {
    "key": "shove",
    "at": [
-    "combat.js:434"
+    "combat.js:436"
    ]
   },
   {
@@ -8114,7 +8115,7 @@
   },
   {
    "path": "combat.js",
-   "lines": 490
+   "lines": 492
   },
   {
    "path": "ui/inventory-actions.js",
