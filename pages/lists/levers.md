@@ -65,7 +65,7 @@ On the [[Settings]] screen, kept in the browser.
 
 - **Aim guide**, {{default aimGuide}} by default, for the challenge of learning a bow's draw by feel. See [[Archery]].
 - **Swing targets**, {{default showSwingTargets}}. **Swing timer**, {{default swingTimer}}. **Floating numbers**, {{default floaters shown}}.
-- **Sound**, {{default soundOn}}, and **Volume**, {{default soundVolume percent}}. See [[Sound]].
+- **Sound**, {{default soundOn}}, and **Volume**, {{default soundVolume percent}}; `F8` switches Sound from anywhere in the game. See [[Sound]].
 
 ## See also
 
@@ -73,7 +73,7 @@ On the [[Settings]] screen, kept in the browser.
 
 ## Sources
 
-<!-- sources at ca691b8 -->
+<!-- sources at 3c68f9c -->
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each
 - `data/tuning.json`: the dead's health, the bite's cooldown, the bite tokens, the floor's times, stamina's regeneration
 - `src/entities/zombie.js:333-352`: the bite tokens' pool, one more for every `biteTokensPer` in reach beyond the first
@@ -83,3 +83,4 @@ On the [[Settings]] screen, kept in the browser.
 - `data/items.json`: each weapon's stamina and damage, the mace's and the thrust's knockdown, the spear's break
 - `src/settings.js:8-45`: every setting's default
 - `src/settings.js:59-82`: the Settings screen's rows and the world's rules, which are fixed when the world is made
+- `src/main.js:1924-1934`: F8, the mute key

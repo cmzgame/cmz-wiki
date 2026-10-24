@@ -53,6 +53,10 @@ A door or window can be built with the palette on N, with a [[Smith's hammer]] o
 - A door's health: {{n census.constants.map.DOOR_HP}}.
 - Shutters' health: {{n census.constants.map.SHUTTER_HP}}.
 
+## The sound it makes
+
+A door or a pair of shutters creaks as it opens or shuts, the same creak both ways, when it is in earshot. A door broken by the dead makes no creak yet. See [[Sound]].
+
 ## With friends
 
 A guest's E is sent with its input and carried out by the host, so a door opened by anyone opens for everyone, and the change is kept in the save. A guest can no more pass a window than the host can.
@@ -93,3 +97,4 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 - `data/build.json:11-28`, `src/placement.js:144-161`: the door and window in the palette, each asking for `build`, a hammer, on you (game #222)
 - `src/map.js:578-579`, `src/map.js:733-744`: door and shutter health, whatever the material
 - `src/interact.js:1125-1145`, `src/interact.js:505`: a guest's E performed by the host, the change reaching guests and the save
+- `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)

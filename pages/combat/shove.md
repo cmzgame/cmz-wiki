@@ -29,6 +29,10 @@ It costs a weapon no durability (see [[Durability]]).
 - Knockdown chance: {{n combat.shove.knockdown}}.
 - Stamina: {{n combat.shove.stamina}}. Recovery: {{n combat.shove.cooldown seconds}}.
 
+## The sound it makes
+
+A shove has a short push of its own as it is made, whether or not it reaches anyone. See [[Sound]].
+
 ## With friends
 
 A guest's own shove shows at once on their screen, its pose and its recovery included, so a click during the recovery swings nothing there as it does on the host. The push itself is the host's, worked out from the guest's input.
@@ -49,3 +53,4 @@ A guest's own shove shows at once on their screen, its pose and its recovery inc
 - `src/figure/rig.js:19`, `data/poses.json`: the shove's own pose, the player's alone
 - `src/combat.js:390`, `src/combat.js:398-408`: durability spent only by a weapon's landed hits
 - `src/player-controller.js:28`: a guest predicts its own shove's pose and recovery; the push is the host's
+- `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)

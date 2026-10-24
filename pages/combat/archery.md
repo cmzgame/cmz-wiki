@@ -73,6 +73,10 @@ A thrown spear keeps its wear, whether it lies where it fell or comes out of a b
 - Walking while drawing: {{n combat.bow.drawSpeed}}; braced {{n combat.bow.braceMove}}.
 - Spear throw: {{n items.spear.thrown.damage}} damage, {{n items.spear.thrown.range tiles}}, break chance {{n items.spear.thrown.breakChance}}.
 
+## The sound it makes
+
+A drawn bow creaks for as long as it is held, rising as the draw fills; letting go twangs, and the arrow thumps where it comes down. A draw let go too early makes no twang. A spell makes one sound as it is cast, and a thrown spear none yet. See [[Sound]].
+
 ## With friends
 
 A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, a fire arrow burning and lit there too, and arrows on the floor or lodged in bodies travel with the world. An arrow never hurts another player: on the host the dead are its only targets.
@@ -121,5 +125,6 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:705-709`: the thrown spear leaves the hand with its durability; the guard's attack multiplier on a throw
 - `src/archery.js:633-641`, `src/net.js:892`, `src/net.js:1132`, `src/archery.js:364-367`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
 - `src/settings.js:15`, `src/settings.js:67`, `src/main.js:1314`, `src/archery.js:755-759`: the Aim guide, off by default, read only where the viewer's own screen is drawn; the marker always computed
+- `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
 
 {{navbox weapons}}
