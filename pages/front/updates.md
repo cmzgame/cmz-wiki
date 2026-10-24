@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `82485c4`
+
+- **Fixed in the game:** a gate opened while the dead strike it (game #397, from Michael's play). They went on striking the open gate; now they stop and walk through it, so opening a gate lets them in rather than having it broken. [[Fences]] and [[The dead]] say so.
+
 ## 2026-10-24: synced to `32ff419`
 
 - **Changed in the game:** the shove's push (game #396, Michael's ruling). A shove pushes {{n combat.shove.knockback tiles}}, and a tired one pushes {{pct combat.shove.tiredPush}} of that; a tired shove's stagger and knockdown stay at {{pct combat.blow.tiredDamage}}, so its stagger is shorter than the shove's recovery. [[Shove]], [[Stamina]], [[Combat]], and [[Levers]] say so.
