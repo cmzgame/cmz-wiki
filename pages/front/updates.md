@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `125bffb`
+
+- **Changed in the game:** the throwing spear (game #383, Michael's ruling). A thrown spear breaks with a chance of {{n items.spear.thrown.breakChance}} each time it comes down, hit or miss (it was one in two), and the thrower is told "The throwing spear breaks."; a spear that stays in a body now comes out of the search with its wear, where it came back fresh (the wiki's last sync found it). [[Throwing spear]] and [[Archery]] say so.
+
 ## 2026-10-24: synced to `a6f7968`
 
 - **New in the game:** the first sounds (game #381). Footsteps by the floor under them, the dead's shuffle, a swing's whoosh (heavier for the halberd), and a hit's thud, all made by the game as it loads, heard by distance and never to one side. A **Sound** tab in the settings has Sound (on) and Volume (75%). [[Sound]] is new; [[Settings]] has the tab.

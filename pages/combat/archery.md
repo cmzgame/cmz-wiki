@@ -60,9 +60,9 @@ With the [[Throwing spear]] in the main hand, middle or Q draws a throw with the
 - It does {{n items.spear.thrown.damage}} damage at full draw, as much as the {{n tuning.zombie.hp}} health of a fresh zombie, so a full throw kills one outright, and less for a partial draw.
 - It pushes {{n items.spear.thrown.knockback tiles}} and always staggers. It never floors. Like any hit, it cancels a bite being wound up.
 - Its hit where it comes down follows the arrow's rule: never through a wall or a closed door to one of the dead past it.
-- Each time it comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone. Otherwise it lodges in the body it hit or lies where it fell.
+- Each time it comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone, and the thrower is told "The throwing spear breaks." Otherwise it lodges in the body it hit or lies where it fell.
 
-A thrown spear that falls to the ground keeps its wear; one lodged in a body comes back as a fresh spear when the body is searched. With the [[Wooden shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
+A thrown spear keeps its wear, whether it lies where it fell or comes out of a body's search. With the [[Wooden shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
 
 ## Numbers
 
@@ -90,35 +90,36 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 
 ## Sources
 
-<!-- sources at 37e8726 -->
-- `src/archery.js:588-603`: the bow and the spear share the launcher and the draw
-- `src/archery.js:66-68`, `src/archery.js:626-651`, `src/archery.js:747-749`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
+<!-- sources at 125bffb -->
+- `src/archery.js:592-607`: the bow and the spear share the launcher and the draw
+- `src/archery.js:66-68`, `src/archery.js:630-655`, `src/archery.js:751-753`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
 - `data/items.json`: the bow's `drawTime` and `braceDrawTime`, `damage`, `knockback`, `shots`; the spear's `thrown` block
 - `data/combat.json:11`, `src/archery.js:29-61`: the bow's and the flight's numbers as data (range, speed, arc heights, minDraw, drawSpeed, braceMove, recoverTime, hit radius, wall, trunk, and prop heights)
-- `src/archery.js:663-720`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the hands, belt, and bag hold none
-- `src/main.js:793-809`, `src/game.js:625`, `src/net.js:429`: a right tap during a draw cancels it in the world's step, a guest's too
-- `src/archery.js:741`, `src/main.js:1177`: sprinting, a right-click menu, or a pause cancels a draw; an open panel does not
-- `src/archery.js:747-748`: the braced draw time
+- `src/archery.js:667-724`: begin, cancel, and release; a dry release spends nothing; "No arrows." when the hands, belt, and bag hold none
+- `src/main.js:797-813`, `src/game.js:625`, `src/net.js:429`: a right tap during a draw cancels it in the world's step, a guest's too
+- `src/archery.js:745`, `src/main.js:1182`: sprinting, a right-click menu, or a pause cancels a draw; an open panel does not
+- `src/archery.js:751-752`: the braced draw time
 - `src/player-controller.js:55`: walking speed while drawing and braced
-- `src/game.js:106`, `src/archery.js:299-326`: what a shot can hit is what `setTargets` hands in, the dead; never a villager, a player, or the archer
+- `src/game.js:106`, `src/archery.js:303-330`: what a shot can hit is what `setTargets` hands in, the dead; never a villager, a player, or the archer
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/archery.js:95-142`: the shot fixed at release, travelling along the ground with the arc above
-- `src/archery.js:261-295`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
+- `src/archery.js:261-299`: the landing: the nearest of the dead within the hit radius, damage scaled by the draw, no knockdown, no finisher, lodging, a miss lying on the floor
 - `src/archery.js:276`, `src/entities/zombie.js:110`, `src/entities/zombie.js:140-151`: a shot's hit staggers by its own chance (an arrow the default, the spear always), never floors, and cancels a bite being wound up
-- `src/archery.js:271`, `src/archery.js:311-345`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not
+- `src/archery.js:271`, `src/archery.js:315-349`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not
 - `src/archery.js:156-162`, `src/placeholders.js:88-90`: the wall test by height: a door passes open or broken below its top, a window open or broken between its sill and its top
-- `src/archery.js:297-304`, `src/archery.js:311-326`: only the dead are hit
+- `src/archery.js:301-308`, `src/archery.js:315-330`: only the dead are hit
 - `src/archery.js:144-215`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot
-- `src/entities/character.js:148-171`: lodged arrows and a lodged spear come out in the body's loot, made afresh by id (a spear's wear not kept), the rest at its feet
-- `src/archery.js:596-600`: fire arrows before plain ones, as their own projectile, setting alight
+- `src/entities/character.js:149-178`, `src/archery.js:281-288`: lodged arrows come out in the body's loot by count, made fresh, and a lodged spear as itself, its wear kept; the rest at its feet
+- `src/archery.js:600-604`: fire arrows before plain ones, as their own projectile, setting alight
 - `src/archery.js:275`, `src/burn.js:26-33`: a fire arrow's hit sets alight before the damage
-- `src/archery.js:279-293`: a fire arrow lodges or lands as a plain arrow
-- `src/archery.js:365-373`, `src/archery.js:546-549`: the fire arrow's light in flight and its burning head
-- `src/archery.js:709-718`, `src/items.js:39-41`: the bow loses durability per arrow loosed
+- `src/archery.js:281-288`, `src/archery.js:296-297`: a fire arrow lodges or lands as a plain arrow
+- `src/archery.js:369-377`, `src/archery.js:550-553`: the fire arrow's light in flight and its burning head
+- `src/archery.js:713-722`, `src/items.js:39-41`: the bow loses durability per arrow loosed
 - `src/player-controller.js:40-44`: middle or Q throws the spear; no brace for a throw
-- `src/archery.js:273`: the spear's break chance rolled on every landing
-- `src/archery.js:701-705`: the thrown spear leaves the hand with its durability; the guard's attack multiplier on a throw
-- `src/archery.js:629-637`, `src/net.js:892`, `src/net.js:1132`, `src/archery.js:360-363`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
-- `src/settings.js:15`, `src/settings.js:65`, `src/main.js:1308`, `src/archery.js:751-755`: the Aim guide, off by default, read only where the viewer's own screen is drawn; the marker always computed
+- `src/archery.js:273`, `data/items.json:22` `spear.thrown.breakChance`: the spear's break chance rolled on every landing, hit or miss
+- `src/main.js:1751-1754`, `src/host.js:230-234`: the thrower told the spear breaks, a guest's thrower by the host
+- `src/archery.js:705-709`: the thrown spear leaves the hand with its durability; the guard's attack multiplier on a throw
+- `src/archery.js:633-641`, `src/net.js:892`, `src/net.js:1132`, `src/archery.js:364-367`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
+- `src/settings.js:15`, `src/settings.js:67`, `src/main.js:1314`, `src/archery.js:755-759`: the Aim guide, off by default, read only where the viewer's own screen is drawn; the marker always computed
 
 {{navbox weapons}}
