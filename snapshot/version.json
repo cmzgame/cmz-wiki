@@ -1,7 +1,7 @@
 {
-  "commit": "5830ac20351c101f1055a7334cfff585bcda0be4",
-  "short": "5830ac2",
-  "date": "2026-10-24T12:21:02-05:00",
-  "subject": "Merge #394, reviewed: the closing burst, a trial, the dead walk faster once close to a target they see (#385)",
+  "commit": "32ff419cf8d37ea8ebc3cebccaf950d494bafbac",
+  "short": "32ff419",
+  "date": "2026-10-24T16:55:22-05:00",
+  "subject": "Merge #396, reviewed: the shove pushes 0.65 tiles, a tired one 0.45 (Michael, 2026-10-24)",
   "ref": "origin/main"
 }

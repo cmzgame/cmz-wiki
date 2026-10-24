@@ -28,7 +28,7 @@ You also cannot sprint while:
 - **A shove** costs {{n combat.shove.stamina}}.
 - **A blow taken on a shield** costs the shield's {{n items.shield.shield.stamina}}.
 
-Stamina is the one thing that paces a fight: from a full bar, an [[Arming sword]] swung as fast as it allows runs it dry in about ten seconds, and a heavier weapon sooner. A swing the bar cannot pay for still lands, at ×{{n combat.blow.tiredDamage}} damage, so you are never locked out of hitting; a [[Shove]] the bar cannot pay for pushes, staggers, and floors at the same share. A swing or shove that empties the bar leaves you winded, and the bar you fight with is the bar you sprint with.
+Stamina is the one thing that paces a fight: from a full bar, an [[Arming sword]] swung as fast as it allows runs it dry in about ten seconds, and a heavier weapon sooner. A swing the bar cannot pay for still lands, at ×{{n combat.blow.tiredDamage}} damage, so you are never locked out of hitting; a [[Shove]] the bar cannot pay for staggers and floors at the same share, and pushes {{pct combat.shove.tiredPush}} as far. A swing or shove that empties the bar leaves you winded, and the bar you fight with is the bar you sprint with.
 
 ### Recovery
 
@@ -67,7 +67,7 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - `data/combat.json:2`, `data/combat.json:12`: the fists' and the shove's stamina
 - `data/items.json:37`, `src/combat.js:150-159`: a blocked blow costs the shield's stamina
 - `data/items.json:8`, `data/tuning.json:52`: an arming sword's cost and swing against the recovery, about ten seconds from a full bar
-- `src/combat.js:418-421`: a tired shove at the same share (game #389, at 9be007c)
+- `src/combat.js:418-434`: a tired shove's stagger and knockdown at the same share, its push at `shove.tiredPush` (game #396, at 32ff419)
 - `data/combat.json:10`, `src/combat.js:336-341`, `src/combat.js:375`, `src/combat.js:419-420`: the tired blow, a swing the bar cannot pay for, at `blow.tiredDamage` (game commit 2c70942); an emptying swing or shove leaves you winded
 - `src/entities/player.js:359-361`, `src/entities/player.js:168-173`, `data/tuning.json:73-74`: no recovery with the guard up; the needs' multipliers, multiplied together
 - `src/entities/player.js:139-145`: Survival off holds the needs full, so they never slow it

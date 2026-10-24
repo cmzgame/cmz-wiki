@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `32ff419`
+
+- **Changed in the game:** the shove's push (game #396, Michael's ruling). A shove pushes {{n combat.shove.knockback tiles}}, and a tired one pushes {{pct combat.shove.tiredPush}} of that; a tired shove's stagger and knockdown stay at {{pct combat.blow.tiredDamage}}, so its stagger is shorter than the shove's recovery. [[Shove]], [[Stamina]], [[Combat]], and [[Levers]] say so.
+
 ## 2026-10-24: synced to `5830ac2`
 
 - **New in the game:** the closing burst, a trial (game #394). One of the dead in the chase walks {{n tuning.zombie.burstSpeed}} times as fast within {{n tuning.zombie.burstRange tiles}} of a player it sees. A walking or swinging player still outpaces it; one drawing a bow, behind a raised shield, or bracing does not. [[The dead]] has a section on it and [[Levers]] a line. [[Fences]] now gives a fence-side bite's whole reach in one place.

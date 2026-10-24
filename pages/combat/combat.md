@@ -38,7 +38,7 @@ A swing commits the player for as long as its animation plays: they walk at {{n 
 
 Each weapon has its own recovery between swings; clicks during it do nothing. Two gold bars at the bottom of the screen fill over each hand's recovery.
 
-Every swing costs [[Stamina]]. The player is never locked out: a swing the bar cannot pay for still lands, at {{n combat.blow.tiredDamage}} times its damage (the tired blow), and a tired [[Shove]] pushes, staggers, and floors at the same share. Running out leaves the player winded, unable to sprint until stamina is back to {{n tuning.player.sprintRecoverAt}}.
+Every swing costs [[Stamina]]. The player is never locked out: a swing the bar cannot pay for still lands, at {{n combat.blow.tiredDamage}} times its damage (the tired blow), and a tired [[Shove]] staggers and floors at the same share and pushes {{pct combat.shove.tiredPush}} as far. Running out leaves the player winded, unable to sprint until stamina is back to {{n tuning.player.sprintRecoverAt}}.
 
 ### Damage and the finisher
 
@@ -135,7 +135,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - `src/player-controller.js:53-55`, `src/combat.js:201-206`, `src/entities/player.js:384-387`: the commitment: the walk at `blow.swingMove` while the swing's animation plays, the figure's facing held, the aim free
 - `src/combat.js:329-343`, `src/combat.js:455-462`: cooldown, stamina cost
 - `src/combat.js:336-341`, `src/combat.js:375`: the tired blow, when the bar cannot pay the swing's cost
-- `src/combat.js:418-421`: the tired shove at the same share (game #389, at 9be007c)
+- `src/combat.js:418-434`: the tired shove, its stagger and knockdown at the same share, its push at `shove.tiredPush` (game #396, at 32ff419)
 - `src/ui/swing-timer.js`: the gold bars at bottom centre
 - `src/entities/player.js:353`: winded until stamina is back
 - `src/combat.js:356-391`: the damage formula, the finisher, hit-stop
