@@ -5,7 +5,7 @@ aliases: [Board, Boarding, Boarding up, Nailing boards]
 summary: Nailing planks over doors and windows with B, pulling them with a hold of B, and what a board does.
 ---
 
-**Boards** are [[Plank|planks]] nailed over a door or a window to keep [[The dead|the dead]] out. You nail them with B and pull them with a hold of B, with a [[Smith's hammer]] on you. Each board costs a plank, which comes back when you pull it, and has its own health.
+**Boards** are [[Plank|planks]] nailed over a door or a window to keep [[The dead|the dead]] out. A [[Fences|fence]] takes none, its gates included. You nail them with B and pull them with a hold of B, with a [[Smith's hammer]] on you. Each board costs a plank, which comes back when you pull it, and has its own health.
 
 ## How it works
 
@@ -14,6 +14,8 @@ summary: Nailing planks over doors and windows with B, pulling them with a hold 
 Stand by a door or window, with a [[Smith's hammer]] anywhere on you (a hand, the belt, or the bag), and tap B. A bar runs for {{n census.constants.interact.BOARD_TIME seconds}}, and a board goes up on the side you are standing on. Each side of an opening takes up to {{n census.constants.map.BOARDS_PER_SIDE}} boards.
 
 Each board spends one plank, taken from the bag first, then the belt, then your hands. Without a hammer, B says "You need a smith's hammer." and the opening's menu reads "Board up (need a smith's hammer)"; with no plank, B says "You need a plank." A [[Log]] splits into {{n items.log.splitsInto.count}} planks from its item menu, with a [[Hatchet]] on you. The world rule Free building does not waive the hammer or the plank for boards.
+
+A gate takes no boards, nor does any stretch of fence: a gate's menu has no Board up, and B at one says "A gate takes no boards."
 
 Moving cancels the bar, as does drifting out of reach.
 
@@ -74,3 +76,4 @@ A guest's tap and hold of B are carried out by the host, which checks that playe
 - `src/interact.js:489-493`: the menu's count of boards on each side
 - `src/render/walls.js:19-32`: only the near face's boards are drawn
 - `src/interact.js:1125-1157`, `src/net.js:427`: B's tap and hold, from a guest's snapshot, performed by the host
+- `src/interact.js:557`, `src/interact.js:1273`, `src/map.js:816-818`, `src/map.js:2181`: no boards on a fence, a gate included: no Board up on its menu, B says "A gate takes no boards.", a board refused, and a map's boards on one left off (game #398, at 4db1c00)
