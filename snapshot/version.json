@@ -1,7 +1,7 @@
 {
-  "commit": "a6f79688a8338f8e4288cb4fe413d4d7b55ca1fc",
-  "short": "a6f7968",
-  "date": "2026-10-24T03:10:54-05:00",
-  "subject": "Merge #381, reviewed: sounds step 1, the module, the placeholders at boot, the ear (footsteps, the swing, the hit), the Sound tab (#379)",
+  "commit": "125bffbb16a8d091ce15b62c1e760059ddcdd5cf",
+  "short": "125bffb",
+  "date": "2026-10-24T03:33:57-05:00",
+  "subject": "Merge #383, reviewed: the spear breaks one throw in four, hit or miss, and says so; a spear that stays in a body keeps its wear",
   "ref": "origin/main"
 }
