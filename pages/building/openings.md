@@ -25,7 +25,7 @@ Nothing stands on either of the two tiles a door is between, so the dead can alw
 - A door cannot be built where either tile holds any piece of furniture ("No room").
 - Furniture made at a station never lands on one (see [[Crafting]]).
 
-The same holds for the gates in a [[Fences|fence]], which are doors. The valley's own furniture is laid out the same way, and every door in it can be walked to.
+The same holds for the gates in a [[Fences|fence]], which are doors, though a gate takes no boards. The valley's own furniture is laid out the same way, and every door in it can be walked to.
 
 ### Windows and shutters
 
@@ -98,3 +98,4 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 - `src/map.js:578-579`, `src/map.js:733-744`: door and shutter health, whatever the material
 - `src/interact.js:1125-1145`, `src/interact.js:505`: a guest's E performed by the host, the change reaching guests and the save
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
+- `src/interact.js:557`, `src/interact.js:1273`, `src/map.js:816-818`, `src/map.js:2181`: no boards on a fence, a gate included: no Board up on its menu, B says "A gate takes no boards.", a board refused, and a map's boards on one left off (game #398, at 4db1c00)

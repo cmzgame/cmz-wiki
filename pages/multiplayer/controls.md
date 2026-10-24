@@ -34,7 +34,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 ### Acting
 
 - `E`: the nearest simple action (talk to a villager, open a door or shutter, search, drink, feed a fire, and so on), shown over its target as "E: action". It takes only what you can reach with a clear line, never through a wall. It does not light a fire that is out unless you carry a flame, a tinderbox or a lit torch (see [[Fire]]). It acts when the key is let go, however long it was held; holding it does nothing more. While carrying furniture: put it down.
-- `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you). Held: pull a board off, with the hammer, and get the plank back.
+- `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you); a gate takes none. Held: pull a board off, with the hammer, and get the plank back.
 - `T`: light or douse the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or douse the torch in hand (a tinderbox lights it)".
 - `Q`: the main hand's other mode, as the middle button.
 - `1` `2` `3` `4`: the belt's slots: eat or drink what is there, otherwise swap it with your hand.
@@ -127,3 +127,4 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/net.js:872`, `src/net.js:1129`: the host sends its clock in every frame and a guest takes it
 - `src/net.js:1250-1290`: a guest's inputs and commands go to the host
 - `src/main.js:214-223`: any input while stepped away brings you back and is spent on it
+- `src/interact.js:1273`: B at a gate, "A gate takes no boards." (game #398, at 4db1c00)

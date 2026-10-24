@@ -42,7 +42,7 @@ Only fences break this way. A plain wall of wood, stone, or logs is never broken
 
 ### Gates
 
-A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A gate swings: opening or shutting it plays two drawn in-between positions, over {{n census.constants.render_walls.SWING_S seconds}}, where a house door snaps open or shut. A shut gate blocks bodies, but you can still see through it. An open gate is no fence to strike: open a gate the dead are striking and they stop at once and walk through it, so opening it lets them in rather than having it broken.
+A gate is a door in a fence. Tap E to open or close it, as with any door (see [[Openings]]). A gate swings: opening or shutting it plays two drawn in-between positions, over {{n census.constants.render_walls.SWING_S seconds}}, where a house door snaps open or shut. A shut gate blocks bodies, but you can still see through it. **A fence takes no [[Boards|boards]], a gate included**: a gate's menu has no Board up, and B at one says "A gate takes no boards." An open gate is no fence to strike: open a gate the dead are striking and they stop at once and walk through it, so opening it lets them in rather than having it broken.
 
 ### Building
 
@@ -89,7 +89,7 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 ## Sources
 
 <!-- sources at 3c0a243 -->
-- `data/sprites/wall_fence.json`, `data/sprites/post_fence.json`, `data/sprites/wall_parts_fence.json`, `data/sprites/wall_boards_gate.json`: the drawn fence, its post, its gate's leaves, and the boards across a shut gate (game #343, at b0df8fc)
+- `data/sprites/wall_fence.json`, `data/sprites/post_fence.json`, `data/sprites/wall_parts_fence.json`, `data/sprites/wall_boards_gate.json`: the drawn fence, its post, its gate's leaves, and a drawing of boards across a gate (game #343, at b0df8fc), which no gate can take since game #398
 - `data/build.json`: the Fence and the Gate, their costs, seconds, and tool; a gate `over` the fence (game #343, at b0df8fc)
 - `src/placement.js:204-212`: a build entry's wall kind, and a gate refused in any wall but a fence ("Only in a fence") (game #343, at b0df8fc)
 - `src/render/walls.js:133-159`: a gate's swing through its in-between leaves, `SWING_S`, on each screen from the gate's open state, never for a ghost, a broken gate, or a boarded one (game #343, at b0df8fc)
@@ -119,4 +119,5 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `src/map.js:724-729`, `src/game.js:420`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)
 - `src/entities/zombie.js:679-693`, `src/entities/zombie.js:876-890`: the dead kept waiting for a bite strike the fence between; one with its target on its own side, at the fence, takes up the chase (game #389, at 9be007c)
 - `src/entities/zombie.js:865-871`, `src/entities/zombie.js:923-929`: a gate opened while the dead strike it ends their striking, and they take up the chase through it (game #397, at 82485c4)
+- `src/interact.js:557`, `src/interact.js:1273`, `src/map.js:816-818`, `src/map.js:2181`: no boards on a fence, a gate included: no Board up on its menu, B says "A gate takes no boards.", a board refused, and a map's boards on one left off (game #398, at 4db1c00)
 

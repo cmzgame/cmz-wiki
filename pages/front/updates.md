@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `4db1c00`
+
+- **Changed in the game:** a fence takes no boards, a gate included (game #398, Michael's ruling). A gate's menu has no Board up, and B at one says "A gate takes no boards." [[Fences]], [[Boards]], [[Openings]], and [[Controls]] say so.
+
 ## 2026-10-24: synced to `82485c4`
 
 - **Fixed in the game:** a gate opened while the dead strike it (game #397, from Michael's play). They went on striking the open gate; now they stop and walk through it, so opening a gate lets them in rather than having it broken. [[Fences]] and [[The dead]] say so.

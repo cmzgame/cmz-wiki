@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "82485c429bbe295bbf0e1377c5124f07101d96eb",
-  "short": "82485c4",
-  "date": "2026-10-24T17:55:44-05:00",
-  "subject": "Merge #397, reviewed: a gate opened while the dead strike it ends the press, and they walk through (Michael, 2026-10-24)",
+  "commit": "4db1c00947b3b37d1531a03b892aac333164b9e5",
+  "short": "4db1c00",
+  "date": "2026-10-24T18:08:50-05:00",
+  "subject": "Merge #398, reviewed: no boards on a fence, a gate included (Michael, 2026-10-24)",
   "ref": "origin/main"
  },
  "counts": {
@@ -7325,32 +7325,32 @@
   {
    "key": "Drop",
    "at": [
-    "interact.js:1421"
+    "interact.js:1422"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1365",
-    "interact.js:1451"
+    "interact.js:1366",
+    "interact.js:1452"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1341"
+    "interact.js:1342"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1342"
+    "interact.js:1343"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1455"
+    "interact.js:1456"
    ]
   },
   {
@@ -7446,14 +7446,14 @@
   {
    "key": "Place",
    "at": [
-    "interact.js:1335",
-    "interact.js:1337"
+    "interact.js:1336",
+    "interact.js:1338"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1457"
+    "interact.js:1458"
    ]
   },
   {
@@ -7555,15 +7555,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1432",
-    "interact.js:1471"
+    "interact.js:1433",
+    "interact.js:1472"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1333",
-    "interact.js:1419"
+    "interact.js:1334",
+    "interact.js:1420"
    ]
   },
   {
@@ -7641,7 +7641,7 @@
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1345"
+    "interact.js:1346"
    ]
   },
   {
@@ -7683,19 +7683,19 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1716"
+    "interact.js:1717"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1375"
+    "interact.js:1376"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1704"
+    "interact.js:1705"
    ]
   }
  ],
@@ -7741,7 +7741,7 @@
    "at": [
     "interact.js:227",
     "interact.js:396",
-    "interact.js:1687",
+    "interact.js:1688",
     "ui/station-panel.js:78",
     "ui/station-panel.js:103"
    ]
@@ -8051,7 +8051,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2317
+   "lines": 2319
   },
   {
    "path": "main.js",
@@ -8059,7 +8059,7 @@
   },
   {
    "path": "interact.js",
-   "lines": 1761
+   "lines": 1762
   },
   {
    "path": "placeholders.js",
