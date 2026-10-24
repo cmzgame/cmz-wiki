@@ -6,7 +6,7 @@ summary: The dead who walk the valley: how they see, hunt, bite (a few at a time
 numbersOk: true
 ---
 
-<table class="infobox"><caption>The dead</caption><tr><th>Health</th><td>{{n tuning.zombie.hp}}</td></tr><tr><th>Speed</th><td>{{n tuning.zombie.speed tiles a second}}</td></tr><tr><th>Sight</th><td>{{n tuning.zombie.sight tiles}} in full light</td></tr><tr><th>Bite</th><td>{{n tuning.zombie.damage}} damage</td></tr><tr><th>Wardrobes</th><td>{{n census.counts.zombieWardrobes}}</td></tr><tr><th>Placed in the valley</th><td>{{n census.counts.authoredDead}} (at Standard)</td></tr></table>
+<table class="infobox"><caption>The dead</caption><tr><th>Health</th><td>{{n tuning.zombie.hp}}</td></tr><tr><th>Speed</th><td>{{n tuning.zombie.speed tiles a second}}; {{n tuning.zombie.burstSpeed}} times that close to a player it sees</td></tr><tr><th>Sight</th><td>{{n tuning.zombie.sight tiles}} in full light</td></tr><tr><th>Bite</th><td>{{n tuning.zombie.damage}} damage</td></tr><tr><th>Wardrobes</th><td>{{n census.counts.zombieWardrobes}}</td></tr><tr><th>Placed in the valley</th><td>{{n census.counts.authoredDead}} (at Standard)</td></tr></table>
 
 **The dead** are the village's former people, walking. They shamble, they look for the living, and they bite. Each is dressed from one of {{n census.counts.zombieWardrobes}} wardrobes, and their bodies push apart from one another. They never open doors and never break plain walls, but they strike doors, shutters, and fences down.
 
@@ -31,6 +31,10 @@ At night, once one of the dead has not seen a player for {{n tuning.zombie.flame
 The dead know only where they last saw the player. They walk to that spot. Arriving without seeing the player, or finding no path there, they search within {{n tuning.zombie.searchRadius tiles}} of it with short walks for {{n tuning.zombie.searchTime seconds}}, then give up and go idle, unless they hold a siege on that player (below). Nothing tells them where the player is through a wall. A hit tells a hunting zombie where the blow came from; for an arrow, where it was shot from.
 
 Idle, they wander a little within their room, standing between walks.
+
+### The closing burst
+
+One of the dead in the chase that sees its target within {{n tuning.zombie.burstRange tiles}} walks {{n tuning.zombie.burstSpeed}} times as fast, so one or two can close on a player who is not paying attention. It depends on distance alone, never on time. A walking player still outpaces a bursting one, and so does one in the middle of a swing, slowed to {{pct combat.blow.swingMove}} of their pace. A player slowed further does not, and the dead catch them: drawing a bow ({{pct combat.bow.drawSpeed}} of their pace), behind a raised [[Wooden shield|shield]] ({{pct items.shield.shield.moveMult}}), or bracing ({{pct combat.bow.braceMove}}). Players' own speed is on [[Player]]. It is a trial: the burst may change or go.
 
 ### The bite
 
@@ -163,3 +167,4 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/entities/zombie.js:679-693`, `src/entities/zombie.js:886-890`: a waiter with a shut fence between it and its target strikes the fence; the press hands back to the chase only one that may bite (game #389, at 9be007c)
 - `src/entities/zombie.js:151-165`, `src/figure/rig.js:21`, `data/poses.json`: a staggering hit reels, one that does not flinches (game #389, at 9be007c)
 - `src/ui/zombie-bars.js:16-18`, `src/highlight.js:32-34`: a downed one's bar over its body, and its outline under the pointer (game #390, at 9be007c)
+- `src/entities/zombie.js:639-643`, `data/tuning.json`: the closing burst, `burstSpeed` within `burstRange` of a target it sees in the chase; 1 is off; the player's speeds against it from `player.speed`, `blow.swingMove`, `bow.drawSpeed`, the shield's `moveMult`, `bow.braceMove` (game #394, at 5830ac2)

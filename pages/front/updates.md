@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `5830ac2`
+
+- **New in the game:** the closing burst, a trial (game #394). One of the dead in the chase walks {{n tuning.zombie.burstSpeed}} times as fast within {{n tuning.zombie.burstRange tiles}} of a player it sees. A walking or swinging player still outpaces it; one drawing a bow, behind a raised shield, or bracing does not. [[The dead]] has a section on it and [[Levers]] a line. [[Fences]] now gives a fence-side bite's whole reach in one place.
+
 ## 2026-10-24: synced to `9be007c`
 
 - **Changed in the game:** three rulings from Michael's first real melee test (game #389). **The dead kept waiting at a fence strike it:** only a few bite one player at once, and the rest at a fence or gate between them and the player now strike it instead of standing. **The shove pushes {{n combat.shove.knockback tiles}}** (it was twice that), and **a tired shove**, one the stamina bar cannot pay for, pushes, staggers, and floors at {{pct combat.blow.tiredDamage}}. **The dead reel** through a stagger, arms flung up, where a hit that does not stagger only flinches. [[Fences]], [[Shove]], [[The dead]], [[Stagger and knockdown]], [[Stamina]], [[Combat]], and [[Levers]] say so.

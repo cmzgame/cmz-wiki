@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "9be007c7a2977e65b3355f6c36b16f5866d01404",
-  "short": "9be007c",
-  "date": "2026-10-24T12:11:48-05:00",
-  "subject": "Merge #389, reviewed: the dead that wait strike the fence; the shove's push 0.4 and a tired shove; the dead reel through a stagger (#385)",
+  "commit": "5830ac20351c101f1055a7334cfff585bcda0be4",
+  "short": "5830ac2",
+  "date": "2026-10-24T12:21:02-05:00",
+  "subject": "Merge #394, reviewed: the closing burst, a trial, the dead walk faster once close to a target they see (#385)",
   "ref": "origin/main"
  },
  "counts": {
@@ -6334,6 +6334,8 @@
    "downTime": 0.8,
    "getUpTime": 0.6,
    "turnDownTime": 2,
+   "burstSpeed": 1.5,
+   "burstRange": 3,
    "knockTime": 0.15,
    "breachReach": 1.1,
    "pressGiveUp": 20,
@@ -7819,7 +7821,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1006"
+    "entities/zombie.js:1011"
    ]
   },
   {
@@ -7868,13 +7870,13 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1007"
+    "entities/zombie.js:1012"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:821",
+    "entities/zombie.js:826",
     "map.js:778"
    ]
   },
@@ -8072,7 +8074,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 1020
+   "lines": 1025
   },
   {
    "path": "ground.js",
@@ -8215,12 +8217,12 @@
    "lines": 215
   },
   {
-   "path": "render/scene.js",
-   "lines": 209
+   "path": "tuning.js",
+   "lines": 210
   },
   {
-   "path": "tuning.js",
-   "lines": 208
+   "path": "render/scene.js",
+   "lines": 209
   },
   {
    "path": "fire.js",
