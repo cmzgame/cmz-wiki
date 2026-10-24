@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `ca691b8`
+
+- **New in the game's docs:** `docs/42`, the game's list of levers (game #388): every number still being balanced by play and every world or player setting, with the ruling behind each. [[Levers]] is new: it lists them with their values today, each read from the game's data. A lever that lives only in the code says so. [[Settings]], [[World rules]], [[The dead]], [[Shove]], [[Stamina]], [[Combat]], [[Stagger and knockdown]], [[Throwing spear]], and [[Infection]] link to it. Nothing else in the game changed: the rulings that #388 logs (a shorter shove, the aim guide on by default, a closing burst for the dead) are not yet built, and the pages follow them when they are.
+
 ## 2026-10-24: synced to `125bffb`
 
 - **Changed in the game:** the throwing spear (game #383, Michael's ruling). A thrown spear breaks with a chance of {{n items.spear.thrown.breakChance}} each time it comes down, hit or miss (it was one in two), and the thrower is told "The throwing spear breaks."; a spear that stays in a body now comes out of the search with its wear, where it came back fresh (the wiki's last sync found it). [[Throwing spear]] and [[Archery]] say so.

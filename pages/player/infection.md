@@ -36,6 +36,7 @@ An infection belongs to whoever was bitten, and the host tells a guest when a bi
 ## See also
 
 - [[Bleeding]], [[Health]], [[The dead]], [[Moodles]]
+- [[Levers]]: the infection chance and the dial it will join
 
 ## Sources
 

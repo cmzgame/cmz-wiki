@@ -117,6 +117,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - [[Openings]]
 - [[Sight]]
 - [[Light]]
+- [[Levers]]: the dead's numbers still being balanced
 
 ## Sources
 

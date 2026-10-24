@@ -65,6 +65,7 @@ The game's full list of stored settings and their defaults, including the ones t
 ## See also
 
 - [[Controls]], [[Interface]], [[Multiplayer]], [[Screens]]
+- [[Levers]]: every setting and tuning number still being balanced, with its value
 
 ## Sources
 

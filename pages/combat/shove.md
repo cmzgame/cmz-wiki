@@ -37,6 +37,7 @@ A guest's own shove shows at once on their screen, its pose and its recovery inc
 
 - [[Combat]]
 - [[Stagger and knockdown]]
+- [[Levers]]: the shove's numbers still being balanced
 
 ## Sources
 

@@ -59,6 +59,7 @@ While it lies, any blow in hand is a **finisher**: {{n combat.finisher.mult}} ti
 - [[Weapons]]
 - [[The dead]]
 - [[Shove]]
+- [[Levers]]: the floor's and knockdown's numbers still being balanced
 
 ## Sources
 

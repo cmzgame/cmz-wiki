@@ -111,6 +111,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - [[Durability]]
 - [[Fists]]
 - [[The dead]]
+- [[Levers]]: the fighting numbers still being balanced
 
 ## Sources
 
