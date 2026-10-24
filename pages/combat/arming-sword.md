@@ -15,19 +15,20 @@ Left swings it. It has no other mode.
 
 - It does {{n items.sword.weapon.damage}} damage, with a reach of {{n items.sword.weapon.range tiles}} and an arc of {{n items.sword.weapon.arc}} degrees.
 - Swing {{n items.sword.weapon.swing seconds}}, stamina {{n items.sword.weapon.stamina}}.
-- Stagger chance {{n items.sword.weapon.staggerChance}}; it floors on the default chance (see [[Stagger and knockdown]]).
+- Stagger chance {{n items.sword.weapon.staggerChance}}; it never floors (see [[Stagger and knockdown]]).
 - It lasts about {{n items.sword.weapon.kills}} kills (see [[Durability]]).
 
-It does not interrupt a bite already under way.
+Like any hit, it cancels a bite being wound up.
 
 {{item-sections sword}}
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `data/loot.json`: the sword in the `chest` table
-- `data/items.json`: the sword's `weapon` block, and the other one-handers' `kills` it outlasts
-- `data/combat.json` `blow.knockdownChance`, `src/combat.js:348`: the default knockdown chance
-- `src/entities/zombie.js:142-152`: no `interrupts`, so a bite under way goes on
+<!-- sources at 37e8726 -->
+- `data/loot.json:2`: the sword in the `chest` table
+- `data/items.json:8`: the sword's `weapon` block
+- `data/items.json`: the other one-handers' `kills` it outlasts
+- `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: no `knockdown` of its own, so the default chance, 0: it never floors
+- `src/combat.js:383`, `src/entities/zombie.js:140-148`: like any landed hit, it cancels a bite being wound up
 
 {{navbox weapons}}

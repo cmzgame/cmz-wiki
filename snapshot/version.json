@@ -1,7 +1,7 @@
 {
-  "commit": "9d1681fd548efbb5437e3bbfb07ea114f41b7c05",
-  "short": "9d1681f",
-  "date": "2026-10-20T18:58:05-05:00",
-  "subject": "Merge #351, reviewed: a door or a window in another wood than its wall (#334, PR 2)",
+  "commit": "37e8726d4e1b5ce053d9263915507067738f3b2b",
+  "short": "37e8726",
+  "date": "2026-10-24T02:43:15-05:00",
+  "subject": "Merge #377, reviewed: tools/status.html, where everything is, read live from GitHub (#358)",
   "ref": "origin/main"
 }

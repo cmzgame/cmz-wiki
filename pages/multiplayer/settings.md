@@ -22,6 +22,7 @@ In the order the screen shows them, with the default first.
 - **Small text**: Clear or Pixel, Clear by default: "Very small text in a plain, clear font (Clear), or in the pixel font like the rest (Pixel)." With Clear, all the smallest text (the health and stamina numbers, the clock, stack counts, the hover cards, the bleed's numbers, the log and the chat, these help lines) is drawn in the computer's own sans-serif, where small digits are easy to tell apart (the pixel font's three and eight run together when small); titles and large text keep the pixel font. Every digit, at any size, is in the clear sans too (a name like a world's or your character's keeps its pixel letters around clear numbers); Pixel gives back the old look, digits included.
 - **Floating numbers**: Shown or Hidden: damage, healing, and what you gather float up over heads (see [[Interface#Floating numbers|Interface]]).
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
+- **Swing targets**: On or Off, On by default: "A green outline on what your next swing would hit. Green means the swing lands." A browser that saved its settings before it came on by default keeps its own choice.
 - **Aim guide**: Off or On: the landing marker and a dotted line while you draw a bow, wind up a throw, or cast. It changes only what your own screen draws. A browser that saved its settings before it went off by default keeps its own choice. See [[Archery]].
 - **Fullscreen**: Off or On, at the foot of the tab. It asks the browser for the whole screen when clicked and shows what the page is in now; it is not kept, since the browser decides when fullscreen ends. Playing never goes fullscreen by itself. Where the browser does not allow it, the row says so and cannot be switched. What `Escape` does in fullscreen depends on the browser, and the row's line says which:
   - In a browser that can lock the keyboard (Chrome and Edge), the game keeps `Escape` while fullscreen lasts: "The game fills the whole screen. Esc closes menus as usual; hold Esc to leave fullscreen." A tap of `Escape` closes the game's menus as it does in a window, and a held `Escape` leaves fullscreen; the browser shows its own banner saying so.
@@ -33,7 +34,6 @@ In the order the screen shows them, with the default first.
 {{devonly note="This tab is for testing the game."}}
 
 - **Debug corner**: Shown or Hidden: the numbers and keys in the top-left corner.
-- **Swing targets**: Off or On: a green outline on what your next swing would hit.
 - **Hit shapes**: Off or On: draws the dead's body samples, green when the next swing reaches them.
 - **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, a body, a laid [[Rugs|rug]]. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead (the swing's outline is theirs), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
 - **Layer** rows: one per slot that has painted clothing layers, a dropdown to try one on in place of what is equipped (the answer **item** shows the item's own art).
@@ -58,24 +58,25 @@ The game's full list of stored settings and their defaults, including the ones t
 
 ## Sources
 
-<!-- sources at 2a9a308 -->
-- `src/ui/screens.js:1019-1035`, `index.html:53`: the screen, "Kept in this browser", the two tabs, Defaults and Back; opened from the site's menu or the pause menu
-- `src/ui/screens.js:189-205`, `src/ui/screens.js:218-232`, `src/ui/screens.js:245-250`: a page of the site out of a world, over the world in one; Back returns to where it was opened from (game #120)
-- `src/settings.js:44-69`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown; the world's rules and the Dev chest in no tab (game #128)
-- `src/ui/screens.js:511-532`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
-- `src/ui/screens.js:84`, `src/ui/screens.js:148-151`: Display open first; a click on a tab opens it
+<!-- sources at 37e8726 -->
+- `src/ui/screens.js:1207-1223`, `index.html:53`: the screen, "Kept in this browser", the two tabs, Defaults and Back; opened from the site's menu or the pause menu
+- `src/ui/screens.js:231-247`, `src/ui/screens.js:260-274`, `src/ui/screens.js:286-291`: a page of the site out of a world, over the world in one; Back returns to where it was opened from (game #120)
+- `src/settings.js:45-79`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown; the world's rules and the Dev chest in no tab (game #128)
+- `src/ui/screens.js:672-695`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
+- `src/ui/screens.js:87`, `src/ui/screens.js:159-163`: Display open first; a click on a tab opens it
 - `style.css` (the `CMZ Digits` face), `src/ui/small-text.js`: every digit in the clear sans at any size, at the pixel font's line height; Pixel restores it (game #325, at ef0d378)
 - `src/settings.js:28`, `src/settings.js:61`, `src/ui/small-text.js`: Small text, Clear by default, for text at or under its threshold (game #322, at 5cf78a9)
-- `src/settings.js:27`, `src/settings.js:72`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17)
+- `src/settings.js:27`, `src/settings.js:74`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17)
 - `src/render/rugs.js:43`: a laid rug outlined (game #339, at 499e344)
-- `src/settings.js:27`, `src/settings.js:59`: Floating numbers, shown by default (game #299, at 3331946)
-- `src/settings.js:8-38`: the defaults, the Aim guide off
-- `src/main.js:1253`: the Aim guide read where the viewer's own frame is drawn
-- `src/view.js:80-87`: `UI_SCALE_MAX` and Auto's fit
+- `src/settings.js:29`, `src/settings.js:62`: Floating numbers, shown by default (game #299, at 3331946)
+- `src/settings.js:16`, `src/settings.js:64`, `src/settings.js:92-103`: Swing targets, on by default, in the Display group, its line; a browser's saved choice kept over the default
+- `src/settings.js:8-43`: the defaults, the Aim guide off
+- `src/main.js:1308`: the Aim guide read where the viewer's own frame is drawn
+- `src/view.js:81-88`: `UI_SCALE_MAX` and Auto's fit
 - `src/view.js:28`, `src/view.js:70-79`: the zooms and Auto
-- `src/ui/screens.js:714-732`, `src/ui/screens.js:333-337`, `src/ui/screens.js:114-117`: the Escape lock where the browser has one, the two help lines, the lock refused, the lock let go when fullscreen ends (game #311, at 8af4eed)
-- `src/ui/screens.js:545-552`, `src/ui/screens.js:288-293`, `src/ui/screens.js:111`: Fullscreen: its line, asked of the browser by a click, showing the page's state, disabled where not allowed (game #129)
-- `src/ui/screens.js:623-641`: the Testing tab's Layer rows (the first answer **item**), Painted hair with Reload hair, and the relay
-- `src/ui/screens.js:169`: a focused dropdown keeps its keys, Escape through
-- `src/settings.js:110-117`, `src/ui/screens.js:1032-1035`: Defaults resets only the screen's own rows and the painted layers, never the remembered Sandbox choices; the tab is kept (game #128)
-- `src/identities.js:90-97`: a new browser id drawn after the reset
+- `src/ui/screens.js:711-722`, `src/ui/screens.js:730`, `src/ui/screens.js:333-337`, `src/ui/screens.js:114-117`: the Escape lock where the browser has one, the two help lines, the lock refused, the lock let go when fullscreen ends (game #311, at 8af4eed)
+- `src/ui/screens.js:724-732`, `src/ui/screens.js:330-337`, `src/ui/screens.js:114-117`: Fullscreen: its line, asked of the browser by a click, showing the page's state, disabled where not allowed (game #129)
+- `src/ui/screens.js:802-821`: the Testing tab's Layer rows (the first answer **item**), Painted hair with Reload hair, and the relay
+- `src/ui/screens.js:177-183`: a focused dropdown keeps its keys, Escape through
+- `src/settings.js:120-127`, `src/ui/screens.js:1220-1223`: Defaults resets only the screen's own rows and the painted layers, never the remembered Sandbox choices; the tab is kept (game #128)
+- `src/identities.js:90-98`: the browser id, drawn once and kept: the reset never touches it

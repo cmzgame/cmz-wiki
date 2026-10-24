@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "9d1681fd548efbb5437e3bbfb07ea114f41b7c05",
-  "short": "9d1681f",
-  "date": "2026-10-20T18:58:05-05:00",
-  "subject": "Merge #351, reviewed: a door or a window in another wood than its wall (#334, PR 2)",
+  "commit": "37e8726d4e1b5ce053d9263915507067738f3b2b",
+  "short": "37e8726",
+  "date": "2026-10-24T02:43:15-05:00",
+  "subject": "Merge #377, reviewed: tools/status.html, where everything is, read live from GitHub (#358)",
   "ref": "origin/main"
  },
  "counts": {
@@ -26,7 +26,7 @@
   "verbs": 14,
   "menuLabels": 71,
   "events": 31,
-  "checks": 61,
+  "checks": 63,
   "modules": 116
  },
  "items": [
@@ -49,7 +49,7 @@
     "arc": 90,
     "swing": 0.5,
     "knockback": 0.13,
-    "stamina": 3,
+    "stamina": 5,
     "style": "one_handed",
     "kills": 5,
     "ignite": 0.25
@@ -158,7 +158,7 @@
     "arc": 100,
     "swing": 0.55,
     "knockback": 0.22,
-    "stamina": 5,
+    "stamina": 7,
     "style": "one_handed",
     "kills": 5
    },
@@ -207,7 +207,7 @@
     "arc": 80,
     "swing": 0.55,
     "knockback": 0.27,
-    "stamina": 6,
+    "stamina": 10,
     "style": "one_handed",
     "kills": 20
    },
@@ -249,7 +249,7 @@
     "arc": 90,
     "swing": 0.5,
     "knockback": 0.2,
-    "stamina": 4,
+    "stamina": 6,
     "style": "one_handed",
     "kills": 5
    },
@@ -303,7 +303,7 @@
     "arc": 100,
     "swing": 0.5,
     "knockback": 0.27,
-    "stamina": 6,
+    "stamina": 10,
     "style": "one_handed",
     "kills": 60
    },
@@ -340,19 +340,19 @@
     "arc": 80,
     "swing": 0.95,
     "knockback": 0.3,
-    "stamina": 12,
+    "stamina": 16,
     "style": "one_handed",
     "alt": {
      "name": "thrust",
      "style": "thrust",
      "staggerChance": 1,
-     "interrupts": true,
      "damage": 40,
      "range": 2.9,
      "arc": 12,
      "swing": 1.3,
      "knockback": 0.45,
-     "stamina": 15,
+     "knockdown": 0.5,
+     "stamina": 20,
      "multiHit": false
     },
     "kills": 80
@@ -381,14 +381,13 @@
    ],
    "weapon": {
     "staggerChance": 1,
-    "interrupts": true,
     "damage": 38,
     "range": 1.2,
     "arc": 80,
     "swing": 0.65,
     "knockback": 0.33,
-    "stamina": 8,
-    "knockdown": 0.6,
+    "stamina": 14,
+    "knockdown": 0.35,
     "style": "one_handed",
     "kills": 40
    },
@@ -708,7 +707,7 @@
     "arc": 40,
     "swing": 0.6,
     "knockback": 0.25,
-    "stamina": 6,
+    "stamina": 10,
     "style": "one_handed",
     "kills": 25
    },
@@ -1141,7 +1140,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.2,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 5
    },
@@ -1181,7 +1180,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.2,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 5
    },
@@ -1223,7 +1222,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.1,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 3
    },
@@ -1428,7 +1427,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.2,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 5
    },
@@ -1468,7 +1467,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.2,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 5
    },
@@ -1508,7 +1507,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.2,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 5
    },
@@ -1550,7 +1549,7 @@
     "arc": 80,
     "swing": 0.6,
     "knockback": 0.2,
-    "stamina": 6,
+    "stamina": 8,
     "style": "one_handed",
     "kills": 5
    },
@@ -6283,7 +6282,7 @@
    }
   ],
   "wild": {
-   "biome": "harvest",
+   "zone": "harvest",
    "density": [
     0.0405,
     0.1305
@@ -6318,10 +6317,12 @@
    "contact": 0.7,
    "damage": 8,
    "cooldown": 1.2,
+   "biteTokens": 2,
+   "biteTokensPer": 3,
    "fenceStrike": 1,
    "fenceReach": 0.9,
    "fenceBiteExtra": 0.5,
-   "hp": 100,
+   "hp": 150,
    "repath": 0.3,
    "radius": 0.3,
    "searchTime": 10,
@@ -6330,8 +6331,9 @@
    "groanMin": 20,
    "groanMax": 60,
    "stagger": 0.3,
-   "downTime": 2,
+   "downTime": 0.8,
    "getUpTime": 0.6,
+   "turnDownTime": 2,
    "knockTime": 0.15,
    "breachReach": 1.1,
    "pressGiveUp": 20,
@@ -6354,7 +6356,7 @@
    "stamina": 100,
    "sprintMult": 1.75,
    "sprintDrain": 16,
-   "staminaRegen": 22,
+   "staminaRegen": 10,
    "sprintRecoverAt": 20,
    "aimY": 22,
    "hungerMax": 100,
@@ -6505,14 +6507,14 @@
    "swing": 0.4,
    "knockback": 0.17,
    "knockbackChance": 1,
-   "stamina": 3,
+   "stamina": 4,
    "knockdown": 0,
    "style": "one_handed"
   },
   "stagger": {
    "chance": 0.5,
    "immunity": 0.6,
-   "note": "a hit staggers the dead one with the weapon's staggerChance (this is the default); after a stagger ends it cannot be staggered again for immunity seconds; a bite under way is not cancelled unless the weapon interrupts (docs/02 question 29b)"
+   "note": "a hit staggers the dead one with the weapon's staggerChance (this is the default), stopping its walk for the zombie's stagger seconds (data/tuning.json); after a stagger ends it cannot be staggered again for immunity seconds. Every landed hit shows a flinch whether or not it staggers, and any landed hit during a bite's wind-up cancels the bite (docs/41, step 1; the old `interrupts` field is retired). The cancel is a lever (Michael, 2026-10-23): what a cancelled bite costs the dead one (the bite's whole cooldown, zombie.cooldown in data/tuning.json; half of it the softer setting) and whether every hit cancels or only a staggering one are revisited after real combat testing, read by check(\"melee\")'s lone-zombie row"
   },
   "bleed": {
    "chance": 0.5,
@@ -6531,7 +6533,7 @@
    "dps": 0.8,
    "duration": 10,
    "cap": 10,
-   "note": "burning (#14, Michael 2026-10-15): like bleeding but capped at one; a body burning loses dps a second for duration seconds, a new source refreshing the timer and never stacking, and never more than cap over one burn however often refreshed (Michael: never more than 10 against 100). Only the dead burn, never a player. Sources: a weapon's `ignite` chance (the torch's 0.25 in data/items.json), the fireball and a fire arrow always (their `ignite`)"
+   "note": "burning (#14, Michael 2026-10-15): like bleeding but capped at one; a body burning loses dps a second for duration seconds, a new source refreshing the timer and never stacking, and never more than cap over one burn however often refreshed (Michael: never more than 10 against 100, the dead's health then; the cap is kept at 10 against 150 since docs/41 step 6, a number not a ratio, until Michael says otherwise). Only the dead burn, never a player. Sources: a weapon's `ignite` chance (the torch's 0.25 in data/items.json), the fireball and a fire arrow always (their `ignite`)"
   },
   "infection": {
    "chance": 0.2,
@@ -6561,11 +6563,12 @@
   },
   "blow": {
    "pointBlank": 0.55,
-   "knockdownChance": 0.3,
+   "knockdownChance": 0,
    "tiredDamage": 0.5,
-   "hitStop": 0.045,
-   "hitStopKill": 0.09,
-   "note": "pointBlank: tiles this close are always hit; knockdownChance: the share of hits that floor the dead for a weapon with no knockdown of its own (high; for the combat pass, Michael 2026-10-15); tiredDamage: a swing at zero stamina lands at this share; hitStop, hitStopKill: seconds the world freezes on a hit and on a kill"
+   "hitStop": 0.07,
+   "hitStopKill": 0.12,
+   "swingMove": 0.6,
+   "note": "pointBlank: tiles this close are always hit; knockdownChance: the share of hits that floor the dead for a weapon with no knockdown of its own: 0 since docs/41 step 3 (was 0.3, 'high; for the combat pass'), so only a weapon with its own knockdown floors (the mace, the halberd's thrust, the shove); tiredDamage: a swing the bar cannot pay for (stamina below its cost; docs/41 step 4) lands at this share; hitStop, hitStopKill: seconds the world freezes on a hit and on a kill (0.07 and 0.12 since docs/41 step 1); swingMove: the walk's share while the swing's animation plays, the commitment to a swing (docs/41 step 1)"
   },
   "bow": {
    "range": 22,
@@ -6601,12 +6604,14 @@
   "shove": {
    "range": 1,
    "arc": 100,
-   "knockback": 0.53,
+   "knockback": 0.8,
    "knockbackChance": 1,
-   "stagger": 0.6,
-   "knockdown": 0.25,
-   "stamina": 5,
-   "cooldown": 0.45
+   "stagger": 0.8,
+   "knockdown": 0.1,
+   "stamina": 15,
+   "cooldown": 0.5,
+   "targets": 3,
+   "note": "Space (docs/41 step 2): no damage, a push of knockback tiles, a stagger of stagger seconds, a knockdown by chance, on up to targets of the dead in the wedge whatever the Multi-hit setting; cooldown is also the recovery in which no swing starts"
   }
  },
  "build": {
@@ -6772,6 +6777,7 @@
   "one_handed",
   "present",
   "thrust",
+  "shove",
   "zombie",
   "bow",
   "bow_rest",
@@ -6832,8 +6838,8 @@
   },
   {
    "key": "showSwingTargets",
-   "default": "false",
-   "note": "outline the zombies the next swing would hit (docs/14), for testing and for play"
+   "default": "true",
+   "note": "outline the zombies the next swing would hit (docs/14): on by default since docs/41 step 1 (green means the swing lands)"
   },
   {
    "key": "multiHit",
@@ -7233,7 +7239,7 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:64"
+    "settings.js:65"
    ]
   },
   {
@@ -7281,7 +7287,7 @@
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:72"
+    "settings.js:73"
    ]
   },
   {
@@ -7348,7 +7354,7 @@
   {
    "key": "Free building",
    "at": [
-    "settings.js:68"
+    "settings.js:69"
    ]
   },
   {
@@ -7396,7 +7402,7 @@
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:69"
+    "settings.js:70"
    ]
   },
   {
@@ -7481,19 +7487,19 @@
   {
    "key": "Starting population",
    "at": [
-    "settings.js:71"
+    "settings.js:72"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:67"
+    "settings.js:68"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:73"
+    "settings.js:64"
    ]
   },
   {
@@ -7517,7 +7523,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:70"
+    "settings.js:71"
    ]
   },
   {
@@ -7543,13 +7549,13 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:65"
+    "settings.js:66"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:66"
+    "settings.js:67"
    ]
   },
   {
@@ -7665,13 +7671,13 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:295"
+    "archery.js:294"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:709"
+    "archery.js:708"
    ]
   },
   {
@@ -7689,7 +7695,7 @@
   {
    "key": "blocked",
    "at": [
-    "combat.js:161"
+    "combat.js:165"
    ]
   },
   {
@@ -7760,37 +7766,37 @@
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:152"
+    "combat.js:156"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:270"
+    "combat.js:283"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:370"
+    "combat.js:389"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:335"
+    "combat.js:351"
    ]
   },
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:921"
+    "entities/zombie.js:973"
    ]
   },
   {
    "key": "shove",
    "at": [
-    "combat.js:405"
+    "combat.js:430"
    ]
   },
   {
@@ -7833,28 +7839,28 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:922"
+    "entities/zombie.js:974"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:747",
+    "entities/zombie.js:799",
     "map.js:778"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:717",
-    "combat.js:387",
+    "archery.js:716",
+    "combat.js:406",
     "game.js:532"
    ]
   },
   {
    "key": "zombieDied",
    "at": [
-    "entities/zombie.js:152"
+    "entities/zombie.js:173"
    ]
   }
  ],
@@ -7946,6 +7952,7 @@
  ],
  "checks": [
   "apples",
+  "atlas",
   "build",
   "burn",
   "cap",
@@ -7979,6 +7986,7 @@
   "lantern",
   "layers",
   "light",
+  "melee",
   "mine",
   "navrow",
   "paintings",
@@ -8033,12 +8041,12 @@
    "lines": 1251
   },
   {
-   "path": "ground.js",
-   "lines": 983
+   "path": "entities/zombie.js",
+   "lines": 987
   },
   {
-   "path": "entities/zombie.js",
-   "lines": 935
+   "path": "ground.js",
+   "lines": 983
   },
   {
    "path": "placement.js",
@@ -8050,7 +8058,11 @@
   },
   {
    "path": "archery.js",
-   "lines": 762
+   "lines": 761
+  },
+  {
+   "path": "gl.js",
+   "lines": 743
   },
   {
    "path": "game.js",
@@ -8065,36 +8077,32 @@
    "lines": 622
   },
   {
-   "path": "gl.js",
-   "lines": 610
+   "path": "render/walls.js",
+   "lines": 506
   },
   {
-   "path": "render/walls.js",
-   "lines": 505
+   "path": "combat.js",
+   "lines": 486
   },
   {
    "path": "ui/inventory-actions.js",
    "lines": 478
   },
   {
-   "path": "combat.js",
-   "lines": 461
-  },
-  {
    "path": "light.js",
    "lines": 440
   },
   {
-   "path": "ui/map-panel.js",
-   "lines": 398
+   "path": "figure/rig.js",
+   "lines": 404
   },
   {
    "path": "entities/player.js",
-   "lines": 395
+   "lines": 398
   },
   {
-   "path": "figure/rig.js",
-   "lines": 389
+   "path": "ui/map-panel.js",
+   "lines": 398
   },
   {
    "path": "inventory.js",
@@ -8170,7 +8178,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 205
+   "lines": 208
   },
   {
    "path": "fire.js",
@@ -8229,12 +8237,12 @@
    "lines": 153
   },
   {
-   "path": "rugs.js",
-   "lines": 143
+   "path": "item-info.js",
+   "lines": 145
   },
   {
-   "path": "item-info.js",
-   "lines": 139
+   "path": "rugs.js",
+   "lines": 143
   },
   {
    "path": "settings.js",
@@ -8369,16 +8377,16 @@
    "lines": 62
   },
   {
+   "path": "player-controller.js",
+   "lines": 58
+  },
+  {
    "path": "mining.js",
    "lines": 57
   },
   {
    "path": "ui/names.js",
    "lines": 57
-  },
-  {
-   "path": "player-controller.js",
-   "lines": 56
   },
   {
    "path": "ui/build-palette.js",
@@ -8530,8 +8538,7 @@
    "BODY_TOP": 48,
    "BODY_HALF_W": 10,
    "KICK_PX": 3,
-   "KICK_TIME": 0.08,
-   "WEDGE_TIME": 0.12
+   "KICK_TIME": 0.08
   },
   "figure_draw": {
    "SHADE_DYE": 0.16,
@@ -8580,7 +8587,7 @@
    "FLAG_NOFOG": 8,
    "FLAG_STANDING": 16,
    "FLAG_SOLID": 32,
-   "STRIDE": 12
+   "STRIDE": 13
   },
   "ground": {
    "W": 1024,

@@ -2,39 +2,36 @@
 title: Shove
 categories: [Combat, Mechanics]
 aliases: [Push, Space]
-summary: Space pushes the dead in front of you away and always staggers them, whatever is in your hands.
+summary: Space pushes up to three of the dead in front of you away and staggers them, whatever is in your hands; then you cannot swing for a moment.
 ---
 
-The **shove** is done with Space. It pushes the dead in front of the [[Player]] away, with anything or nothing in their hands. It does no damage, but it always staggers and interrupts a bite, and it sometimes floors its target.
+The **shove** is done with Space. It is the tool for a crowd: it pushes up to {{n combat.shove.targets}} of the dead in front of the [[Player]] away and staggers them, with anything or nothing in their hands. It does no damage, and it sometimes floors a target. After a shove, no swing starts for {{n combat.shove.cooldown seconds}}.
 
 ## How it works
 
-The shove uses the same wedge as a swing (see [[Combat]]): a reach of {{n combat.shove.range tiles}} and an arc of {{n combat.shove.arc}} degrees. It needs a clear line to the target, ignores the dead lying on the floor, and obeys the Multi-hit setting.
+The shove uses the same wedge as a swing (see [[Combat]]): a reach of {{n combat.shove.range tiles}} and an arc of {{n combat.shove.arc}} degrees. It reaches the nearest {{n combat.shove.targets}} of the dead in the wedge whatever the Multi-hit setting says, needs a clear line to each, and passes over the dead lying on the floor.
 
-A shove:
+Each one shoved:
 
-- pushes {{n combat.shove.knockback tiles}},
-- always staggers, for {{n combat.shove.stagger seconds}}, and interrupts a bite under way,
-- floors the target on {{n combat.shove.knockdown}} of shoves,
-- costs {{n combat.shove.stamina}} [[Stamina]], with {{n combat.shove.cooldown seconds}} before the next.
+- is pushed {{n combat.shove.knockback tiles}},
+- is staggered for {{n combat.shove.stagger seconds}}, and loses a bite it was winding up (see [[Stagger and knockdown]]),
+- is floored on {{n combat.shove.knockdown}} of shoves.
+
+A shove costs {{n combat.shove.stamina}} [[Stamina]]. Its cooldown, {{n combat.shove.cooldown seconds}}, is also a recovery: until it ends, a left click swings nothing and the next shove waits. The player draws a shove of their own, both arms out.
 
 It costs a weapon no durability (see [[Durability]]).
 
 ## Numbers
 
-- Reach: {{n combat.shove.range tiles}}. Arc: {{n combat.shove.arc}} degrees.
+- Reach: {{n combat.shove.range tiles}}. Arc: {{n combat.shove.arc}} degrees. Targets: up to {{n combat.shove.targets}}.
 - Push: {{n combat.shove.knockback tiles}}.
 - Stagger: {{n combat.shove.stagger seconds}}.
 - Knockdown chance: {{n combat.shove.knockdown}}.
-- Stamina: {{n combat.shove.stamina}}. Cooldown: {{n combat.shove.cooldown seconds}}.
+- Stamina: {{n combat.shove.stamina}}. Recovery: {{n combat.shove.cooldown seconds}}.
 
 ## With friends
 
-A guest's shove is not shown ahead on their own screen: the host performs it from the guest's input.
-
-## Settings that change it
-
-- **Multi-hit** (default off): on, the shove reaches everything in its wedge.
+A guest's own shove shows at once on their screen, its pose and its recovery included, so a click during the recovery swings nothing there as it does on the host. The push itself is the host's, worked out from the guest's input.
 
 ## See also
 
@@ -43,9 +40,11 @@ A guest's shove is not shown ahead on their own screen: the host performs it fro
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
-- `src/combat.js:376-394`: the shove: the wedge, line of sight, downed targets skipped, multi-hit, no damage, stagger forced with `interrupts`
+<!-- sources at 37e8726 -->
+- `src/combat.js:410-436`: the shove: the cooldown and stamina, the pose, the wedge, the nearest of the dead to `targets` whatever Multi-hit, downed targets skipped, no damage, the stagger, the knockdown by chance
+- `src/combat.js:183-194`: a cap on targets for the shove alone, ahead of the Multi-hit rule
+- `src/combat.js:329-333`: no swing starts while the shove's cooldown runs
 - `data/combat.json`: the `shove` numbers
-- `src/combat.js:362-372`: durability spent only by weapon hits
-- `src/player-controller.js:53`: performed on the host, not predicted on a guest
-- `src/settings.js:19`: Multi-hit, off by default
+- `src/figure/rig.js:19`, `data/poses.json`: the shove's own pose, the player's alone
+- `src/combat.js:390`, `src/combat.js:398-408`: durability spent only by a weapon's landed hits
+- `src/player-controller.js:28`: a guest predicts its own shove's pose and recovery; the push is the host's
