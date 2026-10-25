@@ -32,7 +32,8 @@ Each kind of container has a table of its own, and the odds of every one are on 
 - **Coffins** roll a rag, or rarely a [[Dirk]], and mostly nothing.
 - **The inn's counter** rolls bread, cheese, and apples.
 - **Haystacks**, at [[Hollow Farm]] and [[Long Acre]], roll a stick.
-- **Chicken coops**, at [[Your cottage]] and [[Hollow Farm]], roll a placeholder table: rags, sticks, a little [[Grain]], and often nothing. There are no eggs. Its grid is {{n loot.coop.grid.0}} × {{n loot.coop.grid.1}}, and its menu reads **Search chicken coop**, then **Open chicken coop**.
+- **Chicken coops**, at [[Your cottage]] and [[Hollow Farm]], roll nothing: a coop holds only the [[Egg|eggs]] and [[Feather|feathers]] its hens lay into it (see [[Chicken coop]] and [[Keeping]]). Its grid is {{n loot.coop.grid.0}} × {{n loot.coop.grid.1}}, and its menu reads **Search chicken coop**, then **Open chicken coop**.
+- **Feeding troughs**, in the farms' pens and by Hollow Farm's coop, roll nothing and open at once: a [[Feeding trough]] takes only feed, and starts empty.
 - **Bookcases, desks, and strongboxes** roll nothing yet: books, gems, and trinkets are to come.
 - **Wheelbarrows** have their own table, which rolls nothing: an empty grid of {{n loot.wheelbarrow.grid.0}} × {{n loot.wheelbarrow.grid.1}}.
 - **Some containers hold a fixed set**, the same in every world, and roll nothing: the chest in [[Your cottage]], the joiner's, the weaver's, the smithy's, and the miners' and quarry huts' chests, [[The toll house]]'s chest (an [[Arming sword]] and a [[Flanged mace]]), the barn's tool rack, the two granaries, the ore cart, the stone stacks, the charcoal sacks, and [[Hollow Farm]]'s **scarecrow**, which wears the [[Onion-head Hat]]. Each is on its place's page.
@@ -96,6 +97,7 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `data/sprites/shelf.json`: a carry flag (likewise barrel, chest, cupboard, desk, strongbox, woodpile, bookcase)
 - `data/maps/valley.json`: where the chests stand
 - `src/host.js:212-215`: a guest's search runs on the host and its panel opens
-- `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:453-457`: the chicken coop, a container with the coop table (a placeholder, no eggs), at your cottage and Hollow Farm (game #338, at 232d0fb)
+- `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:196`, `tools/mapgen/valley.py:458`: the chicken coop, a container whose table rolls nothing since game #460, at your cottage and Hollow Farm (lines at 6e3ab37)
+- `data/sprites/feed_trough.json`, `data/loot.json:4`, `src/interact.js:401-436`: the feeding trough, never rolled, opened at once, taking feed alone (game #460, at 6e3ab37) (game #338, at 232d0fb)
 - `src/placement.js:538-544`: a made container taken apart only when empty, "Empty it first." (game #413, at 31d330a)
 - `data/recipes.json`: the made containers: the workbench's cupboard, desk, bookcase, counter, cart, stall, barrel, the anvil's strongbox (game #428, at 0ce54cf)

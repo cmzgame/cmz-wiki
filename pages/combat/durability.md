@@ -45,7 +45,7 @@ After {{n tuning.work.anvil.ceilings.length}} repairs, at either place, a thing 
 
 The [[Torch]], the [[Halberd]], the [[Stick]], and the [[Plank]] wear but cannot be repaired.
 
-The menus name the numbers: "Sharpen arming sword (*now*% to {{pct tuning.work.grindstone.ceilings.0}})", "Repair hoe (*now*% to {{pct tuning.work.anvil.ceilings.0}}, a plank)". One worn past repair is greyed, "Repair hoe (worn past repair)"; one the anvil cannot do for want of the hammer or the material is greyed with what is missing, "Repair hoe (need a plank)". With nothing to do, each place shows one greyed line: "Sharpen (no dull blade carried)" or "Repair (nothing worn carried)". See each place's page for its messages.
+The menus name the numbers: "Sharpen arming sword (*now*% to {{pct tuning.work.grindstone.ceilings.0}})", "Repair hoe (*now*% to {{pct tuning.work.anvil.ceilings.0}}, a plank)". One worn past repair is greyed, "Repair hoe (worn past repair)"; one the anvil cannot do for want of the hammer or the material is greyed with what is missing, "Repair hoe (need a plank)". With nothing to do, each place shows one greyed line: "Sharpen (no dull blade carried)" or "Repair (nothing worn carried)" when you carry nothing worn it works on, and "Sharpen (nothing it can better)" or "Repair (nothing it can better)" when what you carry is worn but already at or above what that place would bring it to. See each place's page for its messages.
 
 A repairable thing's hover card says where and with what, and how many repairs it has in all: "Repaired at an anvil with an iron bar, or sharpened at a grindstone; ... repairs in all." Once it has had one, its state line, after its condition ("...% left"), says how many it has left, "... repairs left", or "past repair".
 
@@ -81,7 +81,7 @@ Durability is kept on the item itself and travels with the hands, so it is the s
 - `data/tuning.json:167-169`: the two ladders and their seconds; the anvil's tool, `smith` (game #416, at 31d330a)
 - `data/items.json:6-52`: each repair block: iron bar and edged, iron bar, or plank; none on the torch, halberd, stick, or plank (game #416, at 31d330a)
 - `src/repair.js:56-72`, `src/repair.js:94-108`: what refuses, the material taken, the condition set to the ceiling, the count raised (game #416, at 31d330a)
-- `src/repair.js:115-153`: the menus: offered only when it raises the condition, the labels, greyed past repair or missing a thing, the one greyed line (game #416, at 31d330a)
+- `src/repair.js:115-156`: the menus: offered only when it raises the condition, the labels, greyed past repair or missing a thing, the one greyed line, "(nothing it can better)" when what is worn is above the place's ceiling (game #454, at 6e3ab37)
 - `src/item-info.js:121-126`, `src/item-info.js:143-148`: the hover card's repair line and its state line's repairs left (game #416, at 31d330a)
 - `src/net.js:600-610`, `src/net.js:827-830`, `src/repair.js:50-52`: a guest's repair run on the host by label; the wear sent to two decimals so the labels agree (game #416, at 31d330a)
 

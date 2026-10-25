@@ -1,11 +1,11 @@
 ---
 title: Trees
 categories: [Gatherables, The world]
-aliases: [Tree, Oak, Spire, Chopping, Woodcutting, Felling, Chop down, Apple tree, Apple trees, Fruit trees, Picking, Pick apples]
-summary: The forest's trees, oaks and spires in three sizes, and the apple trees, green round trees picked for apples; a hatchet fells any tree for logs and leaves a stump.
+aliases: [Tree, Oak, Spire, Chopping, Woodcutting, Felling, Chop down, Apple tree, Apple trees, Fruit trees, Picking, Pick apples, Gather sticks, Sticks under trees]
+summary: The forest's trees, oaks and spires in three sizes, and the apple trees, green round trees picked for apples; a hatchet fells any tree for logs, leaving a stump and sometimes a sapling, and sticks are gathered under any standing tree once a day.
 ---
 
-Trees stand all over [[The valley]] outside the village and its reserves, and fill [[The wild]] beyond it. They are [[Gatherables]]: a click sways them, and any tree can be chopped down for [[Log|logs]] with a [[Hatchet]] in hand, leaving a [[Stump]].
+Trees stand all over [[The valley]] outside the village and its reserves, and fill [[The wild]] beyond it. They are [[Gatherables]]: a click sways them, any tree can be chopped down for [[Log|logs]] with a [[Hatchet]] in hand, leaving a [[Stump]] and sometimes a [[Sapling]], and [[Stick|sticks]] can be gathered under any standing tree once a day.
 
 ## Kinds
 
@@ -35,7 +35,17 @@ When you walk behind a tall tree, a soft hole opens in its canopy so you can see
 
 Chopping needs a [[Hatchet]] in a hand. With one, a tree's menu offers **Chop down**, naming how many logs it will give; without one the entry reads "Chop down (need a hatchet)" and is greyed. You must stand within {{n tuning.world.pickReach tiles}} of the trunk, with a clear line to it: never through a wall or a shut door ("There is a wall in the way."). It takes {{n tuning.world.chopSeconds seconds}}. The tree is gone, its logs lie on the ground on its tile, and a [[Stump]] stands where it stood: "... logs on the ground, and a stump." An apple tree leaves a stump too, and chopping a laden one loses its apples.
 
-The stump is chopped up the same way, with the hatchet, for {{n sprites.stump.wood}} more log, and then the tile is clear. Felled logs are the wood that comes back: the forest does not regrow, so a stump is only a last log.
+Every tree felled, an apple tree too, drops a [[Sapling]] on its tile about {{pct tuning.trees.sapling.chance}} of the time, and the line then ends "; a sapling fell too." The skill the game names for it, Woodcutting at level {{n tuning.trees.sapling.level}}, is recorded and not asked for yet.
+
+The stump is chopped up the same way, with the hatchet, for {{n sprites.stump.wood}} more log, and then the tile is clear; a stump never drops a sapling.
+
+## New trees
+
+A felled tree never grows back where it stood, so a clearing stays clear. New trees come from saplings: planted on open grass outdoors, a sapling grows over about {{n tuning.trees.sapling.days game days}} into the round oak (the medium green oak), keeping the planted sapling's place, and it waits while anyone stands on it. A sapling from an apple tree grows an apple tree, so felling one never loses an orchard for good. See [[Sapling]] for where one may be planted and how it grows.
+
+## Sticks
+
+Any standing tree's menu has **Gather sticks**, after the tree's own entries: apple trees too, never a stump. It is a menu entry alone: E never takes it, so a tree beside a door never takes E from the door. Standing within {{n tuning.world.pickReach tiles}} of the trunk with a clear line to it, it takes {{n tuning.trees.sticks.seconds seconds}} and gives {{n tuning.trees.sticks.count.0}} or {{n tuning.trees.sticks.count.1}} [[Stick|sticks]] into the bag ("You gather a stick.", or the count of sticks), any that do not fit at your feet. That tree then has none until the world's clock reaches the next midnight: its entry reads "Gather sticks (none until tomorrow)", greyed, and asking again says "There are no more sticks under this tree today." Each tree keeps its own day, so the woods give sticks without end. The twigs drawn on the ground under trees are only drawn and do not change.
 
 Logs are fuel for a [[Fire|fireplace]], and can be split into [[Plank|planks]].
 
@@ -45,19 +55,19 @@ Logs are fuel for a [[Fire|fireplace]], and can be split into [[Plank|planks]].
 
 ## With friends
 
-Chopping and picking are menu actions the host performs for whoever asked, the hatchet checked in that player's own hands. The tree's removal, the logs, and the stump, a picked tree going bare, and a bare one bearing again reach every player with the changed part of the map, and the day a bare tree bears again is saved with it. Whether the world has trees is the host's choice, made with the world; a guest's copy has the host's.
+Chopping, picking, and gathering sticks are menu actions the host performs for whoever asked, the hatchet checked in that player's own hands; the sapling's chance is rolled on the host. The tree's removal, the logs, the stump, and a sapling dropped, a picked tree going bare, and a bare one bearing again, and a tree's day for sticks, reach every player with the changed part of the map, and are saved with it. Whether the world has trees is the host's choice, made with the world; a guest's copy has the host's.
 
 ## See also
 
 - [[Gatherables]]
-- [[Log]], [[Apple]], [[Hatchet]], [[Stump]]
+- [[Log]], [[Apple]], [[Hatchet]], [[Stump]], [[Sapling]], [[Stick]]
 - [[The orchard]]
 - [[The wild]]
 - [[Sight]]
 
 ## Sources
 
-<!-- sources at 261cd7a -->
+<!-- sources at 6e3ab37 -->
 - `src/map.js:2158-2197`, `data/maps/valley.json:11646-11661`: trees scattered over the valley except the village and the reserves
 - `data/maps/valley.json:11615-11645`: the zone's green, orange, red, and yellow oaks and spires; blue and purple in no map
 - `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_old.json`: per size the collision radius, wood, canopy reach, shadow, and leaf colour
@@ -79,3 +89,6 @@ Chopping and picking are menu actions the host performs for whoever asked, the h
 - `src/map.js:518-527`: a tree changed in place, its day saved with it and its chunk sent to guests
 - `src/map.js:2046`: Trees off: an authored tree, an orchard's or a garden's, is not placed either (game #192)
 - `src/map.js:413-447`: the mushrooms placed against where the trees would have stood, never on such a tile (game #149)
+- `src/chop.js:39-53`, `src/trees.js:122-128`, `data/tuning.json:193-197`: a felled tree with a canopy (an apple tree too, never a stump) drops a sapling at `trees.sapling.chance`, its skill and level recorded; the line's "; a sapling fell too" (game #461, at 6e3ab37)
+- `src/trees.js:1-14`, `src/trees.js:130-178`, `src/trees.js:68-79`: no tree regrows where felled; a planted sapling grows into `tree_oak_m`, or the tree its felled tree names (`saplingGrows`, the apple trees'), waiting while anyone stands on it (game #461)
+- `src/trees.js:180-248`, `src/interact.js:989-990`, `data/tuning.json:195`: Gather sticks on any standing tree, never a stump, after the tree's entries and never E's; within `pickReach` and a clear line; the count and the seconds; into the bag or at the feet; the tree's `sticksAt` the next midnight, greyed "(none until tomorrow)" and refused until then (game #461)

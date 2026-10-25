@@ -29,7 +29,7 @@ Holding right while drawing braces the bow: a full draw takes {{n items.bow.bow.
 
 The arrow travels along the ground at {{n combat.bow.speed tiles a second}}, with the arc drawn above it, out to at most {{n combat.bow.range tiles}}. The arc rises from {{n combat.bow.arcMin}} to {{n combat.bow.arcMax}} pixels high with the distance.
 
-It hurts only where it comes down: the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of the landing point, with nothing between it and that point. The test is made at the arrow's height as it lands, which is the ground, so a wall, a fence, boards, a closed door, or any window (even an open one, whose sill is above the ground) between the landing point and the body means no hit; an open or broken doorway does not. An arrow that comes down just short of a wall never hits one of the dead standing just past it. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
+It hurts only where it comes down: the nearest of [[The dead]], or of the wild game, within {{n combat.bow.hitRadius tiles}} of the landing point, with nothing between it and that point; a tame animal only when nothing else is there, and never by a spell (see [[Hunting]]). The test is made at the arrow's height as it lands, which is the ground, so a wall, a fence, boards, a closed door, or any window (even an open one, whose sill is above the ground) between the landing point and the body means no hit; an open or broken doorway does not. An arrow that comes down just short of a wall never hits one of the dead standing just past it. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
 
 ### Fire arrows
 
@@ -48,7 +48,7 @@ A stopped arrow falls at the foot of what stopped it and hits nothing.
 
 ### Getting arrows back
 
-An arrow that hits one of the dead stays in the body. Arrows stack in a body, and come out with its loot when it is killed and searched (see [[Corpses]]). What does not fit on the body falls at its feet. A miss, or a shot stopped by a wall or a tree, lies where it came down as an item on the floor, picked up with E. Arrows do not break.
+An arrow that hits one of the dead stays in the body. Arrows stack in a body, and come out with its loot when it is killed and searched (see [[Corpses]]). What does not fit on the body falls at its feet. An arrow or a thrown weapon that hits an animal stays in it too, and comes back when its carcass is butchered (see [[Hunting]]). A miss, or a shot stopped by a wall or a tree, lies where it came down as an item on the floor, picked up with E. Arrows do not break.
 
 The bow itself loses durability with each arrow loosed (see [[Durability]]).
 
@@ -111,7 +111,8 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:276`, `src/entities/zombie.js:110`, `src/entities/zombie.js:140-151`: a shot's hit staggers by its own chance (an arrow the default, the spear always), never floors, and cancels a bite being wound up
 - `src/archery.js:271`, `src/archery.js:315-349`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not
 - `src/archery.js:156-162`, `src/placeholders.js:88-90`: the wall test by height: a door passes open or broken below its top, a window open or broken between its sill and its top
-- `src/archery.js:301-308`, `src/archery.js:315-330`: only the dead are hit
+- `src/archery.js:301-308`, `src/archery.js:315-330`: who can be hit (the dead alone, at this commit)
+- `src/archery.js:272-292`, `src/archery.js:319-346` (at 6e3ab37): an animal hit at the landing, the tame only alone and never by a spell; what lodges in it comes back when it is butchered (game #456)
 - `src/archery.js:144-215`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot
 - `src/entities/character.js:149-178`, `src/archery.js:281-288`: lodged arrows come out in the body's loot by count, made fresh, and a lodged spear as itself, its wear kept; the rest at its feet
 - `src/archery.js:600-604`: fire arrows before plain ones, as their own projectile, setting alight

@@ -19,9 +19,9 @@ Right-click a vat and choose **Use the dye vat**, or press `E` beside it, from w
 The picker has, from top to bottom:
 
 - **The figure**, on the left: your character in what they have on, the hands empty, drawn at 3x and turning through its facings, with the chosen garment on in the picked colours. A bag is shown on the back the same way.
-- **Garment**: a button for every dyeable thing you have with you, the things worn first (marked "(worn)") in the order head, chest, hands, waist, legs, feet, back, then what is in your hands, then what is in your bag. Something on the belt, or inside another bag, is not listed. With nothing dyeable it says "Nothing you carry can be dyed." The first in the list is chosen when the picker opens.
+- **Garment**: a button for every dyeable thing you have with you, the things worn first (marked "(worn)") in the order head, chest, hands, waist, legs, feet, back, then what is in your hands, then what rides on your belt's slots and what is in your bag, and a bag or a belt inside the bag in its turn (a satchel in a worn rucksack, a cap in that satchel). Apply takes the thing from wherever the list found it. With nothing dyeable it says "Nothing you carry can be dyed." The first in the list is chosen when the picker opens.
 - **A row of swatches per region** of the chosen thing, labelled with the region's name (**Cloth**, **Hat**, **Leather**, **Strap**), each swatch named on hover. The first swatch is always the item's own colour, named **Undyed**. A colour that is the item's own is shown only once, as Undyed: the [[Linen breeches]]' own brown is Walnut brown, and the boots' own is Dark brown. The [[Leather belt]] has one row instead, **Scheme**, of whole colourings (see below).
-- **Colour**: the picked colours by name, as "Woad blue", or for a thing of two regions "Cloth undyed, Strap oxblood".
+- **Colour**: the picked colours by name, as "Woad blue", or for a thing of two regions "Cloth undyed, Strap oxblood". A colour that is a dye's is named for the dye, even when it is the thing's own; "Undyed" is only for an own colour no vat gives, and for the thing in its own colours whole.
 - **What it costs** and **Apply**. The note reads "Costs nothing." Apply is greyed while the picks are what the thing is dyed now, and greyed with the reason in the note when it cannot be done.
 
 Pick a garment, pick its colours, and press **Apply**: the game says "Dyed." and the colours are on the item at once. A thing can be dyed again as often as you like, and picking Undyed puts its own colours back.
@@ -37,7 +37,7 @@ The reasons Apply can give:
 
 - **On the figure:** a plain-drawn garment takes the colours as its own tones, one per region (the satchel's cloth and strap, the belt's leather and buckle). A painted one, like the [[Onion-head Hat]], is recoloured by the key tones its art names, in any slot; the rest of its paint and its outline are kept.
 - **In the bag:** an item without a drawn icon is drawn as a block in its first colour. An item with a drawn icon (the [[Linen tunic]], the [[Linen breeches]], the [[Hobnail boots]]) keeps its icon as painted.
-- **On the hover card:** a dyeable item's card says how it can be dyed, as "Can be dyed at a dye vat: 16 colours.", "Can be dyed at a dye vat: 16 colours for the cloth, 7 colours for the strap.", or "Can be dyed at a dye vat: {{n items.good_belt.dye.schemes.length}} schemes." The count is the whole palette, the item's own colour among them where it is one. A dyed item's card names its colours on its state line: "Woad blue", "Black and iron", "Cloth undyed, strap oxblood".
+- **On the hover card:** a dyeable item's card says how it can be dyed, as "Can be dyed at a dye vat: 16 colours.", "Can be dyed at a dye vat: 16 colours for the cloth, 7 colours for the strap.", or "Can be dyed at a dye vat: {{n items.good_belt.dye.schemes.length}} schemes." The count is what the picker shows: a palette colour that is the item's own is its Undyed swatch and is not counted again, so the [[Linen breeches]] (own Walnut brown) say "15 colours" and the [[Hobnail boots]] (own Dark brown) "6 colours". A dyed item's card names its colours on its state line: "Woad blue", "Black and iron", "Cloth undyed, strap oxblood".
 
 ## The colours
 
@@ -70,7 +70,7 @@ The belt is dyed whole, its leather and its buckle together, as one of {{n items
 - Oxblood and bronze
 - Tan and iron
 
-The belt's own buckle is the same brass as the vat's, so a scheme with brass names its buckle "undyed": the picker's Colour row reads "Leather black, Buckle undyed" and the card's state line "Black and undyed", though the swatch is named "Black and brass".
+The belt's own buckle is the same brass as the vat's, and it is named brass: black leather with the belt's own buckle reads "Leather black, Buckle brass" in the picker's Colour row and "Black and brass" on the card's state line, as its swatch is named.
 
 {{prop-sections dyevat}}
 
@@ -84,7 +84,7 @@ A guest's **Use the dye vat** is sent to the host and carried out there for that
 
 ## Sources
 
-<!-- sources at 31d330a -->
+<!-- sources at 6e3ab37 -->
 - `src/ui/station-panel.js:75-78`, `src/ui/station-panel.js:122`: a vat makes nothing and opens the picker, not a station's panel (game #417, at 31d330a)
 - `data/maps/valley.json:3850-3872`, `tools/mapgen/valley.py:366-367`: three vats in the weaver's yard
 - `src/dye.js:107-113`, `data/dyes.json:3`: the unlock, Crafting 3, open to all until the skills are built
@@ -93,19 +93,19 @@ A guest's **Use the dye vat** is sent to the host and carried out there for that
 - `src/stations.js:21`, `src/dye.js:135-139`: the reach
 - `src/ui/dye-panel.js:36-43`, `src/ui/dye-panel.js:192-199`, `src/main.js:873-878`: the picker, titled Dye vat; the world runs; it closes on ×, Escape, out of reach or behind a wall, or with the vat gone
 - `src/ui/dye-panel.js:157-185`, `src/main.js:1562-1563`: the figure in the player's clothes, the hands empty, the chosen garment on in the picks, at 3x, turning
-- `src/dye.js:122-132`, `src/ui/dye-panel.js:122-124`: the garments, worn first in slot order, then the hands, then the bag; "(worn)"; "Nothing you carry can be dyed."
+- `src/dye.js:123-162`, `src/ui/dye-panel.js:117-124`: the garments, one walk for the picker and the verb: worn first in slot order, then the hands, the belt's slots, and the bag, a bag or belt inside it in its turn; "(worn)"; "Nothing you carry can be dyed." (game #454, at 6e3ab37)
 - `src/ui/dye-panel.js:73-82`, `src/ui/dye-panel.js:93-100`: the first chosen on opening; the swatches start at its colours now
 - `src/ui/dye-panel.js:126-140`: a row per region, Undyed first, the item's own colour not repeated; Scheme for an item with schemes
-- `src/ui/dye-panel.js:141-147`: the Colour row; the note; Apply greyed when unchanged or refused
+- `src/ui/dye-panel.js:114`, `src/ui/dye-panel.js:141-146`, `src/dye.js:68-74`: the Colour row, a dye's name even for an own colour, Undyed for an own colour no vat gives or the own colours whole; the note; Apply greyed when unchanged or refused (game #454)
 - `src/ui/dye-panel.js:102-108`, `src/dye.js:152-161`: Apply, "Dyed.", the colours set, or cleared when they are the item's own
 - `src/dye.js:134-150`, `src/reach.js:8-9`: the refusals: "That is gone.", "Too far from the vat.", "There is a wall in the way.", "You don't have that with you."
 - `src/ui/dye-panel.js:197`: the picker closes a tile past the reach, so "Too far from the vat." shows between
 - `src/figure/wardrobe.js:44-45`, `src/figure/draw.js:145-173`: a plain garment drawn in its colours; a painted one recoloured by its key tones in any slot
 - `src/ui/inventory-panel.js:239-240`, `data/items.json:29-32`: the block's colour where an item has no drawn icon; the tunic, breeches, and boots have drawn icons
-- `src/item-info.js:110-112`, `src/item-info.js:149-150`, `src/dye.js:68-79`: the card's "Can be dyed" line, counting the whole palette, and the dyed state line
+- `src/item-info.js:184-187`, `src/item-info.js:249`, `src/dye.js:76-87`: the card's "Can be dyed" line, counted as the picker shows it, the own colour not counted again, and the dyed state line (game #454, at 6e3ab37)
 - `data/items.json:27-36`: each item's `dye` block, its regions and palettes, the belt's schemes; the rope belt, the sacks, and the rucksack have none
 - `data/dyes.json:4-32`: the colours' names and the two palettes
-- `data/items.json:34`, `data/dyes.json:26`, `src/dye.js:76-77`, `src/ui/dye-panel.js:114`: the belt's own buckle is the brass dye's hex, so it reads "undyed"
+- `data/items.json:34`, `data/dyes.json:26`, `src/dye.js:68-74`, `src/ui/dye-panel.js:114`: the belt's own buckle is the brass dye's hex, so it is named brass (game #454)
 - `src/net.js:1260-1263`, `src/host.js:280-283`, `src/main.js:1847-1851`: a guest's menu entry sent to the host by its label; the use told to the guest, whose picker opens on its own screen
 - `src/net.js:1298-1301`, `src/main.js:1060`, `src/host.js:192-200`, `src/host.js:295-299`: Apply on a guest is the `dye` command, run by the host as that player; its message goes to the guest
 - `src/net.js:240`, `src/game.js:414-415`, `tools/check.js:763-772`: the worn entries, with their colours, in the player's record, the sync check, and the save

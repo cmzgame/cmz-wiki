@@ -5,11 +5,11 @@ aliases: [Rock, Boulder]
 summary: Big rocks about the valley, the quarry's among them, and in the wild forest; mined with a pickaxe for stone, and in the valley another rises elsewhere a game day or two later.
 ---
 
-Big rocks stand in [[The quarry]], about [[The valley]] on open ground, and here and there in [[The wild]], the forest beyond the valley's edge. They are [[Gatherables]]: a click within reach makes one sway. With a [[Pickaxe]] in hand a rock is mined for [[Stone]], and is then gone; inside the valley another rises out of the ground somewhere else a game day or two later (see [[Mining]]).
+Big rocks stand in [[The quarry]], about [[The valley]] on open ground, and here and there in [[The wild]], the forest beyond the valley's edge. They are [[Gatherables]]: a click within reach makes one sway. With a [[Pickaxe]] in hand a rock is mined for [[Stone]], and is then gone; inside the valley another rises out of the ground somewhere else {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later (see [[Mining]]).
 
 ## Where they are
 
-The valley keeps {{n valley.resources.stone.count}} rocks. At the start, eight stand in [[The quarry]] and the rest at spots chosen at random on natural ground about the valley, the quarry's floor included, the same spots in every new world. In the wild, the land is split into squares of {{n valley.wild.rocks.cell}} by {{n valley.wild.rocks.cell}} tiles, and {{n valley.wild.rocks.chance}} of those squares hold one rock at a spot of their own. There are four looks, equally likely. The same rocks are in the same places on every visit. The ore rocks of [[The iron workings]] are a different kind: they give iron ore (see [[Mining]]).
+The valley keeps {{n valley.resources.stone.count}} rocks. At the start, eight stand in [[The quarry]] and the rest at spots chosen at random on natural ground about the valley, the quarry's floor included, the same spots in every new world. In the wild, the land is split into squares of {{n valley.wild.rocks.cell}} by {{n valley.wild.rocks.cell}} tiles, and {{n valley.wild.rocks.chance}} of those squares hold one rock at a spot of their own. There are four looks, equally likely. The same rocks are in the same places on every visit. The ore rocks of [[The iron workings]] are a different kind: they give iron ore, and the salt rocks there give [[Salt]] (see [[Mining]]).
 
 ## Coming back
 

@@ -24,7 +24,7 @@ A sharpening uses up a repair as an anvil's does, so a sword sharpened once reac
 
 The things with an edge are the [[Arming sword]], the [[Hatchet]], the [[Throwing spear]], the [[Scythe]], and the [[Dirk]]. The [[Flanged mace]], the [[Pickaxe]], and the [[Smith's hammer]] have none and go to the anvil; so do the wooden things, the [[Hunting bow]], the [[Hoe]], the [[Fishing rod]], and the [[Shovel]].
 
-A thing already at or above what the stone would bring it to has no entry. With nothing to sharpen, the menu has one greyed line: "Sharpen (no dull blade carried)". It also shows that line when every blade you carry is already as sharp as the stone can make it.
+A thing already at or above what the stone would bring it to has no entry. With nothing to sharpen, the menu has one greyed line: "Sharpen (no dull blade carried)". When every worn blade you carry is already as sharp as the stone can make it, the line is "Sharpen (nothing it can better)" instead.
 
 The reasons it can refuse, if a sharpening is asked for another way:
 
@@ -51,7 +51,7 @@ A guest's entry is sent to the host by its label, and the host runs it for that 
 - `src/repair.js:56-72`: the refusals
 - `src/repair.js:74-84`: what is carried: the hands, the belt, the bag
 - `src/repair.js:94-108`: the sharpening sets the condition to the ceiling, counts the repair, and says what is left
-- `src/repair.js:115-153`: the menu: one entry per worn edged thing it can better, the label's numbers, greyed past repair, the one greyed line with nothing to do
+- `src/repair.js:115-156`: the menu: one entry per worn edged thing it can better, the label's numbers, greyed past repair, the one greyed line with nothing to do, "(nothing it can better)" for blades above its ceiling (game #454, at 6e3ab37)
 - `src/interact.js:886-903`: the prop's menu takes the grindstone's entries
 - `src/interact.js:1084-1096`: moving or leaving reach ends the bar
 - `src/net.js:600-610`, `src/net.js:1261-1263`, `src/interact.js:136-141`: a guest's entry sent by label and run on the host as that player

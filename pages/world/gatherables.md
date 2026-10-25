@@ -2,10 +2,10 @@
 title: Gatherables
 categories: [Mechanics, The world]
 aliases: [Gathering, Wobble, Sway]
-summary: Trees, rocks, mushrooms, crops, pumpkins, and beehives: the things that sway when clicked or walked through.
+summary: Trees, rocks, herbs, mushrooms, clay banks, salt rocks, crops, pumpkins, and beehives: the things that sway when clicked, are outlined, and give something when gathered.
 ---
 
-Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; beehives give a [[Pot of honey]]; mushrooms and pumpkins give nothing yet.
+Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Herbs]], [[Mushrooms]], [[Clay|clay banks]], [[Salt|salt rocks]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, rocks mined for [[Stone]], [[Iron ore]], or [[Salt]], herbs gathered and mushrooms foraged by hand, and clay banks dug for [[Clay]]; beehives give a [[Pot of honey]]; pumpkins give nothing yet.
 
 ## How it works
 
@@ -17,7 +17,7 @@ The well plays its own animation instead: it lowers its bucket and winds it back
 
 ### Walking through
 
-Gatherables you can walk through, crops and mushrooms, sway when any character passes through them: you, other players, the dead, villagers, and [[Animals|animals]]. Each sway runs its full {{n census.constants.interact.BRUSH_MS}} milliseconds before it can start again, so a walk through a field sets it rippling. Standing still does nothing. Trees and rocks block a body, so they never sway this way.
+Gatherables you can walk through, crops, herbs, and mushrooms, sway when any character passes through them: you, other players, the dead, villagers, and [[Animals|animals]]. Each sway runs its full {{n census.constants.interact.BRUSH_MS}} milliseconds before it can start again, so a walk through a field sets it rippling. Standing still does nothing. Trees, rocks, clay banks, and salt rocks block a body, so they never sway this way.
 
 Decoration, such as the flowers and leaves on the ground, does neither.
 
@@ -25,11 +25,12 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 
 - **Trees:** chop one down from the right-click menu with a [[Hatchet]] in a hand. It takes {{n tuning.world.chopSeconds seconds}}, the tree is gone, its logs lie on the ground where it stood, and a [[Stump]] is left, which the hatchet chops up for one more log. An apple tree with fruit on it can also be picked for [[Apple|apples]], and is then bare for some days. See [[Trees]].
 - **Crops:** harvested when ready, with E or the menu, for their food and seeds, with the crop's tool on you (none for flax); see [[Farming]].
-- **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], or at [[The iron workings]] for [[Iron ore]], and gone; inside the valley a new one rises elsewhere in its area a game day or two later. See [[Mining]].
-- **Mushrooms and pumpkins:** they sway, and nothing more.
+- **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], or at [[The iron workings]] for [[Iron ore]] or [[Salt]], and gone; inside the valley a new one rises elsewhere in its area {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later. See [[Mining]].
+- **Herbs:** eleven kinds grow wild about the valley; **Gather sage** (named for the herb) on the menu, or `E`, gives {{n sprites.herb_sage.gather.count.0}} in {{n sprites.herb_sage.gather.seconds seconds}} by hand, and the plant is gone; another grows elsewhere {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later. Grave moss is gathered only at night. See [[Herbs]].
+- **Mushrooms:** **Forage mushroom**, or `E`, gives a [[Mushroom]] in {{n sprites.mushroom_0.gather.seconds seconds}} by hand, and inside the valley another grows elsewhere near trees later. See [[Mushrooms]].
+- **Clay banks**, on the river's bank: **Dig clay**, with a [[Shovel]] carried, gives {{n sprites.clay_bank.dig.count.0}} [[Clay]] in {{n sprites.clay_bank.dig.seconds seconds}}, and the bank is gone; another appears elsewhere along the river later. See [[Clay]].
+- **Pumpkins:** they sway, and nothing more.
 - **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on the menu, or `E`, gives {{n tuning.work.honey.count.0}} [[Pot of honey]] in {{n tuning.work.honey.seconds seconds}}, and the hive has more {{n tuning.work.honey.days}} game days later. Every hive has honey at the start. See [[Beehive]].
-
-{{planned doc=46 step=2 note="Foraging mushrooms; a foraged one will come back near trees elsewhere in the valley."}}
 
 ## Numbers
 
@@ -37,16 +38,17 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 - A sway lasts {{n census.constants.render_props.WIGGLE_MS}} ms.
 - A click restarts a sway only after {{n census.constants.interact.POKE_COOLDOWN_MS}} ms.
 - Chopping a tree or a stump: {{n tuning.world.chopSeconds seconds}}.
+- Gathering an herb or foraging a mushroom: {{n sprites.herb_sage.gather.seconds seconds}}; digging clay: {{n sprites.clay_bank.dig.seconds seconds}}.
 
 ## With friends
 
-The sways of each step go out to guests in the host's frames, so everyone sees the same field ripple at the same moment. A guest's own click is sent to the host, which checks its reach before the thing sways. Chopping a tree is a menu action run on the host; the tree's removal and the logs reach every player with the changed part of the map. Taking honey is the same: the hive's wait is kept on the hive and sent with its part of the map, so a hive one player has emptied is empty for everyone.
+The sways of each step go out to guests in the host's frames, so everyone sees the same field ripple at the same moment. A guest's own click is sent to the host, which checks its reach before the thing sways. Chopping a tree is a menu action run on the host; the tree's removal and the logs reach every player with the changed part of the map. Gathering an herb, foraging a mushroom, and digging clay are the same, by the node's id, the item into the guest's bag. Taking honey is the same: the hive's wait is kept on the hive and sent with its part of the map, so a hive one player has emptied is empty for everyone.
 
 ## See also
 
 - [[Trees]]
 - [[Rocks]]
-- [[Mushrooms]]
+- [[Herbs]], [[Mushrooms]], [[Clay]], [[Salt]]
 - [[Crops]]
 - [[Log]]
 - [[Beehive]]
@@ -68,4 +70,6 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - `src/interact.js:550-571`, `src/farming.js:233-259`: a ready crop harvested (game #206)
 - `src/interact.js:1416-1448`, `src/net.js:882`, `src/net.js:1141-1145`: the sways sent in frames; a guest's click checked by the host
 - `src/interact.js:70-92`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk
+- `data/sprites/herb_sage.json` (and the other herbs), `data/sprites/clay_bank.json`, `data/sprites/salt_rock.json`: `interactable`, the herbs not solid, the bank and the salt rock solid; the `gather`, `dig`, and `mine` blocks (game #457, at 6e3ab37)
+- `src/gather.js:41-119`, `src/interact.js:994`: Gather, Forage, and Dig on the menu, timed, run on the host by the node's id (game #457, at 6e3ab37)
 - `src/hives.js:104-158`, `data/tuning.json:171`: Take honey at a hive, `E`, the count, the seconds, the days until more, every hive with honey at the start; `honeyAt` on the prop, its chunk touched (game #416, at 31d330a)

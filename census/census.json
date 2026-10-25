@@ -1,17 +1,17 @@
 {
  "version": {
-  "commit": "261cd7a98ae8f4f5d8e6851b164466511bdbf7ae",
-  "short": "261cd7a",
-  "date": "2026-10-25T15:40:26-05:00",
-  "subject": "Merge #453, reviewed: natural resources come back, docs/46 step 1 (#447)",
+  "commit": "6e3ab3767f2cbc957bd11513e880e4ed4078639c",
+  "short": "6e3ab37",
+  "date": "2026-10-25T17:35:29-05:00",
+  "subject": "Merge #461, reviewed: saplings and sticks, docs/46 step 3 (#449)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 87,
-  "recipes": 65,
+  "items": 119,
+  "recipes": 68,
   "interactions": 35,
-  "lootTables": 28,
-  "sprites": 183,
+  "lootTables": 29,
+  "sprites": 200,
   "places": 46,
   "villagers": 9,
   "authoredDead": 62,
@@ -23,11 +23,11 @@
   "fixedRules": 5,
   "liveRules": 5,
   "keys": 21,
-  "verbs": 21,
-  "menuLabels": 88,
-  "events": 34,
-  "checks": 69,
-  "modules": 132
+  "verbs": 28,
+  "menuLabels": 93,
+  "events": 36,
+  "checks": 73,
+  "modules": 137
  },
  "items": [
   {
@@ -282,6 +282,7 @@
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: arrow",
+    "workbench: snare",
     "workbench: torch_post",
     "anvil: knife",
     "anvil: hammer",
@@ -294,7 +295,6 @@
    ],
    "foundIn": [
     "chest",
-    "coop",
     "body",
     "wild",
     "woodpile"
@@ -712,6 +712,9 @@
     "tool",
     "container"
    ],
+   "verbs": [
+    "milk"
+   ],
    "art": {
     "icon": false,
     "held": true,
@@ -872,6 +875,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -901,6 +906,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -932,6 +939,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -961,6 +970,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -992,6 +1003,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -1021,6 +1034,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -1564,6 +1579,423 @@
    "interactions": []
   },
   {
+   "id": "hen_raw",
+   "name": "Raw hen",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 10,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a hen (data/animals.json, docs/45 section 4); cooked and used in recipes in step 4"
+  },
+  {
+   "id": "rabbit_raw",
+   "name": "Raw rabbit",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 10,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a rabbit (data/animals.json); a snare's catch (docs/45 section 2)"
+  },
+  {
+   "id": "venison_raw",
+   "name": "Raw venison",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 14,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a deer (data/animals.json)"
+  },
+  {
+   "id": "beef_raw",
+   "name": "Raw beef",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 14,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a cow (data/animals.json)"
+  },
+  {
+   "id": "mutton_raw",
+   "name": "Raw mutton",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 12,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a sheep (data/animals.json)"
+  },
+  {
+   "id": "pork_raw",
+   "name": "Raw pork",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 12,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a pig or a boar (data/animals.json)"
+  },
+  {
+   "id": "bacon",
+   "name": "Bacon",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "raw",
+    "meat"
+   ],
+   "hunger": 8,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a pig (Beastlore 7, open until the skills; data/animals.json)"
+  },
+  {
+   "id": "lard",
+   "name": "Lard",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "fat"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a pig (Beastlore 7); pemmican binds with it in step 4 (docs/45 section 4)"
+  },
+  {
+   "id": "hide",
+   "name": "Hide",
+   "kind": "material",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [
+    "hide"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "skinned from game and stock with a dirk (docs/45 section 2); tanned to leather in step 4 (Crafting 3)"
+  },
+  {
+   "id": "feather",
+   "name": "Feather",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "feather"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "butchered from a hen, three to five (docs/45 section 3); fletches arrows in step 4"
+  },
+  {
+   "id": "snare",
+   "name": "Snare",
+   "kind": "furniture",
+   "size": [
+    1,
+    2
+   ],
+   "tags": [],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/45 section 2: made at the workbench (Crafting 1), set outdoors near rabbits (Beastlore 3; both open until the skills); it holds a rabbit after a while (src/entities/animal.js)"
+  },
+  {
+   "id": "lead",
+   "name": "Lead",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "tool"
+   ],
+   "verbs": [
+    "lead"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/45 section 1: a halter and rope, made at the workbench (Crafting 1, open until the skills); carried, it leads one tame animal home (Beastlore 1, 4, and 7 by kind, open until the skills)"
+  },
+  {
+   "id": "shears",
+   "name": "Shears",
+   "kind": "tool",
+   "size": [
+    1,
+    2
+   ],
+   "hands": "either",
+   "tags": [
+    "tool",
+    "metal"
+   ],
+   "verbs": [
+    "shear"
+   ],
+   "art": {
+    "icon": false,
+    "held": true,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/45 section 3: made at the anvil (Blacksmithing 1, open until the skills); carried, a fed sheep's wool"
+  },
+  {
+   "id": "milk",
+   "name": "Jug of milk",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food",
+    "milk"
+   ],
+   "hunger": 4,
+   "thirst": 20,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a fed cow's, milked with a bucket carried (docs/45 section 3); cheese and butter from it in step 4"
+  },
+  {
+   "id": "wool",
+   "name": "Wool",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "wool"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a fed sheep's, shorn with shears carried (docs/45 section 3); yarn and woollen cloth in step 4"
+  },
+  {
+   "id": "egg",
+   "name": "Egg",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "food",
+    "raw",
+    "egg"
+   ],
+   "hunger": 6,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "laid by a fed hen into its coop (docs/45 section 3)"
+  },
+  {
+   "id": "hay",
+   "name": "Hay",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 20,
+   "tags": [
+    "feed"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "cut from grass with the scythe (Farming 5, open until the skills; docs/45 section 3): feed for a trough"
+  },
+  {
    "id": "scythe",
    "name": "Scythe",
    "kind": "tool",
@@ -1777,6 +2209,7 @@
     "workbench: prop:cart",
     "workbench: prop:barrel",
     "anvil: knife",
+    "anvil: shears",
     "anvil: hammer",
     "anvil: hatchet",
     "anvil: pickaxe",
@@ -1835,7 +2268,8 @@
    ],
    "tags": [
     "food",
-    "raw"
+    "raw",
+    "feed"
    ],
    "hunger": 10,
    "art": {
@@ -1864,7 +2298,8 @@
    ],
    "tags": [
     "food",
-    "raw"
+    "raw",
+    "feed"
    ],
    "hunger": 8,
    "art": {
@@ -1917,7 +2352,8 @@
    ],
    "tags": [
     "food",
-    "raw"
+    "raw",
+    "feed"
    ],
    "hunger": 12,
    "art": {
@@ -1944,9 +2380,11 @@
     1,
     1
    ],
+   "stack": 20,
    "tags": [
     "food",
-    "raw"
+    "raw",
+    "feed"
    ],
    "art": {
     "icon": false,
@@ -1958,9 +2396,7 @@
     "cooking: porridge",
     "millstones: flour"
    ],
-   "foundIn": [
-    "coop"
-   ],
+   "foundIn": [],
    "interactions": [],
    "note": "rye or wheat; flour at the mill (step 4), porridge at a hearth"
   },
@@ -2193,6 +2629,8 @@
     "loom: satchel",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
@@ -2232,12 +2670,13 @@
     "workbench: torch",
     "workbench: fishing_rod",
     "workbench: bow",
+    "workbench: snare",
+    "workbench: lead",
     "workbench: prop:bed",
     "workbench: prop:stall"
    ],
    "foundIn": [
     "chest",
-    "coop",
     "pantry",
     "coffin"
    ],
@@ -2568,6 +3007,353 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": []
+  },
+  {
+   "id": "sage",
+   "name": "Sage",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_sage (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "nettle",
+   "name": "Nettle",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_nettle (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "feverfew",
+   "name": "Feverfew",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_feverfew (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "yarrow",
+   "name": "Yarrow",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the healing herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_yarrow (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "mana_herb",
+   "name": "Mana herb",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the mana herb, near water (docs/39 section 4, Herbalism 4); its name is Michael's to choose (ruled 2026-10-23), a placeholder until then; gathered from its node, herb_mana_herb (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "nightshade",
+   "name": "Nightshade",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw",
+    "poison"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "for poisons, in the woods (docs/39 section 4, Herbalism 5); gathered from its node, herb_nightshade (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "wolfsbane",
+   "name": "Wolfsbane",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw",
+    "poison"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "for poisons, in the woods (docs/39 section 4, Herbalism 5); gathered from its node, herb_wolfsbane (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "grave_moss",
+   "name": "Grave moss",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the graveyard's herb, gathered only at night (docs/39 section 4, Herbalism 7: its kinds unnamed); a placeholder name and kind until Michael names them; gathered from its node, herb_grave_moss (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "woad",
+   "name": "Woad",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw",
+    "dye"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8); gathered from its node, herb_woad (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "madder",
+   "name": "Madder",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw",
+    "dye"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8); gathered from its node, herb_madder (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "weld",
+   "name": "Weld",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "herb",
+    "raw",
+    "dye"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8); gathered from its node, herb_weld (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+  },
+  {
+   "id": "mushroom",
+   "name": "Mushroom",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "mushroom",
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "foraged from the mushrooms near trees (docs/39 section 4, Herbalism 3; src/gather.js). For Potions and Cooking when they come; whether it is eaten raw, and for how much, is Michael's. Its icon is a dev design in the drawn mushrooms' colours"
+  },
+  {
+   "id": "clay",
+   "name": "Clay",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "dug from a clay bank by the river with a shovel (docs/39 section 4, Mining 3; src/gather.js). Jugs and jars (shaped at the workbench, fired in an oven, docs/39 section 3) are not built, so it has no use yet"
+  },
+  {
+   "id": "salt",
+   "name": "Salt",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "raw"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "mined from a salt rock in the ore area (docs/39 section 4, Mining 3; src/mining.js). Salting food (Cooking 5) is not built, so it has no use yet"
+  },
+  {
+   "id": "sapling",
+   "name": "Sapling",
+   "kind": "material",
+   "size": [
+    1,
+    2
+   ],
+   "tags": [
+    "sapling"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/46 step 3 (#449): felling a tree sometimes drops one (Woodcutting 4, recorded and not enforced; tuning.trees.sapling); planted on open grass outdoors (src/setdown.js, the stand rule natural, src/trees.js) it grows into the round oak over about five game days. Its icon and its picture on the floor are its first stage's design"
   }
  ],
  "recipes": [
@@ -2893,6 +3679,44 @@
    ],
    "seconds": 5,
    "uses": "cut"
+  },
+  {
+   "id": "snare",
+   "station": "workbench",
+   "out": {
+    "id": "snare",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 2
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 5,
+   "uses": "cut",
+   "note": "docs/45 section 2: a snare for rabbits, Crafting 1 (open until the skills); a stake and a noose of cloth"
+  },
+  {
+   "id": "lead",
+   "station": "workbench",
+   "out": {
+    "id": "lead",
+    "count": 1
+   },
+   "in": [
+    {
+     "tag": "cloth",
+     "count": 2
+    }
+   ],
+   "seconds": 4,
+   "uses": "cut",
+   "note": "docs/45 section 1: a lead, Crafting 1 (open until the skills)"
   },
   {
    "id": "shield",
@@ -3286,6 +4110,23 @@
    ],
    "seconds": 8,
    "tool": "hammer"
+  },
+  {
+   "id": "shears",
+   "station": "anvil",
+   "out": {
+    "id": "shears",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 8,
+   "tool": "hammer",
+   "note": "docs/45 section 3: shears, Blacksmithing 1 (open until the skills)"
   },
   {
    "id": "hammer",
@@ -4056,35 +4897,33 @@
    ],
    "rolls": [
     0,
-    2
+    0
    ],
    "entries": [
     {
-     "item": "rag",
-     "count": 1,
-     "weight": 2,
-     "perRoll": 0.2222
-    },
-    {
-     "item": "stick",
-     "count": [
-      1,
-      2
-     ],
-     "weight": 2,
-     "perRoll": 0.2222
-    },
-    {
-     "item": "grain",
+     "item": "nothing",
      "count": 1,
      "weight": 1,
-     "perRoll": 0.1111
-    },
+     "perRoll": 1
+    }
+   ]
+  },
+  {
+   "name": "feed_trough",
+   "grid": [
+    4,
+    2
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": [
     {
      "item": "nothing",
      "count": 1,
-     "weight": 4,
-     "perRoll": 0.4444
+     "weight": 1,
+     "perRoll": 1
     }
    ]
   },
@@ -4826,6 +5665,17 @@
    "note": "the drawn chicken coop (docs/29-world/09, 1.2.11; #333): a plank hut on legs with a ramp and a nesting box, long side along y as drawn, along x as its mirror, as the bed; a container (loot table coop, a placeholder: Michael, 2026-10-20, \"Coop as placeholder container is fine!\"), so no interactable: a container does not sway. chicken_coop_1 (door half open) and chicken_coop_2 (open) are spare click frames, drawn the y way: a clickAnim cannot play on a facings sprite yet"
   },
   {
+   "id": "clay_bank",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "a clay bank on the grass by the river (docs/39 section 4: Mining 3; docs/46 step 2): dug with a shovel carried for clay (src/gather.js), and it comes back elsewhere by the river (src/resources.js). Dev art drawn from this design (src/gather-art.js); the clay's icon is the same palette"
+  },
+  {
    "id": "coffin",
    "kind": "container",
    "label": "Coffin",
@@ -5038,6 +5888,15 @@
    "note": "a dev box for the dye vat (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
+   "id": "feed_trough",
+   "kind": "container",
+   "label": "feed",
+   "drawn": false,
+   "container": true,
+   "carry": false,
+   "note": "docs/45 section 3: a feeding trough, not the water trough; built from the palette, filled with feed (grain, vegetables, hay: an item tagged feed); a tame animal whose home is within keep.feedReach eats one unit a day (src/entities/animal.js); it opens at once as the feeding trough (`searched`, never rolled) and takes only feed (`accepts`, grid.fits)"
+  },
+  {
    "id": "fireplace",
    "kind": "fire",
    "drawn": true,
@@ -5196,6 +6055,94 @@
    }
   },
   {
+   "id": "herb_feverfew",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Feverfew: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_grave_moss",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Grave moss: the graveyard's herb, gathered only at night (docs/39 section 4, Herbalism 7: its kinds unnamed); a placeholder name and kind until Michael names them. Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_madder",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Madder: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_mana_herb",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Mana herb: the mana herb, near water (docs/39 section 4, Herbalism 4); its name is Michael's to choose (ruled 2026-10-23), a placeholder until then. Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_nettle",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Nettle: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_nightshade",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Nightshade: for poisons, in the woods (docs/39 section 4, Herbalism 5). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_sage",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Sage: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_weld",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Weld: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_woad",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Woad: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_wolfsbane",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Wolfsbane: for poisons, in the woods (docs/39 section 4, Herbalism 5). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
+   "id": "herb_yarrow",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "Yarrow: the healing herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+  },
+  {
    "id": "lantern_post",
    "kind": "fire",
    "drawn": false,
@@ -5271,7 +6218,7 @@
    "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+   "note": "a mushroom near trees (question 27): foraged for a mushroom (docs/46 step 2, Herbalism 3; src/gather.js), and it comes back near trees elsewhere in the woods (src/resources.js)"
   },
   {
    "id": "mushroom_1",
@@ -5279,7 +6226,7 @@
    "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+   "note": "a mushroom near trees (question 27): foraged for a mushroom (docs/46 step 2, Herbalism 3; src/gather.js), and it comes back near trees elsewhere in the woods (src/resources.js)"
   },
   {
    "id": "mushroom_2",
@@ -5287,7 +6234,7 @@
    "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+   "note": "a mushroom near trees (question 27): foraged for a mushroom (docs/46 step 2, Herbalism 3; src/gather.js), and it comes back near trees elsewhere in the woods (src/resources.js)"
   },
   {
    "id": "mushroom_3",
@@ -5295,7 +6242,7 @@
    "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+   "note": "a mushroom near trees (question 27): foraged for a mushroom (docs/46 step 2, Herbalism 3; src/gather.js), and it comes back near trees elsewhere in the woods (src/resources.js)"
   },
   {
    "id": "mushroom_4",
@@ -5303,7 +6250,7 @@
    "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "a mushroom to forage, later (question 27); for now it wiggles when clicked"
+   "note": "a mushroom near trees (question 27): foraged for a mushroom (docs/46 step 2, Herbalism 3; src/gather.js), and it comes back near trees elsewhere in the woods (src/resources.js)"
   },
   {
    "id": "noticeboard",
@@ -5511,12 +6458,39 @@
    "note": "a laid rug (docs/02, 2026-10-20, \"Paintings and rugs are items\"; #327): a flat 2 by 3 drawing on the ground plane, long side along y as drawn, along x as its mirror, as the bed; no outline (you walk on it). `rug` puts it in the tile's rug slot, under whatever stands on it, so furniture may stand on it and it never blocks. It is made by placing the item of the same name from the bag and gives that item back (src/rugs.js)."
   },
   {
+   "id": "salt_rock",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "collide": {
+    "radius": 0.38
+   },
+   "interactable": true,
+   "note": "a salt rock in the ore area (docs/39 section 4: Mining 3; docs/46 step 2): a pickaxe in hand mines it for salt and it goes (src/mining.js); a new one rises elsewhere in the ore area after a while (src/resources.js), as the ore does. Dev art drawn from this design (src/gather-art.js); the salt's icon is the same palette"
+  },
+  {
+   "id": "sapling_0",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "a sapling planted, its first stage (docs/46 step 3, #449; src/trees.js): walked through and swayed like a crop, picked up again as the Sapling item, grown to its second stage and then to the round oak over tuning.trees.sapling.days of growth, which waits while anyone stands on it. Dev art drawn from this design (src/gather-art.js), the item's icon from the same"
+  },
+  {
+   "id": "sapling_1",
+   "kind": "gatherable",
+   "drawn": false,
+   "carry": false,
+   "interactable": true,
+   "note": "a sapling planted, its second stage, larger (docs/46 step 3, #449; src/trees.js): as sapling_0, and the round oak (tree_oak_m) when its growing days are done"
+  },
+  {
    "id": "sawpit",
    "kind": "placeholder box",
    "label": "Sawpit",
    "drawn": false,
    "carry": false,
-   "note": "a dev box for the sawpit (docs/30 step 1; docs/29/09 has its art request); saws a log into planks with no hatchet (docs/43 section 6, src/repair.js)"
+   "note": "a dev box for the sawpit (docs/30 step 1; docs/29/09 has its art request); saws a log into planks with no hatchet (docs/43 section 6, src/sawpit.js)"
   },
   {
    "id": "scarecrow",
@@ -5535,6 +6509,12 @@
    "container": true,
    "carry": true,
    "note": "a dev box for the shelf (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "snare",
+   "kind": "placeholder box",
+   "drawn": false,
+   "note": "docs/45 section 2: a stake and a noose, set outdoors from the bag (src/setdown.js); it holds a rabbit after a while (src/entities/animal.js), picked up again as the Snare item"
   },
   {
    "id": "spinningwheel",
@@ -7386,6 +8366,18 @@
     "honey": [
      "beastlore",
      "taken"
+    ],
+    "gather": [
+     "herbalism",
+     "gathered"
+    ],
+    "dig": [
+     "mining",
+     "dug"
+    ],
+    "sticks": [
+     "woodcutting",
+     "gathered"
     ]
    }
   },
@@ -7508,6 +8500,29 @@
    "tries": 8,
    "yardCap": 300,
    "riseSeconds": 1
+  },
+  "trees": {
+   "sapling": {
+    "item": "sapling",
+    "chance": 0.33,
+    "days": 5,
+    "stages": [
+     "sapling_0",
+     "sapling_1"
+    ],
+    "grows": "tree_oak_m",
+    "skill": "woodcutting",
+    "level": 4
+   },
+   "sticks": {
+    "item": "stick",
+    "count": [
+     1,
+     2
+    ],
+    "seconds": 2
+   },
+   "checkSeconds": 30
   }
  },
  "combat": {
@@ -7761,6 +8776,18 @@
    },
    "seconds": 8,
    "note": "docs/43 section 4 (step 3): built inside a room, against a wall; a switch (section 3), out when built; no tool (the builder's default, as the campfire's)"
+  },
+  "feed_trough": {
+   "label": "Feeding trough",
+   "kind": "prop",
+   "sprite": "feed_trough",
+   "stand": "ground",
+   "cost": {
+    "plank": 3
+   },
+   "seconds": 6,
+   "tool": "build",
+   "note": "docs/45 section 3: a feeding trough (not the water trough) in a pen, filled with grain, vegetables, or hay; built from the palette, planks (Primary's default)"
   }
  },
  "looks": {
@@ -8050,56 +9077,56 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1115"
+    "main.js:1130"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1114"
+    "main.js:1129"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1092"
+    "main.js:1107"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:933",
-    "main.js:947"
+    "main.js:947",
+    "main.js:961"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1382"
+    "interact.js:1411"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1384"
+    "interact.js:1413"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1112"
+    "main.js:1127"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1095"
+    "main.js:1110"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1094"
+    "main.js:1109"
    ]
   },
   {
@@ -8120,62 +9147,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1383"
+    "interact.js:1412"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1090"
+    "main.js:1105"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1096"
+    "main.js:1111"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1103"
+    "main.js:1118"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1092"
+    "main.js:1107"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1175"
+    "main.js:1190"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1175"
+    "main.js:1190"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1093"
+    "main.js:1108"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1186"
+    "main.js:1201"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:933",
-    "main.js:939"
+    "main.js:947",
+    "main.js:953"
    ]
   }
  ],
@@ -8193,9 +9220,15 @@
    ]
   },
   {
+   "key": "butcher",
+   "at": [
+    "entities/animal.js:799"
+   ]
+  },
+  {
    "key": "chop",
    "at": [
-    "chop.js:26"
+    "chop.js:28"
    ]
   },
   {
@@ -8205,21 +9238,27 @@
    ]
   },
   {
+   "key": "dig",
+   "at": [
+    "gather.js:88"
+   ]
+  },
+  {
    "key": "dip",
    "at": [
-    "burn.js:152"
+    "burn.js:153"
    ]
   },
   {
    "key": "dye",
    "at": [
-    "dye.js:164"
+    "dye.js:194"
    ]
   },
   {
    "key": "feed",
    "at": [
-    "burn.js:282"
+    "burn.js:283"
    ]
   },
   {
@@ -8235,6 +9274,12 @@
    ]
   },
   {
+   "key": "gather",
+   "at": [
+    "gather.js:87"
+   ]
+  },
+  {
    "key": "harvest",
    "at": [
     "farming.js:233"
@@ -8247,9 +9292,21 @@
    ]
   },
   {
+   "key": "lead",
+   "at": [
+    "entities/animal.js:487"
+   ]
+  },
+  {
+   "key": "letgo",
+   "at": [
+    "entities/animal.js:501"
+   ]
+  },
+  {
    "key": "light",
    "at": [
-    "burn.js:300"
+    "burn.js:301"
    ]
   },
   {
@@ -8279,7 +9336,7 @@
   {
    "key": "putout",
    "at": [
-    "burn.js:267"
+    "burn.js:268"
    ]
   },
   {
@@ -8289,9 +9346,21 @@
    ]
   },
   {
+   "key": "skin",
+   "at": [
+    "entities/animal.js:786"
+   ]
+  },
+  {
    "key": "sleep",
    "at": [
     "entities/player.js:242"
+   ]
+  },
+  {
+   "key": "sticks",
+   "at": [
+    "trees.js:204"
    ]
   },
   {
@@ -8311,7 +9380,7 @@
   {
    "key": "chop",
    "at": [
-    "chop.js:18"
+    "chop.js:20"
    ]
   },
   {
@@ -8323,7 +9392,7 @@
   {
    "key": "harvest",
    "at": [
-    "farming.js:295"
+    "farming.js:304"
    ]
   },
   {
@@ -8336,7 +9405,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:768"
+    "interact.js:793"
    ]
   }
  ],
@@ -8350,7 +9419,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1533"
+    "main.js:1559"
    ]
   },
   {
@@ -8362,13 +9431,13 @@
   {
    "key": "Build",
    "at": [
-    "main.js:836"
+    "main.js:850"
    ]
   },
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:914"
+    "interact.js:939"
    ]
   },
   {
@@ -8416,38 +9485,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1456"
+    "main.js:1472"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1582"
+    "interact.js:1611"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1524",
-    "interact.js:1612"
+    "interact.js:1553",
+    "interact.js:1641"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1500"
+    "interact.js:1529"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1501"
+    "interact.js:1530"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1618"
+    "interact.js:1647"
    ]
   },
   {
@@ -8469,9 +9538,21 @@
    ]
   },
   {
+   "key": "Gather sticks (none until tomorrow)",
+   "at": [
+    "trees.js:235"
+   ]
+  },
+  {
+   "key": "Gather sticks",
+   "at": [
+    "trees.js:239"
+   ]
+  },
+  {
    "key": "Growing the world",
    "at": [
-    "main.js:1507"
+    "main.js:1533"
    ]
   },
   {
@@ -8483,7 +9564,8 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:727"
+    "interact.js:733",
+    "interact.js:749"
    ]
   },
   {
@@ -8495,25 +9577,31 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:548"
+    "interact.js:554"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1440"
+    "main.js:1456"
+   ]
+  },
+  {
+   "key": "Look at the snare",
+   "at": [
+    "interact.js:1932"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1482"
+    "main.js:1498"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1494"
+    "main.js:1520"
    ]
   },
   {
@@ -8537,71 +9625,71 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1546"
+    "main.js:1572"
    ]
   },
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1495"
+    "interact.js:1524"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1487",
-    "interact.js:1489",
-    "interact.js:1491",
-    "interact.js:1494",
-    "interact.js:1496"
+    "interact.js:1516",
+    "interact.js:1518",
+    "interact.js:1520",
+    "interact.js:1523",
+    "interact.js:1525"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1620"
+    "interact.js:1649"
    ]
   },
   {
    "key": "Put out the campfire",
    "at": [
-    "interact.js:504"
+    "interact.js:510"
    ]
   },
   {
    "key": "Put out the lantern",
    "at": [
-    "interact.js:612"
+    "interact.js:618"
    ]
   },
   {
    "key": "Put out the torch",
    "at": [
-    "interact.js:563"
+    "interact.js:569"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1406"
+    "main.js:1422"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1402"
+    "main.js:1418"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1442"
+    "main.js:1458"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1441"
+    "main.js:1457"
    ]
   },
   {
@@ -8613,13 +9701,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1555"
+    "main.js:1581"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:521"
+    "interact.js:527"
    ]
   },
   {
@@ -8661,7 +9749,7 @@
   {
    "key": "Take down the bracket",
    "at": [
-    "interact.js:587"
+    "interact.js:593"
    ]
   },
   {
@@ -8673,13 +9761,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:572"
+    "interact.js:578"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:769"
+    "interact.js:794"
    ]
   },
   {
@@ -8691,15 +9779,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1593",
-    "interact.js:1634"
+    "interact.js:1622",
+    "interact.js:1663"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1485",
-    "interact.js:1580"
+    "interact.js:1514",
+    "interact.js:1609"
    ]
   },
   {
@@ -8717,7 +9805,7 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:935"
+    "interact.js:960"
    ]
   },
   {
@@ -8741,31 +9829,37 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:1839"
+    "interact.js:1868"
+   ]
+  },
+  {
+   "key": "${label} (${short})",
+   "at": [
+    "gather.js:102"
    ]
   },
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:635"
+    "interact.js:641"
    ]
   },
   {
    "key": "${word} ${name} (worn past repair)",
    "at": [
-    "repair.js:132"
+    "repair.js:134"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:787"
+    "interact.js:812"
    ]
   },
   {
    "key": "Boil water (${water.NO_TAINTED.replace(/\\.$/, \"\").toLowerCase()})",
    "at": [
-    "interact.js:982"
+    "interact.js:1011"
    ]
   },
   {
@@ -8796,25 +9890,31 @@
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:868"
+    "interact.js:893"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1310"
+    "interact.js:1339"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1504"
+    "interact.js:1533"
+   ]
+  },
+  {
+   "key": "Let go of the ${c.name}",
+   "at": [
+    "interact.js:1980"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:1888"
+    "interact.js:1917"
    ]
   },
   {
@@ -8826,87 +9926,99 @@
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:231"
+    "interact.js:233"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:794"
+    "interact.js:819"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
    "at": [
-    "interact.js:363"
+    "interact.js:365"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:346"
+    "interact.js:348"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:774"
+    "interact.js:799"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1921"
+    "interact.js:2016"
    ]
   },
   {
    "key": "Put out the ${name}",
    "at": [
-    "interact.js:487"
+    "interact.js:493"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1536"
+    "interact.js:1565"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1909"
+    "interact.js:2004"
    ]
   }
  ],
  "events": [
   {
+   "key": "animalBite",
+   "at": [
+    "entities/animal.js:382"
+   ]
+  },
+  {
+   "key": "animalKilled",
+   "at": [
+    "entities/animal.js:712"
+   ]
+  },
+  {
    "key": "arrowLanded",
    "at": [
-    "archery.js:298"
+    "archery.js:305"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:712"
+    "archery.js:728"
    ]
   },
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1315"
+    "main.js:1330"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:413"
+    "game.js:428"
    ]
   },
   {
    "key": "blocked",
    "at": [
-    "combat.js:172"
+    "combat.js:173"
    ]
   },
   {
@@ -8918,9 +10030,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:237",
-    "interact.js:428",
-    "interact.js:1852",
+    "interact.js:239",
+    "interact.js:434",
+    "interact.js:1881",
     "ui/station-panel.js:83",
     "ui/station-panel.js:109"
    ]
@@ -8928,7 +10040,7 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:664"
+    "game.js:818"
    ]
   },
   {
@@ -8946,7 +10058,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:643"
+    "game.js:797"
    ]
   },
   {
@@ -8958,62 +10070,62 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1038"
+    "map.js:1061"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:136"
+    "map.js:137"
    ]
   },
   {
    "key": "fireLit",
    "at": [
-    "map.js:372",
-    "map.js:381"
+    "map.js:373",
+    "map.js:382"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:120"
+    "map.js:121"
    ]
   },
   {
    "key": "firePutOut",
    "at": [
-    "map.js:353"
+    "map.js:354"
    ]
   },
   {
    "key": "gameOver",
    "at": [
-    "game.js:725"
+    "game.js:892"
    ]
   },
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:163"
+    "combat.js:164"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:290"
+    "combat.js:309"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:404"
+    "combat.js:430"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:366"
+    "combat.js:385"
    ]
   },
   {
@@ -9025,7 +10137,7 @@
   {
    "key": "shove",
    "at": [
-    "combat.js:451"
+    "combat.js:477"
    ]
   },
   {
@@ -9043,7 +10155,7 @@
   {
    "key": "talkStarted",
    "at": [
-    "entities/villager.js:318"
+    "entities/villager.js:320"
    ]
   },
   {
@@ -9055,8 +10167,8 @@
   {
    "key": "torchSpent",
    "at": [
-    "map.js:176",
-    "map.js:190"
+    "map.js:177",
+    "map.js:191"
    ]
   },
   {
@@ -9075,15 +10187,15 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:826",
-    "map.js:1034"
+    "map.js:1057"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:720",
-    "combat.js:421",
-    "game.js:556"
+    "archery.js:736",
+    "combat.js:447",
+    "game.js:709"
    ]
   },
   {
@@ -9210,10 +10322,13 @@
   "frame",
   "ground",
   "growth",
+  "herbs",
   "hidden",
   "highlight",
   "hovercard",
+  "hunting",
   "immune",
+  "keeping",
   "kindle",
   "kit",
   "lantern",
@@ -9228,6 +10343,7 @@
   "reach",
   "resources",
   "rooms",
+  "saplings",
   "save",
   "sheets",
   "siege",
@@ -9253,23 +10369,23 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2615
-  },
-  {
-   "path": "main.js",
-   "lines": 2014
+   "lines": 2667
   },
   {
    "path": "interact.js",
-   "lines": 1966
+   "lines": 2061
+  },
+  {
+   "path": "main.js",
+   "lines": 2041
   },
   {
    "path": "placeholders.js",
-   "lines": 1617
+   "lines": 1654
   },
   {
    "path": "net.js",
-   "lines": 1469
+   "lines": 1525
   },
   {
    "path": "ui/screens.js",
@@ -9288,16 +10404,20 @@
    "lines": 983
   },
   {
+   "path": "entities/animal.js",
+   "lines": 971
+  },
+  {
+   "path": "game.js",
+   "lines": 914
+  },
+  {
    "path": "ui/inventory-panel.js",
    "lines": 783
   },
   {
    "path": "archery.js",
-   "lines": 765
-  },
-  {
-   "path": "game.js",
-   "lines": 747
+   "lines": 781
   },
   {
    "path": "gl.js",
@@ -9305,19 +10425,19 @@
   },
   {
    "path": "assets.js",
-   "lines": 662
+   "lines": 663
   },
   {
    "path": "figure/draw.js",
    "lines": 643
   },
   {
-   "path": "render/walls.js",
-   "lines": 508
+   "path": "combat.js",
+   "lines": 534
   },
   {
-   "path": "combat.js",
-   "lines": 507
+   "path": "render/walls.js",
+   "lines": 508
   },
   {
    "path": "figure/rig.js",
@@ -9341,7 +10461,7 @@
   },
   {
    "path": "entities/villager.js",
-   "lines": 372
+   "lines": 374
   },
   {
    "path": "sound-gen.js",
@@ -9356,52 +10476,60 @@
    "lines": 333
   },
   {
+   "path": "farming.js",
+   "lines": 329
+  },
+  {
    "path": "figure/raster.js",
    "lines": 329
   },
   {
-   "path": "entities/animal.js",
-   "lines": 328
-  },
-  {
    "path": "burn.js",
-   "lines": 321
-  },
-  {
-   "path": "farming.js",
-   "lines": 320
+   "lines": 322
   },
   {
    "path": "host.js",
-   "lines": 306
+   "lines": 310
+  },
+  {
+   "path": "gather-art.js",
+   "lines": 305
   },
   {
    "path": "render/entities.js",
    "lines": 299
   },
   {
-   "path": "ui/nav-row.js",
-   "lines": 290
+   "path": "render/props.js",
+   "lines": 293
   },
   {
-   "path": "render/props.js",
-   "lines": 284
+   "path": "ui/nav-row.js",
+   "lines": 290
   },
   {
    "path": "paintings.js",
    "lines": 283
   },
   {
+   "path": "tuning.js",
+   "lines": 274
+  },
+  {
+   "path": "item-info.js",
+   "lines": 264
+  },
+  {
    "path": "stations.js",
    "lines": 264
   },
   {
-   "path": "tuning.js",
-   "lines": 263
-  },
-  {
    "path": "chart.js",
    "lines": 257
+  },
+  {
+   "path": "trees.js",
+   "lines": 249
   },
   {
    "path": "ui/skill-icons.js",
@@ -9424,6 +10552,10 @@
    "lines": 223
   },
   {
+   "path": "pathfind.js",
+   "lines": 223
+  },
+  {
    "path": "items.js",
    "lines": 221
   },
@@ -9433,27 +10565,31 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 209
+   "lines": 211
   },
   {
    "path": "ui/dye-panel.js",
    "lines": 206
   },
   {
+   "path": "dye.js",
+   "lines": 203
+  },
+  {
    "path": "fire.js",
    "lines": 197
   },
   {
+   "path": "setdown.js",
+   "lines": 192
+  },
+  {
    "path": "grid.js",
-   "lines": 190
+   "lines": 191
   },
   {
    "path": "woods.js",
    "lines": 186
-  },
-  {
-   "path": "setdown.js",
-   "lines": 183
   },
   {
    "path": "ui/station-panel.js",
@@ -9462,14 +10598,6 @@
   {
    "path": "render/area.js",
    "lines": 175
-  },
-  {
-   "path": "item-info.js",
-   "lines": 174
-  },
-  {
-   "path": "dye.js",
-   "lines": 173
   },
   {
    "path": "input.js",
@@ -9492,15 +10620,15 @@
    "lines": 158
   },
   {
+   "path": "repair.js",
+   "lines": 157
+  },
+  {
    "path": "dev.js",
    "lines": 155
   },
   {
    "path": "identities.js",
-   "lines": 155
-  },
-  {
-   "path": "repair.js",
    "lines": 155
   },
   {
@@ -9540,6 +10668,14 @@
    "lines": 124
   },
   {
+   "path": "gather.js",
+   "lines": 120
+  },
+  {
+   "path": "resources.js",
+   "lines": 118
+  },
+  {
    "path": "ui/speech.js",
    "lines": 117
   },
@@ -9560,10 +10696,6 @@
    "lines": 115
   },
   {
-   "path": "resources.js",
-   "lines": 114
-  },
-  {
    "path": "ui/hover-card.js",
    "lines": 111
   },
@@ -9582,10 +10714,6 @@
   {
    "path": "use.js",
    "lines": 106
-  },
-  {
-   "path": "pathfind.js",
-   "lines": 102
   },
   {
    "path": "netsmooth.js",
@@ -9636,11 +10764,11 @@
    "lines": 78
   },
   {
-   "path": "highlight.js",
-   "lines": 76
+   "path": "sawpit.js",
+   "lines": 77
   },
   {
-   "path": "sawpit.js",
+   "path": "highlight.js",
    "lines": 76
   },
   {
@@ -9688,6 +10816,14 @@
    "lines": 58
   },
   {
+   "path": "tracks.js",
+   "lines": 58
+  },
+  {
+   "path": "chop.js",
+   "lines": 56
+  },
+  {
    "path": "mining.js",
    "lines": 56
   },
@@ -9698,10 +10834,6 @@
   {
    "path": "ui/kit.js",
    "lines": 53
-  },
-  {
-   "path": "chop.js",
-   "lines": 52
   },
   {
    "path": "ui/moodles.js",
@@ -9742,6 +10874,10 @@
   {
    "path": "ui/small-text.js",
    "lines": 37
+  },
+  {
+   "path": "render/tracks.js",
+   "lines": 36
   },
   {
    "path": "sight.js",
@@ -9847,7 +10983,8 @@
    "KICK_TIME": 0.08
   },
   "entities_animal": {
-   "LOOK_EVERY": 0.25
+   "LOOK_EVERY": 0.25,
+   "BODY_REACH": 2.6
   },
   "figure_draw": {
    "SHADE_DYE": 0.16,
@@ -9888,6 +11025,9 @@
    "HEAL": 1,
    "GATHER": 2,
    "MAX_LOG": 300
+  },
+  "game": {
+   "CENSUS_DEPTH": 16
   },
   "gl": {
    "FLAG_UNLIT": 1,
@@ -9972,7 +11112,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 9,
+   "PROTOCOL": 12,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -9981,7 +11121,9 @@
    "SYNC_EVERY_FRAMES": 10,
    "JOIN_WAIT_MS": 10000,
    "FRAME_EVERY": 3,
-   "EARLY_MAX": 600
+   "EARLY_MAX": 600,
+   "RETURN_WAIT_FRAMES": 200,
+   "RING": 4
   },
   "netsmooth": {
    "KEEP": 12
@@ -9992,7 +11134,7 @@
    "FACE_T": 16
   },
   "pathfind": {
-   "KEY_OFF": 32768
+   "START_NODES": 2048
   },
   "placeholders": {
    "WALL_T": 18,
@@ -10180,7 +11322,7 @@
   "gives": "log",
   "field": "wood",
   "tool": "chop",
-  "at": "src/chop.js:26-51"
+  "at": "src/chop.js:28-55"
  },
  "valleyProps": {
   "from": "src/map.js loadMap, inside data/maps/valley.json's bounds",
@@ -10205,6 +11347,7 @@
    "charcoal_sack": 2,
    "chest": 44,
    "chicken_coop": 2,
+   "clay_bank": 8,
    "coffin": 2,
    "counter": 1,
    "crane": 1,
@@ -10229,12 +11372,24 @@
    "cupboard": 12,
    "desk": 3,
    "dyevat": 3,
+   "feed_trough": 4,
    "fireplace": 19,
    "font": 1,
    "forge": 1,
    "grindstone": 1,
    "haystack": 9,
    "headstone": 18,
+   "herb_feverfew": 14,
+   "herb_grave_moss": 4,
+   "herb_madder": 10,
+   "herb_mana_herb": 10,
+   "herb_nettle": 16,
+   "herb_nightshade": 7,
+   "herb_sage": 16,
+   "herb_weld": 10,
+   "herb_woad": 10,
+   "herb_wolfsbane": 7,
+   "herb_yarrow": 16,
    "lantern_post": 3,
    "lectern": 1,
    "loom": 1,
@@ -10258,6 +11413,7 @@
    "rock_1": 8,
    "rock_2": 12,
    "rock_3": 7,
+   "salt_rock": 4,
    "sawpit": 1,
    "scarecrow": 1,
    "shelf": 20,

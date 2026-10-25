@@ -7,7 +7,7 @@ summary: A two-handed polearm with a wide, slow sweep and a long, narrow thrust.
 
 {{infobox-item halberd}}
 
-The **Halberd** is a two-handed polearm. It leaves no hand for a [[Wooden shield]] or a [[Torch]]. It has the longest reach of any weapon held in the hand, and the longest life.
+The **Halberd** is a two-handed polearm. It leaves no hand for a [[Wooden shield]] or a [[Torch]]. It has the longest reach of any weapon held in the hand, and the longest life. An animal killed with it is hacked to ruin: its carcass gives {{n animals.kills.halberd}} of every yield (see [[Hunting]]).
 
 ## Combat
 
@@ -30,5 +30,6 @@ The sweep never floors (see [[Stagger and knockdown]]). Both modes share one coo
 - `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: the sweep has no `knockdown` of its own, so it takes the default chance, 0, and never floors
 - `src/combat.js:330`, `src/combat.js:342`: one cooldown for both modes
 - `src/items.js:24-37`: durability per hit from the base damage
+- `data/animals.json:4-5` (at 6e3ab37): the halberd's own kill class, whose share is none (game #456)
 
 {{navbox weapons}}
