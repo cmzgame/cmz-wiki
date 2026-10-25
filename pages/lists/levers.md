@@ -46,6 +46,8 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **What stacks and how far:** each item's own stack size; one thing a cell unless chosen. Today only arrows, throwing knives and axes, bandages, and seeds stack (see [[Inventory#Stacking|Inventory]]).
 - **The bags' sizes:** each bag's grid: the [[Burlap sack]] {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}}, the [[Linen satchel]] {{n items.satchel.bag.0}} × {{n items.satchel.bag.1}}, and the [[Rucksack]] {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}} today. {{planned doc=42 note="A rucksack of eight by six, made from leather and wool, and a best bag of ten by six, both built."}}
 - **A boss's best drop:** {{planned doc=42 note="About one in eight at first, rising with each kill that misses it, certain by the twentieth, for each player."}}
+- **Natural resources:** each kind's count for the valley, {{n valley.resources.stone.count}} rocks of stone, {{n valley.resources.ore.count}} ore rocks, and {{n valley.resources.mushrooms.count}} mushrooms, and each kind's area, are the map's; a taken one's replacement falls due {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later, looked for every {{n tuning.resources.checkSeconds seconds}} with {{n tuning.resources.tries}} tries; a fill of more than {{n tuning.resources.yardCap}} tiles is open ground, not a fenced yard; a rock rises in {{n tuning.resources.riseSeconds seconds}}. See [[Mining#Coming back|Mining]]. {{planned doc=46 note="Salt, clay, and herbs with counts of their own, saplings that grow into trees, and sticks gathered under a tree."}}
+- **Animals:** each kind's walk, run, flight, wander, stands, and grazing (see [[Animals]]); wild game renewed one a home every {{n animals.renew.seconds seconds}} of the clock, never within {{n animals.renew.clear tiles}} of a player; each home's herd and cap are the map's. {{planned doc=45 note="The feeding cycle, feathers, and breeding's days and pen cap."}}
 
 ### Making and mending
 
@@ -112,3 +114,4 @@ On the [[Settings]] screen, kept in the browser.
 - `data/dyes.json`, `data/items.json` each `dye`: the dye vat's palettes, its unlock, no cost (game #417, at 31d330a)
 - `src/rules.js`, `data/recipes.json`: Village stations, its recipes' rows (game #431, at 49b8c44)
 - `data/tuning.json` `work.burnCorpse`, `water`, `player.waveSeconds`, `villager` (the cowering): the burning, the water and Sick, the wave, the cowering (games #434 and #435, at fa2997f)
+- `data/maps/valley.json` `resources` and `animals`, `data/tuning.json` `resources`, `data/animals.json`: the natural resources' counts and times, the animals' numbers and renewal, the homes (games #452 and #453, at 261cd7a)

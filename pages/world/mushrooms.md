@@ -15,9 +15,17 @@ A world made with the Trees [[World rules|world rule]] off has the same mushroom
 
 ## What they do
 
-Mushrooms do not block anyone: you, the dead, and villagers walk straight through them, and they sway as each one passes. A click within reach sways them too. They cannot be carried.
+Mushrooms do not block anyone: you, the dead, villagers, and [[Animals|animals]] walk straight through them, and they sway as each one passes. A click within reach sways them too. They cannot be carried.
 
-{{planned doc=30 step=4 note="Picking a mushroom."}}
+## Coming back
+
+The valley keeps a count of {{n valley.resources.mushrooms.count}} mushrooms. A mushroom taken inside the valley is owed back: {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later a new one appears, simply there, at a random spot elsewhere in the valley within {{n valley.resources.mushrooms.near}} tiles of a tree, on plain grass with nothing on it, never inside a room or a fenced yard and never under anyone. In a world made with Trees off, the trees that would have stood count. Nothing takes a mushroom yet, so none has come back in play.
+
+{{planned doc=46 step=2 note="Foraging a mushroom, at Herbalism 3 once the skills are built; until then no one will be refused."}}
+
+## With friends
+
+The mushrooms still owed will be the host's, saved with the world; a new one reaches every player with its part of the map.
 
 ## See also
 
@@ -27,10 +35,11 @@ Mushrooms do not block anyone: you, the dead, and villagers walk straight throug
 
 ## Sources
 
-<!-- sources at 9d9a5b5 -->
-- `data/maps/valley.json:5558-5569`, `tools/mapgen/valley.py:405`: five kinds equally, the chance a tile, within 2 tiles of a tree
-- `src/map.js:1949-1964`: inside the valley only on plain grass with nothing authored
-- `src/map.js:326-338`: the roll by tile and seed, near a tree, and the offset in the tile
-- `src/map.js:304-324`, `src/map.js:1931`, `src/map.js:332`: with Trees off, the trees that would have stood still count for the mushrooms near them, and no mushroom on such a tree's tile (game #149)
+<!-- sources at 261cd7a -->
+- `data/maps/valley.json` `forage`, `tools/mapgen/valley.py`: five kinds equally, the chance a tile, within 2 tiles of a tree
+- `src/map.js:2529-2543`: inside the valley only on plain grass with nothing authored
+- `src/map.js:507-519`: the roll by tile and seed, near a tree, and the offset in the tile
+- `src/map.js:48-49`, `src/map.js:489-493`, `src/map.js:513`: with Trees off, the trees that would have stood still count for the mushrooms near them, and no mushroom on such a tree's tile (game #149)
 - `data/sprites/mushroom_0.json`: `interactable: true`, `carry: false`
-- `src/interact.js:1226-1258`, `src/game.js:574-594`: a click and anyone walking through sway them
+- `src/interact.js:1694-1761`, `src/game.js:666-696`: a click and anyone walking through sway them
+- `data/maps/valley.json` `resources.mushrooms`, `src/map.js:612-636`, `src/resources.js:33-87`, `data/tuning.json` `resources`: the valley's count, near trees, owed back after its days at a free spot elsewhere, simply appearing; nothing calls the take yet (game #453)

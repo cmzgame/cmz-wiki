@@ -27,7 +27,7 @@ Grass tufts, flowers, leaves, and props with none of these are decoration, and l
 
 **What counts as made.** A kind can be made when a player can bring a new one into the world in the valley: a recipe whose product is that object, at a station the valley has, from materials and tools that can be had there (the same test as [[Production chains]]); the [[Building|build palette]]; or, for a crop, a seed that can be had there. A made container starts empty.
 
-**How many.** The props the map places are counted from the map. The trees and mushrooms the map grows by its rules are counted by the game's own map loader, inside the valley's edge. Past the edge, [[The wild]] grows trees, rocks, and mushrooms as it is walked, without end, and is not counted.
+**How many.** The props the map places are counted from the map. The trees and mushrooms the map grows by its rules, and the rocks the map adds when it loads to make up the valley's count of stone (see [[Rocks]]), are counted by the game's own map loader, inside the valley's edge. Past the edge, [[The wild]] grows trees, rocks, and mushrooms as it is walked, without end, and is not counted.
 
 ## Dead ends
 
