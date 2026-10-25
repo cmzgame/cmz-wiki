@@ -35,7 +35,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 
 - `E`: the nearest simple action (talk to a villager, open a door or shutter, search, drink, feed a fire, and so on), shown over its target as "E: action". It takes only what you can reach with a clear line, never through a wall. It does not light a fire that is out unless you carry a flame, a tinderbox or a lit torch (see [[Fire]]). It acts when the key is let go, however long it was held; holding it does nothing more. While carrying furniture: put it down.
 - `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you); a gate takes none. Held: pull a board off, with the hammer, and get the plank back.
-- `T`: light or douse the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or douse the torch in hand (a tinderbox lights it)".
+- `T`: light or put out the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or put out the torch in hand (a tinderbox lights it)".
 - `Q`: the main hand's other mode, as the middle button.
 - `1` `2` `3` `4`: the belt's slots: eat or drink what is there, otherwise swap it with your hand.
 
@@ -44,7 +44,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `Tab`: the bag (or the character panel if you have no bag on your back). Also closes the actions menu.
 - `C`: the character panel.
 - `N`: the build palette (see [[Building]]). Not with the bag open: the game says "Close your bag to build."
-- `X`: removal mode, for taking down what players built or made (see [[Building]]). Not with the bag open, as `N`.
+- `X`: Take apart, which highlights what players built or made; a click takes it apart for half its materials (see [[Building]]). Not with the bag open, as `N`.
 - `R`: turn the thing being placed; rotate an item being dragged.
 - `M`: the [[Map]]: what anyone in the world has seen, and where every player is. The wheel zooms it and a drag moves it; the world keeps running while it is open.
 
@@ -128,3 +128,5 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/net.js:1250-1290`: a guest's inputs and commands go to the host
 - `src/main.js:214-223`: any input while stepped away brings you back and is spent on it
 - `src/interact.js:1273`: B at a gate, "A gate takes no boards." (game #398, at 4db1c00)
+- `src/ui/screens.js:50`: X's line, Take apart (game #413, at 31d330a)
+- `src/ui/screens.js`: T's line, "Light or put out the torch in hand" (game #421, at 1bcb6ed)

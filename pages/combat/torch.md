@@ -13,14 +13,14 @@ The **Torch** is a light first. Lit and held in either hand it lights the way, o
 
 A torch is either lit or out. **A new torch is out**: one made at the workbench, one found, and the one every new character starts with.
 
-`T` lights and douses it:
+`T` lights it and puts it out:
 
-- With a torch in a hand, or else on the belt, `T` lights it if you carry a [[Tinderbox]] ("You light the torch."), and puts it out if it is lit ("You douse the torch."). With no tinderbox it says "You need a tinderbox to light it." A tinderbox never wears out.
+- With a torch in a hand, or else on the belt, `T` lights it if you carry a [[Tinderbox]] ("You light the torch."), and puts it out if it is lit ("You put out the torch."). With no tinderbox it says "You need a tinderbox to light it." A tinderbox never wears out.
 - With no torch in a hand or on the belt, `T` takes one from your bag into a hand, still out ("You take the torch in hand. T lights it."). With none at all, "No torch on you."
 
-A torch can also be lit by [[Use]]: use a [[Tinderbox]] or a lit torch on an unlit torch in your hand or on your belt, or on a torch that is out on a post or in a wall bracket ("You light the torch."). An unlit torch in your hand or on your belt used on a burning fire, a campfire, a hearth, an oven, the forge, or a lit torch on a post or in a bracket, is lit from it ("You light the torch at the fire."), and one used on a lantern, in a wall bracket or on a lantern post, is lit from the lantern ("You light the torch at the lantern."). The target must be within {{n census.constants.burn.DIP_REACH tiles}}, in sight, never through a wall, and a torch in the bag cannot be lit this way ("Only a torch in a hand or on the belt can be lit that way."). A mounted torch that is out, in a bracket or on a post, also has **Light the torch** on its menu, and a [[Fireball]] that comes down within reach of one, with no wall between, lights it too.
+A torch can also be lit by [[Use]]: use a [[Tinderbox]] or a lit torch on an unlit torch in your hand or on your belt, or on a torch that is out on a post or in a wall bracket ("You light the torch."). An unlit torch in your hand or on your belt used on a burning fire (a campfire, a lit fireplace or hearth, the oven, the forge) or a lit torch on a post or in a bracket, is lit from it ("You light the torch at the fire."), and one used on a lit lantern, in a wall bracket or on a lantern post, is lit from the lantern ("You light the torch at the lantern."). The target must be within {{n census.constants.burn.DIP_REACH tiles}}, in sight, never through a wall, and a torch in the bag cannot be lit this way ("Only a torch in a hand or on the belt can be lit that way."). A mounted torch that is out, in a bracket or on a post, also has **Light the torch** on its menu, and a lit one **Put out the torch**, and a [[Fireball]] that comes down within reach of one, with no wall between, lights it too.
 
-A lit torch is a flame: used on a campfire with fuel in it, it lights the fire, and one in a hand or on the belt is a flame for lighting any fire that is out from the fire's own menu, as a tinderbox is (see [[Fire]]). Only a lit torch gives light, gives back your sight in the dark, draws the dead at night, and can set the dead alight. A torch that is out is a stick with a weapon's numbers.
+A lit torch is a flame: used on a campfire with fuel in it, it lights the fire, and so it does a fireplace, a hearth, or a lantern that is out, and one in a hand or on the belt is a flame for lighting any fire that is out from the fire's own menu, as a tinderbox is (see [[Fire]]). Only a lit torch gives light, gives back your sight in the dark, draws the dead at night, and can set the dead alight. A torch that is out is a stick with a weapon's numbers.
 
 **A torch goes out when it leaves a hand, the belt, or a holder**: put in the bag or a container, dropped on the ground, or taken down from a bracket or a post. A torch on a belt or in a bag that is dropped goes out with it, and so does every torch on a body when it falls. Moving a torch between a hand and the belt keeps it lit. Mounting it in a bracket or on a post keeps it as it was, lit or out (see [[Torch posts and brackets]]).
 
@@ -54,7 +54,7 @@ In the off hand beside a weapon such as the [[Arming sword]] it counts as a weap
 
 ## With friends
 
-`T` is part of each player's input and is carried out by the host for that player, so a guest lights and douses their own torch the same way. The burning is worked out on the host, and every player sees each torch lit or out. A guest's copy of a mounted torch's wear catches up each time it burns down another hundredth.
+`T` is part of each player's input and is carried out by the host for that player, so a guest lights and puts out their own torch the same way. The burning is worked out on the host, and every player sees each torch lit or out. A guest's copy of a mounted torch's wear catches up each time it burns down another hundredth.
 
 ## Sources
 
@@ -85,5 +85,6 @@ In the off hand beside a weapon such as the [[Arming sword]] it counts as a weap
 - `src/sight.js:18-29`, `data/tuning.json:142`, `data/tuning.json:163`: the carrier's own torch sets how far it sees the dead in the dark; a belt torch's `beltLight` reach past `darkRadius` (game #173)
 - `src/interact.js:1235`, `src/interact.js:1275`: `T` an event in the player's input, performed by the host's step
 - `src/game.js:410-420`, `src/map.js:150-170`: a torch's lit state and wear reach every player; a mounted torch's wear sent at each hundredth
+- `src/interact.js:1370-1385`: `T` puts a lit torch out, "You put out the torch."; `src/interact.js:528-560`: Put out the torch on a holder's menu; `src/burn.js:87-150`: a lit torch lights a switch or a lantern that is out (game #421, at 1bcb6ed)
 
 {{navbox weapons}}

@@ -21,9 +21,13 @@ Equipping over a filled slot swaps the old garment into your bag; with no room t
 
 ### What clothes do
 
-Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks. Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Dirk]] on you, any of them tears into two [[Rag|rags]]; the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
+Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks, and most can be dyed (below). Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Dirk]] on you, any of them tears into two [[Rag|rags]]; the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
 
 A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. The valley has one pair of [[Work gloves]], on [[Hollow Farm]]'s tool rack, and one [[Onion-head Hat]], worn by its scarecrow. The Onion-head Hat is painted: a green hood with a brow over the eyes, drawn the same way on the dead and on villagers who wear one, in their own colours. The dead are dressed too, and searching a body lays their clothes out to be taken.
+
+### Dyeing
+
+The three dye vats in [[The weaver]]'s yard recolour clothing (see [[Dye vat]]): the [[Linen cap]], the [[Onion-head Hat]], the [[Linen tunic]], and the [[Linen breeches]] from the cloth palette, the [[Work gloves]] and the [[Hobnail boots]] from the leather palette, the [[Leather belt]] by one of its schemes, and the [[Linen satchel]]'s cloth and strap each on its own. The [[Rope belt]] and the bags other than the satchel cannot be dyed. A dyed garment is drawn in its colours on whoever wears it, and its hover card names them. Dyeing costs nothing and is open to everyone for now.
 
 ### Garments
 
@@ -66,3 +70,4 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `src/ui/inventory-actions.js:254-436`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
 - `src/net.js:238`: what each character has on travels in its record
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
+- `data/items.json:27-36`, `src/dye.js:122-132`, `src/dye.js:107-113`, `src/item-info.js:149-150`: what can be dyed and from which palette, at the dye vat; open to all, costing nothing; the card names the colours (game #417, at 31d330a)

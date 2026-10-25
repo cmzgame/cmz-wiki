@@ -6,7 +6,7 @@ summary: The baker's station: it bakes bread from flour, with its fire lit.
 
 {{infobox-station oven}}
 
-The **oven** bakes a [[Loaf of bread]] from [[Flour]]. Its fire burns [[Log|logs]] and must be lit. The baker's oven in the valley starts lit. Nothing in the valley gives flour yet, so the oven's one recipe cannot be made in play. The cooking recipes ([[Cooking]]) are not offered at the oven, only its own.
+The **oven** bakes from [[Flour]], which the [[Millstones]] grind, and it cooks every recipe a fire cooks as well ([[Cooking]]): its panel lists its own recipes first, then the fire's. Its fire burns [[Log|logs]] and must be lit. The baker's oven in the valley starts lit.
 
 ## Using it
 
@@ -34,5 +34,6 @@ A guest feeds the oven and bakes through the host like any station; the fire and
 - `src/interact.js:633-648`: the station's menu entry and `E`
 - `src/stations.js:204-212`: a job waits while the fire is out
 - `src/host.js:184-191`: a guest's Make runs on the host
+- `src/stations.js:47-55`, `src/ui/station-panel.js`: the oven is two stations, its own and cooking, its panel both lists, its menu "Use the oven" (game #421, at 1bcb6ed)
 
 {{navbox making}}

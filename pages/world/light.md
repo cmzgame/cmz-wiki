@@ -17,7 +17,7 @@ Outside, the ambient light is the sky's brightness for the hour (see [[The day]]
 
 A room's light depends on what is in it and how open it is. Rooms are found from the walls, never authored; see [[Rooms]].
 
-- **A room with a lit fireplace or hearth** is fully lit, every corner of it, day or night. Only fires that light their room do this: the fireplace and the hearth. An [[Oven]], a [[Forge]], or a campfire lights only the pool round it.
+- **A room with a lit fireplace or hearth** is fully lit, every corner of it, day or night. Only fires that light their room do this: the fireplace and the hearth, which are switches that burn nothing (see [[Fire#The home lights|Fire]]). An [[Oven]], a [[Forge]], or a [[Campfire]] lights only the pool round it.
 - **A room without such a fire** takes its daylight through its open doors and open shutters; a broken door or broken shutters count as open. By day each open one lights {{n tuning.world.daylightTiles}} tiles of the room fully, so one open window fills a small room with daylight and a larger room needs more of them open, in proportion to its size. Fully lit by day is {{n census.constants.light.tunables_unlitRoomCap}}, a little below the open sky. Closed shutters let through only a sliver, so with every door and shutter shut, noon inside is barely brighter than midnight, and the dead in the room are hidden as they are at night (see [[Sight]]). At night a room without a fire is dark however open it stands. See [[Openings]].
 
 ### Light through doors and windows
@@ -48,7 +48,7 @@ A [[Torch]] gives light only while it is lit, and burns down while it is (see [[
 - **On the belt:** {{n tuning.world.beltLight}} of the light and reach of one in hand, a little past the {{n tuning.sight.darkRadius tiles}} you see the dead in the dark without one.
 - **In the bag:** no light.
 
-`T` lights the torch in your hand, or else on your belt, with a [[Tinderbox]] carried, and douses a lit one; with no torch in a hand or on the belt it takes one from the bag into a hand, still out. A torch cannot be set down lit on the ground: dropped, put away, or taken down from a holder, it goes out. It can be mounted in a bracket or on a post.
+`T` lights the torch in your hand, or else on your belt, with a [[Tinderbox]] carried, and puts out a lit one; with no torch in a hand or on the belt it takes one from the bag into a hand, still out. A torch cannot be set down lit on the ground: dropped, put away, or taken down from a holder, it goes out. It can be mounted in a bracket or on a post.
 
 ### Moving lights
 
@@ -115,3 +115,4 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `src/net.js:1239-1246`, `src/net.js:884`, `src/light.js:185-188`: a guest rebuilds the light; each player's carried light sent when it changes, with its owner
 - `src/sight.js:26`: only the viewer's own carried light lengthens its reach (game #150)
 - `src/fire.js:97-102`, `src/archery.js:366-381`, `src/game.js:700`, `src/light.js:184-200`, `data/combat.json` `bow.fireballGlow`, `bow.flareRadius`, `bow.flareSeconds`: burning bodies, a fireball or fire arrow in flight, and a fireball's flare as moving lights, not among the flames the dead notice
+- `data/sprites/fireplace.json`, `data/sprites/hearth.json`: the room fires are switches, `fire.switch`; `src/interact.js:1370-1385`: T puts a torch out (game #421, at 1bcb6ed)

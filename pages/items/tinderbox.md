@@ -7,19 +7,20 @@ summary: The tool that lights a torch with T, a campfire or a mounted torch when
 
 {{infobox-item tinderbox}}
 
-The **tinderbox** is a flame you carry. It lights a [[Torch]], a campfire, or a torch mounted in a bracket or on a post, and it is one of the two flames (with a lit torch) that a fire which is out needs to be lit from its own menu. Every new character starts with one in the bag, beside the torch in their hand, which starts out. It can also ride in a slot of the [[Belt]]. It never wears out and is never used up. Nothing makes one yet, and the only other is in the [[Developer chest]]. It is drawn as a matchbox.
+The **tinderbox** is a flame you carry. It lights a [[Torch]], a [[Campfire]], a fireplace, a hearth, a lantern, or a torch mounted in a bracket or on a post, and it is one of the two flames (with a lit torch) that a fire which is out needs to be lit from its own menu. Every new character starts with one in the bag, beside the torch in their hand, which starts out. It can also ride in a slot of the [[Belt]]. It never wears out and is never used up. Nothing makes one yet, and the only other is in the [[Developer chest]]. It is drawn as a matchbox.
 
 ## Using it
 
-- **`T`**: with a tinderbox on you, `T` lights the torch in your hand, or else the one on your belt ("You light the torch."). Without one, `T` can still douse a lit torch, but it cannot light one: "You need a tinderbox to light it." See [[Torch#Lit or out|Torch]].
+- **`T`**: with a tinderbox on you, `T` lights the torch in your hand, or else the one on your belt ("You light the torch."). Without one, `T` can still put out a lit torch, but it cannot light one: "You need a tinderbox to light it." See [[Torch#Lit or out|Torch]].
 - **[[Use]]** it on what you want lit:
-  - a campfire that is out but has fuel in it ("You light the fire.");
+  - a campfire that is out but has fuel in it ("You light the campfire.");
+  - a fireplace, a hearth, or a lantern that is out ("You light the fireplace.", "You light the lantern."); these burn no fuel (see [[Fire#The home lights|Fire]]);
   - a torch on a torch post or in a wall bracket that is out ("You light the torch.");
   - an unlit torch in your hand or on your belt (with the bag open, click its slot).
 - **Light the torch** on the right-click menu of a bracket or a post holding a torch that is out lights it with the tinderbox you carry (see [[Torch posts and brackets]]).
-- **Light the ...** on the menu of a campfire, a hearth, a fireplace, an [[Oven]], or a [[Forge]] that is out needs a flame on you as well as the fuel: a tinderbox anywhere you carry it, or a lit torch in a hand or on the belt. Without one the entry reads "(need a tinderbox or a flame)", `E` passes it by, and a click says "You need a tinderbox or a lit torch to light it." Feeding a fire that is burning needs none (see [[Fire]]).
+- **Light the ...** on the menu of a campfire, a hearth, a fireplace, a lantern, an [[Oven]], or a [[Forge]] that is out needs a flame on you (and, for the campfire, the oven, and the forge, fuel in it or on you): a tinderbox anywhere you carry it, or a lit torch in a hand or on the belt. Without one the entry reads "(need a tinderbox or a flame)", `E` passes it by, and a click says "You need a tinderbox or a lit torch to light it." Feeding a fire that is burning needs none (see [[Fire]]).
 
-The target of a Use or of **Light the torch** must be within {{n census.constants.burn.DIP_REACH tiles}} of you, in sight: never through a wall or a shut door. Each refusal says why: "It is already burning.", "It has nothing to burn.", "There is no torch there." (an empty bracket or post), "It is already lit.", "Too far away.", "There is a wall in the way.", "A lantern is always lit." (a lantern, in a bracket or on a post), or, for a torch in the bag, "Only a torch in a hand or on the belt can be lit that way." Used on a hearth, a fireplace, an oven, or a forge, it says "That cannot be lit."; those are lit from their own menus, above.
+The target of a Use or of **Light the torch** must be within {{n census.constants.burn.DIP_REACH tiles}} of you, in sight: never through a wall or a shut door. Each refusal says why: "It is already burning.", "It has nothing to burn.", "There is no torch there." (an empty bracket or post), "It is already lit.", "Too far away.", "There is a wall in the way.", or, for a torch in the bag, "Only a torch in a hand or on the belt can be lit that way." Used on an oven or a forge, it says "That cannot be lit."; those are lit from their own menus, above.
 
 A lit torch does everything a tinderbox does here, so one lit torch can light another. A torch goes out whenever it leaves a hand, the belt, or a holder, so a torch put away in the bag needs a flame to be lit again.
 
@@ -50,5 +51,6 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 - `src/items.js:198-211`: a torch out when it leaves a hand, the belt, or a holder
 - `src/ui/inventory-actions.js:442-476`, `src/main.js:1021-1032`: a guest's Use, by the item's uid and the slot, a bracket by its tile and edge, run on the host as that player
 - `src/net.js:599-607`: a guest's menu choice run on the host as that player
+- `src/burn.js:87-120`, `data/interactions.json`: a fireplace, a hearth, and a lantern that is out are lit by the light verb, each naming itself; "You light the campfire."; no longer "A lantern is always lit." (game #421, at 1bcb6ed)
 
 {{navbox items}}

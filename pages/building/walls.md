@@ -26,13 +26,13 @@ A building may mix materials, with a different wall on each side. A door or a wi
 
 Doors and windows sit at the same heights in every wall, whatever its material.
 
-### Building and removing walls
+### Building and taking apart walls
 
-You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, and remove what you built with X. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; removing it puts the wall back. Walls that are part of the map cannot be removed. See [[Building]].
+You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart. See [[Building]].
 
 ### Brackets
 
-Some walls carry a bracket on one side. Most hold one of the village's lanterns, which never go out and cannot be taken. An empty bracket can hold a [[Torch]], which lights the area while it is lit and burns down; E takes the torch or mounts one you carry (see [[Torch posts and brackets]]). Brackets exist only where the map puts them, and you cannot make new ones; a door or a window built into a wall takes its bracket away.
+Some walls carry a bracket on one side. Most hold one of the village's lanterns, which burn nothing, can be put out and lit again, and cannot be taken. An empty bracket can hold a [[Torch]], which lights the area while it is lit and burns down; E takes the torch or mounts one you carry (see [[Torch posts and brackets]]). Brackets exist only where the map puts them, and you cannot make new ones; a door or a window built into a wall takes its bracket away.
 
 ### Near walls
 
@@ -77,3 +77,4 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - `data/items.json`: the torch's `fire`; `data/sprites/lantern_post.json`; `src/light.js:61-71`: a lantern's light, and a mounted torch's only while lit
 - `src/map.js:2149-2155`, `src/map.js:2230`: brackets only where the map authors them
 - `src/render/walls.js:164-170`, `src/render/walls.js:314-316`: near walls faded
+- `src/placement.js:518-576`: what a player built is taken apart with X for half its cost, a door or window leaving the wall again (game #413, at 31d330a)

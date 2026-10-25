@@ -7,7 +7,7 @@ summary: The bow's ammunition, which can be recovered from bodies and the ground
 
 {{infobox-item arrow}}
 
-The **Arrow** is the [[Hunting bow]]'s ammunition. Arrows stack to {{n items.arrow.stack}} and are drawn from the bag or the belt. [[Use|Used]] on any lit fire that burns fuel (a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]), the whole stack of arrows you carry becomes [[Fire arrow|fire arrows]] at once: the dip. The fire must be lit and within reach, and only arrows you carry (in a hand, on the [[Belt]], or in the bag) are dipped; a stack in an open chest or a body is refused with "Take the arrows out first." See [[Fire arrow]].
+The **Arrow** is the [[Hunting bow]]'s ammunition. Arrows stack to {{n items.arrow.stack}} and are drawn from the bag or the belt. [[Use|Used]] on any lit fire (a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]), the whole stack of arrows you carry becomes [[Fire arrow|fire arrows]] at once: the dip. The fire must be lit and within reach, and only arrows you carry (in a hand, on the [[Belt]], or in the bag) are dipped; a stack in an open chest or a body is refused with "Take the arrows out first." See [[Fire arrow]].
 
 ## Combat
 

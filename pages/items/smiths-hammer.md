@@ -2,7 +2,7 @@
 title: Smith's hammer
 aliases: [Hammer]
 categories: [Items, Tools]
-summary: The tool for smithing and building: held for the anvil's recipes, carried for doors, windows, boards, Remove, and most of the workbench's rows; it fights as a weak weapon.
+summary: The tool for smithing and building: held for the anvil's recipes, carried for doors, windows, boards, Take apart, repairs at the anvil, and most of the workbench's rows; it fights as a weak weapon.
 ---
 
 {{infobox-item hammer}}
@@ -10,7 +10,8 @@ summary: The tool for smithing and building: held for the anvil's recipes, carri
 The **smith's hammer** (the hammer until the names were made specific) is the tool of two trades.
 
 - **Smithing:** every recipe at the [[Anvil]] but the hammer's own needs it **in a hand**.
-- **Building:** carried anywhere on you (a hand, the belt, or the bag), it is what building a door or a window, boarding up an opening, pulling a board off, and **Remove** ask for (see [[Building]] and [[Boards]]), and what most rows at the [[Workbench]] ask for: the furniture, the [[Wheelbarrow]], the [[Wooden shield]], the [[Hoe]], the [[Shovel]], and the [[Bucket]]. Without one, the opening's Board up and Pull a board entries read "(need a smith's hammer)", the palette greys a door and a window, the Remove ghost goes red, the workbench's rows say "needs a smith's hammer on you", and each refuses with "You need a smith's hammer." With the world rule Free building on, building and Remove do not ask for it; boarding up and pulling a board still do.
+- **Repairing:** carried anywhere on you, it is what a repair at the [[Anvil]] asks for (see [[Durability]]). A worn hammer is repaired there too, for an [[Iron bar]].
+- **Building:** carried anywhere on you (a hand, the belt, or the bag), it is what building a door or a window, boarding up an opening, pulling a board off, and **Take apart** ask for (see [[Building]] and [[Boards]]), and what most rows at the [[Workbench]] ask for: the furniture, the [[Wheelbarrow]], the [[Wooden shield]], the [[Hoe]], the [[Shovel]], and the [[Bucket]]. Without one, the opening's Board up and Pull a board entries read "(need a smith's hammer)", the palette greys a door and a window, the Take apart ghost goes red, the workbench's rows say "needs a smith's hammer on you", and each refuses with "You need a smith's hammer." With the world rule Free building on, building and Take apart do not ask for it; boarding up and pulling a board still do.
 
 It can be held in either hand and swung as a weak weapon that breaks after about {{n items.hammer.weapon.kills}} kills.
 
@@ -24,7 +25,7 @@ It can be held in either hand and swung as a weak weapon that breaks after about
 
 ## With friends
 
-A guest's tool is checked on the host, from that player's own hands, belt, and bag, whether they build, board, remove, or make something at a station.
+A guest's tool is checked on the host, from that player's own hands, belt, and bag, whether they build, board, take something apart, repair, or make something at a station.
 
 ## Sources
 
@@ -39,5 +40,7 @@ A guest's tool is checked on the host, from that player's own hands, belt, and b
 - `src/settings.js:63`: Free building's help line
 - `data/loot.json:7`, `data/loot.json:13`: the joiner's chest (game #222) and the quarryman's chest each hold a hammer
 - `src/items.js:27-37`: durability per hit from kills
+- `data/tuning.json` `work.anvil.uses`, `src/repair.js:57-72`: the anvil's repair asks for the `smith` tool carried; `data/items.json` the hammer's `repair` with an iron bar (game #416, at 31d330a)
+- `src/placement.js:518-576`: Take apart asks for the recipe's or entry's tool, the hammer for most (game #413, at 31d330a)
 
 {{navbox items}}

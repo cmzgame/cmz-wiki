@@ -1,17 +1,20 @@
 ---
 title: Building
 categories: [Building, Mechanics]
-aliases: [Build, Build palette, Build mode, Removal, Removal tool, Remove]
-summary: Building log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, doors and windows over walls and broken openings, and removing what players built or made with X.
+aliases: [Build, Build palette, Build mode, Removal, Removal tool, Remove, Take apart, Taking apart]
+numbersOk: true
+summary: Building log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, doors and windows over walls and broken openings, and taking apart what players built or made with X, for half its materials.
 ---
 
-**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. The removal tool on X takes away what players built or made. Building and removing ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and Remove. Everything you build is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there.
+<!-- typed: the game's own lines quoted as examples ("Click to take apart door (1 plank back)", "2 planks"), which carry an example's count, not a number of the game's -->
+
+**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Campfire]] is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. The campfire stands on a tile, outdoors.
 
 ## How it works
 
 ### The palette
 
-N opens a short list on the left of the screen. It has a row for each piece and a Remove row:
+N opens a short list on the left of the screen. It has a row for each piece and a **Take apart** row:
 
 - **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built in {{n build.wall.seconds seconds}}, with a [[Hatchet]] on you.
 - **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each costing {{n build.wall_oak.cost.plank}} [[Plank|plank]], built in {{n build.wall_oak.seconds seconds}}, with a [[Smith's hammer]] on you. **Winter Pine wall** and **Bloodbark wall** are listed only while Free building is on (see [[Woods]]).
@@ -19,6 +22,7 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}, with a smith's hammer on you.
 - **Fence**, costing {{n build.fence.cost.plank}} plank a stretch, built in {{n build.fence.seconds seconds}}, with a smith's hammer on you.
 - **Gate**, costing {{n build.gate.cost.plank}} planks, built in {{n build.gate.seconds seconds}}, with a smith's hammer on you.
+- **Campfire**, costing {{n build.campfire.cost.stone}} [[Stone|stone]] and {{n build.campfire.cost.log}} logs, which become its first fuel, built in {{n build.campfire.seconds seconds}} on open ground outdoors, with no tool. Its ghost sits on a tile, not an edge, and says "Outdoors only" inside a room. See [[Campfire]].
 
 "On you" is anywhere you carry it: a hand, the belt, or the bag.
 
@@ -55,22 +59,36 @@ While a Door or a Window is picked, **R** cycles the wood of its leaves and shut
 
 Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch bracket on a wall built over is lost with it; a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
 
-### Removal
+### Taking apart
 
-X, or the palette's Remove row, turns on the removal tool. The front-most removable thing under the cursor lights up green, or red with "You need a smith's hammer." without a hammer on you, or with "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away. A piece of furniture needs a clear line as well, so it cannot be taken down through a wall ("There is a wall in the way."); a wall, a door, or a window is removed by distance alone, from either side. A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
+X, or the palette's **Take apart** row, turns on the tool. The front-most thing under the cursor that can be taken apart lights up green, and the prompt says what comes back: "Click to take apart door (1 plank back)". It lights up red with the reason when it cannot be taken apart now:
 
-Only what players made can be removed:
+- "You need a smith's hammer." (or "You need a hatchet." for a log wall) without the tool on you;
+- "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away;
+- "There is a wall in the way." for a piece of furniture behind a wall (a wall, a door, or a window is taken apart by distance alone, from either side);
+- "Empty it first." for a container or a station with anything in it, its output box included;
+- "It is still making something." for a station with something in its queue.
+
+A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
+
+**What comes back is half the materials, rounded down.** For a wall, a door, a window, a fence, or a gate it is half its cost in the palette; for furniture, half of each item in the recipe that made it. An ingredient a recipe names by kind (the bed's "any cloth") gives nothing back, since which item went in is not kept. The materials go to your bag, and what does not fit falls at your feet. The line says what you got: "You take the chest apart: 2 planks.", or "You take the ... apart; nothing is left worth keeping." when half rounds down to nothing.
+
+**The tool** is the one the thing's recipe or palette row asks for: a [[Smith's hammer]] for a door, a window, a wooden wall, a fence, a gate, and furniture made at the [[Workbench]]; a [[Hatchet]] for a log wall.
+
+Only what players made can be taken apart:
 
 - any wall, door, or window a player built, including a door or window built into a wall of the village
 - any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
-The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map, trees, the well, fires, or torch posts.
+The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map, trees, the well, fires, or torch posts. Furniture is carried whole instead (see [[Carrying furniture]]).
 
-Nothing is refunded. A removed container spills what it held onto its tile, and a removed station spills its output box too. A removed wall takes its [[Boards|boards]] and any torch bracket with it; a painting hung on it falls to the floor, whole (see [[Paintings]]).
+A made piece of furniture also has **Take apart** on its own right-click menu, saying what comes back ("Take apart (2 planks back)") or, greyed, why not: "Take apart (empty it first)", "Take apart (you need a smith's hammer)".
 
-Removing a door or a window that was built into a wall puts the wall back, never a hole. If that wall was one a player built, it is still theirs to remove; a wall of the village comes back as the village's. A new door built over a broken one still remembers the wall the first was built into.
+A wall taken apart takes its [[Boards|boards]] and any torch bracket with it; a painting hung on it falls to the floor, whole (see [[Paintings]]). Taking apart a door or a window that was built into a wall puts the wall back, never a hole. If that wall was one a player built, it is still theirs to take apart; a wall of the village comes back as the village's. A new door built over a broken one still remembers the wall the first was built into.
 
-The removal tool cannot be used while carrying furniture ("Your hands are full.") or with the bag open ("Close your bag to build.").
+A wall, door, or window built while Free building was on cost nothing, and taking it apart gives nothing back.
+
+The tool cannot be used while carrying furniture ("Your hands are full.") or with the bag open ("Close your bag to build.").
 
 ## Numbers
 
@@ -80,19 +98,21 @@ The removal tool cannot be used while carrying furniture ("Your hands are full."
 - Window: {{n build.window.cost.plank}} planks, {{n build.window.seconds seconds}}.
 - Fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
 - Gate: {{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}.
+- Campfire: {{n build.campfire.cost.stone}} stone and {{n build.campfire.cost.log}} logs, {{n build.campfire.seconds seconds}}.
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
-- Removal reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
+- Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
+- Take apart gives back half the materials, rounded down.
 
 ## With friends
 
-A guest's click is sent to the host as a build command. The host checks the guest's reach, tool, and materials again and runs the timed build on the guest's own character, spending the guest's own items. Removal works the same way: the guest names what it clicked, and the host checks that it can be removed, that the guest carries a hammer, and that it is in reach.
+A guest's click is sent to the host as a build command. The host checks the guest's reach, tool, and materials again and runs the timed build on the guest's own character, spending the guest's own items. Taking apart works the same way: the guest names what it clicked, or chooses Take apart on a piece's menu, and the host checks that it can be taken apart, that it holds nothing, that the guest carries the tool, and that it is in reach; the materials go to the guest's bag.
 
 ## Settings that change it
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free, and building and Remove do not ask for the hammer or the hatchet. The build time still applies. Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
@@ -135,8 +155,12 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:330-379`: what lights up: props made at a station (`made`) and built walls
 - `src/stations.js:183-184`: a prop made at a station marked `made`
 - `src/map.js:651`: built walls marked `built`
-- `src/placement.js:419-437`: a removed container spills its bag and a station its output, nothing refunded
 - `src/map.js:661-676`, `src/placement.js:435`: a removed wall takes its boards and bracket; a door or window built into a wall leaves the wall again, built if it was built
 - `src/placement.js:526-597`: a guest's build and remove as commands, rechecked on the host, the tool too
+- `src/placement.js:518-576`, `src/placement.js:484-489`, `src/placement.js:882`: Take apart: half the materials back, rounded down, from the recipe or the build entry, a tag ingredient giving nothing; the recipe's or entry's tool; refused while it holds anything or a queue runs; the materials to the bag, the rest at the feet; its lines; the prompt naming what comes back (game #413, at 31d330a)
+- `src/placement.js:850`: a wall built under Free building marked `free`, giving nothing back (game #413, at 31d330a)
+- `src/interact.js:290-310`, `src/interact.js:901`: a made prop's menu entry, its label saying what comes back or why not (game #413, at 31d330a)
+- `src/ui/build-palette.js:49`: the palette's Take apart row (game #413, at 31d330a)
+- `data/build.json:112-124`, `src/placement.js:244-251`, `src/placement.js:934-960`, `src/campfire.js:19-31`: the palette's Campfire, a prop on a tile outdoors, its cost the fuel's logs, no tool (game #421, at 1bcb6ed)
 - `src/rules.js:18`, `src/placement.js:128-131`, `src/placement.js:144-150`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest

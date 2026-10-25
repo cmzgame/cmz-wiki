@@ -8,7 +8,7 @@ numbersOk: true
 
 <!-- typed: the output box's size and the most a single Make can queue (src/stations.js) are neither data nor named constants -->
 
-**Crafting** is done at **stations**: a [[Workbench]], an [[Anvil]], a [[Forge]], an [[Oven]], a [[Loom]], a [[Charcoal clamp]], and any lit fire that cooks ([[Cooking]]). The [[Loom]] and the [[Charcoal clamp]] are stations too; a dye vat stands in the village but has nothing to make yet ("Nothing to make here yet."). Every recipe is known from the start; the full list is on [[Recipes]].
+**Crafting** is done at **stations**: a [[Workbench]], an [[Anvil]], a [[Forge]], an [[Oven]], a [[Loom]], a [[Charcoal clamp]], and any lit fire that cooks ([[Cooking]]). The [[Loom]] and the [[Charcoal clamp]] are stations too. A [[Dye vat]] is a station with no recipes: it opens its own picker to dye clothing instead of the station panel. Every recipe is known from the start; the full list is on [[Recipes]].
 
 ## How it works
 
@@ -75,8 +75,8 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 <!-- sources at 3c0a243 -->
 - `src/stations.js:46-53`: which props are stations, and the cooking fires
 - `data/sprites/loom.json`, `data/sprites/charcoal_clamp.json`: the loom and the clamp are stations (game #210, #216)
-- `src/ui/station-panel.js:155`: "Nothing to make here yet."
 - `data/maps/valley.json`: the loom and dye vats in the village
+- `src/ui/station-panel.js:75-78`: a dye vat opens the dye picker, not the station panel (game #417, at 31d330a)
 - `data/recipes.json`: every recipe, known from the start
 - `src/interact.js:788-805`: the station's menu entry and `E`
 - `src/stations.js:21`: the reach
