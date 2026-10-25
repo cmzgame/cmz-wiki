@@ -6,7 +6,7 @@ summary: A raw fish caught in the river and the pond with a fishing rod; eaten r
 
 {{infobox-item perch}}
 
-A **perch** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the river and the pond (see [[Fishing]]); the chance a cast catches one is in the table below. Eaten raw it adds {{n items.perch.hunger}} to your [[Hunger]] and heals {{n items.perch.heal}} [[Health]]. Grilled at a lit fire that cooks ([[Cooking]]) it becomes [[Grilled perch]], which adds {{n items.grilled_perch.hunger}} hunger and heals {{n items.grilled_perch.heal}}. It stacks to {{n items.perch.stack}}.
+A **perch** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the river and the pond (see [[Fishing]]); the chance a cast catches one is in the table below. Eaten raw it adds {{n items.perch.hunger}} to your [[Hunger]] and heals {{n items.perch.heal}} [[Health]]. Grilled at a lit fire that cooks ([[Cooking]]) it becomes [[Grilled perch]], which adds {{n items.grilled_perch.hunger}} hunger and heals {{n items.grilled_perch.heal}}. It {{stack perch}}.
 
 {{item-sections perch}}
 

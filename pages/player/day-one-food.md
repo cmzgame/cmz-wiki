@@ -19,7 +19,7 @@ Rolled loot is an average. A container is filled from its loot table the first t
 
 ### Containers
 
-A placed container takes the loot table the map names for it, or else its kind's own: chests, shelves, cupboards, woodpiles, and the rest share the chests' table (see [[Containers]]). The tables with no food in them (the miners' tools, the stone stacks, the granaries' seed) are left out.
+A placed container takes the loot table the map names for it, or else its kind's own: chests, barrels, shelves and cupboards, the inn's counter, and the rest each have a table of their own (every one is on [[Drop tables]]). The tables with no food in them (the woodpiles, the market's carts and stalls, the miners' tools, the stone stacks, the granaries' seed) are left out.
 
 {{day-one-food containers}}
 
@@ -47,7 +47,7 @@ These are the most the food can give. Every character starts with a full stomach
 
 - [[Fishing]]: the valley's waters give fish for as long as anyone casts.
 - Fruit growing back on picked trees.
-- What the dead carry in their pockets (see [[Containers]]).
+- What the dead carry in their pockets (see [[Drop tables]]).
 - Crops not yet ripe, which go on growing, and anything a player plants.
 - Cooking. Every cooked food fills more than the food that goes into it (a [[Roast potato]] against a [[Potato]], a [[Stew]] against its vegetables, grilled fish against raw), so cooking is the way to stretch the valley's food.
 - The ripe rye's [[Grain]], which is not food until it is cooked into [[Porridge]] or milled and baked into a [[Loaf of bread]].
@@ -82,3 +82,4 @@ The valley's food is the world's, not each player's: two or four players share t
 - `src/game.js:356`: the clock runs `sleepTimeScale` times as fast while everyone sleeps
 - `src/entities/player.js:38`: a new character starts full
 - `docs/02-decisions.md` (the game's), 2026-10-18, "Day-one food is a tracked statistic": why the page exists, the starting foods weak on purpose, and the regions' better foods as Michael's "could"
+- `data/loot.json`, `data/sprites/*.json`: a table per kind of container, food lighter in each (game #399, at ce21ffc)

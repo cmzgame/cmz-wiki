@@ -42,7 +42,10 @@ Where a lever lives only in the game's code, not its data, this page says so.
 
 - **Rot:** {{planned doc=42 note="Each food will keep for a number of game days, and planted or hanging food five times as long."}}
 - **Day-one food:** what one player with tools can gather and make in the valley is aimed at about twelve game days of food, as counted on [[Day-one food]].
-- **The loot tables:** what every [[Containers|container]] holds is provisional until it is ruled.
+- **The loot tables:** a table per kind of [[Containers|container]], most with weights out of thirty-two, so a weight is a chance in thirty-two a roll, and a number of rolls for each container. Every table, each item's chance a roll and its expected count per container, and what the valley holds all told are on [[Drop tables]], for Michael to tune.
+- **What stacks and how far:** each item's own stack size; one thing a cell unless chosen. Today only arrows, throwing knives and axes, bandages, and seeds stack (see [[Inventory#Stacking|Inventory]]).
+- **The bags' sizes:** each bag's grid: the [[Burlap sack]] {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}} and the [[Rucksack]] {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}} today. {{planned doc=42 note="A rucksack of eight by six, a linen satchel of seven by five, and a best bag of ten by six, all built."}}
+- **A boss's best drop:** {{planned doc=42 note="About one in eight at first, rising with each kill that misses it, certain by the twentieth, for each player."}}
 
 ## World settings
 
@@ -74,7 +77,7 @@ On the [[Settings]] screen, kept in the browser.
 
 ## Sources
 
-<!-- sources at 32ff419 -->
+<!-- sources at ce21ffc -->
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each
 - `data/tuning.json`: the dead's health, the bite's cooldown, the bite tokens, the floor's times, stamina's regeneration
 - `src/entities/zombie.js:639-643`: the closing burst (game #394, at 5830ac2)
@@ -84,6 +87,7 @@ On the [[Settings]] screen, kept in the browser.
 - `data/combat.json`: the tired blow, knockdown, the finisher, the combo and its switch (`combo.enabled`), the shove, hit stop, the swing's walk, fists, the infection chance
 - `src/combat.js:418-434`: the tired shove, its stagger and knockdown at the tired blow's share, its push at `shove.tiredPush` (game #396, at 32ff419)
 - `data/items.json`: each weapon's stamina and damage, the mace's and the thrust's knockdown, the spear's break
+- `data/loot.json`, `data/items.json`: the loot tables, each item's stack, each bag's grid (game #399)
 - `src/settings.js:8-45`: every setting's default
 - `src/settings.js:59-82`: the Settings screen's rows and the world's rules, which are fixed when the world is made
 - `src/main.js:1924-1934`: F8, the mute key

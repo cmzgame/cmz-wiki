@@ -7,7 +7,7 @@ summary: Mined from the ore rocks of the iron workings with a pickaxe, and smelt
 
 {{infobox-item iron_ore}}
 
-**Iron ore** is smelted into [[Iron bar|iron bars]] at the [[Forge]] (the recipe is below). It is mined from the ore rocks of [[The iron workings]] with a [[Pickaxe]] in hand (see [[Mining]]): a rock gives {{n sprites.ore_rock.mine.count.0}} and then stands mined out for {{n sprites.ore_rock.mine.days}} days before it bears ore again, so iron never runs out. The ore cart at the workings and the miners' hut's chest hold some from the start. It stacks to {{n items.iron_ore.stack}}.
+**Iron ore** is smelted into [[Iron bar|iron bars]] at the [[Forge]] (the recipe is below). It is mined from the ore rocks of [[The iron workings]] with a [[Pickaxe]] in hand (see [[Mining]]): a rock gives {{n sprites.ore_rock.mine.count.0}} and then stands mined out for {{n sprites.ore_rock.mine.days}} days before it bears ore again, so iron never runs out. The ore cart at the workings and the miners' hut's chest hold some from the start. It {{stack iron_ore}}.
 
 {{item-sections iron_ore}}
 

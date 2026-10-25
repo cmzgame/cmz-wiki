@@ -7,7 +7,7 @@ summary: Mined from a rock with a pickaxe, or taken from the quarry's stacks of 
 
 {{infobox-item stone}}
 
-**Stone** is mined from a rock with a [[Pickaxe]] in hand, which gives {{n sprites.rock_0.mine.count.0}} and leaves nothing of the rock (see [[Mining]]). [[The quarry]] has rocks to mine and four stacks of cut stone that are searched like a chest. It stacks to {{n items.stone.stack}}. Nothing in the game uses it yet: it is the material stone walls will be built from.
+**Stone** is mined from a rock with a [[Pickaxe]] in hand, which gives {{n sprites.rock_0.mine.count.0}} and leaves nothing of the rock (see [[Mining]]). [[The quarry]] has rocks to mine and four stacks of cut stone that are searched like a chest. It {{stack stone}}. Nothing in the game uses it yet: it is the material stone walls will be built from.
 
 {{planned doc=30 note="Building stone walls from stone, with a hammer in hand (game issue 104)."}}
 

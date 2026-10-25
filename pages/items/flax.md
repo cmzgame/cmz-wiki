@@ -7,7 +7,7 @@ summary: The sixth crop: grown from flax seed and harvested for flax, which the 
 
 {{infobox-item flax}}
 
-**Flax** is the sixth crop and its harvest. It is grown like the others (see [[Farming]]): plant a [[Flax seed]] in tilled soil, keep it watered, and harvest it when it is ready, by hand with no tool, for {{n crops.crops.flax.harvest.count.0}} or {{n crops.crops.flax.harvest.count.1}} flax and {{n crops.crops.flax.seeds}} seeds back. The [[Loom]] weaves flax into [[Linen cloth]]. Flax seed is in the chest of [[The weaver]] and the granaries of [[Hollow Farm]] and [[The mill]], and [[Long Acre]] has a flax strip growing from the start. It stacks to {{n items.flax.stack}}.
+**Flax** is the sixth crop and its harvest. It is grown like the others (see [[Farming]]): plant a [[Flax seed]] in tilled soil, keep it watered, and harvest it when it is ready, by hand with no tool, for {{n crops.crops.flax.harvest.count.0}} or {{n crops.crops.flax.harvest.count.1}} flax and {{n crops.crops.flax.seeds}} seeds back. The [[Loom]] weaves flax into [[Linen cloth]]. Flax seed is in the chest of [[The weaver]] and the granaries of [[Hollow Farm]] and [[The mill]], and [[Long Acre]] has a flax strip growing from the start. It {{stack flax}}.
 
 Flax is not grain: the [[Scythe]] does not cut it.
 

@@ -6,7 +6,7 @@ summary: A raw fish caught in the river with a fishing rod; eaten raw, or grille
 
 {{infobox-item trout}}
 
-A **trout** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the river (see [[Fishing]]); the chance a cast catches one is in the table below. Eaten raw it adds {{n items.trout.hunger}} to your [[Hunger]] and heals {{n items.trout.heal}} [[Health]]. Grilled at a lit fire that cooks ([[Cooking]]) it becomes [[Grilled trout]], which adds {{n items.grilled_trout.hunger}} hunger and heals {{n items.grilled_trout.heal}}. It stacks to {{n items.trout.stack}}.
+A **trout** is a fish, and [[Food]]. It is caught with a [[Fishing rod]] in the river (see [[Fishing]]); the chance a cast catches one is in the table below. Eaten raw it adds {{n items.trout.hunger}} to your [[Hunger]] and heals {{n items.trout.heal}} [[Health]]. Grilled at a lit fire that cooks ([[Cooking]]) it becomes [[Grilled trout]], which adds {{n items.grilled_trout.hunger}} hunger and heals {{n items.grilled_trout.heal}}. It {{stack trout}}.
 
 {{item-sections trout}}
 

@@ -7,7 +7,7 @@ summary: Woven from flax at the loom; made into bandages and linen clothes, and 
 
 {{infobox-item cloth}}
 
-**Linen cloth** is woven from [[Flax]] at the [[Loom]]. The loom makes it into [[Bandage|bandages]], the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]]. It carries the cloth tag, so every recipe that asks for cloth (a [[Torch]], a [[Fishing rod]], a bow, a bed) takes it, as it takes a [[Rag]] or a garment. It stacks to {{n items.cloth.stack}}.
+**Linen cloth** is woven from [[Flax]] at the [[Loom]]. The loom makes it into [[Bandage|bandages]], the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]]. It carries the cloth tag, so every recipe that asks for cloth (a [[Torch]], a [[Fishing rod]], a bow, a bed) takes it, as it takes a [[Rag]] or a garment. It {{stack cloth}}.
 
 A recipe that wants cloth takes plain cloth first, a rag or this, before it takes a garment you are carrying.
 

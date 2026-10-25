@@ -44,7 +44,7 @@ Every new character, including one made after a death and every friend who joins
 
 {{starting-kit}}
 
-The torch is not lit: `T` lights it with the tinderbox (see [[Torch]]). The head and glove slots start empty. Better belts and bags, hoods, and gloves turn up in chests (see [[Inventory]]). Clothing carries no armour or warmth.
+The torch is not lit: `T` lights it with the tinderbox (see [[Torch]]). The head and glove slots start empty. A better belt, gloves, and a hat are each placed once in the valley: the [[Leather belt]] and [[Work gloves]] on [[Hollow Farm]]'s tool rack, the [[Onion-head Hat]] on its scarecrow (see [[Drop tables]]). Clothing carries no armour or warmth.
 
 A world can change the kit when it is made, at the Sandbox step of New world, for testing (see [[World rules]]): **Extra starting items** adds items to the default kit, and **Dev bag** starts everyone wearing the [[Developer Bag]] in place of the sack. Both are chosen once, never changed after, and hold for every character the world makes.
 
@@ -97,3 +97,4 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/tuning.json:4`, `data/tuning.json:81`: the dead's and villagers' speeds
 - `src/rules.js:44-49`: a guest uses the host's rules
 - `src/game.js:348-358`: time runs fast only while every living player sleeps
+- `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)

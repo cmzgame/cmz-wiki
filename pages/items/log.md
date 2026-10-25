@@ -7,7 +7,7 @@ summary: A log from a felled tree: split into planks, burned as fuel, or built i
 
 {{infobox-item log}}
 
-A **log** comes from chopping down a tree, or the stump it leaves, with a [[Hatchet]], and turns up in chests and barrels. It is split into [[Plank|planks]], burned in most fires, and built into log walls. It is large, and takes up a good part of a bag.
+A **log** comes from chopping down a tree, or the stump it leaves, with a [[Hatchet]], and turns up in woodpiles. It is split into [[Plank|planks]], burned in most fires, and built into log walls. It is large, and takes up a good part of a bag.
 
 ## Getting logs
 
@@ -35,5 +35,6 @@ A log is the fuel of the campfire, the hearth, the fireplace, and the [[Oven]] (
 - `data/sprites/campfire.json`: log as fuel (likewise hearth, fireplace, oven)
 - `data/build.json:2-10`: a log wall's cost, and its tool, `notch` (game #222)
 - `src/placement.js:157-163`: the cost taken from hands, belt, and bag
+- `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
 
 {{navbox items}}
