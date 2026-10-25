@@ -11,7 +11,7 @@ The **belt** is equipped at the waist and gives **belt slots**, shown at the bot
 
 ### What goes on a belt
 
-A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a stack of [[Food]], a [[Waterskin]], or a [[Tinderbox]]. Drag it onto the slot on the character screen. Anything else is refused.
+A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a [[Food]], a [[Waterskin]], or a [[Tinderbox]]. Drag it onto the slot on the character screen. Anything else is refused.
 
 ### Pressing a slot
 
@@ -71,3 +71,4 @@ The belt keys are part of each player's input, carried out by the host's world f
 - `src/inventory.js:199-213`: a belt is a container and goes in another only empty
 - `src/interact.js:1109`, `src/interact.js:1129`: the belt keys are events in the player's input snapshot
 - `src/game.js:627`: the host's step performs them for each player
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)

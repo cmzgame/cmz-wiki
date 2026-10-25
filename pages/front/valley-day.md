@@ -285,8 +285,8 @@ Michael's playtest on 2026-10-18 produced rulings and ideas that change nothing 
 - **Health stays a hundred** (ruled 2026-10-19, withdrawing the day before's ten-times scale): a player starts at a hundred, which levels and gear may raise; the dead and bosses scale as far as they need, thousands for a boss (game #133, #275).
 - **Skills are being shaped** (game #275): ten levels each, unlocks at most levels and a capstone at ten, death taking them; combat skills (Melee, Ranged, Magic, Faith) are in the draft, and whether a skill may touch combat is open.
 - **Gear can drop by chance** (ruled), a boss's best item not every kill; **regions should keep drawing players back** (Michael's hope); **the least armour is just better than nothing**, with how strong the best gets open; **weapons differ by situation** through resistances (game #133, #268, #123).
-- **Loot tables balanced:** most containers roll the chest's table today, so a valley holds about fourteen rucksacks and fourteen swords; a table per kind of container, gear rare (game #268).
-- **Bags and stacking:** one thing a cell by default, and bag tiers from the valley and the regions (game #260).
+- **Loot tables balanced** (done, game #399): a table per kind of container, and gear placed once: the valley's one found sword and mace in the toll house, one leather belt and pair of gloves on the barn's rack, one Onion-head Hat on the scarecrow, no rucksack. Every table is on [[Drop tables]], for Michael to tune.
+- **Bags and stacking:** one thing a cell by default (done, game #399: only arrows, throwing knives and axes, bandages, and seeds stack); bag tiers from the valley and the regions, a crafted rucksack among them, are still open (game #260).
 - **The map redrawn** with distinct areas and roomier buildings, and **a furniture and rugs pass** (game #92, #261).
 - **The regions feed the skills,** a rule drafted for Michael to edit (game #123).
 - **A dead-free first day** with an optional tutorial, then the dead arriving on a curve: Michael's middle ground, not ruled (game #123).

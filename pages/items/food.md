@@ -11,7 +11,7 @@ summary: Eating food fills hunger by the food's value and heals by its heal valu
 
 ### Eating
 
-- **Eat** on a food's menu, in your bag or in an open container, eats one from the stack.
+- **Eat** on a food's menu, in your bag or in an open container, eats it. Food does not stack: each takes a cell of its own.
 - A food on your [[Belt]] is eaten from its slot: its belt key, **Eat** on the slot's menu, or a double-click on the slot.
 
 Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals. What it heals rises over your head as a green number (see [[Interface#Floating numbers|Interface]]).
@@ -26,7 +26,7 @@ A food heals exactly its value, every time, however full you are. The cost of a 
 
 ### Where food comes from
 
-A new character carries a [[Loaf of bread]] and [[Apple|apples]]. Bread and the [[Wheel of cheese]] turn up in chests, apples in barrels, and the dead carry apples and bread in their pockets (see [[Containers]]). Apples are also picked from the apple trees of [[The orchard]] and three cottage gardens (see [[Trees#Fruit trees|Trees]]). [[Perch]], [[Trout]], and [[Carp]] are caught with a [[Fishing rod]] (see [[Fishing]]).
+A new character carries a [[Loaf of bread]] and [[Apple|apples]]. Bread and the [[Wheel of cheese]] turn up in chests, on shelves and in cupboards, and on the inn's counter; apples in barrels; and the dead carry apples and bread in their pockets (each table's odds are on [[Drop tables]]). Apples are also picked from the apple trees of [[The orchard]] and three cottage gardens (see [[Trees#Fruit trees|Trees]]). [[Perch]], [[Trout]], and [[Carp]] are caught with a [[Fishing rod]] (see [[Fishing]]).
 
 [[Potato|Potatoes]] and [[Cabbage|cabbages]] are grown and harvested by [[Farming]], starting from the plot by [[Your cottage]].
 
@@ -36,24 +36,24 @@ Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish gril
 
 ### Foods
 
-| Food | Hunger | Thirst | Heals | Stacks to |
-|---|---|---|---|---|
-| [[Loaf of bread]] | {{n items.bread.hunger}} | - | {{n items.bread.heal}} | - |
-| [[Apple]] | {{n items.apple.hunger}} | {{n items.apple.thirst}} | {{n items.apple.heal}} | {{n items.apple.stack}} |
-| [[Wheel of cheese]] | {{n items.cheese.hunger}} | - | {{n items.cheese.heal}} | - |
-| [[Perch]] | {{n items.perch.hunger}} | - | {{n items.perch.heal}} | {{n items.perch.stack}} |
-| [[Trout]] | {{n items.trout.hunger}} | - | {{n items.trout.heal}} | {{n items.trout.stack}} |
-| [[Carp]] | {{n items.carp.hunger}} | - | {{n items.carp.heal}} | {{n items.carp.stack}} |
-| [[Grilled perch]] | {{n items.grilled_perch.hunger}} | - | {{n items.grilled_perch.heal}} | {{n items.grilled_perch.stack}} |
-| [[Grilled trout]] | {{n items.grilled_trout.hunger}} | - | {{n items.grilled_trout.heal}} | {{n items.grilled_trout.stack}} |
-| [[Grilled carp]] | {{n items.grilled_carp.hunger}} | - | {{n items.grilled_carp.heal}} | {{n items.grilled_carp.stack}} |
-| [[Potato]] | {{n items.potato.hunger}} | - | {{n items.potato.heal}} | {{n items.potato.stack}} |
-| [[Cabbage]] | {{n items.cabbage.hunger}} | - | {{n items.cabbage.heal}} | {{n items.cabbage.stack}} |
-| [[Garlic]] | {{n items.garlic.hunger}} | - | {{n items.garlic.heal}} | {{n items.garlic.stack}} |
-| [[Pumpkin]] | {{n items.pumpkin.hunger}} | - | {{n items.pumpkin.heal}} | {{n items.pumpkin.stack}} |
-| [[Roast potato]] | {{n items.roast_potato.hunger}} | - | {{n items.roast_potato.heal}} | {{n items.roast_potato.stack}} |
-| [[Stew]] | {{n items.stew.hunger}} | {{n items.stew.thirst}} | {{n items.stew.heal}} | {{n items.stew.stack}} |
-| [[Porridge]] | {{n items.porridge.hunger}} | - | {{n items.porridge.heal}} | {{n items.porridge.stack}} |
+| Food | Hunger | Thirst | Heals |
+|---|---|---|---|
+| [[Loaf of bread]] | {{n items.bread.hunger}} | - | {{n items.bread.heal}} |
+| [[Apple]] | {{n items.apple.hunger}} | {{n items.apple.thirst}} | {{n items.apple.heal}} |
+| [[Wheel of cheese]] | {{n items.cheese.hunger}} | - | {{n items.cheese.heal}} |
+| [[Perch]] | {{n items.perch.hunger}} | - | {{n items.perch.heal}} |
+| [[Trout]] | {{n items.trout.hunger}} | - | {{n items.trout.heal}} |
+| [[Carp]] | {{n items.carp.hunger}} | - | {{n items.carp.heal}} |
+| [[Grilled perch]] | {{n items.grilled_perch.hunger}} | - | {{n items.grilled_perch.heal}} |
+| [[Grilled trout]] | {{n items.grilled_trout.hunger}} | - | {{n items.grilled_trout.heal}} |
+| [[Grilled carp]] | {{n items.grilled_carp.hunger}} | - | {{n items.grilled_carp.heal}} |
+| [[Potato]] | {{n items.potato.hunger}} | - | {{n items.potato.heal}} |
+| [[Cabbage]] | {{n items.cabbage.hunger}} | - | {{n items.cabbage.heal}} |
+| [[Garlic]] | {{n items.garlic.hunger}} | - | {{n items.garlic.heal}} |
+| [[Pumpkin]] | {{n items.pumpkin.hunger}} | - | {{n items.pumpkin.heal}} |
+| [[Roast potato]] | {{n items.roast_potato.hunger}} | - | {{n items.roast_potato.heal}} |
+| [[Stew]] | {{n items.stew.hunger}} | {{n items.stew.thirst}} | {{n items.stew.heal}} |
+| [[Porridge]] | {{n items.porridge.hunger}} | - | {{n items.porridge.heal}} |
 
 {{item-table kind=food}}
 
@@ -99,5 +99,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `data/items.json:16-18`, `data/items.json:41-46`, `data/items.json:54-57`, `data/items.json:63-65`: the foods, each with its hunger, thirst, and heal (game #186)
 - `src/ui/inventory-actions.js:313-319`, `src/ui/inventory-actions.js:421-432`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default
+- `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)
 
 {{navbox items}}

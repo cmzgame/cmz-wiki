@@ -7,7 +7,7 @@ summary: The strongest one-hander: it always staggers, and it is the only one-ha
 
 {{infobox-item mace}}
 
-The **Flanged mace** (the Mace until the names were made specific) is the strongest one-handed weapon. It always staggers, and it is the only one-handed weapon that floors the dead.
+The **Flanged mace** (the Mace until the names were made specific) is the strongest one-handed weapon. It always staggers, and it is the only one-handed weapon that floors the dead. The valley's one found mace lies in the chest of [[The toll house]], beside an [[Arming sword]].
 
 ## Combat
 
@@ -30,5 +30,6 @@ It may be held in either hand.
 - `src/entities/zombie.js:149-160`: a hit staggers by its weapon's `staggerChance`, the mace's 1, so always
 - `data/items.json:10` `weapon.knockdown`, `src/combat.js:373-374`: the mace floors on its own `knockdown` chance
 - `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: the default knockdown chance the mace overrides, 0, so a one-hander with no `knockdown` of its own never floors
+- `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
 
 {{navbox weapons}}

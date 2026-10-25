@@ -2,7 +2,7 @@
 title: Inventory
 categories: [Items, Mechanics]
 aliases: [Bag, Bags, The bag, Grid, Tetris grid, Floor items, Picking up, Dropping]
-summary: The bag on your back is a grid of cells; every item is a rectangle in it, can be turned, and stacks with its like. There is no weight.
+summary: The bag on your back is a grid of cells; every item is a rectangle in it and can be turned, and only a few things stack. There is no weight.
 ---
 
 Your **inventory** is the bag on your back. You carry nothing in yourself: what you carry is in the bag's grid, in your [[Hands]], on your [[Belt]], or equipped as [[Clothing]]. With no bag on your back you have no grid at all.
@@ -21,7 +21,7 @@ While dragging an item, press `R`, right-click, or turn the mouse wheel to turn 
 
 ### Stacking
 
-Some items stack: apples, arrows, bandages, charcoal, and others (the most a stack holds is on each item's page as "Stacks to"). Adding to a grid tops up the stacks already there before starting a new one. A [[Waterskin]] stacks only with one holding the same amount of water.
+Only a few things stack: [[Arrow|arrows]] and [[Fire arrow|fire arrows]] ({{n items.arrow.stack}} to a cell), [[Throwing knife|throwing knives]] ({{n items.throwing_knife.stack}}), [[Throwing axe|throwing axes]] ({{n items.throwing_axe.stack}}), [[Bandage|bandages]] ({{n items.bandage.stack}}), and seeds ({{n items.potato_seed.stack}}). Everything else, food and materials included, takes a cell of its own, so the bag's room is the limit on how much you carry. Each item's page says how it stacks. Adding to a grid tops up the stacks already there before starting a new one.
 
 ### Tidy
 
@@ -69,7 +69,7 @@ A container (any item with a grid or belt slots, so every bag and every belt) ca
 Three bags exist. Each is equipped on the back and gives a grid of its own size:
 
 - [[Burlap sack]]: {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}}. Every new character starts with one.
-- [[Rucksack]]: {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}}. Found in chests.
+- [[Rucksack]]: {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}}. No container in the valley holds one.
 - [[Developer Bag]]: {{n items.dev_bag.bag.0}} × {{n items.dev_bag.bag.1}}. A testing item.
 
 Equipping a new bag swaps bags: the old one is dropped at your feet with everything still in it. A bag on the floor is a container you can **Open**; you can **Equip** it (**Swap bags** if you have one on), and **Pick up** it while it is empty.
@@ -88,7 +88,7 @@ Dropped items lie on the tile where they fell. **Drop** on an item's menu drops 
 
 `E` picks up the nearest thing within {{n census.constants.interact.INTERACT_RANGE tiles}}; a loose item beats a container on the same tile. Right-clicking a tile with items on it offers **Pick up** for each, and **Equip** for clothing (as **Equip cap**).
 
-A single item that can be held goes into a free hand first, then the bag, then the belt. A stack goes into the bag; if only part of it fits, the rest stays on the floor. With no room the game says "No room in your bag."; with no bag, "You have no bag."
+A single item that can be held goes into a free hand first, then the bag, then the belt. A stack goes into the bag; if only part of it fits, the rest stays on the floor. Things that do not stack lie on the floor one by one, each its own item: three apples dropped from a full bag are three items to pick up. With no room the game says "No room in your bag."; with no bag, "You have no bag."
 
 ## With friends
 
@@ -140,3 +140,5 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/ui/inventory-actions.js:254-436`: a guest's panel actions run on the host
 - `src/ui/inventory-actions.js:102-116`, `src/ui/inventory-actions.js:387-395`: a guest's slot command meets the host's `canPlace`; "That does not go there." (game #226)
 - `src/ui/inventory-actions.js:338-346`: a container not the guest's own must be within reach
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)
+- `src/map.js` `dropItem`: what does not stack is laid on the floor as single entries (game #399, at ce21ffc)

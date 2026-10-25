@@ -1,16 +1,16 @@
 {
  "version": {
-  "commit": "4db1c00947b3b37d1531a03b892aac333164b9e5",
-  "short": "4db1c00",
-  "date": "2026-10-24T18:08:50-05:00",
-  "subject": "Merge #398, reviewed: no boards on a fence, a gate included (Michael, 2026-10-24)",
+  "commit": "ce21ffc28a19b7e41d44ae131a6c52a37c4f90cc",
+  "short": "ce21ffc",
+  "date": "2026-10-24T22:36:25-05:00",
+  "subject": "Merge #399, reviewed: a loot table per kind of container, gear placed once, one thing a cell (#268, #260; Michael, 2026-10-24)",
   "ref": "origin/main"
  },
  "counts": {
   "items": 81,
   "recipes": 46,
   "interactions": 28,
-  "lootTables": 19,
+  "lootTables": 28,
   "sprites": 177,
   "places": 43,
   "villagers": 9,
@@ -90,7 +90,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "fuel"
    ],
@@ -134,8 +133,7 @@
     "clamp: charcoal"
    ],
    "foundIn": [
-    "chest",
-    "barrel"
+    "woodpile"
    ],
    "interactions": []
   },
@@ -183,7 +181,9 @@
     "workbench: prop:wheelbarrow"
    ],
    "foundIn": [
-    "chest"
+    "chest",
+    "woodpile",
+    "market"
    ],
    "interactions": []
   },
@@ -225,9 +225,7 @@
     "anvil"
    ],
    "usedIn": [],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -278,9 +276,11 @@
     "anvil: sword"
    ],
    "foundIn": [
+    "chest",
     "coop",
     "body",
-    "wild"
+    "wild",
+    "woodpile"
    ],
    "interactions": []
   },
@@ -316,9 +316,7 @@
     "anvil"
    ],
    "usedIn": [],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -400,9 +398,7 @@
     "anvil"
    ],
    "usedIn": [],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -456,7 +452,7 @@
     1
    ],
    "hands": "either",
-   "stack": 100,
+   "stack": 20,
    "tags": [],
    "art": {
     "icon": true,
@@ -478,7 +474,7 @@
     1
    ],
    "hands": "either",
-   "stack": 100,
+   "stack": 10,
    "tags": [],
    "art": {
     "icon": true,
@@ -539,7 +535,9 @@
    "usedIn": [],
    "foundIn": [
     "chest",
-    "body"
+    "body",
+    "pantry",
+    "inn_counter"
    ],
    "interactions": []
   },
@@ -551,7 +549,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "raw"
@@ -567,7 +564,9 @@
    "usedIn": [],
    "foundIn": [
     "barrel",
-    "body"
+    "body",
+    "pantry",
+    "inn_counter"
    ],
    "interactions": []
   },
@@ -591,7 +590,9 @@
    "madeBy": [],
    "usedIn": [],
    "foundIn": [
-    "chest"
+    "chest",
+    "pantry",
+    "inn_counter"
    ],
    "interactions": []
   },
@@ -854,9 +855,7 @@
     "workbench: bow",
     "workbench: prop:bed"
    ],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -914,9 +913,7 @@
     "workbench: bow",
     "workbench: prop:bed"
    ],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -1016,9 +1013,7 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -1066,9 +1061,7 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [
-    "chest"
-   ],
+   "foundIn": [],
    "interactions": []
   },
   {
@@ -1250,7 +1243,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "raw",
@@ -1278,7 +1270,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "raw",
@@ -1306,7 +1297,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "raw",
@@ -1334,7 +1324,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "cooked",
@@ -1361,7 +1350,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "cooked",
@@ -1388,7 +1376,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "cooked",
@@ -1525,7 +1512,9 @@
     "anvil"
    ],
    "usedIn": [],
-   "foundIn": [],
+   "foundIn": [
+    "coffin"
+   ],
    "interactions": [],
    "note": "a tool (docs/30, section 10): its verbs on the world come with the places that need them; a poor weapon, five kills"
   },
@@ -1578,7 +1567,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "metal",
     "raw"
@@ -1604,7 +1592,6 @@
     1,
     1
    ],
-   "stack": 10,
    "tags": [
     "metal"
    ],
@@ -1639,7 +1626,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "stone",
     "raw"
@@ -1651,7 +1637,9 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [],
+   "foundIn": [
+    "market"
+   ],
    "interactions": [],
    "note": "mined from a rock with a pickaxe (src/mining.js, #196); the material stone walls wait for (#104)"
   },
@@ -1663,7 +1651,6 @@
     1,
     1
    ],
-   "stack": 10,
    "tags": [
     "food",
     "raw"
@@ -1679,7 +1666,9 @@
     "cooking: roast_potato",
     "cooking: stew"
    ],
-   "foundIn": [],
+   "foundIn": [
+    "pantry"
+   ],
    "interactions": [],
    "note": "raw; roasted or stewed it is a meal (docs/30, section 7: cooked doubles)"
   },
@@ -1691,7 +1680,6 @@
     1,
     1
    ],
-   "stack": 10,
    "tags": [
     "food",
     "raw"
@@ -1717,7 +1705,6 @@
     1,
     1
    ],
-   "stack": 10,
    "tags": [
     "food",
     "raw",
@@ -1733,7 +1720,9 @@
    "usedIn": [
     "cooking: stew"
    ],
-   "foundIn": [],
+   "foundIn": [
+    "pantry"
+   ],
    "interactions": []
   },
   {
@@ -1744,7 +1733,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "raw"
@@ -1770,7 +1758,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "food",
     "raw"
@@ -1799,7 +1786,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "food"
    ],
@@ -1838,7 +1824,9 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [],
+   "foundIn": [
+    "market"
+   ],
    "interactions": [],
    "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
   },
@@ -1861,7 +1849,9 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [],
+   "foundIn": [
+    "market"
+   ],
    "interactions": [],
    "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
   },
@@ -1884,7 +1874,9 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [],
+   "foundIn": [
+    "market"
+   ],
    "interactions": [],
    "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
   },
@@ -1907,7 +1899,9 @@
    },
    "madeBy": [],
    "usedIn": [],
-   "foundIn": [],
+   "foundIn": [
+    "market"
+   ],
    "interactions": [],
    "note": "planted on tilled soil (data/crops.json; #194); a harvest gives two back"
   },
@@ -1965,7 +1959,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "raw",
     "fibre"
@@ -1979,7 +1972,10 @@
    "usedIn": [
     "loom: cloth"
    ],
-   "foundIn": [],
+   "foundIn": [
+    "chest",
+    "market"
+   ],
    "interactions": [],
    "note": "the flax crop's harvest (#212); cloth at the loom"
   },
@@ -1991,7 +1987,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "cloth"
    ],
@@ -2013,7 +2008,11 @@
     "workbench: bow",
     "workbench: prop:bed"
    ],
-   "foundIn": [],
+   "foundIn": [
+    "chest",
+    "pantry",
+    "market"
+   ],
    "interactions": [],
    "note": "woven at the loom from flax (#212); every recipe that asks for the cloth tag takes it, a garment, or a rag"
   },
@@ -2025,7 +2024,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "cloth"
    ],
@@ -2049,7 +2047,10 @@
     "workbench: prop:bed"
    ],
    "foundIn": [
-    "coop"
+    "chest",
+    "coop",
+    "pantry",
+    "coffin"
    ],
    "interactions": [],
    "note": "torn from a garment at the workbench with a knife on you (#212); a rag is never torn again, and a recipe that wants the cloth tag takes it"
@@ -2062,7 +2063,6 @@
     1,
     1
    ],
-   "stack": 10,
    "tags": [
     "food",
     "cooked"
@@ -2088,7 +2088,6 @@
     1,
     1
    ],
-   "stack": 3,
    "tags": [
     "food",
     "cooked"
@@ -2115,7 +2114,6 @@
     1,
     1
    ],
-   "stack": 3,
    "tags": [
     "food",
     "cooked"
@@ -2142,7 +2140,6 @@
     1,
     1
    ],
-   "stack": 5,
    "tags": [
     "food",
     "cooked"
@@ -3394,81 +3391,60 @@
     3
    ],
    "rolls": [
-    2,
-    3
+    1,
+    2
    ],
    "entries": [
     {
      "item": "bread",
      "count": 1,
      "weight": 3,
-     "perRoll": 0.1579
+     "perRoll": 0.0938
     },
     {
      "item": "cheese",
      "count": 1,
      "weight": 2,
-     "perRoll": 0.1053
+     "perRoll": 0.0625
+    },
+    {
+     "item": "cloth",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "rag",
+     "count": [
+      1,
+      2
+     ],
+     "weight": 4,
+     "perRoll": 0.125
     },
     {
      "item": "plank",
      "count": 1,
      "weight": 3,
-     "perRoll": 0.1579
+     "perRoll": 0.0938
     },
     {
-     "item": "log",
+     "item": "stick",
      "count": 1,
      "weight": 2,
-     "perRoll": 0.1053
+     "perRoll": 0.0625
     },
     {
-     "item": "hatchet",
+     "item": "flax",
      "count": 1,
      "weight": 1,
-     "perRoll": 0.0526
-    },
-    {
-     "item": "sword",
-     "count": 1,
-     "weight": 1,
-     "perRoll": 0.0526
-    },
-    {
-     "item": "mace",
-     "count": 1,
-     "weight": 1,
-     "perRoll": 0.0526
-    },
-    {
-     "item": "good_belt",
-     "count": 1,
-     "weight": 1,
-     "perRoll": 0.0526
-    },
-    {
-     "item": "rucksack",
-     "count": 1,
-     "weight": 1,
-     "perRoll": 0.0526
-    },
-    {
-     "item": "gloves",
-     "count": 1,
-     "weight": 1,
-     "perRoll": 0.0526
-    },
-    {
-     "item": "hood",
-     "count": 1,
-     "weight": 1,
-     "perRoll": 0.0526
+     "perRoll": 0.0313
     },
     {
      "item": "nothing",
      "count": 1,
-     "weight": 2,
-     "perRoll": 0.1053
+     "weight": 13,
+     "perRoll": 0.4063
     }
    ]
   },
@@ -3519,36 +3495,30 @@
     3
    ],
    "rolls": [
-    2,
-    3
+    1,
+    1
    ],
    "entries": [
     {
      "item": "apple",
      "count": [
       1,
-      4
+      2
      ],
-     "weight": 4,
-     "perRoll": 0.4
+     "weight": 12,
+     "perRoll": 0.375
     },
     {
      "item": "waterskin",
      "count": 1,
-     "weight": 2,
-     "perRoll": 0.2
-    },
-    {
-     "item": "log",
-     "count": 1,
-     "weight": 2,
-     "perRoll": 0.2
+     "weight": 4,
+     "perRoll": 0.125
     },
     {
      "item": "nothing",
      "count": 1,
-     "weight": 2,
-     "perRoll": 0.2
+     "weight": 16,
+     "perRoll": 0.5
     }
    ]
   },
@@ -3784,6 +3754,311 @@
      "perRoll": 1
     }
    ]
+  },
+  {
+   "name": "pantry",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    2
+   ],
+   "entries": [
+    {
+     "item": "bread",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "cheese",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "garlic",
+     "count": [
+      1,
+      2
+     ],
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "apple",
+     "count": 1,
+     "weight": 3,
+     "perRoll": 0.0938
+    },
+    {
+     "item": "potato",
+     "count": 1,
+     "weight": 3,
+     "perRoll": 0.0938
+    },
+    {
+     "item": "cloth",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "rag",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 14,
+     "perRoll": 0.4375
+    }
+   ]
+  },
+  {
+   "name": "woodpile",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    1,
+    2
+   ],
+   "entries": [
+    {
+     "item": "log",
+     "count": 1,
+     "weight": 12,
+     "perRoll": 0.375
+    },
+    {
+     "item": "stick",
+     "count": [
+      1,
+      2
+     ],
+     "weight": 12,
+     "perRoll": 0.375
+    },
+    {
+     "item": "plank",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    }
+   ]
+  },
+  {
+   "name": "market",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    1,
+    2
+   ],
+   "entries": [
+    {
+     "item": "flax",
+     "count": [
+      1,
+      3
+     ],
+     "weight": 6,
+     "perRoll": 0.1875
+    },
+    {
+     "item": "plank",
+     "count": 1,
+     "weight": 6,
+     "perRoll": 0.1875
+    },
+    {
+     "item": "stone",
+     "count": [
+      1,
+      2
+     ],
+     "weight": 6,
+     "perRoll": 0.1875
+    },
+    {
+     "item": "cloth",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "potato_seed",
+     "count": [
+      2,
+      4
+     ],
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "cabbage_seed",
+     "count": [
+      2,
+      4
+     ],
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "garlic_seed",
+     "count": [
+      2,
+      4
+     ],
+     "weight": 1,
+     "perRoll": 0.0313
+    },
+    {
+     "item": "pumpkin_seed",
+     "count": [
+      2,
+      4
+     ],
+     "weight": 1,
+     "perRoll": 0.0313
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    }
+   ]
+  },
+  {
+   "name": "study",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "strongbox",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "coffin",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    1
+   ],
+   "entries": [
+    {
+     "item": "rag",
+     "count": 1,
+     "weight": 10,
+     "perRoll": 0.3125
+    },
+    {
+     "item": "knife",
+     "count": 1,
+     "weight": 2,
+     "perRoll": 0.0625
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 20,
+     "perRoll": 0.625
+    }
+   ]
+  },
+  {
+   "name": "inn_counter",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    1,
+    2
+   ],
+   "entries": [
+    {
+     "item": "bread",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "cheese",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "apple",
+     "count": 1,
+     "weight": 4,
+     "perRoll": 0.125
+    },
+    {
+     "item": "nothing",
+     "count": 1,
+     "weight": 20,
+     "perRoll": 0.625
+    }
+   ]
+  },
+  {
+   "name": "toll_chest",
+   "grid": [
+    4,
+    3
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
+  },
+  {
+   "name": "scarecrow",
+   "grid": [
+    2,
+    2
+   ],
+   "rolls": [
+    0,
+    0
+   ],
+   "entries": []
   }
  ],
  "sprites": [
@@ -4622,9 +4897,10 @@
   },
   {
    "id": "scarecrow",
-   "kind": "placeholder box",
+   "kind": "container",
    "label": "Scarecrow",
    "drawn": false,
+   "container": true,
    "carry": false,
    "note": "Hollow Farm's scarecrow (#201), in the middle of the pumpkin field; a dev box until it is drawn (docs/29-world/05)"
   },
@@ -7767,7 +8043,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:782"
+    "map.js:790"
    ]
   },
   {
@@ -7878,7 +8154,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:826",
-    "map.js:778"
+    "map.js:786"
    ]
   },
   {
@@ -8051,7 +8327,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2319
+   "lines": 2327
   },
   {
    "path": "main.js",

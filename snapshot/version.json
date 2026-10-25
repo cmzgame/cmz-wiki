@@ -1,7 +1,7 @@
 {
-  "commit": "4db1c00947b3b37d1531a03b892aac333164b9e5",
-  "short": "4db1c00",
-  "date": "2026-10-24T18:08:50-05:00",
-  "subject": "Merge #398, reviewed: no boards on a fence, a gate included (Michael, 2026-10-24)",
+  "commit": "ce21ffc28a19b7e41d44ae131a6c52a37c4f90cc",
+  "short": "ce21ffc",
+  "date": "2026-10-24T22:36:25-05:00",
+  "subject": "Merge #399, reviewed: a loot table per kind of container, gear placed once, one thing a cell (#268, #260; Michael, 2026-10-24)",
   "ref": "origin/main"
 }

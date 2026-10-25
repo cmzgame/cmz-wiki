@@ -23,7 +23,7 @@ Equipping over a filled slot swaps the old garment into your bag; with no room t
 
 Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks. Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Dirk]] on you, any of them tears into two [[Rag|rags]]; the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
 
-A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. [[Work gloves]] and an [[Onion-head Hat]] turn up in chests. The Onion-head Hat is painted: a green hood with a brow over the eyes, drawn the same way on the dead and on villagers who wear one, in their own colours. The dead are dressed too, and searching a body lays their clothes out to be taken.
+A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. The valley has one pair of [[Work gloves]], on [[Hollow Farm]]'s tool rack, and one [[Onion-head Hat]], worn by its scarecrow. The Onion-head Hat is painted: a green hood with a brow over the eyes, drawn the same way on the dead and on villagers who wear one, in their own colours. The dead are dressed too, and searching a body lays their clothes out to be taken.
 
 ### Garments
 
@@ -65,3 +65,4 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `src/entities/character.js:148-171`: a body's garments laid out on its grid
 - `src/ui/inventory-actions.js:254-436`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
 - `src/net.js:238`: what each character has on travels in its record
+- `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)

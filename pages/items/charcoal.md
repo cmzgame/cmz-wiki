@@ -7,7 +7,7 @@ summary: The forge's fuel: burned from logs in a charcoal clamp, and found in th
 
 {{infobox-item charcoal}}
 
-**Charcoal** is the fuel of the [[Forge]]. It is burned from [[Log|logs]] in a [[Charcoal clamp]]: one stands in the yard of [[The smithy]], and three at [[The charcoal burners]] in the east woods. The smithy's chest holds some from the start, and the burners' sacks and their hut's chest hold more. It stacks to {{n items.charcoal.stack}}.
+**Charcoal** is the fuel of the [[Forge]]. It is burned from [[Log|logs]] in a [[Charcoal clamp]]: one stands in the yard of [[The smithy]], and three at [[The charcoal burners]] in the east woods. The smithy's chest holds some from the start, and the burners' sacks and their hut's chest hold more. It {{stack charcoal}}.
 
 {{item-sections charcoal}}
 
