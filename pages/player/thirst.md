@@ -20,17 +20,21 @@ Thirst empties from full in {{n tuning.player.thirstDrainSeconds}} seconds of th
 
 There are three ways to drink:
 
-- **A [[Waterskin]].** Choose "Drink" on it in your bag (it says "tainted" with how full it is, since its water came from a tainted source); on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin you carry also sips by itself once you are Thirsty (below).
+- **A [[Waterskin]].** Choose "Drink" on it in your bag (it says "tainted" with how full it is when its water is tainted); on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin of clean water you carry also sips by itself once you are Thirsty (below).
 - **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, [[Stew]] +{{n items.stew.thirst}}.
-- **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well (tainted)" (or the trough, or the font) or "Drink from the water (tainted)": all natural water is unsafe until purified, and says so, though the sickness it is to bring is not built yet (see [[Water]]). It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
+- **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well (tainted)" (or the trough, or the font) or "Drink from the water (tainted)". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
 
-At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your belt. Wells and water never run out.
+### Tainted water
+
+Every fixed source is tainted, and so is a skin filled at one, until the skin is boiled clean at a lit cooking fire (see [[Water#Boiling|Water]]). The waterskin you start with is full of clean water. A tainted drink quenches as well as a clean one, but each one, from a source or a skin, has a {{pct tuning.water.sickChance}} chance to make you [[Sick]] (and adds a stack, with no roll, if you are Sick already) and a {{pct tuning.water.infectionChance}} chance of the [[Infection]].
+
+At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your belt. A fill at a tainted source taints the whole skin. Wells and water never run out.
 
 ### Drinking by itself
 
-Once thirst falls to **Thirsty** (stage {{n tuning.player.autoDrinkStage}} below), you take a sip by yourself from a waterskin you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. It is the same sip as one taken by hand. The emptiest skin that still holds water goes first, so one skin is finished before the next is started.
+Once thirst falls to **Thirsty** (stage {{n tuning.player.autoDrinkStage}} below), you take a sip by yourself from a waterskin of clean water you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. It is the same sip as one taken by hand. The emptiest clean skin that still holds water goes first, so one skin is finished before the next is started. A skin of tainted water is never sipped by itself: it is left for you to drink by hand.
 
-It waits while you swing, draw a bow or a throw, cast, hold a guard, or sleep, and while you are already holding a drink or food out; it comes as soon as that ends. With no water in any skin nothing happens, so the Thirsty moodle means you are out of water. With [[Survival]] off, thirst is held full and it never comes.
+It waits while you swing, draw a bow or a throw, cast, hold a guard, or sleep, and while you are already holding a drink or food out; it comes as soon as that ends. With no clean water in any skin nothing happens, so the Thirsty moodle means you are out of clean water. With [[Survival]] off, thirst is held full and it never comes.
 
 ### Stages
 
@@ -59,7 +63,7 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## See also
 
-- [[Waterskin]], [[Water]], [[Hunger]], [[Food]], [[Moodles]]
+- [[Waterskin]], [[Water]], [[Sick]], [[Hunger]], [[Food]], [[Moodles]]
 
 ## Sources
 
@@ -69,6 +73,7 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 - `src/clock.js:5`: a game day is 720 seconds
 - `src/interact.js:1248-1249`, `src/entities/player.js:106-114`, `data/tuning.json:59`: the "Drink" entry and the sip
 - `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
+- `src/entities/player.js:131-149`, `src/entities/player.js:118-129`, `src/sick.js:56-67`, `src/interact.js:858-906`, `data/kit.json`, `data/tuning.json`: clean water only for the sip by itself; a tainted drink's chance of Sick and of the infection, from a source or a skin; the Drink labels; a fill at a tainted source taints the skin; the starting skin clean (game #435, at fa2997f)
 - `src/entities/player.js:115-133`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
 - `src/game.js:615-618`, `src/main.js:1686-1688`: in the world's step, the word on the drinker's screen

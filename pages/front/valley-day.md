@@ -198,9 +198,9 @@ Read: [[Settings]].
 
 ### Inspect, tainted water, and Harvest by name (game #302)
 
-Right-click a crop and **Inspect** it: a line of what it is, how long until it is ready, whether it is watered, and what harvests it, with its tile outlined in gold. Every drink from natural water now says **(tainted)**, the well's and the river's and a waterskin's; the sickness is still to come. **Harvest** names the crop, so E beside the potatoes and the cabbages says which it will take.
+Right-click a crop and **Inspect** it: a line of what it is, how long until it is ready, whether it is watered, and what harvests it, with its tile outlined in gold. Every drink from natural water now says **(tainted)**, the well's and the river's and a waterskin's. Since game #435 a tainted drink may make you [[Sick]] or infect you, the waterskin you start with holds clean water, and a tainted skin is boiled clean at a cooking fire (see [[Water#Boiling|Water]]). **Harvest** names the crop, so E beside the potatoes and the cabbages says which it will take.
 
-Read: [[Farming#Inspect|Farming]], [[Water]], [[Waterskin]].
+Read: [[Farming#Inspect|Farming]], [[Water]], [[Waterskin]], [[Sick]].
 
 ### Floating numbers (game #299)
 
@@ -311,6 +311,7 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/sick.js:56-67`, `data/kit.json`, `src/water.js:126-148`: a tainted drink's chance of Sick and of the infection, the starting skin clean, boiling (game #435, at fa2997f)
 - `src/ui/screens.js:714-732`, `src/main.js:1743`, `src/ui/nav-row.js:220-241`, `src/item-info.js`, `src/ui/hover-card.js`, `src/debuffs.js`, `src/ui/debuff-row.js`: durable fullscreen, the row in one line, the item hover card, bleeding as a debuff (game #311, #312, #313, #315, at 8af4eed)
 - `data/items.json`, `data/sprites/flame.json`: the everyday items' drawn icons, world pictures, held angles, and the lit torch's flame, icon, and portrait (game #337, at 232d0fb)
 - `data/sprites/beehive.json`, `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:313`, `tools/mapgen/valley.py:453-457`: the hives and the coops, and where they stand (game #338, at 232d0fb)

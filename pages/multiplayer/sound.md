@@ -2,7 +2,7 @@
 title: Sound
 categories: [Interface, Mechanics]
 aliases: [Sounds, Audio, Footsteps, Volume, Mute, F8]
-summary: What the game sounds like so far: footsteps and the dead's shuffle, a swing, a shove, a hit, the bow, a spell, the dead falling and dying, doors and shutters, heard by distance; F8 mutes.
+summary: What the game sounds like so far: footsteps and the dead's shuffle, a swing, a shove, a hit, the bow, a spell, the dead falling and dying, moaning as they come and striking doors and fences, doors and shutters, heard by distance; F8 mutes.
 numbersOk: true
 ---
 
@@ -23,6 +23,8 @@ The game's **sounds** are made by the game itself when it loads, from noise and 
 - **A spell** makes one sound as it is cast, when the [[Staff of Fire]]'s spell is let go. It has no draw and no twang.
 - **A thrown spear** has no sound of its own yet.
 - **The dead fall and die:** one of the dead knocked down thumps to the ground, and one killed makes a heavier sound of its own (only that, if one blow floors and kills it).
+- **The dead moan** as they come for someone: one that was standing, wandering, searching, or waiting turns to chase a player or a villager, or to break in at a door or shutters, or to push at a fence, and moans. One of the dead moans no more often than every {{n sounds.moan.again seconds}}, and no moan follows another sooner than {{n sounds.moan.gap seconds}} after it, so a crowd turning at once gives one, not a drone. One already chasing, or turning back to the chase from a bite, is silent.
+- **The dead strike:** a blow of the dead on a door, shutters, boards, or a fence makes a knock, the same for all of them, as the wall gives its small jolt.
 - **Doors and shutters** creak as they open or shut, with the same creak for both. Only an opening already in earshot sounds: a door that changed while you were away is silent when you come back to it. A door broken by the dead makes no creak; the sound of breaking is to come.
 
 ### Hearing
@@ -35,7 +37,7 @@ Nothing sounds until the page has been clicked or a key pressed once: browsers k
 
 ### The visual twin
 
-Each sound that tells you something has a picture that says the same: a swing has its animation and the swing timer, a hit its red number, its push, and its brief freeze, the bow its drawing pose, a fall and a death the body on the ground, a door its leaf. Footsteps are seen as the walk. `F8`'s line says what it did.
+Each sound that tells you something has a picture that says the same: a swing has its animation and the swing timer, a hit its red number, its push, and its brief freeze, the bow its drawing pose, a fall and a death the body on the ground, a moan the dead turning to come at you, a strike the wall's jolt, a door its leaf. Footsteps are seen as the walk. `F8`'s line says what it did.
 
 ## Numbers
 
@@ -44,6 +46,7 @@ Each sound that tells you something has a picture that says the same: a swing ha
 - A heavy swing from: {{n sounds.swing.heavyAt seconds}} of swing.
 - Doors and shutters listened for within: {{n sounds.openings.radius tiles}}.
 - Sounds at once, in all: {{n sounds.voices}}.
+- One of the dead moans at most every {{n sounds.moan.again seconds}}, and any moan at most every {{n sounds.moan.gap seconds}}.
 
 ## With friends
 
@@ -76,3 +79,4 @@ Each player hears their own world as their own screen shows it: a friend's foots
 - `src/main.js:1924-1934`, `src/ui/screens.js:33`: F8 switches Sound with its line, any panel up; on the Controls screen
 - `src/sound-cues.js:1-11`: each client hears what it sees; nothing new crosses the wire
 - `src/settings.js:30-31`, `src/settings.js:68-69`: the Sound and Volume rows
+- `src/sound-cues.js:262-292`, `data/sounds.json` `moan`, `src/main.js`: the moan from a calm state to the chase, a breach, or a press, throttled; the strike with the jolt the host draws and a guest's fx (game #436, at fa2997f)

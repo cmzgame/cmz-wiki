@@ -36,7 +36,7 @@ Four slow needs run from full down to empty, each shown as a moodle that worsens
 - [[Tiredness]]: restored only by [[Sleep]] in a bed. It never kills, but it stops sprinting and then healing.
 - [[Health]] comes back by itself only while you are fed, watered, not [[Bleeding]], and not falling asleep.
 
-One more moodle is not a need: [[Infection]], a marker from bites that does nothing yet. [[Bleeding]], from bites, is a debuff, shown in a row of its own at the top right with its time left. All of the needs switch off with the [[Survival]] setting.
+One more moodle is not a need: [[Infection]], a marker from bites that does nothing yet. [[Bleeding]], from bites, and [[Sick]], from tainted water, are debuffs, shown in a row of their own at the top right with their time left. All of the needs switch off with the [[Survival]] setting.
 
 ### The starter kit
 

@@ -9,6 +9,12 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-25: synced to `fa2997f`
+
+- **New in the game:** Burn corpse, the wave, and the cowering (game #434, the dead ends' step 6). A body of the dead is burned with a tinderbox and a log, gone with everything in it after a game hour; `G` and `/wave` wave; an immune villager cowers and runs from the dead near it. [[Corpses]], [[Tinderbox]], [[Controls]], [[Chat log]], [[Villagers]], [[Wyn]], and [[Levers]] are updated.
+- **New in the game:** water, tainted and clean (game #435). Every source is tainted, and a fill there taints the whole skin; boiling at a lit cooking fire makes it clean; a tainted drink can make you [[Sick]], a new debuff, or carry the infection, whose third stage is now Queasy. New page: Sick. [[Water]], [[Thirst]], [[Waterskin]], [[Bucket]], [[Infection]], [[Cooking]], [[Bleeding]], [[Interface]], [[The player|Player]], [[Valley day]], and [[Levers]] are updated.
+- **New in the game:** the dead moan as they come for someone, and their blows on doors, shutters, boards, and fences make a sound (game #436). [[Sound]] is updated.
+
 ## 2026-10-25: synced to `49b8c44`
 
 - **New in the game:** the world rule **Village stations** (game #431, the dead ends' step 4), chosen when a world is made: Fixed by default, or Movable and craftable, when the village's forge, anvil, oven, millstones, dye vats, and wells can be carried and more of them made. [[World rules]], [[Levers]], [[Forge]], [[Anvil]], [[Oven]], [[Millstones]], and [[Dye vat]] are updated.

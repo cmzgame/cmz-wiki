@@ -21,7 +21,7 @@ The **interface** is everything drawn over the world: the bars, the clock, the i
 
 ## Top right: debuffs
 
-A row of debuffs runs along the top of the screen from the top right corner, growing leftward: a harm with a time on it, each an icon in a dark red frame with its time left under it, whole seconds rounded up under a minute (`34s`) and whole minutes rounded up from a minute (`10m`). When it has more than one stack, the number of stacks shows in its corner. Hovering over one shows its card, in the style of the item cards: its name, "Debuff" with its stacks and time left, what it does, and what ends it. An icon goes when its debuff ends. The only debuff so far is [[Bleeding]], a red drop. The row is always over the map but under the menus and screens. Each player's row is drawn from their own record, so a guest sees their own as the host sees theirs.
+A row of debuffs runs along the top of the screen from the top right corner, growing leftward: a harm with a time on it, each an icon in a dark red frame with its time left under it, whole seconds rounded up under a minute (`34s`) and whole minutes rounded up from a minute (`10m`). When it has more than one stack, the number of stacks shows in its corner. Hovering over one shows its card, in the style of the item cards: its name, "Debuff" with its stacks and time left, what it does, and what ends it. An icon goes when its debuff ends. The debuffs so far are [[Bleeding]], a red drop, and [[Sick]], from tainted water, a green face. The row is always over the map but under the menus and screens. Each player's row is drawn from their own record, so a guest sees their own as the host sees theirs.
 
 ## Right edge: moodles
 
@@ -145,3 +145,4 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `style.css:69-75`: the interface over the debug corner, so a panel or screen covers it (game commit f2b8062)
 - `src/ui/build-palette.js:49`: the palette's Take apart row (game #413, at 31d330a)
 - `data/tuning.json` `floaters.gathers`: honey floats under Beastlore (game #416, at 31d330a)
+- `src/debuffs.js`, `src/sick.js`: Sick beside bleeding in the row (game #435, at fa2997f)
