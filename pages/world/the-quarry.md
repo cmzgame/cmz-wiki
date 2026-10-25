@@ -7,7 +7,7 @@ summary: A pit in the north-east cut into stone on three sides: rocks to mine, s
 
 {{infobox-place "the quarry"}}
 
-**The quarry** is a pit in the north-east of the valley, cut into stone on three sides and open to the south. Eight rocks stand on its dirt floor, mined with a [[Pickaxe]] for [[Stone]] (see [[Mining]]); a mined rock is gone, and a new one rises a game day or two later somewhere on natural ground in the valley, the quarry's floor included, and four stacks of cut stone along the north face are searched like a chest. There are a crane, a wheelbarrow, and a small flooded pit, a pond (see [[Fishing]]).
+**The quarry** is a pit in the north-east of the valley, cut into stone on three sides and open to the south. Eight rocks stand on its dirt floor, mined with a [[Pickaxe]] for [[Stone]] (see [[Mining]]); a mined rock is gone, and a new one rises {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later somewhere on natural ground in the valley, the quarry's floor included, and four stacks of cut stone along the north face are searched like a chest. There are a crane, a wheelbarrow, and a small flooded pit, a pond (see [[Fishing]]).
 
 South-west of it is **[[The quarryman's hut|the quarryman's hut]]**, with a bed, a table, a barrel, and a chest that holds a pickaxe and a [[Smith's hammer]].
 

@@ -26,7 +26,7 @@ When the host leaves the world or closes it to friends, every guest goes dormant
 
 ### Stepping away
 
-In a world shared with friends, five minutes of real time with no input takes your character out of the world in the same way. The screen says "You stepped away"; any key, click, mouse move, or wheel brings you back, and that first press is spent on returning. Others' chat logs read "Name stepped away." and "Name is back."
+In a world shared with friends, five minutes of real time with no input takes your character out of the world in the same way. The screen says "You stepped away"; any key, click, mouse move, or wheel brings you back, and that first press is spent on returning. A guest's screen keeps saying "You stepped away" a moment longer, until the host's world has their character again and the ground round it has loaded (the host may have let it go while they were out), or for at most {{n census.constants.net.RETURN_WAIT_FRAMES}} of the host's frames; nothing they do is sent until then, so they never walk onto blank ground. Others' chat logs read "Name stepped away." and "Name is back."
 
 You never step away while asleep or dead, or when playing alone. A host who steps away with no guests in holds their world still until they return.
 
@@ -55,6 +55,7 @@ Dormancy exists only with friends; a world played alone has nobody to keep. Each
 - `src/host.js:54-80`: a rejoin from the same browser brings back the same character
 - `src/main.js:131-181`, `src/main.js:136`: stepping away after `AWAY_AFTER_MS` (five minutes of real time), the idle clock each client's own, "You stepped away" (the `away` screen), and coming back (game commit 0bd3f9c)
 - `src/main.js:204-213`: any key, click, mouse move, or wheel brings you back, the first one spent on it (game commit 0bd3f9c)
+- `src/net.js:1326-1334`, `src/net.js:1448-1474`, `src/main.js:193-217`: a guest back from a step away keeps the away screen until a frame carries its player and the ring of chunks round it, or `RETURN_WAIT_FRAMES` frames pass (game #455, at 6e3ab37)
 - `src/host.js:103-138`: the host takes the character out (`awayNow`) and puts it back where it stood (`backNow`); "Name stepped away." and "Name is back." in every log (game commit 0bd3f9c)
 - `src/main.js:144-152`, `src/host.js:107`: never while asleep or dead, and never in a solo world (game commit 0bd3f9c)
 - `src/main.js:690-696`: a host away with no guests holds the world still; a friend's join starts it again (game commit 0bd3f9c)

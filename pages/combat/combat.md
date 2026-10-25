@@ -5,7 +5,7 @@ aliases: [Fighting, Melee, Attacking]
 summary: How fighting the dead works: the three mouse roles, the swing and its commitment, stamina, damage, the finisher, and knockback.
 ---
 
-**Combat** is how the [[Player]] fights [[The dead]]. There are no guns: the player swings what is in their hands, shoves with Space, or shoots a [[Hunting bow]]. A blow is decided on the click, and only the dead can be hit: never [[Villagers]], never other players.
+**Combat** is how the [[Player]] fights [[The dead]]. There are no guns: the player swings what is in their hands, shoves with Space, or shoots a [[Hunting bow]]. A blow is decided on the click, and only the dead and [[Animals|animals]] can be hit: never [[Villagers]], never other players.
 
 ## How it works
 
@@ -28,7 +28,8 @@ A click swings at once. The hit is decided on the click; the arm's animation is 
 - One of the dead drawn below the player on screen gets a little extra reach, up to {{n census.constants.combat.BODY_SLACK tiles}}.
 - The player must be able to see the target: there are no hits through walls, shut doors, or shut shutters (see [[Sight]]). The dark does not count: one of the dead hidden by the dark is hit like any other, and so is one an arrow, a throw, or a fireball meets.
 - A swing is refused while carrying a prop, during a timed action, or when dead.
-- Only [[The dead]] can be hit, and not a corpse: a swing, the [[Shove|shove]], an arrow, a thrown spear, and the [[Fireball]] never hurt a [[Villagers|villager]], another player, or the one who struck. There is no friendly fire, and no setting turns it on.
+- Only [[The dead]] and [[Animals|animals]] can be hit, and not a corpse: a swing, the [[Shove|shove]], an arrow, a thrown spear, and the [[Fireball]] never hurt a [[Villagers|villager]], another player, or the one who struck. There is no friendly fire, and no setting turns it on.
+- Wild game (deer, rabbits, boar) is hit as the dead are. Tame stock (hens, cows, pigs, sheep) is struck only when nothing else is in the wedge, and then the nearest one alone; the shove is for the dead alone. See [[Hunting]].
 
 The wedge itself is not drawn; the Swing targets outline, on by default, shows exactly which of the dead the next swing hits. Each weapon's reach and arc are on its page and in [[Weapons]].
 
@@ -90,7 +91,7 @@ Whenever a world is open to friends, hit-stop is switched off for everyone, host
 
 The mouse roles are read on each player's own machine and sent to the host. A guest's own swing, guard, and shove show at once on their screen, recovery and slowed walk included, but the hits, the shove's push, and the bow's draw are worked out on the host; a guest's right tap during a draw ends the draw on the host too. The rules (Multi-hit, Zombie aggro) are the host's, and a world keeps them in its save. See [[Multiplayer]].
 
-Players never hurt players, whatever they swing, shoot, or cast: on the host the dead are the only targets, so a friend standing in the wedge is passed over as a villager is.
+Players never hurt players, whatever they swing, shoot, or cast: on the host the dead and the animals are the only targets, so a friend standing in the wedge is passed over as a villager is.
 
 ## Settings that change it
 
@@ -111,6 +112,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - [[Dual wielding]]
 - [[Shove]]
 - [[Archery]]
+- [[Hunting]]
 - [[Burning]]
 - [[Durability]]
 - [[Fists]]
@@ -123,6 +125,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - `src/combat.js:329-393`: the swing decided on the click (`tryAttack`)
 - `src/combat.js:183-194`, `src/combat.js:208-212`: only the dead are targets; a swing refused while carrying, in a timed action, or dead
 - `src/combat.js:183-194`, `src/game.js:106`, `src/archery.js:299-326`: no friendly fire: a blow and the shove pick from the dead alone (`targetsIn`, the dead one not yet dead), and an arrow, a spear, or the fireball lands on what `setTargets` hands in, the dead (game commit 0bd3f9c)
+- `src/combat.js:204-220`, `src/archery.js:319-346` (at 6e3ab37): animals among a blow's and a shot's targets, tame stock only alone (game #456)
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it (game commit 490addf)
 - `src/buttons.js:10`, `src/buttons.js:24-44`: the roles and the tap time
 - `src/player-controller.js:17-56`: what each role does; the stance starts on the press; Space is the shove

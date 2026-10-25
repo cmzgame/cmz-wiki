@@ -27,7 +27,7 @@ The entry names the thing, its condition now, what the repair brings it to, and 
 - repaired twice: {{pct tuning.work.anvil.ceilings.2}}
 - repaired {{n tuning.work.anvil.ceilings.length}} times: past repair, greyed "Repair hoe (worn past repair)"; it wears on until it breaks.
 
-Without the hammer or the material the entry is greyed with what is missing: "Repair hoe (need a smith's hammer)", "Repair hoe (need a plank)". A thing already at or above what the anvil would bring it to has no entry; with nothing to repair, the menu has one greyed line, "Repair (nothing worn carried)". When it is done the game says what was spent and what it reached: "You repair the hoe, spending a plank: {{pct tuning.work.anvil.ceilings.0}}. It will take ... more repairs." The [[Torch]], the [[Halberd]], the [[Stick]], and the [[Plank]] cannot be repaired.
+Without the hammer or the material the entry is greyed with what is missing: "Repair hoe (need a smith's hammer)", "Repair hoe (need a plank)". A thing already at or above what the anvil would bring it to has no entry; with nothing to repair, the menu has one greyed line, "Repair (nothing worn carried)", or "Repair (nothing it can better)" when what you carry is worn but already at or above that. When it is done the game says what was spent and what it reached: "You repair the hoe, spending a plank: {{pct tuning.work.anvil.ceilings.0}}. It will take ... more repairs." The [[Torch]], the [[Halberd]], the [[Stick]], and the [[Plank]] cannot be repaired.
 
 The refusals, if a repair is asked for another way: "That cannot be repaired.", "The anvil can do no more for it.", "It is worn past repair.", "You need a smith's hammer.", "You need a plank." (or the thing's own material), and "You are not carrying that."
 
@@ -57,7 +57,7 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 - `data/sprites/anvil.json`, `src/repair.js:29-35`: the anvil is also a repairing place, `repair: "anvil"` (game #416, at 31d330a)
 - `data/tuning.json:169`, `data/items.json:6-52`: the anvil's ceilings, seconds, and tool (`smith`, carried); each item's material (game #416, at 31d330a)
 - `src/repair.js:56-72`, `src/repair.js:94-108`: the refusals; one unit of the material taken; the condition set to the ceiling; the message (game #416, at 31d330a)
-- `src/repair.js:115-153`: the entries, their labels, greyed past repair or missing a thing, the one greyed line (game #416, at 31d330a)
+- `src/repair.js:115-156`: the entries, their labels, greyed past repair or missing a thing, the one greyed line and its "(nothing it can better)" (game #454, at 6e3ab37)
 - `src/inventory.js:92-108`: the hammer found carried, in a hand, the belt, or the bag (game #416, at 31d330a)
 - `src/net.js:600-610`, `src/net.js:1261-1263`: a guest's Repair sent by label, run on the host as that player (game #416, at 31d330a)
 - `data/sprites/anvil.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's anvil fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)

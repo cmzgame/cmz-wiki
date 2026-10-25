@@ -11,7 +11,7 @@ A **log** comes from chopping down a tree, or the stump it leaves, with a [[Hatc
 
 ## Getting logs
 
-With a [[Hatchet]] in a hand, right-click a tree and choose **Chop down**. After {{n tuning.world.chopSeconds seconds}} the tree is gone, its logs lie on its tile, and a [[Stump]] is left, which the hatchet chops up for {{n sprites.stump.wood}} more log. Without a hatchet the entry is greyed: "Chop down (need a hatchet)". The menu says how many logs a tree gives: a young tree {{n sprites.tree_oak_m.wood}}, a grown one {{n sprites.tree_oak_l.wood}}, and an old one {{n sprites.tree_oak_old.wood}}.
+With a [[Hatchet]] in a hand, right-click a tree and choose **Chop down**. After {{n tuning.world.chopSeconds seconds}} the tree is gone, its logs lie on its tile (sometimes with a [[Sapling]]), and a [[Stump]] is left, which the hatchet chops up for {{n sprites.stump.wood}} more log. Without a hatchet the entry is greyed: "Chop down (need a hatchet)". The menu says how many logs a tree gives: a young tree {{n sprites.tree_oak_m.wood}}, a grown one {{n sprites.tree_oak_l.wood}}, and an old one {{n sprites.tree_oak_old.wood}}.
 
 ## Splitting
 
@@ -33,6 +33,7 @@ A log is the fuel of a [[Campfire]] and the [[Oven]]; a hearth and a fireplace b
 - `data/items.json:4`: the log: 2 x 3, fuel, splits into 3 planks
 - `src/interact.js:654-676`, `src/chop.js:26-51`: Chop down with a hatchet in a hand, the logs on the tile, the count in the label, the stump left and chopped for its log (game #207)
 - `data/tuning.json:117`, `data/sprites/stump.json`: the chop's seconds, the stump's log
+- `src/chop.js:45-50` (at 6e3ab37): a felled tree sometimes drops a sapling beside its logs (game #461)
 - `data/sprites/tree_oak_m.json`: a young tree's wood (likewise tree_oak_l, tree_oak_old)
 - `data/loot.json:2-3`: logs in the chest and barrel tables
 - `src/interact.js:1251-1267`, `data/tuning.json:113`: Split, in your own bag, with the split tool, a hatchet, carried, greyed "(need a hatchet)" without it; "Some planks fell to the floor." (game #222)

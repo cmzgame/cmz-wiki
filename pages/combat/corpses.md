@@ -38,7 +38,7 @@ One of the dead that dies while [[Burning]] burns on as a corpse until its fire'
 
 - It needs a [[Tinderbox]] and a [[Log]], each anywhere on you; the log is spent. A lit [[Torch]] is not the flame for it. Without them the entry is greyed with what is lacking: "Burn corpse (need a tinderbox and a log)", "Burn corpse (need a log)", or "Burn corpse (need a tinderbox)".
 - A body already burning, set alight before or still burning from its own death (above), shows "Burn corpse (already burning)".
-- It takes a bar of {{n tuning.work.burnCorpse.seconds seconds}} beside the body, within {{n census.constants.burn.BODY_REACH tiles}} and with no wall between; moving ends it. Done, the game says "The body catches. It will burn for about an hour, and nothing in it will be left."
+- It takes a bar of {{n tuning.work.burnCorpse.seconds seconds}} beside the body, within {{n census.constants.burn.BODY_REACH tiles}} and with no wall between; moving ends it. Done, the game says "The body catches. It will burn for about an hour, and nothing in it will be left."; the hours in it are the burn's own number, as the card's are.
 - The entry has a hover card. Its first line, in red, is the warning "Burns the body and everything in it."; then what it needs ("Needs a tinderbox and a log carried; the log is spent.") and how long it burns.
 - [[Use|Using]] a tinderbox on a body does the same at once, with no bar, and spends the log as the menu does.
 
@@ -74,6 +74,7 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 - `src/interact.js:1866-1891`, `src/burn.js:73-87`: Burn corpse on the dead's bodies alone, not a player's; greyed with what is lacking or while it burns; the bar's seconds and reach (game #434, at fa2997f)
 - `data/tuning.json:187`: `work.burnCorpse`: the tinderbox, the log, the hours, the seconds (game #434, at fa2997f)
 - `src/burn.js:89-97`, `src/burn.js:104-143`: alight for `hours` times `HOUR_SECONDS`; the card's warning in red, its lines; the verb's refusals, the log spent, its message (game #434, at fa2997f)
+- `src/burn.js:139-142`: the done line reads `work.burnCorpse.hours`, as the card does (game #454, at 6e3ab37)
 - `data/interactions.json:17`, `src/interactions.js:39`: a tinderbox used on a body of the dead runs the same verb (game #434, at fa2997f)
 - `src/map.js:96`, `src/fire.js:26`, `src/fire.js:97-99`: an hour's seconds; a burning body's light (game #434, at fa2997f)
 - `src/interact.js:1841-1858`, `src/interact.js:171`, `src/main.js:962`: the search greyed while it burns, a grid open on it closed, a guest's address finding nothing (game #434, at fa2997f)

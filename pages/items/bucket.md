@@ -1,8 +1,8 @@
 ---
 title: Bucket
 categories: [Items, Tools, Farming]
-aliases: [Buckets, Fill the bucket, Pour the bucket]
-summary: An item that holds water: filled at any water or a well, poured on a plot to water every crop in the 3 by 3 round it. One waits in your cottage's chest.
+aliases: [Buckets, Fill the bucket, Pour the bucket, Empty the bucket first]
+summary: An item that holds water: filled at any water or a well, poured on a plot to water every crop in the 3 by 3 round it; carried empty, it milks a fed cow. One waits in your cottage's chest.
 numbersOk: true
 ---
 <!-- typed: the three by three and the three tiles ahead are loop bounds in the game's code (`src/bucket.js:53-54`, `src/farming.js:272`), not named numbers a lookup can read -->
@@ -15,6 +15,8 @@ A **bucket** carries water for the fields. It is an item you keep in the bag, on
 
 - **Fill the bucket:** at any water tile, well, trough, or font, the menu offers it (greyed "(full)" when it is full): "You fill the bucket."
 - **Pour the bucket:** at a crop or tilled soil where something in the three by three round it needs water, the menu offers it (greyed "(empty)" when it is empty). It wets the soil of every crop there and empties the bucket: "You water ... plants." One pour a fill.
+
+- **Milk the cow:** carried empty, the bucket milks a cow that has eaten today, once a game day, for a [[Jug of milk]] (see [[Keeping]]). The milk is a jug of its own: the bucket stays empty. A bucket holding water is refused with "Empty the bucket first." Its hover card says "Milks a fed cow."
 
 A [[Use]] of the bucket on water or a crop does the same. The first bucket that can serve is used: hands, then belt, then bag. Each needs you within reach of the tile with a clear line to it; neither is offered through a wall, and a pour never wets the far side of one.
 
@@ -36,7 +38,8 @@ A guest fills and pours through the same menu entries and Use, sent to the host 
 ## Sources
 
 <!-- sources at 3c0a243 -->
-- `data/items.json:21`: the bucket: either hand, `vessel` and its capacity (game #211)
+- `data/items.json:22`: the bucket: either hand, `vessel` and its capacity (game #211), its verb `milk` (game #460; line at 6e3ab37)
+- `src/entities/animal.js:513-552`, `src/item-info.js:233`: milking with the bucket carried, refused while it holds water; its card's line (game #460, at 6e3ab37)
 - `src/bucket.js:1-126`: the buckets you carry, the first that can serve; Fill at water, a well, a trough, or a font; Pour on the 3 by 3 where something needs water, one pour a fill; reach and a clear line; the menu's entries and their greyed forms
 - `src/bucket.js:1-16`, `src/bucket.js:83-85`, `src/water.js:38-49`, `src/item-info.js:97-98`, `src/ui/inventory-panel.js:273`: a fill at a tainted source taints the bucket; its card's line and the brown drop; no boiling a bucket (game #435, at fa2997f)
 - `src/water.js:97-103`: "A bucket cannot be boiled yet." (game #435, at fa2997f)

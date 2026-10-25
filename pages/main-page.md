@@ -22,9 +22,9 @@ The game plays in a web browser, alone or with friends: press **Play** on its si
 - **You:** [[Player]], [[Health]], [[Stamina]], [[Moodles]], [[Sleep]], [[Death]].
 - **The dead:** [[The dead]], how they see, hunt, and break in.
 - **Fighting:** [[Combat]], [[Weapons]], [[Archery]], [[Durability]].
-- **Things:** [[Items]], [[Inventory]], [[Crafting]], [[Recipes]], [[Production chains]], [[Fire]], [[Food]], [[Fishing]], [[Farming]].
+- **Things:** [[Items]], [[Inventory]], [[Crafting]], [[Recipes]], [[Production chains]], [[Fire]], [[Food]], [[Fishing]], [[Farming]], [[Herbs]].
 - **Home:** [[Building]], [[Openings]], [[Placement]].
-- **The world:** [[Light]], [[Sight]], [[Water]], [[Gatherables]], [[Villagers]], [[Animals]].
+- **The world:** [[Light]], [[Sight]], [[Water]], [[Gatherables]], [[Trees]], [[Villagers]], [[Animals]], [[Hunting]], [[Keeping]].
 - **With friends:** [[Multiplayer]], [[Worlds]].
 
 ## About this wiki

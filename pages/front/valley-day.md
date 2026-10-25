@@ -45,6 +45,18 @@ A [[Pickaxe]] in hand mines a rock for [[Stone]] or an ore rock for [[Iron ore]]
 
 Read: [[Mining]], [[Pickaxe]], [[Charcoal clamp]], [[Forge]], [[Anvil]].
 
+### Herbs, mushrooms, clay, and salt (game #457)
+
+Eleven kinds of herb, {{n valley.resources.sage.count}} sage among them, grow like weeds at random on the valley's natural ground: the mana herb near water, nightshade and wolfsbane near trees, and grave moss only in the graveyard, gathered only at night. Each is gathered by hand from its menu, one at a time. The mushrooms under the trees are foraged now for a [[Mushroom]]. {{n valley.resources.clay.count}} clay banks by the river are dug for [[Clay]] with a [[Shovel]] carried, and {{n valley.resources.salt.count}} salt rocks at the iron workings are mined for [[Salt]] with a [[Pickaxe]] in hand. Each comes back elsewhere in its area once taken. None of them has a use yet.
+
+Read: [[Herbs]], [[Mushrooms]], [[Clay]], [[Salt]], [[Gatherables]].
+
+### Saplings and sticks (game #461)
+
+A felled tree sometimes drops a [[Sapling]] ({{pct tuning.trees.sapling.chance}} of the time). Planted on open grass outdoors, it grows into a tree in {{n tuning.trees.sapling.days game days}}, waiting while anyone stands on it; an apple tree's sapling grows an apple tree. **Gather sticks** under any standing tree, from its menu, gives {{n tuning.trees.sticks.count.0}} or {{n tuning.trees.sticks.count.1}} [[Stick|sticks]], once a game day a tree.
+
+Read: [[Sapling]], [[Trees]], [[Stick]].
+
 ### Cloth (game #216)
 
 [[Flax]] is a sixth crop, and the weaver's chest holds its first seed and a [[Dirk]]. The [[Loom]] weaves flax into [[Linen cloth]], and cloth into [[Bandage|bandages]] and linen clothes. With a knife on you, any garment tears into [[Rag|rags]] at the workbench, and a recipe that wants cloth takes a rag or plain cloth before a garment. The cap and the breeches are now the [[Linen cap]] and [[Linen breeches]], beside the [[Linen tunic]] (renamed in game #218), and cloth is the new [[Linen cloth]].
@@ -278,9 +290,21 @@ Read: [[Chat log]], [[Sight]].
 
 ### Animals (game #452)
 
-Deer, rabbits, and boar live in the woods ringing the valley; hens at Hollow Farm's coop, cows and pigs in two new fenced pens west of the orchard, and sheep in the croft's sheepfold past the ford. They graze and wander about their homes; deer and rabbits run from a player or one of the dead they see; the dead ignore them all. Object Highlight outlines one under the pointer, its name shows over it, and **Look at** says what it is doing. Wild game comes back slowly up to a cap, never within sight of a player. Nothing hunts, keeps, or uses them yet.
+Deer, rabbits, and boar live in the woods ringing the valley; hens at Hollow Farm's coop, cows and pigs in two new fenced pens west of the orchard, and sheep in the croft's sheepfold past the ford. They graze and wander about their homes; deer and rabbits run from a player or one of the dead they see; the dead ignore them all. Object Highlight outlines one under the pointer, its name shows over it, and **Look at** says what it is doing. Wild game comes back slowly up to a cap, never within sight of a player.
 
 Read: [[Animals]].
+
+### Hunting (game #456)
+
+A blow or an arrow reaches wild game as it reaches the dead; tame stock only when nothing else is there to hit. A kill leaves a carcass to skin and then butcher with a [[Dirk]] carried, for raw meat, a [[Hide]], [[Feather|feathers]], bacon, and [[Lard]]; the weapon decides how much: the bow the whole yield, a melee weapon less, the [[Halberd]] nothing. A struck boar charges and bites. A [[Snare]] from the workbench catches rabbits unseen, and wild game leaves tracks near you. Raw meat is eaten raw for now.
+
+Read: [[Hunting]], [[Meat]], [[Snare]], [[Dirk]].
+
+### Keeping (game #460)
+
+A [[Lead]] from the workbench leads a tame animal at your pace; let go, it makes its home where it stands, so a fenced yard with its gates shut is a pen. A [[Feeding trough]] (one in each farm pen and by the coop, or built from the palette) filled with grain, vegetables, or [[Hay]] (cut with the [[Scythe]]) feeds the animals near it, and a fed animal gives that day: a cow a [[Jug of milk]] to an empty [[Bucket]], a sheep [[Wool]] to [[Shears]] from the anvil, a hen an [[Egg]] into its coop and most days a feather. Two of a kind fed in a pen breed. An unfed animal gives nothing and never starves.
+
+Read: [[Keeping]], [[Lead]], [[Feeding trough]], [[Chicken coop]].
 
 ## Decided or filed, not built yet
 
@@ -319,6 +343,9 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 <!-- sources at 3c0a243 -->
 - `data/animals.json`, `src/entities/animal.js`, `tools/mapgen/valley.py:588-658`: the animals, their homes and pens, the flight, the renewal (game #452, at 261cd7a)
 - `src/resources.js`, `data/maps/valley.json` `resources`, `data/tuning.json` `resources`: mined rocks and ore rocks owed back elsewhere in their area (game #453, at 261cd7a)
+- `src/gather.js`, `data/maps/valley.json` `resources`, `data/sprites/herb_sage.json`, `data/sprites/clay_bank.json`, `data/sprites/salt_rock.json`: herbs, mushrooms foraged, clay, and salt (game #457, at 6e3ab37)
+- `src/trees.js`, `src/chop.js`, `data/tuning.json` `trees`: saplings and sticks (game #461, at 6e3ab37)
+- `src/entities/animal.js`, `data/animals.json` `kills`, `work`, `snare`, `tracks`, `keep`, `src/tracks.js`, `src/farming.js:262-300`: hunting, snares, tracks, keeping, hay (games #456 and #460, at 6e3ab37)
 - `data/sprites/tree_apple.json`, `src/render/bees.js`: the apple tree as the round tree with apples; the bees at the hives (game #451, at 261cd7a)
 - `src/sick.js:56-67`, `data/kit.json`, `src/water.js:126-148`: a tainted drink's chance of Sick and of the infection, the starting skin clean, boiling (game #435, at fa2997f)
 - `src/ui/screens.js:714-732`, `src/main.js:1743`, `src/ui/nav-row.js:220-241`, `src/item-info.js`, `src/ui/hover-card.js`, `src/debuffs.js`, `src/ui/debuff-row.js`: durable fullscreen, the row in one line, the item hover card, bleeding as a debuff (game #311, #312, #313, #315, at 8af4eed)

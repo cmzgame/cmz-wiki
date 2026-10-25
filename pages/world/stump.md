@@ -9,7 +9,7 @@ A **stump** is what a tree leaves when it is chopped down with a [[Hatchet]] (se
 
 ## Chopping it up
 
-With a hatchet in a hand, its menu offers **Chop up the stump**, naming its log; without one the entry is greyed: "Chop up the stump (need a hatchet)". You must stand within {{n tuning.world.pickReach tiles}} of it. After {{n tuning.world.chopSeconds seconds}} it gives {{n sprites.stump.wood}} [[Log]] on its tile, "... from the stump, and the ground is clear.", and nothing is left: no second stump.
+With a hatchet in a hand, its menu offers **Chop up the stump**, naming its log; without one the entry is greyed: "Chop up the stump (need a hatchet)". You must stand within {{n tuning.world.pickReach tiles}} of it. After {{n tuning.world.chopSeconds seconds}} it gives {{n sprites.stump.wood}} [[Log]] on its tile, "... from the stump, and the ground is clear.", and nothing is left: no second stump, and never a [[Sapling]], which only a standing tree's felling drops. Nor does a stump give sticks: Gather sticks is a standing tree's alone.
 
 ## With friends
 
@@ -21,11 +21,12 @@ Chopping a stump is a menu action the host performs for whoever asked. The stump
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at 6e3ab37 -->
 - `data/sprites/stump.json`: the stump: `interactable`, outlined, its collision, `wood`, `felled` (game #207)
-- `data/tuning.json:118`, `src/chop.js:41-46`: a felled tree with a canopy leaves the stump sprite on its tile
-- `src/chop.js:23-24`, `src/chop.js:26-51`: a stump is a prop marked `felled`; chopped, it gives its log and leaves nothing
-- `src/interact.js:654-676`, `data/tuning.json:117`: Chop up the stump with a hatchet in a hand, else greyed; within `pickReach`; `chopSeconds`
-- `src/map.js:506-540`: the stump placed and removed through the map, so the chunk is saved and sent
+- `data/tuning.json:179`, `src/chop.js:41-50`: a felled tree with a canopy leaves the stump sprite on its tile
+- `src/chop.js:25-26`, `src/chop.js:28-53`: a stump is a prop marked `felled`; chopped, it gives its log and leaves nothing, the sapling's roll only for a tree with a canopy (game #461, at 6e3ab37)
+- `src/trees.js:184-190`: Gather sticks never on a stump (game #461)
+- `src/interact.js:854-876`, `src/chop.js:33`, `data/tuning.json:178`: Chop up the stump with a hatchet in a hand, else greyed; within `pickReach`; `chopSeconds`
+- `src/map.js:789-830`: the stump placed and removed through the map, so the chunk is saved and sent
 
 {{navbox props}}

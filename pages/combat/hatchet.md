@@ -7,7 +7,7 @@ summary: A one-handed tool that fells trees, splits logs, and notches log walls,
 
 {{infobox-item hatchet}}
 
-The **Hatchet** is a one-handed tool, and a solid weapon in either hand. It is the tool for wood: held in a hand, it chops down a tree for its [[Log|logs]], leaving a [[Stump]], and chops up the stump for one more log (see [[Trees]]). Without one, a tree's menu reads "Chop down (need a hatchet)". Chopping does not wear it.
+The **Hatchet** is a one-handed tool, and a solid weapon in either hand. It is the tool for wood: held in a hand, it chops down a tree for its [[Log|logs]], leaving a [[Stump]] and sometimes a [[Sapling]], and chops up the stump for one more log (see [[Trees]]). Without one, a tree's menu reads "Chop down (need a hatchet)". Chopping does not wear it.
 
 Carried anywhere on you (a hand, the belt, or the bag), it also does the hatchet's other work: **splitting** a [[Log]] into [[Plank|planks]] from the bag's menu, cutting [[Stick|sticks]] from a plank at the [[Workbench]], and **notching** a log wall when you build one (see [[Building]]). Without one, those read "(need a hatchet)" and refuse with "You need a hatchet."
 
@@ -40,7 +40,7 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 <!-- sources at 37e8726 -->
 - `data/items.json:6`: the hatchet: either hand, its verbs `chop`, `notch`, and `split`, its `weapon` block (the last two game #222)
 - `src/inventory.js:89-108`, `data/tuning.json:153`, `src/interact.js:1371-1387`, `src/stations.js:149`, `src/placement.js:176-191`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
-- `src/chop.js:14-51`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it
+- `src/chop.js:16-53`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it; a felled tree sometimes drops a sapling (game #461, at 6e3ab37)
 - `src/interact.js:737-759`: "Chop down (need a hatchet)" greyed without one
 - `data/loot.json:7-8`, `data/maps/valley.json:1397`, `data/maps/valley.json:3578`, `src/map.js:1974`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
 - `data/loot.json:2`: the hatchet in the `chest` table

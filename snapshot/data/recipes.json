@@ -325,6 +325,44 @@
    "uses": "cut"
   },
   {
+   "id": "snare",
+   "station": "workbench",
+   "out": {
+    "id": "snare",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stick",
+     "count": 2
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 5,
+   "uses": "cut",
+   "note": "docs/45 section 2: a snare for rabbits, Crafting 1 (open until the skills); a stake and a noose of cloth"
+  },
+  {
+   "id": "lead",
+   "station": "workbench",
+   "out": {
+    "id": "lead",
+    "count": 1
+   },
+   "in": [
+    {
+     "tag": "cloth",
+     "count": 2
+    }
+   ],
+   "seconds": 4,
+   "uses": "cut",
+   "note": "docs/45 section 1: a lead, Crafting 1 (open until the skills)"
+  },
+  {
    "id": "shield",
    "station": "workbench",
    "out": {
@@ -716,6 +754,23 @@
    ],
    "seconds": 8,
    "tool": "hammer"
+  },
+  {
+   "id": "shears",
+   "station": "anvil",
+   "out": {
+    "id": "shears",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 8,
+   "tool": "hammer",
+   "note": "docs/45 section 3: shears, Blacksmithing 1 (open until the skills)"
   },
   {
    "id": "hammer",

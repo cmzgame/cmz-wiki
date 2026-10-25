@@ -7,7 +7,7 @@ summary: A two-handed bow that shoots arrows in an arc, drawn with the left butt
 
 {{infobox-item bow}}
 
-The **Hunting bow** (the Bow until the names were made specific) is held in both hands and shoots [[Arrow|arrows]] from the bag or the belt. It hits only where the arrow comes down.
+The **Hunting bow** (the Bow until the names were made specific) is held in both hands and shoots [[Arrow|arrows]] from the bag or the belt. It hits only where the arrow comes down. It is the hunter's weapon: an animal it kills gives its whole yield, a share of {{n animals.kills.bow}} (see [[Hunting]]).
 
 ## Combat
 
@@ -40,5 +40,6 @@ Drawn, it creaks for as long as it is held, rising as the draw fills; let go, it
 - `src/archery.js:568-572`, `src/archery.js:267-282`: fire arrows drawn first, setting alight what they hit, lodging or landing as plain arrows
 - `src/archery.js:681-690`, `src/items.js:39-41`: durability per arrow loosed
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
+- `data/animals.json:4`, `src/archery.js:272-279` (at 6e3ab37): a bow's kill keeps the class bow, the whole yield (game #456)
 
 {{navbox weapons}}
