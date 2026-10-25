@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-24: synced to `6e5b20a`
+
+- **New in the game:** the [[Linen satchel]] (game #403), a bag of {{n items.satchel.bag.0}} × {{n items.satchel.bag.1}} woven at the [[Loom]] from linen cloth, between the burlap sack and the rucksack. **A bag taken off keeps what is in it:** Unequip sets it down at your feet, and on the floor it is a container to open and take from, and to equip again. The satchel has a page of its own; [[Inventory]], [[Loom]], [[Burlap sack]], [[Rucksack]], and [[Levers]] say so. The instruments' fix (game #402) changes nothing a player sees.
+
 ## 2026-10-24: synced to `ce21ffc`
 
 - **Changed in the game:** the loot tables and stacking (game #399, Michael's rulings). Each kind of container has a table of its own: chests, barrels, shelves and cupboards, woodpiles, carts and stalls, coffins, the inn's counter, haystacks; bookcases, desks, and strongboxes hold nothing yet. **Gear is placed once:** the valley's found sword and mace are in [[The toll house]]'s chest, its leather belt and work gloves on [[Hollow Farm]]'s tool rack, and its Onion-head Hat on the farm's scarecrow, now a container; no container holds a rucksack. **Only a few things stack:** arrows, throwing knives and axes, bandages, and seeds; food and materials take a cell each. [[Drop tables]] is new: every table OSRS-style, with each item's chance a roll and expected count per container, and what the valley holds all told, read from the data for Michael to tune. [[Containers]], [[Inventory]], [[Food]], [[Day-one food]], [[Levers]], [[Crafting]] (a station's output box spills more often now), and every item page that named chests or a stack size are rewritten; each item's infobox shows how it stacks.

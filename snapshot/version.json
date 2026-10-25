@@ -1,7 +1,7 @@
 {
-  "commit": "ce21ffc28a19b7e41d44ae131a6c52a37c4f90cc",
-  "short": "ce21ffc",
-  "date": "2026-10-24T22:36:25-05:00",
-  "subject": "Merge #399, reviewed: a loot table per kind of container, gear placed once, one thing a cell (#268, #260; Michael, 2026-10-24)",
+  "commit": "6e5b20add080d22d7b6ba1834fc5d5df959fc549",
+  "short": "6e5b20a",
+  "date": "2026-10-24T23:04:32-05:00",
+  "subject": "Merge #403, reviewed: a bag set down keeps its contents, and the linen satchel (#400)",
   "ref": "origin/main"
 }

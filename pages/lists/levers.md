@@ -44,7 +44,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **Day-one food:** what one player with tools can gather and make in the valley is aimed at about twelve game days of food, as counted on [[Day-one food]].
 - **The loot tables:** a table per kind of [[Containers|container]], most with weights out of thirty-two, so a weight is a chance in thirty-two a roll, and a number of rolls for each container. Every table, each item's chance a roll and its expected count per container, and what the valley holds all told are on [[Drop tables]], for Michael to tune.
 - **What stacks and how far:** each item's own stack size; one thing a cell unless chosen. Today only arrows, throwing knives and axes, bandages, and seeds stack (see [[Inventory#Stacking|Inventory]]).
-- **The bags' sizes:** each bag's grid: the [[Burlap sack]] {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}} and the [[Rucksack]] {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}} today. {{planned doc=42 note="A rucksack of eight by six, a linen satchel of seven by five, and a best bag of ten by six, all built."}}
+- **The bags' sizes:** each bag's grid: the [[Burlap sack]] {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}}, the [[Linen satchel]] {{n items.satchel.bag.0}} × {{n items.satchel.bag.1}}, and the [[Rucksack]] {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}} today. {{planned doc=42 note="A rucksack of eight by six, made from leather and wool, and a best bag of ten by six, both built."}}
 - **A boss's best drop:** {{planned doc=42 note="About one in eight at first, rising with each kill that misses it, certain by the twentieth, for each player."}}
 
 ## World settings

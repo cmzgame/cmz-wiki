@@ -2,12 +2,12 @@
 title: Loom
 categories: [Stations, Crafting]
 aliases: [Looms, Weaving]
-summary: The weaver's station: flax into linen cloth, and cloth into bandages and linen clothes.
+summary: The weaver's station: flax into linen cloth, and cloth into bandages, linen clothes, and the linen satchel.
 ---
 
 {{infobox-station loom}}
 
-The **loom** stands in [[The weaver]]'s workroom. It weaves [[Flax]] into [[Linen cloth]], and makes the cloth into [[Bandage|bandages]], the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]]. It needs no fire and no tool. The weaver's chest and the farms' granaries hold flax seed, and [[Long Acre]] grows flax from the start, so a whole run, from seed to cloth, can be had in play (see [[Farming]]).
+The **loom** stands in [[The weaver]]'s workroom. It weaves [[Flax]] into [[Linen cloth]], and makes the cloth into [[Bandage|bandages]], the [[Linen cap]], the [[Linen breeches]], the [[Linen tunic]], and the [[Linen satchel]], a bag bigger than the sack. It needs no fire and no tool. The weaver's chest and the farms' granaries hold flax seed, and [[Long Acre]] grows flax from the start, so a whole run, from seed to cloth, can be had in play (see [[Farming]]).
 
 ## Using it
 
@@ -30,5 +30,6 @@ A guest opens the loom's panel on their own screen; Make is carried out by the h
 - `data/recipes.json:125-199`: the loom's recipes: cloth from flax; bandages, a cap, breeches, and a tunic from cloth (game #216)
 - `tools/mapgen/valley.py:360`: the loom in the weaver's workroom, and the chest's flax seed
 - `src/interact.js:788-803`, `src/stations.js:145-202`: the station's entry and `E`; Make and the output box
+- `data/recipes.json` `weave_satchel`: the linen satchel woven from cloth (game #403, at 6e5b20a)
 
 {{navbox making}}

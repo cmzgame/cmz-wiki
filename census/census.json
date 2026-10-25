@@ -1,14 +1,14 @@
 {
  "version": {
-  "commit": "ce21ffc28a19b7e41d44ae131a6c52a37c4f90cc",
-  "short": "ce21ffc",
-  "date": "2026-10-24T22:36:25-05:00",
-  "subject": "Merge #399, reviewed: a loot table per kind of container, gear placed once, one thing a cell (#268, #260; Michael, 2026-10-24)",
+  "commit": "6e5b20add080d22d7b6ba1834fc5d5df959fc549",
+  "short": "6e5b20a",
+  "date": "2026-10-24T23:04:32-05:00",
+  "subject": "Merge #403, reviewed: a bag set down keeps its contents, and the linen satchel (#400)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 81,
-  "recipes": 46,
+  "items": 82,
+  "recipes": 47,
   "interactions": 28,
   "lootTables": 28,
   "sprites": 177,
@@ -1041,6 +1041,32 @@
    "interactions": []
   },
   {
+   "id": "satchel",
+   "name": "Linen satchel",
+   "kind": "bag",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [],
+   "bag": [
+    7,
+    5
+   ],
+   "wear": "back",
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "loom"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": []
+  },
+  {
    "id": "rucksack",
    "name": "Rucksack",
    "kind": "bag",
@@ -2004,6 +2030,7 @@
     "loom: cap",
     "loom: breeches",
     "loom: tunic",
+    "loom: satchel",
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: prop:bed"
@@ -2577,6 +2604,21 @@
     }
    ],
    "seconds": 14
+  },
+  {
+   "id": "weave_satchel",
+   "station": "loom",
+   "out": {
+    "id": "satchel",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "cloth",
+     "count": 6
+    }
+   ],
+   "seconds": 24
   },
   {
    "id": "handle",
