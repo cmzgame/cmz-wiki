@@ -9,7 +9,7 @@ summary: A cutting tool: carried, it lets you tear a garment into rags at the wo
 
 The **dirk** (the belt knife until 2026-10-19, and the knife before the names were made specific) is a small tool made at the [[Anvil]] from an [[Iron bar]] and a [[Stick]], with a [[Smith's hammer]] in hand. The chest in [[The weaver]] holds one. Carried anywhere, in a hand, on the belt, or in the bag, it cuts: it is what tearing a garment into [[Rag|rags]] at the [[Workbench]] asks for, and making a [[Hunting bow]], [[Arrow|arrows]], or a [[Fishing rod]] there, and what a ripe [[Cabbage]] or [[Pumpkin]] crop asks for at harvest (see [[Farming]]). Without one, those read "(need a dirk)" or "needs a dirk on you", and refuse with "You need a dirk." It can be held in either hand and swung as a weak weapon that breaks after about {{n items.knife.weapon.kills}} kills.
 
-{{planned doc=30 note="The knife's other verbs, butchering and skinning, with the animals."}}
+{{planned doc=45 step=2 note="The knife's other verbs, skinning and butchering a kill, with hunting (see [[Animals]])."}}
 
 {{item-sections knife}}
 

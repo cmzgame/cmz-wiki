@@ -14,7 +14,7 @@ For anyone writing a page, Claude or Michael. The model is the Old School RuneSc
 
 Every number the game has goes in as a reference, so the wiki changes when the game does:
 
-- From the data: `{{n tuning.zombie.speed}}` (first segment names the file: `tuning`, `combat`, `build`, `items`, `looks`, `loot`, `valley`, `sprites`, `sounds`), items by id: `{{n items.sword.weapon.damage}}`.
+- From the data: `{{n tuning.zombie.speed}}` (first segment names the file: `tuning`, `combat`, `build`, `items`, `looks`, `loot`, `valley`, `sprites`, `sounds`, `animals`), items by id: `{{n items.sword.weapon.damage}}`.
 - From the code's named constants, found by the census: `{{n census.constants.combat.POINT_BLANK}}` (module path with `/` as `_`, e.g. `entities_zombie`; an object called `tunables` appears as `tunables_<name>`).
 - A unit can follow: `{{n tuning.zombie.speed tiles a second}}`.
 - A number that is not the game's (a count of pages, "two hands", "the third hit") may be written as a word. A number the game has but that is neither in data nor a named constant: write it, and add `numbersOk: true` to the front matter with a comment line in the body `<!-- typed: why -->` so it can be found later.

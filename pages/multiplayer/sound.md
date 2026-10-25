@@ -16,7 +16,7 @@ The game's **sounds** are made by the game itself when it loads, from noise and 
 
 - **Footsteps:** every walking character steps as its foot comes down, about four steps a second. The step sounds of the floor under it: dirt (farm soil too), wood, stone (cobble too), or shallow water. Grass, and any floor without a step of its own, sounds the dead's shuffle. Only the {{n sounds.footsteps.nearest}} nearest walkers are heard at once.
 - **The dead** shuffle instead of stepping, quieter than a footfall, whatever the floor.
-- **A swing** whooshes as it is made, loudest at the click, as the [[Combat|swing timer]]'s bar starts to fill. A weapon whose swing takes {{n sounds.swing.heavyAt seconds}} or more (the [[Halberd]]) makes a heavier, lower whoosh.
+- **A swing** whooshes as it is made, loudest at the click, as the [[Combat|swing timer]]'s bar starts to fill. A weapon whose swing takes {{n sounds.swing.heavyAt seconds}} or more (the [[Halberd]]) makes a heavier, lower whoosh. With a weapon in each hand, each hand's swing makes its own, the off hand's by its own weapon (see [[Dual wielding]]).
 - **A shove** (`Space`) has a short push of its own as it is made, whether or not it reaches anyone. See [[Shove]].
 - **A hit** thuds wherever a hit lands: a blow on one of [[The dead]], a bite on a player, an arrow, a fireball, a villager hurt. It sounds with the [[Interface#Floating numbers|floating number]], and the Floating numbers setting off does not silence it.
 - **The bow:** a drawn [[Hunting bow]] creaks for as long as it is held, the creak rising from {{pct sounds.bow.rateFrom}} to {{pct sounds.bow.rateTo}} of its speed as the draw fills, and stopping when the draw ends. Letting go twangs, and the arrow thumps where it comes down. A draw let go too early to shoot makes no twang. See [[Archery]].
@@ -70,6 +70,7 @@ Each player hears their own world as their own screen shows it: a friend's foots
 - `data/sounds.json`: the slots, their radius and voices, the footsteps' floors and the default shuffle, the swing's heavy threshold, the bow's rate, the openings' radius
 - `src/sound-cues.js:114-147`: a step as a walk turns to a contact frame, by the floor under it, a floor with no step of its own the shuffle; the dead's shuffle; the nearest walkers only
 - `src/sound-cues.js:153-211`: a swing and a shove when their cooldowns rise, heavy by the length of its swing; the bow's creak while the draw is up, its rate by the draw; the twang and a spell's cast when the recovery is set; no twang on a dry release; a spear silent
+- `src/sound-cues.js:191-192`, `src/sound-cues.js:228-231`: each hand's swing its own, the off hand's slot from the off weapon (game #450, at 261cd7a)
 - `src/sound-cues.js:213-222`, `src/floaters.js`: a hit from every damage event, through the ear's own cursor
 - `src/sound-cues.js:224-243`: a fall when one of the dead goes down, a death when one dies, only the death if both
 - `src/sound-cues.js:245-269`: an arrow's landing where it was last in flight

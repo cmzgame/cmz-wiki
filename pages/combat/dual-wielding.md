@@ -13,6 +13,10 @@ summary: Fighting with a weapon in each hand, and the exposure each off-hand swi
 
 Each hand has its own cooldown. After any swing with two weapons, the other hand waits {{n combat.dual.lockout}} of that swing's time before it may swing. An off-hand blow does {{n combat.dual.offDamage}} times its weapon's damage.
 
+### The off hand's swing
+
+An off-hand swing is drawn on the off arm: it swings the off weapon in that weapon's own style, mirrored, with the weapon following the off forearm, while the main arm holds what it holds. In the side facings the off arm is the far one, so its swing shows behind the body. Each hand's swing makes its own whoosh, the off hand's chosen by the off weapon: a light one, or a heavier one for a weapon whose swing takes {{n sounds.swing.heavyAt seconds}} or more (see [[Sound]]).
+
 Any item with a weapon block counts as an off-hand weapon, including the [[Torch]], the [[Plank]], and the tools. The [[Wooden shield]] never does. So a weapon with a torch in the other hand is dual wielding as soon as the player clicks faster than the main weapon recovers.
 
 ### Exposure
@@ -41,7 +45,7 @@ Exposure is applied after the shield's guard.
 
 ## With friends
 
-Each player's cooldowns and exposure travel exactly to the guest, so a guest's swing is allowed or refused on the same step as on the host.
+Each player's cooldowns and exposure travel exactly to the guest, so a guest's swing is allowed or refused on the same step as on the host. A guest's own off-hand swing is drawn on the off arm at once, and a friend's is drawn and heard the same way on every screen.
 
 ## See also
 
@@ -51,7 +55,7 @@ Each player's cooldowns and exposure travel exactly to the guest, so a guest's s
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 261cd7a -->
 - `src/combat.js:267-283`: the left click swings the main hand when ready, else the off hand
 - `src/combat.js:305-323`: each hand's cooldown; the lockout after a swing with two weapons
 - `data/combat.json`: `dual.offDamage`, `lockout`, `window`, `front`, `arc`, `side`, `sideArc`, `behind`
@@ -63,3 +67,6 @@ Each player's cooldowns and exposure travel exactly to the guest, so a guest's s
 - `src/items.js:112-133`: which hands may hold what; the spear refused beside a weapon, a torch not counted
 - `src/inventory.js:219-220`: the off-hand item remembered and put back
 - `src/net.js:222`: cooldowns and exposure travel exactly
+- `src/combat.js:356-364`, `src/figure/rig.js:166-198`, `src/figure/rig.js:335`: the off hand's swing plays `attack_off`, the off weapon's style with the arms swapped, on every player's sheet; the main arm holds (game #450, at 261cd7a)
+- `src/render/entities.js:247-248`: the off weapon follows the off forearm in its swing (game #450, at 261cd7a)
+- `src/sound-cues.js:191-192`, `src/sound-cues.js:228-231`, `data/sounds.json` `swing`: each hand's swing heard when its cooldown rises, the off hand's slot from the off weapon, heavy from `heavyAt` (game #450, at 261cd7a)

@@ -17,7 +17,7 @@ The well plays its own animation instead: it lowers its bucket and winds it back
 
 ### Walking through
 
-Gatherables you can walk through, crops and mushrooms, sway when any character passes through them: you, other players, the dead, and villagers. Each sway runs its full {{n census.constants.interact.BRUSH_MS}} milliseconds before it can start again, so a walk through a field sets it rippling. Standing still does nothing. Trees and rocks block a body, so they never sway this way.
+Gatherables you can walk through, crops and mushrooms, sway when any character passes through them: you, other players, the dead, villagers, and [[Animals|animals]]. Each sway runs its full {{n census.constants.interact.BRUSH_MS}} milliseconds before it can start again, so a walk through a field sets it rippling. Standing still does nothing. Trees and rocks block a body, so they never sway this way.
 
 Decoration, such as the flowers and leaves on the ground, does neither.
 
@@ -25,11 +25,11 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 
 - **Trees:** chop one down from the right-click menu with a [[Hatchet]] in a hand. It takes {{n tuning.world.chopSeconds seconds}}, the tree is gone, its logs lie on the ground where it stood, and a [[Stump]] is left, which the hatchet chops up for one more log. An apple tree with fruit on it can also be picked for [[Apple|apples]], and is then bare for some days. See [[Trees]].
 - **Crops:** harvested when ready, with E or the menu, for their food and seeds, with the crop's tool on you (none for flax); see [[Farming]].
-- **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], and gone; the ore rocks of [[The iron workings]] give [[Iron ore]] and come back after some days. See [[Mining]].
+- **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], or at [[The iron workings]] for [[Iron ore]], and gone; inside the valley a new one rises elsewhere in its area a game day or two later. See [[Mining]].
 - **Mushrooms and pumpkins:** they sway, and nothing more.
 - **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on the menu, or `E`, gives {{n tuning.work.honey.count.0}} [[Pot of honey]] in {{n tuning.work.honey.seconds seconds}}, and the hive has more {{n tuning.work.honey.days}} game days later. Every hive has honey at the start. See [[Beehive]].
 
-{{planned doc=30 note="Picking mushrooms."}}
+{{planned doc=46 step=2 note="Foraging mushrooms; a foraged one will come back near trees elsewhere in the valley."}}
 
 ## Numbers
 
@@ -63,7 +63,8 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - `data/ground.json`: flowers and leaves are baked decals, not props
 - `data/sprites/tree_apple.json`, `src/interact.js:599-624`: an apple tree laden is picked for apples, then bare (game #192)
 - `src/interact.js:654-676`, `src/chop.js:26-51`, `src/interact.js:772-786`, `data/sprites/stump.json`: chopping a tree or a stump with a hatchet, picking a fruit tree, a crop's actions; the stump gatherable and outlined (game #207); nothing else has an action but mining
-- `src/mining.js:1-54`: a rock or an ore rock mined with a pickaxe in hand (game #210)
+- `src/mining.js:1-55`, `src/resources.js:33-64`: a rock or an ore rock mined with a pickaxe in hand and gone, and owed back elsewhere in its area (games #210 and #453, at 261cd7a)
+- `src/game.js:687-696`: an animal walking through a crop or mushroom sways it (game #452, at 261cd7a)
 - `src/interact.js:550-571`, `src/farming.js:233-259`: a ready crop harvested (game #206)
 - `src/interact.js:1416-1448`, `src/net.js:882`, `src/net.js:1141-1145`: the sways sent in frames; a guest's click checked by the host
 - `src/interact.js:70-92`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk

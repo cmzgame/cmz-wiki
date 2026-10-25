@@ -22,6 +22,8 @@ Only the dead within {{n tuning.world.activeTiles tiles}} of some player (in a s
 
 The dead see the [[Player]] by the same rule the player sees by: a clear line (see [[Sight]]). How far they see depends on the [[Light]] where the player stands: {{n tuning.zombie.sight tiles}} in full light, falling to {{n tuning.zombie.sightDarkFraction}} of that when the player stands unlit. Each looks every {{n tuning.zombie.sightCheck seconds}}.
 
+The dead ignore [[Animals|animals]], wild and tame: they never chase, bite, or count one, though deer and rabbits run from them.
+
 ### Flames at night
 
 At night, once one of the dead has not seen a player for {{n tuning.zombie.flamePatience seconds}}, it can be drawn by any lit flame in its line of sight, from as far as {{n tuning.zombie.flameRange tiles}} in full dark. A torch carried in hand counts as seeing its carrier. Two torches are seen {{n tuning.world.twoTorches}} times as far; a torch on the belt is seen from {{n tuning.world.beltLight}} times as far.
@@ -127,6 +129,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - [[Sight]]
 - [[Light]]
 - [[Levers]]: the dead's numbers still being balanced
+- [[Animals]]
 
 ## Sources
 
@@ -169,3 +172,4 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/ui/zombie-bars.js:16-18`, `src/highlight.js:32-34`: a downed one's bar over its body, and its outline under the pointer (game #390, at 9be007c)
 - `src/entities/zombie.js:639-643`, `data/tuning.json`: the closing burst, `burstSpeed` within `burstRange` of a target it sees in the chase; 1 is off; the player's speeds against it from `player.speed`, `blow.swingMove`, `bow.drawSpeed`, the shield's `moveMult`, `bow.braceMove` (game #394, at 5830ac2)
 - `src/entities/zombie.js:865-871`, `src/entities/zombie.js:923-929`: a gate opened while they strike it, and they walk through (game #397, at 82485c4)
+- `src/game.js:687-696`: animals are in none of the dead's lists; deer and rabbits run from the standing dead (game #452, at 261cd7a)

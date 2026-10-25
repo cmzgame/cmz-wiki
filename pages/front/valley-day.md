@@ -29,7 +29,7 @@ Read: [[Hatchet]], [[Trees]], [[Stump]], [[Log]].
 
 ### Apple trees and the orchard (game #192)
 
-Pick apples from a laden apple tree's menu; the tree is then bare for {{n sprites.tree_apple.pick.days}} days of the world's clock before it bears again. [[The orchard]] has rows of them, and three cottage gardens have one each. Picking needs a clear line to the tree, like farming. A world made with Trees off has none.
+Pick apples from a laden apple tree's menu; the tree is then bare for {{n sprites.tree_apple.pick.days}} days of the world's clock before it bears again. Since game #451 an apple tree is the green round tree with red apples through its crown, and a picked one is the same crown bare. [[The orchard]] has rows of them, and three cottage gardens have one each. Picking needs a clear line to the tree, like farming. A world made with Trees off has none.
 
 Read: [[Trees]], [[Apple]], [[The orchard]].
 
@@ -41,7 +41,7 @@ Read: [[Fishing]], [[Fishing rod]], [[Perch]], [[Trout]], [[Carp]].
 
 ### Mining, iron, and charcoal (game #210)
 
-A [[Pickaxe]] in hand mines a rock for [[Stone]], and the rock is gone; an ore rock gives [[Iron ore]], stands mined out for {{n sprites.ore_rock.mine.days}} days, and comes back, so iron never runs out. Two new places hold them: [[The iron workings]] in the east woods and [[The quarry]] in the north-east, each with a hut whose chest holds a pickaxe. A [[Charcoal clamp]] burns logs into [[Charcoal]]: one stands in the smithy's yard, three at [[The charcoal burners]]. The smithy's chest holds the first iron bars and charcoal, so the forge and the anvil work from the first day.
+A [[Pickaxe]] in hand mines a rock for [[Stone]] or an ore rock for [[Iron ore]], and the rock is gone. Since game #453 the valley keeps its count of each: a new rock rises out of the ground elsewhere in its area {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later, stone anywhere on natural ground and ore at the iron workings and the woods round them, so neither runs out (see [[Mining#Coming back|Mining]]). The valley now starts with {{n valley.resources.stone.count}} rocks, not only the quarry's. Two new places hold them: [[The iron workings]] in the east woods and [[The quarry]] in the north-east, each with a hut whose chest holds a pickaxe. A [[Charcoal clamp]] burns logs into [[Charcoal]]: one stands in the smithy's yard, three at [[The charcoal burners]]. The smithy's chest holds the first iron bars and charcoal, so the forge and the anvil work from the first day.
 
 Read: [[Mining]], [[Pickaxe]], [[Charcoal clamp]], [[Forge]], [[Anvil]].
 
@@ -138,7 +138,7 @@ Read: [[Torch]], [[Items]].
 
 ### The beehive and the chicken coop (game #338)
 
-Drawn straw beehives stand at [[Your cottage]] (two, along the south of the farm plot), at [[Hollow Farm]] (three, east of the lane), and in [[The manor]]'s garden (three, drawn now). A click sways one, and since game #416 **Take honey** gives a [[Pot of honey]] (see [[Beehive]]). A [[Chicken coop]] stands south of your cottage by the well and another at the west end of Hollow Farm's yard; **Search chicken coop** opens it like a chest, with a small placeholder table of rags, sticks, and a little grain, often nothing, and no eggs.
+Drawn straw beehives stand at [[Your cottage]] (two, along the south of the farm plot), at [[Hollow Farm]] (three, east of the lane), and in [[The manor]]'s garden (three, drawn now). A click sways one, and since game #416 **Take honey** gives a [[Pot of honey]] (see [[Beehive]]); since game #451 bees fly about each hive by day, livelier for a few seconds after its honey is taken. A [[Chicken coop]] stands south of your cottage by the well and another at the west end of Hollow Farm's yard; **Search chicken coop** opens it like a chest, with a small placeholder table of rags, sticks, and a little grain, often nothing, and no eggs.
 
 Read: [[Beehive]], [[Chicken coop]], [[Containers]], [[Gatherables]].
 
@@ -276,6 +276,12 @@ The dead you cannot see in the dark put "Something groans in the dark." in the c
 
 Read: [[Chat log]], [[Sight]].
 
+### Animals (game #452)
+
+Deer, rabbits, and boar live in the woods ringing the valley; hens at Hollow Farm's coop, cows and pigs in two new fenced pens west of the orchard, and sheep in the croft's sheepfold past the ford. They graze and wander about their homes; deer and rabbits run from a player or one of the dead they see; the dead ignore them all. Object Highlight outlines one under the pointer, its name shows over it, and **Look at** says what it is doing. Wild game comes back slowly up to a cap, never within sight of a player. Nothing hunts, keeps, or uses them yet.
+
+Read: [[Animals]].
+
 ## Decided or filed, not built yet
 
 Michael's playtest on 2026-10-18 produced rulings and ideas that change nothing in the game yet. Each lives on the game's GitHub (its issue number below) and in its decisions log, `docs/02`; they are listed here so the day is on one page.
@@ -311,6 +317,9 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/animals.json`, `src/entities/animal.js`, `tools/mapgen/valley.py:588-658`: the animals, their homes and pens, the flight, the renewal (game #452, at 261cd7a)
+- `src/resources.js`, `data/maps/valley.json` `resources`, `data/tuning.json` `resources`: mined rocks and ore rocks owed back elsewhere in their area (game #453, at 261cd7a)
+- `data/sprites/tree_apple.json`, `src/render/bees.js`: the apple tree as the round tree with apples; the bees at the hives (game #451, at 261cd7a)
 - `src/sick.js:56-67`, `data/kit.json`, `src/water.js:126-148`: a tainted drink's chance of Sick and of the infection, the starting skin clean, boiling (game #435, at fa2997f)
 - `src/ui/screens.js:714-732`, `src/main.js:1743`, `src/ui/nav-row.js:220-241`, `src/item-info.js`, `src/ui/hover-card.js`, `src/debuffs.js`, `src/ui/debuff-row.js`: durable fullscreen, the row in one line, the item hover card, bleeding as a debuff (game #311, #312, #313, #315, at 8af4eed)
 - `data/items.json`, `data/sprites/flame.json`: the everyday items' drawn icons, world pictures, held angles, and the lit torch's flame, icon, and portrait (game #337, at 232d0fb)

@@ -24,7 +24,7 @@ The game plays in a web browser, alone or with friends: press **Play** on its si
 - **Fighting:** [[Combat]], [[Weapons]], [[Archery]], [[Durability]].
 - **Things:** [[Items]], [[Inventory]], [[Crafting]], [[Recipes]], [[Production chains]], [[Fire]], [[Food]], [[Fishing]], [[Farming]].
 - **Home:** [[Building]], [[Openings]], [[Placement]].
-- **The world:** [[Light]], [[Sight]], [[Water]], [[Gatherables]], [[Villagers]].
+- **The world:** [[Light]], [[Sight]], [[Water]], [[Gatherables]], [[Villagers]], [[Animals]].
 - **With friends:** [[Multiplayer]], [[Worlds]].
 
 ## About this wiki
