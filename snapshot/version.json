@@ -1,7 +1,7 @@
 {
-  "commit": "e045b31c325060bfbbb1498c4fdc3d99227452aa",
-  "short": "e045b31",
-  "date": "2026-10-25T02:56:29-05:00",
-  "subject": "Merge #420, reviewed: water ruled (#279), docs/44 the spec; the TODO status for the night (Michael, 2026-10-25)",
+  "commit": "0ce54cf07facfc5fb19f0097bcfb0ce3cd9c219e",
+  "short": "0ce54cf",
+  "date": "2026-10-25T03:33:23-05:00",
+  "subject": "Merge #428, reviewed: the made things, the placements, and Place as decoration (docs/43 step 3, #408)",
   "ref": "origin/main"
 }

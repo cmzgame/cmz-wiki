@@ -51,7 +51,7 @@ A body can be searched in the same way: the first search rolls the body's pocket
 
 ### Carrying a container
 
-A chest, a barrel, a shelf, a cupboard, a desk, a strongbox, a woodpile, or a bookcase can be picked up with both hands empty and carried; it keeps its contents. See [[Placement]]. One a player made can also be taken apart for half its materials, but only once it is empty: "Empty it first." (see [[Building#Taking apart|Building]]).
+A chest, a barrel, a shelf, a cupboard, a desk, a strongbox, a woodpile, or a bookcase can be picked up with both hands empty and carried; it keeps its contents. See [[Placement]]. One a player made can also be taken apart for half its materials, but only once it is empty: "Empty it first." (see [[Building#Taking apart|Building]]). The [[Workbench]] makes the chest, shelf, cupboard, desk, bookcase, counter, cart, stall, barrel, and wheelbarrow, and the [[Anvil]] the strongbox; each made one starts empty and already searched, so nothing is rolled into it.
 
 {{where chest}}
 
@@ -98,3 +98,4 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `src/host.js:212-215`: a guest's search runs on the host and its panel opens
 - `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:453-457`: the chicken coop, a container with the coop table (a placeholder, no eggs), at your cottage and Hollow Farm (game #338, at 232d0fb)
 - `src/placement.js:538-544`: a made container taken apart only when empty, "Empty it first." (game #413, at 31d330a)
+- `data/recipes.json`: the made containers: the workbench's cupboard, desk, bookcase, counter, cart, stall, barrel, the anvil's strongbox (game #428, at 0ce54cf)

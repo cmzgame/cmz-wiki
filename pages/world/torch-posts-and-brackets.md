@@ -1,11 +1,11 @@
 ---
 title: Torch posts and brackets
 categories: [Mechanics, The world, Light]
-aliases: [Torch post, Torch bracket, Bracket, Brackets, Mounting a torch, Lantern, Lanterns, Lantern post, Lantern posts]
+aliases: [Torch bracket, Bracket, Brackets, Mounting a torch, Lantern, Lanterns, Lantern post, Lantern posts]
 summary: Wall brackets and posts that hold a torch, which burns down there while lit; and the village's lanterns, which burn nothing and can be put out.
 ---
 
-A [[Torch]] can be mounted in an empty bracket on a wall or on a torch post, where it lights the ground round it while it is lit, and slowly burns down. A mounted torch can be taken down again. The village's own lights are **lanterns**, in brackets on its walls and on posts in the square: they burn nothing, a player may put one out and light it again, and they cannot be taken.
+A [[Torch]] can be mounted in an empty bracket on a wall or on a torch post, where it lights the ground round it while it is lit, and slowly burns down. A mounted torch can be taken down again. A post is made at the [[Workbench]] and set down outdoors as a [[Torch post]] item, and a bracket is made at the [[Anvil]] and hung on a wall as a [[Wall bracket]]. The valley's own torch posts (one by the square, four along the high street) and its four torch brackets each hold an unlit torch for a player to light. The village's own lights are **lanterns**, in brackets on its walls and on posts in the square: they burn nothing, a player may put one out and light it again, and they cannot be taken.
 
 ## How it works
 
@@ -95,3 +95,4 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `src/main.js:1021-1032`, `src/ui/inventory-actions.js:457-459`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests
 - `src/interact.js:599-609`, `src/burn.js:87-120`, `src/burn.js:161-191`, `src/map.js:291-300`, `src/light.js:64`: a lantern put out and lit again, by its menu or a Use, `lit: false` on its bracket, no light while out; a lit torch on a holder put out from its menu (game #421, at 1bcb6ed)
+- `tools/mapgen/valley.py:212-215`, `src/map.js`: the valley's posts and its four brackets with unlit, unworn torches; a player's own post and bracket (`src/setdown.js`) (game #428, at 0ce54cf)

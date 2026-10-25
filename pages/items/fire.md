@@ -1,7 +1,7 @@
 ---
 title: Fire
 categories: [Crafting, Mechanics]
-aliases: [Fires, Fuel, Hearth, Fireplace, Feeding a fire, Lighting a fire, Putting out a fire, Put out, Home lights, Switches]
+aliases: [Fires, Fuel, Fireplace, Feeding a fire, Lighting a fire, Putting out a fire, Put out, Home lights, Switches]
 summary: The home lights (a fireplace, a hearth, a lantern) are switches that burn nothing; a campfire, the oven, and the forge burn their own fuel and go out when it runs out.
 ---
 
@@ -11,7 +11,7 @@ A **fire** gives [[Light]], and most fires let you cook ([[Cooking]]). There are
 
 ### The home lights
 
-A fireplace, a hearth, a lantern on a post, and a lantern in a wall bracket each have two entries on their menu:
+A fireplace, a [[Hearth]], a lantern on a post, a lantern in a wall bracket, and a [[Jack-o'-lantern]] each have two entries on their menu:
 
 - **Light the ...**, when it is out, with a flame on you ("You light the fireplace."). Without one it reads "Light the ... (need a tinderbox or a flame)", greyed.
 - **Put out the ...**, when it is lit, with nothing needed ("You put out the fireplace.").
@@ -56,7 +56,7 @@ A fire that burns fuel burns one unit every so many game hours. When the last un
 
 ### Torches and the jack-o'-lantern
 
-A [[Torch]] is a light you carry, in either hand, while it is lit. It is lit with a [[Tinderbox]] and burns down while it is lit, faster in a hand than on the belt. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` lights or puts out the torch in your hand, or else on your belt; with none there, it takes one from the bag into a hand. An empty wall bracket or a torch post holds a torch: **Take the torch** and **Mount the torch** (see [[Torch posts and brackets]]). A jack-o'-lantern is always lit.
+A [[Torch]] is a light you carry, in either hand, while it is lit. It is lit with a [[Tinderbox]] and burns down while it is lit, faster in a hand than on the belt. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` lights or puts out the torch in your hand, or else on your belt; with none there, it takes one from the bag into a hand. An empty wall bracket or a torch post holds a torch: **Take the torch** and **Mount the torch** (see [[Torch posts and brackets]]). A [[Jack-o'-lantern]] is a small light that is a switch, as the home lights are: put out with nothing and lit again with a flame.
 
 ## Numbers
 
@@ -99,7 +99,7 @@ Lighting, putting out, and feeding a fire change the world, so every player sees
 - `src/map.js:99-120`: a fire burns a unit every so many hours and goes out
 - `src/main.js:1742-1744`, `src/host.js:253-260`, `data/tuning.json`: "A fire has gone out." within `fireOutRadius`, on every player's screen
 - `src/stations.js`: a job waits while the fire is out
-- `data/sprites/pumpkin.json`: the jack-o'-lantern is always lit
+- `data/sprites/pumpkin.json`: the jack-o'-lantern is a switch (game #428, at 0ce54cf)
 - `data/items.json`: the torch's radius; `data/tuning.json`: the belt torch and two torches
 - `src/net.js:599-607`: a guest's menu choice performed on the host as that player, its refusal to their screen
 - `data/interactions.json`, `src/interactions.js:34-43`, `src/burn.js:56-77`: arrows used on any lit fire, refused when it is out

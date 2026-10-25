@@ -1,21 +1,21 @@
 {
  "version": {
-  "commit": "e045b31c325060bfbbb1498c4fdc3d99227452aa",
-  "short": "e045b31",
-  "date": "2026-10-25T02:56:29-05:00",
-  "subject": "Merge #420, reviewed: water ruled (#279), docs/44 the spec; the TODO status for the night (Michael, 2026-10-25)",
+  "commit": "0ce54cf07facfc5fb19f0097bcfb0ce3cd9c219e",
+  "short": "0ce54cf",
+  "date": "2026-10-25T03:33:23-05:00",
+  "subject": "Merge #428, reviewed: the made things, the placements, and Place as decoration (docs/43 step 3, #408)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 84,
-  "recipes": 47,
-  "interactions": 31,
+  "items": 87,
+  "recipes": 59,
+  "interactions": 33,
   "lootTables": 28,
   "sprites": 177,
   "places": 43,
   "villagers": 9,
   "authoredDead": 62,
-  "mapProps": 37,
+  "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
   "settings": 36,
@@ -24,10 +24,10 @@
   "liveRules": 5,
   "keys": 20,
   "verbs": 19,
-  "menuLabels": 82,
+  "menuLabels": 84,
   "events": 33,
   "checks": 65,
-  "modules": 125
+  "modules": 126
  },
  "items": [
   {
@@ -78,6 +78,7 @@
     "torch on torch_post: Light",
     "torch on torch: Light",
     "torch on bracket: Light",
+    "torch on pumpkin: Light",
     "torch on lantern_post: Light",
     "torch on fire: Light"
    ]
@@ -180,7 +181,17 @@
     "workbench: prop:table",
     "workbench: prop:bed",
     "workbench: prop:workbench",
-    "workbench: prop:wheelbarrow"
+    "workbench: prop:wheelbarrow",
+    "workbench: prop:cupboard",
+    "workbench: prop:desk",
+    "workbench: prop:bookcase",
+    "workbench: prop:counter",
+    "workbench: prop:chair",
+    "workbench: prop:cart",
+    "workbench: prop:stall",
+    "workbench: prop:barrel",
+    "workbench: torch_post",
+    "anvil: prop:strongbox"
    ],
    "foundIn": [
     "chest",
@@ -268,6 +279,7 @@
     "workbench: fishing_rod",
     "workbench: bow",
     "workbench: arrow",
+    "workbench: torch_post",
     "anvil: knife",
     "anvil: hammer",
     "anvil: hatchet",
@@ -647,7 +659,8 @@
     "tinderbox on bracket: Light",
     "tinderbox on lantern_post: Light",
     "tinderbox on fireplace: Light",
-    "tinderbox on hearth: Light"
+    "tinderbox on hearth: Light",
+    "tinderbox on pumpkin: Light"
    ],
    "note": "never wears out: T lights a torch with it (docs/07, Michael 2026-10-17, #156)"
   },
@@ -852,7 +865,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [],
    "interactions": []
@@ -880,7 +894,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [],
    "interactions": []
@@ -910,7 +925,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [],
    "interactions": []
@@ -938,7 +954,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [],
    "interactions": []
@@ -968,7 +985,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [],
    "interactions": []
@@ -996,7 +1014,8 @@
     "workbench: rag",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [],
    "interactions": []
@@ -1066,6 +1085,73 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": []
+  },
+  {
+   "id": "torch_post",
+   "name": "Torch post",
+   "kind": "furniture",
+   "size": [
+    1,
+    3
+   ],
+   "tags": [],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [
+    "tinderbox on torch_post: Light",
+    "torch on torch_post: Light"
+   ],
+   "note": "docs/43 section 4: made at the workbench, set down outdoors with Place, picked up again empty (src/setdown.js)"
+  },
+  {
+   "id": "wall_bracket",
+   "name": "Wall bracket",
+   "kind": "furniture",
+   "size": [
+    1,
+    2
+   ],
+   "tags": [],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/43 section 4: made at the anvil, hung on a wall's face as a painting is, holding a torch (src/setdown.js)"
+  },
+  {
+   "id": "decorative_pumpkin",
+   "name": "Decorative pumpkin",
+   "kind": "decor",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/43 section 4: a pumpkin placed as decoration and picked up again; not food, so a prop that does not rot is never a larder"
   },
   {
    "id": "campfire",
@@ -1681,6 +1767,8 @@
    ],
    "usedIn": [
     "workbench: prop:wheelbarrow",
+    "workbench: prop:cart",
+    "workbench: prop:barrel",
     "anvil: knife",
     "anvil: hammer",
     "anvil: hatchet",
@@ -1688,7 +1776,9 @@
     "anvil: scythe",
     "anvil: spear",
     "anvil: mace",
-    "anvil: sword"
+    "anvil: sword",
+    "anvil: prop:strongbox",
+    "anvil: wall_bracket"
    ],
    "foundIn": [],
    "interactions": [],
@@ -1821,10 +1911,14 @@
    },
    "madeBy": [],
    "usedIn": [
+    "workbench: prop:pumpkin",
     "oven: pumpkin_pie"
    ],
    "foundIn": [],
-   "interactions": []
+   "interactions": [
+    "tinderbox on pumpkin: Light",
+    "torch on pumpkin: Light"
+   ]
   },
   {
    "id": "grain",
@@ -2083,7 +2177,8 @@
     "loom: satchel",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [
     "chest",
@@ -2121,7 +2216,8 @@
     "workbench: torch",
     "workbench: fishing_rod",
     "workbench: bow",
-    "workbench: prop:bed"
+    "workbench: prop:bed",
+    "workbench: prop:stall"
    ],
    "foundIn": [
     "chest",
@@ -2944,6 +3040,186 @@
    "uses": "build"
   },
   {
+   "id": "cupboard",
+   "station": "workbench",
+   "out": {
+    "prop": "cupboard"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 5
+    }
+   ],
+   "seconds": 12,
+   "uses": "build"
+  },
+  {
+   "id": "desk",
+   "station": "workbench",
+   "out": {
+    "prop": "desk"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 4
+    }
+   ],
+   "seconds": 10,
+   "uses": "build"
+  },
+  {
+   "id": "bookcase",
+   "station": "workbench",
+   "out": {
+    "prop": "bookcase"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 5
+    }
+   ],
+   "seconds": 12,
+   "uses": "build"
+  },
+  {
+   "id": "counter",
+   "station": "workbench",
+   "out": {
+    "prop": "counter",
+    "footprint": [
+     3,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 4
+    }
+   ],
+   "seconds": 10,
+   "uses": "build"
+  },
+  {
+   "id": "chair",
+   "station": "workbench",
+   "out": {
+    "prop": "chair"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 2
+    }
+   ],
+   "seconds": 6,
+   "uses": "build"
+  },
+  {
+   "id": "cart",
+   "station": "workbench",
+   "out": {
+    "prop": "cart",
+    "footprint": [
+     2,
+     3
+    ]
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 6
+    },
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 16,
+   "uses": "build"
+  },
+  {
+   "id": "stall",
+   "station": "workbench",
+   "out": {
+    "prop": "stall",
+    "footprint": [
+     2,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 6
+    },
+    {
+     "tag": "cloth",
+     "count": 1
+    }
+   ],
+   "seconds": 16,
+   "uses": "build"
+  },
+  {
+   "id": "barrel",
+   "station": "workbench",
+   "out": {
+    "prop": "barrel"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 4
+    },
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 10,
+   "uses": "build"
+  },
+  {
+   "id": "jack_o_lantern",
+   "station": "workbench",
+   "label": "Jack-o'-lantern",
+   "out": {
+    "prop": "pumpkin"
+   },
+   "in": [
+    {
+     "id": "pumpkin",
+     "count": 1
+    }
+   ],
+   "seconds": 4,
+   "uses": "cut"
+  },
+  {
+   "id": "torch_post",
+   "station": "workbench",
+   "out": {
+    "id": "torch_post",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 2
+    },
+    {
+     "id": "stick",
+     "count": 1
+    }
+   ],
+   "seconds": 6,
+   "uses": "build"
+  },
+  {
    "id": "charcoal",
    "station": "clamp",
    "out": {
@@ -3132,6 +3408,41 @@
     }
    ],
    "seconds": 16,
+   "tool": "hammer"
+  },
+  {
+   "id": "strongbox",
+   "station": "anvil",
+   "out": {
+    "prop": "strongbox"
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 2
+    },
+    {
+     "id": "plank",
+     "count": 2
+    }
+   ],
+   "seconds": 14,
+   "tool": "hammer"
+  },
+  {
+   "id": "wall_bracket",
+   "station": "anvil",
+   "out": {
+    "id": "wall_bracket",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 6,
    "tool": "hammer"
   },
   {
@@ -3372,6 +3683,19 @@
    "on": "campfire",
    "verb": "Add",
    "action": "feed"
+  },
+  {
+   "use": "tinderbox",
+   "on": "pumpkin",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the jack-o'-lantern."
+  },
+  {
+   "use": "torch",
+   "on": "pumpkin",
+   "verb": "Light",
+   "action": "light"
   },
   {
    "use": "torch",
@@ -4927,19 +5251,19 @@
   },
   {
    "id": "pumpkin_plain_0",
-   "kind": "gatherable",
+   "kind": "other",
    "drawn": true,
-   "carry": true,
-   "interactable": true,
-   "note": "a plain pumpkin (docs/17), a gatherable"
+   "carry": false,
+   "interactable": false,
+   "note": "a plain pumpkin (docs/17) as decoration (docs/43 section 4): Pick up gives a Decorative pumpkin, not food; not interactable"
   },
   {
    "id": "pumpkin_plain_1",
-   "kind": "gatherable",
+   "kind": "other",
    "drawn": true,
-   "carry": true,
-   "interactable": true,
-   "note": "a plain pumpkin (docs/17), a gatherable"
+   "carry": false,
+   "interactable": false,
+   "note": "a plain pumpkin (docs/17) as decoration (docs/43 section 4): Pick up gives a Decorative pumpkin, not food; not interactable"
   },
   {
    "id": "rock_0",
@@ -5105,7 +5429,8 @@
    },
    "collide": {
     "radius": 0.12
-   }
+   },
+   "note": "a player's own post, empty, is picked up as the Torch post item (docs/43 section 4; src/setdown.js)"
   },
   {
    "id": "tree_apple",
@@ -5750,7 +6075,8 @@
      "table",
      "table",
      "table",
-     "table"
+     "table",
+     "torch_post"
     ]
    },
    {
@@ -7162,7 +7488,19 @@
    },
    "fuel": "log",
    "seconds": 4,
-   "note": "docs/43 section 3 (Michael, 2026-10-25): built on open ground outdoors only, no skill and no tool; its two logs are its starting fuel, not materials (Take apart gives back half its stones)"
+   "note": "docs/43 section 3 (Michael, 2026-10-25): built on open ground outdoors only, no skill and no tool; its two logs are its starting fuel, not materials (Take apart gives back half its stones)",
+   "stand": "outdoors"
+  },
+  "hearth": {
+   "label": "Hearth",
+   "kind": "prop",
+   "sprite": "hearth",
+   "stand": "wall",
+   "cost": {
+    "stone": 6
+   },
+   "seconds": 8,
+   "note": "docs/43 section 4 (step 3): built inside a room, against a wall; a switch (section 3), out when built; no tool (the builder's default, as the campfire's)"
   }
  },
  "looks": {
@@ -7468,7 +7806,7 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1327"
+    "interact.js:1347"
    ]
   },
   {
@@ -7499,15 +7837,15 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:399",
-    "placement.js:409",
-    "placement.js:413"
+    "placement.js:425",
+    "placement.js:436",
+    "placement.js:440"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1328"
+    "interact.js:1348"
    ]
   },
   {
@@ -7711,7 +8049,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:760"
+    "interact.js:763"
    ]
   }
  ],
@@ -7725,7 +8063,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1523"
+    "main.js:1524"
    ]
   },
   {
@@ -7737,25 +8075,25 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:909"
+    "interact.js:912"
+   ]
+  },
+  {
+   "key": "Click to hang the bracket · Esc cancel",
+   "at": [
+    "placement.js:740"
    ]
   },
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1012"
+    "placement.js:1086"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1005"
-   ]
-  },
-  {
-   "key": "Click to set the campfire down · Esc cancel",
-   "at": [
-    "placement.js:697"
+    "placement.js:1079"
    ]
   },
   {
@@ -7785,38 +8123,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1446"
+    "main.js:1447"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1517"
+    "interact.js:1542"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1461",
-    "interact.js:1547"
+    "interact.js:1486",
+    "interact.js:1572"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1437"
+    "interact.js:1462"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1438"
+    "interact.js:1463"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1551"
+    "interact.js:1576"
    ]
   },
   {
@@ -7840,7 +8178,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1497"
+    "main.js:1498"
    ]
   },
   {
@@ -7852,7 +8190,7 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:719"
+    "interact.js:722"
    ]
   },
   {
@@ -7864,7 +8202,7 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:542"
+    "interact.js:543"
    ]
   },
   {
@@ -7876,13 +8214,13 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1472"
+    "main.js:1473"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1484"
+    "main.js:1485"
    ]
   },
   {
@@ -7906,39 +8244,47 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1536"
+    "main.js:1537"
+   ]
+  },
+  {
+   "key": "Place as decoration (it will not be food again)",
+   "at": [
+    "interact.js:1457"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1429",
-    "interact.js:1431",
-    "interact.js:1433"
+    "interact.js:1449",
+    "interact.js:1451",
+    "interact.js:1453",
+    "interact.js:1456",
+    "interact.js:1458"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1553"
+    "interact.js:1578"
    ]
   },
   {
    "key": "Put out the campfire",
    "at": [
-    "interact.js:498"
+    "interact.js:499"
    ]
   },
   {
    "key": "Put out the lantern",
    "at": [
-    "interact.js:604"
+    "interact.js:607"
    ]
   },
   {
    "key": "Put out the torch",
    "at": [
-    "interact.js:557"
+    "interact.js:558"
    ]
   },
   {
@@ -7974,13 +8320,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1545"
+    "main.js:1546"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:515"
+    "interact.js:516"
    ]
   },
   {
@@ -8020,6 +8366,12 @@
    ]
   },
   {
+   "key": "Take down the bracket",
+   "at": [
+    "interact.js:582"
+   ]
+  },
+  {
    "key": "Take honey",
    "at": [
     "hives.js:74"
@@ -8028,13 +8380,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:566"
+    "interact.js:567"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:761"
+    "interact.js:764"
    ]
   },
   {
@@ -8046,15 +8398,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1528",
-    "interact.js:1567"
+    "interact.js:1553",
+    "interact.js:1592"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1427",
-    "interact.js:1515"
+    "interact.js:1447",
+    "interact.js:1540"
    ]
   },
   {
@@ -8066,7 +8418,7 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:930"
+    "interact.js:933"
    ]
   },
   {
@@ -8090,7 +8442,7 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:627"
+    "interact.js:630"
    ]
   },
   {
@@ -8102,56 +8454,56 @@
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:779"
+    "interact.js:782"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:938",
-    "placement.js:971"
+    "placement.js:1012",
+    "placement.js:1045"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1024"
+    "placement.js:1105"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:710"
+    "placement.js:756"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1019"
+    "placement.js:1100"
    ]
   },
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:867"
+    "interact.js:870"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1262"
+    "interact.js:1282"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1441"
+    "interact.js:1466"
    ]
   },
   {
    "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:809"
+    "interact.js:812"
    ]
   },
   {
@@ -8163,55 +8515,55 @@
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:225"
+    "interact.js:226"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:786"
+    "interact.js:789"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
    "at": [
-    "interact.js:357"
+    "interact.js:358"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:340"
+    "interact.js:341"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:766"
+    "interact.js:769"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1812"
+    "interact.js:1837"
    ]
   },
   {
    "key": "Put out the ${name}",
    "at": [
-    "interact.js:481"
+    "interact.js:482"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1471"
+    "interact.js:1496"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1800"
+    "interact.js:1825"
    ]
   }
  ],
@@ -8249,15 +8601,15 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:638"
+    "placement.js:667"
    ]
   },
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:231",
-    "interact.js:422",
-    "interact.js:1783",
+    "interact.js:232",
+    "interact.js:423",
+    "interact.js:1808",
     "ui/station-panel.js:83",
     "ui/station-panel.js:109"
    ]
@@ -8289,7 +8641,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:831"
+    "map.js:857"
    ]
   },
   {
@@ -8301,8 +8653,8 @@
   {
    "key": "fireLit",
    "at": [
-    "map.js:339",
-    "map.js:348"
+    "map.js:365",
+    "map.js:374"
    ]
   },
   {
@@ -8314,7 +8666,7 @@
   {
    "key": "firePutOut",
    "at": [
-    "map.js:320"
+    "map.js:346"
    ]
   },
   {
@@ -8406,7 +8758,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:826",
-    "map.js:827"
+    "map.js:853"
    ]
   },
   {
@@ -8580,15 +8932,15 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2369
+   "lines": 2395
   },
   {
    "path": "main.js",
-   "lines": 1998
+   "lines": 1999
   },
   {
    "path": "interact.js",
-   "lines": 1857
+   "lines": 1882
   },
   {
    "path": "placeholders.js",
@@ -8603,12 +8955,12 @@
    "lines": 1252
   },
   {
-   "path": "entities/zombie.js",
-   "lines": 1027
+   "path": "placement.js",
+   "lines": 1107
   },
   {
-   "path": "placement.js",
-   "lines": 1026
+   "path": "entities/zombie.js",
+   "lines": 1027
   },
   {
    "path": "ground.js",
@@ -8715,12 +9067,12 @@
    "lines": 257
   },
   {
-   "path": "ui/skill-icons.js",
-   "lines": 248
+   "path": "render/props.js",
+   "lines": 250
   },
   {
-   "path": "render/props.js",
-   "lines": 243
+   "path": "ui/skill-icons.js",
+   "lines": 248
   },
   {
    "path": "save.js",
@@ -8775,6 +9127,10 @@
    "lines": 186
   },
   {
+   "path": "setdown.js",
+   "lines": 183
+  },
+  {
    "path": "ui/station-panel.js",
    "lines": 178
   },
@@ -8800,7 +9156,7 @@
   },
   {
    "path": "item-info.js",
-   "lines": 165
+   "lines": 169
   },
   {
    "path": "figure/wardrobe.js",
@@ -9335,6 +9691,9 @@
   "save": {
    "VERSION": 3
   },
+  "setdown": {
+   "REACH": 2.6
+  },
   "sound-cues": {
    "FRESH": 0.25
   },
@@ -9560,6 +9919,7 @@
    "stone_stack": 4,
    "strongbox": 3,
    "table": 24,
+   "torch_post": 5,
    "tree_apple": 23,
    "tree_oak_l": 311,
    "tree_oak_m": 300,
