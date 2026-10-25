@@ -33,6 +33,10 @@ The refusals, if a repair is asked for another way: "That cannot be repaired.", 
 
 {{where anvil}}
 
+## Village stations
+
+The village's anvil stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and a second anvil, from iron bars at the anvil itself; one a player made works as the village's does.
+
 ## With friends
 
 A guest opens the anvil's panel on their own screen; Make is carried out by the host for that player, and the hammer must be in that player's hand. A guest's Repair is sent to the host by its label and run there for that player, from that player's own hammer and material; the thing's condition and repair count travel in the player's record.
@@ -56,5 +60,6 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 - `src/repair.js:115-153`: the entries, their labels, greyed past repair or missing a thing, the one greyed line (game #416, at 31d330a)
 - `src/inventory.js:92-108`: the hammer found carried, in a hand, the belt, or the bag (game #416, at 31d330a)
 - `src/net.js:600-610`, `src/net.js:1261-1263`: a guest's Repair sent by label, run on the host as that player (game #416, at 31d330a)
+- `data/sprites/anvil.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's anvil fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)
 
 {{navbox making}}

@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-25: synced to `49b8c44`
+
+- **New in the game:** the world rule **Village stations** (game #431, the dead ends' step 4), chosen when a world is made: Fixed by default, or Movable and craftable, when the village's forge, anvil, oven, millstones, dye vats, and wells can be carried and more of them made. [[World rules]], [[Levers]], [[Forge]], [[Anvil]], [[Oven]], [[Millstones]], and [[Dye vat]] are updated.
+- **Changed in the game, nothing visible:** a fix to a test instrument (game #430).
+
 ## 2026-10-25: synced to `0ce54cf`
 
 - **New in the game:** the made things (game #428, the dead ends' step 3). The [[Workbench]] makes the cupboard, desk, bookcase, counter, chair, cart, stall, barrel, a [[Jack-o'-lantern]] carved from a pumpkin, and a [[Torch post]] as an item you set down outdoors; the [[Anvil]] makes the strongbox and a [[Wall bracket]] you hang on a wall as a painting is. A [[Hearth]] is built from the palette inside a room against a wall. The valley's torch posts (one by the square, four along the high street) and its four empty brackets now hold unlit torches. A [[Pumpkin]] can be placed as decoration, coming back a [[Decorative pumpkin]], not food. New pages: Torch post, Wall bracket, Hearth, Jack-o'-lantern, Decorative pumpkin. [[Fire]], [[Building]], [[Torch posts and brackets]], [[Containers]], [[Workbench]], and [[Placement]] are updated.

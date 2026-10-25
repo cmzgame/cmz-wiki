@@ -18,6 +18,10 @@ Light it with charcoal and a flame, a [[Tinderbox]] or a lit [[Torch]] on you, a
 
 {{where forge}}
 
+## Village stations
+
+The village's forge stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another forge at the [[Workbench]]; one a player made works as the village's does.
+
 ## With friends
 
 A guest feeds the forge and makes bars through the host like any station; the fire and the queue are the same for every player.
@@ -34,5 +38,6 @@ A guest feeds the forge and makes bars through the host like any station; the fi
 - `src/interact.js:788-803`: the station's menu entry and `E`
 - `src/stations.js:204-212`: a job waits while the fire is out
 - `src/host.js:184-191`: a guest's Make runs on the host
+- `data/sprites/forge.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's forge fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)
 
 {{navbox making}}

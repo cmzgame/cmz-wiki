@@ -55,7 +55,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **Honey:** a [[Beehive]] gives {{n tuning.work.honey.count.0}} [[Pot of honey]], and has more {{n tuning.work.honey.days}} game days later; taking it takes {{n tuning.work.honey.seconds seconds}}. The pot fills {{n items.honey.hunger}} hunger and heals {{n items.honey.heal}}.
 - **The dye vat:** the dyes and their palettes, and what each garment may take, are data; using a vat will ask for Crafting {{n dyes.unlock.level}}, open to everyone until skills are built, and a dye costs nothing until it is ruled whether it costs a plant. See [[Dye vat]].
 - **Burning a body:** {{planned doc=42 note="About a game hour of burning, for a log."}}
-- **The village's stations:** {{planned doc=42 note="Fixed where they stand, or movable and craftable; fixed by default."}}
+- **The village's stations:** a world rule, **Village stations**, Fixed by default or Movable and craftable, chosen when the world is made; its recipes' materials are data. See [[World rules]].
 
 ## World settings
 
@@ -68,7 +68,7 @@ Chosen at the Sandbox step of New world; see [[World rules]] for what each does.
 - **Survival**, {{default survival}}.
 - **Free building**, {{default freeBuilding}}.
 - **Multi-hit**, {{default multiHit}}: "the easy button".
-- **Trees** ({{default trees}}) and **Starting population** ({{default population}}): chosen when the world is made, and fixed after.
+- **Trees** ({{default trees}}), **Starting population** ({{default population}}), and **Village stations** (Fixed): chosen when the world is made, and fixed after.
 - **Dev chest** ({{default devChest}}), **Dev bag** ({{default devBag}}), and **Extra starting items** (none): the Sandbox step's testing choices.
 - **Combat difficulty and infection, one dial:** {{planned doc=42 note="One world setting for how hard the fighting is and how readily a bite infects."}} Today its only part is the chance a bite infects, {{pct combat.infection.chance}}, a tuning number. See [[Infection]].
 - **What death takes:** {{planned doc=42 note="Death will take all of a character's skills, with a world rule to soften it if playtests ask for one."}}
@@ -104,3 +104,4 @@ On the [[Settings]] screen, kept in the browser.
 - `src/placement.js:518-536`: Take apart's half, rounded down, in the code (game #413, at 31d330a)
 - `data/tuning.json` `work`, `data/items.json` each `repair` and the honey: the repair ladders and seconds, the sawpit, the hives (game #416, at 31d330a)
 - `data/dyes.json`, `data/items.json` each `dye`: the dye vat's palettes, its unlock, no cost (game #417, at 31d330a)
+- `src/rules.js`, `data/recipes.json`: Village stations, its recipes' rows (game #431, at 49b8c44)
