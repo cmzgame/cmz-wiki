@@ -10,7 +10,7 @@ The **workbench** is the station for wood. From [[Plank|planks]], [[Stick|sticks
 
 ## Using it
 
-Right-click it and choose its entry, or press `E` beside it, and pick a recipe in the panel (see [[Crafting]]). Items go into the workbench's output box; furniture is placed on a free tile beside the workbench. A chest or a shelf made here starts empty and already searched, so nothing is ever rolled into it (see [[Containers]]).
+Right-click it and choose its entry, or press `E` beside it, and pick a recipe in the panel (see [[Crafting]]). Items go into the workbench's output box; furniture is placed on a free tile beside the workbench. A chest, a shelf, or any other container made here starts empty and already searched, so nothing is ever rolled into it (see [[Containers]]). A [[Torch post]] is made here as an item, set down outdoors from the bag; a [[Jack-o'-lantern]] is carved from a [[Pumpkin]] with a [[Dirk]] on you.
 
 A workbench can be made at a workbench.
 
@@ -41,5 +41,6 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 - `data/recipes.json:431-453`: a workbench made at a workbench
 - `data/maps/valley.json`: where the workbenches stand
 - `src/host.js:183-189`: a guest's Make runs on the host
+- `data/recipes.json`: the workbench's furniture, the barrel, the jack-o'-lantern, the torch post as an item (game #428, at 0ce54cf)
 
 {{navbox making}}

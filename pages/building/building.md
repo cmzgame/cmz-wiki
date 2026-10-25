@@ -8,7 +8,7 @@ summary: Building log walls, walls of each wood, fences, gates, doors, and windo
 
 <!-- typed: the game's own lines quoted as examples ("Click to take apart door (1 plank back)", "2 planks"), which carry an example's count, not a number of the game's -->
 
-**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Campfire]] is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. The campfire stands on a tile, outdoors.
+**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Campfire]] and the [[Hearth]] is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. The campfire stands on a tile, outdoors.
 
 ## How it works
 
@@ -23,6 +23,7 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Fence**, costing {{n build.fence.cost.plank}} plank a stretch, built in {{n build.fence.seconds seconds}}, with a smith's hammer on you.
 - **Gate**, costing {{n build.gate.cost.plank}} planks, built in {{n build.gate.seconds seconds}}, with a smith's hammer on you.
 - **Campfire**, costing {{n build.campfire.cost.stone}} [[Stone|stone]] and {{n build.campfire.cost.log}} logs, which become its first fuel, built in {{n build.campfire.seconds seconds}} on open ground outdoors, with no tool. Its ghost sits on a tile, not an edge, and says "Outdoors only" inside a room. See [[Campfire]].
+- **Hearth**, costing {{n build.hearth.cost.stone}} [[Stone|stone]], built in {{n build.hearth.seconds seconds}} inside a room against a wall ("Indoors only", "Against a wall"), with no tool. See [[Hearth]].
 
 "On you" is anywhere you carry it: a hand, the belt, or the bag.
 
@@ -99,6 +100,7 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
 - Gate: {{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}.
 - Campfire: {{n build.campfire.cost.stone}} stone and {{n build.campfire.cost.log}} logs, {{n build.campfire.seconds seconds}}.
+- Hearth: {{n build.hearth.cost.stone}} stone, {{n build.hearth.seconds seconds}}.
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
 - Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
@@ -164,3 +166,4 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `data/build.json:112-124`, `src/placement.js:244-251`, `src/placement.js:934-960`, `src/campfire.js:19-31`: the palette's Campfire, a prop on a tile outdoors, its cost the fuel's logs, no tool (game #421, at 1bcb6ed)
 - `src/rules.js:18`, `src/placement.js:128-131`, `src/placement.js:144-150`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest
+- `data/build.json:125-133`, `src/setdown.js:21-38`: the palette's Hearth, six stone, inside a room against a wall (game #428, at 0ce54cf)

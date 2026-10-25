@@ -37,6 +37,10 @@ Put it down with a left click on a green ghost, or with E, which sets it on the 
 
 Solid furniture blocks the whole of its tile: nobody walks through it and no path goes through it. Round things, such as barrels, block only a circle, so you can slip between them.
 
+### Setting things down from the bag
+
+Some things are set down from the bag rather than carried: a [[Campfire]], a [[Torch post]] (outdoors only), and a [[Decorative pumpkin]] (any open floor). **Place** on the item's menu starts a ghost on the tile under the cursor, green where it may stand and red with the reason; a click sets it down and Escape cancels. A [[Pumpkin]] has **Place as decoration**, which sets it down as a decorative pumpkin: picked up again it is no longer food. A [[Wall bracket]] is hung on a wall's face instead, as a painting is. Each comes up again into the bag with **Pick up** on its menu.
+
 ## Numbers
 
 - Reach to put down furniture: {{n census.constants.placement.PLACE_REACH tiles}}.
@@ -70,3 +74,4 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 - `src/map.js:1155-1209`, `data/sprites/barrel.json`: round props block only a circle
 - `src/placement.js:25`: the build reach
 - `src/placement.js:488-508`: a guest's put-down as a command with its turns, turned back on a refusal
+- `src/setdown.js`, `src/placement.js:324-356`, `src/placement.js:717-745`: set down from the bag, Place as decoration, a bracket hung (game #428, at 0ce54cf)
