@@ -66,13 +66,14 @@ A container (any item with a grid or belt slots, so every bag and every belt) ca
 
 ### Bags
 
-Three bags exist. Each is equipped on the back and gives a grid of its own size:
+Four bags exist. Each is equipped on the back and gives a grid of its own size:
 
 - [[Burlap sack]]: {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}}. Every new character starts with one.
+- [[Linen satchel]]: {{n items.satchel.bag.0}} × {{n items.satchel.bag.1}}. Woven at the [[Loom]] from [[Linen cloth|linen cloth]], so it can be made before the animals come.
 - [[Rucksack]]: {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}}. No container in the valley holds one.
 - [[Developer Bag]]: {{n items.dev_bag.bag.0}} × {{n items.dev_bag.bag.1}}. A testing item.
 
-Equipping a new bag swaps bags: the old one is dropped at your feet with everything still in it. A bag on the floor is a container you can **Open**; you can **Equip** it (**Swap bags** if you have one on), and **Pick up** it while it is empty.
+Only the bag on your back is your inventory. **A bag taken off keeps what is in it:** **Unequip** on the back slot sets it down at your feet ("You set the burlap sack down."), and equipping a new bag swaps bags, the old one dropped at your feet with everything still in it. A bag on the floor stands as a container you can **Open** and take from, **Take All** included; you can **Equip** it (**Swap bags** if you have one on), and **Pick up** it once it is empty.
 
 ### Placing a rug
 
@@ -142,3 +143,4 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/ui/inventory-actions.js:338-346`: a container not the guest's own must be within reach
 - `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)
 - `src/map.js` `dropItem`: what does not stack is laid on the floor as single entries (game #399, at ce21ffc)
+- `src/interact.js` `slotMenu`, `itemActions`, `src/inventory.js` `ensureBag`, `src/map.js` `dropItem`: a bag's grid rides on its entry; Unequip sets it down; on the floor Open, Equip or Swap bags, Pick up once empty; the linen satchel (game #403, at 6e5b20a)
