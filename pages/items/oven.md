@@ -18,6 +18,10 @@ Keep its fire fed (see [[Fire]]); lighting it when it is out needs a [[Tinderbox
 
 {{where oven}}
 
+## Village stations
+
+The village's oven stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another oven at the [[Workbench]]; one a player made works as the village's does.
+
 ## With friends
 
 A guest feeds the oven and bakes through the host like any station; the fire and the queue are the same for every player.
@@ -35,5 +39,6 @@ A guest feeds the oven and bakes through the host like any station; the fire and
 - `src/stations.js:204-212`: a job waits while the fire is out
 - `src/host.js:184-191`: a guest's Make runs on the host
 - `src/stations.js:47-55`, `src/ui/station-panel.js`: the oven is two stations, its own and cooking, its panel both lists, its menu "Use the oven" (game #421, at 1bcb6ed)
+- `data/sprites/oven.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's oven fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)
 
 {{navbox making}}

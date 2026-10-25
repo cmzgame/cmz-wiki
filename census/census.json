@@ -1,14 +1,14 @@
 {
  "version": {
-  "commit": "0ce54cf07facfc5fb19f0097bcfb0ce3cd9c219e",
-  "short": "0ce54cf",
-  "date": "2026-10-25T03:33:23-05:00",
-  "subject": "Merge #428, reviewed: the made things, the placements, and Place as decoration (docs/43 step 3, #408)",
+  "commit": "49b8c4404b0dac863084738928034ac88fdb402f",
+  "short": "49b8c44",
+  "date": "2026-10-25T12:30:37-05:00",
+  "subject": "Merge #431, reviewed: the village's stations behind a world rule (docs/43 step 4, #409)",
   "ref": "origin/main"
  },
  "counts": {
   "items": 87,
-  "recipes": 59,
+  "recipes": 65,
   "interactions": 33,
   "lootTables": 28,
   "sprites": 177,
@@ -18,13 +18,13 @@
   "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 36,
-  "rules": 9,
-  "fixedRules": 4,
+  "settings": 37,
+  "rules": 10,
+  "fixedRules": 5,
   "liveRules": 5,
   "keys": 20,
   "verbs": 19,
-  "menuLabels": 84,
+  "menuLabels": 85,
   "events": 33,
   "checks": 65,
   "modules": 126
@@ -191,7 +191,10 @@
     "workbench: prop:stall",
     "workbench: prop:barrel",
     "workbench: torch_post",
-    "anvil: prop:strongbox"
+    "anvil: prop:strongbox",
+    "workbench: prop:millstones",
+    "workbench: prop:dyevat",
+    "workbench: prop:well"
    ],
    "foundIn": [
     "chest",
@@ -715,7 +718,9 @@
    "madeBy": [
     "workbench"
    ],
-   "usedIn": [],
+   "usedIn": [
+    "workbench: prop:well"
+   ],
    "foundIn": [],
    "interactions": [
     "bucket on floor_water: Fill",
@@ -1778,7 +1783,11 @@
     "anvil: mace",
     "anvil: sword",
     "anvil: prop:strongbox",
-    "anvil: wall_bracket"
+    "anvil: wall_bracket",
+    "workbench: prop:forge",
+    "anvil: prop:anvil",
+    "workbench: prop:oven",
+    "workbench: prop:dyevat"
    ],
    "foundIn": [],
    "interactions": [],
@@ -1802,7 +1811,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "workbench: prop:forge",
+    "workbench: prop:oven",
+    "workbench: prop:millstones",
+    "workbench: prop:well"
+   ],
    "foundIn": [
     "market"
    ],
@@ -3599,6 +3613,139 @@
    ],
    "seconds": 12,
    "fire": true
+  },
+  {
+   "id": "forge",
+   "station": "workbench",
+   "rule": "villageStations",
+   "out": {
+    "prop": "forge",
+    "footprint": [
+     2,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "stone",
+     "count": 10
+    },
+    {
+     "id": "iron_bar",
+     "count": 2
+    }
+   ],
+   "seconds": 20,
+   "uses": "build"
+  },
+  {
+   "id": "anvil",
+   "station": "anvil",
+   "rule": "villageStations",
+   "out": {
+    "prop": "anvil"
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 5
+    }
+   ],
+   "seconds": 20,
+   "tool": "hammer"
+  },
+  {
+   "id": "oven",
+   "station": "workbench",
+   "rule": "villageStations",
+   "out": {
+    "prop": "oven",
+    "footprint": [
+     2,
+     1
+    ]
+   },
+   "in": [
+    {
+     "id": "stone",
+     "count": 8
+    },
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 20,
+   "uses": "build"
+  },
+  {
+   "id": "millstones",
+   "station": "workbench",
+   "rule": "villageStations",
+   "out": {
+    "prop": "millstones",
+    "footprint": [
+     2,
+     2
+    ]
+   },
+   "in": [
+    {
+     "id": "stone",
+     "count": 6
+    },
+    {
+     "id": "plank",
+     "count": 4
+    }
+   ],
+   "seconds": 20,
+   "uses": "build"
+  },
+  {
+   "id": "dyevat",
+   "station": "workbench",
+   "rule": "villageStations",
+   "label": "Dye vat",
+   "out": {
+    "prop": "dyevat"
+   },
+   "in": [
+    {
+     "id": "plank",
+     "count": 4
+    },
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 12,
+   "uses": "build"
+  },
+  {
+   "id": "well",
+   "station": "workbench",
+   "rule": "villageStations",
+   "out": {
+    "prop": "well"
+   },
+   "in": [
+    {
+     "id": "stone",
+     "count": 10
+    },
+    {
+     "id": "plank",
+     "count": 2
+    },
+    {
+     "id": "bucket",
+     "count": 1
+    }
+   ],
+   "seconds": 20,
+   "uses": "build"
   }
  ],
  "interactions": [
@@ -7640,6 +7787,11 @@
    "note": "the world has trees: the last choice at a Sandbox step (a world's own rule since #130; it replaced Combat testing's tree strip)"
   },
   {
+   "key": "villageStations",
+   "default": "false",
+   "note": "the village's forge, anvil, oven, millstones, dye vats, and wells: fixed (false) or movable and craftable (true), chosen when a world is made (docs/43 section 5)"
+  },
+  {
    "key": "population",
    "default": "\"standard\"",
    "note": "how many of the dead a world starts with, \"none\", \"low\", \"standard\" or \"high\": the last choice at a Sandbox step (#130)"
@@ -7768,12 +7920,14 @@
   "freeBuilding",
   "trees",
   "population",
+  "villageStations",
   "extraKit",
   "devBag"
  ],
  "fixedRules": [
   "trees",
   "population",
+  "villageStations",
   "extraKit",
   "devBag"
  ],
@@ -7837,9 +7991,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:425",
-    "placement.js:436",
-    "placement.js:440"
+    "placement.js:427",
+    "placement.js:438",
+    "placement.js:442"
    ]
   },
   {
@@ -7914,7 +8068,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:242"
+    "stations.js:248"
    ]
   },
   {
@@ -8057,7 +8211,7 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:67"
+    "settings.js:68"
    ]
   },
   {
@@ -8081,43 +8235,43 @@
   {
    "key": "Click to hang the bracket · Esc cancel",
    "at": [
-    "placement.js:740"
+    "placement.js:742"
    ]
   },
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1086"
+    "placement.js:1088"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1079"
+    "placement.js:1081"
    ]
   },
   {
    "key": "Cursor",
    "at": [
-    "settings.js:61"
+    "settings.js:62"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:77"
+    "settings.js:79"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:81"
+    "settings.js:83"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:80"
+    "settings.js:82"
    ]
   },
   {
@@ -8160,19 +8314,19 @@
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:82"
+    "settings.js:84"
    ]
   },
   {
    "key": "Floating numbers",
    "at": [
-    "settings.js:64"
+    "settings.js:65"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:73"
+    "settings.js:74"
    ]
   },
   {
@@ -8184,7 +8338,7 @@
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:79"
+    "settings.js:81"
    ]
   },
   {
@@ -8196,7 +8350,7 @@
   {
    "key": "Interface size",
    "at": [
-    "settings.js:59"
+    "settings.js:60"
    ]
   },
   {
@@ -8226,19 +8380,19 @@
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:74"
+    "settings.js:75"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:62"
+    "settings.js:63"
    ]
   },
   {
    "key": "Object Highlight",
    "at": [
-    "settings.js:78"
+    "settings.js:80"
    ]
   },
   {
@@ -8332,37 +8486,37 @@
   {
    "key": "Small text",
    "at": [
-    "settings.js:63"
+    "settings.js:64"
    ]
   },
   {
    "key": "Sound",
    "at": [
-    "settings.js:68"
+    "settings.js:69"
    ]
   },
   {
    "key": "Starting population",
    "at": [
-    "settings.js:76"
+    "settings.js:78"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:72"
+    "settings.js:73"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:66"
+    "settings.js:67"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:65"
+    "settings.js:66"
    ]
   },
   {
@@ -8392,7 +8546,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:75"
+    "settings.js:76"
    ]
   },
   {
@@ -8410,9 +8564,15 @@
    ]
   },
   {
+   "key": "Village stations",
+   "at": [
+    "settings.js:77"
+   ]
+  },
+  {
    "key": "Volume",
    "at": [
-    "settings.js:69"
+    "settings.js:70"
    ]
   },
   {
@@ -8424,19 +8584,19 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:70"
+    "settings.js:71"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:71"
+    "settings.js:72"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:60"
+    "settings.js:61"
    ]
   },
   {
@@ -8460,26 +8620,26 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:1012",
-    "placement.js:1045"
+    "placement.js:1014",
+    "placement.js:1047"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1105"
+    "placement.js:1107"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:756"
+    "placement.js:758"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1100"
+    "placement.js:1102"
    ]
   },
   {
@@ -8601,7 +8761,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:667"
+    "placement.js:669"
    ]
   },
   {
@@ -8617,13 +8777,13 @@
   {
    "key": "craftDone",
    "at": [
-    "stations.js:218"
+    "stations.js:224"
    ]
   },
   {
    "key": "craftStarted",
    "at": [
-    "stations.js:165"
+    "stations.js:171"
    ]
   },
   {
@@ -8956,7 +9116,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 1107
+   "lines": 1109
   },
   {
    "path": "entities/zombie.js",
@@ -9055,12 +9215,12 @@
    "lines": 283
   },
   {
-   "path": "entities/villager.js",
-   "lines": 263
+   "path": "stations.js",
+   "lines": 264
   },
   {
-   "path": "stations.js",
-   "lines": 258
+   "path": "entities/villager.js",
+   "lines": 263
   },
   {
    "path": "chart.js",
@@ -9147,15 +9307,15 @@
    "lines": 173
   },
   {
+   "path": "item-info.js",
+   "lines": 170
+  },
+  {
    "path": "view.js",
    "lines": 170
   },
   {
    "path": "boot.js",
-   "lines": 169
-  },
-  {
-   "path": "item-info.js",
    "lines": 169
   },
   {
@@ -9183,11 +9343,11 @@
    "lines": 153
   },
   {
-   "path": "rugs.js",
-   "lines": 143
+   "path": "settings.js",
+   "lines": 145
   },
   {
-   "path": "settings.js",
+   "path": "rugs.js",
    "lines": 143
   },
   {
@@ -9311,11 +9471,11 @@
    "lines": 72
   },
   {
-   "path": "rng.js",
-   "lines": 67
+   "path": "rules.js",
+   "lines": 68
   },
   {
-   "path": "rules.js",
+   "path": "rng.js",
    "lines": 67
   },
   {

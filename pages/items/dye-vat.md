@@ -74,6 +74,10 @@ The belt's own buckle is the same brass as the vat's, so a scheme with brass nam
 
 {{prop-sections dyevat}}
 
+## Village stations
+
+The village's dye vat stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another dye vat at the [[Workbench]]; one a player made works as the village's does.
+
 ## With friends
 
 A guest's **Use the dye vat** is sent to the host and carried out there for that player; the host tells the guest, and the picker then opens on the guest's own screen, showing the guest's own clothes. **Apply** is a `dye` command naming the vat, the item, and a colour for each region; the host runs it for that player with the same checks, and "Dyed." or the reason is shown to the guest. The colours are kept on the item, so they ride in the player's record and in the save: everyone sees a dyed garment on whoever wears it, and it keeps its colours when it is taken off, dropped, or found on a body.
@@ -105,5 +109,6 @@ A guest's **Use the dye vat** is sent to the host and carried out there for that
 - `src/net.js:1260-1263`, `src/host.js:280-283`, `src/main.js:1847-1851`: a guest's menu entry sent to the host by its label; the use told to the guest, whose picker opens on its own screen
 - `src/net.js:1298-1301`, `src/main.js:1060`, `src/host.js:192-200`, `src/host.js:295-299`: Apply on a guest is the `dye` command, run by the host as that player; its message goes to the guest
 - `src/net.js:240`, `src/game.js:414-415`, `tools/check.js:763-772`: the worn entries, with their colours, in the player's record, the sync check, and the save
+- `data/sprites/dyevat.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's dye vat fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)
 
 {{navbox props}}

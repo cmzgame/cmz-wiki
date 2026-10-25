@@ -1,7 +1,7 @@
 ---
 title: World rules
 categories: [Mechanics, Multiplayer, Settings]
-aliases: [World rule, Sandbox, Sandbox step, Rules, Starting population, Population, Trees rule, Extra starting items, Starting kit]
+aliases: [World rule, Sandbox, Sandbox step, Rules, Starting population, Population, Trees rule, Village stations, Extra starting items, Starting kit]
 summary: Each world keeps its own rules, chosen at the Sandbox step of New world; the host changes most of them from the pause menu, and the rest are fixed when the world is made.
 ---
 
@@ -23,6 +23,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 
 - **Trees** (default On): every tree, in the forests, the wild, and the orchards; its line says "(so no apples from trees)". Off, no tree is made anywhere, inside [[The valley]], [[The orchard]] and the cottage gardens included, or out in [[The wild]], however far anyone walks, so no apples can be picked. The rocks, the ground, and the [[Mushrooms]] are as they would be: the mushrooms grow beside where the trees would have stood, the same ones in the same places as with trees.
 - **Starting population**: **None**, **Low**, **Standard** (the default), or **High**: how many of [[The dead]] the world starts with. Each level is a factor on the map's own number: at Standard the valley holds exactly the dead its map places, at None it holds none, at Low some of the map's dead are left out, and at High each of them stands more than once. An extra one stands on a free open tile close to where the map put it, never on the far side of a wall or a door. Every chunk of the wild grown later brings its usual number of the dead times the same factor, so a None world grows no dead in the wild either. The factor is read once, when the world is made: the dead never grow in number with time.
+- **Village stations**: **Fixed** (the default) or **Movable and craftable**. Fixed, the village's [[Forge]], [[Anvil]], [[Oven]], [[Millstones]], [[Dye vat|dye vats]], and wells stay where they stand, and none can be made: their recipes are not offered anywhere, not on a station's panel and not on any hover card. Movable and craftable, every one of them can be picked up and carried like furniture, the village's own included, and more are made: the forge, the oven, the millstones, a dye vat, and a well at the [[Workbench]], with a [[Smith's hammer]] on you, and a second anvil at the anvil, with the hammer in hand. A station a player made works as the village's does, and can be taken apart; the village's own cannot.
 
 - **Dev bag** (default Off): every new character starts wearing the [[Developer Bag]] in place of the [[Burlap sack]], with the starting kit in it, so a large list of extra items fits.
 - **Extra starting items** (default empty): items every new character starts with on top of the default kit (see [[Player#The starter kit|the starter kit]]), picked from a search: type part of an item's name and pick it from the suggestions (the arrows and Enter, or a click), then set how many beside it, or take it out with its cross. Picking an item again raises its count. They go in the bag, each where it first fits, after the default kit. The list is checked as it changes, and what is wrong is said under it: more than the starting bag holds ("The starting bag is full: ..."). Turning **Dev bag** on gives the list the bigger bag's room. While something is wrong, **Next** does nothing.
@@ -35,7 +36,7 @@ A world without trees has a few more of the dead in the wild than one with them 
 
 ### The Sandbox step
 
-**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
+**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), Village stations, the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
 
 The choices are offered first as this browser last chose them when it made a world; the very first time, at their defaults. Changing a rule in a world later does not change what the next Sandbox step offers.
 
@@ -57,7 +58,7 @@ A world made before each world kept its own rules plays by the rules saved with 
 
 The rules are the host's. A change the host makes from World rules reaches every guest at once, and a guest's own copy of the world is made with the host's trees and the host's dead. A guest's World rules screen shows the same rows, every one locked and marked "(the host's)", with the line "How this world plays. They are the host's to change." A guest cannot change them.
 
-In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees and Starting population locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
+In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees, Starting population, and Village stations locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
 
 ## See also
 
@@ -84,3 +85,4 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 - `src/net.js:885`, `src/net.js:1126`, `src/game.js:429`: sent to guests when they change, in the sync check
 - `src/ui/screens.js:963-969`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
 - `src/game.js:282-283`: a world's rules, the kit's two among them, restored from its save, a server world's too
+- `src/rules.js`, `src/settings.js`, `src/placement.js:105-117`, `src/stations.js:57-64`, `data/recipes.json`, `server/relay.js:243-258`: Village stations, a fixed rule, its words; the village's stations carried with it on; their recipes hidden while it is off; a moved world keeps it in its meta (game #431, at 49b8c44)
