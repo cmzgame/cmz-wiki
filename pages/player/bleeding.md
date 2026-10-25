@@ -19,7 +19,7 @@ While any wound is open, [[Health]] does not regenerate.
 
 ### The debuff
 
-Bleeding is a debuff, not a moodle. While a wound is open, a red drop shows in the row of debuffs at the top right of the screen (see [[Interface#Top right: debuffs|Interface]]), with the time left under it and, from two stacks on, the number of stacks in its corner. The time is whole seconds rounded up under a minute (`34s`) and whole minutes rounded up from a minute (`10m`); since a wound lasts {{n combat.bleed.duration}} seconds from its last bite, bleeding always shows seconds. The drop goes when the wound closes or is bandaged.
+Bleeding is a debuff, not a moodle. While a wound is open, a red drop shows in the row of debuffs at the top right of the screen (see [[Interface#Top right: debuffs|Interface]]), with the time left under it and, from two stacks on, the number of stacks in its corner. The time is whole seconds rounded up under a minute (`34s`) and whole minutes rounded up from a minute (`10m`); since a wound lasts {{n combat.bleed.duration}} seconds from its last bite, bleeding always shows seconds. The drop goes when the wound closes or is bandaged. [[Sick]], from tainted water, is the row's other debuff and shows beside it.
 
 Hovering over the drop shows a card: **Bleeding**, "Debuff" with the stacks and the time left, how much health it takes a second at its stacks now, "A bandage stops it.", and "Another bite makes it worse and starts the time again."
 
@@ -49,12 +49,13 @@ A wound belongs to whoever was bitten, and the host tells a guest when they star
 
 ## See also
 
-- [[Bandage]], [[Health]], [[Infection]], [[Combat]], [[Interface]]
+- [[Bandage]], [[Health]], [[Infection]], [[Sick]], [[Combat]], [[Interface]]
 
 ## Sources
 
 <!-- sources at 9205ad7 -->
 - `src/debuffs.js:9-47`, `src/ui/debuff-row.js:1-87`, `src/ui/debuff-icons.js:7-18`, `style.css:504-519`: bleeding as a debuff, the red drop at the top right with its time (seconds under a minute, minutes rounded up) and its stacks, and its card; it left the moodles (game #315, at 8af4eed)
+- `src/debuffs.js:20-42`: the row's two debuffs, bleeding first, then Sick (game #435, at fa2997f)
 - `src/net.js:825`, `src/game.js:418`: the wound in a player's record on the wire and in the sync check (game #315, at 8af4eed)
 - `data/combat.json:4`: the wound chance, the most stacks, the timer, and the drain by stacks
 - `src/bleed.js:12`: the code's defaults match the data

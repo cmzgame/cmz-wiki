@@ -52,7 +52,8 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 
 - `Z`: the next zoom level (Wide, Middle, Close, then Wide again).
 - `Enter`: open the chat box; in it, `Enter` says the line. See [[Chat log]].
-- `/`: open the chat box with a slash typed (there are no commands yet).
+- `/`: open the chat box with a slash typed, for a command. The one command is `/wave`, which waves as `G` does; any other says "There is no /... Try /wave." See [[Chat log#Speaking|Chat log]].
+- `G`: wave. Your character raises an arm and waves for {{n tuning.player.waveSeconds seconds}}, and every player who can see you sees it. Walking, or lifting furniture, ends it; eating or drinking shows its own pose first. Not asleep or dead; with your arms full of furniture the game says "Your arms are full." The Controls screen says "Wave, for everyone to see".
 - `Escape`: close the top thing in this order: the actions menu, a screen, Use mode, the station panel, a conversation, the skills panel, the build palette, placement or removal, the bag and character panels, the map. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
 - `F8`: every sound off, or on again, with a line saying which; the same switch as the Sound setting (see [[Sound]]). It works with any panel or screen up.
 
@@ -79,7 +80,7 @@ See [[Inventory]].
 
 ## With friends
 
-A guest's keys and clicks go to the host, who performs them. Stepped away (see [[Dormancy]]), any key, click, mouse move, or wheel brings you back, and is spent doing so.
+A guest's keys and clicks go to the host, who performs them. A guest's wave, from `G` or `/wave`, goes to the host the same way, as a key in their next input, and every player sees it. Stepped away (see [[Dormancy]]), any key, click, mouse move, or wheel brings you back, and is spent doing so.
 
 ## See also
 
@@ -111,7 +112,7 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/main.js:874-895`: N and X refused with the bag open, "Close your bag to build."
 - `src/placement.js:288`, `src/ui/inventory-panel.js:131`: R turns a prop being placed or a dragged item
 - `src/main.js:1076`, `src/view.js:95-109`: Z cycles the zooms, wrapping
-- `src/main.js:1065-1066`, `src/ui/log.js:45-52`: Enter and / open the chat box; no commands yet
+- `src/main.js:1065-1066`, `src/ui/log.js:45-52`: Enter and / open the chat box; a slash line handed to the game as a command
 - `src/main.js:1924-1934`, `src/ui/screens.js:33`: F8 switches Sound, with its line, any panel up; on the Controls screen (game #386, at 3c68f9c)
 - `src/main.js:855-875`, `src/ui/log.js:60`: Escape's order, a screen first (game #298), a conversation, the skills panel, and the map among the panels, and in the chat box
 - `src/ui/nav-row.js:130-139`, `src/ui/nav-row.js:213-223`, `src/input.js:105-107`: the row of buttons, each tapping its key (game #298)
@@ -130,3 +131,6 @@ A guest's keys and clicks go to the host, who performs them. Stepped away (see [
 - `src/interact.js:1273`: B at a gate, "A gate takes no boards." (game #398, at 4db1c00)
 - `src/ui/screens.js:50`: X's line, Take apart (game #413, at 31d330a)
 - `src/ui/screens.js`: T's line, "Light or put out the torch in hand" (game #421, at 1bcb6ed)
+- `src/interact.js:1376-1402`, `src/main.js:1556-1559`, `src/ui/screens.js:54-58`: G and /wave queue a `wave` key event; any other command's answer; the Talking group's lines (game #434, at fa2997f)
+- `src/entities/player.js:75-81`, `src/entities/player.js:412-415`, `data/tuning.json:67`: the wave for `waveSeconds`, not dead, asleep, or carrying; walking ends it, the held-out pose first (game #434, at fa2997f)
+- `src/net.js:429`, `src/entities/player.js:71`: the wave a key event in a guest's snapshot, `waveFor` in the player's record for every client (game #434, at fa2997f)

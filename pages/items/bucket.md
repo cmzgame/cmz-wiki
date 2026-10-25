@@ -20,6 +20,8 @@ A [[Use]] of the bucket on water or a crop does the same. The first bucket that 
 
 A bucket is not a waterskin: you cannot drink from it, and "Fill waterskins" leaves it alone.
 
+Its water is clean or tainted, as a waterskin's is (see [[Water#Tainted and clean|Water]]). Every fixed source is tainted, and a fill at one makes the whole bucket tainted. Its hover card says "Clean water." or "Tainted water.", and a small brown drop in the top right corner of its icon marks tainted water; an empty bucket says neither. A bucket cannot be boiled yet, and crops need no clean water: tainted water waters them as well.
+
 ## Where to find one
 
 - The chest in the main room of [[Your cottage]] holds one, with a hatchet and a loaf.
@@ -29,13 +31,15 @@ A bucket is not a waterskin: you cannot drink from it, and "Fill waterskins" lea
 
 ## With friends
 
-A guest fills and pours through the same menu entries and Use, sent to the host with the tile and the bucket; its water is the bucket's own fill, saved and sent with the guest's inventory.
+A guest fills and pours through the same menu entries and Use, sent to the host with the tile and the bucket; its water is the bucket's own fill, and whether it is clean, saved and sent with the guest's inventory.
 
 ## Sources
 
 <!-- sources at 3c0a243 -->
 - `data/items.json:21`: the bucket: either hand, `vessel` and its capacity (game #211)
 - `src/bucket.js:1-126`: the buckets you carry, the first that can serve; Fill at water, a well, a trough, or a font; Pour on the 3 by 3 where something needs water, one pour a fill; reach and a clear line; the menu's entries and their greyed forms
+- `src/bucket.js:1-16`, `src/bucket.js:83-85`, `src/water.js:38-49`, `src/item-info.js:97-98`, `src/ui/inventory-panel.js:273`: a fill at a tainted source taints the bucket; its card's line and the brown drop; no boiling a bucket (game #435, at fa2997f)
+- `src/water.js:97-103`: "A bucket cannot be boiled yet." (game #435, at fa2997f)
 - `src/farming.js:102-109`: a pour wets each crop as a waterskin does one
 - `data/interactions.json`: the Use rows for the bucket
 - `data/crops.json`: the fill's and the pour's seconds
