@@ -60,7 +60,7 @@ The game goes on while any panel is open, and the world's keys and clicks still 
 - **A conversation** (see [[Talk]]): talking to a villager opens a parchment panel at the bottom centre, above the belt, with their lines, **Click here to continue**, the questions to choose, and **That's all for now**, each a line of blue text to click.
 - **The skills panel** (from the row of buttons): the skills in their groups, Combat, Gathering, and Production, each with its picture (the one that floats over a gatherer's head) and at its first level, with a note that skills are not built yet. It has an X; `Escape` closes it.
 - **The map** (`M`; see [[Map]]): the land seen so far and every player, over the world.
-- **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Remove row. See [[Building]].
+- **The build palette** (`N`): a list on the left of what can be built and its cost, greyed when you are short, and a Take apart row. See [[Building]].
 
 ## Floating numbers
 
@@ -68,7 +68,7 @@ Numbers rise over heads as things happen, like the combat text of other games:
 
 - **A red number**, with a minus sign, over whoever is hit: you, one of the dead, a villager, or another player. The damage you take and the damage you deal both show, each over the head it was done to.
 - **A green number**, with a plus sign, over whoever is healed. For now only [[Food]] heals with a number; healing by itself over time, burning, bleeding, and starving show none.
-- **A skill's small picture and a number** over whoever gathers: the logs from chopping (Woodcutting), the ore and stone from mining (Mining), a fish caught (Fishing), and what is picked or harvested (Farming). Until skills are built, the number is how many things were gained. It is white with a black edge in the dark and black with a white edge in the light, so it is never taken for a red or a green one. Herbalism and Beastlore have no number yet.
+- **A skill's small picture and a number** over whoever gathers: the logs from chopping (Woodcutting), the ore and stone from mining (Mining), a fish caught (Fishing), what is picked or harvested (Farming), and honey taken from a hive (Beastlore). Until skills are built, the number is how many things were gained. It is white with a black edge in the dark and black with a white edge in the light, so it is never taken for a red or a green one. Herbalism has no number yet.
 
 Each rises about {{n tuning.floaters.riseTiles tile}} over {{n tuning.floaters.life seconds}}, fading over its last half, a little to one side. Several at once over one body start a line apart. A number shows only over a body in your sight, and never over one of the living dead hidden by the dark. **Floating numbers** in [[Settings]] hides them all.
 
@@ -143,3 +143,5 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/ui/cursor.js:1-36`, `src/settings.js:29`, `src/settings.js:56`: the four cursors and the zombie hand
 - `src/main.js:1112-1122`, `style.css:81-84`, `src/settings.js:11`: the debug corner, its place, and its contents
 - `style.css:69-75`: the interface over the debug corner, so a panel or screen covers it (game commit f2b8062)
+- `src/ui/build-palette.js:49`: the palette's Take apart row (game #413, at 31d330a)
+- `data/tuning.json` `floaters.gathers`: honey floats under Beastlore (game #416, at 31d330a)

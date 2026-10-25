@@ -138,7 +138,7 @@ Read: [[Torch]], [[Items]].
 
 ### The beehive and the chicken coop (game #338)
 
-Drawn straw beehives stand at [[Your cottage]] (two, along the south of the farm plot), at [[Hollow Farm]] (three, east of the lane), and in [[The manor]]'s garden (three, drawn now). A click sways one, and that is all: there is no honey yet. A [[Chicken coop]] stands south of your cottage by the well and another at the west end of Hollow Farm's yard; **Search chicken coop** opens it like a chest, with a small placeholder table of rags, sticks, and a little grain, often nothing, and no eggs.
+Drawn straw beehives stand at [[Your cottage]] (two, along the south of the farm plot), at [[Hollow Farm]] (three, east of the lane), and in [[The manor]]'s garden (three, drawn now). A click sways one, and since game #416 **Take honey** gives a [[Pot of honey]] (see [[Beehive]]). A [[Chicken coop]] stands south of your cottage by the well and another at the west end of Hollow Farm's yard; **Search chicken coop** opens it like a chest, with a small placeholder table of rags, sticks, and a little grain, often nothing, and no eggs.
 
 Read: [[Beehive]], [[Chicken coop]], [[Containers]], [[Gatherables]].
 
@@ -266,7 +266,7 @@ Read: [[Rooms]], [[Openings]], [[Containers]], [[Crafting]], [[Building]].
 
 ### Lanterns and torches (game #188, #189)
 
-Hold an unlit torch to a lantern, in a bracket or on a post, to light it. A lantern is always lit and says so to a tinderbox or a lit torch. In Use mode the label over a wall bracket names what is on it.
+Hold an unlit torch to a lantern, in a bracket or on a post, to light it. Since game #421 a lantern can be put out and lit again (see [[Fire#The home lights|Fire]]). In Use mode the label over a wall bracket names what is on it.
 
 Read: [[Torch]], [[Torch posts and brackets]].
 

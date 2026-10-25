@@ -1,15 +1,15 @@
 {
  "version": {
-  "commit": "6e5b20add080d22d7b6ba1834fc5d5df959fc549",
-  "short": "6e5b20a",
-  "date": "2026-10-24T23:04:32-05:00",
-  "subject": "Merge #403, reviewed: a bag set down keeps its contents, and the linen satchel (#400)",
+  "commit": "e045b31c325060bfbbb1498c4fdc3d99227452aa",
+  "short": "e045b31",
+  "date": "2026-10-25T02:56:29-05:00",
+  "subject": "Merge #420, reviewed: water ruled (#279), docs/44 the spec; the TODO status for the night (Michael, 2026-10-25)",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 82,
+  "items": 84,
   "recipes": 47,
-  "interactions": 28,
+  "interactions": 31,
   "lootTables": 28,
   "sprites": 177,
   "places": 43,
@@ -23,11 +23,11 @@
   "fixedRules": 4,
   "liveRules": 5,
   "keys": 20,
-  "verbs": 14,
-  "menuLabels": 74,
-  "events": 31,
-  "checks": 64,
-  "modules": 119
+  "verbs": 19,
+  "menuLabels": 82,
+  "events": 33,
+  "checks": 65,
+  "modules": 125
  },
  "items": [
   {
@@ -135,7 +135,9 @@
    "foundIn": [
     "woodpile"
    ],
-   "interactions": []
+   "interactions": [
+    "log on campfire: Add"
+   ]
   },
   {
    "id": "plank",
@@ -597,6 +599,29 @@
    "interactions": []
   },
   {
+   "id": "honey",
+   "name": "Pot of honey",
+   "kind": "food",
+   "size": [
+    1,
+    1
+   ],
+   "tags": [
+    "food"
+   ],
+   "hunger": 20,
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "from the village's beehives every few game days (docs/43 section 6, #410; src/hives.js); never rots when rot comes (2026-10-23) and binds pemmican"
+  },
+  {
    "id": "tinderbox",
    "name": "Tinderbox",
    "kind": "tool",
@@ -620,7 +645,9 @@
     "tinderbox on torch_post: Light",
     "tinderbox on torch: Light",
     "tinderbox on bracket: Light",
-    "tinderbox on lantern_post: Light"
+    "tinderbox on lantern_post: Light",
+    "tinderbox on fireplace: Light",
+    "tinderbox on hearth: Light"
    ],
    "note": "never wears out: T lights a torch with it (docs/07, Michael 2026-10-17, #156)"
   },
@@ -1039,6 +1066,29 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": []
+  },
+  {
+   "id": "campfire",
+   "name": "Campfire",
+   "kind": "furniture",
+   "size": [
+    5,
+    5
+   ],
+   "tags": [],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [
+    "tinderbox on campfire: Light",
+    "torch on campfire: Light",
+    "log on campfire: Add"
+   ]
   },
   {
    "id": "satchel",
@@ -3246,7 +3296,7 @@
    "on": "campfire",
    "verb": "Light",
    "action": "light",
-   "message": "You light the fire."
+   "message": "You light the campfire."
   },
   {
    "use": "tinderbox",
@@ -3267,7 +3317,7 @@
    "on": "campfire",
    "verb": "Light",
    "action": "light",
-   "message": "You light the fire."
+   "message": "You light the campfire."
   },
   {
    "use": "torch",
@@ -3302,6 +3352,26 @@
    "on": "lantern_post",
    "verb": "Light",
    "action": "light"
+  },
+  {
+   "use": "tinderbox",
+   "on": "fireplace",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the fireplace."
+  },
+  {
+   "use": "tinderbox",
+   "on": "hearth",
+   "verb": "Light",
+   "action": "light",
+   "message": "You light the hearth."
+  },
+  {
+   "use": "log",
+   "on": "campfire",
+   "verb": "Add",
+   "action": "feed"
   },
   {
    "use": "torch",
@@ -4119,7 +4189,7 @@
    "drawn": false,
    "station": "anvil",
    "carry": false,
-   "note": "a dev box for the anvil (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "a dev box for the anvil (docs/30 step 1; docs/29/09 has its art request); also repairs a made weapon or tool for a unit of its material on the item's repair count (docs/43 section 6, src/repair.js)"
   },
   {
    "id": "barrel",
@@ -4145,7 +4215,7 @@
    "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "a straw skep on a plank stand (docs/29-world/09, 1.5.11): a gatherable, outlined, sways on click. bees_1 and bees_2 are optional click frames (bees stirring at the entrance); to use them add clickAnim {frames: [bees_1, bees_2, bees_1], ms: [160, 260, 160]} and the sway stops, as the well's does"
+   "note": "a straw skep on a plank stand (docs/29-world/09, 1.5.11): a gatherable, outlined, sways on click; gives honey every few game days (`hive`, src/hives.js, docs/43 section 6). bees_1 and bees_2 are optional click frames (bees stirring at the entrance); to use them add clickAnim {frames: [bees_1, bees_2, bees_1], ms: [160, 260, 160]} and the sway stops, as the well's does"
   },
   {
    "id": "bench",
@@ -4170,8 +4240,8 @@
    "drawn": false,
    "fire": {
     "fuel": "log",
-    "hoursPerUnit": 2,
-    "maxFuel": 4,
+    "hoursPerUnit": 3,
+    "maxFuel": 6,
     "radius": 4,
     "cooks": true
    }
@@ -4550,7 +4620,7 @@
    "label": "Grindstone",
    "drawn": false,
    "carry": false,
-   "note": "a dev box for the grindstone (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "a dev box for the grindstone (docs/30 step 1; docs/29/09 has its art request); sharpens an edged weapon or tool for free on the item's repair count (docs/43 section 6, src/repair.js)"
   },
   {
    "id": "ground_cobble",
@@ -4935,7 +5005,7 @@
    "label": "Sawpit",
    "drawn": false,
    "carry": false,
-   "note": "a dev box for the sawpit (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "a dev box for the sawpit (docs/30 step 1; docs/29/09 has its art request); saws a log into planks with no hatchet (docs/43 section 6, src/repair.js)"
   },
   {
    "id": "scarecrow",
@@ -6748,6 +6818,10 @@
     "harvest": [
      "farming",
      "harvested"
+    ],
+    "honey": [
+     "beastlore",
+     "taken"
     ]
    }
   },
@@ -6816,6 +6890,38 @@
    "drawCutoff": 0.02,
    "groanGap": 20,
    "groanRadius": 6
+  },
+  "work": {
+   "grindstone": {
+    "ceilings": [
+     0.6,
+     0.4,
+     0.2
+    ],
+    "seconds": 4
+   },
+   "anvil": {
+    "ceilings": [
+     1,
+     0.8,
+     0.6
+    ],
+    "seconds": 6,
+    "uses": "smith"
+   },
+   "saw": {
+    "item": "log",
+    "seconds": 5
+   },
+   "honey": {
+    "item": "honey",
+    "count": [
+     1,
+     1
+    ],
+    "days": 3,
+    "seconds": 3
+   }
   }
  },
  "combat": {
@@ -7045,6 +7151,18 @@
    },
    "seconds": 3,
    "tool": "build"
+  },
+  "campfire": {
+   "label": "Campfire",
+   "kind": "prop",
+   "sprite": "campfire",
+   "cost": {
+    "stone": 3,
+    "log": 2
+   },
+   "fuel": "log",
+   "seconds": 4,
+   "note": "docs/43 section 3 (Michael, 2026-10-25): built on open ground outdoors only, no skill and no tool; its two logs are its starting fuel, not materials (Take apart gives back half its stones)"
   }
  },
  "looks": {
@@ -7325,50 +7443,50 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1110"
+    "main.js:1113"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1109"
+    "main.js:1112"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1087"
+    "main.js:1090"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:930",
-    "main.js:944"
+    "main.js:932",
+    "main.js:946"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1234"
+    "interact.js:1327"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1107"
+    "main.js:1110"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1090"
+    "main.js:1093"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1089"
+    "main.js:1092"
    ]
   },
   {
@@ -7381,70 +7499,70 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:368",
-    "placement.js:377",
-    "placement.js:381"
+    "placement.js:399",
+    "placement.js:409",
+    "placement.js:413"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1235"
+    "interact.js:1328"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1085"
+    "main.js:1088"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1091"
+    "main.js:1094"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1098"
+    "main.js:1101"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1087"
+    "main.js:1090"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1170"
+    "main.js:1173"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1170"
+    "main.js:1173"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1088"
+    "main.js:1091"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1181"
+    "main.js:1184"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:930",
-    "main.js:936"
+    "main.js:932",
+    "main.js:938"
    ]
   }
  ],
@@ -7458,13 +7576,25 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:240"
+    "stations.js:242"
    ]
   },
   {
    "key": "dip",
    "at": [
-    "burn.js:61"
+    "burn.js:62"
+   ]
+  },
+  {
+   "key": "dye",
+   "at": [
+    "dye.js:164"
+   ]
+  },
+  {
+   "key": "feed",
+   "at": [
+    "burn.js:192"
    ]
   },
   {
@@ -7486,9 +7616,15 @@
    ]
   },
   {
+   "key": "honey",
+   "at": [
+    "hives.js:38"
+   ]
+  },
+  {
    "key": "light",
    "at": [
-    "burn.js:156"
+    "burn.js:210"
    ]
   },
   {
@@ -7513,6 +7649,18 @@
    "key": "pour",
    "at": [
     "bucket.js:87"
+   ]
+  },
+  {
+   "key": "putout",
+   "at": [
+    "burn.js:177"
+   ]
+  },
+  {
+   "key": "saw",
+   "at": [
+    "sawpit.js:31"
    ]
   },
   {
@@ -7563,7 +7711,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:670"
+    "interact.js:760"
    ]
   }
  ],
@@ -7577,37 +7725,37 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1519"
+    "main.js:1523"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:833"
+    "main.js:835"
    ]
   },
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:819"
+    "interact.js:909"
    ]
   },
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:819"
+    "placement.js:1012"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:812"
+    "placement.js:1005"
    ]
   },
   {
-   "key": "Click to place · R turn · E in front",
+   "key": "Click to set the campfire down · Esc cancel",
    "at": [
-    "placement.js:808"
+    "placement.js:697"
    ]
   },
   {
@@ -7637,38 +7785,38 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1442"
+    "main.js:1446"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1422"
+    "interact.js:1517"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1366",
-    "interact.js:1452"
+    "interact.js:1461",
+    "interact.js:1547"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1342"
+    "interact.js:1437"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1343"
+    "interact.js:1438"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1456"
+    "interact.js:1551"
    ]
   },
   {
@@ -7692,7 +7840,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1493"
+    "main.js:1497"
    ]
   },
   {
@@ -7704,7 +7852,7 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:629"
+    "interact.js:719"
    ]
   },
   {
@@ -7716,25 +7864,25 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:473"
+    "interact.js:542"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1427"
+    "main.js:1431"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1468"
+    "main.js:1472"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1480"
+    "main.js:1484"
    ]
   },
   {
@@ -7758,62 +7906,81 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1532"
+    "main.js:1536"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1336",
-    "interact.js:1338"
+    "interact.js:1429",
+    "interact.js:1431",
+    "interact.js:1433"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1458"
+    "interact.js:1553"
+   ]
+  },
+  {
+   "key": "Put out the campfire",
+   "at": [
+    "interact.js:498"
+   ]
+  },
+  {
+   "key": "Put out the lantern",
+   "at": [
+    "interact.js:604"
+   ]
+  },
+  {
+   "key": "Put out the torch",
+   "at": [
+    "interact.js:557"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1395"
+    "main.js:1398"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1391"
+    "main.js:1394"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1429"
+    "main.js:1433"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1428"
+    "main.js:1432"
    ]
   },
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:755"
+    "ui/inventory-panel.js:758"
    ]
   },
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1541"
+    "main.js:1545"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:446"
+    "interact.js:515"
    ]
   },
   {
@@ -7853,15 +8020,21 @@
    ]
   },
   {
+   "key": "Take honey",
+   "at": [
+    "hives.js:74"
+   ]
+  },
+  {
    "key": "Take the torch",
    "at": [
-    "interact.js:487"
+    "interact.js:566"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:671"
+    "interact.js:761"
    ]
   },
   {
@@ -7873,15 +8046,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1433",
-    "interact.js:1472"
+    "interact.js:1528",
+    "interact.js:1567"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1334",
-    "interact.js:1420"
+    "interact.js:1427",
+    "interact.js:1515"
    ]
   },
   {
@@ -7893,7 +8066,7 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:840"
+    "interact.js:930"
    ]
   },
   {
@@ -7917,103 +8090,128 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:537"
+    "interact.js:627"
+   ]
+  },
+  {
+   "key": "${word} ${name} (worn past repair)",
+   "at": [
+    "repair.js:132"
    ]
   },
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:689"
+    "interact.js:779"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:780"
+    "placement.js:938",
+    "placement.js:971"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:830"
+    "placement.js:1024"
    ]
   },
   {
-   "key": "Click to remove ${targetName(t)} · Esc cancel",
+   "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:825"
+    "placement.js:710"
+   ]
+  },
+  {
+   "key": "Click to take apart ${targetName(t)}${back.length ? ",
+   "at": [
+    "placement.js:1019"
    ]
   },
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:777"
+    "interact.js:867"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1169"
+    "interact.js:1262"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1346"
+    "interact.js:1441"
    ]
   },
   {
    "key": "Mined out (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:719"
+    "interact.js:809"
+   ]
+  },
+  {
+   "key": "No honey yet (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
+   "at": [
+    "hives.js:69"
    ]
   },
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:221"
+    "interact.js:225"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:696"
+    "interact.js:786"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
    "at": [
-    "interact.js:331"
+    "interact.js:357"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:314"
+    "interact.js:340"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:676"
+    "interact.js:766"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:1717"
+    "interact.js:1812"
+   ]
+  },
+  {
+   "key": "Put out the ${name}",
+   "at": [
+    "interact.js:481"
    ]
   },
   {
    "key": "Split into ${s.count} ${getItem(s.id).name.toLowerCase()}s${noAxe ? ",
    "at": [
-    "interact.js:1376"
+    "interact.js:1471"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:1705"
+    "interact.js:1800"
    ]
   }
  ],
@@ -8033,13 +8231,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1304"
+    "main.js:1307"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:395"
+    "game.js:396"
    ]
   },
   {
@@ -8051,54 +8249,60 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:528"
+    "placement.js:638"
    ]
   },
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:227",
-    "interact.js:396",
-    "interact.js:1688",
-    "ui/station-panel.js:78",
-    "ui/station-panel.js:103"
+    "interact.js:231",
+    "interact.js:422",
+    "interact.js:1783",
+    "ui/station-panel.js:83",
+    "ui/station-panel.js:109"
    ]
   },
   {
    "key": "craftDone",
    "at": [
-    "stations.js:216"
+    "stations.js:218"
    ]
   },
   {
    "key": "craftStarted",
    "at": [
-    "stations.js:163"
+    "stations.js:165"
    ]
   },
   {
    "key": "drank",
    "at": [
-    "game.js:618"
+    "game.js:621"
+   ]
+  },
+  {
+   "key": "dyeOpened",
+   "at": [
+    "ui/dye-panel.js:67"
    ]
   },
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:790"
+    "map.js:831"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:128"
+    "map.js:129"
    ]
   },
   {
    "key": "fireLit",
    "at": [
-    "map.js:301",
-    "map.js:310"
+    "map.js:339",
+    "map.js:348"
    ]
   },
   {
@@ -8108,9 +8312,15 @@
    ]
   },
   {
+   "key": "firePutOut",
+   "at": [
+    "map.js:320"
+   ]
+  },
+  {
    "key": "gameOver",
    "at": [
-    "game.js:681"
+    "game.js:684"
    ]
   },
   {
@@ -8176,8 +8386,8 @@
   {
    "key": "torchSpent",
    "at": [
-    "map.js:167",
-    "map.js:181"
+    "map.js:169",
+    "map.js:183"
    ]
   },
   {
@@ -8196,7 +8406,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:826",
-    "map.js:786"
+    "map.js:827"
    ]
   },
   {
@@ -8204,7 +8414,7 @@
    "at": [
     "archery.js:720",
     "combat.js:406",
-    "game.js:532"
+    "game.js:535"
    ]
   },
   {
@@ -8315,6 +8525,7 @@
   "debuffs",
   "decor",
   "determinism",
+  "dye",
   "eviction",
   "farm",
   "farms",
@@ -8369,15 +8580,15 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2327
+   "lines": 2369
   },
   {
    "path": "main.js",
-   "lines": 1986
+   "lines": 1998
   },
   {
    "path": "interact.js",
-   "lines": 1762
+   "lines": 1857
   },
   {
    "path": "placeholders.js",
@@ -8385,7 +8596,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1410
+   "lines": 1415
   },
   {
    "path": "ui/screens.js",
@@ -8396,16 +8607,16 @@
    "lines": 1027
   },
   {
+   "path": "placement.js",
+   "lines": 1026
+  },
+  {
    "path": "ground.js",
    "lines": 983
   },
   {
-   "path": "placement.js",
-   "lines": 832
-  },
-  {
    "path": "ui/inventory-panel.js",
-   "lines": 777
+   "lines": 780
   },
   {
    "path": "archery.js",
@@ -8417,7 +8628,7 @@
   },
   {
    "path": "game.js",
-   "lines": 703
+   "lines": 706
   },
   {
    "path": "assets.js",
@@ -8425,11 +8636,11 @@
   },
   {
    "path": "figure/draw.js",
-   "lines": 622
+   "lines": 643
   },
   {
    "path": "render/walls.js",
-   "lines": 506
+   "lines": 508
   },
   {
    "path": "combat.js",
@@ -8441,7 +8652,7 @@
   },
   {
    "path": "light.js",
-   "lines": 440
+   "lines": 441
   },
   {
    "path": "figure/rig.js",
@@ -8476,12 +8687,12 @@
    "lines": 308
   },
   {
-   "path": "render/entities.js",
-   "lines": 296
+   "path": "host.js",
+   "lines": 306
   },
   {
-   "path": "host.js",
-   "lines": 293
+   "path": "render/entities.js",
+   "lines": 296
   },
   {
    "path": "ui/nav-row.js",
@@ -8496,12 +8707,12 @@
    "lines": 263
   },
   {
-   "path": "chart.js",
-   "lines": 257
+   "path": "stations.js",
+   "lines": 258
   },
   {
-   "path": "stations.js",
-   "lines": 256
+   "path": "chart.js",
+   "lines": 257
   },
   {
    "path": "ui/skill-icons.js",
@@ -8524,8 +8735,16 @@
    "lines": 233
   },
   {
+   "path": "burn.js",
+   "lines": 231
+  },
+  {
    "path": "figure/held.js",
    "lines": 223
+  },
+  {
+   "path": "tuning.js",
+   "lines": 222
   },
   {
    "path": "items.js",
@@ -8536,12 +8755,12 @@
    "lines": 215
   },
   {
-   "path": "tuning.js",
-   "lines": 210
-  },
-  {
    "path": "render/scene.js",
    "lines": 209
+  },
+  {
+   "path": "ui/dye-panel.js",
+   "lines": 206
   },
   {
    "path": "fire.js",
@@ -8556,20 +8775,20 @@
    "lines": 186
   },
   {
-   "path": "burn.js",
-   "lines": 176
+   "path": "ui/station-panel.js",
+   "lines": 178
   },
   {
    "path": "render/area.js",
    "lines": 175
   },
   {
-   "path": "input.js",
+   "path": "dye.js",
    "lines": 173
   },
   {
-   "path": "ui/station-panel.js",
-   "lines": 170
+   "path": "input.js",
+   "lines": 173
   },
   {
    "path": "view.js",
@@ -8578,6 +8797,10 @@
   {
    "path": "boot.js",
    "lines": 169
+  },
+  {
+   "path": "item-info.js",
+   "lines": 165
   },
   {
    "path": "figure/wardrobe.js",
@@ -8592,16 +8815,16 @@
    "lines": 155
   },
   {
+   "path": "repair.js",
+   "lines": 155
+  },
+  {
    "path": "dev.js",
    "lines": 154
   },
   {
    "path": "ui/talk-panel.js",
    "lines": 153
-  },
-  {
-   "path": "item-info.js",
-   "lines": 145
   },
   {
    "path": "rugs.js",
@@ -8676,6 +8899,10 @@
    "lines": 98
   },
   {
+   "path": "campfire.js",
+   "lines": 97
+  },
+  {
    "path": "ui/zombie-bars.js",
    "lines": 89
   },
@@ -8686,6 +8913,10 @@
   {
    "path": "camera.js",
    "lines": 87
+  },
+  {
+   "path": "hives.js",
+   "lines": 84
   },
   {
    "path": "fishing.js",
@@ -8705,6 +8936,10 @@
   },
   {
    "path": "highlight.js",
+   "lines": 76
+  },
+  {
+   "path": "sawpit.js",
    "lines": 76
   },
   {
@@ -8820,16 +9055,16 @@
    "lines": 26
   },
   {
+   "path": "events.js",
+   "lines": 25
+  },
+  {
    "path": "inspect-mark.js",
    "lines": 25
   },
   {
    "path": "render-util.js",
    "lines": 25
-  },
-  {
-   "path": "events.js",
-   "lines": 24
   },
   {
    "path": "render/marks.js",
@@ -8888,6 +9123,9 @@
   },
   "buttons": {
    "TAP_TIME": 0.2
+  },
+  "campfire": {
+   "REACH": 2.6
   },
   "clock": {
    "DAY_LENGTH": 720,
@@ -9252,6 +9490,7 @@
    "beehive": 8,
    "bench": 4,
    "bookcase": 4,
+   "campfire": 1,
    "cart": 6,
    "chair": 33,
    "charcoal_clamp": 4,

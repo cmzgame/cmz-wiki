@@ -19,7 +19,7 @@ While you carry something you can only walk. You cannot:
 
 - sprint, swing, draw a bow, or block
 - open the bag or the character screen
-- build, or use the removal tool ("Your hands are full.")
+- build, or take anything apart ("Your hands are full.")
 
 The right-click menu offers only Put down and Walk here.
 
@@ -35,7 +35,7 @@ A piece of furniture's own art data says whether it can be carried. These can: t
 
 These cannot: the [[Workbench]] and every other station, the cart, the coffin, the counter, the stall, crops, mushrooms, rocks, trees, the well, torch posts, and fires that light a room or burn fuel.
 
-Carrying and removal are separate: the removal tool takes only what players made, whether or not it can be carried (see [[Building]]).
+Carrying and taking apart are separate. **Pick up** keeps a thing whole, with what it holds; **Take apart** destroys a thing a player made for half its materials, and only once it is empty (see [[Building#Taking apart|Building]]). The village's own furniture is carried, never taken apart.
 
 ### Furniture you make
 
@@ -76,3 +76,4 @@ The piece you carry is part of your character, so a save and a join keep it, and
 - `data/sprites/chest.json`, `data/sprites/workbench.json`: the chest carryable, the workbench not
 - `src/placement.js:24`: the reach to put down
 - `src/render/entities.js:233`: the carried piece drawn over the head
+- `src/placement.js:518-576`, `src/interact.js:290-310`: Take apart only what a player made, empty, for half its materials; Pick up keeps it whole (game #413, at 31d330a)

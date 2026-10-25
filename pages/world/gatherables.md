@@ -5,7 +5,7 @@ aliases: [Gathering, Wobble, Sway]
 summary: Trees, rocks, mushrooms, crops, pumpkins, and beehives: the things that sway when clicked or walked through.
 ---
 
-Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; mushrooms, pumpkins, and beehives give nothing yet.
+Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Mushrooms]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, and rocks mined for [[Stone]] or [[Iron ore]]; beehives give a [[Pot of honey]]; mushrooms and pumpkins give nothing yet.
 
 ## How it works
 
@@ -27,7 +27,7 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 - **Crops:** harvested when ready, with E or the menu, for their food and seeds, with the crop's tool on you (none for flax); see [[Farming]].
 - **Rocks:** mined with a [[Pickaxe]] in hand for [[Stone]], and gone; the ore rocks of [[The iron workings]] give [[Iron ore]] and come back after some days. See [[Mining]].
 - **Mushrooms and pumpkins:** they sway, and nothing more.
-- **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: they sway, and nothing more; there is no honey yet.
+- **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on the menu, or `E`, gives {{n tuning.work.honey.count.0}} [[Pot of honey]] in {{n tuning.work.honey.seconds seconds}}, and the hive has more {{n tuning.work.honey.days}} game days later. Every hive has honey at the start. See [[Beehive]].
 
 {{planned doc=30 note="Picking mushrooms."}}
 
@@ -40,7 +40,7 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 
 ## With friends
 
-The sways of each step go out to guests in the host's frames, so everyone sees the same field ripple at the same moment. A guest's own click is sent to the host, which checks its reach before the thing sways. Chopping a tree is a menu action run on the host; the tree's removal and the logs reach every player with the changed part of the map.
+The sways of each step go out to guests in the host's frames, so everyone sees the same field ripple at the same moment. A guest's own click is sent to the host, which checks its reach before the thing sways. Chopping a tree is a menu action run on the host; the tree's removal and the logs reach every player with the changed part of the map. Taking honey is the same: the hive's wait is kept on the hive and sent with its part of the map, so a hive one player has emptied is empty for everyone.
 
 ## See also
 
@@ -49,6 +49,7 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - [[Mushrooms]]
 - [[Crops]]
 - [[Log]]
+- [[Beehive]]
 
 ## Sources
 
@@ -66,3 +67,4 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - `src/interact.js:550-571`, `src/farming.js:233-259`: a ready crop harvested (game #206)
 - `src/interact.js:1416-1448`, `src/net.js:882`, `src/net.js:1141-1145`: the sways sent in frames; a guest's click checked by the host
 - `src/interact.js:70-92`, `src/map.js:898-916`: a guest's chop run on the host by address; the change travels in the touched chunk
+- `src/hives.js:104-158`, `data/tuning.json:171`: Take honey at a hive, `E`, the count, the seconds, the days until more, every hive with honey at the start; `honeyAt` on the prop, its chunk touched (game #416, at 31d330a)

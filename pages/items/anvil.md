@@ -1,12 +1,12 @@
 ---
 title: Anvil
 categories: [Stations, Crafting]
-summary: The smith's station: tools and weapons from iron bars and sticks, with a hammer in hand.
+summary: The smith's station: tools and weapons from iron bars and sticks, with a hammer in hand; it also repairs a worn weapon or tool for a bar or a plank.
 ---
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]].
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
 
 ## Using it
 
@@ -16,11 +16,26 @@ Right-click it and choose its entry, or press `E` beside it, and pick a recipe i
 
 {{recipes anvil}}
 
+## Repairing
+
+Beside its recipes, the anvil's right-click menu has an entry for each worn weapon or tool you carry, in a hand, on the [[Belt]], or in your bag, that it can still better. A repair costs one unit of the material the thing names, an [[Iron bar]] or a [[Plank]] (the table on [[Durability#Repairs|Durability]] says which), taken from anywhere on you, and needs a [[Smith's hammer]] on you (carried, not held, unlike the recipes). It takes {{n tuning.work.anvil.seconds seconds}}; moving ends it.
+
+The entry names the thing, its condition now, what the repair brings it to, and the material: "Repair hoe (*now*% to {{pct tuning.work.anvil.ceilings.0}}, a plank)". What it reaches falls with every repair the thing has had, here or at the [[Grindstone]]:
+
+- never repaired: {{pct tuning.work.anvil.ceilings.0}}
+- repaired once: {{pct tuning.work.anvil.ceilings.1}}
+- repaired twice: {{pct tuning.work.anvil.ceilings.2}}
+- repaired {{n tuning.work.anvil.ceilings.length}} times: past repair, greyed "Repair hoe (worn past repair)"; it wears on until it breaks.
+
+Without the hammer or the material the entry is greyed with what is missing: "Repair hoe (need a smith's hammer)", "Repair hoe (need a plank)". A thing already at or above what the anvil would bring it to has no entry; with nothing to repair, the menu has one greyed line, "Repair (nothing worn carried)". When it is done the game says what was spent and what it reached: "You repair the hoe, spending a plank: {{pct tuning.work.anvil.ceilings.0}}. It will take ... more repairs." The [[Torch]], the [[Halberd]], the [[Stick]], and the [[Plank]] cannot be repaired.
+
+The refusals, if a repair is asked for another way: "That cannot be repaired.", "The anvil can do no more for it.", "It is worn past repair.", "You need a smith's hammer.", "You need a plank." (or the thing's own material), and "You are not carrying that."
+
 {{where anvil}}
 
 ## With friends
 
-A guest opens the anvil's panel on their own screen; Make is carried out by the host for that player, and the hammer must be in that player's hand.
+A guest opens the anvil's panel on their own screen; Make is carried out by the host for that player, and the hammer must be in that player's hand. A guest's Repair is sent to the host by its label and run there for that player, from that player's own hammer and material; the thing's condition and repair count travel in the player's record.
 
 ## Sources
 
@@ -35,5 +50,11 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 - `data/maps/valley.json`: where the anvil stands
 - `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
 - `src/host.js:183-189`: a guest's Make runs on the host as the craft verb, for that player
+- `data/sprites/anvil.json`, `src/repair.js:29-35`: the anvil is also a repairing place, `repair: "anvil"` (game #416, at 31d330a)
+- `data/tuning.json:169`, `data/items.json:6-52`: the anvil's ceilings, seconds, and tool (`smith`, carried); each item's material (game #416, at 31d330a)
+- `src/repair.js:56-72`, `src/repair.js:94-108`: the refusals; one unit of the material taken; the condition set to the ceiling; the message (game #416, at 31d330a)
+- `src/repair.js:115-153`: the entries, their labels, greyed past repair or missing a thing, the one greyed line (game #416, at 31d330a)
+- `src/inventory.js:92-108`: the hammer found carried, in a hand, the belt, or the bag (game #416, at 31d330a)
+- `src/net.js:600-610`, `src/net.js:1261-1263`: a guest's Repair sent by label, run on the host as that player (game #416, at 31d330a)
 
 {{navbox making}}

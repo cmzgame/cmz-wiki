@@ -47,6 +47,16 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **The bags' sizes:** each bag's grid: the [[Burlap sack]] {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}}, the [[Linen satchel]] {{n items.satchel.bag.0}} × {{n items.satchel.bag.1}}, and the [[Rucksack]] {{n items.rucksack.bag.0}} × {{n items.rucksack.bag.1}} today. {{planned doc=42 note="A rucksack of eight by six, made from leather and wool, and a best bag of ten by six, both built."}}
 - **A boss's best drop:** {{planned doc=42 note="About one in eight at first, rising with each kill that misses it, certain by the twentieth, for each player."}}
 
+### Making and mending
+
+- **Take apart's return:** half a thing's materials, rounded down. This lives in the code, not the data. See [[Building#Taking apart|Building]].
+- **Repairs:** one count per weapon or tool, used by a repair at either place. The [[Grindstone]] sharpens an edge free, to {{pct tuning.work.grindstone.ceilings.0}}, then {{pct tuning.work.grindstone.ceilings.1}}, then {{pct tuning.work.grindstone.ceilings.2}}, in {{n tuning.work.grindstone.seconds seconds}}; the [[Anvil]] repairs to {{pct tuning.work.anvil.ceilings.0}}, then {{pct tuning.work.anvil.ceilings.1}}, then {{pct tuning.work.anvil.ceilings.2}}, in {{n tuning.work.anvil.seconds seconds}}, for one of the item's material with a [[Smith's hammer]] carried. Each item's material is its own line of data. See [[Durability]].
+- **The sawpit:** a [[Log]] sawn into what a log splits into, {{n items.log.splitsInto.count}} planks, in {{n tuning.work.saw.seconds seconds}}, no hatchet. See [[Sawpit]].
+- **Honey:** a [[Beehive]] gives {{n tuning.work.honey.count.0}} [[Pot of honey]], and has more {{n tuning.work.honey.days}} game days later; taking it takes {{n tuning.work.honey.seconds seconds}}. The pot fills {{n items.honey.hunger}} hunger and heals {{n items.honey.heal}}.
+- **The dye vat:** the dyes and their palettes, and what each garment may take, are data; using a vat will ask for Crafting {{n dyes.unlock.level}}, open to everyone until skills are built, and a dye costs nothing until it is ruled whether it costs a plant. See [[Dye vat]].
+- **Burning a body:** {{planned doc=42 note="About a game hour of burning, for a log."}}
+- **The village's stations:** {{planned doc=42 note="Fixed where they stand, or movable and craftable; fixed by default."}}
+
 ## World settings
 
 ### A world's rules
@@ -91,3 +101,6 @@ On the [[Settings]] screen, kept in the browser.
 - `src/settings.js:8-45`: every setting's default
 - `src/settings.js:59-82`: the Settings screen's rows and the world's rules, which are fixed when the world is made
 - `src/main.js:1924-1934`: F8, the mute key
+- `src/placement.js:518-536`: Take apart's half, rounded down, in the code (game #413, at 31d330a)
+- `data/tuning.json` `work`, `data/items.json` each `repair` and the honey: the repair ladders and seconds, the sawpit, the hives (game #416, at 31d330a)
+- `data/dyes.json`, `data/items.json` each `dye`: the dye vat's palettes, its unlock, no cost (game #417, at 31d330a)

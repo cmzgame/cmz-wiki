@@ -15,6 +15,8 @@ Equip it from the loom's output box or a container's grid, or from the floor (**
 
 Taken off, it keeps what is in it: **Unequip** sets it down, and on the floor it is a container to **Open**, take from, and equip again (see [[Inventory]]).
 
+It can be dyed at a [[Dye vat]], its cloth from the cloth palette and its strap from the leather palette, each picked on its own; its hover card reads "Can be dyed at a dye vat" with the count of each. Dyed, it is drawn in its colours on your back and as a block of the cloth's colour in a bag, and its card names them, as "Cloth undyed, strap oxblood".
+
 {{item-sections satchel}}
 
 ## With friends
@@ -30,5 +32,6 @@ A guest's satchel is made, equipped, set down, and swapped by the host, by the s
 - `src/inventory.js` `ensureBag`, `canStoreIn`: a bag's grid rides on its entry; a bag goes in another only empty
 - `src/ui/inventory-actions.js` `takeAllFrom`, `takeAllWord`: Take All leaves a bag holding things, with its word
 - `docs/39-the-valley.md`, section 5.4: open to all until Crafting 3 gates it (game #403, at 6e5b20a)
+- `data/items.json:36`, `src/item-info.js:110-112`, `src/dye.js:68-79`, `src/ui/inventory-panel.js:239-240`: dyed at the vat, cloth and strap each from its palette; the card's line and its colours; the block's colour (game #417, at 31d330a)
 
 {{navbox items}}

@@ -2,16 +2,16 @@
 title: Torch posts and brackets
 categories: [Mechanics, The world, Light]
 aliases: [Torch post, Torch bracket, Bracket, Brackets, Mounting a torch, Lantern, Lanterns, Lantern post, Lantern posts]
-summary: Wall brackets and posts that hold a torch, which burns down there while lit; and the village's lanterns, which never go out.
+summary: Wall brackets and posts that hold a torch, which burns down there while lit; and the village's lanterns, which burn nothing and can be put out.
 ---
 
-A [[Torch]] can be mounted in an empty bracket on a wall or on a torch post, where it lights the ground round it while it is lit, and slowly burns down. A mounted torch can be taken down again. The village's own lights are **lanterns**, in brackets on its walls and on posts in the square: they never go out, and they cannot be taken.
+A [[Torch]] can be mounted in an empty bracket on a wall or on a torch post, where it lights the ground round it while it is lit, and slowly burns down. A mounted torch can be taken down again. The village's own lights are **lanterns**, in brackets on its walls and on posts in the square: they burn nothing, a player may put one out and light it again, and they cannot be taken.
 
 ## How it works
 
 ### Lanterns
 
-A lantern hangs in a wall bracket or on a lantern post. It is always lit, gives a steady light with no flicker, out to {{n sprites.lantern_post.fire.radius tiles}}, a little more than a torch's {{n items.torch.fire.radius}}, and never burns down. A bracket that holds a lantern offers nothing to E or the right-click menu, and a lantern post cannot be carried. Like any light, a lantern's is stopped by walls and shut doors and shutters. Lanterns are still placeholder art.
+A lantern hangs in a wall bracket or on a lantern post. It gives a steady light with no flicker, out to {{n sprites.lantern_post.fire.radius tiles}}, a little more than a torch's {{n items.torch.fire.radius}}, and never burns down. Its menu has **Put out the lantern** while it is lit, and **Light the lantern** while it is out, with a flame on you ("You light the lantern."); a [[Use]] of a tinderbox or a lit torch on one that is out lights it too. A lantern that is out gives no light. A lantern post cannot be carried. Like any light, a lantern's is stopped by walls and shut doors and shutters. Lanterns are still placeholder art.
 
 ### Brackets
 
@@ -29,13 +29,13 @@ Stand within {{n census.constants.interact.INTERACT_RANGE}} tiles of an empty br
 - **Mount the torch:** with a torch anywhere about you, in a hand, on the belt, or in the bag, it is put into the empty holder as it is: lit if it was lit, out if it was out.
 - With no torch, the menu shows "An empty bracket (need a torch)" or "An empty post (need a torch)", greyed.
 
-A mounted torch cannot be lit or doused where it hangs with `T`. One that is out is lit by:
+A mounted torch cannot be lit or put out where it hangs with `T`. A lit one has **Put out the torch** on its menu, which keeps how burnt it is. One that is out is lit by:
 
 - **Light the torch** on its menu, with a [[Tinderbox]] on you, or else a lit torch in a hand or on the belt ("You light the torch."; with neither, "You have no flame (a tinderbox, or a lit torch)."); it is not the E action, so choose it from the menu;
 - [[Use]] of a tinderbox or a lit torch on it, on a post or in a bracket ("You light the torch."). In Use mode a click near a wall bracket aims at the bracket, after any character or furniture under the cursor, and the label names what is there: "the torch in the bracket", "the lantern", or "the empty bracket";
 - a [[Fireball]] that comes down within reach of it.
 
-Each needs no wall between: the menu and Use reach {{n census.constants.burn.DIP_REACH tiles}}, in sight, so a bracket's torch is never lit from the far side of its wall. Its menu is reached from the side of the wall it faces, so a bracket facing into a room is worked from inside. A lit torch on a post or in a bracket is a flame in its turn: an unlit torch in your hand or on your belt used on it is lit from it ("You light the torch at the fire."), with the same reach and never through its wall. A lantern is a flame too: an unlit torch in your hand or on your belt used on a lantern, in a wall bracket or on a lantern post, is lit from it ("You light the torch at the lantern."), with the same reach and never through its wall, and the lantern stays as it was. A lantern itself is never lit or put out: a Use of a tinderbox or a lit torch on a lantern, in a bracket or on a post, says "A lantern is always lit." A Use on an empty bracket says "There is no torch there."
+Each needs no wall between: the menu and Use reach {{n census.constants.burn.DIP_REACH tiles}}, in sight, so a bracket's torch is never lit from the far side of its wall. Its menu is reached from the side of the wall it faces, so a bracket facing into a room is worked from inside. A lit torch on a post or in a bracket is a flame in its turn: an unlit torch in your hand or on your belt used on it is lit from it ("You light the torch at the fire."), with the same reach and never through its wall. A lit lantern is a flame too: an unlit torch in your hand or on your belt used on a lantern, in a wall bracket or on a lantern post, is lit from it ("You light the torch at the lantern."), with the same reach and never through its wall, and the lantern stays as it was. A Use of a tinderbox or a lit torch on a lantern that is lit says "It is already lit." A Use on an empty bracket says "There is no torch there."
 
 ### Burning down
 
@@ -94,3 +94,4 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 - `src/interact.js:73-130`: a guest's take or mount run on the host by address
 - `src/main.js:1021-1032`, `src/ui/inventory-actions.js:457-459`: a guest's Use on a bracket by its tile and edge, run on the host
 - `src/map.js:261-283`: `setHolder` marks the holder's tile changed, so the frame carries it to guests
+- `src/interact.js:599-609`, `src/burn.js:87-120`, `src/burn.js:161-191`, `src/map.js:291-300`, `src/light.js:64`: a lantern put out and lit again, by its menu or a Use, `lit: false` on its bracket, no light while out; a lit torch on a holder put out from its menu (game #421, at 1bcb6ed)
