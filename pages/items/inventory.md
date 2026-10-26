@@ -31,7 +31,7 @@ The **Tidy** button repacks the bag, the biggest items first. If the repack woul
 
 `Tab` opens the bag; `C` opens the character screen, with your clothing slots and your two hands; an eye on a worn slot hides that item's look and keeps its use (see [[Clothing#Hiding a worn item|Clothing]]). They open and close separately, and each can be dragged by its header to where you want it (the game remembers). With no bag on your back, `Tab` opens the character screen and says "No bag on your back." While you are carrying furniture, both say "Your hands are full."
 
-An open panel does not stop the game or make you safe. The dead keep coming, and with the bag or a container open you can still fight, shoot, cast, aim a [[Use]], press `E`, `B`, and `T`, and zoom; only a click on a panel is the panel's. Only the pause menu stops play (see [[Controls]]).
+An open panel does not stop the game or make you safe. The dead keep coming, and with the bag or a container open you can still fight, shoot, cast, aim a [[Use]], press `E`, `B`, and `T`, and zoom; only a click on a panel is the panel's. Your character keeps turning to the pointer over any panel, so the aim follows the mouse there too; what lies under a panel is not pointed at: Object Highlight, a Use's label, and a ghost being placed answer only over the world. Only the pause menu stops play (see [[Controls]]).
 
 In a panel:
 
@@ -105,6 +105,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/input.js:52-71`, `src/main.js:1157-1166`, `src/highlight.js:63`, `src/placement.js:560` (at 5eb40e6): the pointer followed over every panel for the aim; the world's hovers, highlight, and ghosts only over the world (game #501)
 - `src/item-info.js:268-272`, `src/item-info.js:355-393` (at 78116b1): the card's Equip line, a two-hander's belt slots; a belt slot's leading line; an empty belt slot's and a locked place's cards (game #478)
 - `src/ui/inventory-panel.js:318-331`, `src/handed.js` (at 78116b1): a hand slot named by its side (game #477)
 - `src/interact.js:1336-1337`, `src/interact.js:324-337`: a painting's Place, and its Pick up (game #344, at 9ac68a2)

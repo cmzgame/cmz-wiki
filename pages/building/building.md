@@ -68,7 +68,8 @@ X, or the palette's **Take apart** row, turns on the tool. The front-most thing 
 - "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away;
 - "There is a wall in the way." for a piece of furniture behind a wall (a wall, a door, or a window is taken apart by distance alone, from either side);
 - "Empty it first." for a container or a station with anything in it, its output box included;
-- "It is still making something." for a station with something in its queue.
+- "It is still making something." for a station with something in its queue;
+- "Put it out first." for a lit [[Campfire]], which can be put out; "Let it burn down first." for a lit [[Cauldron]], [[Oven]], or [[Forge]], whose fire only burns down; and "It still has fuel in it; let it burn down." for one out with fuel left.
 
 A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
 
@@ -130,6 +131,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit fire's word by whether it is put out by hand, a station's only burning down (game #501)
 - `data/build.json`, `src/placement.js:86-96`, `src/placement.js:381`, `src/woods.js:41-67`: a row per wooden wall, the regions' two only with Free building; R for a door's or window's wood (game #348, #351, at 9d1681f)
 - `src/map.js:647`, `src/map.js:670`: a painting falls to the floor when its wall is removed or built over (game #344, at 9ac68a2)
 - `data/build.json`: the Fence (`wall_fence`, `kind` wall) and the Gate (`kind` door, `over` the fence), with the `build` tool (game #343, at b0df8fc)

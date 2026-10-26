@@ -16,6 +16,8 @@ The **Halberd** is a two-handed polearm. It leaves no hand for a [[Wooden shield
 
 On the [[Belt]] it goes in a **main-hand slot**, whose key draws it into both hands, or in the **utility slot**, where it is stored in one cell and never drawn by the key. An off-hand slot refuses it: "The halberd needs both hands: it goes in a main-hand slot or the utility slot." Its hover card says "Equip: both hands; on the belt, a main-hand slot or the utility slot."
 
+The Swing targets outline shows the sweep's reach and arc, never the thrust's: the left button's swing is what it tests (see [[Combat#The swing|Combat]]). So one of the dead the outline marks may be outside the thrust's narrow arc and be missed by it, and one straight ahead beyond the sweep's reach is hit by the thrust with no outline. {{planned note="Which outline a weapon with two modes shows is filed for Michael to rule (game #503)."}}
+
 The sweep never floors (see [[Stagger and knockdown]]). Both modes share one cooldown. The halberd lasts about {{n items.halberd.weapon.kills}} kills (see [[Durability]]); the thrust costs the same durability per hit as the sweep.
 
 {{item-sections halberd}}
@@ -33,6 +35,7 @@ The sweep never floors (see [[Stagger and knockdown]]). Both modes share one coo
 - `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: the sweep has no `knockdown` of its own, so it takes the default chance, 0, and never floors
 - `src/combat.js:330`, `src/combat.js:342`: one cooldown for both modes
 - `src/items.js:24-37`: durability per hit from the base damage
+- `src/combat.js:319`, `src/combat.js:492-509`, `src/combat.js:112` (at 5eb40e6): the outline is the next left-button swing's test, the sweep, not the thrust's; filed for a ruling (game #503)
 - `data/animals.json:4-5` (at 6e3ab37): the halberd's own kill class, whose share is none (game #456)
 
 {{navbox weapons}}

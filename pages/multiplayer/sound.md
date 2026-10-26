@@ -38,7 +38,7 @@ Nothing sounds until the page has been clicked or a key pressed once: browsers k
 
 ### The visual twin
 
-Each sound that tells you something has a picture that says the same: a swing has its animation and the swing timer, a hit its red number, its push, and its brief freeze, the bow its drawing pose, a fall and a death the body on the ground, a moan the dead turning to come at you, a strike the wall's jolt, a door its leaf, a refused cast the mana bar's flash, and a prayer its bar over the altar and then the bars filling. Footsteps are seen as the walk. `F8`'s line says what it did.
+Each sound that tells you something has a picture that says the same: a swing has its animation and the swing timer, a hit its red number, its push, and its brief freeze, the bow its drawing pose, a fall and a death the body on the ground, a moan the dead turning to come at you (and, when one calls the others, its "{{n tuning.zombie.pullText}}" and a "{{n tuning.zombie.pullBubble}}" over each that answers, see [[Sight-pull]]), a strike the wall's jolt, a door its leaf, a refused cast the mana bar's flash, and a prayer its bar over the altar and then the bars filling. Footsteps are seen as the walk. `F8`'s line says what it did.
 
 ## Numbers
 
@@ -67,6 +67,7 @@ Each player hears their own world as their own screen shows it: a friend's foots
 ## Sources
 
 <!-- sources at 3c68f9c -->
+- `src/entities/zombie.js:559-587` (at 5eb40e6): a call's line and the answers' marks, drawn when one of the dead calls the others (game #504)
 - `src/sound-gen.js`, `src/main.js:1478-1492`: the sounds made at load from noise and tones, the same on every boot, each recipe; the boot stage
 - `data/sounds.json`: the slots, their radius and voices, the footsteps' floors and the default shuffle, the swing's heavy threshold, the bow's rate, the openings' radius
 - `src/sound-cues.js:114-147`: a step as a walk turns to a contact frame, by the floor under it, a floor with no step of its own the shuffle; the dead's shuffle; the nearest walkers only

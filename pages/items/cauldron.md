@@ -31,7 +31,7 @@ The **Cauldron** item is made at the anvil from iron bars, with a [[Smith's hamm
 
 - **Place**, on its menu in the bag, shows a ghost of it on the tile under the cursor, green where it may stand and red with the reason where it may not: open floor with nothing on it and no rug ("No room"), within reach ("Too far"). A click sets it down, cold and empty: "You set the cauldron down." Escape cancels.
 - **Pick up cauldron** on its menu gives the item back, but only once it is cold and empty: "Its fire is still burning; let it burn down.", "It still has fuel in it; let it burn down.", "It is still making something.", or "Empty it first." for a potion left in its output. A lit cauldron burns down before it can be lifted.
-- **Take apart**, as for anything you made, gives back half its iron bars, rounded down, with a smith's hammer carried, and is refused while it is lit, has fuel, or holds anything (see [[Building#Taking apart|Building]]).
+- **Take apart**, as for anything you made, gives back half its iron bars, rounded down, with a smith's hammer carried, and is refused while it is lit, has fuel, or holds anything (see [[Building#Taking apart|Building]]). Lit, it says "Let it burn down first.": a cauldron's fire cannot be put out.
 
 Its card says "Place: set down on the floor." and that set down it is a station with its brews, over a fire of logs, picked up again while out and empty.
 
@@ -56,6 +56,7 @@ A guest lights, feeds, and opens a cauldron through the same menu entries, sent 
 ## Sources
 
 <!-- sources at 0fa02e5 -->
+- `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit cauldron's Take apart says "Let it burn down first." (game #501)
 - `data/sprites/cauldron.json`: one prop with its fire under it: logs, most fuel, hours a log, `burns`, `cooks: false`, `station: "cauldron"`, `carry: false`, `item: "cauldron"`, a placeholder box
 - `data/maps/valley.json:8593-8616`, `tools/mapgen/valley.py:489-493`: the witch's cauldron, `cauldron_witch`, at the lane to the mere's north end, cold and empty
 - `src/interact.js:463-497`: the fire's menu: Light with a log and a flame, Feed, full; no Put out

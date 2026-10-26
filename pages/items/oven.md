@@ -20,7 +20,7 @@ Keep its fire fed (see [[Fire]]); lighting it when it is out needs a [[Tinderbox
 
 ## Village stations
 
-The village's oven stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another oven at the [[Workbench]]; one a player made works as the village's does.
+The village's oven stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another oven at the [[Workbench]]; one a player made works as the village's does. One a player made can be taken apart (see [[Building#Taking apart|Building]]), but not while it is lit: "Let it burn down first.", since its fire cannot be put out.
 
 ## With friends
 
@@ -29,6 +29,7 @@ A guest feeds the oven and bakes through the host like any station; the fire and
 ## Sources
 
 <!-- sources at 64cc711 -->
+- `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit oven's Take apart says "Let it burn down first." (game #501)
 - `data/sprites/oven.json`: the oven: a station whose fire burns logs, its most and hours a unit
 - `data/recipes.json:478-493`: bread from flour, fire needed
 - `data/maps/valley.json`: the baker's oven starts lit

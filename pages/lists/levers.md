@@ -21,6 +21,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **Whether every hit cancels a bite, or only one that staggers:** today every landed hit cancels it, whatever the weapon. This switch lives in the code, not the data.
 - **The bite's wind-up:** the dead's bite lands on frame {{n poses.zombie.activeFrame}} of its attack, the first frame counted as frame zero, at {{n poses.zombie.fps}} frames a second.
 - **The closing burst** (a trial): one of the dead in the chase walks {{n tuning.zombie.burstSpeed}} times as fast within {{n tuning.zombie.burstRange tiles}} of a target it sees; set to one, it is off. See [[The dead#The closing burst|The dead]].
+- **Sight-pull:** one of the dead turning to hunt a player calls the dead within {{n tuning.zombie.pullRadius tiles}} that can see it, scaled by the light on the caller as their sight is; set to zero, no one is called. The caller's line "{{n tuning.zombie.pullText}}", and the "{{n tuning.zombie.pullBubble}}" over each one drawn in for {{n tuning.zombie.pullBubbleSeconds seconds}}, are levers too. Michael ruled the rule (one call, no chain); the numbers are Primary's defaults. See [[Sight-pull]].
 - **Bite tokens:** of the dead in reach of one target, {{n tuning.zombie.biteTokens}} may bite at once, plus one more for every {{n tuning.zombie.biteTokensPer}} in reach beyond the first {{n tuning.zombie.biteTokensPer}}. See [[The dead]].
 - **The floor:** one of the dead knocked down stays down {{n tuning.zombie.downTime seconds}} and takes {{n tuning.zombie.getUpTime seconds}} to get up; a villager who has just turned lies {{n tuning.zombie.turnDownTime seconds}}. See [[Stagger and knockdown]].
 
@@ -114,6 +115,7 @@ On the [[Settings]] screen, kept in the browser.
 - `src/settings.js:30`, `src/settings.js:66` (at 78116b1): Belt slot order, a player's own setting, Sequential by default (game #478)
 - `data/tuning.json`: the dead's health, the bite's cooldown, the bite tokens, the floor's times, stamina's regeneration
 - `src/entities/zombie.js:639-643`: the closing burst (game #394, at 5830ac2)
+- `data/tuning.json:24-27`, `src/entities/zombie.js:568-587` (at 5eb40e6): sight-pull's reach, its line, and its mark; zero skips the call (game #504)
 - `src/entities/zombie.js:333-352`: the bite tokens' pool, one more for every `biteTokensPer` in reach beyond the first
 - `src/entities/zombie.js:140-148`: a landed hit during the wind-up cancels the bite and sets the bite's cooldown; every hit, a switch in code
 - `data/poses.json`: the dead's attack, its rate and the frame the bite lands on

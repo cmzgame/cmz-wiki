@@ -13,9 +13,9 @@ The **Throwing axe** is a small axe thrown from the hand. Axes stack to {{n item
 
 ## Combat
 
-- **Left** throws it, from the main hand only, with the bow's draw: hold, aim with the cursor, and release (see [[Archery]]). A stack in the off hand is only held and never throws. A full draw takes {{n items.throwing_axe.thrown.drawTime seconds}}, reaches {{n items.throwing_axe.thrown.range tiles}}, flies at {{n items.throwing_axe.thrown.speed tiles a second}}, and does {{n items.throwing_axe.thrown.damage}} damage; a partial draw falls short and does less.
+- **Left** throws it, from the main hand only, with the bow's draw: hold, aim with the cursor, and release (see [[Archery]]). A stack in the off hand is only held and never throws. The whole stack goes into either hand, or onto any [[Belt|belt slot]], by a drag or Equip, and a hand slot's key draws it whole. A full draw takes {{n items.throwing_axe.thrown.drawTime seconds}}, reaches {{n items.throwing_axe.thrown.range tiles}}, flies at {{n items.throwing_axe.thrown.speed tiles a second}}, and does {{n items.throwing_axe.thrown.damage}} damage; a partial draw falls short and does less.
 - Each throw takes one axe from the stack, and the hand is empty when the last one goes.
-- A hit pushes {{n items.throwing_axe.thrown.knockback tiles}} and always staggers one of [[The dead]]. It knocks the dead one down {{pct items.throwing_axe.thrown.knockdown}} of the time, rolled where the axe comes down, but never one already down and never with a hit that kills (see [[Stagger and knockdown]]). Like any hit, it cancels a bite being wound up.
+- A hit pushes {{n items.throwing_axe.thrown.knockback tiles}} and always staggers one of [[The dead]]. It knocks the dead one down {{pct items.throwing_axe.thrown.knockdown}} of the time, rolled where the axe comes down, but never one already down and never with a hit that kills (see [[Stagger and knockdown]]). Like any hit, it cancels a bite being wound up. One it hits and does not kill, if it was not yet hunting a player, calls the dead near it that can see it (see [[Sight-pull]]).
 - In flight the axe spins, {{n items.throwing_axe.thrown.spin}} turns a second, clockwise when thrown to the right and the other way when thrown to the left.
 - Each time an axe comes down, hit or miss, it breaks {{pct items.throwing_axe.thrown.breakChance}} of the time and is gone, and the thrower is told "The throwing axe breaks."
 
@@ -50,6 +50,7 @@ A guest's draw and release are resolved by the host, as the spear's are, and the
 - `src/main.js:1824-1825`, `src/host.js:243-245`: "The throwing axe breaks.", a guest's by the host
 - `src/interact.js:262-310`: E and Pick up take the pile from the tile and its neighbours within reach; the label counts it
 - `src/item-info.js:168-185` `shotLines`: the card's lines, read from the `thrown` block
+- `src/ui/inventory-actions.js:111-115`, `src/ui/inventory-actions.js:146`, `src/ui/inventory-actions.js:150` (at 5eb40e6): the stack into a hand or a belt slot whole, by a drag or a guest's slot command; before, only one at a time was let in (game #501)
 - `src/poison.js:50`: a blade is the `blade` tag, which the axe does not have
 
 {{navbox weapons}}

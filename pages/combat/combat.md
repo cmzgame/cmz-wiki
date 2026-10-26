@@ -34,7 +34,7 @@ A click swings at once. The hit is decided on the click; the arm's animation is 
 - Only [[The dead]] and [[Animals|animals]] can be hit, and not a corpse: a swing, the [[Shove|shove]], an arrow, a thrown spear, and the [[Fireball]] never hurt a [[Villagers|villager]], another player, or the one who struck. There is no friendly fire, and no setting turns it on.
 - Wild game (deer, rabbits, boar) is hit as the dead are. Tame stock (hens, cows, pigs, sheep) is struck only when nothing else is in the wedge, and then the nearest one alone; the shove is for the dead alone. See [[Hunting]].
 
-The wedge itself is not drawn; the Swing targets outline, on by default, shows exactly which of the dead the next swing hits. Each weapon's reach and arc are on its page and in [[Weapons]].
+The wedge itself is not drawn; the Swing targets outline, on by default, shows exactly which of the dead the next left-button swing hits. It is the left button's test only: the [[Halberd]]'s thrust on the middle button or Q has its own reach and arc, so the outline shows the sweep's reach, not the thrust's. Each weapon's reach and arc are on its page and in [[Weapons]].
 
 A swing commits the player for as long as its animation plays: they walk at {{n combat.blow.swingMove}} of their speed, and the figure keeps facing the way it struck. The aim and the next swing stay free; nothing caps how fast the player turns.
 
@@ -69,6 +69,10 @@ Every hit makes one of the dead flinch, and a hit during its bite's wind-up canc
 
 By default a swing hits only the nearest of the dead in the wedge. With the Multi-hit setting on, it hits everything in the wedge. The halberd's thrust always hits only the nearest.
 
+### Pulling one of the dead
+
+A blow that one of the dead lives through tells it where the blow came from, and if it was not yet hunting a player it calls once to the dead near it that can see it: they join the hunt. A killing blow calls no one. So a hit, a throw, or an arrow on one at the edge of a group, out of the others' line or in the dark, brings that one alone, and a hit in the middle of a group brings the rest. See [[Sight-pull]].
+
 ### Durability
 
 Weapons lose [[Durability|durability]] by landed hits and break when it runs out.
@@ -99,7 +103,7 @@ Players never hurt players, whatever they swing, shoot, or cast: on the host the
 ## Settings that change it
 
 - **Multi-hit** (default off): on, a blow reaches everything in its wedge.
-- **Swing targets** (default on): a green outline on exactly the dead the next left click would hit; green means the swing lands. It follows the off hand when that hand would take the click. One of the dead hidden by the dark gets no outline, though the swing still hits it.
+- **Swing targets** (default on): a green outline on exactly the dead the next left click would hit; green means the swing lands. It follows the off hand when that hand would take the click. It shows the left button's swing only, never the halberd's thrust. One of the dead hidden by the dark gets no outline, though the swing still hits it.
 - **Show hit shapes** (default off): draws the points on each nearby body that the swing tests, green when in the wedge.
 - **Swing timer** (default on): the bars that fill over each hand's recovery.
 - **Zombie aggro** (default on): off, the dead ignore the player (see [[The dead]]).
@@ -114,6 +118,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - [[Stagger and knockdown]]
 - [[Dual wielding]]
 - [[Shove]]
+- [[Sight-pull]]
 - [[Archery]]
 - [[Hunting]]
 - [[Burning]]
@@ -167,5 +172,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 - `src/settings.js:36`, `src/settings.js:76`, `src/game.js:77`, `src/game.js:93-96`: the Dev chest chosen at New world (game commit f2b8062)
 - `src/rules.js:13-30`, `src/game.js:77-85`, `src/game.js:141-167`: Zombie aggro and Multi-hit the world's rules; the Starting population (game commit f2b8062)
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
+- `src/combat.js:319`, `src/combat.js:492-509`, `src/combat.js:112` (at 5eb40e6): the outline tests the next left-button swing (`nextSwingWeapon`), never the thrust (`altWeaponOf`); which one a two-mode weapon should show is filed for a ruling (game #503)
+- `src/entities/zombie.js:126-136`, `src/entities/zombie.js:559-587` (at 5eb40e6): a blow it lives through calls the dead that see it; a killing blow none (game #504)
 
 {{navbox weapons}}

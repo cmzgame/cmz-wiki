@@ -13,7 +13,7 @@ summary: M opens the map: the land anyone in your world has seen, drawn from the
 
 - **The land seen so far.** Every tile anyone in the world has seen is charted: its ground (grass, dirt, cobbles, water, a field) or what stands on it (a tree, a rock), in one colour. Nothing else is drawn: no furniture, no items, no fires.
 - **Walls** as thin lines on the edges of their tiles: walls, doors, windows, and fences each their own colour, and one a player built a shade lighter than the village's. A wall is charted once a tile on either side of it has been seen, so a building's walls show from outside before its rooms are seen.
-- **Players.** A marker for every living player in the world, wherever they are: yours gold, with an arrow for the way you face, the others white, each with a name. The dead and the villagers are never shown.
+- **Players.** A marker for every living player in the world, wherever they are, each with a name. Yours is a gold disc with a point toward the way you face, outlined dark, and it turns as your character does; the others are smaller white dots. The dead and the villagers are never shown.
 - **Place names**, each drawn once any tile of its place has been charted.
 - **A compass**: an "N" pointing up and to the right.
 
@@ -28,7 +28,7 @@ The world keeps one chart, shared by every player in it. Wherever a living playe
 - **Centre**, or a double-click, follows you again.
 - **`M`**, the X, or `Escape` closes it. Escape closes any other panel open on top first, and the map before the pause menu.
 
-The world keeps running while the map is open, and no key is taken from you: you can walk, fight, and shove with it up. A click or the wheel over the map is the map's, never the world's.
+The world keeps running while the map is open, and no key is taken from you: you can walk, fight, and shove with it up. Your character keeps turning to the pointer over the map, as over the world, so your aim and your marker's point follow the mouse. A click or the wheel over the map is the map's, never the world's.
 
 ## Numbers
 
@@ -54,7 +54,9 @@ There are no pins or notes, no marker where you died, no map to carry, no sign o
 - `src/chart.js:136-154`, `src/chart.js:171-189`, `data/tuning.json:114`, `src/visibility.js`: the reveal, each tile within `chartRadius` a living player can see by the fog's rule, with no light needed; a touched chunk within reach charted again
 - `src/chart.js:208-248`, `src/game.js:216`: the chart in the save and the welcome, the changed cells in each frame (game #239); kept when the wild far away is set aside
 - `src/ui/map-panel.js:10-21`, `src/ui/map-panel.js:196-259`: three zooms, the colours of the walls, a built wall lighter
-- `src/ui/map-panel.js:275-380`: a marker for every living player, yours gold with an arrow and the others white, each named, never the dead or a villager; the place names once charted; the compass, "N" up and to the right
+- `src/ui/map-panel.js:275-380`: a marker for every living player, the others white, each named, never the dead or a villager; the place names once charted; the compass, "N" up and to the right
+- `src/ui/map-panel.js:17`, `src/ui/map-panel.js:265-277`, `src/ui/map-panel.js:340-368` (at 5eb40e6): your own marker a gold disc with a point toward your facing, outlined dark, your name clear of it (game #501)
+- `src/input.js:52-71` (at 5eb40e6): the pointer followed over the whole window, a panel included, so the aim turns with the map open; a click is the world's only over the world (game #501)
 - `src/ui/map-panel.js:106-189`: Centre and the double-click, the drag clamped to the charted land, the wheel's zoom about the pointer
 - `src/main.js:851-869`: Escape closes other panels first, then the map, then the pause menu
 - `src/map.js:2236-2248`: the place names from the map's named sets

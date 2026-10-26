@@ -34,6 +34,10 @@ The dead know only where they last saw the player. They walk to that spot. Arriv
 
 Idle, they wander a little within their room, standing between walks.
 
+### Sight-pull
+
+One of the dead that first turns to hunt a player, because it sees one or because a player's blow lands on it and it lives, calls once: "{{n tuning.zombie.pullText}}". Every other one of the dead within {{n tuning.zombie.pullRadius tiles}} of it that is not already hunting a player, is on its feet or getting up, and has a clear line to it joins the hunt, shown by a "{{n tuning.zombie.pullBubble}}" over its head, and walks to where the caller learnt of the player. The reach is scaled by the light on the caller, as their sight is, so a call in the dark reaches about a tile and a half. The ones it calls never call others, and a killing blow calls no one. The dead never come to a sound. See [[Sight-pull]].
+
 ### The closing burst
 
 One of the dead in the chase that sees its target within {{n tuning.zombie.burstRange tiles}} walks {{n tuning.zombie.burstSpeed}} times as fast, so one or two can close on a player who is not paying attention. It depends on distance alone, never on time. A walking player still outpaces a bursting one, and so does one in the middle of a swing, slowed to {{pct combat.blow.swingMove}} of their pace. A player slowed further does not, and the dead catch them: drawing a bow ({{pct combat.bow.drawSpeed}} of their pace), behind a raised [[Wooden shield|shield]] ({{pct items.shield.shield.moveMult}}), or bracing ({{pct combat.bow.braceMove}}). Players' own speed is on [[Player]]. It is a trial: the burst may change or go.
@@ -79,7 +83,7 @@ The dead strike a fence that stands between them and a player they are hunting a
 
 ### The siege
 
-At night, from {{n census.constants.clock.DUSK_START}} o'clock, one of the dead that sees a player inside a room it is not in holds a siege on them until {{n tuning.zombie.siegeEndHour}} o'clock. It remembers the door it saw them go in by, the one on the line from where it last saw them outside to where it sees them now (else the door nearest them), and any window it saw them through, and breaks in there first. When its search finds no one it does not give up: it waits about the house, going between the openings it knows and breaking the shut ones. At {{n tuning.zombie.siegeEndHour}} o'clock it loses interest and wanders off, unless it sees someone. No more of the dead are called: a siege is only the ones that saw you. While one holding a siege on you is within {{n tuning.zombie.siegeSleepRadius tiles}}, you cannot [[Sleep|sleep]]. See [[Breaking in#The siege|Breaking in]].
+At night, from {{n census.constants.clock.DUSK_START}} o'clock, one of the dead that sees a player inside a room it is not in holds a siege on them until {{n tuning.zombie.siegeEndHour}} o'clock. It remembers the door it saw them go in by, the one on the line from where it last saw them outside to where it sees them now (else the door nearest them), and any window it saw them through, and breaks in there first. When its search finds no one it does not give up: it waits about the house, going between the openings it knows and breaking the shut ones. At {{n tuning.zombie.siegeEndHour}} o'clock it loses interest and wanders off, unless it sees someone. The siege calls no more of the dead: it is held only by the ones that saw you. While one holding a siege on you is within {{n tuning.zombie.siegeSleepRadius tiles}}, you cannot [[Sleep|sleep]]. See [[Breaking in#The siege|Breaking in]].
 
 ### The groan
 
@@ -99,6 +103,7 @@ At no health one of the dead falls, and once the fall has played its body stays 
 - A floored zombie takes finishers while it lies, not while it gets up.
 - A hit during a bite's wind-up cancels it, whatever the weapon; a bite already landed cannot be cancelled.
 - [[Burning|Fire]] and [[Poison]] go on hurting one after the hit: a burn and a poison each take health a second for a while, and one of the dead may carry both. A poisoned one is drawn tinted green.
+- A hit on one of the dead, or its first sight of you, brings the others near it that can see it (see [[Sight-pull]]). To take one at a time, pull one at the edge of a group, out of the others' line, or in the dark.
 - Only a few of a crowd bite at once; the rest wait their turn, or strike the fence between, and a [[Shove]] that clears a biter hands its place on.
 - A hit that staggers one makes it reel, arms flung up and leaning back, for the length of the stagger; a hit that does not stagger it only flinches. One lying downed has its health bar just over the body, and is outlined when the pointer is over it.
 - Light matters: in the dark they see the player from much less far, but a lit flame draws them at night.
@@ -108,7 +113,7 @@ At no health one of the dead falls, and once the fall has played its body stays 
 
 ## The sound it makes
 
-The dead shuffle as they walk, whatever the floor. One knocked down thumps to the ground, and one killed makes a heavier sound of its own. Their own voices are to come. See [[Sound]].
+The dead shuffle as they walk, whatever the floor. One knocked down thumps to the ground, and one killed makes a heavier sound of its own. They moan as they turn to come at someone. See [[Sound]].
 
 ## With friends
 
@@ -124,6 +129,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 ## See also
 
 - [[Corpses]]
+- [[Sight-pull]]
 - [[Combat]]
 - [[Burning]]
 - [[Openings]]
@@ -174,4 +180,6 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/ui/zombie-bars.js:17-19`, `src/highlight.js:32-34`: a downed one's bar over its body, and its outline under the pointer (game #390)
 - `src/entities/zombie.js:639-643`, `data/tuning.json`: the closing burst, `burstSpeed` within `burstRange` of a target it sees in the chase; 1 is off; the player's speeds against it from `player.speed`, `blow.swingMove`, `bow.drawSpeed`, the shield's `moveMult`, `bow.braceMove` (game #394)
 - `src/entities/zombie.js:865-871`, `src/entities/zombie.js:923-929`: a gate opened while they strike it, and they walk through (game #397)
+- `src/entities/zombie.js:126-136`, `src/entities/zombie.js:559-591`, `src/entities/zombie.js:612-617`, `src/entities/zombie.js:638-648`, `data/tuning.json:24-27`: sight-pull, the call on a first-hand turn to a player and who answers (game #504, at 5eb40e6)
+- `src/sound-cues.js:272-292`: the moan as one turns from calm to closing in (game #436)
 - `src/game.js:852-861`: animals are in none of the dead's lists; deer and rabbits run from the standing dead (game #452)

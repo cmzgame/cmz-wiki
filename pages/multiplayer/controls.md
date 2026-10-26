@@ -7,7 +7,7 @@ summary: Every key and mouse button and what it does.
 
 The game is played with the keyboard and a three-button mouse. Keys cannot be changed yet. The **Controls** screen, on the game's site menu out of a world or on the pause menu in one (see [[Screens]]), shows a short list in six groups: Moving and doing, Fighting, Your things, Building, Talking, and Testing (the debug keys, kept apart from the rest). `R` is written there once, for turning what you are placing or the item you are dragging, and the screen ends with a link to this wiki. This page is the full list.
 
-Only the pause menu and its screens take the keys and the mouse from the world (see [[Screens]]). With the bag, a container, a station's panel, or the character screen open, every button and key below still works on the world, and the world goes on; a click or a wheel turn over a panel stays the panel's.
+Only the pause menu and its screens take the keys and the mouse from the world (see [[Screens]]). With the bag, a container, a station's panel, the character screen, or the [[Map]] open, every button and key below still works on the world, and the world goes on; a click or a wheel turn over a panel stays the panel's. Your character keeps turning to the pointer over any panel, so the aim follows the mouse there too.
 
 ## The mouse
 
@@ -89,6 +89,7 @@ A guest's keys and clicks go to the host, who performs them. A guest's wave, fro
 ## Sources
 
 <!-- sources at 0362b89 -->
+- `src/input.js:52-71` (at 5eb40e6): the pointer followed over the whole window, so the aim turns over any panel (game #501)
 - `src/ui/screens.js:23-61`, `src/ui/screens.js:1079-1086`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:948`: Controls on the site's menu and on the pause menu
 - `src/buttons.js:10`, `src/buttons.js:25-26`, `src/buttons.js:34-42`: the three buttons as roles, the tap time, the hold, the middle button and Q

@@ -56,6 +56,10 @@ The path is checked once, when the shot is loosed. A shot is stopped by:
 
 A stopped arrow falls at the foot of what stopped it and hits nothing.
 
+### Pulling from afar
+
+An arrow, a throw, or a fireball can start a fight from afar. One of the dead hit and not killed learns where the shot came from, and, if it was not yet hunting a player, calls once to the dead near it that can see it, and they come too. A shot at one at the edge of a group, out of the others' line or in the dark, brings that one alone. See [[Sight-pull]].
+
 ### Getting arrows back
 
 An arrow that hits one of the dead stays in the body. Arrows stack in a body, and come out with its loot when it is killed and searched (see [[Corpses]]). What does not fit on the body falls at its feet. An arrow or a thrown weapon that hits an animal stays in it too, and comes back when its carcass is butchered (see [[Hunting]]). A miss, or a shot stopped by a wall or a tree, lies where it came down as an item on the floor, picked up with E. Arrows do not break.
@@ -116,6 +120,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## Sources
 
 <!-- sources at 125bffb -->
+- `src/archery.js:312`, `src/entities/zombie.js:126-136`, `src/entities/zombie.js:559-587` (at 5eb40e6): a shot's hit tells the dead one where it was loosed from, and one it does not kill calls the dead that see it (game #504)
 - `src/archery.js:809-829`, `src/archery.js:919-950`, `src/archery.js:284-335`, `src/archery.js:734-776`, `src/interact.js:262-310`, `data/items.json:13-14` (at 307ed34): the throwing knife and axe: the left button from the main hand, one from the stack, the knockdown and break rolled at the landing, the spin and the lying picture, the pile taken with E (game #494)
 - `data/items.json:24` `bow.ammo`, `src/archery.js:298-313`, `src/archery.js:714-719` (at 307ed34): the bow's order with the poisoned arrows, their hit poisoning, their green heads (game #496)
 - `src/archery.js:64-70` (at dc10b81): `shotDamage`, the damage by the draw, shared by every hit and by the hover card

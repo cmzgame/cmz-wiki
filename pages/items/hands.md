@@ -26,6 +26,8 @@ Items that cannot be held (food, materials) have no hand Equip entry. Clothing a
 
 **Unequip** on a hand's menu, or a double-click on the hand, puts the item away in the bag or on the belt ("Nowhere to put it." if neither has room). Dragging one hand's item onto the other hand swaps them. **Drop** on a hand's menu drops the item at your feet.
 
+A stack of [[Throwing knife|throwing knives]] or [[Throwing axe|throwing axes]] goes into a hand whole, by Equip or by a drag. Drawn from the [[Belt]] (by a slot's key, a drag between a slot and a hand, or the slot's menu), what the hand held goes onto the slot just freed when that slot's key would draw it back, and not into the bag (see [[Belt#The swap|Belt]]).
+
 ### Two-handed items
 
 Equipping a two-handed item pushes the off hand's item into your bag (or onto the belt) and remembers it. The next one-handed item you put in your main hand brings the remembered item back to the off hand, once.
@@ -65,6 +67,7 @@ A guest's equips, unequips, and swaps are sent to the host by the item's id and 
 - `src/interact.js:890-898`: "Your hands are full."
 - `src/interact.js:877-887`: Unequip, "Nowhere to put it."
 - `src/ui/inventory-actions.js:89-98`: hand to hand swaps
+- `src/ui/inventory-actions.js:111-115`, `src/ui/inventory-actions.js:150`, `src/ui/inventory-actions.js:174-184`, `src/inventory.js:392-479` (at 5eb40e6): a held stack into a hand whole; a drag between a belt slot and a hand by the belt's swap (game #501)
 - `src/interact.js:1095-1147`: Drop on a hand's menu
 - `src/inventory.js:226-234`: the off hand's item brought back once
 - `src/combat.js:272-283`: two weapons swing in turn

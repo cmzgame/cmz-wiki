@@ -20,7 +20,7 @@ Light it with charcoal and a flame, a [[Tinderbox]] or a lit [[Torch]] on you, a
 
 ## Village stations
 
-The village's forge stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another forge at the [[Workbench]]; one a player made works as the village's does.
+The village's forge stays where it stands, and none is made, unless the world was made with the rule **Village stations** set to Movable and craftable (see [[World rules]]). Then it can be picked up and carried like furniture, and another forge at the [[Workbench]]; one a player made works as the village's does. One a player made can be taken apart (see [[Building#Taking apart|Building]]), but not while it is lit: "Let it burn down first.", since its fire cannot be put out.
 
 ## With friends
 
@@ -29,6 +29,7 @@ A guest feeds the forge and makes bars through the host like any station; the fi
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit forge's Take apart says "Let it burn down first." (game #501)
 - `data/sprites/forge.json`: the forge burns charcoal, holds and burns its units, gives light, does not cook
 - `data/recipes.json:489-504`: iron bar from iron ore, fire needed
 - `data/loot.json:12`, `data/loot.json:14`, `data/loot.json:16-17`: charcoal and ore in the smithy's chest, the burners', the miners', and the ore cart (game #210)

@@ -11,7 +11,7 @@ The **belt** is equipped at the waist and gives **belt slots**, shown at the bot
 
 ### What goes on a belt
 
-A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), a [[Food]], a [[Waterskin]], a [[Tinderbox]], a potion or a poison (see [[Potions]]), or a [[Clay vial]]. Drag it onto the slot. Anything else is refused.
+A belt slot takes one item that can be held (a weapon, a tool, a [[Torch]]), or a whole stack of [[Throwing knife|throwing knives]] or [[Throwing axe|throwing axes]], a [[Food]], a [[Waterskin]], a [[Tinderbox]], a potion or a poison (see [[Potions]]), or a [[Clay vial]]. Drag it onto the slot. Anything else is refused.
 
 A slot's role decides one thing about what it takes: **a two-handed item** (the [[Halberd]], the [[Hunting bow]]) goes in a main-hand slot or the utility slot, **never an off-hand slot**. A drag of one onto an off-hand slot is refused with "The hunting bow needs both hands: it goes in a main-hand slot or the utility slot." (the item's own name). Anything else may go in any slot: a [[Wooden shield]] in a main-hand slot rides there as storage, and the utility slot holds any held item, a halberd included, in one cell whatever its size in the bag.
 
@@ -19,7 +19,7 @@ A slot's role decides one thing about what it takes: **a two-handed item** (the 
 
 What a slot's key does is read from the slot's role and the item there:
 
-- **A main-hand slot** draws its item into your main hand, and what the main hand held goes onto that slot. A two-handed item there is drawn into both hands (below). A food there is eaten instead. An item that cannot go in the main hand stays, with a line saying why: "The wooden shield can't be held in your main hand."
+- **A main-hand slot** draws its item into your main hand, and what the main hand held goes back onto that slot (see [[Belt#The swap|The swap]]). A two-handed item there is drawn into both hands (below). A food there is eaten instead. An item that cannot go in the main hand stays, with a line saying why: "The wooden shield can't be held in your main hand."
 - **An off-hand slot** does the same for the off hand: it draws a book, a shield, a torch, or a second weapon into the off hand, or eats a food. "The throwing spear can't be held in your off hand."
 - **The utility slot** only eats a food. With anything else it does nothing and says why: "You can't equip a weapon from the utility slot." for a weapon, a bow, a shield, or a staff, or with the item named for anything else held, as "You can't equip the torch from the utility slot." It is storage: a spare weapon, a torch, or food carried without taking a bag cell.
 - **An empty slot** does nothing at all and says nothing, whatever its role. It never puts away what you hold, so a stray key in a fight never takes the weapon out of your hand.
@@ -31,9 +31,22 @@ Every press that fails gives a line, shown on your screen and in the [[Chat log|
 
 The [[Throwing spear]] is never held beside another weapon, so drawing a weapon into the off hand beside it (or the spear beside one) is refused with "The throwing spear can't be held beside another weapon.", and everything stays as it was.
 
+### The swap
+
+Whichever way a belt item goes into a hand, what that hand held is put away by one rule. The ways are the slot's key, a drag from the slot onto a hand, a drag of what a hand holds onto an occupied slot whose item fits that hand, and the slot menu's Equip. What the hand held goes:
+
+1. onto the slot just freed, when that slot's key would draw it back (a sword onto a main-hand slot; a two-handed item never onto an off-hand slot). Dragged onto the slot, it always goes there;
+2. else onto an empty slot of the hand it was in (the main hand's to a main-hand slot, the off hand's to an off-hand slot);
+3. else into the bag;
+4. else onto the empty utility slot;
+5. else onto the freed slot, to ride there as storage;
+6. and only else at your feet, with a line: "Nowhere to put the wooden shield: it is at your feet."
+
+So a [[Hunting bow]] held while a sword is drawn from a main-hand slot, by its key or by a drag, ends on that slot, never in the bag.
+
 ### Two-handed items
 
-A two-handed item in a main-hand slot is drawn into both hands. What the main hand held goes onto that slot. What the off hand held goes to an empty off-hand slot, else the bag, else the empty utility slot, and only else to your feet. The game remembers it, and drawing a one-handed weapon into the main hand later puts it back in the off hand (see [[Hands#Two-handed items|Hands]]).
+A two-handed item in a main-hand slot is drawn into both hands. What the main hand held goes by the swap, onto that slot first. What the off hand held goes to an empty off-hand slot, else the bag, else the empty utility slot, and only else to your feet, with the same line. The game remembers it, and drawing a one-handed weapon into the main hand later puts it back in the off hand (see [[Hands#Two-handed items|Hands]]).
 
 Drawing an item into the off hand while a two-handed item is held sends the two-handed item to an empty main-hand slot, else the bag, else the empty utility slot, else your feet; the off-hand slot is left empty.
 
@@ -65,7 +78,7 @@ A two-handed item's card says "Equip: both hands; on the belt, a main-hand slot 
 A slot's menu offers **Use**, then:
 
 - **Equip**, where the key would draw the item (it does what the key does);
-- for a held item the key does not draw (anything in the utility slot, a shield in a main-hand slot), an Equip into its own hand, as from the bag: **Equip (main hand)** and **Equip (off hand)** for an item that fits either, **Equip (both hands)** for a two-handed one, **Equip (off hand)** for a shield;
+- for a held item the key does not draw (anything in the utility slot, a shield in a main-hand slot), an Equip into its own hand: **Equip (main hand)** and **Equip (off hand)** for an item that fits either, **Equip (both hands)** for a two-handed one, **Equip (off hand)** for a shield. What that hand held goes by [[Belt#The swap|the swap]], so it takes the freed slot only where that slot's key would draw it, and never the bag before an empty slot of its own hand;
 - **Eat** for a food; **Drink** for a potion, as its key does; **Drink**, with how full it is, for a waterskin, which is the one way to drink from a skin on the belt by hand (and **Boil water** at a lit cooking fire, see [[Water]]);
 - **Put in bag** ("No room in your bag." if it is full), and **Drop**.
 
@@ -107,7 +120,9 @@ The belt keys are part of each player's input, carried out by the host's world f
 - `src/ui/inventory-actions.js:128-141`, `data/items.json:20`: what a belt slot takes; a two-hander never an off-hand slot; an item marked `belt`, the tinderbox
 - `src/inventory.js:323-334`: `roleTakes` and `roleRefusal`: a two-handed item refused by an off-hand slot, with its words
 - `src/inventory.js:338-363`: `beltAction`: what each role's key does with each item, and the lines; a skin never drunk by its key; a weapon for the utility slot's line
-- `src/inventory.js:368-445`: `beltDraw`: the swap, the two-hander's draw into both hands, where the off hand's item goes, the spear's refusal with everything put back
+- `src/inventory.js:372-390`, `src/inventory.js:392-479` (at 5eb40e6): `beltDraw`: the swap, what the hand held to the freed slot when its key would draw it back, else a slot of its hand, the bag, the utility slot, the freed slot, the feet with `dropWord`'s line; a hand chosen by a drag or the menu (`chosenDraw`); the two-hander's draw into both hands, where the off hand's item goes, the spear's refusal with everything put back (game #501)
+- `src/interact.js:1581`, `src/interact.js:1586-1601`, `src/interact.js:1756-1759`, `src/ui/inventory-actions.js:174-184` (at 5eb40e6): the key, the slot menu's Equip into a hand, and both drags go through `beltEquip`; what falls at the feet has its line (game #501)
+- `src/ui/inventory-actions.js:111-115`, `src/ui/inventory-actions.js:146`, `src/ui/inventory-actions.js:150` (at 5eb40e6): a held thing goes into a belt slot or a hand as its whole stack, up to its `stack` (game #501)
 - `src/inventory.js:224-243`: putting away with the bag full: a one-handed weapon to a main-hand slot, then the utility slot, never an off-hand slot
 - `src/interact.js:1413-1435`: the number keys turned into the slot's role by the client's order; "You have no belt."; "A leather belt adds a slot here."
 - `src/interact.js:1458-1462`, `src/interact.js:1527-1556`: the press performed in the world's step; an empty slot does nothing and says nothing; every refusal a line

@@ -37,6 +37,7 @@ Each area lists its newest changes first. The box at the front of each entry is 
 
 ## The dead
 
+- ☐ **Sight-pull: the dead call the dead** (game #504, merged 2026-10-26): Find three or four of the dead standing together by day. Throw a knife or loose an arrow at one in the middle: it says "Hrraagh!", and the others within about 4 tiles that can see it show a "!" and come for you. Then hit one at the edge of a group with a wall or a corner between it and the rest, or one in the dark at night (the call reaches only about a tile and a half there): it comes alone. A killing blow calls no one, and the ones drawn in never call others. Read: [[Sight-pull]], [[The dead]], [[Combat]], [[Archery]], [[Levers]].
 - ☐ **Burn a body of the dead** (game #434, merged 2026-10-25): With a tinderbox and a log, right-click a body of the dead and choose Burn corpse (greyed with what you lack otherwise). After a two-second bar it burns with light for about 30 seconds, then it and its contents are gone. Search is greyed while it burns. Read: [[Corpses]], [[Tinderbox]], [[Burning]].
 - ☐ **Open a struck gate, they walk in** (game #397, merged 2026-10-24): While the dead strike a fence gate, open it: they stop striking and walk through. Read: [[Fences]].
 - ☐ **The dead lunge when close** (game #394, merged 2026-10-24): Let one of the dead chase you: within about 3 tiles it walks 1.5 times as fast to close in. Walking away still outruns it. A trial; Michael may switch it off (burstSpeed 1). Read: [[The dead]], [[Levers]].
@@ -155,6 +156,8 @@ Each area lists its newest changes first. The box at the front of each entry is 
 
 ## Bug fixes
 
+- ☐ **No more random art-load failures at boot** (game #502, merged 2026-10-26): Load the game several times, hard-refreshing: it boots every time, with no "Failed while loading the art" naming a different picture each time. A picture that fails to load is now tried again three times before the boot gives up.
+- ☐ **Playtest fixes, first batch** (game #501, merged 2026-10-26): Drag a stack of throwing knives or axes onto a hand or any belt slot: it goes in whole. Hold the bow, then draw a sword from a main-hand slot by its key, by dragging it onto your hand, or by the slot's Equip: the bow takes the slot the sword left, never the bag; with nowhere at all to go, it falls at your feet with "Nowhere to put the ...: it is at your feet.". Open the map (M) and move the mouse: your character keeps turning to it, and your own marker is a gold disc with a point the way you face. Light a cauldron of your own and try Take apart: "Let it burn down first.". Read: [[Belt]], [[Hands]], [[Throwing knife]], [[Throwing axe]], [[Map]], [[Cauldron]].
 - ☐ **Fixed: odd names for made things** (game #470, merged 2026-10-26): Make a jack-o'-lantern, a dye vat, or millstones: the line reads "Made a jack-o'-lantern.", "Made a dye vat.", "Made a pair of millstones.". A busy station's menu reads "Pick up dye vat (it is still making something)". Read: [[Crafting]].
 - ☐ **Fixes seen by a guest** (game #465, #468, merged 2026-10-26): As a guest, look at a bed or rug lying across a chunk's edge: it stays whole, also after walking far off and back. Lifting the same piece of furniture twice says "The chest is not there any more." instead of giving a second one. A guest no longer sees the host's swing targets outlined. Needs two tabs. The swing-outline part of #465 is my reading of its body; the PR itself calls #465 not player-visible.
 - ☐ **Bug fixes batch (PR #466)** (game #466, merged 2026-10-25): Butcher and shear: lines read "raw venison" and "some lard", and "(you need shears)". Milking finds an empty bucket anywhere you carry it. A looted garment in an odd colour is named in a word ("Brownish"). A counter or cart made at a bench lands only on free, reachable tiles. A round oak's sapling grows "an oak". Read: [[Crafting]], [[Hunting]], [[Keeping]], [[Dye vat]], [[Sapling]].
@@ -169,7 +172,8 @@ Each area lists its newest changes first. The box at the front of each entry is 
 Rulings and ideas from Michael's playtests that change nothing in the game yet. Each lives on the game's GitHub (its issue number below) and in its decisions log, `docs/02`.
 
 - **Throwing potions** (game #483): a potion or a poison held in a hand and thrown, shattering in a splash that works on everyone in it. Ruled, not built.
-- **Sight-pull** (game #492): one of the dead drawn to a player calls once to those that see it. Built on a branch, and held until after Michael's playtest.
+- **The halberd's thrust and the outline** (game #503): the Swing targets outline shows the sweep's reach and arc, so about a third of the outlined targets are missed by the thrust, and a body straight ahead past the sweep's reach is hit by the thrust with no outline. Filed for Michael to rule which outline a weapon with two modes shows. Read: [[Halberd]].
+- **Honey in a clay jar** (game #500, ruled 2026-10-26): Take honey will need an empty clay jar, made as a vial is, and eating the honey will leave the jar; your cottage will start with a couple. Ruled, not built. Read: [[Pot of honey]], [[Beehive]].
 - **The art owed for the throwing knife and axe** (game #493): their spin frames and their portraits for the hand slots. Until they come, the throws turn the drawn art step by step and a hand slot shows the bag's icon.
 - **Food rots** (ruled): rot is pacing, like a torch burning down, and not decay of the world; how fast, and what preserves food, are in the levers (game #264).
 - **The valley's day-one food** is a statistic the wiki keeps current: [[Day-one food]]. Today it would keep one player from starving for about {{day-one-food n=days}} game days, far more than intended; a leaner start and rot are the answers (game #264).
@@ -180,7 +184,7 @@ Rulings and ideas from Michael's playtests that change nothing in the game yet. 
 - **The regions feed the skills,** a rule drafted for Michael to edit (game #123).
 - **Villagers who flee, follow, and stay**, on routines (game #103), and the stretch goals (game #106).
 
-Done since they were filed: **the loot tables** (game #268: a table per kind of container, and gear placed once; every table is on [[Drop tables]]) and **bags and stacking** (game #260: one thing a cell by default, the [[Burlap sack]], the [[Linen satchel]], and the [[Rucksack]]).
+Done since they were filed: **sight-pull** (game #492, built in #504; see [[Sight-pull]]), **the loot tables** (game #268: a table per kind of container, and gear placed once; every table is on [[Drop tables]]) and **bags and stacking** (game #260: one thing a cell by default, the [[Burlap sack]], the [[Linen satchel]], and the [[Rucksack]]).
 
 ## See also
 
@@ -188,8 +192,8 @@ Done since they were filed: **the loot tables** (game #268: a table per kind of 
 
 ## Sources
 
-<!-- sources at 307ed34 -->
-- The game's merged pull requests, #128 to #496, named in each entry: their bodies say what a player can try
+<!-- sources at 5eb40e6 -->
+- The game's merged pull requests, #128 to #504, named in each entry: their bodies say what a player can try
 - The playtest checklist's items, written from those pull requests for Michael's playtest (2026-10-26)
 - `data/tuning.json` `player.hp`: a player's health, a hundred
 - `data/items.json`: the bags, `bag` on the burlap sack, the linen satchel, and the rucksack
