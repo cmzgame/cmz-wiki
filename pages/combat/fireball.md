@@ -21,11 +21,12 @@ The **Fireball** is the game's one spell. It is cast by holding the [[Staff of F
 - **What it lights.** Where it comes down, it lights an unlit campfire with fuel in it, and a torch mounted in a bracket or on a post that is out, within {{n combat.bow.kindleRadius tiles}}, with no wall between. It never lights a fireplace, a hearth, an [[Oven]], or a [[Forge]], and a campfire with no fuel stays out (see [[Fire]] and [[Torch posts and brackets]]). Nothing else catches, and fire never spreads.
 - **Who it can hit.** One of the dead, and not a corpse, or a wild animal, which takes the damage and does not burn. It passes over a [[Villagers|villager]], another player, and the caster, as every shot does (see [[Combat]]), and it passes tame animals by: an arrow may hit stock when nothing else is there, a spell never does.
 - **Its card.** The Book of Fire's hover card says all of this in three lines (see [[Book of Fire]]).
-- **No cost** beyond the draw and the recovery after it.
+- **Its cost:** {{n items.book_of_fire.book.spell.mana}} [[Mana]] a cast, paid on the release, the same at any draw. A cast the bar cannot pay for is refused before the draw starts: "Not enough mana.", the mana bar flashes, and nothing is spent. A draw let go too early to fly, or cancelled, costs nothing. See [[Mana]].
 
 ## Numbers
 
 - Draw: {{n items.book_of_fire.book.spell.drawTime seconds}}.
+- Cost: {{n items.book_of_fire.book.spell.mana}} mana, of {{n tuning.player.mana}}.
 - Speed: {{n items.book_of_fire.book.spell.speed tiles a second}}. Range: {{n items.book_of_fire.book.spell.range tiles}}.
 - Burst on the way: within {{n items.book_of_fire.book.spell.contact tiles}}. Hit where it lands: within {{n items.book_of_fire.book.spell.landRadius tiles}}.
 - Damage: {{n items.book_of_fire.book.spell.damage}} at a full draw. Push: {{n items.book_of_fire.book.spell.knockback tiles}}.
@@ -37,11 +38,12 @@ The **Fireball** is the game's one spell. It is cast by holding the [[Staff of F
 
 A guest's cast is its draw and release, worked out on the host as the bow's shot is, and the burst and the hit are decided there too; the ball reaches every screen with the arrows in flight, drawn and lit there, and so does its flare. A campfire or a torch it lights is lit for everyone and kept in the save. The burn it starts runs on the host, and every screen sees the body burn. The ball never hurts another player.
 
-{{planned doc=24 note="A cost for casting, other spells and a choice among them, and a burst of flame drawn where it hits."}}
+{{planned doc=24 note="Other spells and a choice among them, and a burst of flame drawn where it hits."}}
 
 ## See also
 
 - [[Archery]], whose draw the cast shares.
+- [[Mana]], what a cast spends.
 - [[Burning]].
 - [[Combat]].
 
@@ -67,3 +69,4 @@ A guest's cast is its draw and release, worked out on the host as the bow's shot
 - `src/game.js:106`, `src/archery.js:299-326`: what it can hit is what `setTargets` hands in, the dead; never a villager, a player, or the caster
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; this page's With friends checked against it
 - `src/render/entities.js`: the fireball drawn by direction with its flicker
+- `data/items.json:11` `book.spell.mana`, `src/mana.js:32-55`, `src/archery.js:826-830`, `src/archery.js:850-865`: the cost, refused before the draw with the line and the flash, paid on a release that flies (game #488, at 0fa02e5)

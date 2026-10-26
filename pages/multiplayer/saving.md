@@ -28,9 +28,9 @@ If a save fails, a message says so on screen: "The world could not be saved", wi
 
 ### What is kept
 
-Everything in the world: the map as it now stands, the dead, the villagers, the bodies and what is on them, fires and their fuel, the clock, the [[World rules|world rules]], every character (each player's bag, belt, hands, wounds, and needs), and the dormant characters of friends who are away.
+Everything in the world: the map as it now stands, the dead, the villagers, the bodies and what is on them, fires and their fuel, the clock, the [[World rules|world rules]], every character (each player's bag, belt, hands, wounds, needs, [[Mana]], the time of their last potion, and a potion's buff), and the dormant characters of friends who are away.
 
-A few things in motion are not kept: an automatic walk, a timed action's progress (searching, boarding), a bow's draw, and arrows in flight. They are simply stopped when the world loads.
+A few things in motion are not kept: an automatic walk, a timed action's progress (searching, boarding), a bow's draw, and arrows in flight. They are simply stopped when the world loads. One of the dead saved while breaking in at a door or shutters takes up the chase again on the first step after the load (or stands idle with Zombie aggro off); a world saved at that moment once stopped with an error there instead, before the fix.
 
 ### Where worlds are kept
 
@@ -70,3 +70,4 @@ A [[Server worlds|server world]] is saved by the server.
 - `src/save.js:28-46`: the version, an older save brought up to date, a newer one refused
 - `src/identities.js:106-112`, `src/settings.js:32-34`: what a guest keeps: friends' bookmarks and identities
 - `server/world.js:130`, `server/world.js:144-160`: a server world saved by the server
+- `src/entities/zombie.js:768-773`, `src/entities/character.js:61` `CH_DROPPED`: one of the dead saved mid-breach comes back in the chase; `src/game.js:476`: mana, `potionAt`, and `buffs` kept on each player (games #487, #488, #491, at 0fa02e5)

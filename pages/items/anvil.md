@@ -6,7 +6,7 @@ summary: The smith's station: tools, weapons, wall brackets, and strongboxes fro
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Shears]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], the [[Arming sword]], and the [[Wall bracket]], and, with planks as well, a [[Strongbox|strongbox]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Shears]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], the [[Arming sword]], and the [[Wall bracket]], and, with planks as well, a [[Strongbox|strongbox]]; three bars make your own [[Cauldron]], an item set down where you like. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
 
 ## Using it
 
@@ -61,5 +61,6 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 - `src/inventory.js:94-112`: the hammer found carried, in a hand, the belt, or the bag (game #416)
 - `src/net.js:665-675`, `src/net.js:1417-1419`: a guest's Repair sent by label, run on the host as that player (game #416)
 - `data/sprites/anvil.json`, `data/recipes.json`, `src/placement.js:111-118`: the village's anvil fixed unless Village stations moves it; its recipe behind the rule (game #431)
+- `data/recipes.json:1645-1660`: the Cauldron from three iron bars, a smith's hammer carried (game #491, at 0fa02e5)
 
 {{navbox making}}

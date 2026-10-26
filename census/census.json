@@ -1,18 +1,18 @@
 {
  "version": {
-  "commit": "78116b18617b84df0cf861f28113a716a3c59389",
-  "short": "78116b1",
-  "date": "2026-10-25T23:09:26-05:00",
-  "subject": "Merge pull request #478 from cmzgame/primary/belt-roles",
+  "commit": "0fa02e594c04fb85cc5cf1bf9883b6f1544ea21f",
+  "short": "0fa02e5",
+  "date": "2026-10-26T00:35:11-05:00",
+  "subject": "Merge pull request #491 from cmzgame/build/481-potions",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 135,
-  "recipes": 87,
+  "items": 143,
+  "recipes": 95,
   "interactions": 35,
   "lootTables": 29,
-  "sprites": 202,
-  "places": 46,
+  "sprites": 203,
+  "places": 47,
   "villagers": 9,
   "authoredDead": 62,
   "mapProps": 42,
@@ -23,11 +23,11 @@
   "fixedRules": 5,
   "liveRules": 5,
   "keys": 21,
-  "verbs": 28,
-  "menuLabels": 95,
+  "verbs": 29,
+  "menuLabels": 97,
   "events": 37,
-  "checks": 79,
-  "modules": 141
+  "checks": 82,
+  "modules": 143
  },
  "items": [
   {
@@ -441,7 +441,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "a spellbook: held with a staff in the other hand, its spell is cast (docs/24)"
+   "note": "a spellbook: held with a staff in the other hand, its spell is cast (docs/24); the spell's `mana` is what a cast costs, paid on its release (docs/47 section 5)"
   },
   {
    "id": "staff_of_fire",
@@ -639,7 +639,8 @@
    },
    "madeBy": [],
    "usedIn": [
-    "cooking: pemmican"
+    "cooking: pemmican",
+    "cauldron: stamina_potion"
    ],
    "foundIn": [],
    "interactions": [],
@@ -2718,7 +2719,8 @@
     "workbench: prop:forge",
     "anvil: prop:anvil",
     "workbench: prop:oven",
-    "workbench: prop:dyevat"
+    "workbench: prop:dyevat",
+    "anvil: cauldron"
    ],
    "foundIn": [],
    "interactions": [],
@@ -3533,10 +3535,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: healing_potion"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_sage (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_sage (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "nettle",
@@ -3556,10 +3560,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: stamina_potion"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_nettle (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "a common herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_nettle (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "feverfew",
@@ -3602,10 +3608,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: healing_potion"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "the healing herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_yarrow (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "the healing herb (docs/39 section 4, Herbalism 1); gathered from its node, herb_yarrow (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "mana_herb",
@@ -3625,10 +3633,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: mana_potion"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "mageroot, near water (docs/39 section 4, Herbalism 4); named by Michael, 2026-10-25 (\"Mana herb is Mageroot for now\"), its id kept; gathered from its node, herb_mana_herb (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "mageroot, near water (docs/39 section 4, Herbalism 4); named by Michael, 2026-10-25 (\"Mana herb is Mageroot for now\"), its id kept; gathered from its node, herb_mana_herb (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "nightshade",
@@ -3649,10 +3659,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: poison"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "for poisons, in the woods (docs/39 section 4, Herbalism 5); gathered from its node, herb_nightshade (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "for poisons, in the woods (docs/39 section 4, Herbalism 5); gathered from its node, herb_nightshade (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "wolfsbane",
@@ -3673,10 +3685,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: strong_poison"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "for poisons, in the woods (docs/39 section 4, Herbalism 5); gathered from its node, herb_wolfsbane (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "for poisons, in the woods (docs/39 section 4, Herbalism 5); gathered from its node, herb_wolfsbane (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "grave_moss",
@@ -3696,10 +3710,13 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: poison",
+    "cauldron: strong_poison"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "the graveyard's herb, gathered at any hour (Michael, 2026-10-25: \"keep grave moss\", and no 'only at night' plants; docs/39 section 4); gathered from its node, herb_grave_moss (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "the graveyard's herb, gathered at any hour (Michael, 2026-10-25: \"keep grave moss\", and no 'only at night' plants; docs/39 section 4); gathered from its node, herb_grave_moss (docs/46 step 2, #448). Brewed into potions at a cauldron (docs/47, #481); teas and seasoning are not built"
   },
   {
    "id": "woad",
@@ -3791,10 +3808,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "cauldron: mana_potion"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "foraged from the mushrooms near trees (docs/39 section 4, Herbalism 3; src/gather.js). For Potions and Cooking when they come; whether it is eaten raw, and for how much, is Michael's. Its icon is a dev design in the drawn mushrooms' colours"
+   "note": "foraged from the mushrooms near trees (docs/39 section 4, Herbalism 3; src/gather.js). Brewed into the mana potion (docs/47, #481); for Cooking when it comes; whether it is eaten raw, and for how much, is Michael's. Its icon is a dev design in the drawn mushrooms' colours"
   },
   {
    "id": "clay",
@@ -3813,10 +3832,12 @@
     "drawn": true
    },
    "madeBy": [],
-   "usedIn": [],
+   "usedIn": [
+    "workbench: unfired_vial"
+   ],
    "foundIn": [],
    "interactions": [],
-   "note": "dug from a clay bank by the river with a shovel (docs/39 section 4, Mining 3; src/gather.js). Jugs and jars (shaped at the workbench, fired in an oven, docs/39 section 3) are not built, so it has no use yet"
+   "note": "dug from a clay bank by the river with a shovel (docs/39 section 4, Mining 3; src/gather.js). Shaped into vials at the workbench (docs/47, #481); jugs and jars (docs/39 section 3) are not built"
   },
   {
    "id": "salt",
@@ -3839,6 +3860,201 @@
    "foundIn": [],
    "interactions": [],
    "note": "mined from a salt rock in the ore area (docs/39 section 4, Mining 3; src/mining.js). Salting food (Cooking 5) is not built, so it has no use yet"
+  },
+  {
+   "id": "unfired_vial",
+   "name": "Unfired vial",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "clay"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [
+    "oven: clay_vial"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "clay shaped at the workbench, two a clay (docs/47 section 2, #481); fired in any oven it is a clay vial. Its own item so the oven's time is the busywork it should be. Dev art from one design (src/gather-art.js `vial`), the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "clay_vial",
+   "name": "Clay vial",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "clay"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "oven"
+   ],
+   "usedIn": [
+    "cauldron: healing_potion",
+    "cauldron: stamina_potion",
+    "cauldron: mana_potion",
+    "cauldron: poison",
+    "cauldron: strong_poison"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the empty vial (docs/47 section 2, #481): fired in an oven from an unfired vial; a potion is brewed into it at a cauldron, and drinking leaves it again, so a vial is refilled, not remade. Bare: unsealed and unglazed. Dev art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "healing_potion",
+   "name": "Healing potion",
+   "kind": "potion",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "cauldron"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/47 section 4 (#481): drunk, `potions.heal` health at once (data/tuning.json); the colour on the wax seal and the glazed band, the clay earthen (Michael, 2026-10-25: clay is opaque). Brewed at a cauldron; the empty vial comes back. Dev art, the drawn pair owed (docs/26); held to throw from step 4"
+  },
+  {
+   "id": "stamina_potion",
+   "name": "Stamina potion",
+   "kind": "potion",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "cauldron"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/47 section 4 (#481): drunk, fills the stamina bar and its regeneration `potions.staminaMult` times as fast for `potions.staminaSeconds` (a buff, `player.buffs.stamina`, shown in the debuff row in gold). Dev art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "mana_potion",
+   "name": "Mana potion",
+   "kind": "potion",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "cauldron"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/47 section 4 (#481): drunk, `potions.mana` mana at once (Michael's 50), the bar of #480. Dev art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "poison",
+   "name": "Poison",
+   "kind": "poison",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "cauldron"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/47 section 6 (#481): brewed, never drunk; Use on a blade or on arrows comes with step 3 (#482). Dev art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "strong_poison",
+   "name": "Strong poison",
+   "kind": "poison",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 5,
+   "tags": [],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "cauldron"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "docs/47 section 6 (#481): brewed, never drunk; the darker green with a black seal (docs/47 section 8). Use on a blade or on arrows comes with step 3 (#482). Dev art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "cauldron",
+   "name": "Cauldron",
+   "kind": "furniture",
+   "size": [
+    2,
+    2
+   ],
+   "tags": [],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [
+    "anvil"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "your own cauldron (docs/47 section 3, #481): made at the anvil, set down from the bag with Place on any open floor (src/setdown.js), picked up again while it is out and empty, as the campfire is. A dev box until its art is drawn"
   },
   {
    "id": "sapling",
@@ -5471,6 +5687,186 @@
    ],
    "seconds": 8,
    "note": "wool spun to yarn (Crafting 6; docs/45 section 4; open to all until the skills)"
+  },
+  {
+   "id": "unfired_vial",
+   "station": "workbench",
+   "out": {
+    "id": "unfired_vial",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "clay",
+     "count": 1
+    }
+   ],
+   "seconds": 4,
+   "note": "docs/47 section 2 (#481): one clay shaped into two unfired vials (Crafting 1, the clay's Mining 3, recorded, open to all until the skills)"
+  },
+  {
+   "id": "clay_vial",
+   "station": "oven",
+   "out": {
+    "id": "clay_vial",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "unfired_vial",
+     "count": 1
+    }
+   ],
+   "seconds": 10,
+   "fire": true,
+   "note": "docs/47 section 2 (#481): an unfired vial fired in any oven, no kiln (docs/39 sections 3 and 5.7)"
+  },
+  {
+   "id": "cauldron",
+   "station": "anvil",
+   "out": {
+    "id": "cauldron",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 3
+    }
+   ],
+   "seconds": 16,
+   "uses": "smith",
+   "note": "docs/47 section 3 (#481): your own cauldron, an item into the bag, set down with Place; three iron bars, a smith's hammer carried; no world rule, so it is open in every world"
+  },
+  {
+   "id": "healing_potion",
+   "station": "cauldron",
+   "out": {
+    "id": "healing_potion",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "yarrow",
+     "count": 2
+    },
+    {
+     "id": "sage",
+     "count": 1
+    },
+    {
+     "id": "clay_vial",
+     "count": 1
+    }
+   ],
+   "water": 10,
+   "seconds": 20,
+   "fire": true,
+   "note": "docs/47 section 3 (#481): two of the main herb, one secondary, a clay vial, a draught of clean water; over the cauldron's lit fire (Potions, open to all until the skills)"
+  },
+  {
+   "id": "stamina_potion",
+   "station": "cauldron",
+   "out": {
+    "id": "stamina_potion",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "nettle",
+     "count": 2
+    },
+    {
+     "id": "honey",
+     "count": 1
+    },
+    {
+     "id": "clay_vial",
+     "count": 1
+    }
+   ],
+   "water": 10,
+   "seconds": 20,
+   "fire": true,
+   "note": "docs/47 section 3 (#481): two of the main herb, one secondary, a clay vial, a draught of clean water; over the cauldron's lit fire (Potions, open to all until the skills)"
+  },
+  {
+   "id": "mana_potion",
+   "station": "cauldron",
+   "out": {
+    "id": "mana_potion",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "mana_herb",
+     "count": 2
+    },
+    {
+     "id": "mushroom",
+     "count": 1
+    },
+    {
+     "id": "clay_vial",
+     "count": 1
+    }
+   ],
+   "water": 10,
+   "seconds": 20,
+   "fire": true,
+   "note": "docs/47 section 3 (#481): two of the main herb, one secondary, a clay vial, a draught of clean water; over the cauldron's lit fire (Potions, open to all until the skills)"
+  },
+  {
+   "id": "poison",
+   "station": "cauldron",
+   "out": {
+    "id": "poison",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "nightshade",
+     "count": 2
+    },
+    {
+     "id": "grave_moss",
+     "count": 1
+    },
+    {
+     "id": "clay_vial",
+     "count": 1
+    }
+   ],
+   "water": 10,
+   "seconds": 20,
+   "fire": true,
+   "note": "docs/47 section 3 (#481): two of the main herb, one secondary, a clay vial, a draught of clean water; over the cauldron's lit fire (Potions, open to all until the skills)"
+  },
+  {
+   "id": "strong_poison",
+   "station": "cauldron",
+   "out": {
+    "id": "strong_poison",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "wolfsbane",
+     "count": 2
+    },
+    {
+     "id": "grave_moss",
+     "count": 1
+    },
+    {
+     "id": "clay_vial",
+     "count": 1
+    }
+   ],
+   "water": 10,
+   "seconds": 20,
+   "fire": true,
+   "note": "docs/47 section 3 (#481): two of the main herb, one secondary, a clay vial, a draught of clean water; over the cauldron's lit fire (Potions, open to all until the skills)"
   }
  ],
  "interactions": [
@@ -6389,7 +6785,7 @@
    "label": "Altar",
    "drawn": false,
    "carry": false,
-   "note": "a dev box for the altar (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "a dev box for the altar (docs/30 step 1; docs/29/09 has its art request); Pray at it refills mana and stamina (`pray`, src/mana.js; docs/47 section 5: Faith 1, recorded and not enforced until the skills)"
   },
   {
    "id": "animal_boar",
@@ -6498,6 +6894,22 @@
    "container": true,
    "carry": false,
    "note": "a dev box for the cart (docs/30 step 1; docs/29/09 has its art request)"
+  },
+  {
+   "id": "cauldron",
+   "kind": "station",
+   "label": "Cauldron",
+   "drawn": false,
+   "station": "cauldron",
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 2,
+    "maxFuel": 3,
+    "radius": 1.6,
+    "cooks": false
+   },
+   "carry": false,
+   "note": "the cauldron (docs/47 section 3, #481): one prop with its fire under it, burning logs as the oven does and cooking nothing (`cooks` false: it boils no water and bakes nothing), brewing only while lit. The witch's at the mere is the map's (tools/mapgen/valley.py), never carried and not a village station; your own is the Cauldron item set down with Place (src/setdown.js) and picked up while it is out and empty. A dev box until its art is drawn"
   },
   {
    "id": "chair",
@@ -8734,6 +9146,20 @@
     "props": []
    },
    {
+    "name": "the witch's cauldron",
+    "rect": [
+     81,
+     17,
+     4,
+     4
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
+   },
+   {
     "name": "Long Acre's farmhouse",
     "rect": [
      66,
@@ -9180,6 +9606,8 @@
    "radius": 0.3,
    "hp": 100,
    "stamina": 100,
+   "mana": 100,
+   "manaRegen": 0.333,
    "sprintMult": 1.75,
    "sprintDrain": 16,
    "staminaRegen": 10,
@@ -9424,6 +9852,15 @@
     "seconds": 2
    },
    "checkSeconds": 30
+  },
+  "potions": {
+   "note": "Potions, poisons, and mana (docs/47; Michael, 2026-10-25). Step 1 (#480): `praySeconds` is the bar of the altar's Pray, which refills mana and stamina (src/mana.js; Primary's default). The mana bar itself is `player.mana` and `player.manaRegen`. Step 2 (#481; src/potions.js): drinking, a healing potion gives `heal` health at once; a stamina potion fills the bar and makes it come back `staminaMult` times as fast for `staminaSeconds` (a buff, player.buffs.stamina); a mana potion gives `mana` mana (Michael's 50) up to the player's `maxMana`; `between` seconds of the sim clock after any potion before the next takes effect (player.potionAt). Primary's defaults but the mana, levers in docs/42.",
+   "praySeconds": 3,
+   "heal": 40,
+   "mana": 50,
+   "staminaMult": 2,
+   "staminaSeconds": 30,
+   "between": 10
   }
  },
  "combat": {
@@ -9983,56 +10420,56 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1131"
+    "main.js:1137"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1130"
+    "main.js:1136"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1108"
+    "main.js:1114"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:947",
-    "main.js:961"
+    "main.js:953",
+    "main.js:967"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1448"
+    "interact.js:1450"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1450"
+    "interact.js:1452"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1128"
+    "main.js:1134"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1111"
+    "main.js:1117"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1110"
+    "main.js:1116"
    ]
   },
   {
@@ -10053,62 +10490,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1449"
+    "interact.js:1451"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1106"
+    "main.js:1112"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1112"
+    "main.js:1118"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1119"
+    "main.js:1125"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1108"
+    "main.js:1114"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1191"
+    "main.js:1197"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1191"
+    "main.js:1197"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1109"
+    "main.js:1115"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1202"
+    "main.js:1208"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:947",
-    "main.js:953"
+    "main.js:953",
+    "main.js:959"
    ]
   }
  ],
@@ -10140,7 +10577,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:363"
+    "stations.js:398"
    ]
   },
   {
@@ -10240,6 +10677,12 @@
    ]
   },
   {
+   "key": "pray",
+   "at": [
+    "mana.js:97"
+   ]
+  },
+  {
    "key": "putout",
    "at": [
     "burn.js:268"
@@ -10260,7 +10703,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:243"
+    "entities/player.js:250"
    ]
   },
   {
@@ -10311,7 +10754,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:812"
+    "interact.js:814"
    ]
   }
  ],
@@ -10325,7 +10768,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1563"
+    "main.js:1567"
    ]
   },
   {
@@ -10343,13 +10786,13 @@
   {
    "key": "Build",
    "at": [
-    "main.js:850"
+    "main.js:856"
    ]
   },
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:958"
+    "interact.js:960"
    ]
   },
   {
@@ -10397,40 +10840,47 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1474"
+    "main.js:1480"
+   ]
+  },
+  {
+   "key": "Drink",
+   "at": [
+    "interact.js:1608",
+    "interact.js:1701"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1660"
+    "interact.js:1665"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1602",
-    "interact.js:1694"
+    "interact.js:1605",
+    "interact.js:1699"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1578",
-    "interact.js:1703"
+    "interact.js:1581",
+    "interact.js:1710"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1579",
-    "interact.js:1704"
+    "interact.js:1582",
+    "interact.js:1711"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1701"
+    "interact.js:1708"
    ]
   },
   {
@@ -10466,7 +10916,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1536"
+    "main.js:1542"
    ]
   },
   {
@@ -10478,8 +10928,8 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:752",
-    "interact.js:768"
+    "interact.js:754",
+    "interact.js:770"
    ]
   },
   {
@@ -10491,31 +10941,31 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:573"
+    "interact.js:575"
    ]
   },
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1458"
+    "main.js:1464"
    ]
   },
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2065"
+    "interact.js:2072"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1500"
+    "main.js:1506"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1522"
+    "main.js:1528"
    ]
   },
   {
@@ -10539,71 +10989,77 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1576"
+    "main.js:1580"
    ]
   },
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1573"
+    "interact.js:1576"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1565",
-    "interact.js:1567",
-    "interact.js:1569",
+    "interact.js:1568",
+    "interact.js:1570",
     "interact.js:1572",
-    "interact.js:1574"
+    "interact.js:1575",
+    "interact.js:1577"
+   ]
+  },
+  {
+   "key": "Pray",
+   "at": [
+    "mana.js:79"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1709"
+    "interact.js:1716"
    ]
   },
   {
    "key": "Put out the campfire",
    "at": [
-    "interact.js:529"
+    "interact.js:531"
    ]
   },
   {
    "key": "Put out the lantern",
    "at": [
-    "interact.js:637"
+    "interact.js:639"
    ]
   },
   {
    "key": "Put out the torch",
    "at": [
-    "interact.js:588"
+    "interact.js:590"
    ]
   },
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1424"
+    "main.js:1430"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1420"
+    "main.js:1426"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1460"
+    "main.js:1466"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1459"
+    "main.js:1465"
    ]
   },
   {
@@ -10615,13 +11071,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1585"
+    "main.js:1589"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:546"
+    "interact.js:548"
    ]
   },
   {
@@ -10663,7 +11119,7 @@
   {
    "key": "Take down the bracket",
    "at": [
-    "interact.js:612"
+    "interact.js:614"
    ]
   },
   {
@@ -10675,13 +11131,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:597"
+    "interact.js:599"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:813"
+    "interact.js:815"
    ]
   },
   {
@@ -10693,15 +11149,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1671",
-    "interact.js:1723"
+    "interact.js:1676",
+    "interact.js:1730"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1563",
-    "interact.js:1658"
+    "interact.js:1566",
+    "interact.js:1663"
    ]
   },
   {
@@ -10719,7 +11175,7 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:979"
+    "interact.js:981"
    ]
   },
   {
@@ -10743,7 +11199,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2001"
+    "interact.js:2008"
    ]
   },
   {
@@ -10755,7 +11211,7 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:660"
+    "interact.js:662"
    ]
   },
   {
@@ -10767,13 +11223,13 @@
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:831"
+    "interact.js:833"
    ]
   },
   {
    "key": "Boil water (${water.NO_TAINTED.replace(/\\.$/, \"\").toLowerCase()})",
    "at": [
-    "interact.js:1030"
+    "interact.js:1032"
    ]
   },
   {
@@ -10804,37 +11260,37 @@
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:912"
+    "interact.js:914"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1358"
+    "interact.js:1360"
    ]
   },
   {
    "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1706"
+    "interact.js:1713"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1582"
+    "interact.js:1585"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2113"
+    "interact.js:2120"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2050"
+    "interact.js:2057"
    ]
   },
   {
@@ -10846,55 +11302,55 @@
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:234"
+    "interact.js:236"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:838"
+    "interact.js:840"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
    "at": [
-    "interact.js:384"
+    "interact.js:386"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:367"
+    "interact.js:369"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:818"
+    "interact.js:820"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2149"
+    "interact.js:2156"
    ]
   },
   {
    "key": "Put out the ${name}",
    "at": [
-    "interact.js:512"
+    "interact.js:514"
    ]
   },
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1614"
+    "interact.js:1619"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2137"
+    "interact.js:2144"
    ]
   }
  ],
@@ -10914,25 +11370,25 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:323"
+    "archery.js:324"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:860"
+    "archery.js:873"
    ]
   },
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1332"
+    "main.js:1338"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:441"
+    "game.js:443"
    ]
   },
   {
@@ -10950,9 +11406,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:240",
-    "interact.js:453",
-    "interact.js:2014",
+    "interact.js:242",
+    "interact.js:455",
+    "interact.js:2021",
     "ui/station-panel.js:84",
     "ui/station-panel.js:110"
    ]
@@ -10960,25 +11416,25 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:832"
+    "game.js:836"
    ]
   },
   {
    "key": "craftDone",
    "at": [
-    "stations.js:339"
+    "stations.js:374"
    ]
   },
   {
    "key": "craftStarted",
    "at": [
-    "stations.js:190"
+    "stations.js:225"
    ]
   },
   {
    "key": "drank",
    "at": [
-    "game.js:811"
+    "game.js:813"
    ]
   },
   {
@@ -11021,7 +11477,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:906"
+    "game.js:910"
    ]
   },
   {
@@ -11051,13 +11507,13 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1013"
+    "entities/zombie.js:1017"
    ]
   },
   {
    "key": "playerPicked",
    "at": [
-    "game.js:72"
+    "game.js:74"
    ]
   },
   {
@@ -11069,13 +11525,13 @@
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:231"
+    "entities/player.js:238"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:222"
+    "entities/player.js:229"
    ]
   },
   {
@@ -11106,22 +11562,22 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1014"
+    "entities/zombie.js:1018"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:826",
+    "entities/zombie.js:830",
     "map.js:1113"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:868",
+    "archery.js:881",
     "combat.js:447",
-    "game.js:723"
+    "game.js:725"
    ]
   },
   {
@@ -11218,6 +11674,7 @@
   }
  ],
  "checks": [
+  "all",
   "animals",
   "apples",
   "arrows",
@@ -11265,12 +11722,14 @@
   "lantern",
   "layers",
   "light",
+  "mana",
   "melee",
   "mine",
   "navrow",
   "paintings",
   "players",
   "poses",
+  "potions",
   "produce",
   "reach",
   "resources",
@@ -11305,11 +11764,11 @@
   },
   {
    "path": "interact.js",
-   "lines": 2212
+   "lines": 2219
   },
   {
    "path": "main.js",
-   "lines": 2047
+   "lines": 2051
   },
   {
    "path": "placeholders.js",
@@ -11317,7 +11776,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1595
+   "lines": 1601
   },
   {
    "path": "ui/screens.js",
@@ -11329,7 +11788,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 1027
+   "lines": 1031
   },
   {
    "path": "ground.js",
@@ -11341,11 +11800,11 @@
   },
   {
    "path": "game.js",
-   "lines": 928
+   "lines": 932
   },
   {
    "path": "archery.js",
-   "lines": 913
+   "lines": 926
   },
   {
    "path": "ui/inventory-panel.js",
@@ -11369,7 +11828,7 @@
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 513
+   "lines": 518
   },
   {
    "path": "render/walls.js",
@@ -11381,7 +11840,7 @@
   },
   {
    "path": "inventory.js",
-   "lines": 478
+   "lines": 485
   },
   {
    "path": "light.js",
@@ -11389,19 +11848,19 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 419
+   "lines": 426
   },
   {
    "path": "item-info.js",
-   "lines": 400
+   "lines": 421
+  },
+  {
+   "path": "stations.js",
+   "lines": 414
   },
   {
    "path": "ui/map-panel.js",
    "lines": 398
-  },
-  {
-   "path": "stations.js",
-   "lines": 379
   },
   {
    "path": "entities/villager.js",
@@ -11413,7 +11872,11 @@
   },
   {
    "path": "sound-cues.js",
-   "lines": 356
+   "lines": 362
+  },
+  {
+   "path": "gather-art.js",
+   "lines": 336
   },
   {
    "path": "farming.js",
@@ -11432,10 +11895,6 @@
    "lines": 313
   },
   {
-   "path": "gather-art.js",
-   "lines": 305
-  },
-  {
    "path": "render/entities.js",
    "lines": 301
   },
@@ -11444,16 +11903,16 @@
    "lines": 298
   },
   {
+   "path": "tuning.js",
+   "lines": 290
+  },
+  {
    "path": "ui/nav-row.js",
    "lines": 290
   },
   {
    "path": "paintings.js",
    "lines": 283
-  },
-  {
-   "path": "tuning.js",
-   "lines": 274
   },
   {
    "path": "chart.js",
@@ -11508,12 +11967,12 @@
    "lines": 206
   },
   {
-   "path": "fire.js",
-   "lines": 197
+   "path": "setdown.js",
+   "lines": 202
   },
   {
-   "path": "setdown.js",
-   "lines": 193
+   "path": "fire.js",
+   "lines": 197
   },
   {
    "path": "grid.js",
@@ -11528,12 +11987,16 @@
    "lines": 179
   },
   {
-   "path": "render/area.js",
-   "lines": 175
+   "path": "input.js",
+   "lines": 178
   },
   {
-   "path": "input.js",
-   "lines": 173
+   "path": "dev.js",
+   "lines": 176
+  },
+  {
+   "path": "render/area.js",
+   "lines": 175
   },
   {
    "path": "view.js",
@@ -11542,10 +12005,6 @@
   {
    "path": "boot.js",
    "lines": 169
-  },
-  {
-   "path": "dev.js",
-   "lines": 168
   },
   {
    "path": "figure/wardrobe.js",
@@ -11580,12 +12039,20 @@
    "lines": 145
   },
   {
+   "path": "potions.js",
+   "lines": 141
+  },
+  {
    "path": "render/bees.js",
    "lines": 138
   },
   {
    "path": "resources.js",
    "lines": 138
+  },
+  {
+   "path": "ui/hud.js",
+   "lines": 137
   },
   {
    "path": "bucket.js",
@@ -11600,8 +12067,8 @@
    "lines": 124
   },
   {
-   "path": "ui/hud.js",
-   "lines": 124
+   "path": "mana.js",
+   "lines": 123
   },
   {
    "path": "entities/movement.js",
@@ -11724,6 +12191,10 @@
    "lines": 70
   },
   {
+   "path": "debuffs.js",
+   "lines": 69
+  },
+  {
    "path": "rules.js",
    "lines": 68
   },
@@ -11740,20 +12211,20 @@
    "lines": 65
   },
   {
+   "path": "player-controller.js",
+   "lines": 63
+  },
+  {
    "path": "bleed.js",
    "lines": 62
   },
   {
-   "path": "debuffs.js",
-   "lines": 60
-  },
-  {
-   "path": "player-controller.js",
-   "lines": 58
-  },
-  {
    "path": "tracks.js",
    "lines": 58
+  },
+  {
+   "path": "ui/debuff-icons.js",
+   "lines": 57
   },
   {
    "path": "chop.js",
@@ -11790,10 +12261,6 @@
   {
    "path": "render/rugs.js",
    "lines": 46
-  },
-  {
-   "path": "ui/debuff-icons.js",
-   "lines": 43
   },
   {
    "path": "world.js",
@@ -12046,6 +12513,9 @@
    "ZOOM_PACE": 0.3,
    "AUTOSAVE": 60
   },
+  "mana": {
+   "FLASH_SECONDS": 0.6
+  },
   "map": {
    "CHUNK": 16,
    "ROOM_MAX": 300,
@@ -12060,7 +12530,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 17,
+   "PROTOCOL": 19,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -12291,6 +12761,7 @@
    "bookcase": 4,
    "campfire": 1,
    "cart": 6,
+   "cauldron": 1,
    "chair": 33,
    "charcoal_clamp": 4,
    "charcoal_sack": 2,
@@ -12375,26 +12846,26 @@
    "table": 24,
    "torch_post": 5,
    "tree_apple": 23,
-   "tree_oak_l": 302,
-   "tree_oak_m": 289,
+   "tree_oak_l": 301,
+   "tree_oak_m": 288,
    "tree_oak_old": 155,
    "tree_orange_l": 285,
    "tree_orange_m": 316,
    "tree_orange_old": 153,
    "tree_red_l": 297,
-   "tree_red_m": 277,
+   "tree_red_m": 276,
    "tree_red_old": 155,
    "tree_spire_green_l": 154,
-   "tree_spire_green_m": 162,
+   "tree_spire_green_m": 161,
    "tree_spire_green_old": 66,
    "tree_spire_orange_l": 160,
    "tree_spire_orange_m": 171,
    "tree_spire_orange_old": 84,
    "tree_spire_red_l": 138,
    "tree_spire_red_m": 180,
-   "tree_spire_red_old": 75,
+   "tree_spire_red_old": 74,
    "tree_spire_yellow_l": 144,
-   "tree_spire_yellow_m": 155,
+   "tree_spire_yellow_m": 154,
    "tree_spire_yellow_old": 72,
    "tree_yellow_l": 286,
    "tree_yellow_m": 293,

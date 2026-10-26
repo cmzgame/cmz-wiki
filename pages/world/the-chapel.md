@@ -7,9 +7,11 @@ summary: The stone chapel in the graveyard at the top of the nobles' street.
 
 {{infobox-place "the chapel"}}
 
-**The chapel** is a stone building at the top of the nobles' street, standing in the graveyard. Inside are rows of pews, the altar, a lectern, a chest, a cupboard, and the font, which can be drunk from like a well (see [[Water]]). A partition closes off a small room in the north-east corner. The door is on the south side, with two windows to the west and one to the east. Its two wall brackets are empty, so the chapel has no light of its own (see [[Torch posts and brackets]]).
+**The chapel** is a stone building at the top of the nobles' street, standing in the graveyard. Inside are rows of pews, the [[Altar]], a lectern, a chest, a cupboard, and the font, which can be drunk from like a well (see [[Water]]). A partition closes off a small room in the north-east corner. The door is on the south side, with two windows to the west and one to the east. Its two wall brackets are empty, so the chapel has no light of its own (see [[Torch posts and brackets]]).
 
 The graveyard round it is fenced, with rows of headstones on either side of the chapel and a gate on the south side onto the street. You can see over the fence but not walk through it. [[Grave moss]], the graveyard's own herb, grows here and there among the headstones, and nowhere else; it is gathered at any hour (see [[Herbs]]). [[The crypt]] stands in the graveyard's north-east corner, and [[The priest's house]] to the east.
+
+**Pray** at the altar fills your [[Mana]] and your [[Stamina]] after a bar of {{n tuning.potions.praySeconds seconds}}, as often as you like (see [[Altar]]).
 
 The [[Priest]] stands inside.
 
@@ -33,5 +35,6 @@ The graveyard is full of the dead at the start, among the headstones on both sid
 - `data/maps/valley.json:12327-12336`: the Priest inside
 - `tools/mapgen/valley.py:593`: the graveyard's dead
 - `data/maps/valley.json:11798-11801`, `data/maps/valley.json:11802-11805`: two of them inside the chapel at its south end
+- `data/sprites/altar.json`, `src/mana.js:66-122`: Pray at the altar fills mana and stamina (game #488, at 0fa02e5)
 
 {{navbox places}}

@@ -1,12 +1,12 @@
 ---
 title: Grave moss
 categories: [Items, Materials, Herbs]
-summary: Grave moss, the graveyard's herb, grows wild among the headstones and is gathered by hand at any hour; nothing uses it yet.
+summary: Grave moss, the graveyard's herb, grows wild among the headstones and is gathered by hand at any hour; it is brewed into both poisons.
 ---
 
 {{infobox-item grave_moss}}
 
-**Grave moss** is the graveyard's herb, one of the eleven [[Herbs]]. It grows only inside the graveyard's wall at [[The chapel]], among the headstones, one plant here and there, never in a patch: the valley keeps about {{n valley.resources.grave_moss.count}}. The plant is drawn small, a pale tuft, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. Nothing uses it yet: potions, the herb tea, and seasoning are not built.
+**Grave moss** is the graveyard's herb, one of the eleven [[Herbs]]. It grows only inside the graveyard's wall at [[The chapel]], among the headstones, one plant here and there, never in a patch: the valley keeps about {{n valley.resources.grave_moss.count}}. The plant is drawn small, a pale tuft, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into both poisons, one to a vial: [[Poison]] with two [[Nightshade]] and [[Strong poison]] with two [[Wolfsbane]] (see [[Potions]]); the herb tea and seasoning are not built.
 
 ## Gathering
 
@@ -14,9 +14,9 @@ Right-click the plant and choose **Gather grave moss**, or press `E` beside it, 
 
 It is gathered at any hour, day or night, and comes back at any hour too: no plant in the game is gathered, or grows back, only at night (Michael, 2026-10-25). The name is kept, too: grave moss is no longer a placeholder.
 
-Its card reads "Grave moss", its kind "Herb", and "Grows wild in the graveyard; gathered by hand." The game's data records Herbalism {{n sprites.herb_grave_moss.gather.level}} for it; the skills are not built, so no one is refused. The design's Herbalism levels six and seven were struck the same evening and their replacements are open, so that level is a record the data keeps until they are ruled.
+Its card reads "Grave moss", its kind "Herb", "Grows wild in the graveyard; gathered by hand.", and "Goes into: poison, strong poison." The game's data records Herbalism {{n sprites.herb_grave_moss.gather.level}} for it; the skills are not built, so no one is refused. The design's Herbalism levels six and seven were struck the same evening and their replacements are open, so that level is a record the data keeps until they are ruled.
 
-{{planned doc=39 note="Potions, the herb tea, and seasoning from the herbs."}}
+{{planned doc=39 note="The herb tea and seasoning from the herbs."}}
 
 {{item-sections grave_moss}}
 
@@ -34,5 +34,6 @@ A guest gathers it through the same menu entry, sent to the host with the plant'
 - `src/gather.js:32-84`, `src/gather.js:86-115`: the gather, its reach, the bag or the feet, the node gone and owed back; a block's only refusal now a tool not carried (game #475)
 - `src/resources.js:35-45`, `src/resources.js:52-89`: back elsewhere in its area after its days, at any hour (game #475)
 - `src/item-info.js:78-101`, `src/item-info.js:220`: the card's kind and where it grows
+- `data/recipes.json:1661-1790`, `src/item-info.js:322-324`: brewed into poison and strong poison at the cauldron; the card's Goes into (game #491, at 0fa02e5)
 
 {{navbox items}}

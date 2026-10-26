@@ -5,7 +5,7 @@ aliases: [Fires, Fuel, Fireplace, Feeding a fire, Lighting a fire, Putting out a
 summary: The home lights (a fireplace, a hearth, a lantern) are switches that burn nothing; a campfire, the oven, and the forge burn their own fuel and go out when it runs out.
 ---
 
-A **fire** gives [[Light]], and most fires let you cook ([[Cooking]]). There are two kinds. **The home lights**, a fireplace, a hearth, and a lantern, are switches: lit with a flame, put out with nothing, and they burn no fuel. **The fires that burn fuel**, a [[Campfire]], the [[Oven]], and the [[Forge]], hold a few units of their own fuel and burn one every few game hours; at zero they go out.
+A **fire** gives [[Light]], and most fires let you cook ([[Cooking]]). There are two kinds. **The home lights**, a fireplace, a hearth, and a lantern, are switches: lit with a flame, put out with nothing, and they burn no fuel. **The fires that burn fuel**, a [[Campfire]], the [[Oven]], the [[Forge]], and the [[Cauldron]], hold a few units of their own fuel and burn one every few game hours; at zero they go out.
 
 ## How it works
 
@@ -27,16 +27,17 @@ Each burns one fuel item and holds a most it can take:
 | [[Campfire]] | [[Log]] | {{n sprites.campfire.fire.hoursPerUnit}} | {{n sprites.campfire.fire.maxFuel}} | Yes |
 | [[Oven]] | [[Log]] | {{n sprites.oven.fire.hoursPerUnit}} | {{n sprites.oven.fire.maxFuel}} | Yes, and its own bread and pie |
 | [[Forge]] | [[Charcoal]] | {{n sprites.forge.fire.hoursPerUnit}} | {{n sprites.forge.fire.maxFuel}} | No |
+| [[Cauldron]] | [[Log]] | {{n sprites.cauldron.fire.hoursPerUnit}} | {{n sprites.cauldron.fire.maxFuel}} | No: it brews potions |
 
 A game hour is {{n census.constants.map.HOUR_SECONDS}} real seconds at normal speed.
 
-The oven's and the forge's menus have **Light the ... (a log)** when they are out and **Feed the ... (n of max, h left)** while they burn, and "The ... is full" when they hold all they can; the campfire's has **Add a log** (see [[Campfire]]). The entry is greyed, with "(need a log)", when you have none. The fuel comes from your bag, your [[Belt]], or your [[Hands]] (not from containers nearby). The hours left are shown rounded, or "under an hour". A log added to a cold campfire does not light it.
+The oven's, the forge's, and the cauldron's menus have **Light the ... (a log)** when they are out and **Feed the ... (n of max, h left)** while they burn, and "The ... is full" when they hold all they can; the campfire's has **Add a log** (see [[Campfire]]). The entry is greyed, with "(need a log)", when you have none. The fuel comes from your bag, your [[Belt]], or your [[Hands]] (not from containers nearby). The hours left are shown rounded, or "under an hour". A log added to a cold campfire does not light it.
 
 ### A flame
 
 **Lighting any fire that is out needs a flame on you**: a [[Tinderbox]] anywhere you carry it (a hand, the belt, or the bag), or a lit [[Torch]] in a hand or on the belt; a torch in the bag does not count. The flame is not used up. A click on a greyed Light says "You need a tinderbox or a lit torch to light it.", and `E` passes it by. Feeding a fire that is already burning needs no flame.
 
-A [[Use]] of a flame lights a campfire that is out but has fuel in it, a fireplace, a hearth, a lantern, or a torch that is out on a post or in a bracket, from within {{n census.constants.burn.DIP_REACH tiles}} and in sight, never through a wall. A lit campfire says "It is already burning.", an empty one "It has nothing to burn.", a home light already lit "It is already lit.". The oven and the forge are lit only from their own menus ("That cannot be lit." to a Use).
+A [[Use]] of a flame lights a campfire that is out but has fuel in it, a fireplace, a hearth, a lantern, or a torch that is out on a post or in a bracket, from within {{n census.constants.burn.DIP_REACH tiles}} and in sight, never through a wall. A lit campfire says "It is already burning.", an empty one "It has nothing to burn.", a home light already lit "It is already lit.". The oven, the forge, and the cauldron are lit only from their own menus ("That cannot be lit." to a Use), and none of them is put out: each burns its fuel down.
 
 A [[Fireball]] that comes down within {{n combat.bow.kindleRadius tiles}} of a campfire with fuel in it, with no wall between, lights it; it lights no home light.
 
@@ -103,5 +104,6 @@ Lighting, putting out, and feeding a fire change the world, so every player sees
 - `data/items.json`: the torch's radius; `data/tuning.json`: the belt torch and two torches
 - `src/net.js:664-672`: a guest's menu choice performed on the host as that player, its refusal to their screen
 - `data/interactions.json`, `src/interactions.js:35-44`, `src/burn.js:147-169`: arrows used on any lit fire, refused when it is out
+- `data/sprites/cauldron.json`, `src/interact.js:463-497`, `src/burn.js:198-200`, `src/burn.js:263`: the cauldron's fire, logs, lit from its menu, never by a Use, never put out (game #491, at 0fa02e5)
 
 {{navbox making}}

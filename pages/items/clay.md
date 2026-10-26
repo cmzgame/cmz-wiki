@@ -2,12 +2,12 @@
 title: Clay
 categories: [Items, Materials, Gatherables]
 aliases: [Clay bank, Clay banks, Dig clay]
-summary: Clay dug from the clay banks on the river's dirt bank, with a shovel carried; a dug bank comes back elsewhere along the river; nothing uses clay yet.
+summary: Clay dug from the clay banks on the river's dirt bank, with a shovel carried; a dug bank comes back elsewhere along the river; it is shaped into vials for potions.
 ---
 
 {{infobox-item clay}}
 
-**Clay** is a material dug from the **clay banks** on the river's bank in [[The valley]], with a [[Shovel]] carried. The valley keeps about {{n valley.resources.clay.count}} banks. A dug bank is gone, and another appears elsewhere along the river {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later. Nothing uses clay yet: the jugs and jars it is meant for are not built.
+**Clay** is a material dug from the **clay banks** on the river's bank in [[The valley]], with a [[Shovel]] carried. The valley keeps about {{n valley.resources.clay.count}} banks. A dug bank is gone, and another appears elsewhere along the river {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later. One clay is shaped at the [[Workbench]] into two [[Unfired vial|unfired vials]], which an [[Oven]] fires into [[Clay vial|clay vials]], the vials [[Potions]] are brewed into. The jugs and jars it is also meant for are not built.
 
 ## Clay banks
 
@@ -21,9 +21,9 @@ Only on the dirt of the river's bank within {{n valley.resources.clay.water tile
 
 With a shovel anywhere on you (a hand, the belt, or the bag), right-click a bank and choose **Dig clay**, or press `E` beside it, within {{n tuning.world.pickReach tiles}} with no wall in the way. It takes {{n sprites.clay_bank.dig.seconds seconds}} and gives {{n sprites.clay_bank.dig.count.0}} clay, into the bag, or at your feet when the bag is full. Without a shovel the entry is greyed, "Dig clay (need a shovel)", and the dig is refused: "You need a shovel." The bank is then gone, and owed back: {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later a new one appears at another spot along the river (see [[Herbs#Coming back|Herbs]] for how the comeback is looked for). A small Mining number floats up over you as you dig.
 
-The card reads "Clay", its kind "Material", and "Dug from the clay banks by the river, a shovel carried." The game's data records Mining {{n sprites.clay_bank.dig.level}} for digging; the skills are not built, so no one is refused.
+The card reads "Clay", its kind "Material", "Dug from the clay banks by the river, a shovel carried.", and "Goes into: unfired vial." The game's data records Mining {{n sprites.clay_bank.dig.level}} for digging; the skills are not built, so no one is refused.
 
-{{planned doc=39 note="Jugs and jars of clay, shaped at the workbench and fired in an oven."}}
+{{planned doc=39 note="Jugs and jars of clay, shaped at the workbench and fired in an oven, beside the vials."}}
 
 {{item-sections clay}}
 
@@ -43,5 +43,6 @@ A guest digs through the same menu entry, sent to the host with the bank's id an
 - `src/resources.js:36-66`: owed back after its days at another spot; no rise
 - `src/item-info.js:72-98`: the card's line
 - `data/tuning.json:115-123` `floaters.gathers`: the Mining number on a dig
+- `data/recipes.json:1611-1643`, `src/item-info.js:322-324`: one clay into two unfired vials at the workbench, fired into clay vials at the oven; the card's Goes into (game #491, at 0fa02e5)
 
 {{navbox items}}

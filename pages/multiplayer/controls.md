@@ -37,7 +37,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you); a gate takes none. Held: pull a board off, with the hammer, and get the plank back.
 - `T`: light or put out the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or put out the torch in hand (a tinderbox lights it)".
 - `Q`: the main hand's other mode, as the middle button.
-- `1` `2` `3` `4` `5`: the belt's slots. A main-hand or off-hand slot's key draws what is there into that hand, swapping what the hand held onto the slot, or eats a food; the utility slot's key only eats. An empty slot's key does nothing, and a waterskin's drinks by itself and is never drunk by its key. Which key is which slot is the **Belt slot order** setting: by default `1` main hand, `2` off hand, `3` utility, and a leather belt's `4` main hand and `5` off hand (see [[Belt]]). The Controls screen says "Use a belt slot: a hand slot draws what is there into its hand (or eats it), the utility slot eats; the order is a setting".
+- `1` `2` `3` `4` `5`: the belt's slots. A main-hand or off-hand slot's key draws what is there into that hand, swapping what the hand held onto the slot, or eats a food; the utility slot's key only eats. Any slot's key drinks a potion (see [[Potions]]). An empty slot's key does nothing, and a waterskin's drinks by itself and is never drunk by its key. Which key is which slot is the **Belt slot order** setting: by default `1` main hand, `2` off hand, `3` utility, and a leather belt's `4` main hand and `5` off hand (see [[Belt]]). The Controls screen says "Use a belt slot: a hand slot draws what is there into its hand (or eats it), the utility slot eats; the order is a setting".
 
 ### Panels and building
 
@@ -64,7 +64,7 @@ In a screen with a text box (a world's name, a join code, the creator key), `Ent
 - Drag an item to move it; drop it outside the panels to put it on the floor.
 - `R`, a right click, or the wheel while dragging: rotate it.
 - Shift-click: send an item across (bag to container and back).
-- Double-click: equip or unequip it, otherwise send it across. In your bag it equips the item (into a hand, or a garment into its slot); on a hand or clothing slot it unequips; on a belt slot it does what the slot's key does: it eats a food or draws the item into the slot's hand, or else shows the key's line (it never drinks a skin on the belt). The Controls screen says "Equip or unequip a thing; else move it across".
+- Double-click: equip or unequip it, otherwise send it across. In your bag it equips the item (into a hand, or a garment into its slot), or drinks a potion; on a hand or clothing slot it unequips; on a belt slot it does what the slot's key does: it eats a food, drinks a potion, or draws the item into the slot's hand, or else shows the key's line (it never drinks a skin on the belt). The Controls screen says "Equip or unequip a thing; else move it across".
 - Right-click: the item's menu.
 - Typing in a station's count goes to the count alone, never to the keys above; `Enter` or `Escape` leaves it.
 
@@ -135,3 +135,4 @@ A guest's keys and clicks go to the host, who performs them. A guest's wave, fro
 - `src/interact.js:1376-1402`, `src/main.js:1556-1559`, `src/ui/screens.js:54-58`: G and /wave queue a `wave` key event; any other command's answer; the Talking group's lines (game #434, at fa2997f)
 - `src/entities/player.js:75-81`, `src/entities/player.js:412-415`, `data/tuning.json:67`: the wave for `waveSeconds`, not dead, asleep, or carrying; walking ends it, the held-out pose first (game #434, at fa2997f)
 - `src/net.js:429`, `src/entities/player.js:71`: the wave a key event in a guest's snapshot, `waveFor` in the player's record for every client (game #434, at fa2997f)
+- `src/inventory.js:343-356`, `src/ui/inventory-actions.js:249-256`: any slot's key drinks a potion; a double-click in your own bag drinks one (game #491, at 0fa02e5)

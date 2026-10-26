@@ -7,7 +7,7 @@ summary: Food taken from the valley's beehives, a pot a hive, with more some gam
 
 {{infobox-item honey}}
 
-A **pot of honey** is [[Food]]. Eating one adds {{n items.honey.hunger}} to your [[Hunger]] and heals {{n items.honey.heal}} [[Health]]. It comes from the [[Beehive|beehives]] at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on a hive's menu gives {{n tuning.work.honey.count.0}} pot, and the hive has more {{n tuning.work.honey.days}} [[The day|game days]] later. Every hive has honey at the start. No container holds it and no recipe makes it. A pot {{stack honey}}. Honey is a binder: [[Pemmican]] takes a pot of honey or [[Lard]] to bind its meat and plant.
+A **pot of honey** is [[Food]]. Eating one adds {{n items.honey.hunger}} to your [[Hunger]] and heals {{n items.honey.heal}} [[Health]]. It comes from the [[Beehive|beehives]] at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on a hive's menu gives {{n tuning.work.honey.count.0}} pot, and the hive has more {{n tuning.work.honey.days}} [[The day|game days]] later. Every hive has honey at the start. No container holds it and no recipe makes it. A pot {{stack honey}}. Honey is a binder: [[Pemmican]] takes a pot of honey or [[Lard]] to bind its meat and plant. One pot goes into each [[Stamina potion]], with two [[Nettle]], at a [[Cauldron]] (see [[Potions]]).
 
 {{item-sections honey}}
 
@@ -25,5 +25,6 @@ Honey is taken on the host for the player who asked, and the hive's wait is the 
 - `data/loot.json`, `data/recipes.json`: no table gives honey and no recipe makes it
 - `src/net.js:600-610`, `src/hives.js:130-131`: a guest's Take honey run on the host; the hive's `honeyAt` sent with its chunk
 - `data/items.json:19`, `data/recipes.json:1324-1348`: honey tagged `binder`, pemmican's binder (game #462, at d625844)
+- `data/recipes.json:1687-1712`: a pot of honey in the stamina potion (game #491, at 0fa02e5)
 
 {{navbox items}}

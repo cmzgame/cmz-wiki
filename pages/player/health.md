@@ -34,7 +34,7 @@ With the [[Survival]] setting off the needs are held full, so you are always wel
 
 Awake, you regain {{n tuning.player.healthRegenPerMinute}} health a minute. Asleep in a bed, you regain {{n tuning.player.sleepRegenPerMinute}} a minute (see [[Sleep]]). **Well fed**, with hunger at {{n tuning.player.fullAt}} or more, either rate is {{n tuning.player.wellFedRegenMult}} times as fast. A minute here is a minute of the world's own clock, so while everyone sleeps it passes much faster.
 
-[[Food]] heals a little: each food adds its whole heal value when eaten, full or not, a stopgap (see [[Food]]). Eating also raises hunger and thirst, which lets regeneration start again.
+[[Food]] heals a little: each food adds its whole heal value when eaten, full or not, a stopgap (see [[Food]]). The big heal is a [[Healing potion]]: {{n tuning.potions.heal}} at once, brewed at a [[Cauldron]], with {{n tuning.potions.between seconds}} before another potion can be drunk (see [[Potions]]). Eating also raises hunger and thirst, which lets regeneration start again.
 
 ## Numbers
 
@@ -75,3 +75,4 @@ Each player has their own health. A sleeper among players who are awake still re
 - `src/entities/player.js:136-140`: with Survival off the needs are held full and regeneration still runs
 - `data/tuning.json:67-69`: the regeneration rates, per sim minute, and the well-fed multiplier
 - `src/entities/player.js:83-100`, `data/items.json`: `eat` adds each food's whole `heal`, full or not (game #259)
+- `src/potions.js:53-58`, `data/tuning.json` `potions.heal`, `potions.between`: the healing potion's heal and the wait between potions (game #491, at 0fa02e5)

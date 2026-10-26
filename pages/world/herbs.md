@@ -2,10 +2,10 @@
 title: Herbs
 categories: [Gatherables, The world, Mechanics]
 aliases: [Herb, Herbalism, Gathering herbs, Dye plants, Dye plant]
-summary: Eleven kinds of herb grow wild about the valley, one plant here and there like weeds; each is gathered by hand for one of its herb, and another grows elsewhere a game day or two later. Nothing uses them yet.
+summary: Eleven kinds of herb grow wild about the valley, one plant here and there like weeds; each is gathered by hand for one of its herb, and another grows elsewhere a game day or two later. Seven of them, with the mushroom, are brewed into potions and poisons.
 ---
 
-**Herbs** grow wild in [[The valley]]: eleven kinds, scattered one plant at a time like weeds, never in patches. Each is a [[Gatherables|gatherable]]: outlined, swaying when clicked or walked through, and gathered by hand for one of its herb. A gathered plant is gone, and another of its kind grows somewhere else in its area {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later, so the valley keeps about the same number. Nothing uses an herb yet: potions, the herb tea, and seasoning are not built, and the three dye plants are not yet asked for at the [[Dye vat]].
+**Herbs** grow wild in [[The valley]]: eleven kinds, scattered one plant at a time like weeds, never in patches. Each is a [[Gatherables|gatherable]]: outlined, swaying when clicked or walked through, and gathered by hand for one of its herb. A gathered plant is gone, and another of its kind grows somewhere else in its area {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later, so the valley keeps about the same number. Seven of the herbs are brewed into [[Potions]] at a [[Cauldron]]; [[Feverfew]] and the three dye plants are not yet used for anything, the herb tea and seasoning are not built, and the dye plants are not yet asked for at the [[Dye vat]].
 
 ## The kinds
 
@@ -49,9 +49,17 @@ An herb gathered inside the valley is owed back to its kind: {{n tuning.resource
 
 ### What they are for
 
-Nothing yet. Each herb's card names the herb, its kind (**Herb**, or **Dye plant** for woad, madder, and weld), and where it grows: "Grows wild in the valley; gathered by hand.", "Grows wild near water; gathered by hand.", "Grows wild near trees; gathered by hand.", or "Grows wild in the graveyard; gathered by hand."
+Seven herbs, and the [[Mushroom]], go into the brews at a [[Cauldron]], two of a potion's own herb and one of a second ingredient to each (see [[Potions]]):
 
-{{planned doc=39 note="Potions, the herb tea, and seasoning from the herbs; the cure, with mushrooms, when infection is real."}}
+- [[Yarrow]] and [[Sage]]: the [[Healing potion]].
+- [[Nettle]] and a [[Pot of honey]]: the [[Stamina potion]].
+- [[Mageroot]] and a mushroom: the [[Mana potion]].
+- [[Nightshade]] and [[Grave moss]]: [[Poison]].
+- [[Wolfsbane]] and grave moss: [[Strong poison]].
+
+Feverfew, woad, madder, and weld go into nothing yet. Each herb's card names the herb, its kind (**Herb**, or **Dye plant** for woad, madder, and weld), and where it grows: "Grows wild in the valley; gathered by hand.", "Grows wild near water; gathered by hand.", "Grows wild near trees; gathered by hand.", or "Grows wild in the graveyard; gathered by hand."; an herb that goes into a brew adds "Goes into:" and the brews.
+
+{{planned doc=39 note="The herb tea and seasoning from the herbs; feverfew's use; the cure, with mushrooms, when infection is real."}}
 
 {{planned doc=43 note="A dye that costs a dye plant (woad, madder, weld) at the dye vat; the vats cost nothing today."}}
 
@@ -90,5 +98,6 @@ Gathering is a menu entry the host runs: a guest's choice of "Gather nettle" is 
 - `src/interact.js:1771-1792`: a body walking through a non-solid gatherable sways it
 - `src/item-info.js:72-98`, `src/item-info.js:135-139`: the card's kind (Herb, Dye plant) and where it grows
 - `data/tuning.json:115-123` `floaters.gathers`: the Herbalism number on a gather
+- `data/recipes.json:1661-1790`, `src/item-info.js:322-324`: seven herbs and the mushroom brewed at the cauldron; the cards' Goes into (game #491, at 0fa02e5)
 
 {{navbox items}}

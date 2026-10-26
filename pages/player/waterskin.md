@@ -30,6 +30,8 @@ The hover card of a skin holding water says "Clean water." or "Tainted water: dr
 
 **Boiling** makes a tainted skin clean. At a lit cooking fire (a campfire, a hearth, a fireplace, or the oven), [[Use]] the skin on the fire, choose **Boil water** on the skin's menu in the bag or on the belt (greyed "Boil water (no lit fire in reach)" with none in reach), or choose **Boil water** on the fire's menu, which takes the fullest tainted skin you carry (greyed "Boil water (no tainted water carried)" with none). A bar runs for {{n tuning.water.boilSeconds}} seconds within {{n tuning.water.boilReach}} tiles of the fire; at its end the water is clean and the fill is kept: "The water boils. It is clean now." The menus offer Boil water only on a skin that holds tainted water. See [[Water#Boiling|Water]].
 
+Clean water carried in a skin is also what [[Potions]] are brewed with: each brew at a [[Cauldron]] takes a draught from the clean skins you carry, the emptiest first, and never from a tainted skin (see [[Potions#Brewing|Potions]]).
+
 {{item-sections waterskin}}
 
 ## With friends
@@ -58,5 +60,6 @@ A guest drinks, fills, and boils through the same actions; the host performs the
 - `src/items.js:98`, `src/water.js:35-36`: a found waterskin's random fill, its water not marked clean
 - `src/farming.js:140-149`, `src/farming.js:216-231`, `data/interactions.json:20-22`: watering a crop takes the fill a watering costs, from the fullest skin with enough (game #206)
 - `src/ui/inventory-actions.js:270`, `src/ui/inventory-actions.js:421-432`: a guest's menu choice is run by the host
+- `src/stations.js:166-221`: a brew's draught from the clean skins carried, the emptiest first (game #491, at 0fa02e5)
 
 {{navbox items}}

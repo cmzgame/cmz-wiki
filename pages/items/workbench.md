@@ -6,7 +6,7 @@ summary: The woodworker's station: sticks, torches, bows, arrows, shields, tools
 
 {{infobox-station workbench}}
 
-The **workbench** is the station for wood. From [[Plank|planks]], [[Stick|sticks]], and cloth it makes sticks, [[Torch|torches]], a [[Hunting bow]] and [[Arrow|arrows]] (fletched with a [[Feather]]), a [[Wooden shield]], a [[Hoe]] and a [[Shovel]], a [[Fishing rod]], a [[Bucket]], a [[Snare]] and a [[Lead]], furniture, and two stations of your own, the [[Smoking rack]] and the [[Tanning vat]]; it tears a garment into [[Rag|rags]], and it churns a [[Jug of milk]] into [[Butter]]. It needs no fire and no tool in hand, but most of its rows ask for a tool **on you**, anywhere you carry it (a hand, the belt, or the bag): a [[Smith's hammer]] for the furniture, the wheelbarrow, the shield, the hoe, the shovel, and the bucket; a [[Dirk]] for the bow, the arrows, the rod, and tearing a garment; a [[Hatchet]] for sticks from a plank. Each row's Needs below names its tool, and the panel says "needs a ... on you". A torch needs none. The joiner's chest holds a hatchet and a hammer, and the weaver's a knife. Everything it takes can be had in play: planks come from splitting a [[Log]], sticks from planks, and cloth from the [[Loom]], a rag, or a garment. The one exception is the wheelbarrow, which needs an [[Iron bar]].
+The **workbench** is the station for wood. From [[Plank|planks]], [[Stick|sticks]], and cloth it makes sticks, [[Torch|torches]], a [[Hunting bow]] and [[Arrow|arrows]] (fletched with a [[Feather]]), a [[Wooden shield]], a [[Hoe]] and a [[Shovel]], a [[Fishing rod]], a [[Bucket]], a [[Snare]] and a [[Lead]], furniture, and two stations of your own, the [[Smoking rack]] and the [[Tanning vat]]; it tears a garment into [[Rag|rags]], churns a [[Jug of milk]] into [[Butter]], and shapes [[Clay]] into [[Unfired vial|unfired vials]] for [[Potions]]. It needs no fire and no tool in hand, but most of its rows ask for a tool **on you**, anywhere you carry it (a hand, the belt, or the bag): a [[Smith's hammer]] for the furniture, the wheelbarrow, the shield, the hoe, the shovel, and the bucket; a [[Dirk]] for the bow, the arrows, the rod, and tearing a garment; a [[Hatchet]] for sticks from a plank. Each row's Needs below names its tool, and the panel says "needs a ... on you". A torch needs none. The joiner's chest holds a hatchet and a hammer, and the weaver's a knife. Everything it takes can be had in play: planks come from splitting a [[Log]], sticks from planks, and cloth from the [[Loom]], a rag, or a garment. The one exception is the wheelbarrow, which needs an [[Iron bar]].
 
 ## Using it
 
@@ -44,5 +44,6 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 - `data/maps/valley.json`: where the workbenches stand
 - `src/host.js:185-192`: a guest's Make runs on the host
 - `data/recipes.json`: the workbench's furniture, the barrel, the jack-o'-lantern, the torch post as an item (game #428)
+- `data/recipes.json:1611-1626`: one clay into two unfired vials, no tool (game #491, at 0fa02e5)
 
 {{navbox making}}

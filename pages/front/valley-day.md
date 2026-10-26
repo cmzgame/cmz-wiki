@@ -252,6 +252,18 @@ The starting kit is the game's data. At the Sandbox step of New world, a world c
 
 Read: [[World rules]], [[Developer Bag]], [[Getting started]].
 
+### Mana (game #488)
+
+A blue mana bar sits under stamina and comes back slowly by itself. The [[Fireball]] costs mana, paid when it is let go; a cast the bar cannot pay for is refused with "Not enough mana." and a flash of the bar. **Pray** at the chapel's [[Altar]], a short bar, fills mana and stamina at once.
+
+Read: [[Mana]], [[Altar]], [[Fireball]].
+
+### Potions: vials, the cauldron, and drinking (game #491)
+
+Clay is shaped into vials at the workbench and fired in an oven. Potions are brewed at a [[Cauldron]] over a lit fire of logs, from two herbs of one kind, a second ingredient, a clay vial, and a draught of clean water from a waterskin you carry. The witch's cauldron stands at the north end of the lane to the mere; your own is made at the anvil and set down where you like. The healing potion heals a large share at once, the stamina potion fills the bar and speeds its recovery for a while (the game's first buff, in gold in the row of debuffs), and the mana potion restores mana; a few seconds must pass between potions, and the empty vial comes back. The two poisons are brewed but cannot be drunk or used yet. The herbs' and clay's cards say what they go into.
+
+Read: [[Potions]], [[Cauldron]], [[The witch's cauldron]], [[Clay vial]], [[Herbs]].
+
 ## The dead, villagers, and light
 
 ### The dead strike what they break (game #185)
@@ -400,3 +412,4 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 - `src/archery.js`, `src/net.js`, `src/netsmooth.js`: a guest's flights stepped from their launch (game #463, at d625844)
 - `src/interact.js:1704-1834`: a click under a crown (game #464, at d625844)
 - `src/items.js:65-83`, `src/inventory.js:94-112`, `src/dye.js:33-55`, `src/stations.js:208-275`, `data/sprites/tree_oak_m.json`: the counted names, the bucket, the colour words, a made prop's spot, the oak's name (game #466, at d625844)
+- `src/mana.js`, `src/potions.js`, `src/stations.js:166-221`, `data/recipes.json:1611-1790`, `data/sprites/cauldron.json`, `data/sprites/altar.json`: mana and Pray, the vials, the cauldron, and drinking (games #488 and #491, at 0fa02e5)

@@ -2,7 +2,7 @@
 title: Interface
 categories: [Interface]
 aliases: [HUD, UI, Health bar, Stamina bar, Prompt, Context menu, Actions menu, Cursor, Debug corner]
-summary: What is on the screen while playing: the portrait and bars, the clock, the debuffs, the moodles, the swing bars, the prompt, menus, panels, and the cursor.
+summary: What is on the screen while playing: the portrait and bars (health, stamina, mana), the clock, the debuffs and buffs, the moodles, the swing bars, the prompt, menus, panels, and the cursor.
 ---
 
 The **interface** is everything drawn over the world: the bars, the clock, the icons, the menus, and the panels. It is drawn at its own size, set by **Interface size** in [[Settings]], separately from the world's zoom. It is hidden whenever no [[Worlds|world]] is in, before one is chosen and after one is left, the chat box and the debug corner with it; the game is then its site, a page of menus with nothing of a world drawn (see [[Screens#The site|Screens]]).
@@ -13,6 +13,7 @@ The **interface** is everything drawn over the world: the bars, the clock, the i
 - Your **name**.
 - **Health**: a labelled bar ("Health" with the current and the most, {{n tuning.player.hp}} at full). It is green when high, yellow lower, red when low. See [[Health]].
 - **Stamina**: a labelled bar in percent, out of {{n tuning.player.stamina}}. It pulses gold when a block lands and red when a guard breaks. See [[Stamina]].
+- **Mana**: a labelled blue bar under stamina, with its points and its most, out of {{n tuning.player.mana}}. It flashes, its edge red and its fill brighter, when a spell is refused for want of mana. See [[Mana]].
 - **Hands**: what is in the main and off hand ("–" for an empty hand; a two-handed item is named once).
 
 ## Top centre: the clock
@@ -21,7 +22,7 @@ The **interface** is everything drawn over the world: the bars, the clock, the i
 
 ## Top right: debuffs
 
-A row of debuffs runs along the top of the screen from the top right corner, growing leftward: a harm with a time on it, each an icon in a dark red frame with its time left under it, whole seconds rounded up under a minute (`34s`) and whole minutes rounded up from a minute (`10m`). When it has more than one stack, the number of stacks shows in its corner. Hovering over one shows its card, in the style of the item cards: its name, "Debuff" with its stacks and time left, what it does, and what ends it. An icon goes when its debuff ends. The debuffs so far are [[Bleeding]], a red drop, and [[Sick]], from tainted water, a green face. The row is always over the map but under the menus and screens. Each player's row is drawn from their own record, so a guest sees their own as the host sees theirs.
+A row of debuffs runs along the top of the screen from the top right corner, growing leftward: a harm with a time on it, each an icon in a dark red frame with its time left under it, whole seconds rounded up under a minute (`34s`) and whole minutes rounded up from a minute (`10m`). When it has more than one stack, the number of stacks shows in its corner. Hovering over one shows its card, in the style of the item cards: its name, "Debuff" with its stacks and time left, what it does, and what ends it. An icon goes when its debuff ends. The debuffs so far are [[Bleeding]], a red drop, and [[Sick]], from tainted water, a green face. A **buff**, a good effect with a time on it, sits in the same row framed in gold, its card saying "Buff" in place of "Debuff"; the one buff so far is the [[Stamina potion]]'s, a gold bolt. The row is always over the map but under the menus and screens. Each player's row is drawn from their own record, so a guest sees their own as the host sees theirs.
 
 ## Right edge: moodles
 
@@ -146,3 +147,5 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/ui/build-palette.js:49`: the palette's Take apart row (game #413, at 31d330a)
 - `data/tuning.json` `floaters.gathers`: honey floats under Beastlore (game #416, at 31d330a)
 - `src/debuffs.js`, `src/sick.js`: Sick beside bleeding in the row (game #435, at fa2997f)
+- `src/ui/hud.js:108-114`, `style.css:297-353`: the mana bar under stamina, in blue, its points, its flash (game #488, at 0fa02e5)
+- `src/debuffs.js:42-50`, `src/ui/debuff-icons.js:36-40`, `style.css:580`: the stamina potion's buff in the row, a gold bolt in a gold frame, "Buff" on its card (game #491, at 0fa02e5)

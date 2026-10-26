@@ -11,7 +11,7 @@ The **player** is your survivor: one person in the valley, made from an [[Identi
 
 ### Health and stamina
 
-You have {{n tuning.player.hp}} [[Health]], shown as a bar at the top left with the current and the maximum. At zero you [[Death|die]]. Below it is [[Stamina]], {{n tuning.player.stamina}} at most, shown as a percent: sprinting, swinging, shoving, and blocking spend it, and it comes back when you stop.
+You have {{n tuning.player.hp}} [[Health]], shown as a bar at the top left with the current and the maximum. At zero you [[Death|die]]. Below it is [[Stamina]], {{n tuning.player.stamina}} at most, shown as a percent: sprinting, swinging, shoving, and blocking spend it, and it comes back when you stop. Below that is [[Mana]], {{n tuning.player.mana}} at most, in blue: a spell spends it, and it comes back slowly by itself.
 
 The top left also shows a portrait of your character, your name, and a "Hands" line naming what is in your main hand and your off hand. The clock is at the top centre, and the [[Moodles]] run down the right edge.
 
@@ -36,7 +36,7 @@ Four slow needs run from full down to empty, each shown as a moodle that worsens
 - [[Tiredness]]: restored only by [[Sleep]] in a bed. It never kills, but it stops sprinting and then healing.
 - [[Health]] comes back by itself only while you are fed, watered, not [[Bleeding]], and not falling asleep.
 
-One more moodle is not a need: [[Infection]], a marker from bites that does nothing yet. [[Bleeding]], from bites, and [[Sick]], from tainted water, are debuffs, shown in a row of their own at the top right with their time left. All of the needs switch off with the [[Survival]] setting.
+One more moodle is not a need: [[Infection]], a marker from bites that does nothing yet. [[Bleeding]], from bites, and [[Sick]], from tainted water, are debuffs, shown in a row of their own at the top right with their time left; a [[Stamina potion]]'s buff shows there too, in gold. All of the needs switch off with the [[Survival]] setting.
 
 ### The starter kit
 
@@ -54,6 +54,7 @@ A world can change the kit when it is made, at the Sandbox step of New world, fo
 
 - Health: {{n tuning.player.hp}}
 - Stamina: {{n tuning.player.stamina}}
+- Mana: {{n tuning.player.mana}}
 - Walking speed: {{n tuning.player.speed tiles a second}}
 - Sprint: ×{{n tuning.player.sprintMult}}
 - Body radius: {{n tuning.player.radius tiles}}
@@ -65,7 +66,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 
 ## See also
 
-- [[Health]], [[Stamina]], [[Hunger]], [[Thirst]], [[Tiredness]], [[Sleep]]
+- [[Health]], [[Stamina]], [[Mana]], [[Hunger]], [[Thirst]], [[Tiredness]], [[Sleep]]
 - [[Bleeding]], [[Infection]], [[Death]], [[Survival]]
 - [[Moodles]], [[Inventory]], [[Combat]], [[Controls]], [[Characters]]
 
@@ -98,3 +99,4 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `src/rules.js:44-49`: a guest uses the host's rules
 - `src/game.js:348-358`: time runs fast only while every living player sleeps
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
+- `data/tuning.json:52-53`, `src/ui/hud.js:108-114`: mana under stamina (game #488, at 0fa02e5)

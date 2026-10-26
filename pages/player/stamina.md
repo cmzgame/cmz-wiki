@@ -38,6 +38,8 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - ×{{n tuning.player.tiredStaminaRegenMult}} while "Tired" or worse ([[Tiredness]]).
 - Both multiply together.
 
+A [[Stamina potion]] fills the bar at once, and for {{n tuning.potions.staminaSeconds seconds}} after makes it come back {{n tuning.potions.staminaMult}} times as fast, on top of the needs' slowing; the buff shows in the row of debuffs, framed in gold. Praying at the [[Altar]] in [[The chapel]] fills the bar too, with [[Mana]]. Either ends being winded.
+
 ## Numbers
 
 - Maximum: {{n tuning.player.stamina}}
@@ -47,6 +49,7 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - Winded until: {{n tuning.player.sprintRecoverAt}}
 - Shove: {{n combat.shove.stamina}}
 - Damage when a swing cannot be paid for: ×{{n combat.blow.tiredDamage}}
+- A stamina potion: the bar full, recovery ×{{n tuning.potions.staminaMult}} for {{n tuning.potions.staminaSeconds seconds}}
 
 ## Settings that change it
 
@@ -54,7 +57,8 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 
 ## See also
 
-- [[Health]], [[Combat]], [[Wooden shield]], [[Tiredness]], [[Player]]
+- [[Health]], [[Mana]], [[Combat]], [[Wooden shield]], [[Tiredness]], [[Player]]
+- [[Stamina potion]], [[Altar]]
 - [[Levers]]: stamina's numbers still being balanced
 
 ## Sources
@@ -71,3 +75,4 @@ When you are not sprinting, stamina comes back at {{n tuning.player.staminaRegen
 - `data/combat.json:10`, `src/combat.js:336-341`, `src/combat.js:375`, `src/combat.js:419-420`: the tired blow, a swing the bar cannot pay for, at `blow.tiredDamage` (game commit 2c70942); an emptying swing or shove leaves you winded
 - `src/entities/player.js:359-361`, `src/entities/player.js:168-173`, `data/tuning.json:73-74`: no recovery with the guard up; the needs' multipliers, multiplied together
 - `src/entities/player.js:139-145`: Survival off holds the needs full, so they never slow it
+- `src/potions.js:58-62`, `src/entities/player.js:192-197`, `src/mana.js:111-113`: the stamina potion's fill and buff, multiplied with the needs' slowing; Pray fills the bar; both end winded (games #488 and #491, at 0fa02e5)

@@ -34,7 +34,7 @@ Water in a [[Waterskin]] or a [[Bucket]] is tainted unless it is clean. The wate
 
 The hover card of a skin or a bucket holding water says which it holds: "Clean water.", or on a skin "Tainted water: drinking it may make you Sick." and on a bucket "Tainted water.". A small brown drop in the top right corner of its icon marks tainted water at a glance. A skin's Drink says "(tainted, ...)" with its fill. The item's name never changes. An empty one says nothing about water.
 
-A waterskin's sip by itself, once you are Thirsty, takes only clean water: a skin of tainted water is left for you to drink by hand (see [[Thirst]]).
+A waterskin's sip by itself, once you are Thirsty, takes only clean water: a skin of tainted water is left for you to drink by hand (see [[Thirst]]). A brew at a [[Cauldron]] takes clean water too, from the skins you carry: "Potions need clean water." (see [[Potions]]).
 
 ### Boiling
 
@@ -104,3 +104,4 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 - `src/interact.js:694-697`, `data/tuning.json:53`: thirst set to its maximum
 - `src/interact.js:70-92`: a guest's drink or fill run on the host by the tile
 - `src/interact.js:722-745`, `tools/mapgen/mapgen.py:80-90`, `tools/mapgen/valley.py:212`, `tools/mapgen/valley.py:311`, `src/map.js:1472-1481`: Cast the line with a rod in hand; the river and the ford named `river`, the duck pond and the manor's pool `pond` (game #193)
+- `src/stations.js:166-221`: a brew's draught of clean water, never tainted (game #491, at 0fa02e5)

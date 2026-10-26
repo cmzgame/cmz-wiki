@@ -2,7 +2,7 @@
 title: Sound
 categories: [Interface, Mechanics]
 aliases: [Sounds, Audio, Footsteps, Volume, Mute, F8]
-summary: What the game sounds like so far: footsteps and the dead's shuffle, a swing, a shove, a hit, the bow, a spell, the dead falling and dying, moaning as they come and striking doors and fences, doors and shutters, heard by distance; F8 mutes.
+summary: What the game sounds like so far: footsteps and the dead's shuffle, a swing, a shove, a hit, the bow, a spell, a spell refused for want of mana, a prayer, the dead falling and dying, moaning as they come and striking doors and fences, doors and shutters, heard by distance; F8 mutes.
 numbersOk: true
 ---
 
@@ -21,6 +21,7 @@ The game's **sounds** are made by the game itself when it loads, from noise and 
 - **A hit** thuds wherever a hit lands: a blow on one of [[The dead]], a bite on a player, an arrow, a fireball, a villager hurt. It sounds with the [[Interface#Floating numbers|floating number]], and the Floating numbers setting off does not silence it.
 - **The bow:** a drawn [[Hunting bow]] creaks for as long as it is held, the creak rising from {{pct sounds.bow.rateFrom}} to {{pct sounds.bow.rateTo}} of its speed as the draw fills, and stopping when the draw ends. Letting go twangs, and the arrow thumps where it comes down. A draw let go too early to shoot makes no twang. See [[Archery]].
 - **A spell** makes one sound as it is cast, when the [[Staff of Fire]]'s spell is let go. It has no draw and no twang.
+- **Not enough mana:** a spell refused for want of [[Mana]] makes a short falling note, and **a prayer** at the [[Altar]] a rising one as its bar begins. Each is heard only by the player it concerns, at full strength wherever they stand, since its picture is that player's own bars.
 - **A thrown spear** has no sound of its own yet.
 - **The dead fall and die:** one of the dead knocked down thumps to the ground, and one killed makes a heavier sound of its own (only that, if one blow floors and kills it).
 - **The dead moan** as they come for someone: one that was standing, wandering, searching, or waiting turns to chase a player or a villager, or to break in at a door or shutters, or to push at a fence, and moans. One of the dead moans no more often than every {{n sounds.moan.again seconds}}, and no moan follows another sooner than {{n sounds.moan.gap seconds}} after it, so a crowd turning at once gives one, not a drone. One already chasing, or turning back to the chase from a bite, is silent.
@@ -37,7 +38,7 @@ Nothing sounds until the page has been clicked or a key pressed once: browsers k
 
 ### The visual twin
 
-Each sound that tells you something has a picture that says the same: a swing has its animation and the swing timer, a hit its red number, its push, and its brief freeze, the bow its drawing pose, a fall and a death the body on the ground, a moan the dead turning to come at you, a strike the wall's jolt, a door its leaf. Footsteps are seen as the walk. `F8`'s line says what it did.
+Each sound that tells you something has a picture that says the same: a swing has its animation and the swing timer, a hit its red number, its push, and its brief freeze, the bow its drawing pose, a fall and a death the body on the ground, a moan the dead turning to come at you, a strike the wall's jolt, a door its leaf, a refused cast the mana bar's flash, and a prayer its bar over the altar and then the bars filling. Footsteps are seen as the walk. `F8`'s line says what it did.
 
 ## Numbers
 
@@ -81,3 +82,4 @@ Each player hears their own world as their own screen shows it: a friend's foots
 - `src/sound-cues.js:1-11`: each client hears what it sees; nothing new crosses the wire
 - `src/settings.js:30-31`, `src/settings.js:68-69`: the Sound and Volume rows
 - `src/sound-cues.js:262-292`, `data/sounds.json` `moan`, `src/main.js`: the moan from a calm state to the chase, a breach, or a press, throttled; the strike with the jolt the host draws and a guest's fx (game #436, at fa2997f)
+- `data/sounds.json:284-311`, `src/sound-cues.js:178-201`: `mana_short` with the bar's flash and `pray` as the prayer's bar begins, each heard by that player alone, at no place (game #488, at 0fa02e5)
