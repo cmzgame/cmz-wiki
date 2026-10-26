@@ -37,7 +37,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you); a gate takes none. Held: pull a board off, with the hammer, and get the plank back.
 - `T`: light or put out the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or put out the torch in hand (a tinderbox lights it)".
 - `Q`: the main hand's other mode, as the middle button.
-- `1` `2` `3` `4`: the belt's slots: eat or drink what is there, otherwise swap it with your hand.
+- `1` `2` `3` `4`: the belt's slots: eat or drink what is there, otherwise swap it into the hand chosen for that slot (the main hand, the off hand for a book, by default); an empty slot puts away what you hold (see [[Belt]]).
 
 ### Panels and building
 
@@ -64,7 +64,7 @@ In a screen with a text box (a world's name, a join code, the creator key), `Ent
 - Drag an item to move it; drop it outside the panels to put it on the floor.
 - `R`, a right click, or the wheel while dragging: rotate it.
 - Shift-click: send an item across (bag to container and back).
-- Double-click: equip or unequip it, otherwise send it across. In your bag it equips the item (into a hand, or a garment into its slot); on a hand or clothing slot it unequips; on a belt slot it eats a food, drinks from a waterskin, or else equips into a hand. The Controls screen says "Equip or unequip a thing; else move it across".
+- Double-click: equip or unequip it, otherwise send it across. In your bag it equips the item (into a hand, or a garment into its slot); on a hand or clothing slot it unequips; on a belt slot it eats a food, drinks from a waterskin, or else draws the item into the slot's chosen hand. The Controls screen says "Equip or unequip a thing; else move it across".
 - Right-click: the item's menu.
 - Typing in a station's count goes to the count alone, never to the keys above; `Enter` or `Escape` leaves it.
 
@@ -106,7 +106,7 @@ A guest's keys and clicks go to the host, who performs them. A guest's wave, fro
 - `src/interact.js:881-928`, `src/interact.js:372-379`, `src/ui/screens.js:28`: E takes only a simple action within reach and a clear line (game #227), a villager's Talk among them (game #230); a fire's Light is one only with a flame carried (game #169)
 - `src/interact.js:1143-1157`, `src/interact.js:479-546`: B boards up (needs a plank and a hammer carried), held pulls a board, the plank back (game #222)
 - `src/interact.js:1118`, `src/interact.js:1158-1181`, `src/ui/screens.js:44`: T lights or douses the torch in hand, else on the belt, with a tinderbox; else takes one from the bag; the Controls screen's line
-- `src/interact.js:1109`, `src/interact.js:1129`, `src/interact.js:1185-1206`: keys 1 to 4 eat, drink, or swap the belt slot
+- `src/interact.js:1109`, `src/interact.js:1129`, `src/interact.js:1185-1206`: keys 1 to 4 eat, drink, or swap the belt slot; the swap goes to the slot's chosen hand (game #467, `src/inventory.js:352-380` at 879d0a7)
 - `src/main.js:915-923`, `src/ui/context-menu.js:34`: Tab and C, and Tab closing the menu
 - `src/main.js:1067-1069`, `src/ui/screens.js:30`: N, M, and X; the Controls screen's M line (game #235)
 - `src/main.js:874-895`: N and X refused with the bag open, "Close your bag to build."

@@ -16,7 +16,7 @@ It is a switch, as the home lights are (see [[Fire#The home lights|Fire]]):
 - **Put out the jack-o'-lantern**, with nothing needed.
 - **Light the jack-o'-lantern**, with a [[Tinderbox]] or a lit [[Torch]] on you; a Use of either on it lights it too ("You light the jack-o'-lantern.").
 
-It can be picked up and carried like furniture (see [[Carrying furniture]]). A click sways it.
+It can be picked up and carried like furniture (see [[Carrying furniture]]; the entry reads "Pick up jack-o'-lantern"). A click sways it. When the bench finishes one the game says "Made a jack-o'-lantern.", and the hover card of a tinderbox or a lit torch names it as a thing to Use on, not as a pumpkin.
 
 {{prop-sections pumpkin}}
 
@@ -27,6 +27,7 @@ Lighting and putting it out are the menu's labels, run on the host for the playe
 ## Sources
 
 <!-- sources at 0ce54cf -->
+- `src/prop-names.js`, `src/stations.js` (`madeWords`), `src/map.js` (`fireName`) at 879d0a7: the prop is named by its recipe's label (game #470)
 - `data/recipes.json`: the Jack-o'-lantern at the workbench, a pumpkin, a dirk carried (`uses: cut`), its prop the `pumpkin` sprite
 - `data/sprites/pumpkin.json`: its light, lit, a switch, carried, interactable
 - `src/map.js:323-325`: its name in the lines, "jack-o'-lantern"
