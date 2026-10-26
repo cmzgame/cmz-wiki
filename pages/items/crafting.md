@@ -54,7 +54,7 @@ What a recipe makes lands in the station's **output box**, a grid of 3 × 2 that
 
 A recipe for **furniture** or a station (a chest, a shelf, a table, a bed, a counter, a cart, a workbench, a [[Smoking rack]], a [[Tanning vat]], and the rest) makes no item: the thing is set down as a prop near the station. It goes on the nearest tiles a body could walk to from beside the station, never through a wall or a shut door into the next room, up to {{n census.constants.stations.SPOT_STEPS}} steps away. Every tile it covers must be walkable, empty, bare of items, not beside a door (so the dead can still stand at the door; see [[Openings]]), with nobody standing on it and no wall between two of its tiles, so a counter never stands over its own bench.
 
-If there is no such spot, the recipe is greyed and Make refused before anything is taken: "There is no room beside it for a counter." If the room fills while the job runs (someone stands on the spot), the finished thing waits at the head of the queue and lands once there is room, so nothing made is lost. When a job is done the game says what was made, counted: "Made 5 arrows.", "Made a counter."
+If there is no such spot, the recipe is greyed and Make refused before anything is taken: "There is no room beside it for a counter." If the room fills while the job runs (someone stands on the spot), the finished thing waits at the head of the queue and lands once there is room, so nothing made is lost. When a job is done the game says what was made, counted and named in words: "Made 5 arrows.", "Made a counter.", "Made a jack-o'-lantern.", "Made a dye vat.", "Made a pair of millstones."
 
 A container made this way starts searched and empty, and anything made at a station can be taken down again with the removal tool (see [[Building]]). A station cannot be picked up while it is still making something: its entry reads "Pick up oven (it is still making something)".
 
@@ -105,6 +105,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/stations.js:208-259`, `src/stations.js:296-345`: a made prop on the nearest free tiles a body could walk to, every tile of its footprint free, never beside a door, under a body, or across a wall; the refusal before anything is spent; a job that cannot land waits at the head of its queue (game #466, at d625844)
 - `src/stations.js:268-291`: "There is no room beside it for ..."; the counted done line (game #466, at d625844)
 - `src/stations.js:111-146`: a tagged ingredient taken from the bag, the belt, a hand, then the containers, a garment last (game #462, at d625844)
+- `src/prop-names.js`, `src/stations.js` (`madeWords`) at 879d0a7: a made prop is named by its recipe's label, then its definition's name ("Made a dye vat.", "Made a pair of millstones."; game #470)
 - `src/interact.js:320-338`: no station picked up while its queue runs (game #462, at d625844)
 - `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
 - `src/net.js:1288-1290`: Make sent to the host

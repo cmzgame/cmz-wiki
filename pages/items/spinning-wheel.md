@@ -11,7 +11,7 @@ The **spinning wheel** in [[The weaver]]'s workroom spins [[Wool]] into [[Woolle
 
 ## Using it
 
-Right-click it and choose its entry, or press `E` beside it, and pick the recipe in the panel (see [[Crafting]]). Wool is shorn from a fed sheep with [[Shears]] (see [[Keeping]]). What it makes goes into the wheel's output box.
+Right-click it and choose **Use the spinning wheel**, or press `E` beside it, and pick the recipe in the panel (see [[Crafting]]). Wool is shorn from a fed sheep with [[Shears]] (see [[Keeping]]). What it makes goes into the wheel's output box.
 
 ## Recipes
 
@@ -26,7 +26,7 @@ A guest spins through the host like any station; the queue and the output box ar
 ## Sources
 
 <!-- sources at d625844 -->
-- `data/sprites/spinningwheel.json`: the spinning wheel, a station since game #462, no longer carried, on placeholder art
+- `data/sprites/spinningwheel.json`: the spinning wheel, a station since game #462, no longer carried, on placeholder art; its `name` makes the entry read "Use the spinning wheel" (game #470, at 879d0a7)
 - `data/recipes.json:1590-1605`: wool spun to yarn
 - `data/recipes.json`: no recipe makes a spinning wheel
 - `tools/mapgen/valley.py:367`: the wheel in the weaver's workroom beside the loom

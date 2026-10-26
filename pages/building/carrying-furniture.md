@@ -23,6 +23,10 @@ While you carry something you can only walk. You cannot:
 
 The right-click menu offers only Put down and Walk here.
 
+### Two players, one piece
+
+A piece of furniture is lifted once. If a second player's lift of the same piece comes after the first has taken it (or has carried it off and set it down elsewhere), the second gets nothing and is told "The chest is not there any more." ("The millstones are not there any more." for the pair). A fresh lift of the piece where it now stands works. A piece that stands across the edge of two chunks of the map is one piece, whole, for every player.
+
 ### Putting down
 
 A left click on a green ghost puts the piece down, and R turns it first. E puts it on the tile in front of you. Escape does not drop it. Nothing can be put down on either tile of a door or a gate. See [[Placement]].
@@ -41,7 +45,7 @@ Carrying and taking apart are separate. **Pick up** keeps a thing whole, with wh
 
 Some [[Workbench]] recipes make furniture rather than an item. The piece appears on the nearest free tiles a body could walk to from the station, never past a wall or a shut door, and never beside a door; with no such spot it is not made (see [[Crafting#The output|Crafting]]). It can be carried only if its kind can: a crafted chest can, a crafted workbench cannot.
 
-Under the world rule **Village stations** the village's forge, anvil, oven, millstones, and dye vats can be carried, but a station is never picked up while it is still making something: its entry reads "Pick up oven (it is still making something)".
+Under the world rule **Village stations** the village's forge, anvil, oven, millstones, and dye vats can be carried, but a station is never picked up while it is still making something: its entry reads "Pick up oven (it is still making something)", "Pick up dye vat (it is still making something)", or, for the pair of millstones, "Pick up millstones (they are still making something)".
 
 ## Numbers
 
@@ -62,6 +66,8 @@ The piece you carry is part of your character, so a save and a join keep it, and
 
 <!-- sources at 9205ad7 -->
 - `src/interact.js:259-312`: Pick up with both hands empty, and the carry menu (Put down, Walk here)
+- `src/interact.js:324-350`: a lift re-checks that the piece still stands where it was found (`stillStanding`); a second lifter is told "The chest is not there any more." (game #468, at 879d0a7)
+- `src/prop-names.js`, `src/interact.js:338`: a prop is named by its recipe's label, then its definition's name; the millstones are plural (game #470, at 879d0a7)
 - `src/entities/character.js:70-71`: the carried prop, contents and all, on the character
 - `src/entities/player.js:328`: no sprint, swing, bow, or block while carrying
 - `src/main.js:698-736`: no bag, character screen, building, or removal; "Your hands are full."

@@ -1,7 +1,7 @@
 {
-  "commit": "d625844d78334525500a8d018d79f00a9ed4ac27",
-  "short": "d625844",
-  "date": "2026-10-25T18:58:47-05:00",
-  "subject": "Merge #466, reviewed: a second batch of small bugs (docs/bugs.md)",
+  "commit": "879d0a76431cd656ace637042b5387de3c57257e",
+  "short": "879d0a7",
+  "date": "2026-10-25T20:09:29-05:00",
+  "subject": "Merge #470, reviewed: props named by their recipe's label or sprite's name, never their raw id",
   "ref": "origin/main"
 }

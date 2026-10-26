@@ -17,6 +17,7 @@ The mouse buttons are roles, not fixed actions:
 - **Right**, tapped (let go within {{n census.constants.buttons.TAP_TIME seconds}}), opens the actions menu where it was pressed, or cancels a bow draw in progress. **Right held** is the off hand's stance: it raises the [[Wooden shield]] or braces the bow. The stance starts on the press, without waiting for the tap time.
 - **Middle** or **Q** is the main hand's other mode: the [[Halberd]]'s thrust, or the [[Throwing spear]]'s throw.
 - **Space** is the [[Shove]].
+- **The belt's keys `1` to `4`** draw a held item into the hand chosen for that slot, the main hand by default for a weapon (see [[Belt]]); drawing a weapon there is dual wielding only when you choose the off hand for it.
 
 See [[Controls]] for every key.
 
@@ -122,6 +123,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 ## Sources
 
 <!-- sources at 37e8726 -->
+- `src/inventory.js:352-380` (at 879d0a7): a belt key draws into the slot's chosen hand (game #467)
 - `src/combat.js:329-393`: the swing decided on the click (`tryAttack`)
 - `src/combat.js:183-194`, `src/combat.js:208-212`: only the dead are targets; a swing refused while carrying, in a timed action, or dead
 - `src/combat.js:183-194`, `src/game.js:106`, `src/archery.js:299-326`: no friendly fire: a blow and the shove pick from the dead alone (`targetsIn`, the dead one not yet dead), and an arrow, a spear, or the fireball lands on what `setTargets` hands in, the dead (game commit 0bd3f9c)
