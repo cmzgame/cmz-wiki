@@ -76,41 +76,41 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
-- `src/stations.js:46-53`: which props are stations, and the cooking fires
+<!-- sources at 879d0a7 -->
+- `src/stations.js:49-59`: which props are stations, and the cooking fires
 - `data/sprites/loom.json`, `data/sprites/charcoal_clamp.json`: the loom and the clamp are stations (game #210, #216)
 - `data/maps/valley.json`: the loom and dye vats in the village
-- `src/ui/station-panel.js:75-78`: a dye vat opens the dye picker, not the station panel (game #417, at 31d330a)
+- `src/ui/station-panel.js:76-79`: a dye vat opens the dye picker, not the station panel (game #417)
 - `data/recipes.json`: every recipe, known from the start
-- `src/interact.js:788-805`: the station's menu entry and `E`
-- `src/stations.js:21`: the reach
+- `src/interact.js:1068-1085`: the station's menu entry and `E`
+- `src/stations.js:24`: the reach
 - `src/ui/station-panel.js`: the one panel: recipes greyed with their reason, ingredients, count, Make, queue
-- `src/stations.js:246`: the count clamped from 1 to 10
-- `src/ui/station-panel.js:103`: the output box closes beyond reach
-- `src/ui/station-panel.js:167`: the panel closes beyond reach, or with a wall between (game #227)
-- `src/main.js:1097-1182`, `src/ui/station-panel.js:45-54`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
-- `src/stations.js:62-99`: where ingredients are counted from, searched containers only
-- `src/stations.js:79-124`: the order, plain cloth before a garment for a cloth want (game #216) they are taken in
+- `src/stations.js:369`: the count clamped from 1 to 10
+- `src/ui/station-panel.js:110`: the output box closes beyond reach
+- `src/ui/station-panel.js:176`: the panel closes beyond reach, or with a wall between (game #227)
+- `src/main.js:1136-1221`, `src/ui/station-panel.js:37-46`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
+- `src/stations.js:72-109`: where ingredients are counted from, searched containers only
+- `src/stations.js:89-148`: the order, plain cloth before a garment for a cloth want (game #216) they are taken in
 - `data/items.json:15`: the bandage is not cloth (game commit 2c70942)
-- `data/items.json:26-31`: the garments are cloth
-- `src/stations.js:145-154`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "You need a ..." (a recipe's `uses`, game #222), "Needs a ... in hand.", "Short of ..."
-- `src/inventory.js:88-108`, `src/ui/station-panel.js:145`: a tool carried in a hand, on the belt, or in the bag, found by its verb; "needs a ... on you" on the row
-- `src/stations.js:205-225`: a job waits while its fire is out
-- `src/ui/station-panel.js:152`: "(the fire is out)" on a paused job
-- `data/recipes.json:505-663`: only the anvil's recipes ask for a tool in hand, the hammer; `data/recipes.json:4-472`: the workbench's rows ask by verb, `uses`: `build` a hammer, `cut` a knife, `split` a hatchet (game #222)
-- `src/game.js:560`: the queues stepped in the world's step
-- `src/map.js:94`: a game hour in seconds
-- `src/stations.js:22`: the output box's size
-- `src/stations.js:296-320`: output to the box, or the floor beside when full
-- `src/stations.js:208-259`, `src/stations.js:296-345`: a made prop on the nearest free tiles a body could walk to, every tile of its footprint free, never beside a door, under a body, or across a wall; the refusal before anything is spent; a job that cannot land waits at the head of its queue (game #466, at d625844)
-- `src/stations.js:268-291`: "There is no room beside it for ..."; the counted done line (game #466, at d625844)
-- `src/stations.js:111-146`: a tagged ingredient taken from the bag, the belt, a hand, then the containers, a garment last (game #462, at d625844)
+- `data/items.json:27-32`: the garments are cloth
+- `src/stations.js:170-181`: the refusals: "Not at this station.", "Too far from it.", "The fire is out.", "You need a ..." (a recipe's `uses`, game #222), "Needs a ... in hand.", "Short of ..."
+- `src/inventory.js:94-112`, `src/ui/station-panel.js:153`: a tool carried in a hand, on the belt, or in the bag, found by its verb; "needs a ... on you" on the row
+- `src/stations.js:326-345`: a job waits while its fire is out
+- `src/ui/station-panel.js:160`: "(the fire is out)" on a paused job
+- `data/recipes.json:815-1025`: only the anvil's recipes ask for a tool in hand, the hammer; `data/recipes.json:4-124`, `data/recipes.json:231-782`: the workbench's rows ask by verb, `uses`: `build` a hammer, `cut` a knife, `split` a hatchet (game #222)
+- `src/game.js:750`: the queues stepped in the world's step
+- `src/map.js:105`: a game hour in seconds
+- `src/stations.js:25`: the output box's size
+- `src/stations.js:294-324`: output to the box, or the floor beside when full
+- `src/stations.js:210-261`, `src/stations.js:294-324`: a made prop on the nearest free tiles a body could walk to, every tile of its footprint free, never beside a door, under a body, or across a wall; the refusal before anything is spent; a job that cannot land waits at the head of its queue (game #466)
+- `src/stations.js:270-289`: "There is no room beside it for ..."; the counted done line (game #466)
+- `src/stations.js:113-148`: a tagged ingredient taken from the bag, the belt, a hand, then the containers, a garment last (game #462)
 - `src/prop-names.js`, `src/stations.js` (`madeWords`) at 879d0a7: a made prop is named by its recipe's label, then its definition's name ("Made a dye vat.", "Made a pair of millstones."; game #470)
-- `src/interact.js:320-338`: no station picked up while its queue runs (game #462, at d625844)
-- `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
-- `src/net.js:1288-1290`: Make sent to the host
-- `src/host.js:183-189`: the host runs it as the craft verb for that player
-- `src/net.js:883`: the queues in each frame
-- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)
+- `src/interact.js:332-357`: no station picked up while its queue runs (game #462)
+- `src/ui/station-panel.js:73-90`: a guest's panel opens on its own screen
+- `src/net.js:1450-1452`: Make sent to the host
+- `src/host.js:185-192`: the host runs it as the craft verb for that player
+- `src/net.js:1005`: the queues in each frame
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, feathers, eggs, hay, grain, pemmican, and seeds stack (game #399)
 
 {{navbox making}}

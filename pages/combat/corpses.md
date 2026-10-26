@@ -60,23 +60,23 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 
 ## Sources
 
-<!-- sources at 9205ad7 -->
+<!-- sources at 879d0a7 -->
 - `src/ui/inventory-actions.js`, `takeAllFrom`, `performItemCommand`: Take All on a body, the body redrawn without what was taken (game #251)
-- `src/entities/zombie.js:113-123`, `src/entities/zombie.js:357-364`: the fall, then a still body
-- `src/entities/character.js:139-185`: a body as a container: its clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped
-- `src/interact.js:43`, `src/interact.js:1333-1355`: the first search's time and the pockets rolled
+- `src/entities/zombie.js:119-122`, `src/entities/zombie.js:169-178`, `src/entities/zombie.js:561-568`: the fall (`damageZombie` calls `kill`), then a still body
+- `src/entities/character.js:147-199`: a body as a container: its clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped
+- `src/interact.js:68`, `src/interact.js:1983-2004`: the first search's time and the pockets rolled
 - `data/wardrobes.json`: the dead's pockets
-- `src/game.js:524-535`: corpses leave the thinking list
+- `src/game.js:883-890`: corpses leave the thinking list
 - `data/loot.json`: the `body` table and its rolls
-- `src/archery.js:244-259`: arrows and spears lodge in a body hit
-- `src/archery.js:272-276`: a fire arrow lodges as a plain arrow (game commit 3b7cb9a)
-- `src/burn.js:34-51`, `src/fire.js:48-49`: a corpse burns on until its timer runs out, losing nothing; its flames low and spread (game commit 3b7cb9a)
-- `src/interact.js:1866-1891`, `src/burn.js:73-87`: Burn corpse on the dead's bodies alone, not a player's; greyed with what is lacking or while it burns; the bar's seconds and reach (game #434, at fa2997f)
-- `data/tuning.json:187`: `work.burnCorpse`: the tinderbox, the log, the hours, the seconds (game #434, at fa2997f)
-- `src/burn.js:89-97`, `src/burn.js:104-143`: alight for `hours` times `HOUR_SECONDS`; the card's warning in red, its lines; the verb's refusals, the log spent, its message (game #434, at fa2997f)
-- `src/burn.js:139-142`: the done line reads `work.burnCorpse.hours`, as the card does (game #454, at 6e3ab37)
-- `data/interactions.json:17`, `src/interactions.js:39`: a tinderbox used on a body of the dead runs the same verb (game #434, at fa2997f)
-- `src/map.js:96`, `src/fire.js:26`, `src/fire.js:97-99`: an hour's seconds; a burning body's light (game #434, at fa2997f)
-- `src/interact.js:1841-1858`, `src/interact.js:171`, `src/main.js:962`: the search greyed while it burns, a grid open on it closed, a guest's address finding nothing (game #434, at fa2997f)
-- `src/burn.js:99-101`, `src/game.js:643-647`: the body and all it held gone when the fire is out (game #434, at fa2997f)
-- `src/net.js:710`, `src/net.js:849-886`: the burning mark in the body's record; its removal by the corpses' roster (game #434, at fa2997f)
+- `src/archery.js:295-308`: arrows and spears lodge in a body hit
+- `src/archery.js:300-306`: a fire arrow lodges as a plain arrow (game commit 3b7cb9a)
+- `src/burn.js:37-54`, `src/fire.js:48-49`: a corpse burns on until its timer runs out, losing nothing; its flames low and spread (game commit 3b7cb9a)
+- `src/interact.js:2009-2029`, `src/burn.js:73-87`: Burn corpse on the dead's bodies alone, not a player's; greyed with what is lacking or while it burns; the bar's seconds and reach (game #434)
+- `data/tuning.json:190`: `work.burnCorpse`: the tinderbox, the log, the hours, the seconds (game #434)
+- `src/burn.js:89-97`, `src/burn.js:104-144`: alight for `hours` times `HOUR_SECONDS`; the card's warning in red, its lines; the verb's refusals, the log spent, its message (game #434)
+- `src/burn.js:139-142`: the done line reads `work.burnCorpse.hours`, as the card does (game #454)
+- `data/interactions.json:17`, `src/interactions.js:40`: a tinderbox used on a body of the dead runs the same verb (game #434)
+- `src/map.js:105`, `src/fire.js:26`, `src/fire.js:97-99`: an hour's seconds; a burning body's light (game #434)
+- `src/interact.js:1985-2003`, `src/interact.js:175`, `src/main.js:973`: the search greyed while it burns, a grid open on it closed, a guest's address finding nothing (game #434)
+- `src/burn.js:99-101`, `src/game.js:827-831`: the body and all it held gone when the fire is out (game #434)
+- `src/net.js:775`, `src/net.js:957-1002`: the burning mark in the body's record; its removal by the corpses' roster (game #434)

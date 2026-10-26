@@ -47,22 +47,22 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
-- `src/interact.js:1212-1289`: Use on an item's menu
-- `src/interact.js:1295-1355`: Use on a slot's menu
+<!-- sources at 879d0a7 -->
+- `src/interact.js:1548-1638`: Use on an item's menu
+- `src/interact.js:1644-1713`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
-- `src/ui/inventory-panel.js:501-503`: a click on an item in a panel is the target
-- `src/main.js:819-829`, `src/interact.js:831-838`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
-- `src/main.js:1112-1119`: a click on the world is the target, the panels open or not
-- `src/interactions.js:1-50`: rows by item id or tag and target, `fire` for any that burns fuel, `bracket` for a wall bracket, the first match wins; the default "Nothing interesting happens."
+- `src/ui/inventory-panel.js:556-558`: a click on an item in a panel is the target
+- `src/main.js:852-862`, `src/interact.js:1112-1118`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
+- `src/main.js:1151-1158`: a click on the world is the target, the panels open or not
+- `src/interactions.js:1-51`: rows by item id or tag and target, `fire` for any that burns fuel, `bracket` for a wall bracket, the first match wins; the default "Nothing interesting happens."
 - `data/interactions.json`: the rows: light (a tinderbox or a torch on a campfire, a torch post, a torch, a bracket, a fire), dip, till, plant, water (game #206), and the well's note
-- `src/interactions.js:34-43`: `crop` matches any crop
-- `src/burn.js:56`, `src/burn.js:79-176`: the `light` verb: what it lights, the torch lit at a fire or a lantern (game #188), the reach and the line of sight, the refusals
+- `src/interactions.js:35-44`: `crop` matches any crop
+- `src/burn.js:148`, `src/burn.js:171-322`: the `light` verb: what it lights, the torch lit at a fire or a lantern (game #188), the reach and the line of sight, the refusals
 - `src/use.js:94-104`: a row's action run, its line said on success, the reason on a refusal
-- `src/burn.js:56-77`: the dip's reach, its refusals (arrows not carried: "Take the arrows out first."), the whole stack changed
-- `src/interact.js:681-720`: the well's own menu fills waterskins
-- `src/interact.js:361-394`: fires lit and fed from their menus
+- `src/burn.js:148-169`: the dip's reach, its refusals (arrows not carried: "Take the arrows out first."), the whole stack changed
+- `src/interact.js:906-949`: the well's own menu fills waterskins
+- `src/interact.js:462-497`: fires lit and fed from their menus
 - `src/use.js:81-87`: a guest's Use sent to the host
-- `src/ui/inventory-actions.js:442-476`, `src/main.js:1021-1032`: the host runs it as that player; a bracket sent by its tile and edge
-- `src/host.js:281-285`: the line goes to the guest's chat log
-- `data/interactions.json`, `src/burn.js:87-120`, `src/burn.js:192-209`: tinderbox rows for the fireplace and the hearth, the campfire's line, a log on a campfire (game #421, at 1bcb6ed)
+- `src/ui/inventory-actions.js:449-483`, `src/main.js:1058-1069`: the host runs it as that player; a bracket sent by its tile and edge
+- `src/host.js:304-309`: the line goes to the guest's chat log
+- `data/interactions.json`, `src/burn.js:178-211`, `src/burn.js:283-300`: tinderbox rows for the fireplace and the hearth, the campfire's line, a log on a campfire (game #421)

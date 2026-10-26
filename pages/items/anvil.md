@@ -1,12 +1,12 @@
 ---
 title: Anvil
 categories: [Stations, Crafting]
-summary: The smith's station: tools and weapons from iron bars and sticks, with a hammer in hand; it also repairs a worn weapon or tool for a bar or a plank.
+summary: The smith's station: tools, weapons, wall brackets, and strongboxes from iron bars, sticks, and planks, with a hammer in hand; it also repairs a worn weapon or tool for a bar or a plank.
 ---
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], and the [[Arming sword]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Shears]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], the [[Flanged mace]], the [[Arming sword]], and the [[Wall bracket]], and, with planks as well, a [[Strongbox|strongbox]]. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
 
 ## Using it
 
@@ -43,23 +43,23 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
-- `src/stations.js:46-53`: which prop is which station
+<!-- sources at 879d0a7 -->
+- `src/stations.js:49-59`: which prop is which station
 - `data/sprites/anvil.json`: the anvil is a station, not carried, with no fire
-- `data/recipes.json:505-663`: the anvil's recipes: hammer, knife, hatchet, pickaxe, scythe, spear, mace, sword; every one but the hammer's has `tool: "hammer"`
-- `data/loot.json:13`, `data/loot.json:16`: the quarryman's chest's hammer and the smithy's chest's iron bars (game #210)
-- `src/interact.js:788-805`: the station's menu entry and `E`
-- `src/stations.js:145-154`: the refusals, "Needs a smith's hammer in hand." among them
-- `src/stations.js:168-204`: what is made goes to the output box
+- `data/recipes.json:815-1025`: the anvil's recipes: knife, shears, hammer, hatchet, pickaxe, scythe, spear, mace, sword, strongbox, wall bracket; every one but the hammer's has `tool: "hammer"`
+- `data/loot.json:15`, `data/loot.json:18`: the quarryman's chest's hammer and the smithy's chest's iron bars (game #210)
+- `src/interact.js:1068-1085`: the station's menu entry and `E`
+- `src/stations.js:170-181`: the refusals, "Needs a smith's hammer in hand." among them
+- `src/stations.js:195-201`, `src/stations.js:294-324`: what is made goes to the output box
 - `data/maps/valley.json`: where the anvil stands
-- `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
-- `src/host.js:183-189`: a guest's Make runs on the host as the craft verb, for that player
-- `data/sprites/anvil.json`, `src/repair.js:29-35`: the anvil is also a repairing place, `repair: "anvil"` (game #416, at 31d330a)
-- `data/tuning.json:169`, `data/items.json:6-52`: the anvil's ceilings, seconds, and tool (`smith`, carried); each item's material (game #416, at 31d330a)
-- `src/repair.js:56-72`, `src/repair.js:94-108`: the refusals; one unit of the material taken; the condition set to the ceiling; the message (game #416, at 31d330a)
-- `src/repair.js:115-156`: the entries, their labels, greyed past repair or missing a thing, the one greyed line and its "(nothing it can better)" (game #454, at 6e3ab37)
-- `src/inventory.js:92-108`: the hammer found carried, in a hand, the belt, or the bag (game #416, at 31d330a)
-- `src/net.js:600-610`, `src/net.js:1261-1263`: a guest's Repair sent by label, run on the host as that player (game #416, at 31d330a)
-- `data/sprites/anvil.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's anvil fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)
+- `src/ui/station-panel.js:73-90`: a guest's panel opens on its own screen
+- `src/host.js:185-192`: a guest's Make runs on the host as the craft verb, for that player
+- `data/sprites/anvil.json`, `src/repair.js:29-35`: the anvil is also a repairing place, `repair: "anvil"` (game #416)
+- `data/tuning.json:187`, `data/items.json:6-89`: the anvil's ceilings, seconds, and tool (`smith`, carried); each item's material (game #416)
+- `src/repair.js:56-72`, `src/repair.js:94-108`: the refusals; one unit of the material taken; the condition set to the ceiling; the message (game #416)
+- `src/repair.js:115-156`: the entries, their labels, greyed past repair or missing a thing, the one greyed line and its "(nothing it can better)" (game #454)
+- `src/inventory.js:94-112`: the hammer found carried, in a hand, the belt, or the bag (game #416)
+- `src/net.js:665-675`, `src/net.js:1417-1419`: a guest's Repair sent by label, run on the host as that player (game #416)
+- `data/sprites/anvil.json`, `data/recipes.json`, `src/placement.js:111-118`: the village's anvil fixed unless Village stations moves it; its recipe behind the rule (game #431)
 
 {{navbox making}}

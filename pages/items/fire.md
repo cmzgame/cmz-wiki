@@ -80,28 +80,28 @@ Lighting, putting out, and feeding a fire change the world, so every player sees
 
 ## Sources
 
-<!-- sources at 1bcb6ed -->
+<!-- sources at 879d0a7 -->
 - `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/lantern_post.json`: the home lights' `fire.switch` (game #421)
-- `src/interact.js:477-487`, `src/interact.js:599-609`: a switch's and a bracket lantern's menu: Light with a flame, Put out with nothing (game #421)
-- `src/map.js:99-102`, `src/map.js:122-124`: a switch burns nothing and takes no fuel (game #421)
-- `src/map.js:291-312`: a lantern or a switch on or off; a put-out emits `firePutOut`, not the burnt-out `fireOut` (game #421)
+- `src/interact.js:508-518`, `src/interact.js:632-640`: a switch's and a bracket lantern's menu: Light with a flame, Put out with nothing (game #421)
+- `src/map.js:108-111`, `src/map.js:131-133`: a switch burns nothing and takes no fuel (game #421)
+- `src/map.js:320-346`: a lantern or a switch on or off; a put-out emits `firePutOut`, not the burnt-out `fireOut` (game #421)
 - `src/light.js:47-71`: lit fires give light, a room fire its room, a lantern put out none
 - `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`: each fire's fuel, hours a unit, most, cooking
-- `src/stations.js:47-55`: a prop's stations as a list, the oven its own and a fire that cooks (game #421)
-- `src/map.js:96`: a game hour in seconds
-- `src/interact.js:431-466`: the oven's and forge's Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only
-- `src/inventory.js:151-161`, `src/inventory.js:318-332`: the flame: a tinderbox in a hand, on the belt, or in the bag, else a lit torch in a hand or on the belt; the refusal's words
-- `src/burn.js:87-120`, `src/burn.js:210-230`: the `light` verb: a campfire with fuel, a switch, a lantern, a torch that is out; never the oven or the forge; each refusal; the lines
-- `src/burn.js:122-150`: a burning fire, a lit torch on a holder, and a lit lantern are flames; a lantern put out is not
-- `src/archery.js:289-292`, `src/map.js:186-205`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel and nothing else that is a fire
-- `src/burn.js:161-191`, `src/interact.js:528-560`: the `putout` verb: a switch, a lantern, a campfire keeping its fuel, a mounted torch keeping its wear (game #421)
-- `src/interact.js:1370-1385`: `T`, "You put out the torch." (game #421)
-- `src/map.js:99-120`: a fire burns a unit every so many hours and goes out
-- `src/main.js:1742-1744`, `src/host.js:253-260`, `data/tuning.json`: "A fire has gone out." within `fireOutRadius`, on every player's screen
+- `src/stations.js:51-59`: a prop's stations as a list, the oven its own and a fire that cooks (game #421)
+- `src/map.js:105`: a game hour in seconds
+- `src/interact.js:462-497`: the oven's and forge's Light, Feed, full, "(need a log)"; fuel from bag, belt, and hands only
+- `src/inventory.js:155-165`, `src/inventory.js:398-412`: the flame: a tinderbox in a hand, on the belt, or in the bag, else a lit torch in a hand or on the belt; the refusal's words
+- `src/burn.js:178-211`, `src/burn.js:301-321`: the `light` verb: a campfire with fuel, a switch, a lantern, a torch that is out; never the oven or the forge; each refusal; the lines
+- `src/burn.js:213-241`: a burning fire, a lit torch on a holder, and a lit lantern are flames; a lantern put out is not
+- `src/archery.js:311-314`, `src/map.js:198-218`, `data/combat.json` `bow.kindleRadius`: a fireball lights a campfire with fuel and nothing else that is a fire
+- `src/burn.js:252-282`, `src/interact.js:559-591`: the `putout` verb: a switch, a lantern, a campfire keeping its fuel, a mounted torch keeping its wear (game #421)
+- `src/interact.js:1481-1499`: `T`, "You put out the torch." (game #421)
+- `src/map.js:108-129`: a fire burns a unit every so many hours and goes out
+- `src/main.js:1781-1783`, `src/host.js:254-261`, `data/tuning.json`: "A fire has gone out." within `fireOutRadius`, on every player's screen
 - `src/stations.js`: a job waits while the fire is out
-- `data/sprites/pumpkin.json`: the jack-o'-lantern is a switch (game #428, at 0ce54cf)
+- `data/sprites/pumpkin.json`: the jack-o'-lantern is a switch (game #428)
 - `data/items.json`: the torch's radius; `data/tuning.json`: the belt torch and two torches
-- `src/net.js:599-607`: a guest's menu choice performed on the host as that player, its refusal to their screen
-- `data/interactions.json`, `src/interactions.js:34-43`, `src/burn.js:56-77`: arrows used on any lit fire, refused when it is out
+- `src/net.js:664-672`: a guest's menu choice performed on the host as that player, its refusal to their screen
+- `data/interactions.json`, `src/interactions.js:35-44`, `src/burn.js:147-169`: arrows used on any lit fire, refused when it is out
 
 {{navbox making}}
