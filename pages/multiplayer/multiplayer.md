@@ -7,6 +7,7 @@ numbersOk: true
 ---
 
 <!-- typed: the idle time, five minutes, is AWAY_AFTER_MS in src/main.js, not a census constant -->
+<!-- typed: sixty steps a second is the world's fixed step, STEP = 1 / 60 in src/loop.js, an expression the census does not read -->
 
 **Multiplayer** lets friends play in the same [[Worlds|world]] at once. One browser, the host's, runs the world; everyone else is a guest who sees it and plays in it through the host. There is no separate kind of save for playing together: any world of yours can be opened to friends and closed again.
 
@@ -16,7 +17,7 @@ numbersOk: true
 
 A world lives in the browser that made it. When it is open to friends, that browser is the **host**: it runs the dead, the villagers, the fire, the clock, and every player, guests included. A guest sends what they press and click; the host does it and sends the world back {{n census.constants.net.FRAME_EVERY}} steps at a time. A guest's own walking is predicted on their screen and corrected by the host.
 
-On a guest's screen the other players, the dead, and the villagers are drawn a few steps behind the host's frames and moved smoothly between them, so they walk evenly even when frames arrive unevenly; a body that jumps far, as at a respawn, is put straight where it is.
+On a guest's screen the other players, the dead, and the villagers are drawn a few steps behind the host's frames and moved smoothly between them, so they walk evenly even when frames arrive unevenly; a body that jumps far, as at a respawn, is put straight where it is. Arrows, thrown weapons, and the fireball are drawn the same way: the host sends each flight once, when it is loosed, and once when it comes down, and the guest draws it moving every step from where it was loosed, on the same clock as the bodies, so it meets the body it hits where both are drawn. The host still decides what it hits and where it lands. A guest's own shot is drawn on that clock too, {{n tuning.feel.netDelaySteps}} steps behind the newest frame (about 67 ms, at sixty steps a second), a little later than it once was.
 
 Everything a guest can do, they do through the same actions as the host: opening doors, boarding windows, fighting, the bag and the character screen, building, and [[Crafting|crafting]] at a station.
 
@@ -103,3 +104,4 @@ The [[World rules|world rules]] above, set by the host.
 - `src/ui/log.js`, `src/ui/speech.js`: talking
 - `src/ui/screens.js:1044-1050`, `src/main.js:1021-1027`: the dead screen, a guest's from the host
 - `docs/31-multiplayer/03-the-game-with-more-than-one-player.md`: play with friends as built, system by system; every section of this page checked against it (game commit 490addf)
+- `src/archery.js`, `src/net.js`, `src/netsmooth.js` `drawClock`: a flight's launch and end sent once, stepped every step on a guest from its launch on the bodies' draw clock, `feel.netDelaySteps` behind the newest frame; the host's hit and landing kept (game #463, at d625844)

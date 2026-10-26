@@ -80,7 +80,9 @@ Wild game (deer, rabbits, and boar) takes any blow or shot. Tame stock (hens, co
 
 Tame animals are kept, not hunted. A [[Lead]] leads one at your pace, and let go by hand it makes where it stands its home, so let go inside a fenced yard with its gates shut it stays: a pen. Each eats one unit of feed a game day (grain, potatoes, cabbages, pumpkins, or [[Hay]]) as soon as a [[Feeding trough]] it can reach holds some: in a pen, a trough on its own pen's fences; out of one, a trough within {{n animals.keep.feedReach tiles}} of its home. Unfed, it gives nothing and never starves. Fed, a cow gives a [[Jug of milk]] to an empty [[Bucket]] carried, a sheep [[Wool]] to [[Shears]], and a hen lays an [[Egg]] into its [[Chicken coop|coop]], with a [[Feather]] most days. Two of a kind fed in a pen breed one young every {{n animals.keep.breedDays game days}}, up to {{n animals.keep.penCap}} of a kind. The whole of it is [[Keeping]].
 
-{{planned doc=45 step=4 note="What they give: raw meat to cook alone or in recipes, cheese and butter, bacon and lard, smoked meat, pemmican, woollen cloth, leather, and fletched arrows."}}
+## What they give
+
+What the animals give is used: raw [[Meat|meat]] cooks alone at a fire or goes into the [[Meat pottage]], the [[Hearty stew]], a [[Meat pie]], [[Smoked meat]] at a [[Smoking rack]], and [[Pemmican]] (bound with [[Lard]] or honey); eggs and [[Bacon]] fry into [[Eggs and bacon]]; jugs of milk make a [[Wheel of cheese]] and [[Butter]]; [[Wool]] is spun into [[Woollen yarn]] and woven into [[Woollen cloth]]; a [[Hide]] is tanned into [[Leather]] at a [[Tanning vat]]; and a [[Feather]] fletches every batch of [[Arrow|arrows]]. See [[Cooking]] and [[Production chains]].
 
 ## With friends
 
@@ -112,5 +114,6 @@ The animals live in the host's world: the host moves them, renews them, feeds th
 - `src/ui/names.js:32-60`, `src/main.js:1237-1240`: the name on hover when the animal is seen
 - `src/game.js:841-855`: the dead's lists hold no animals; a butchered carcass leaves the list
 - `src/game.js:111-116`, `src/game.js:248-250`, `src/game.js:332-333`, `src/game.js:471-474`: the animals and homes made from the map, saved, restored, and in the sync check (at 6e3ab37)
+- `data/recipes.json`, `data/items.json:70-85`: the animals' recipes: the cooked meats, the dishes, cheese and butter, yarn and woollen cloth, leather, and fletched arrows (game #462, at d625844)
 
 {{navbox places}}

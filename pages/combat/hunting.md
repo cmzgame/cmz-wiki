@@ -49,7 +49,7 @@ A carcass lies where it fell until it is butchered. It never rots and the dead i
 
 A carcass's menu has **Skin the deer**, then **Butcher the deer**. Each is a timed action, {{n animals.work.skin seconds}} to skin and {{n animals.work.butcher seconds}} to butcher, and each needs a [[Dirk]] carried anywhere: in a hand, on the belt, or in the bag. Without one the entries are greyed "Skin the deer (you need a dirk)". Butcher is greyed "(skin it first)" until an animal with a hide is skinned. A hen and a pig have no hide, so they offer Butcher alone. You must be within {{n census.constants.entities_animal.BODY_REACH tiles}} of it; farther, the entry walks you there first.
 
-Skinning says "You skin the deer: a hide." or, when the share left nothing, "The deer's hide is ruined." Butchering says "You butcher the deer:" and what it gave or "There is nothing left worth taking on the deer." What you get goes to your bag, and what does not fit falls at your feet. Arrows and thrown weapons lodged in the carcass come back with the meat, a thrown weapon with its wear kept. A butchered carcass is gone.
+Skinning says "You skin the deer: a hide." or, when the share left nothing, "The deer's hide is ruined." Butchering says "You butcher the deer:" and what it gave, each item counted as the thing is: venison, beef, mutton, pork, bacon, and lard take no "s" and no "a" ("raw venison", "some lard"), while a hen, a rabbit, a feather, or a hide does ("raw hens", "feathers", "a hide"); or "There is nothing left worth taking on the deer." What you get goes to your bag, and what does not fit falls at your feet. Arrows and thrown weapons lodged in the carcass come back with the meat, a thrown weapon with its wear kept. A butchered carcass is gone.
 
 ### What each kind gives
 
@@ -71,7 +71,7 @@ A boar struck by a player turns on that player. It charges at its run of {{n ani
 
 ### Snares
 
-A [[Snare]] is made at the [[Workbench]] and set from the bag outdoors. Left alone for {{n animals.snare.hours}} game hours near a home of rabbits (within {{n animals.snare.reach tiles}}), it holds one of that home's rabbits, taken only when no player, living or dead, is within {{n animals.renew.clear tiles}} of the snare or of the rabbit, so nothing is caught in view. The catch is a carcass lying on the snare, its class Snare (the whole yield). Once it is butchered, the snare is set again. The rabbit was the home's own, so the home renews it in time: snaring is renewal, never endless.
+A [[Snare]] is made at the [[Workbench]] and set from the bag outdoors. Left alone for {{n animals.snare.hours}} game hours near a home of rabbits (within {{n animals.snare.reach tiles}}), it holds one of that home's rabbits, taken only when no player is within {{n animals.renew.clear tiles}} of the snare or of the rabbit, nor a fallen player's body, so nothing is caught in view; the walking dead do not stop a catch. The catch is a carcass lying on the snare, its class Snare (the whole yield). Once it is butchered, the snare is set again. The rabbit was the home's own, so the home renews it in time: snaring is renewal, never endless.
 
 ### Tracks
 
@@ -118,5 +118,8 @@ Hunting is the host's: the hits, the kill, the boar's charge, the snares' catche
 - `src/entities/animal.js:960-970`: Look at's lines for a carcass and a charging boar
 - `src/tracks.js:1-57`, `src/render/tracks.js:1-35`: the prints: wild game only, every so many tiles, their life, the cap, the radius, in sight; this client's alone
 - `data/animals.json:1-18`: `kills`, `classes`, `work`, `snare`, `tracks`, each species' health, wildness, `yields`, and the boar's `fight` (game #456)
+- `src/entities/animal.js:764-768`, `src/items.js:65-83`, `data/items.json:53-60`: the yields counted by each item's noun and plural, "4 raw venison", "some lard" (game #466, at d625844)
+- `src/entities/animal.js:878-911`: the snare's watchers are the players and their bodies, not the walking dead (game #466, at d625844)
+- `data/recipes.json:1130-1348`: what the meat cooks into (game #462, at d625844)
 
 {{navbox items}}

@@ -11,14 +11,14 @@ summary: Eating food fills hunger by the food's value and heals by its heal valu
 
 ### Eating
 
-- **Eat** on a food's menu, in your bag or in an open container, eats it. Food does not stack: each takes a cell of its own.
+- **Eat** on a food's menu, in your bag or in an open container, eats it. Most food does not stack, each taking a cell of its own; an [[Egg]] and [[Pemmican]] stack.
 - A food on your [[Belt]] is eaten from its slot: its belt key, **Eat** on the slot's menu, or a double-click on the slot.
 
 Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals. What it heals rises over your head as a green number (see [[Interface#Floating numbers|Interface]]).
 
 ### Healing
 
-Each food heals a little, by its heal value below: raw food least, cooked food more, a [[Stew]] the most. It is a stopgap while you wait for your health to come back by itself or find something better; no food heals much.
+Each food heals a little, by its heal value below: raw food least, cooked food more, the pottages, the [[Hearty stew]], and the [[Meat pie]] the most. It is a stopgap while you wait for your health to come back by itself or find something better; no food heals much.
 
 A food heals exactly its value, every time, however full you are. The cost of a heal is the food itself: the same food you would need for hunger later.
 
@@ -32,7 +32,9 @@ A new character carries a [[Loaf of bread]] and [[Apple|apples]]. Bread and the 
 
 How long all the food the valley starts with would last, alone or with friends, is counted on [[Day-one food]].
 
-Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish grill at a fire, a potato roasts, and a stew takes potatoes, a cabbage, and garlic. Rye's [[Grain]] makes porridge, and ground into [[Flour]] at the [[Millstones]] it bakes into bread and, with a pumpkin, a [[Pumpkin pie]] at the oven. Every one of them can be made in play.
+Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish grill at a fire, a potato roasts, and the [[Plain pottage]] takes potatoes, a cabbage, and garlic. Rye's [[Grain]] makes porridge, and ground into [[Flour]] at the [[Millstones]] it bakes into bread and, with a pumpkin, a [[Pumpkin pie]] at the oven. Every one of them can be made in play.
+
+The animals give more (see [[Hunting]] and [[Keeping]]): each raw [[Meat|meat]] cooks alone at a fire into its own roast or steak, and raw meat goes into the [[Meat pottage]], the [[Hearty stew]], a [[Meat pie]] at the oven, [[Smoked meat]] at a [[Smoking rack]], and [[Pemmican]]; eggs and bacon make [[Eggs and bacon]], jugs of milk a [[Wheel of cheese]] at a fire, and a jug [[Butter]] at the [[Workbench]].
 
 ### Foods
 
@@ -52,8 +54,21 @@ Cooked foods are made at a lit fire ([[Cooking]]) or the [[Oven]]. The fish gril
 | [[Garlic]] | {{n items.garlic.hunger}} | - | {{n items.garlic.heal}} |
 | [[Pumpkin]] | {{n items.pumpkin.hunger}} | - | {{n items.pumpkin.heal}} |
 | [[Roast potato]] | {{n items.roast_potato.hunger}} | - | {{n items.roast_potato.heal}} |
-| [[Stew]] | {{n items.stew.hunger}} | {{n items.stew.thirst}} | {{n items.stew.heal}} |
+| [[Plain pottage]] | {{n items.stew.hunger}} | {{n items.stew.thirst}} | {{n items.stew.heal}} |
 | [[Porridge]] | {{n items.porridge.hunger}} | - | {{n items.porridge.heal}} |
+| [[Roast hen]] | {{n items.hen_cooked.hunger}} | - | {{n items.hen_cooked.heal}} |
+| [[Roast rabbit]] | {{n items.rabbit_cooked.hunger}} | - | {{n items.rabbit_cooked.heal}} |
+| [[Venison steak]] | {{n items.venison_cooked.hunger}} | - | {{n items.venison_cooked.heal}} |
+| [[Beef steak]] | {{n items.beef_cooked.hunger}} | - | {{n items.beef_cooked.heal}} |
+| [[Roast mutton]] | {{n items.mutton_cooked.hunger}} | - | {{n items.mutton_cooked.heal}} |
+| [[Roast pork]] | {{n items.pork_cooked.hunger}} | - | {{n items.pork_cooked.heal}} |
+| [[Meat pottage]] | {{n items.meat_pottage.hunger}} | {{n items.meat_pottage.thirst}} | {{n items.meat_pottage.heal}} |
+| [[Hearty stew]] | {{n items.hearty_stew.hunger}} | {{n items.hearty_stew.thirst}} | {{n items.hearty_stew.heal}} |
+| [[Eggs and bacon]] | {{n items.eggs_and_bacon.hunger}} | - | {{n items.eggs_and_bacon.heal}} |
+| [[Meat pie]] | {{n items.meat_pie.hunger}} | - | {{n items.meat_pie.heal}} |
+| [[Smoked meat]] | {{n items.smoked_meat.hunger}} | - | {{n items.smoked_meat.heal}} |
+| [[Pemmican]] | {{n items.pemmican.hunger}} | - | {{n items.pemmican.heal}} |
+| [[Butter]] | {{n items.butter.hunger}} | - | {{n items.butter.heal}} |
 
 {{item-table kind=food}}
 
@@ -100,6 +115,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `src/ui/inventory-actions.js:313-319`, `src/ui/inventory-actions.js:421-432`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
-- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc); eggs since game #460, pemmican since game #462
+- `data/items.json:70-82`, `data/items.json:109`, `data/recipes.json:1130-1420`, `data/recipes.json:1554-1573`, `data/recipes.json:386-401`: the cooked meats, the dishes, and butter, their numbers and recipes; the stew named Plain pottage (game #462, at d625844)
 
 {{navbox items}}

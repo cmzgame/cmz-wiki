@@ -43,9 +43,9 @@ Every tame animal that has not eaten today eats one unit of feed as soon as a tr
 | Hen | An [[Egg]] | Laid into its [[Chicken coop]] when it eats | - | {{n animals.species.hen.lays.count.0}} |
 | Hen | A [[Feather]] | Left in its coop on {{pct animals.keep.feather}} of the days it eats | - | 1 |
 
-Milking and shearing are timed entries on the animal's menu, once a game day each, and only on a day it has eaten. Each is greyed with the reason: "(you need a bucket)", "(the cow has not been fed today)", "(it has been milked today)", or "(it has been shorn today)". A bucket holding water is refused with "Empty the bucket first.": the milk is a jug of its own, not the bucket's fill, and the bucket is kept. What you take goes into your bag, or falls at your feet if it is full: "You milk the cow: a jug of milk."
+Milking and shearing are timed entries on the animal's menu, once a game day each, and only on a day it has eaten. Each is greyed with the reason: "(you need a bucket)", "(you need shears)", "(the cow has not been fed today)", "(it has been milked today)", or "(it has been shorn today)". Milking takes an empty bucket wherever you carry it, before a bucket of water in your hand; only when every bucket you carry holds water is it refused with "Empty the bucket first.": the milk is a jug of its own, not the bucket's fill, and the bucket is kept. What you take goes into your bag, or falls at your feet if it is full: "You milk the cow: a jug of milk.", "You shear the sheep: some wool." or "2 wool".
 
-A hen lays as it eats, into a chicken coop within {{n animals.keep.coopReach tiles}} of its home each way; with no coop that near, it lays nothing. The coop holds only what its hens lay, and a full coop takes no more until someone empties it.
+A hen lays as it eats, into a chicken coop within {{n animals.keep.coopReach tiles}} of its home each way (a square round its home, not a circle); with no coop that near, it lays nothing. The coop holds only what its hens lay, and a full coop takes no more until someone empties it.
 
 **Pens that give more:** {{pct animals.keep.more}} of the time, milking, shearing, and laying each give one more. Pigs give nothing while alive; they are kept for their meat (see [[Hunting]]).
 
@@ -100,5 +100,6 @@ Every part of keeping runs on the host. A guest's **Lead**, **Let go**, **Milk**
 - `data/items.json:81`, `data/items.json:77-80`, `data/items.json:69`: grain, potatoes, cabbages, pumpkins, and hay tagged `feed`
 - `tools/mapgen/valley.py:458-459`, `tools/mapgen/valley.py:593-602`: the coop and the troughs at Hollow Farm, the byre, the pigsty, and the sheepfold
 - `src/net.js`, `src/game.js`: an animal's leader, fed day, taken day, and home on the wire and in the `animals` sync part (game #460, `net.PROTOCOL` 12)
+- `src/entities/animal.js:520-551`, `src/inventory.js:94-112`, `src/items.js:65-83`: milking prefers an empty bucket carried anywhere; "(you need shears)"; the yields counted, "some wool" (game #466, at d625844)
 
 {{navbox places}}

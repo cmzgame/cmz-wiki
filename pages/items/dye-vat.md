@@ -37,7 +37,7 @@ The reasons Apply can give:
 
 - **On the figure:** a plain-drawn garment takes the colours as its own tones, one per region (the satchel's cloth and strap, the belt's leather and buckle). A painted one, like the [[Onion-head Hat]], is recoloured by the key tones its art names, in any slot; the rest of its paint and its outline are kept.
 - **In the bag:** an item without a drawn icon is drawn as a block in its first colour. An item with a drawn icon (the [[Linen tunic]], the [[Linen breeches]], the [[Hobnail boots]]) keeps its icon as painted.
-- **On the hover card:** a dyeable item's card says how it can be dyed, as "Can be dyed at a dye vat: 16 colours.", "Can be dyed at a dye vat: 16 colours for the cloth, 7 colours for the strap.", or "Can be dyed at a dye vat: {{n items.good_belt.dye.schemes.length}} schemes." The count is what the picker shows: a palette colour that is the item's own is its Undyed swatch and is not counted again, so the [[Linen breeches]] (own Walnut brown) say "15 colours" and the [[Hobnail boots]] (own Dark brown) "6 colours". A dyed item's card names its colours on its state line: "Woad blue", "Black and iron", "Cloth undyed, strap oxblood".
+- **On the hover card:** a dyeable item's card says how it can be dyed, as "Can be dyed at a dye vat: 16 colours.", "Can be dyed at a dye vat: 16 colours for the cloth, 7 colours for the strap.", or "Can be dyed at a dye vat: {{n items.good_belt.dye.schemes.length}} schemes." The count is what the picker shows: a palette colour that is the item's own is its Undyed swatch and is not counted again, so the [[Linen breeches]] (own Walnut brown) say "15 colours" and the [[Hobnail boots]] (own Dark brown) "6 colours". A dyed item's card names its colours on its state line: "Woad blue", "Black and iron", "Cloth undyed, strap oxblood". A colour no dye gives and not the item's own, as on a garment looted from [[The dead]], is named by a plain word read from the colour itself, never its code: "Brownish" for a dull or dark warm colour (a looted hood reads "Brownish"), "Greyish" for one with little colour, or the hue's family, as "Greenish", "Bluish", or "Reddish". The picker's Colour row names it the same way.
 
 ## The colours
 
@@ -110,5 +110,6 @@ A guest's **Use the dye vat** is sent to the host and carried out there for that
 - `src/net.js:1298-1301`, `src/main.js:1060`, `src/host.js:192-200`, `src/host.js:295-299`: Apply on a guest is the `dye` command, run by the host as that player; its message goes to the guest
 - `src/net.js:240`, `src/game.js:414-415`, `tools/check.js:763-772`: the worn entries, with their colours, in the player's record, the sync check, and the save
 - `data/sprites/dyevat.json`, `data/recipes.json`, `src/placement.js:105-117`: the village's dye vat fixed unless Village stations moves it; its recipe behind the rule (game #431, at 49b8c44)
+- `src/dye.js:33-55`, `src/dye.js:95-118`: a colour no dye gives, not the item's own, is a plain word from the colour itself (`colourFamily`), never its hex (game #466, at d625844)
 
 {{navbox props}}

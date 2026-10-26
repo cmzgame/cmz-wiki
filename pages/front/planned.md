@@ -17,9 +17,9 @@ The valley's next work was filed as the game's issues #194 to #204; what is left
 
 - **The castle** across the river, then the rest of **the forest places** (the woodcutters, the witch, the hunter, the bandits).
 - **Tools' verbs:** the shovel's own digging (a grave, the buried chest, a plot dug up).
-- **Animals:** what they give, cooked and made (raw meat at a fire and in recipes, cheese and butter, leather, yarn and woollen cloth, fletching: the game's `docs/45`, step 4).
+- **Animals:** the companion, after the demo (the game's `docs/45`, step 5); rot for raw meat (game #264); what leather makes (the leather belt, the rucksack, leather armour, game #133); smoked fish, salted food, and warm woollen clothes.
 
-Fishing, apple trees, farming, the farms and the mill, the bucket and the scythe, the hatchet's felling, mining, charcoal, cloth, and the tools an action asks for, once planned here, are built: see [[Fishing]], [[Trees]], [[Farming]], [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Bucket]], [[Scythe]], [[Stump]], [[Mining]], [[Charcoal clamp]], [[Linen cloth]], and [[Smith's hammer]].
+Fishing, apple trees, farming, the farms and the mill, the bucket and the scythe, the hatchet's felling, mining, charcoal, cloth, the tools an action asks for, and what the animals give, cooked and made, once planned here, are built: see [[Cooking]], [[Meat]], [[Leather]], [[Woollen cloth]], [[Fishing]], [[Trees]], [[Farming]], [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Bucket]], [[Scythe]], [[Stump]], [[Mining]], [[Charcoal clamp]], [[Linen cloth]], and [[Smith's hammer]].
 
 ## Other plans
 
@@ -40,7 +40,7 @@ The map on M and talk with villagers, barks and conversations both, once planned
 - `docs/30-the-big-pass-spec.md:155-156`: the castle (step 5) and the forest places (step 6), the iron workings, the quarry, and the burners built (game #210)
 - `docs/30-the-big-pass-spec.md:142-145`: the tools' verbs; the hatchet's, the pickaxe's, and the scythe's built (game #207, #210, #213), and the tool rule (game #222); the shovel's graves and plots not; the knife's butchering and skinning built with hunting (game #456)
 - `docs/30-the-big-pass-spec.md:23`, `docs/30-the-big-pass-spec.md:158`: animals last: chickens, deer, leather, the tannery
-- `docs/45-animals.md:63-69` (at 6e3ab37): the animals' steps 1 to 3 built (game #452, #456, #460); step 4, what they give made into things, not
+- `docs/45-animals.md:3` (at d625844): the animals' steps 1 to 4 built (game #452, #456, #460, #462); step 5, the companion, after the demo
 - `docs/30-the-big-pass-spec.md:159`: fishing moved into valley 1.0 and built (game #193); apple trees built (game #192)
 - `docs/02-decisions.md`: the valley's issues filed again as #194 to #204 (2026-10-18, game #205)
 - `docs/33-the-map.md:3`: the map on M built (game #234, #235)

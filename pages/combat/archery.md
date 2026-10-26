@@ -79,7 +79,7 @@ A drawn bow creaks for as long as it is held, rising as the draw fills; letting 
 
 ## With friends
 
-A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. Arrows in flight are sent to guests each frame, a fire arrow burning and lit there too, and arrows on the floor or lodged in bodies travel with the world. An arrow never hurts another player: on the host the dead are its only targets.
+A guest's draw fills on the host from the button they hold, and looses at the ground point they aimed at. A guest's right tap reaches the host as part of their input, so it ends the draw there and keeps the arrow. A flight is sent to guests once, when it is loosed, and once more when it comes down; each guest then draws it moving every step from where it was loosed, on the same clock as the bodies it flies among, so an arrow, a thrown spear, and a fireball fly as smoothly on a guest's screen as on the host's, a fire arrow burning and lit there too. The host still decides what a flight hits and where it lands, and a fireball's flare shows where the host's fireball burst. Arrows on the floor or lodged in bodies travel with the world. Because a guest draws flights a few steps behind the host, as it draws the bodies, a guest's own shot appears a few steps later than it used to, and an arrow that lands can show for a moment both in the air and on the ground. An arrow never hurts another player: on the host the dead are its only targets.
 
 ## Settings that change it
 
@@ -127,5 +127,6 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:633-641`, `src/net.js:892`, `src/net.js:1132`, `src/archery.js:364-367`: a guest's aim point on the host; arrows in flight, by projectile, sent each frame and drawn on the guest
 - `src/settings.js:15`, `src/settings.js:67`, `src/main.js:1314`, `src/archery.js:755-759`: the Aim guide, on by default (game #390, at 9be007c), read only where the viewer's own screen is drawn; the marker always computed
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
+- `src/archery.js`, `src/net.js`, `src/netsmooth.js`: a flight's launch and end sent once (`go`, `end`), stepped every step on a guest from its launch on the draw clock (`drawClock`), the host's end and landing kept (game #463, at d625844)
 
 {{navbox weapons}}

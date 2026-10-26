@@ -51,6 +51,12 @@ Eleven kinds of herb, {{n valley.resources.sage.count}} sage among them, grow li
 
 Read: [[Herbs]], [[Mushrooms]], [[Clay]], [[Salt]], [[Gatherables]].
 
+### A click under a tree's crown (game #464)
+
+A click on a tree's crown where an herb, a mushroom, or any other gatherable stands behind it finds that gatherable: it sways, it is first on the menu, and Object Highlight and Use mode take it. The trunk always reaches the tree.
+
+Read: [[Gatherables]], [[Trees]].
+
 ### Saplings and sticks (game #461)
 
 A felled tree sometimes drops a [[Sapling]] ({{pct tuning.trees.sapling.chance}} of the time). Planted on open grass outdoors, it grows into a tree in {{n tuning.trees.sapling.days game days}}, waiting while anyone stands on it; an apple tree's sapling grows an apple tree. **Gather sticks** under any standing tree, from its menu, gives {{n tuning.trees.sticks.count.0}} or {{n tuning.trees.sticks.count.1}} [[Stick|sticks]], once a game day a tree.
@@ -77,7 +83,7 @@ Read: [[Scythe]], [[Farming]].
 
 ### The farms and the mill (game #219)
 
-[[Hollow Farm]], south of the lane, has the great barn with a [[Hoe]] on its rack, the farmhouse, a granary with seed of every crop, the pumpkin field with its scarecrow, plots of potatoes, cabbages, and garlic, and the farm pond. [[Long Acre]], in the north, has two rye fields, a flax strip, and a kitchen garden, with the brook and its plank footbridge beside it. [[The mill]] grinds grain into flour at its [[Millstones]], and the [[Miller]] lives there, alive and at risk. Every crop can now be grown, so bread, porridge, the stew, and a new [[Pumpkin pie]] can all be made.
+[[Hollow Farm]], south of the lane, has the great barn with a [[Hoe]] on its rack, the farmhouse, a granary with seed of every crop, the pumpkin field with its scarecrow, plots of potatoes, cabbages, and garlic, and the farm pond. [[Long Acre]], in the north, has two rye fields, a flax strip, and a kitchen garden, with the brook and its plank footbridge beside it. [[The mill]] grinds grain into flour at its [[Millstones]], and the [[Miller]] lives there, alive and at risk. Every crop can now be grown, so bread, porridge, the [[Plain pottage]] (then named the stew), and a new [[Pumpkin pie]] can all be made.
 
 Read: [[Hollow Farm]], [[Long Acre]], [[The mill]], [[Millstones]], [[Farming]].
 
@@ -129,6 +135,12 @@ Read: [[Controls]].
 On a guest's screen, the other players, the dead, and the villagers are drawn a few steps behind the host's frames and moved smoothly between them, so they walk evenly.
 
 Read: [[Multiplayer]].
+
+### Smoother arrows on a guest (game #463)
+
+Arrows, thrown weapons, and the fireball now fly as smoothly on a guest's screen as on the host's: each flight is sent once and drawn every step from where it was loosed, on the bodies' clock, the host still deciding the hit. A guest's own shot shows a few steps later than before.
+
+Read: [[Multiplayer]], [[Archery]].
 
 ### A guest told when a fire goes out (game #253)
 
@@ -296,7 +308,7 @@ Read: [[Animals]].
 
 ### Hunting (game #456)
 
-A blow or an arrow reaches wild game as it reaches the dead; tame stock only when nothing else is there to hit. A kill leaves a carcass to skin and then butcher with a [[Dirk]] carried, for raw meat, a [[Hide]], [[Feather|feathers]], bacon, and [[Lard]]; the weapon decides how much: the bow the whole yield, a melee weapon less, the [[Halberd]] nothing. A struck boar charges and bites. A [[Snare]] from the workbench catches rabbits unseen, and wild game leaves tracks near you. Raw meat is eaten raw for now.
+A blow or an arrow reaches wild game as it reaches the dead; tame stock only when nothing else is there to hit. A kill leaves a carcass to skin and then butcher with a [[Dirk]] carried, for raw meat, a [[Hide]], [[Feather|feathers]], bacon, and [[Lard]]; the weapon decides how much: the bow the whole yield, a melee weapon less, the [[Halberd]] nothing. A struck boar charges and bites. A [[Snare]] from the workbench catches rabbits unseen, and wild game leaves tracks near you. Raw meat is eaten raw, or cooked (game #462, below).
 
 Read: [[Hunting]], [[Meat]], [[Snare]], [[Dirk]].
 
@@ -305,6 +317,18 @@ Read: [[Hunting]], [[Meat]], [[Snare]], [[Dirk]].
 A [[Lead]] from the workbench leads a tame animal at your pace; let go, it makes its home where it stands, so a fenced yard with its gates shut is a pen. A [[Feeding trough]] (one in each farm pen and by the coop, or built from the palette) filled with grain, vegetables, or [[Hay]] (cut with the [[Scythe]]) feeds the animals near it, and a fed animal gives that day: a cow a [[Jug of milk]] to an empty [[Bucket]], a sheep [[Wool]] to [[Shears]] from the anvil, a hen an [[Egg]] into its coop and most days a feather. Two of a kind fed in a pen breed. An unfed animal gives nothing and never starves.
 
 Read: [[Keeping]], [[Lead]], [[Feeding trough]], [[Chicken coop]].
+
+### The animals' recipes (game #462)
+
+What the animals give is used. Each raw meat cooks alone at a fire into a roast or a steak, and any raw meat goes into the [[Meat pottage]] (beside the meatless pottage, once the stew, now the [[Plain pottage]]), the [[Hearty stew]], a [[Meat pie]] at the oven, [[Smoked meat]] at a [[Smoking rack]], and [[Pemmican]], which stacks. Eggs and bacon fry together, milk makes a [[Wheel of cheese]] and [[Butter]], wool is spun at the weaver's [[Spinning wheel]] (now a station) and woven into [[Woollen cloth]], which serves as any cloth, and a hide is tanned into [[Leather]] at a [[Tanning vat]]. The rack and the vat are made at the workbench. Arrows now need a [[Feather]].
+
+Read: [[Cooking]], [[Meat]], [[Food]], [[Arrow]].
+
+### Small fixes (game #466)
+
+The butcher's, the skinner's, and the shearer's lines count their yields as the things are, "raw venison" and "some lard", never "venisons" or "a lard", and a missing pair of shears reads "(you need shears)". Milking finds an empty bucket wherever you carry it. A garment looted from the dead in a colour no dye gives names it in a word, as "Brownish". A counter, a cart, or a station made at a bench lands only on free tiles a body could walk to from the bench, never past a wall or a shut door, and is refused, before anything is spent, where there is no room. The round oaks are named "oak", so a sapling grows into "an oak".
+
+Read: [[Crafting]], [[Hunting]], [[Keeping]], [[Dye vat]], [[Sapling]].
 
 ## Decided or filed, not built yet
 
@@ -372,3 +396,7 @@ In review in the game: #255 (region and zone wording, waiting on Michael) and #2
 - `data/items.json:27`, `data/hair/mohawk.json`: the hat's painted art, the mohawk redrawn (game #229, #231)
 - `src/inventory.js:184-198`, `src/interp.js`, `data/tuning.json`: hiding a worn item, the draw between steps and the feel numbers (game #243, #244, #247)
 - `src/ui/inventory-actions.js:46-83`, `src/netsmooth.js`, `src/host.js:239-247`: Take All, smoother bodies on a guest, a guest told a fire has gone out (game #251, #249, #253)
+- `data/recipes.json`, `data/items.json:70-85`, `data/sprites/smoking_rack.json`, `data/sprites/tanning_vat.json`, `data/sprites/spinningwheel.json`: the animals' recipes (game #462, at d625844)
+- `src/archery.js`, `src/net.js`, `src/netsmooth.js`: a guest's flights stepped from their launch (game #463, at d625844)
+- `src/interact.js:1704-1834`: a click under a crown (game #464, at d625844)
+- `src/items.js:65-83`, `src/inventory.js:94-112`, `src/dye.js:33-55`, `src/stations.js:208-275`, `data/sprites/tree_oak_m.json`: the counted names, the bucket, the colour words, a made prop's spot, the oak's name (game #466, at d625844)

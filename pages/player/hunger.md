@@ -37,7 +37,7 @@ The hunger moodle shows the stage:
 - Full to empty: {{n tuning.player.hungerDrainSeconds}} seconds
 - Well fed, and health back {{n tuning.player.wellFedRegenMult}} times as fast, at: {{n tuning.player.fullAt}}
 - Starving: {{n tuning.player.starveDamage}} health a second
-- A [[Loaf of bread]]: +{{n items.bread.hunger}}; an [[Apple]]: +{{n items.apple.hunger}}; [[Stew]]: +{{n items.stew.hunger}}. Every food is listed under [[Food]].
+- A [[Loaf of bread]]: +{{n items.bread.hunger}}; an [[Apple]]: +{{n items.apple.hunger}}; [[Plain pottage]]: +{{n items.stew.hunger}}; [[Hearty stew]], the most of any food: +{{n items.hearty_stew.hunger}}. Every food is listed under [[Food]].
 
 ## With friends
 
@@ -67,5 +67,6 @@ Each player has their own hunger. Eating on a guest goes through the host like e
 - `src/entities/player.js:164-169`, `data/tuning.json:69`: Very hungry slows stamina recovery
 - `src/entities/player.js:151`, `data/tuning.json:57`: starving damage
 - `data/items.json:16-17`, `data/items.json:70`: bread, apple, and stew
+- `data/items.json:77`, `data/items.json:109`: the hearty stew; the stew named Plain pottage (game #462, at d625844)
 - `src/ui/inventory-actions.js:270`, `src/ui/inventory-actions.js:421-432`: a guest's menu choice is run by the host
 - `src/entities/player.js:141-145`: Survival off holds hunger full

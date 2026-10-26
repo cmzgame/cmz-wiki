@@ -9,7 +9,7 @@ summary: A very large bag for testing, from the dev chest.
 
 {{devonly note="The Developer Bag is for testing: it comes from the dev chest, the console, and a world made with the Dev bag rule."}}
 
-The **Developer Bag** is a bag equipped on the back with a grid of {{n items.dev_bag.bag.0}} × {{n items.dev_bag.bag.1}} cells, far bigger than any other (see [[Inventory]]). The [[Developer chest]] holds two. On the console, `__game.giveKit()` puts one on your back with what you carried moved into it, and `__game.giveDevBag()` gives one.
+The **Developer Bag** is a bag equipped on the back with a grid of {{n items.dev_bag.bag.0}} × {{n items.dev_bag.bag.1}} cells, far bigger than any other (see [[Inventory]]). The [[Developer chest]] holds two. On the host's console, `__game.giveKit()` puts one on your back with what you carried moved into it, and `__game.giveDevBag()` gives one; a guest's console refuses both (see [[Developer chest#The console|Developer chest]]).
 
 A world made with **Dev bag** on, at the Sandbox step of New world, starts every character, a guest's too, wearing a Developer Bag in place of the [[Burlap sack]], with the starting kit in it (see [[Player#The starter kit|the starter kit]] and [[World rules]]). It is chosen once, when the world is made.
 
@@ -22,5 +22,6 @@ A world made with **Dev bag** on, at the Sandbox step of New world, starts every
 - `data/loot.json:18`: two in the dev chest's fixed list
 - `src/settings.js:71`, `src/rules.js:22`, `src/kit.js:64-69`: the Dev bag world rule, worn in place of the sack by every new character
 - `src/dev.js:123-149`: giveKit and giveDevBag
+- `src/dev.js:56-64`, `src/dev.js:146-163`: giveKit and giveDevBag the host's, refused on a guest's console (game #465, at d625844)
 
 {{navbox items}}

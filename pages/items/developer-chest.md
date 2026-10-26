@@ -37,7 +37,7 @@ Two more choices of the same step set what everyone starts with rather than what
 - `__game.give(id, n)` gives any item by its id.
 - `__game.giveDevBag()` gives a Developer Bag.
 
-These change only the game they are typed into; on a guest's game they change only what the guest sees.
+They are the host's: on a guest's console every helper that writes the world (these three, a teleport, a walk, a line said, a look set, a second player, a bleed or the infection, a shot, a world restored) refuses, saying the world is the host's, and `__game.readOnly` is true there. A guest's console still reads its copy of the world.
 
 ## See also
 
@@ -57,3 +57,4 @@ These change only the game they are typed into; on a guest's game they change on
 - `src/game.js:92-96`: placed beside the spawn of a new world made with it
 - `src/dev.js:133-150`: giveKit, give, and giveDevBag, all on the local client
 - `data/loot.json:19`: the two rugs last, the grid grown to hold them (game #339, at 499e344)
+- `src/dev.js:1-8`, `src/dev.js:56-64`: a guest's console read-only: the writing helpers throw, `readOnly` (game #465, at d625844)
