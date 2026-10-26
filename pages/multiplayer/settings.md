@@ -23,6 +23,7 @@ In the order the screen shows them, with the default first.
 - **Cursor**: Default, A hand, A severed hand, or A zombie hand.
 - **Names over heads**: Shown or Hidden: another player's name over their head while they are in sight.
 - **Small text**: Clear or Pixel, Clear by default: "Very small text in a plain, clear font (Clear), or in the pixel font like the rest (Pixel)." With Clear, all the smallest text (the health and stamina numbers, the clock, stack counts, the hover cards, the bleed's numbers, the log and the chat, these help lines) is drawn in the computer's own sans-serif, where small digits are easy to tell apart (the pixel font's three and eight run together when small); titles and large text keep the pixel font. Every digit, at any size, is in the clear sans too (a name like a world's or your character's keeps its pixel letters around clear numbers); Pixel gives back the old look, digits included.
+- **Belt slot order**: Sequential or Hands grouped, Sequential by default: which number key is which [[Belt]] slot. Sequential: `1` the main-hand slot, `2` the off-hand slot, `3` the utility slot, and a leather belt adds `4` main hand and `5` off hand. Hands grouped: `1` and `2` the main-hand slots, `3` and `4` the off-hand slots, `5` the utility slot; on a rope belt `2` and `4` are drawn as locked places. It changes only your own keys and screen: the other players and the world see the slots by their roles.
 - **Floating numbers**: Shown or Hidden: damage, healing, and what you gather float up over heads (see [[Interface#Floating numbers|Interface]]).
 - **Swing timer**: On or Off: the two swing bars at the bottom of the screen. The red exposure bar over your head shows either way.
 - **Swing targets**: On or Off, On by default: "A green outline on what your next swing would hit. Green means the swing lands." A browser that saved its settings before it came on by default keeps its own choice.
@@ -78,6 +79,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/ui/screens.js:231-247`, `src/ui/screens.js:260-274`, `src/ui/screens.js:286-291`: a page of the site out of a world, over the world in one; Back returns to where it was opened from (game #120)
 - `src/settings.js:47-83`: the registry: every row's tab, label, line of explanation, and answers; a true-or-false row a switch, any other a dropdown; the world's rules and the Dev chest in no tab (game #128)
 - `src/ui/screens.js:672-695`: a switch with its answer beside it, a dropdown showing the chosen answer, the line under each label
+- `src/settings.js:30`, `src/settings.js:66`, `src/inventory.js:308-312` (at 78116b1): Belt slot order, Sequential by default, and the two orders (game #478)
 - `src/ui/screens.js:87`, `src/ui/screens.js:159-163`: Display open first; a click on a tab opens it
 - `style.css` (the `CMZ Digits` face), `src/ui/small-text.js`: every digit in the clear sans at any size, at the pixel font's line height; Pixel restores it (game #325, at ef0d378)
 - `src/settings.js:28`, `src/settings.js:63`, `src/ui/small-text.js`: Small text, Clear by default, for text at or under its threshold (game #322, at 5cf78a9)

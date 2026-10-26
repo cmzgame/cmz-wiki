@@ -14,7 +14,7 @@ A **waterskin** holds water for [[Thirst]], shown as a percent, and its water is
 
 ## Effects
 
-Choose "Drink" on it in your bag; when it sits on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. The menu shows how full it is, and "tainted" when its water is: "Drink (tainted, 40%)", or "Drink (40%)" for clean water. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water. Each sip of tainted water has a {{pct tuning.water.sickChance}} chance to make you [[Sick]] (a stack more, with no roll, once you are Sick) and a {{pct tuning.water.infectionChance}} chance of the [[Infection]]; a sip of clean water rolls nothing.
+Choose "Drink" on it in your bag, or on its slot when it sits on the [[Belt]]. A skin on the belt is never drunk by its belt key or a double-click on its slot: they say "Your waterskin drinks by itself from your belt.", since it sips by itself (below) from any slot. The menu shows how full it is, and "tainted" when its water is: "Drink (tainted, 40%)", or "Drink (40%)" for clean water. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taking the same from the skin; a sip with thirst already full still takes a little water. Each sip of tainted water has a {{pct tuning.water.sickChance}} chance to make you [[Sick]] (a stack more, with no roll, once you are Sick) and a {{pct tuning.water.infectionChance}} chance of the [[Infection]]; a sip of clean water rolls nothing.
 
 It also drinks by itself, clean water only. Once your [[Thirst]] falls to **Thirsty** (the moodle's stage {{n tuning.player.autoDrinkStage}}), you take the same sip from a waterskin of clean water you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows; a skin of tainted water is never sipped by itself. The emptiest clean skin that still holds water goes first, so one is finished before the next is started. It waits until you are not swinging, drawing, casting, guarding, or asleep, and not already holding a drink or food out. It needs [[Survival]] on.
 
@@ -49,7 +49,7 @@ A guest drinks, fills, and boils through the same actions; the host performs the
 - `src/game.js:418`, `src/entities/character.js:64-74`: a skin's clean water in the sync check and the save (game #435, at fa2997f)
 - `data/loot.json:3-4`: waterskins in barrels and on bodies
 - `src/interact.js:1248-1249`: "Drink (N%)" showing the fill
-- `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: the belt key, the slot's Drink, or a double-click drinks it (game #186)
+- `src/interact.js:1693-1697`, `src/inventory.js:344-347`, `src/ui/inventory-actions.js:90-108` (at 78116b1): the belt slot's Drink drinks it; its key and a double-click never do, and say so (game #478)
 - `src/entities/player.js:106-114`, `data/tuning.json:59`: the sip, with a +1 that takes water at full thirst
 - `src/entities/player.js:115-133`, `data/tuning.json:60`: drinking by itself at Thirsty, belt and bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/game.js:615-618`, `src/main.js:1686-1688`, `src/host.js:248-251`: in the world's step on the host, the word to whoever drank

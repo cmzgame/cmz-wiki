@@ -20,7 +20,7 @@ Thirst empties from full in {{n tuning.player.thirstDrainSeconds}} seconds of th
 
 There are three ways to drink:
 
-- **A [[Waterskin]].** Choose "Drink" on it in your bag (it says "tainted" with how full it is when its water is tainted); on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin of clean water you carry also sips by itself once you are Thirsty (below).
+- **A [[Waterskin]].** Choose "Drink" on it in your bag (it says "tainted" with how full it is when its water is tainted); on the belt, choose "Drink" on its slot (its belt key and a double-click never drink it: "Your waterskin drinks by itself from your belt."). One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin of clean water you carry also sips by itself once you are Thirsty (below).
 - **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, a [[Jug of milk]] +{{n items.milk.thirst}}, the [[Plain pottage]] +{{n items.stew.thirst}}, the [[Meat pottage]] +{{n items.meat_pottage.thirst}}, and the [[Hearty stew]] +{{n items.hearty_stew.thirst}}.
 - **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well (tainted)" (or the trough, or the font) or "Drink from the water (tainted)". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
 
@@ -72,7 +72,7 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 - `src/entities/player.js:148`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
 - `src/interact.js:1248-1249`, `src/entities/player.js:106-114`, `data/tuning.json:59`: the "Drink" entry and the sip
-- `src/interact.js:1193-1207`, `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: the belt key, the slot's Drink, or a double-click drinks a waterskin on the belt (game #186)
+- `src/interact.js:1693-1697`, `src/inventory.js:344-347`, `src/ui/inventory-actions.js:90-108` (at 78116b1): the belt slot's Drink drinks a waterskin; its key and a double-click never do, and say so (game #478)
 - `src/entities/player.js:131-149`, `src/entities/player.js:118-129`, `src/sick.js:56-67`, `src/interact.js:858-906`, `data/kit.json`, `data/tuning.json`: clean water only for the sip by itself; a tainted drink's chance of Sick and of the infection, from a source or a skin; the Drink labels; a fill at a tainted source taints the skin; the starting skin clean (game #435, at fa2997f)
 - `src/entities/player.js:115-133`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too

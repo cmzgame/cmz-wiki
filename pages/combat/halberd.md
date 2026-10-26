@@ -14,7 +14,7 @@ The **Halberd** is a two-handed polearm. It leaves no hand for a [[Wooden shield
 - **Left** is a wide, long, slow sweep: {{n items.halberd.weapon.damage}} damage, a reach of {{n items.halberd.weapon.range tiles}}, an arc of {{n items.halberd.weapon.arc}} degrees, swing {{n items.halberd.weapon.swing seconds}}, stamina {{n items.halberd.weapon.stamina}}, stagger chance {{n items.halberd.weapon.staggerChance}}.
 - **Middle** or **Q** is a thrust at the end of the pole: {{n items.halberd.weapon.alt.damage}} damage, a reach of {{n items.halberd.weapon.alt.range tiles}}, an arc of only {{n items.halberd.weapon.alt.arc}} degrees, swing {{n items.halberd.weapon.alt.swing seconds}}, stamina {{n items.halberd.weapon.alt.stamina}}. The thrust always staggers, floors on {{n items.halberd.weapon.alt.knockdown}} of hits, and hits only the nearest target, even with Multi-hit on.
 
-The halberd is **too long for the belt**: a [[Belt]] slot refuses it ("The halberd is too long for the belt."), and with it in your hands and no room in the bag, a belt key says "The halberd is too long for the belt, and your bag is full." Its hover card says so.
+On the [[Belt]] it goes in a **main-hand slot**, whose key draws it into both hands, or in the **utility slot**, where it is stored in one cell and never drawn by the key. An off-hand slot refuses it: "The halberd needs both hands: it goes in a main-hand slot or the utility slot." Its hover card says "Equip: both hands; on the belt, a main-hand slot or the utility slot."
 
 The sweep never floors (see [[Stagger and knockdown]]). Both modes share one cooldown. The halberd lasts about {{n items.halberd.weapon.kills}} kills (see [[Durability]]); the thrust costs the same durability per hit as the sweep.
 
@@ -28,7 +28,7 @@ The sweep never floors (see [[Stagger and knockdown]]). Both modes share one coo
 - `src/player-controller.js:42-43`: the thrust on the middle button or Q
 - `src/combat.js:109-113`: the thrust laid over the sweep's numbers
 - `src/combat.js:180-193`: the thrust's `multiHit: false`
-- `data/items.json:9`, `src/inventory.js:286-294`, `src/interact.js:1527-1530`, `src/item-info.js:191`: `noBelt`: the belt refuses it, with its words, and its card says so (game #467, at 879d0a7)
+- `src/inventory.js:323-363`, `src/item-info.js:268-272` (at 78116b1): a two-hander on the belt: a main-hand slot draws it into both hands, the utility slot stores it, an off-hand slot refuses it with its words; its card says so (game #478, which took away `noBelt`)
 - `data/items.json:9` `weapon.alt.knockdown`, `weapon.alt.staggerChance`, `src/combat.js:373-374`: the thrust floors on its own `alt.knockdown` chance and always staggers
 - `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: the sweep has no `knockdown` of its own, so it takes the default chance, 0, and never floors
 - `src/combat.js:330`, `src/combat.js:342`: one cooldown for both modes

@@ -2,10 +2,10 @@
 title: Identities
 categories: [Multiplayer, Player]
 aliases: [Identity, Look, Appearance]
-summary: An identity is a name and a look kept in the browser, used as a stamp when a character is made.
+summary: An identity is a name, a look, and a handedness kept in the browser, used as a stamp when a character is made.
 ---
 
-An **identity** is a name and a look, kept in the browser and used again and again. When a [[Characters|character]] is made, it is stamped from an identity: it takes the name and the face and keeps them for life. An identity is not a character; one identity can be the stamp for survivors in many [[Worlds|worlds]].
+An **identity** is a name, a look, and a handedness, kept in the browser and used again and again. When a [[Characters|character]] is made, it is stamped from an identity: it takes the name, the face, and the hand it favours, and keeps them for life. An identity is not a character; one identity can be the stamp for survivors in many [[Worlds|worlds]].
 
 ## How it works
 
@@ -18,12 +18,15 @@ An **identity** is a name and a look, kept in the browser and used again and aga
 - **Hair style**: a dropdown of bald, short, and the painted styles.
 - **Hair colour**: {{n looks.hair.length}} colours.
 - **Eyes**: {{n looks.eyes.length}} colours.
+- **Handedness**: **Right-handed** or **Left-handed**, Right-handed for a new identity. It names which of the character's hands is the main hand and which arm holds the main hand's thing; it changes nothing the game does (see [[Hands#Right- or left-handed|Hands]]).
+
+The lists show each identity with its hair and its hand, as "short hair, left-handed".
 
 A preview shows the figure in the starting clothes, turning through its facings.
 
 ### A stamp, not a link
 
-Editing an identity changes only the characters made from it afterwards. A character already made keeps the name and look it was stamped with, and deleting an identity removes no character. A new look for an existing survivor means a new character.
+Editing an identity changes only the characters made from it afterwards. A character already made keeps the name, look, and handedness it was stamped with, and deleting an identity removes no character. A new look for an existing survivor means a new character.
 
 The last identity chosen is offered first next time.
 
@@ -35,7 +38,7 @@ The **Defaults** button on the [[Settings]] screen does not touch the identities
 
 ## With friends
 
-Joining a friend's world for the first time asks for an identity, on a page of the site before their world arrives; your new character in their world is stamped from it. The friend's world keeps the character, not the identity.
+Joining a friend's world for the first time asks for an identity, on a page of the site before their world arrives; your new character in their world is stamped from it, its handedness included (the friend's world takes only Right-handed or Left-handed, and anything else as Right-handed). The friend's world keeps the character, not the identity.
 
 ## See also
 
@@ -56,3 +59,6 @@ Joining a friend's world for the first time asks for an identity, on a page of t
 - `src/settings.js:32-33`: identities kept in the browser's settings, not in a world
 - `src/settings.js`: Defaults leaves the identities alone (game commit 3c70aa7)
 - `src/host.js:54-80`, `src/main.js:1681`, `src/ui/screens.js:809-822`: a first join asks for an identity and stamps a character from it
+- `src/ui/screens.js:771`, `src/identities.js:47-58`, `src/handed.js` (at 78116b1): the Handedness row, Right-handed or Left-handed, right by default, kept on the identity (game #477)
+- `src/ui/screens.js:914` (at 78116b1): an identity's row, "short hair, left-handed"
+- `src/game.js:95-120`, `src/game.js:639-644`, `src/host.js:101-116` (at 78116b1): handedness stamped on each character made from the identity, a guest's by the join, which takes only right or left

@@ -1,7 +1,7 @@
 ---
 title: Hands
 categories: [Items, Mechanics]
-aliases: [Main hand, Off hand, Equipping, Equip, Two-handed]
+aliases: [Main hand, Off hand, Equipping, Equip, Two-handed, Handedness, Left-handed, Right-handed]
 summary: You have two hands, the main and the off; an item says which it may go in, and a two-handed item takes both.
 ---
 
@@ -28,7 +28,15 @@ Items that cannot be held (food, materials) have no hand Equip entry. Clothing a
 
 ### Two-handed items
 
-Equipping a two-handed item pushes the off hand's item into your bag and remembers it. The next one-handed item you put in your main hand brings the remembered item back to the off hand, once.
+Equipping a two-handed item pushes the off hand's item into your bag (or onto the belt) and remembers it. The next one-handed item you put in your main hand brings the remembered item back to the off hand, once.
+
+### Right- or left-handed
+
+A character is **right-handed** or **left-handed**, chosen with their [[Identities|identity]] (Right-handed by default; there is no third choice). It changes how the hands are named and drawn, and nothing else: everything the game does, the mouse buttons, combat, and the belt, works by the main hand and the off hand, never by left or right.
+
+- **The character screen** names the hand slots by side: **Main hand (right)** and **Off-hand (left)** for a right-handed character, **Main hand (left)** and **Off-hand (right)** for a left-handed one. The names are the empty slots' words and their hover cards' names. The figure on the screen faces you, so a right-handed character's main hand is in its left column; a left-handed character's main-hand slot stands in the right column.
+- **The figure** holds the main hand's thing in the matching arm: a left-handed character swings, draws a bow, casts, thrusts, holds a torch, and waves with the left arm, and holds the off hand's thing in the right. Only the arms are turned round; the face, the hair, and the clothes are drawn as they are. The dead and the villagers are all right-handed.
+- **The belt's** main-hand slots are stamped with the hand the character favours, and the off-hand slots with the other (see [[Belt#The look and the cards|Belt]]).
 
 ### Two weapons
 
@@ -38,7 +46,7 @@ Picking up a single holdable item puts it in a free hand before the bag, so pick
 
 ## With friends
 
-A guest's equips, unequips, and swaps are sent to the host by the item's id and the slot, and the host performs them for that player. What each player holds is drawn for everyone.
+A guest's equips, unequips, and swaps are sent to the host by the item's id and the slot, and the host performs them for that player. What each player holds is drawn for everyone. A guest's handedness comes with their identity when they join, is kept on their character in the host's world and its save, and every player sees which arm holds their weapon.
 
 ## See also
 
@@ -63,3 +71,7 @@ A guest's equips, unequips, and swaps are sent to the host by the item's id and 
 - `src/items.js:121-123`: what counts as a weapon for the spear's rule; a torch does not
 - `src/interact.js:157-162`: a single holdable item goes to a free hand first
 - `src/ui/inventory-actions.js:200-358`: a guest's equips sent by uid and slot
+- `src/handed.js`, `src/entities/player.js:35` (at 78116b1): right- or left-handed, right by default; which hand is called main and off, a label read by nothing in the sim (game #477)
+- `src/ui/inventory-panel.js:318-331` (at 78116b1): the character screen's hand slots, "Main hand (right)" and "Off-hand (left)", and a left-handed character's main hand in the right column
+- `src/figure/rig.js:274`, `src/figure/draw.js:89`, `src/figure/draw.js:530` (at 78116b1): a left-handed figure's arms turned round in the pose, the main hand's thing in the left arm
+- `src/host.js:101-116`, `src/game.js:474` (at 78116b1): a guest's handedness from the join, on its character, and in the sync check

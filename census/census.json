@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "dc10b81f34956d5fdeff7e16212fa32ebf0f1540",
-  "short": "dc10b81",
-  "date": "2026-10-25T21:27:33-05:00",
-  "subject": "Merge #475, reviewed: rocks rise with a shudder; the evening's rulings (Mageroot, no night plants, eggs one a cell, pemmican, the belt pinned, potions a sitting)",
+  "commit": "78116b18617b84df0cf861f28113a716a3c59389",
+  "short": "78116b1",
+  "date": "2026-10-25T23:09:26-05:00",
+  "subject": "Merge pull request #478 from cmzgame/primary/belt-roles",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,16 +18,16 @@
   "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 37,
+  "settings": 38,
   "rules": 10,
   "fixedRules": 5,
   "liveRules": 5,
   "keys": 21,
   "verbs": 28,
-  "menuLabels": 94,
+  "menuLabels": 95,
   "events": 37,
-  "checks": 78,
-  "modules": 139
+  "checks": 79,
+  "modules": 141
  },
  "items": [
   {
@@ -1060,7 +1060,7 @@
     1
    ],
    "tags": [],
-   "beltSlots": 2,
+   "beltSlots": 3,
    "wear": "waist",
    "art": {
     "icon": true,
@@ -1081,7 +1081,7 @@
     1
    ],
    "tags": [],
-   "beltSlots": 4,
+   "beltSlots": 5,
    "wear": "waist",
    "art": {
     "icon": false,
@@ -9875,6 +9875,11 @@
    "note": "\"clear\": text at or under 15 UI px is set in the system's sans-serif; \"pixel\": in the pixel font like the rest (ui/small-text.js; #321)"
   },
   {
+   "key": "beltOrder",
+   "default": "\"sequential\"",
+   "note": "the belt's number keys and places on screen (inventory.beltPositions): \"sequential\" 1 main, 2 off, 3 utility, the leather belt's 4 main, 5 off; \"grouped\" 1 and 2 main, 3 and 4 off, 5 utility. This client's own: the key goes out as the slot's role (Michael, 2026-10-25)"
+  },
+  {
    "key": "floaters",
    "default": "true",
    "note": "the floating numbers over heads: damage, heals, and gathers (ui/floaters.js; #294)"
@@ -9978,56 +9983,56 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1127"
+    "main.js:1131"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1126"
+    "main.js:1130"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1104"
+    "main.js:1108"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:943",
-    "main.js:957"
+    "main.js:947",
+    "main.js:961"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1430"
+    "interact.js:1448"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1432"
+    "interact.js:1450"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1124"
+    "main.js:1128"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1107"
+    "main.js:1111"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1106"
+    "main.js:1110"
    ]
   },
   {
@@ -10048,62 +10053,62 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1431"
+    "interact.js:1449"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1102"
+    "main.js:1106"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1108"
+    "main.js:1112"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1115"
+    "main.js:1119"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1104"
+    "main.js:1108"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1187"
+    "main.js:1191"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1187"
+    "main.js:1191"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1105"
+    "main.js:1109"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1198"
+    "main.js:1202"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:943",
-    "main.js:949"
+    "main.js:947",
+    "main.js:953"
    ]
   }
  ],
@@ -10314,13 +10319,19 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:68"
+    "settings.js:70"
    ]
   },
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1558"
+    "main.js:1563"
+   ]
+  },
+  {
+   "key": "Belt slot order",
+   "at": [
+    "settings.js:66"
    ]
   },
   {
@@ -10332,7 +10343,7 @@
   {
    "key": "Build",
    "at": [
-    "main.js:846"
+    "main.js:850"
    ]
   },
   {
@@ -10362,80 +10373,82 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:62"
+    "settings.js:63"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:79"
+    "settings.js:81"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:83"
+    "settings.js:85"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:82"
+    "settings.js:84"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1470"
+    "main.js:1474"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1650"
+    "interact.js:1660"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1592",
-    "interact.js:1683"
+    "interact.js:1602",
+    "interact.js:1694"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1568"
+    "interact.js:1578",
+    "interact.js:1703"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1569"
+    "interact.js:1579",
+    "interact.js:1704"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1690"
+    "interact.js:1701"
    ]
   },
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:84"
+    "settings.js:86"
    ]
   },
   {
    "key": "Floating numbers",
    "at": [
-    "settings.js:65"
+    "settings.js:67"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:74"
+    "settings.js:76"
    ]
   },
   {
@@ -10453,13 +10466,13 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1532"
+    "main.js:1536"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:81"
+    "settings.js:83"
    ]
   },
   {
@@ -10472,7 +10485,7 @@
   {
    "key": "Interface size",
    "at": [
-    "settings.js:60"
+    "settings.js:61"
    ]
   },
   {
@@ -10484,71 +10497,71 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1454"
+    "main.js:1458"
    ]
   },
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2051"
+    "interact.js:2065"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1496"
+    "main.js:1500"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1518"
+    "main.js:1522"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:75"
+    "settings.js:77"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:63"
+    "settings.js:64"
    ]
   },
   {
    "key": "Object Highlight",
    "at": [
-    "settings.js:80"
+    "settings.js:82"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1571"
+    "main.js:1576"
    ]
   },
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1563"
+    "interact.js:1573"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1555",
-    "interact.js:1557",
-    "interact.js:1559",
-    "interact.js:1562",
-    "interact.js:1564"
+    "interact.js:1565",
+    "interact.js:1567",
+    "interact.js:1569",
+    "interact.js:1572",
+    "interact.js:1574"
    ]
   },
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1695"
+    "interact.js:1709"
    ]
   },
   {
@@ -10572,37 +10585,37 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1420"
+    "main.js:1424"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1416"
+    "main.js:1420"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1456"
+    "main.js:1460"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1455"
+    "main.js:1459"
    ]
   },
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:766"
+    "ui/inventory-panel.js:788"
    ]
   },
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1580"
+    "main.js:1585"
    ]
   },
   {
@@ -10614,37 +10627,37 @@
   {
    "key": "Small text",
    "at": [
-    "settings.js:64"
+    "settings.js:65"
    ]
   },
   {
    "key": "Sound",
    "at": [
-    "settings.js:69"
+    "settings.js:71"
    ]
   },
   {
    "key": "Starting population",
    "at": [
-    "settings.js:78"
+    "settings.js:80"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:73"
+    "settings.js:75"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:67"
+    "settings.js:69"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:66"
+    "settings.js:68"
    ]
   },
   {
@@ -10674,33 +10687,33 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:76"
+    "settings.js:78"
    ]
   },
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1661",
-    "interact.js:1709"
+    "interact.js:1671",
+    "interact.js:1723"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1553",
-    "interact.js:1648"
+    "interact.js:1563",
+    "interact.js:1658"
    ]
   },
   {
    "key": "Village stations",
    "at": [
-    "settings.js:77"
+    "settings.js:79"
    ]
   },
   {
    "key": "Volume",
    "at": [
-    "settings.js:70"
+    "settings.js:72"
    ]
   },
   {
@@ -10712,25 +10725,25 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:71"
+    "settings.js:73"
    ]
   },
   {
    "key": "Zombies attack villagers",
    "at": [
-    "settings.js:72"
+    "settings.js:74"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:61"
+    "settings.js:62"
    ]
   },
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:1987"
+    "interact.js:2001"
    ]
   },
   {
@@ -10801,27 +10814,27 @@
    ]
   },
   {
-   "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
+   "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1572"
+    "interact.js:1706"
    ]
   },
   {
-   "key": "Equip to ${hand} hand",
+   "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1692"
+    "interact.js:1582"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2099"
+    "interact.js:2113"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2036"
+    "interact.js:2050"
    ]
   },
   {
@@ -10863,7 +10876,7 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2135"
+    "interact.js:2149"
    ]
   },
   {
@@ -10875,13 +10888,13 @@
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1604"
+    "interact.js:1614"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2123"
+    "interact.js:2137"
    ]
   }
  ],
@@ -10913,13 +10926,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1328"
+    "main.js:1332"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:439"
+    "game.js:441"
    ]
   },
   {
@@ -10939,7 +10952,7 @@
    "at": [
     "interact.js:240",
     "interact.js:453",
-    "interact.js:2000",
+    "interact.js:2014",
     "ui/station-panel.js:84",
     "ui/station-panel.js:110"
    ]
@@ -10947,7 +10960,7 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:829"
+    "game.js:832"
    ]
   },
   {
@@ -10965,7 +10978,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:808"
+    "game.js:811"
    ]
   },
   {
@@ -11008,7 +11021,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:903"
+    "game.js:906"
    ]
   },
   {
@@ -11044,7 +11057,7 @@
   {
    "key": "playerPicked",
    "at": [
-    "game.js:71"
+    "game.js:72"
    ]
   },
   {
@@ -11108,7 +11121,7 @@
    "at": [
     "archery.js:868",
     "combat.js:447",
-    "game.js:720"
+    "game.js:723"
    ]
   },
   {
@@ -11239,6 +11252,7 @@
   "frame",
   "ground",
   "growth",
+  "handed",
   "herbs",
   "hidden",
   "highlight",
@@ -11291,11 +11305,11 @@
   },
   {
    "path": "interact.js",
-   "lines": 2198
+   "lines": 2212
   },
   {
    "path": "main.js",
-   "lines": 2039
+   "lines": 2047
   },
   {
    "path": "placeholders.js",
@@ -11303,11 +11317,11 @@
   },
   {
    "path": "net.js",
-   "lines": 1589
+   "lines": 1595
   },
   {
    "path": "ui/screens.js",
-   "lines": 1253
+   "lines": 1255
   },
   {
    "path": "placement.js",
@@ -11327,7 +11341,7 @@
   },
   {
    "path": "game.js",
-   "lines": 925
+   "lines": 928
   },
   {
    "path": "archery.js",
@@ -11335,7 +11349,7 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 788
+   "lines": 810
   },
   {
    "path": "gl.js",
@@ -11347,11 +11361,15 @@
   },
   {
    "path": "figure/draw.js",
-   "lines": 643
+   "lines": 644
   },
   {
    "path": "combat.js",
    "lines": 535
+  },
+  {
+   "path": "ui/inventory-actions.js",
+   "lines": 513
   },
   {
    "path": "render/walls.js",
@@ -11359,11 +11377,11 @@
   },
   {
    "path": "figure/rig.js",
-   "lines": 487
+   "lines": 493
   },
   {
-   "path": "ui/inventory-actions.js",
-   "lines": 484
+   "path": "inventory.js",
+   "lines": 478
   },
   {
    "path": "light.js",
@@ -11374,8 +11392,8 @@
    "lines": 419
   },
   {
-   "path": "inventory.js",
-   "lines": 413
+   "path": "item-info.js",
+   "lines": 400
   },
   {
    "path": "ui/map-panel.js",
@@ -11388,10 +11406,6 @@
   {
    "path": "entities/villager.js",
    "lines": 374
-  },
-  {
-   "path": "item-info.js",
-   "lines": 370
   },
   {
    "path": "sound-gen.js",
@@ -11415,7 +11429,7 @@
   },
   {
    "path": "host.js",
-   "lines": 311
+   "lines": 313
   },
   {
    "path": "gather-art.js",
@@ -11531,23 +11545,23 @@
   },
   {
    "path": "dev.js",
-   "lines": 166
+   "lines": 168
   },
   {
    "path": "figure/wardrobe.js",
-   "lines": 160
+   "lines": 164
   },
   {
    "path": "talk.js",
    "lines": 158
   },
   {
-   "path": "repair.js",
+   "path": "identities.js",
    "lines": 157
   },
   {
-   "path": "identities.js",
-   "lines": 155
+   "path": "repair.js",
+   "lines": 157
   },
   {
    "path": "ui/talk-panel.js",
@@ -11558,11 +11572,11 @@
    "lines": 149
   },
   {
-   "path": "rugs.js",
-   "lines": 145
+   "path": "settings.js",
+   "lines": 147
   },
   {
-   "path": "settings.js",
+   "path": "rugs.js",
    "lines": 145
   },
   {
@@ -11647,7 +11661,7 @@
   },
   {
    "path": "ui/context-menu.js",
-   "lines": 93
+   "lines": 92
   },
   {
    "path": "ui/zombie-bars.js",
@@ -11704,6 +11718,10 @@
   {
    "path": "ui/swing-timer.js",
    "lines": 72
+  },
+  {
+   "path": "ui/belt-icons.js",
+   "lines": 70
   },
   {
    "path": "rules.js",
@@ -11816,6 +11834,10 @@
   {
    "path": "figure.js",
    "lines": 30
+  },
+  {
+   "path": "handed.js",
+   "lines": 26
   },
   {
    "path": "events.js",
@@ -12038,7 +12060,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 15,
+   "PROTOCOL": 17,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,

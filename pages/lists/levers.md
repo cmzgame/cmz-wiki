@@ -90,6 +90,7 @@ On the [[Settings]] screen, kept in the browser.
 - **Aim guide**, {{default aimGuide}} by default, for the challenge of learning a bow's draw by feel. See [[Archery]].
 - **Swing targets**, {{default showSwingTargets}}. **Swing timer**, {{default swingTimer}}. **Floating numbers**, {{default floaters shown}}.
 - **Sound**, {{default soundOn}}, and **Volume**, {{default soundVolume percent}}; `F8` switches Sound from anywhere in the game. See [[Sound]].
+- **Belt slot order**, {{default beltOrder}} by default (Sequential: the first three keys never change), or Hands grouped: which number key is which [[Belt]] slot. It changes only that player's own keys and screen.
 
 ## See also
 
@@ -99,6 +100,7 @@ On the [[Settings]] screen, kept in the browser.
 
 <!-- sources at ce21ffc -->
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each
+- `src/settings.js:30`, `src/settings.js:66` (at 78116b1): Belt slot order, a player's own setting, Sequential by default (game #478)
 - `data/tuning.json`: the dead's health, the bite's cooldown, the bite tokens, the floor's times, stamina's regeneration
 - `src/entities/zombie.js:639-643`: the closing burst (game #394, at 5830ac2)
 - `src/entities/zombie.js:333-352`: the bite tokens' pool, one more for every `biteTokensPer` in reach beyond the first

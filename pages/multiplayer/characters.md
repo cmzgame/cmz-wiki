@@ -5,7 +5,7 @@ aliases: [Character, Character creation, New character]
 summary: A character is one survivor in one world, made from an identity in two steps; after a death the next one starts at the spawn.
 ---
 
-A **character** is one survivor in one [[Worlds|world]]: their body, what they carry and have on, their wounds and needs. A character belongs to the world it was made in and never moves to another. Its name and look come from an [[Identities|identity]] at creation and do not change afterwards.
+A **character** is one survivor in one [[Worlds|world]]: their body, what they carry and have on, their wounds and needs. A character belongs to the world it was made in and never moves to another. Its name, look, and handedness (right- or left-handed, see [[Hands#Right- or left-handed|Hands]]) come from an [[Identities|identity]] at creation and do not change afterwards.
 
 ## How it works
 
@@ -43,6 +43,7 @@ Each browser has its own character in a friend's world. The world knows whose is
 <!-- sources at 2a9a308 -->
 - `src/save.js:152-173`: a world keeps its own characters; the index row names my character
 - `src/identities.js:38-72`: the name and look are stamped from an identity at creation
+- `src/game.js:120`, `src/game.js:644` (at 78116b1): the handedness too, right unless the identity says left (game #477)
 - `src/ui/screens.js:80`: `CREATION_STEPS`, two steps
 - `src/ui/screens.js:375`: Next on the first step needs an identity chosen
 - `src/ui/screens.js:415-435`: the identity step (Choose, Edit, New identity), the placeholder second step, Back, and the last button's words

@@ -90,7 +90,7 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/kit.json`: the default starting kit, what is worn, in the sack, and in hand, the torch out and a tinderbox in the sack
 - `src/game.js:100`, `src/game.js:135-139`, `src/game.js:454`, `src/kit.js:62-75`: the kit given at create and to every added player, a guest's too, with the world's extra items and dev bag
 - `src/rules.js:21-22`, `src/rules.js:30`, `src/settings.js:70-72`: Extra starting items and Dev bag, world rules chosen once at the Sandbox step
-- `data/items.json:32`: the rope belt's two slots
+- `data/items.json:33`: the rope belt's slots
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
 - `data/loot.json:18`, `src/settings.js:33`, `src/game.js:92-98`: the dev chest, chosen at New world

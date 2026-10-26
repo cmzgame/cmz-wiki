@@ -22,6 +22,8 @@ With [[Fire arrow|fire arrows]] carried, the bow shoots those first, and the one
 
 Its hover card says: "Draw and release (left button): 19 to 38 damage by the draw, up to {{n combat.bow.range}} tiles." and "Needs arrows carried, fire arrows first; good for about {{n items.bow.shots}} shots." The card reads all of it from the data (the damage range from the bow's damage, the range from the flight's default), so it follows the game.
 
+On the [[Belt]] it goes in a main-hand slot, whose key draws it into both hands, or in the utility slot, where it is stored; an off-hand slot refuses it: "The hunting bow needs both hands: it goes in a main-hand slot or the utility slot."
+
 The bow loses durability per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Durability]]).
 
 {{item-sections bow}}
@@ -34,6 +36,7 @@ Drawn, it creaks for as long as it is held, rising as the draw fills; let go, it
 
 <!-- sources at 3b7cb9a -->
 - `data/items.json`: the bow: both hands, `drawTime`, `braceDrawTime`, `damage`, `knockback`, `shots`, and from game #471 `ammo` (fire arrows, then arrows)
+- `src/inventory.js:323-363` (at 78116b1): a two-hander on the belt: a main-hand slot draws it, the utility slot stores it, an off-hand slot refuses it (game #478)
 - `src/item-info.js` `shotLines` (at dc10b81): the card's lines for the bow, read from `bow`, `ammo`, `shots`, and `data/combat.json` `bow`; `src/archery.js:64-70`: `shotDamage`, the damage by the draw
 - `src/archery.js:746-753` (at dc10b81): the arrows taken from the bow's `ammo`, the first carried, the last asked for when none is
 - `src/archery.js:635-692`, `src/archery.js:695-735`: the draw, release, cancel, and the brace

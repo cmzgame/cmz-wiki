@@ -36,7 +36,7 @@ An open panel does not stop the game or make you safe. The dead keep coming, and
 In a panel:
 
 - Drag an item to move it; drop it outside every panel to drop it on the floor.
-- Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot. Double-clicking a filled slot on the character screen or the belt runs its first entry: a hand or clothing slot unequips; a belt slot eats a food, drinks from a waterskin, or else draws the item into the hand chosen for that slot (see [[Belt]]).
+- Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot. Double-clicking a filled slot on the character screen or the belt runs its first entry: a hand or clothing slot unequips; a belt slot does what its key does, eating a food or drawing the item into the slot's hand, or else shows the key's line (see [[Belt]]).
 - Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Apply**, **Split**, **Store** or **Take**, **Drop** or **Drop all**, and **Rotate**, each where it applies.
 
 An item that has lost [[Durability|durability]] shows a bar on its icon, and its hover card says how much is left.
@@ -49,10 +49,10 @@ The card says, from the top:
 
 - The item's full **name**, in white.
 - Its **kind** (Food, Tool, Material, Clothing, Bag, Seed, Bow, Shield, "Tool, weapon", and so on), then the stack's count, a fill, and the durability left as a percentage, where they apply.
-- What it does, a short line each, read from the game's data and never written by hand per item: **Eat** with what it heals and how much hunger it fills; **Drink** with how full it is; **Apply** for a bandage; a weapon's damage and reach; **Equip** with the hand or hands it takes (and, for what fits either hand, the hand the belt draws it into: "from the belt, the main hand"; on a belt slot's own card, that slot's hand; or "too long for the belt" for the [[Halberd]]), or the slot it is worn on, with a bag's grid or a belt's slots; the actions a tool is for; whether it gives light; **Use** on what, and to do what (a tinderbox is Used on a campfire or a torch post, to light it); what a seed grows; what it splits into; where it is made; what it goes into; what it builds and how many it takes; and that it burns as fuel. The word **Use** is drawn in the Use mode's gold, the other menu words in bold white. A card holds at most {{n census.constants.item-info.MAX_LINES}} of these lines.
+- What it does, a short line each, read from the game's data and never written by hand per item: **Eat** with what it heals and how much hunger it fills; **Drink** with how full it is; **Apply** for a bandage; a weapon's damage and reach; **Equip** with the hand or hands it takes ("main or off hand" for what fits either; for a two-handed item, "both hands; on the belt, a main-hand slot or the utility slot"), or the slot it is worn on, with a bag's grid or a belt's slots; the actions a tool is for; whether it gives light; **Use** on what, and to do what (a tinderbox is Used on a campfire or a torch post, to light it); what a seed grows; what it splits into; where it is made; what it goes into; what it builds and how many it takes; and that it burns as fuel. The word **Use** is drawn in the Use mode's gold, the other menu words in bold white. A card holds at most {{n census.constants.item-info.MAX_LINES}} of these lines.
 - "Right-click for actions.", in small grey letters.
 
-An empty slot shows a card with its name (for example the belt's slots by number) and "Empty slot". The card changes as the item does: eat from a stack under the pointer and the count on the card goes down.
+An empty slot shows a card with its name and "Empty slot": a hand slot's name is its side, as "Main hand (right)" (see [[Hands#Right- or left-handed|Hands]]). On a [[Belt]] slot the card leads with what its key does there ("From this main-hand slot: drawn into your main hand."), and an empty belt slot's card says what its role is for (see [[Belt#The look and the cards|Belt]]). The card changes as the item does: eat from a stack under the pointer and the count on the card goes down.
 
 Some items' cards do not yet say everything the item does.
 
@@ -105,7 +105,8 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 ## Sources
 
 <!-- sources at 3c0a243 -->
-- `src/item-info.js:187-196`, `src/ui/inventory-panel.js:450` (at 879d0a7): the card's Equip line says where the belt draws an either-hand item, a belt slot's card its own hand, and the halberd's that it is too long (game #467)
+- `src/item-info.js:268-272`, `src/item-info.js:355-393` (at 78116b1): the card's Equip line, a two-hander's belt slots; a belt slot's leading line; an empty belt slot's and a locked place's cards (game #478)
+- `src/ui/inventory-panel.js:318-331`, `src/handed.js` (at 78116b1): a hand slot named by its side (game #477)
 - `src/interact.js:1336-1337`, `src/interact.js:324-337`: a painting's Place, and its Pick up (game #344, at 9ac68a2)
 - `src/inventory.js:184-198`, `src/ui/inventory-panel.js:289-297`: the eye on a worn slot (game #243)
 - `src/main.js:1098-1183`, `src/input.js:61`, `src/input.js:88`: an open panel stops no click, key, or zoom; the world takes the mouse only from the canvas (game commit 57df52e)

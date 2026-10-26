@@ -33,7 +33,7 @@ Exposure is applied after the shield's guard.
 
 - An item for both hands needs two empty hands.
 - An item for either hand goes in the main hand first.
-- A key on the [[Belt]] draws an item into **the hand chosen for that slot**: by default the item's own hand (a weapon or any either-hand item the main hand, a book the off hand, a torch a free hand). So flipping through weapons on the belt is not dual wielding by accident; it is only when you choose the off hand for a weapon's slot.
+- A key on the [[Belt]] draws an item into **its slot's hand**: a main-hand slot's into the main hand, an off-hand slot's into the off hand. So flipping through weapons on the main-hand slots is never dual wielding by accident; a weapon is drawn beside another only from an off-hand slot. A weapon put away with the bag full goes to a main-hand slot or the utility slot, never an off-hand slot.
 - The [[Throwing spear]] is refused beside any other weapon. A torch does not count as a weapon for this rule, so a spear and a torch may be held together, but the torch is then only a light: it never takes the off hand's turn, and the spear is never dual wielded. Beside any other weapon, such as an [[Arming sword]], a torch does swing as the off hand when clicked faster than the main weapon recovers.
 - When a two-handed item pushes the off-hand item into the bag, the game remembers it and puts it back in the hand later.
 
@@ -57,7 +57,7 @@ Each player's cooldowns and exposure travel exactly to the guest, so a guest's s
 ## Sources
 
 <!-- sources at 261cd7a -->
-- `src/inventory.js:296-318`, `src/inventory.js:352-380` (at 879d0a7): a belt key draws into the slot's chosen hand, else the item's own (game #467)
+- `src/inventory.js:224-243`, `src/inventory.js:344-445` (at 78116b1): a belt key draws into its slot's hand by the slot's role; a one-hander stowed never to an off-hand slot (game #478)
 - `src/combat.js:267-283`: the left click swings the main hand when ready, else the off hand
 - `src/combat.js:305-323`: each hand's cooldown; the lockout after a swing with two weapons
 - `data/combat.json`: `dual.offDamage`, `lockout`, `window`, `front`, `arc`, `side`, `sideArc`, `behind`

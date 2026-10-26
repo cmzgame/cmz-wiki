@@ -17,7 +17,9 @@ The mouse buttons are roles, not fixed actions:
 - **Right**, tapped (let go within {{n census.constants.buttons.TAP_TIME seconds}}), opens the actions menu where it was pressed, or cancels a bow draw in progress. **Right held** is the off hand's stance: it raises the [[Wooden shield]] or braces the bow. The stance starts on the press, without waiting for the tap time.
 - **Middle** or **Q** is the main hand's other mode: the [[Halberd]]'s thrust, or the [[Throwing spear]]'s throw.
 - **Space** is the [[Shove]].
-- **The belt's keys `1` to `4`** draw a held item into the hand chosen for that slot, the main hand by default for a weapon (see [[Belt]]); drawing a weapon there is dual wielding only when you choose the off hand for it.
+- **The belt's keys** draw a held item into its slot's hand: a main-hand slot's into the main hand, an off-hand slot's into the off hand (see [[Belt]]); a weapon is drawn beside another, for dual wielding, only from an off-hand slot.
+
+The buttons and the belt name the main hand and the off hand, never left or right: a left-handed character holds the main hand's weapon in the left arm, and the left button still uses it (see [[Hands#Right- or left-handed|Hands]]).
 
 See [[Controls]] for every key.
 
@@ -123,7 +125,8 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 ## Sources
 
 <!-- sources at 37e8726 -->
-- `src/inventory.js:352-380` (at 879d0a7): a belt key draws into the slot's chosen hand (game #467)
+- `src/inventory.js:344-445` (at 78116b1): a belt key draws into its slot's hand by the slot's role (game #478)
+- `src/handed.js`, `src/figure/rig.js:274`, `src/figure/draw.js:89` (at 78116b1): handedness is a label and a drawn arm; nothing in combat reads it (game #477)
 - `src/combat.js:329-393`: the swing decided on the click (`tryAttack`)
 - `src/combat.js:183-194`, `src/combat.js:208-212`: only the dead are targets; a swing refused while carrying, in a timed action, or dead
 - `src/combat.js:183-194`, `src/game.js:106`, `src/archery.js:299-326`: no friendly fire: a blow and the shove pick from the dead alone (`targetsIn`, the dead one not yet dead), and an arrow, a spear, or the fireball lands on what `setTargets` hands in, the dead (game commit 0bd3f9c)

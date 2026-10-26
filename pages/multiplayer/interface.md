@@ -37,7 +37,7 @@ Four icons always shown, in a fixed order: infection, hunger, thirst, tiredness.
 ## Bottom centre: the swing bars and the belt
 
 - **Swing bars**: two gold bars above the belt, the main hand on top and the off hand below. They are empty at rest and fill while a swing recovers. The **Swing timer** setting hides them.
-- **The belt**: while a belt is equipped, its slots show here; keys `1` to `4` use them.
+- **The belt**: while a belt is equipped, its slots show here, each with its key, `1` to `5` in the order the **Belt slot order** setting gives. An empty slot is stamped faintly with its role: a hand for a main-hand or off-hand slot, a pouch for the utility slot. With the Hands grouped order a rope belt shows two locked places. See [[Belt]].
 
 ## Bottom left: the chat log
 
@@ -130,7 +130,7 @@ Under the portrait, a block of text: frames a second, your position and needs, t
 - `src/ui/speech.js`, `src/ui/names.js`: bubbles and names over heads
 - `style.css:561-565`, `src/ui/swing-timer.js:1-9`: the two swing bars at bottom centre
 - `src/settings.js:49`: the Swing timer setting
-- `src/interact.js:928-932`, `style.css:1321-1325`: the belt's slots and keys 1 to 4
+- `src/ui/inventory-panel.js:333-352`, `src/ui/belt-icons.js` (at 78116b1): the belt's slots, their keys in the setting's order, the role stamped on an empty one, the locked places (game #478)
 - `src/main.js:610-646`, `src/ui/context-menu.js`, `src/buttons.js:10`: the actions menu, Build last, greyed entries, what closes it
 - `src/interact.js:1015-1147`, `src/ui/inventory-panel.js:674-703`: the item and slot menus
 - `src/item-info.js:70-122`, `src/ui/hover-card.js`, `src/ui/inventory-panel.js:428-456`: the item cards over every grid and slot, an empty slot's name (game #313, at 8af4eed)

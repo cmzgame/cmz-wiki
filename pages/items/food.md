@@ -101,7 +101,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `src/entities/player.js:140-152`: hunger drains, or stays full with Survival off
 - `src/interact.js:1183-1190`: every way of eating comes to one place
 - `src/interact.js:1212-1246`: Eat from your bag or a container
-- `src/interact.js:1193-1207`: a food on the belt eaten by its key
+- `src/inventory.js:344-363`, `src/interact.js:1532-1541` (at 78116b1): a food on the belt eaten by its key, from a slot of any role (game #478)
 - `src/interact.js:1321-1333`, `src/ui/inventory-actions.js:221-229`: a belt slot's menu offers Eat in place of Equip, and a double-click eats (game #186)
 - `src/entities/player.js:149-161`: health comes back while fed and watered, faster well fed (game #259)
 - `data/kit.json:6-7`: the starter bread and apples
