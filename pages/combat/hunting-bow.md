@@ -3,20 +3,24 @@ title: Hunting bow
 categories: [Items, Weapons]
 aliases: [Bow, Bows]
 summary: A two-handed bow that shoots arrows in an arc, drawn with the left button.
+numbersOk: true
 ---
 
+<!-- typed: the hover card's own figures quoted: the low end of its damage range, 19, is the damage at the least draw that flies, worked out from the data (game #471) -->
 {{infobox-item bow}}
 
 The **Hunting bow** (the Bow until the names were made specific) is held in both hands and shoots [[Arrow|arrows]] from the bag or the belt. It hits only where the arrow comes down. It is the hunter's weapon: an animal it kills gives its whole yield, a share of {{n animals.kills.bow}} (see [[Hunting]]).
 
 ## Combat
 
-- **Left** draws: hold, aim with the cursor, and release to shoot. A full free draw takes {{n items.bow.bow.drawTime seconds}} and does {{n items.bow.bow.damage}} damage; a partial draw falls short and does less.
+- **Left** draws: hold, aim with the cursor, and release to shoot. A full free draw takes {{n items.bow.bow.drawTime seconds}} and does {{n items.bow.bow.damage}} damage; a partial draw falls short and does less, down to 19 at the least draw that flies (see [[Archery#Damage by the draw|Archery]]).
 - **Right** held braces: a full draw takes {{n items.bow.bow.braceDrawTime seconds}}, but the player walks at a crawl. A tap of right cancels a draw and keeps the arrow.
 
 An arrow hurts the nearest of [[The dead]] within {{n combat.bow.hitRadius tiles}} of where it lands, never through a wall or a closed door, pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance, and never floors. Walls, boards, trees, and solid props stop it. See [[Archery]] for the draw, the arc, and what stops a shot.
 
-With [[Fire arrow|fire arrows]] carried, the bow shoots those first, and the one of the dead a fire arrow hits is set alight (see [[Burning]]); it lodges or lands as a plain arrow.
+With [[Fire arrow|fire arrows]] carried, the bow shoots those first, and the one of the dead a fire arrow hits is set alight (see [[Burning]]); it lodges or lands as a plain arrow. Which arrows it takes, and in what order, is its `ammo` list in the game's data: fire arrows, then arrows. With neither carried it asks for arrows.
+
+Its hover card says: "Draw and release (left button): 19 to 38 damage by the draw, up to {{n combat.bow.range}} tiles." and "Needs arrows carried, fire arrows first; good for about {{n items.bow.shots}} shots." The card reads all of it from the data (the damage range from the bow's damage, the range from the flight's default), so it follows the game.
 
 The bow loses durability per arrow loosed and lasts {{n items.bow.shots}} shots (see [[Durability]]).
 
@@ -29,7 +33,9 @@ Drawn, it creaks for as long as it is held, rising as the draw fills; let go, it
 ## Sources
 
 <!-- sources at 3b7cb9a -->
-- `data/items.json`: the bow: both hands, `drawTime`, `braceDrawTime`, `damage`, `knockback`, `shots`
+- `data/items.json`: the bow: both hands, `drawTime`, `braceDrawTime`, `damage`, `knockback`, `shots`, and from game #471 `ammo` (fire arrows, then arrows)
+- `src/item-info.js` `shotLines` (at dc10b81): the card's lines for the bow, read from `bow`, `ammo`, `shots`, and `data/combat.json` `bow`; `src/archery.js:64-70`: `shotDamage`, the damage by the draw
+- `src/archery.js:746-753` (at dc10b81): the arrows taken from the bow's `ammo`, the first carried, the last asked for when none is
 - `src/archery.js:635-692`, `src/archery.js:695-735`: the draw, release, cancel, and the brace
 - `src/main.js:625-640`, `src/game.js:554`: a right tap cancels a draw in the world's step, a guest's too
 - `data/combat.json` `bow`: the flight's numbers

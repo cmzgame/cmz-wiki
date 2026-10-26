@@ -66,7 +66,7 @@ The dead ignore animals entirely. They never chase, bite, or count one, and a ca
 
 ### Coming back
 
-Wild game comes back slowly, and a rabbit a [[Snare]] takes is its home's own, so snaring is renewal too. A wild home with fewer living animals than its cap gets one back every {{n animals.renew.seconds seconds}} of the game's clock (one game day), but only while no player, living or dead, is within {{n animals.renew.clear tiles}} of it, so nothing appears in view. The new animal stands on a free outdoor tile of the home's clearing, its spot first; if the whole clearing is built over or walled in, it waits. Livestock is never renewed; two of a kind fed in a pen breed instead (see [[Keeping]]).
+Wild game comes back slowly, and a rabbit a [[Snare]] takes is its home's own, so snaring is renewal too. A wild home with fewer living animals than its cap gets one back every {{n animals.renew.seconds seconds}} of the game's clock (one game day), but only while no player, living or dead, is within {{n animals.renew.clear tiles}} of it, so nothing appears in view. The new animal stands on a free outdoor tile of the home's clearing, its spot first; if the whole clearing is built over or walled in, it waits. Livestock is never renewed; two of a kind fed in a pen breed instead (see [[Keeping]]). A birth, unlike a renewal, may come in view: a young one appears in its pen with a player looking on (Michael, 2026-10-25).
 
 ## Looking at them
 
@@ -78,7 +78,7 @@ Wild game (deer, rabbits, and boar) takes any blow or shot. Tame stock (hens, co
 
 ## Keeping them
 
-Tame animals are kept, not hunted. A [[Lead]] leads one at your pace, and let go by hand it makes where it stands its home, so let go inside a fenced yard with its gates shut it stays: a pen. Each eats one unit of feed a game day (grain, potatoes, cabbages, pumpkins, or [[Hay]]) as soon as a [[Feeding trough]] it can reach holds some: in a pen, a trough on its own pen's fences; out of one, a trough within {{n animals.keep.feedReach tiles}} of its home. Unfed, it gives nothing and never starves. Fed, a cow gives a [[Jug of milk]] to an empty [[Bucket]] carried, a sheep [[Wool]] to [[Shears]], and a hen lays an [[Egg]] into its [[Chicken coop|coop]], with a [[Feather]] most days. Two of a kind fed in a pen breed one young every {{n animals.keep.breedDays game days}}, up to {{n animals.keep.penCap}} of a kind. The whole of it is [[Keeping]].
+Tame animals are kept, not hunted. A [[Lead]] leads one at your pace, and let go by hand it makes where it stands its home, so let go inside a fenced yard with its gates shut it stays: a pen. Each eats one unit of feed a game day (grain, potatoes, cabbages, pumpkins, or [[Hay]]) as soon as a [[Feeding trough]] it can reach holds some: in a pen, a trough on its own pen's fences; out of one, a trough within {{n animals.keep.feedReach tiles}} of its home. Unfed, it gives nothing and never starves. Fed, a cow gives a [[Jug of milk]] to an empty [[Bucket]] carried, a sheep [[Wool]] to [[Shears]], and a hen lays an [[Egg]] into its [[Chicken coop|coop]], with a [[Feather]] most days. Two of a kind fed in a pen breed one young every {{n animals.keep.breedDays game days}}, up to {{n animals.keep.penCap}} of a kind, and a birth may be seen. The whole of it is [[Keeping]].
 
 ## What they give
 

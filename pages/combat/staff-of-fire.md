@@ -8,6 +8,8 @@ summary: The Staff of Fire is a magic staff. Held in one hand with the Book of F
 
 The **Staff of Fire** is a magic staff. Held in one hand with the [[Book of Fire]] in the other, it casts the book's spell, the [[Fireball]], on the left button. Alone it does nothing on the left button.
 
+Its hover card says: "Cast (left button, a spellbook in the other hand): Fireball with the Book of Fire." It names the spell of every book it can cast.
+
 It is found only in the [[Developer chest]] for now.
 
 {{item-sections staff_of_fire}}
@@ -21,6 +23,7 @@ Its spell makes one sound as it is cast, when it is let go; it has no draw and n
 <!-- sources at 3c70aa7 -->
 - `data/items.json`: the item (`staff: true`)
 - `src/archery.js`: `spellOf`, the staff and the book together cast; one alone refuses
+- `src/item-info.js` `shotLines` (at dc10b81): the card's line for a staff, read from the books' `book.spell`
 - `data/loot.json`: the dev chest's fixed contents
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386, at 3c68f9c)
 

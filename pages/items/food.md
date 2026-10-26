@@ -11,7 +11,7 @@ summary: Eating food fills hunger by the food's value and heals by its heal valu
 
 ### Eating
 
-- **Eat** on a food's menu, in your bag or in an open container, eats it. Most food does not stack, each taking a cell of its own; an [[Egg]] and [[Pemmican]] stack.
+- **Eat** on a food's menu, in your bag or in an open container, eats it. Most food does not stack, each taking a cell of its own, an [[Egg]] too; [[Pemmican]] stacks.
 - A food on your [[Belt]] is eaten from its slot: its belt key, **Eat** on the slot's menu, or a double-click on the slot.
 
 Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals. What it heals rises over your head as a green number (see [[Interface#Floating numbers|Interface]]).
@@ -115,7 +115,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `src/ui/inventory-actions.js:313-319`, `src/ui/inventory-actions.js:421-432`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
-- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc); eggs since game #460, pemmican since game #462
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc); eggs stacked from game #460 until game #475 made them one a cell; pemmican since game #462
 - `data/items.json:70-82`, `data/items.json:109`, `data/recipes.json:1130-1420`, `data/recipes.json:1554-1573`, `data/recipes.json:386-401`: the cooked meats, the dishes, and butter, their numbers and recipes; the stew named Plain pottage (game #462, at d625844)
 
 {{navbox items}}

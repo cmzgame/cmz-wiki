@@ -18,6 +18,8 @@ An arrow that hits one of [[The dead]] stays in the body and comes out with its 
 
 With fire arrows carried as well, the bow shoots those first. A fire arrow that hits or lands comes back as a plain arrow.
 
+The arrow's hover card says: "Shot from a hunting bow (19 to 38 damage by the draw), when no fire arrows are carried." The card is worked out from the bow's data, so it names the bows that take the arrow and where the arrow stands in their order.
+
 {{item-sections arrow}}
 
 ## Sources
@@ -29,6 +31,7 @@ With fire arrows carried as well, the bow shoots those first. A fire arrow that 
 - `src/entities/character.js:139-162`: lodged arrows come out in the body's loot
 - `src/archery.js:568-572`: fire arrows drawn before plain ones
 - `data/interactions.json`, `src/burn.js:73-94`: the `dip` verb: arrows used on a lit fire become fire arrows, the whole stack; refused when the fire is out, from beyond `DIP_REACH`, or with the arrows not carried
+- `src/item-info.js` `shotLines` (at dc10b81): the card's line for an arrow: the bows that shoot it, their damage by the draw, its place in their `ammo` order (game #471)
 - `data/recipes.json:327-347`: arrows fletched: a stick and a feather, a dirk carried (game #462, at d625844)
 
 {{navbox weapons}}

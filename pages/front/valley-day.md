@@ -47,7 +47,7 @@ Read: [[Mining]], [[Pickaxe]], [[Charcoal clamp]], [[Forge]], [[Anvil]].
 
 ### Herbs, mushrooms, clay, and salt (game #457)
 
-Eleven kinds of herb, {{n valley.resources.sage.count}} sage among them, grow like weeds at random on the valley's natural ground: the mana herb near water, nightshade and wolfsbane near trees, and grave moss only in the graveyard, gathered only at night. Each is gathered by hand from its menu, one at a time. The mushrooms under the trees are foraged now for a [[Mushroom]]. {{n valley.resources.clay.count}} clay banks by the river are dug for [[Clay]] with a [[Shovel]] carried, and {{n valley.resources.salt.count}} salt rocks at the iron workings are mined for [[Salt]] with a [[Pickaxe]] in hand. Each comes back elsewhere in its area once taken. None of them has a use yet.
+Eleven kinds of herb, {{n valley.resources.sage.count}} sage among them, grow like weeds at random on the valley's natural ground: mageroot near water, nightshade and wolfsbane near trees, and grave moss only in the graveyard. All are gathered at any hour. Each is gathered by hand from its menu, one at a time. The mushrooms under the trees are foraged now for a [[Mushroom]]. {{n valley.resources.clay.count}} clay banks by the river are dug for [[Clay]] with a [[Shovel]] carried, and {{n valley.resources.salt.count}} salt rocks at the iron workings are mined for [[Salt]] with a [[Pickaxe]] in hand. Each comes back elsewhere in its area once taken. None of them has a use yet.
 
 Read: [[Herbs]], [[Mushrooms]], [[Clay]], [[Salt]], [[Gatherables]].
 

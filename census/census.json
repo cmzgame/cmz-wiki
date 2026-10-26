@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "879d0a76431cd656ace637042b5387de3c57257e",
-  "short": "879d0a7",
-  "date": "2026-10-25T20:09:29-05:00",
-  "subject": "Merge #470, reviewed: props named by their recipe's label or sprite's name, never their raw id",
+  "commit": "dc10b81f34956d5fdeff7e16212fa32ebf0f1540",
+  "short": "dc10b81",
+  "date": "2026-10-25T21:27:33-05:00",
+  "subject": "Merge #475, reviewed: rocks rise with a shudder; the evening's rulings (Mageroot, no night plants, eggs one a cell, pemmican, the belt pinned, potions a sitting)",
   "ref": "origin/main"
  },
  "counts": {
@@ -484,7 +484,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "art only for now: it does not throw yet (docs/24)"
+   "note": "art only for now: it does not throw yet (docs/24); `toCome` says so on its card (#317)"
   },
   {
    "id": "throwing_axe",
@@ -506,7 +506,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "art only for now: it does not throw yet (docs/24)"
+   "note": "art only for now: it does not throw yet (docs/24); `toCome` says so on its card (#317)"
   },
   {
    "id": "bandage",
@@ -2018,7 +2018,6 @@
     1,
     1
    ],
-   "stack": 20,
    "tags": [
     "food",
     "raw",
@@ -2036,7 +2035,7 @@
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "laid by a fed hen into its coop (docs/45 section 3)"
+   "note": "laid by a fed hen into its coop (docs/45 section 3); one a cell, no stack (Michael, 2026-10-25: \"Let's make eggs not stack, but I would be open to changing that after playtesting\")"
   },
   {
    "id": "hay",
@@ -2406,7 +2405,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "Cooking 7 (open until the skills; docs/45 section 4): any raw meat, a plant, and a binder (lard or honey) at a fire; small, the one food that stacks, keeps all but forever (docs/39); heals 3, so a stack of twenty fills you on the road and does not heal you through a fight (Primary's default on the review of #462, for Michael)"
+   "note": "Cooking 7 (open until the skills; docs/45 section 4): any raw meat, a plant, and a binder (lard or honey) at a fire; small, the one food that stacks, keeps all but forever (docs/39); heals 3, so a stack of twenty fills you on the road and does not heal you through a fight (Primary's on the review of #462; its heal and hunger ruled by Michael, 2026-10-25: \"seems just right\")"
   },
   {
    "id": "yarn",
@@ -3610,7 +3609,7 @@
   },
   {
    "id": "mana_herb",
-   "name": "Mana herb",
+   "name": "Mageroot",
    "kind": "material",
    "size": [
     1,
@@ -3629,7 +3628,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "the mana herb, near water (docs/39 section 4, Herbalism 4); its name is Michael's to choose (ruled 2026-10-23), a placeholder until then; gathered from its node, herb_mana_herb (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "mageroot, near water (docs/39 section 4, Herbalism 4); named by Michael, 2026-10-25 (\"Mana herb is Mageroot for now\"), its id kept; gathered from its node, herb_mana_herb (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
   },
   {
    "id": "nightshade",
@@ -3700,7 +3699,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "the graveyard's herb, gathered only at night (docs/39 section 4, Herbalism 7: its kinds unnamed); a placeholder name and kind until Michael names them; gathered from its node, herb_grave_moss (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
+   "note": "the graveyard's herb, gathered at any hour (Michael, 2026-10-25: \"keep grave moss\", and no 'only at night' plants; docs/39 section 4); gathered from its node, herb_grave_moss (docs/46 step 2, #448). No uses yet: potions, teas, and seasoning are not built"
   },
   {
    "id": "woad",
@@ -3886,6 +3885,7 @@
   },
   {
    "id": "tear_cap",
+   "verb": "Tear",
    "station": "workbench",
    "out": {
     "id": "rag",
@@ -3903,6 +3903,7 @@
   },
   {
    "id": "tear_hood",
+   "verb": "Tear",
    "station": "workbench",
    "out": {
     "id": "rag",
@@ -3920,6 +3921,7 @@
   },
   {
    "id": "tear_tunic",
+   "verb": "Tear",
    "station": "workbench",
    "out": {
     "id": "rag",
@@ -3937,6 +3939,7 @@
   },
   {
    "id": "tear_gloves",
+   "verb": "Tear",
    "station": "workbench",
    "out": {
     "id": "rag",
@@ -3954,6 +3957,7 @@
   },
   {
    "id": "tear_breeches",
+   "verb": "Tear",
    "station": "workbench",
    "out": {
     "id": "rag",
@@ -3971,6 +3975,7 @@
   },
   {
    "id": "tear_boots",
+   "verb": "Tear",
    "station": "workbench",
    "out": {
     "id": "rag",
@@ -6945,7 +6950,7 @@
    "drawn": false,
    "carry": false,
    "interactable": true,
-   "note": "Grave moss: the graveyard's herb, gathered only at night (docs/39 section 4, Herbalism 7: its kinds unnamed); a placeholder name and kind until Michael names them. Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Grave moss: the graveyard's herb, gathered at any hour (Michael, 2026-10-25: \"keep grave moss\", and no 'only at night' plants; Herbalism 7's night line struck, its level recorded until its replacement is ruled, docs/39 section 4). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
   },
   {
    "id": "herb_madder",
@@ -6961,7 +6966,7 @@
    "drawn": false,
    "carry": false,
    "interactable": true,
-   "note": "Mana herb: the mana herb, near water (docs/39 section 4, Herbalism 4); its name is Michael's to choose (ruled 2026-10-23), a placeholder until then. Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Mageroot (the item mana_herb, its id kept): near water (docs/39 section 4, Herbalism 4); named by Michael, 2026-10-25: \"Mana herb is Mageroot for now\". Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
   },
   {
    "id": "herb_nettle",
@@ -10136,7 +10141,7 @@
   {
    "key": "dig",
    "at": [
-    "gather.js:88"
+    "gather.js:84"
    ]
   },
   {
@@ -10172,7 +10177,7 @@
   {
    "key": "gather",
    "at": [
-    "gather.js:87"
+    "gather.js:83"
    ]
   },
   {
@@ -10315,7 +10320,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1557"
+    "main.js:1558"
    ]
   },
   {
@@ -10448,7 +10453,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1531"
+    "main.js:1532"
    ]
   },
   {
@@ -10521,7 +10526,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1570"
+    "main.js:1571"
    ]
   },
   {
@@ -10597,7 +10602,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1579"
+    "main.js:1580"
    ]
   },
   {
@@ -10731,7 +10736,7 @@
   {
    "key": "${label} (${short})",
    "at": [
-    "gather.js:102"
+    "gather.js:98"
    ]
   },
   {
@@ -10896,13 +10901,13 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:317"
+    "archery.js:323"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:851"
+    "archery.js:860"
    ]
   },
   {
@@ -10972,7 +10977,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1118"
+    "map.js:1117"
    ]
   },
   {
@@ -11095,13 +11100,13 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:826",
-    "map.js:1114"
+    "map.js:1113"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:859",
+    "archery.js:868",
     "combat.js:447",
     "game.js:720"
    ]
@@ -11282,7 +11287,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2747
+   "lines": 2746
   },
   {
    "path": "interact.js",
@@ -11290,7 +11295,7 @@
   },
   {
    "path": "main.js",
-   "lines": 2038
+   "lines": 2039
   },
   {
    "path": "placeholders.js",
@@ -11326,7 +11331,7 @@
   },
   {
    "path": "archery.js",
-   "lines": 904
+   "lines": 913
   },
   {
    "path": "ui/inventory-panel.js",
@@ -11385,6 +11390,10 @@
    "lines": 374
   },
   {
+   "path": "item-info.js",
+   "lines": 370
+  },
+  {
    "path": "sound-gen.js",
    "lines": 363
   },
@@ -11418,7 +11427,7 @@
   },
   {
    "path": "render/props.js",
-   "lines": 293
+   "lines": 298
   },
   {
    "path": "ui/nav-row.js",
@@ -11427,10 +11436,6 @@
   {
    "path": "paintings.js",
    "lines": 283
-  },
-  {
-   "path": "item-info.js",
-   "lines": 280
   },
   {
    "path": "tuning.js",
@@ -11457,12 +11462,12 @@
    "lines": 243
   },
   {
-   "path": "dye.js",
-   "lines": 234
+   "path": "audio.js",
+   "lines": 240
   },
   {
-   "path": "audio.js",
-   "lines": 233
+   "path": "dye.js",
+   "lines": 234
   },
   {
    "path": "loop.js",
@@ -11565,6 +11570,10 @@
    "lines": 138
   },
   {
+   "path": "resources.js",
+   "lines": 138
+  },
+  {
    "path": "bucket.js",
    "lines": 130
   },
@@ -11581,19 +11590,15 @@
    "lines": 124
   },
   {
-   "path": "gather.js",
-   "lines": 120
-  },
-  {
-   "path": "resources.js",
-   "lines": 118
-  },
-  {
    "path": "entities/movement.js",
    "lines": 116
   },
   {
    "path": "floaters.js",
+   "lines": 116
+  },
+  {
+   "path": "gather.js",
    "lines": 116
   },
   {

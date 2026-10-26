@@ -3,8 +3,10 @@ title: Clothing
 categories: [Items, Mechanics]
 aliases: [Equipped slots, Clothing slots, Clothes, Garments]
 summary: Seven slots for what you have on: head, chest, hands, legs, feet, the waist for a belt, and the back for a bag.
+numbersOk: true
 ---
 
+<!-- typed: the hover card's own words quoted: 'Tear into 2 rags at the workbench' (game #471) -->
 **Clothing** is anything you put on rather than hold. The character screen (`C`) has seven slots for it: **head**, **chest**, **hands** (gloves), **legs**, **feet**, **waist** (the [[Belt]]), and **back** (the bag; see [[Inventory]]). Every garment names its one slot.
 
 ## How it works
@@ -21,7 +23,7 @@ Equipping over a filled slot swaps the old garment into your bag; with no room t
 
 ### What clothes do
 
-Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks, and most can be dyed (below). Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Dirk]] on you, any of them tears into two [[Rag|rags]]; the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
+Clothes do nothing beyond being drawn on your figure. A belt gives belt slots and a bag gives a grid; the rest are for looks, and most can be dyed (below). Every garment except the belts and bags is cloth, which some recipes take (see [[Crafting]]). At the [[Workbench]], with a [[Dirk]] on you, any of them tears into two [[Rag|rags]] (the cap, hat, tunic, gloves, breeches, and boots say so on their hover cards: "Tear into 2 rags at the workbench, a dirk carried."); the [[Loom]] makes the [[Linen cap]], the [[Linen breeches]], and the [[Linen tunic]] from [[Linen cloth]].
 
 A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots]], a [[Rope belt]], and a [[Burlap sack]], with the head bare. The valley has one pair of [[Work gloves]], on [[Hollow Farm]]'s tool rack, and one [[Onion-head Hat]], worn by its scarecrow. The Onion-head Hat is painted: a green hood with a brow over the eyes, drawn the same way on the dead and on villagers who wear one, in their own colours. The dead are dressed too, and searching a body lays their clothes out to be taken.
 
@@ -59,6 +61,7 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `src/ui/inventory-actions.js:221-229`, `src/ui/inventory-panel.js:75-90`: a double-click on a slot runs its Equip or Unequip (game commit 9a450f2)
 - `data/items.json:26-36`: belts give slots; every garment but the belts and bags is tagged cloth
 - `data/recipes.json:23-124`, `data/recipes.json:155-199`: a garment torn into rags with a knife carried (`uses: cut`, game #222); the linen clothes at the loom (game #216)
+- `src/item-info.js` `recipesOf` (at dc10b81): each garment's card says the tear, from the recipe's `verb` (game #471)
 - `data/recipes.json`: the recipes that take any cloth
 - `data/kit.json:3`: the starter clothes, the head bare
 - `data/loot.json:2`: gloves and the hood in the chest table

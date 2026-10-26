@@ -3,8 +3,10 @@ title: Archery
 categories: [Combat, Mechanics]
 aliases: [Shooting, Throwing, The draw, Brace]
 summary: The bow's draw and brace, the arc of a shot, what stops an arrow, getting arrows back, and the spear's throw.
+numbersOk: true
 ---
 
+<!-- typed: the damage formula 0.4 + 0.6 times the draw and the three damages at the least draw that flies (19, 74, 22), from archery.shotDamage and the data (game #471) -->
 **Archery** covers the [[Hunting bow]] and the thrown [[Throwing spear]], which share the same draw. Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
 
 ## How it works
@@ -30,6 +32,10 @@ Holding right while drawing braces the bow: a full draw takes {{n items.bow.bow.
 The arrow travels along the ground at {{n combat.bow.speed tiles a second}}, with the arc drawn above it, out to at most {{n combat.bow.range tiles}}. The arc rises from {{n combat.bow.arcMin}} to {{n combat.bow.arcMax}} pixels high with the distance.
 
 It hurts only where it comes down: the nearest of [[The dead]], or of the wild game, within {{n combat.bow.hitRadius tiles}} of the landing point, with nothing between it and that point; a tame animal only when nothing else is there, and never by a spell (see [[Hunting]]). The test is made at the arrow's height as it lands, which is the ground, so a wall, a fence, boards, a closed door, or any window (even an open one, whose sill is above the ground) between the landing point and the body means no hit; an open or broken doorway does not. An arrow that comes down just short of a wall never hits one of the dead standing just past it. It never hurts [[Villagers]], other players, or the archer. A full draw does {{n items.bow.bow.damage}} damage, and a partial draw less. An arrow pushes {{n items.bow.bow.knockback tiles}}, staggers with the default chance (see [[Stagger and knockdown]]), never floors, and gets no finisher bonus on a downed target.
+
+### Damage by the draw
+
+A shot does its full damage times 0.4 plus 0.6 times the share of a full draw it was loosed at, rounded. So the least draw that flies ({{n combat.bow.minDraw}} of a full one) does a little under half: 19 for the bow's {{n items.bow.bow.damage}}, 74 for the spear's {{n items.spear.thrown.damage}}, and 22 for the [[Fireball]]'s {{n items.book_of_fire.book.spell.damage}}. A weapon's hover card gives the range worked out the same way, as "19 to 38 damage by the draw".
 
 ### Fire arrows
 
@@ -95,6 +101,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## Sources
 
 <!-- sources at 125bffb -->
+- `src/archery.js:64-70` (at dc10b81): `shotDamage`, the damage by the draw, shared by every hit and by the hover card
 - `src/archery.js:592-607`: the bow and the spear share the launcher and the draw
 - `src/archery.js:66-68`, `src/archery.js:630-655`, `src/archery.js:751-753`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw
 - `data/items.json`: the bow's `drawTime` and `braceDrawTime`, `damage`, `knockback`, `shots`; the spear's `thrown` block

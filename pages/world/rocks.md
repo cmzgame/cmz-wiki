@@ -13,7 +13,7 @@ The valley keeps {{n valley.resources.stone.count}} rocks. At the start, eight s
 
 ## Coming back
 
-A rock mined inside the valley is owed back: {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later a new one rises at a random spot on natural ground anywhere in the valley: plain grass, or the dirt floor of the quarry. Never on the tile it was mined from, a road, water, a built floor, tilled soil, a rug, or under anything; never against a wall, inside a room, or inside a fenced yard or pen; never on anyone, living or dead, or an animal. It comes up whole through the ground line over {{n tuning.resources.riseSeconds seconds}}, with a little soil and dust at its foot, so the valley's count stays about the same. A rock mined in the wild is gone for good. See [[Mining#Coming back|Mining]].
+A rock mined inside the valley is owed back: {{n tuning.resources.days.0}} to {{n tuning.resources.days.1}} game days later a new one rises at a random spot on natural ground anywhere in the valley: plain grass, or the dirt floor of the quarry. Never on the tile it was mined from, a road, water, a built floor, tilled soil, a rug, or under anything; never against a wall, inside a room, or inside a fenced yard or pen; never on anyone, living or dead, or an animal. It comes up whole through the ground line over {{n tuning.resources.riseSeconds seconds}}, with a little soil and a puff of dust at its foot, and with a shudder: a few sideways jolts of a pixel or two, easing to still as it settles, as if the ground had shifted and pushed it up (see [[Mining#Coming back|Mining]]). So the valley's count stays about the same. A rock mined in the wild is gone for good. See [[Mining#Coming back|Mining]].
 
 ## What they do
 
@@ -21,7 +21,7 @@ A rock blocks a circle of {{n sprites.rock_0.collide.radius}} tiles, like a broa
 
 ## With friends
 
-The rocks still owed are the host's, saved with the world. A new rock reaches every player with its part of the map, and every screen draws it rising from the same moment.
+The rocks still owed are the host's, saved with the world. A new rock reaches every player with its part of the map, and every screen draws it rising, and shuddering, from the same moment.
 
 ## See also
 
@@ -30,15 +30,16 @@ The rocks still owed are the host's, saved with the world. A new rock reaches ev
 
 ## Sources
 
-<!-- sources at 261cd7a -->
+<!-- sources at dc10b81 -->
 - `data/maps/valley.json` `resources.stone`: the valley's count of rocks, the four kinds, the quarry open to them and its dirt (game #453, at 261cd7a)
-- `src/map.js:2545-2582`: the count made up at the load, by hash, on the authored tiles (game #453, at 261cd7a)
+- `src/map.js:2680-2714`: the count made up at the load, by hash, on the authored tiles (game #453, at 261cd7a)
 - `data/maps/valley.json`: the wild's rock rule (`wild.rocks`: the cell, the chance, the four kinds)
 - `src/map.js`: the wild's rocks placed by the cell's own roll
 - `data/sprites/rock_0.json` (and `rock_1` to `rock_3`): the collision, the shadow, not carried, `interactable`, and the `mine` block
 - `src/mining.js:41-55`: mined for stone and gone (game #210)
-- `src/resources.js:33-87`, `src/map.js:612-636`, `data/tuning.json` `resources`: a rock mined inside the valley owed back after its days, at a spot that passes the one test; none for a rock in the wild (game #453, at 261cd7a)
-- `src/resources.js:89-99`, `src/render/props.js:124-214`: the rise (game #453, at 261cd7a)
+- `src/resources.js:35-89`, `src/map.js:630-656`, `data/tuning.json` `resources`: a rock mined inside the valley owed back after its days, at a spot that passes the one test; none for a rock in the wild (game #453, at 261cd7a)
+- `src/resources.js:91-101`, `src/render/props.js:122-149`, `src/render/props.js:212`: the rise (game #453, at 261cd7a)
+- `src/resources.js:103-123`, `src/render/props.js:122-149`, `src/render/props.js:212`: the shudder (game #475)
 - `tools/mapgen/valley.py:548-549`: the quarry's eight rocks
 
 {{navbox places}}

@@ -11,7 +11,7 @@ A **chicken coop** is a small plank hut on legs, with a ramp and a nesting box. 
 
 ## Using it
 
-The first time, its menu reads **Search chicken coop**; after that, **Open chicken coop**. Searching finds whatever the hens have laid, and adds nothing. Its grid is {{n loot.coop.grid.0}} × {{n loot.coop.grid.1}}; eggs and feathers stack, so a coop takes days to fill.
+The first time, its menu reads **Search chicken coop**; after that, **Open chicken coop**. Searching finds whatever the hens have laid, and adds nothing. Its grid is {{n loot.coop.grid.0}} × {{n loot.coop.grid.1}}, six cells. An [[Egg]] does not stack, so each takes a cell of its own; [[Feather|feathers]] stack to {{n items.feather.stack}}, and so take only the one cell. The eggs and feathers share the six cells, and once they are full the hens lay no more until the coop is emptied.
 
 ## The valley's coops
 
@@ -26,11 +26,12 @@ The host lays the eggs and feathers into the coop, and its contents travel with 
 
 ## Sources
 
-<!-- sources at 6e3ab37 -->
+<!-- sources at dc10b81 -->
 - `data/sprites/chicken_coop.json`: the drawn coop, a container with the `coop` table, fixed
-- `data/loot.json:3`: the coop's table, empty since game #460: it holds only what its hens lay
+- `data/loot.json:3`: the coop's table, empty since game #460: it holds only what its hens lay; its grid of three by two
+- `data/items.json:68`: the egg has no `stack` since game #475, so it takes a cell; the feather stacks (game #475, Michael's ruling of 2026-10-25)
 - `src/entities/animal.js:597-623`: a hen's coop within `coopReach` of its home each way, its grid made on first use; the egg, one more at `more`, a feather at `feather`; a full coop takes no more
-- `src/interact.js:415-436`: Search, then Open; a search rolls nothing into a grid that holds something
+- `src/interact.js:434-457`: Search, then Open; a search rolls nothing into a grid that holds something
 - `tools/mapgen/valley.py:196`, `tools/mapgen/valley.py:458-459`: the coops at your cottage and Hollow Farm, and the hens' trough beside the farm's
 - `data/maps/valley.json` `animals`: Hollow Farm's hens, at the coop
 
