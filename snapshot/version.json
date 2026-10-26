@@ -1,7 +1,7 @@
 {
-  "commit": "6e3ab3767f2cbc957bd11513e880e4ed4078639c",
-  "short": "6e3ab37",
-  "date": "2026-10-25T17:35:29-05:00",
-  "subject": "Merge #461, reviewed: saplings and sticks, docs/46 step 3 (#449)",
+  "commit": "d625844d78334525500a8d018d79f00a9ed4ac27",
+  "short": "d625844",
+  "date": "2026-10-25T18:58:47-05:00",
+  "subject": "Merge #466, reviewed: a second batch of small bugs (docs/bugs.md)",
   "ref": "origin/main"
 }

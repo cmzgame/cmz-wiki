@@ -21,7 +21,7 @@ Thirst empties from full in {{n tuning.player.thirstDrainSeconds}} seconds of th
 There are three ways to drink:
 
 - **A [[Waterskin]].** Choose "Drink" on it in your bag (it says "tainted" with how full it is when its water is tainted); on the belt, press its belt key, choose "Drink" on its slot, or double-click the slot. One sip is instant and raises thirst by up to {{n tuning.player.drinkSip}}, taken from the skin's water. A skin of clean water you carry also sips by itself once you are Thirsty (below).
-- **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, [[Stew]] +{{n items.stew.thirst}}.
+- **Some foods.** An [[Apple]] gives +{{n items.apple.thirst}} thirst, a [[Jug of milk]] +{{n items.milk.thirst}}, the [[Plain pottage]] +{{n items.stew.thirst}}, the [[Meat pottage]] +{{n items.meat_pottage.thirst}}, and the [[Hearty stew]] +{{n items.hearty_stew.thirst}}.
 - **A well or any water.** Stand at a well, or beside any water tile (a river, a pond, shallow water), and choose "Drink from the well (tainted)" (or the trough, or the font) or "Drink from the water (tainted)". It takes {{n census.constants.interact.DRINK_TIME}} seconds and fills thirst all the way. It becomes the E action once thirst is below 90.
 
 ### Tainted water
@@ -78,6 +78,7 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
 - `src/game.js:615-618`, `src/main.js:1686-1688`: in the world's step, the word on the drinker's screen
 - `data/items.json:17`, `data/items.json:70`: the apple's and the stew's thirst
+- `data/items.json:66`, `data/items.json:76-77`, `data/items.json:109`: the milk's, the meat pottage's, and the hearty stew's thirst; the stew named Plain pottage (game #462, at d625844)
 - `src/interact.js:681-720`, `src/map.js:1429-1438`: the well's and the water's actions, named for the prop; floors with `drink`
 - `src/interact.js:56`, `src/interact.js:686`, `src/interact.js:692-697`: drinking's time, the E action below 90, thirst set to full
 - `src/interact.js:57`, `src/interact.js:682`, `src/interact.js:700-714`, `src/inventory.js:85-87`: filling's time and every waterskin in the bag and on the belt to full (the belt's game #222)

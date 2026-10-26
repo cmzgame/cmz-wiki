@@ -5,7 +5,7 @@ aliases: [Tree, Oak, Spire, Chopping, Woodcutting, Felling, Chop down, Apple tre
 summary: The forest's trees, oaks and spires in three sizes, and the apple trees, green round trees picked for apples; a hatchet fells any tree for logs, leaving a stump and sometimes a sapling, and sticks are gathered under any standing tree once a day.
 ---
 
-Trees stand all over [[The valley]] outside the village and its reserves, and fill [[The wild]] beyond it. They are [[Gatherables]]: a click sways them, any tree can be chopped down for [[Log|logs]] with a [[Hatchet]] in hand, leaving a [[Stump]] and sometimes a [[Sapling]], and [[Stick|sticks]] can be gathered under any standing tree once a day.
+Trees stand all over [[The valley]] outside the village and its reserves, and fill [[The wild]] beyond it. They are [[Gatherables]]: a click sways them (on the trunk, or on the crown where nothing smaller stands behind it: a click on a crown over an herb, a mushroom, or any other gatherable finds that instead; see [[Gatherables#The wobble|Gatherables]]), any tree can be chopped down for [[Log|logs]] with a [[Hatchet]] in hand, leaving a [[Stump]] and sometimes a [[Sapling]], and [[Stick|sticks]] can be gathered under any standing tree once a day.
 
 ## Kinds
 
@@ -18,6 +18,8 @@ The forest has two shapes, the round oak and the tall spire, each in six colours
 | Old | {{n sprites.tree_oak_old.collide.radius}} tiles | {{n sprites.tree_oak_old.wood}} | {{n sprites.tree_oak_old.canopy.reach}} tiles |
 
 ## Fruit trees
+
+The round oaks of every size are named "oak": a Use on one says "oak", and a sapling's card and Inspect say it grows into "an oak". The spires and the coloured trees have no name of their own yet.
 
 An **apple tree** is the medium round oak in green, with red apples all through its crown. In [[Use|Use mode]] the label names it "apple tree", laden or bare. [[The orchard]] is planted with them in staggered rows, and three cottage gardens have one each: those of the cottage by the merchant's, the cottage by the baker's, and the first cottage on the lane. Like any tree it sways when clicked, blocks a circle of {{n sprites.tree_apple.collide.radius}} tiles, its canopy reaches {{n sprites.tree_apple.canopy.reach}} tiles, and it gives {{n sprites.tree_apple.wood}} logs when chopped.
 
@@ -92,3 +94,5 @@ Chopping, picking, and gathering sticks are menu actions the host performs for w
 - `src/chop.js:39-53`, `src/trees.js:122-128`, `data/tuning.json:193-197`: a felled tree with a canopy (an apple tree too, never a stump) drops a sapling at `trees.sapling.chance`, its skill and level recorded; the line's "; a sapling fell too" (game #461, at 6e3ab37)
 - `src/trees.js:1-14`, `src/trees.js:130-178`, `src/trees.js:68-79`: no tree regrows where felled; a planted sapling grows into `tree_oak_m`, or the tree its felled tree names (`saplingGrows`, the apple trees'), waiting while anyone stands on it (game #461)
 - `src/trees.js:180-248`, `src/interact.js:989-990`, `data/tuning.json:195`: Gather sticks on any standing tree, never a stump, after the tree's entries and never E's; within `pickReach` and a clear line; the count and the seconds; into the bag or at the feet; the tree's `sticksAt` the next midnight, greyed "(none until tomorrow)" and refused until then (game #461)
+- `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_old.json`: the round oaks named "oak" (game #466, at d625844)
+- `src/interact.js:1704-1834`: a click on a crown gives way to a gatherable behind it; the trunk always reaches the tree (game #464, at d625844)

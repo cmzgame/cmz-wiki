@@ -40,7 +40,7 @@ Each kind of container has a table of its own, and the odds of every one are on 
 
 **Gear is placed once.** No rolled table holds a weapon, a tool, a bag, a hat, or a belt, but for a coffin's rare dirk: the valley's found sword and mace are in the toll house, its one leather belt and pair of work gloves on the barn's rack, its one Onion-head Hat on the scarecrow, and no container holds a [[Rucksack]].
 
-Furniture you make is different: a chest, a shelf, or a wheelbarrow made at the [[Workbench]] appears already searched and empty, so nothing is ever rolled into it.
+Furniture you make is different: a chest, a shelf, or a wheelbarrow made at the [[Workbench]] appears already searched and empty, so nothing is ever rolled into it. It is set down on the nearest free tiles a body could walk to from the bench, and where there is no room for it (a counter or a cart needs more than one tile) the recipe is refused before anything is spent (see [[Crafting#The output|Crafting]]).
 
 Each table is rolled a number of times, and each roll picks one row by its weight. "Nothing" is a row like any other.
 
@@ -101,3 +101,4 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `data/sprites/feed_trough.json`, `data/loot.json:4`, `src/interact.js:401-436`: the feeding trough, never rolled, opened at once, taking feed alone (game #460, at 6e3ab37) (game #338, at 232d0fb)
 - `src/placement.js:538-544`: a made container taken apart only when empty, "Empty it first." (game #413, at 31d330a)
 - `data/recipes.json`: the made containers: the workbench's cupboard, desk, bookcase, counter, cart, stall, barrel, the anvil's strongbox (game #428, at 0ce54cf)
+- `src/stations.js:208-275`: a made container set down on free tiles near its station, refused with no room (game #466, at d625844)

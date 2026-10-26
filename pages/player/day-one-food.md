@@ -49,7 +49,7 @@ These are the most the food can give. Every character starts with a full stomach
 - Fruit growing back on picked trees.
 - What the dead carry in their pockets (see [[Drop tables]]).
 - Crops not yet ripe, which go on growing, and anything a player plants.
-- Cooking. Every cooked food fills more than the food that goes into it (a [[Roast potato]] against a [[Potato]], a [[Stew]] against its vegetables, grilled fish against raw), so cooking is the way to stretch the valley's food.
+- Cooking. Every cooked food fills more than the food that goes into it (a [[Roast potato]] against a [[Potato]], a [[Plain pottage]] against its vegetables, grilled fish against raw), so cooking is the way to stretch the valley's food.
 - The ripe rye's [[Grain]], which is not food until it is cooked into [[Porridge]] or milled and baked into a [[Loaf of bread]].
 - A world's extra starting items (see [[World rules]]); the count uses the default kit.
 - A world made with the Trees rule off has no apple trees, so less food than this.

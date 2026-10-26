@@ -2,12 +2,15 @@
 title: Arrow
 categories: [Items, Ammunition, Combat]
 aliases: [Arrows]
-summary: The bow's ammunition, which can be recovered from bodies and the ground, and dipped in a fire to make fire arrows.
+summary: The bow's ammunition, fletched with a feather at the workbench, recovered from bodies and the ground, and dipped in a fire to make fire arrows.
+numbersOk: true
 ---
+
+<!-- typed: the refusal "Short of 1 feather." is the game's own words for the arrows recipe, whose count is in data/recipes.json rows, which no lookup reads -->
 
 {{infobox-item arrow}}
 
-The **Arrow** is the [[Hunting bow]]'s ammunition. Arrows stack to {{n items.arrow.stack}} and are drawn from the bag or the belt. [[Use|Used]] on any lit fire (a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]), the whole stack of arrows you carry becomes [[Fire arrow|fire arrows]] at once: the dip. The fire must be lit and within reach, and only arrows you carry (in a hand, on the [[Belt]], or in the bag) are dipped; a stack in an open chest or a body is refused with "Take the arrows out first." See [[Fire arrow]].
+The **Arrow** is the [[Hunting bow]]'s ammunition. Arrows stack to {{n items.arrow.stack}} and are drawn from the bag or the belt. They are made at the [[Workbench]] from a [[Stick]] and a [[Feather]], a batch at a time, with a [[Dirk]] on you; without a feather the recipe is refused, "Short of 1 feather.", so new arrows wait on the hens of [[Hollow Farm]] (see [[Hunting]] and [[Keeping]]). The arrows a new character starts with and those found are as before. [[Use|Used]] on any lit fire (a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]), the whole stack of arrows you carry becomes [[Fire arrow|fire arrows]] at once: the dip. The fire must be lit and within reach, and only arrows you carry (in a hand, on the [[Belt]], or in the bag) are dipped; a stack in an open chest or a body is refused with "Take the arrows out first." See [[Fire arrow]].
 
 ## Combat
 
@@ -26,5 +29,6 @@ With fire arrows carried as well, the bow shoots those first. A fire arrow that 
 - `src/entities/character.js:139-162`: lodged arrows come out in the body's loot
 - `src/archery.js:568-572`: fire arrows drawn before plain ones
 - `data/interactions.json`, `src/burn.js:73-94`: the `dip` verb: arrows used on a lit fire become fire arrows, the whole stack; refused when the fire is out, from beyond `DIP_REACH`, or with the arrows not carried
+- `data/recipes.json:327-347`: arrows fletched: a stick and a feather, a dirk carried (game #462, at d625844)
 
 {{navbox weapons}}

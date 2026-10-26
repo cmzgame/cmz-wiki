@@ -6,9 +6,9 @@ summary: A station is a piece of furniture you make things at: pick a recipe, an
 numbersOk: true
 ---
 
-<!-- typed: the output box's size and the most a single Make can queue (src/stations.js) are neither data nor named constants -->
+<!-- typed: the output box's size and the most a single Make can queue (src/stations.js) are neither data nor named constants; the done line's "Made 5 arrows." is the game's own words for the arrows recipe -->
 
-**Crafting** is done at **stations**: a [[Workbench]], an [[Anvil]], a [[Forge]], an [[Oven]], a [[Loom]], a [[Charcoal clamp]], and any lit fire that cooks ([[Cooking]]). The [[Loom]] and the [[Charcoal clamp]] are stations too. A [[Dye vat]] is a station with no recipes: it opens its own picker to dye clothing instead of the station panel. Every recipe is known from the start; the full list is on [[Recipes]].
+**Crafting** is done at **stations**: a [[Workbench]], an [[Anvil]], a [[Forge]], an [[Oven]], a [[Loom]], a [[Spinning wheel]], a [[Charcoal clamp]], the [[Millstones]], a [[Smoking rack]], a [[Tanning vat]], and any lit fire that cooks ([[Cooking]]). A [[Dye vat]] is a station with no recipes: it opens its own picker to dye clothing instead of the station panel. Every recipe is known from the start; the full list is on [[Recipes]].
 
 ## How it works
 
@@ -32,7 +32,7 @@ The ingredients are counted, and taken, from:
 - the station's own output box;
 - every container within {{n census.constants.stations.REACH tiles}} of you, with a clear line to it, that has already been searched (an unsearched chest's contents do not exist yet; see [[Containers]]). A chest in the next room, through a wall, does not count.
 
-They are taken from your bag first, then the belt, then your hands, then the containers. Some recipes ask for "any cloth": any garment will do (a bandage is not cloth).
+They are taken from your bag first, then the belt, then your hands, then the containers, and each is spent wherever it was taken from. Some recipes ask for any of a kind rather than one item: "any cloth" takes [[Linen cloth]], [[Woollen cloth]], a [[Rag]], or a garment (a bandage is not cloth), and a garment is taken last, so a rag or a cloth goes before a tunic; "any meat" takes any of the six raw meats (not bacon); "any plant" garlic or a cabbage; "any binder" lard or honey.
 
 All the ingredients for the count are taken when you press Make. If anything is short, nothing is taken and the game says what is missing ("Short of ...").
 
@@ -52,7 +52,11 @@ After Make, the work runs on the station's own queue in the world's time. You ma
 
 What a recipe makes lands in the station's **output box**, a grid of 3 × 2 that opens beside your bag. If the output box is full, the item is put on the floor beside the station. Since most things take a cell each, a queue of more than a few burns, rags, or handles fills the box and spills onto the floor. The output box counts as one of the places ingredients are taken from, so a chain (planks to sticks to a bow) can be made without emptying it.
 
-A recipe for **furniture** (a chest, a shelf, a bench, a table, a bed, a workbench, a wheelbarrow) makes no item: the furniture is placed as a prop on a free tile beside the station, never on either tile of a door, so the dead can still stand at the door (see [[Openings]]). A container made this way starts searched and empty, and anything made at a station can be taken down again with the removal tool (see [[Building]]).
+A recipe for **furniture** or a station (a chest, a shelf, a table, a bed, a counter, a cart, a workbench, a [[Smoking rack]], a [[Tanning vat]], and the rest) makes no item: the thing is set down as a prop near the station. It goes on the nearest tiles a body could walk to from beside the station, never through a wall or a shut door into the next room, up to {{n census.constants.stations.SPOT_STEPS}} steps away. Every tile it covers must be walkable, empty, bare of items, not beside a door (so the dead can still stand at the door; see [[Openings]]), with nobody standing on it and no wall between two of its tiles, so a counter never stands over its own bench.
+
+If there is no such spot, the recipe is greyed and Make refused before anything is taken: "There is no room beside it for a counter." If the room fills while the job runs (someone stands on the spot), the finished thing waits at the head of the queue and lands once there is room, so nothing made is lost. When a job is done the game says what was made, counted: "Made 5 arrows.", "Made a counter."
+
+A container made this way starts searched and empty, and anything made at a station can be taken down again with the removal tool (see [[Building]]). A station cannot be picked up while it is still making something: its entry reads "Pick up oven (it is still making something)".
 
 ## Recipes
 
@@ -97,8 +101,11 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/game.js:560`: the queues stepped in the world's step
 - `src/map.js:94`: a game hour in seconds
 - `src/stations.js:22`: the output box's size
-- `src/stations.js:168-204`: output to the box, or the floor beside when full; furniture placed beside the station
-- `src/stations.js:178-204`: never on a door's tiles (game commit 82106de)
+- `src/stations.js:296-320`: output to the box, or the floor beside when full
+- `src/stations.js:208-259`, `src/stations.js:296-345`: a made prop on the nearest free tiles a body could walk to, every tile of its footprint free, never beside a door, under a body, or across a wall; the refusal before anything is spent; a job that cannot land waits at the head of its queue (game #466, at d625844)
+- `src/stations.js:268-291`: "There is no room beside it for ..."; the counted done line (game #466, at d625844)
+- `src/stations.js:111-146`: a tagged ingredient taken from the bag, the belt, a hand, then the containers, a garment last (game #462, at d625844)
+- `src/interact.js:320-338`: no station picked up while its queue runs (game #462, at d625844)
 - `src/ui/station-panel.js:71-84`: a guest's panel opens on its own screen
 - `src/net.js:1288-1290`: Make sent to the host
 - `src/host.js:183-189`: the host runs it as the craft verb for that player

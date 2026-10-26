@@ -16,7 +16,7 @@ A **bucket** carries water for the fields. It is an item you keep in the bag, on
 - **Fill the bucket:** at any water tile, well, trough, or font, the menu offers it (greyed "(full)" when it is full): "You fill the bucket."
 - **Pour the bucket:** at a crop or tilled soil where something in the three by three round it needs water, the menu offers it (greyed "(empty)" when it is empty). It wets the soil of every crop there and empties the bucket: "You water ... plants." One pour a fill.
 
-- **Milk the cow:** carried empty, the bucket milks a cow that has eaten today, once a game day, for a [[Jug of milk]] (see [[Keeping]]). The milk is a jug of its own: the bucket stays empty. A bucket holding water is refused with "Empty the bucket first." Its hover card says "Milks a fed cow."
+- **Milk the cow:** carried empty, the bucket milks a cow that has eaten today, once a game day, for a [[Jug of milk]] (see [[Keeping]]). The milk is a jug of its own: the bucket stays empty. Any empty bucket you carry will do, in a hand, on the belt, or in the bag, before a bucket of water in your hand; only when every bucket you carry holds water is milking refused with "Empty the bucket first." Its hover card says "Milks a fed cow."
 
 A [[Use]] of the bucket on water or a crop does the same. The first bucket that can serve is used: hands, then belt, then bag. Each needs you within reach of the tile with a clear line to it; neither is offered through a wall, and a pour never wets the far side of one.
 
@@ -48,5 +48,6 @@ A guest fills and pours through the same menu entries and Use, sent to the host 
 - `data/crops.json`: the fill's and the pour's seconds
 - `data/recipes.json:373-388`: the bucket from three planks at the workbench, with `build`, a hammer, carried (game #222)
 - `data/loot.json:6`: the bucket in your cottage's chest, beside a hatchet, a shovel, and a loaf
+- `src/entities/animal.js:520-551`, `src/inventory.js:94-106`: milking prefers an empty bucket carried anywhere (game #466, at d625844)
 
 {{navbox items}}

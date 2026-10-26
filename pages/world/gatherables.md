@@ -13,6 +13,8 @@ Gatherables are the things in the world that are meant to be gathered: [[Trees]]
 
 A left click on a gatherable within {{n census.constants.interact.CLICK_REACH}} tiles makes it sway for {{n census.constants.render_props.WIGGLE_MS}} milliseconds. Clicking again during the next {{n census.constants.interact.POKE_COOLDOWN_MS}} milliseconds does not restart it. A click finds the thing by its drawn picture, so a tall tree's crown can be clicked as well as its trunk.
 
+**Under a tree's crown**, a click finds the small thing behind it. Where a tree's crown covers another gatherable (an herb, a mushroom, a crop, a beehive, a rock, an ore rock, a clay bank, a salt rock, a pumpkin, a sapling, or a stump), a click on the covered point reaches that gatherable instead of the tree: it is the one that sways, the first thing on the right-click menu, what Object Highlight (see [[Settings]]) outlines, and the target in [[Use|Use mode]]. A tree's **trunk** always reaches the tree, and so does any part of its crown with nothing behind it. Another tree's trunk, or anything that is not a gatherable (a chest, decoration), between the crown and the gatherable keeps the click on the tree. The crown and the trunk are read from the tree's picture. E is unchanged: it finds actions by tile, not by the picture.
+
 The well plays its own animation instead: it lowers its bucket and winds it back up.
 
 ### Walking through
@@ -73,3 +75,5 @@ The sways of each step go out to guests in the host's frames, so everyone sees t
 - `data/sprites/herb_sage.json` (and the other herbs), `data/sprites/clay_bank.json`, `data/sprites/salt_rock.json`: `interactable`, the herbs not solid, the bank and the salt rock solid; the `gather`, `dig`, and `mine` blocks (game #457, at 6e3ab37)
 - `src/gather.js:41-119`, `src/interact.js:994`: Gather, Forage, and Dig on the menu, timed, run on the host by the node's id (game #457, at 6e3ab37)
 - `src/hives.js:104-158`, `data/tuning.json:171`: Take honey at a hive, `E`, the count, the seconds, the days until more, every hive with honey at the start; `honeyAt` on the prop, its chunk touched (game #416, at 31d330a)
+- `src/interact.js:1704-1834`: `trunkOf`, `hitsAt`, and `interactableAt`: a crown gives way to the first interactable non-tree behind it, a trunk or a non-interactable blocks; the click's sway, Object Highlight, Use mode, and the menu all through it (game #464, at d625844)
+- `src/interact.js:2143-2170`: `menuActions`: the thing the click found first among the props' actions (game #464, at d625844)

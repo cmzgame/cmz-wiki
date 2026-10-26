@@ -7,9 +7,9 @@ summary: A fed cow's milk, taken once a day with an empty bucket carried; food a
 
 {{infobox-item milk}}
 
-A **jug of milk** is what a cow gives when it has eaten today: choose **Milk the cow** on its menu with an empty [[Bucket]] carried, a timed entry of {{n animals.work.milk seconds}}, once a game day. It gives {{n animals.species.cow.produce.count.0}} jug, and one more {{pct animals.keep.more}} of the time. The milk is a jug of its own: the bucket is not filled and is kept, and a bucket holding water is refused with "Empty the bucket first." The cows are in [[Hollow Farm]]'s byre; see [[Keeping]].
+A **jug of milk** is what a cow gives when it has eaten today: choose **Milk the cow** on its menu with an empty [[Bucket]] carried, a timed entry of {{n animals.work.milk seconds}}, once a game day. It gives {{n animals.species.cow.produce.count.0}} jug, and one more {{pct animals.keep.more}} of the time. The milk is a jug of its own: the bucket is not filled and is kept. Any empty bucket you carry will do, wherever it is: a bucket of water in your hand does not stop you if an empty one is in the bag, and only when every bucket you carry holds water is milking refused, "Empty the bucket first." The cows are in [[Hollow Farm]]'s byre; see [[Keeping]].
 
-It is eaten as food and quenches thirst too: "Eat: heals {{n items.milk.heal}}, fills hunger {{n items.milk.hunger}}, quenches thirst {{n items.milk.thirst}}." Its card also says "Milked from a fed cow, a bucket carried." {{planned doc=45 step=4 note="Cheese and butter from milk (Cooking 3)."}}
+It is eaten as food and quenches thirst too: "Eat: heals {{n items.milk.heal}}, fills hunger {{n items.milk.hunger}}, quenches thirst {{n items.milk.thirst}}." Its card also says "Milked from a fed cow, a bucket carried." Jugs of milk warmed at a lit fire make a [[Wheel of cheese]] (see [[Cooking]]), and a jug is churned into [[Butter]] at the [[Workbench]].
 
 {{item-sections milk}}
 
@@ -22,8 +22,8 @@ A guest's **Milk the cow** is sent to the host by the cow's id, and the host run
 <!-- sources at 6e3ab37 -->
 - `data/items.json:66`: the jug of milk: food, its hunger, thirst, and heal
 - `data/animals.json`: the cow's `produce`, `work.milk`, `keep.more`
-- `src/entities/animal.js:513-552`: milking: fed today, once a day, a bucket carried and empty, the count and one more
+- `src/entities/animal.js:520-551`, `src/inventory.js:94-106`: milking: fed today, once a day, an empty bucket carried anywhere preferred, refused only when every bucket holds water (game #466), the count and one more
 - `src/item-info.js:147-153`, `src/item-info.js:224-229`: its card's Eat line and where it comes from
-- `docs/45-animals.md:40`: cheese and butter, not built
+- `data/recipes.json:1307-1323`, `data/recipes.json:386-401`: cheese at a lit cooking fire, butter at the workbench (game #462, at d625844)
 
 {{navbox items}}

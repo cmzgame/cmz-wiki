@@ -2,12 +2,18 @@
 title: Cooking
 categories: [Stations, Crafting]
 aliases: [Cook, Cook here]
-summary: Any lit campfire, hearth, or fireplace, and the oven, is a station for cooking (roast potatoes, stew, porridge, and grilled fish) and boils tainted water clean.
+summary: Any lit campfire, hearth, or fireplace, and the oven, is a station for cooking (roast potatoes, the pottages and the hearty stew, cooked meat, porridge, grilled fish, cheese, and pemmican) and boils tainted water clean.
 ---
 
 {{infobox-station cooking}}
 
-**Cooking** is done at any lit fire that cooks: a [[Campfire]], a hearth, a fireplace, or the [[Oven]]. A campfire's, a hearth's, or a fireplace's menu has **Cook here**, which opens the station panel with the cooking recipes; the oven's panel lists its own recipes and then these. The [[Forge]] does not offer them. Fish can be cooked: a [[Perch]], a [[Trout]], or a [[Carp]] caught by [[Fishing]] grills into its grilled kind. A [[Potato]] grown by [[Farming]] roasts, and every cooking recipe's ingredients can be grown: garlic for the stew, rye's grain for the porridge.
+**Cooking** is done at any lit fire that cooks: a [[Campfire]], a hearth, a fireplace, or the [[Oven]]. A campfire's, a hearth's, or a fireplace's menu has **Cook here**, which opens the station panel with the cooking recipes; the oven's panel lists its own recipes and then these. The [[Forge]] does not offer them. Fish can be cooked: a [[Perch]], a [[Trout]], or a [[Carp]] caught by [[Fishing]] grills into its grilled kind. A [[Potato]] grown by [[Farming]] roasts, and the vegetables can all be grown: garlic for the [[Plain pottage]], rye's grain for the porridge.
+
+The animals' meat and what they give cook here too (see [[Hunting]] and [[Keeping]]):
+
+- **Raw meat cooked alone:** each of the six raw [[Meat|meats]] cooks into its own dish, a [[Roast hen]], a [[Roast rabbit]], a [[Venison steak]], a [[Beef steak]], a [[Roast mutton]], or a [[Roast pork]].
+- **Raw meat in dishes:** any raw meat (not [[Bacon]]) goes into the [[Meat pottage]], beside the meatless plain one, and the [[Hearty stew]], which takes two of any kind; with a plant and a binder it makes [[Pemmican]], the one cooked food that stacks. The [[Oven]] bakes it into a [[Meat pie]], and a [[Smoking rack]] smokes it.
+- **From the farm:** [[Eggs and bacon]], and a [[Wheel of cheese]] from jugs of milk.
 
 ## Using it
 
@@ -45,6 +51,8 @@ A guest cooks through the host like any station; the fire and the queue are the 
 - `data/maps/valley.json`: where the fireplaces are
 - `src/host.js:183-189`: a guest's Make runs on the host
 - `src/water.js:51-148`, `src/interact.js:975`, `src/interact.js:983-1006`, `data/interactions.json:37`, `data/tuning.json`, `data/sprites/forge.json`, `data/sprites/charcoal_clamp.json`: Boil water at a lit cooking fire, its three ways in, greyed labels, the bar and its reach, no extra fuel, the refusal at a fire that does not cook (game #435, at fa2997f)
+- `data/recipes.json:1130-1348`: the six raw meats cooked alone, the meat pottage, the hearty stew, eggs and bacon, cheese, and pemmican, each at a lit cooking fire (game #462, at d625844)
+- `data/items.json:109`: the stew is named Plain pottage (game #462, at d625844)
 - `src/stations.js:47-55`, `src/ui/station-panel.js`: a prop's stations as a list, the oven its own and cooking, its panel both lists (game #421, at 1bcb6ed)
 
 {{navbox making}}
