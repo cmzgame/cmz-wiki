@@ -26,23 +26,23 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at 879d0a7 -->
 - `data/sprites/workbench.json`: the workbench: a station with no fire
-- `data/recipes.json:4-124`, `data/recipes.json:200-472`: the workbench's recipes, none with fire or a tool in hand; each but the torch with a carried tool by its verb, `uses`: `build` (a hammer), `cut` (a knife), `split` (a hatchet) (game #222)
-- `src/stations.js:145-154`, `src/ui/station-panel.js:145`, `src/inventory.js:88-108`: a row's tool carried anywhere, "needs a ... on you"
-- `data/loot.json:7`, `data/loot.json:11`: the joiner's hatchet and hammer, the weaver's knife
-- `data/recipes.json:200-215`: sticks from a plank, with a hatchet
+- `data/recipes.json:4-124`, `data/recipes.json:231-782`: the workbench's recipes, none with fire or a tool in hand; each but the torch with a carried tool by its verb, `uses`: `build` (a hammer), `cut` (a knife), `split` (a hatchet) (game #222)
+- `src/stations.js:170-181`, `src/ui/station-panel.js:153`, `src/inventory.js:94-112`: a row's tool carried anywhere, "needs a ... on you"
+- `data/loot.json:9`, `data/loot.json:13`: the joiner's hatchet and hammer, the weaver's knife
+- `data/recipes.json:231-246`: sticks from a plank, with a hatchet
 - `data/items.json:4`: planks from a log
-- `data/items.json:26-31`, `data/items.json:67-68`: cloth: the garments, linen cloth, and rags
-- `data/recipes.json:454-472`: the wheelbarrow needs an iron bar
-- `src/interact.js:788-805`: the station's menu entry and `E`
-- `src/stations.js:296-320`: items to the output box; a chest or shelf made here starts with its bag made, searched and empty
-- `src/stations.js:208-275`: a made prop on the nearest free tiles a body could walk to, its whole footprint free; refused before anything is spent with no such spot (game #466, at d625844)
+- `data/items.json:27-32`, `data/items.json:106-107`: cloth: the garments, linen cloth, and rags
+- `data/recipes.json:584-602`: the wheelbarrow needs an iron bar
+- `src/interact.js:1068-1085`: the station's menu entry and `E`
+- `src/stations.js:294-324`: items to the output box; a chest or shelf made here starts with its bag made, searched and empty
+- `src/stations.js:210-276`: a made prop on the nearest free tiles a body could walk to, its whole footprint free; refused before anything is spent with no such spot (game #466)
 - `tools/mapgen/valley.py:140-151`, `tools/mapgen/valley.py:352`: the chandler's workbench in its lean-to, the joiner's in the workshop; the lean-to too full for a counter (Primary's pane run on game #466)
-- `data/recipes.json:327-441`: the arrows fletched with a feather, the snare, the lead, butter, the smoking rack, and the tanning vat (game #462, at d625844)
-- `data/recipes.json:431-453`: a workbench made at a workbench
+- `data/recipes.json:327-441`: the arrows fletched with a feather, the snare, the lead, butter, the smoking rack, and the tanning vat (game #462)
+- `data/recipes.json:561-583`: a workbench made at a workbench
 - `data/maps/valley.json`: where the workbenches stand
-- `src/host.js:183-189`: a guest's Make runs on the host
-- `data/recipes.json`: the workbench's furniture, the barrel, the jack-o'-lantern, the torch post as an item (game #428, at 0ce54cf)
+- `src/host.js:185-192`: a guest's Make runs on the host
+- `data/recipes.json`: the workbench's furniture, the barrel, the jack-o'-lantern, the torch post as an item (game #428)
 
 {{navbox making}}
