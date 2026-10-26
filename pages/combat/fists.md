@@ -5,7 +5,7 @@ aliases: [Punch, Unarmed]
 summary: An empty main hand punches: weak, short, never floors, and never breaks.
 ---
 
-**Fists** are what the [[Player]] fights with when nothing usable is in the main hand. A punch is weak and short, never floors one of [[The dead]], and never breaks. An item with no weapon block held in the main hand (food, the [[Throwing knife]], the [[Throwing axe]], and so on) also swings as fists. The [[Staff of Fire]] and the [[Book of Fire]] are the exception: held together they cast a [[Fireball]], and either one alone does nothing on the left button (no punch).
+**Fists** are what the [[Player]] fights with when nothing usable is in the main hand. A punch is weak and short, never floors one of [[The dead]], and never breaks. An item with no weapon block held in the main hand (food, a material, and so on) also swings as fists. The [[Throwing knife]] and the [[Throwing axe]] have none either, but they are thrown on the left button instead. The [[Staff of Fire]] and the [[Book of Fire]] are the exception: held together they cast a [[Fireball]], and either one alone does nothing on the left button (no punch).
 
 ## Combat
 
@@ -29,6 +29,7 @@ The Swing targets setting works with fists too. Fists have no durability to lose
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/archery.js:815-828` (at 307ed34): a pure throwable in the main hand is thrown on the left button, not punched (game #494)
 - `src/combat.js:50`, `src/combat.js:73-77`: fists when the main hand holds no weapon block
 - `data/items.json`: the throwing knife and throwing axe carry no weapon block; the book carries `book.spell` and the staff `staff: true` (game commit 3c70aa7)
 - `src/archery.js`: `spellOf`, a staff and a book make a spell launcher; one without the other refuses

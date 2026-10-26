@@ -1,15 +1,15 @@
 {
  "version": {
-  "commit": "0fa02e594c04fb85cc5cf1bf9883b6f1544ea21f",
-  "short": "0fa02e5",
-  "date": "2026-10-26T00:35:11-05:00",
-  "subject": "Merge pull request #491 from cmzgame/build/481-potions",
+  "commit": "307ed348f6f17e90d2d8db6ba0a094db59a15b55",
+  "short": "307ed34",
+  "date": "2026-10-26T01:32:43-05:00",
+  "subject": "Merge pull request #496 from cmzgame/build/482-poisons",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 143,
-  "recipes": 95,
-  "interactions": 35,
+  "items": 145,
+  "recipes": 97,
+  "interactions": 39,
   "lootTables": 29,
   "sprites": 203,
   "places": 47,
@@ -23,11 +23,11 @@
   "fixedRules": 5,
   "liveRules": 5,
   "keys": 21,
-  "verbs": 29,
+  "verbs": 30,
   "menuLabels": 97,
   "events": 37,
-  "checks": 82,
-  "modules": 143
+  "checks": 84,
+  "modules": 144
  },
  "items": [
   {
@@ -194,6 +194,7 @@
     "workbench: prop:stall",
     "workbench: prop:barrel",
     "workbench: torch_post",
+    "anvil: throwing_axe",
     "anvil: prop:strongbox",
     "workbench: prop:millstones",
     "workbench: prop:dyevat",
@@ -217,7 +218,8 @@
    "hands": "either",
    "tags": [
     "metal",
-    "tool"
+    "tool",
+    "blade"
    ],
    "weapon": {
     "staggerChance": 0.5,
@@ -315,7 +317,8 @@
    ],
    "hands": "either",
    "tags": [
-    "metal"
+    "metal",
+    "blade"
    ],
    "weapon": {
     "staggerChance": 0.5,
@@ -466,7 +469,7 @@
   },
   {
    "id": "throwing_knife",
-   "name": "Throwing Knife",
+   "name": "Throwing knife",
    "kind": "tool",
    "size": [
     1,
@@ -475,20 +478,23 @@
    "hands": "either",
    "stack": 20,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
     "drawn": true
    },
-   "madeBy": [],
+   "madeBy": [
+    "anvil"
+   ],
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "art only for now: it does not throw yet (docs/24); `toCome` says so on its card (#317)"
+   "note": "docs/24 section 1 (Michael, 2026-10-25): the knife pulls, thrown on the left button from the main hand, one from the stack a throw; Michael's damage, range, stagger, and break, Primary's speed, arc, draw, push, and spin (docs/42)"
   },
   {
    "id": "throwing_axe",
-   "name": "Throwing Axe",
+   "name": "Throwing axe",
    "kind": "tool",
    "size": [
     1,
@@ -497,16 +503,19 @@
    "hands": "either",
    "stack": 10,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
     "drawn": true
    },
-   "madeBy": [],
+   "madeBy": [
+    "anvil"
+   ],
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "art only for now: it does not throw yet (docs/24); `toCome` says so on its card (#317)"
+   "note": "docs/24 section 1 (Michael, 2026-10-25): the axe stops, thrown on the left button from the main hand, one from the stack a throw; every hit staggers and some knock down; Michael's damage, range, stagger, knockdown, and break, Primary's speed, arc, draw, push, and spin (docs/42)"
   },
   {
    "id": "bandage",
@@ -759,7 +768,8 @@
    ],
    "hands": "main",
    "tags": [
-    "metal"
+    "metal",
+    "blade"
    ],
    "weapon": {
     "staggerChance": 0.5,
@@ -834,7 +844,9 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [
-    "arrow on fire: Dip"
+    "arrow on fire: Dip",
+    "poison on arrow: Coat",
+    "strong_poison on arrow: Coat"
    ]
   },
   {
@@ -859,6 +871,52 @@
    "foundIn": [],
    "interactions": [],
    "note": "an arrow dipped in a lit fire (#14: Use arrows on a campfire, a hearth, the forge, the oven); a bow draws these before plain arrows, and what it hits is set alight; it lands or lodges as a plain arrow. Placeholder art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "poison_arrow",
+   "name": "Poisoned arrow",
+   "kind": "ammo",
+   "size": [
+    1,
+    2
+   ],
+   "stack": 20,
+   "tags": [
+    "wood"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "an arrow coated with poison (docs/47 section 6, #482: Use a poison on arrows, five a vial); a bow draws these after fire arrows and before plain ones, what it hits is poisoned (src/poison.js), and it lands or lodges as a plain arrow. In flight the arrow with a green head (archery.generatePoisonArrow). Placeholder art, the drawn pair owed (docs/26)"
+  },
+  {
+   "id": "strong_poison_arrow",
+   "name": "Strongly poisoned arrow",
+   "kind": "ammo",
+   "size": [
+    1,
+    2
+   ],
+   "stack": 20,
+   "tags": [
+    "wood"
+   ],
+   "art": {
+    "icon": false,
+    "held": false,
+    "drawn": false
+   },
+   "madeBy": [],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "an arrow coated with strong poison (docs/47 section 6, #482: Use a strong poison on arrows, five a vial); a bow draws these after fire arrows and before ordinary poisoned ones and plain ones, what it hits is strongly poisoned, and it lands or lodges as a plain arrow. In flight the arrow with a darker green head, as its vial is darker. Placeholder art, the drawn pair owed (docs/26)"
   },
   {
    "id": "cap",
@@ -2502,7 +2560,8 @@
    "hands": "either",
    "tags": [
     "tool",
-    "metal"
+    "metal",
+    "blade"
    ],
    "weapon": {
     "staggerChance": 0.3,
@@ -2582,7 +2641,8 @@
    "hands": "either",
    "tags": [
     "tool",
-    "metal"
+    "metal",
+    "blade"
    ],
    "weapon": {
     "staggerChance": 0.3,
@@ -2707,6 +2767,8 @@
     "workbench: prop:barrel",
     "anvil: knife",
     "anvil: shears",
+    "anvil: throwing_knife",
+    "anvil: throwing_axe",
     "anvil: hammer",
     "anvil: hatchet",
     "anvil: pickaxe",
@@ -4008,8 +4070,11 @@
    ],
    "usedIn": [],
    "foundIn": [],
-   "interactions": [],
-   "note": "docs/47 section 6 (#481): brewed, never drunk; Use on a blade or on arrows comes with step 3 (#482). Dev art, the drawn pair owed (docs/26)"
+   "interactions": [
+    "poison on blade: Coat",
+    "poison on arrow: Coat"
+   ],
+   "note": "docs/47 section 6 (#481): brewed, never drunk; Used on a blade it coats it for `poison.hits` landed hits, and on arrows it makes `poison.arrows` poisoned arrows (data/combat.json, src/poison.js, #482); the vial comes back. Dev art, the drawn pair owed (docs/26)"
   },
   {
    "id": "strong_poison",
@@ -4031,8 +4096,11 @@
    ],
    "usedIn": [],
    "foundIn": [],
-   "interactions": [],
-   "note": "docs/47 section 6 (#481): brewed, never drunk; the darker green with a black seal (docs/47 section 8). Use on a blade or on arrows comes with step 3 (#482). Dev art, the drawn pair owed (docs/26)"
+   "interactions": [
+    "strong_poison on blade: Coat",
+    "strong_poison on arrow: Coat"
+   ],
+   "note": "docs/47 section 6 (#481): brewed, never drunk; the darker green with a black seal (docs/47 section 8). Used on a blade it coats it for `poison.hits` landed hits, and on arrows it makes `poison.arrows` strongly poisoned arrows (data/combat.json, src/poison.js, #482); the vial comes back. Dev art, the drawn pair owed (docs/26)"
   },
   {
    "id": "cauldron",
@@ -4933,6 +5001,44 @@
    "seconds": 8,
    "tool": "hammer",
    "note": "docs/45 section 3: shears, Blacksmithing 1 (open until the skills)"
+  },
+  {
+   "id": "throwing_knife",
+   "station": "anvil",
+   "out": {
+    "id": "throwing_knife",
+    "count": 10
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    }
+   ],
+   "seconds": 8,
+   "tool": "hammer",
+   "note": "docs/24 section 1: Blacksmithing 3 (open until the skills); ten knives a bar, Primary's default"
+  },
+  {
+   "id": "throwing_axe",
+   "station": "anvil",
+   "out": {
+    "id": "throwing_axe",
+    "count": 2
+   },
+   "in": [
+    {
+     "id": "iron_bar",
+     "count": 1
+    },
+    {
+     "id": "plank",
+     "count": 1
+    }
+   ],
+   "seconds": 8,
+   "tool": "hammer",
+   "note": "docs/24 section 1: Blacksmithing 3 (open until the skills); two axes a bar and a plank, the plank their hafts, Primary's default"
   },
   {
    "id": "hammer",
@@ -5995,6 +6101,42 @@
     "to": "fire_arrow"
    },
    "message": "You dip the arrows in the fire."
+  },
+  {
+   "use": "poison",
+   "exact": true,
+   "on": "blade",
+   "verb": "Coat",
+   "action": "coat"
+  },
+  {
+   "use": "strong_poison",
+   "exact": true,
+   "on": "blade",
+   "verb": "Coat",
+   "action": "coat"
+  },
+  {
+   "use": "poison",
+   "exact": true,
+   "on": "arrow",
+   "verb": "Coat",
+   "action": "coat",
+   "args": {
+    "from": "arrow",
+    "to": "poison_arrow"
+   }
+  },
+  {
+   "use": "strong_poison",
+   "exact": true,
+   "on": "arrow",
+   "verb": "Coat",
+   "action": "coat",
+   "args": {
+    "from": "arrow",
+    "to": "strong_poison_arrow"
+   }
   },
   {
    "use": "hoe",
@@ -9900,6 +10042,25 @@
    "cap": 10,
    "note": "burning (#14, Michael 2026-10-15): like bleeding but capped at one; a body burning loses dps a second for duration seconds, a new source refreshing the timer and never stacking, and never more than cap over one burn however often refreshed (Michael: never more than 10 against 100, the dead's health then; the cap is kept at 10 against 150 since docs/41 step 6, a number not a ratio, until Michael says otherwise). Only the dead burn, never a player. Sources: a weapon's `ignite` chance (the torch's 0.25 in data/items.json), the fireball and a fire arrow always (their `ignite`)"
   },
+  "poison": {
+   "dpsByStacks": {
+    "ordinary": [
+     1,
+     2,
+     3
+    ],
+    "strong": [
+     2,
+     4,
+     6
+    ]
+   },
+   "max": 3,
+   "duration": 10,
+   "hits": 10,
+   "arrows": 5,
+   "note": "poisons (docs/47 section 6, #482; src/poison.js): a coat on a blade lasts `hits` landed hits (a swing that lands spends one however many bodies it strikes, a thrown spear's landing hit one, a miss none), and a vial on arrows makes `arrows` poisoned arrows from plain ones; each poisoned hit on one of the dead or a wild animal adds a stack up to `max` and puts the timer back to `duration` seconds, and the body loses dpsByStacks[tier][stacks - 1] a second, ticked once a second as a floating number; a strong hit lifts the status to strong, and an ordinary hit on a strong one adds its stack and keeps it strong. Never a player, never spread, beside a burn. Defaults, Primary's (Michael's: about ten hits, about five arrows, three stacks, two tiers)"
+  },
   "infection": {
    "chance": 0.2,
    "days": 1.5,
@@ -10445,13 +10606,13 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1450"
+    "interact.js:1485"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1452"
+    "interact.js:1487"
    ]
   },
   {
@@ -10490,7 +10651,7 @@
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1451"
+    "interact.js:1486"
    ]
   },
   {
@@ -10565,13 +10726,19 @@
   {
    "key": "butcher",
    "at": [
-    "entities/animal.js:797"
+    "entities/animal.js:812"
    ]
   },
   {
    "key": "chop",
    "at": [
     "chop.js:28"
+   ]
+  },
+  {
+   "key": "coat",
+   "at": [
+    "poison.js:146"
    ]
   },
   {
@@ -10697,7 +10864,7 @@
   {
    "key": "skin",
    "at": [
-    "entities/animal.js:784"
+    "entities/animal.js:799"
    ]
   },
   {
@@ -10754,7 +10921,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:814"
+    "interact.js:849"
    ]
   }
  ],
@@ -10768,7 +10935,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1567"
+    "main.js:1581"
    ]
   },
   {
@@ -10792,7 +10959,7 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:960"
+    "interact.js:995"
    ]
   },
   {
@@ -10846,41 +11013,41 @@
   {
    "key": "Drink",
    "at": [
-    "interact.js:1608",
-    "interact.js:1701"
+    "interact.js:1643",
+    "interact.js:1736"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1665"
+    "interact.js:1700"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1605",
-    "interact.js:1699"
+    "interact.js:1640",
+    "interact.js:1734"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1581",
-    "interact.js:1710"
+    "interact.js:1616",
+    "interact.js:1745"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1582",
-    "interact.js:1711"
+    "interact.js:1617",
+    "interact.js:1746"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1708"
+    "interact.js:1743"
    ]
   },
   {
@@ -10916,7 +11083,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1542"
+    "main.js:1556"
    ]
   },
   {
@@ -10928,8 +11095,8 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:754",
-    "interact.js:770"
+    "interact.js:789",
+    "interact.js:805"
    ]
   },
   {
@@ -10941,7 +11108,7 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:575"
+    "interact.js:610"
    ]
   },
   {
@@ -10953,19 +11120,19 @@
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2072"
+    "interact.js:2107"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1506"
+    "main.js:1520"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1528"
+    "main.js:1542"
    ]
   },
   {
@@ -10989,23 +11156,23 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1580"
+    "main.js:1594"
    ]
   },
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1576"
+    "interact.js:1611"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1568",
-    "interact.js:1570",
-    "interact.js:1572",
-    "interact.js:1575",
-    "interact.js:1577"
+    "interact.js:1603",
+    "interact.js:1605",
+    "interact.js:1607",
+    "interact.js:1610",
+    "interact.js:1612"
    ]
   },
   {
@@ -11017,25 +11184,25 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1716"
+    "interact.js:1751"
    ]
   },
   {
    "key": "Put out the campfire",
    "at": [
-    "interact.js:531"
+    "interact.js:566"
    ]
   },
   {
    "key": "Put out the lantern",
    "at": [
-    "interact.js:639"
+    "interact.js:674"
    ]
   },
   {
    "key": "Put out the torch",
    "at": [
-    "interact.js:590"
+    "interact.js:625"
    ]
   },
   {
@@ -11071,13 +11238,13 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1589"
+    "main.js:1603"
    ]
   },
   {
    "key": "Sleep",
    "at": [
-    "interact.js:548"
+    "interact.js:583"
    ]
   },
   {
@@ -11119,7 +11286,7 @@
   {
    "key": "Take down the bracket",
    "at": [
-    "interact.js:614"
+    "interact.js:649"
    ]
   },
   {
@@ -11131,13 +11298,13 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:599"
+    "interact.js:634"
    ]
   },
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:815"
+    "interact.js:850"
    ]
   },
   {
@@ -11149,15 +11316,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1676",
-    "interact.js:1730"
+    "interact.js:1711",
+    "interact.js:1765"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1566",
-    "interact.js:1663"
+    "interact.js:1601",
+    "interact.js:1698"
    ]
   },
   {
@@ -11175,7 +11342,7 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:981"
+    "interact.js:1016"
    ]
   },
   {
@@ -11199,7 +11366,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2008"
+    "interact.js:2043"
    ]
   },
   {
@@ -11211,7 +11378,7 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:662"
+    "interact.js:697"
    ]
   },
   {
@@ -11223,13 +11390,13 @@
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:833"
+    "interact.js:868"
    ]
   },
   {
    "key": "Boil water (${water.NO_TAINTED.replace(/\\.$/, \"\").toLowerCase()})",
    "at": [
-    "interact.js:1032"
+    "interact.js:1067"
    ]
   },
   {
@@ -11260,37 +11427,37 @@
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:914"
+    "interact.js:949"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1360"
+    "interact.js:1395"
    ]
   },
   {
    "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1713"
+    "interact.js:1748"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1585"
+    "interact.js:1620"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2120"
+    "interact.js:2155"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2057"
+    "interact.js:2092"
    ]
   },
   {
@@ -11302,55 +11469,55 @@
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:236"
+    "interact.js:241"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:840"
+    "interact.js:875"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
    "at": [
-    "interact.js:386"
+    "interact.js:421"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:369"
+    "interact.js:404"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:820"
+    "interact.js:855"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2156"
+    "interact.js:2191"
    ]
   },
   {
    "key": "Put out the ${name}",
    "at": [
-    "interact.js:514"
+    "interact.js:549"
    ]
   },
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1619"
+    "interact.js:1654"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2144"
+    "interact.js:2179"
    ]
   }
  ],
@@ -11364,19 +11531,19 @@
   {
    "key": "animalKilled",
    "at": [
-    "entities/animal.js:713"
+    "entities/animal.js:730"
    ]
   },
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:324"
+    "archery.js:337"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:873"
+    "archery.js:953"
    ]
   },
   {
@@ -11388,13 +11555,13 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:443"
+    "game.js:444"
    ]
   },
   {
    "key": "blocked",
    "at": [
-    "combat.js:173"
+    "combat.js:175"
    ]
   },
   {
@@ -11406,9 +11573,9 @@
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:242",
-    "interact.js:455",
-    "interact.js:2021",
+    "interact.js:247",
+    "interact.js:490",
+    "interact.js:2056",
     "ui/station-panel.js:84",
     "ui/station-panel.js:110"
    ]
@@ -11416,7 +11583,7 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:836"
+    "game.js:838"
    ]
   },
   {
@@ -11434,7 +11601,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:813"
+    "game.js:814"
    ]
   },
   {
@@ -11477,31 +11644,31 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:910"
+    "game.js:912"
    ]
   },
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:164"
+    "combat.js:166"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:309"
+    "combat.js:311"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:430"
+    "combat.js:438"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:385"
+    "combat.js:387"
    ]
   },
   {
@@ -11513,13 +11680,13 @@
   {
    "key": "playerPicked",
    "at": [
-    "game.js:74"
+    "game.js:75"
    ]
   },
   {
    "key": "shove",
    "at": [
-    "combat.js:477"
+    "combat.js:485"
    ]
   },
   {
@@ -11575,9 +11742,9 @@
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:881",
-    "combat.js:447",
-    "game.js:725"
+    "archery.js:961",
+    "combat.js:455",
+    "game.js:726"
    ]
   },
   {
@@ -11728,6 +11895,7 @@
   "navrow",
   "paintings",
   "players",
+  "poison",
   "poses",
   "potions",
   "produce",
@@ -11747,6 +11915,7 @@
   "sync",
   "takeall",
   "talk",
+  "throwing",
   "tools",
   "torch",
   "villagers",
@@ -11764,11 +11933,11 @@
   },
   {
    "path": "interact.js",
-   "lines": 2219
+   "lines": 2254
   },
   {
    "path": "main.js",
-   "lines": 2051
+   "lines": 2065
   },
   {
    "path": "placeholders.js",
@@ -11776,7 +11945,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1601
+   "lines": 1616
   },
   {
    "path": "ui/screens.js",
@@ -11791,20 +11960,20 @@
    "lines": 1031
   },
   {
+   "path": "archery.js",
+   "lines": 1006
+  },
+  {
+   "path": "entities/animal.js",
+   "lines": 984
+  },
+  {
    "path": "ground.js",
    "lines": 983
   },
   {
-   "path": "entities/animal.js",
-   "lines": 969
-  },
-  {
    "path": "game.js",
-   "lines": 932
-  },
-  {
-   "path": "archery.js",
-   "lines": 926
+   "lines": 934
   },
   {
    "path": "ui/inventory-panel.js",
@@ -11816,7 +11985,7 @@
   },
   {
    "path": "assets.js",
-   "lines": 663
+   "lines": 669
   },
   {
    "path": "figure/draw.js",
@@ -11824,7 +11993,7 @@
   },
   {
    "path": "combat.js",
-   "lines": 535
+   "lines": 543
   },
   {
    "path": "ui/inventory-actions.js",
@@ -11843,16 +12012,16 @@
    "lines": 485
   },
   {
+   "path": "item-info.js",
+   "lines": 442
+  },
+  {
    "path": "light.js",
    "lines": 441
   },
   {
    "path": "entities/player.js",
    "lines": 426
-  },
-  {
-   "path": "item-info.js",
-   "lines": 421
   },
   {
    "path": "stations.js",
@@ -11896,11 +12065,11 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 301
+   "lines": 313
   },
   {
    "path": "render/props.js",
-   "lines": 298
+   "lines": 299
   },
   {
    "path": "tuning.js",
@@ -11979,6 +12148,10 @@
    "lines": 191
   },
   {
+   "path": "poison.js",
+   "lines": 189
+  },
+  {
    "path": "woods.js",
    "lines": 186
   },
@@ -12011,6 +12184,10 @@
    "lines": 164
   },
   {
+   "path": "potions.js",
+   "lines": 161
+  },
+  {
    "path": "talk.js",
    "lines": 158
   },
@@ -12037,10 +12214,6 @@
   {
    "path": "rugs.js",
    "lines": 145
-  },
-  {
-   "path": "potions.js",
-   "lines": 141
   },
   {
    "path": "render/bees.js",
@@ -12183,6 +12356,10 @@
    "lines": 74
   },
   {
+   "path": "interactions.js",
+   "lines": 73
+  },
+  {
    "path": "ui/swing-timer.js",
    "lines": 72
   },
@@ -12205,10 +12382,6 @@
   {
    "path": "rng.js",
    "lines": 67
-  },
-  {
-   "path": "interactions.js",
-   "lines": 65
   },
   {
    "path": "player-controller.js",
@@ -12478,6 +12651,7 @@
    "DRINK_TIME": 1.5,
    "FILL_TIME": 2,
    "HOLD_TIME": 0.35,
+   "PILE_SPREAD": 1.5,
    "INSPECT_RANGE": 12,
    "WALL_FACE": 80,
    "FACE_HALF_W": 26,
@@ -12530,7 +12704,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 19,
+   "PROTOCOL": 20,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,

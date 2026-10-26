@@ -11,7 +11,7 @@ summary: Killing animals for what they give: wild game takes any blow or arrow, 
 
 ### What a blow or a shot reaches
 
-**Wild game** (deer, rabbits, and boar) takes a blow or an arrow as anything does. A swing's wedge, an arrow's landing, a thrown spear, and a [[Fireball]] all hurt it, beside the dead or alone, with Multi-hit off or on.
+**Wild game** (deer, rabbits, and boar) takes a blow or an arrow as anything does. A swing's wedge, an arrow's landing, a thrown spear, knife, or axe, and a [[Fireball]] all hurt it, beside the dead or alone, with Multi-hit off or on. A [[Poison|poisoned]] blade or arrow poisons an animal it hits as it does the dead, and an animal the poison kills gives what the weapon that poisoned it would have given.
 
 **Tame stock** (hens, cows, pigs, and sheep) is hurt only on purpose:
 
@@ -35,7 +35,7 @@ At no health an animal dies where it stands and lies on its side: a **carcass**.
 | Class | What kills | Share of every yield |
 |---|---|---|
 | Bow | An arrow from the [[Hunting bow]] | {{n animals.kills.bow}} |
-| Thrown | A thrown weapon, such as the [[Throwing spear]] | {{n animals.kills.thrown}} |
+| Thrown | A thrown weapon: the [[Throwing spear]], the [[Throwing knife]], or the [[Throwing axe]] | {{n animals.kills.thrown}} |
 | Melee | A blow with anything else in hand, fists too | {{n animals.kills.melee}} |
 | Spell | A spell, such as the [[Fireball]] | {{n animals.kills.spell}} |
 | Halberd | A blow with the [[Halberd]] | {{n animals.kills.halberd}} |
@@ -101,6 +101,7 @@ Hunting is the host's: the hits, the kill, the boar's charge, the snares' catche
 ## Sources
 
 <!-- sources at 6e3ab37 -->
+- `src/poison.js:93-112`, `src/entities/animal.js:733-740` (at 307ed34): an animal poisoned by a hit, its carcass keeping the poisoning weapon's class (game #496); `src/archery.js:300-305`: a thrown knife or axe is `thrown` (game #494)
 - `src/combat.js:204-220`: a blow's targets: the dead and wild game first, then the nearest tame animal alone; the shove for the dead alone
 - `src/combat.js:388-397`: a blow on an animal: its damage only, the class of the item in hand
 - `src/combat.js:495-499`: the Swing targets outline on animals

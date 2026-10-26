@@ -27,7 +27,7 @@ The spark comes before the hit's damage, so a blow, a fireball, or an arrow that
 
 ### Who burns
 
-Only the dead burn. A player, a villager, the ground, walls, furniture, and trees never catch fire, so nothing ever needs putting out.
+Only the dead burn. A player, a villager, the ground, walls, furniture, and trees never catch fire, so nothing ever needs putting out. A burn and a [[Poison|poison]] are separate: one of the dead may carry both at once, each draining its own.
 
 ### What it looks like
 
@@ -50,13 +50,14 @@ The burn runs on the host alone: who is set alight, the timer, and the damage ar
 ## See also
 
 - [[Torch]], [[Fireball]], [[Fire arrow]]
-- [[Bleeding]]
+- [[Bleeding]], [[Poison]]
 - [[The dead]], [[Corpses]]
 - [[Combat]]
 
 ## Sources
 
 <!-- sources at 64cc711 -->
+- `src/game.js:835`, `src/poison.js:14-19` (at 307ed34): poison ticks beside a burn, each its own (game #496)
 - `data/combat.json` `burn`: `dps`, `duration`, `cap`
 - `src/burn.js:20-24`: the code's defaults match the data, loaded by `src/combat.js:67`
 - `src/burn.js:26-33`: only a living one of the dead can be set alight; a new spark puts the timer back to full, and a fresh burn starts its count from nothing

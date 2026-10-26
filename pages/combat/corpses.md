@@ -14,7 +14,7 @@ The first search takes {{n census.constants.interact.SEARCH_TIME seconds}} and r
 - the clothes it has on,
 - what is in its hands,
 - its pockets ({{n wardrobes.zombie.0.pockets.0}} × {{n wardrobes.zombie.0.pockets.1}}),
-- any [[Arrow|arrows]] and [[Throwing spear|spears]] lodged in it.
+- any [[Arrow|arrows]], [[Throwing spear|spears]], [[Throwing knife|throwing knives]], and [[Throwing axe|throwing axes]] lodged in it.
 
 Anything that does not fit falls at its feet. Taking the clothes off changes the body's picture. **Take All** on the body's panel takes everything that fits your bag and belt at once, and the body is redrawn without it (see [[Inventory#Take All|Inventory]]). The fallen stop thinking: a corpse no longer moves, groans, or bites.
 
@@ -26,7 +26,7 @@ Each of the dead rolls {{n loot.body.rolls.0}} to {{n loot.body.rolls.1}} times 
 
 ## Lodged arrows
 
-An arrow or thrown spear that hits one of the dead stays in the body, and arrows stack there. A [[Fire arrow]] stays as a plain arrow. They come out with the loot on the first search (see [[Archery]]).
+An arrow, or a thrown spear, knife, or axe, that hits one of the dead stays in the body, and arrows stack there; a thrown weapon stays as itself, and knives or axes come out stacked. A [[Fire arrow]] or a [[Poisoned arrow|poisoned arrow]] stays as a plain arrow. They come out with the loot on the first search (see [[Archery]]).
 
 ## A burning body
 
@@ -61,6 +61,7 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 ## Sources
 
 <!-- sources at 879d0a7 -->
+- `src/archery.js:315-326` (at 307ed34): a thrown knife or axe lodged as itself, an arrow of any kind as a plain arrow (games #494, #496)
 - `src/ui/inventory-actions.js`, `takeAllFrom`, `performItemCommand`: Take All on a body, the body redrawn without what was taken (game #251)
 - `src/entities/zombie.js:119-122`, `src/entities/zombie.js:169-178`, `src/entities/zombie.js:561-568`: the fall (`damageZombie` calls `kill`), then a still body
 - `src/entities/character.js:147-199`: a body as a container: its clothes, hands, pockets, lodged items on its 6x6 grid, the overflow at its feet, redrawn as it is stripped

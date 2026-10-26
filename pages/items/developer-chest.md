@@ -20,8 +20,8 @@ The **developer chest** stands beside the spawn of a new world made with it, whi
 - A [[Tinderbox]]
 - {{n loot.dev_kit.fixed.13.count}} × [[Bandage]]
 - The [[Book of Fire]] and the [[Staff of Fire]]
-- {{n loot.dev_kit.fixed.16.count}} × [[Throwing Knife]]
-- {{n loot.dev_kit.fixed.17.count}} × [[Throwing Axe]]
+- {{n loot.dev_kit.fixed.16.count}} × [[Throwing knife]]
+- {{n loot.dev_kit.fixed.17.count}} × [[Throwing axe]]
 - A [[Bearskin rug]] and a [[Regal red rug]], to try laying them (see [[Rugs]])
 - One of each of the eight paintings, to try hanging them: the [[Lone oak painting]], the [[Deer painting]], the [[Snow peak painting]], the [[Waterfall painting]], the [[Pines painting]], the [[Castle painting]], the [[Lake painting]], and the [[Sunset painting]] (see [[Paintings]])
 

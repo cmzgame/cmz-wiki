@@ -13,7 +13,7 @@ summary: How fighting the dead works: the three mouse roles, the swing and its c
 
 The mouse buttons are roles, not fixed actions:
 
-- **Left** is the main hand: a swing, a stab, or with a bow the draw. With a weapon in each hand, left swings whichever hand is ready (see [[Dual wielding]]).
+- **Left** is the main hand: a swing, a stab, with a bow the draw, or with a stack of [[Throwing knife|throwing knives]] or [[Throwing axe|throwing axes]] the throw. With a weapon in each hand, left swings whichever hand is ready (see [[Dual wielding]]).
 - **Right**, tapped (let go within {{n census.constants.buttons.TAP_TIME seconds}}), opens the actions menu where it was pressed, or cancels a bow draw in progress. **Right held** is the off hand's stance: it raises the [[Wooden shield]] or braces the bow. The stance starts on the press, without waiting for the tap time.
 - **Middle** or **Q** is the main hand's other mode: the [[Halberd]]'s thrust, or the [[Throwing spear]]'s throw.
 - **Space** is the [[Shove]].
@@ -125,6 +125,7 @@ Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A 
 ## Sources
 
 <!-- sources at 37e8726 -->
+- `src/archery.js:815-828` (at 307ed34): a pure throwable throws on the left button (game #494)
 - `src/inventory.js:344-445` (at 78116b1): a belt key draws into its slot's hand by the slot's role (game #478)
 - `src/handed.js`, `src/figure/rig.js:274`, `src/figure/draw.js:89` (at 78116b1): handedness is a label and a drawn arm; nothing in combat reads it (game #477)
 - `src/combat.js:329-393`: the swing decided on the click (`tryAttack`)

@@ -2,12 +2,12 @@
 title: Archery
 categories: [Combat, Mechanics]
 aliases: [Shooting, Throwing, The draw, Brace]
-summary: The bow's draw and brace, the arc of a shot, what stops an arrow, getting arrows back, and the spear's throw.
+summary: The bow's draw and brace, the arc of a shot, what stops an arrow, getting arrows back, and the throws of the spear, the throwing knife, and the throwing axe.
 numbersOk: true
 ---
 
-<!-- typed: the damage formula 0.4 + 0.6 times the draw and the three damages at the least draw that flies (19, 74, 22), from archery.shotDamage and the data (game #471) -->
-**Archery** covers the [[Hunting bow]] and the thrown [[Throwing spear]], which share the same draw. Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
+<!-- typed: the damage formula 0.4 + 0.6 times the draw and the damages at the least draw that flies (19, 74, 22, and the knife's 7 and the axe's 15), from archery.shotDamage and the data (games #471, #494) -->
+**Archery** covers the [[Hunting bow]] and the thrown weapons, the [[Throwing spear]], the [[Throwing knife]], and the [[Throwing axe]], which share the same draw. Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
 
 ## How it works
 
@@ -21,7 +21,7 @@ With the bow in both hands, the left button draws. The cursor sets the direction
 - A tap of right during a draw cancels it and keeps the arrow. Sprinting, opening a right-click menu, or a pause also cancel it. An open bag, container, station, or character screen does not: a bow can be drawn and loosed with any of them up.
 - After a shot there is {{n combat.bow.recoverTime seconds}} before the next draw.
 
-Arrows are taken from the bag or the belt. With none, the game says "No arrows." With [[Fire arrow|fire arrows]] carried, the bow shoots those first and plain arrows after.
+Arrows are taken from the bag or the belt. With none, the game says "No arrows." The bow takes its arrows in an order: [[Fire arrow|fire arrows]] first, then [[Strongly poisoned arrow|strongly poisoned arrows]], then [[Poisoned arrow|poisoned arrows]], then plain ones.
 
 ### The brace
 
@@ -35,11 +35,15 @@ It hurts only where it comes down: the nearest of [[The dead]], or of the wild g
 
 ### Damage by the draw
 
-A shot does its full damage times 0.4 plus 0.6 times the share of a full draw it was loosed at, rounded. So the least draw that flies ({{n combat.bow.minDraw}} of a full one) does a little under half: 19 for the bow's {{n items.bow.bow.damage}}, 74 for the spear's {{n items.spear.thrown.damage}}, and 22 for the [[Fireball]]'s {{n items.book_of_fire.book.spell.damage}}. A weapon's hover card gives the range worked out the same way, as "19 to 38 damage by the draw".
+A shot does its full damage times 0.4 plus 0.6 times the share of a full draw it was loosed at, rounded. So the least draw that flies ({{n combat.bow.minDraw}} of a full one) does a little under half: 19 for the bow's {{n items.bow.bow.damage}}, 74 for the spear's {{n items.spear.thrown.damage}}, 7 for the throwing knife's {{n items.throwing_knife.thrown.damage}}, 15 for the throwing axe's {{n items.throwing_axe.thrown.damage}}, and 22 for the [[Fireball]]'s {{n items.book_of_fire.book.spell.damage}}. A weapon's hover card gives the range worked out the same way, as "19 to 38 damage by the draw".
 
 ### Fire arrows
 
 A fire arrow flies as an arrow does, with its head burning and a small light moving with it. The one of the dead it hits is always set alight before the damage, so a body it kills burns on (see [[Burning]]). It lodges in the body, or lies where it came down, as a plain arrow. Fire arrows are made by using arrows on a lit fire (see [[Fire arrow]]).
+
+### Poisoned arrows
+
+A [[Poisoned arrow|poisoned]] or [[Strongly poisoned arrow|strongly poisoned arrow]] flies as an arrow does, with a green head. The one of the dead or the animal it hits is poisoned after the damage (see [[Poison#Poisoned|Poison]]), and it lodges or lies as a plain arrow. They are made by using a [[Poison]] on arrows.
 
 ### What stops a shot
 
@@ -68,7 +72,16 @@ With the [[Throwing spear]] in the main hand, middle or Q draws a throw with the
 - Its hit where it comes down follows the arrow's rule: never through a wall or a closed door to one of the dead past it.
 - Each time it comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone, and the thrower is told "The throwing spear breaks." Otherwise it lodges in the body it hit or lies where it fell.
 
-A thrown spear keeps its wear, whether it lies where it fell or comes out of a body's search. With the [[Wooden shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage.
+A thrown spear keeps its wear, whether it lies where it fell or comes out of a body's search. With the [[Wooden shield]]'s guard raised, a throw does {{n items.shield.shield.attackMult}} times its damage. A coated spear poisons what its landing hit strikes (see [[Poison]]).
+
+### Throwing knives and axes
+
+The [[Throwing knife]] and the [[Throwing axe]] have no other mode, so **left** throws them, from a stack in the main hand only; a stack in the off hand is only held. The draw is the bow's: hold, aim, release, and a throw cannot be braced. Each throw takes one from the stack, and the hand is empty after the last.
+
+- The knife: {{n items.throwing_knife.thrown.damage}} damage at a full draw, {{n items.throwing_knife.thrown.range tiles}}, a draw of {{n items.throwing_knife.thrown.drawTime seconds}}; it staggers {{pct items.throwing_knife.thrown.staggerChance}} of the time and breaks {{pct items.throwing_knife.thrown.breakChance}} of the time.
+- The axe: {{n items.throwing_axe.thrown.damage}} damage at a full draw, {{n items.throwing_axe.thrown.range tiles}}, a draw of {{n items.throwing_axe.thrown.drawTime seconds}}; it always staggers, knocks the dead down {{pct items.throwing_axe.thrown.knockdown}} of the time, and breaks {{pct items.throwing_axe.thrown.breakChance}} of the time.
+
+Both spin in flight and end up as arrows do: lodged in the body they hit, or lying where they came down, drawn turned the way they flew. **E** or **Pick up** on one lying on the ground takes every one of its kind on that tile and the tiles round it that you can reach, and the label counts them.
 
 ## Numbers
 
@@ -78,10 +91,12 @@ A thrown spear keeps its wear, whether it lies where it fell or comes out of a b
 - Hit radius: {{n combat.bow.hitRadius tiles}}.
 - Walking while drawing: {{n combat.bow.drawSpeed}}; braced {{n combat.bow.braceMove}}.
 - Spear throw: {{n items.spear.thrown.damage}} damage, {{n items.spear.thrown.range tiles}}, break chance {{n items.spear.thrown.breakChance}}.
+- Knife throw: {{n items.throwing_knife.thrown.damage}} damage, {{n items.throwing_knife.thrown.range tiles}}, break chance {{n items.throwing_knife.thrown.breakChance}}.
+- Axe throw: {{n items.throwing_axe.thrown.damage}} damage, {{n items.throwing_axe.thrown.range tiles}}, knockdown {{n items.throwing_axe.thrown.knockdown}}, break chance {{n items.throwing_axe.thrown.breakChance}}.
 
 ## The sound it makes
 
-A drawn bow creaks for as long as it is held, rising as the draw fills; letting go twangs, and the arrow thumps where it comes down. A draw let go too early makes no twang. A spell makes one sound as it is cast, and a thrown spear none yet. See [[Sound]].
+A drawn bow creaks for as long as it is held, rising as the draw fills; letting go twangs, and the arrow thumps where it comes down. A draw let go too early makes no twang. A spell makes one sound as it is cast, and a thrown spear, knife, or axe none yet. See [[Sound]].
 
 ## With friends
 
@@ -94,13 +109,15 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## See also
 
 - [[Hunting bow]]
-- [[Arrow]], [[Fire arrow]]
-- [[Throwing spear]]
+- [[Arrow]], [[Fire arrow]], [[Poisoned arrow]], [[Strongly poisoned arrow]]
+- [[Throwing spear]], [[Throwing knife]], [[Throwing axe]]
 - [[Combat]]
 
 ## Sources
 
 <!-- sources at 125bffb -->
+- `src/archery.js:809-829`, `src/archery.js:919-950`, `src/archery.js:284-335`, `src/archery.js:734-776`, `src/interact.js:262-310`, `data/items.json:13-14` (at 307ed34): the throwing knife and axe: the left button from the main hand, one from the stack, the knockdown and break rolled at the landing, the spin and the lying picture, the pile taken with E (game #494)
+- `data/items.json:24` `bow.ammo`, `src/archery.js:298-313`, `src/archery.js:714-719` (at 307ed34): the bow's order with the poisoned arrows, their hit poisoning, their green heads (game #496)
 - `src/archery.js:64-70` (at dc10b81): `shotDamage`, the damage by the draw, shared by every hit and by the hover card
 - `src/archery.js:592-607`: the bow and the spear share the launcher and the draw
 - `src/archery.js:66-68`, `src/archery.js:630-655`, `src/archery.js:751-753`: the draw fills by time, the cursor's ground point read at chest height, the ramp of a partial draw

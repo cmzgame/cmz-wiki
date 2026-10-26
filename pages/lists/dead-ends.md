@@ -17,10 +17,15 @@ A **dead end** is an object in [[The valley]] that a player can use but cannot m
 - a torch post or bracket to hang a torch in ([[Torch posts and brackets]]);
 - [[Water]] to drink from;
 - a bed to [[Sleep]] in;
-- something to mine ([[Mining]]), pick, or chop ([[Trees]]);
+- something to mine ([[Mining]]), pick, or chop ([[Trees]]), and the [[Sticks|sticks]] gathered under a standing tree;
+- an herb or a mushroom to gather by hand ([[Herbs]]), or a clay bank to dig ([[Clay]]);
+- a [[Beehive|beehive]]'s honey to take;
+- a grindstone to sharpen at or an anvil to repair at ([[Durability]]), and a [[Sawpit|sawpit]] to saw at;
+- an [[Altar|altar]] to pray at (the tables do not read its Pray yet, so today they list the altar under Left out);
+- a feeding trough to fill, a set [[Snare|snare]], or a growing sapling;
 - a crop to water and harvest ([[Farming]]);
 - anything an item can be used on, as the game's list of use-on rows names it;
-- furniture that can be picked up and carried ([[Carrying furniture]]);
+- furniture that can be picked up and carried ([[Carrying furniture]]), and an item set down from the bag as its object (a snare, a sapling, a campfire, your own [[Cauldron|cauldron]]), counted as made by setting it down;
 - a [[Gatherables|gatherable]], which a click sways.
 
 Grass tufts, flowers, leaves, and props with none of these are decoration, and left out. Kinds are grouped as a player names them: a crop's stages are one crop, and the forest's many trees are one row.
@@ -59,7 +64,7 @@ Placed in the valley with nothing to do with them: {{dead-ends decoration}}
 
 ## Sources
 
-<!-- sources at 63ea3be -->
+<!-- sources at 307ed34 -->
 - `data/maps/valley.json`: every placed prop, a container's own `loot`, the wall brackets, the openings and the fences' gates, and the scatter, wild, and forage rules
 - `src/map.js:2024-2230`: the map loader, which places the authored props, then grows the scatter's trees and the forage's mushrooms inside the bounds (counted by the wiki's census with this loader, run headless)
 - `src/map.js:384-459`: the wild past the bounds, its trees, rocks, and mushrooms grown per tile as it is walked
@@ -71,7 +76,9 @@ Placed in the valley with nothing to do with them: {{dead-ends decoration}}
 - `data/interactions.json`: the use-on rows, by the object they name (`fire` any fire that burns, `crop` any crop, `bracket` a wall bracket)
 - `src/interact.js:415-473`: a torch post or bracket: take, mount, or light its torch; a lantern is never taken
 - `src/interact.js:479-546`: a door, a window, or a gate: open, close, board up
-- `src/burn.js:95-146`: a lantern is always lit, and lights a torch
+- `src/burn.js:186-260`: a lantern, in a bracket or on a post, is a switch: put out and lit again, and a torch lit at it while it burns (docs/43 section 3); it is no longer always lit
+- `data/sprites/altar.json` `pray`: the altar's Pray, which the tables' signals (`lib/templates.js` `deadEnds`) do not read yet
+- `src/setdown.js`: an item set down from the bag as its prop
 - `data/recipes.json`, `src/stations.js:177-195`: the recipes whose product is a prop, placed beside the station; a made container starts empty
 - `data/build.json`, `src/placement.js:199-211`, `src/map.js:600-618`: the build palette's walls, doors, and windows; a door may stand in a fence
 - `data/crops.json`, `src/farming.js:179-202`: a crop planted from its seed

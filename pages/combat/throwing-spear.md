@@ -6,7 +6,7 @@ summary: A main-hand spear that stabs at long reach, or is thrown with the bow's
 numbersOk: true
 ---
 
-<!-- typed: the hover card's own figures quoted: 74 is the damage at the least draw that flies, worked out from the data (game #471) -->
+<!-- typed: the hover card's own figures quoted: 74 is the damage at the least draw that flies, worked out from the data (game #471); 10 in the coat's line is the card's own words for a fresh coat, combat.poison.hits (game #496) -->
 {{infobox-item spear}}
 
 The **Throwing spear** is held in the main hand only, and never beside another weapon (a [[Wooden shield]] or a [[Torch]] is fine; a torch beside it is only a light and never swings). It stabs at a long, narrow reach, or it can be thrown.
@@ -18,14 +18,19 @@ The **Throwing spear** is held in the main hand only, and never beside another w
 
 Each time a thrown spear comes down, hit or miss, it breaks with a chance of {{n items.spear.thrown.breakChance}} and is gone, and the thrower is told "The throwing spear breaks." Otherwise it lodges in the body it hit (and comes out when the body is searched, see [[Corpses]]) or lies where it fell. Like an arrow, it never hits one of the dead with a wall or a closed door between the body and where it came down.
 
-Its hover card says: "Throw (middle button or Q): 74 to {{n items.spear.thrown.damage}} damage by the draw, up to {{n items.spear.thrown.range}} tiles." and "It lands to be picked up again, or stays in the body it hits; it may break ({{pct items.spear.thrown.breakChance}})." The card replaced "150 damage at full draw" (game #471).
+Its hover card says: "Throw (middle button or Q): 74 to {{n items.spear.thrown.damage}} damage by the draw, up to {{n items.spear.thrown.range}} tiles.", "Every hit staggers the dead.", and "It lands to be picked up again, or stays in the body it hits; it may break ({{pct items.spear.thrown.breakChance}})." The card replaced "150 damage at full draw" (game #471), and the stagger line came with game #494; the spear's data had always said it.
 
 The stab lasts about {{n items.spear.weapon.kills}} kills (see [[Durability]]); a thrown spear keeps its wear, whether it falls to the ground or stays in a body and comes out of the search.
+
+### Poison
+
+The spear is a blade, so a [[Poison]] or [[Strong poison]] [[Use|used]] on it coats it for {{n combat.poison.hits}} landed hits (see [[Poison#Coating a blade|Poison]]). A stab that lands spends one hit; so does a thrown spear's landing hit, and a spear that lodges or lands carries the rest of its coat with it. A miss spends none. While coated its card says "Poisoned: 10 hits left." (or "Strongly poisoned"), counting down.
 
 {{item-sections spear}}
 
 ## See also
 
+- [[Throwing knife]], [[Throwing axe]]: the two thrown on the left button
 - [[Levers]]: the spear's break, still being balanced
 
 ## Sources
@@ -41,6 +46,8 @@ The stab lasts about {{n items.spear.weapon.kills}} kills (see [[Durability]]); 
 - `src/archery.js:270-297`: damage by draw, never a knockdown, the break roll, lodging or lying where it fell
 - `data/items.json:22` `spear.thrown.damage`, `src/archery.js:276`, `data/tuning.json:18` `zombie.hp`: a full throw's damage equals a fresh zombie's health
 - `data/items.json:22` `spear.thrown.staggerChance`, `src/entities/zombie.js:149-160`: a throw always staggers
+- `src/item-info.js:180` (at 307ed34): "Every hit staggers the dead.", from `thrown.staggerChance` (game #494)
+- `data/items.json:23` `tags` `blade`, `src/combat.js:392-435`, `src/archery.js:298-305`, `src/poison.js:55-73` (at 307ed34): the coat on the spear, spent by a landed stab or a thrown spear's landing hit, carried by the spear that lodges or lands, the card's line (game #496)
 - `src/archery.js:281-288`, `src/entities/character.js:166-176`, `src/archery.js:296-297`: a spear that stays in a body lodges as itself and comes out of the search with its wear; one that lands is the thrown entry itself, its wear kept
 - `src/archery.js:273`, `src/main.js:1751-1754`, `src/host.js:230-234`: a break rolled on every landing, hit or miss; the thrower told "The throwing spear breaks.", a guest's by the host
 - `src/archery.js:271`, `src/archery.js:310-349`: the landing's hit never through a wall or a closed door

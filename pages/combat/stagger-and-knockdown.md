@@ -34,7 +34,7 @@ Only three things floor one of the dead, each by its own chance:
 - the [[Halberd]]'s thrust, on {{n items.halberd.weapon.alt.knockdown}},
 - the [[Shove]], on {{n combat.shove.knockdown}}.
 
-Every other weapon, the tools and [[Fists]] included, uses the default, {{n combat.blow.knockdownChance}}, and never floors. Arrows, thrown spears, and the fireball never floor.
+Every other weapon, the tools and [[Fists]] included, uses the default, {{n combat.blow.knockdownChance}}, and never floors. Arrows, thrown spears and knives, and the fireball never floor. The [[Throwing axe]] does: {{pct items.throwing_axe.thrown.knockdown}} of its hits, rolled where it comes down, never on one already down or with a hit that kills.
 
 A knockdown cancels a bite and any attempt to break through an [[Openings|opening]].
 
@@ -64,6 +64,7 @@ While it lies, any blow in hand is a **finisher**: {{n combat.finisher.mult}} ti
 ## Sources
 
 <!-- sources at 37e8726 -->
+- `data/items.json:14` `throwing_axe.thrown.knockdown`, `src/archery.js:308-312` (at 307ed34): the throwing axe's knockdown, rolled at the landing (game #494)
 - `src/entities/zombie.js:38-44`: the flinch a one-shot that the walk and the idle do not replace
 - `src/entities/zombie.js:139-162`: a landed hit cancels a bite not yet landed, sets the cooldown; the stagger by chance and its immunity; the hurt pose on every hit
 - `data/poses.json`: the dead's attack, six frames at 10 a second, the bite on the fifth

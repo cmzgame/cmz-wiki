@@ -13,11 +13,14 @@ The **dirk** (the belt knife until 2026-10-19, and the knife before the names we
 
 Carried, the dirk also skins and butchers an animal's carcass (see [[Hunting]]): **Skin the deer** ({{n animals.work.skin seconds}}) gives its [[Hide]], then **Butcher the deer** ({{n animals.work.butcher seconds}}) its [[Meat|meat]], and a pig's [[Lard]] or a hen's [[Feather|feathers]]. Without a dirk on you both are greyed "(you need a dirk)".
 
+**Poison:** it is a blade, so a [[Poison]] or [[Strong poison]] [[Use|used]] on it coats it for {{n combat.poison.hits}} landed hits. A swing that lands spends one hit, however many bodies it strikes, and poisons every one of them; a miss spends none. See [[Poison#Coating a blade|Poison]].
+
 {{item-sections knife}}
 
 ## Sources
 
 <!-- sources at 6e3ab37 -->
+- `data/items.json` `tags` `blade`, `src/combat.js:392-435` (at 307ed34): a blade, coated by a poison; a landed swing spends one hit and poisons every body it strikes (game #496)
 - `data/recipes.json:738-757`: the knife from a bar and a stick, with a hammer
 - `data/loot.json:13`: the weaver's chest's knife (game #216)
 - `data/recipes.json:23-124`, `data/recipes.json:271-326`, `src/stations.js:150-160`, `src/inventory.js:88-108`: the tear, the rod, the bow, and the arrows use `cut`, a knife carried (game #222)

@@ -29,7 +29,7 @@ The map on M and talk with villagers, barks and conversations both, once planned
 - **Villagers who flee, follow, and stay** (`docs/04`).
 - **Infection's effects and cures** (a marker today).
 - **Better animations** (`docs/32`): sleeping in a bed, sitting, deaths.
-- **Throwing knives and axes, and more magic** (`docs/24`): the [[Fireball]] is built; a cost for casting and other spells are not.
+- **More magic** (`docs/24`): the [[Fireball]], its cost in [[Mana]], and the [[Throwing knife|throwing knives]] and [[Throwing axe|axes]] are built; other spells are not.
 - **More of burning** (`docs/05`): [[Burning]] is built for the dead; the dead noticing it, a way to put a fire out, a player burning, and fire spreading are not.
 - **A demo** (`docs/36`).
 

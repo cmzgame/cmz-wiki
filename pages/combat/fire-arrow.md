@@ -25,14 +25,16 @@ A fire that burns no fuel, such as a jack-o'-lantern or a torch in a bracket, do
 
 ## Combat
 
-- With fire arrows carried, the bow draws them first; plain arrows are shot once the fire arrows run out. The draw, the arc, the damage, and what stops a shot are the arrow's (see [[Archery]]).
+- With fire arrows carried, the bow draws them first, before [[Strongly poisoned arrow|strongly poisoned]], [[Poisoned arrow|poisoned]], and plain arrows; the others are shot once the fire arrows run out. The draw, the arc, the damage, and what stops a shot are the arrow's (see [[Archery]]).
 - In flight it is an arrow with its head burning, and a small moving light, so it lights its path at night.
 - One that hits one of the dead always sets it alight, before the damage, so a body it kills burns on as a corpse. It then stays in the body as a plain [[Arrow]], and comes out as one in the body's loot.
 - A miss, or a shot stopped by a wall or a tree, lies where it came down as a plain arrow.
 
 So a fire arrow is spent with its shot: what you get back is plain arrows, to be dipped again.
 
-Its hover card says three things: "Shot from a hunting bow (19 to 38 damage by the draw), before any arrows.", "Sets the dead it hits alight: 8 damage over 10 seconds." (the whole of one burn, at most {{n combat.burn.cap}}; see [[Burning]]), and "Made from arrows: **Use** them on fire (dip).", with the word Use in the Use mode's gold. Before game #471 its card had no lines.
+Fire and poison do not mix: a [[Poison]] used on fire arrows, or a poisoned arrow used on a fire, does nothing ("Nothing interesting happens.").
+
+Its hover card says three things: "Shot from a hunting bow (19 to 38 damage by the draw), before any strongly poisoned arrows, poisoned arrows or arrows.", "Sets the dead it hits alight: 8 damage over 10 seconds." (the whole of one burn, at most {{n combat.burn.cap}}; see [[Burning]]), and "Made from arrows: **Use** them on fire (dip).", with the word Use in the Use mode's gold. Before game #471 its card had no lines.
 
 {{item-sections fire_arrow}}
 
@@ -53,6 +55,7 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 - `src/burn.js:73-94`: the dip: refused for an unlit fire, from too far, or with the arrows not carried ("Take the arrows out first.", game commit 8bacbff); the whole stack changed in place
 - `src/use.js:94-104`: a row's verb run, its line said on success, the refusal said otherwise
 - `src/archery.js:568-572`: fire arrows drawn before plain ones, as their own projectile, setting alight
+- `data/items.json:24` `bow.ammo`, `src/item-info.js:198-205`, `data/interactions.json:22-25` (at 307ed34): the order with the poisoned arrows, the card's line, no row for a poison on fire arrows (game #496)
 - `src/inventory.js:87-95`: arrows counted in the hands, the belt, and the bag
 - `src/archery.js:356-364`, `src/archery.js:520-523`: the fire arrow's light in flight, and its burning head
 - `src/archery.js:267-282`: a hit sets alight before the damage and lodges a plain arrow; a miss lands as a plain arrow

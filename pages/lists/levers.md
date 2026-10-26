@@ -34,6 +34,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **The third-hit combo:** three hits on one of the dead within {{n combat.combo.window seconds}} always floor it. It is switched off and kept for testing.
 - **The shove:** a push of {{n combat.shove.knockback tiles}} ({{pct combat.shove.tiredPush}} of it when tired), a stagger of {{n combat.shove.stagger seconds}}, {{n combat.shove.stamina}} stamina, a recovery of {{n combat.shove.cooldown seconds}} in which no swing starts, on up to {{n combat.shove.targets}} of the dead at once. See [[Shove]].
 - **The spear's break:** a thrown [[Throwing spear|spear]] breaks on {{pct items.spear.thrown.breakChance}} of its throws, hit or miss.
+- **The throwing knife and axe:** Michael's numbers: damage {{n items.throwing_knife.thrown.damage}} and {{n items.throwing_axe.thrown.damage}}, range {{n items.throwing_knife.thrown.range tiles}} and {{n items.throwing_axe.thrown.range tiles}}, a break on {{pct items.throwing_knife.thrown.breakChance}} and {{pct items.throwing_axe.thrown.breakChance}} of throws, the knife's stagger {{pct items.throwing_knife.thrown.staggerChance}}, the axe's always, and its knockdown {{pct items.throwing_axe.thrown.knockdown}}. The defaults beside them: speed {{n items.throwing_knife.thrown.speed}} and {{n items.throwing_axe.thrown.speed}} tiles a second, draws of {{n items.throwing_knife.thrown.drawTime seconds}} and {{n items.throwing_axe.thrown.drawTime seconds}}, pushes of {{n items.throwing_knife.thrown.knockback}} and {{n items.throwing_axe.thrown.knockback tiles}}, the arcs, the spin ({{n items.throwing_knife.thrown.spin}} and {{n items.throwing_axe.thrown.spin}} turns a second), and the anvil's two recipes, knives from a bar and axes from a bar and a plank. See [[Throwing knife]] and [[Throwing axe]].
 - **Hit stop and the swing's commitment:** a landed blow freezes the world for {{n combat.blow.hitStop seconds}}, a killing one for {{n combat.blow.hitStopKill seconds}}; while a swing plays, the player walks at {{pct combat.blow.swingMove}} of their speed. See [[Combat]].
 
 {{weapon-table}}
@@ -67,7 +68,8 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **The vials and the brew:** each brew's herbs, vial, seconds, and draught of clean water are its row at the cauldron in `data/recipes.json`, as are the workbench's two unfired vials from a clay and the oven's firing; a clay vial stacks {{n items.clay_vial.stack}} and a potion {{n items.healing_potion.stack}}; the cauldron's fire holds {{n sprites.cauldron.fire.maxFuel}} logs of {{n sprites.cauldron.fire.hoursPerUnit}} game hours each; your own cauldron is made from iron bars at the anvil and is {{n items.cauldron.size.0}} × {{n items.cauldron.size.1}} in the bag. See [[Potions]] and [[Cauldron]].
 - **Drinking:** a healing potion heals {{n tuning.potions.heal}}, a mana potion gives {{n tuning.potions.mana}}, a stamina potion fills the bar and makes it come back {{n tuning.potions.staminaMult}} times as fast for {{n tuning.potions.staminaSeconds seconds}}; {{n tuning.potions.between seconds}} from one potion to the next.
 - **The poisons' bottleneck:** grave moss, {{n valley.resources.grave_moss.count}} in the valley, goes into both poisons. See [[Herbs]].
-- **Poisons and the splash:** {{planned doc=47 note="A coat of poison on a blade lasting some hits, a vial poisoning some arrows, up to three stacks draining the dead, and a thrown potion's splash about a tile and a half across."}}
+- **Poisons:** a coat lasts {{n combat.poison.hits}} landed hits and a vial makes {{n combat.poison.arrows}} poisoned arrows (Michael's, "about"); up to {{n combat.poison.max}} stacks (Michael's), each hit setting the timer back to {{n combat.poison.duration seconds}}; ordinary poison drains {{n combat.poison.dpsByStacks.ordinary.0}}, {{n combat.poison.dpsByStacks.ordinary.1}}, or {{n combat.poison.dpsByStacks.ordinary.2}} a second by its stacks and strong poison {{n combat.poison.dpsByStacks.strong.0}}, {{n combat.poison.dpsByStacks.strong.1}}, or {{n combat.poison.dpsByStacks.strong.2}}, ticked once a second. Which weapons are blades (the edged ones), and the bow's order (fire, strongly poisoned, poisoned, plain arrows), are defaults too. See [[Poison]].
+- **The splash:** {{planned doc=47 step=4 note="A thrown potion's splash about a tile and a half across."}}
 
 ### Water, and the others
 
@@ -107,6 +109,7 @@ On the [[Settings]] screen, kept in the browser.
 ## Sources
 
 <!-- sources at ce21ffc -->
+- `data/items.json:13-14` `thrown`, `data/recipes.json:858-893`, `data/combat.json:6` `poison`, `data/items.json:24` `bow.ammo` (at 307ed34): the throwing knife's and axe's numbers and recipes, the poisons' numbers, the bow's order (games #494, #496)
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each
 - `src/settings.js:30`, `src/settings.js:66` (at 78116b1): Belt slot order, a player's own setting, Sequential by default (game #478)
 - `data/tuning.json`: the dead's health, the bite's cooldown, the bite tokens, the floor's times, stamina's regeneration

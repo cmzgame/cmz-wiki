@@ -2,13 +2,13 @@
 title: Potions
 categories: [Items, Crafting, Mechanics]
 aliases: [Potion, Brewing, Brew, Drinking potions, Drink a potion, Poisons]
-summary: Potions are brewed at a cauldron over a lit fire from two herbs of one kind, a second ingredient, a clay vial, and clean water; three are drunk (healing, stamina, mana), with ten seconds between one and the next, and two poisons are brewed but never drunk.
+summary: Potions are brewed at a cauldron over a lit fire from two herbs of one kind, a second ingredient, a clay vial, and clean water; three are drunk (healing, stamina, mana), with ten seconds between one and the next, and two poisons are never drunk but Used on a blade or arrows.
 numbersOk: true
 ---
 
 <!-- typed: a brew's draught of clean water, 10 of a skin's fill, is each cauldron row's `water` in data/recipes.json, which no lookup reads -->
 
-**Potions** are brewed at a [[Cauldron]] over a lit fire and drunk from the bag or the [[Belt]]. There are five brews: three potions that are drunk, the [[Healing potion]], the [[Stamina potion]], and the [[Mana potion]], and two poisons, [[Poison]] and [[Strong poison]], which are brewed but never drunk. Each is a [[Clay vial]] filled at the cauldron, and drinking one gives the empty vial back, so a vial is refilled rather than made again.
+**Potions** are brewed at a [[Cauldron]] over a lit fire and drunk from the bag or the [[Belt]]. There are five brews: three potions that are drunk, the [[Healing potion]], the [[Stamina potion]], and the [[Mana potion]], and two poisons, [[Poison]] and [[Strong poison]], which are never drunk but coat a blade or arrows. Each is a [[Clay vial]] filled at the cauldron, and drinking one gives the empty vial back, so a vial is refilled rather than made again.
 
 ## Making one
 
@@ -72,9 +72,9 @@ Potions and poisons stack to {{n items.healing_potion.stack}} in one cell; vials
 
 ## Poisons
 
-[[Poison]] and [[Strong poison]] are never drunk. Their key in any belt slot, and a double-click on one, say "Poison isn't for drinking. Use it on a blade or on arrows." and do nothing else; they have no Drink. Their card says **Use** on a blade or on arrows, but nothing can be coated yet.
+[[Poison]] and [[Strong poison]] are never drunk. Their key in any belt slot, and a double-click on one, say "Poison isn't for drinking. Use it on a blade or on arrows." and do nothing else; they have no Drink.
 
-{{planned doc=47 step=3 note="Poison put on a blade or on arrows with Use, poisoning the dead and wild game it strikes."}}
+They are [[Use|Used]] instead. On a blade (the [[Arming sword]], the [[Dirk]], the [[Hatchet]], the [[Scythe]], or the [[Throwing spear]]) a vial coats it for {{n combat.poison.hits}} landed hits; on plain arrows it makes up to {{n combat.poison.arrows}} [[Poisoned arrow|poisoned]] or [[Strongly poisoned arrow|strongly poisoned arrows]]. The empty vial comes back either way, as from a drink. What a coated blade or a poisoned arrow hits, of the dead or the animals, is poisoned: up to {{n combat.poison.max}} stacks, each taking more health a second, for {{n combat.poison.duration seconds}} after the last hit, strong poison twice as fast. Poison never touches a player or a villager. See [[Poison]] for the whole of it.
 
 {{planned doc=47 step=4 note="Potions and poisons held in a hand and thrown, shattering in a splash that works on everyone in it."}}
 
@@ -88,7 +88,7 @@ None yet: the cauldron's bubbling and a brew's finishing sound wait for the stat
 
 ## With friends
 
-Everything is done by the host for the player who asked: a guest's Make is the station panel's own command, a guest's drink is their belt key, their slot's or bag's menu, or their double-click, each sent with the entry's id. The water is taken from that player's skins, the potion works on that player, and the vial goes back to their own slot or bag. The wait between potions and the stamina buff are kept on each player, in the save and in each player's record, and are part of the multiplayer sync check, so a guest's buff shows in their own row as the host's does. The cauldron's queue, its output, and its fire are the same for everyone.
+Everything is done by the host for the player who asked: a guest's Make is the station panel's own command, a guest's drink is their belt key, their slot's or bag's menu, or their double-click, and a guest's coat is their Use, each sent with the entry's id. The water is taken from that player's skins, the potion works on that player, and the vial goes back to their own slot or bag. The wait between potions and the stamina buff are kept on each player, in the save and in each player's record, and are part of the multiplayer sync check, so a guest's buff shows in their own row as the host's does. The cauldron's queue, its output, and its fire are the same for everyone.
 
 ## See also
 
@@ -113,6 +113,7 @@ Everything is done by the host for the player who asked: a guest's Make is the s
 - `data/items.json:136-142`: the vials and the potions, their stacks, `belt`, `potion` and `poison`, their placeholder designs (seal and band)
 - `src/item-info.js:248-256`: the cards' Drink lines, the wait, and the poison's Use line
 - `docs/47-potions-poisons-mana.md` section 8 (status): the cauldron's sounds not built
+- `data/interactions.json:22-25`, `src/poison.js`, `data/combat.json:6` `poison` (at 307ed34): the poisons Used on a blade or arrows, and what they do (game #496)
 - `src/game.js:476`, `src/net.js:139-141`: `potionAt` and `buffs` in the record and the sync check's player text
 
 {{navbox items}}

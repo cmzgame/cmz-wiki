@@ -7,7 +7,7 @@ summary: The wiki of Cozy Medieval Zombies, a cute isometric medieval village ov
 
 The game is in development, and this wiki describes it as it is today, true to its code. Every table here is generated from the game's own data, so the numbers are the game's numbers.
 
-**New on valley day:** [[Valley day]] lists everything added or changed since the valley became the game's focus (farming, the hatchet and stumps, apple trees, fishing, food that heals, the dead striking fences, and more), with the pages to read before you play.
+**What to try:** the [[Playtest checklist]] lists every change a player can try since the valley became the game's focus (farming, fishing, hunting, potions and poisons, throwing knives and axes, and more), each with how to try it and the pages to read.
 
 ## Start here
 

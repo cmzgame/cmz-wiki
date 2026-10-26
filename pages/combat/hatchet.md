@@ -29,6 +29,8 @@ Left swings it. It has no other mode.
 
 Its arc is narrower than the [[Arming sword]]'s.
 
+**Poison:** it is a blade, so a [[Poison]] or [[Strong poison]] [[Use|used]] on it coats it for {{n combat.poison.hits}} landed hits. A swing that lands spends one hit, however many bodies it strikes, and poisons every one of them; a miss spends none. See [[Poison#Coating a blade|Poison]].
+
 {{item-sections hatchet}}
 
 ## With friends
@@ -38,6 +40,7 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 ## Sources
 
 <!-- sources at 37e8726 -->
+- `data/items.json` `tags` `blade`, `src/combat.js:392-435` (at 307ed34): a blade, coated by a poison; a landed swing spends one hit and poisons every body it strikes (game #496)
 - `data/items.json:6`: the hatchet: either hand, its verbs `chop`, `notch`, and `split`, its `weapon` block (the last two game #222)
 - `src/inventory.js:89-108`, `data/tuning.json:153`, `src/interact.js:1371-1387`, `src/stations.js:149`, `src/placement.js:176-191`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
 - `src/chop.js:16-53`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it; a felled tree sometimes drops a sapling (game #461, at 6e3ab37)

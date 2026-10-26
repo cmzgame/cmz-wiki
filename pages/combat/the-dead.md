@@ -98,6 +98,7 @@ At no health one of the dead falls, and once the fall has played its body stays 
 - Hits, pushes, staggers, and knockdowns are on [[Combat]] and [[Stagger and knockdown]].
 - A floored zombie takes finishers while it lies, not while it gets up.
 - A hit during a bite's wind-up cancels it, whatever the weapon; a bite already landed cannot be cancelled.
+- [[Burning|Fire]] and [[Poison]] go on hurting one after the hit: a burn and a poison each take health a second for a while, and one of the dead may carry both. A poisoned one is drawn tinted green.
 - Only a few of a crowd bite at once; the rest wait their turn, or strike the fence between, and a [[Shove]] that clears a biter hands its place on.
 - A hit that staggers one makes it reel, arms flung up and leaning back, for the length of the stagger; a hit that does not stagger it only flinches. One lying downed has its health bar just over the body, and is outlined when the pointer is over it.
 - Light matters: in the dark they see the player from much less far, but a lit flame draws them at night.
@@ -134,6 +135,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 ## Sources
 
 <!-- sources at 879d0a7 -->
+- `src/poison.js:85-142`, `src/game.js:835` (at 307ed34): poison on the dead, beside a burn, and its green (game #496)
 - `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, biteTokens, biteTokensPer, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
 - `data/wardrobes.json`: the dead's ten wardrobes
 - `src/entities/zombie.js:46-85`, `src/entities/movement.js:81-103`: the body, separation

@@ -15,6 +15,8 @@ It is made at the [[Anvil]] from an [[Iron bar]] and [[Stick|sticks]], with a [[
 
 The rye fields of [[Long Acre]] are the scythe's work, and the farms' granaries hold rye seed for more.
 
+**Poison:** it is a blade, so a [[Poison]] or [[Strong poison]] [[Use|used]] on it coats it for {{n combat.poison.hits}} landed hits. A swing that lands spends one hit, however many bodies it strikes, and poisons every one of them; a miss spends none. See [[Poison#Coating a blade|Poison]].
+
 {{item-sections scythe}}
 
 ## With friends
@@ -24,6 +26,7 @@ A guest's swing is carried out on the host, which harvests for that player; the 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/items.json` `tags` `blade`, `src/combat.js:392-435` (at 307ed34): a blade, coated by a poison; a landed swing spends one hit and poisons every body it strikes (game #496)
 - `data/items.json:47`: the scythe: either hand, its verb `harvest`, its weapon block
 - `src/farming.js:258-305`: a swing with an item listing `harvest`, in the hand that swung, harvests every ready grain crop on the three tiles ahead by the `harvest` verb; the message counts the rows and what fell (game #213; lines at 6e3ab37)
 - `src/farming.js:266-300`: a swing that cuts no grain over at least two open grass tiles outdoors cuts one hay, to the bag or the feet (game #460, at 6e3ab37)
