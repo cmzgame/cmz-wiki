@@ -111,6 +111,6 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/net.js:1450-1452`: Make sent to the host
 - `src/host.js:185-192`: the host runs it as the craft verb for that player
 - `src/net.js:1005`: the queues in each frame
-- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, feathers, eggs, hay, grain, pemmican, and seeds stack (game #399)
+- `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, feathers, hay, grain, pemmican, and seeds stack, and eggs did until game #475 (game #399)
 
 {{navbox making}}

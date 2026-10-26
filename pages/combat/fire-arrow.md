@@ -3,8 +3,10 @@ title: Fire arrow
 categories: [Items, Ammunition, Combat]
 aliases: [Fire arrows, Flaming arrow, Flaming arrows, Burning arrow]
 summary: An arrow dipped in a lit fire. A bow shoots these first, and the one of the dead a fire arrow hits is set alight.
+numbersOk: true
 ---
 
+<!-- typed: the hover card's own figures quoted: 19 to 38 is the bow's damage by the draw and 8 over 10 seconds is one burn, both worked out from the data (game #471) -->
 {{infobox-item fire_arrow}}
 
 The **Fire arrow** is an [[Arrow]] dipped in a lit [[Fire]]. A [[Hunting bow]] shoots fire arrows before plain ones, and the one of [[The dead]] a fire arrow hits is set alight (see [[Burning]]). Fire arrows stack to {{n items.fire_arrow.stack}} and take the same room in the bag as arrows.
@@ -30,6 +32,8 @@ A fire that burns no fuel, such as a jack-o'-lantern or a torch in a bracket, do
 
 So a fire arrow is spent with its shot: what you get back is plain arrows, to be dipped again.
 
+Its hover card says three things: "Shot from a hunting bow (19 to 38 damage by the draw), before any arrows.", "Sets the dead it hits alight: 8 damage over 10 seconds." (the whole of one burn, at most {{n combat.burn.cap}}; see [[Burning]]), and "Made from arrows: **Use** them on fire (dip).", with the word Use in the Use mode's gold. Before game #471 its card had no lines.
+
 {{item-sections fire_arrow}}
 
 ## With friends
@@ -40,7 +44,8 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 
 <!-- sources at 0bd3f9c -->
 - `src/burn.js`, the `dip` verb, `src/reach.js`: the fire within reach and with a clear line, "There is a wall in the way." (game #227)
-- `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; placeholder art
+- `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; placeholder art; `ignite: true` since game #471
+- `src/item-info.js` `shotLines` (at dc10b81): the card's lines: the bow and its place in the order, the burn (`data/combat.json` `burn`: `dps` times `duration`, capped), and the dip row it is made by
 - `data/interactions.json`: the row: arrows used on `fire`, the `dip` verb, its line
 - `src/interactions.js:34-42`: `fire` matches any prop whose fire burns fuel
 - `data/sprites/campfire.json`, `data/sprites/hearth.json`, `data/sprites/fireplace.json`, `data/sprites/oven.json`, `data/sprites/forge.json`: the fires that burn fuel

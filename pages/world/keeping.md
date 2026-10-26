@@ -45,7 +45,7 @@ Every tame animal that has not eaten today eats one unit of feed as soon as a tr
 
 Milking and shearing are timed entries on the animal's menu, once a game day each, and only on a day it has eaten. Each is greyed with the reason: "(you need a bucket)", "(you need shears)", "(the cow has not been fed today)", "(it has been milked today)", or "(it has been shorn today)". Milking takes an empty bucket wherever you carry it, before a bucket of water in your hand; only when every bucket you carry holds water is it refused with "Empty the bucket first.": the milk is a jug of its own, not the bucket's fill, and the bucket is kept. What you take goes into your bag, or falls at your feet if it is full: "You milk the cow: a jug of milk.", "You shear the sheep: some wool." or "2 wool".
 
-A hen lays as it eats, into a chicken coop within {{n animals.keep.coopReach tiles}} of its home each way (a square round its home, not a circle); with no coop that near, it lays nothing. The coop holds only what its hens lay, and a full coop takes no more until someone empties it.
+A hen lays as it eats, into a chicken coop within {{n animals.keep.coopReach tiles}} of its home each way (a square round its home, not a circle); with no coop that near, it lays nothing. The coop holds only what its hens lay, and a full coop takes no more until someone empties it. Its grid is six cells and an [[Egg]] takes a cell, since eggs do not stack, so the eggs and feathers fill it in days (see [[Chicken coop]]).
 
 **Pens that give more:** {{pct animals.keep.more}} of the time, milking, shearing, and laying each give one more. Pigs give nothing while alive; they are kept for their meat (see [[Hunting]]).
 
@@ -57,7 +57,7 @@ Two animals of a kind, both fed today, standing in the same pen, have a young on
 - the pen holds fewer than {{n animals.keep.penCap}} of their kind;
 - the pen has {{n animals.keep.roomPerHead tiles}} for each of their kind, the young one counted.
 
-The young one is born on the free outdoor tile of the pen nearest the first parent, with its parents' home. The host checks once a second, so a birth that is due waits only for the feed, the room, and the days; it may happen in view. Animals out of a pen, and led animals, never breed.
+The young one is born on the free outdoor tile of the pen nearest the first parent, with its parents' home. The host checks once a second, so a birth that is due waits only for the feed, the room, and the days; it may happen in view (Michael ruled on 2026-10-25 that a young one may appear in its pen with a player looking on). Animals out of a pen, and led animals, never breed.
 
 ## Numbers
 
