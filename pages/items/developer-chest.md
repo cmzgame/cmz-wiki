@@ -24,7 +24,7 @@ The other rug and the seven other paintings are not in it; they can be added to 
 
 ## Choosing it
 
-**Dev chest** is a switch at the Sandbox step of New world, under "Chosen once, when the world is made" ("A chest of every item by the spawn, made with the world."), on by default and offered as you last chose it. With it on, the chest is placed when the world is made, on the nearest free tile to the one two tiles east of the spawn, in your cottage's living room. It cannot be added to a world later, and in a friend's world it is the host's choice. See [[World rules]].
+**Dev chest** is a switch at the Sandbox step of New world, under "Chosen once, when the world is made" ("A chest beside you of every weapon and tool, the basic materials, potions, and seeds, made with the world."), on by default and offered as you last chose it. With it on, the chest is placed when the world is made, on the nearest free tile to the one two tiles east of the spawn, in your cottage's living room. It cannot be added to a world later, and in a friend's world it is the host's choice. See [[World rules]].
 
 Two more choices of the same step set what everyone starts with rather than what stands by the spawn: **Dev bag** starts every character wearing a [[Developer Bag]] in place of the sack, and **Extra starting items** adds a list of items to the starting kit (see [[Player#The starter kit|the starter kit]]). Unlike the chest, they are world rules.
 
