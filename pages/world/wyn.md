@@ -34,7 +34,7 @@ A guest pokes Wyn, or talks to them, as the host's player does, by the same comm
 ## Sources
 
 <!-- sources at 3c0a243 -->
-- `data/maps/valley.json:12288-12299`, `tools/mapgen/valley.py:606-608`: Wyn by your cottage's door at (102, 218), wardrobe 6, their map line, `immune`, `talk: guide`, `guide` (game #220)
+- `data/maps/valley.json:12813-12823`, `tools/mapgen/valley.py:696-698`: Wyn by your cottage's door at (102, 220), wardrobe 6, their map line, `immune`, `talk: guide`, `guide` (game #220)
 - `tools/mapgen/mapgen.py:15`, `tools/mapgen/mapgen.py:146-150`: a guide on every map the generator makes, within three tiles of its spawn
 - `data/talk/guide.json`: the barks and the conversation's questions with their wiki links
 - `src/entities/villager.js:224-260`, `src/talk.js:124-141`: a poke's line and a remark unprompted

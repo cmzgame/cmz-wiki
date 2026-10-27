@@ -2,12 +2,12 @@
 title: Waterfall painting
 categories: [Items, Decor]
 aliases: [Waterfall]
-summary: A tall painting, taking one stretch of wall, of a waterfall; carried in the bag and hung on a wall with Place; in the Developer Chest for now.
+summary: A tall painting, taking one stretch of wall, of a waterfall; carried in the bag and hung on a wall with Place; for now only through a world's Extra starting items.
 ---
 
 {{infobox-item painting_tall_waterfall}}
 
-The **waterfall painting** is a tall painting, taking one stretch of wall: a waterfall, carried in your bag and hung on the face of a plain wall with **Place** on its menu. **Pick up** takes it down into the bag again, and it falls to the floor, whole, if its wall is removed or built over. Nothing makes one yet and nothing in the valley holds one: it is in the [[Developer chest]], and can be added to a new world's Extra starting items. Where it can hang, and how, is on [[Paintings]].
+The **waterfall painting** is a tall painting, taking one stretch of wall: a waterfall, carried in your bag and hung on the face of a plain wall with **Place** on its menu. **Pick up** takes it down into the bag again, and it falls to the floor, whole, if its wall is removed or built over. Nothing makes one yet, and neither the valley nor the [[Developer chest]] holds one: it can be added to a new world's Extra starting items. Where it can hang, and how, is on [[Paintings]].
 
 {{item-sections painting_tall_waterfall}}
 
@@ -20,6 +20,6 @@ A guest hangs and takes down a painting as the host does; see [[Paintings#With f
 <!-- sources at 9ac68a2 -->
 - `data/items.json:78`: the waterfall painting, kind decor, tall (game #344, at 9ac68a2)
 - `data/sprites/decor_paintings.json`, `data/art/decor/painting_tall_waterfall_north.png`, `data/art/decor/painting_tall_waterfall_west.png`: drawn on a north and a west wall (game #344, at 9ac68a2)
-- `data/loot.json:19`: in the dev kit; no other table holds one (game #344, at 9ac68a2)
+- `data/loot.json:20`: no longer in the dev kit, which keeps the bearskin rug and the castle painting alone of the decor; no other table holds one (game #514, at 393acaf)
 
 {{navbox items}}

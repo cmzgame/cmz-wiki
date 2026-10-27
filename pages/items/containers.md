@@ -102,7 +102,7 @@ A search chosen by a guest is carried out by the host, and so is an Open of a ba
 - `data/sprites/shelf.json`: a carry flag (likewise barrel, chest, cupboard, desk, strongbox, woodpile, bookcase)
 - `data/maps/valley.json`: where the chests stand
 - `src/host.js:212-215`: a guest's search runs on the host and its panel opens
-- `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:196`, `tools/mapgen/valley.py:458`: the chicken coop, a container whose table rolls nothing since game #460, at your cottage and Hollow Farm (lines at 6e3ab37)
+- `data/sprites/chicken_coop.json`, `data/loot.json:3`, `tools/mapgen/valley.py:200`, `tools/mapgen/valley.py:462`: the chicken coop, a container whose table rolls nothing since game #460, at your cottage and Hollow Farm (lines at 393acaf)
 - `data/sprites/feed_trough.json`, `data/loot.json:4`, `src/interact.js:401-436`: the feeding trough, never rolled, opened at once, taking feed alone (game #460, at 6e3ab37) (game #338, at 232d0fb)
 - `src/placement.js:538-544`: a made container taken apart only when empty, "Empty it first." (game #413, at 31d330a)
 - `data/recipes.json`: the made containers: the workbench's cupboard, desk, bookcase, counter, cart, stall, barrel, the anvil's strongbox (game #428, at 0ce54cf)

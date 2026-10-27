@@ -32,7 +32,7 @@ The host lays the eggs and feathers into the coop, and its contents travel with 
 - `data/items.json:68`: the egg has no `stack` since game #475, so it takes a cell; the feather stacks (game #475, Michael's ruling of 2026-10-25)
 - `src/entities/animal.js:597-623`: a hen's coop within `coopReach` of its home each way, its grid made on first use; the egg, one more at `more`, a feather at `feather`; a full coop takes no more
 - `src/interact.js:434-457`: Search, then Open; a search rolls nothing into a grid that holds something
-- `tools/mapgen/valley.py:196`, `tools/mapgen/valley.py:458-459`: the coops at your cottage and Hollow Farm, and the hens' trough beside the farm's
+- `tools/mapgen/valley.py:200`, `tools/mapgen/valley.py:462-463` (at 393acaf): the coops at your cottage and Hollow Farm, and the hens' trough beside the farm's
 - `data/maps/valley.json` `animals`: Hollow Farm's hens, at the coop
 
 {{navbox props}}

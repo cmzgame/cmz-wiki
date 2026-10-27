@@ -34,7 +34,7 @@ A guest digs through the same menu entry, sent to the host with the bank's id an
 ## Sources
 
 <!-- sources at 6e3ab37 -->
-- `data/items.json`: clay, a material, its icon generated from a lump design in the bank's colour (game #457)
+- `data/items.json`: clay, a material (game #457); its icon and its picture drawn in art round 4, in place of the generated lump (game #514, at 393acaf)
 - `data/sprites/clay_bank.json`: the bank: solid (`collide`), `interactable`, not carried; its `dig` block (item, count, seconds, level, the tool verb `dig`)
 - `data/maps/valley.json` `resources.clay`, `tools/mapgen/valley.py:629-633`, `tools/mapgen/valley.py:644`: the count, the river's corridor less the ford's band, the dirt floor, water within one tile, of the river
 - `src/map.js:619-653`, `src/map.js:580-592`: where a bank may stand: its floor, water of its group near, nothing on the tile, no wall, not in a room or a fenced yard, no body

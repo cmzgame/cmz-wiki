@@ -10,7 +10,7 @@ The **shovel** digs. Carried anywhere on you (a hand, the belt, or the bag), it 
 
 ## Where to find one
 
-- **The chest in the main room of [[Your cottage]]** holds one, every time, so the potatoes in your own plot can be dug on the first day.
+- **The chest in the living room of [[Your cottage]]** holds one, every time, so the potatoes in your own plot can be dug on the first day.
 - The [[Workbench]] makes one from a [[Stick]] and a [[Plank]], with a [[Smith's hammer]] on you.
 
 {{planned doc=30 step=4 note="The shovel's other digging: a grave and its goods, the buried chest, a plot dug up."}}

@@ -110,7 +110,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 - `data/recipes.json:664-818`: the cooking, oven, and millstones recipes, the grilled fish among them
 - `data/loot.json:9-10`: the granaries' seed of every crop, so every ingredient can be grown (game #219)
 - `data/recipes.json`: flour at the millstones, the pumpkin pie at the oven (game #219)
-- `src/farming.js:233-259`, `tools/mapgen/valley.py:191`: potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
+- `src/farming.js:233-259`, `tools/mapgen/valley.py:195` (at 393acaf): potatoes and cabbages harvested, with seeds back, from the cottage's plot (game #206)
 - `data/items.json:16-18`, `data/items.json:41-46`, `data/items.json:54-57`, `data/items.json:63-65`: the foods, each with its hunger, thirst, and heal (game #186)
 - `src/ui/inventory-actions.js:313-319`, `src/ui/inventory-actions.js:421-432`: a guest's Eat, from a bag or a belt slot, runs on the host
 - `src/settings.js:22`: Survival, on by default

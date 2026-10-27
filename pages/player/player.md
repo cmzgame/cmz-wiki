@@ -11,7 +11,7 @@ The **player** is your survivor: one person in the valley, made from an [[Identi
 
 ### Health and stamina
 
-You have {{n tuning.player.hp}} [[Health]], shown as a bar at the top left with the current and the maximum. At zero you [[Death|die]]. Below it is [[Stamina]], {{n tuning.player.stamina}} at most, shown as a percent: sprinting, swinging, shoving, and blocking spend it, and it comes back when you stop. Below that is [[Mana]], {{n tuning.player.mana}} at most, in blue: a spell spends it, and it comes back slowly by itself.
+You have {{n tuning.player.hp}} [[Health]], shown as a bar at the top left with the current and the maximum. At zero you [[Death|die]]. Below it is [[Mana]], {{n tuning.player.mana}} at most, in blue: a spell spends it, and it comes back slowly by itself. Below that is [[Stamina]], {{n tuning.player.stamina}} at most, shown as a percent: sprinting, swinging, shoving, and blocking spend it, and it comes back when you stop.
 
 The top left also shows a portrait of your character, your name, and a "Hands" line naming what is in your main hand and your off hand. The clock is at the top centre, and the [[Moodles]] run down the right edge.
 
@@ -48,7 +48,7 @@ The torch is not lit: `T` lights it with the tinderbox (see [[Torch]]). The head
 
 A world can change the kit when it is made, at the Sandbox step of New world, for testing (see [[World rules]]): **Extra starting items** adds items to the default kit, and **Dev bag** starts everyone wearing the [[Developer Bag]] in place of the sack. Both are chosen once, never changed after, and hold for every character the world makes.
 
-{{devonly note="In a world made with the Dev chest (on by default at New world), a chest of every weapon, two Developer Bags, and bandages stands beside the spawn."}}
+{{devonly note="In a world made with the Dev chest (on by default at New world), a chest of every weapon and every tool, materials, potions, seeds, two Developer Bags, and bandages stands two tiles east of the spawn."}}
 
 ## Numbers
 
@@ -94,9 +94,9 @@ Every friend has their own survivor with their own health, stamina, and needs, a
 - `data/items.json:33`: the rope belt's slots
 - `data/loot.json:2`: better belts, bags, hoods, and gloves in chests
 - `data/items.json`: no clothing has armour or warmth
-- `data/loot.json:18`, `src/settings.js:33`, `src/game.js:92-98`: the dev chest, chosen at New world
+- `data/loot.json:20`, `src/settings.js:40`, `src/game.js:115-120`: the dev chest, chosen at New world, two tiles east of the spawn (game #514, at 393acaf)
 - `data/tuning.json:4`, `data/tuning.json:81`: the dead's and villagers' speeds
 - `src/rules.js:44-49`: a guest uses the host's rules
 - `src/game.js:348-358`: time runs fast only while every living player sleeps
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
-- `data/tuning.json:52-53`, `src/ui/hud.js:108-114`: mana under stamina (game #488, at 0fa02e5)
+- `data/tuning.json:56-57`, `src/ui/hud.js:40-42`: mana between health and stamina (game #514, at 393acaf)

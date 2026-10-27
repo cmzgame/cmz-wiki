@@ -91,6 +91,8 @@ A [[Paintings|painting]] in your bag has **Place** on its menu, after Use: a gho
 
 Dropped items lie on the tile where they fell. **Drop** on an item's menu drops it at your feet; **Drop all** drops the whole stack. A bag or belt dropped from its slot keeps everything in it.
 
+An item on the floor is drawn as its own picture when it has drawn art, a long one (a sword, a spear, a rod, a bow) lying flat on the ground; an herb, a mushroom, salt, or a vial as its generated icon; anything still on placeholder art as a small block in its colour. Several on one tile lie side by side.
+
 `E` picks up the nearest thing within {{n census.constants.interact.INTERACT_RANGE tiles}}; a loose item beats a container on the same tile. Right-clicking a tile with items on it offers **Pick up** for each, and **Equip** for clothing (as **Equip cap**).
 
 A single item that can be held goes into a free hand first, then the bag, then the belt. A stack goes into the bag; if only part of it fits, the rest stays on the floor. Things that do not stack lie on the floor one by one, each its own item: three apples dropped from a full bag are three items to pick up. With no room the game says "No room in your bag."; with no bag, "You have no bag."
@@ -152,5 +154,6 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/ui/inventory-actions.js:338-346`: a container not the guest's own must be within reach
 - `data/items.json`: only arrows, fire arrows, throwing knives and axes, bandages, and seeds stack (game #399, at ce21ffc)
 - `src/map.js` `dropItem`: what does not stack is laid on the floor as single entries (game #399, at ce21ffc)
+- `src/main.js:1551-1570`, `src/render/props.js:274-290`: an item with drawn art on the floor as its own picture, a long one flat; a generated icon as itself; else the block in its colour (game #514, at 393acaf)
 - `src/interact.js` `slotMenu`, `itemActions`, `src/inventory.js` `ensureBag`, `src/map.js` `dropItem`: a bag's grid rides on its entry; Unequip sets it down; on the floor Open, Equip or Swap bags, Pick up once empty; the linen satchel (game #403, at 6e5b20a)
 - `data/items.json:136-142`, `src/ui/inventory-actions.js:249-256`, `src/item-info.js:248-256`: the vials and potions stack; a double-click drinks a potion in your own bag; the potions' Drink lines (game #491, at 0fa02e5)

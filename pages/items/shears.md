@@ -13,7 +13,7 @@ summary: A tool made at the anvil from an iron bar: carried, it shears a fed she
 
 A sheep's menu has **Shear the sheep**, a timed entry of {{n animals.work.shear seconds}}, once a game day and only on a day the sheep has eaten from a [[Feeding trough]]. It gives {{n animals.species.sheep.produce.count.0}} to {{n animals.species.sheep.produce.count.1}} wool, and one more {{pct animals.keep.more}} of the time; the wool goes into your bag, or falls at your feet if it is full. The entry is greyed when it cannot be done: "(the sheep has not been fed today)", "(it has been shorn today)", or, with no shears carried, "(you need shears)"; chosen anyway, it says "You need shears." The valley's sheep are in the croft's sheepfold. See [[Keeping]].
 
-Shears are drawn in the hand by a placeholder shape; their art and their portrait for the character screen are still to be drawn.
+Shears have drawn art: their icon in the bag, their picture in the hand and on the floor, and their portrait in a hand slot of the character screen.
 
 {{item-sections shears}}
 
@@ -25,6 +25,7 @@ A guest's **Shear the sheep** is sent to the host by the sheep's id, and the hos
 
 <!-- sources at 6e3ab37 -->
 - `data/items.json:65`: the shears: either hand, their verb `shear`
+- `data/items.json`: the shears' icon, held picture, and portrait drawn in art round 4 (game #514, at 393acaf)
 - `data/recipes.json:758-774`: shears from an iron bar at the anvil, the hammer in hand
 - `data/animals.json`: the sheep's `produce`, `work.shear`, `keep.more`
 - `src/entities/animal.js:513-552`, `src/interact.js:1986-1990`: shearing: fed today, once a day, the shears carried, the count and one more, the greyed reasons

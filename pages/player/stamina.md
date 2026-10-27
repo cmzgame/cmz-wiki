@@ -5,7 +5,7 @@ aliases: [Sprint, Sprinting, Winded, Running]
 summary: The orange bar that sprinting, swinging, shoving, and blocking spend.
 ---
 
-**Stamina** is your short-term breath, shown as an orange bar under [[Health]] with a percent. It runs from {{n tuning.player.stamina}} down to zero. Sprinting and fighting spend it, and it comes back quickly when you stop.
+**Stamina** is your short-term breath, shown as an orange bar under [[Health]] and [[Mana]] with a percent. It runs from {{n tuning.player.stamina}} down to zero. Sprinting and fighting spend it, and it comes back quickly when you stop.
 
 ## How it works
 
@@ -65,6 +65,7 @@ A [[Stamina potion]] fills the bar at once, and for {{n tuning.potions.staminaSe
 
 <!-- sources at 37e8726 -->
 - `src/ui/hud.js:95-98`: the bar, its percent, and the winded class
+- `src/ui/hud.js:40-42`: the bar last of the three, under health and mana (game #514, at 393acaf)
 - `data/tuning.json:49-53`: the maximum, the sprint multiplier, the drain, the recovery, and the winded threshold
 - `src/entities/player.js:352-362`: sprinting, its drain, winded, and the recovery
 - `src/entities/player.js:355`: no sprint when still, winded, carrying, guarding, or Exhausted

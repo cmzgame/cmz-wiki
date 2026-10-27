@@ -24,7 +24,7 @@ Honey is taken on the host for the player who asked, and the hive's wait is the 
 - `data/items.json:19`: the pot of honey: food, its hunger and heal, no stack
 - `src/entities/player.js:93-103`: eating adds its hunger and its heal
 - `src/hives.js:113-158`, `data/tuning.json:171`: Take honey at a hive, the count, the days until more; every hive starts with honey
-- `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:313`, `tools/mapgen/valley.py:456-458`: the hives at the cottage, the manor, and Hollow Farm
+- `tools/mapgen/valley.py:201-202`, `tools/mapgen/valley.py:320`, `tools/mapgen/valley.py:464-466` (at 393acaf): the hives at the cottage, the manor, and Hollow Farm
 - `data/loot.json`, `data/recipes.json`: no table gives honey and no recipe makes it
 - `src/net.js:600-610`, `src/hives.js:130-131`: a guest's Take honey run on the host; the hive's `honeyAt` sent with its chunk
 - `data/items.json:19`, `data/recipes.json:1324-1348`: honey tagged `binder`, pemmican's binder (game #462, at d625844)

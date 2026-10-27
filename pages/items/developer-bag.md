@@ -19,7 +19,7 @@ A world made with **Dev bag** on, at the Sandbox step of New world, starts every
 
 <!-- sources at 3c0a243 -->
 - `data/items.json:36`: the Developer Bag: equipped on the back, grid 12 x 8
-- `data/loot.json:18`: two in the dev chest's fixed list
+- `data/loot.json:20`: two in the dev chest's fixed list
 - `src/settings.js:71`, `src/rules.js:22`, `src/kit.js:64-69`: the Dev bag world rule, worn in place of the sack by every new character
 - `src/dev.js:123-149`: giveKit and giveDevBag
 - `src/dev.js:56-64`, `src/dev.js:146-163`: giveKit and giveDevBag the host's, refused on a guest's console (game #465, at d625844)

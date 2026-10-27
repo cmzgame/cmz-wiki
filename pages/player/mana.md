@@ -2,16 +2,16 @@
 title: Mana
 categories: [Player, Mechanics, Magic]
 aliases: [Mana bar, Not enough mana]
-summary: The blue bar under stamina that a spell spends; it comes back slowly by itself, and a prayer at the chapel's altar or a mana potion fills it faster.
+summary: The blue bar between health and stamina that a spell spends; it comes back slowly by itself, and a prayer at the chapel's altar or a mana potion fills it faster.
 ---
 
-**Mana** is what a spell costs. It is a blue bar at the top left of the screen, under [[Stamina]], and it runs from {{n tuning.player.mana}} down to zero. Casting the [[Fireball]] spends it. It comes back slowly by itself; a prayer at the [[Altar]] in [[The chapel]] fills it at once, and so does a [[Mana potion]], by part of the bar.
+**Mana** is what a spell costs. It is a blue bar at the top left of the screen, between [[Health]] and [[Stamina]], and it runs from {{n tuning.player.mana}} down to zero. Casting the [[Fireball]] spends it. It comes back slowly by itself; a prayer at the [[Altar]] in [[The chapel]] fills it at once, and so does a [[Mana potion]], by part of the bar.
 
 ## How it works
 
 ### The bar
 
-The bar is labelled "Mana", drawn in blue under the stamina bar, with the whole points it holds and its most, out of {{n tuning.player.mana}}. Every character starts with it full, and a character from a world saved before mana came back full too. The most is kept on each player, so gear or a skill may raise one player's later; today it is {{n tuning.player.mana}} for everyone. {{planned doc=47 note="Gear and the Faith skill raising a player's most mana."}}
+The bar is labelled "Mana", drawn in blue between the health bar and the stamina bar, with the whole points it holds and its most, out of {{n tuning.player.mana}}. Every character starts with it full, and a character from a world saved before mana came back full too. The most is kept on each player, so gear or a skill may raise one player's later; today it is {{n tuning.player.mana}} for everyone. {{planned doc=47 note="Gear and the Faith skill raising a player's most mana."}}
 
 ### Coming back
 
@@ -56,9 +56,9 @@ Mana is each player's own, kept on the host: the host's step brings it back and 
 
 ## Sources
 
-<!-- sources at 0fa02e5 -->
-- `data/tuning.json:52-53`: the most, {{n tuning.player.mana}}, and the regeneration a second
-- `src/ui/hud.js:108-114`, `style.css:297-353`: the bar under stamina, in blue (`--blue`), its points, and the flash (`short`: the red edge, the blue glow, the brighter fill)
+<!-- sources at 393acaf -->
+- `data/tuning.json:56-57`: the most, {{n tuning.player.mana}}, and the regeneration a second, doubled for the demo pass (game #514, at 393acaf)
+- `src/ui/hud.js:40-42`, `src/ui/hud.js:108-114`, `style.css:297-353`: the bar between health and stamina (game #514, at 393acaf), in blue (`--blue`), its points, and the flash (`short`: the red edge, the blue glow, the brighter fill)
 - `src/entities/player.js:40`, `src/mana.js:28-30`: each player's own most, `maxMana`; a save from before mana comes back full
 - `src/mana.js:57-64`, `src/game.js:816`: regeneration in the host's step for a living player, never past the most
 - `data/items.json:11` `book.spell.mana`, `src/mana.js:32-44`: the spell's cost

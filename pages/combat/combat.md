@@ -110,7 +110,7 @@ Players never hurt players, whatever they swing, shoot, or cast: on the host the
 
 Zombie aggro and Multi-hit are [[World rules|world rules]], each world's own. A world made at a High Starting population has more of the dead to fight.
 
-{{devonly note="The Dev chest, chosen at New world (default on), puts a chest of every weapon beside the spawn."}}
+{{devonly note="The Dev chest, chosen at New world (default on), puts a chest of every weapon and every tool beside the spawn."}}
 
 ## See also
 

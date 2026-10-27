@@ -81,7 +81,7 @@ A guest tills, plants, waters (by the bucket's or the skin's own entry), and har
 - `data/crops.json`, `src/farming.js:240-241`, `src/interact.js:560-562`, `src/inventory.js:88-108`: each crop's `tool`, a verb, carried: rye `harvest` (a scythe), potato and garlic `dig` (a shovel), cabbage and pumpkin `cut` (a knife), flax none; "Harvest (need a ...)" greyed without it (game #222)
 - `src/farming.js:111-118`, `data/tuning.json:116`: every farming verb within `pickReach` and with a clear line (game #206)
 - `src/farming.js:298-319`, `src/game.js:558`: the crops' pictures follow their stages at each check
-- `tools/mapgen/valley.py:191`, `tools/mapgen/mapgen.py:216-231`: the cottage's plot, potatoes and cabbages at the middle and last stages
+- `tools/mapgen/valley.py:195` (at 393acaf), `tools/mapgen/mapgen.py:283-295`: the cottage's plot, potatoes and cabbages at the middle and last stages
 - `data/loot.json:8-11`: the barn rack's hoe and the two granaries' seed of every crop (game #219), the weaver's chest's flax seed (game #216)
 - `tools/mapgen/valley.py:408-523`: Hollow Farm's and Long Acre's fields at mixed stages
 - `src/bucket.js:1-126`: the bucket's fill and pour (game #211)

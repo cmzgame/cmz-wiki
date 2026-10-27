@@ -113,7 +113,7 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `src/map.js:661-676`: the burst edge emptied and the rooms found again
 - `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:435`: a gate built over a fence, no window over one; removing it puts the fence back
 - `data/maps/valley.json:1156-1170`: the graveyard's fence feature and its gate
-- `data/maps/valley.json:1446-1457`, `data/maps/valley.json:2209-2220`, `data/maps/valley.json:2947-2958`, `data/maps/valley.json:3315-3326`: the fences of your cottage, the inn, the manor, and the merchant's house
+- `data/maps/valley.json:1475-1495` (at 393acaf), `data/maps/valley.json:2209-2220`, `data/maps/valley.json:2947-2958`, `data/maps/valley.json:3315-3326`: the fences of your cottage, the inn, the manor, and the merchant's house
 - `data/maps/valley.json:4288-4302`, `data/maps/valley.json:4858-4872`: fence partitions inside the cooper's long house and the second cottage on the lane
 - `src/host.js:218-225`, `src/main.js:1655-1657`, `src/main.js:1762-1765`: the jolt and the splinters drawn on every player's screen
 - `src/map.js:724-729`, `src/game.js:420`: a fence's health short of a break saved, but neither sent to a guest nor in the sync check (game #185)

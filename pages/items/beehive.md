@@ -33,7 +33,7 @@ Every player sees the same bees: each screen draws them from the hive and the ga
 <!-- sources at 261cd7a -->
 - `docs/02-decisions.md` (at 5eb40e6): honey into a clay jar, ruled and not built (game #499, #500)
 - `data/sprites/beehive.json`: the drawn skep, `interactable`, fixed, `hive: true`
-- `tools/mapgen/valley.py:195-198`, `tools/mapgen/valley.py:313`, `tools/mapgen/valley.py:456-458`: two hives at the cottage, three in the manor's garden, three in Hollow Farm's yard
+- `tools/mapgen/valley.py:201-202`, `tools/mapgen/valley.py:320`, `tools/mapgen/valley.py:464-466` (at 393acaf): two hives at the cottage, three in the manor's garden, three in Hollow Farm's yard
 - `src/hives.js:1-7`: honey until taken, more `work.honey.days` later; skills not read yet
 - `src/hives.js:104-111`, `data/maps/valley.json`: a hive has honey with no `honeyAt` or once the clock passes it; no hive is placed with one
 - `src/hives.js:113-136`, `data/tuning.json:171`: the verb: the count, the bag or the feet, `honeyAt` set the days on, the chunk touched, the messages; the second at one hive finds it taken

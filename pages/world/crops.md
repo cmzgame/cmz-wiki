@@ -44,6 +44,6 @@ Crops do not block anyone. You, the dead, and villagers walk through them, and e
 - `src/farming.js:89-95`, `src/farming.js:298-319`, `src/interact.js:550-571`: the picture follows the stage; the menu's days, Water, and Harvest (game #206), greyed without the crop's tool (game #222)
 - `data/crops.json`: each crop's harvest `tool` (game #222)
 - `src/interact.js:1449-1481`, `src/game.js:640`, `src/game.js:649`, `src/game.js:654`: a click sways them, and players, the dead, and villagers brush through them
-- `tools/mapgen/valley.py:191`, `tools/mapgen/mapgen.py:216-231`: the cottage plot, potatoes and cabbages at stages 1 and 2, placed `solid: false`
+- `tools/mapgen/valley.py:195` (at 393acaf), `tools/mapgen/mapgen.py:283-295`: the cottage plot, potatoes and cabbages at stages 1 and 2, placed `solid: false`
 - `tools/mapgen/valley.py:455-506`: Hollow Farm's pumpkin, potato, cabbage, and garlic plots, and Long Acre's rye, flax, and kitchen garden, at mixed stages (game #219)
 - `data/loot.json:9-10`: the granaries' seed of every crop

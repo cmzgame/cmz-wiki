@@ -13,7 +13,7 @@ A **lead** is a halter and rope, made at the [[Workbench]] from cloth ([[Linen c
 
 Open a tame animal's menu and choose **Lead the cow** (named for the animal); without a lead it reads "(you need a lead)". One lead leads one animal: while it is on an animal, a second one's entry reads "(your lead is in use)", and a second lead carried leads a second animal. The animal follows at your pace, walking or sprinting, and stands when it is close. Choose **Let go of the cow** to let it go: where it stands becomes its home, so an animal let go in a fenced yard with its gates shut stays there. A lead that comes off on its own (the animal has no way to you, or you are gone) leaves the animal its old home, and it walks back to it. The whole rule is on [[Keeping#The lead|Keeping]].
 
-It is drawn in the hand by a placeholder shape; its art and its portrait for the character screen are still to be drawn.
+It has drawn art: its icon in the bag, its picture in the hand and on the floor, and its portrait in a hand slot of the character screen.
 
 {{item-sections lead}}
 
@@ -24,7 +24,7 @@ A guest leads and lets go through the same menu entries, sent to the host by the
 ## Sources
 
 <!-- sources at 6e3ab37 -->
-- `data/items.json:64`: the lead: either hand, its verb `lead`, held as a placeholder shape
+- `data/items.json`: the lead: either hand, its verb `lead`; its icon, held picture, and portrait drawn in art round 4 (game #514, at 393acaf)
 - `data/recipes.json:348-364`: the lead from two cloth at the workbench, with `cut`, a dirk, carried
 - `src/item-info.js:231`: its card's line
 - `src/entities/animal.js:466-511`, `src/interact.js:1971-1985`: Lead and Let go, the greyed reasons, one lead an animal

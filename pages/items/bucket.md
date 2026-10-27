@@ -27,7 +27,7 @@ Its water is clean or tainted, as a waterskin's is (see [[Water#Tainted and clea
 
 ## Where to find one
 
-- The chest in the main room of [[Your cottage]] holds one, with a hatchet and a loaf.
+- The chest in the living room of [[Your cottage]] holds one, with a hatchet and a loaf.
 - The [[Workbench]] makes one from three [[Plank|planks]], with a [[Smith's hammer]] on you.
 
 {{item-sections bucket}}

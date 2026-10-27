@@ -5,7 +5,7 @@ aliases: [Rug, Laying a rug, Place a rug, Laid rug]
 summary: A rug is an item carried rolled up in the bag; Place lays it flat on the floor, under the furniture you can carry, and Pick up rolls it back.
 ---
 
-A **rug** is an item you carry rolled up in your bag and lay on the floor where you like. There are two, the [[Bearskin rug]] and the [[Regal red rug]]. Laid, a rug lies flat under everything: you walk over it, things dropped on it lie on it, and the furniture you can carry may stand on it. Picked up again, it rolls back into the bag. Nothing makes a rug yet, and nothing in the valley holds one; both are in the [[Developer chest]], and so they can be added to a new world's **Extra starting items** (see [[World rules]]).
+A **rug** is an item you carry rolled up in your bag and lay on the floor where you like. There are two, the [[Bearskin rug]] and the [[Regal red rug]]. Laid, a rug lies flat under everything: you walk over it, things dropped on it lie on it, and the furniture you can carry may stand on it. Picked up again, it rolls back into the bag. Nothing makes a rug yet, and nothing in the valley holds one. The [[Developer chest]] holds the bearskin rug; either can be added to a new world's **Extra starting items** (see [[World rules]]).
 
 ## How it works
 
@@ -59,7 +59,7 @@ A guest lays and picks up rugs as the host does. Place only starts the ghost on 
 
 <!-- sources at 499e344 -->
 - `data/items.json:73-74`: the two rugs, kind decor, 1 by 4 in the bag, each naming its laid sprite; no recipe or loot table of the valley holds one (game #339, at 499e344)
-- `data/loot.json:19`: both in the dev kit (game #339, at 499e344)
+- `data/loot.json:20`: the bearskin rug alone in the dev kit (game #514, at 393acaf)
 - `data/sprites/rug_bearskin.json`, `data/sprites/rug_regal_red.json`: the laid rug, 2 by 3 along y, 3 by 2 along x, not carried, a rug (game #339, at 499e344)
 - `src/item-info.js:97`: the hover card's Place line (game #339, at 499e344)
 - `src/interact.js:1307-1308`: Place on a rug in your own bag (game #339, at 499e344)

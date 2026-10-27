@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "d7cf736e874467272e9d68a924805b32f0a8a21e",
-  "short": "d7cf736",
-  "date": "2026-10-26T19:05:13-05:00",
-  "subject": "Merge pull request #508 from cmzgame/build/506-playtest-features",
+  "commit": "393acaf06dc42ff80713a9cbf92b29421720319e",
+  "short": "393acaf",
+  "date": "2026-10-26T21:17:51-05:00",
+  "subject": "Merge pull request #514 from cmzgame/primary/demo-pass",
   "ref": "origin/main"
  },
  "counts": {
@@ -96,9 +96,9 @@
     "fuel"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "clamp"
@@ -333,9 +333,9 @@
     "kills": 60
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -381,9 +381,9 @@
     "kills": 80
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -415,9 +415,9 @@
     "kills": 40
    },
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -614,9 +614,9 @@
    ],
    "hunger": 30,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "cooking"
@@ -643,9 +643,9 @@
    ],
    "hunger": 20,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [
@@ -737,9 +737,9 @@
     "milk"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -788,9 +788,9 @@
    },
    "thrown": true,
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -814,9 +814,9 @@
    "shots": 100,
    "bow": true,
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -838,9 +838,9 @@
     "wood"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -866,9 +866,9 @@
     "wood"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
@@ -1358,9 +1358,9 @@
    ],
    "shield": true,
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -1397,9 +1397,9 @@
     "mine"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -1437,9 +1437,9 @@
     "till"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -1479,9 +1479,9 @@
     "fish"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -1980,9 +1980,9 @@
     "lead"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "workbench"
@@ -2009,9 +2009,9 @@
     "shear"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -2582,9 +2582,9 @@
     "harvest"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -2665,9 +2665,9 @@
     "cut"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -2708,9 +2708,9 @@
     "build"
    ],
    "art": {
-    "icon": false,
+    "icon": true,
     "held": true,
-    "drawn": false
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -2757,9 +2757,9 @@
     "metal"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "forge"
@@ -2837,9 +2837,9 @@
    ],
    "hunger": 10,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [
@@ -2870,9 +2870,9 @@
    ],
    "hunger": 8,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [
@@ -2900,9 +2900,9 @@
    ],
    "hunger": 3,
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [
@@ -3187,9 +3187,9 @@
     "cloth"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "loom"
@@ -3228,9 +3228,9 @@
     "cloth"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "workbench",
@@ -3894,7 +3894,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -7001,12 +7001,13 @@
   {
    "id": "barrel",
    "kind": "container",
-   "drawn": false,
+   "drawn": true,
    "container": true,
    "carry": true,
    "collide": {
     "radius": 0.26
-   }
+   },
+   "note": "the drawn barrel (art round 4): a cooper's oak barrel standing on its end, four iron hoops, a sunk head inside the chime, a bung on the lit side; round, so one drawing and no facings"
   },
   {
    "id": "bed",
@@ -7113,9 +7114,10 @@
   {
    "id": "chest",
    "kind": "container",
-   "drawn": false,
+   "drawn": true,
    "container": true,
-   "carry": true
+   "carry": true,
+   "note": "the drawn chest (art round 4): a six-board chest, iron corners and straps, a hasp and padlock; long side along y as drawn with its front toward +x (a west wall at its back), along x as its mirror (front toward +y)"
   },
   {
    "id": "chicken_coop",
@@ -7965,11 +7967,10 @@
   {
    "id": "shelf",
    "kind": "container",
-   "label": "Shelf",
-   "drawn": false,
+   "drawn": true,
    "container": true,
    "carry": true,
-   "note": "a dev box for the shelf (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "the drawn shelf (art round 4): a tall open shelf with pots, jars and a tied sack; backs against a west wall as drawn (y), a north wall as its mirror (x), as the fireplace; once a dev box (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
    "id": "smoking_rack",
@@ -8618,11 +8619,10 @@
   {
    "id": "woodpile",
    "kind": "container",
-   "label": "Woodpile",
-   "drawn": false,
+   "drawn": true,
    "container": true,
    "carry": true,
-   "note": "a dev box for the woodpile (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "the drawn woodpile (art round 4): split logs stacked along y between two stakes on two sleepers, the cut ends toward +x; along x as its mirror; once a dev box (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
    "id": "workbench",
@@ -8642,8 +8642,8 @@
  "map": {
   "name": "The valley",
   "spawn": [
-   104,
-   216
+   102,
+   218
   ],
   "bounds": [
    0,
@@ -8657,8 +8657,8 @@
     "rect": [
      98,
      212,
-     16,
-     12
+     22,
+     15
     ],
     "buildings": 1,
     "rooms": 2,
@@ -8668,6 +8668,8 @@
     ],
     "props": [
      "bed",
+     "chair",
+     "chair",
      "chair",
      "chair",
      "chest",
@@ -9615,7 +9617,7 @@
    {
     "tile": [
      102,
-     218
+     220
     ],
     "name": "Wyn",
     "wardrobe": 6,
@@ -9778,7 +9780,7 @@
    "hp": 100,
    "stamina": 100,
    "mana": 100,
-   "manaRegen": 0.333,
+   "manaRegen": 0.667,
    "sprintMult": 1.75,
    "sprintDrain": 16,
    "staminaRegen": 10,
@@ -10971,7 +10973,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1598"
+    "main.js:1623"
    ]
   },
   {
@@ -11119,7 +11121,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1573"
+    "main.js:1598"
    ]
   },
   {
@@ -11168,7 +11170,7 @@
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1559"
+    "main.js:1584"
    ]
   },
   {
@@ -11192,7 +11194,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1611"
+    "main.js:1636"
    ]
   },
   {
@@ -11274,7 +11276,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1620"
+    "main.js:1645"
    ]
   },
   {
@@ -11611,7 +11613,7 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:444"
+    "game.js:445"
    ]
   },
   {
@@ -11641,7 +11643,7 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:839"
+    "game.js:840"
    ]
   },
   {
@@ -11659,7 +11661,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:814"
+    "game.js:815"
    ]
   },
   {
@@ -11702,7 +11704,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:913"
+    "game.js:914"
    ]
   },
   {
@@ -11762,7 +11764,7 @@
   {
    "key": "taintedOnly",
    "at": [
-    "game.js:815"
+    "game.js:816"
    ]
   },
   {
@@ -11808,7 +11810,7 @@
    "at": [
     "archery.js:961",
     "combat.js:455",
-    "game.js:726"
+    "game.js:727"
    ]
   },
   {
@@ -12005,7 +12007,7 @@
   },
   {
    "path": "main.js",
-   "lines": 2088
+   "lines": 2113
   },
   {
    "path": "placeholders.js",
@@ -12041,7 +12043,7 @@
   },
   {
    "path": "game.js",
-   "lines": 935
+   "lines": 936
   },
   {
    "path": "ui/inventory-panel.js",
@@ -12053,7 +12055,7 @@
   },
   {
    "path": "assets.js",
-   "lines": 684
+   "lines": 688
   },
   {
    "path": "figure/draw.js",
@@ -12137,7 +12139,7 @@
   },
   {
    "path": "render/props.js",
-   "lines": 299
+   "lines": 300
   },
   {
    "path": "tuning.js",
@@ -13016,7 +13018,7 @@
    "campfire": 1,
    "cart": 6,
    "cauldron": 1,
-   "chair": 33,
+   "chair": 35,
    "charcoal_clamp": 4,
    "charcoal_sack": 2,
    "chest": 44,
@@ -13026,8 +13028,8 @@
    "counter": 1,
    "crane": 1,
    "crop_cabbage_0": 18,
-   "crop_cabbage_1": 14,
-   "crop_cabbage_2": 38,
+   "crop_cabbage_1": 15,
+   "crop_cabbage_2": 40,
    "crop_flax_0": 10,
    "crop_flax_1": 11,
    "crop_flax_2": 21,
@@ -13035,8 +13037,8 @@
    "crop_garlic_1": 16,
    "crop_garlic_2": 22,
    "crop_potato_0": 10,
-   "crop_potato_1": 16,
-   "crop_potato_2": 32,
+   "crop_potato_1": 17,
+   "crop_potato_2": 34,
    "crop_pumpkin_0": 54,
    "crop_pumpkin_1": 54,
    "crop_pumpkin_2": 107,
@@ -13072,8 +13074,8 @@
    "millstones": 1,
    "millwheel": 1,
    "mine_mouth": 1,
-   "mushroom_0": 160,
-   "mushroom_1": 166,
+   "mushroom_0": 159,
+   "mushroom_1": 167,
    "mushroom_2": 158,
    "mushroom_3": 152,
    "mushroom_4": 138,
@@ -13104,10 +13106,10 @@
    "tree_oak_m": 288,
    "tree_oak_old": 155,
    "tree_orange_l": 285,
-   "tree_orange_m": 316,
+   "tree_orange_m": 314,
    "tree_orange_old": 153,
    "tree_red_l": 297,
-   "tree_red_m": 276,
+   "tree_red_m": 275,
    "tree_red_old": 155,
    "tree_spire_green_l": 154,
    "tree_spire_green_m": 161,

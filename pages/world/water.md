@@ -104,7 +104,7 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 - `src/interact.js:682`, `src/interact.js:708-712`, `src/inventory.js:85-87`, `data/items.json:20`: every waterskin in the bag and on the belt filled to 100 (the belt's game #222)
 - `src/interact.js:52`: the reach
 - `data/sprites/well.json`, `data/sprites/trough.json`, `data/sprites/font.json`, `src/interact.js:718-720`, `src/interact.js:780`: wells, troughs, and the font give the same actions, each named for the prop; the well's bucket (game commit 2c70942)
-- `tools/mapgen/valley.py:192`, `tools/mapgen/valley.py:199`, `tools/mapgen/valley.py:203`, `tools/mapgen/valley.py:244`, `tools/mapgen/valley.py:248`, `tools/mapgen/valley.py:259`, `tools/mapgen/valley.py:312`: where the wells, troughs, and the font stand
+- `tools/mapgen/valley.py:196`, `tools/mapgen/valley.py:207`, `tools/mapgen/valley.py:211`, `tools/mapgen/valley.py:255`, `tools/mapgen/valley.py:259`, `tools/mapgen/valley.py:270`, `tools/mapgen/valley.py:323`, `tools/mapgen/valley.py:457`, `tools/mapgen/valley.py:470`, `tools/mapgen/valley.py:515` (at 393acaf): where the wells, troughs, and the font stand
 - `src/interact.js:694-697`, `data/tuning.json:53`: thirst set to its maximum
 - `src/interact.js:70-92`: a guest's drink or fill run on the host by the tile
 - `src/interact.js:722-745`, `tools/mapgen/mapgen.py:80-90`, `tools/mapgen/valley.py:212`, `tools/mapgen/valley.py:311`, `src/map.js:1472-1481`: Cast the line with a rod in hand; the river and the ford named `river`, the duck pond and the manor's pool `pond` (game #193)

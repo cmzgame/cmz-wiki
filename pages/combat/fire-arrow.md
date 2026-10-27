@@ -46,7 +46,7 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 
 <!-- sources at 0bd3f9c -->
 - `src/burn.js`, the `dip` verb, `src/reach.js`: the fire within reach and with a clear line, "There is a wall in the way." (game #227)
-- `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; placeholder art; `ignite: true` since game #471
+- `data/items.json`: the fire arrow: ammunition, its stack and size those of the arrow; `ignite: true` since game #471; drawn art since game #514
 - `src/item-info.js` `shotLines` (at dc10b81): the card's lines: the bow and its place in the order, the burn (`data/combat.json` `burn`: `dps` times `duration`, capped), and the dip row it is made by
 - `data/interactions.json`: the row: arrows used on `fire`, the `dip` verb, its line
 - `src/interactions.js:34-42`: `fire` matches any prop whose fire burns fuel

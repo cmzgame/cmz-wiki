@@ -13,7 +13,7 @@ Carried anywhere on you (a hand, the belt, or the bag), it also does the hatchet
 
 ## Where to find one
 
-- **The chest in the main room of [[Your cottage]]** holds a hatchet, with a [[Shovel]], a [[Loaf of bread]], and a [[Bucket]], every time: it has a table of its own rather than a chest's random roll.
+- **The chest in the living room of [[Your cottage]]** holds a hatchet, with a [[Shovel]], a [[Loaf of bread]], and a [[Bucket]], every time: it has a table of its own rather than a chest's random roll.
 - **The chest in [[The joiner]]'s workshop** holds a second, likewise, with a [[Smith's hammer]].
 - Any other chest may roll one (the Item sources table below).
 - The [[Anvil]] makes one from [[Iron bar|iron bars]] and a [[Stick]], with a [[Smith's hammer]] in hand (see [[Iron bar]] for the bars).
@@ -45,7 +45,7 @@ A guest chops with the hatchet in their own hands: the menu choice goes to the h
 - `src/inventory.js:89-108`, `data/tuning.json:153`, `src/interact.js:1371-1387`, `src/stations.js:149`, `src/placement.js:176-191`, `data/recipes.json:200-215`, `data/build.json:2-10`: carried anywhere, it splits a log, cuts sticks from a plank, and notches a log wall; without one, "(need a hatchet)" and "You need a hatchet."
 - `src/chop.js:16-53`: a hatchet in a hand chops a tree or a stump; nothing in the chop wears it; a felled tree sometimes drops a sapling (game #461, at 6e3ab37)
 - `src/interact.js:737-759`: "Chop down (need a hatchet)" greyed without one
-- `data/loot.json:7-8`, `data/maps/valley.json:1397`, `data/maps/valley.json:3578`, `src/map.js:1974`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
+- `data/loot.json:7-8`, `data/maps/valley.json:1423` (at 393acaf), `data/maps/valley.json:3578`, `src/map.js:1974`: the cottage's chest and the joiner's name their own tables, each with a fixed hatchet (and the cottage's a loaf) (game #207)
 - `data/loot.json:2`: the hatchet in the `chest` table
 - `data/recipes.json:544-563`: the hatchet at the anvil from two iron bars and a stick, the hammer in hand
 - `src/items.js:24-37`, `src/combat.js:390`: wear comes only from a weapon's hits

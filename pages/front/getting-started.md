@@ -13,13 +13,13 @@ The game opens on its site. Press **Play** on its menu (or `Enter` on Home) to o
 
 ## Where you start
 
-You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], at the southern end of the village: two rooms, a fireplace, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
+You wake at hour {{n census.constants.clock.START_HOUR}} of day one (in the morning) in [[Your cottage]], by its door, at the southern end of the village: two rooms, a fireplace, a bed, chests, a well, and a fenced plot of crops. A full day lasts {{n census.constants.clock.DAY_LENGTH}} seconds of real time (see [[The day]]).
 
 You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back holding a [[Waterskin]], a [[Loaf of bread]], [[Apple|apples]], a [[Plank]], and a [[Tinderbox]], and a [[Torch]] in your hand: the game's default kit, which a world made for testing can add to (see [[Player#The starter kit|the starter kit]]). The torch is not lit: press **T** to light it with the tinderbox, and again to douse it. A lit torch burns down, faster in your hand than on your belt, so douse it when you do not need it. Press **Tab** for your bag and **C** for the character screen. The game does not stop while they are open, and you can fight with them up; only the pause menu (**Escape** with nothing open) stops it.
 
 ## The first things to do
 
-1. **Look round the cottage.** Right-click anything for what you can do with it; **E** does the nearest simple thing. Search the [[Containers|chests]]: the one in the main room holds your first tools, a [[Hatchet]], a [[Shovel]], and a [[Bucket]]. The hatchet chops down trees for [[Log|logs]] (see [[Trees]]) and splits a log into planks; the shovel digs up ripe potatoes; the bucket waters the garden. A tool works from anywhere on you, the bag included: an action that needs one names it when you lack it ("You need a smith's hammer."). Step outside and [[Wyn]], the guide, is by the door: press **E** beside them to talk, and ask about anything the game does; each answer links to its page here.
+1. **Look round the cottage.** Right-click anything for what you can do with it; **E** does the nearest simple thing. Search the [[Containers|chests]]: the one in the living room holds your first tools, a [[Hatchet]], a [[Shovel]], and a [[Bucket]]. The hatchet chops down trees for [[Log|logs]] (see [[Trees]]) and splits a log into planks; the shovel digs up ripe potatoes; the bucket waters the garden. A tool works from anywhere on you, the bag included: an action that needs one names it when you lack it ("You need a smith's hammer."). Step outside and [[Wyn]], the guide, is by the door: press **E** beside them to talk, and ask about anything the game does; each answer links to its page here.
 2. **Learn the doors and shutters.** Tap **E** at a door or a window to open or shut it. Nobody passes through a window, you or the dead: a door is the only way in or out, and the dead who see you through a window come round to the door. Shut shutters block sight both ways. See [[Openings]].
 3. **Keep fed and watered.** [[Hunger]] and [[Thirst]] fall over the day and show as [[Moodles]] down the right of the screen. Drink at the well or any water, and fill your waterskin there.
 4. **Mind your fires.** A fire burns its fuel down over game hours and goes out. Feed it [[Log|logs]] from its menu; lighting one that is out also needs the tinderbox in your bag, or a lit torch. See [[Fire]].
@@ -46,7 +46,7 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `src/main.js:323-359`, `src/ui/screens.js:361-367`, `src/ui/screens.js:439-458`, `src/identities.js:38-72`: a new world, its character made from an identity kept in the browser
 - `src/game.js:218-223`: each world's save holds its own characters
 - `src/clock.js:18`, `src/clock.js:5`: the start hour and the day's length
-- `data/maps/valley.json:11685-11688`, `data/maps/valley.json:1305-1778`: the spawn in your cottage: two rooms, the fireplace, the bed, chests, the well, the fenced plot
+- `data/maps/valley.json:12203-12206`, `data/maps/valley.json:1296-1882`: the spawn in your cottage's living room (lines at 393acaf, game #514): two rooms, the fireplace, the bed, chests, the well, the fenced plot
 - `data/kit.json`, `src/game.js:135-139`: the starter kit, its torch out and a tinderbox in the sack
 - `data/loot.json:6-7`, `data/loot.json:11`: your cottage's chest's hatchet, shovel, loaf, and bucket; the joiner's hatchet and hammer; the weaver's knife (game #222)
 - `src/inventory.js:88-108`, `data/crops.json`: a tool carried anywhere, found by its verb, "You need a ..."; potatoes with a shovel, cabbages with a knife (game #222)
