@@ -26,7 +26,7 @@ You start with plain clothes, a [[Rope belt]], a [[Burlap sack]] on your back ho
 5. **Farm the plot.** The garden's potatoes and cabbages grow on their own while their soil is wet; harvest a ready one with **E** for food and {{n crops.crops.potato.seeds}} seeds, and plant the seeds again in the tilled soil. Potatoes want the shovel on you; cabbages want a [[Dirk]], which the weaver's chest holds. Water them from your waterskin or the bucket, and till more ground with a [[Hoe]]. See [[Farming]].
 6. **Go further afield.** [[The joiner]]'s chest has a second hatchet and a [[Smith's hammer]], which building doors and windows, boarding up, and most of the workbench ask for; [[Hollow Farm]], past the end of the lane, has a hoe in its barn and a granary of every seed; the weaver's chest has flax seed and a knife for cloth (see [[Linen cloth]]); the smithy's chest has the first iron and charcoal for the forge and the anvil; and the iron workings and the quarry, out in the woods, have pickaxes and rocks to mine (see [[Mining]]).
 7. **Find your way.** Press **M** for the [[Map]]: the land you and your friends have seen, and where each of you is. Map north is up and to the right.
-8. **Sleep in a bed, indoors,** when you are tired. The night passes quickly while you sleep, and nothing wakes you, so shut the door first. If the dead saw you go in at night, they wait about the house until dawn, and you cannot sleep while they are near. See [[Sleep]].
+8. **Sleep in a bed, indoors,** when you are tired. The screen fades to black and the night passes quickly while you sleep. Nothing in the world wakes you, so shut the door first; any key or click gets you up early. If the dead saw you go in at night, they wait about the house until dawn, and you cannot sleep while they are near. See [[Sleep]].
 
 ## The dead
 
@@ -62,7 +62,7 @@ The dead walk slowly, see you by the light you stand in, and remember only where
 - `src/entities/player.js:147-149`, `src/moodles.js:23-126`, `src/ui/moodles.js:141-177`: hunger and thirst fall and show as moodles down the right
 - `src/interact.js:681-720`: drinking and filling at the well or any water
 - `src/map.js:98-129`, `src/interact.js:361-394`: fires burn down and are fed from their menu; lit with a flame carried (game #169)
-- `src/entities/player.js:221-239`, `src/entities/player.js:193-219`, `src/game.js:348-358`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing wakes you
+- `src/entities/player.js:221-239`, `src/entities/player.js:193-219`, `src/game.js:348-358`: sleep in a bed indoors, refused while a siege is held on you; time runs fast; nothing in the world wakes you (a key or a click does, game #508, `src/interact.js:1600-1634` at d7cf736)
 - `data/tuning.json:4`, `data/tuning.json:43`: the dead walk at a third of your speed
 - `src/entities/zombie.js:308-313`, `src/entities/zombie.js:520-560`, `src/entities/zombie.js:371-387`: they see by the light on you, remember where they last saw you, and notice a flame at night
 - `src/entities/zombie.js:421-478`, `src/entities/zombie.js:847-914`: at night the dead that see you go in remember the door and wait about the house until dawn

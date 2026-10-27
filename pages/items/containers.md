@@ -20,6 +20,10 @@ An open container's grid shows beside your bag. It stays open while you are with
 
 A container can hold a bag or a belt only while that bag or belt is empty (the one container rule; see [[Inventory]]).
 
+### Containers inside containers
+
+A bag or a belt lying in an open chest or on a searched body, the satchel, the rucksack, a sack, a rope or a leather belt, has **Open** on its menu there ("Open leather belt"). It opens as a panel of its own, with **Take All**, so what is in it can be had without taking it out or wearing it. Opened inside another container it is take-only: things come out, by a drag, a Take, or Take All, and nothing goes in. A belt's slots open as one row, each slot in its own place. The inner panel closes with the container that holds it, and when someone takes the bag or belt away. Only one level opens: nothing in an inner panel offers Open. A bag or a belt lying on the ground opens the same way from its own menu (see [[Inventory#Bags|Inventory]] and [[Belt#The belt as a container|Belt]]).
+
 ### Which furniture rolls which table
 
 Each kind of container has a table of its own, and the odds of every one are on [[Drop tables]], with what the valley's containers hold all told.
@@ -58,7 +62,7 @@ A chest, a barrel, a shelf, a cupboard, a desk, a strongbox, a woodpile, or a bo
 
 ## With friends
 
-A search chosen by a guest is carried out by the host. What a container holds is part of the world, so every player sees the same contents and the same items gone once someone takes them.
+A search chosen by a guest is carried out by the host, and so is an Open of a bag or a belt inside a container, named by the item and the container that holds it. What a container holds is part of the world, so every player sees the same contents and the same items gone once someone takes them.
 
 ## See also
 
@@ -78,6 +82,7 @@ A search chosen by a guest is carried out by the host. What a container holds is
 - `src/interact.js:314-321`: a container's grid from its table
 - `data/tuning.json:75`: the close distance
 - `src/main.js:762-767`: the container closes when you walk away
+- `src/interact.js:164-190`, `src/interact.js:200-255`, `src/interact.js:1743-1752`, `src/inventory.js:60-114` (at d7cf736): Open on a bag or a belt in a chest or on a body, a take-only view, a belt's slots by their index, one level only; the address a guest sends (game #508)
 - `src/interact.js:1016-1091`: eat, drink, equip clothing, apply from a container; a hand's Equip only from your bag; Take and Store in (game commit 9a450f2)
 - `src/ui/inventory-panel.js:75-89`: double-click sends across
 - `src/ui/inventory-panel.js:667`: shift-click sends across, with the container rule

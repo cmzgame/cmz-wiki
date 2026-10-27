@@ -33,7 +33,7 @@ The sky's brightness is the outdoor part of [[Light]]. Indoors, a room's light c
 
 ### Sleeping through the night
 
-While every living player sleeps, the world runs {{n tuning.player.sleepTimeScale}} times as fast, so a night passes in moments. See [[Sleep]].
+While every living player sleeps, the world runs {{n tuning.player.sleepTimeScale}} times as fast, so a night passes in a few real seconds; the sleeper's screen fades to black, and any key or click wakes them early. See [[Sleep]].
 
 ### The hour keys
 

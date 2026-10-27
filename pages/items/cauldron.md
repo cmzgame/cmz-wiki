@@ -29,7 +29,7 @@ A brew needs the fire lit to start ("The fire is out."), and one under way waits
 
 The **Cauldron** item is made at the anvil from iron bars, with a [[Smith's hammer]] carried; it goes into your bag, {{n items.cauldron.size.0}} by {{n items.cauldron.size.1}} cells. Its recipe names no world rule, so it can be made in every world, whatever **Village stations** says.
 
-- **Place**, on its menu in the bag, shows a ghost of it on the tile under the cursor, green where it may stand and red with the reason where it may not: open floor with nothing on it and no rug ("No room"), within reach ("Too far"). A click sets it down, cold and empty: "You set the cauldron down." Escape cancels.
+- **Place**, on its menu in the bag, shows a ghost of it on the tile under the cursor, green where it may stand and red with the reason where it may not: open floor with nothing on it and no rug ("No room"), within reach ("Too far"). A click sets it down, cold and empty: "You set the cauldron down." Escape or a right click cancels.
 - **Pick up cauldron** on its menu gives the item back, but only once it is cold and empty: "Its fire is still burning; let it burn down.", "It still has fuel in it; let it burn down.", "It is still making something.", or "Empty it first." for a potion left in its output. A lit cauldron burns down before it can be lifted.
 - **Take apart**, as for anything you made, gives back half its iron bars, rounded down, with a smith's hammer carried, and is refused while it is lit, has fuel, or holds anything (see [[Building#Taking apart|Building]]). Lit, it says "Let it burn down first.": a cauldron's fire cannot be put out.
 

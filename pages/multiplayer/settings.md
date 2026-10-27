@@ -48,7 +48,7 @@ See [[Sound]].
 
 - **Debug corner**: Shown or Hidden: the numbers and keys in the top-left corner.
 - **Hit shapes**: Off or On: draws the dead's body samples, green when the next swing reaches them.
-- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, an [[Animals|animal]], a body, a laid [[Rugs|rug]]. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead on their feet (the swing's outline is theirs; one lying downed under the pointer is outlined, the moment for a finisher, though it has no menu action, and the green swing outline wins over it), another player, or a door or a shutter for now. Nothing is outlined while placing, removing, carrying, or in Use mode.
+- **Object Highlight**: On or Off, on by default: a thin pale outline round the game object under the pointer that you can act on, a tree, a crop, a mushroom, a chest or a station, an item on the ground, a villager, an [[Animals|animal]], a body, a laid [[Rugs|rug]]. Plain scenery (leaf litter, a headstone) gets none, nor do the living dead on their feet (the swing's outline is theirs; one lying downed under the pointer is outlined, the moment for a finisher, though it has no menu action, and the green swing outline wins over it), another player, or a door or a shutter for now. Nothing is outlined by it while placing, removing, or carrying; in Use mode the outline is the Use's own, on what the next click would be used on, shown whatever this setting says (see [[Use]]).
 - **Layer** rows: one per slot that has painted clothing layers, a dropdown to try one on in place of what is equipped (the answer **item** shows the item's own art).
 - **Painted hair**: a **Reload hair** button that picks up hair styles just saved in the hair editor.
 - **Relay**: where Open to friends and Join go, or "none: only this browser's own tabs".
@@ -85,6 +85,7 @@ The game's full list of stored settings and their defaults, including the ones t
 - `src/settings.js:28`, `src/settings.js:63`, `src/ui/small-text.js`: Small text, Clear by default, for text at or under its threshold (game #322, at 5cf78a9)
 - `src/settings.js:27`, `src/settings.js:78`, `src/highlight.js`, `src/render/highlight.js`: Object Highlight, on by default; what it outlines and leaves out (game #303, at 2facd17); one lying downed outlined, the swing outline winning over it (`src/highlight.js:30-34`, `src/render/entities.js:270`) (game #390, at 9be007c)
 - `src/render/rugs.js:43`: a laid rug outlined (game #339, at 499e344)
+- `src/highlight.js:61-74`, `src/main.js` (at d7cf736): in Use mode, the Use's target outlined whatever the setting (game #507)
 - `src/settings.js:29`, `src/settings.js:64`: Floating numbers, shown by default (game #299, at 3331946)
 - `src/settings.js:16`, `src/settings.js:66`, `src/settings.js:96-107`: Swing targets, on by default, in the Display group, its line; a browser's saved choice kept over the default
 - `src/settings.js:8-45`: the defaults, the Aim guide on (game #390, at 9be007c)

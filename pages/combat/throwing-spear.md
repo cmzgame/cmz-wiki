@@ -9,7 +9,7 @@ numbersOk: true
 <!-- typed: the hover card's own figures quoted: 74 is the damage at the least draw that flies, worked out from the data (game #471); 10 in the coat's line is the card's own words for a fresh coat, combat.poison.hits (game #496) -->
 {{infobox-item spear}}
 
-The **Throwing spear** is held in the main hand only, and never beside another weapon (a [[Wooden shield]] or a [[Torch]] is fine; a torch beside it is only a light and never swings). It stabs at a long, narrow reach, or it can be thrown.
+The **Throwing spear** is held in the main hand only, and never beside another weapon, a tool that swings (a [[Shovel]], a [[Smith's hammer]], a [[Dirk]]) included; a [[Wooden shield]] or a [[Torch]] is fine, and a torch beside it is only a light and never swings. Putting a weapon beside it, by a drag, a belt key, or a menu's Equip, is refused with the reason: "The throwing spear can't be held beside the shovel: it is never dual wielded." It stabs at a long, narrow reach, or it can be thrown.
 
 ## Combat
 
@@ -39,7 +39,7 @@ The spear is a blade, so a [[Poison]] or [[Strong poison]] [[Use|used]] on it co
 - `src/combat.js:115-126`: nothing in the off hand swings beside it
 - `src/item-info.js` `shotLines` (at dc10b81): the card's throw lines, read from the `thrown` block
 - `data/items.json:22`: the spear: main hand, `noDual`, the stab's `weapon` block, the `thrown` block
-- `src/items.js:117-138`: refused beside another weapon; a shield or torch allowed
+- `src/items.js:178-205`, `src/inventory.js:347-375`, `src/ui/inventory-actions.js:202` (at d7cf736): refused beside anything that swings, shoots, or is thrown, a shield or torch allowed; the refusal's words (game #507)
 - `data/combat.json:10` `blow.knockdownChance`, `src/combat.js:373-374`: the stab has no `knockdown` of its own, so it takes the default chance, 0
 - `src/player-controller.js:40-52`: middle or Q throws; no brace
 - `src/archery.js:589-607`, `src/archery.js:705-708`, `src/archery.js:296-297`: the spear thrown with the bow's draw, leaving the hand empty, the spear keeping its durability

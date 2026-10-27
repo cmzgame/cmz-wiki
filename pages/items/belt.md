@@ -29,7 +29,7 @@ What a slot's key does is read from the slot's role and the item there:
 
 Every press that fails gives a line, shown on your screen and in the [[Chat log|chat log]]. A press with no belt worn says "You have no belt."
 
-The [[Throwing spear]] is never held beside another weapon, so drawing a weapon into the off hand beside it (or the spear beside one) is refused with "The throwing spear can't be held beside another weapon.", and everything stays as it was.
+The [[Throwing spear]] is never held beside another weapon, a tool that swings (a [[Shovel]], a [[Smith's hammer]], a [[Dirk]]) included, so drawing one into the off hand beside it (or the spear beside one) is refused with the reason named, as "The throwing spear can't be held beside the shovel: it is never dual wielded." The refusal is checked before anything moves, so everything stays as it was.
 
 ### The swap
 
@@ -79,10 +79,12 @@ A slot's menu offers **Use**, then:
 
 - **Equip**, where the key would draw the item (it does what the key does);
 - for a held item the key does not draw (anything in the utility slot, a shield in a main-hand slot), an Equip into its own hand: **Equip (main hand)** and **Equip (off hand)** for an item that fits either, **Equip (both hands)** for a two-handed one, **Equip (off hand)** for a shield. What that hand held goes by [[Belt#The swap|the swap]], so it takes the freed slot only where that slot's key would draw it, and never the bag before an empty slot of its own hand;
-- **Eat** for a food; **Drink** for a potion, as its key does; **Drink**, with how full it is, for a waterskin, which is the one way to drink from a skin on the belt by hand (and **Boil water** at a lit cooking fire, see [[Water]]);
+- **Eat** for a food; **Drink** for a potion, as its key does; **Drink**, with how full it is, for a waterskin, which is the one way to drink from a skin on the belt by hand; **Boil water** at a lit cooking fire for a waterskin or a [[Bucket]] of tainted water (see [[Water]]);
 - **Put in bag** ("No room in your bag." if it is full), and **Drop**.
 
 A double-click on a slot does what its key does: it eats, drinks a potion, or draws the item, or else shows the key's line. A double-click never drinks a skin on the belt and never equips from the utility slot.
+
+A stack dragged onto a slot holding a stack of the same thing fills it, up to the stack's limit; what does not fit stays where it came from, and with no room at all the game says "That stack is full." (see [[Inventory#Stacking|Inventory]]).
 
 When an item is put away and the bag has no room, it goes onto a free belt slot whose role takes it. **Take All** on a container does the same with what the bag cannot hold, so a bow skips an empty off-hand slot for the utility slot.
 
@@ -96,9 +98,11 @@ A belt can be hidden from your figure with the eye on its slot of the character 
 
 A belt counts as a container: it can go in a bag or a chest only while its slots are empty (see [[Inventory#The one container rule|the one container rule]]). Dropped from its slot, it keeps what is on it, and a torch on it goes out.
 
+**A belt opens where it lies.** A belt on the ground has **Open** on its menu (named for it, "Open rope belt"), and `E` opens one that holds anything (an empty one, `E` picks up). A belt in a chest or on a body has **Open** on its menu there. Either way its slots open as a container panel, one row with each slot in its own place, with **Take All**: take its things out by a drag, a Take, or Take All, and they leave the belt itself. Nothing can be put into a belt this way; to fill it, wear it. See [[Containers#Containers inside containers|Containers]].
+
 ## With friends
 
-The belt keys are part of each player's input, carried out by the host's world for that player, so a guest's belt works the same way as the host's. The key goes out as the slot's role, never its number: each player's Belt slot order is their own, and the host, the other players, and the save never see it. A guest's drag onto a slot meets the same role rule on the host, and its refusal's line reaches the guest's screen. The lines for a locked place and for no belt are shown on the player's own screen alone, since nothing in the world changes.
+The belt keys are part of each player's input, carried out by the host's world for that player, so a guest's belt works the same way as the host's. The key goes out as the slot's role, never its number: each player's Belt slot order is their own, and the host, the other players, and the save never see it. A guest's drag onto a slot meets the same role rule on the host, and its refusal's line reaches the guest's screen. A guest opens a belt on the ground, in a chest, or on a body by the same menu entry, and every take from it is run on the host, so the belt's slots change for everyone. The lines for a locked place and for no belt are shown on the player's own screen alone, since nothing in the world changes.
 
 ## Settings that change it
 
@@ -111,7 +115,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 
 ## Sources
 
-<!-- sources at 78116b1 -->
+<!-- sources at d7cf736 -->
 - `data/items.json:33-34`: the rope belt's and the leather belt's slot counts
 - `src/inventory.js:295-312`: the slots' roles by index (`BELT_ROLES`), the key events by role (`BELT_EVENTS`), and the two key orders (`beltPositions`) (game #478)
 - `src/inventory.js:35-41`: an old world's rope belt of two grows to three
@@ -127,7 +131,10 @@ The belt keys are part of each player's input, carried out by the host's world f
 - `src/interact.js:1413-1435`: the number keys turned into the slot's role by the client's order; "You have no belt."; "A leather belt adds a slot here."
 - `src/interact.js:1458-1462`, `src/interact.js:1527-1556`: the press performed in the world's step; an empty slot does nothing and says nothing; every refusal a line
 - `src/ui/prompt.js:60-69`: every message is also a line in the log
-- `src/interact.js:1654-1720`: the slot menu: Use, Equip, the Equip into its own hand, Eat, Drink, Boil water, Put in bag, Drop
+- `src/interact.js:1880-1915`: the slot menu: Use, Equip, the Equip into its own hand, Eat, Drink, Boil water for a skin or a bucket (game #508), Put in bag, Drop
+- `src/items.js:178-205`, `src/inventory.js:347-375`, `src/inventory.js:522`: the dual rule counts anything that swings, shoots, or is thrown, a torch excepted; its one wording, checked before anything moves (game #507, at d7cf736)
+- `src/ui/inventory-actions.js:117-123`, `src/ui/inventory-actions.js:170`, `src/items.js:24-47`: a stack dropped on a matching stack fills it; entries with their own state never merge (game #508, at d7cf736)
+- `src/interact.js:325-342`, `src/interact.js:1749-1752`, `src/interact.js:164-190`, `src/interact.js:244-255`, `src/inventory.js:60-90`: a belt opened on the ground, in a chest, or on a body, its slots a take-only view laid out by slot index, a take emptying the slot (game #508, at d7cf736)
 - `src/ui/inventory-actions.js:90-108`: a double-click follows the key's path and says the key's line
 - `src/ui/inventory-actions.js:47-63`: Take All fills any empty belt slot whose role takes the thing
 - `src/settings.js:30`, `src/settings.js:66`: the Belt slot order setting, its two answers and its line

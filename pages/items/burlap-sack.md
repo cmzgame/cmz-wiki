@@ -7,7 +7,7 @@ summary: The bag every new character starts with, on the back.
 
 {{infobox-item small_sack}}
 
-The **burlap sack** is the bag every new character starts with on their back. It gives a grid of {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}} cells, the smallest of the bags (see [[Inventory]]). A fallen player's body keeps its sack, and searching the body lays it out with what is in it. The [[Linen satchel]], woven at the [[Loom]], holds more; a [[Rucksack]] more still, though no container in the valley holds one.
+The **burlap sack** is the bag every new character starts with on their back. It gives a grid of {{n items.small_sack.bag.0}} × {{n items.small_sack.bag.1}} cells, the smallest of the bags (see [[Inventory]]). A fallen player's body keeps its sack, and searching the body lays it out with what is in it; **Open** on the sack there shows what it holds, to take from, with Take All (see [[Containers#Containers inside containers|Containers]]). The [[Linen satchel]], woven at the [[Loom]], holds more; a [[Rucksack]] more still, though no container in the valley holds one.
 
 Equipping another bag drops the sack at your feet with everything in it. Empty, it can be carried inside another bag; full, it cannot.
 
@@ -24,6 +24,7 @@ Equipping another bag drops the sack at your feet with everything in it. Empty, 
 - `data/loot.json:2`: the rucksack in the chest table
 - `src/interact.js:168-189`: equipping another bag drops the old one at your feet with its contents
 - `src/inventory.js:159-173`: a bag goes in another container only empty
+- `src/interact.js:1743-1752`, `src/inventory.js:93-114` (at d7cf736): Open on a bag in a chest or on a body, take-only (game #508)
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
 - `data/items.json`, `data/recipes.json`: the linen satchel, a bag at the loom (game #403, at 6e5b20a)
 

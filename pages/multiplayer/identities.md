@@ -11,7 +11,7 @@ An **identity** is a name, a look, and a handedness, kept in the browser and use
 
 ### Making and editing
 
-**Identities** on the game's site menu (a page of the site, see [[Screens]]) lists the browser's identities with **Edit**, **Delete**, and **New identity**; the first step of character creation lists them with **Choose** and **Edit**, and **New identity** below. The editor, **New identity** or **Edit identity**, has:
+**Identities** on the game's site menu (a page of the site, see [[Screens]]) lists the browser's identities with **Edit**, **Delete** (which asks on the page, "Delete this identity? Characters made from it are not touched."), and **New identity**; the first step of character creation lists them with **Choose** and **Edit**, and **New identity** below. The editor, **New identity** or **Edit identity**, has:
 
 - **Name**: what others see over your head and in the [[Chat log|chat log]].
 - **Skin**: {{n looks.skins.living.length}} living tones and {{n looks.skins.dead.length}} dead ones.
@@ -47,6 +47,7 @@ Joining a friend's world for the first time asks for an identity, on a page of t
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/ui/screens.js:471`, `src/ui/screens.js:76-108` (at d7cf736): Delete identity's question, asked on the page (game #507)
 - `src/identities.js:38-72`: an identity is a name and a look, kept and reused; a character is stamped from it
 - `index.html:52`, `src/ui/screens.js:664-673`, `src/ui/screens.js:823-830`, `src/ui/screens.js:811-815`, `src/ui/screens.js:511-532`: Identities on the site's menu, the lists (Edit and Delete; in creation Choose and Edit) and the editor (game commit 02dfcc2)
 - `src/identities.js:48`, `src/ui/screens.js:413`: the name field

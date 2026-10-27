@@ -2,7 +2,7 @@
 title: Cooking
 categories: [Stations, Crafting]
 aliases: [Cook, Cook here]
-summary: Any lit campfire, hearth, or fireplace, and the oven, is a station for cooking (roast potatoes, the pottages and the hearty stew, cooked meat, porridge, grilled fish, cheese, and pemmican) and boils tainted water clean.
+summary: Any lit campfire, hearth, or fireplace, and the oven, is a station for cooking (roast potatoes, the pottages and the hearty stew, cooked meat, porridge, grilled fish, cheese, and pemmican) and boils tainted water clean, in a skin or a bucket.
 ---
 
 {{infobox-station cooking}}
@@ -21,7 +21,7 @@ Light the fire, and keep a campfire or the oven fed (a hearth or a fireplace bur
 
 ## Boiling water
 
-A lit cooking fire also boils a [[Waterskin]] of tainted water clean. [[Use]] the skin on the fire, choose **Boil water** on the skin's menu in the bag or on the belt, or choose **Boil water** on the fire's menu, which takes the fullest tainted skin you carry. The fire's entry is greyed "Boil water (no tainted water carried)" with none, and the skin's "Boil water (no lit fire in reach)" with no lit cooking fire in reach. A bar runs for {{n tuning.water.boilSeconds}} seconds within {{n tuning.water.boilReach}} tiles of the fire, and at its end the water is clean, its fill kept. It burns no extra fuel, but the fire must stay lit. An unlit fire offers nothing, and a fire that does not cook, the [[Forge]] or a [[Charcoal clamp]], refuses: "That is no cooking fire." See [[Water#Boiling|Water]].
+A lit cooking fire also boils a [[Waterskin]] of tainted water clean. [[Use]] the skin on the fire, choose **Boil water** on the skin's menu in the bag or on the belt, or choose **Boil water** on the fire's menu, which takes the fullest tainted skin you carry. The fire's entry is greyed "Boil water (no tainted water carried)" with none, and the skin's "Boil water (no lit fire in reach)" with no lit cooking fire in reach. A bar runs for {{n tuning.water.boilSeconds}} seconds within {{n tuning.water.boilReach}} tiles of the fire, and at its end the water is clean, its fill kept. A [[Bucket]] of tainted water boils the same way, by Use, its own menu in the bag, on the belt, or in a hand, or the fire's **Boil water in the bucket** (greyed "(no tainted water in it)" when no bucket carried holds tainted water), with a bar of {{n tuning.water.bucketBoilSeconds}} seconds; its water can then be poured into skins. It burns no extra fuel, but the fire must stay lit. An unlit fire offers nothing, and a fire that does not cook, the [[Forge]] or a [[Charcoal clamp]], refuses: "That is no cooking fire." See [[Water#Boiling|Water]].
 
 ## Recipes
 
@@ -31,7 +31,7 @@ A lit cooking fire also boils a [[Waterskin]] of tainted water clean. [[Use]] th
 
 ## With friends
 
-A guest cooks through the host like any station; the fire and the queue are the same for every player. A guest's boil is run on the host too, by the fire and the skin it names.
+A guest cooks through the host like any station; the fire and the queue are the same for every player. A guest's boil is run on the host too, by the fire and the skin or bucket it names.
 
 ## Sources
 
@@ -50,7 +50,7 @@ A guest cooks through the host like any station; the fire and the queue are the 
 - `src/stations.js:205-225`: a job waits while the fire is out
 - `data/maps/valley.json`: where the fireplaces are
 - `src/host.js:183-189`: a guest's Make runs on the host
-- `src/water.js:51-148`, `src/interact.js:975`, `src/interact.js:983-1006`, `data/interactions.json:37`, `data/tuning.json`, `data/sprites/forge.json`, `data/sprites/charcoal_clamp.json`: Boil water at a lit cooking fire, its three ways in, greyed labels, the bar and its reach, no extra fuel, the refusal at a fire that does not cook (game #435, at fa2997f)
+- `src/water.js:54-176`, `src/interact.js:1161`, `src/interact.js:1170-1205`, `data/interactions.json:42-43`, `data/tuning.json:97-99` (at d7cf736; a bucket's boil, game #508), `data/sprites/forge.json`, `data/sprites/charcoal_clamp.json`: Boil water at a lit cooking fire, its three ways in, greyed labels, the bar and its reach, no extra fuel, the refusal at a fire that does not cook (game #435, at fa2997f)
 - `data/recipes.json:1130-1348`: the six raw meats cooked alone, the meat pottage, the hearty stew, eggs and bacon, cheese, and pemmican, each at a lit cooking fire (game #462, at d625844)
 - `data/items.json:109`: the stew is named Plain pottage (game #462, at d625844)
 - `src/stations.js:47-55`, `src/ui/station-panel.js`: a prop's stations as a list, the oven its own and cooking, its panel both lists (game #421, at 1bcb6ed)

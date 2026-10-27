@@ -73,9 +73,13 @@ The bar only moves forward. The screen stays up at least half a second, so it ne
 
 In a world shared with friends, a screen saying "You stepped away" covers the game after a long time without input; any key, click, or mouse move closes it, and so does its **Come back** button. See [[Dormancy]].
 
+## Questions
+
+When a screen needs a yes or a no, it asks on the page itself, in a box over the screen with the question, a button named for what it does, and **Cancel**: Delete a world, Exit with friends in, Move a world to the server, Bring it home, an owner's Change the code and Remove a player, and Delete an identity. Cancel has the focus, so `Enter` answers no, as `Escape` and Cancel do; the screen being drawn again under the question answers no too, and a question stays up while the friends' worlds are asked after. The game never uses the browser's own dialogs, which a browser can be told to stop showing and the desktop app's browser pane answers no at once.
+
 ## Escape
 
-`Escape` closes the top thing first: the actions menu, then Use mode, then the station panel, then a conversation, then a screen (which steps back to the one that opened it), then the build palette, then placement or removal, then the bag and character panels, then the map. With nothing open it opens the pause menu. In fullscreen (see [[Settings]]), in a browser that can lock the keyboard (Chrome and Edge), `Escape` works as it does in a window and holding it leaves fullscreen; in any other browser the first `Escape` leaves fullscreen and the next one reaches the game. Holding `Escape` closes one thing, once.
+`Escape` closes the top thing first: the actions menu, then a screen (which steps back to the one that opened it), then Use mode, then an Inspect card, then the station panel, then a conversation, then the skills panel, then the build palette, then placement or removal, then the bag and character panels, then the map. With nothing open it opens the pause menu. In fullscreen (see [[Settings]]), in a browser that can lock the keyboard (Chrome and Edge), `Escape` works as it does in a window and holding it leaves fullscreen; in any other browser the first `Escape` leaves fullscreen and the next one reaches the game. Holding `Escape` closes one thing, once.
 
 ## With friends
 
@@ -87,7 +91,7 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at d7cf736 -->
 - `src/main.js`, `handleEscape`: a conversation after the station panel and the map last before the pause menu in Escape's order (game #230, #235)
 - `index.html:36-67`, `style.css:1602-1623`, `style.css:10-24`, `style.css:1642-1673`, `data/fonts/PirataOne-Regular.ttf`: the site: the blurred picture behind, the wordmark between the autumn trees (Pirata One, its dark backing, the big line flat zombie green), the menu with Play and Wiki, the footer (game #120)
 - `src/ui/screens.js:189-212`, `src/ui/screens.js:234-242`: out of a world, and during a join waiting for its welcome, a screen is drawn as a page of the site with the game's stage hidden; in a world, over the world
@@ -110,7 +114,8 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 - `src/main.js:269-286`, `src/main.js:674-685`, `src/main.js:1494-1502`, `src/main.js:1681-1705`: Joining with Cancel, giving way to creation when the host asks who, back on Join as this, Receiving the world, the ground, then the world
 - `src/main.js:1683`, `src/boot.js:137-139`: Cancel goes once the welcome arrives (game #117)
 - `src/ui/screens.js:1036-1043`, `src/main.js:154-180`: the stepped-away screen and what closes it
-- `src/main.js:833-852`, `src/ui/screens.js:245-274`: Escape's order, a screen stepping back to its opener
+- `src/ui/screens.js:76-108`, `src/ui/screens.js:366-471`, `src/ui/screens.js:904` (at d7cf736): every question asked on the page, its buttons, Cancel focused, answered no by Cancel, Escape, or a redraw; never a browser dialog (games #507, #509)
+- `src/main.js:900-920`, `src/ui/screens.js:245-274`: Escape's order, a screen stepping back to its opener, an Inspect card after Use mode (game #507, at d7cf736)
 - `src/ui/screens.js:545-552`: in fullscreen the first Escape leaves it, the second pauses, as the Fullscreen row says
 - `src/ui/screens.js:714-732`, `src/main.js:1743`: where the browser can lock the keyboard, Escape kept by the page in fullscreen and a hold leaving it; elsewhere the first Escape the browser's; a held Escape acting once (game #311, at 8af4eed)
 - `src/main.js:821-824`, `src/main.js:1485`: screens pause only off the wire

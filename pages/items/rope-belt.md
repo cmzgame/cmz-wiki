@@ -8,7 +8,7 @@ summary: The belt every new character starts with: a main-hand slot, an off-hand
 
 The **rope belt** is equipped at the waist and gives {{n items.belt.beltSlots}} belt slots, pressed with the number keys: a main-hand slot, an off-hand slot, and the utility slot (see [[Belt]]). Every new character starts with one on. The [[Leather belt]], from chests, adds a second main-hand slot and a second off-hand slot.
 
-Empty, it can be carried in a bag; with anything on it, it cannot.
+Empty, it can be carried in a bag; with anything on it, it cannot. On the ground, in a chest, or on a body, it has **Open**, which shows its slots as a panel with Take All, to take things off it without wearing it (see [[Belt#The belt as a container|Belt]]).
 
 {{item-sections belt}}
 
@@ -18,6 +18,7 @@ Empty, it can be carried in a bag; with anything on it, it cannot.
 - `data/items.json:33`, `src/inventory.js:295`: its slot count, and each slot's role by its place (game #478)
 - `data/items.json:29`: the rope belt's slots
 - `src/game.js:103-116`: every new character starts with one on
+- `src/interact.js:325-342`, `src/interact.js:1743-1752`, `src/inventory.js:60-114` (at d7cf736): Open on the ground, in a chest, or on a body, a take-only view with Take All (game #508)
 - `data/items.json:30`: the good belt's slots
 - `data/loot.json:2`: the good belt in the chest table
 - `src/inventory.js:159-173`: a belt goes in a bag only empty

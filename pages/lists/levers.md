@@ -60,7 +60,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **The sawpit:** a [[Log]] sawn into what a log splits into, {{n items.log.splitsInto.count}} planks, in {{n tuning.work.saw.seconds seconds}}, no hatchet. See [[Sawpit]].
 - **Honey:** a [[Beehive]] gives {{n tuning.work.honey.count.0}} [[Pot of honey]], and has more {{n tuning.work.honey.days}} game days later; taking it takes {{n tuning.work.honey.seconds seconds}}. The pot fills {{n items.honey.hunger}} hunger and heals {{n items.honey.heal}}.
 - **The dye vat:** the dyes and their palettes, and what each garment may take, are data; using a vat will ask for Crafting {{n dyes.unlock.level}}, open to everyone until skills are built, and a dye costs nothing until it is ruled whether it costs a plant. See [[Dye vat]].
-- **Burning a body:** it burns {{n tuning.work.burnCorpse.hours}} game hour, for a log and with a tinderbox carried, after a bar of {{n tuning.work.burnCorpse.seconds seconds}}. See [[Corpses]].
+- **Burning a body:** it burns {{n tuning.work.burnCorpse.hours}} game hour, with a tinderbox carried or a lit torch in hand and nothing spent (a log is no longer spent), after a bar of {{n tuning.work.burnCorpse.seconds seconds}}. See [[Corpses]].
 - **The village's stations:** a world rule, **Village stations**, Fixed by default or Movable and craftable, chosen when the world is made; its recipes' materials are data. See [[World rules]].
 
 ### Potions, poisons, and mana
@@ -74,7 +74,8 @@ Where a lever lives only in the game's code, not its data, this page says so.
 
 ### Water, and the others
 
-- **Tainted water and Sick:** a tainted drink makes you [[Sick]] {{pct tuning.water.sickChance}} of the time, a stack lasting {{n tuning.water.sickDays}} of a game day, up to {{n tuning.water.sickMaxStacks}} stacks; Sick makes tiredness come {{n tuning.water.sickTiredMult}} times as fast and food heal {{pct tuning.water.sickHealMult}} of its number; a tainted drink gives the infection {{pct tuning.water.infectionChance}} of the time; boiling a skin takes {{n tuning.water.boilSeconds seconds}} at a lit fire within {{n tuning.water.boilReach tiles}}. See [[Water]].
+- **Tainted water and Sick:** a tainted drink makes you [[Sick]] {{pct tuning.water.sickChance}} of the time, a stack lasting {{n tuning.water.sickDays}} of a game day, up to {{n tuning.water.sickMaxStacks}} stacks; Sick makes tiredness come {{n tuning.water.sickTiredMult}} times as fast and food heal {{pct tuning.water.sickHealMult}} of its number; a tainted drink gives the infection {{pct tuning.water.infectionChance}} of the time; boiling a skin takes {{n tuning.water.boilSeconds seconds}} and a bucket {{n tuning.water.bucketBoilSeconds seconds}} at a lit fire within {{n tuning.water.boilReach tiles}}. See [[Water]], [[Bucket]].
+- **Sleep's speed:** while every living player sleeps, the world runs {{n tuning.player.sleepTimeScale}} times as fast (until the playtest of 2026-10-26, three times faster); the screen fades to black and back over {{n tuning.feel.sleepFadeSeconds seconds}}. See [[Sleep]].
 - **The wave:** {{n tuning.player.waveSeconds seconds}} long, on `G`. See [[Controls]].
 - **The cowering of the immune:** one of the dead in sight within {{n tuning.villager.cowerRadius tiles}} makes an immune villager cower {{n tuning.villager.cowerSeconds seconds}}, then run about {{n tuning.villager.fleeTiles tiles}} at {{n tuning.villager.fleeSpeed}} times its walk, and walk back once none is within {{n tuning.villager.cowerClearRadius tiles}}. See [[Villagers]].
 
@@ -131,6 +132,7 @@ On the [[Settings]] screen, kept in the browser.
 - `data/dyes.json`, `data/items.json` each `dye`: the dye vat's palettes, its unlock, no cost (game #417, at 31d330a)
 - `src/rules.js`, `data/recipes.json`: Village stations, its recipes' rows (game #431, at 49b8c44)
 - `data/tuning.json` `work.burnCorpse`, `water`, `player.waveSeconds`, `villager` (the cowering): the burning, the water and Sick, the wave, the cowering (games #434 and #435, at fa2997f)
+- `data/tuning.json:77`, `data/tuning.json:98`, `data/tuning.json:141`, `data/tuning.json:198` (at d7cf736): sleep's speed, the bucket's boil, the fade, the burning with no fuel (game #508)
 - `data/maps/valley.json` `resources` and `animals`, `data/tuning.json` `resources`, `data/animals.json`: the natural resources' counts and times, the animals' numbers and renewal, the homes (games #452 and #453, at 261cd7a)
 - `data/maps/valley.json` `resources`, `data/sprites/herb_sage.json`, `data/sprites/clay_bank.json`, `data/sprites/salt_rock.json`, `data/tuning.json` `trees`, `data/animals.json` `kills`, `work`, `snare`, `tracks`, `keep`: herbs, clay, and salt; saplings and sticks; hunting and keeping (games #456, #457, #460, #461, at 6e3ab37)
 - `data/recipes.json`, `data/items.json`: the animals' recipes and foods, the rack's and the vat's costs (game #462, at d625844)

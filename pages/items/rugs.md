@@ -24,7 +24,7 @@ A rug in your own bag has **Place** on its right-click menu, after **Use**. Plac
 - **There is a ... in the way**: something on a tile that cannot be picked up and carried, which it names ("There is a tree in the way"): a tree, a rock, a crop, the anvil, the cart. A rug lies only under what can be lifted off it again (see [[Carrying furniture#What can be carried|what can be carried]]).
 - **A wall is in the way**: a wall runs between two of the rug's own tiles. A rug lies within a room or on open ground, never across a wall.
 
-Furniture that can be carried, items on the floor, and bodies do not stop it. A click on a green ghost lays the rug and it leaves your bag; a click on a red one says why. `Escape` cancels, and the rug stays in the bag. The ghost goes away if the rug leaves your bag some other way or your hands fill.
+Furniture that can be carried, items on the floor, and bodies do not stop it. A click on a green ghost lays the rug and it leaves your bag; a click on a red one says why. `Escape` or a right click cancels, and the rug stays in the bag. The ghost goes away if the rug leaves your bag some other way or your hands fill.
 
 ### Laid
 

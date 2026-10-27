@@ -16,7 +16,7 @@ A **torch post** is a post that holds a [[Torch]] outdoors. You make one at the 
 - **No room**: the tile is not open floor, or something stands on it, or a rug is laid there.
 - **Too far**, or a wall in the way: it is set down within {{n census.constants.setdown.REACH tiles}} and in sight.
 
-A click sets it down ("You set the torch post down."); Escape cancels. It stands empty.
+A click sets it down ("You set the torch post down."); Escape or a right click cancels. It stands empty.
 
 ## Using it
 

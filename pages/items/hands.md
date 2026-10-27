@@ -42,7 +42,7 @@ A character is **right-handed** or **left-handed**, chosen with their [[Identiti
 
 ### Two weapons
 
-With a weapon in each hand you fight with both in turn (see [[Combat]]). The [[Throwing spear]] is never held beside another weapon, though a shield or a torch beside it is fine. A [[Torch]] counts as a light, not a weapon, for this rule.
+With a weapon in each hand you fight with both in turn (see [[Combat]]). The [[Throwing spear]] is never held beside another weapon, a tool that swings (a [[Shovel]], a hammer, a dirk) included, though a shield or a torch beside it is fine; the refusal names both, as "The throwing spear can't be held beside the shovel: it is never dual wielded." A [[Torch]] counts as a light, not a weapon, for this rule.
 
 Picking up a single holdable item puts it in a free hand before the bag, so picking up a sword with a torch in one hand leaves you holding both.
 

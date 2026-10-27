@@ -13,7 +13,7 @@ The **linen satchel** is a bag equipped on the back, with a grid of {{n items.sa
 
 Equip it from the loom's output box or a container's grid, or from the floor (**Swap bags**): the bag you had is set down at your feet with everything still in it, to be emptied into the new one. Empty, a satchel can be carried inside another bag; holding things, it cannot, and **Take All** leaves it where it is ("A bag with things in it stays: empty it first.").
 
-Taken off, it keeps what is in it: **Unequip** sets it down, and on the floor it is a container to **Open**, take from, and equip again (see [[Inventory]]).
+Taken off, it keeps what is in it: **Unequip** sets it down, and on the floor it is a container to **Open**, take from, and equip again (see [[Inventory]]). In a chest or on a body it has **Open** there too, take-only, with Take All (see [[Containers#Containers inside containers|Containers]]).
 
 It can be dyed at a [[Dye vat]], its cloth from the cloth palette and its strap from the leather palette, each picked on its own; its hover card reads "Can be dyed at a dye vat" with the count of each. Dyed, it is drawn in its colours on your back and as a block of the cloth's colour in a bag, and its card names them, as "Cloth undyed, strap oxblood".
 
@@ -29,6 +29,7 @@ A guest's satchel is made, equipped, set down, and swapped by the host, by the s
 - `data/items.json`: the linen satchel: a bag on the back, its grid, its size in another bag
 - `data/recipes.json` `weave_satchel`: woven at the loom from linen cloth
 - `src/interact.js` `slotMenu`, `itemActions`: Unequip sets a bag down; on the floor Open, Swap bags, Pick up once empty
+- `src/interact.js:1743-1752`, `src/inventory.js:93-114` (at d7cf736): Open in a chest or on a body, take-only (game #508)
 - `src/inventory.js` `ensureBag`, `canStoreIn`: a bag's grid rides on its entry; a bag goes in another only empty
 - `src/ui/inventory-actions.js` `takeAllFrom`, `takeAllWord`: Take All leaves a bag holding things, with its word
 - `docs/39-the-valley.md`, section 5.4: open to all until Crafting 3 gates it (game #403, at 6e5b20a)

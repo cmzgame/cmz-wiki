@@ -6,7 +6,7 @@ summary: A small knife thrown from a stack in the main hand on the left button; 
 numbersOk: true
 ---
 
-<!-- typed: the hover card's own figure quoted: 7 is the damage at the least draw that flies, worked out from the data by archery.shotDamage; "ten knives a bar" is the recipe's out count in data/recipes.json, which no lookup reads (game #494) -->
+<!-- typed: the hover card's own figure quoted: 9 is the damage at the least draw that flies (18 since game #507), worked out from the data by archery.shotDamage; "ten knives a bar" is the recipe's out count in data/recipes.json, which no lookup reads (game #494) -->
 {{infobox-item throwing_knife}}
 
 The **Throwing knife** is a small knife thrown from the hand. Knives stack to {{n items.throwing_knife.stack}} in a cell, and a stack held in the main hand is thrown one at a time. Ten are made at the [[Anvil]] from one [[Iron bar]], with a [[Smith's hammer]] carried. Beside the [[Throwing axe]], the knife is the quick, long throw that pulls one of the dead out of a crowd: it hits for less and staggers less often, but flies farther and faster.
@@ -23,7 +23,7 @@ A knife that does not break ends up where an arrow would. One that hits stays in
 
 **E**, or **Pick up** on its menu, on a knife lying on the ground takes every throwing knife on that tile and the tiles round it at once, and the label counts them: "Pick up Throwing knife (6)". A knife past a wall, a shut door, or shut shutters is left where it lies, and what the bag has no room for stays on the ground.
 
-Its hover card says: "Throw (left button, from the main hand): 7 to {{n items.throwing_knife.thrown.damage}} damage by the draw, up to {{n items.throwing_knife.thrown.range tiles}}.", "A hit staggers the dead {{pct items.throwing_knife.thrown.staggerChance}} of the time.", and "It lands to be picked up again, or stays in the body it hits; it may break ({{pct items.throwing_knife.thrown.breakChance}})." Before game #494 the knife did not throw: its card said "To come: thrown.", and it swung as [[Fists]].
+Its hover card says: "Throw (left button, from the main hand): 9 to {{n items.throwing_knife.thrown.damage}} damage by the draw, up to {{n items.throwing_knife.thrown.range tiles}}.", "A hit staggers the dead {{pct items.throwing_knife.thrown.staggerChance}} of the time.", and "It lands to be picked up again, or stays in the body it hits; it may break ({{pct items.throwing_knife.thrown.breakChance}})." Before game #494 the knife did not throw: its card said "To come: thrown.", and it swung as [[Fists]].
 
 A throwing knife is not one of the blades a [[Poison]] coats.
 
@@ -41,7 +41,7 @@ A guest's draw and release are resolved by the host, as the spear's are, and the
 ## Sources
 
 <!-- sources at 307ed34 -->
-- `data/items.json:13`: the knife: either hand, its stack, its `thrown` block (damage, range, speed, draw, push, stagger, break, spin) (game #494)
+- `data/items.json:13`: the knife: either hand, its stack, its `thrown` block (damage, range, speed, draw, push, stagger, break, spin) (game #494); its damage 18, Michael's ruling (game #507, at d7cf736)
 - `data/recipes.json:858-874`: ten knives from an iron bar at the anvil, a smith's hammer carried
 - `src/archery.js:809-829` `launcherOf`: a pure throwable (a `thrown` block and no `weapon`) throws on the left button, from the main hand
 - `src/archery.js:919-950` `releaseDraw`: one from the stack as a new entry with its own uid; the hand empties with the last

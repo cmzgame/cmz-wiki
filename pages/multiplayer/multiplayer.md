@@ -43,7 +43,7 @@ A hidden or covered tab keeps a shared world running. A hidden host with guests 
 
 ### Sleep with friends
 
-Time runs fast only when every living player in the world is asleep. One player alone in bed while a friend is awake sleeps at ordinary speed, and is told "Time will pass faster once everyone in the world is asleep." See [[Sleep]].
+Time runs fast only when every living player in the world is asleep. One player alone in bed while a friend is awake sleeps at ordinary speed, and is told "Time will pass faster once everyone in the world is asleep." Only the sleeper's own screen fades to black; the others see them standing by the bed with a "Zz" over their head, and any key or click wakes a sleeper early, a guest the same as the host. See [[Sleep]].
 
 ### Away from the keyboard
 
@@ -97,6 +97,7 @@ The [[World rules|world rules]] above, set by the host.
 - `src/main.js:1032`, `src/loop.js:66-74`: hit-stop off on the wire
 - `src/main.js:1767`, `src/main.js:1783-1788`, `src/loop.js:138-186`: a hidden tab keeps a shared world running; the host's tab title
 - `src/game.js:325-332`, `src/main.js:1614-1615`, `data/tuning.json`: time fast only when every living player sleeps, `player.sleepTimeScale`, the message
+- `src/ui/sleep-fade.js`, `src/ui/speech.js:65-67`, `src/interact.js:1600-1634` (at d7cf736): the sleeper's fade, the others' "Zz", waking early by a key event (game #508)
 - `src/net.js:113`, `src/net.js:637-654`, `src/host.js:116-122`: the grace and dormancy
 - `src/main.js:131-181`, `src/host.js:124-159`: stepping away after `AWAY_AFTER_MS`, never a sleeper, and coming back
 - `src/main.js:819-822`: nothing pauses a world on the wire, the dead screen included, so a world with everyone dead runs on

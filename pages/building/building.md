@@ -44,7 +44,7 @@ Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest
 
 A click on a green ghost starts the build. A bar runs for the piece's time. Nothing is spent until the bar finishes, and every rule is checked again then. Moving cancels the build, as does going a little beyond the build reach. Only one build runs at a time.
 
-Build mode stays on after a piece is finished, so a run of wall can be laid click by click. N or Escape leaves it.
+Build mode stays on after a piece is finished, so a run of wall can be laid click by click. N, Escape, or a right click leaves it; that right click opens no menu.
 
 When a wall goes up or comes down, the [[Rooms|rooms]] on either side of it are worked out again, so closing the last gap in a ring of walls makes a room.
 
@@ -71,7 +71,7 @@ X, or the palette's **Take apart** row, turns on the tool. The front-most thing 
 - "It is still making something." for a station with something in its queue;
 - "Put it out first." for a lit [[Campfire]], which can be put out; "Let it burn down first." for a lit [[Cauldron]], [[Oven]], or [[Forge]], whose fire only burns down; and "It still has fuel in it; let it burn down." for one out with fuel left.
 
-A click destroys it at once, and the tool stays on. X, N, or Escape leaves it.
+A click destroys it at once, and the tool stays on. X, N, Escape, or a right click leaves it.
 
 **What comes back is half the materials, rounded down.** For a wall, a door, a window, a fence, or a gate it is half its cost in the palette; for furniture, half of each item in the recipe that made it. An ingredient a recipe names by kind (the bed's "any cloth") gives nothing back, since which item went in is not kept. The materials go to your bag, and what does not fit falls at your feet. The line says what you got: "You take the chest apart: 2 planks.", or "You take the ... apart; nothing is left worth keeping." when half rounds down to nothing.
 
@@ -130,7 +130,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at d7cf736 -->
 - `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit fire's word by whether it is put out by hand, a station's only burning down (game #501)
 - `data/build.json`, `src/placement.js:86-96`, `src/placement.js:381`, `src/woods.js:41-67`: a row per wooden wall, the regions' two only with Free building; R for a door's or window's wood (game #348, #351, at 9d1681f)
 - `src/map.js:647`, `src/map.js:670`: a painting falls to the floor when its wall is removed or built over (game #344, at 9ac68a2)
@@ -155,6 +155,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:504`: one build at a time
 - `src/map.js:1830-1858`: rooms refound on either side of a changed edge
 - `src/main.js:886-895`: X, refused while carrying or with the bag open, with the same line
+- `src/main.js:829-847`, `src/placement.js:378-382`: a right click leaves build mode or the Take apart tool, as Escape does, and opens no menu (game #507, at d7cf736)
 - `src/placement.js:30`, `src/placement.js:389-413`, `src/placement.js:581-595`: the removal reach, a made prop's with a clear line (game #227), a wall's by distance alone; Remove asks for the board tool, a hammer, red with its line (game #222)
 - `src/placement.js:330-379`: what lights up: props made at a station (`made`) and built walls
 - `src/stations.js:183-184`: a prop made at a station marked `made`

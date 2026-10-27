@@ -39,7 +39,7 @@ A world made on another map is listed but cannot be played here; its card says i
 
 ### Deleting a world
 
-**Delete** asks "Delete this world and every character in it?" and, if confirmed, removes it from the browser for good. A friend's world cannot be deleted from here, only forgotten.
+**Delete** asks "Delete this world and every character in it?" on the page, with **Delete** and **Cancel**, and on Delete removes it from the browser for good. Cancel, `Escape`, or `Enter` (Cancel has the focus) answers no, and so does the page being drawn again under the question. Every question the screens ask is asked this way, on the page, never in a browser dialog (see [[Screens#Questions|Screens]]). A friend's world cannot be deleted from here, only forgotten.
 
 ### Exit game
 
@@ -62,7 +62,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at d7cf736 -->
 - `src/save.js`: a world as a save in the browser that made it
 - `src/ui/screens.js:197-220`, `src/main.js:1266-1268`: nothing runs until a world is chosen; out of a world, the site
 - `index.html:51`, `src/ui/screens.js:778`: Play and Play in your browser open the Worlds page (game #120)
@@ -81,7 +81,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 - `src/main.js:325-359`, `src/ui/screens.js:242-250`: the world made at the spawn behind the loading screen, saved at once, its ground baked before the screen goes; the site hidden
 - `src/clock.js:18`: `START_HOUR`
 - `src/main.js:362-413`: Play reads the save behind the loading screen, opens to friends again if it was open
-- `src/ui/screens.js:304`: Delete's confirmation
+- `src/ui/screens.js:76-108`, `src/ui/screens.js:379`: Delete's question, asked on the page, Cancel focused, answered no by Cancel, Escape, or a redraw (game #507, at d7cf736)
 - `src/ui/screens.js:289-295`, `src/main.js:462-498`: Exit game asks a host with guests, saves under the loading screen until written, and shows the Worlds page
 - `src/ui/screens.js:489-505`, `src/ui/screens.js:737-741`, `src/net.js:398-405`: the dots asked of the relay
 - `src/main.js:450-451`: a guest never saves

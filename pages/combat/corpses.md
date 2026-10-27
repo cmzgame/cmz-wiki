@@ -36,19 +36,19 @@ One of the dead that dies while [[Burning]] burns on as a corpse until its fire'
 
 **Burn corpse**, on the right-click menu of every body of the dead (a villager who rose and fell again among them), sets it alight on purpose. A fallen player's body never has it: that is left for their friends to come back to.
 
-- It needs a [[Tinderbox]] and a [[Log]], each anywhere on you; the log is spent. A lit [[Torch]] is not the flame for it. Without them the entry is greyed with what is lacking: "Burn corpse (need a tinderbox and a log)", "Burn corpse (need a log)", or "Burn corpse (need a tinderbox)".
+- It needs a flame and nothing else: a [[Tinderbox]] anywhere on you, or a lit [[Torch]] in a hand. Nothing is spent. With neither the entry is greyed: "Burn corpse (need a tinderbox or a lit torch)".
 - A body already burning, set alight before or still burning from its own death (above), shows "Burn corpse (already burning)".
 - It takes a bar of {{n tuning.work.burnCorpse.seconds seconds}} beside the body, within {{n census.constants.burn.BODY_REACH tiles}} and with no wall between; moving ends it. Done, the game says "The body catches. It will burn for about an hour, and nothing in it will be left."; the hours in it are the burn's own number, as the card's are.
-- The entry has a hover card. Its first line, in red, is the warning "Burns the body and everything in it."; then what it needs ("Needs a tinderbox and a log carried; the log is spent.") and how long it burns.
-- [[Use|Using]] a tinderbox on a body does the same at once, with no bar, and spends the log as the menu does.
+- The entry has a hover card. Its first line, in red, is the warning "Burns the body and everything in it."; then what it needs ("Needs a tinderbox carried or a lit torch in hand; nothing is spent."), "Use a lit torch on the body to burn it too." with **Use** in gold, and how long it burns.
+- [[Use|Using]] a tinderbox or a lit torch on a body does the same at once, with no bar, and spends nothing. An unlit torch is refused: "The torch is not lit."
 
 The body burns for {{n tuning.work.burnCorpse.hours}} hour of the game's clock ({{n census.constants.map.HOUR_SECONDS seconds}} of play an hour, see [[The day]]), its flames lying low along it and giving the light of any burning body, out to {{n census.constants.fire.tunables_lightRadius tiles}} (see [[Light]]). While it burns nothing in it can be had: its entry reads "Search body (it is burning)" or "Open body (it is burning)", greyed, and a grid open on it closes. When the fire goes out the body is gone, and with it everything it held: its clothes, its hands, its pockets, and what was lodged in it. Take what you want first.
 
-The refusals, if it is asked for another way: "It is not dead yet.", "There is no body there to burn.", "It is already burning.", "Too far from the body.", and "You need a tinderbox and a log to burn it." (or the one that is missing).
+The refusals, if it is asked for another way: "It is not dead yet.", "There is no body there to burn.", "It is already burning.", "Too far from the body.", "You need a tinderbox or a lit torch to burn it.", and, for a torch Used that is out, "The torch is not lit."
 
 ## With friends
 
-What has been taken from a body, and what is lodged in it, travels with the world, so every player sees the same corpse. A guest's Burn corpse is sent to the host by the body's id and run there for that player, from their own tinderbox and log. A body burning away is marked in its record, so a guest's menu greys its search too and a guest's open grid finds nothing; when it is gone, the list of bodies in the next frame takes it from every guest's world.
+What has been taken from a body, and what is lodged in it, travels with the world, so every player sees the same corpse. A guest's Burn corpse is sent to the host by the body's id and run there for that player, with their own tinderbox or lit torch; a guest's Use of either names it by its uid. A body burning away is marked in its record, so a guest's menu greys its search too and a guest's open grid finds nothing; when it is gone, the list of bodies in the next frame takes it from every guest's world.
 
 ## See also
 
@@ -60,7 +60,7 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 
 ## Sources
 
-<!-- sources at 879d0a7 -->
+<!-- sources at d7cf736 -->
 - `src/archery.js:315-326` (at 307ed34): a thrown knife or axe lodged as itself, an arrow of any kind as a plain arrow (games #494, #496)
 - `src/ui/inventory-actions.js`, `takeAllFrom`, `performItemCommand`: Take All on a body, the body redrawn without what was taken (game #251)
 - `src/entities/zombie.js:119-122`, `src/entities/zombie.js:169-178`, `src/entities/zombie.js:561-568`: the fall (`damageZombie` calls `kill`), then a still body
@@ -72,11 +72,10 @@ What has been taken from a body, and what is lodged in it, travels with the worl
 - `src/archery.js:295-308`: arrows and spears lodge in a body hit
 - `src/archery.js:300-306`: a fire arrow lodges as a plain arrow (game commit 3b7cb9a)
 - `src/burn.js:37-54`, `src/fire.js:48-49`: a corpse burns on until its timer runs out, losing nothing; its flames low and spread (game commit 3b7cb9a)
-- `src/interact.js:2009-2029`, `src/burn.js:73-87`: Burn corpse on the dead's bodies alone, not a player's; greyed with what is lacking or while it burns; the bar's seconds and reach (game #434)
-- `data/tuning.json:190`: `work.burnCorpse`: the tinderbox, the log, the hours, the seconds (game #434)
-- `src/burn.js:89-97`, `src/burn.js:104-144`: alight for `hours` times `HOUR_SECONDS`; the card's warning in red, its lines; the verb's refusals, the log spent, its message (game #434)
-- `src/burn.js:139-142`: the done line reads `work.burnCorpse.hours`, as the card does (game #454)
-- `data/interactions.json:17`, `src/interactions.js:40`: a tinderbox used on a body of the dead runs the same verb (game #434)
+- `src/interact.js:2220-2242`, `src/burn.js:76-87`: Burn corpse on the dead's bodies alone, not a player's; greyed "(need a tinderbox or a lit torch)" or while it burns; a tinderbox carried or a lit torch in a hand; the bar's seconds and reach (games #434, #508)
+- `data/tuning.json:198`: `work.burnCorpse`: the tinderbox, the hours, the seconds; no fuel since game #508
+- `src/burn.js:89-97`, `src/burn.js:104-146`: alight for `hours` times `HOUR_SECONDS`; the card's warning in red, its lines; the verb's refusals, nothing spent, its message (games #434, #454, #508)
+- `data/interactions.json:17-18`, `src/interactions.js`: a tinderbox or a torch used on a body of the dead runs the same verb, an unlit torch refused (games #434, #508)
 - `src/map.js:105`, `src/fire.js:26`, `src/fire.js:97-99`: an hour's seconds; a burning body's light (game #434)
 - `src/interact.js:1985-2003`, `src/interact.js:175`, `src/main.js:973`: the search greyed while it burns, a grid open on it closed, a guest's address finding nothing (game #434)
 - `src/burn.js:99-101`, `src/game.js:827-831`: the body and all it held gone when the fire is out (game #434)

@@ -14,7 +14,7 @@ Only the pause menu and its screens take the keys and the mouse from the world (
 The three buttons are roles, not fixed actions (see [[Combat]]):
 
 - **Left button**: the main hand. With a weapon it swings; with nothing in hand, fists. When placing something it confirms the spot, and in Use mode it picks the target. With an actions menu open, a left click only closes the menu. Clicking a gatherable within {{n census.constants.interact.CLICK_REACH}} tiles makes it sway. With a weapon in each hand, the two take turns.
-- **Right button, tapped** (let go within {{n census.constants.buttons.TAP_TIME}} seconds): the actions menu for whatever is under the cursor. During a bow's draw a tap cancels the draw; in Use mode it puts the item away.
+- **Right button, tapped** (let go within {{n census.constants.buttons.TAP_TIME}} seconds): the actions menu for whatever is under the cursor. During a bow's draw a tap cancels the draw; in Use mode it puts the item away. With a placement ghost up (a build, a rug, a painting, a set-down from the bag, a bracket) or the Take apart tool on, a tap puts it away as `Escape` does and opens no menu; a piece of furniture you are carrying is no ghost, so its menu still opens, to put it down.
 - **Right button, held**: the off hand's stance: block with a [[Wooden shield|shield]], brace, or an off-hand swing.
 - **Middle button**: the main hand's other mode (also `Q`).
 - **Wheel**: zoom one step in or out, with the panels open or closed (not while an item is being dragged, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the chat log it scrolls the chat log, over a panel it does nothing to the world, and while dragging an item it rotates it.
@@ -54,7 +54,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `Enter`: open the chat box; in it, `Enter` says the line. See [[Chat log]].
 - `/`: open the chat box with a slash typed, for a command. The one command is `/wave`, which waves as `G` does; any other says "There is no /... Try /wave." See [[Chat log#Speaking|Chat log]].
 - `G`: wave. Your character raises an arm and waves for {{n tuning.player.waveSeconds seconds}}, and every player who can see you sees it. Walking, or lifting furniture, ends it; eating or drinking shows its own pose first. Not asleep or dead; with your arms full of furniture the game says "Your arms are full." The Controls screen says "Wave, for everyone to see".
-- `Escape`: close the top thing in this order: the actions menu, a screen, Use mode, the station panel, a conversation, the skills panel, the build palette, placement or removal, the bag and character panels, the map. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
+- `Escape`: close the top thing in this order: the actions menu, a screen, Use mode, an Inspect card (see [[Farming#Inspect|Farming]]), the station panel, a conversation, the skills panel, the build palette, placement or removal, the bag and character panels, the map. With nothing open, the pause menu. In the chat box it only leaves the box. Out of a world it steps back through the site's pages (see [[Screens#The site|Screens]]).
 - `F8`: every sound off, or on again, with a line saying which; the same switch as the Sound setting (see [[Sound]]). It works with any panel or screen up.
 
 In a screen with a text box (a world's name, a join code, the creator key), `Enter` presses its Next button. On the site's Home, `Enter` opens the Worlds page, unless a button, link, or field has the focus. In fullscreen, in a browser that can lock the keyboard (Chrome and Edge), a tap of `Escape` does what it does in a window and a held `Escape` leaves fullscreen; in any other browser the first `Escape` leaves fullscreen and the next reaches the game (see [[Settings]]). A held `Escape` acts once: the game takes no notice of the key repeating.
@@ -88,7 +88,7 @@ A guest's keys and clicks go to the host, who performs them. A guest's wave, fro
 
 ## Sources
 
-<!-- sources at 0362b89 -->
+<!-- sources at d7cf736 -->
 - `src/input.js:52-71` (at 5eb40e6): the pointer followed over the whole window, so the aim turns over any panel (game #501)
 - `src/ui/screens.js:23-61`, `src/ui/screens.js:1079-1086`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:948`: Controls on the site's menu and on the pause menu
@@ -115,7 +115,8 @@ A guest's keys and clicks go to the host, who performs them. A guest's wave, fro
 - `src/main.js:1076`, `src/view.js:95-109`: Z cycles the zooms, wrapping
 - `src/main.js:1065-1066`, `src/ui/log.js:45-52`: Enter and / open the chat box; a slash line handed to the game as a command
 - `src/main.js:1924-1934`, `src/ui/screens.js:33`: F8 switches Sound, with its line, any panel up; on the Controls screen (game #386, at 3c68f9c)
-- `src/main.js:855-875`, `src/ui/log.js:60`: Escape's order, a screen first (game #298), a conversation, the skills panel, and the map among the panels, and in the chat box
+- `src/main.js:900-920`, `src/ui/log.js:60`: Escape's order, a screen first (game #298), an Inspect card after Use mode (game #507), a conversation, the skills panel, and the map among the panels, and in the chat box
+- `src/main.js:829-847`, `src/placement.js:378-382`: a right tap puts a placement ghost or the Take apart tool away and opens no menu (game #507, at d7cf736)
 - `src/ui/nav-row.js:130-139`, `src/ui/nav-row.js:213-223`, `src/input.js:105-107`: the row of buttons, each tapping its key (game #298)
 - `src/main.js:851-852`, `src/ui/screens.js:253-282`: Escape out of a world steps back through the site
 - `src/ui/screens.js:851`, `src/ui/screens.js:898`, `src/ui/screens.js:911`: Enter in a screen's text field presses its button

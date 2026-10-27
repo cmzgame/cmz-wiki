@@ -2,7 +2,7 @@
 title: Tinderbox
 categories: [Items, Tools, Light]
 aliases: [Tinder]
-summary: The tool that lights a torch with T, a campfire or a mounted torch when used on it, and any fire from its own menu, and with a log burns a body of the dead away; every new character starts with one, and it never wears out.
+summary: The tool that lights a torch with T, a campfire or a mounted torch when used on it, and any fire from its own menu, and burns a body of the dead away; every new character starts with one, and it never wears out.
 ---
 
 {{infobox-item tinderbox}}
@@ -17,19 +17,19 @@ The **tinderbox** is a flame you carry. It lights a [[Torch]], a [[Campfire]], a
   - a fireplace, a hearth, or a lantern that is out ("You light the fireplace.", "You light the lantern."); these burn no fuel (see [[Fire#The home lights|Fire]]);
   - a torch on a torch post or in a wall bracket that is out ("You light the torch.");
   - an unlit torch in your hand or on your belt (with the bag open, click its slot).
-- **[[Use]]** it on a body of the dead to burn it, with a [[Log]] on you, which is spent: the body burns for {{n tuning.work.burnCorpse.hours}} hour of the game's clock and is then gone, with everything in it. Its hover card says "Use on a body of the dead: burn." The body's own **Burn corpse** menu entry does the same after a bar of {{n tuning.work.burnCorpse.seconds seconds}}, and needs the tinderbox anywhere you carry it; a lit torch will not do. See [[Corpses#Burning a body|Corpses]].
+- **[[Use]]** it on a body of the dead to burn it; nothing is spent: the body burns for {{n tuning.work.burnCorpse.hours}} hour of the game's clock and is then gone, with everything in it. Its hover card says "Use on a body of the dead: burn." The body's own **Burn corpse** menu entry does the same after a bar of {{n tuning.work.burnCorpse.seconds seconds}}, with the tinderbox anywhere you carry it or a lit torch in a hand. See [[Corpses#Burning a body|Corpses]].
 - **Light the torch** on the right-click menu of a bracket or a post holding a torch that is out lights it with the tinderbox you carry (see [[Torch posts and brackets]]).
 - **Light the ...** on the menu of a campfire, a hearth, a fireplace, a lantern, an [[Oven]], or a [[Forge]] that is out needs a flame on you (and, for the campfire, the oven, and the forge, fuel in it or on you): a tinderbox anywhere you carry it, or a lit torch in a hand or on the belt. Without one the entry reads "(need a tinderbox or a flame)", `E` passes it by, and a click says "You need a tinderbox or a lit torch to light it." Feeding a fire that is burning needs none (see [[Fire]]).
 
 The target of a Use or of **Light the torch** must be within {{n census.constants.burn.DIP_REACH tiles}} of you, in sight: never through a wall or a shut door. Each refusal says why: "It is already burning.", "It has nothing to burn.", "There is no torch there." (an empty bracket or post), "It is already lit.", "Too far away.", "There is a wall in the way.", or, for a torch in the bag, "Only a torch in a hand or on the belt can be lit that way." Used on an oven or a forge, it says "That cannot be lit."; those are lit from their own menus, above.
 
-A lit torch does everything a tinderbox does here but burn a body, so one lit torch can light another. A torch goes out whenever it leaves a hand, the belt, or a holder, so a torch put away in the bag needs a flame to be lit again.
+A lit torch does everything a tinderbox does here, so one lit torch can light another, and a lit torch Used on a body of the dead burns it too. A torch goes out whenever it leaves a hand, the belt, or a holder, so a torch put away in the bag needs a flame to be lit again.
 
 {{item-sections tinderbox}}
 
 ## With friends
 
-`T`, a Use, a fire's menu, and a body's Burn corpse are carried out by the host for whoever asked, with that player's own tinderbox (and log), and what they light is lit for everyone and kept in the save. A guest's Use on a wall bracket names the bracket by where it is on its wall.
+`T`, a Use, a fire's menu, and a body's Burn corpse are carried out by the host for whoever asked, with that player's own tinderbox or torch, and what they light is lit for everyone and kept in the save. A guest's Use on a wall bracket names the bracket by where it is on its wall.
 
 ## Sources
 
@@ -54,7 +54,7 @@ A lit torch does everything a tinderbox does here but burn a body, so one lit to
 - `src/net.js:599-607`: a guest's menu choice run on the host as that player
 - `src/burn.js:87-120`, `data/interactions.json`: a fireplace, a hearth, and a lantern that is out are lit by the light verb, each naming itself; "You light the campfire."; no longer "A lantern is always lit." (game #421, at 1bcb6ed)
 - `data/interactions.json:17`, `src/interactions.js:39`, `src/item-info.js:32`: a tinderbox used on a body of the dead runs `burncorpse`; its card's words for the target (game #434, at fa2997f)
-- `data/tuning.json:187`, `src/burn.js:78-87`, `src/burn.js:127-143`: the tinderbox and a log, carried anywhere, the log spent, the hour; a lit torch not the flame (game #434, at fa2997f)
+- `data/tuning.json:198`, `src/burn.js:76-87`, `src/burn.js:129-146`, `data/interactions.json:18`: the tinderbox carried anywhere or a lit torch, nothing spent, the hour; a lit torch Used on a body (games #434, #508, at d7cf736)
 - `src/interact.js:1866-1885`: Burn corpse on a body's menu, a bar of `seconds`, by the body's id for a guest (game #434, at fa2997f)
 
 {{navbox items}}

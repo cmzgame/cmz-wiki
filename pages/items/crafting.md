@@ -16,7 +16,7 @@ numbersOk: true
 
 Choose the station's entry on its right-click menu, or press `E` beside it, from within {{n census.constants.stations.REACH tiles}}. One panel serves every station:
 
-- the station's recipes, each greyed with the reason when you cannot make it;
+- the station's recipes, each greyed with the reason when you cannot make it; a long list scrolls, and picking a recipe keeps it where it was scrolled to (a station opened afresh starts at the top);
 - the chosen recipe's ingredients, with how many you have and how many it needs;
 - a count, from 1 to 10;
 - **Make**;
@@ -88,6 +88,7 @@ A guest uses a station through the host: the guest's own panel opens on their sc
 - `src/stations.js:369`: the count clamped from 1 to 10
 - `src/ui/station-panel.js:110`: the output box closes beyond reach
 - `src/ui/station-panel.js:176`: the panel closes beyond reach, or with a wall between (game #227)
+- `src/ui/station-panel.js:102`, `src/ui/station-panel.js:166-173` (at d7cf736): the recipe list keeps its scroll across a pick, a station opened afresh at the top (game #507)
 - `src/main.js:1136-1221`, `src/ui/station-panel.js:37-46`: the panel stops nothing in the world; typing in the count is kept from the keys, Enter or Escape leaves it (game commit 57df52e)
 - `src/stations.js:72-109`: where ingredients are counted from, searched containers only
 - `src/stations.js:89-148`: the order, plain cloth before a garment for a cloth want (game #216) they are taken in

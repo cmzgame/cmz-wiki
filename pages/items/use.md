@@ -11,7 +11,7 @@ summary: Use on any item's menu, then click anything: if the game has a rule for
 
 ### Picking a target
 
-After **Use**, the item stays where it is, outlined, and a label follows the cursor: "Use (item) → (what is under it)"; over a wall bracket it names what is there: "the torch in the bracket", "the lantern", or "the empty bracket". The next left click is the target:
+After **Use**, the item stays where it is, outlined, and a label follows the cursor: "Use (item) → (what is under it)"; over a wall bracket it names what is there: "the torch in the bracket", "the lantern", or "the empty bracket". What the click would be used on is outlined in the world, whatever the Object Highlight setting says: a character, a prop by its picture, or a crop when the pointer is on its plot's soil; bare ground and a bracket have none. The next left click is the target:
 
 - an item in a bag or a container (with the panels open);
 - a character, a living one or one of the dead;
@@ -53,6 +53,7 @@ A guest's Use is sent to the host with the item and the target, an item in a han
 - `src/interact.js:1548-1638`: Use on an item's menu
 - `src/interact.js:1644-1713`: Use on a slot's menu
 - `src/use.js:42-105`: the Use mode: the outline, the label, the next click, cancelling, no range
+- `src/highlight.js:61-74`, `src/main.js` (at d7cf736): the Use mode's target outlined in the world, whatever Object Highlight says (game #507)
 - `src/ui/inventory-panel.js:556-558`: a click on an item in a panel is the target
 - `src/main.js:852-862`, `src/interact.js:1112-1118`: a character, else a prop, else any bracket within reach of the point (game #172), else the tile
 - `src/main.js:1151-1158`: a click on the world is the target, the panels open or not

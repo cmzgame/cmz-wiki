@@ -26,15 +26,15 @@ There are three ways to drink:
 
 ### Tainted water
 
-Every fixed source is tainted, and so is a skin filled at one, until the skin is boiled clean at a lit cooking fire (see [[Water#Boiling|Water]]). The waterskin you start with is full of clean water. A tainted drink quenches as well as a clean one, but each one, from a source or a skin, has a {{pct tuning.water.sickChance}} chance to make you [[Sick]] (and adds a stack, with no roll, if you are Sick already) and a {{pct tuning.water.infectionChance}} chance of the [[Infection]].
+Every fixed source is tainted, and so is a skin filled at one, until the skin is boiled clean at a lit cooking fire, or filled from a [[Bucket]] of water boiled clean (see [[Water#Boiling|Water]]). The waterskin you start with is full of clean water. A tainted drink quenches as well as a clean one, but each one, from a source or a skin, has a {{pct tuning.water.sickChance}} chance to make you [[Sick]] (and adds a stack, with no roll, if you are Sick already) and a {{pct tuning.water.infectionChance}} chance of the [[Infection]].
 
-At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills every waterskin in your bag and on your belt. A fill at a tainted source taints the whole skin. Wells and water never run out.
+At the same well or water, "Fill waterskins" takes {{n census.constants.interact.FILL_TIME}} seconds and fills the waterskins in your bag and on your belt. A fill at a tainted source taints the whole skin, so it skips any skin holding clean water and fills only the empty and the tainted ones; with only clean skins to fill it reads "Fill waterskins (they hold clean water)" and fills nothing. Wells and water never run out.
 
 ### Drinking by itself
 
 Once thirst falls to **Thirsty** (stage {{n tuning.player.autoDrinkStage}} below), you take a sip by yourself from a waterskin of clean water you carry, on the [[Belt]] or in your bag, and "You drink from your waterskin." shows. It is the same sip as one taken by hand. The emptiest clean skin that still holds water goes first, so one skin is finished before the next is started. A skin of tainted water is never sipped by itself: it is left for you to drink by hand.
 
-It waits while you swing, draw a bow or a throw, cast, hold a guard, or sleep, and while you are already holding a drink or food out; it comes as soon as that ends. With no clean water in any skin nothing happens, so the Thirsty moodle means you are out of clean water. With [[Survival]] off, thirst is held full and it never comes.
+It waits while you swing, draw a bow or a throw, cast, hold a guard, or sleep, and while you are already holding a drink or food out; it comes as soon as that ends. With no clean water in any skin nothing happens, so the Thirsty moodle means you are out of clean water. When the skins you carry hold only tainted water, the log says so once at each stage from Thirsty on: "Your waterskins hold only tainted water: boil it at a lit fire." With [[Survival]] off, thirst is held full and it never comes.
 
 ### Stages
 
@@ -67,13 +67,14 @@ Each player has their own thirst. A guest drinks and fills through the same acti
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at d7cf736 -->
 - `data/tuning.json:53`, `data/tuning.json:56`: the maximum and the drain time
 - `src/entities/player.js:148`: the drain, awake or asleep
 - `src/clock.js:5`: a game day is 720 seconds
 - `src/interact.js:1248-1249`, `src/entities/player.js:106-114`, `data/tuning.json:59`: the "Drink" entry and the sip
 - `src/interact.js:1693-1697`, `src/inventory.js:344-347`, `src/ui/inventory-actions.js:90-108` (at 78116b1): the belt slot's Drink drinks a waterskin; its key and a double-click never do, and say so (game #478)
 - `src/entities/player.js:131-149`, `src/entities/player.js:118-129`, `src/sick.js:56-67`, `src/interact.js:858-906`, `data/kit.json`, `data/tuning.json`: clean water only for the sip by itself; a tainted drink's chance of Sick and of the infection, from a source or a skin; the Drink labels; a fill at a tainted source taints the skin; the starting skin clean (game #435, at fa2997f)
+- `src/interact.js:1034-1090`, `src/entities/player.js:159-176`: Fill waterskins skips a skin holding clean water at a tainted source; the line when only tainted water is carried (game #507, at d7cf736)
 - `src/entities/player.js:115-133`, `data/tuning.json:60`: drinking by itself: the stage, every skin on the belt and in the bag, the emptiest with water first, what holds it off, Survival (game #121)
 - `src/archery.js:590-591`, `src/archery.js:606-619`, `src/archery.js:664-678`: a throw and a cast are draws too
 - `src/game.js:615-618`, `src/main.js:1686-1688`: in the world's step, the word on the drinker's screen

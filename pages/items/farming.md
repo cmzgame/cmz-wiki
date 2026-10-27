@@ -25,7 +25,12 @@ There are six seeds: [[Potato seed]], [[Cabbage seed]], [[Garlic seed]], [[Pumpk
 
 A crop's soil stays wet for {{n crops.soil.wetDays}} days after it is planted or watered. Growth runs only while the soil is wet: a crop with dry soil stops where it is, its menu says "Dry: waiting for water", and it waits as long as it must. Nothing kills it.
 
-**Water** on a crop's menu, or a [[Use]] of a waterskin on it, takes {{n crops.soil.fillCost}} of the water from a skin you carry, the fullest that has enough, and wets the soil again: "The water soaks in." With no skin that has enough, the entry reads "Water (no water in a skin)", greyed. A [[Bucket]] waters every crop in the three by three round where you pour it, in one go.
+A crop's menu has an entry for each vessel you carry that can water it, each named, the bucket first:
+
+- **Water with the bucket**, with a [[Bucket]] carried: it waters every crop in the three by three round the crop, wet or dry, in one go, and empties the bucket (greyed "Water with the bucket (empty)" when every bucket you carry is empty).
+- **Water with the waterskin**, with a skin that has enough: it takes {{n crops.soil.fillCost}} of the water from the fullest skin you carry that has enough, and wets the soil again: "The water soaks in."
+
+With neither a bucket nor a skin that has enough, the one entry is greyed: "Water (no water carried)". E never waters: on a crop it is only the harvest. A [[Use]] of a waterskin or a bucket on a crop or on tilled soil waters with that one; in the Use mode the crop under the pointer is outlined, so you can see which the click will water.
 
 Each crop has three stages: young, growing, and ready. While it grows, its menu says how long it has to go: "Growing (ready in about N days)". Time asleep counts, since sleep runs the clock fast.
 
@@ -35,7 +40,7 @@ A ready crop's menu offers **Harvest** with the crop's name, "Harvest potatoes",
 
 ### Inspect
 
-Every crop's menu has **Inspect**: a line saying what it is, whether it is ready or how many days it has left, whether it is watered or dry, whether it is fertilized (nothing fertilizes yet, so never), and what harvests it; for example "Cabbage: ready to harvest; watered; not fertilized; harvest with a dirk." While the line shows, the crop's tile is outlined in gold on the ground, so you can tell which of a row of crops it speaks of. It works on any crop you can see within {{n census.constants.interact.INSPECT_RANGE tiles}}, without walking there, and only you see it.
+Every crop's menu has **Inspect**: a card in the look of the hover card, standing above the crop, titled with what it is, and a line for each fact: whether it is ready or how many days it has left, whether it is watered or dry, whether it is fertilized (nothing fertilizes yet, so never), and what harvests it; for example "Cabbage", then "Ready to harvest", "Watered", "Not fertilized", "Harvest with a dirk". While the card shows, the crop's tile is outlined in gold on the ground, so you can tell which of a row of crops it speaks of. The card follows the crop as the view moves, kept on the screen, and its lines are read again as they change. It stays until you close it with its × button or Escape, Inspect something else, the crop is gone, or you walk more than {{n census.constants.ui_inspect-card.CLOSE_RANGE tiles}} from it. It works on any crop you can see within {{n census.constants.interact.INSPECT_RANGE tiles}}, without walking there, and only you see it. A planted [[Sapling]]'s Inspect is the same card, titled "Sapling".
 
 ### Reach and walls
 
@@ -54,7 +59,7 @@ The days count only while the soil is wet.
 
 ## With friends
 
-A guest tills, plants, waters, and harvests through the same menu entries and Use, sent to the host with the tile or the crop, and checked there against that player's hands, reach, and line of sight. The seed and the water come out of the guest's own bag, and the harvest goes into it. A crop's growth is kept on the crop itself, so the soil, the crops, and their stages reach every player with the changed part of the map and are saved with the world.
+A guest tills, plants, waters (by the bucket's or the skin's own entry), and harvests through the same menu entries and Use, sent to the host with the tile or the crop, and checked there against that player's hands, reach, and line of sight. The seed and the water come out of the guest's own bag, and the harvest goes into it. A crop's growth is kept on the crop itself, so the soil, the crops, and their stages reach every player with the changed part of the map and are saved with the world.
 
 ## See also
 
@@ -63,12 +68,14 @@ A guest tills, plants, waters, and harvests through the same menu entries and Us
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
-- `data/crops.json`, `src/interact.js:551-611`, `src/inspect-mark.js`, `src/render/marks.js`: the Harvest label names the crop; Inspect's line and its gold tile, this client's own, never sent (game #302, at ea2bba7)
+<!-- sources at d7cf736 -->
+- `data/crops.json`, `src/interact.js:841-890`, `src/inspect-mark.js`, `src/render/marks.js`: the Harvest label names the crop; Inspect and its gold tile, this client's own, never sent (game #302)
+- `src/ui/inspect-card.js:1-122`, `src/main.js`: Inspect's card above the patch, its × and Escape, closed when its thing goes or past `CLOSE_RANGE`; a sapling's titled Sapling (game #507, at d7cf736)
+- `src/interact.js:862-868`, `src/bucket.js:91-111`, `src/bucket.js:141-164`, `src/highlight.js:61-74`: a crop's Water entries, the bucket's first, each its own vessel, greyed "Water (no water carried)"; E never waters; the Use mode's outline (game #507, at d7cf736)
 - `src/farming.js:1-11`, `data/crops.json`: growth derived from the clock while wet, never stepped; a dry crop pauses and never dies; each crop's stage days, harvest, seed, and seeds back; the soil's wet days, the water a watering takes, the actions' seconds (game #206)
 - `src/farming.js:160-177`, `src/interact.js:573-597`: Till the soil with a hoe in a hand on bare grass or dirt, the furrows by the way you face it; its refusals
 - `src/farming.js:179-202`, `data/items.json:60-65`: Plant for each seed carried, on empty soil; the crop starts wet; the six seeds
-- `src/farming.js:216-231`, `src/farming.js:102-109`, `src/interact.js:550-571`: Water, from the fullest skin with enough; greyed without; "The water soaks in."
+- `src/farming.js:216-231`, `src/farming.js:102-109`: Water with the waterskin, from the fullest skin with enough; "The water soaks in."
 - `src/farming.js:64-95`, `src/interact.js:562-567`: the stage and the days left read from the growth; "Growing (ready in about N days)", "Dry: waiting for water"
 - `src/farming.js:233-259`, `src/farming.js:261-296`: Harvest: the food and the seeds into the bag, the rest at your feet, the tile left as soil; the scythe's swing
 - `data/crops.json`, `src/farming.js:240-241`, `src/interact.js:560-562`, `src/inventory.js:88-108`: each crop's `tool`, a verb, carried: rye `harvest` (a scythe), potato and garlic `dig` (a shovel), cabbage and pumpkin `cut` (a knife), flax none; "Harvest (need a ...)" greyed without it (game #222)

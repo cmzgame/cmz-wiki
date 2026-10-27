@@ -36,7 +36,7 @@ A planted sapling does not block: anyone walks over it, and walking through sets
 
 ## Its menu
 
-- **Inspect** says how long it still has: "A sapling: an oak in about N days of growing, which waits while anyone stands on it." (an apple tree's says "an apple tree"). For one that cannot grow where it is, it gives the reason instead: "A sapling that cannot grow into an apple tree here: not against a wall. It waits until that changes." Inspect reads the sapling and the clock on your own screen, and reaches as far as any Inspect.
+- **Inspect** opens a card above it, titled "Sapling", with a close button (see [[Farming#Inspect|Farming]]), which says how long it still has: "A sapling: an oak in about N days of growing, which waits while anyone stands on it." (an apple tree's says "an apple tree"). For one that cannot grow where it is, it gives the reason instead: "A sapling that cannot grow into an apple tree here: not against a wall. It waits until that changes." Inspect reads the sapling and the clock on your own screen, and reaches as far as any Inspect.
 - **Pick up sapling** puts it back in the bag as the item, still carrying the tree it grows into. Its growing is lost: planted again, it starts from the beginning. With no room in the bag it is refused: "No room in your bag."
 
 It is not a thing you made, so it has no Take apart.
@@ -63,6 +63,7 @@ The drop is rolled on the host when anyone fells a tree. A guest plants a saplin
 - `src/trees.js:130-139`: the grown tree in place with the sapling's id
 - `data/sprites/sapling_0.json`, `data/sprites/sapling_1.json`, `src/interact.js:1778-1795`: the two stages, outlined (`interactable`), swayed by walking through
 - `src/interact.js:744-760`, `src/interact.js:728`, `src/interact.js:991`, `src/trees.js:110-120`: Inspect, local, its lines
+- `src/interact.js:892-907`, `src/ui/inspect-card.js:35-40` (at d7cf736): Inspect's card titled Sapling, its report whole (game #507)
 - `src/interact.js:1002`, `src/interact.js:1033-1046`, `src/setdown.js:103-125`: Pick up, the entry keeping its tree, refused with no room in the bag
 - `src/item-info.js:99-109`, `src/item-info.js:136`, `src/item-info.js:173-179`: the card: Seedling, Place, what it grows into, the drop's chance rounded
 - `data/sprites/tree_oak_l.json`, `data/sprites/tree_oak_m.json`, `data/sprites/tree_oak_old.json`, `src/item-info.js:174-180`, `src/trees.js:113-120`: the round oaks named "oak", so the card and Inspect say "an oak" (game #466, at d625844)

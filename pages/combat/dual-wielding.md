@@ -34,7 +34,7 @@ Exposure is applied after the shield's guard.
 - An item for both hands needs two empty hands.
 - An item for either hand goes in the main hand first.
 - A key on the [[Belt]] draws an item into **its slot's hand**: a main-hand slot's into the main hand, an off-hand slot's into the off hand. So flipping through weapons on the main-hand slots is never dual wielding by accident; a weapon is drawn beside another only from an off-hand slot. A weapon put away with the bag full goes to a main-hand slot or the utility slot, never an off-hand slot.
-- The [[Throwing spear]] is refused beside any other weapon. A torch does not count as a weapon for this rule, so a spear and a torch may be held together, but the torch is then only a light: it never takes the off hand's turn, and the spear is never dual wielded. Beside any other weapon, such as an [[Arming sword]], a torch does swing as the off hand when clicked faster than the main weapon recovers.
+- The [[Throwing spear]] is refused beside any other weapon, a tool that swings (a [[Shovel]], a hammer, a dirk) included, with the reason named, as "The throwing spear can't be held beside the shovel: it is never dual wielded." A torch does not count as a weapon for this rule, so a spear and a torch may be held together, but the torch is then only a light: it never takes the off hand's turn, and the spear is never dual wielded. Beside any other weapon, such as an [[Arming sword]], a torch does swing as the off hand when clicked faster than the main weapon recovers.
 - When a two-handed item pushes the off-hand item into the bag, the game remembers it and puts it back in the hand later.
 
 ## Numbers

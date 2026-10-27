@@ -11,7 +11,7 @@ A **decorative pumpkin** is what a [[Pumpkin]] becomes once it is set down as de
 
 ## Setting it down
 
-Place starts a ghost on the tile under the cursor, green where it may stand within {{n census.constants.setdown.REACH tiles}} and in sight: any open floor, indoors or out, with nothing on it ("No room" otherwise). A click sets it down ("You set the pumpkin down as decoration."); Escape cancels.
+Place starts a ghost on the tile under the cursor, green where it may stand within {{n census.constants.setdown.REACH tiles}} and in sight: any open floor, indoors or out, with nothing on it ("No room" otherwise). A click sets it down ("You set the pumpkin down as decoration."); Escape or a right click cancels.
 
 A decoration is not a gatherable: it neither sways when clicked nor is outlined. Its menu has one entry, **Pick up decorative pumpkin**, which puts it in your bag. It is never taken apart. The plain pumpkins on the proving ground's map are this decoration too.
 

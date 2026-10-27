@@ -23,6 +23,8 @@ While dragging an item, press `R`, right-click, or turn the mouse wheel to turn 
 
 Only a few things stack: [[Arrow|arrows]], [[Fire arrow|fire arrows]], and [[Poisoned arrow|poisoned]] and [[Strongly poisoned arrow|strongly poisoned arrows]] ({{n items.arrow.stack}} to a cell), [[Throwing knife|throwing knives]] ({{n items.throwing_knife.stack}}), [[Throwing axe|throwing axes]] ({{n items.throwing_axe.stack}}), [[Bandage|bandages]] ({{n items.bandage.stack}}), [[Feather|feathers]] ({{n items.feather.stack}}), [[Hay]] ({{n items.hay.stack}}), [[Grain]] ({{n items.grain.stack}}), [[Pemmican]] ({{n items.pemmican.stack}}), seeds ({{n items.potato_seed.stack}}), the [[Unfired vial|unfired]] and [[Clay vial|clay vials]] ({{n items.clay_vial.stack}}), and the potions and poisons ({{n items.healing_potion.stack}}; see [[Potions]]). Everything else, food and materials included, takes a cell of its own, so the bag's room is the limit on how much you carry. Each item's page says how it stacks. Adding to a grid tops up the stacks already there before starting a new one.
 
+**A stack dropped on a stack of the same thing fills it**, wherever the two are: a bag cell, a chest's, a hand, or a [[Belt]] slot. As many move as the stack's limit takes, and the rest stays where it came from; with no room at all, a drag from a hand or a slot says "That stack is full." **A stack with a state of its own never merges**, neither filled nor poured into another, and goes into a grid whole, as itself: a stack of [[Throwing knife|throwing knives]] or [[Throwing axe|axes]] coated with [[Poison|poison]] keeps its coat. The same holds for anything that carries wear, colours, a fill of water, clean water, repairs, a lit flame, a sapling's tree, or things inside it, though none of those stacks today.
+
 ### Tidy
 
 The **Tidy** button repacks the bag, the biggest items first. If the repack would not fit everything, nothing moves.
@@ -37,7 +39,7 @@ In a panel:
 
 - Drag an item to move it; drop it outside every panel to drop it on the floor.
 - Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot; a potion is drunk, and a poison says it is not for drinking. Double-clicking a filled slot on the character screen or the belt runs its first entry: a hand or clothing slot unequips; a belt slot does what its key does, eating a food or drawing the item into the slot's hand, or else shows the key's line (see [[Belt]]).
-- Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Apply**, **Split**, **Store** or **Take**, **Drop** or **Drop all**, and **Rotate**, each where it applies.
+- Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Boil water**, **Apply**, **Split**, **Store** or **Take**, **Open** (a bag or a belt in a chest or on a body), **Drop** or **Drop all**, and **Rotate**, each where it applies.
 
 An item that has lost [[Durability|durability]] shows a bar on its icon, and its hover card says how much is left.
 
@@ -58,7 +60,7 @@ Some items' cards do not yet say everything the item does.
 
 ### Take All
 
-An open container's panel has a **Take All** button in its header, beside Tidy and the X: a chest, a shelf, or a barrel, a bag on the ground, a searched body, or a station's output. One click moves everything into your bag, top row first, left to right. What does not fit the bag but can go on the belt (something held in a hand, a food, a waterskin, the tinderbox) goes to a free belt slot, and what fits neither stays where it was: "Your bag is full.", or "Your bag is full: the rest stays." when some of it moved. A stack that fits in part goes in as far as it fits. A bag with things in it stays, because a bag holds a bag only when it is empty: "A bag with things in it stays: empty it first." With no bag on your back it says "You have no bag." It is never on your own bag or the character screen.
+An open container's panel has a **Take All** button in its header, beside Tidy and the X: a chest, a shelf, or a barrel, a bag or a belt on the ground, a bag or a belt opened inside a chest or on a body, a searched body, or a station's output. One click moves everything into your bag, top row first, left to right. What does not fit the bag but can go on the belt (something held in a hand, a food, a waterskin, the tinderbox) goes to a free belt slot, and what fits neither stays where it was: "Your bag is full.", or "Your bag is full: the rest stays." when some of it moved. A stack that fits in part goes in as far as it fits. A bag with things in it stays, because a bag holds a bag only when it is empty: "A bag with things in it stays: empty it first." With no bag on your back it says "You have no bag." It is never on your own bag or the character screen.
 
 ### The one container rule
 
@@ -74,6 +76,8 @@ Four bags exist. Each is equipped on the back and gives a grid of its own size:
 - [[Developer Bag]]: {{n items.dev_bag.bag.0}} × {{n items.dev_bag.bag.1}}. A testing item.
 
 Only the bag on your back is your inventory. **A bag taken off keeps what is in it:** **Unequip** on the back slot sets it down at your feet ("You set the burlap sack down."), and equipping a new bag swaps bags, the old one dropped at your feet with everything still in it. A bag on the floor stands as a container you can **Open** and take from, **Take All** included; you can **Equip** it (**Swap bags** if you have one on), and **Pick up** it once it is empty.
+
+**A bag or a belt inside a chest or on a body opens where it lies.** Its menu there has **Open** (named for it, as "Open linen satchel"), and it opens as a panel of its own with **Take All**, no need to take it out or wear it first. Opened so it is take-only: things come out of it, by a drag, a Take, or Take All, and nothing goes in. It closes with the chest or body that holds it, and when someone else takes it away. Only one level opens: a bag inside a bag opened this way has no Open, and in your own bag a container is always empty, so it has none. A belt on the ground opens the same way (see [[Belt#The belt as a container|Belt]]); a bag on the ground still opens as before, taking things in.
 
 ### Placing a rug
 
@@ -93,7 +97,7 @@ A single item that can be held goes into a free hand first, then the bag, then t
 
 ## With friends
 
-A guest's panels show their own character's bag, and every drag, drop, double-click, Tidy, Take All, Rotate, and menu entry is sent to the host, who carries it out for that player, by the same rules as the host's own: an item dragged to a belt, worn, or hand slot it cannot go in is refused, with "That does not go there." A container that is not the guest's own must be within reach of the guest's character on the host. Items on the floor are the same for everyone.
+A guest's panels show their own character's bag, and every drag, drop, double-click, Tidy, Take All, Rotate, and menu entry is sent to the host, who carries it out for that player, by the same rules as the host's own: an item dragged to a belt, worn, or hand slot it cannot go in is refused, with "That does not go there." A container that is not the guest's own must be within reach of the guest's character on the host. A bag or a belt opened inside a chest or on a body is named to the host by the item's uid within that container, so a guest's take from it is the host's take, and what changes reaches everyone. Items on the floor are the same for everyone.
 
 ## See also
 
@@ -104,7 +108,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at d7cf736 -->
 - `src/input.js:52-71`, `src/main.js:1157-1166`, `src/highlight.js:63`, `src/placement.js:560` (at 5eb40e6): the pointer followed over every panel for the aim; the world's hovers, highlight, and ghosts only over the world (game #501)
 - `src/item-info.js:268-272`, `src/item-info.js:355-393` (at 78116b1): the card's Equip line, a two-hander's belt slots; a belt slot's leading line; an empty belt slot's and a locked place's cards (game #478)
 - `src/ui/inventory-panel.js:318-331`, `src/handed.js` (at 78116b1): a hand slot named by its side (game #477)
@@ -117,7 +121,9 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/ui/inventory-panel.js:131-139`: R, a right click, or the wheel turns a dragged item
 - `src/ui/inventory-panel.js:701-715`: Rotate for non-square items, greyed when it will not fit
 - `data/items.json`: each item's `stack`
-- `src/grid.js:58-84`: stacks merge on equal fill and top up first
+- `src/grid.js:58-100`, `src/grid.js:110-125`: stacks top up first, and a drag onto a matching stack fills it; a stack with its own state goes in whole
+- `src/items.js:24-47`, `src/ui/inventory-actions.js:117-123`, `src/ui/inventory-actions.js:163-170`, `src/ui/inventory-actions.js:224-230`, `src/ui/inventory-panel.js:695`: a stack dropped on a matching stack in a hand, a belt slot, or a grid fills it, the rest left, "That stack is full."; what has its own state never merges (game #508, at d7cf736)
+- `src/interact.js:164-190`, `src/interact.js:200-255`, `src/interact.js:1743-1752`, `src/inventory.js:93-114`, `src/main.js`: Open on a bag or a belt in a chest or on a body, take-only, one level only, never in your own bag; found again by its address each step, so it closes when it goes (game #508, at d7cf736)
 - `src/grid.js:158-181`: Tidy, biggest first, nothing moves on failure
 - `src/ui/inventory-actions.js:46-83`, `src/ui/inventory-actions.js:188-194`, `src/ui/inventory-panel.js:107-112`, `src/ui/inventory-panel.js:279`: Take All on a container's panel: the grid's order into the bag, then a free belt slot that takes it; a stack in part; a bag with things in it stays; its words (game #251)
 - `src/interact.js:1307-1308`, `src/rugs.js:107-130`: a rug's Place, and its Pick up refused under furniture (game #339, at 499e344)

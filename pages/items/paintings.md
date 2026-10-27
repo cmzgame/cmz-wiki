@@ -25,7 +25,7 @@ A painting in your own bag has **Place** on its right-click menu, after **Use**.
 - **A corner is in the way**: another wall meets the end of the run on your side, and would hide much of the painting.
 - **Too wide for the wall** and **A post is in the way**: a wide painting needs two stretches of the same wall side by side, with no wall meeting the joint between them.
 
-A painting goes only on the face of a wall turned toward the camera: the inside of a building's north and west walls, and the outside of its south and east walls. A wide painting aimed at the last stretch of a wall hangs from the one before it. A click on a green ghost hangs the painting and it leaves your bag; a click on a red one says why. `Escape` cancels, and the painting stays in the bag.
+A painting goes only on the face of a wall turned toward the camera: the inside of a building's north and west walls, and the outside of its south and east walls. A wide painting aimed at the last stretch of a wall hangs from the one before it. A click on a green ghost hangs the painting and it leaves your bag; a click on a red one says why. `Escape` or a right click cancels, and the painting stays in the bag.
 
 ### Hung
 

@@ -36,7 +36,7 @@ Each log burns {{n sprites.campfire.fire.hoursPerUnit}} game hours, so a full ca
 
 **Pick up campfire** works only once it is **out and empty**: lit, it says "Put it out first."; with fuel left, "It still has fuel in it; let it burn down.". Picked up, it is a **Campfire** item of {{n items.campfire.size.0}} by {{n items.campfire.size.1}} in your bag, too big for the [[Burlap sack]] ("No room in your bag."), but one a [[Linen satchel]] or a [[Rucksack]] takes.
 
-The item's menu has **Place**: a ghost of the campfire follows the cursor, with the same rules as building one, and a click sets it down, cold and empty ("You set the campfire down."). Escape cancels.
+The item's menu has **Place**: a ghost of the campfire follows the cursor, with the same rules as building one, and a click sets it down, cold and empty ("You set the campfire down."). Escape or a right click cancels.
 
 ## Taking it apart
 

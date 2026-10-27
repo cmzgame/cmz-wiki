@@ -11,7 +11,7 @@ A **wall bracket** is an iron holder for a [[Torch]] on a wall. It is made at th
 
 ## Hanging one
 
-**Place** on the item's menu, in your own bag, starts a ghost: the wall under the cursor drawn again with the bracket on it, green where it may hang within reach and red with the reason where not. It takes the same faces a painting does: a plain, solid, drawn wall, its face toward the camera, with nothing hung there. It refuses a face that has a bracket on it already ("A bracket is already there"), and a painting will not hang over a bracket. A click hangs it ("You hang the bracket on the wall."); Escape cancels.
+**Place** on the item's menu, in your own bag, starts a ghost: the wall under the cursor drawn again with the bracket on it, green where it may hang within reach and red with the reason where not. It takes the same faces a painting does: a plain, solid, drawn wall, its face toward the camera, with nothing hung there. It refuses a face that has a bracket on it already ("A bracket is already there"), and a painting will not hang over a bracket. A click hangs it ("You hang the bracket on the wall."); Escape or a right click cancels.
 
 ## Using it
 

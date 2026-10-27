@@ -1,14 +1,14 @@
 ---
 title: Sleep
 categories: [Player, Mechanics]
-aliases: [Sleeping, Bed, Beds, Time scale]
-summary: Lie down in a bed indoors to restore tiredness; while everyone sleeps, the world runs fast.
+aliases: [Sleeping, Bed, Beds, Time scale, Waking, Wake up, Zz]
+summary: Lie down in a bed indoors to restore tiredness; the screen fades to black, while everyone sleeps the world runs fast, and any key or click wakes you early.
 numbersOk: true
 ---
 
 <!-- typed: the bed's reach (1.6 tiles), the "not tired" day window ending at 20:00, and the wake window ending at 22:00 are literals in src/entities/player.js -->
 
-**Sleep** is how you restore [[Tiredness]]. Choose "Sleep" on a bed, or press E near one, and your character lies down until morning. While every living player in the world is asleep, the whole world runs {{n tuning.player.sleepTimeScale}} times faster.
+**Sleep** is how you restore [[Tiredness]]. Choose "Sleep" on a bed, or press E near one, and your character sleeps until morning, or until you press any key or click. Your screen fades to black while you sleep. While every living player in the world is asleep, the whole world runs {{n tuning.player.sleepTimeScale}} times faster.
 
 ## How it works
 
@@ -28,19 +28,20 @@ Otherwise the game says why: "Too far from the bed.", "There is a wall in the wa
 
 ### While you sleep
 
-Nothing moves you, and nothing wakes you: a siege that begins while you sleep does not break it either. [[Hunger]] and [[Thirst]] keep draining. Tiredness refills from empty in {{n tuning.player.sleepRestoreSeconds}} seconds of the world's clock, and [[Health]] regenerates at {{n tuning.player.sleepRegenPerMinute}} a minute instead of {{n tuning.player.healthRegenPerMinute}}, as long as you are fed, watered, and not [[Bleeding]].
+Your screen fades to black over {{n tuning.feel.sleepFadeSeconds seconds}}; the bars, the chat log, and the line "You lie down." still show over the black. Your character stays where it stood, beside the bed: there is no lying-down picture yet. Nothing in the world moves you or wakes you: a siege that begins while you sleep does not break it either. [[Hunger]] and [[Thirst]] keep draining. Tiredness refills from empty in {{n tuning.player.sleepRestoreSeconds}} seconds of the world's clock, and [[Health]] regenerates at {{n tuning.player.sleepRegenPerMinute}} a minute instead of {{n tuning.player.healthRegenPerMinute}}, as long as you are fed, watered, and not [[Bleeding]].
 
-If you are the only player, or every living player is asleep, the world runs at ×{{n tuning.player.sleepTimeScale}}: the clock, [[The dead]], [[Fire|fires]], and [[Crafting]] queues all move that much faster, and a night passes in a few seconds. The game says "You lie down. The night goes on without you."
+If you are the only player, or every living player is asleep, the world runs at ×{{n tuning.player.sleepTimeScale}}: the clock, [[The dead]], [[Fire|fires]], and [[Crafting]] queues all move that much faster, and a night passes in a few real seconds. The game says "You lie down. The night goes on without you."
 
 ### Waking
 
-You get up when you are fully rested and the hour is between {{n tuning.player.wakeHour}}:00 and 22:00, or at once if the bed is taken away. Someone who becomes rested late at night sleeps on until {{n tuning.player.wakeHour}}:00. On waking, the game says the day and time and how many hours you slept.
+You get up when you are fully rested and the hour is between {{n tuning.player.wakeHour}}:00 and 22:00, or at once if the bed is taken away. You can also wake early: any key or click gets you up, and that press does nothing else. The press or click that chose Sleep never counts. The screen fades back in as you wake. Someone who becomes rested late at night sleeps on until {{n tuning.player.wakeHour}}:00. On waking, the game says the day and time and how many hours you slept.
 
 Beds stand in the valley's houses, and a bed can be made at the [[Workbench]] (see [[Crafting]]).
 
 ## Numbers
 
 - Time scale while everyone sleeps: ×{{n tuning.player.sleepTimeScale}}
+- The fade to black, and back: {{n tuning.feel.sleepFadeSeconds seconds}}
 - Tiredness, empty to full: {{n tuning.player.sleepRestoreSeconds}} seconds
 - Health asleep: {{n tuning.player.sleepRegenPerMinute}} a minute
 - Earliest waking hour: {{n tuning.player.wakeHour}}:00
@@ -48,7 +49,7 @@ Beds stand in the valley's houses, and a bed can be made at the [[Workbench]] (s
 
 ## With friends
 
-Time runs fast only while **every living player** in the world is asleep. Players who have died, or who have stepped away and gone dormant, do not count. Until the last one lies down, the game says "You lie down. Time will pass faster once everyone in the world is asleep.", and you sleep at normal speed, still restoring tiredness and health at the sleeping rate; the last one into bed is told "You lie down. The night goes on without you." instead. If a sleeper leaves, goes dormant, or dies, the speed is put right at once. A guest lies down through the same Sleep action as the host.
+Time runs fast only while **every living player** in the world is asleep. Players who have died, or who have stepped away and gone dormant, do not count. Until the last one lies down, the game says "You lie down. Time will pass faster once everyone in the world is asleep.", and you sleep at normal speed, still restoring tiredness and health at the sleeping rate; the last one into bed is told "You lie down. The night goes on without you." instead. If a sleeper leaves, goes dormant, or dies, the speed is put right at once. A guest lies down through the same Sleep action as the host, and wakes early the same way: the key or click is sent with the guest's input and the host gets them up. Only the sleeper's own screen fades to black; every other player sees the sleeper standing by the bed with a "Zz" over their head, which never goes in the chat log. When one sleeper wakes early, the world's speed follows whoever is still asleep.
 
 A siege is held on the player the dead saw go in, so it refuses only that player's bed; while they cannot sleep, time does not run fast for anyone.
 
@@ -62,14 +63,16 @@ A siege is held on the player the dead saw go in, so it refuses only that player
 
 ## Sources
 
-<!-- sources at 64cc711 -->
+<!-- sources at d7cf736 -->
 - `src/entities/player.js`, the `sleep` verb, `src/reach.js`: the bed's reach with a clear line, "There is a wall in the way." (game #227)
 - `data/sprites/bed.json:32`: a bed is a prop with `sleep`
-- `data/tuning.json:61`: the time scale
+- `data/tuning.json:77`, `data/tuning.json:141`: the time scale, 20 since game #508; the fade's seconds (game #508)
 - `src/entities/player.js:204-222`: the verb, its reach (1.6 tiles), indoors, free hands, the siege, and the refusals with the day window ending at 20:00
 - `src/entities/player.js:168-174`, `src/game.js:334`, `src/entities/zombie.js:452-468`, `data/tuning.json:28-30`: the siege query: any of the dead holding a siege on that player, before its dawn, within `siegeSleepRadius`
 - `src/interact.js:386-403`: Sleep as the E action from Yawning or from 20:00
-- `src/entities/player.js:176-184`, `src/entities/player.js:195-202`, `src/entities/player.js:123-150`: asleep, nothing moves you, nothing wakes you but the morning or the bed's going; needs drain, tiredness restores, health at the sleeping rate
+- `src/entities/player.js:176-184`, `src/entities/player.js:253-269`, `src/entities/player.js:123-150`: asleep, nothing moves you, nothing in the world wakes you but the morning or the bed's going; needs drain, tiredness restores, health at the sleeping rate
+- `src/interact.js:1600-1612`, `src/interact.js:1628-1634`, `src/main.js`, `src/net.js`: any key or click wakes you early, a key event `wake` performed in the world's step, never the press that chose Sleep; a guest's sent the same way (game #508, at d7cf736)
+- `src/ui/sleep-fade.js:1-35`, `src/ui/speech.js:34`, `src/ui/speech.js:65-67`: your own screen fades to black under the HUD; others see "Zz" over a sleeping player, kept out of the log (game #508, at d7cf736)
 - `data/tuning.json:60`, `data/tuning.json:63-64`: the restore time and the regeneration rates
 - `src/game.js:323-333`, `src/game.js:600`, `src/world.js:25-29`, `src/loop.js:15`, `src/loop.js:114-116`: the scale while every living player sleeps, re-evaluated each step, the loop running many steps a frame
 - `src/main.js:1620`: the two lying-down messages, by whether everyone is already asleep
