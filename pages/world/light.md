@@ -17,19 +17,19 @@ Outside, the ambient light is the sky's brightness for the hour (see [[The day]]
 
 A room's light depends on what is in it and how open it is. Rooms are found from the walls, never authored; see [[Rooms]].
 
-- **A room with a lit fireplace or hearth** is fully lit, every corner of it, day or night. Only fires that light their room do this: the fireplace and the hearth, which are switches that burn nothing (see [[Fire#The home lights|Fire]]). An [[Oven]], a [[Forge]], or a [[Campfire]] lights only the pool round it.
+- **A room with a lit fireplace or fire pit** is fully lit, every corner of it, day or night. Only fires that light their room do this: the [[Fireplace|fireplace]] and the [[Fire pit|fire pit]], which are switches that burn nothing (see [[Fire#The home lights|Fire]]). The room's light dips a little with its fire's flicker, to {{n tuning.world.litRoomFlickerMin}} of full at the flicker's lowest and back, in time with the fire's own pool; this is only in the picture, and the light the game reads (what the dead see by) stays full. An [[Oven]], a [[Forge]], or a [[Campfire]] lights only the pool round it.
 - **A room without such a fire** takes its daylight through its open doors and open shutters; a broken door or broken shutters count as open. By day each open one lights {{n tuning.world.daylightTiles}} tiles of the room fully, so one open window fills a small room with daylight and a larger room needs more of them open, in proportion to its size. Fully lit by day is {{n census.constants.light.tunables_unlitRoomCap}}, a little below the open sky. Closed shutters let through only a sliver, so with every door and shutter shut, noon inside is barely brighter than midnight, and the dead in the room are hidden as they are at night (see [[Sight]]). At night a room without a fire is dark however open it stands. See [[Openings]].
 
 ### Light through doors and windows
 
-Every open door or window with a difference in light between its two sides throws a pool onto the darker side. By day, sunlight falls on the floor inside a window; at night a hearth-lit room spills light out of its open windows and doors onto the ground outside. The pool is placed {{n census.constants.light.PORTAL_OFF}} tiles off the opening and appears only when the difference is at least {{n census.constants.light.PORTAL_MIN}}, so closed shutters throw no pool. A fence gate is not part of any room and throws none. These pools do not draw the dead.
+Every open door or window with a difference in light between its two sides throws a pool onto the darker side. By day, sunlight falls on the floor inside a window; at night a fire-lit room spills light out of its open windows and doors onto the ground outside. The pool is placed {{n census.constants.light.PORTAL_OFF}} tiles off the opening and appears only when the difference is at least {{n census.constants.light.PORTAL_MIN}}, so closed shutters throw no pool. A fence gate is not part of any room and throws none. These pools do not draw the dead.
 
 ### Fires, lanterns, and mounted torches
 
 A lit fire casts a flickering pool of light with real shadows: walls, shut doors, and closed shutters stop it, and open doorways let it through. Each kind of fire has its own reach:
 
 - Fireplace: {{n sprites.fireplace.fire.radius tiles}}, and it lights its whole room.
-- Hearth: {{n sprites.hearth.fire.radius tiles}}, and it lights its whole room.
+- Fire pit: {{n sprites.fire_pit.fire.radius tiles}}, the farthest of any fire, and indoors it lights its whole room.
 - Campfire: {{n sprites.campfire.fire.radius tiles}}.
 - [[Oven]]: {{n sprites.oven.fire.radius tiles}}.
 - [[Forge]]: {{n sprites.forge.fire.radius tiles}}.
@@ -68,6 +68,7 @@ The dead see you farther the brighter the light on you. Their reach is {{n tunin
 - Light worked out on a grid of {{n census.constants.light.RES}} cells a tile.
 - Torch in hand: {{n items.torch.fire.radius tiles}}; two torches {{n tuning.world.twoTorches}} times; on the belt {{n tuning.world.beltLight}} times.
 - Lantern: {{n sprites.lantern_post.fire.radius tiles}}.
+- A fire-lit room's drawn light at its fire's flicker's lowest: {{n tuning.world.litRoomFlickerMin}} of full.
 - A fireball's light in flight: {{n combat.bow.fireballGlow tiles}}; its flare {{n combat.bow.flareRadius tiles}} for {{n combat.bow.flareSeconds seconds}}.
 - Pools through openings need a difference of {{n census.constants.light.PORTAL_MIN}}.
 - An open door or window lights {{n tuning.world.daylightTiles}} tiles of its room fully by day; fully lit is {{n census.constants.light.tunables_unlitRoomCap}}.
@@ -99,12 +100,13 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `src/light.js:428-440`: one light level: ambient, the static map, carried lights
 - `src/light.js:29`, `src/light.js:121-123`, `src/clock.js:7`: the outdoor cap and the night sky
 - `src/map.js:2191-2243`: rooms found by flood fill
-- `src/light.js:53-59`, `src/light.js:160`, `data/sprites/fireplace.json`, `data/sprites/hearth.json`: a room with a lit fireplace or hearth fully lit; the oven, forge, and campfire light no room
+- `src/light.js:50-60`, `src/light.js:160-161`, `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`: a room with a lit fireplace or fire pit fully lit; the oven, forge, and campfire light no room (game #527, at c3cb736)
+- `src/light.js:309-341`, `src/render/area.js:149-172`, `data/tuning.json:190`: a lit room's drawn light dips with its fire's flicker to `world.litRoomFlickerMin`, in time with the fire's pool; the world's room light stays 1 (game #527, at c3cb736)
 - `src/light.js:28-33`, `src/light.js:131-169`, `data/tuning.json:172`, `src/map.js:1812-1821`: an unlit room's daylight: each open or broken opening lights `daylightTiles` tiles to the window-lit cap, closed shutters only their leak, nothing by night (game #150)
 - `src/light.js:23-25`, `src/light.js:73-103`: pools through openings, their offset and minimum difference; fence gates bound no room
 - `src/light.js:203-208`: the pools draw no dead
 - `src/light.js:53-72`, `src/light.js:216-252`: fires', lanterns', and lit mounted torches' pools, stopped by walls and shut openings; a lantern steady, at the lantern post's radius
-- `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/items.json:2`, `data/sprites/torch_post.json`, `data/sprites/lantern_post.json`, `data/sprites/pumpkin.json`: each fire's radius
+- `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`, `data/sprites/campfire.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/items.json:2`, `data/sprites/torch_post.json`, `data/sprites/lantern_post.json`, `data/sprites/pumpkin.json`: each fire's radius
 - `src/game.js:909-921`, `data/tuning.json:163-164`: the carried torch in hand, two in hand, on the belt; none from the bag or the ground
 - `src/interact.js:1479-1499`, `src/items.js:219-239`: the T key; a torch lit only with a tinderbox, giving light only while lit, out when it leaves a hand, the belt, or a holder
 - `src/light.js:309-314`: flicker only in the picture
@@ -115,4 +117,4 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `src/net.js:1401-1408`, `src/net.js:1006`, `src/light.js:186-189`: a guest rebuilds the light; each player's carried light sent when it changes, with its owner
 - `src/sight.js:26`: only the viewer's own carried light lengthens its reach (game #150)
 - `src/fire.js:97-102`, `src/archery.js:512-527`, `src/game.js:922`, `src/light.js:185-201`, `data/combat.json` `bow.fireballGlow`, `bow.flareRadius`, `bow.flareSeconds`: burning bodies, a fireball or fire arrow in flight, and a fireball's flare as moving lights, not among the flames the dead notice
-- `data/sprites/fireplace.json`, `data/sprites/hearth.json`: the room fires are switches, `fire.switch`; `src/interact.js:1479-1499`: T puts a torch out (game #421)
+- `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`: the room fires are switches, `fire.switch`; `src/interact.js:1479-1499`: T puts a torch out (game #421)

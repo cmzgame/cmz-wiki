@@ -13,7 +13,7 @@ The **Fire arrow** is an [[Arrow]] dipped in a lit [[Fire]]. A [[Hunting bow]] s
 
 ## Creation
 
-[[Use]] arrows you carry (in a hand, on the [[Belt]], or in the bag) on any lit fire: a campfire, a hearth, a fireplace, the [[Oven]], or the [[Forge]]. The whole stack becomes fire arrows at once, in the same place, and the chat log says "You dip the arrows in the fire." You must stand within {{n census.constants.burn.DIP_REACH tiles}} of the fire.
+[[Use]] arrows you carry (in a hand, on the [[Belt]], or in the bag) on any lit fire: a campfire, a [[Fireplace|fireplace]], a [[Fire pit|fire pit]], the [[Oven]], or the [[Forge]]. The whole stack becomes fire arrows at once, in the same place, and the chat log says "You dip the arrows in the fire." You must stand within {{n census.constants.burn.DIP_REACH tiles}} of the fire.
 
 The game refuses, with a line in the [[Chat log|chat log]], when:
 
@@ -50,7 +50,7 @@ A guest dips arrows with its own Use, which the host carries out as that player.
 - `src/item-info.js` `shotLines` (at dc10b81): the card's lines: the bow and its place in the order, the burn (`data/combat.json` `burn`: `dps` times `duration`, capped), and the dip row it is made by
 - `data/interactions.json`: the row: arrows used on `fire`, the `dip` verb, its line
 - `src/interactions.js:34-42`: `fire` matches any prop whose fire burns fuel
-- `data/sprites/campfire.json`, `data/sprites/hearth.json`, `data/sprites/fireplace.json`, `data/sprites/oven.json`, `data/sprites/forge.json`: the fires that burn fuel
+- `data/sprites/campfire.json`, `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`, `data/sprites/oven.json`, `data/sprites/forge.json`: the fires that burn (the fire pit's, game #527, at c3cb736)
 - `src/burn.js:55-65`: only arrows carried in the hands, the belt, or the bag
 - `src/burn.js:73-94`: the dip: refused for an unlit fire, from too far, or with the arrows not carried ("Take the arrows out first.", game commit 8bacbff); the whole stack changed in place
 - `src/use.js:94-104`: a row's verb run, its line said on success, the refusal said otherwise

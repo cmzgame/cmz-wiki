@@ -7,7 +7,7 @@ summary: The inn on the east side of the square: taproom, kitchen, guest wing, a
 
 {{infobox-place "the inn"}}
 
-**The inn** stands on the east side of the square in the middle of the village. Its main building holds the taproom, with a counter, barrels, and tables and chairs, and the kitchen behind a partition. Both rooms have a fireplace, and both are lit at the start with {{n valley.sets.1.buildings.0.props.16.fuel}} logs each, so the inn is warm and bright on the first day until they burn out (see [[Fire]]). Three of the taproom's windows are boarded from the inside (see [[Openings]]). A lantern hangs over the door outside, on the west wall, and more inside (see [[Torch posts and brackets]]).
+**The inn** stands on the east side of the square in the middle of the village. Its main building holds the taproom, with a counter, barrels, and tables and chairs, and the kitchen behind a partition. Both rooms have a [[Fireplace|fireplace]], both lit at the start; a fireplace burns nothing, so they stay lit until someone puts them out (see [[Fire]]). Three of the taproom's windows are boarded from the inside (see [[Openings]]). A lantern hangs over the door outside, on the west wall, and more inside (see [[Torch posts and brackets]]).
 
 South of the taproom is the guest wing: three small rooms, each with its own door off the taproom, a bed, and a chest. Behind the inn is a fenced yard with a gate to the west, holding a well, a trough, a woodpile, a cart, and a privy.
 
@@ -24,7 +24,7 @@ The dead at the west end of the bridge, a knot of them by the toll gate, stand o
 <!-- sources at 3c0a243 -->
 - `tools/mapgen/valley.py:219`: the inn on the square's east side
 - `data/maps/valley.json:1789-2074`: the taproom (counter, barrels, tables and chairs) and the kitchen behind a partition
-- `data/maps/valley.json:1994-2019`: both fireplaces lit at the start with 3 logs each
+- `data/maps/valley.json:2023-2048`, `data/sprites/fireplace.json`: both fireplaces lit at the start; a fireplace a switch, burning nothing (game #527, at c3cb736)
 - `data/maps/valley.json:1804-1827`: three windows boarded from the inside
 - `data/maps/valley.json:2061-2072`, `data/maps/valley.json:2193-2204`: the lantern over the west door outside, and the lanterns inside
 - `data/maps/valley.json:2075-2206`: the guest wing: three rooms, each with a door off the taproom, a bed, and a chest

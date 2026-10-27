@@ -26,7 +26,7 @@ When a wall is built or removed, only the rooms on either side of it are worked 
 ### What rooms change
 
 - **[[Sleep]]**: a bed must be in a room. Outdoors it says "Not out here." Indoors, a siege held on you stops it too.
-- **[[Light]]**: a hearth lights its whole room, and a room's daylight comes in through its openings: each one open lights {{n tuning.world.daylightTiles}} tiles of the room fully, so a larger room needs more open, and a room shut tight is dark by day.
+- **[[Light]]**: a lit [[Fireplace|fireplace]] or [[Fire pit|fire pit]] lights its whole room, and a room's daylight comes in through its openings: each one open lights {{n tuning.world.daylightTiles}} tiles of the room fully, so a larger room needs more open, and a room shut tight is dark by day.
 - **[[Breaking in]]**: the dead choose a room to break into or out of, and at night the dead that saw you go into a room wait about it until dawn (the siege).
 - **Near walls**: the walls of your room on the camera's side turn see-through.
 
@@ -69,7 +69,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 - `src/map.js:1442-1454`, `src/map.js:1775-1777`: a see-through wall bounds no room
 - `src/map.js:1830-1858`: rooms refound only on either side of a changed edge
 - `src/entities/player.js:229-230`: a bed outdoors says "Not out here."; a siege held on the player refuses it
-- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:106`: a hearth's room light; a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
+- `src/light.js:55-58`, `src/light.js:130-168`, `data/tuning.json:106`: a lit room fire's room light (a fireplace, a fire pit: `src/light.js:50-60` at c3cb736, game #527); a room's daylight by its open openings in proportion to its size, a shut room dark by day (game #150)
 - `src/map.js:843-878`: the dead choose a room to break
 - `src/entities/zombie.js:421-460`, `src/entities/zombie.js:847-914`: the siege, about a house the dead saw a player go into, until dawn
 - `src/map.js:733-744`, `src/map.js:819-826`: a plain wall never breaks and a window never passes a body, so a room with no door is never entered

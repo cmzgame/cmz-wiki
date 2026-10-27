@@ -50,7 +50,7 @@ After Make, the work runs on the station's own queue in the world's time. You ma
 
 ### The output
 
-What a recipe makes lands in the station's **output box**, a grid of 3 × 2 that opens beside your bag. If the output box is full, the item is put on the floor beside the station. Since most things take a cell each, a queue of more than a few burns, rags, or handles fills the box and spills onto the floor. The output box counts as one of the places ingredients are taken from, so a chain (planks to sticks to a bow) can be made without emptying it.
+What a recipe makes lands in the station's **output box**, a grid of 3 × 3 that opens beside your bag, big enough for a [[Campfire]] made at the workbench. If the output box is full, the item is put on the floor beside the station. Since most things take a cell each, a queue of more than a few burns, rags, or handles fills the box and spills onto the floor. The output box counts as one of the places ingredients are taken from, so a chain (planks to sticks to a bow) can be made without emptying it.
 
 A recipe for **furniture** or a station (a chest, a shelf, a table, a bed, a counter, a cart, a workbench, a [[Smoking rack]], a [[Tanning vat]], and the rest) makes no item: the thing is set down as a prop near the station. It goes on the nearest tiles a body could walk to from beside the station, never through a wall or a shut door into the next room, up to {{n census.constants.stations.SPOT_STEPS}} steps away. Every tile it covers must be walkable, empty, bare of items, not beside a door (so the dead can still stand at the door; see [[Openings]]), with nobody standing on it and no wall between two of its tiles, so a counter never stands over its own bench.
 

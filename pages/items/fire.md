@@ -1,22 +1,22 @@
 ---
 title: Fire
 categories: [Crafting, Mechanics]
-aliases: [Fires, Fuel, Fireplace, Feeding a fire, Lighting a fire, Putting out a fire, Put out, Home lights, Switches]
-summary: The home lights (a fireplace, a hearth, a lantern) are switches that burn nothing; a campfire, the oven, and the forge burn their own fuel and go out when it runs out.
+aliases: [Fires, Fuel, Feeding a fire, Lighting a fire, Putting out a fire, Put out, Home lights, Switches]
+summary: The home lights (a fireplace, a fire pit, a lantern) are switches that burn nothing; a campfire, the oven, and the forge burn their own fuel and go out when it runs out.
 ---
 
-A **fire** gives [[Light]], and most fires let you cook ([[Cooking]]). There are two kinds. **The home lights**, a fireplace, a hearth, and a lantern, are switches: lit with a flame, put out with nothing, and they burn no fuel. **The fires that burn fuel**, a [[Campfire]], the [[Oven]], the [[Forge]], and the [[Cauldron]], hold a few units of their own fuel and burn one every few game hours; at zero they go out.
+A **fire** gives [[Light]], and most fires let you cook ([[Cooking]]). There are two kinds. **The home lights**, a [[Fireplace|fireplace]], a [[Fire pit|fire pit]], and a lantern, are switches: lit with a flame, put out with nothing, and they burn no fuel. **The fires that burn fuel**, a [[Campfire]], the [[Oven]], the [[Forge]], and the [[Cauldron]], hold a few units of their own fuel and burn one every few game hours; at zero they go out.
 
 ## How it works
 
 ### The home lights
 
-A fireplace, a [[Hearth]], a lantern on a post, a lantern in a wall bracket, and a [[Jack-o'-lantern]] each have two entries on their menu:
+A [[Fireplace]], a [[Fire pit]], a lantern on a post, a lantern in a wall bracket, and a [[Jack-o'-lantern]] each have two entries on their menu:
 
 - **Light the ...**, when it is out, with a flame on you ("You light the fireplace."). Without one it reads "Light the ... (need a tinderbox or a flame)", greyed.
 - **Put out the ...**, when it is lit, with nothing needed ("You put out the fireplace.").
 
-They burn nothing, and stay lit until someone puts them out. A [[Use]] of a tinderbox or a lit torch on one that is out lights it too. A lit fireplace or hearth lights its whole room, and cooks. A lantern that is out gives no light, and no flame to light a torch from. The village's own lights are lanterns.
+They burn nothing, and stay lit until someone puts them out. A [[Use]] of a tinderbox or a lit torch on one that is out lights it too. A lit fireplace or fire pit lights its whole room, and cooks; a fire pit outdoors lights the ground round it out to {{n sprites.fire_pit.fire.radius tiles}}. Both are built from the palette (see [[Building]]). A lantern that is out gives no light, and no flame to light a torch from. The village's own lights are lanterns.
 
 ### Fires that burn fuel
 
@@ -37,7 +37,7 @@ The oven's, the forge's, and the cauldron's menus have **Light the ... (a log)**
 
 **Lighting any fire that is out needs a flame on you**: a [[Tinderbox]] anywhere you carry it (a hand, the belt, or the bag), or a lit [[Torch]] in a hand or on the belt; a torch in the bag does not count. The flame is not used up. A click on a greyed Light says "You need a tinderbox or a lit torch to light it.", and `E` passes it by. Feeding a fire that is already burning needs no flame.
 
-A [[Use]] of a flame lights a campfire that is out but has fuel in it, a fireplace, a hearth, a lantern, or a torch that is out on a post or in a bracket, from within {{n census.constants.burn.DIP_REACH tiles}} and in sight, never through a wall. A lit campfire says "It is already burning.", an empty one "It has nothing to burn.", a home light already lit "It is already lit.". The oven, the forge, and the cauldron are lit only from their own menus ("That cannot be lit." to a Use), and none of them is put out: each burns its fuel down.
+A [[Use]] of a flame lights a campfire that is out but has fuel in it, a fireplace, a fire pit, a lantern, or a torch that is out on a post or in a bracket, from within {{n census.constants.burn.DIP_REACH tiles}} and in sight, never through a wall. A lit campfire says "It is already burning.", an empty one "It has nothing to burn.", a home light already lit "It is already lit.". The oven, the forge, and the cauldron are lit only from their own menus ("That cannot be lit." to a Use), and none of them is put out: each burns its fuel down.
 
 A [[Fireball]] that comes down within {{n combat.bow.kindleRadius tiles}} of a campfire with fuel in it, with no wall between, lights it; it lights no home light.
 
@@ -82,7 +82,7 @@ Lighting, putting out, and feeding a fire change the world, so every player sees
 ## Sources
 
 <!-- sources at 879d0a7 -->
-- `data/sprites/fireplace.json`, `data/sprites/hearth.json`, `data/sprites/lantern_post.json`: the home lights' `fire.switch` (game #421)
+- `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`, `data/sprites/lantern_post.json`: the home lights' `fire.switch` (game #421; the fire pit, game #527, at c3cb736)
 - `src/interact.js:508-518`, `src/interact.js:632-640`: a switch's and a bracket lantern's menu: Light with a flame, Put out with nothing (game #421)
 - `src/map.js:108-111`, `src/map.js:131-133`: a switch burns nothing and takes no fuel (game #421)
 - `src/map.js:320-346`: a lantern or a switch on or off; a put-out emits `firePutOut`, not the burnt-out `fireOut` (game #421)

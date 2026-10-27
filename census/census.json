@@ -1,18 +1,18 @@
 {
  "version": {
-  "commit": "bb52ef0b463c0f3b83bcfbb8f60b8ca01842c77b",
-  "short": "bb52ef0",
-  "date": "2026-10-26T22:45:45-05:00",
-  "subject": "Merge pull request #521 from cmzgame/primary/dyed-icons",
+  "commit": "c3cb73605e4fa5a3289018cc9ef40048ec21fcfa",
+  "short": "c3cb736",
+  "date": "2026-10-27T02:04:13-05:00",
+  "subject": "Merge pull request #527 from cmzgame/build/fires",
   "ref": "origin/main"
  },
  "counts": {
   "items": 145,
-  "recipes": 97,
+  "recipes": 98,
   "interactions": 42,
   "lootTables": 29,
   "sprites": 203,
-  "places": 47,
+  "places": 48,
   "villagers": 9,
   "authoredDead": 62,
   "mapProps": 42,
@@ -132,6 +132,7 @@
    "madeBy": [],
    "usedIn": [
     "workbench: prop:workbench",
+    "workbench: campfire",
     "clamp: charcoal",
     "smoking_rack: smoked_meat"
    ],
@@ -682,7 +683,7 @@
     "tinderbox on bracket: Light",
     "tinderbox on lantern_post: Light",
     "tinderbox on fireplace: Light",
-    "tinderbox on hearth: Light",
+    "tinderbox on fire_pit: Light",
     "tinderbox on pumpkin: Light",
     "tinderbox on corpse: Burn"
    ],
@@ -874,7 +875,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "an arrow dipped in a lit fire (#14: Use arrows on a campfire, a hearth, the forge, the oven); a bow draws these before plain arrows, and what it hits is set alight; it lands or lodges as a plain arrow. Drawn (art round 4, 2026-10-26); in flight still generated"
+   "note": "an arrow dipped in a lit fire (#14: Use arrows on a campfire, a fireplace, a fire pit, the forge, the oven); a bow draws these before plain arrows, and what it hits is set alight; it lands or lodges as a plain arrow. Drawn (art round 4, 2026-10-26); in flight still generated"
   },
   {
    "id": "poison_arrow",
@@ -1252,23 +1253,26 @@
    "name": "Campfire",
    "kind": "furniture",
    "size": [
-    5,
-    5
+    3,
+    3
    ],
    "tags": [],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
-   "madeBy": [],
+   "madeBy": [
+    "workbench"
+   ],
    "usedIn": [],
    "foundIn": [],
    "interactions": [
     "tinderbox on campfire: Light",
     "torch on campfire: Light",
     "log on campfire: Add"
-   ]
+   ],
+   "note": "made at the workbench (Michael, 2026-10-27), 3 by 3 in the bag (Primary's reading of \"a 2x2 or 3x3\": a powerful thing to lug), 1 by 1 on the ground; set down with Place cold and empty, picked up again out and empty (src/campfire.js); drawn, art round 6"
   },
   {
    "id": "satchel",
@@ -2811,6 +2815,7 @@
    },
    "madeBy": [],
    "usedIn": [
+    "workbench: campfire",
     "workbench: prop:forge",
     "workbench: prop:oven",
     "workbench: prop:millstones",
@@ -2971,7 +2976,7 @@
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "rye or wheat; flour at the mill (step 4), porridge at a hearth"
+   "note": "rye or wheat; flour at the mill (step 4), porridge at a cooking fire"
   },
   {
    "id": "flour",
@@ -4938,6 +4943,26 @@
    "uses": "build"
   },
   {
+   "id": "campfire",
+   "station": "workbench",
+   "out": {
+    "id": "campfire",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "stone",
+     "count": 3
+    },
+    {
+     "id": "log",
+     "count": 2
+    }
+   ],
+   "seconds": 6,
+   "note": "the campfire is made, not built (Michael, 2026-10-27: \"Make it from the workbench\"; the build menu holds only what cannot be carried): the Campfire item, set down from the bag with Place cold and empty, its logs then fed as any fire's (the two logs are the make's, not its fuel); no tool, as it was built with none; the seconds the builder's default, as the torch post's"
+  },
+  {
    "id": "charcoal",
    "station": "clamp",
    "out": {
@@ -6051,10 +6076,10 @@
   },
   {
    "use": "tinderbox",
-   "on": "hearth",
+   "on": "fire_pit",
    "verb": "Light",
    "action": "light",
-   "message": "You light the hearth."
+   "message": "You light the fire pit."
   },
   {
    "use": "log",
@@ -7045,14 +7070,15 @@
   {
    "id": "campfire",
    "kind": "fire",
-   "drawn": false,
+   "drawn": true,
    "fire": {
     "fuel": "log",
     "hoursPerUnit": 3,
     "maxFuel": 6,
     "radius": 4,
     "cooks": true
-   }
+   },
+   "note": "the drawn campfire (art round 6): a ring of ten fieldstones round a bed of ash and coals, four logs stood in a teepee and one lying ready; the travelling fire, set down from the Campfire item and picked up out and empty; two facings, y as drawn (the spare log at the back right) and x its mirror (the spare log at the back left; the lit side swaps); its three flame frames stand in the teepee, already cut where the near logs and stones stand in front of them, and mirror with the drawing"
   },
   {
    "id": "cart",
@@ -7369,7 +7395,21 @@
     "cooks": true
    },
    "carry": false,
-   "note": "the drawn fireplace (docs/17): backs against a west wall as drawn (y), a north wall as its mirror (x); the hearth's fire, with drawn flames"
+   "note": "the drawn fireplace (art round 6, redrawn to match the fire pit and the campfire): a big stone hearth on a flagstone slab, an arched firebox with its voussoirs and keystone proud of the coursed face, a fire laid on firedogs and an iron crane with a pot, stepped corbels under a thick oak mantle that stands out at the front and both sides (a candle, a jug, a bowl on it), a chimney breast to a weathered slope at 68; backs against a west wall as drawn (y), a north wall as its mirror (x); its three flame frames stand in the firebox, already cut where the jambs, the arch, the logs, and the pot stand in front of them (the mirrored facing needs them mirrored too: see the art's README)"
+  },
+  {
+   "id": "fire_pit",
+   "kind": "fire",
+   "drawn": true,
+   "fire": {
+    "fuel": "log",
+    "hoursPerUnit": 3,
+    "maxFuel": 6,
+    "radius": 5,
+    "cooks": true
+   },
+   "carry": false,
+   "note": "the fire pit (Michael, 2026-10-26, docs/02 Round rooms: a spec, the fire rulings; art round 6): the 2 by 2 floor fire, indoors or out, built and never moved; a low round base of flags, a short wall of squared blocks round a bed of coals and crossed logs, a wrought-iron rack over it on two posts (on the line through the left and right tiles' centres) with a crossbar, two pots on S-hooks (one lidded) and a wooden ladle on the bar's end; the rack runs across the screen; two facings, y as drawn (ladle at the left) and x its mirror (ladle at the right; the lit side swaps, the accepted cost), a mirror for a map that faces it so (the palette builds the y facing); its three flame frames stand under the pots, already cut where the wall, the logs, and the pots stand in front of them. The engine cuts it into three screen columns (the left tile, the middle two, the right tile): the posts stand in the outer columns and the pots in the middle one, in both facings (the art's README); the frames mirror with the drawing"
   },
   {
    "id": "flame",
@@ -7502,18 +7542,6 @@
    "drawn": false,
    "carry": false,
    "note": "a dev box for the headstone (docs/30 step 1; docs/29/09 has its art request)"
-  },
-  {
-   "id": "hearth",
-   "kind": "fire",
-   "drawn": false,
-   "fire": {
-    "fuel": "log",
-    "hoursPerUnit": 3,
-    "maxFuel": 4,
-    "radius": 3,
-    "cooks": true
-   }
   },
   {
    "id": "herb_feverfew",
@@ -8675,6 +8703,20 @@
      "shelf",
      "table"
     ]
+   },
+   {
+    "name": "a fire pit by your cottage",
+    "rect": [
+     107,
+     231,
+     2,
+     2
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
    },
    {
     "name": "the inn",
@@ -9936,7 +9978,8 @@
    "chopSeconds": 3,
    "stumpSprite": "stump",
    "fenceHp": 90,
-   "fenceGateFactor": 0.5
+   "fenceGateFactor": 0.5,
+   "litRoomFlickerMin": 0.85
   },
   "population": {
    "none": 0,
@@ -10281,29 +10324,27 @@
    "seconds": 3,
    "tool": "build"
   },
-  "campfire": {
-   "label": "Campfire",
+  "fireplace": {
+   "label": "Fireplace",
    "kind": "prop",
-   "sprite": "campfire",
-   "cost": {
-    "stone": 3,
-    "log": 2
-   },
-   "fuel": "log",
-   "seconds": 4,
-   "note": "docs/43 section 3 (Michael, 2026-10-25): built on open ground outdoors only, no skill and no tool; its two logs are its starting fuel, not materials (Take apart gives back half its stones)",
-   "stand": "outdoors"
-  },
-  "hearth": {
-   "label": "Hearth",
-   "kind": "prop",
-   "sprite": "hearth",
+   "sprite": "fireplace",
    "stand": "wall",
    "cost": {
     "stone": 6
    },
    "seconds": 8,
-   "note": "docs/43 section 4 (step 3): built inside a room, against a wall; a switch (section 3), out when built; no tool (the builder's default, as the campfire's)"
+   "note": "the Fireplace (Michael, 2026-10-26, the fire rulings under Round rooms: a spec; it replaced the generated hearth): the drawn fireplace, two tiles along a flat wall indoors, its facing from the wall it backs onto (src/setdown.js fitFor); a switch (docs/43 section 3), out when built; cooks; never moved; taken apart out for half its stone; no tool (the builder's default, as the hearth's was)"
+  },
+  "fire_pit": {
+   "label": "Fire pit",
+   "kind": "prop",
+   "sprite": "fire_pit",
+   "stand": "ground",
+   "cost": {
+    "stone": 8
+   },
+   "seconds": 10,
+   "note": "the fire pit (Michael, 2026-10-26, the fire rulings): 2 by 2 on open ground, indoors or out, never on water (roads are fine), clear of a door's two tiles; a switch, out when built; cooks; never moved; taken apart out for half its stone; the cost and the seconds Primary's and the builder's defaults; no tool, as the Fireplace"
   },
   "feed_trough": {
    "label": "Feeding trough",
@@ -10672,9 +10713,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:427",
-    "placement.js:438",
-    "placement.js:442"
+    "placement.js:447",
+    "placement.js:458",
+    "placement.js:462"
    ]
   },
   {
@@ -10773,7 +10814,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:398"
+    "stations.js:404"
    ]
   },
   {
@@ -10970,7 +11011,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1623"
+    "main.js:1626"
    ]
   },
   {
@@ -10994,19 +11035,19 @@
   {
    "key": "Click to hang the bracket · Esc cancel",
    "at": [
-    "placement.js:745"
+    "placement.js:770"
    ]
   },
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1091"
+    "placement.js:1123"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1084"
+    "placement.js:1116"
    ]
   },
   {
@@ -11036,7 +11077,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1497"
+    "main.js:1500"
    ]
   },
   {
@@ -11118,7 +11159,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1598"
+    "main.js:1601"
    ]
   },
   {
@@ -11155,19 +11196,19 @@
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2262"
+    "interact.js:2278"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1537"
+    "main.js:1540"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1584"
+    "main.js:1587"
    ]
   },
   {
@@ -11191,7 +11232,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1636"
+    "main.js:1639"
    ]
   },
   {
@@ -11273,7 +11314,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1645"
+    "main.js:1648"
    ]
   },
   {
@@ -11407,7 +11448,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2198"
+    "interact.js:2214"
    ]
   },
   {
@@ -11449,26 +11490,26 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:1017",
-    "placement.js:1050"
+    "placement.js:1045",
+    "placement.js:1082"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1110"
+    "placement.js:1142"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:761"
+    "placement.js:787"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1105"
+    "placement.js:1137"
    ]
   },
   {
@@ -11498,13 +11539,13 @@
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2310"
+    "interact.js:2326"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2247"
+    "interact.js:2263"
    ]
   },
   {
@@ -11548,7 +11589,7 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2346"
+    "interact.js:2362"
    ]
   },
   {
@@ -11566,7 +11607,7 @@
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2334"
+    "interact.js:2350"
    ]
   },
   {
@@ -11622,7 +11663,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:672"
+    "placement.js:697"
    ]
   },
   {
@@ -11632,7 +11673,7 @@
     "interact.js:315",
     "interact.js:339",
     "interact.js:577",
-    "interact.js:2211",
+    "interact.js:2227",
     "ui/station-panel.js:84",
     "ui/station-panel.js:111"
    ]
@@ -11646,7 +11687,7 @@
   {
    "key": "craftDone",
    "at": [
-    "stations.js:374"
+    "stations.js:380"
    ]
   },
   {
@@ -12000,15 +12041,15 @@
   },
   {
    "path": "interact.js",
-   "lines": 2409
+   "lines": 2425
   },
   {
    "path": "main.js",
-   "lines": 2113
+   "lines": 2116
   },
   {
    "path": "placeholders.js",
-   "lines": 1654
+   "lines": 1672
   },
   {
    "path": "net.js",
@@ -12020,7 +12061,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 1112
+   "lines": 1144
   },
   {
    "path": "entities/zombie.js",
@@ -12052,7 +12093,7 @@
   },
   {
    "path": "assets.js",
-   "lines": 688
+   "lines": 741
   },
   {
    "path": "figure/draw.js",
@@ -12079,6 +12120,10 @@
    "lines": 493
   },
   {
+   "path": "light.js",
+   "lines": 468
+  },
+  {
    "path": "entities/player.js",
    "lines": 447
   },
@@ -12087,12 +12132,8 @@
    "lines": 445
   },
   {
-   "path": "light.js",
-   "lines": 441
-  },
-  {
    "path": "stations.js",
-   "lines": 414
+   "lines": 420
   },
   {
    "path": "ui/map-panel.js",
@@ -12139,8 +12180,12 @@
    "lines": 300
   },
   {
+   "path": "setdown.js",
+   "lines": 298
+  },
+  {
    "path": "tuning.js",
-   "lines": 297
+   "lines": 298
   },
   {
    "path": "ui/nav-row.js",
@@ -12203,15 +12248,15 @@
    "lines": 206
   },
   {
-   "path": "setdown.js",
-   "lines": 202
-  },
-  {
    "path": "input.js",
    "lines": 198
   },
   {
    "path": "fire.js",
+   "lines": 197
+  },
+  {
+   "path": "render/area.js",
    "lines": 197
   },
   {
@@ -12237,10 +12282,6 @@
   {
    "path": "dev.js",
    "lines": 176
-  },
-  {
-   "path": "render/area.js",
-   "lines": 175
   },
   {
    "path": "view.js",
@@ -12363,12 +12404,12 @@
    "lines": 106
   },
   {
-   "path": "iso.js",
+   "path": "campfire.js",
    "lines": 98
   },
   {
-   "path": "campfire.js",
-   "lines": 97
+   "path": "iso.js",
+   "lines": 98
   },
   {
    "path": "ui/context-menu.js",
@@ -13050,6 +13091,7 @@
    "desk": 3,
    "dyevat": 3,
    "feed_trough": 4,
+   "fire_pit": 1,
    "fireplace": 19,
    "font": 1,
    "forge": 1,
@@ -13076,10 +13118,10 @@
    "millwheel": 1,
    "mine_mouth": 1,
    "mushroom_0": 159,
-   "mushroom_1": 167,
-   "mushroom_2": 158,
-   "mushroom_3": 152,
-   "mushroom_4": 138,
+   "mushroom_1": 165,
+   "mushroom_2": 160,
+   "mushroom_3": 153,
+   "mushroom_4": 137,
    "noticeboard": 1,
    "ore_cart": 1,
    "ore_rock": 6,
@@ -13103,30 +13145,30 @@
    "table": 24,
    "torch_post": 5,
    "tree_apple": 23,
-   "tree_oak_l": 301,
-   "tree_oak_m": 288,
+   "tree_oak_l": 300,
+   "tree_oak_m": 286,
    "tree_oak_old": 155,
-   "tree_orange_l": 285,
+   "tree_orange_l": 284,
    "tree_orange_m": 314,
-   "tree_orange_old": 153,
-   "tree_red_l": 297,
-   "tree_red_m": 275,
-   "tree_red_old": 155,
+   "tree_orange_old": 152,
+   "tree_red_l": 295,
+   "tree_red_m": 273,
+   "tree_red_old": 154,
    "tree_spire_green_l": 154,
    "tree_spire_green_m": 161,
    "tree_spire_green_old": 66,
-   "tree_spire_orange_l": 160,
+   "tree_spire_orange_l": 159,
    "tree_spire_orange_m": 171,
    "tree_spire_orange_old": 84,
-   "tree_spire_red_l": 138,
-   "tree_spire_red_m": 180,
+   "tree_spire_red_l": 137,
+   "tree_spire_red_m": 179,
    "tree_spire_red_old": 74,
-   "tree_spire_yellow_l": 144,
+   "tree_spire_yellow_l": 143,
    "tree_spire_yellow_m": 154,
    "tree_spire_yellow_old": 72,
    "tree_yellow_l": 286,
    "tree_yellow_m": 293,
-   "tree_yellow_old": 142,
+   "tree_yellow_old": 141,
    "trough": 4,
    "well": 5,
    "wheelbarrow": 3,

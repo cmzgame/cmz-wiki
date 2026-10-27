@@ -2,12 +2,12 @@
 title: Cooking
 categories: [Stations, Crafting]
 aliases: [Cook, Cook here]
-summary: Any lit campfire, hearth, or fireplace, and the oven, is a station for cooking (roast potatoes, the pottages and the hearty stew, cooked meat, porridge, grilled fish, cheese, and pemmican) and boils tainted water clean, in a skin or a bucket.
+summary: Any lit campfire, fireplace, or fire pit, and the oven, is a station for cooking (roast potatoes, the pottages and the hearty stew, cooked meat, porridge, grilled fish, cheese, and pemmican) and boils tainted water clean, in a skin or a bucket.
 ---
 
 {{infobox-station cooking}}
 
-**Cooking** is done at any lit fire that cooks: a [[Campfire]], a hearth, a fireplace, or the [[Oven]]. A campfire's, a hearth's, or a fireplace's menu has **Cook here**, which opens the station panel with the cooking recipes; the oven's panel lists its own recipes and then these. The [[Forge]] does not offer them. Fish can be cooked: a [[Perch]], a [[Trout]], or a [[Carp]] caught by [[Fishing]] grills into its grilled kind. A [[Potato]] grown by [[Farming]] roasts, and the vegetables can all be grown: garlic for the [[Plain pottage]], rye's grain for the porridge.
+**Cooking** is done at any lit fire that cooks: a [[Campfire]], a [[Fireplace]], a [[Fire pit]], or the [[Oven]]. A campfire's, a fireplace's, or a fire pit's menu has **Cook here**, which opens the station panel with the cooking recipes; the oven's panel lists its own recipes and then these. The [[Forge]] does not offer them. Fish can be cooked: a [[Perch]], a [[Trout]], or a [[Carp]] caught by [[Fishing]] grills into its grilled kind. A [[Potato]] grown by [[Farming]] roasts, and the vegetables can all be grown: garlic for the [[Plain pottage]], rye's grain for the porridge.
 
 The animals' meat and what they give cook here too (see [[Hunting]] and [[Keeping]]):
 
@@ -17,7 +17,7 @@ The animals' meat and what they give cook here too (see [[Hunting]] and [[Keepin
 
 ## Using it
 
-Light the fire, and keep a campfire or the oven fed (a hearth or a fireplace burns nothing; see [[Fire]]), then choose **Cook here** or press `E` beside it, and pick a recipe (see [[Crafting]]). What is cooked goes into the fire's output box. If the fire goes out during a job, the job waits until it is fed again.
+Light the fire, and keep a campfire or the oven fed (a fireplace or a fire pit burns nothing; see [[Fire]]), then choose **Cook here** or press `E` beside it, and pick a recipe (see [[Crafting]]). What is cooked goes into the fire's output box. If the fire goes out during a job, the job waits until it is fed again.
 
 ## Boiling water
 
@@ -37,7 +37,7 @@ A guest cooks through the host like any station; the fire and the queue are the 
 
 <!-- sources at 3c0a243 -->
 - `data/sprites/campfire.json`: the campfire cooks
-- `data/sprites/hearth.json`: the hearth cooks
+- `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`: the fireplace and the fire pit cook (game #527, at c3cb736)
 - `data/sprites/fireplace.json:30-34`: the fireplace cooks
 - `src/interact.js:788-805`: Cook here on a cooking fire's menu
 - `src/stations.js:46-53`: the oven's own station wins; the forge does not cook

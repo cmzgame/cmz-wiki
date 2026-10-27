@@ -8,7 +8,7 @@ summary: Building log walls, walls of each wood, fences, gates, doors, and windo
 
 <!-- typed: the game's own lines quoted as examples ("Click to take apart door (1 plank back)", "2 planks"), which carry an example's count, not a number of the game's -->
 
-**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Campfire]] and the [[Hearth]] is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. The campfire stands on a tile, outdoors.
+**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Fireplace]], the [[Fire pit]], and the [[Feeding trough]] is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. Those three stand on tiles. The palette holds only what cannot be picked up and carried; a [[Campfire]] is made at the [[Workbench]] and set down from the bag instead.
 
 ## How it works
 
@@ -22,8 +22,11 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}, with a smith's hammer on you.
 - **Fence**, costing {{n build.fence.cost.plank}} plank a stretch, built in {{n build.fence.seconds seconds}}, with a smith's hammer on you.
 - **Gate**, costing {{n build.gate.cost.plank}} planks, built in {{n build.gate.seconds seconds}}, with a smith's hammer on you.
-- **Campfire**, costing {{n build.campfire.cost.stone}} [[Stone|stone]] and {{n build.campfire.cost.log}} logs, which become its first fuel, built in {{n build.campfire.seconds seconds}} on open ground outdoors, with no tool. Its ghost sits on a tile, not an edge, and says "Outdoors only" inside a room. See [[Campfire]].
-- **Hearth**, costing {{n build.hearth.cost.stone}} [[Stone|stone]], built in {{n build.hearth.seconds seconds}} inside a room against a wall ("Indoors only", "Against a wall"), with no tool. See [[Hearth]].
+- **Fireplace**, costing {{n build.fireplace.cost.stone}} [[Stone|stone]], built in {{n build.fireplace.seconds seconds}}, with no tool: two tiles indoors with its back along a plain wall ("Indoors only", "Against a wall"), facing out from the wall the cursor finds. See [[Fireplace]].
+- **Fire pit**, costing {{n build.fire_pit.cost.stone}} stone, built in {{n build.fire_pit.seconds seconds}}, with no tool: two tiles by two on open ground, indoors or out, never on water ("Not on water"). See [[Fire pit]].
+- **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built in {{n build.feed_trough.seconds seconds}}, with a smith's hammer on you. See [[Feeding trough]].
+
+The ghost of a piece that stands on tiles covers its tiles, not an edge. Besides its own rule it says "No room" where a tile is not open floor or holds something, "Not beside a door" on a door's two tiles, and "Someone is in the way" where anyone, living or dead, or a body, stands on one of them.
 
 "On you" is anywhere you carry it: a hand, the belt, or the bag.
 
@@ -69,7 +72,7 @@ X, or the palette's **Take apart** row, turns on the tool. The front-most thing 
 - "There is a wall in the way." for a piece of furniture behind a wall (a wall, a door, or a window is taken apart by distance alone, from either side);
 - "Empty it first." for a container or a station with anything in it, its output box included;
 - "It is still making something." for a station with something in its queue;
-- "Put it out first." for a lit [[Campfire]], which can be put out; "Let it burn down first." for a lit [[Cauldron]], [[Oven]], or [[Forge]], whose fire only burns down; and "It still has fuel in it; let it burn down." for one out with fuel left.
+- "Put it out first." for a lit [[Campfire]], [[Fireplace]], or [[Fire pit]], which can be put out; "Let it burn down first." for a lit [[Cauldron]], [[Oven]], or [[Forge]], whose fire only burns down; and "It still has fuel in it; let it burn down." for one out with fuel left.
 
 A click destroys it at once, and the tool stays on. X, N, Escape, or a right click leaves it.
 
@@ -100,8 +103,9 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Window: {{n build.window.cost.plank}} planks, {{n build.window.seconds seconds}}.
 - Fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
 - Gate: {{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}.
-- Campfire: {{n build.campfire.cost.stone}} stone and {{n build.campfire.cost.log}} logs, {{n build.campfire.seconds seconds}}.
-- Hearth: {{n build.hearth.cost.stone}} stone, {{n build.hearth.seconds seconds}}.
+- Fireplace: {{n build.fireplace.cost.stone}} stone, {{n build.fireplace.seconds seconds}}.
+- Fire pit: {{n build.fire_pit.cost.stone}} stone, {{n build.fire_pit.seconds seconds}}.
+- Feeding trough: {{n build.feed_trough.cost.plank}} planks, {{n build.feed_trough.seconds seconds}}.
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
 - Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
@@ -131,6 +135,8 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `data/build.json:112-145`, `src/placement.js:250-277`, `src/setdown.js:75-140`, `src/stations.js:247-250`: the palette's Fireplace, Fire pit, and Feeding trough, standing on tiles; the fit's reasons and "Someone is in the way"; the campfire left the palette for the workbench, the palette holding only what cannot be carried (game #527, at c3cb736)
+- `src/placement.js:637-645`: "Put it out first." for a lit built fire (game #527, at c3cb736)
 - `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit fire's word by whether it is put out by hand, a station's only burning down (game #501)
 - `data/build.json`, `src/placement.js:86-96`, `src/placement.js:381`, `src/woods.js:41-67`: a row per wooden wall, the regions' two only with Free building; R for a door's or window's wood (game #348, #351, at 9d1681f)
 - `src/map.js:647`, `src/map.js:670`: a painting falls to the floor when its wall is removed or built over (game #344, at 9ac68a2)
@@ -166,7 +172,6 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/placement.js:850`: a wall built under Free building marked `free`, giving nothing back (game #413, at 31d330a)
 - `src/interact.js:290-310`, `src/interact.js:901`: a made prop's menu entry, its label saying what comes back or why not (game #413, at 31d330a)
 - `src/ui/build-palette.js:49`: the palette's Take apart row (game #413, at 31d330a)
-- `data/build.json:112-124`, `src/placement.js:244-251`, `src/placement.js:934-960`, `src/campfire.js:19-31`: the palette's Campfire, a prop on a tile outdoors, its cost the fuel's logs, no tool (game #421, at 1bcb6ed)
 - `src/rules.js:18`, `src/placement.js:128-131`, `src/placement.js:144-150`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest
-- `data/build.json:125-133`, `src/setdown.js:21-38`: the palette's Hearth, six stone, inside a room against a wall (game #428, at 0ce54cf)
+- `data/build.json:112-122`, `src/setdown.js:75-105`: the palette's Fireplace, six stone, two tiles indoors with its back on a plain wall; it replaced the Hearth (game #527, at c3cb736)

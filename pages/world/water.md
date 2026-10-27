@@ -40,7 +40,7 @@ A waterskin's sip by itself, once you are Thirsty, takes only clean water: a ski
 
 ### Boiling
 
-A waterskin or a [[Bucket]] of tainted water comes out clean after boiling at a lit cooking fire: a [[Campfire]], a hearth, a fireplace, or the [[Oven]] (see [[Cooking]]). A fire that does not cook, such as the [[Forge]] or a [[Charcoal clamp]], will not do: "That is no cooking fire." There are three ways to start it, and all do the same thing:
+A waterskin or a [[Bucket]] of tainted water comes out clean after boiling at a lit cooking fire: a [[Campfire]], a [[Fireplace]], a [[Fire pit]], or the [[Oven]] (see [[Cooking]]). A fire that does not cook, such as the [[Forge]] or a [[Charcoal clamp]], will not do: "That is no cooking fire." There are three ways to start it, and all do the same thing:
 
 - **[[Use]]** a tainted waterskin or bucket, then click a lit cooking fire.
 - **Its own menu**: **Boil water**, on a skin in the bag or on the [[Belt]], or a bucket in the bag, on the belt, or in a hand, offered only when it holds tainted water. With no lit cooking fire in reach it is greyed: "Boil water (no lit fire in reach)".
@@ -93,7 +93,7 @@ A guest's drink or fill is sent to the host by the tile it names and run there a
 - `src/item-info.js:263-266`, `src/ui/inventory-panel.js:274`, `style.css`: the card's clean or tainted line, the tainted line first in red, and the brown drop on a tainted icon (games #435, #507, at d7cf736)
 - `src/entities/player.js:131-149`: the sip by itself takes only clean water (game #435, at fa2997f)
 - `src/water.js:54-176`, `src/interact.js:1161`, `src/interact.js:1170-1205`, `src/interact.js:1798-1801`, `src/interact.js:1893-1903`, `src/interact.js:1920`, `data/interactions.json:42-43`, `data/tuning.json:97-99`: boiling at a lit cooking fire, the three ways in for a skin and a bucket, their greyed labels, the two bars, the reach, the refusals, the fill kept (games #435, #508, at d7cf736)
-- `data/sprites/campfire.json`, `data/sprites/hearth.json`, `data/sprites/fireplace.json`, `data/sprites/oven.json`, `data/sprites/forge.json`, `data/sprites/charcoal_clamp.json`: which fires cook (game #435, at fa2997f)
+- `data/sprites/campfire.json`, `data/sprites/fireplace.json`, `data/sprites/fire_pit.json` (game #527, at c3cb736), `data/sprites/oven.json`, `data/sprites/forge.json`, `data/sprites/charcoal_clamp.json`: which fires cook (game #435, at fa2997f)
 - `src/game.js:418`, `src/entities/character.js:64-74`: a skin's clean water in the sync check and the save (game #435, at fa2997f)
 - `data/sprites/floor_water.json`, `src/map.js:1457-1460`, `src/map.js:1531-1538`: wholly water is walked by nobody
 - `tools/mapgen/valley.py:160-164`: the river, the stone bridge on the high street, the ford where the drove crosses

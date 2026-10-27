@@ -23,7 +23,7 @@ The [[Sawpit]] in the lumber yard of [[The joiner]] saws a log into the same {{n
 
 ## As fuel and for building
 
-A log is the fuel of a [[Campfire]] and the [[Oven]]; a hearth and a fireplace burn nothing (see [[Fire]]). A log added to a cold campfire does not light it. A campfire is built from {{n build.campfire.cost.log}} logs and {{n build.campfire.cost.stone}} stone, its logs its first fuel. A log wall costs {{n build.wall.cost.log}} log, and building one asks for a [[Hatchet]] on you (see [[Building]]).
+A log is the fuel of a [[Campfire]] and the [[Oven]]; a [[Fireplace|fireplace]] and a [[Fire pit|fire pit]] burn nothing (see [[Fire]]). A log added to a cold campfire does not light it. A campfire is made at the [[Workbench]] from logs and stone (see Uses below); it is set down cold and empty, and the logs it was made from are not its fuel. A log wall costs {{n build.wall.cost.log}} log, and building one asks for a [[Hatchet]] on you (see [[Building]]).
 
 {{item-sections log}}
 
@@ -39,7 +39,7 @@ A log is the fuel of a [[Campfire]] and the [[Oven]]; a hearth and a fireplace b
 - `src/interact.js:1251-1267`, `data/tuning.json:113`: Split, in your own bag, with the split tool, a hatchet, carried, greyed "(need a hatchet)" without it; "Some planks fell to the floor." (game #222)
 - `src/sawpit.js:25-75`, `data/tuning.json:170`, `src/item-info.js:119`: the sawpit saws a carried log into its `splitsInto` with no hatchet, `E` with a log on you, the planks to the bag or the feet; the card's line (game #416, at 31d330a)
 - `src/interact.js:1398-1414`: the Split entry's label names the count (at 31d330a)
-- `data/sprites/campfire.json`: log as fuel (likewise the oven); `data/sprites/fireplace.json`, `data/sprites/hearth.json`: switches, no fuel; `data/build.json:112-124`: the campfire's cost (game #421, at 1bcb6ed)
+- `data/sprites/campfire.json`: log as fuel (likewise the oven); `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`: switches, no fuel; `data/recipes.json:789-808`: the campfire's make at the workbench (game #527, at c3cb736)
 - `data/build.json:2-10`: a log wall's cost, and its tool, `notch` (game #222)
 - `src/placement.js:157-163`: the cost taken from hands, belt, and bag
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)

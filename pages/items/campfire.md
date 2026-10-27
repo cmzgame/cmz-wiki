@@ -1,24 +1,32 @@
 ---
 title: Campfire
-categories: [Crafting, Building]
+categories: [Items, Crafting, Light]
 aliases: [Campfires, Camp fire]
-summary: A fire you build yourself, outdoors, from stone and logs; it burns logs, cooks, and is picked up again only once it is out and empty.
+summary: The fire you carry: made at the workbench from stone and logs, set down outdoors with Place, it burns logs, cooks, and is picked up again once it is out and empty.
+numbersOk: true
 ---
 
-{{infobox-prop campfire}}
+<!-- typed: the station output box's 3 by 3 (src/stations.js OUTPUT, an array the census does not read) and the drawing's ten stones and four logs -->
 
-A **campfire** is the one fire you build yourself. It goes on open ground outdoors, from the build palette (`N`), and costs {{n build.campfire.cost.stone}} [[Stone|stone]] and {{n build.campfire.cost.log}} [[Log|logs]]; the logs are its first fuel. It burns logs while it is lit, gives [[Light]], and is a station for [[Cooking]]. Once it is out and empty it can be picked up and set down somewhere else.
+{{infobox-item campfire}}
 
-## Building one
+A **campfire** is the one fire you can carry. It is made at the [[Workbench]] as the **Campfire** item, {{n items.campfire.size.0}} by {{n items.campfire.size.1}} cells in the bag, and set down from the bag with **Place** on one tile of open ground outdoors. It burns [[Log|logs]] while it is lit, gives [[Light]], and is a station for [[Cooking]]. Once it is out and empty it can be picked up and set down somewhere else. It is not on the build palette: the palette holds only what cannot be carried, and the [[Fireplace]] and the [[Fire pit]] are built there instead.
 
-Open the palette with `N` and pick **Campfire**. The ghost follows the cursor tile by tile, green where a campfire may stand and red with the reason where it may not:
+It is drawn as a ring of ten fieldstones round a bed of ash and coals, four logs stood in a teepee and one lying ready beside it; lit, its own flames burn in the teepee. Set down, it takes one of two facings, the spare log at the back right or, mirrored, at the back left.
+
+## Making one
+
+At the workbench, pick **Campfire** in the panel (see [[Crafting]]); it needs no tool. The item goes into the workbench's output box, which is 3 by 3 so that it fits, and from there into your bag. It takes a good share of a bag: the [[Burlap sack]] every new character wears holds one, and so do the [[Linen satchel]] and the [[Rucksack]].
+
+## Setting it down
+
+**Place** on the item's menu, in your own bag, starts a ghost of the campfire on the tile under the cursor, green where it may stand and red with the reason where not:
 
 - **Outdoors only**: the tile is inside a room.
 - **No room**: the tile is not open ground, or something stands on it, or a rug is laid there.
-- **Too far**, or a wall in the way: it is built within reach and in sight, as everything is.
-- **Need ...**: you are short of the stone or the logs.
+- **Too far**, or a wall in the way: it is set down within reach and in sight, as everything is.
 
-A click starts a bar of {{n build.campfire.seconds seconds}}. When it finishes, the stone and the logs are spent and a cold campfire stands there holding the logs as its fuel. It needs no tool and no skill.
+A click sets it down, cold and empty ("You set the campfire down."). Escape or a right click cancels. The stone and logs it was made from are not its fuel: add logs before you light it.
 
 ## Lighting, feeding, and putting it out
 
@@ -32,41 +40,38 @@ Its right-click menu has:
 
 Each log burns {{n sprites.campfire.fire.hoursPerUnit}} game hours, so a full campfire burns for a long night. At the last log it goes out, and the players near it read "A fire has gone out." (see [[Fire]]).
 
-## Picking it up and setting it down
+## Picking it up
 
-**Pick up campfire** works only once it is **out and empty**: lit, it says "Put it out first."; with fuel left, "It still has fuel in it; let it burn down.". Picked up, it is a **Campfire** item of {{n items.campfire.size.0}} by {{n items.campfire.size.1}} in your bag, too big for the [[Burlap sack]] ("No room in your bag."), but one a [[Linen satchel]] or a [[Rucksack]] takes.
-
-The item's menu has **Place**: a ghost of the campfire follows the cursor, with the same rules as building one, and a click sets it down, cold and empty ("You set the campfire down."). Escape or a right click cancels.
+**Pick up campfire** works only once it is **out and empty**: lit, it says "Put it out first."; with fuel left, "It still has fuel in it; let it burn down.". Picked up, it is the Campfire item again, to be set down elsewhere ("No room in your bag." when it does not fit).
 
 ## Taking it apart
 
-A campfire a player built has **Take apart** on its menu (and lights up under the X tool): it gives back half its stones, rounded down, and no logs, which were fuel. It is refused while it is lit or has fuel in it, as Pick up is. A campfire picked up and set down again is still the builder's own to take apart. See [[Building#Taking apart|Building]].
+A campfire you made has **Take apart** on its menu (and lights up under the X tool): it gives back half of what made it, rounded down, a stone and a log, and needs no tool. It is refused while it is lit or has fuel in it, as Pick up is. A campfire you picked up and set down again is still your own to take apart; the village's own, picked up and set down, is still the village's and never taken apart. See [[Building#Taking apart|Building]].
 
-{{prop-sections campfire}}
+{{item-sections campfire}}
+
+{{where campfire}}
 
 One cold campfire with a little fuel in it stands at [[The charcoal burners]].
 
 ## With friends
 
-Building, lighting, feeding, putting out, picking up, setting down, and taking apart are all carried out by the host for the player who asked, with what that player carries. A guest's build and set-down go as placement commands, the rest as the menu's own labels. The fire's fuel and whether it is lit travel with its tile, so everyone sees the same campfire.
+Making, setting down, lighting, feeding, putting out, picking up, and taking apart are all carried out by the host for the player who asked, with what that player carries. A guest's Make is the workbench's own, and their set-down is a command naming the item; the rest are the menu's own labels. The fire's fuel and whether it is lit travel with its tile, so everyone sees the same campfire.
 
 ## Sources
 
-<!-- sources at 1bcb6ed -->
-- `data/build.json:112-124`: the palette's Campfire: a prop, three stone and two logs, the logs its fuel, its seconds, no tool (game #421)
-- `src/campfire.js:19-31`: open ground outdoors only, nothing standing there, no rug; "Outdoors only", "No room", "Too far"
-- `src/placement.js:244-251`, `src/placement.js:934-960`: the palette's prop build: the ghost's reasons, the timed bar, the cost spent and the fuel set at the end
-- `src/campfire.js:33-41`: a campfire made by a player, cold, holding its fuel, marked `made`
-- `data/sprites/campfire.json`: its fuel (logs), hours a log, most logs, light, cooking
-- `src/interact.js:488-526`: its menu: Add a log, Light, Put out, Pick up
-- `src/burn.js:192-209`: Add a log, which lights nothing ("You add a log; it is not lit.")
-- `src/burn.js:87-120`, `src/burn.js:210-230`: Light with a flame, "You light the campfire."
-- `src/burn.js:161-191`: Put out, the fuel kept
-- `src/campfire.js:43-71`: Pick up only out and empty, its refusals, into the bag as the Campfire item, "No room in your bag."
-- `data/items.json`: the Campfire item, 5 by 5, `place: "campfire"`
-- `src/campfire.js:80-98`, `src/interact.js:1433`, `src/placement.js:320`, `src/placement.js:688-700`: Place, the ghost, set down cold and empty
-- `src/placement.js:518-536`: Take apart: half the cost but the fuel
-- `tools/mapgen/valley.py:578`: the charcoal burners' campfire, with two logs
-- `src/placement.js:880-900`, `src/net.js`: a guest's build and set-down as placement commands, run on the host
+<!-- sources at c3cb736 -->
+- `data/recipes.json:789-808`: the campfire at the workbench, three stone and two logs, no tool; the logs are the make's, not its fuel (game #527)
+- `data/items.json:41`: the Campfire item, 3 by 3, `place: "campfire"`, its drawn icon and held picture (game #527)
+- `src/stations.js:26`: the output box 3 by 3, so the made item lands in it (game #527)
+- `data/sprites/campfire.json`: the drawn campfire in two facings, its own flames; its fuel (logs), hours a log, most logs, light, cooking
+- `src/campfire.js:1-6`, `src/campfire.js:20-26`: made at the workbench, set down outdoors on one tile, cold and empty; "Outdoors only", "No room", "Too far"
+- `src/campfire.js:82-98`: Place sets it down, "You set the campfire down.", the player's own unless the item was the village's
+- `src/interact.js:586-591`: its menu: Add a log, Light, Put out, Pick up
+- `src/burn.js:197-232`: Light with a flame, "You light the campfire."; Add a log lights nothing
+- `src/campfire.js:44-72`: Pick up only out and empty, its refusals, into the bag as the item, marked `made` as it stood
+- `src/placement.js:610-635`: Take apart by the recipe of the item whose Place sets it down: half of each, no tool for a make that named none
+- `tools/mapgen/valley.py`: the charcoal burners' campfire, with two logs
+- `src/campfire.js:82`, `src/net.js`: a guest's set-down as the `campfire` command by the item's uid, run on the host
 
-{{navbox props}}
+{{navbox items}}

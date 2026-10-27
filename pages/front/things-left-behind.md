@@ -4,13 +4,13 @@ categories: [About]
 summary: What this game takes from survival games like Project Zomboid, and what it swears off.
 ---
 
-Cozy Medieval Zombies is a survival simulation in the spirit of Project Zomboid, boiled down to a few rules that collide: light, sight, hunger, thirst, sleep, a hearth you keep lit, a garden you tend, a home you furnish and defend. It is not Zomboid with cute art, and that is on purpose. This page is the list of things the game leaves behind, kept by Michael as he plays; a line here is a promise to the player, not a plan.
+Cozy Medieval Zombies is a survival simulation in the spirit of Project Zomboid, boiled down to a few rules that collide: light, sight, hunger, thirst, sleep, a fire you keep lit, a garden you tend, a home you furnish and defend. It is not Zomboid with cute art, and that is on purpose. This page is the list of things the game leaves behind, kept by Michael as he plays; a line here is a promise to the player, not a plan.
 
 ## Left behind
 
 - **No body map.** [[Health]] is one number; a wound is [[Bleeding]] or [[Infection]], not a diagram.
 - **No vision cone stance.** You see what the light and the walls let you see ([[Sight]]); no stance narrows it, and sprinting (Shift) costs stamina, not sight.
-- **No water shutoff, no power cut.** Nothing in the world switches off on a schedule. Things run out because you used them: the hearth burns the logs you fed it ([[Fire]]), the waterskin empties as you drink ([[Thirst]]).
+- **No water shutoff, no power cut.** Nothing in the world switches off on a schedule. Things run out because you used them: a campfire burns the logs you fed it ([[Fire]]), the waterskin empties as you drink ([[Thirst]]).
 - **No danger that grows with the days.** No world decay, no scheduled horde. Every rise in danger is one a player chose: you went to the bog and brought some of the bog home with you.
 - **No skill grind on the battlefield.** Skills, when they come, are off the battlefield and never make you hit harder; a sword does what a sword does ([[Combat]]).
 - **No guns.** Ever. Medieval, low-fantasy: a sword, a bow, a torch, and a book of fire ([[Weapons]]).
@@ -20,7 +20,7 @@ Cozy Medieval Zombies is a survival simulation in the spirit of Project Zomboid,
 
 - One continuous world with real line of sight: look through the inn's window before you open the door ([[Openings]], [[Sight]]).
 - The dead that remember where they last saw you, and break in ([[The dead]], [[Breaking in]]).
-- A home worth defending: boards, doors, a hearth, a bed ([[Building]], [[Sleep]]).
+- A home worth defending: boards, doors, a fireplace, a bed ([[Building]], [[Sleep]]).
 
 ## With friends
 

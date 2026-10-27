@@ -7,7 +7,7 @@ summary: Raw beef cooked alone at a lit fire; food that fills more and heals mor
 
 {{infobox-item beef_cooked}}
 
-**Beef steak** is [[Raw beef|raw beef]], the meat of a cow, cooked alone at a lit fire (see [[Cooking]]): pick it in a campfire's, a hearth's, a fireplace's, or the [[Oven]]'s panel with the raw meat on you or in a searched container within reach. It is [[Food]]: eaten, it fills hunger by {{n items.beef_cooked.hunger}} and heals {{n items.beef_cooked.heal}}, where the raw meat fills {{n items.beef_raw.hunger}} and heals {{n items.beef_raw.heal}}. It takes a cell of its own and does not stack, and it is on placeholder art.
+**Beef steak** is [[Raw beef|raw beef]], the meat of a cow, cooked alone at a lit fire (see [[Cooking]]): pick it in a campfire's, a [[Fireplace|fireplace]]'s, a [[Fire pit|fire pit]]'s, or the [[Oven]]'s panel with the raw meat on you or in a searched container within reach. It is [[Food]]: eaten, it fills hunger by {{n items.beef_cooked.hunger}} and heals {{n items.beef_cooked.heal}}, where the raw meat fills {{n items.beef_raw.hunger}} and heals {{n items.beef_raw.heal}}. It takes a cell of its own and does not stack, and it is on placeholder art.
 
 Cooking a meat alone is the quick way; the same raw meat goes further in a dish (the [[Meat pottage]], the [[Hearty stew]], a [[Meat pie]], [[Smoked meat]], or [[Pemmican]]). Every meat is on [[Meat]].
 

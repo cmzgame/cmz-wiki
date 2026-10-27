@@ -32,6 +32,8 @@ Grass tufts, flowers, leaves, and props with none of these are decoration, and l
 
 **What counts as made.** A kind can be made when a player can bring a new one into the world in the valley: a recipe whose product is that object, at a station the valley has, from materials and tools that can be had there (the same test as [[Production chains]]); the [[Building|build palette]]; or, for a crop, a seed that can be had there. A made container starts empty.
 
+**Collectibles are left out.** The rugs and paintings are marked in the game's data as collectibles: made to be found and kept, never made (see [[Rugs]] and [[Paintings]]). Nothing lists them here for having no recipe; [[Production chains]] names them while nothing in normal play holds them.
+
 **How many.** The props the map places are counted from the map. The trees and mushrooms the map grows by its rules, and the rocks the map adds when it loads to make up the valley's count of stone (see [[Rocks]]), are counted by the game's own map loader, inside the valley's edge. Past the edge, [[The wild]] grows trees, rocks, and mushrooms as it is walked, without end, and is not counted.
 
 ## Dead ends
@@ -65,6 +67,7 @@ Placed in the valley with nothing to do with them: {{dead-ends decoration}}
 ## Sources
 
 <!-- sources at 307ed34 -->
+- `data/items.json:114-123`: the rugs and paintings marked `collectible`, left out of the lists (game #526, at c3cb736)
 - `data/maps/valley.json`: every placed prop, a container's own `loot`, the wall brackets, the openings and the fences' gates, and the scatter, wild, and forage rules
 - `src/map.js:2024-2230`: the map loader, which places the authored props, then grows the scatter's trees and the forage's mushrooms inside the bounds (counted by the wiki's census with this loader, run headless)
 - `src/map.js:384-459`: the wild past the bounds, its trees, rocks, and mushrooms grown per tile as it is walked

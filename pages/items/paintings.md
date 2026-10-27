@@ -5,7 +5,7 @@ aliases: [Painting, Hanging a painting, Hung painting, Place a painting]
 summary: A painting is an item carried in the bag; Place hangs it on the face of a plain wall, and Pick up takes it down again.
 ---
 
-A **painting** is an item you carry in your bag and hang on a wall where you like. There are eight, in three shapes: three small ones, the [[Lone oak painting]], the [[Deer painting]], and the [[Snow peak painting]]; two tall ones, the [[Waterfall painting]] and the [[Pines painting]]; and three wide ones, the [[Castle painting]], the [[Lake painting]], and the [[Sunset painting]]. Hung, a painting sits flat on the wall's face; taken down, it goes back into the bag. Nothing makes a painting yet, and nothing in the valley holds one. The [[Developer chest]] holds one, the [[Castle painting]], to try hanging a wide one; any of the eight can be added to a new world's **Extra starting items** (see [[World rules]]).
+A **painting** is an item you carry in your bag and hang on a wall where you like. There are eight, in three shapes: three small ones, the [[Lone oak painting]], the [[Deer painting]], and the [[Snow peak painting]]; two tall ones, the [[Waterfall painting]] and the [[Pines painting]]; and three wide ones, the [[Castle painting]], the [[Lake painting]], and the [[Sunset painting]]. Hung, a painting sits flat on the wall's face; taken down, it goes back into the bag. A painting is a collectible, made to be found, brought home, and kept: nothing makes one, and none ever will. Nothing in the valley holds one yet. The [[Developer chest]] holds one, the [[Castle painting]], to try hanging a wide one; any of the eight can be added to a new world's **Extra starting items** (see [[World rules]]).
 
 ## How it works
 
@@ -59,6 +59,7 @@ A guest hangs and takes down paintings as the host does. Place only starts the g
 ## Sources
 
 <!-- sources at 9ac68a2 -->
+- `data/items.json:116-123`: the eight paintings marked `collectible`, found and never made (game #526, at c3cb736; the game's docs/02, 2026-10-27)
 - `data/items.json:75-82`: the eight paintings, kind decor, small 2 by 2, tall 2 by 3, wide 3 by 2 (game #344, at 9ac68a2)
 - `data/loot.json:20`: the castle painting alone in the dev kit; no other table holds one (game #514, at 393acaf)
 - `data/sprites/decor_paintings.json`: each painting drawn on a north and a west wall (game #344, at 9ac68a2)
