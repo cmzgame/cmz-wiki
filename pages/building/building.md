@@ -25,6 +25,7 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Fireplace**, costing {{n build.fireplace.cost.stone}} [[Stone|stone]], built in {{n build.fireplace.seconds seconds}}, with no tool: two tiles indoors with its back along a plain wall ("Indoors only", "Against a wall"), facing out from the wall the cursor finds. See [[Fireplace]].
 - **Fire pit**, costing {{n build.fire_pit.cost.stone}} stone, built in {{n build.fire_pit.seconds seconds}}, with no tool: two tiles by two on open ground, indoors or out, never on water ("Not on water"). See [[Fire pit]].
 - **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built in {{n build.feed_trough.seconds seconds}}, with a smith's hammer on you. See [[Feeding trough]].
+- **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built in {{n build.round_stone.seconds seconds}} at 5. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
 
 The ghost of a piece that stands on tiles covers its tiles, not an edge. Besides its own rule it says "No room" where a tile is not open floor or holds something, "Not beside a door" on a door's two tiles, and "Someone is in the way" where anyone, living or dead, or a body, stands on one of them.
 
@@ -83,9 +84,10 @@ A click destroys it at once, and the tool stays on. X, N, Escape, or a right cli
 Only what players made can be taken apart:
 
 - any wall, door, or window a player built, including a door or window built into a wall of the village
+- a round room a player built, whole: any edge of it lights up the whole ring, and a wall or a door it took in is left as it was (see [[Round rooms#Taking one apart|Round rooms]])
 - any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
-The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map, trees, the well, fires, or torch posts. Furniture is carried whole instead (see [[Carrying furniture]]).
+The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map (a round room of the map says "That is the village's."), stairs, trees, the well, fires, or torch posts. Furniture is carried whole instead (see [[Carrying furniture]]).
 
 A made piece of furniture also has **Take apart** on its own right-click menu, saying what comes back ("Take apart (2 planks back)") or, greyed, why not: "Take apart (empty it first)", "Take apart (you need a smith's hammer)".
 
@@ -106,6 +108,7 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Fireplace: {{n build.fireplace.cost.stone}} stone, {{n build.fireplace.seconds seconds}}.
 - Fire pit: {{n build.fire_pit.cost.stone}} stone, {{n build.fire_pit.seconds seconds}}.
 - Feeding trough: {{n build.feed_trough.cost.plank}} planks, {{n build.feed_trough.seconds seconds}}.
+- Round stone wall: {{n build.round_stone.cost.stone}} stone an edge it lays, never charged (Free building only); {{n build.round_stone.seconds seconds}} at 5 across, two fifths more at 7.
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
 - Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
@@ -119,11 +122,13 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]) and the Round stone wall (see [[Round rooms]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
 - [[Walls]]
+- [[Round rooms]]
+- [[Upper floors]], whose stairs only the map places so far
 - [[Openings]]
 - [[Boards]]
 - [[Rooms]]
@@ -135,6 +140,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `data/build.json:146-157`, `src/placement.js:80-200`, `src/placement.js:693-696`, `src/placement.js:800-860` (at da57a57): the Round stone wall, listed and built only with Free building; a ring taken apart whole, the map's refused (game #536)
 - `data/build.json:112-145`, `src/placement.js:250-277`, `src/setdown.js:75-140`, `src/stations.js:247-250`: the palette's Fireplace, Fire pit, and Feeding trough, standing on tiles; the fit's reasons and "Someone is in the way"; the campfire left the palette for the workbench, the palette holding only what cannot be carried (game #527, at c3cb736)
 - `src/placement.js:637-645`: "Put it out first." for a lit built fire (game #527, at c3cb736)
 - `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit fire's word by whether it is put out by hand, a station's only burning down (game #501)

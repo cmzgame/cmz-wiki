@@ -16,7 +16,7 @@ It is drawn as a big stone hearth on a flagstone slab: an arched firebox, a fire
 Pick **Fireplace** in the palette. Its ghost runs two tiles along the wall under the cursor, its back to the wall, and turns to face out from whichever wall it finds: against a west wall it runs north to south, against a north wall west to east. Either of its two tiles may be pointed at. It is green where it may stand and red with the reason where not:
 
 - **Indoors only**: the tiles are outdoors.
-- **Against a wall**: its back does not rest on a plain, whole wall along its full length. A door, a window, a gap, a broken wall, or a fence will not do.
+- **Against a wall**: its back does not rest on a plain, whole wall along its full length. A door, a window, a gap, a broken wall, a fence, or a [[Round rooms|round room]]'s curved wall will not do; a round room's fire is a [[Fire pit]].
 - **No room**: a tile is not open floor, something stands on it, a rug is laid there, a wall runs between its two tiles, or they are in two rooms.
 - **Not on water**, and **Not beside a door**: it keeps clear of a door's two tiles, where the dead must be able to stand (see [[Openings]]).
 - **Someone is in the way**: a player, a villager, one of the dead, an animal, or a body stands on one of its tiles.
@@ -42,6 +42,7 @@ A guest's build is a command the host checks and carries out for that player, na
 ## Sources
 
 <!-- sources at 91bafc1 -->
+- `src/setdown.js:60-63` (at da57a57): never against a round room's ring (game #536)
 - `data/build.json:112-122`: the palette's Fireplace: a prop, six stone, `stand: "wall"`, its seconds, no tool; it replaced the generated hearth (game #527)
 - `data/sprites/fireplace.json`: the drawn fireplace, two tiles in two facings (a west wall as drawn, a north wall as its mirror), its own flames, a switch that lights its room and cooks, its radius and flicker, `carry: false`
 - `src/setdown.js:75-105`: "No room", "Not on water", "Not beside a door", "Indoors only", "Against a wall" (a plain, unbroken, solid wall along the whole back)

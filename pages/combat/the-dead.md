@@ -85,6 +85,10 @@ The dead strike a fence that stands between them and a player they are hunting a
 
 At night, from {{n census.constants.clock.DUSK_START}} o'clock, one of the dead that sees a player inside a room it is not in holds a siege on them until {{n tuning.zombie.siegeEndHour}} o'clock. It remembers the door it saw them go in by, the one on the line from where it last saw them outside to where it sees them now (else the door nearest them), and any window it saw them through, and breaks in there first. When its search finds no one it does not give up: it waits about the house, going between the openings it knows and breaking the shut ones. At {{n tuning.zombie.siegeEndHour}} o'clock it loses interest and wanders off, unless it sees someone. The siege calls no more of the dead: it is held only by the ones that saw you. While one holding a siege on you is within {{n tuning.zombie.siegeSleepRadius tiles}}, you cannot [[Sleep|sleep]]. See [[Breaking in#The siege|Breaking in]].
 
+### Up and down stairs
+
+The dead walk [[Upper floors|stairs]] as players do. One that sees you go up a stair follows you up it, and down again; a storey apart, the dead and a player see each other only when both are near a stair between them, so a floor hides you otherwise, and one that has lost you on another floor with no stair to take stays where it is. They bite and strike only on their own floor, never through it.
+
 ### The groan
 
 Now and then each of the dead says "{{n tuning.zombie.groanText}}" in a speech bubble, every {{n tuning.zombie.groanMin}} to {{n tuning.zombie.groanMax seconds}}. It does not groan while on the floor, and the fallen are silent. A groan from one you cannot see for the dark shows no bubble; within {{n tuning.sight.groanRadius tiles}} of you the [[Chat log]] says "Something groans in the dark." instead, at most once every {{n tuning.sight.groanGap seconds}}, and farther off nothing is heard. One behind a tree's canopy by day says nothing in the log.
@@ -141,6 +145,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 ## Sources
 
 <!-- sources at 879d0a7 -->
+- `src/entities/zombie.js:389-405`, `src/entities/zombie.js:492`, `src/entities/zombie.js:328`, `src/entities/movement.js:49-60` (at da57a57): the dead on stairs, seeing a storey away only by a stair, following by it, biting on one layer (game #534)
 - `src/poison.js:85-142`, `src/game.js:835` (at 307ed34): poison on the dead, beside a burn, and its green (game #496)
 - `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, biteTokens, biteTokensPer, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
 - `data/wardrobes.json`: the dead's ten wardrobes

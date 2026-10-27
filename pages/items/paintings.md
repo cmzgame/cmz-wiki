@@ -24,6 +24,7 @@ A painting in your own bag has **Place** on its right-click menu, after **Use**.
 - **Something already hangs there**: one painting to a stretch of wall.
 - **A corner is in the way**: another wall meets the end of the run on your side, and would hide much of the painting.
 - **Too wide for the wall** and **A post is in the way**: a wide painting needs two stretches of the same wall side by side, with no wall meeting the joint between them.
+- **It would not hang flat on the curve**: the wall is a [[Round rooms|round room]]'s ring.
 
 A painting goes only on the face of a wall turned toward the camera: the inside of a building's north and west walls, and the outside of its south and east walls. A wide painting aimed at the last stretch of a wall hangs from the one before it. A click on a green ghost hangs the painting and it leaves your bag; a click on a red one says why. `Escape` or a right click cancels, and the painting stays in the bag.
 
@@ -59,6 +60,7 @@ A guest hangs and takes down paintings as the host does. Place only starts the g
 ## Sources
 
 <!-- sources at 9ac68a2 -->
+- `src/paintings.js:57` (at da57a57): no painting on a round room's ring (game #536)
 - `data/items.json:116-123`: the eight paintings marked `collectible`, found and never made (game #526, at c3cb736; the game's docs/02, 2026-10-27)
 - `data/items.json:75-82`: the eight paintings, kind decor, small 2 by 2, tall 2 by 3, wide 3 by 2 (game #344, at 9ac68a2)
 - `data/loot.json:20`: the castle painting alone in the dev kit; no other table holds one (game #514, at 393acaf)

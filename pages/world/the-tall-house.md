@@ -1,0 +1,34 @@
+---
+title: The tall house
+categories: [Places]
+aliases: [Tall house, Two-storey house]
+summary: A two-storey wooden house east of your cottage, the valley's first upper floor: a stair up to a bedroom with five windows.
+---
+
+{{infobox-place "the tall house"}}
+
+**The tall house** is a two-storey wooden house in [[The valley]], east of [[Your cottage]], between the cottage's garden fence and the river. It is the valley's first house with an [[Upper floors|upper floor]]: a stair inside climbs to a first floor over the whole house. Its ground floor is {{n valley.sets.2.buildings.0.rect.2}} by {{n valley.sets.2.buildings.0.rect.3}} tiles inside, and the first floor covers all of it.
+
+## What is there
+
+**The ground floor** has its door on the south side, a window on the west and one on the north, a table with a chair, a chest in the north-east corner, and a lantern in a bracket on the inside of the west wall. A wooden stair runs east along the middle of the room, three steps up to the landing.
+
+**The first floor** has five windows, two on the north side and one each on the east, the south, and the west; a bed along the west end of the south wall, a chest in the south-east corner, and a lantern in a bracket on the inside of the north wall.
+
+The chests are searched like any [[Containers|container]]. The bed is one to [[Sleep]] in.
+
+From outside, both storeys stand. Inside, the first floor is hidden over the house while you are on the ground floor, so you see into the room; walk up the stair and you are on the first floor, the camera following you up (see [[Upper floors]]).
+
+## The dead
+
+None are placed in or round it. The dead that see you go up the stair follow you up it.
+
+## Sources
+
+<!-- sources at da57a57 -->
+- `tools/mapgen/valley.py:210-228`: the tall house east of your cottage, between its fence and the river: the ground floor's door, windows, table, chair, chest, and lantern; the first floor's five windows, bed, chest, and lantern; the stair along the middle row climbing east (game #534)
+- `data/maps/valley.json` (the set "the tall house"): the building, its `floors`, and its `stairs`
+- `src/render/storeys.js:44-57`: the floors above yours hidden over the building you stand in, every storey shown from outside (game #534)
+- `src/entities/zombie.js:389-405`: the dead follow by the stair (game #534)
+
+{{navbox places}}

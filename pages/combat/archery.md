@@ -56,6 +56,10 @@ The path is checked once, when the shot is loosed. A shot is stopped by:
 
 A stopped arrow falls at the foot of what stopped it and hits nothing.
 
+A flight stays on the floor it was loosed from: a shot or a throw from an [[Upper floors|upper floor]] flies, hits, and lands on that floor alone, and nothing hits through a floor.
+
+{{planned doc=49 step=5 note="Shooting down from an upstairs window, with a bow or a thrown knife or axe, from the ground floor and the first floor; never a spell or a spear."}}
+
 A flight rises from the hand and falls to its landing point, so what stops it depends on where along the path it stands. At the top of its arc a full-range bow shot or a full throw of the spear is above a house wall, and a full throw of a [[Throwing knife]] or a [[Throwing axe]] is above a fence but never a house wall; a shorter shot arcs lower.
 
 ### Pulling from afar
@@ -122,6 +126,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## Sources
 
 <!-- sources at 125bffb -->
+- `src/archery.js:135`, `src/archery.js:282`, `src/archery.js:309`, `src/archery.js:377` (at da57a57): a flight on its shooter's layer, hitting and landing there alone (game #534)
 - `src/archery.js:312`, `src/entities/zombie.js:126-136`, `src/entities/zombie.js:559-587` (at 5eb40e6): a shot's hit tells the dead one where it was loosed from, and one it does not kill calls the dead that see it (game #504)
 - `src/archery.js:809-829`, `src/archery.js:919-950`, `src/archery.js:284-335`, `src/archery.js:734-776`, `src/interact.js:262-310`, `data/items.json:13-14` (at 307ed34): the throwing knife and axe: the left button from the main hand, one from the stack, the knockdown and break rolled at the landing, the spin and the lying picture, the pile taken with E (game #494)
 - `data/items.json:24` `bow.ammo`, `src/archery.js:298-313`, `src/archery.js:714-719` (at 307ed34): the bow's order with the poisoned arrows, their hit poisoning, their green heads (game #496)

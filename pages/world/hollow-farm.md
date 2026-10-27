@@ -15,9 +15,10 @@ summary: The big farm south of the lane: the great barn with a hoe on its rack, 
 - **The yard**, with a well, woodpiles, and the farm pond; a [[Chicken coop]] at its west end with the farm's hens about it and a [[Feeding trough]] beside it: fill the trough with feed and the hens lay [[Egg|eggs]] into the coop (see [[Keeping]]); and three [[Beehive|beehives]] in a row east of the lane, each with a [[Pot of honey]] to take, and more {{n tuning.work.honey.days}} game days after.
 - **The pumpkin field**, the biggest field on the map, fenced with a gate on the yard, a scarecrow in its middle. The scarecrow is a container: searched, it gives up the [[Onion-head Hat]] it wears, the valley's only one.
 - Fenced plots of **potatoes**, **cabbages**, and **garlic**, all at mixed stages.
+- **The dovecote**, a small round stone room on the wood's edge north of [[The orchard]], its door to the south and a window to the east, empty inside: the valley's one [[Round rooms|round room]]. See [[Hollow Farm's dovecote]].
 - **The byre** and **the pigsty**, two fenced pens west of [[The orchard]], each with a gate on the farm's side: the cows in the byre, the pigs in the pigsty, held while the gates are shut (see [[Animals]]). Each pen has a feeding trough inside it, empty until a player fills it; fed, the cows give milk to a [[Bucket]] (see [[Keeping]]).
 
-Each part is a place of its own on the map: [[Hollow Farm's yard]] (its well, woodpiles, cart, trough, coop, feeding trough, and hives), [[Hollow Farm's great barn]], [[Hollow Farm's farmhouse]], [[Hollow Farm's granary]], [[Hollow Farm's pumpkin field]], [[Hollow Farm's potatoes]], [[Hollow Farm's cabbages]], [[Hollow Farm's garlic]], [[Hollow Farm's byre]], and [[Hollow Farm's pigsty]].
+Each part is a place of its own on the map: [[Hollow Farm's yard]] (its well, woodpiles, cart, trough, coop, feeding trough, and hives), [[Hollow Farm's great barn]], [[Hollow Farm's farmhouse]], [[Hollow Farm's granary]], [[Hollow Farm's pumpkin field]], [[Hollow Farm's potatoes]], [[Hollow Farm's cabbages]], [[Hollow Farm's garlic]], [[Hollow Farm's byre]], [[Hollow Farm's pigsty]], and [[Hollow Farm's dovecote]].
 
 ## The dead
 
@@ -30,6 +31,7 @@ The fields, the crops, the animals, and what the granary held are the world's, t
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `tools/mapgen/valley.py:635-638` (at da57a57): the dovecote, a round stone room north of the orchard, door south, window east (game #536)
 - `tools/mapgen/valley.py:408-467`, `data/maps/valley.json:5396-8458`: the farm's yard, the great barn and its tool rack, the farmhouse, the granary, the well, the pond, the pumpkin field and its scarecrow, the potato, cabbage, and garlic plots (game #219)
 - `data/loot.json:8-9`: the barn rack's hoe; the granary's seed of every crop, fixed
 - `tools/mapgen/valley.py:453-457`, `data/loot.json:3`: the coop at the yard's west end with the coop table, and three hives east of the lane (game #338, at 232d0fb); the coop's table rolls nothing since game #460

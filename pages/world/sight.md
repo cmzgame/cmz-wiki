@@ -74,6 +74,12 @@ When you walk behind a tall tree, a soft round hole opens in its canopy so you c
 - Counted as seen from {{n tuning.sight.seenAt}} of whole; not drawn below {{n tuning.sight.drawCutoff}}.
 - "Something groans in the dark.": only within {{n tuning.sight.groanRadius tiles}}, at most every {{n tuning.sight.groanGap seconds}}.
 
+### On an upper floor
+
+Sight is worked out on your own floor, by its walls and openings. A floor hides what is above and below it: from upstairs you do not see the dead on the ground through the floor, and they do not see you, except near a stair between you (see [[Upper floors]]). Inside a house the floors above yours are hidden over it, and a body on a floor hidden from you is not drawn.
+
+{{planned doc=49 step=4 note="Looking down from an upstairs window at the dead on the ground, and being seen from below."}}
+
 ## With friends
 
 Each player's sight and fog are their own, worked out from their own character. Another player is drawn only when they are in your sight, never through a wall.
@@ -90,6 +96,7 @@ Each player sees the dead in the dark by their own sight and their own torch, fr
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/visibility.js:12`, `src/visibility.js:94-106`, `src/render/storeys.js:44-67` (at da57a57): sight on the viewer's own layer; the hiding rule and a hidden storey's bodies (game #534)
 - `src/visibility.js:12-48`, `src/visibility.js:86-109`, `src/camera.js:58-75`: rays from your tile over the viewport and a margin; the corner points
 - `src/main.js:1170-1179`: recomputed on a new tile, a world change, or a resize
 - `src/map.js:1363-1376`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not

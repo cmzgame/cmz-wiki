@@ -5,7 +5,7 @@ aliases: [Wall, Log wall, Wood wall, Stone wall, Wall materials]
 summary: Walls sit on the edges between tiles; their materials, heights, and thickness.
 ---
 
-**Walls** in the game sit on the edges between tiles, not on the tiles themselves. Each tile can hold a wall on its north edge and on its west edge; its other two sides belong to its neighbours. Doors and windows are walls of another kind (see [[Openings]]).
+**Walls** in the game sit on the edges between tiles, not on the tiles themselves. Each tile can hold a wall on its north edge and on its west edge; its other two sides belong to its neighbours. Doors and windows are walls of another kind (see [[Openings]]). Each floor of a building has walls of its own: a wall stands on one floor, and an [[Upper floors|upper floor]]'s walls stand a storey up, on its own tiles' edges.
 
 ## How it works
 
@@ -26,11 +26,15 @@ A building may mix materials, with a different wall on each side. A door or a wi
 
 A house wall of any material is about twice a person's height. Doors and windows sit at the same heights in every wall, whatever its material: a door's top is {{n census.constants.placeholders.DOOR_TOP}} pixels up, clear over a person's head, and a window runs from {{n census.constants.placeholders.WINDOW_SILL}} pixels, about the waist, to {{n census.constants.placeholders.WINDOW_TOP}}, over the head (see [[Openings]]).
 
-An arrow or a throw in flight is stopped by a wall only below that wall's own height: a house wall's, or a fence's much lower one, which an arc can pass over (see [[Archery#What stops a shot|Archery]]).
+An arrow or a throw in flight is stopped by a wall only below that wall's own height: a house wall's, or a fence's much lower one, which an arc can pass over (see [[Archery#What stops a shot|Archery]]). A thrown knife or axe clears a fence and never a house wall, as Michael ruled he prefers (2026-10-27).
+
+### Round walls
+
+A [[Round rooms|round room]]'s wall is stone, drawn as a ring round a square of five or seven tiles, but in the world it is ordinary walls on the edges of the tiles inside the circle: it stops bodies, sight, and light as any stone wall does, and nothing breaks it. Bodies are also held off the drawn curve. Doors and windows go only at its four door points. [[Hollow Farm's dovecote]] is one; players build them only with Free building on.
 
 ### Building and taking apart walls
 
-You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N, and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart. See [[Building]].
+You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N (and, with Free building on, round stone rooms), and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart. See [[Building]].
 
 ### Brackets
 
@@ -55,6 +59,8 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 
 - [[Openings]]
 - [[Fences]]
+- [[Round rooms]]
+- [[Upper floors]]
 - [[Woods]]
 - [[Rooms]]
 - [[Building]]
@@ -62,6 +68,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:61-67`, `src/map.js:1444-1513`, `docs/02-decisions.md` (2026-10-27, Thrown things clear fences, not walls) (at da57a57): walls on each layer; a ring's edges walls of stone, doors only at its door points; the thrown-things ruling (games #533, #536)
 - `data/sprites/wall_spruce.json`, `data/sprites/wall_mahogany.json`, `data/sprites/wall_daub.json`, `data/sprites/wall_winterpine.json`, `data/sprites/wall_bloodbark.json`, `data/build.json`, `src/woods.js`: the six woods, each buildable, and a door's or window's own wood (game #348, #351, at 9d1681f)
 - `src/map.js:1-6`, `src/map.js:1345-1351`: walls on the `n` and `w` edges of a tile
 - `src/map.js:733-744`: doors and windows are walls with a kind

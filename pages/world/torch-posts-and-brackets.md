@@ -49,6 +49,8 @@ It takes the faces a painting takes: a plain, solid, drawn wall, indoors or out,
 - **A bracket is already there**: a bracket, with a torch or a lantern, is on either face of that stretch of wall;
 - **Something already hangs there**: a painting is on that face.
 
+A [[Round rooms|round room]]'s ring counts as wall for a torch: it hangs at its point on the curve, on a face the camera sees, and is refused on one turned away ("Not on that side of the curve"). A torch on a plain wall that a round room is built against falls to the floor, put out, when the ring takes the wall in; a lantern's bracket refuses the ring ("A lantern is in the way").
+
 A painting is refused on a face that holds a torch ("A bracket is in the way").
 
 On the wall it works as a bracket's torch does: **Light the torch** while it is out and **Put out the torch** while it is lit, and it burns down at the wall rate. In place of Take the torch it offers **Pick up torch**, which `E` also does: the torch comes back put out, as a torch leaving any holder does, with its wear, into a free hand, else the belt or the bag ("You pick up the torch."), and the bracket goes with it, leaving the wall bare. A torch that burns out on the wall takes its bracket with it, and one whose wall goes falls to the floor, put out. The village's own brackets keep their brackets: their torch is taken with Take the torch, as above. The torch's [[Inventory#The hover card|hover card]] says "**Place torch**: on a wall's face, in a bracket that comes with it; picked up again, the bracket goes too."
@@ -85,6 +87,7 @@ Taking and mounting a torch are performed by the host for whoever asked, and the
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/setdown.js:260-267`, `src/map.js:1474-1475`, `src/map.js:1496-1499` (at da57a57): a torch on a ring at its point on the curve, a face turned away refused; a torch on a wall taken in falls; a lantern refuses the ring (game #536)
 - `data/sprites/lantern_post.json`: the lantern post: its light's radius, the one number for every lantern, not carried
 - `src/map.js:138-141`, `src/map.js:208-215`, `src/light.js:63-67`: a bracket holds a lantern or a torch; a lantern's light steady, never out, at the post's radius
 - `src/interact.js:416`: a lantern bracket offers no action

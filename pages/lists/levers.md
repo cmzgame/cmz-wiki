@@ -65,7 +65,9 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **The campfire:** {{n sprites.campfire.fire.maxFuel}} logs at most, {{n sprites.campfire.fire.hoursPerUnit}} game hours a log; made at the [[Workbench]] from stone and logs (its row in `data/recipes.json`, the seconds a default), set down cold and empty, {{n items.campfire.size.0}} × {{n items.campfire.size.1}} in the bag, so a station's output box is made as big (in the code, not the data); taken apart for half its make. See [[Campfire]].
 - **The built fires:** the [[Fireplace]] {{n build.fireplace.cost.stone}} stone in {{n build.fireplace.seconds seconds}}, the [[Fire pit]] {{n build.fire_pit.cost.stone}} stone in {{n build.fire_pit.seconds seconds}}; the fire pit's light outdoors reaches {{n sprites.fire_pit.fire.radius tiles}}, the brightest fire; each fire's flicker is its own, in its sprite's data (the fireplace's and the fire pit's {{n sprites.fire_pit.fire.flicker.amp}}, the campfire's {{n sprites.campfire.fire.flicker.amp}}).
 - **The fires' flicker in a lit room:** a room lit by its fire dips with the flicker to {{n tuning.world.litRoomFlickerMin}} of full at its lowest, and is full at its brightest; it is only drawn, and set to full it is gone. See [[Light]].
-- **The openings' heights:** a window's sill, {{n census.constants.placeholders.WINDOW_SILL}} pixels up, and a bracket's height on its wall, {{n census.constants.placeholders.BRACKET_UP}}; both live in the code, not the data, and a change to the sill redraws the windows. The walls' {{n sprites.wall_wood.wall.height}}, the door's top at {{n census.constants.placeholders.DOOR_TOP}}, and the window's top at {{n census.constants.placeholders.WINDOW_TOP}} are ruled. See [[Walls]].
+- **The openings' heights:** a window's sill, {{n census.constants.placeholders.WINDOW_SILL}} pixels up, and a bracket's height on its wall, {{n census.constants.placeholders.BRACKET_UP}}; both live in the code, not the data, and a change to the sill redraws the windows. The walls' {{n sprites.wall_wood.wall.height}}, the door's top at {{n census.constants.placeholders.DOOR_TOP}}, and the window's top at {{n census.constants.placeholders.WINDOW_TOP}} are ruled. A fence's height, {{n sprites.wall_fence.wall.height}}, is what a thrown knife or axe clears, never a house wall, as Michael prefers (2026-10-27). See [[Walls]].
+- **Upper floors:** a storey is {{n census.constants.map.STOREY}} pixels, a wall's height, one constant in the code (ruled, not a knob). A stair's cost, a built floor's support and cost, a ladder's climb, and the floors you may shoot down from will be levers when they are built. See [[Upper floors]].
+- **Round rooms:** the Round stone wall's cost, {{n build.round_stone.cost.stone}} stone an edge it lays, a placeholder never charged while it is buildable only with Free building, until its cost is settled; its {{n build.round_stone.seconds seconds}}, two fifths more at seven across; the curve's pieces for bodies, one every {{n census.constants.round.CHORD_DEG}} degrees, and the drawn ring's {{n census.constants.render_rings.SEGMENTS}} segments, in the code. See [[Round rooms]].
 - **The village's stations:** a world rule, **Village stations**, Fixed by default or Movable and craftable, chosen when the world is made; its recipes' materials are data. See [[World rules]].
 
 ### Potions, poisons, and mana
@@ -93,7 +95,7 @@ Chosen at the Sandbox step of New world; see [[World rules]] for what each does.
 - **Zombie aggro**, {{default zombieAggro}} by default.
 - **Zombies attack villagers**, {{default zombiesAttackVillagers}}.
 - **Survival**, {{default survival}}.
-- **Free building**, {{default freeBuilding}}.
+- **Free building**, {{default freeBuilding}}: the only way to build a [[Round rooms|round room]] for now.
 - **Multi-hit**, {{default multiHit}}: "the easy button".
 - **Trees** ({{default trees}}), **Starting population** ({{default population}}), and **Village stations** (Fixed): chosen when the world is made, and fixed after.
 - **Dev chest** ({{default devChest}}), **Dev bag** ({{default devBag}}), and **Extra starting items** (none): the Sandbox step's testing choices.
@@ -116,6 +118,7 @@ On the [[Settings]] screen, kept in the browser.
 ## Sources
 
 <!-- sources at ce21ffc -->
+- `data/build.json:146-157`, `src/map.js:67`, `src/round.js:9`, `src/render/rings.js:22`, `data/sprites/wall_fence.json` (at da57a57): the round stone wall's cost and seconds, the storey, the chords and segments, the fence's height (games #533, #536)
 - `data/items.json:13-14` `thrown`, `data/recipes.json:858-893`, `data/combat.json:6` `poison`, `data/items.json:24` `bow.ammo` (at 307ed34): the throwing knife's and axe's numbers and recipes, the poisons' numbers, the bow's order (games #494, #496)
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each
 - `data/items.json` `spear.thrown.arcMax`, `src/placeholders.js:91-94`, `data/sprites/wall_*.json` `wall.height` (at 91bafc1): the spear's arc, the openings' heights, the bracket's, the walls' (game #529)

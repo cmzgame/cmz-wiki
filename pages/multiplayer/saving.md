@@ -39,7 +39,7 @@ In the browser's own storage, on that one device and in that one browser. Anothe
 ## Numbers
 
 - Autosave: every {{n census.constants.main.AUTOSAVE}} seconds of game time, and no oftener than every {{n census.constants.main.AUTOSAVE}} real seconds.
-- Save format version: {{n census.constants.save.VERSION}}. An older save is brought up to date on load; a save from a newer version of the game is refused.
+- Save format version: {{n census.constants.save.VERSION}}. A world saved before this version (2026-10-27, when the map gained its floors) does not load, and neither does a save from a newer version of the game; the saves of the two versions before it were brought up to date, but worlds are expendable while the game is tested.
 
 ## With friends
 
@@ -67,7 +67,7 @@ A [[Server worlds|server world]] is saved by the server.
 - `src/main.js:299-305`, `src/main.js:475-489`: saved when the host changes a rule, and on Exit game
 - `src/main.js:435-448`: the save's wrapper keeps the dormant characters; never for a guest
 - `src/save.js:12-13`: what is not saved
-- `src/save.js:28-46`: the version, an older save brought up to date, a newer one refused
+- `src/save.js:26-51` (at da57a57): the version, no step up from the one before, a newer one refused (game #533)
 - `src/identities.js:106-112`, `src/settings.js:32-34`: what a guest keeps: friends' bookmarks and identities
 - `server/world.js:130`, `server/world.js:144-160`: a server world saved by the server
 - `src/entities/zombie.js:768-773`, `src/entities/character.js:61` `CH_DROPPED`: one of the dead saved mid-breach comes back in the chase; `src/game.js:476`: mana, `potionAt`, and `buffs` kept on each player (games #487, #488, #491, at 0fa02e5)

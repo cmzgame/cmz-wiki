@@ -17,6 +17,8 @@ In a small glade south of the garden, a [[Fire pit]] stands lit from the start, 
 
 [[Wyn]], the guide, stands just outside the door, the first person you meet: poke them for a word.
 
+East of the garden fence, toward the river, stands [[The tall house]], a two-storey house with a stair up to its first floor (see [[Upper floors]]).
+
 {{place-contents "your cottage"}}
 
 ## The dead
@@ -26,6 +28,7 @@ The nearest of the dead stands in the lane to the west of the garden at the star
 ## Sources
 
 <!-- sources at 393acaf -->
+- `tools/mapgen/valley.py:210-228` (at da57a57): the tall house east of the cottage's fence, between it and the river (game #534)
 - `tools/mapgen/valley.py:156`, `tools/mapgen/valley.py:181-203`, `data/maps/valley.json:12203-12206`: the end cottage on the south lane, grown to {{n valley.sets.0.buildings.0.rect.2}} by {{n valley.sets.0.buildings.0.rect.3}} inside for the demo pass, and the spawn in its living room by the door (game #514, at 393acaf)
 - `data/maps/valley.json:1304-1462`, `data/loot.json:8`: wooden walls; the partition at x 7 with its door, making a living room and a bedroom; the fireplace, the table and four chairs, and the chest of its own table (a hatchet, a shovel, a loaf, and a bucket) against the north wall; the bed, a chest, and the shelf against the partition; the door south, windows two south, two north, and one east; the bracket's lantern inside the west wall (game #514, at 393acaf)
 - `tools/mapgen/mapgen.py:23-30`: a chest or shelf facing away from its wall (game #514)

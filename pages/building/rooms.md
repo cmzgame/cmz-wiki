@@ -21,6 +21,8 @@ An area is outdoors when:
 
 So a fenced field or yard is outdoors.
 
+Each floor's rooms are found on that floor alone: an [[Upper floors|upper floor]]'s room is a room of its own, the open stairwell inside its walls part of it, and an open edge of an upper floor with nothing beyond it is outdoors, as a balcony would be. The inside of a [[Round rooms|round room]] is one room, its curved wall being walls on the edges of its tiles.
+
 When a wall is built or removed, only the rooms on either side of it are worked out again. Closing the last gap in a ring of walls you [[Building|built]] makes a new room at once.
 
 ### What rooms change
@@ -52,6 +54,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 ## See also
 
 - [[Walls]]
+- [[Upper floors]], [[Round rooms]]
 - [[Openings]]
 - [[Fences]]
 - [[Light]]
@@ -60,6 +63,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:2876-2946` (the room fill, at da57a57): rooms filled per layer, a stairwell's void inside walls kept, an open edge onto ungrown upper ground outdoors (game #533); a ring's edges ordinary walls (game #536)
 - `src/reach.js:1-33`: one reach test for every player action: distance to the nearest tile and a clear line (game #227)
 - `src/interact.js:946-1002`: a timed action cancelled when a wall comes between; an action behind a wall walks round to a tile with a clear line, "Can't get there from here." with none
 - `src/stations.js:62-80`, `src/main.js:937-940`: a station's ingredients only from chests in reach and sight; an open container closes behind a wall

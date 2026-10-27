@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "91bafc1f9a4f1440d66e55fc089026120ff43dc9",
-  "short": "91bafc1",
-  "date": "2026-10-27T13:19:43-05:00",
-  "subject": "Merge pull request #531 from cmzgame/primary/fire-light-fix",
+  "commit": "da57a578c39fbb010a2014f6ac49a7c8c4f20733",
+  "short": "da57a57",
+  "date": "2026-10-27T15:35:28-05:00",
+  "subject": "Merge pull request #536 from cmzgame/build/round-rooms",
   "ref": "origin/main"
  },
  "counts": {
@@ -12,7 +12,7 @@
   "interactions": 42,
   "lootTables": 29,
   "sprites": 204,
-  "places": 48,
+  "places": 50,
   "villagers": 9,
   "authoredDead": 62,
   "mapProps": 42,
@@ -26,8 +26,8 @@
   "verbs": 31,
   "menuLabels": 100,
   "events": 38,
-  "checks": 89,
-  "modules": 148
+  "checks": 91,
+  "modules": 151
  },
  "items": [
   {
@@ -8687,6 +8687,24 @@
     "props": []
    },
    {
+    "name": "the tall house",
+    "rect": [
+     121,
+     214,
+     10,
+     9
+    ],
+    "buildings": 1,
+    "rooms": 1,
+    "dead": 0,
+    "villagers": [],
+    "props": [
+     "chair",
+     "chest",
+     "table"
+    ]
+   },
+   {
     "name": "the inn",
     "rect": [
      98,
@@ -9618,6 +9636,20 @@
     "dead": 0,
     "villagers": [],
     "props": []
+   },
+   {
+    "name": "Hollow Farm's dovecote",
+    "rect": [
+     40,
+     222,
+     5,
+     5
+    ],
+    "buildings": 0,
+    "rooms": 0,
+    "dead": 0,
+    "villagers": [],
+    "props": []
    }
   ],
   "villagers": [
@@ -10325,6 +10357,18 @@
    "seconds": 6,
    "tool": "build",
    "note": "docs/45 section 3: a feeding trough (not the water trough) in a pen, filled with grain, vegetables, or hay; built from the palette, planks (Primary's default)"
+  },
+  "round_stone": {
+   "label": "Round stone wall",
+   "kind": "round",
+   "sprite": "wall_stone",
+   "cost": {
+    "stone": 2
+   },
+   "seconds": 20,
+   "tool": "build",
+   "dev": true,
+   "note": "docs/50: a round room, 5 or 7 across, by a drag from one corner of its square; stone only, shown and buildable only while Free building is on (Michael, 2026-10-27: \"A few on the map, buildable by dev settings, otherwise not in the game yet until we settle on cost, etc.\"); its cost is per edge of the outline (40 stone at 5, 56 at 7), a placeholder and Primary's default, never charged since Free building waives it; the seconds the builder's default (two fifths more at 7)"
   }
  },
  "looks": {
@@ -10619,56 +10663,56 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1144"
+    "main.js:1147"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1143"
+    "main.js:1146"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1121"
+    "main.js:1124"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:960",
-    "main.js:974"
+    "main.js:963",
+    "main.js:977"
    ]
   },
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1619"
+    "interact.js:1641"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1621"
+    "interact.js:1643"
    ]
   },
   {
    "key": "KeyL",
    "at": [
-    "main.js:1141"
+    "main.js:1144"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1124"
+    "main.js:1127"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1123"
+    "main.js:1126"
    ]
   },
   {
@@ -10681,70 +10725,70 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:450",
-    "placement.js:461",
-    "placement.js:465"
+    "placement.js:583",
+    "placement.js:594",
+    "placement.js:598"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1620"
+    "interact.js:1642"
    ]
   },
   {
    "key": "KeyV",
    "at": [
-    "main.js:1119"
+    "main.js:1122"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1125"
+    "main.js:1128"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1132"
+    "main.js:1135"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1121"
+    "main.js:1124"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1208"
+    "main.js:1211"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1208"
+    "main.js:1211"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1122"
+    "main.js:1125"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1219"
+    "main.js:1222"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:960",
-    "main.js:966"
+    "main.js:963",
+    "main.js:969"
    ]
   }
  ],
@@ -10782,7 +10826,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:404"
+    "stations.js:414"
    ]
   },
   {
@@ -10979,7 +11023,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1626"
+    "main.js:1629"
    ]
   },
   {
@@ -11003,19 +11047,19 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1130"
+    "placement.js:1341"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1123"
+    "placement.js:1334"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:776"
+    "placement.js:944"
    ]
   },
   {
@@ -11045,47 +11089,47 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1500"
+    "main.js:1503"
    ]
   },
   {
    "key": "Drink",
    "at": [
-    "interact.js:1802",
-    "interact.js:1897"
+    "interact.js:1824",
+    "interact.js:1919"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1860"
+    "interact.js:1882"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1799",
-    "interact.js:1895"
+    "interact.js:1821",
+    "interact.js:1917"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1775",
-    "interact.js:1906"
+    "interact.js:1797",
+    "interact.js:1928"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1776",
-    "interact.js:1907"
+    "interact.js:1798",
+    "interact.js:1929"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1904"
+    "interact.js:1926"
    ]
   },
   {
@@ -11127,7 +11171,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1601"
+    "main.js:1604"
    ]
   },
   {
@@ -11158,25 +11202,25 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1481"
+    "main.js:1484"
    ]
   },
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2288"
+    "interact.js:2315"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1540"
+    "main.js:1543"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1587"
+    "main.js:1590"
    ]
   },
   {
@@ -11200,7 +11244,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1639"
+    "main.js:1642"
    ]
   },
   {
@@ -11212,16 +11256,16 @@
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1770"
+    "interact.js:1792"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1762",
-    "interact.js:1764",
-    "interact.js:1766",
-    "interact.js:1769"
+    "interact.js:1784",
+    "interact.js:1786",
+    "interact.js:1788",
+    "interact.js:1791"
    ]
   },
   {
@@ -11233,7 +11277,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1914"
+    "interact.js:1936"
    ]
   },
   {
@@ -11257,25 +11301,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1447"
+    "main.js:1450"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1443"
+    "main.js:1446"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1483"
+    "main.js:1486"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1482"
+    "main.js:1485"
    ]
   },
   {
@@ -11287,7 +11331,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1648"
+    "main.js:1651"
    ]
   },
   {
@@ -11359,15 +11403,15 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1871",
-    "interact.js:1928"
+    "interact.js:1893",
+    "interact.js:1950"
    ]
   },
   {
    "key": "Use",
    "at": [
-    "interact.js:1756",
-    "interact.js:1858"
+    "interact.js:1778",
+    "interact.js:1880"
    ]
   },
   {
@@ -11415,7 +11459,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2224"
+    "interact.js:2251"
    ]
   },
   {
@@ -11433,7 +11477,7 @@
   {
    "key": "${water.BOIL_BUCKET} (no tainted water in it)",
    "at": [
-    "interact.js:1185"
+    "interact.js:1186"
    ]
   },
   {
@@ -11451,32 +11495,33 @@
   {
    "key": "Boil water (${water.NO_TAINTED.replace(/\\.$/, \"\").toLowerCase()})",
    "at": [
-    "interact.js:1176"
+    "interact.js:1177"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:1052",
-    "placement.js:1089"
+    "placement.js:176",
+    "placement.js:1263",
+    "placement.js:1300"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1149"
+    "placement.js:1365"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:793"
+    "placement.js:962"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1144"
+    "placement.js:1355"
    ]
   },
   {
@@ -11488,31 +11533,31 @@
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1514"
+    "interact.js:1536"
    ]
   },
   {
    "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1909"
+    "interact.js:1931"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1779"
+    "interact.js:1801"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2336"
+    "interact.js:2363"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2273"
+    "interact.js:2300"
    ]
   },
   {
@@ -11526,7 +11571,7 @@
    "at": [
     "interact.js:309",
     "interact.js:331",
-    "interact.js:1760"
+    "interact.js:1782"
    ]
   },
   {
@@ -11556,7 +11601,7 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2372"
+    "interact.js:2400"
    ]
   },
   {
@@ -11568,13 +11613,13 @@
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1814"
+    "interact.js:1836"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2360"
+    "interact.js:2388"
    ]
   },
   {
@@ -11600,25 +11645,25 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:350"
+    "archery.js:351"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:966"
+    "archery.js:968"
    ]
   },
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1352"
+    "main.js:1355"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:445"
+    "game.js:448"
    ]
   },
   {
@@ -11630,7 +11675,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:701"
+    "placement.js:869"
    ]
   },
   {
@@ -11640,7 +11685,7 @@
     "interact.js:315",
     "interact.js:339",
     "interact.js:577",
-    "interact.js:2237",
+    "interact.js:2264",
     "ui/station-panel.js:84",
     "ui/station-panel.js:111"
    ]
@@ -11648,13 +11693,13 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:839"
+    "game.js:846"
    ]
   },
   {
    "key": "craftDone",
    "at": [
-    "stations.js:380"
+    "stations.js:390"
    ]
   },
   {
@@ -11666,7 +11711,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:814"
+    "game.js:821"
    ]
   },
   {
@@ -11678,38 +11723,38 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1159"
+    "map.js:1605"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:138"
+    "map.js:216"
    ]
   },
   {
    "key": "fireLit",
    "at": [
-    "map.js:416",
-    "map.js:425"
+    "map.js:510",
+    "map.js:519"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:122"
+    "map.js:200"
    ]
   },
   {
    "key": "firePutOut",
    "at": [
-    "map.js:397"
+    "map.js:491"
    ]
   },
   {
    "key": "gameOver",
    "at": [
-    "game.js:913"
+    "game.js:920"
    ]
   },
   {
@@ -11739,7 +11784,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1072"
+    "entities/zombie.js:1098"
    ]
   },
   {
@@ -11769,7 +11814,7 @@
   {
    "key": "taintedOnly",
    "at": [
-    "game.js:815"
+    "game.js:822"
    ]
   },
   {
@@ -11787,8 +11832,8 @@
   {
    "key": "torchSpent",
    "at": [
-    "map.js:184",
-    "map.js:198"
+    "map.js:262",
+    "map.js:276"
    ]
   },
   {
@@ -11800,22 +11845,22 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1073"
+    "entities/zombie.js:1099"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:885",
-    "map.js:1155"
+    "entities/zombie.js:911",
+    "map.js:1601"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:974",
+    "archery.js:976",
     "combat.js:455",
-    "game.js:726"
+    "game.js:732"
    ]
   },
   {
@@ -11978,6 +12023,7 @@
   "reach",
   "resources",
   "rooms",
+  "round",
   "saplings",
   "save",
   "sheets",
@@ -11987,6 +12033,7 @@
   "slots",
   "smalltext",
   "sound",
+  "storeys",
   "sway",
   "sync",
   "takeall",
@@ -12005,15 +12052,15 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 2788
+   "lines": 3606
   },
   {
    "path": "interact.js",
-   "lines": 2435
+   "lines": 2464
   },
   {
    "path": "main.js",
-   "lines": 2116
+   "lines": 2119
   },
   {
    "path": "placeholders.js",
@@ -12021,39 +12068,39 @@
   },
   {
    "path": "net.js",
-   "lines": 1622
+   "lines": 1672
+  },
+  {
+   "path": "placement.js",
+   "lines": 1367
+  },
+  {
+   "path": "gl.js",
+   "lines": 1326
   },
   {
    "path": "ui/screens.js",
    "lines": 1300
   },
   {
-   "path": "gl.js",
-   "lines": 1275
-  },
-  {
-   "path": "placement.js",
-   "lines": 1151
-  },
-  {
    "path": "entities/zombie.js",
-   "lines": 1086
+   "lines": 1112
   },
   {
    "path": "archery.js",
-   "lines": 1019
+   "lines": 1021
+  },
+  {
+   "path": "ground.js",
+   "lines": 986
   },
   {
    "path": "entities/animal.js",
    "lines": 984
   },
   {
-   "path": "ground.js",
-   "lines": 983
-  },
-  {
    "path": "game.js",
-   "lines": 935
+   "lines": 942
   },
   {
    "path": "ui/inventory-panel.js",
@@ -12073,7 +12120,7 @@
   },
   {
    "path": "render/walls.js",
-   "lines": 600
+   "lines": 606
   },
   {
    "path": "ui/inventory-actions.js",
@@ -12089,11 +12136,11 @@
   },
   {
    "path": "light.js",
-   "lines": 475
+   "lines": 488
   },
   {
    "path": "entities/player.js",
-   "lines": 447
+   "lines": 449
   },
   {
    "path": "item-info.js",
@@ -12101,19 +12148,19 @@
   },
   {
    "path": "stations.js",
-   "lines": 420
+   "lines": 430
   },
   {
    "path": "ui/map-panel.js",
    "lines": 412
   },
   {
-   "path": "entities/villager.js",
-   "lines": 374
+   "path": "render/props.js",
+   "lines": 381
   },
   {
-   "path": "render/props.js",
-   "lines": 373
+   "path": "entities/villager.js",
+   "lines": 374
   },
   {
    "path": "sound-gen.js",
@@ -12128,6 +12175,10 @@
    "lines": 336
   },
   {
+   "path": "render/scene.js",
+   "lines": 335
+  },
+  {
    "path": "farming.js",
    "lines": 329
   },
@@ -12136,15 +12187,15 @@
    "lines": 329
   },
   {
+   "path": "setdown.js",
+   "lines": 326
+  },
+  {
    "path": "burn.js",
    "lines": 325
   },
   {
    "path": "host.js",
-   "lines": 319
-  },
-  {
-   "path": "setdown.js",
    "lines": 319
   },
   {
@@ -12165,15 +12216,11 @@
   },
   {
    "path": "paintings.js",
-   "lines": 283
-  },
-  {
-   "path": "render/scene.js",
-   "lines": 264
+   "lines": 284
   },
   {
    "path": "chart.js",
-   "lines": 257
+   "lines": 258
   },
   {
    "path": "trees.js",
@@ -12185,11 +12232,19 @@
   },
   {
    "path": "save.js",
-   "lines": 243
+   "lines": 246
+  },
+  {
+   "path": "render/storeys.js",
+   "lines": 244
   },
   {
    "path": "audio.js",
    "lines": 240
+  },
+  {
+   "path": "render/area.js",
+   "lines": 238
   },
   {
    "path": "dye.js",
@@ -12198,6 +12253,10 @@
   {
    "path": "loop.js",
    "lines": 233
+  },
+  {
+   "path": "render/rings.js",
+   "lines": 226
   },
   {
    "path": "figure/held.js",
@@ -12209,7 +12268,7 @@
   },
   {
    "path": "entities/character.js",
-   "lines": 213
+   "lines": 214
   },
   {
    "path": "ui/dye-panel.js",
@@ -12222,10 +12281,6 @@
   {
    "path": "input.js",
    "lines": 198
-  },
-  {
-   "path": "render/area.js",
-   "lines": 197
   },
   {
    "path": "grid.js",
@@ -12288,6 +12343,10 @@
    "lines": 153
   },
   {
+   "path": "entities/movement.js",
+   "lines": 152
+  },
+  {
    "path": "settings.js",
    "lines": 147
   },
@@ -12304,19 +12363,35 @@
    "lines": 138
   },
   {
+   "path": "render/depth.js",
+   "lines": 137
+  },
+  {
    "path": "ui/hud.js",
    "lines": 137
   },
   {
-   "path": "render/depth.js",
-   "lines": 126
+   "path": "netsmooth.js",
+   "lines": 128
+  },
+  {
+   "path": "ui/log.js",
+   "lines": 128
   },
   {
    "path": "sprites.js",
    "lines": 125
   },
   {
+   "path": "round.js",
+   "lines": 124
+  },
+  {
    "path": "ui/floaters.js",
+   "lines": 124
+  },
+  {
+   "path": "ui/speech.js",
    "lines": 124
   },
   {
@@ -12328,14 +12403,6 @@
    "lines": 123
   },
   {
-   "path": "ui/speech.js",
-   "lines": 120
-  },
-  {
-   "path": "entities/movement.js",
-   "lines": 116
-  },
-  {
    "path": "floaters.js",
    "lines": 116
   },
@@ -12345,14 +12412,6 @@
   },
   {
    "path": "moodles.js",
-   "lines": 115
-  },
-  {
-   "path": "netsmooth.js",
-   "lines": 115
-  },
-  {
-   "path": "ui/log.js",
    "lines": 115
   },
   {
@@ -12384,28 +12443,28 @@
    "lines": 98
   },
   {
+   "path": "ui/zombie-bars.js",
+   "lines": 95
+  },
+  {
+   "path": "highlight.js",
+   "lines": 94
+  },
+  {
+   "path": "camera.js",
+   "lines": 92
+  },
+  {
    "path": "ui/context-menu.js",
    "lines": 92
   },
   {
-   "path": "highlight.js",
+   "path": "ui/names.js",
    "lines": 91
-  },
-  {
-   "path": "ui/zombie-bars.js",
-   "lines": 90
   },
   {
    "path": "ui/debuff-row.js",
    "lines": 88
-  },
-  {
-   "path": "ui/names.js",
-   "lines": 88
-  },
-  {
-   "path": "camera.js",
-   "lines": 87
   },
   {
    "path": "hives.js",
@@ -12532,6 +12591,10 @@
    "lines": 41
   },
   {
+   "path": "reach.js",
+   "lines": 39
+  },
+  {
    "path": "verbs.js",
    "lines": 39
   },
@@ -12554,10 +12617,6 @@
   {
    "path": "sight.js",
    "lines": 35
-  },
-  {
-   "path": "reach.js",
-   "lines": 34
   },
   {
    "path": "client.js",
@@ -12716,6 +12775,7 @@
    "FLAG_NOFOG": 8,
    "FLAG_STANDING": 16,
    "FLAG_SOLID": 32,
+   "FLAG_UPPER": 64,
    "PASS_FLAT": 0,
    "PASS_STAND": 1,
    "PASS_TRANS": 2,
@@ -12794,6 +12854,7 @@
    "CHUNK": 16,
    "ROOM_MAX": 300,
    "ROUND_BODY_RADIUS": 0.2,
+   "STOREY": 96,
    "HOUR_SECONDS": 30,
    "BOARD_HP": 40,
    "DOOR_HP": 100,
@@ -12804,7 +12865,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 22,
+   "PROTOCOL": 25,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -12857,12 +12918,19 @@
   "render_props": {
    "WIGGLE_MS": 560
   },
+  "render_rings": {
+   "SEGMENTS": 48,
+   "LIGHT_IN": 0.75
+  },
   "render_scene": {
    "FOG_ALPHA": 0.36,
    "NEAR_WALL_ALPHA": 0.42,
    "OCCLUDER_MIN_HEIGHT": 64,
    "HOLE_INNER": 34,
    "HOLE_OUTER": 78
+  },
+  "render_storeys": {
+   "PAD": 48
   },
   "render_walls": {
    "L_FACE": 0,
@@ -12873,11 +12941,16 @@
    "SWING_S": 0.24,
    "SHAKE_MS": 110
   },
+  "round": {
+   "CHORD_DEG": 15,
+   "BODY_R": 0.3,
+   "WAYPOINT": 0.08
+  },
   "rugs": {
    "REACH": 2.6
   },
   "save": {
-   "VERSION": 3
+   "VERSION": 4
   },
   "setdown": {
    "REACH": 2.6
@@ -13038,17 +13111,17 @@
    "altar": 1,
    "anvil": 1,
    "barrel": 38,
-   "bed": 26,
+   "bed": 27,
    "beehive": 8,
    "bench": 4,
    "bookcase": 4,
    "campfire": 1,
    "cart": 6,
    "cauldron": 1,
-   "chair": 35,
+   "chair": 36,
    "charcoal_clamp": 4,
    "charcoal_sack": 2,
-   "chest": 44,
+   "chest": 46,
    "chicken_coop": 2,
    "clay_bank": 8,
    "coffin": 2,
@@ -13104,8 +13177,8 @@
    "mine_mouth": 1,
    "mushroom_0": 159,
    "mushroom_1": 165,
-   "mushroom_2": 160,
-   "mushroom_3": 153,
+   "mushroom_2": 159,
+   "mushroom_3": 154,
    "mushroom_4": 137,
    "noticeboard": 1,
    "ore_cart": 1,
@@ -13127,32 +13200,32 @@
    "stocks": 1,
    "stone_stack": 4,
    "strongbox": 3,
-   "table": 24,
+   "table": 25,
    "torch_post": 5,
    "tree_apple": 23,
-   "tree_oak_l": 300,
-   "tree_oak_m": 286,
+   "tree_oak_l": 299,
+   "tree_oak_m": 283,
    "tree_oak_old": 155,
    "tree_orange_l": 284,
    "tree_orange_m": 314,
    "tree_orange_old": 152,
-   "tree_red_l": 295,
-   "tree_red_m": 273,
-   "tree_red_old": 154,
-   "tree_spire_green_l": 154,
-   "tree_spire_green_m": 161,
+   "tree_red_l": 293,
+   "tree_red_m": 272,
+   "tree_red_old": 153,
+   "tree_spire_green_l": 153,
+   "tree_spire_green_m": 160,
    "tree_spire_green_old": 66,
    "tree_spire_orange_l": 159,
    "tree_spire_orange_m": 171,
    "tree_spire_orange_old": 84,
-   "tree_spire_red_l": 137,
-   "tree_spire_red_m": 179,
+   "tree_spire_red_l": 136,
+   "tree_spire_red_m": 178,
    "tree_spire_red_old": 74,
-   "tree_spire_yellow_l": 143,
-   "tree_spire_yellow_m": 154,
-   "tree_spire_yellow_old": 72,
-   "tree_yellow_l": 286,
-   "tree_yellow_m": 293,
+   "tree_spire_yellow_l": 142,
+   "tree_spire_yellow_m": 153,
+   "tree_spire_yellow_old": 71,
+   "tree_yellow_l": 282,
+   "tree_yellow_m": 292,
    "tree_yellow_old": 141,
    "trough": 4,
    "well": 5,

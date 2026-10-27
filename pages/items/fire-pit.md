@@ -23,6 +23,8 @@ Pick **Fire pit** in the palette. Its ghost is centred on the cursor, green wher
 
 A click starts a bar of {{n build.fire_pit.seconds seconds}}; when it ends the stone is spent and the fire pit stands there, out. It needs no tool.
 
+It is the fire for a [[Round rooms|round room]], where a fireplace cannot stand: it fits inside one, clear of the tiles the curve crosses ("Not against the curve"), the larger, seven across, with room to spare.
+
 ## Using it
 
 - **Light the fire pit**, with a [[Tinderbox]] or a lit [[Torch]] on you ("You light the fire pit."); a [[Use]] of either on it lights it too. A [[Fireball]] does not light it.
@@ -41,6 +43,7 @@ A guest's build is a command the host checks and carries out for that player, na
 ## Sources
 
 <!-- sources at 91bafc1 -->
+- `src/setdown.js:85-89`, `src/map.js:1317-1319` (at da57a57): no piece on a tile a ring's curve crosses (game #536)
 - `data/build.json:123-133`: the palette's Fire pit: a prop, eight stone, `stand: "ground"`, its seconds, no tool (game #527)
 - `data/sprites/fire_pit.json`: the drawn fire pit, 2 by 2, its rack and pots, its own flames, a switch that lights its room and cooks, radius 5, its flicker, `carry: false`
 - `src/setdown.js:75-105`, `src/setdown.js:107-127`: "No room", "Not on water" (drinkable or slow floor; a road is neither), "Not beside a door", the tiles in one room or all outdoors; the ghost centred on the cursor
