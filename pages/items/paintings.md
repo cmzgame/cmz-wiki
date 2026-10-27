@@ -20,7 +20,7 @@ A painting in your own bag has **Place** on its right-click menu, after **Use**.
 - **Too far**: the floor under the painting is more than {{n census.constants.paintings.REACH tiles}} from you.
 - **There is a wall in the way.**: a wall, a shut door, or closed shutters stand between you and it. You hang a painting from the side of the wall it faces.
 - **Nothing to hang it on**: the wall is a door, a window, a fence, bars, or a broken piece. Only a plain, solid wall takes a painting.
-- **A bracket is in the way**: a torch bracket is on that face.
+- **A bracket is in the way**: a lantern or a torch in its bracket is on that face, the village's or one put up with Place torch (see [[Torch posts and brackets]]).
 - **Something already hangs there**: one painting to a stretch of wall.
 - **A corner is in the way**: another wall meets the end of the run on your side, and would hide much of the painting.
 - **Too wide for the wall** and **A post is in the way**: a wide painting needs two stretches of the same wall side by side, with no wall meeting the joint between them.
@@ -71,5 +71,6 @@ A guest hangs and takes down paintings as the host does. Place only starts the g
 - `src/render/paintings.js`, `src/render/walls.js`: drawn after its wall, lit and faded with it; a wide one in two halves, each with its own stretch of wall (game #344, at 9ac68a2)
 - `src/interact.js:324-337`, `src/interact.js:966-967`, `src/paintings.js:171-190`: Pick up and its name; at your feet with a full bag; the second take-down of one painting gets nothing (game #344, at 9ac68a2)
 - `src/map.js:647`, `src/map.js:670`: a painting falls to the floor when its wall is removed or built over (game #344, at 9ac68a2)
+- `src/paintings.js:58`, `src/setdown.js:258-262` (at 91bafc1): a face holding a torch put up with Place torch refuses a painting, as any bracket's (game #532)
 
 {{navbox items}}

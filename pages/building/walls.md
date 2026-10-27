@@ -24,7 +24,9 @@ Every wall has a material, which is its art. The corner posts take the heaviest 
 
 A building may mix materials, with a different wall on each side. A door or a window built into a wall is made of that wall's material; in a wall of wood its leaves and shutters may be of another wood (see [[Woods]]).
 
-Doors and windows sit at the same heights in every wall, whatever its material.
+A house wall of any material is about twice a person's height. Doors and windows sit at the same heights in every wall, whatever its material: a door's top is {{n census.constants.placeholders.DOOR_TOP}} pixels up, clear over a person's head, and a window runs from {{n census.constants.placeholders.WINDOW_SILL}} pixels, about the waist, to {{n census.constants.placeholders.WINDOW_TOP}}, over the head (see [[Openings]]).
+
+An arrow or a throw in flight is stopped by a wall only below that wall's own height: a house wall's, or a fence's much lower one, which an arc can pass over (see [[Archery#What stops a shot|Archery]]).
 
 ### Building and taking apart walls
 
@@ -32,7 +34,7 @@ You can build log walls, walls of each wood, fences, gates, doors, and windows f
 
 ### Brackets
 
-Some walls carry a bracket on one side. Most hold one of the village's lanterns, which burn nothing, can be put out and lit again, and cannot be taken. An empty bracket can hold a [[Torch]], which lights the area while it is lit and burns down; E takes the torch or mounts one you carry (see [[Torch posts and brackets]]). Brackets exist only where the map puts them, and you cannot make new ones; a door or a window built into a wall takes its bracket away.
+Some walls carry a bracket on one side. Most hold one of the village's lanterns, which burn nothing, can be put out and lit again, and cannot be taken. A few hold a [[Torch]], which lights the area while it is lit and burns down; E takes the torch or mounts one you carry. You can put a torch of your own on any plain wall's face with **Place torch**, and it brings its own bracket, which goes when the torch is picked up (see [[Torch posts and brackets#A torch on a wall|Torch posts and brackets]]). When a wall is taken apart, or a door or a window is built into it, its bracket goes: a torch in it falls to the floor, put out, and a lantern goes with the wall.
 
 ### Near walls
 
@@ -47,6 +49,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - Top of a door: {{n census.constants.placeholders.DOOR_TOP}} pixels up.
 - Window: from {{n census.constants.placeholders.WINDOW_SILL}} to {{n census.constants.placeholders.WINDOW_TOP}} pixels up.
 - A bracket: {{n census.constants.placeholders.BRACKET_UP}} pixels up.
+- An arrow or a throw is stopped below a wall's own height; a wall with no height of its own stops it below {{n combat.bow.wallHeight}} pixels.
 
 ## See also
 
@@ -70,11 +73,13 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 - `data/maps/valley.json:1295-5226`: which buildings are wood and which stone
 - `data/build.json`: the log wall is the only wall you can build
 - `src/map.js:2100`, `data/maps/valley.json:5109-5114`: a material per side
-- `src/placeholders.js:88-91`: openings and the bracket at fixed heights
+- `src/placeholders.js:91-94`, `data/sprites/wall_wood.json` (at 91bafc1): openings and the bracket at fixed heights, the door's top over a player's head and the window from the waist to over the head; the house walls' height, a player about half of it (game #529, the game's docs/52)
+- `src/archery.js:179-199` (at 91bafc1): a flight stopped by a wall below the wall's own height, `bow.wallHeight` for a wall with none (game #529)
 - `src/placement.js:330-379`, `src/map.js:651`: only built walls can be removed
-- `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:435`: a door or window built into a plain wall, of its material, a door into a fence; its bracket forgotten; removal puts the wall back
+- `src/map.js:596-606`, `src/map.js:631-676`, `src/placement.js:435`: a door or window built into a plain wall, of its material, a door into a fence; removal puts the wall back
+- `src/map.js:262-275`, `src/map.js:1027`, `src/map.js:1097`, `src/setdown.js:234-318` (at 91bafc1): a wall that goes drops its bracket's torch to the floor, put out, a lantern going with it; a torch put on a wall with its own bracket, which goes with it (game #532)
 - `src/map.js:137-283`, `src/interact.js:413-473`: brackets, a lantern or a torch; a lantern never out and not taken; E to take or mount a torch, which burns down
 - `data/items.json`: the torch's `fire`; `data/sprites/lantern_post.json`; `src/light.js:61-71`: a lantern's light, and a mounted torch's only while lit
-- `src/map.js:2149-2155`, `src/map.js:2230`: brackets only where the map authors them
+- `src/map.js:2149-2155`, `src/map.js:2230`: the village's brackets where the map authors them
 - `src/render/walls.js:164-170`, `src/render/walls.js:314-316`: near walls faded
 - `src/placement.js:518-576`: what a player built is taken apart with X for half its cost, a door or window leaving the wall again (game #413, at 31d330a)

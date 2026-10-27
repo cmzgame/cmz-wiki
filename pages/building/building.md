@@ -61,7 +61,7 @@ A log wall, a wall of wood, or a fence needs an empty edge. A gate goes on an em
 
 While a Door or a Window is picked, **R** cycles the wood of its leaves and shutters, shown as "leaves: Spruce · R" under its row and beside the ghost; only a wall of wood takes another wood's door or window (see [[Woods]]).
 
-Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch bracket on a wall built over is lost with it; a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
+Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch in a bracket on a wall built over falls to the floor, put out, and the bracket goes (a lantern goes with the wall); a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
 
 ### Taking apart
 
@@ -89,7 +89,7 @@ The village's own furniture never lights up, even after it has been carried some
 
 A made piece of furniture also has **Take apart** on its own right-click menu, saying what comes back ("Take apart (2 planks back)") or, greyed, why not: "Take apart (empty it first)", "Take apart (you need a smith's hammer)".
 
-A wall taken apart takes its [[Boards|boards]] and any torch bracket with it; a painting hung on it falls to the floor, whole (see [[Paintings]]). Taking apart a door or a window that was built into a wall puts the wall back, never a hole. If that wall was one a player built, it is still theirs to take apart; a wall of the village comes back as the village's. A new door built over a broken one still remembers the wall the first was built into.
+A wall taken apart takes its [[Boards|boards]] and any bracket with it, but a torch in the bracket falls to the floor, put out; a painting hung on it falls to the floor, whole (see [[Paintings]] and [[Torch posts and brackets]]). Taking apart a door or a window that was built into a wall puts the wall back, never a hole. If that wall was one a player built, it is still theirs to take apart; a wall of the village comes back as the village's. A new door built over a broken one still remembers the wall the first was built into.
 
 A wall, door, or window built while Free building was on cost nothing, and taking it apart gives nothing back.
 
@@ -175,3 +175,4 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - `src/rules.js:18`, `src/placement.js:128-131`, `src/placement.js:144-150`, `src/settings.js:63`: Free building makes costs free and waives the build tools, the time stays; boards still want a plank and a hammer
 - `src/rules.js:13-23`, `src/rules.js:44-46`: Free building is a world rule, the host's on a guest
 - `data/build.json:112-122`, `src/setdown.js:75-105`: the palette's Fireplace, six stone, two tiles indoors with its back on a plain wall; it replaced the Hearth (game #527, at c3cb736)
+- `src/map.js:262-275`, `src/map.js:1027`, `src/map.js:1097` (at 91bafc1): a wall taken apart or built over drops its bracket's torch to the floor, put out; a lantern goes with it (game #532)

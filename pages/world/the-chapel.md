@@ -7,7 +7,7 @@ summary: The stone chapel in the graveyard at the top of the nobles' street.
 
 {{infobox-place "the chapel"}}
 
-**The chapel** is a stone building at the top of the nobles' street, standing in the graveyard. Inside are rows of pews, the [[Altar]], a lectern, a chest, a cupboard, and the font, which can be drunk from like a well (see [[Water]]). A partition closes off a small room in the north-east corner. The door is on the south side, with two windows to the west and one to the east. Its two wall brackets are empty, so the chapel has no light of its own (see [[Torch posts and brackets]]).
+**The chapel** is a stone building at the top of the nobles' street, standing in the graveyard. Inside are rows of pews, the [[Altar]], a lectern, a chest, a cupboard, and the font, which can be drunk from like a well (see [[Water]]). A partition closes off a small room in the north-east corner. The door is on the south side, with two windows to the west and one to the east. Its two wall brackets each hold an unlit torch, so the chapel is dark until someone lights them (see [[Torch posts and brackets]]).
 
 The graveyard round it is fenced, with rows of headstones on either side of the chapel and a gate on the south side onto the street. You can see over the fence but not walk through it. [[Grave moss]], the graveyard's own herb, grows here and there among the headstones, and nowhere else; it is gathered at any hour (see [[Herbs]]). [[The crypt]] stands in the graveyard's north-east corner, and [[The priest's house]] to the east.
 
@@ -27,7 +27,7 @@ The graveyard is full of the dead at the start, among the headstones on both sid
 - `tools/mapgen/valley.py:250-264`: the chapel at the top of the nobles' street, inside the graveyard
 - `data/maps/valley.json:2282-2450`: stone walls; the pews, altar, lectern, chest, cupboard, and font; the partition in the north-east corner; the door south, two windows west, one east
 - `data/sprites/font.json`, `src/interact.js:718-720`, `src/interact.js:780`: the font is drunk from like a well
-- `data/maps/valley.json:2437-2448`: both brackets empty
+- `data/maps/valley.json:2437-2448`, `tools/mapgen/valley.py:280` (at 91bafc1): both brackets with unlit torches (corrected at 91bafc1; game #428)
 - `tools/mapgen/valley.py:252`, `tools/mapgen/valley.py:265-273`: the graveyard's fence with its south gate, and the headstones either side of the chapel
 - `data/sprites/wall_fence.json`, `src/map.js:1363-1372`: a fence is seen over and not walked through
 - `data/maps/valley.json` `resources.grave_moss`, `tools/mapgen/valley.py:633`, `tools/mapgen/valley.py:640`: grave moss inside the graveyard's wall, its own place (game #457, at 6e3ab37; gathered and grown back at any hour since game #475)

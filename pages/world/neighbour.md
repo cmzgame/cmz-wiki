@@ -22,7 +22,7 @@ The last group always holds, so their map line (in the box above) is not heard.
 
 ## Where they stand
 
-The Neighbour stands inside [[The shut cottage]], next door but one to [[Your cottage]] along the lane. Its door starts closed and its one bracket is empty, so it is dark inside.
+The Neighbour stands inside [[The shut cottage]], next door but one to [[Your cottage]] along the lane. Its door starts closed and the torch in its one bracket is unlit, so it is dark inside.
 
 ## Sources
 
@@ -40,6 +40,6 @@ The Neighbour stands inside [[The shut cottage]], next door but one to [[Your co
 - `data/maps/valley.json:5862-5870`: the Neighbour's line and tile
 - `tools/mapgen/valley.py:390`, `tools/mapgen/valley.py:615`: inside the shut cottage, "a neighbour inside who will not open"
 - `data/maps/valley.json:1295-1778`, `data/maps/valley.json:5092-5226`, `data/maps/valley.json:4960-5091`: your cottage at x 98, the reeve's house at 90, the shut cottage at 80: next door but one
-- `data/maps/valley.json:4980-4985`, `data/maps/valley.json:5071-5076`: its door closed and its one bracket empty
+- `data/maps/valley.json:4980-4985`, `data/maps/valley.json:5071-5076`: its door closed and its one bracket's torch unlit (corrected at 91bafc1, `tools/mapgen/valley.py:114`; game #428)
 
 {{navbox places}}

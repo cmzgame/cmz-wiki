@@ -22,7 +22,11 @@ A torch can also be lit by [[Use]]: use a [[Tinderbox]] or a lit torch on an unl
 
 A lit torch is a flame: used on a campfire with fuel in it, it lights the fire, and so it does a fireplace, a fire pit, or a lantern that is out, and one in a hand or on the belt is a flame for lighting any fire that is out from the fire's own menu, as a tinderbox is (see [[Fire]]). A lit torch also burns a body of the dead: [[Use]] it on the body, or choose **Burn corpse** on the body's menu with the torch in a hand, and nothing is spent (an unlit one is refused, "The torch is not lit."; see [[Corpses#Burning a body|Corpses]]). Only a lit torch gives light, gives back your sight in the dark, draws the dead at night, and can set the dead alight. A torch that is out is a stick with a weapon's numbers.
 
-**A torch goes out when it leaves a hand, the belt, or a holder**: put in the bag or a container, dropped on the ground, or taken down from a bracket or a post. A torch on a belt or in a bag that is dropped goes out with it, and so does every torch on a body when it falls. Moving a torch between a hand and the belt keeps it lit. Mounting it in a bracket or on a post keeps it as it was, lit or out (see [[Torch posts and brackets]]).
+**A torch goes out when it leaves a hand, the belt, or a holder**: put in the bag or a container, dropped on the ground, taken down from a bracket or a post, or picked up off a wall. A torch on a belt or in a bag that is dropped goes out with it, and so does every torch on a body when it falls. Moving a torch between a hand and the belt keeps it lit. Mounting it in a bracket or on a post keeps it as it was, lit or out (see [[Torch posts and brackets]]).
+
+## On a wall
+
+A torch goes on any plain wall with **Place torch**, on its menu in your bag, on the belt, or in a hand. A ghost of the torch in a bracket follows the cursor along the wall's face, as a painting's does; a click puts it up, lit or out as it was, and the bracket comes with it. It is refused on a fence, a window, a door, a face that already holds a painting or a bracket, and out of reach. On the wall it is lit and put out from its menu and burns down at the wall rate; **Pick up torch** (or `E`) takes it back, put out, and the bracket goes with it. If its wall is taken down or built over, it falls to the floor, put out. Its hover card says "**Place torch**: on a wall's face, in a bracket that comes with it; picked up again, the bracket goes too." See [[Torch posts and brackets#A torch on a wall|Torch posts and brackets]].
 
 ## Burning down
 
@@ -33,7 +37,7 @@ A lit torch burns down, whether or not it is giving light:
 
 A whole day is {{n census.constants.clock.DAY_LENGTH seconds}} (see [[The day]]); while everyone sleeps the world runs faster, and so does the burning. Two lit torches in hand both burn; a lit torch on the belt while one is held burns too, though only the held one gives light. A torch that is out does not burn.
 
-The burning and the kills wear one meter, the torch's durability. When it is used up the torch is gone, from the hand or the belt, with "Your torch is spent." A torch in a bracket or on a post that burns out is gone from its holder, and players within {{n tuning.world.torchSpentRadius tiles}} of it read "A torch burns out." The village's own lights are lanterns, which never go out (see [[Torch posts and brackets]]).
+The burning and the kills wear one meter, the torch's durability. When it is used up the torch is gone, from the hand or the belt, with "Your torch is spent." A torch in a bracket or on a post that burns out is gone from its holder (one put on a wall with Place torch takes its bracket with it), and players within {{n tuning.world.torchSpentRadius tiles}} of it read "A torch burns out." The village's own lights are lanterns, which never go out (see [[Torch posts and brackets]]).
 
 ## Light
 
@@ -54,7 +58,7 @@ In the off hand beside a weapon such as the [[Arming sword]] it counts as a weap
 
 ## With friends
 
-`T` is part of each player's input and is carried out by the host for that player, so a guest lights and puts out their own torch the same way. The burning is worked out on the host, and every player sees each torch lit or out. A guest's copy of a mounted torch's wear catches up each time it burns down another hundredth.
+`T` is part of each player's input and is carried out by the host for that player, so a guest lights and puts out their own torch the same way. The burning is worked out on the host, and every player sees each torch lit or out. A guest's copy of a mounted torch's wear catches up each time it burns down another hundredth. A guest's Place torch is sent to the host with the torch and the face it goes on, and carried out by the same rules.
 
 ## Sources
 
@@ -87,5 +91,6 @@ In the off hand beside a weapon such as the [[Arming sword]] it counts as a weap
 - `src/interact.js:1235`, `src/interact.js:1275`: `T` an event in the player's input, performed by the host's step
 - `src/game.js:410-420`, `src/map.js:150-170`: a torch's lit state and wear reach every player; a mounted torch's wear sent at each hundredth
 - `src/interact.js:1370-1385`: `T` puts a lit torch out, "You put out the torch."; `src/interact.js:528-560`: Put out the torch on a holder's menu; `src/burn.js:87-150`: a lit torch lights a switch or a lantern that is out (game #421, at 1bcb6ed)
+- `src/interact.js:1745-1747`, `src/setdown.js:234-318`, `src/map.js:238-275`, `src/item-info.js:310` (at 91bafc1): Place torch from the bag, the belt, or a hand; a painting's faces; lit or out as it was; Pick up torch put out with its bracket; burnt out or its wall gone; the card's line (game #532)
 
 {{navbox weapons}}

@@ -39,7 +39,7 @@ Solid furniture blocks the whole of its tile: nobody walks through it and no pat
 
 ### Setting things down from the bag
 
-Some things are set down from the bag rather than carried: a [[Campfire]], a [[Torch post]] (outdoors only), and a [[Decorative pumpkin]] (any open floor). **Place** on the item's menu starts a ghost on the tile under the cursor, green where it may stand and red with the reason; a click sets it down, and Escape or a right click cancels. A right click puts away any placement ghost the same way (a build, a rug, a painting, a bracket) and opens no menu; a carried piece is no ghost, so a right click on it still opens its menu. A [[Pumpkin]] has **Place as decoration**, which sets it down as a decorative pumpkin: picked up again it is no longer food. A [[Wall bracket]] is hung on a wall's face instead, as a painting is. Each comes up again into the bag with **Pick up** on its menu.
+Some things are set down from the bag rather than carried: a [[Campfire]], a [[Torch post]] (outdoors only), and a [[Decorative pumpkin]] (any open floor). **Place** on the item's menu starts a ghost on the tile under the cursor, green where it may stand and red with the reason; a click sets it down, and Escape or a right click cancels. A right click puts away any placement ghost the same way (a build, a rug, a painting, a torch for a wall) and opens no menu; a carried piece is no ghost, so a right click on it still opens its menu. A [[Pumpkin]] has **Place as decoration**, which sets it down as a decorative pumpkin: picked up again it is no longer food. Each comes up again into the bag with **Pick up** on its menu. A [[Torch]] goes on a wall's face instead, as a painting does, with **Place torch** (see [[Torch posts and brackets]]).
 
 ## Numbers
 
@@ -75,4 +75,4 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 - `src/placement.js:25`: the build reach
 - `src/main.js:829-847`, `src/placement.js:378-382`: a right click puts a ghost away as Escape does, never a carried piece (game #507, at d7cf736)
 - `src/placement.js:488-508`: a guest's put-down as a command with its turns, turned back on a refusal
-- `src/setdown.js`, `src/placement.js:324-356`, `src/placement.js:717-745`: set down from the bag, Place as decoration, a bracket hung (game #428, at 0ce54cf)
+- `src/setdown.js`, `src/placement.js:324-356`, `src/placement.js:717-745`: set down from the bag, Place as decoration (game #428, at 0ce54cf); `src/setdown.js:234-318`, `src/placement.js:364-376` (at 91bafc1): Place torch on a wall's face in place of the wall bracket (game #532)

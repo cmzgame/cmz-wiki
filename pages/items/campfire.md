@@ -24,6 +24,8 @@ At the workbench, pick **Campfire** in the panel (see [[Crafting]]); it needs no
 
 - **Outdoors only**: the tile is inside a room.
 - **No room**: the tile is not open ground, or something stands on it, or a rug is laid there.
+- **Not on water**: the tile is water, a ford included.
+- **Someone is in the way**: a player, a villager, one of the dead, an animal, or a body is on the tile.
 - **Too far**, or a wall in the way: it is set down within reach and in sight, as everything is.
 
 A click sets it down, cold and empty ("You set the campfire down."). Escape or a right click cancels. The stone and logs it was made from are not its fuel: add logs before you light it.
@@ -60,7 +62,7 @@ Making, setting down, lighting, feeding, putting out, picking up, and taking apa
 
 ## Sources
 
-<!-- sources at c3cb736 -->
+<!-- sources at 91bafc1 -->
 - `data/recipes.json:789-808`: the campfire at the workbench, three stone and two logs, no tool; the logs are the make's, not its fuel (game #527)
 - `data/items.json:41`: the Campfire item, 3 by 3, `place: "campfire"`, its drawn icon and held picture (game #527)
 - `src/stations.js:26`: the output box 3 by 3, so the made item lands in it (game #527)
@@ -73,5 +75,6 @@ Making, setting down, lighting, feeding, putting out, picking up, and taking apa
 - `src/placement.js:610-635`: Take apart by the recipe of the item whose Place sets it down: half of each, no tool for a make that named none
 - `tools/mapgen/valley.py`: the charcoal burners' campfire, with two logs
 - `src/campfire.js:82`, `src/net.js`: a guest's set-down as the `campfire` command by the item's uid, run on the host
+- `src/campfire.js:20-30` (at 91bafc1): "Not on water" (a drinkable or slow floor, a ford among them) and "Someone is in the way" (`stations.bodyOnTiles`), as the fire pit's (game #531)
 
 {{navbox items}}

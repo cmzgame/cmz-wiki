@@ -31,7 +31,7 @@ A click starts a bar of {{n build.fireplace.seconds seconds}}; when it ends the 
 - **Cook here** while it is lit, and **Boil water** for a tainted [[Waterskin]] or [[Bucket]] you carry (see [[Water#Boiling|Water]]).
 - **Take apart**, for one you built, once it is out: half its stone back, rounded down, with no tool (see [[Building#Taking apart|Building]]). Lit, it says "Put it out first.". The village's own are never taken apart.
 
-It is never picked up or carried. Lit, it lights every corner of its room, and its own pool reaches {{n sprites.fireplace.fire.radius tiles}}. The flame flickers, and the room's light dips with it a little, to {{n tuning.world.litRoomFlickerMin}} of full at the flicker's lowest (see [[Light]]).
+It is never picked up or carried. Lit, it lights every corner of its room, and its own pool reaches {{n sprites.fireplace.fire.radius tiles}}, cast from between its two tiles. The flame flickers, and the room's light dips with it a little, to {{n tuning.world.litRoomFlickerMin}} of full at the flicker's lowest (see [[Light]]).
 
 {{prop-sections fireplace}}
 
@@ -41,7 +41,7 @@ A guest's build is a command the host checks and carries out for that player, na
 
 ## Sources
 
-<!-- sources at c3cb736 -->
+<!-- sources at 91bafc1 -->
 - `data/build.json:112-122`: the palette's Fireplace: a prop, six stone, `stand: "wall"`, its seconds, no tool; it replaced the generated hearth (game #527)
 - `data/sprites/fireplace.json`: the drawn fireplace, two tiles in two facings (a west wall as drawn, a north wall as its mirror), its own flames, a switch that lights its room and cooks, its radius and flicker, `carry: false`
 - `src/setdown.js:75-105`: "No room", "Not on water", "Not beside a door", "Indoors only", "Against a wall" (a plain, unbroken, solid wall along the whole back)
@@ -51,5 +51,6 @@ A guest's build is a command the host checks and carries out for that player, na
 - `src/interact.js`, `src/burn.js:197-201`, `data/interactions.json`: Light and Put out as a switch; "You light the fireplace."
 - `src/placement.js:610-645`: Take apart, half the cost back, no tool; "Put it out first." while lit
 - `src/light.js:50-60`, `src/light.js:333-341`, `src/render/area.js:149-172`, `data/tuning.json:190`: a lit fireplace lights its room; the room's drawn light dips with the flicker to `world.litRoomFlickerMin`, the renderer's alone
+- `src/light.js:56-66` (at 91bafc1): a fire's pool cast from the middle of its footprint, between the fireplace's two tiles (game #531)
 
 {{navbox props}}

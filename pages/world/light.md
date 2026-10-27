@@ -37,7 +37,7 @@ A lit fire casts a flickering pool of light with real shadows: walls, shut doors
 - A lit torch in a bracket or on a post: {{n items.torch.fire.radius tiles}}. See [[Torch posts and brackets]].
 - A lit jack-o'-lantern: {{n sprites.pumpkin.fire.radius tiles}}.
 
-A fire gives light only while it burns, and a mounted torch only while it is lit. How fires are lit and fed is on [[Fire]].
+A fire of more than one tile, the fireplace or the fire pit, casts its pool from the middle of its tiles. A fire gives light only while it burns, and a mounted torch only while it is lit. How fires are lit and fed is on [[Fire]].
 
 ### Carried torches
 
@@ -48,7 +48,7 @@ A [[Torch]] gives light only while it is lit, and burns down while it is (see [[
 - **On the belt:** {{n tuning.world.beltLight}} of the light and reach of one in hand, a little past the {{n tuning.sight.darkRadius tiles}} you see the dead in the dark without one.
 - **In the bag:** no light.
 
-`T` lights the torch in your hand, or else on your belt, with a [[Tinderbox]] carried, and puts out a lit one; with no torch in a hand or on the belt it takes one from the bag into a hand, still out. A torch cannot be set down lit on the ground: dropped, put away, or taken down from a holder, it goes out. It can be mounted in a bracket or on a post.
+`T` lights the torch in your hand, or else on your belt, with a [[Tinderbox]] carried, and puts out a lit one; with no torch in a hand or on the belt it takes one from the bag into a hand, still out. A torch cannot be set down lit on the ground: dropped, put away, or taken down from a holder, it goes out. It can be mounted in a bracket or on a post, or put on a wall with its own bracket by **Place torch** (see [[Torch posts and brackets]]).
 
 ### Moving lights
 
@@ -118,3 +118,4 @@ Light belongs to the world: the host works it out, and each guest works out the 
 - `src/sight.js:26`: only the viewer's own carried light lengthens its reach (game #150)
 - `src/fire.js:97-102`, `src/archery.js:512-527`, `src/game.js:922`, `src/light.js:185-201`, `data/combat.json` `bow.fireballGlow`, `bow.flareRadius`, `bow.flareSeconds`: burning bodies, a fireball or fire arrow in flight, and a fireball's flare as moving lights, not among the flames the dead notice
 - `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`: the room fires are switches, `fire.switch`; `src/interact.js:1479-1499`: T puts a torch out (game #421)
+- `src/light.js:56-66` (at 91bafc1): a fire's pool from the middle of its footprint (game #531); `src/setdown.js:234-291`: a torch put on a wall (game #532)

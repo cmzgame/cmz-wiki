@@ -15,7 +15,7 @@ The **tinderbox** is a flame you carry. It lights a [[Torch]], a [[Campfire]], a
 - **[[Use]]** it on what you want lit:
   - a campfire that is out but has fuel in it ("You light the campfire.");
   - a fireplace, a fire pit, or a lantern that is out ("You light the fireplace.", "You light the fire pit.", "You light the lantern."); these burn no fuel (see [[Fire#The home lights|Fire]]);
-  - a torch on a torch post or in a wall bracket that is out ("You light the torch.");
+  - a torch on a torch post, or on a wall in its bracket, that is out ("You light the torch."); its hover card calls the second "a torch on a wall";
   - an unlit torch in your hand or on your belt (with the bag open, click its slot).
 - **[[Use]]** it on a body of the dead to burn it; nothing is spent: the body burns for {{n tuning.work.burnCorpse.hours}} hour of the game's clock and is then gone, with everything in it. Its hover card says "Use on a body of the dead: burn." The body's own **Burn corpse** menu entry does the same after a bar of {{n tuning.work.burnCorpse.seconds seconds}}, with the tinderbox anywhere you carry it or a lit torch in a hand. See [[Corpses#Burning a body|Corpses]].
 - **Light the torch** on the right-click menu of a bracket or a post holding a torch that is out lights it with the tinderbox you carry (see [[Torch posts and brackets]]).
@@ -56,5 +56,6 @@ A lit torch does everything a tinderbox does here, so one lit torch can light an
 - `data/interactions.json:17`, `src/interactions.js:39`, `src/item-info.js:32`: a tinderbox used on a body of the dead runs `burncorpse`; its card's words for the target (game #434, at fa2997f)
 - `data/tuning.json:198`, `src/burn.js:76-87`, `src/burn.js:129-146`, `data/interactions.json:18`: the tinderbox carried anywhere or a lit torch, nothing spent, the hour; a lit torch Used on a body (games #434, #508, at d7cf736)
 - `src/interact.js:1866-1885`: Burn corpse on a body's menu, a bar of `seconds`, by the body's id for a guest (game #434, at fa2997f)
+- `src/item-info.js:37` (at 91bafc1): the card's word for a torch in a bracket, "a torch on a wall" (game #532)
 
 {{navbox items}}

@@ -40,7 +40,7 @@ A guest's build is a command the host checks and carries out for that player, na
 
 ## Sources
 
-<!-- sources at c3cb736 -->
+<!-- sources at 91bafc1 -->
 - `data/build.json:123-133`: the palette's Fire pit: a prop, eight stone, `stand: "ground"`, its seconds, no tool (game #527)
 - `data/sprites/fire_pit.json`: the drawn fire pit, 2 by 2, its rack and pots, its own flames, a switch that lights its room and cooks, radius 5, its flicker, `carry: false`
 - `src/setdown.js:75-105`, `src/setdown.js:107-127`: "No room", "Not on water" (drinkable or slow floor; a road is neither), "Not beside a door", the tiles in one room or all outdoors; the ghost centred on the cursor
@@ -50,5 +50,6 @@ A guest's build is a command the host checks and carries out for that player, na
 - `src/placement.js:610-645`: Take apart, half the cost back, no tool; "Put it out first." while lit
 - `src/light.js:50-60`, `src/light.js:333-341`, `src/render/area.js:149-172`, `data/tuning.json:190`: lit indoors it lights its room, and every lit fire with a radius casts its pool; the room's drawn light dips to `world.litRoomFlickerMin`
 - `data/maps/valley.json:1883-1910`, `tools/mapgen/valley.py`: the lit fire pit in a glade south of your cottage, a place of its own with a clear ring round it
+- `src/light.js:56-66` (at 91bafc1): a fire's pool cast from the middle of its footprint, the centre of the fire pit's four tiles (game #531)
 
 {{navbox props}}

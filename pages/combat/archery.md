@@ -49,12 +49,14 @@ A [[Poisoned arrow|poisoned]] or [[Strongly poisoned arrow|strongly poisoned arr
 
 The path is checked once, when the shot is loosed. A shot is stopped by:
 
-- a wall, below {{n combat.bow.wallHeight}} pixels high, unless it passes through an open or broken door below its lintel, or an open or broken window without boards between its sill and its top,
+- a wall, below the wall's own height: a house wall's {{n sprites.wall_wood.wall.height}} pixels, a [[Fences|fence]]'s {{n sprites.wall_fence.wall.height}} (a wall with no height of its own, {{n combat.bow.wallHeight}}), unless it passes through an open or broken door below its lintel, or an open or broken window without boards between its sill and its top,
 - boards, always,
 - tree trunks and round props, below {{n combat.bow.trunkHeight}} pixels,
 - other solid props, below their own height, up to {{n combat.bow.propHeight}} pixels.
 
 A stopped arrow falls at the foot of what stopped it and hits nothing.
+
+A flight rises from the hand and falls to its landing point, so what stops it depends on where along the path it stands. At the top of its arc a full-range bow shot or a full throw of the spear is above a house wall, and a full throw of a [[Throwing knife]] or a [[Throwing axe]] is above a fence but never a house wall; a shorter shot arcs lower.
 
 ### Pulling from afar
 
@@ -140,6 +142,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 - `src/archery.js:276`, `src/entities/zombie.js:110`, `src/entities/zombie.js:140-151`: a shot's hit staggers by its own chance (an arrow the default, the spear always), never floors, and cancels a bite being wound up
 - `src/archery.js:271`, `src/archery.js:315-349`: the landing's hit, an arrow's and a spear's alike, counts only a body with no wall, boards, or closed door between it and the landing point at the shot's height as it lands, the ground for an arc; an open or broken door passes there, a window does not
 - `src/archery.js:156-162`, `src/placeholders.js:88-90`: the wall test by height: a door passes open or broken below its top, a window open or broken between its sill and its top
+- `src/archery.js:179-199`, `src/archery.js:81-83`, `data/combat.json:11` `bow.wallHeight`, `data/items.json` `spear.thrown.arcMax` (at 91bafc1): each wall stops a flight below its own definition's height, a fence's its own, `wallHeight` the fallback; the arc's height along the path from `z0` and the peak; the spear's full throw over a house wall, the knife's and the axe's over a fence only (game #529)
 - `src/archery.js:301-308`, `src/archery.js:315-330`: who can be hit (the dead alone, at this commit)
 - `src/archery.js:272-292`, `src/archery.js:319-346` (at 6e3ab37): an animal hit at the landing, the tame only alone and never by a spell; what lodges in it comes back when it is butchered (game #456)
 - `src/archery.js:144-215`: what stops a shot, scanned once at release, the arrow falling at the obstacle's foot

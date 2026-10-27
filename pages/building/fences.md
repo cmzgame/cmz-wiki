@@ -19,6 +19,8 @@ A fence is {{n sprites.wall_fence.wall.height}} pixels tall and {{n sprites.wall
 
 A fence stops bodies, not reach. A blow is stopped only by what blocks [[Sight|sight]], and sight passes a fence, so you can hit one of the dead on the other side with a torch or any weapon. The same holds the other way: one of the dead that sees you and comes within {{n tuning.zombie.contact tiles}} can bite you across it, and one striking the fence reaches a little further (below; see [[The dead]]). A fence keeps the dead from walking in; it does not keep you out of reach.
 
+An arrow or a throw is stopped by a fence only below the fence's own height, {{n sprites.wall_fence.wall.height}} pixels, so a shot or a throw whose arc is higher where it crosses passes over it: a full throw of a [[Throwing knife]] or a [[Throwing axe]] can clear a fence it could never clear in a house wall (see [[Archery#What stops a shot|Archery]]).
+
 ### The dead strike a fence down
 
 When one of the dead is hunting a player it cannot walk to, and a fence stands in its way, it goes to the fence and strikes it:
@@ -120,4 +122,4 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - `src/entities/zombie.js:679-693`, `src/entities/zombie.js:876-890`: the dead kept waiting for a bite strike the fence between; one with its target on its own side, at the fence, takes up the chase (game #389, at 9be007c)
 - `src/entities/zombie.js:865-871`, `src/entities/zombie.js:923-929`: a gate opened while the dead strike it ends their striking, and they take up the chase through it (game #397, at 82485c4)
 - `src/interact.js:557`, `src/interact.js:1273`, `src/map.js:816-818`, `src/map.js:2181`: no boards on a fence, a gate included: no Board up on its menu, B says "A gate takes no boards.", a board refused, and a map's boards on one left off (game #398, at 4db1c00)
-
+- `src/archery.js:179-199` (at 91bafc1): a flight stopped by a fence only below the fence's own height (game #529)

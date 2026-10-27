@@ -1,12 +1,12 @@
 ---
 title: Anvil
 categories: [Stations, Crafting]
-summary: The smith's station: tools, weapons, wall brackets, and strongboxes from iron bars, sticks, and planks, with a hammer in hand; it also repairs a worn weapon or tool for a bar or a plank.
+summary: The smith's station: tools, weapons, and strongboxes from iron bars, sticks, and planks, with a hammer in hand; it also repairs a worn weapon or tool for a bar or a plank.
 ---
 
 {{infobox-station anvil}}
 
-The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Shears]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], [[Throwing knife|throwing knives]], the [[Flanged mace]], the [[Arming sword]], and the [[Wall bracket]], and, with planks as well, a [[Strongbox|strongbox]] and [[Throwing axe|throwing axes]]; three bars make your own [[Cauldron]], an item set down where you like. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
+The **anvil** is the smith's station. From [[Iron bar|iron bars]] and [[Stick|sticks]] it makes the [[Smith's hammer]], the [[Dirk]], the [[Shears]], the [[Hatchet]], the [[Pickaxe]], the [[Scythe]], the [[Throwing spear]], [[Throwing knife|throwing knives]], the [[Flanged mace]], and the [[Arming sword]]; with planks as well, a [[Strongbox|strongbox]] and [[Throwing axe|throwing axes]]; three bars make your own [[Cauldron]], an item set down where you like. It needs no fire. Every recipe but the hammer's needs a hammer in hand. The chest in [[The smithy]] holds the first iron bars, and the quarryman's hut by [[The quarry]] a [[Smith's hammer]], so the anvil works from the first day; more bars are smelted at the [[Forge]] from mined [[Iron ore]]. The anvil also repairs worn weapons and tools, a few times each, for a bar or a plank (see [[Durability#Repairs|Durability]]).
 
 ## Using it
 
@@ -46,7 +46,7 @@ A guest opens the anvil's panel on their own screen; Make is carried out by the 
 <!-- sources at 879d0a7 -->
 - `src/stations.js:49-59`: which prop is which station
 - `data/sprites/anvil.json`: the anvil is a station, not carried, with no fire
-- `data/recipes.json:815-1025`: the anvil's recipes: knife, shears, hammer, hatchet, pickaxe, scythe, spear, mace, sword, strongbox, wall bracket; every one but the hammer's has `tool: "hammer"`
+- `data/recipes.json:815-1025`: the anvil's recipes: knife, shears, hammer, hatchet, pickaxe, scythe, spear, mace, sword, strongbox (the wall bracket's row gone at 91bafc1, game #532); every one but the hammer's has `tool: "hammer"`
 - `data/loot.json:15`, `data/loot.json:18`: the quarryman's chest's hammer and the smithy's chest's iron bars (game #210)
 - `src/interact.js:1068-1085`: the station's menu entry and `E`
 - `src/stations.js:170-181`: the refusals, "Needs a smith's hammer in hand." among them
