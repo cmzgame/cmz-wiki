@@ -8,7 +8,7 @@ numbersOk: true
 
 <!-- typed: a body's grid size (src/entities/character.js) is neither data nor a named constant -->
 
-A **container** is a piece of furniture that holds items in a grid: chests, barrels, shelves, cupboards, desks, and the rest. Bags and belts are containers too, but carried ones (see [[Inventory]]). A container in the world starts unsearched; searching it fills it from its loot table.
+A **container** is a piece of furniture that holds items in a grid: chests, barrels, shelves, cupboards, desks, and the rest. Bags and belts are containers too, but carried ones (see [[Inventory]]). A container in the world starts unsearched; searching it fills it from its loot table. The valley's chests, shelves, and cupboards are drawn with their backs to a wall and their doors or open fronts to the room.
 
 ## How it works
 
@@ -99,6 +99,7 @@ A search chosen by a guest is carried out by the host, and so is an Open of a ba
 - `src/interact.js:1334-1358`: searching a body; villagers have no search entry
 - `data/wardrobes.json`: village wardrobes have no loot
 - `src/placement.js:69-75`: what can be carried
+- `tools/mapgen/mapgen.py:23-30`, `data/sprites/cupboard.json`: a drawn chest, shelf, or cupboard faces away from its wall, `y` against a west wall and `x` its mirror against a north one (art rounds 4 and 5; game #519, at ece297c)
 - `data/sprites/shelf.json`: a carry flag (likewise barrel, chest, cupboard, desk, strongbox, woodpile, bookcase)
 - `data/maps/valley.json`: where the chests stand
 - `src/host.js:212-215`: a guest's search runs on the host and its panel opens

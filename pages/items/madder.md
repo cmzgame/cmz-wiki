@@ -6,7 +6,7 @@ summary: Madder, a dye plant, gathered as an herb, grows wild anywhere about the
 
 {{infobox-item madder}}
 
-**Madder** is a dye plant, gathered as an herb, one of the eleven [[Herbs]]. It grows wild on open grass anywhere about [[The valley]], one plant here and there, never in a patch: the valley keeps about {{n valley.resources.madder.count}}. The plant is drawn small, with yellow-green stars, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. Nothing uses it yet: the [[Dye vat]] costs nothing, and no colour asks for a dye plant.
+**Madder** is a dye plant, gathered as an herb, one of the eleven [[Herbs]]. It grows wild on open grass anywhere about [[The valley]], one plant here and there, never in a patch: the valley keeps about {{n valley.resources.madder.count}}. The plant is drawn small, a green clump with tiny yellow flowers and its red roots showing at its foot, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. Nothing uses it yet: the [[Dye vat]] costs nothing, and no colour asks for a dye plant.
 
 ## Gathering
 
@@ -25,8 +25,8 @@ A guest gathers it through the same menu entry, sent to the host with the plant'
 ## Sources
 
 <!-- sources at 6e3ab37 -->
-- `data/items.json`: the item, its tags (`herb`, `raw`, `dye`), its icon drawn from `herb_madder`'s design (game #457)
-- `data/sprites/herb_madder.json`: the node's `gather` block (item, count, seconds, level), `interactable`, its design
+- `data/items.json`: the item, its tags (`herb`, `raw`, `dye`), its icon and its picture in the hand drawn in art round 5 as the picked herb, in place of the icon generated from `herb_madder`'s design (game #519, at ece297c; first game #457)
+- `data/sprites/herb_madder.json`: the node's `gather` block (item, count, seconds, level), `interactable`, the plant drawn in art round 5, outlined (game #519, at ece297c)
 - `data/maps/valley.json` `resources.madder`, `tools/mapgen/valley.py:635-643`: its count and where it grows
 - `src/map.js:619-653`: where a node may stand
 - `src/gather.js:41-85`, `src/gather.js:92-119`: the gather, its reach, the bag or the feet, the node gone and owed back

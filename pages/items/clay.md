@@ -11,7 +11,7 @@ summary: Clay dug from the clay banks on the river's dirt bank, with a shovel ca
 
 ## Clay banks
 
-A clay bank is a low reddish-brown mound on the river's own dirt bank, beside the water of the river, from the top of the valley to the bottom but for the ford's stretch, where the drove's road meets the water. It is a [[Gatherables|gatherable]], outlined, and sways when clicked; it is solid, so you walk round it like a [[Rocks|rock]] (it blocks a circle {{n sprites.clay_bank.collide.radius}} tiles in radius). It cannot be carried.
+A clay bank is a low grey-brown mound of wet clay on the river's own dirt bank, the colour of the clay it gives, beside the water of the river, from the top of the valley to the bottom but for the ford's stretch, where the drove's road meets the water. It is a [[Gatherables|gatherable]], outlined, and sways when clicked; it is solid, so you walk round it like a [[Rocks|rock]] (it blocks a circle {{n sprites.clay_bank.collide.radius}} tiles in radius). It cannot be carried.
 
 ### Where a new one may appear
 
@@ -34,8 +34,8 @@ A guest digs through the same menu entry, sent to the host with the bank's id an
 ## Sources
 
 <!-- sources at 6e3ab37 -->
-- `data/items.json`: clay, a material (game #457); its icon and its picture drawn in art round 4, in place of the generated lump (game #514, at 393acaf)
-- `data/sprites/clay_bank.json`: the bank: solid (`collide`), `interactable`, not carried; its `dig` block (item, count, seconds, level, the tool verb `dig`)
+- `data/items.json`: clay, a material (game #457); its icon and its picture drawn in art round 4, in place of the generated lump (game #514, at 393acaf); its colour the drawn clay's grey-brown (game #519, at ece297c)
+- `data/sprites/clay_bank.json`: the bank: solid (`collide`), `interactable`, not carried; its `dig` block (item, count, seconds, level, the tool verb `dig`); drawn in art round 5, grey-brown as the clay, in place of the orange design (game #519, at ece297c)
 - `data/maps/valley.json` `resources.clay`, `tools/mapgen/valley.py:629-633`, `tools/mapgen/valley.py:644`: the count, the river's corridor less the ford's band, the dirt floor, water within one tile, of the river
 - `src/map.js:619-653`, `src/map.js:580-592`: where a bank may stand: its floor, water of its group near, nothing on the tile, no wall, not in a room or a fenced yard, no body
 - `src/gather.js:41-85`, `src/gather.js:92-119`, `src/inventory.js:104-108`: Dig clay with a tool carried that lists `dig`, greyed and refused without one; the bag or the feet; the bank gone and owed back

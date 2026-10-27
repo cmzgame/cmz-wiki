@@ -25,7 +25,7 @@ summary: Eleven kinds of herb grow wild about the valley, one plant here and the
 
 The valley is wooded, so "near a tree" covers most of its open ground: nightshade and wolfsbane lean toward the woods but are found almost anywhere. Mageroot (the mana herb until 2026-10-25) grows only by water; every other pond in the valley lies where nothing grows. Grave moss keeps its name.
 
-Each herb is drawn as a small plant of its own colour and shape, with a clump of leaves at its foot: sage grey-green with violet tips, nettle dark and toothed, feverfew white daisies, yarrow flat white heads, mageroot blue-teal with a glowing point, nightshade purple bells and black berries, wolfsbane blue-violet hoods, grave moss a pale tuft, woad yellow clusters, madder yellow-green stars, and weld a tall yellow spike. Its icon in the bag is the same picture.
+Each herb is drawn as a small plant of its own colour and shape, outlined all the way round: sage grey-green with violet spikes, nettle dark and toothed, feverfew white daisies, yarrow flat white heads, mageroot pale blue-teal leaves, nightshade purple flowers and black berries, wolfsbane blue-violet hoods, grave moss a pale grey mound, woad yellow clusters over blue-green leaves, madder a green clump with tiny yellow flowers over red roots, and weld a tall yellow spike. Picked, each is drawn again as the herb you carry, a bunch of its stems or, for mageroot and madder, its root: the icon in the bag and the picture in the hand and on the floor.
 
 ## How it works
 
@@ -87,8 +87,8 @@ Gathering is a menu entry the host runs: a guest's choice of "Gather nettle" is 
 
 <!-- sources at 6e3ab37 -->
 - `data/maps/valley.json` `resources`, `tools/mapgen/valley.py:625-643`: the eleven kinds, their counts, areas (the river's corridor and the brook for mageroot, the graveyard for grave moss), `water`, `near`, `own`, `where` (no `night` since game #475); not solid; one sprite each (game #457)
-- `data/sprites/herb_sage.json` (and the other ten `herb_*`): each `gather` block (item, count, seconds, skill, level; no `night` since game #475), `interactable`, the design its picture and icon are drawn from
-- `data/items.json`: the eleven herbs, tagged `herb` (and `dye` for woad, madder, and weld), their icons generated from their nodes' designs
+- `data/sprites/herb_sage.json` (and the other ten `herb_*`): each `gather` block (item, count, seconds, skill, level; no `night` since game #475), `interactable`, the plant drawn in art round 5 (game #519, at ece297c)
+- `data/items.json`: the eleven herbs, tagged `herb` (and `dye` for woad, madder, and weld), their icons and pictures drawn in art round 5 as the picked herb, in place of icons generated from the nodes' designs (game #519, at ece297c)
 - `src/map.js:619-653`: where a node may stand: its area, its floors, nothing on the tile, no wall, a tree near, water near, not in a room or a fenced yard unless its area is its own place, no body
 - `src/map.js:580-592`: water within so many tiles, of a named water when the kind names one
 - `src/map.js:689-725`, `src/map.js:2623-2633`: the kinds read from the map, clipped to the valley's bounds; the count made up at the load by hash

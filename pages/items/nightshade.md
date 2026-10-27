@@ -25,8 +25,8 @@ A guest gathers it through the same menu entry, sent to the host with the plant'
 ## Sources
 
 <!-- sources at 6e3ab37 -->
-- `data/items.json`: the item, its tags (`herb`, `raw`, `poison`), its icon drawn from `herb_nightshade`'s design (game #457)
-- `data/sprites/herb_nightshade.json`: the node's `gather` block (item, count, seconds, level), `interactable`, its design
+- `data/items.json`: the item, its tags (`herb`, `raw`, `poison`), its icon and its picture in the hand drawn in art round 5 as the picked herb, in place of the icon generated from `herb_nightshade`'s design (game #519, at ece297c; first game #457)
+- `data/sprites/herb_nightshade.json`: the node's `gather` block (item, count, seconds, level), `interactable`, the plant drawn in art round 5, outlined (game #519, at ece297c)
 - `data/maps/valley.json` `resources.nightshade`, `tools/mapgen/valley.py:635-643`: its count and where it grows
 - `src/map.js:619-653`: where a node may stand
 - `src/gather.js:41-85`, `src/gather.js:92-119`: the gather, its reach, the bag or the feet, the node gone and owed back

@@ -27,7 +27,7 @@ So a poisoned arrow is spent with its shot: what comes back is plain arrows, to 
 
 Its hover card says: "Shot from a hunting bow (19 to 38 damage by the draw), after any fire arrows or strongly poisoned arrows and before any arrows.", "Poisons the dead and game it hits: a stack a hit, up to {{n combat.poison.max}}, draining {{n combat.poison.dpsByStacks.ordinary.0}}, {{n combat.poison.dpsByStacks.ordinary.1}}, or {{n combat.poison.dpsByStacks.ordinary.2}} a second for {{n combat.poison.duration}} seconds after the last.", and "Made from arrows: **Use** poison on them (coat)."
 
-The art is the game's placeholder for now: a green block in the bag.
+It is drawn as an arrow with a green head, the same picture in the bag, in the hand, and lying on the floor; only its flight is still the game's generated arrow.
 
 {{item-sections poison_arrow}}
 
@@ -42,7 +42,7 @@ A guest coats arrows with their own Use, carried out by the host. Poisoned arrow
 ## Sources
 
 <!-- sources at 307ed34 -->
-- `data/items.json:27`: the poisoned arrow: ammunition, `poisoned: { tier: 1 }`, its stack and size the arrow's; placeholder art (game #496)
+- `data/items.json:27`: the poisoned arrow: ammunition, `poisoned: { tier: 1 }`, its stack and size the arrow's (game #496); its icon and its picture drawn in art round 5, in flight still generated (game #519, at ece297c)
 - `data/items.json:24` `bow.ammo`: fire arrows, strongly poisoned, poisoned, then plain
 - `data/interactions.json:24`, `src/poison.js:146-188`: poison used on arrows makes up to `arrows` of them
 - `src/archery.js:809-826` `launcherOf`: the first arrow carried in the bow's order, its `poisoned` tier

@@ -11,7 +11,7 @@ summary: Salt mined from the salt rocks at the iron workings with a pickaxe in h
 
 ## Salt rocks
 
-A salt rock is a pale grey-white lump with crystals on it. It is a [[Gatherables|gatherable]], outlined, and sways when clicked; it is solid, so you walk round it (it blocks a circle {{n sprites.salt_rock.collide.radius}} tiles in radius). It cannot be carried. A new one grows only on natural ground in the ore area, the iron workings included, by the same rule as the ore rocks, and rises whole through the ground line over {{n tuning.resources.riseSeconds seconds}} with a little soil and dust at its foot and a shudder, like every rock (see [[Mining#Coming back|Mining]]).
+A salt rock is a pale boulder, faceted like the other rocks, with white cubic crystals of salt on it. It is a [[Gatherables|gatherable]], outlined, and sways when clicked; it is solid, so you walk round it (it blocks a circle {{n sprites.salt_rock.collide.radius}} tiles in radius). It cannot be carried. A new one grows only on natural ground in the ore area, the iron workings included, by the same rule as the ore rocks, and rises whole through the ground line over {{n tuning.resources.riseSeconds seconds}} with a little soil and dust at its foot and a shudder, like every rock (see [[Mining#Coming back|Mining]]).
 
 ## Mining
 
@@ -30,8 +30,8 @@ A guest mines through the same menu entry, sent to the host with the rock and ch
 ## Sources
 
 <!-- sources at dc10b81 -->
-- `data/items.json`: salt, a material, its icon generated from a lump design with crystals in the rock's colours (game #457)
-- `data/sprites/salt_rock.json`: the salt rock: solid (`collide`), `interactable`, not carried; its `mine` block (item, count, seconds, `gone`, level)
+- `data/items.json`: salt, a material (game #457); its icon and picture drawn in art round 5, a heap of white crystals, in place of the generated lump (game #519, at ece297c)
+- `data/sprites/salt_rock.json`: the salt rock: solid (`collide`), `interactable`, not carried; its `mine` block (item, count, seconds, `gone`, level); drawn in art round 5, with the rocks' shadow (game #519, at ece297c)
 - `data/maps/valley.json` `resources.salt`, `tools/mapgen/valley.py:645`: the count, the ore area, the iron workings open to it, `rise`
 - `src/mining.js:19-55`, `src/interact.js:851-871`: Mine salt with a pickaxe in a hand, greyed without one; reach and a clear line; the bag or the feet; gone and owed back
 - `src/resources.js:35-66`, `src/resources.js:91-101`: owed back after its days, rising from its arrival

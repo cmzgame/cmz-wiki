@@ -17,6 +17,8 @@ Its menu has:
 - **Feed the cauldron (n of max, h left)** while it burns, up to {{n sprites.cauldron.fire.maxFuel}} logs, and "The cauldron is full" when it holds them all. Each log burns {{n sprites.cauldron.fire.hoursPerUnit}} game hours.
 - **Use the cauldron**, which opens its panel (see [[Crafting]]).
 
+It is drawn as a black iron pot on three short legs, with two lugs and a bail, over a ring of fieldstones with logs and ash under it. While it burns, its own flames lick up under the pot, in sight. The witch's and your own look the same.
+
 It cannot be put out: once lit, it burns its logs down. A [[Use]] of a flame, or a [[Fireball]] coming down beside it, does not light it ("That cannot be lit."). It gives light while it burns. It cooks nothing: it boils no water, and has no Cook here.
 
 A brew needs the fire lit to start ("The fire is out."), and one under way waits while the fire is out. Each brew takes two herbs of one kind, a second ingredient, a [[Clay vial]], and a draught of clean water from a [[Waterskin]] you carry; the potion goes into the cauldron's output. See [[Potions#Brewing|Potions]] for the water and the herbs.
@@ -57,7 +59,7 @@ A guest lights, feeds, and opens a cauldron through the same menu entries, sent 
 
 <!-- sources at 0fa02e5 -->
 - `src/placement.js:611-622`, `src/map.js:336-341` (at 5eb40e6): a lit cauldron's Take apart says "Let it burn down first." (game #501)
-- `data/sprites/cauldron.json`: one prop with its fire under it: logs, most fuel, hours a log, `burns`, `cooks: false`, `station: "cauldron"`, `carry: false`, `item: "cauldron"`, a placeholder box
+- `data/sprites/cauldron.json`: one prop with its fire under it: logs, most fuel, hours a log, `burns`, `cooks: false`, `station: "cauldron"`, `carry: false`, `item: "cauldron"`; drawn in art round 5, its three flame frames under the pot through the fire's `at`, `frames`, `base`, and `fps`, the Cauldron item's icon and picture too (game #519, at ece297c)
 - `data/maps/valley.json:8593-8616`, `tools/mapgen/valley.py:489-493`: the witch's cauldron, `cauldron_witch`, at the lane to the mere's north end, cold and empty
 - `src/interact.js:463-497`: the fire's menu: Light with a log and a flame, Feed, full; no Put out
 - `src/burn.js:198-200`, `src/burn.js:263`: not lit by a Use, never put out
@@ -65,6 +67,7 @@ A guest lights, feeds, and opens a cauldron through the same menu entries, sent 
 - `src/stations.js:166-221`, `src/stations.js:360-372`: the water, "The fire is out.", the job that waits
 - `data/recipes.json:1645-1660`: your own, three iron bars at the anvil, `uses: "smith"`, no rule
 - `data/items.json:143`: the Cauldron item, its size, `place`, `stand: "ground"`
+- `src/assets.js:575-640`, `src/render/props.js:190-197`: a drawn fire's frames placed by `at`, animated at `fps`, drawn only while lit and in sight
 - `src/setdown.js:31-41`, `src/setdown.js:71-96`: set down on open floor, within reach; "You set the cauldron down."
 - `src/setdown.js:98-134`, `src/interact.js:1023`: Pick up only for your own, cold, unfuelled, idle, and empty; the witch's has none
 - `src/placement.js:590-623`, `src/interact.js:302-318`, `src/interact.js:1024`: Take apart for half the bars, the smith's tool, refused while it holds anything or burns

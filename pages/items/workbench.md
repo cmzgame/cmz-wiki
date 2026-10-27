@@ -10,9 +10,11 @@ The **workbench** is the station for wood. From [[Plank|planks]], [[Stick|sticks
 
 ## Using it
 
-Right-click it and choose its entry, or press `E` beside it, and pick a recipe in the panel (see [[Crafting]]). Items go into the workbench's output box. Furniture and the two stations are set down on the nearest free tiles a body could walk to from the bench, never past a wall or a shut door, every tile of the thing free and none beside a door; with no such spot the recipe is refused before anything is spent, "There is no room beside it for a counter." (see [[Crafting#The output|Crafting]]). The workbench in [[The chandler's house]] stands in a small lean-to too full for a counter, so a counter is refused there; the joiner's has room. A chest, a shelf, or any other container made here starts empty and already searched, so nothing is ever rolled into it (see [[Containers]]). A [[Torch post]] is made here as an item, set down outdoors from the bag; a [[Jack-o'-lantern]] is carved from a [[Pumpkin]] with a [[Dirk]] on you.
+The workbench is a long, heavy plank bench across **two tiles**, as the table is, on four stout legs with a shelf below, a leg vice at one end, chisels racked along its back, and a saw, a plane, and a mallet on its top. It stands either way round, its worker's side to the front. The two in the valley each take two tiles: the joiner's in [[The joiner]]'s workshop, and the chandler's along the west wall of the lean-to at [[The chandler's house]], its front to the room. It cannot be carried.
 
-A workbench can be made at a workbench.
+Right-click it and choose its entry, or press `E` beside it, and pick a recipe in the panel (see [[Crafting]]). Items go into the workbench's output box. Furniture and the two stations are set down on the nearest free tiles a body could walk to from the bench, never past a wall or a shut door, every tile of the thing free and none beside a door; with no such spot the recipe is refused before anything is spent, "There is no room beside it for a counter." (see [[Crafting#The output|Crafting]]). The chandler's lean-to is too full for a counter, so a counter is refused there; the joiner's has room. A chest, a shelf, or any other container made here starts empty and already searched, so nothing is ever rolled into it (see [[Containers]]). A [[Torch post]] is made here as an item, set down outdoors from the bag; a [[Jack-o'-lantern]] is carved from a [[Pumpkin]] with a [[Dirk]] on you.
+
+A workbench can be made at a workbench. It needs two free tiles side by side near the bench, as any two-tile furniture does, and is set down along them.
 
 ## Recipes
 
@@ -27,7 +29,8 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 ## Sources
 
 <!-- sources at 879d0a7 -->
-- `data/sprites/workbench.json`: the workbench: a station with no fire
+- `data/sprites/workbench.json`: the workbench: a station with no fire, not carried; drawn in art round 5 across two tiles, `facingFootprint` 1 by 2 as drawn and 2 by 1 as its mirror, as the table (game #519, at ece297c)
+- `tools/mapgen/valley.py:150`, `tools/mapgen/valley.py:356`: the chandler's bench on two tiles along the lean-to's west wall, the joiner's on two tiles (game #519, at ece297c)
 - `data/recipes.json:4-124`, `data/recipes.json:231-782`: the workbench's recipes, none with fire or a tool in hand; each but the torch with a carried tool by its verb, `uses`: `build` (a hammer), `cut` (a knife), `split` (a hatchet) (game #222)
 - `src/stations.js:170-181`, `src/ui/station-panel.js:153`, `src/inventory.js:94-112`: a row's tool carried anywhere, "needs a ... on you"
 - `data/loot.json:9`, `data/loot.json:13`: the joiner's hatchet and hammer, the weaver's knife
@@ -40,7 +43,7 @@ A guest opens the workbench's panel on their own screen; Make is carried out by 
 - `src/stations.js:210-276`: a made prop on the nearest free tiles a body could walk to, its whole footprint free; refused before anything is spent with no such spot (game #466)
 - `tools/mapgen/valley.py:140-151`, `tools/mapgen/valley.py:352`: the chandler's workbench in its lean-to, the joiner's in the workshop; the lean-to too full for a counter (Primary's pane run on game #466)
 - `data/recipes.json:327-441`: the arrows fletched with a feather, the snare, the lead, butter, the smoking rack, and the tanning vat (game #462)
-- `data/recipes.json:561-583`: a workbench made at a workbench
+- `data/recipes.json:567-585`, `src/map.js:2418-2428`: a workbench made at a workbench, its footprint two tiles, its facing the one that fits them
 - `data/maps/valley.json`: where the workbenches stand
 - `src/host.js:185-192`: a guest's Make runs on the host
 - `data/recipes.json`: the workbench's furniture, the barrel, the jack-o'-lantern, the torch post as an item (game #428)

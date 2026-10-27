@@ -80,7 +80,7 @@ They are [[Use|Used]] instead. On a blade (the [[Arming sword]], the [[Dirk]], t
 
 ## The look
 
-The vials are earthen, a clay colour, and a potion's colour is on its wax seal and on a glazed band round its shoulder: red for healing, gold for stamina, blue for mana, green for poison, and a darker green with a black seal for strong poison. The clay vial is bare, with an open mouth; the unfired vial is matte raw clay. This is the game's placeholder art, drawn from one design for the bag's icon and the picture on the floor.
+The vials are earthen, a clay colour, and a potion's colour is on its wax seal and on a glazed band round its shoulder: red for healing, gold for stamina, blue for mana, green for poison, and a darker green with a black seal for strong poison. The clay vial is bare, with an open mouth; the unfired vial is grey raw clay. Each is drawn as an icon for the bag, a picture for the hand and the floor, and, for the three potions and two poisons, a portrait for a belt slot.
 
 ## The sound it makes
 
@@ -110,7 +110,7 @@ Everything is done by the host for the player who asked: a guest's Make is the s
 - `src/ui/inventory-actions.js:91-96`, `src/ui/inventory-actions.js:249-256`: the double-click drinks in your own bag and on a belt slot; a poison's line; elsewhere it moves across
 - `src/entities/player.js:192-197`, `src/potions.js:130-140`: the stamina buff doubles regeneration, run down by the host's step
 - `src/debuffs.js:42-50`, `src/ui/debuff-icons.js:36-40`, `style.css:580`: the buff in the row, framed in gold
-- `data/items.json:136-142`: the vials and the potions, their stacks, `belt`, `potion` and `poison`, their placeholder designs (seal and band)
+- `data/items.json:136-142`: the vials and the potions, their stacks, `belt`, `potion` and `poison`, their icons, pictures, and the potions' and poisons' portraits drawn in art round 5 (game #519, at ece297c)
 - `src/item-info.js:248-256`: the cards' Drink lines, the wait, and the poison's Use line
 - `docs/47-potions-poisons-mana.md` section 8 (status): the cauldron's sounds not built
 - `data/interactions.json:22-25`, `src/poison.js`, `data/combat.json:6` `poison` (at 307ed34): the poisons Used on a blade or arrows, and what they do (game #496)

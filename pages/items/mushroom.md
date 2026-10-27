@@ -7,7 +7,7 @@ summary: A mushroom foraged by hand from the mushrooms that grow near trees; it 
 
 {{infobox-item mushroom}}
 
-A **mushroom** is what foraging gives: any of the small [[Mushrooms]] that grow near trees in [[The valley]] and [[The wild]] can be foraged by hand for one. It is a material, kind "Forage" on its card, and it goes into one thing, the [[Mana potion]], one to a potion, with two [[Mageroot]], brewed at a [[Cauldron]] (see [[Potions]]). It is not food, and cooking with it is not built. Its icon is a small mushroom drawn in the colours of the ones on the ground.
+A **mushroom** is what foraging gives: any of the small [[Mushrooms]] that grow near trees in [[The valley]] and [[The wild]] can be foraged by hand for one. It is a material, kind "Forage" on its card, and it goes into one thing, the [[Mana potion]], one to a potion, with two [[Mageroot]], brewed at a [[Cauldron]] (see [[Potions]]). It is not food, and cooking with it is not built. It is drawn as a pair of small brown-capped mushrooms, in the bag, in the hand, and on the floor.
 
 ## Foraging
 
@@ -26,7 +26,7 @@ A guest forages through the same menu entry, sent to the host with the mushroom'
 ## Sources
 
 <!-- sources at 6e3ab37 -->
-- `data/items.json`: the mushroom: a material tagged `mushroom`, its icon generated from a mushroom design in the drawn mushrooms' colours (game #457)
+- `data/items.json`: the mushroom: a material tagged `mushroom` (game #457); its icon and picture drawn in art round 5, in place of the generated one (game #519, at ece297c)
 - `data/sprites/mushroom_0.json` (and `mushroom_1` to `mushroom_4`): the `gather` block (item, count, seconds, level, the word "Forage")
 - `src/gather.js:41-85`, `src/gather.js:92-119`, `src/interact.js:994`, `src/interact.js:1149-1171`: Forage mushroom, its reach, the bag or the feet, the node gone and owed back; a simple action, so `E` runs it
 - `src/item-info.js:72-98`, `src/item-info.js:135-139`: the card's kind, Forage, and "Forage under trees."

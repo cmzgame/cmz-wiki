@@ -24,7 +24,7 @@ A guest fires vials at an oven through the station panel's commands, and a vial 
 ## Sources
 
 <!-- sources at 0fa02e5 -->
-- `data/items.json:137`: the item, its stack, `belt`, its placeholder design (`vial`, bare)
+- `data/items.json:137`: the item, its stack, `belt`; its icon and picture drawn in art round 5 (game #519, at ece297c)
 - `data/recipes.json:1627-1643`, `data/recipes.json:1661-1790`: fired from an unfired vial at the oven; one in every brew at the cauldron
 - `src/potions.js:28`, `src/potions.js:79-128`: the vial a drink leaves, and where it goes
 - `src/inventory.js:348-366`: its belt key: "The clay vial is not held in a hand."

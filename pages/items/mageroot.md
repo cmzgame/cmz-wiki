@@ -7,7 +7,7 @@ summary: Mageroot, an herb that grows only by water, grows wild by water and is 
 
 {{infobox-item mana_herb}}
 
-**Mageroot** is an herb that grows only by water, one of the eleven [[Herbs]]. It was the mana herb until Michael named it on 2026-10-25 ("Mana herb is Mageroot for now"); the game keeps its old id, `mana_herb`, so a save, the map, and the data still call it that. It grows within {{n valley.resources.mana_herb.water tiles}} of water, along the river and the brook west of [[Long Acre]], one plant here and there, never in a patch: the valley keeps about {{n valley.resources.mana_herb.count}}. The plant is drawn small, with blue-teal leaves with a glowing point, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into the [[Mana potion]], two to a potion, with one [[Mushroom]] (see [[Potions]]); the herb tea and seasoning are not built.
+**Mageroot** is an herb that grows only by water, one of the eleven [[Herbs]]. It was the mana herb until Michael named it on 2026-10-25 ("Mana herb is Mageroot for now"); the game keeps its old id, `mana_herb`, so a save, the map, and the data still call it that. It grows within {{n valley.resources.mana_herb.water tiles}} of water, along the river and the brook west of [[Long Acre]], one plant here and there, never in a patch: the valley keeps about {{n valley.resources.mana_herb.count}}. The plant is drawn small, with pale blue-teal leaves, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into the [[Mana potion]], two to a potion, with one [[Mushroom]] (see [[Potions]]); the herb tea and seasoning are not built.
 
 ## Gathering
 
@@ -26,8 +26,8 @@ A guest gathers it through the same menu entry, sent to the host with the plant'
 ## Sources
 
 <!-- sources at dc10b81 -->
-- `data/items.json`: the item, named Mageroot, its id `mana_herb` kept, its tags (`herb`, `raw`), its icon drawn from `herb_mana_herb`'s design (game #457, renamed in game #475)
-- `data/sprites/herb_mana_herb.json`: the node's `gather` block (item, count, seconds, level), its `name` "mageroot", `interactable`, its design
+- `data/items.json`: the item, named Mageroot, its id `mana_herb` kept, its tags (`herb`, `raw`), its icon and its picture in the hand drawn in art round 5 as the picked herb, in place of the icon generated from `herb_mana_herb`'s design (game #519, at ece297c; first game #457, renamed in game #475)
+- `data/sprites/herb_mana_herb.json`: the node's `gather` block (item, count, seconds, level), its `name` "mageroot", `interactable`, the plant drawn in art round 5, outlined (game #519, at ece297c)
 - `data/maps/valley.json` `resources.mana_herb`, `tools/mapgen/valley.py:635-643`: its count and where it grows
 - `src/map.js:630-656`: where a node may stand
 - `src/gather.js:44-47`: the menu's words, the verb and the item's name in lower case ("Gather mageroot")

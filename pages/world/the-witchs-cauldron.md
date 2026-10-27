@@ -7,7 +7,7 @@ summary: A lone cauldron at the north end of the lane to the mere, where the wit
 
 {{infobox-place "the witch's cauldron"}}
 
-**The witch's cauldron** stands alone at the north end of the lane to the mere, on the lane's east side, north of [[Long Acre]]. It is the valley's one [[Cauldron]], where [[Potions]] are brewed, and it is open to anyone. It starts cold and empty: bring [[Log|logs]] and a flame to light it, and clean water in a [[Waterskin]] for the brew. It cannot be picked up or carried. Nothing else stands there yet: the witch's cottage, the witch, and her garden are to come, with the mere.
+**The witch's cauldron** stands alone at the north end of the lane to the mere, on the lane's east side, north of [[Long Acre]]. It is the valley's one [[Cauldron]], where [[Potions]] are brewed, and it is open to anyone. It starts cold and empty: bring [[Log|logs]] and a flame to light it, and clean water in a [[Waterskin]] for the brew. It is the drawn black pot over a ring of stones, its flames showing under it while it burns. It cannot be picked up or carried. Nothing else stands there yet: the witch's cottage, the witch, and her garden are to come, with the mere.
 
 {{place-contents "the witch's cauldron"}}
 
@@ -21,7 +21,7 @@ None of the dead are placed here at the start.
 
 <!-- sources at 0fa02e5 -->
 - `tools/mapgen/valley.py:486-493`, `data/maps/valley.json:8593-8616`: the lane to the mere, and the witch's cauldron at its north end on the east side, its own small place, cold and empty
-- `data/sprites/cauldron.json`, `src/interact.js:1023`: a cauldron, never carried, with no Pick up for anyone
+- `data/sprites/cauldron.json`, `src/interact.js:1023`: a cauldron, never carried, with no Pick up for anyone; drawn, with its own flames, in art round 5 (game #519, at ece297c)
 - `data/maps/valley.json` `zombies`: none placed near it
 
 {{navbox places}}

@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "393acaf06dc42ff80713a9cbf92b29421720319e",
-  "short": "393acaf",
-  "date": "2026-10-26T21:17:51-05:00",
-  "subject": "Merge pull request #514 from cmzgame/primary/demo-pass",
+  "commit": "ece297c123c7d7f79f340b4026e15872e7ea2659",
+  "short": "ece297c",
+  "date": "2026-10-26T22:16:32-05:00",
+  "subject": "Merge pull request #519 from cmzgame/primary/art-round-5",
   "ref": "origin/main"
  },
  "counts": {
@@ -874,7 +874,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "an arrow dipped in a lit fire (#14: Use arrows on a campfire, a hearth, the forge, the oven); a bow draws these before plain arrows, and what it hits is set alight; it lands or lodges as a plain arrow. Placeholder art, the drawn pair owed (docs/26)"
+   "note": "an arrow dipped in a lit fire (#14: Use arrows on a campfire, a hearth, the forge, the oven); a bow draws these before plain arrows, and what it hits is set alight; it lands or lodges as a plain arrow. Drawn (art round 4, 2026-10-26); in flight still generated"
   },
   {
    "id": "poison_arrow",
@@ -889,15 +889,15 @@
     "wood"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "an arrow coated with poison (docs/47 section 6, #482: Use a poison on arrows, five a vial); a bow draws these after fire arrows and before plain ones, what it hits is poisoned (src/poison.js), and it lands or lodges as a plain arrow. In flight the arrow with a green head (archery.generatePoisonArrow). Placeholder art, the drawn pair owed (docs/26)"
+   "note": "an arrow coated with poison (docs/47 section 6, #482: Use a poison on arrows, five a vial); a bow draws these after fire arrows and before plain ones, what it hits is poisoned (src/poison.js), and it lands or lodges as a plain arrow. In flight the arrow with a green head (archery.generatePoisonArrow). Drawn (art rounds 4 and 5, 2026-10-26); in flight still generated"
   },
   {
    "id": "strong_poison_arrow",
@@ -912,15 +912,15 @@
     "wood"
    ],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [],
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "an arrow coated with strong poison (docs/47 section 6, #482: Use a strong poison on arrows, five a vial); a bow draws these after fire arrows and before ordinary poisoned ones and plain ones, what it hits is strongly poisoned, and it lands or lodges as a plain arrow. In flight the arrow with a darker green head, as its vial is darker. Placeholder art, the drawn pair owed (docs/26)"
+   "note": "an arrow coated with strong poison (docs/47 section 6, #482: Use a strong poison on arrows, five a vial); a bow draws these after fire arrows and before ordinary poisoned ones and plain ones, what it hits is strongly poisoned, and it lands or lodges as a plain arrow. In flight the arrow with a darker green head, as its vial is darker. Drawn (art rounds 4 and 5, 2026-10-26); in flight still generated"
   },
   {
    "id": "cap",
@@ -1285,8 +1285,8 @@
    ],
    "wear": "back",
    "art": {
-    "icon": false,
-    "held": false,
+    "icon": true,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -3597,7 +3597,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3622,7 +3622,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3647,7 +3647,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3670,7 +3670,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3695,7 +3695,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3721,7 +3721,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3747,7 +3747,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3772,7 +3772,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3799,7 +3799,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3823,7 +3823,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3847,7 +3847,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3870,7 +3870,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3879,7 +3879,7 @@
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "foraged from the mushrooms near trees (docs/39 section 4, Herbalism 3; src/gather.js). Brewed into the mana potion (docs/47, #481); for Cooking when it comes; whether it is eaten raw, and for how much, is Michael's. Its icon is a dev design in the drawn mushrooms' colours"
+   "note": "foraged from the mushrooms near trees (docs/39 section 4, Herbalism 3; src/gather.js). Brewed into the mana potion (docs/47, #481); for Cooking when it comes; whether it is eaten raw, and for how much, is Michael's. Drawn as the picked mushrooms (art round 5, 2026-10-26)"
   },
   {
    "id": "clay",
@@ -3918,7 +3918,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [],
@@ -3941,7 +3941,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -3952,7 +3952,7 @@
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "clay shaped at the workbench, two a clay (docs/47 section 2, #481); fired in any oven it is a clay vial. Its own item so the oven's time is the busywork it should be. Dev art from one design (src/gather-art.js `vial`), the drawn pair owed (docs/26)"
+   "note": "clay shaped at the workbench, two a clay (docs/47 section 2, #481); fired in any oven it is a clay vial. Its own item so the oven's time is the busywork it should be. Drawn (art round 5, 2026-10-26)"
   },
   {
    "id": "clay_vial",
@@ -3968,7 +3968,7 @@
    ],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -3983,7 +3983,7 @@
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "the empty vial (docs/47 section 2, #481): fired in an oven from an unfired vial; a potion is brewed into it at a cauldron, and drinking leaves it again, so a vial is refilled, not remade. Bare: unsealed and unglazed. Dev art, the drawn pair owed (docs/26)"
+   "note": "the empty vial (docs/47 section 2, #481): fired in an oven from an unfired vial; a potion is brewed into it at a cauldron, and drinking leaves it again, so a vial is refilled, not remade. Bare: unsealed and unglazed. Drawn (art round 5, 2026-10-26)"
   },
   {
    "id": "healing_potion",
@@ -3997,7 +3997,7 @@
    "tags": [],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -4006,7 +4006,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "docs/47 section 4 (#481): drunk, `potions.heal` health at once (data/tuning.json); the colour on the wax seal and the glazed band, the clay earthen (Michael, 2026-10-25: clay is opaque). Brewed at a cauldron; the empty vial comes back. Dev art, the drawn pair owed (docs/26); held to throw from step 4"
+   "note": "docs/47 section 4 (#481): drunk, `potions.heal` health at once (data/tuning.json); the colour on the wax seal and the glazed band, the clay earthen (Michael, 2026-10-25: clay is opaque). Brewed at a cauldron; the empty vial comes back. Drawn (art round 5, 2026-10-26), a belt portrait too; held to throw from step 4"
   },
   {
    "id": "stamina_potion",
@@ -4020,7 +4020,7 @@
    "tags": [],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -4029,7 +4029,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "docs/47 section 4 (#481): drunk, fills the stamina bar and its regeneration `potions.staminaMult` times as fast for `potions.staminaSeconds` (a buff, `player.buffs.stamina`, shown in the debuff row in gold). Dev art, the drawn pair owed (docs/26)"
+   "note": "docs/47 section 4 (#481): drunk, fills the stamina bar and its regeneration `potions.staminaMult` times as fast for `potions.staminaSeconds` (a buff, `player.buffs.stamina`, shown in the debuff row in gold). Drawn (art round 5, 2026-10-26)"
   },
   {
    "id": "mana_potion",
@@ -4043,7 +4043,7 @@
    "tags": [],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -4052,7 +4052,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "docs/47 section 4 (#481): drunk, `potions.mana` mana at once (Michael's 50), the bar of #480. Dev art, the drawn pair owed (docs/26)"
+   "note": "docs/47 section 4 (#481): drunk, `potions.mana` mana at once (Michael's 50), the bar of #480. Drawn (art round 5, 2026-10-26)"
   },
   {
    "id": "poison",
@@ -4066,7 +4066,7 @@
    "tags": [],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -4078,7 +4078,7 @@
     "poison on blade: Coat",
     "poison on arrow: Coat"
    ],
-   "note": "docs/47 section 6 (#481): brewed, never drunk; Used on a blade it coats it for `poison.hits` landed hits, and on arrows it makes `poison.arrows` poisoned arrows (data/combat.json, src/poison.js, #482); the vial comes back. Dev art, the drawn pair owed (docs/26)"
+   "note": "docs/47 section 6 (#481): brewed, never drunk; Used on a blade it coats it for `poison.hits` landed hits, and on arrows it makes `poison.arrows` poisoned arrows (data/combat.json, src/poison.js, #482); the vial comes back. Drawn (art round 5, 2026-10-26)"
   },
   {
    "id": "strong_poison",
@@ -4092,7 +4092,7 @@
    "tags": [],
    "art": {
     "icon": true,
-    "held": false,
+    "held": true,
     "drawn": true
    },
    "madeBy": [
@@ -4104,7 +4104,7 @@
     "strong_poison on blade: Coat",
     "strong_poison on arrow: Coat"
    ],
-   "note": "docs/47 section 6 (#481): brewed, never drunk; the darker green with a black seal (docs/47 section 8). Used on a blade it coats it for `poison.hits` landed hits, and on arrows it makes `poison.arrows` strongly poisoned arrows (data/combat.json, src/poison.js, #482); the vial comes back. Dev art, the drawn pair owed (docs/26)"
+   "note": "docs/47 section 6 (#481): brewed, never drunk; the darker green with a black seal (docs/47 section 8). Used on a blade it coats it for `poison.hits` landed hits, and on arrows it makes `poison.arrows` strongly poisoned arrows (data/combat.json, src/poison.js, #482); the vial comes back. Drawn (art round 5, 2026-10-26)"
   },
   {
    "id": "cauldron",
@@ -4116,9 +4116,9 @@
    ],
    "tags": [],
    "art": {
-    "icon": false,
-    "held": false,
-    "drawn": false
+    "icon": true,
+    "held": true,
+    "drawn": true
    },
    "madeBy": [
     "anvil"
@@ -4126,7 +4126,7 @@
    "usedIn": [],
    "foundIn": [],
    "interactions": [],
-   "note": "your own cauldron (docs/47 section 3, #481): made at the anvil, set down from the bag with Place on any open floor (src/setdown.js), picked up again while it is out and empty, as the campfire is. A dev box until its art is drawn"
+   "note": "your own cauldron (docs/47 section 3, #481): made at the anvil, set down from the bag with Place on any open floor (src/setdown.js), picked up again while it is out and empty, as the campfire is. Drawn (art round 5, 2026-10-26), the prop and the item"
   },
   {
    "id": "sapling",
@@ -7066,8 +7066,7 @@
   {
    "id": "cauldron",
    "kind": "station",
-   "label": "Cauldron",
-   "drawn": false,
+   "drawn": true,
    "station": "cauldron",
    "fire": {
     "fuel": "log",
@@ -7077,7 +7076,7 @@
     "cooks": false
    },
    "carry": false,
-   "note": "the cauldron (docs/47 section 3, #481): one prop with its fire under it, burning logs as the oven does and cooking nothing (`cooks` false: it boils no water and bakes nothing), brewing only while lit. The witch's at the mere is the map's (tools/mapgen/valley.py), never carried and not a village station; your own is the Cauldron item set down with Place (src/setdown.js) and picked up while it is out and empty. A dev box until its art is drawn"
+   "note": "the cauldron (docs/47 section 3, #481): one prop with its fire under it, burning logs as the oven does and cooking nothing (`cooks` false: it boils no water and bakes nothing), brewing only while lit. The witch's at the mere is the map's (tools/mapgen/valley.py), never carried and not a village station; your own is the Cauldron item set down with Place (src/setdown.js) and picked up while it is out and empty. Drawn (art round 5): a black iron pot on three short legs over a ring of fieldstones, three logs and ash under it, two lugs and a bail; one drawing, lit from the top left and never mirrored (round, so one facing); its three flame frames stand under the pot, already cut where the pot, its legs, and the front log stand in front of them"
   },
   {
    "id": "chair",
@@ -7130,13 +7129,13 @@
   {
    "id": "clay_bank",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "collide": {
     "radius": 0.38
    },
    "interactable": true,
-   "note": "a clay bank on the grass by the river (docs/39 section 4: Mining 3; docs/46 step 2): dug with a shovel carried for clay (src/gather.js), and it comes back elsewhere by the river (src/resources.js). Dev art drawn from this design (src/gather-art.js); the clay's icon is the same palette"
+   "note": "a clay bank on the grass by the river (docs/39 section 4: Mining 3; docs/46 step 2): dug with a shovel carried for clay (src/gather.js), and it comes back elsewhere by the river (src/resources.js). Drawn in art round 5 (group C) in the drawn clay item's grey-brown (data/art/items/clay_icon.png), replacing the orange dev design."
   },
   {
    "id": "coffin",
@@ -7314,11 +7313,10 @@
   {
    "id": "cupboard",
    "kind": "container",
-   "label": "Cupboard",
-   "drawn": false,
+   "drawn": true,
    "container": true,
    "carry": true,
-   "note": "a dev box for the cupboard (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "the drawn cupboard (art round 5): a tall kitchen cupboard, two framed doors with sunk panels, iron strap hinges and ring pulls, a moulded cornice with a crock and a jug on top; backs against a west wall as drawn (y), a north wall as its mirror (x), as the shelf; once a dev box (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
    "id": "decor_paintings",
@@ -7520,90 +7518,90 @@
   {
    "id": "herb_feverfew",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Feverfew: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Feverfew: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_grave_moss",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Grave moss: the graveyard's herb, gathered at any hour (Michael, 2026-10-25: \"keep grave moss\", and no 'only at night' plants; Herbalism 7's night line struck, its level recorded until its replacement is ruled, docs/39 section 4). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Grave moss: the graveyard's herb, gathered at any hour (Michael, 2026-10-25: \"keep grave moss\", and no 'only at night' plants; Herbalism 7's night line struck, its level recorded until its replacement is ruled, docs/39 section 4). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_madder",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Madder: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Madder: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_mana_herb",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Mageroot (the item mana_herb, its id kept): near water (docs/39 section 4, Herbalism 4); named by Michael, 2026-10-25: \"Mana herb is Mageroot for now\". Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Mageroot (the item mana_herb, its id kept): near water (docs/39 section 4, Herbalism 4); named by Michael, 2026-10-25: \"Mana herb is Mageroot for now\". Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_nettle",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Nettle: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Nettle: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_nightshade",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Nightshade: for poisons, in the woods (docs/39 section 4, Herbalism 5). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Nightshade: for poisons, in the woods (docs/39 section 4, Herbalism 5). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_sage",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Sage: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Sage: a common herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_weld",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Weld: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Weld: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_woad",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Woad: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Woad: a dye plant, gathered as an herb (docs/46 step 2, a default, Primary's); its cost at the dye vats is Michael's (docs/43 section 8). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_wolfsbane",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Wolfsbane: for poisons, in the woods (docs/39 section 4, Herbalism 5). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Wolfsbane: for poisons, in the woods (docs/39 section 4, Herbalism 5). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "herb_yarrow",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "interactable": true,
-   "note": "Yarrow: the healing herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Dev art drawn from this design (src/gather-art.js), the item's icon from the same."
+   "note": "Yarrow: the healing herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
    "id": "lantern_post",
@@ -7923,13 +7921,13 @@
   {
    "id": "salt_rock",
    "kind": "gatherable",
-   "drawn": false,
+   "drawn": true,
    "carry": false,
    "collide": {
     "radius": 0.38
    },
    "interactable": true,
-   "note": "a salt rock in the ore area (docs/39 section 4: Mining 3; docs/46 step 2): a pickaxe in hand mines it for salt and it goes (src/mining.js); a new one rises elsewhere in the ore area after a while (src/resources.js), as the ore does. Dev art drawn from this design (src/gather-art.js); the salt's icon is the same palette"
+   "note": "a salt rock in the ore area (docs/39 section 4: Mining 3; docs/46 step 2): a pickaxe in hand mines it for salt and it goes (src/mining.js); a new one rises elsewhere in the ore area after a while (src/resources.js), as the ore does. Drawn in art round 5 (group C): a pale boulder in the drawn rocks' facets with cubic salt crystals, the salt item's whites."
   },
   {
    "id": "sapling_0",
@@ -8627,11 +8625,10 @@
   {
    "id": "workbench",
    "kind": "station",
-   "label": "Workbench",
-   "drawn": false,
+   "drawn": true,
    "station": "workbench",
    "carry": false,
-   "note": "a dev box for the workbench (docs/30 step 1; docs/29/09 has its art request)"
+   "note": "the drawn workbench (art round 5): a long, heavy plank bench across two tiles, its top at 24, on four stout legs with a shelf between the stretchers, a leg vice at the far end of its front, three chisels in a rack along the back, a saw, a plane, and a mallet on the top, shavings; long side along y as drawn with its back to a west wall and the worker's side toward +x, along x as its mirror (as the table); once a dev box (docs/30 step 1; docs/29/09 has its art request)"
   },
   {
    "id": "zombie",
@@ -10557,7 +10554,7 @@
   {
    "key": "devChest",
    "default": "true",
-   "note": "the chest of every item placed by the spawn: chosen at a new world's Sandbox step (docs/38), this is the next world's first choice; docs/30 step 0: the map file stays clean"
+   "note": "the dev chest placed by the spawn (every weapon and tool, the basic materials; data/loot.json dev_kit): chosen at a new world's Sandbox step (docs/38), this is the next world's first choice; docs/30 step 0: the map file stays clean"
   },
   {
    "key": "identities",

@@ -25,7 +25,7 @@ The **Strongly poisoned arrow** is an [[Arrow]] coated with [[Strong poison]]. A
 
 Its hover card says: "Shot from a hunting bow (19 to 38 damage by the draw), after any fire arrows and before any poisoned arrows or arrows.", "Strongly poisons the dead and game it hits: a stack a hit, up to {{n combat.poison.max}}, draining {{n combat.poison.dpsByStacks.strong.0}}, {{n combat.poison.dpsByStacks.strong.1}}, or {{n combat.poison.dpsByStacks.strong.2}} a second for {{n combat.poison.duration}} seconds after the last.", and "Made from arrows: **Use** strong poison on them (coat)."
 
-The art is the game's placeholder for now: a dark green block in the bag.
+It is drawn as an arrow with a dark green head, the same picture in the bag, in the hand, and lying on the floor; only its flight is still the game's generated arrow.
 
 {{item-sections strong_poison_arrow}}
 
@@ -40,7 +40,7 @@ As for the [[Poisoned arrow#With friends|poisoned arrow]]: a guest coats with th
 ## Sources
 
 <!-- sources at 307ed34 -->
-- `data/items.json:28`: the strongly poisoned arrow: ammunition, `poisoned: { tier: 2 }`, its stack and size the arrow's; placeholder art (game #496)
+- `data/items.json:28`: the strongly poisoned arrow: ammunition, `poisoned: { tier: 2 }`, its stack and size the arrow's (game #496); its icon and its picture drawn in art round 5, in flight still generated (game #519, at ece297c)
 - `data/items.json:24` `bow.ammo`: fire arrows, strongly poisoned, poisoned, then plain
 - `data/interactions.json:25`, `src/poison.js:146-188`: strong poison used on arrows makes up to `arrows` of them
 - `src/archery.js:809-826` `launcherOf`: the first arrow carried in the bow's order, its `poisoned` tier

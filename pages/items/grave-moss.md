@@ -6,7 +6,7 @@ summary: Grave moss, the graveyard's herb, grows wild among the headstones and i
 
 {{infobox-item grave_moss}}
 
-**Grave moss** is the graveyard's herb, one of the eleven [[Herbs]]. It grows only inside the graveyard's wall at [[The chapel]], among the headstones, one plant here and there, never in a patch: the valley keeps about {{n valley.resources.grave_moss.count}}. The plant is drawn small, a pale tuft, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into both poisons, one to a vial: [[Poison]] with two [[Nightshade]] and [[Strong poison]] with two [[Wolfsbane]] (see [[Potions]]); the herb tea and seasoning are not built.
+**Grave moss** is the graveyard's herb, one of the eleven [[Herbs]]. It grows only inside the graveyard's wall at [[The chapel]], among the headstones, one plant here and there, never in a patch: the valley keeps about {{n valley.resources.grave_moss.count}}. The plant is drawn small, a pale grey mound of moss, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into both poisons, one to a vial: [[Poison]] with two [[Nightshade]] and [[Strong poison]] with two [[Wolfsbane]] (see [[Potions]]); the herb tea and seasoning are not built.
 
 ## Gathering
 
@@ -27,8 +27,8 @@ A guest gathers it through the same menu entry, sent to the host with the plant'
 ## Sources
 
 <!-- sources at dc10b81 -->
-- `data/items.json`: the item, its tags (`herb`, `raw`), its icon drawn from `herb_grave_moss`'s design (game #457)
-- `data/sprites/herb_grave_moss.json`: the node's `gather` block (item, count, seconds, level; no `night` since game #475), `interactable`, its design
+- `data/items.json`: the item, its tags (`herb`, `raw`), its icon and its picture in the hand drawn in art round 5 as the picked herb, in place of the icon generated from `herb_grave_moss`'s design (game #519, at ece297c; first game #457)
+- `data/sprites/herb_grave_moss.json`: the node's `gather` block (item, count, seconds, level; no `night` since game #475), `interactable`, the plant drawn in art round 5, outlined (game #519, at ece297c)
 - `data/maps/valley.json` `resources.grave_moss`, `tools/mapgen/valley.py:635-643`: its count and where it grows
 - `src/map.js:630-656`: where a node may stand
 - `src/gather.js:32-84`, `src/gather.js:86-115`: the gather, its reach, the bag or the feet, the node gone and owed back; a block's only refusal now a tool not carried (game #475)
