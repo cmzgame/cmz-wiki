@@ -15,7 +15,7 @@ Equip it from the loom's output box or a container's grid, or from the floor (**
 
 Taken off, it keeps what is in it: **Unequip** sets it down, and on the floor it is a container to **Open**, take from, and equip again (see [[Inventory]]). In a chest or on a body it has **Open** there too, take-only, with Take All (see [[Containers#Containers inside containers|Containers]]).
 
-It can be dyed at a [[Dye vat]], its cloth from the cloth palette and its strap from the leather palette, each picked on its own; its hover card reads "Can be dyed at a dye vat" with the count of each. Dyed, it is drawn in its colours on your back, and its card names them, as "Cloth undyed, strap oxblood"; its icon in a bag and its portrait in the back slot stay as painted, cream linen with a brown strap, since a drawn icon is never recoloured.
+It can be dyed at a [[Dye vat]], its cloth from the cloth palette and its strap from the leather palette, each picked on its own; its hover card reads "Can be dyed at a dye vat" with the count of each. Dyed, it is drawn in its colours on your back, and its card names them, as "Cloth undyed, strap oxblood"; its icon in a bag, on the belt, and while dragged, and its portrait in the back slot, show the colours too: the linen takes the cloth's dye and the strap the strap's, each shade kept lighter or darker as it was drawn, while the outline, the buckle, and the toggle keep their paint. Lying on the floor it is still drawn in its own cream and brown.
 
 {{item-sections satchel}}
 
@@ -34,6 +34,7 @@ A guest's satchel is made, equipped, set down, and swapped by the host, by the s
 - `src/ui/inventory-actions.js` `takeAllFrom`, `takeAllWord`: Take All leaves a bag holding things, with its word
 - `docs/39-the-valley.md`, section 5.4: open to all until Crafting 3 gates it (game #403, at 6e5b20a)
 - `data/items.json:36`, `src/item-info.js:110-112`, `src/dye.js:68-79`, `src/ui/inventory-panel.js:239-240`: dyed at the vat, cloth and strap each from its palette; the card's line and its colours; the block's colour only where an item has no drawn icon (game #417, at 31d330a)
-- `data/items.json:36`, `src/ui/inventory-panel.js:228-243`: its icon, picture, and portrait drawn in art round 5, a drawn icon kept as painted when dyed (game #519, at ece297c)
+- `data/items.json:42`, `src/ui/inventory-panel.js:228-243`: its icon, picture, and portrait drawn in art round 5 (game #519, at ece297c)
+- `data/items.json:42`, `src/ui/dyed-art.js:22-78`, `src/ui/inventory-panel.js:259-269`, `src/ui/inventory-panel.js:614-616`: dyed, its icon and portrait recoloured by each region's `tones` and `base`, the shades kept on the ramp, the outline and fittings painted; the bag, the slots, the belt, and the drag; the floor's picture painted (game #521, at bb52ef0)
 
 {{navbox items}}

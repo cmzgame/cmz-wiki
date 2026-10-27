@@ -29,7 +29,7 @@ A new character starts in a [[Linen tunic]], [[Linen breeches]], [[Hobnail boots
 
 ### Dyeing
 
-The three dye vats in [[The weaver]]'s yard recolour clothing (see [[Dye vat]]): the [[Linen cap]], the [[Onion-head Hat]], the [[Linen tunic]], and the [[Linen breeches]] from the cloth palette, the [[Work gloves]] and the [[Hobnail boots]] from the leather palette, the [[Leather belt]] by one of its schemes, and the [[Linen satchel]]'s cloth and strap each on its own. The [[Rope belt]] and the bags other than the satchel cannot be dyed. A dyed garment is drawn in its colours on whoever wears it, and its hover card names them. Dyeing costs nothing and is open to everyone for now.
+The three dye vats in [[The weaver]]'s yard recolour clothing (see [[Dye vat]]): the [[Linen cap]], the [[Onion-head Hat]], the [[Linen tunic]], and the [[Linen breeches]] from the cloth palette, the [[Work gloves]] and the [[Hobnail boots]] from the leather palette, the [[Leather belt]] by one of its schemes, and the [[Linen satchel]]'s cloth and strap each on its own. The [[Rope belt]] and the bags other than the satchel cannot be dyed. A dyed garment is drawn in its colours on whoever wears it, its drawn icon and slot portrait show them too, and its hover card names them. Dyeing costs nothing and is open to everyone for now.
 
 ### Garments
 
@@ -73,4 +73,5 @@ Equipping and unequipping, the double-click included, are sent to the host and c
 - `src/ui/inventory-actions.js:254-436`: a guest's equip and unequip go to the host as commands; a guest's double-click on a slot sends the same entry (game commit 9a450f2)
 - `src/net.js:238`: what each character has on travels in its record
 - `data/loot.json`, `tools/mapgen/valley.py`: where it is found, a table per kind of container, gear placed once (game #399, at ce21ffc)
+- `src/ui/dyed-art.js:22-78`, `data/items.json:31-42`: a dyed garment's drawn icon and portrait in its colours (game #521, at bb52ef0)
 - `data/items.json:27-36`, `src/dye.js:122-132`, `src/dye.js:107-113`, `src/item-info.js:149-150`: what can be dyed and from which palette, at the dye vat; open to all, costing nothing; the card names the colours (game #417, at 31d330a)

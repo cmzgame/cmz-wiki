@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "ece297c123c7d7f79f340b4026e15872e7ea2659",
-  "short": "ece297c",
-  "date": "2026-10-26T22:16:32-05:00",
-  "subject": "Merge pull request #519 from cmzgame/primary/art-round-5",
+  "commit": "bb52ef0b463c0f3b83bcfbb8f60b8ca01842c77b",
+  "short": "bb52ef0",
+  "date": "2026-10-26T22:45:45-05:00",
+  "subject": "Merge pull request #521 from cmzgame/primary/dyed-icons",
   "ref": "origin/main"
  },
  "counts": {
@@ -27,7 +27,7 @@
   "menuLabels": 100,
   "events": 38,
   "checks": 88,
-  "modules": 146
+  "modules": 147
  },
  "items": [
   {
@@ -12409,6 +12409,10 @@
   {
    "path": "kit.js",
    "lines": 80
+  },
+  {
+   "path": "ui/dyed-art.js",
+   "lines": 79
   },
   {
    "path": "render/paintings.js",

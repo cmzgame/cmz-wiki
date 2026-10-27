@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-26: synced to `bb52ef0`
+
+- **Changed in the game:** **a dyed thing's pictures show its dye** (game #521, Michael's ruling, found by the last sync). A dyed [[Linen tunic]], [[Linen breeches]], [[Hobnail boots]], or [[Linen satchel]] now shows its colours in its bag icon, its character-screen portrait, on the belt, and while dragged: each region's main shade becomes the dye and its other shades stay lighter or darker as drawn, while the outline and fittings (the satchel's buckle and toggle, the boots' hobnails) keep their paint; lying on the floor it is still drawn undyed. [[Dye vat]] (what a dyed item looks like, in the bag and the slots and on the floor), [[Linen satchel]] (the icon no longer said to stay as painted), and [[Clothing]] updated; the [[Playtest checklist]] has a row for #521, and its #519 row no longer says the satchel's icon stays as painted.
+- **Unchanged:** no number moved; the game's `docs/bugs.md` did not change in this merge. The census found 0 problems.
+
 ## 2026-10-26: synced to `ece297c`
 
 - **Changed in the game:** **art round 5, the vials, potions, and poisons** (game #519). The unfired and clay vials, the three potions, and the two poisons are drawn, the colour on the wax seal and a glazed band, the potions and poisons with a portrait for a belt slot; the poisoned and strongly poisoned arrows are drawn in the bag and the hand (in flight still generated); the Cauldron item and the [[Linen satchel]] (icon, picture, portrait) too. [[Potions]], [[Clay vial]], [[Unfired vial]], [[Poisoned arrow]], [[Strongly poisoned arrow]], and [[Linen satchel]] updated (a dyed satchel keeps its drawn icon as painted); the item infoboxes read the drawn icons from the data, and an item infobox's Art line now says Placeholder for an icon still generated (the [[Sapling]]'s).
