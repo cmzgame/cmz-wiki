@@ -27,6 +27,8 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built in {{n build.feed_trough.seconds seconds}}, with a smith's hammer on you. See [[Feeding trough]].
 - **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built in {{n build.round_stone.seconds seconds}} at 5. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
 
+{{planned doc=49 step=8 note="A plank floor and a stone floor on the palette, built anywhere, indoors or out, a tile at a time, with no physics: on an upper floor a tile goes wherever it touches a walkable tile of its own floor, so a whole floor grows from one landing as you walk it, and its open edge is unwalkable, never a fall (Michael, 2026-10-27); stairs built from the palette too."}}
+
 The ghost of a piece that stands on tiles covers its tiles, not an edge. Besides its own rule it says "No room" where a tile is not open floor or holds something, "Not beside a door" on a door's two tiles, and "Someone is in the way" where anyone, living or dead, or a body, stands on one of them.
 
 "On you" is anywhere you carry it: a hand, the belt, or the bag.
@@ -128,7 +130,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 - [[Walls]]
 - [[Round rooms]]
-- [[Upper floors]], whose stairs only the map places so far
+- [[Upper floors]], whose stairs and floors only the map places so far
 - [[Openings]]
 - [[Boards]]
 - [[Rooms]]
@@ -140,6 +142,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `docs/02-decisions.md` (2026-10-27, Floors are built a tile at a time, with no physics), `docs/49-upper-floors.md` section 5 (at a0cf5a2): floors to be built anywhere, a tile at a time, not built yet (game #538)
 - `data/build.json:146-157`, `src/placement.js:80-200`, `src/placement.js:693-696`, `src/placement.js:800-860` (at da57a57): the Round stone wall, listed and built only with Free building; a ring taken apart whole, the map's refused (game #536)
 - `data/build.json:112-145`, `src/placement.js:250-277`, `src/setdown.js:75-140`, `src/stations.js:247-250`: the palette's Fireplace, Fire pit, and Feeding trough, standing on tiles; the fit's reasons and "Someone is in the way"; the campfire left the palette for the workbench, the palette holding only what cannot be carried (game #527, at c3cb736)
 - `src/placement.js:637-645`: "Put it out first." for a lit built fire (game #527, at c3cb736)

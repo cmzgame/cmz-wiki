@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "da57a578c39fbb010a2014f6ac49a7c8c4f20733",
-  "short": "da57a57",
-  "date": "2026-10-27T15:35:28-05:00",
-  "subject": "Merge pull request #536 from cmzgame/build/round-rooms",
+  "commit": "a0cf5a2eca7b4b26426bfe934c4afb91ecd9e89c",
+  "short": "a0cf5a2",
+  "date": "2026-10-27T17:12:40-05:00",
+  "subject": "Merge pull request #541 from cmzgame/fix/storeys-stair-art",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 97,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 204,
+  "sprites": 206,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -7999,6 +7999,20 @@
    "note": "the iron workings' spoil heap, a dev box (docs/29-world/06; #196) until drawn"
   },
   {
+   "id": "stair_stone",
+   "kind": "other",
+   "drawn": true,
+   "carry": false,
+   "note": "the drawn stone stair (art round 8): a straight run of three tiles climbing one storey (96 px), twelve squared-stone steps of 8 px, one course each, solid to the floor, between stepped cheek walls with a coping slab per step; drawn by the engine on its own planes (render/storeys.js), never placed as a prop"
+  },
+  {
+   "id": "stair_wood",
+   "kind": "other",
+   "drawn": true,
+   "carry": false,
+   "note": "the drawn wooden stair (art round 8): a straight run of three tiles climbing one storey (96 px), twelve treads of 8 px, closed stringers over recessed spandrel panels, a newel at the foot and a post at the head of each side, open and dark under the run behind its header; drawn by the engine on its own planes (render/storeys.js), never placed as a prop"
+  },
+  {
    "id": "stall",
    "kind": "container",
    "label": "Stall",
@@ -11723,7 +11737,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1605"
+    "map.js:1610"
    ]
   },
   {
@@ -11852,7 +11866,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:911",
-    "map.js:1601"
+    "map.js:1606"
    ]
   },
   {
@@ -12052,7 +12066,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3606
+   "lines": 3630
   },
   {
    "path": "interact.js",
@@ -12115,12 +12129,12 @@
    "lines": 644
   },
   {
-   "path": "inventory.js",
-   "lines": 609
+   "path": "render/walls.js",
+   "lines": 633
   },
   {
-   "path": "render/walls.js",
-   "lines": 606
+   "path": "inventory.js",
+   "lines": 609
   },
   {
    "path": "ui/inventory-actions.js",
@@ -12171,6 +12185,10 @@
    "lines": 362
   },
   {
+   "path": "render/storeys.js",
+   "lines": 356
+  },
+  {
    "path": "gather-art.js",
    "lines": 336
   },
@@ -12192,6 +12210,10 @@
   },
   {
    "path": "burn.js",
+   "lines": 325
+  },
+  {
+   "path": "render/rings.js",
    "lines": 325
   },
   {
@@ -12235,10 +12257,6 @@
    "lines": 246
   },
   {
-   "path": "render/storeys.js",
-   "lines": 244
-  },
-  {
    "path": "audio.js",
    "lines": 240
   },
@@ -12253,10 +12271,6 @@
   {
    "path": "loop.js",
    "lines": 233
-  },
-  {
-   "path": "render/rings.js",
-   "lines": 226
   },
   {
    "path": "figure/held.js",
@@ -12347,6 +12361,10 @@
    "lines": 152
   },
   {
+   "path": "round.js",
+   "lines": 152
+  },
+  {
    "path": "settings.js",
    "lines": 147
   },
@@ -12381,10 +12399,6 @@
   {
    "path": "sprites.js",
    "lines": 125
-  },
-  {
-   "path": "round.js",
-   "lines": 124
   },
   {
    "path": "ui/floaters.js",
@@ -12861,6 +12875,8 @@
    "SHUTTER_HP": 60,
    "BOARDS_PER_SIDE": 3,
    "KEY_OFF": 32768,
+   "STAIR_FEET": 0.15,
+   "STAIR_TREADS": 12,
    "UNVISITED": -1,
    "OUTDOORS": -2
   },
@@ -12920,7 +12936,9 @@
   },
   "render_rings": {
    "SEGMENTS": 48,
-   "LIGHT_IN": 0.75
+   "LIGHT_IN": 0.75,
+   "SKIRT_MIN": 0.08,
+   "SKIRT_TUCK": 0.04
   },
   "render_scene": {
    "FOG_ALPHA": 0.36,
@@ -12930,7 +12948,13 @@
    "HOLE_OUTER": 78
   },
   "render_storeys": {
-   "PAD": 48
+   "PAD": 48,
+   "STRINGER_UP": 6,
+   "STRINGER_DOWN": 14,
+   "STRINGER_UNDER": 2,
+   "SIDE_OVER": 10,
+   "NEWEL_H": 30,
+   "HEAD_POST_H": 114
   },
   "render_walls": {
    "L_FACE": 0,
@@ -12939,12 +12963,14 @@
    "L_FLAME": 3,
    "CAP_MARGIN": 1,
    "SWING_S": 0.24,
+   "STACK_BIAS": 1,
    "SHAKE_MS": 110
   },
   "round": {
    "CHORD_DEG": 15,
    "BODY_R": 0.3,
-   "WAYPOINT": 0.08
+   "WAYPOINT": 0.08,
+   "SKIRT_SAMPLES": 192
   },
   "rugs": {
    "REACH": 2.6

@@ -16,9 +16,9 @@ A **round room** is a room with a circular stone wall, 5 or 7 tiles across, draw
 
 A round room is a circle inside a square of 5 or 7 tiles. Its floor is the tiles whose centres lie inside the circle: 21 of a 5 by 5 (the square less its four corner tiles) and 37 of a 7 by 7 (less three at each corner). The outer edges of those tiles, 20 at 5 and 28 at 7, are the room's walls: stone walls on tile edges, like any other (see [[Walls]]), so the room is a room, sight and light stop at it, and the dead path in only by its door. The left-over corner tiles are outdoors.
 
-The wall is drawn as a smooth ring as tall and as thick as a straight stone wall, round the stepped edges. Bodies are stopped by both, the stepped edges and the drawn curve, so nobody stands in the drawn wall. While you are inside, the ring's near half fades as a room's near walls do (see [[Rooms]]).
+The wall is drawn as a smooth ring as tall and as thick as a straight stone wall, round the stepped edges, with nothing on the ground past it. Bodies are stopped by both, the stepped edges and the drawn curve, so nobody stands in the drawn wall. Inside, a stone skirt runs round the foot of the wall, from where the stepped floor ends to the wall's inner face, so the floor meets the curve in a smooth line with no grass showing between the steps; it is outlined on its inner edge, lit by the room, and drawn on the floor of every storey, under bodies and furniture. While you are inside, the stretch of the ring's near half that stands between you and the room fades, as a square room's near walls do (see [[Rooms]]); the two flanks of the near half, which hide none of the room, stay solid.
 
-**The four door points** are the middles of the square's four sides, where the circle touches it. A door or a window goes only there ("Only at a door point of the curve"); a door point with nothing in it is wall. Taking a door or a window out of a door point leaves the ring's wall, never a hole and never a straight wall.
+**The four door points** are the middles of the square's four sides, where the circle touches it. A door or a window goes only there ("Only at a door point of the curve"); a door point with nothing in it is wall. A door or a window at a door point is drawn in the curve itself, with no straight frame and no posts: the opening is cut in the ring's face, the top of the wall runs on unbroken over it, and a shut door's planks, closed shutters, or boards nailed across are drawn on the curve. An open door's leaf swings out square to the curve; an open or broken opening shows only the hole. The skirt runs on under a door point as a narrow threshold. Taking a door or a window out of a door point leaves the ring's wall, never a hole and never a straight wall.
 
 ### What goes inside
 
@@ -76,7 +76,7 @@ A guest builds a round room through the same path as the host: their drag sends 
 
 ## Sources
 
-<!-- sources at da57a57 -->
+<!-- sources at a0cf5a2 -->
 - `data/build.json:146-157`: the Round stone wall, stone, its cost an edge, its seconds, `dev` (game #536)
 - `src/round.js:8-11`, `src/round.js:77-114`: the sizes, the stepped tiles, the outline, the door points, the curve's chords
 - `src/map.js:1308-1319`: the curve-crossed tiles, "Not against the curve"
@@ -88,6 +88,8 @@ A guest builds a round room through the same path as the host: their drag sends 
 - `src/placement.js:296-300`, `src/placement.js:198-212`: no cost with Free building, nothing back for a free ring
 - `src/placement.js:693-696`, `src/placement.js:800-860`: a ring's edge is the whole ring for Take apart; the map's refused, "That is the village's."
 - `src/setdown.js:39-40`, `src/setdown.js:62`, `src/setdown.js:265-267`, `src/paintings.js:57`: no furniture on the crossed tiles, no fireplace against the ring, a torch only on a face the camera sees, no painting
-- `src/render/rings.js:1-22`: the ring drawn in two halves, the near half fading with the near walls
+- `src/render/rings.js:1-8`, `src/render/rings.js:96-232`: the ring drawn in two halves, no footing on the ground; from inside only the near half's stretch over the room faded, the flanks whole, the cap with its face; a door or a window at a door point cut in the curve and drawn on it, the cap unbroken, an open door's leaf square to the curve (game #537)
+- `src/map.js:1284-1288`, `src/render/walls.js:273`, `src/render/walls.js:485-491`: a ring's edges and the openings at its door points drawn by the ring, no straight frame and no post (game #537)
+- `src/render/rings.js:235-283`, `src/round.js:94-120`: the inside skirt, from where the floor ends to under the inner face, a threshold at a door point, outlined, lit inside the floor's end, on every storey's floor (game #539)
 - `tools/mapgen/valley.py:635-638`, `tools/mapgen/proving.py`: the dovecote, the proving ground's room and tower
 - `docs/02-decisions.md` (2026-10-27, Round walls are stone only): stone only, a few on the map, built with Free building alone
