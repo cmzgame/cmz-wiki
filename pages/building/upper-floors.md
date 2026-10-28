@@ -15,7 +15,7 @@ A stair is a straight run of three tiles climbing one storey in {{n census.const
 
 A stair's sides are closed on both floors: you get on and off only at its ends, never sideways from a step, and someone standing beside a stair is held off its side whole. On the floor above, the opening over the stair (the stairwell) is fenced by its edges, so nobody walks into it. There is no floor over a stair. Nothing but bodies stands on one.
 
-Stairs come in wood and stone, drawn as one staircase: its treads, a closed stringer along each side over a recessed panel, a newel post at the foot and a taller post at the head, dark and open under the run. Each part is drawn at its own depth, so someone on a stair is drawn over the treads above them and behind the near stringer. The drawing stands on the tiles you walk: halfway up, feet at either side of the stair land on its drawn treads. The valley's stairs climb only north or west, away from the camera: one climbing toward the camera folds its treads onto one line on screen (Michael, 2026-10-27), and the map refuses one unless it says why, as the proving ground's two do, which try each way. A stair a player builds climbs north or west too (see [[Upper floors#Building floors and stairs|below]]). Nobody takes a stair apart, the map's or a built one.
+Stairs come in wood and stone, drawn as one staircase: its treads, a closed stringer along each side over a recessed panel, a newel post at the foot and a taller post at the head, dark and open under the run. Each part is drawn at its own depth, so someone on a stair is drawn over the treads above them and behind the near stringer. The drawing stands on the tiles you walk: halfway up, feet at either side of the stair land on its drawn treads. The valley's stairs climb only north or west, away from the camera: one climbing toward the camera folds its treads onto one line on screen (Michael, 2026-10-27), and the map refuses one unless it says why, as the proving ground's two do, which try each way. A stair a player builds climbs north or west too (see [[Upper floors#Building floors and stairs|below]]). Nobody takes a stair apart, the map's or a built one. With Free building on, the **Stone ramp** is a stair of rock with no treads, walked on a smooth slope, for climbing onto a [[Cliffs|cliff]]'s plateau.
 
 Walls may stand along a stair's sides, on its own floor and round its stairwell above, but never across it: none between two of its steps ("Not across a stair") and none across its top edge, on its own floor or on the floor above, where a body crosses to the landing ("Not across a stair's top"). While you are on a stair, the walls along it on the camera's side fade, so you are seen on it; those on its far side stand.
 
@@ -71,7 +71,7 @@ With **Free building** on, the build palette (N) has four more rows: **Plank flo
 - nothing is over it on the floor above: no floor ("A floor is over it"), no stair ("Another stair is over it"), no wall across its top there ("A wall is over it"), and no round room's curve ("A round wall is over it");
 - its landing above is open, empty or a floor a player laid ("Its landing must be open"), with nothing on it ("Something is on its landing").
 
-Building it lays its landing on the floor above, planks for a wood stair and a stone floor for a stone one, and leaves the stairwell open over its run. A stair is never taken apart (ruled).
+Building it lays its landing on the floor above, planks for a wood stair, a stone floor for a stone one, and a cliff top for the Stone ramp, and leaves the stairwell open over its run; a landing already floored keeps its floor. A stair is never taken apart (ruled).
 
 **Building upstairs.** What you build goes on your own floor: walls, fences, doors, and windows, and furniture you carry and put down. A wall upstairs needs a floor on at least one side ("No floor there"), and a door needs floor on both, so no door opens onto an open edge. Not yet upstairs ("Not upstairs yet"): a rug, a painting, a campfire or a torch post set down, a torch put on a wall, and the palette's pieces that stand on tiles (the [[Fireplace]], the [[Fire pit]], the [[Feeding trough]]). A [[Round rooms|round room]] is never built across a stair.
 
@@ -100,18 +100,20 @@ Every floor is the host's world. A guest climbs a stair by their own walking, as
 
 ## Settings that change it
 
-- **Free building** (default Off): lists the Plank floor, the Stone floor, the Wood stair, and the Stone stair in the palette and lets them be built; without it no floor or stair can be built. See [[World rules]].
+- **Free building** (default Off): lists the Plank floor, the Stone floor, the Wood stair, and the Stone stair in the palette and lets them be built, and with them the cliff tops and the Stone ramp (see [[Cliffs]]); without it no floor or stair can be built. See [[World rules]].
 
 ## See also
 
 - [[The tall house]]
 - [[Walls]], [[Rooms]], [[Sight]]
 - [[Round rooms]]
+- [[Cliffs]], whose tops are floors and whose ramp is a stair
 - [[Building]]
 
 ## Sources
 
 <!-- sources at 6eba9c1 -->
+- `src/map.js:2651-2664`, `src/map.js:2769-2771`, `data/sprites/stair_ramp_stone.json` (at 3233696): the Stone ramp a stair of its own material, walked on a smooth slope, its landing a cliff top unless floored already (game #561)
 - `data/build.json:158-209`: the Plank floor, the Stone floor, the Wood stair, and the Stone stair, each `dev`, its cost a placeholder, its seconds; a stair north or west only, never taken apart (game #549)
 - `src/placement.js:213-357`: a build on the builder's own storey; a floor laid a tile at a time by a click or a drag at most `MAX_DRAG` a side, each tile's reason, reach by a clear line, laid out from what is walkable, "Floors are not in the game yet", half of a laid floor laid over given back (game #549)
 - `src/placement.js:359-420`, `src/placement.js:1460-1490`: a stair three tiles from the cursor climbing away from the player, its reasons, "Stairs are not in the game yet", the timed build; a guest's floor and stair commands (game #549)

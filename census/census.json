@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "26a0a8f6e34c9931e19a1b7367381a5969da72cd",
-  "short": "26a0a8f",
-  "date": "2026-10-28T01:18:10-05:00",
-  "subject": "Merge pull request #559 from cmzgame/rule/villagers-immune",
+  "commit": "32336965740c7cf78484783d039a7175cf15be04",
+  "short": "3233696",
+  "date": "2026-10-28T14:19:44-05:00",
+  "subject": "Merge pull request #561 from cmzgame/build/cliffs",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 97,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 208,
+  "sprites": 217,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -27,7 +27,7 @@
   "menuLabels": 101,
   "events": 38,
   "checks": 92,
-  "modules": 151
+  "modules": 152
  },
  "items": [
   {
@@ -7386,6 +7386,18 @@
    "note": "the drawn torch flame (art round 3, #331): three flicker frames on a 28x32 cell, base (14, 28), unlit; used by a torch in the hand and in a wall bracket (the torch post draws its own)"
   },
   {
+   "id": "floor_cliff_grass",
+   "kind": "floor",
+   "drawn": true,
+   "note": "the cliff top (art round 10): turf with a rock nub now and then; patterned in world space, any frame meets any other; laid on layer 1 over cliff walls, it needs no edge of its own (the wall's lip carries the rounding)"
+  },
+  {
+   "id": "floor_cliff_top",
+   "kind": "floor",
+   "drawn": true,
+   "note": "the cliff top (art round 10): bare rock with slab cracks, scree, sparse grass and lichen; patterned in world space, any frame meets any other; laid on layer 1 over cliff walls, it needs no edge of its own (the wall's lip carries the rounding)"
+  },
+  {
    "id": "floor_cobble",
    "kind": "floor",
    "drawn": false
@@ -7774,6 +7786,18 @@
    "note": "a drawn corner post, anchored on the grid vertex itself (docs/17)"
   },
   {
+   "id": "post_cliff",
+   "kind": "other",
+   "drawn": true,
+   "note": "a cliff's post (art round 10): a round rock column 16 across with the lip's dome, on the grid vertex itself; serves an outer corner (rounds it at radius 8), a run's end, and an inner corner (hidden in the rock but its top)"
+  },
+  {
+   "id": "post_cliff_grass",
+   "kind": "other",
+   "drawn": true,
+   "note": "a cliff's post (art round 10): a round rock column 16 across with the lip's dome, on the grid vertex itself; serves an outer corner (rounds it at radius 8), a run's end, and an inner corner (hidden in the rock but its top)"
+  },
+  {
    "id": "post_daub",
    "kind": "other",
    "drawn": true,
@@ -8009,6 +8033,13 @@
    "drawn": false,
    "carry": false,
    "note": "the iron workings' spoil heap, a dev box (docs/29-world/06; #196) until drawn"
+  },
+  {
+   "id": "stair_ramp_stone",
+   "kind": "other",
+   "drawn": true,
+   "carry": false,
+   "note": "a stone ramp (art round 10): a sloped rock slab climbing one storey over three tiles, six shallow worn steps cut in it (3 px each), its sides closed by rock in the cliff's strata, its edges rounded over as the cliff's lip; facings n and w only (climbing away from the camera)"
   },
   {
    "id": "stair_stone",
@@ -8514,6 +8545,30 @@
    "kind": "wall",
    "drawn": true,
    "note": "boards across a shut fence gate (art round 3, #332), one to three, named as the house boards are so the wall renderer reads them by the fence's `wall.boards`"
+  },
+  {
+   "id": "wall_cliff",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a cliff face (art round 10): bare stratified rock, 96 tall, 16 thick, centred on the edge, its top rounding over (a lip of radius 8) from the edge line to the face; no openings. `faces` are variants of the plain face, any of which meets any other (pick by a hash of the edge); `back` is the picture for an edge whose plateau is on the camera's side (its face looks away); anchors at the tile's top vertex, as wall_stone's"
+  },
+  {
+   "id": "wall_cliff_corners",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a cliff's corner pieces (art round 10): each one picture of the two edges that meet at a vertex, the rock rounding round the corner (an outer corner radius 20 at the face, an inner corner a cove of radius 12), anchored on the vertex itself at ground level (as a post: no +16). Drawn in place of both edges' own pictures and the post. `edges` names the two edges each owns, from the vertex (vx, vy). Where two corners share an edge (a step one tile long) each takes its halved picture for that edge (`halves`), cut square at the edge's midpoint, and the two halves meet there; no cut at run time."
+  },
+  {
+   "id": "wall_cliff_grass",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a cliff face (art round 10): bare stratified rock, 96 tall, 16 thick, centred on the edge, its top rounding over (a lip of radius 8) from the edge line to the face; no openings. `faces` are variants of the plain face, any of which meets any other (pick by a hash of the edge); `back` is the picture for an edge whose plateau is on the camera's side (its face looks away); anchors at the tile's top vertex, as wall_stone's; the grass-lipped set: the turf rolls over the lip"
+  },
+  {
+   "id": "wall_cliff_grass_corners",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a cliff's corner pieces (art round 10): each one picture of the two edges that meet at a vertex, the rock rounding round the corner (an outer corner radius 20 at the face, an inner corner a cove of radius 12), anchored on the vertex itself at ground level (as a post: no +16). Drawn in place of both edges' own pictures and the post. `edges` names the two edges each owns, from the vertex (vx, vy). Where two corners share an edge (a step one tile long) each takes its halved picture for that edge (`halves`), cut square at the edge's midpoint, and the two halves meet there; no cut at run time."
   },
   {
    "id": "wall_daub",
@@ -10446,6 +10501,68 @@
    "tool": "build",
    "dev": true,
    "note": "as the Wood stair, in stone (9 stone and a plank, docs/49 section 5's default); its landing a stone floor"
+  },
+  "wall_cliff": {
+   "label": "Cliff wall",
+   "kind": "wall",
+   "sprite": "wall_cliff",
+   "cost": {
+    "stone": 1
+   },
+   "seconds": 3,
+   "tool": "build",
+   "dev": true,
+   "note": "art round 10 (Michael, 2026-10-28: \"wire that cliff art for testing\"): a cliff face on a tile edge, 96 tall, bare rock; blocks bodies and sight as stone; no door or window stamped in it, nothing hung on it, taken apart only while Free building is on; a cliff-top floor laid on the storey above it makes it a hill's edge (render/walls.js draws its lip, its back, and the corner pieces); Free building only, for experimenting; the cost a placeholder (a stone, as the stone floor), never charged while Free building is on"
+  },
+  "wall_cliff_grass": {
+   "label": "Grassy cliff wall",
+   "kind": "wall",
+   "sprite": "wall_cliff_grass",
+   "cost": {
+    "stone": 1
+   },
+   "seconds": 3,
+   "tool": "build",
+   "dev": true,
+   "note": "as the Cliff wall, its turf rolled over the lip (art round 10)"
+  },
+  "floor_cliff_top": {
+   "label": "Cliff top",
+   "kind": "floor",
+   "sprite": "floor_cliff_top",
+   "cost": {
+    "stone": 1
+   },
+   "seconds": 1,
+   "tool": "build",
+   "dev": true,
+   "note": "art round 10: bare rock with scree and lichen, laid as the stone floor (docs/49 section 5: a tile at a time, on the ground or upstairs, no physics); over cliff walls it is a hill's top; Free building only; the cost the stone floor's, a placeholder"
+  },
+  "floor_cliff_grass": {
+   "label": "Grassy cliff top",
+   "kind": "floor",
+   "sprite": "floor_cliff_grass",
+   "cost": {
+    "stone": 1
+   },
+   "seconds": 1,
+   "tool": "build",
+   "dev": true,
+   "note": "as the Cliff top, turf with a rock nub now and then (art round 10)"
+  },
+  "stair_ramp_stone": {
+   "label": "Stone ramp",
+   "kind": "stair",
+   "sprite": "stair_ramp_stone",
+   "material": "ramp_stone",
+   "cost": {
+    "stone": 9,
+    "plank": 1
+   },
+   "seconds": 30,
+   "tool": "build",
+   "dev": true,
+   "note": "art round 10: a sloped slab of the cliff's rock climbing one storey over three tiles, north or west, built as a stair (docs/49 section 5) and walked at 32 px a tile with no treads (map.riseOn); its landing a cliff top (its definition's `landing`) unless a floor is laid there already; never taken apart, as a stair; Free building only; the cost the stone stair's, a placeholder"
   }
  },
  "looks": {
@@ -10796,9 +10913,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:806",
-    "placement.js:817",
-    "placement.js:821"
+    "placement.js:811",
+    "placement.js:822",
+    "placement.js:826"
    ]
   },
   {
@@ -11118,19 +11235,19 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1652"
+    "placement.js:1658"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1645"
+    "placement.js:1651"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1213"
+    "placement.js:1219"
    ]
   },
   {
@@ -11568,32 +11685,32 @@
    "at": [
     "placement.js:176",
     "placement.js:402",
-    "placement.js:1573",
-    "placement.js:1610"
+    "placement.js:1579",
+    "placement.js:1616"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1686"
+    "placement.js:1692"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1676"
+    "placement.js:1682"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1232"
+    "placement.js:1238"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1666"
+    "placement.js:1672"
    ]
   },
   {
@@ -11753,7 +11870,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1136"
+    "placement.js:1142"
    ]
   },
   {
@@ -11801,7 +11918,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1698"
+    "map.js:1699"
    ]
   },
   {
@@ -11930,7 +12047,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:923",
-    "map.js:1694"
+    "map.js:1695"
    ]
   },
   {
@@ -12131,7 +12248,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3826
+   "lines": 3848
   },
   {
    "path": "interact.js",
@@ -12143,7 +12260,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 1688
+   "lines": 1694
   },
   {
    "path": "net.js",
@@ -12182,12 +12299,12 @@
    "lines": 949
   },
   {
-   "path": "ui/inventory-panel.js",
-   "lines": 826
+   "path": "render/walls.js",
+   "lines": 906
   },
   {
-   "path": "render/walls.js",
-   "lines": 751
+   "path": "ui/inventory-panel.js",
+   "lines": 826
   },
   {
    "path": "assets.js",
@@ -12202,16 +12319,16 @@
    "lines": 609
   },
   {
+   "path": "render/storeys.js",
+   "lines": 581
+  },
+  {
    "path": "ui/inventory-actions.js",
    "lines": 554
   },
   {
    "path": "combat.js",
    "lines": 543
-  },
-  {
-   "path": "render/storeys.js",
-   "lines": 520
   },
   {
    "path": "figure/rig.js",
@@ -12303,7 +12420,7 @@
   },
   {
    "path": "paintings.js",
-   "lines": 284
+   "lines": 285
   },
   {
    "path": "chart.js",
@@ -12524,6 +12641,10 @@
   {
    "path": "iso.js",
    "lines": 98
+  },
+  {
+   "path": "cliffs.js",
+   "lines": 95
   },
   {
    "path": "ui/zombie-bars.js",
@@ -13037,6 +13158,9 @@
    "SWING_S": 0.24,
    "STACK_BIAS": 1,
    "POST_FOOT_UP": 6,
+   "LIP_UP": 6,
+   "LIP_DOWN": 6,
+   "SIDE_SLACK": 2,
    "SHAKE_MS": 110
   },
   "round": {

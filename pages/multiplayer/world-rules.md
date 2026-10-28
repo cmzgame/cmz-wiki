@@ -15,7 +15,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you 
 
 - **Zombie aggro** (default On): on, the dead hunt you. Off, they wander and ignore you. See [[The dead]].
 - **Survival** (default On): hunger, thirst, and tiredness. Off, the body has no needs. See [[Survival]].
-- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) the Round stone wall, the only way to build a [[Round rooms|round room]], and the Plank floor, the Stone floor, the Wood stair, and the Stone stair, the only way to lay a floor or build a stair (see [[Upper floors]]). See [[Building]].
+- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) the Round stone wall, the only way to build a [[Round rooms|round room]], the Plank floor, the Stone floor, the Wood stair, and the Stone stair, the only way to lay a floor or build a stair (see [[Upper floors]]), and the cliff walls, cliff tops, and Stone ramp, the only way to build a hill, and to take a cliff wall apart (see [[Cliffs]]). See [[Building]].
 - **Multi-hit** (default Off): on, a blow reaches everything in its wedge, "the easy button"; off, only the nearest, the intended way. See [[Combat]].
 
 **Chosen once, when the world is made**, never changed after:
@@ -68,6 +68,7 @@ In a [[Server worlds|server world]] the owner changes the four from the owner's 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/build.json:209-270`, `src/placement.js:635`, `src/placement.js:1091` (at 3233696): the cliff pieces `dev`, listed and built only with Free building, "Cliffs are not in the game yet"; a cliff wall taken apart only with it (game #561)
 - `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
 - `src/placement.js:80-83`, `src/placement.js:124-126` (at da57a57): Free building lists a region's woods and the round stone wall, refused without it (game #536)
 - `data/build.json:158-209`, `src/placement.js:268`, `src/placement.js:375` (at 6eba9c1): the floors and stairs `dev`, listed and built only with Free building, "Floors are not in the game yet", "Stairs are not in the game yet" (game #549)

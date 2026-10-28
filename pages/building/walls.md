@@ -21,6 +21,7 @@ Every wall has a material, which is its art. The corner posts take the heaviest 
 - **Stone**: {{n sprites.wall_stone.wall.height}} pixels tall, {{n sprites.wall_stone.wall.thickness}} thick. The manor, the crypt, and other stone buildings.
 - **Log**: {{n sprites.wall_log.wall.height}} pixels tall, {{n sprites.wall_log.wall.thickness}} thick.
 - **Fence**: {{n sprites.wall_fence.wall.height}} pixels tall, {{n sprites.wall_fence.wall.thickness}} thick, and see-through. See [[Fences]].
+- **Cliff**, bare or grassy: {{n sprites.wall_cliff.wall.height}} pixels tall, {{n sprites.wall_cliff.wall.thickness}} thick, a rock face built only with Free building on, for experimenting with hills. It blocks bodies and sight as stone, and takes no door or window ("Not in a cliff") and no painting or torch ("Not on a cliff"). It is drawn by the plateau a storey up: a face, a back, a corner piece, or nothing where plateau lies on both its sides. See [[Cliffs]].
 
 A building may mix materials, with a different wall on each side. A door or a window built into a wall is made of that wall's material; in a wall of wood its leaves and shutters may be of another wood (see [[Woods]]).
 
@@ -34,11 +35,11 @@ A [[Round rooms|round room]]'s wall is stone, drawn as a ring round a square of 
 
 ### Building and taking apart walls
 
-You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N (and, with Free building on, round stone rooms), and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart. See [[Building]].
+You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N (and, with Free building on, round stone rooms), and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall but a cliff, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart, and a cliff wall is taken apart only while Free building is on. See [[Building]].
 
 ### Brackets
 
-Some walls carry a bracket on one side. Most hold one of the village's lanterns, which burn nothing, can be put out and lit again, and cannot be taken. A few hold a [[Torch]], which lights the area while it is lit and burns down; E takes the torch or mounts one you carry. You can put a torch of your own on any plain wall's face with **Place torch**, and it brings its own bracket, which goes when the torch is picked up (see [[Torch posts and brackets#A torch on a wall|Torch posts and brackets]]). When a wall is taken apart, or a door or a window is built into it, its bracket goes: a torch in it falls to the floor, put out, and a lantern goes with the wall.
+Some walls carry a bracket on one side. Most hold one of the village's lanterns, which burn nothing, can be put out and lit again, and cannot be taken. A few hold a [[Torch]], which lights the area while it is lit and burns down; E takes the torch or mounts one you carry. You can put a torch of your own on any plain wall's face but a cliff's with **Place torch**, and it brings its own bracket, which goes when the torch is picked up (see [[Torch posts and brackets#A torch on a wall|Torch posts and brackets]]). When a wall is taken apart, or a door or a window is built into it, its bracket goes: a torch in it falls to the floor, put out, and a lantern goes with the wall.
 
 ### Near walls
 
@@ -54,6 +55,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 - Stone wall: {{n sprites.wall_stone.wall.height}} tall, {{n sprites.wall_stone.wall.thickness}} thick.
 - Log wall: {{n sprites.wall_log.wall.height}} tall, {{n sprites.wall_log.wall.thickness}} thick.
 - Fence: {{n sprites.wall_fence.wall.height}} tall, {{n sprites.wall_fence.wall.thickness}} thick.
+- Cliff: {{n sprites.wall_cliff.wall.height}} tall, {{n sprites.wall_cliff.wall.thickness}} thick.
 - Top of a door: {{n census.constants.placeholders.DOOR_TOP}} pixels up.
 - Window: from {{n census.constants.placeholders.WINDOW_SILL}} to {{n census.constants.placeholders.WINDOW_TOP}} pixels up.
 - A bracket: {{n census.constants.placeholders.BRACKET_UP}} pixels up.
@@ -64,6 +66,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 - [[Openings]]
 - [[Fences]]
 - [[Round rooms]]
+- [[Cliffs]]
 - [[Upper floors]]
 - [[Woods]]
 - [[Rooms]]
@@ -72,6 +75,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/sprites/wall_cliff.json`, `src/map.js:1164`, `src/paintings.js:57`, `src/placement.js:636`, `src/placement.js:1091`, `src/cliffs.js:1-94` (at 3233696): the cliff wall, its height and thickness, no opening or painting or torch on it, taken apart only with Free building, drawn by its plateau (game #561)
 - `src/render/walls.js:268-294`, `src/render/walls.js:355-395`, `src/render/walls.js:495-520`, `src/map.js:1175-1203`, `src/placement.js:638` (at 6eba9c1): the walls along a stair faded for a body on it; a wall or a post under a floor of the storey above with no cap, flush at a stairwell's edge; a post on a post with no stone foot; no wall across a stair; "No floor there" (games #546, #549, #551)
 - `src/map.js:61-67`, `src/map.js:1444-1513`, `docs/02-decisions.md` (2026-10-27, Thrown things clear fences, not walls) (at da57a57): walls on each layer; a ring's edges walls of stone, doors only at its door points; the thrown-things ruling (games #533, #536)
 - `data/sprites/wall_spruce.json`, `data/sprites/wall_mahogany.json`, `data/sprites/wall_daub.json`, `data/sprites/wall_winterpine.json`, `data/sprites/wall_bloodbark.json`, `data/build.json`, `src/woods.js`: the six woods, each buildable, and a door's or window's own wood (game #348, #351, at 9d1681f)

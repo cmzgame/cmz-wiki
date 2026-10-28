@@ -28,6 +28,7 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built in {{n build.round_stone.seconds seconds}} at 5. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
 - **Plank floor** and **Stone floor**, listed only while Free building is on: a floor laid a tile at a time, or a rectangle by a drag, {{n build.floor_wood.seconds second}} a tile, on the ground or on an upper floor wherever it touches floor already there. Without Free building they are refused, "Floors are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 - **Wood stair** and **Stone stair**, listed only while Free building is on: a stair three tiles long climbing one storey north or west, away from you, with its landing laid on the floor above, built in {{n build.stair_wood.seconds seconds}} in wood and {{n build.stair_stone.seconds seconds}} in stone. Without Free building they are refused, "Stairs are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
+- **Cliff wall**, **Grassy cliff wall**, **Cliff top**, **Grassy cliff top**, and **Stone ramp**, listed only while Free building is on, for experimenting with hills: a cliff wall is a rock wall on an edge that takes no door, window, painting, or torch; a cliff top is a floor laid as the Plank floor is; the ramp is a stair of rock climbing north or west on a smooth slope, its landing a cliff top. Without Free building they are refused, "Cliffs are not in the game yet". See [[Cliffs]].
 
 Everything is built on the floor you stand on: upstairs, walls, doors, windows, and carried furniture go on that floor (a wall upstairs needs floor beside it, "No floor there"). A rug, a painting, a set-down, a torch on a wall, and the Fireplace, the fire pit, and the trough are refused upstairs for now, "Not upstairs yet". No wall, door, or window is built across a stair's run ("Not across a stair") or its top ("Not across a stair's top").
 
@@ -90,6 +91,7 @@ Only what players made can be taken apart:
 
 - any wall, door, or window a player built, including a door or window built into a wall of the village
 - a round room a player built, whole: any edge of it lights up the whole ring, and a wall or a door it took in is left as it was (see [[Round rooms#Taking one apart|Round rooms]])
+- a cliff wall a player built, only while Free building is on ("Cliffs come apart only in Free building"; see [[Cliffs]])
 - a floor a player laid, a tile at a time, when nothing else that can be taken apart is under the cursor; the floor it was laid over comes back on the ground, and upstairs the tile is empty again. It is refused while a wall, a stair, furniture, a rug, a thing on the floor, or anyone stands on it (see [[Upper floors#Building floors and stairs|Upper floors]])
 - any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
@@ -117,6 +119,7 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Round stone wall: {{n build.round_stone.cost.stone}} stone an edge it lays, never charged (Free building only); {{n build.round_stone.seconds seconds}} at 5 across, two fifths more at 7.
 - Plank floor: {{n build.floor_wood.cost.plank}} plank a tile; Stone floor: {{n build.floor_stone.cost.stone}} stone a tile; {{n build.floor_wood.seconds second}} a tile; never charged (Free building only).
 - Wood stair: {{n build.stair_wood.cost.plank}} planks, {{n build.stair_wood.seconds seconds}}; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, {{n build.stair_stone.seconds seconds}}; never charged (Free building only).
+- Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} stone each, {{n build.wall_cliff.seconds seconds}}; Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, {{n build.floor_cliff_top.seconds second}} a tile; Stone ramp: {{n build.stair_ramp_stone.cost.stone}} stone and {{n build.stair_ramp_stone.cost.plank}} plank, {{n build.stair_ramp_stone.seconds seconds}}; never charged (Free building only).
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
 - Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
@@ -130,13 +133,14 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Round stone wall (see [[Round rooms]]), and the floors and stairs (see [[Upper floors]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Round stone wall (see [[Round rooms]]), the floors and stairs (see [[Upper floors]]), and the cliffs and the stone ramp (see [[Cliffs]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
 - [[Walls]]
 - [[Round rooms]]
 - [[Upper floors]], its stairs and floors built with Free building
+- [[Cliffs]], hills built with Free building
 - [[Openings]]
 - [[Boards]]
 - [[Rooms]]
@@ -148,6 +152,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `data/build.json:209-270`, `src/placement.js:591`, `src/placement.js:635-636`, `src/placement.js:1091` (at 3233696): the five cliff pieces, Free building only ("Cliffs are not in the game yet"), "Not in a cliff", a cliff wall taken apart only with Free building (game #561)
 - `src/placement.js:650-651`, `src/stations.js:268-279` (at eba3c56): no wall, door, or window built across a living body (each its own size), "Someone is in the way"; a corpse none (game #553)
 - `src/stations.js:254-279`, `src/placement.js:380`, `src/placement.js:617-623` (at eba3c56): "Someone is in the way" while a living body's circle reaches into one of its tiles; a corpse never counts (game #553)
 - `data/build.json:158-209`, `src/placement.js:213-420`, `src/map.js:1049-1117`, `src/map.js:2650-2705` (at 6eba9c1): the Plank floor, the Stone floor, the Wood stair, and the Stone stair, Free building only ("Floors are not in the game yet", "Stairs are not in the game yet"); building on the builder's own floor; a laid floor taken apart; a stair never (game #549, following the ruling of game #538)
