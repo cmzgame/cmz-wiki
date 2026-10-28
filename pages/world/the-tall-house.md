@@ -17,7 +17,7 @@ summary: A two-storey wooden house east of your cottage, the valley's first uppe
 
 The chests are searched like any [[Containers|container]]. The bed is one to [[Sleep]] in.
 
-From outside, both storeys stand. Its two storeys' walls are drawn as one face, with no ledge between them. Inside, the first floor is hidden over the house while you are on the ground floor, so you see into the room; walk up the stair and you are on the first floor, the camera following you up (see [[Upper floors]]).
+From outside, both storeys stand. Its two storeys' walls are drawn as one face, with no ledge between them, and the corner posts run on in plain wood from one storey to the next. Walk behind the house, north or west of it, and its first floor fades while it covers you, so you are seen through it; in front of it, south or east, it stays solid. A tile or two behind the house, its ground floor still hides you, as any house does. Inside, the first floor is hidden over the house while you are on the ground floor, so you see into the room; walk up the stair and you are on the first floor, the camera following you up (see [[Upper floors]]).
 
 ## The dead
 
@@ -26,6 +26,7 @@ None are placed in or round it. The dead that see you go up the stair follow you
 ## Sources
 
 <!-- sources at a0cf5a2 -->
+- `src/render/storeys.js:60-130`, `src/render/walls.js:495-520` (at 6eba9c1): the first floor faded while it covers a player behind the house; a post on a post with no stone foot (game #546)
 - `tools/mapgen/valley.py:210-228`: the tall house east of your cottage, between its fence and the river: the ground floor's door, windows, table, chair, chest, and lantern; the first floor's five windows, bed, chest, and lantern; the stair along the middle row climbing west from beside the east wall, the way to its foot east of the table (games #534, #540)
 - `src/render/walls.js:290-307`: the two storeys' walls drawn as one face (game #540)
 - `src/render/storeys.js:143-238`, `data/sprites/stair_wood.json`: the drawn wooden stair (game #541)

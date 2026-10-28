@@ -39,7 +39,7 @@ In a panel:
 
 - Drag an item to move it; drop it outside every panel to drop it on the floor.
 - Shift-click or double-click sends an item across to the open container. Double-clicking an item in your own bag equips it, into a hand if it can be held, else into its clothing slot; a potion is drunk, and a poison says it is not for drinking. Double-clicking a filled slot on the character screen or the belt runs its first entry: a hand or clothing slot unequips; a belt slot does what its key does, eating a food or drawing the item into the slot's hand, or else shows the key's line (see [[Belt]]).
-- Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Boil water**, **Apply**, **Split**, **Store** or **Take**, **Open** (a bag or a belt in a chest or on a body), **Drop** or **Drop all**, and **Rotate**, each where it applies.
+- Right-click for the item's menu: **Use**, the **Equip** entries, **Eat**, **Drink**, **Boil water**, **Apply**, **Split**, **Store** or **Take**, **Open** (a bag or a belt in a chest or on a body), **Drop** or **Drop all**, and **Rotate**, each where it applies. The menu of an item in a panel (the bag, a container, the belt, a hand, or a worn slot) stays open while you walk, so you can pick its Use on the move. It closes when the item leaves that bag or slot, when its panel closes, or, for an item in your bag or in the container open beside it, when that container closes or is out of reach; an entry picked then does nothing. The world's own menu, opened on the ground, still closes when you walk.
 
 An item that has lost [[Durability|durability]] shows a bar on its icon, and its hover card says how much is left.
 
@@ -121,6 +121,7 @@ A guest's panels show their own character's bag, and every drag, drop, double-cl
 - `src/inventory.js:27-32`: a bag's grid travels with the bag
 - `src/grid.js:45-56`: the placement scan, unrotated first
 - `src/ui/inventory-panel.js:131-139`: R, a right click, or the wheel turns a dragged item
+- `src/ui/inventory-panel.js:795-826`, `src/ui/context-menu.js:84-94`, `src/main.js:849-853`, `src/main.js:1707-1710` (at 6eba9c1): an item's menu stays open while the player walks and closes when its item, its panel, or the container open beside the bag is gone, a pick then doing nothing; the world's menu closes on walking (game #547)
 - `src/ui/inventory-panel.js:701-715`: Rotate for non-square items, greyed when it will not fit
 - `data/items.json`: each item's `stack`
 - `src/grid.js:58-100`, `src/grid.js:110-125`: stacks top up first, and a drag onto a matching stack fills it; a stack with its own state goes in whole

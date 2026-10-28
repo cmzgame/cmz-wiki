@@ -8,7 +8,7 @@ summary: Building log walls, walls of each wood, fences, gates, doors, and windo
 
 <!-- typed: the game's own lines quoted as examples ("Click to take apart door (1 plank back)", "2 planks"), which carry an example's count, not a number of the game's -->
 
-**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Fireplace]], the [[Fire pit]], and the [[Feeding trough]] is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. Those three stand on tiles. The palette holds only what cannot be picked up and carried; a [[Campfire]] is made at the [[Workbench]] and set down from the bag instead.
+**Building** is how you put up walls, fences, gates, doors, and windows of your own. You open the build palette with N, pick a piece, and lay it on the edge of a tile; a timed bar runs, and the materials are spent when it finishes. **Take apart**, on X, destroys what players built or made and gives back half its materials. Building and taking apart ask for the right tool on you: a [[Hatchet]] for a log wall, a [[Smith's hammer]] for a wooden wall, a fence, a gate, a door, a window, and most furniture. Everything you build but the [[Fireplace]], the [[Fire pit]], the [[Feeding trough]], and the floors and stairs is a [[Walls|wall]] on a tile's edge: a door or a window can go on an empty edge or into a wall that is already there. Those stand on tiles. The palette holds only what cannot be picked up and carried; a [[Campfire]] is made at the [[Workbench]] and set down from the bag instead.
 
 ## How it works
 
@@ -26,8 +26,10 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 - **Fire pit**, costing {{n build.fire_pit.cost.stone}} stone, built in {{n build.fire_pit.seconds seconds}}, with no tool: two tiles by two on open ground, indoors or out, never on water ("Not on water"). See [[Fire pit]].
 - **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built in {{n build.feed_trough.seconds seconds}}, with a smith's hammer on you. See [[Feeding trough]].
 - **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built in {{n build.round_stone.seconds seconds}} at 5. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
+- **Plank floor** and **Stone floor**, listed only while Free building is on: a floor laid a tile at a time, or a rectangle by a drag, {{n build.floor_wood.seconds second}} a tile, on the ground or on an upper floor wherever it touches floor already there. Without Free building they are refused, "Floors are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
+- **Wood stair** and **Stone stair**, listed only while Free building is on: a stair three tiles long climbing one storey north or west, away from you, with its landing laid on the floor above, built in {{n build.stair_wood.seconds seconds}} in wood and {{n build.stair_stone.seconds seconds}} in stone. Without Free building they are refused, "Stairs are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 
-{{planned doc=49 step=8 note="A plank floor and a stone floor on the palette, built anywhere, indoors or out, a tile at a time, with no physics: on an upper floor a tile goes wherever it touches a walkable tile of its own floor, so a whole floor grows from one landing as you walk it, and its open edge is unwalkable, never a fall (Michael, 2026-10-27); stairs built from the palette too."}}
+Everything is built on the floor you stand on: upstairs, walls, doors, windows, and carried furniture go on that floor (a wall upstairs needs floor beside it, "No floor there"). A rug, a painting, a set-down, a torch on a wall, and the Fireplace, the fire pit, and the trough are refused upstairs for now, "Not upstairs yet". No wall, door, or window is built across a stair's run ("Not across a stair") or its top ("Not across a stair's top").
 
 The ghost of a piece that stands on tiles covers its tiles, not an edge. Besides its own rule it says "No room" where a tile is not open floor or holds something, "Not beside a door" on a door's two tiles, and "Someone is in the way" where anyone, living or dead, or a body, stands on one of them.
 
@@ -87,9 +89,10 @@ Only what players made can be taken apart:
 
 - any wall, door, or window a player built, including a door or window built into a wall of the village
 - a round room a player built, whole: any edge of it lights up the whole ring, and a wall or a door it took in is left as it was (see [[Round rooms#Taking one apart|Round rooms]])
+- a floor a player laid, a tile at a time, when nothing else that can be taken apart is under the cursor; the floor it was laid over comes back on the ground, and upstairs the tile is empty again. It is refused while a wall, a stair, furniture, a rug, a thing on the floor, or anyone stands on it (see [[Upper floors#Building floors and stairs|Upper floors]])
 - any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
-The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map (a round room of the map says "That is the village's."), stairs, trees, the well, fires, or torch posts. Furniture is carried whole instead (see [[Carrying furniture]]).
+The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map (a round room of the map says "That is the village's."), stairs (a stair a player built included: none is ever taken apart), trees, the well, fires, or torch posts. Furniture is carried whole instead (see [[Carrying furniture]]).
 
 A made piece of furniture also has **Take apart** on its own right-click menu, saying what comes back ("Take apart (2 planks back)") or, greyed, why not: "Take apart (empty it first)", "Take apart (you need a smith's hammer)".
 
@@ -111,6 +114,8 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Fire pit: {{n build.fire_pit.cost.stone}} stone, {{n build.fire_pit.seconds seconds}}.
 - Feeding trough: {{n build.feed_trough.cost.plank}} planks, {{n build.feed_trough.seconds seconds}}.
 - Round stone wall: {{n build.round_stone.cost.stone}} stone an edge it lays, never charged (Free building only); {{n build.round_stone.seconds seconds}} at 5 across, two fifths more at 7.
+- Plank floor: {{n build.floor_wood.cost.plank}} plank a tile; Stone floor: {{n build.floor_stone.cost.stone}} stone a tile; {{n build.floor_wood.seconds second}} a tile; never charged (Free building only).
+- Wood stair: {{n build.stair_wood.cost.plank}} planks, {{n build.stair_wood.seconds seconds}}; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, {{n build.stair_stone.seconds seconds}}; never charged (Free building only).
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
 - Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
@@ -124,13 +129,13 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]) and the Round stone wall (see [[Round rooms]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Round stone wall (see [[Round rooms]]), and the floors and stairs (see [[Upper floors]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
 - [[Walls]]
 - [[Round rooms]]
-- [[Upper floors]], whose stairs and floors only the map places so far
+- [[Upper floors]], its stairs and floors built with Free building
 - [[Openings]]
 - [[Boards]]
 - [[Rooms]]
@@ -142,7 +147,8 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
-- `docs/02-decisions.md` (2026-10-27, Floors are built a tile at a time, with no physics), `docs/49-upper-floors.md` section 5 (at a0cf5a2): floors to be built anywhere, a tile at a time, not built yet (game #538)
+- `data/build.json:158-209`, `src/placement.js:213-420`, `src/map.js:1049-1117`, `src/map.js:2650-2705` (at 6eba9c1): the Plank floor, the Stone floor, the Wood stair, and the Stone stair, Free building only ("Floors are not in the game yet", "Stairs are not in the game yet"); building on the builder's own floor; a laid floor taken apart; a stair never (game #549, following the ruling of game #538)
+- `src/placement.js:217`, `src/placement.js:615-623`, `src/placement.js:638`, `src/map.js:1175-1203` (at 6eba9c1): "Not upstairs yet", "No floor there", "Not across a stair", "Not across a stair's top" (game #549)
 - `data/build.json:146-157`, `src/placement.js:80-200`, `src/placement.js:693-696`, `src/placement.js:800-860` (at da57a57): the Round stone wall, listed and built only with Free building; a ring taken apart whole, the map's refused (game #536)
 - `data/build.json:112-145`, `src/placement.js:250-277`, `src/setdown.js:75-140`, `src/stations.js:247-250`: the palette's Fireplace, Fire pit, and Feeding trough, standing on tiles; the fit's reasons and "Someone is in the way"; the campfire left the palette for the workbench, the palette holding only what cannot be carried (game #527, at c3cb736)
 - `src/placement.js:637-645`: "Put it out first." for a lit built fire (game #527, at c3cb736)

@@ -16,7 +16,7 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 - **Zombie aggro** (default On): on, the dead hunt you. Off, they wander and ignore you. See [[The dead]].
 - **Zombies attack villagers** (default Off): on, the dead hunt villagers whatever aggro says; with aggro on, you first. A separate switch from Zombie aggro on purpose.
 - **Survival** (default On): hunger, thirst, and tiredness. Off, the body has no needs. See [[Survival]].
-- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) and the Round stone wall, the only way to build a [[Round rooms|round room]]. See [[Building]].
+- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) the Round stone wall, the only way to build a [[Round rooms|round room]], and the Plank floor, the Stone floor, the Wood stair, and the Stone stair, the only way to lay a floor or build a stair (see [[Upper floors]]). See [[Building]].
 - **Multi-hit** (default Off): on, a blow reaches everything in its wedge, "the easy button"; off, only the nearest, the intended way. See [[Combat]].
 
 **Chosen once, when the world is made**, never changed after:
@@ -70,6 +70,7 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 
 <!-- sources at 3c0a243 -->
 - `src/placement.js:80-83`, `src/placement.js:124-126` (at da57a57): Free building lists a region's woods and the round stone wall, refused without it (game #536)
+- `data/build.json:158-209`, `src/placement.js:268`, `src/placement.js:375` (at 6eba9c1): the floors and stairs `dev`, listed and built only with Free building, "Floors are not in the game yet", "Stairs are not in the game yet" (game #549)
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
 - `src/settings.js:60-72`: each rule's label and line (Free building's, game #222), Starting population's answers, the Dev chest, Dev bag, and Extra starting items
 - `src/map.js:46-54`, `src/map.js:399-411`, `src/map.js:2019-2027`, `src/map.js:2193`, `src/map.js:2046`: Trees off: no tree placed in the scatter or the wild, nor an authored one, an orchard's or a garden's (game #192), the other picks as ever

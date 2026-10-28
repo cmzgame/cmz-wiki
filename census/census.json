@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "a0cf5a2eca7b4b26426bfe934c4afb91ecd9e89c",
-  "short": "a0cf5a2",
-  "date": "2026-10-27T17:12:40-05:00",
-  "subject": "Merge pull request #541 from cmzgame/fix/storeys-stair-art",
+  "commit": "6eba9c13a025aa993b09226aefb292e52d67bab5",
+  "short": "6eba9c1",
+  "date": "2026-10-27T21:52:33-05:00",
+  "subject": "Merge pull request #551 from cmzgame/fix/stair-walls",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 97,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 206,
+  "sprites": 208,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -24,9 +24,9 @@
   "liveRules": 5,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 100,
+  "menuLabels": 102,
   "events": 38,
-  "checks": 91,
+  "checks": 92,
   "modules": 151
  },
  "items": [
@@ -7901,6 +7901,18 @@
    "note": "a big rock (Michael, 2026-10-11): solid, not carried, wiggles when clicked; what it is for is question 27"
   },
   {
+   "id": "round_openings_5",
+   "kind": "other",
+   "drawn": true,
+   "note": "art round 9 (Michael approved, 2026-10-27): a round stone wall's doors and windows, 5 across (docs/50), drawn on the curve: per door point (n 270, e 0, s 90, w 180 degrees) and kind the frame, the reveal, the shut, open (and open_a0, hinged at the other end), and broken leaves or shutters, and the boards out and in, 1 to 3. Each frame's anchor is the ring's centre on the ground; `pieces` gives each frame's depth plane (two ground points in tiles from the centre, for depth.planeThrough) and its layer (reveal 0, leaf 1, open leaf 2, frame 3, open shutters 4, boards 5); the face's tint is baked in (render/rings.js draws them untinted)."
+  },
+  {
+   "id": "round_openings_7",
+   "kind": "other",
+   "drawn": true,
+   "note": "art round 9 (Michael approved, 2026-10-27): a round stone wall's doors and windows, 7 across (docs/50), drawn on the curve: per door point (n 270, e 0, s 90, w 180 degrees) and kind the frame, the reveal, the shut, open (and open_a0, hinged at the other end), and broken leaves or shutters, and the boards out and in, 1 to 3. Each frame's anchor is the ring's centre on the ground; `pieces` gives each frame's depth plane (two ground points in tiles from the centre, for depth.planeThrough) and its layer (reveal 0, leaf 1, open leaf 2, frame 3, open shutters 4, boards 5); the face's tint is baked in (render/rings.js draws them untinted)."
+  },
+  {
    "id": "rug_bearskin",
    "kind": "other",
    "drawn": true,
@@ -10383,6 +10395,57 @@
    "tool": "build",
    "dev": true,
    "note": "docs/50: a round room, 5 or 7 across, by a drag from one corner of its square; stone only, shown and buildable only while Free building is on (Michael, 2026-10-27: \"A few on the map, buildable by dev settings, otherwise not in the game yet until we settle on cost, etc.\"); its cost is per edge of the outline (40 stone at 5, 56 at 7), a placeholder and Primary's default, never charged since Free building waives it; the seconds the builder's default (two fifths more at 7)"
+  },
+  "floor_wood": {
+   "label": "Plank floor",
+   "kind": "floor",
+   "sprite": "floor_wood",
+   "cost": {
+    "plank": 1
+   },
+   "seconds": 1,
+   "tool": "build",
+   "dev": true,
+   "note": "docs/49 section 5 (Michael, 2026-10-27, 02 \"Floors are built a tile at a time, with no physics\"): a tile at a time, by a drag for a rectangle; on the ground over the floor there (kept, and put back when it is taken up), on a storey wherever it touches a floor already walkable there; shown and buildable only while Free building is on until the floors are costed (Primary's default, as the round stone wall); 1 plank a tile, a placeholder and Primary's default, never charged while Free building is on; the seconds a tile the builder's default"
+  },
+  "floor_stone": {
+   "label": "Stone floor",
+   "kind": "floor",
+   "sprite": "floor_stone",
+   "cost": {
+    "stone": 1
+   },
+   "seconds": 1,
+   "tool": "build",
+   "dev": true,
+   "note": "as the Plank floor, in the stone floor the map already draws; 1 stone a tile (Primary's default)"
+  },
+  "stair_wood": {
+   "label": "Wood stair",
+   "kind": "stair",
+   "sprite": "stair_wood",
+   "material": "wood",
+   "cost": {
+    "plank": 10
+   },
+   "seconds": 20,
+   "tool": "build",
+   "dev": true,
+   "note": "docs/49 section 5: a stair three tiles long from the tile under the cursor, climbing on away from the player, its landing's planks laid on the storey above (one of its planks); north and west only for now (Primary's default: \"Stairs climb away from the camera\", Michael to confirm); the drawn stair (art round 8); never taken apart (ruled); Free building only for now; the cost docs/49 section 5's default, never charged while Free building is on; the seconds the builder's default"
+  },
+  "stair_stone": {
+   "label": "Stone stair",
+   "kind": "stair",
+   "sprite": "stair_stone",
+   "material": "stone",
+   "cost": {
+    "stone": 9,
+    "plank": 1
+   },
+   "seconds": 30,
+   "tool": "build",
+   "dev": true,
+   "note": "as the Wood stair, in stone (9 stone and a plank, docs/49 section 5's default); its landing a stone floor"
   }
  },
  "looks": {
@@ -10677,26 +10740,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1147"
+    "main.js:1151"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1146"
+    "main.js:1150"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1124"
+    "main.js:1128"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:963",
-    "main.js:977"
+    "main.js:967",
+    "main.js:981"
    ]
   },
   {
@@ -10714,19 +10777,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1144"
+    "main.js:1148"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1127"
+    "main.js:1131"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1126"
+    "main.js:1130"
    ]
   },
   {
@@ -10739,9 +10802,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:583",
-    "placement.js:594",
-    "placement.js:598"
+    "placement.js:802",
+    "placement.js:813",
+    "placement.js:817"
    ]
   },
   {
@@ -10753,56 +10816,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1122"
+    "main.js:1126"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1128"
+    "main.js:1132"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1135"
+    "main.js:1139"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1124"
+    "main.js:1128"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1211"
+    "main.js:1215"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1211"
+    "main.js:1215"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1125"
+    "main.js:1129"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1222"
+    "main.js:1226"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:963",
-    "main.js:969"
+    "main.js:967",
+    "main.js:973"
    ]
   }
  ],
@@ -11037,7 +11100,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1629"
+    "main.js:1633"
    ]
   },
   {
@@ -11049,7 +11112,7 @@
   {
    "key": "Build",
    "at": [
-    "main.js:862"
+    "main.js:866"
    ]
   },
   {
@@ -11061,19 +11124,19 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1341"
+    "placement.js:1648"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1334"
+    "placement.js:1641"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:944"
+    "placement.js:1209"
    ]
   },
   {
@@ -11103,7 +11166,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1503"
+    "main.js:1507"
    ]
   },
   {
@@ -11185,7 +11248,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1604"
+    "main.js:1608"
    ]
   },
   {
@@ -11216,7 +11279,7 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1484"
+    "main.js:1488"
    ]
   },
   {
@@ -11228,13 +11291,13 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1543"
+    "main.js:1547"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1590"
+    "main.js:1594"
    ]
   },
   {
@@ -11258,7 +11321,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1642"
+    "main.js:1646"
    ]
   },
   {
@@ -11315,37 +11378,37 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1450"
+    "main.js:1454"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1446"
+    "main.js:1450"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1486"
+    "main.js:1490"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1485"
+    "main.js:1489"
    ]
   },
   {
    "key": "Rotate",
    "at": [
-    "ui/inventory-panel.js:788"
+    "ui/inventory-panel.js:789"
    ]
   },
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1651"
+    "main.js:1655"
    ]
   },
   {
@@ -11516,26 +11579,33 @@
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
     "placement.js:176",
-    "placement.js:1263",
-    "placement.js:1300"
+    "placement.js:402",
+    "placement.js:1569",
+    "placement.js:1606"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1365"
+    "placement.js:1682"
+   ]
+  },
+  {
+   "key": "Click to build (${costText(g.what)}) · Esc cancel",
+   "at": [
+    "placement.js:1672"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:962"
+    "placement.js:1228"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1355"
+    "placement.js:1662"
    ]
   },
   {
@@ -11560,6 +11630,12 @@
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
     "interact.js:1801"
+   ]
+  },
+  {
+   "key": "Laying ${d.label.toLowerCase()}",
+   "at": [
+    "placement.js:304"
    ]
   },
   {
@@ -11671,7 +11747,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1355"
+    "main.js:1359"
    ]
   },
   {
@@ -11689,7 +11765,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:869"
+    "placement.js:1132"
    ]
   },
   {
@@ -11737,7 +11813,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1610"
+    "map.js:1698"
    ]
   },
   {
@@ -11866,7 +11942,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:911",
-    "map.js:1606"
+    "map.js:1694"
    ]
   },
   {
@@ -12023,6 +12099,7 @@
   "light",
   "mana",
   "melee",
+  "menuwalk",
   "mine",
   "navrow",
   "paintings",
@@ -12066,7 +12143,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3630
+   "lines": 3825
   },
   {
    "path": "interact.js",
@@ -12074,23 +12151,23 @@
   },
   {
    "path": "main.js",
-   "lines": 2119
+   "lines": 2127
+  },
+  {
+   "path": "placement.js",
+   "lines": 1684
+  },
+  {
+   "path": "net.js",
+   "lines": 1676
   },
   {
    "path": "placeholders.js",
    "lines": 1674
   },
   {
-   "path": "net.js",
-   "lines": 1672
-  },
-  {
-   "path": "placement.js",
-   "lines": 1367
-  },
-  {
    "path": "gl.js",
-   "lines": 1326
+   "lines": 1357
   },
   {
    "path": "ui/screens.js",
@@ -12106,7 +12183,7 @@
   },
   {
    "path": "ground.js",
-   "lines": 986
+   "lines": 1011
   },
   {
    "path": "entities/animal.js",
@@ -12118,7 +12195,11 @@
   },
   {
    "path": "ui/inventory-panel.js",
-   "lines": 810
+   "lines": 826
+  },
+  {
+   "path": "render/walls.js",
+   "lines": 751
   },
   {
    "path": "assets.js",
@@ -12127,10 +12208,6 @@
   {
    "path": "figure/draw.js",
    "lines": 644
-  },
-  {
-   "path": "render/walls.js",
-   "lines": 633
   },
   {
    "path": "inventory.js",
@@ -12143,6 +12220,10 @@
   {
    "path": "combat.js",
    "lines": 543
+  },
+  {
+   "path": "render/storeys.js",
+   "lines": 520
   },
   {
    "path": "figure/rig.js",
@@ -12161,6 +12242,10 @@
    "lines": 445
   },
   {
+   "path": "render/rings.js",
+   "lines": 438
+  },
+  {
    "path": "stations.js",
    "lines": 430
   },
@@ -12170,11 +12255,15 @@
   },
   {
    "path": "render/props.js",
-   "lines": 381
+   "lines": 408
   },
   {
    "path": "entities/villager.js",
    "lines": 374
+  },
+  {
+   "path": "render/scene.js",
+   "lines": 373
   },
   {
    "path": "sound-gen.js",
@@ -12185,16 +12274,8 @@
    "lines": 362
   },
   {
-   "path": "render/storeys.js",
-   "lines": 356
-  },
-  {
    "path": "gather-art.js",
    "lines": 336
-  },
-  {
-   "path": "render/scene.js",
-   "lines": 335
   },
   {
    "path": "farming.js",
@@ -12206,14 +12287,10 @@
   },
   {
    "path": "setdown.js",
-   "lines": 326
+   "lines": 327
   },
   {
    "path": "burn.js",
-   "lines": 325
-  },
-  {
-   "path": "render/rings.js",
    "lines": 325
   },
   {
@@ -12234,7 +12311,7 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 285
+   "lines": 286
   },
   {
    "path": "paintings.js",
@@ -12313,6 +12390,10 @@
    "lines": 186
   },
   {
+   "path": "round.js",
+   "lines": 178
+  },
+  {
    "path": "water.js",
    "lines": 178
   },
@@ -12361,7 +12442,7 @@
    "lines": 152
   },
   {
-   "path": "round.js",
+   "path": "render/depth.js",
    "lines": 152
   },
   {
@@ -12379,10 +12460,6 @@
   {
    "path": "resources.js",
    "lines": 138
-  },
-  {
-   "path": "render/depth.js",
-   "lines": 137
   },
   {
    "path": "ui/hud.js",
@@ -12433,6 +12510,10 @@
    "lines": 111
   },
   {
+   "path": "ui/context-menu.js",
+   "lines": 110
+  },
+  {
    "path": "visibility.js",
    "lines": 110
   },
@@ -12466,10 +12547,6 @@
   },
   {
    "path": "camera.js",
-   "lines": 92
-  },
-  {
-   "path": "ui/context-menu.js",
    "lines": 92
   },
   {
@@ -12794,6 +12871,7 @@
    "PASS_STAND": 1,
    "PASS_TRANS": 2,
    "PASS_TOP": 3,
+   "PASS_FADE": 4,
    "DEPTH_HALF_RANGE": 4096,
    "DEPTH_CENTRE_STEP": 256,
    "ALPHA_TEST": 0.5,
@@ -12881,7 +12959,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 25,
+   "PROTOCOL": 26,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -12919,13 +12997,15 @@
    "PLACE_REACH": 2.6,
    "BUILD_REACH": 2.6,
    "REMOVE_REACH": 2.6,
-   "EDGE_CLEARANCE": 0.45
+   "EDGE_CLEARANCE": 0.45,
+   "MAX_DRAG": 12
   },
   "render_area": {
    "CORE_GAIN": 1.4
   },
   "render_depth": {
    "UNIT": 32,
+   "ACROSS_SLOTS": 6,
    "FIGURE_RADIUS": 0.3
   },
   "render_paintings": {
@@ -12949,6 +13029,10 @@
   },
   "render_storeys": {
    "PAD": 48,
+   "FADE_HALF": 8,
+   "FADE_EDGE": 0.15,
+   "FADE_OVER": 12,
+   "FADE_FRONT": 0.6,
    "STRINGER_UP": 6,
    "STRINGER_DOWN": 14,
    "STRINGER_UNDER": 2,
@@ -12964,6 +13048,7 @@
    "CAP_MARGIN": 1,
    "SWING_S": 0.24,
    "STACK_BIAS": 1,
+   "POST_FOOT_UP": 6,
    "SHAKE_MS": 110
   },
   "round": {

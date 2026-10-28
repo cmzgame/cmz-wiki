@@ -47,7 +47,9 @@ A door or shutters the dead break are gone for good. A broken door stays open as
 
 A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. In a wall of wood, a door's leaves and a window's shutters may be of another wood than the wall's, chosen with R while building (see [[Woods]]). The palette's Gate is built on an empty edge or into a fence (see [[Fences]]). A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
 
-In a [[Round rooms|round room]] a door or a window goes only at one of the ring's four door points, the middles of its square's sides ("Only at a door point of the curve" anywhere else on the ring). It is drawn in the curve, with no straight frame and no posts, its leaf, shutters, or boards on the curve; taken out, it leaves the ring's wall.
+In a [[Round rooms|round room]] a door or a window goes only at one of the ring's four door points, the middles of its square's sides ("Only at a door point of the curve" anywhere else on the ring). It is drawn in the curve from its own art, with no square posts: an arched frame of dressed stone, a curved door or arched shutters shut, open, or broken, and boards on the face the camera sees; the east door point's door is hinged at its other end, so it swings clear of its doorway (see [[Round rooms]]). Taken out, it leaves the ring's wall.
+
+Upstairs a door needs floor on both its sides, so none opens onto an open edge of a floor, and no door or window is built across a stair's run or top (see [[Upper floors]]).
 
 ## Numbers
 
@@ -75,7 +77,9 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 
 <!-- sources at 3c0a243 -->
 - `src/map.js:1444-1452`, `src/map.js:1518-1555` (at da57a57): a door or a window on a ring only at a door point; taken out, the ring's wall back (game #536)
-- `src/render/rings.js:96-232`, `src/render/walls.js:273` (at a0cf5a2): a door or a window at a door point drawn in the curve, with no frame or post (game #537)
+- `src/render/rings.js:96-232`, `src/render/walls.js:273` (at a0cf5a2): a door or a window at a door point drawn in the curve, with no straight frame or post (game #537)
+- `src/render/rings.js:354-418`, `data/sprites/round_openings_5.json`, `data/sprites/round_openings_7.json` (at 6eba9c1): the round doors and windows from art round 9, the frame and the reveal, a door or shutters shut, open, or broken, the east door hinged at its other end, the boards on the face seen (game #550)
+- `src/map.js:1175-1203`, `src/placement.js:638` (at 6eba9c1): a door upstairs needs both its sides walkable; nothing across a stair (game #549)
 - `src/woods.js:41-67`, `src/woods.js:115-170`: a door or window in another wood than its wall, drawn in that wood shut and open (game #348, #351, at 9d1681f)
 - `src/map.js:733-744`: a wall record with its kind and state
 - `src/map.js:817-826`: only a door, open or broken and unboarded, passes a body; a window never does

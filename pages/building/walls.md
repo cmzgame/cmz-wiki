@@ -42,7 +42,11 @@ Some walls carry a bracket on one side. Most hold one of the village's lanterns,
 
 ### Near walls
 
-While you are inside a room, its walls on the camera's side are drawn faded. See [[Rooms]].
+While you are inside a room, its walls on the camera's side are drawn faded. See [[Rooms]]. While you are on a stair, the walls along its sides on the camera's side fade too, on its own floor and round its stairwell above, though both sides of them are one room; those on its far side stand. No wall is built across a stair's run or its top (see [[Upper floors]]).
+
+### Storeys
+
+A wall standing on a wall of the floor below is drawn with it as one face, two storeys tall, and a corner post on a post below runs on into it with no stone foot at the seam. A wall under a floor of the storey above shows no top through that floor while the floor is drawn over it: from upstairs, or from outside, the ground floor's walls stay under the upper floor, and at a stairwell's edge a wall's top meets the floor's edge flush. From inside below, where the floor above is hidden, walls show their tops as before. Upstairs a wall is built only beside a floor ("No floor there"). See [[Upper floors]].
 
 ## Numbers
 
@@ -68,6 +72,7 @@ While you are inside a room, its walls on the camera's side are drawn faded. See
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/render/walls.js:268-294`, `src/render/walls.js:355-395`, `src/render/walls.js:495-520`, `src/map.js:1175-1203`, `src/placement.js:638` (at 6eba9c1): the walls along a stair faded for a body on it; a wall or a post under a floor of the storey above with no cap, flush at a stairwell's edge; a post on a post with no stone foot; no wall across a stair; "No floor there" (games #546, #549, #551)
 - `src/map.js:61-67`, `src/map.js:1444-1513`, `docs/02-decisions.md` (2026-10-27, Thrown things clear fences, not walls) (at da57a57): walls on each layer; a ring's edges walls of stone, doors only at its door points; the thrown-things ruling (games #533, #536)
 - `data/sprites/wall_spruce.json`, `data/sprites/wall_mahogany.json`, `data/sprites/wall_daub.json`, `data/sprites/wall_winterpine.json`, `data/sprites/wall_bloodbark.json`, `data/build.json`, `src/woods.js`: the six woods, each buildable, and a door's or window's own wood (game #348, #351, at 9d1681f)
 - `src/map.js:1-6`, `src/map.js:1345-1351`: walls on the `n` and `w` edges of a tile
