@@ -8,7 +8,7 @@ summary: The Neighbour has shut themselves inside The shut cottage on the south 
 
 The **Neighbour** has shut themselves inside [[The shut cottage]] on the south lane and will not come out.
 
-Like every villager, they carry no weapon and never fight. They wander a little, never more than {{n tuning.villager.wanderRadius}} tiles from where they started and never through a wall, and stand idle between walks. A left click on them within {{n census.constants.interact.CLICK_REACH}} tiles, or **Poke** from the right-click menu, makes them stop, turn to face you, and say their line; they stay put for at least {{n tuning.villager.talkTime}} seconds before they wander again. With the world rule Zombies attack villagers on (it is off by default), the dead hunt them, and one bitten to death gets up as one of the dead in their own clothes. Unlike the [[Innkeeper]] and the [[Priest]], they are not immune to the dead. See [[Villagers]].
+Like every villager, they carry no weapon and never fight. They wander a little, never more than {{n tuning.villager.wanderRadius}} tiles from where they started and never through a wall, and stand idle between walks. A left click on them within {{n census.constants.interact.CLICK_REACH}} tiles, or **Poke** from the right-click menu, makes them stop, turn to face you, and say their line; they stay put for at least {{n tuning.villager.talkTime}} seconds before they wander again. They are **immune** to the dead, as every villager is: the dead never hunt or bite them. They still fear them: one of the dead near and in sight makes them cower, run a few tiles off, and stand wary until it is gone, then walk back (see [[Villagers#Fleeing the dead|Villagers]]).
 
 ## What they say
 
@@ -35,8 +35,8 @@ The Neighbour stands inside [[The shut cottage]], next door but one to [[Your co
 - `data/talk/neighbour.json`, `src/talk.js:124-141`: their bark groups, the first that holds, its lines in turn (game #220)
 - `data/talk/neighbour.json`, `src/entities/villager.js:194-222`: their conversation, on Talk to (game #230)
 - `src/entities/villager.js:224-244`, `data/tuning.json:89-90`: a remark unprompted, from an `ambient` group, with a living player within `barkRadius`, not twice inside `barkCooldown`, never talking or dead (a wounded one too, game #230)
-- `src/settings.js:13`, `src/rules.js:15`, `src/entities/zombie.js:345-367`, `src/entities/zombie.js:534-547`: with Zombies attack villagers on (off by default) the dead hunt them, if they are not flagged `immune` (game #187)
-- `src/game.js:397`, `src/entities/villager.js:131-168`, `src/game.js:655-659`: one bitten to death gets up as one of the dead in their clothes
+- `src/entities/villager.js:35-38`, `src/game.js:128`, `src/game.js:347-354`, `src/entities/zombie.js:442-458`, `src/entities/villager.js:244-247` (at 26a0a8f): immune, as every villager is (a map entry would have to say `immune: false`, and none does), read from the map again at a restore; never the dead's prey, a bite taking nothing (game #559)
+- `src/entities/villager.js:84-156`, `src/entities/villager.js:161`, `data/tuning.json` `villager` (at 26a0a8f): the cowering, the flight, standing wary, and the walk back, for every villager (game #434, #559)
 - `data/maps/valley.json:5862-5870`: the Neighbour's line and tile
 - `tools/mapgen/valley.py:390`, `tools/mapgen/valley.py:615`: inside the shut cottage, "a neighbour inside who will not open"
 - `data/maps/valley.json:1295-1778`, `data/maps/valley.json:5092-5226`, `data/maps/valley.json:4960-5091`: your cottage at x 98, the reeve's house at 90, the shut cottage at 80: next door but one

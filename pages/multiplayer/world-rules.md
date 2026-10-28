@@ -5,7 +5,7 @@ aliases: [World rule, Sandbox, Sandbox step, Rules, Starting population, Populat
 summary: Each world keeps its own rules, chosen at the Sandbox step of New world; the host changes most of them from the pause menu, and the rest are fixed when the world is made.
 ---
 
-The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you, whether the body has needs, whether building costs anything, whether the world has trees, how many of the dead it starts with, and, for testing, what every character starts with. There are {{n census.counts.rules}} of them. They belong to the world, not to the player or the browser: each world keeps its own in its save, and a rule set in one world does not follow you into the next. They are not on the [[Settings]] screen.
+The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you (they never hunt a [[Villagers|villager]]: every one is immune, and no rule changes that), whether the body has needs, whether building costs anything, whether the world has trees, how many of the dead it starts with, and, for testing, what every character starts with. There are {{n census.counts.rules}} of them. They belong to the world, not to the player or the browser: each world keeps its own in its save, and a rule set in one world does not follow you into the next. They are not on the [[Settings]] screen.
 
 ## How it works
 
@@ -14,7 +14,6 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you,
 **How it plays**, the {{n census.counts.liveRules}} that can be changed later:
 
 - **Zombie aggro** (default On): on, the dead hunt you. Off, they wander and ignore you. See [[The dead]].
-- **Zombies attack villagers** (default Off): on, the dead hunt villagers whatever aggro says; with aggro on, you first. A separate switch from Zombie aggro on purpose.
 - **Survival** (default On): hunger, thirst, and tiredness. Off, the body has no needs. See [[Survival]].
 - **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) the Round stone wall, the only way to build a [[Round rooms|round room]], and the Plank floor, the Stone floor, the Wood stair, and the Stone stair, the only way to lay a floor or build a stair (see [[Upper floors]]). See [[Building]].
 - **Multi-hit** (default Off): on, a blow reaches everything in its wedge, "the easy button"; off, only the nearest, the intended way. See [[Combat]].
@@ -36,13 +35,13 @@ A world without trees has a few more of the dead in the wild than one with them 
 
 ### The Sandbox step
 
-**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), Village stations, the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
+**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the four switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), Village stations, the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
 
 The choices are offered first as this browser last chose them when it made a world; the very first time, at their defaults. Changing a rule in a world later does not change what the next Sandbox step offers.
 
 ### World rules on the pause menu
 
-**World rules** on the pause menu opens a screen of the same rows, over the world, with the line "How this world plays. A change is made at once, for everyone in it." In your own world the five are switches: a change applies at once and the world is saved with it. Trees and Starting population are shown locked, marked "(set when the world was made)". The kit's two rules are not on this screen at all, since nothing about them can change once the world is made. **Back** returns to the pause menu.
+**World rules** on the pause menu opens a screen of the same rows, over the world, with the line "How this world plays. A change is made at once, for everyone in it." In your own world the four are switches: a change applies at once and the world is saved with it. Trees and Starting population are shown locked, marked "(set when the world was made)". The kit's two rules are not on this screen at all, since nothing about them can change once the world is made. **Back** returns to the pause menu.
 
 ### Worlds made before the rules were per world
 
@@ -58,7 +57,7 @@ A world made before each world kept its own rules plays by the rules saved with 
 
 The rules are the host's. A change the host makes from World rules reaches every guest at once, and a guest's own copy of the world is made with the host's trees and the host's dead. A guest's World rules screen shows the same rows, every one locked and marked "(the host's)", with the line "How this world plays. They are the host's to change." A guest cannot change them.
 
-In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees, Starting population, and Village stations locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
+In a [[Server worlds|server world]] the owner changes the four from the owner's screen, which shows Trees, Starting population, and Village stations locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the four marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
 
 ## See also
 
@@ -69,6 +68,7 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
 - `src/placement.js:80-83`, `src/placement.js:124-126` (at da57a57): Free building lists a region's woods and the round stone wall, refused without it (game #536)
 - `data/build.json:158-209`, `src/placement.js:268`, `src/placement.js:375` (at 6eba9c1): the floors and stairs `dev`, listed and built only with Free building, "Floors are not in the game yet", "Stairs are not in the game yet" (game #549)
 - `src/rules.js:1-7`, `src/rules.js:13-33`: the rules are the world's own, their defaults, Starting population's four words, Trees, Starting population, Extra starting items, and Dev bag fixed at creation, Extra starting items a text
@@ -85,6 +85,6 @@ In a [[Server worlds|server world]] the owner changes the five from the owner's 
 - `src/ui/screens.js:1020-1036`, `src/main.js:755-757`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
 - `src/game.js:77-82`, `src/game.js:215`, `src/game.js:282-283`, `src/save.js:34`: set at creation, kept in the save, restored from it with the defaults for any missing
 - `src/net.js:885`, `src/net.js:1126`, `src/game.js:429`: sent to guests when they change, in the sync check
-- `src/ui/screens.js:963-969`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
+- `src/ui/screens.js:963-969`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the four; a moved world's Trees and Starting population kept in its meta
 - `src/game.js:282-283`: a world's rules, the kit's two among them, restored from its save, a server world's too
 - `src/rules.js`, `src/settings.js`, `src/placement.js:105-117`, `src/stations.js:57-64`, `data/recipes.json`, `server/relay.js:243-258`: Village stations, a fixed rule, its words; the village's stations carried with it on; their recipes hidden while it is off; a moved world keeps it in its meta (game #431, at 49b8c44)

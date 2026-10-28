@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "eba3c56e1b6dd9a730aa3b50946d973cc2c1e5d7",
-  "short": "eba3c56",
-  "date": "2026-10-28T00:27:30-05:00",
-  "subject": "Merge pull request #555 from cmzgame/fix/batter-stays",
+  "commit": "26a0a8f6e34c9931e19a1b7367381a5969da72cd",
+  "short": "26a0a8f",
+  "date": "2026-10-28T01:18:10-05:00",
+  "subject": "Merge pull request #559 from cmzgame/rule/villagers-immune",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,13 +18,13 @@
   "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 38,
-  "rules": 10,
+  "settings": 37,
+  "rules": 9,
   "fixedRules": 5,
-  "liveRules": 5,
+  "liveRules": 4,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 102,
+  "menuLabels": 101,
   "events": 38,
   "checks": 92,
   "modules": 151
@@ -10547,11 +10547,6 @@
    "note": "on by default since 2026-10-15 (Michael: a sandbox setting, the dead hunt unless you turn them off); off they wander and ignore you (2026-10-10). A browser that saved its settings keeps its own"
   },
   {
-   "key": "zombiesAttackVillagers",
-   "default": "false",
-   "note": "on: the dead hunt villagers, whatever aggro says; with aggro on, the player first when both are in sight (two knobs on purpose, Michael 2026-10-15; docs/19)"
-  },
-  {
    "key": "swingTimer",
    "default": "true",
    "note": "a bar at the bottom centre of the screen while a swing recovers (World of Warcraft's swing timer; docs/21)"
@@ -10719,7 +10714,6 @@
  ],
  "rules": [
   "zombieAggro",
-  "zombiesAttackVillagers",
   "multiHit",
   "survival",
   "freeBuilding",
@@ -10903,7 +10897,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:434"
+    "stations.js:435"
    ]
   },
   {
@@ -11094,7 +11088,7 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:70"
+    "settings.js:69"
    ]
   },
   {
@@ -11106,7 +11100,7 @@
   {
    "key": "Belt slot order",
    "at": [
-    "settings.js:66"
+    "settings.js:65"
    ]
   },
   {
@@ -11142,25 +11136,25 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:63"
+    "settings.js:62"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:81"
+    "settings.js:79"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:85"
+    "settings.js:83"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:84"
+    "settings.js:82"
    ]
   },
   {
@@ -11212,7 +11206,7 @@
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:86"
+    "settings.js:84"
    ]
   },
   {
@@ -11224,13 +11218,13 @@
   {
    "key": "Floating numbers",
    "at": [
-    "settings.js:67"
+    "settings.js:66"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:76"
+    "settings.js:74"
    ]
   },
   {
@@ -11254,7 +11248,7 @@
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:83"
+    "settings.js:81"
    ]
   },
   {
@@ -11267,7 +11261,7 @@
   {
    "key": "Interface size",
    "at": [
-    "settings.js:61"
+    "settings.js:60"
    ]
   },
   {
@@ -11303,19 +11297,19 @@
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:77"
+    "settings.js:75"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:64"
+    "settings.js:63"
    ]
   },
   {
    "key": "Object Highlight",
    "at": [
-    "settings.js:82"
+    "settings.js:80"
    ]
   },
   {
@@ -11420,37 +11414,37 @@
   {
    "key": "Small text",
    "at": [
-    "settings.js:65"
+    "settings.js:64"
    ]
   },
   {
    "key": "Sound",
    "at": [
-    "settings.js:71"
+    "settings.js:70"
    ]
   },
   {
    "key": "Starting population",
    "at": [
-    "settings.js:80"
+    "settings.js:78"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:75"
+    "settings.js:73"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:69"
+    "settings.js:68"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:68"
+    "settings.js:67"
    ]
   },
   {
@@ -11474,7 +11468,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:78"
+    "settings.js:76"
    ]
   },
   {
@@ -11494,13 +11488,13 @@
   {
    "key": "Village stations",
    "at": [
-    "settings.js:79"
+    "settings.js:77"
    ]
   },
   {
    "key": "Volume",
    "at": [
-    "settings.js:72"
+    "settings.js:71"
    ]
   },
   {
@@ -11518,19 +11512,13 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:73"
-   ]
-  },
-  {
-   "key": "Zombies attack villagers",
-   "at": [
-    "settings.js:74"
+    "settings.js:72"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:62"
+    "settings.js:61"
    ]
   },
   {
@@ -11753,7 +11741,7 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:448"
+    "game.js:455"
    ]
   },
   {
@@ -11783,13 +11771,13 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:846"
+    "game.js:853"
    ]
   },
   {
    "key": "craftDone",
    "at": [
-    "stations.js:410"
+    "stations.js:411"
    ]
   },
   {
@@ -11801,7 +11789,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:821"
+    "game.js:828"
    ]
   },
   {
@@ -11844,7 +11832,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:920"
+    "game.js:927"
    ]
   },
   {
@@ -11874,7 +11862,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1108"
+    "entities/zombie.js:1110"
    ]
   },
   {
@@ -11904,13 +11892,13 @@
   {
    "key": "taintedOnly",
    "at": [
-    "game.js:822"
+    "game.js:829"
    ]
   },
   {
    "key": "talkStarted",
    "at": [
-    "entities/villager.js:320"
+    "entities/villager.js:326"
    ]
   },
   {
@@ -11929,19 +11917,19 @@
   {
    "key": "villagerDied",
    "at": [
-    "entities/villager.js:276"
+    "entities/villager.js:282"
    ]
   },
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1109"
+    "entities/zombie.js:1111"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:921",
+    "entities/zombie.js:923",
     "map.js:1694"
    ]
   },
@@ -11950,7 +11938,7 @@
    "at": [
     "archery.js:976",
     "combat.js:455",
-    "game.js:732"
+    "game.js:739"
    ]
   },
   {
@@ -12175,7 +12163,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 1122
+   "lines": 1124
   },
   {
    "path": "archery.js",
@@ -12191,7 +12179,7 @@
   },
   {
    "path": "game.js",
-   "lines": 942
+   "lines": 949
   },
   {
    "path": "ui/inventory-panel.js",
@@ -12235,7 +12223,7 @@
   },
   {
    "path": "stations.js",
-   "lines": 450
+   "lines": 451
   },
   {
    "path": "entities/player.js",
@@ -12259,7 +12247,7 @@
   },
   {
    "path": "entities/villager.js",
-   "lines": 374
+   "lines": 380
   },
   {
    "path": "render/scene.js",
@@ -12446,11 +12434,11 @@
    "lines": 152
   },
   {
-   "path": "settings.js",
-   "lines": 147
+   "path": "rugs.js",
+   "lines": 145
   },
   {
-   "path": "rugs.js",
+   "path": "settings.js",
    "lines": 145
   },
   {
@@ -12611,7 +12599,7 @@
   },
   {
    "path": "rules.js",
-   "lines": 68
+   "lines": 69
   },
   {
    "path": "sick.js",

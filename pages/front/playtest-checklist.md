@@ -93,14 +93,13 @@ Each area lists its newest changes first. The box at the front of each entry is 
 
 ## Villagers & animals
 
+- ☐ **Every villager is immune to the dead** (game #559, #187, merged 2026-10-28): Lead one of the dead to any villager, the Reeve or the Miller as well as Wyn, the Innkeeper, or the Priest: it never chases or bites them, and they cower, run a few tiles off, and stand wary until it goes. Board yourself in behind a shut window at night and let a villager walk past the one battering it: the dead one stays on your window. On New world's Sandbox step and on the pause menu's World rules: no Zombies attack villagers, four switches under How it plays. Read: [[Villagers]], [[The dead]], [[World rules]].
 - ☐ **Keeping: leads, troughs, milk, wool, eggs** (game #460, merged 2026-10-25): Make a lead at the workbench and lead a cow into a fenced yard; let go and it stays. Fill a feeding trough with grain or hay (cut with the scythe). The next day milk the cow into an empty bucket, shear a sheep with shears from the anvil, and find an egg in the coop. Two fed of a kind breed. Read: [[Keeping]], [[Lead]], [[Feeding trough]], [[Chicken coop]].
 - ☐ **Hunting, skinning, butchering** (game #456, merged 2026-10-25): Shoot a deer with the bow, then skin and butcher the carcass with a dirk carried for raw meat and a hide (the bow gives the full yield, melee less, the halberd nothing). Strike a boar and it charges. Make a snare at the workbench and set it for rabbits. Read: [[Hunting]], [[Meat]], [[Snare]], [[Dirk]].
 - ☐ **Animals in the world** (game #452, merged 2026-10-25): Find deer, rabbits, and boar in the woods round the valley, hens at Hollow Farm's coop, cows and pigs in pens west of the orchard, sheep at the croft's sheepfold past the ford. Deer and rabbits run from you; the dead ignore animals. Look at says what one is doing. Read: [[Animals]].
-- ☐ **Immune villagers cower and flee** (game #434, merged 2026-10-25): Bring one of the dead within about 3 tiles of Wyn: Wyn cowers with arms up and a "!" bubble, runs about 4 tiles off, and walks back once the dead are gone. A cowering villager does not answer Talk. Read: [[Villagers]], [[Wyn]].
+- ☐ **Villagers cower and flee** (game #434, merged 2026-10-25; every villager since #559): Bring one of the dead within about 3 tiles of Wyn (or any villager): Wyn cowers with arms up and a "!" bubble, runs about 4 tiles off, and walks back once the dead are gone. A cowering villager does not answer Talk. Read: [[Villagers]], [[Wyn]].
 - ☐ **Conversations on parchment** (game #230, #297, merged 2026-10-20): Press E beside a villager or choose Talk to: a parchment panel opens above the belt with blue text links to continue, pick a question, or end with That's all for now. The villager stops and faces you; walking away or a wall between ends it. Read: [[Talk]], [[Wyn]], [[Villagers]], [[Chat log]].
-- ☐ **Hurt villagers heal** (game #238, merged 2026-10-17): Let the dead wound a villager but not kill them, then drive the dead off: the villager heals slowly, about a health a minute, starting a little after the last hit. Read: [[Villagers]].
 - ☐ **Villagers talk; Wyn the guide** (game #220, merged 2026-10-17): Poke a villager for a line of their own that fits the moment (night, dawn, the dead near), and stand near them for unprompted remarks. Wyn stands just outside your cottage's door; a first poke by day says "Ask me anything, if you are stuck." Read: [[Talk]], [[Wyn]], [[Villagers]].
-- ☐ **Immune villagers** (game #187, merged 2026-10-17): Lead the dead to the Innkeeper or the Priest: they are never hunted or hurt, whatever the world rules say. Other villagers, such as the Miller, can still be bitten. Read: [[Villagers]], [[Innkeeper]], [[Priest]].
 
 ## Building & home
 
@@ -192,6 +191,7 @@ Each area lists its newest changes first. The box at the front of each entry is 
 
 ## Bug fixes
 
+- ☐ **A round wall goes up over a corpse** (game #556, merged 2026-10-28): With Free building on, kill one of the dead, then drag a Round stone wall so its outline crosses the body: it builds, as a straight wall does. With one of the dead standing on the outline it still says "Someone is in the way". Read: [[Round rooms]].
 - ☐ **Fixed: tree crowns flickered** (game #544, merged 2026-10-27): Walk through the woods past trees whose crowns overlap: no bars of one tree flash over the other as you walk. Read: [[Trees]].
 - ☐ **Fire pit light, and a campfire on water** (game #531, merged 2026-10-27): Light a fire pit at night: its pool is centred on its flames, not on its back tile. Try to Place a campfire on the river's ford: "Not on water"; on someone standing there: "Someone is in the way" (since game #553 a corpse no longer counts). Read: [[Fire pit]], [[Campfire]], [[Light]].
 - ☐ **Playtest fixes, second batch** (game #507, merged 2026-10-26): On the Worlds page, Delete a world: the question shows on the page, with Delete and Cancel (so do Exit with friends in, Move to the server, Bring it home, and Delete identity). Hold the throwing spear and drag a shovel to the off hand: "The throwing spear can't be held beside the shovel: it is never dual wielded." Pick a recipe low in a long cooking list: the list stays where it was scrolled. With a bucket and a skin, right-click a crop: "Water with the bucket", then "Water with the waterskin", each using its own. Use the bucket on a crop at your cottage or the farms: it waters, and in Use mode the crop under the pointer is outlined. Inspect a crop: a card above it with a ×, closed by it or Escape. Start placing a build, a rug, or a campfire and right-click: the ghost goes, with no menu. Hover a tainted skin: its first line is red. Drink your clean starting skin part down and Fill waterskins at a well: it stays clean; with only clean skins the entry reads "Fill waterskins (they hold clean water)". Carry only tainted water until Thirsty: "Your waterskins hold only tainted water: boil it at a lit fire." Hover the throwing knife: "9 to 18 damage by the draw". Read: [[Worlds]], [[Screens]], [[Throwing spear]], [[Crafting]], [[Bucket]], [[Farming]], [[Controls]], [[Waterskin]], [[Water]], [[Throwing knife]].
@@ -231,8 +231,8 @@ Done since they were filed: **floors built a tile at a time** (game #538, built 
 
 ## Sources
 
-<!-- sources at eba3c56 -->
-- The game's merged pull requests, #128 to #555, named in each entry: their bodies say what a player can try
+<!-- sources at 26a0a8f -->
+- The game's merged pull requests, #128 to #559, named in each entry: their bodies say what a player can try
 - The playtest checklist's items, written from those pull requests for Michael's playtest (2026-10-26)
 - `data/tuning.json` `player.hp`: a player's health, a hundred
 - `data/items.json`: the bags, `bag` on the burlap sack, the linen satchel, and the rucksack

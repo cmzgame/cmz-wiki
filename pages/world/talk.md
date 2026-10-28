@@ -14,7 +14,7 @@ Villagers talk. Each one who has talk of their own says a line suited to the mom
 A villager's talk is a list of **bark groups**. Each group has the lines it says and, usually, a condition saying when it holds: at night, at dawn, with one of the dead within {{n tuning.villager.barkDeadRadius tiles}} of the villager, while another villager lives, and so on. Within a group the lines take turns, one after another, for each villager, so a villager poked twice says two different lines. Nothing about it is random.
 
 - **Poked** (a left click on them, or **Poke** on their menu; see [[Villagers]]), a villager stops, turns to you, and says a line from the first group that holds. They stay put for at least {{n tuning.villager.talkTime}} seconds, or while the line lasts.
-- **Unprompted**, a villager standing or wandering says a line from the first group marked for it that holds, with a living player within {{n tuning.villager.barkRadius tiles}} of them, at most once every {{n tuning.villager.barkCooldown seconds}} of game time. One standing still turns toward the nearest player as they say it. A villager who is talking or dead says nothing unprompted; a wounded one still does.
+- **Unprompted**, a villager standing or wandering says a line from the first group marked for it that holds, with a living player within {{n tuning.villager.barkRadius tiles}} of them, at most once every {{n tuning.villager.barkCooldown seconds}} of game time. One standing still turns toward the nearest player as they say it. A villager who is talking says nothing unprompted.
 
 A villager whose talk has nothing for the moment, or who has no talk yet (the [[Miller]]), says their map line instead: the line in the box on their page, or "Hey!" when the map gives none.
 
@@ -37,9 +37,9 @@ Every villager in [[The valley]] but the Miller has talk of their own: [[Wyn]], 
 
 Each line also goes into your own [[Chat log]] in the villager's name. Everything is a click: no key is taken from you while the panel is open, and the world keeps running, so you can still walk, fight, and use your belt.
 
-A conversation ends with That's all for now, at the end of a thread, with the X, or with `Escape` (in the order the panels close). It also ends when you walk more than {{n tuning.villager.talkWalkAway tiles}} past the reach of {{n tuning.villager.talkReach tiles}}, or lose the clear line to them, or when the villager is struck, turned, or killed. They stand a moment, then go back to what they were doing. Talking to a second villager ends the first conversation.
+A conversation ends with That's all for now, at the end of a thread, with the X, or with `Escape` (in the order the panels close). It also ends when you walk more than {{n tuning.villager.talkWalkAway tiles}} past the reach of {{n tuning.villager.talkReach tiles}}, or lose the clear line to them. They stand a moment, then go back to what they were doing. Talking to a second villager ends the first conversation.
 
-A villager with the dead within {{n tuning.villager.talkDeadRadius tiles}} of them, or with no talk of their own (the [[Miller]]), will not hold a conversation: Talk to gets a line, as a poke does. A wounded villager still talks; only the dead do not.
+A villager with the dead within {{n tuning.villager.talkDeadRadius tiles}} of them, or with no talk of their own (the [[Miller]]), will not hold a conversation: Talk to gets a line, as a poke does.
 
 The guide's conversation is the longest (see [[Wyn]]); each of the others has a short one in their own voice.
 

@@ -9,7 +9,7 @@ summary: Wyn, the guide, stands just outside your cottage's door, immune to the 
 
 **Wyn** is the guide: a neighbour from the farm lane who came up to your yard when the chapel bell stopped, and has not gone home. They stand just outside the door of [[Your cottage]], so they are the first person you see on stepping out. Every map the game makes has its guide beside the spawn.
 
-Like every villager, they carry no weapon and never fight. They wander a little, never more than {{n tuning.villager.wanderRadius}} tiles from where they started and never through a wall, and stand idle between walks. A left click on them within {{n census.constants.interact.CLICK_REACH}} tiles, or **Poke** from the right-click menu, makes them stop, turn to face you, and say a line. Wyn is **immune** to the dead: whatever the world rules say, the dead never hunt them and nothing harms them. They still fear them: one of the dead within {{n tuning.villager.cowerRadius tiles}} and in sight makes Wyn cower with a "{{n tuning.villager.cowerBubble}}", run a few tiles off, and stand wary until it is gone, then walk back (see [[Villagers#The immune cower|Villagers]]).
+Like every villager, they carry no weapon and never fight. They wander a little, never more than {{n tuning.villager.wanderRadius}} tiles from where they started and never through a wall, and stand idle between walks. A left click on them within {{n census.constants.interact.CLICK_REACH}} tiles, or **Poke** from the right-click menu, makes them stop, turn to face you, and say a line. Wyn is **immune** to the dead, as every villager is: the dead never hunt or bite them. They still fear them: one of the dead within {{n tuning.villager.cowerRadius tiles}} and in sight makes Wyn cower with a "{{n tuning.villager.cowerBubble}}", run a few tiles off, and stand wary until it is gone, then walk back (see [[Villagers#Fleeing the dead|Villagers]]).
 
 ## What they say
 
@@ -43,5 +43,6 @@ A guest pokes Wyn, or talks to them, as the host's player does, by the same comm
 - `src/net.js:1279-1280`, `src/net.js:634-638`, `src/interact.js:1533-1538`: a guest's poke goes to the host as a command, which pokes the villager there
 
 - `src/entities/villager.js:77-188`, `data/tuning.json:149-154`: an immune villager cowers, runs, stands wary, and walks back (game #434, at fa2997f)
+- `src/entities/villager.js:35-38`, `src/game.js:128`, `src/game.js:347-354`, `src/entities/zombie.js:442-458`, `src/entities/villager.js:244-247` (at 26a0a8f): immune, as every villager is (a map entry would have to say `immune: false`, and none does), read from the map again at a restore; never the dead's prey, a bite taking nothing (game #559)
 
 {{navbox places}}

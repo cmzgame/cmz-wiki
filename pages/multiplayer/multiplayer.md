@@ -33,7 +33,7 @@ A world remembers which survivor belongs to which browser, so a friend who comes
 
 ### The host's rules
 
-The [[World rules|world rules]] belong to the world, not to each player: **Zombie aggro**, **Zombies attack villagers**, **Survival**, **Free building**, and **Multi-hit**, which the host changes from **World rules** on the pause menu, and **Trees** and **Starting population**, chosen when the world was made. They are kept in the world's save. A guest's World rules screen shows them as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
+The [[World rules|world rules]] belong to the world, not to each player: **Zombie aggro**, **Survival**, **Free building**, and **Multi-hit**, which the host changes from **World rules** on the pause menu, and **Trees** and **Starting population**, chosen when the world was made. They are kept in the world's save. A guest's World rules screen shows them as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
 
 ### The world never pauses
 
@@ -83,6 +83,7 @@ The [[World rules|world rules]] above, set by the host.
 ## Sources
 
 <!-- sources at 2a9a308 -->
+- `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
 - `src/netsmooth.js`, `data/tuning.json` `feel.netDelaySteps`, `netSlew`, `netJump`: remote bodies on a guest drawn a fixed delay behind the host's frames, smoothed, a far jump not (game #249)
 - `src/save.js:152-173`, `src/main.js:699-720`: a world of the browser, opened and closed to friends as a switch
 - `src/net.js:730`, `src/net.js:767-874`: the host runs the world and sends it every `FRAME_EVERY` steps; a guest's walk predicted and corrected

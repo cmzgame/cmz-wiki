@@ -15,7 +15,7 @@ A careful pull still takes one at a time: a throw or an arrow at one at the edge
 
 One of the dead calls when it turns to hunt a player **first-hand**:
 
-- **It sees a player.** Its first sight of a player while it is not hunting one is a call, even if it was already walking to a flame or after a [[Villagers|villager]].
+- **It sees a player.** Its first sight of a player while it is not hunting one is a call, even if it was already walking to a flame.
 - **A player's blow lands on it and it lives.** A swing, the [[Shove|shove]], an [[Archery|arrow]], a throw, or the [[Fireball]] count. It calls on its next step, even while it reels or lies floored by that blow. A killing blow calls no one. A burn's or a poison's tick is not a blow and calls no one (see [[Burning]] and [[Poison]]).
 
 It calls once, at that turn, and never again while that hunt lasts: walking past another group later brings no one. When the hunt ends (it gives up after its search, see [[The dead#Memory and search|The dead]]), its next first-hand turn is a call again.

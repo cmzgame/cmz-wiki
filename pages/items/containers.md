@@ -50,7 +50,7 @@ Each table is rolled a number of times, and each roll picks one row by its weigh
 
 ### The dead
 
-A body can be searched in the same way: the first search rolls the body's pockets and lays out everything it had on a grid of 6 × 6, what it held, what it wore, its pockets, and anything lodged in it. Taking a garment off the grid takes it off the body. Villagers' bodies cannot be searched. The dead's pockets roll {{n loot.body.rolls.0}} to {{n loot.body.rolls.1}} times:
+A body can be searched in the same way: the first search rolls the body's pockets and lays out everything it had on a grid of 6 × 6, what it held, what it wore, its pockets, and anything lodged in it. Taking a garment off the grid takes it off the body. The dead's pockets roll {{n loot.body.rolls.0}} to {{n loot.body.rolls.1}} times:
 
 {{loot-table body}}
 
@@ -96,7 +96,7 @@ A search chosen by a guest is carried out by the host, and so is an Open of a ba
 - `data/loot.json`: the chest, barrel, and body tables, their rolls and weights
 - `data/loot.json`: the fixed tables (`fixed`, no rolls) and the wild table; `tools/mapgen/valley.py`: the farms' haystacks placed with `loot="wild"`, the fixed chests with their own (game #210, #216, #219)
 - `src/entities/character.js:139-162`: a body's grid of 6 x 6, its hands, garments, pockets, and what is lodged
-- `src/interact.js:1334-1358`: searching a body; villagers have no search entry
+- `src/interact.js:1334-1358`: searching a body
 - `data/wardrobes.json`: village wardrobes have no loot
 - `src/placement.js:69-75`: what can be carried
 - `tools/mapgen/mapgen.py:23-30`, `data/sprites/cupboard.json`: a drawn chest, shelf, or cupboard faces away from its wall, `y` against a west wall and `x` its mirror against a north one (art rounds 4 and 5; game #519, at ece297c)

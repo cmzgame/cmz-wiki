@@ -34,7 +34,7 @@ One of the dead that dies while [[Burning]] burns on as a corpse until its fire'
 
 ## Burning a body
 
-**Burn corpse**, on the right-click menu of every body of the dead (a villager who rose and fell again among them), sets it alight on purpose. A fallen player's body never has it: that is left for their friends to come back to.
+**Burn corpse**, on the right-click menu of every body of the dead, sets it alight on purpose. A fallen player's body never has it: that is left for their friends to come back to.
 
 - It needs a flame and nothing else: a [[Tinderbox]] anywhere on you, or a lit [[Torch]] in a hand. Nothing is spent. With neither the entry is greyed: "Burn corpse (need a tinderbox or a lit torch)".
 - A body already burning, set alight before or still burning from its own death (above), shows "Burn corpse (already burning)".

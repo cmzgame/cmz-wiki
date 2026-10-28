@@ -30,7 +30,7 @@ Without a relay, a friend can join only from another tab of the same browser; th
 
 ### What the host decides
 
-The world's [[World rules|rules]] are the host's: Zombie aggro, Zombies attack villagers, Survival, Free building, and Multi-hit, changed from **World rules** on the pause menu, and Trees and Starting population, chosen when the world was made and never changed. A change reaches every guest at once. A guest's World rules screen shows them as the host set them, each marked "(the host's)" and locked. Everything in [[Settings]] (zoom, cursor, the swing timer, and so on) is each player's own.
+The world's [[World rules|rules]] are the host's: Zombie aggro, Survival, Free building, and Multi-hit, changed from **World rules** on the pause menu, and Trees and Starting population, chosen when the world was made and never changed. A change reaches every guest at once. A guest's World rules screen shows them as the host set them, each marked "(the host's)" and locked. Everything in [[Settings]] (zoom, cursor, the swing timer, and so on) is each player's own.
 
 The host's clock is the world's clock.
 
@@ -60,6 +60,7 @@ The world rules, as above: see [[World rules]] for each and its default.
 ## Sources
 
 <!-- sources at 2a9a308 -->
+- `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
 - `src/main.js:699-720`: Open to friends as a switch, the code kept with the world and opened again when next played, the opening and closing messages
 - `src/ui/screens.js:979-991`, `src/ui/screens.js:156-164`: the host screen: the code, Copy, who is in, Open or Close
 - `src/net.js:92-101`: the code's shape, two tree words and four characters

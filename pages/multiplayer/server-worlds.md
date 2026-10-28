@@ -32,7 +32,7 @@ A lost owner key can be replaced from the same screen with the creator key: the 
 **Owner**, on the world's row or on the pause menu while in it, opens the owner's screen:
 
 - **Change the code**: the old code stops working at once; whoever is in stays.
-- **The world's rules**: the [[World rules|world rules]], each with the same label and line as at New world. The {{n census.counts.liveRules}} that play can change (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit) are switches, set for the world and reaching everyone in it at once; Trees and Starting population are shown locked, "(set when the world was made)". A world moved up from a browser keeps the ones it was made with.
+- **The world's rules**: the [[World rules|world rules]], each with the same label and line as at New world. The {{n census.counts.liveRules}} that play can change (Zombie aggro, Survival, Free building, Multi-hit) are switches, set for the world and reaching everyone in it at once; Trees and Starting population are shown locked, "(set when the world was made)". A world moved up from a browser keeps the ones it was made with.
 - **Remove** a player: they are told "The world's owner removed you from it.", their character goes dormant, and their browser is barred from the world.
 - **Remove and change the code**: the same, with a new code.
 - **Let back in**: lifts a bar.
@@ -54,6 +54,7 @@ A server world is made for friends: nobody has to keep a browser open for the ot
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
 - `server/world.js`, `server/relay.js:73-110`: a world on the server, run while anyone is in it, held still when empty
 - `server/relay.js:777-797`: a guest's join wakes a sleeping world
 - `src/ui/screens.js:474-479`, `src/main.js:1372`: Move to the server on a browser world not in play

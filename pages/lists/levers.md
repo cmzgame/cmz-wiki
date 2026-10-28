@@ -24,7 +24,7 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **Sight-pull:** one of the dead turning to hunt a player calls the dead within {{n tuning.zombie.pullRadius tiles}} that can see it, scaled by the light on the caller as their sight is; set to zero, no one is called. The caller's line "{{n tuning.zombie.pullText}}", and the "{{n tuning.zombie.pullBubble}}" over each one drawn in for {{n tuning.zombie.pullBubbleSeconds seconds}}, are levers too. Michael ruled the rule (one call, no chain); the numbers are Primary's defaults. See [[Sight-pull]].
 - **The flame's pull at night:** a lit flame draws the dead from up to {{n tuning.zombie.flameRange tiles}}, scaled by how dark it is and less for a torch on the belt, once one has gone {{n tuning.zombie.flamePatience seconds}} without seeing a player. A fixed flame (a fire, a lantern, a torch on a wall) takes only the dead with no player to follow, never one hunting a player, holding a siege, or breaking a door or a window; a torch a player carries leads any. The two numbers are data; the rule of who is drawn is in the code (Michael's ruling of 2026-10-27). See [[The dead#Flames at night|The dead]].
 - **Bite tokens:** of the dead in reach of one target, {{n tuning.zombie.biteTokens}} may bite at once, plus one more for every {{n tuning.zombie.biteTokensPer}} in reach beyond the first {{n tuning.zombie.biteTokensPer}}. See [[The dead]].
-- **The floor:** one of the dead knocked down stays down {{n tuning.zombie.downTime seconds}} and takes {{n tuning.zombie.getUpTime seconds}} to get up; a villager who has just turned lies {{n tuning.zombie.turnDownTime seconds}}. See [[Stagger and knockdown]].
+- **The floor:** one of the dead knocked down stays down {{n tuning.zombie.downTime seconds}} and takes {{n tuning.zombie.getUpTime seconds}} to get up; a villager who had just turned would lie {{n tuning.zombie.turnDownTime seconds}}, a number nothing reaches while every villager is immune. See [[Stagger and knockdown]].
 
 ### The player's blows
 
@@ -86,7 +86,8 @@ Where a lever lives only in the game's code, not its data, this page says so.
 - **Tainted water and Sick:** a tainted drink makes you [[Sick]] {{pct tuning.water.sickChance}} of the time, a stack lasting {{n tuning.water.sickDays}} of a game day, up to {{n tuning.water.sickMaxStacks}} stacks; Sick makes tiredness come {{n tuning.water.sickTiredMult}} times as fast and food heal {{pct tuning.water.sickHealMult}} of its number; a tainted drink gives the infection {{pct tuning.water.infectionChance}} of the time; boiling a skin takes {{n tuning.water.boilSeconds seconds}} and a bucket {{n tuning.water.bucketBoilSeconds seconds}} at a lit fire within {{n tuning.water.boilReach tiles}}. See [[Water]], [[Bucket]].
 - **Sleep's speed:** while every living player sleeps, the world runs {{n tuning.player.sleepTimeScale}} times as fast (until the playtest of 2026-10-26, three times faster); the screen fades to black and back over {{n tuning.feel.sleepFadeSeconds seconds}}. See [[Sleep]].
 - **The wave:** {{n tuning.player.waveSeconds seconds}} long, on `G`. See [[Controls]].
-- **The cowering of the immune:** one of the dead in sight within {{n tuning.villager.cowerRadius tiles}} makes an immune villager cower {{n tuning.villager.cowerSeconds seconds}}, then run about {{n tuning.villager.fleeTiles tiles}} at {{n tuning.villager.fleeSpeed}} times its walk, and walk back once none is within {{n tuning.villager.cowerClearRadius tiles}}. See [[Villagers]].
+- **Villagers immune to the dead:** a flag on each villager in the map, true unless its entry says otherwise; every villager is immune, none is marked otherwise, and there is no world setting for it (Zombies attack villagers was removed). Immune for now and changeable later: a later ruling flips the map's data, not the code. See [[Villagers]].
+- **The cowering:** one of the dead in sight within {{n tuning.villager.cowerRadius tiles}} makes a villager cower {{n tuning.villager.cowerSeconds seconds}}, then run about {{n tuning.villager.fleeTiles tiles}} at {{n tuning.villager.fleeSpeed}} times its walk, and walk back once none is within {{n tuning.villager.cowerClearRadius tiles}}. See [[Villagers]].
 
 ## World settings
 
@@ -95,7 +96,6 @@ Where a lever lives only in the game's code, not its data, this page says so.
 Chosen at the Sandbox step of New world; see [[World rules]] for what each does.
 
 - **Zombie aggro**, {{default zombieAggro}} by default.
-- **Zombies attack villagers**, {{default zombiesAttackVillagers}}.
 - **Survival**, {{default survival}}.
 - **Free building**, {{default freeBuilding}}: the only way to build a [[Round rooms|round room]], lay a floor, or build a stair for now.
 - **Multi-hit**, {{default multiHit}}: "the easy button".
@@ -120,6 +120,7 @@ On the [[Settings]] screen, kept in the browser.
 ## Sources
 
 <!-- sources at ce21ffc -->
+- `src/entities/villager.js:35-38`, `src/game.js:128`, `src/game.js:347-354`, `src/settings.js` (at 26a0a8f): a villager's `immune`, true unless its map entry says `immune: false`, the map's word again at a restore; Zombies attack villagers removed (game #559)
 - `data/build.json:146-157`, `src/map.js:67`, `src/round.js:9`, `src/render/rings.js:22`, `data/sprites/wall_fence.json` (at da57a57): the round stone wall's cost and seconds, the storey, the chords and segments, the fence's height (games #533, #536)
 - `data/items.json:13-14` `thrown`, `data/recipes.json:858-893`, `data/combat.json:6` `poison`, `data/items.json:24` `bow.ammo` (at 307ed34): the throwing knife's and axe's numbers and recipes, the poisons' numbers, the bow's order (games #494, #496)
 - `docs/42-levers.md`: the list of levers and world settings, their kinds, and the rulings behind each

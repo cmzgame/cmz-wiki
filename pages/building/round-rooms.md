@@ -45,7 +45,7 @@ The ghost is red, with the reason, unless:
 - every tile of the room is open floor, not water ("Not on water or empty ground"), with nothing standing on it ("Something is in the way"), nothing lying on it ("Clear the floor first"), and no wall between two of its tiles ("A wall is in the way");
 - no other round room's square overlaps it ("Another round room is there");
 - every edge of its outline is empty, a plain wall, or a door or a window already at a door point: a fence refuses it ("Not over a fence"), as does a door or a window anywhere else on the outline ("A door or a window is in the way") and a lantern in a bracket ("A lantern is in the way");
-- its nearest edge is within reach ("Too far"), and nobody stands across its outline ("Someone is in the way"; "Step back" when it is you);
+- its nearest edge is within reach ("Too far"), and nobody living stands across its outline ("Someone is in the way"; "Step back" when it is you), a corpse lying across it not counting;
 - its outline crosses no stair's run or top ("Not across a stair", "Not across a stair's top"); nor may a stair be built with a ring's curve over its stairwell or its landing (see [[Upper floors]]).
 
 A plain wall already on the outline is taken into the ring: a round room can stand against a house as an apse, the house's wall drawn as the curve. A torch on that wall falls to the floor, put out, and a painting falls whole. A door or a window already at a door point stays where it is.
@@ -81,6 +81,7 @@ A guest builds a round room through the same path as the host: their drag sends 
 ## Sources
 
 <!-- sources at a0cf5a2 -->
+- `src/stations.js:245-248`, `src/placement.js:130` (at 26a0a8f): a body across the outline refuses the ring, a corpse never (game #556, as a straight wall since #553)
 - `data/build.json:146-157`: the Round stone wall, stone, its cost an edge, its seconds, `dev` (game #536)
 - `src/round.js:8-11`, `src/round.js:77-114`: the sizes, the stepped tiles, the outline, the door points, the curve's chords
 - `src/map.js:1308-1319`: the curve-crossed tiles, "Not against the curve"

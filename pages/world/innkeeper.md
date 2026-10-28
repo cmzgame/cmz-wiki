@@ -8,7 +8,7 @@ summary: The Innkeeper keeps The inn on the square, and is one of the few people
 
 The **Innkeeper** keeps [[The inn]] on the square, and is one of the few people still alive in the valley.
 
-Like every villager, they carry no weapon and never fight. They wander a little, never more than {{n tuning.villager.wanderRadius}} tiles from where they started and never through a wall, and stand idle between walks. A left click on them within {{n census.constants.interact.CLICK_REACH}} tiles, or **Poke** from the right-click menu, makes them stop, turn to face you, and say their line; they stay put for at least {{n tuning.villager.talkTime}} seconds before they wander again. The Innkeeper is **immune** to the dead: whatever the world rules say, the dead never hunt them and nothing harms them. See [[Villagers]].
+Like every villager, they carry no weapon and never fight. They wander a little, never more than {{n tuning.villager.wanderRadius}} tiles from where they started and never through a wall, and stand idle between walks. A left click on them within {{n census.constants.interact.CLICK_REACH}} tiles, or **Poke** from the right-click menu, makes them stop, turn to face you, and say their line; they stay put for at least {{n tuning.villager.talkTime}} seconds before they wander again. The Innkeeper is **immune** to the dead, as every villager is: the dead never hunt or bite them. They still fear them: one of the dead near and in sight makes them cower, run a few tiles off, and stand wary until it is gone, then walk back (see [[Villagers#Fleeing the dead|Villagers]]).
 
 ## What they say
 
@@ -35,8 +35,9 @@ The Innkeeper stands in the taproom of [[The inn]], near the counter, and wander
 - `data/talk/innkeeper.json`, `src/talk.js:124-141`: their bark groups, the first that holds, its lines in turn (game #220)
 - `data/talk/innkeeper.json`, `src/entities/villager.js:194-222`: their conversation, on Talk to (game #230)
 - `src/entities/villager.js:224-244`, `data/tuning.json:89-90`: a remark unprompted, from an `ambient` group, with a living player within `barkRadius`, not twice inside `barkCooldown`, never talking or dead (a wounded one too, game #230)
-- `data/maps/valley.json:12300-12309`, `src/game.js:103`, `src/entities/villager.js:45`: the Innkeeper flagged `immune` in the map (game #187)
-- `src/entities/zombie.js:352-367`, `src/entities/villager.js:131-132`, `src/game.js:397`: the dead never pick an immune villager as prey, and a blow to one does nothing, whatever the world rules
+- `data/maps/valley.json:12300-12309`: the Innkeeper flagged `immune` in the map (game #187), as every villager now is, flag or none (game #559)
+- `src/entities/villager.js:35-38`, `src/game.js:128`, `src/game.js:347-354`, `src/entities/zombie.js:442-458`, `src/entities/villager.js:244-247` (at 26a0a8f): immune, as every villager is (a map entry would have to say `immune: false`, and none does), read from the map again at a restore; never the dead's prey, a bite taking nothing (game #559)
+- `src/entities/villager.js:84-156`, `src/entities/villager.js:161`, `data/tuning.json` `villager` (at 26a0a8f): the cowering, the flight, standing wary, and the walk back, for every villager (game #434, #559)
 - `data/maps/valley.json:5806-5871`: seven villagers in the valley
 - `data/maps/valley.json:12300-12309`: the Innkeeper's line and tile
 - `tools/mapgen/valley.py:609`, `data/maps/valley.json:1856-1866`: they stand in the taproom near the counter

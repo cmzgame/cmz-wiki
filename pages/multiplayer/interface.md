@@ -67,7 +67,7 @@ The game goes on while any panel is open, and the world's keys and clicks still 
 
 Numbers rise over heads as things happen, like the combat text of other games:
 
-- **A red number**, with a minus sign, over whoever is hit: you, one of the dead, a villager, or another player. The damage you take and the damage you deal both show, each over the head it was done to.
+- **A red number**, with a minus sign, over whoever is hit: you, one of the dead, or another player. The damage you take and the damage you deal both show, each over the head it was done to.
 - **A green number**, with a plus sign, over whoever is healed. For now only [[Food]] heals with a number; healing by itself over time, burning, bleeding, and starving show none.
 - **A skill's small picture and a number** over whoever gathers: the logs from chopping (Woodcutting), the ore and stone from mining (Mining), a fish caught (Fishing), what is picked or harvested (Farming), and honey taken from a hive (Beastlore). Until skills are built, the number is how many things were gained. It is white with a black edge in the dark and black with a white edge in the light, so it is never taken for a red or a green one. Herbalism has no number yet.
 

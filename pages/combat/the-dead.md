@@ -24,11 +24,13 @@ The dead see the [[Player]] by the same rule the player sees by: a clear line (s
 
 The dead ignore [[Animals|animals]], wild and tame: they never chase, bite, or count one, though deer and rabbits run from them.
 
+They never hunt or bite a [[Villagers|villager]] either: every villager is immune to them, so a villager walking past never draws one of the dead off a player, a window or a door it is breaking, or a house it is waiting about. A villager who sees one of the dead near cowers and runs a few tiles off (see [[Villagers#Fleeing the dead|Villagers]]).
+
 ### Flames at night
 
 At night, once one of the dead has not seen a player for {{n tuning.zombie.flamePatience seconds}}, it can be drawn by a lit flame in its line of sight on its own floor, from as far as {{n tuning.zombie.flameRange tiles}} in full dark. A torch a player carries counts as seeing its carrier. Two torches are seen {{n tuning.world.twoTorches}} times as far; a torch on the belt is seen from {{n tuning.world.beltLight}} times as far.
 
-**A fixed flame never draws one of the dead off a player's trail.** A fire, a lantern, or a torch on a wall is ignored by one hunting a player (until its search runs out and it gives them up), one holding a siege on a house it saw a player go into, and one breaking a door or a window's shutters or boards: each stays on what it is doing, and loses the trail only by its own rules. A torch a player carries still leads one hunting, since following it is following the player. Only the dead with no player to follow (idle, wandering, after a villager, or already walking to a flame) go to a fixed flame. So a fire lit by the house does not draw away the dead that know you are inside.
+**A fixed flame never draws one of the dead off a player's trail.** A fire, a lantern, or a torch on a wall is ignored by one hunting a player (until its search runs out and it gives them up), one holding a siege on a house it saw a player go into, and one breaking a door or a window's shutters or boards: each stays on what it is doing, and loses the trail only by its own rules. A torch a player carries still leads one hunting, since following it is following the player. Only the dead with no player to follow (idle, wandering, or already walking to a flame) go to a fixed flame. So a fire lit by the house does not draw away the dead that know you are inside.
 
 ### Memory and search
 
@@ -128,7 +130,6 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 ## Settings that change it
 
 - **Zombie aggro** (default on): on, they behave as described here. Off, the dead never see the player and never hunt them; they wander, and a hit does not make them hunt. Flames do not draw them either. It is a [[World rules|world rule]], chosen at New world and changed from the pause menu; a browser that saved its settings before aggro came on by default offers its old choice first at New world.
-- **Zombies attack villagers** (default off): on, one of the dead that sees no player hunts the nearest of the [[Villagers]] it can see, with the same sight and memory, and bites them. A villager flagged immune, the [[Innkeeper]] and the [[Priest]] in the valley, is never hunted or harmed, with the setting on or off. It works whatever Zombie aggro says: with aggro off the dead ignore players and still hunt villagers; with aggro on, players are always preferred when in sight. The two are separate settings on purpose. A bitten villager flinches for {{n tuning.villager.hurtTime seconds}}; one bitten to death gets up as one of the dead in what they wore.
 
 - **Starting population** (default Standard), chosen when the world is made: None, Low, Standard, or High, how many of the dead the world starts with and each wild chunk brings.
 
@@ -149,7 +150,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 <!-- sources at 879d0a7 -->
 - `src/entities/zombie.js:389-405`, `src/entities/zombie.js:492`, `src/entities/zombie.js:328`, `src/entities/movement.js:49-60` (at da57a57): the dead on stairs, seeing a storey away only by a stair, following by it, biting on one layer (game #534)
 - `src/poison.js:85-142`, `src/game.js:835` (at 307ed34): poison on the dead, beside a burn, and its green (game #496)
-- `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, biteTokens, biteTokensPer, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`, `villager.hurtTime`
+- `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, biteTokens, biteTokensPer, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`
 - `data/wardrobes.json`: the dead's ten wardrobes
 - `src/entities/zombie.js:46-85`, `src/entities/movement.js:81-103`: the body, separation
 - `src/map.js:1723-1735`: wild chunks bring the dead per `data/maps/valley.json` (`wild.zombiesPerChunk`)
@@ -178,7 +179,8 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/sight.js:18-34`, `src/ui/zombie-bars.js:60`, `src/render/entities.js:267`, `src/interact.js:1926-1933`: seen in the dark near you, to your torch's reach, or in light; one not seen has no bar or outline and cannot be pointed at; nothing in a blow reads it (game #150)
 - `src/main.js:1755-1759`: the bite's words on the victim's client alone
 - `src/entities/zombie.js:505-508`: the siege held on the last player seen inside
-- `src/settings.js:12-13`, `src/settings.js:71-72`, `src/rules.js:14-15`, `src/entities/zombie.js:367-372`, `src/entities/zombie.js:410-424`, `src/entities/zombie.js:431`, `src/entities/zombie.js:593-605`, `src/entities/villager.js:240-278`: Zombie aggro, Zombies attack villagers, an immune villager never prey nor harmed (game #187), a bitten villager turning
+- `src/settings.js:12`, `src/settings.js:72`, `src/rules.js:16`: Zombie aggro
+- `src/entities/zombie.js:442-458`, `src/entities/zombie.js:684-692`, `src/entities/zombie.js:722`, `src/entities/villager.js:35-38`, `src/entities/villager.js:244-247` (at 26a0a8f): every villager immune, so never the dead's prey and never harmed; no setting for it (game #187, #559)
 - `src/game.js:175-201`, `src/map.js:1723-1735`, `data/tuning.json:183`: the Starting population's factor on the map's dead and each wild chunk's, read once when the world is made
 - `src/burn.js:28-54`, `src/entities/zombie.js:180-190`, `src/combat.js:418-423`, `src/archery.js:292`: burning: who sets it (a torch only while lit), a burn taking health alone, a corpse burning on
 - `src/sound-cues.js`, `data/sounds.json`: the sound it makes, heard as this client sees it (game #381 and #386)

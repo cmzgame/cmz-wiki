@@ -29,7 +29,7 @@ A world made on another map is listed but cannot be played here; its card says i
 
 ### Making a world
 
-**New world** says "A name for it, how it plays, then a character for it." It asks for a name, with one offered: the map's name and the day's date. Under the name is the Sandbox: the world's rules, in two parts. **How it plays** has the five that can be changed later from the pause menu (Zombie aggro, Zombies attack villagers, Survival, Free building, Multi-hit); **Chosen once, when the world is made** has **Trees**, **Starting population**, the **Dev chest**, **Dev bag**, and **Extra starting items**, which are baked into the world and never change. The last two set what every character starts with, for testing: the [[Developer Bag]] worn in place of the sack, and a typed list of items added to the default kit (see [[Player#The starter kit|the starter kit]]). A list with an unknown item, a bad count, or more than the starting bag holds is named under its box, and **Next** refuses it until it is put right. They are offered as you last chose them. See [[World rules]].
+**New world** says "A name for it, how it plays, then a character for it." It asks for a name, with one offered: the map's name and the day's date. Under the name is the Sandbox: the world's rules, in two parts. **How it plays** has the four that can be changed later from the pause menu (Zombie aggro, Survival, Free building, Multi-hit); **Chosen once, when the world is made** has **Trees**, **Starting population**, the **Dev chest**, **Dev bag**, and **Extra starting items**, which are baked into the world and never change. The last two set what every character starts with, for testing: the [[Developer Bag]] worn in place of the sack, and a typed list of items added to the default kit (see [[Player#The starter kit|the starter kit]]). A list with an unknown item, a bad count, or more than the starting bag holds is named under its box, and **Next** refuses it until it is put right. They are offered as you last chose them. See [[World rules]].
 
 **Next** goes on to [[Characters|character creation]]: an identity, then a second step. **Into the valley** makes the world behind the [[Screens#The loading screen|loading screen]] ("Making" and its name), puts your character at the spawn, saves it at once, and draws the ground round you before the screen goes. The site goes and the game fills the window. A new world starts at {{n census.constants.clock.START_HOUR}} o'clock in the morning on day one.
 
@@ -63,6 +63,7 @@ A world is the host's: it lives in their browser, and friends play in it only wh
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
 - `src/save.js`: a world as a save in the browser that made it
 - `src/ui/screens.js:197-220`, `src/main.js:1266-1268`: nothing runs until a world is chosen; out of a world, the site
 - `index.html:51`, `src/ui/screens.js:778`: Play and Play in your browser open the Worlds page (game #120)
