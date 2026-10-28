@@ -26,7 +26,9 @@ The dead ignore [[Animals|animals]], wild and tame: they never chase, bite, or c
 
 ### Flames at night
 
-At night, once one of the dead has not seen a player for {{n tuning.zombie.flamePatience seconds}}, it can be drawn by any lit flame in its line of sight, from as far as {{n tuning.zombie.flameRange tiles}} in full dark. A torch carried in hand counts as seeing its carrier. Two torches are seen {{n tuning.world.twoTorches}} times as far; a torch on the belt is seen from {{n tuning.world.beltLight}} times as far.
+At night, once one of the dead has not seen a player for {{n tuning.zombie.flamePatience seconds}}, it can be drawn by a lit flame in its line of sight on its own floor, from as far as {{n tuning.zombie.flameRange tiles}} in full dark. A torch a player carries counts as seeing its carrier. Two torches are seen {{n tuning.world.twoTorches}} times as far; a torch on the belt is seen from {{n tuning.world.beltLight}} times as far.
+
+**A fixed flame never draws one of the dead off a player's trail.** A fire, a lantern, or a torch on a wall is ignored by one hunting a player (until its search runs out and it gives them up), one holding a siege on a house it saw a player go into, and one breaking a door or a window's shutters or boards: each stays on what it is doing, and loses the trail only by its own rules. A torch a player carries still leads one hunting, since following it is following the player. Only the dead with no player to follow (idle, wandering, after a villager, or already walking to a flame) go to a fixed flame. So a fire lit by the house does not draw away the dead that know you are inside.
 
 ### Memory and search
 
@@ -110,7 +112,7 @@ At no health one of the dead falls, and once the fall has played its body stays 
 - A hit on one of the dead, or its first sight of you, brings the others near it that can see it (see [[Sight-pull]]). To take one at a time, pull one at the edge of a group, out of the others' line, or in the dark.
 - Only a few of a crowd bite at once; the rest wait their turn, or strike the fence between, and a [[Shove]] that clears a biter hands its place on.
 - A hit that staggers one makes it reel, arms flung up and leaning back, for the length of the stagger; a hit that does not stagger it only flinches. One lying downed has its health bar just over the body, and is outlined when the pointer is over it.
-- Light matters: in the dark they see the player from much less far, but a lit flame draws them at night.
+- Light matters: in the dark they see the player from much less far, but a lit flame draws them at night: a torch you carry leads even the ones hunting you, while a fire draws only the ones not on your trail.
 - In the dark you see them only close by, to the reach of a torch you carry, or where they stand in light (see [[Sight#Darkness|Sight]]). One lost in the dark has no health bar or swing-target outline and cannot be clicked, but a swing or a shot still hits it.
 - Doors, shutters, boards, and fences hold them off for a time (see [[Openings]], [[Fences]], and [[Building]]); a crowd breaks any of them faster than one alone.
 - At night, being seen going into a house means the dead that saw you wait about it until dawn.
@@ -153,7 +155,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 - `src/map.js:1723-1735`: wild chunks bring the dead per `data/maps/valley.json` (`wild.zombiesPerChunk`)
 - `src/game.js:693-697`: only the dead in the active box think
 - `src/entities/zombie.js:367-401`, `src/entities/zombie.js:581-592`: sight scaled by the light at the player, the look's interval, the nearest player seen
-- `src/entities/zombie.js:430-446`, `src/entities/zombie.js:606-618`, `src/game.js:918`: flames at night, two torches, the belt
+- `src/entities/zombie.js:457-492`, `src/entities/zombie.js:690-707`, `src/light.js:222-226`, `src/game.js:918` (at eba3c56): flames at night on the dead one's own floor, two torches, the belt; a fixed flame never takes one on a player's trail (`onPlayersTrail`: `huntsPlayer`, `siege`, `breach`), a carried torch any (game #555, Michael's ruling of 2026-10-27)
 - `src/entities/zombie.js:581-619`, `src/entities/zombie.js:671-767`, `src/entities/zombie.js:834-860`, `src/entities/zombie.js:547-557`: memory, the walk to the last sighting, the search, giving up, or a siege
 - `src/entities/zombie.js:123-128`: a hit tells a hunting zombie where the blow came from
 - `src/entities/zombie.js:652`: idle wandering within the room

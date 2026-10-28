@@ -25,7 +25,7 @@ At the workbench, pick **Campfire** in the panel (see [[Crafting]]); it needs no
 - **Outdoors only**: the tile is inside a room.
 - **No room**: the tile is not open ground, or something stands on it, or a rug is laid there.
 - **Not on water**: the tile is water, a ford included.
-- **Someone is in the way**: a player, a villager, one of the dead, an animal, or a body is on the tile.
+- **Someone is in the way**: a player, a villager, one of the dead, or an animal is on the tile, or stands close enough beside it that it would close round them. A corpse does not count.
 - **Too far**, or a wall in the way: it is set down within reach and in sight, as everything is.
 
 A click sets it down, cold and empty ("You set the campfire down."). Escape or a right click cancels. The stone and logs it was made from are not its fuel: add logs before you light it.
@@ -63,6 +63,7 @@ Making, setting down, lighting, feeding, putting out, picking up, and taking apa
 ## Sources
 
 <!-- sources at 91bafc1 -->
+- `src/stations.js:254-279`, `src/placement.js:380`, `src/placement.js:617-623` (at eba3c56): "Someone is in the way" while a living body's circle reaches into one of its tiles; a corpse never counts (game #553)
 - `data/recipes.json:789-808`: the campfire at the workbench, three stone and two logs, no tool; the logs are the make's, not its fuel (game #527)
 - `data/items.json:41`: the Campfire item, 3 by 3, `place: "campfire"`, its drawn icon and held picture (game #527)
 - `src/stations.js:26`: the output box 3 by 3, so the made item lands in it (game #527)

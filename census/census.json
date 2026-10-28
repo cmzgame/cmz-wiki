@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "6eba9c13a025aa993b09226aefb292e52d67bab5",
-  "short": "6eba9c1",
-  "date": "2026-10-27T21:52:33-05:00",
-  "subject": "Merge pull request #551 from cmzgame/fix/stair-walls",
+  "commit": "eba3c56e1b6dd9a730aa3b50946d973cc2c1e5d7",
+  "short": "eba3c56",
+  "date": "2026-10-28T00:27:30-05:00",
+  "subject": "Merge pull request #555 from cmzgame/fix/batter-stays",
   "ref": "origin/main"
  },
  "counts": {
@@ -10802,9 +10802,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:802",
-    "placement.js:813",
-    "placement.js:817"
+    "placement.js:806",
+    "placement.js:817",
+    "placement.js:821"
    ]
   },
   {
@@ -10903,7 +10903,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:414"
+    "stations.js:434"
    ]
   },
   {
@@ -11124,19 +11124,19 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1648"
+    "placement.js:1652"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1641"
+    "placement.js:1645"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1209"
+    "placement.js:1213"
    ]
   },
   {
@@ -11580,32 +11580,32 @@
    "at": [
     "placement.js:176",
     "placement.js:402",
-    "placement.js:1569",
-    "placement.js:1606"
+    "placement.js:1573",
+    "placement.js:1610"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1682"
+    "placement.js:1686"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1672"
+    "placement.js:1676"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1228"
+    "placement.js:1232"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1662"
+    "placement.js:1666"
    ]
   },
   {
@@ -11765,7 +11765,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1132"
+    "placement.js:1136"
    ]
   },
   {
@@ -11789,7 +11789,7 @@
   {
    "key": "craftDone",
    "at": [
-    "stations.js:390"
+    "stations.js:410"
    ]
   },
   {
@@ -11874,7 +11874,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1098"
+    "entities/zombie.js:1108"
    ]
   },
   {
@@ -11935,13 +11935,13 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1099"
+    "entities/zombie.js:1109"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:911",
+    "entities/zombie.js:921",
     "map.js:1694"
    ]
   },
@@ -12143,7 +12143,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3825
+   "lines": 3826
   },
   {
    "path": "interact.js",
@@ -12155,7 +12155,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 1684
+   "lines": 1688
   },
   {
    "path": "net.js",
@@ -12175,7 +12175,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 1112
+   "lines": 1122
   },
   {
    "path": "archery.js",
@@ -12234,6 +12234,10 @@
    "lines": 488
   },
   {
+   "path": "stations.js",
+   "lines": 450
+  },
+  {
    "path": "entities/player.js",
    "lines": 449
   },
@@ -12244,10 +12248,6 @@
   {
    "path": "render/rings.js",
    "lines": 438
-  },
-  {
-   "path": "stations.js",
-   "lines": 430
   },
   {
    "path": "ui/map-panel.js",

@@ -7,7 +7,7 @@ summary: A light held in either hand, lit with a tinderbox, that burns down whil
 
 {{infobox-item torch}}
 
-The **Torch** is a light first. Lit and held in either hand it lights the way, out to {{n items.torch.fire.radius tiles}}, and gives back your sight of [[The dead]] in the dark to that reach; at night it also draws their eye. It is lit with a [[Tinderbox]] and burns down while it is lit. Every new character starts with one in hand, not lit, and a tinderbox in the bag. It is made at the [[Workbench]] and is also a weak weapon.
+The **Torch** is a light first. Lit and held in either hand it lights the way, out to {{n items.torch.fire.radius tiles}}, and gives back your sight of [[The dead]] in the dark to that reach; at night it also draws their eye: even one already hunting you follows it, where a fire draws only the dead on no player's trail. It is lit with a [[Tinderbox]] and burns down while it is lit. Every new character starts with one in hand, not lit, and a tinderbox in the bag. It is made at the [[Workbench]] and is also a weak weapon.
 
 ## Lit or out
 
@@ -86,7 +86,7 @@ In the off hand beside a weapon such as the [[Arming sword]] it counts as a weap
 - `src/combat.js:115-126`, `src/combat.js:297-307`, `src/combat.js:345-348`: in the off hand it swings when the main hand is recovering, leaving the player exposed; never beside the spear
 - `src/items.js:125-138`: a torch is not a weapon beside the spear
 - `src/game.js:687-699`, `src/game.js:511-519`, `src/items.js:213-220`: the carried light: a lit torch in hand, two in hand, else a lit one on the belt
-- `src/entities/zombie.js:419-439`: a torch seen at night, two torches, the belt
+- `src/entities/zombie.js:457-492`, `src/entities/zombie.js:690-707` (at eba3c56): a torch seen at night, two torches, the belt; a carried torch leads one on a player's trail, a fixed flame does not (game #555)
 - `src/sight.js:18-29`, `data/tuning.json:142`, `data/tuning.json:163`: the carrier's own torch sets how far it sees the dead in the dark; a belt torch's `beltLight` reach past `darkRadius` (game #173)
 - `src/interact.js:1235`, `src/interact.js:1275`: `T` an event in the player's input, performed by the host's step
 - `src/game.js:410-420`, `src/map.js:150-170`: a torch's lit state and wear reach every player; a mounted torch's wear sent at each hundredth

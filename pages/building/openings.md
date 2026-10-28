@@ -13,7 +13,7 @@ summary: Doors and windows, which are walls with a kind and a state; opening the
 
 A closed door blocks bodies and [[Sight|sight]]. Tap E near it, or choose the entry in its right-click menu, to open or close it from either side. E reaches a door within {{n census.constants.interact.INTERACT_RANGE tiles}} of either tile of its edge.
 
-An open door with no boards lets bodies through across the whole width of the edge. Walking into the wall right beside an open doorway slides you towards the doorway, so you do not catch on the frame.
+An open door with no boards lets bodies through across the whole width of the edge. Walking into the wall right beside an open doorway slides you towards the doorway, so you do not catch on the frame. A door shuts even on someone standing in its doorway, one of the dead included: they can step back out of it, never further into it.
 
 A door is the only way through a wall. A shut door or closed shutters also stop your reach: nothing behind them can be opened, used, or talked to until they are open (see [[Rooms#Nothing in reach through a wall|Rooms]]). [[The dead]] never open doors. They walk through open ones and break closed ones (see [[Breaking in]]). Every door and every window can be broken, whatever its wall is made of: a door in a stone wall has the same health as one in a wooden wall, and so does one you build.
 
@@ -49,6 +49,8 @@ A door or window can be built with the palette on N, with a [[Smith's hammer]] o
 
 In a [[Round rooms|round room]] a door or a window goes only at one of the ring's four door points, the middles of its square's sides ("Only at a door point of the curve" anywhere else on the ring). It is drawn in the curve from its own art, with no square posts: an arched frame of dressed stone, a curved door or arched shutters shut, open, or broken, and boards on the face the camera sees; the east door point's door is hinged at its other end, so it swings clear of its doorway (see [[Round rooms]]). Taken out, it leaves the ring's wall.
 
+No door or window is built across someone else living who stands on its edge, a player, a villager, one of the dead, or an animal: "Someone is in the way" ("Step back" when it is you). A corpse lying there does not count.
+
 Upstairs a door needs floor on both its sides, so none opens onto an open edge of a floor, and no door or window is built across a stair's run or top (see [[Upper floors]]).
 
 ## Numbers
@@ -76,6 +78,7 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/placement.js:650-651`, `src/stations.js:271-279`, `src/map.js:2928-2975` (at eba3c56): no door or window built across a living body; a door shut on one, which may move only where it goes no deeper (game #553)
 - `src/map.js:1444-1452`, `src/map.js:1518-1555` (at da57a57): a door or a window on a ring only at a door point; taken out, the ring's wall back (game #536)
 - `src/render/rings.js:96-232`, `src/render/walls.js:273` (at a0cf5a2): a door or a window at a door point drawn in the curve, with no straight frame or post (game #537)
 - `src/render/rings.js:354-418`, `data/sprites/round_openings_5.json`, `data/sprites/round_openings_7.json` (at 6eba9c1): the round doors and windows from art round 9, the frame and the reveal, a door or shutters shut, open, or broken, the east door hinged at its other end, the boards on the face seen (game #550)

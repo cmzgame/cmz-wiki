@@ -1,7 +1,7 @@
 {
-  "commit": "6eba9c13a025aa993b09226aefb292e52d67bab5",
-  "short": "6eba9c1",
-  "date": "2026-10-27T21:52:33-05:00",
-  "subject": "Merge pull request #551 from cmzgame/fix/stair-walls",
+  "commit": "eba3c56e1b6dd9a730aa3b50946d973cc2c1e5d7",
+  "short": "eba3c56",
+  "date": "2026-10-28T00:27:30-05:00",
+  "subject": "Merge pull request #555 from cmzgame/fix/batter-stays",
   "ref": "origin/main"
 }

@@ -29,7 +29,7 @@ A carried piece goes down where:
 
 - every tile of its footprint is free of furniture and walkable (a laid rug is not furniture: a piece can stand on one)
 - none of its tiles is either of the two tiles a door or a gate stands between, so [[The dead|the dead]] can always stand at a door (see [[Openings]])
-- none of its tiles is too close to you
+- nobody living, you or anyone else (a player, a villager, one of the dead, an animal), stands on any of its tiles or close enough beside one that the piece would close round them; a corpse does not count
 - no wall runs between two of its own tiles
 - the tile under the cursor is within {{n census.constants.placement.PLACE_REACH tiles}} of you, with a clear line to it: through a wall, a shut door, or shutters the ghost is red with "There is a wall in the way."
 
@@ -59,6 +59,7 @@ On a guest, the ghost is drawn from what the host says it carries. A click sends
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `src/placement.js:494`, `src/stations.js:254-270` (at eba3c56): a carried piece never put down over a body, the carrier's or another's, its circle against the tile; a corpse none (game #553)
 - `src/placement.js:250`, `src/placement.js:534-536`: a painting's ghost on the face of the wall under the cursor (game #344, at 9ac68a2)
 - `src/placement.js`, `putDownReach`: putting down needs the reach and a clear line (game #227)
 - `src/placement.js:402-415`: the furniture ghost centred on the cursor

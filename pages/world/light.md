@@ -60,7 +60,7 @@ At night the world is drawn darker and tinted. The ground and the buildings are 
 
 ### Light and the dead
 
-The dead see you farther the brighter the light on you. Their reach is {{n tuning.zombie.sight tiles}} in full light, falling to {{n tuning.zombie.sightDarkFraction}} of that in total darkness. At night they also notice a flame, a carried torch or a fire, from up to {{n tuning.zombie.flameRange tiles}} away, and walk to it; a torch on the belt shows {{n tuning.world.beltLight}} as far, two torches {{n tuning.world.twoTorches}} times as far. By day flames draw nobody. All of this needs a clear line of sight and the world rule Zombie aggro on. See [[The dead]].
+The dead see you farther the brighter the light on you. Their reach is {{n tuning.zombie.sight tiles}} in full light, falling to {{n tuning.zombie.sightDarkFraction}} of that in total darkness. At night they also notice a flame, a carried torch or a fire, from up to {{n tuning.zombie.flameRange tiles}} away, and walk to it; a torch on the belt shows {{n tuning.world.beltLight}} as far, two torches {{n tuning.world.twoTorches}} times as far. A torch a player carries leads any of them, even one already hunting that player; a fixed flame (a fire, a lantern, a torch on a wall) draws only the dead with no player to follow, never one hunting a player, holding a siege on a house, or breaking a door or a window. By day flames draw nobody. All of this needs a clear line of sight and the world rule Zombie aggro on. See [[The dead]].
 
 ## Numbers
 
@@ -97,6 +97,7 @@ Light belongs to the world: the host works it out, and each guest works out the 
 ## Sources
 
 <!-- sources at 879d0a7 -->
+- `src/entities/zombie.js:457-492`, `src/entities/zombie.js:690-707` (at eba3c56): a carried torch leads any of the dead, a fixed flame only one on no player's trail (game #555)
 - `src/light.js:428-440`: one light level: ambient, the static map, carried lights
 - `src/light.js:29`, `src/light.js:121-123`, `src/clock.js:7`: the outdoor cap and the night sky
 - `src/map.js:2191-2243`: rooms found by flood fill

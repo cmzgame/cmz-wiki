@@ -19,7 +19,7 @@ Pick **Fireplace** in the palette. Its ghost runs two tiles along the wall under
 - **Against a wall**: its back does not rest on a plain, whole wall along its full length. A door, a window, a gap, a broken wall, a fence, or a [[Round rooms|round room]]'s curved wall will not do; a round room's fire is a [[Fire pit]].
 - **No room**: a tile is not open floor, something stands on it, a rug is laid there, a wall runs between its two tiles, or they are in two rooms.
 - **Not on water**, and **Not beside a door**: it keeps clear of a door's two tiles, where the dead must be able to stand (see [[Openings]]).
-- **Someone is in the way**: a player, a villager, one of the dead, an animal, or a body stands on one of its tiles.
+- **Someone is in the way**: a player, a villager, one of the dead, or an animal stands on one of its tiles, or stands close enough beside it that it would close round them. A corpse does not count.
 - **Too far**, or a wall in the way, and **Need ...** when you are short of the stone.
 
 A click starts a bar of {{n build.fireplace.seconds seconds}}; when it ends the stone is spent and the fireplace stands there, out. It needs no tool.
@@ -42,6 +42,7 @@ A guest's build is a command the host checks and carries out for that player, na
 ## Sources
 
 <!-- sources at 91bafc1 -->
+- `src/stations.js:254-279`, `src/placement.js:380`, `src/placement.js:617-623` (at eba3c56): "Someone is in the way" while a living body's circle reaches into one of its tiles; a corpse never counts (game #553)
 - `src/setdown.js:60-63` (at da57a57): never against a round room's ring (game #536)
 - `data/build.json:112-122`: the palette's Fireplace: a prop, six stone, `stand: "wall"`, its seconds, no tool; it replaced the generated hearth (game #527)
 - `data/sprites/fireplace.json`: the drawn fireplace, two tiles in two facings (a west wall as drawn, a north wall as its mirror), its own flames, a switch that lights its room and cooks, its radius and flicker, `carry: false`

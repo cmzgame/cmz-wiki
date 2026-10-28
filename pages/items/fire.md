@@ -59,6 +59,10 @@ A fire that burns fuel burns one unit every so many game hours. When the last un
 
 A [[Torch]] is a light you carry, in either hand, while it is lit. It is lit with a [[Tinderbox]] and burns down while it is lit, faster in a hand than on the belt. Two held torches light more than one; a torch on your [[Belt]] glows at {{n tuning.world.beltLight}} of a held one's light. `T` lights or puts out the torch in your hand, or else on your belt; with none there, it takes one from the bag into a hand. An empty wall bracket or a torch post holds a torch: **Take the torch** and **Mount the torch** (see [[Torch posts and brackets]]). A [[Jack-o'-lantern]] is a small light that is a switch, as the home lights are: put out with nothing and lit again with a flame.
 
+### Fires and the dead
+
+At night a lit fire, a lantern, or a torch on a wall draws the dead that see it from up to {{n tuning.zombie.flameRange tiles}} away, but only those with no player to follow: one hunting a player, holding a siege on a house, or breaking a door or a window is never drawn off by it. A torch you carry is different: it is a sighting of you, and it leads even the ones hunting you. See [[The dead#Flames at night|The dead]] and [[Light]].
+
 ## Numbers
 
 - A game hour: {{n census.constants.map.HOUR_SECONDS}} seconds.
@@ -82,6 +86,7 @@ Lighting, putting out, and feeding a fire change the world, so every player sees
 ## Sources
 
 <!-- sources at 879d0a7 -->
+- `src/entities/zombie.js:457-492`, `src/entities/zombie.js:690-707` (at eba3c56): a fixed fire draws only the dead on no player's trail, a carried torch any (game #555)
 - `data/sprites/fireplace.json`, `data/sprites/fire_pit.json`, `data/sprites/lantern_post.json`: the home lights' `fire.switch` (game #421; the fire pit, game #527, at c3cb736)
 - `src/interact.js:508-518`, `src/interact.js:632-640`: a switch's and a bracket lantern's menu: Light with a flame, Put out with nothing (game #421)
 - `src/map.js:108-111`, `src/map.js:131-133`: a switch burns nothing and takes no fuel (game #421)

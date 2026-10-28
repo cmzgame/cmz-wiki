@@ -38,6 +38,8 @@ A board has {{n census.constants.map.BOARD_HP}} health, shutters {{n census.cons
 
 Health is not shown: an opening jolts with each hit, but looks the same until a board, the door, or the shutters give.
 
+**A fire does not draw it off.** At night, one of the dead breaking a door or a window is never drawn away by a fixed flame, a fire, a lantern, or a torch on a wall, however near and however long it has gone without seeing you: it keeps at the opening until it gives, a bite comes in reach, or where it is going no longer lies through it. A torch you carry still draws it, as a sighting of you (see [[The dead#Flames at night|The dead]]).
+
 ### Through a door, never a window
 
 Once a door is open or broken and has no boards, the zombie walks through it.
@@ -66,6 +68,7 @@ While it holds a siege:
 - **It goes first to the opening it saw you use**, among those it can walk to, when it breaks in (above).
 - **When its search finds no one, it does not give up.** It waits about the house, going between the openings it knows: it stands at one and breaks it if it is shut (a door, or a window battered open to see in, as above), and tries another every {{n tuning.zombie.siegeSwitch seconds}}, or sooner if it cannot reach one. A fence in its way it strikes (see [[Fences]]). When every opening is already open it comes in. If there is nothing left to break and it still cannot walk to you, as with a room that has no door, it waits at the opening it saw you by.
 - If it sees you again, it chases you as usual.
+- **No fire draws it away**: a fire, a lantern, or a torch on a wall near the house does not pull it off the siege; only a torch you carry leads it, as a sighting of you.
 - **You cannot [[Sleep|sleep]]** while one of the dead holding a siege on you is within {{n tuning.zombie.siegeSleepRadius tiles}} of you, whichever room of the house it is in: the bed says "The dead that know you are in here are still about." A sleep already begun is not broken.
 
 At {{n tuning.zombie.siegeEndHour}} o'clock the siege ends: wherever it has got to, the zombie loses interest and wanders off, unless it can see someone, in which case it chases them as usual. Your death ends a siege on you too. Nothing calls more of the dead: a siege is only the ones that saw you.
@@ -138,6 +141,7 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 - `src/entities/zombie.js:607-622`, `src/visibility.js:12-48`: a bite needs the contact distance and a clear line, which an open window passes (game #171)
 - `src/entities/zombie.js:753-779`, `data/tuning.json`: `zombie.noWayTime`: a search, no chase on sight while it lasts, then giving up, or the siege
 - `src/clock.js:12`, `src/clock.js:68-74`, `data/tuning.json:31-33`: dusk and night, and the siege's end hour, switch, and sleep radius
+- `src/entities/zombie.js:457-492`, `src/entities/zombie.js:690-707` (at eba3c56): a fixed flame never pulls off one breaking an opening or holding a siege, a carried torch still does (game #555, Michael's ruling of 2026-10-27)
 - `src/entities/zombie.js:421-460`: a sighting inside a room at night starts or renews a siege and remembers the door crossed (the one on the line from where it last saw the player outside, else the door nearest them, game #171) and the window seen through; out in the open or by day it ends
 - `src/entities/zombie.js:847-914`: the siege state: between the openings it knows, breaking the shut ones, another every `siegeSwitch`, in when all are open, waiting at the opening with nothing to break and no way in
 - `src/entities/zombie.js:462-478`, `src/entities/player.js:221-233`, `src/game.js:359`: the siege held until its dawn on a living player; the sleep refused within `siegeSleepRadius`

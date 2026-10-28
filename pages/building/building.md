@@ -31,7 +31,7 @@ N opens a short list on the left of the screen. It has a row for each piece and 
 
 Everything is built on the floor you stand on: upstairs, walls, doors, windows, and carried furniture go on that floor (a wall upstairs needs floor beside it, "No floor there"). A rug, a painting, a set-down, a torch on a wall, and the Fireplace, the fire pit, and the trough are refused upstairs for now, "Not upstairs yet". No wall, door, or window is built across a stair's run ("Not across a stair") or its top ("Not across a stair's top").
 
-The ghost of a piece that stands on tiles covers its tiles, not an edge. Besides its own rule it says "No room" where a tile is not open floor or holds something, "Not beside a door" on a door's two tiles, and "Someone is in the way" where anyone, living or dead, or a body, stands on one of them.
+The ghost of a piece that stands on tiles covers its tiles, not an edge. Besides its own rule it says "No room" where a tile is not open floor or holds something, "Not beside a door" on a door's two tiles, and "Someone is in the way" where anyone living (you, another player, a villager, one of the dead, or an animal) stands on one of them or close enough beside it that the piece would close round them. A corpse lying there does not count.
 
 "On you" is anywhere you carry it: a hand, the belt, or the bag.
 
@@ -47,6 +47,7 @@ Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest
 - **Already a wall**: the edge already holds something this piece cannot be built over (see below).
 - **No room**: a single solid piece of furniture spans both tiles of the edge, or a laid [[Rugs|rug]] does: a wall is never built through a rug, only along its outer edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
+- **Someone is in the way**: someone else living, a player, a villager, one of the dead, or an animal, stands across the edge, so the wall would go up through them. A corpse lying there does not count. A wall, a door, or a window is never built across a body, since a body caught in one could not walk out of it.
 - **You need a ...**: you lack the piece's tool, and it names it ("You need a smith's hammer.").
 - **Need**: you lack the materials, and it names them.
 
@@ -147,6 +148,8 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `src/placement.js:650-651`, `src/stations.js:268-279` (at eba3c56): no wall, door, or window built across a living body (each its own size), "Someone is in the way"; a corpse none (game #553)
+- `src/stations.js:254-279`, `src/placement.js:380`, `src/placement.js:617-623` (at eba3c56): "Someone is in the way" while a living body's circle reaches into one of its tiles; a corpse never counts (game #553)
 - `data/build.json:158-209`, `src/placement.js:213-420`, `src/map.js:1049-1117`, `src/map.js:2650-2705` (at 6eba9c1): the Plank floor, the Stone floor, the Wood stair, and the Stone stair, Free building only ("Floors are not in the game yet", "Stairs are not in the game yet"); building on the builder's own floor; a laid floor taken apart; a stair never (game #549, following the ruling of game #538)
 - `src/placement.js:217`, `src/placement.js:615-623`, `src/placement.js:638`, `src/map.js:1175-1203` (at 6eba9c1): "Not upstairs yet", "No floor there", "Not across a stair", "Not across a stair's top" (game #549)
 - `data/build.json:146-157`, `src/placement.js:80-200`, `src/placement.js:693-696`, `src/placement.js:800-860` (at da57a57): the Round stone wall, listed and built only with Free building; a ring taken apart whole, the map's refused (game #536)

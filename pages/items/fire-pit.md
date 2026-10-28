@@ -18,7 +18,7 @@ Pick **Fire pit** in the palette. Its ghost is centred on the cursor, green wher
 - **No room**: one of its four tiles is not open floor, something stands on it, a rug is laid there, a wall runs between two of them, or they are not all in one room or all outdoors.
 - **Not on water**: one of its tiles is water. A road is fine.
 - **Not beside a door**: it keeps clear of a door's two tiles, where the dead must be able to stand (see [[Openings]]).
-- **Someone is in the way**: a player, a villager, one of the dead, an animal, or a body stands on one of its tiles.
+- **Someone is in the way**: a player, a villager, one of the dead, or an animal stands on one of its tiles, or stands close enough beside it that it would close round them. A corpse does not count.
 - **Too far**, or a wall in the way, and **Need ...** when you are short of the stone.
 
 A click starts a bar of {{n build.fire_pit.seconds seconds}}; when it ends the stone is spent and the fire pit stands there, out. It needs no tool.
@@ -43,6 +43,7 @@ A guest's build is a command the host checks and carries out for that player, na
 ## Sources
 
 <!-- sources at 91bafc1 -->
+- `src/stations.js:254-279`, `src/placement.js:380`, `src/placement.js:617-623` (at eba3c56): "Someone is in the way" while a living body's circle reaches into one of its tiles; a corpse never counts (game #553)
 - `src/setdown.js:85-89`, `src/map.js:1317-1319` (at da57a57): no piece on a tile a ring's curve crosses (game #536)
 - `data/build.json:123-133`: the palette's Fire pit: a prop, eight stone, `stand: "ground"`, its seconds, no tool (game #527)
 - `data/sprites/fire_pit.json`: the drawn fire pit, 2 by 2, its rack and pots, its own flames, a switch that lights its room and cooks, radius 5, its flicker, `carry: false`
