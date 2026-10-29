@@ -1,7 +1,7 @@
 {
-  "commit": "792595550eabc9fb99caaa59283d0470c534647a",
-  "short": "7925955",
-  "date": "2026-10-28T19:38:35-05:00",
-  "subject": "Merge pull request #564 from cmzgame/fix/cliff-layers",
+  "commit": "c0448ecbe856db5d95bdf521fe2d79825f81f9f6",
+  "short": "c0448ec",
+  "date": "2026-10-28T22:47:44-05:00",
+  "subject": "Merge pull request #565 from cmzgame/build/terrain-menu",
   "ref": "origin/main"
 }

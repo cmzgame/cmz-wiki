@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "792595550eabc9fb99caaa59283d0470c534647a",
-  "short": "7925955",
-  "date": "2026-10-28T19:38:35-05:00",
-  "subject": "Merge pull request #564 from cmzgame/fix/cliff-layers",
+  "commit": "c0448ecbe856db5d95bdf521fe2d79825f81f9f6",
+  "short": "c0448ec",
+  "date": "2026-10-28T22:47:44-05:00",
+  "subject": "Merge pull request #565 from cmzgame/build/terrain-menu",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 97,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 217,
+  "sprites": 218,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -24,9 +24,9 @@
   "liveRules": 4,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 101,
+  "menuLabels": 103,
   "events": 38,
-  "checks": 93,
+  "checks": 94,
   "modules": 152
  },
  "items": [
@@ -7425,6 +7425,12 @@
    "drawn": false
   },
   {
+   "id": "floor_nospawn",
+   "kind": "floor",
+   "drawn": false,
+   "note": "No random spawn (Michael, 2026-10-28): bubblegum pink on purpose, so it cannot be missed by day or night. For building the map by hand: a tile where nothing random may spawn. It tags a tile and does nothing yet; nothing reads it (the future: the scatter, the trees, and the spawns skip a tile that carries it). Walked as ground, no `walk` field."
+  },
+  {
    "id": "floor_stone",
    "kind": "floor",
    "drawn": true,
@@ -10302,7 +10308,8 @@
     "log": 1
    },
    "seconds": 3,
-   "tool": "notch"
+   "tool": "notch",
+   "group": "Walls and openings"
   },
   "wall_oak": {
    "label": "Oak wall",
@@ -10312,7 +10319,8 @@
     "plank": 1
    },
    "seconds": 3,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "wall_spruce": {
    "label": "Spruce wall",
@@ -10322,7 +10330,8 @@
     "plank": 1
    },
    "seconds": 3,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "wall_mahogany": {
    "label": "Mahogany wall",
@@ -10332,7 +10341,8 @@
     "plank": 1
    },
    "seconds": 3,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "wall_daub": {
    "label": "Daub wall",
@@ -10342,7 +10352,8 @@
     "plank": 1
    },
    "seconds": 3,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "wall_winterpine": {
    "label": "Winter Pine wall",
@@ -10353,7 +10364,8 @@
    },
    "seconds": 3,
    "tool": "build",
-   "region": true
+   "region": true,
+   "group": "Walls and openings"
   },
   "wall_bloodbark": {
    "label": "Bloodbark wall",
@@ -10364,7 +10376,8 @@
    },
    "seconds": 3,
    "tool": "build",
-   "region": true
+   "region": true,
+   "group": "Walls and openings"
   },
   "door": {
    "label": "Door",
@@ -10373,7 +10386,8 @@
     "plank": 3
    },
    "seconds": 4,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "window": {
    "label": "Window",
@@ -10382,7 +10396,8 @@
     "plank": 2
    },
    "seconds": 3,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "fence": {
    "label": "Fence",
@@ -10392,7 +10407,8 @@
     "plank": 1
    },
    "seconds": 2,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
   },
   "gate": {
    "label": "Gate",
@@ -10403,7 +10419,21 @@
     "plank": 2
    },
    "seconds": 3,
-   "tool": "build"
+   "tool": "build",
+   "group": "Walls and openings"
+  },
+  "round_stone": {
+   "label": "Round stone wall",
+   "kind": "round",
+   "sprite": "wall_stone",
+   "cost": {
+    "stone": 2
+   },
+   "seconds": 20,
+   "tool": "build",
+   "dev": true,
+   "group": "Walls and openings",
+   "note": "docs/50: a round room, 5 or 7 across, by a drag from one corner of its square; stone only, shown and buildable only while Free building is on (Michael, 2026-10-27: \"A few on the map, buildable by dev settings, otherwise not in the game yet until we settle on cost, etc.\"); its cost is per edge of the outline (40 stone at 5, 56 at 7), a placeholder and Primary's default, never charged since Free building waives it; the seconds the builder's default (two fifths more at 7)"
   },
   "fireplace": {
    "label": "Fireplace",
@@ -10414,6 +10444,7 @@
     "stone": 6
    },
    "seconds": 8,
+   "group": "Props",
    "note": "the Fireplace (Michael, 2026-10-26, the fire rulings under Round rooms: a spec; it replaced the generated hearth): the drawn fireplace, two tiles along a flat wall indoors, its facing from the wall it backs onto (src/setdown.js fitFor); a switch (docs/43 section 3), out when built; cooks; never moved; taken apart out for half its stone; no tool (the builder's default, as the hearth's was)"
   },
   "fire_pit": {
@@ -10425,6 +10456,7 @@
     "stone": 8
    },
    "seconds": 10,
+   "group": "Props",
    "note": "the fire pit (Michael, 2026-10-26, the fire rulings): 2 by 2 on open ground, indoors or out, never on water (roads are fine), clear of a door's two tiles; a switch, out when built; cooks; never moved; taken apart out for half its stone; the cost and the seconds Primary's and the builder's defaults; no tool, as the Fireplace"
   },
   "feed_trough": {
@@ -10437,19 +10469,8 @@
    },
    "seconds": 6,
    "tool": "build",
+   "group": "Props",
    "note": "docs/45 section 3: a feeding trough (not the water trough) in a pen, filled with grain, vegetables, or hay; built from the palette, planks (Primary's default)"
-  },
-  "round_stone": {
-   "label": "Round stone wall",
-   "kind": "round",
-   "sprite": "wall_stone",
-   "cost": {
-    "stone": 2
-   },
-   "seconds": 20,
-   "tool": "build",
-   "dev": true,
-   "note": "docs/50: a round room, 5 or 7 across, by a drag from one corner of its square; stone only, shown and buildable only while Free building is on (Michael, 2026-10-27: \"A few on the map, buildable by dev settings, otherwise not in the game yet until we settle on cost, etc.\"); its cost is per edge of the outline (40 stone at 5, 56 at 7), a placeholder and Primary's default, never charged since Free building waives it; the seconds the builder's default (two fifths more at 7)"
   },
   "floor_wood": {
    "label": "Plank floor",
@@ -10461,6 +10482,7 @@
    "seconds": 1,
    "tool": "build",
    "dev": true,
+   "group": "Floors and stairs",
    "note": "docs/49 section 5 (Michael, 2026-10-27, 02 \"Floors are built a tile at a time, with no physics\"): a tile at a time, by a drag for a rectangle; on the ground over the floor there (kept, and put back when it is taken up), on a storey wherever it touches a floor already walkable there; shown and buildable only while Free building is on until the floors are costed (Primary's default, as the round stone wall); 1 plank a tile, a placeholder and Primary's default, never charged while Free building is on; the seconds a tile the builder's default"
   },
   "floor_stone": {
@@ -10473,6 +10495,7 @@
    "seconds": 1,
    "tool": "build",
    "dev": true,
+   "group": "Floors and stairs",
    "note": "as the Plank floor, in the stone floor the map already draws; 1 stone a tile (Primary's default)"
   },
   "stair_wood": {
@@ -10486,6 +10509,7 @@
    "seconds": 20,
    "tool": "build",
    "dev": true,
+   "group": "Floors and stairs",
    "note": "docs/49 section 5: a stair three tiles long from the tile under the cursor, climbing on away from the player, its landing's planks laid on the storey above (one of its planks); north and west only for now (Primary's default: \"Stairs climb away from the camera\", Michael to confirm); the drawn stair (art round 8); never taken apart (ruled); Free building only for now; the cost docs/49 section 5's default, never charged while Free building is on; the seconds the builder's default"
   },
   "stair_stone": {
@@ -10500,7 +10524,83 @@
    "seconds": 30,
    "tool": "build",
    "dev": true,
+   "group": "Floors and stairs",
    "note": "as the Wood stair, in stone (9 stone and a plank, docs/49 section 5's default); its landing a stone floor"
+  },
+  "terrain_grass": {
+   "label": "Grass",
+   "kind": "terrain",
+   "tab": "terrain",
+   "group": "Ground",
+   "sprite": "floor_grass",
+   "cost": {},
+   "seconds": 0,
+   "reach": 12,
+   "dev": true,
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; grass, the ground's own: painted over dirt, cobble, or water it blends with the dirt and cobble round it as the authored grass does; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
+  },
+  "terrain_dirt": {
+   "label": "Dirt",
+   "kind": "terrain",
+   "tab": "terrain",
+   "group": "Ground",
+   "sprite": "floor_dirt",
+   "cost": {},
+   "seconds": 0,
+   "reach": 12,
+   "dev": true,
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; bare earth: its edge against grass is ragged, as the valley's paths are (the ground bake keys it off the tile's floor, not off who made it); ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
+  },
+  "terrain_cobble": {
+   "label": "Cobblestone",
+   "kind": "terrain",
+   "tab": "terrain",
+   "group": "Ground",
+   "sprite": "floor_cobble",
+   "cost": {},
+   "seconds": 0,
+   "reach": 12,
+   "dev": true,
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; cobbles, inside a dirt verge as the valley's roads are; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
+  },
+  "terrain_nospawn": {
+   "label": "No random spawn",
+   "already": "That is already marked no-spawn ground",
+   "kind": "terrain",
+   "tab": "terrain",
+   "group": "Ground",
+   "sprite": "floor_nospawn",
+   "cost": {},
+   "seconds": 0,
+   "reach": 12,
+   "dev": true,
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; bubblegum pink, on purpose: a tag for the hand-built map (Michael, 2026-10-28); it marks a tile where nothing random may spawn and does nothing else yet; its future use is the scatter, the trees, and the spawns skipping a tile that carries it; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
+  },
+  "terrain_water_shallow": {
+   "label": "Shallow water",
+   "already": "That is already shallow water",
+   "kind": "terrain",
+   "tab": "terrain",
+   "group": "Water",
+   "sprite": "floor_water_shallow",
+   "cost": {},
+   "seconds": 0,
+   "reach": 12,
+   "dev": true,
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; a ford: walked at half speed, drunk from; a hard-edged tile like the valley's shallows; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
+  },
+  "terrain_water": {
+   "label": "Water",
+   "already": "That is already water",
+   "kind": "terrain",
+   "tab": "terrain",
+   "group": "Water",
+   "sprite": "floor_water",
+   "cost": {},
+   "seconds": 0,
+   "reach": 12,
+   "dev": true,
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; wholly water: no one walks it (a tile under a body, a prop, a rug, an item, or a wall edge is refused); its edge against grass and dirt is ragged, as the river's; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
   },
   "wall_cliff": {
    "label": "Cliff wall",
@@ -10512,6 +10612,8 @@
    "seconds": 3,
    "tool": "build",
    "dev": true,
+   "tab": "terrain",
+   "group": "Landforms",
    "note": "art round 10 (Michael, 2026-10-28: \"wire that cliff art for testing\"): a cliff face on a tile edge, 96 tall, bare rock; blocks bodies and sight as stone; no door or window stamped in it, nothing hung on it, taken apart only while Free building is on; a cliff-top floor laid on the storey above it makes it a hill's edge (render/walls.js draws its lip, its back, and the corner pieces); Free building only, for experimenting; the cost a placeholder (a stone, as the stone floor), never charged while Free building is on"
   },
   "wall_cliff_grass": {
@@ -10524,6 +10626,8 @@
    "seconds": 3,
    "tool": "build",
    "dev": true,
+   "tab": "terrain",
+   "group": "Landforms",
    "note": "as the Cliff wall, its turf rolled over the lip (art round 10)"
   },
   "floor_cliff_top": {
@@ -10536,6 +10640,8 @@
    "seconds": 1,
    "tool": "build",
    "dev": true,
+   "tab": "terrain",
+   "group": "Landforms",
    "note": "art round 10: bare rock with scree and lichen, laid as the stone floor (docs/49 section 5: a tile at a time, on the ground or upstairs, no physics); over cliff walls it is a hill's top; Free building only; the cost the stone floor's, a placeholder"
   },
   "floor_cliff_grass": {
@@ -10548,6 +10654,8 @@
    "seconds": 1,
    "tool": "build",
    "dev": true,
+   "tab": "terrain",
+   "group": "Landforms",
    "note": "as the Cliff top, turf with a rock nub now and then (art round 10)"
   },
   "stair_ramp_stone": {
@@ -10562,6 +10670,8 @@
    "seconds": 30,
    "tool": "build",
    "dev": true,
+   "tab": "terrain",
+   "group": "Landforms",
    "note": "art round 10: a sloped slab of the cliff's rock climbing one storey over three tiles, north or west, built as a stair (docs/49 section 5) and walked at 32 px a tile with no treads (map.riseOn); its landing a cliff top (its definition's `landing`) unless a floor is laid there already; never taken apart, as a stair; Free building only; the cost the stone stair's, a placeholder"
   }
  },
@@ -10913,9 +11023,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:811",
-    "placement.js:822",
-    "placement.js:826"
+    "placement.js:905",
+    "placement.js:916",
+    "placement.js:920"
    ]
   },
   {
@@ -11223,7 +11333,8 @@
   {
    "key": "Build",
    "at": [
-    "main.js:866"
+    "main.js:866",
+    "placement.js:83"
    ]
   },
   {
@@ -11235,19 +11346,19 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1658"
+    "placement.js:1753"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1651"
+    "placement.js:1746"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1219"
+    "placement.js:1313"
    ]
   },
   {
@@ -11577,6 +11688,12 @@
    ]
   },
   {
+   "key": "Terrain",
+   "at": [
+    "placement.js:83"
+   ]
+  },
+  {
    "key": "Till the soil",
    "at": [
     "interact.js:942"
@@ -11683,34 +11800,34 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:176",
-    "placement.js:402",
-    "placement.js:1579",
-    "placement.js:1616"
+    "placement.js:200",
+    "placement.js:496",
+    "placement.js:1674",
+    "placement.js:1711"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1692"
+    "placement.js:1788"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1682"
+    "placement.js:1778"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1238"
+    "placement.js:1332"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1672"
+    "placement.js:1767"
    ]
   },
   {
@@ -11740,7 +11857,7 @@
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:304"
+    "placement.js:369"
    ]
   },
   {
@@ -11767,6 +11884,12 @@
     "interact.js:309",
     "interact.js:331",
     "interact.js:1782"
+   ]
+  },
+  {
+   "key": "Painting ${d.label.toLowerCase()}",
+   "at": [
+    "placement.js:424"
    ]
   },
   {
@@ -11870,7 +11993,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1142"
+    "placement.js:1236"
    ]
   },
   {
@@ -11918,7 +12041,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1699"
+    "map.js:1732"
    ]
   },
   {
@@ -12047,7 +12170,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:923",
-    "map.js:1695"
+    "map.js:1728"
    ]
   },
   {
@@ -12235,6 +12358,7 @@
   "sync",
   "takeall",
   "talk",
+  "terrain",
   "throwing",
   "tools",
   "torch",
@@ -12249,7 +12373,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3848
+   "lines": 3881
   },
   {
    "path": "interact.js",
@@ -12261,7 +12385,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 1694
+   "lines": 1790
   },
   {
    "path": "net.js",
@@ -12540,6 +12664,10 @@
    "lines": 157
   },
   {
+   "path": "ui/build-palette.js",
+   "lines": 153
+  },
+  {
    "path": "ui/talk-panel.js",
    "lines": 153
   },
@@ -12753,10 +12881,6 @@
   },
   {
    "path": "mining.js",
-   "lines": 56
-  },
-  {
-   "path": "ui/build-palette.js",
    "lines": 56
   },
   {
@@ -13108,7 +13232,8 @@
    "BUILD_REACH": 2.6,
    "REMOVE_REACH": 2.6,
    "EDGE_CLEARANCE": 0.45,
-   "MAX_DRAG": 12
+   "MAX_DRAG": 12,
+   "TERRAIN_DRAG": 24
   },
   "render_area": {
    "CORE_GAIN": 1.4

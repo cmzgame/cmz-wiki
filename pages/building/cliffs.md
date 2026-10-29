@@ -13,7 +13,7 @@ summary: Cliff walls, cliff tops, and the stone ramp, built only with Free build
 
 ### The pieces
 
-With Free building on, the build palette (N) has five more rows (see [[Building]]):
+With Free building on, the build palette (N) has a **Terrain** tab, and the five cliff pieces are its Landforms (see [[Building]] and [[Terrain]]); before the Terrain tab they were rows on the one list:
 
 - **Cliff wall** and **Grassy cliff wall**: a cliff face on a tile's edge, built as any wall.
 - **Cliff top** and **Grassy cliff top**: a floor, laid a tile at a time or by a drag, on the ground or a storey up, as a [[Upper floors#Building floors and stairs|built floor]] is.
@@ -66,7 +66,7 @@ A guest builds cliff walls, cliff tops, and the ramp through the same build comm
 
 ## Settings that change it
 
-- **Free building** (default Off): lists the five cliff pieces in the palette and lets them be built, and lets a cliff wall be taken apart. See [[World rules]].
+- **Free building** (default Off): offers the Terrain tab, and lists the five cliff pieces on it, and lets them be built, and lets a cliff wall be taken apart. See [[World rules]].
 
 ## See also
 
@@ -77,6 +77,7 @@ A guest builds cliff walls, cliff tops, and the ramp through the same build comm
 ## Sources
 
 <!-- sources at 3233696 -->
+- `data/build.json` (at c0448ec): the five cliff pieces carry `tab` terrain and `group` Landforms; the Terrain tab is offered only with Free building (game #565)
 - `data/build.json:209-270`: the Cliff wall, the Grassy cliff wall, the Cliff top, the Grassy cliff top, and the Stone ramp, each `dev`, its cost a placeholder, its seconds (game #561)
 - `data/sprites/wall_cliff.json`, `data/sprites/wall_cliff_grass.json`: `wall.cliff`, the height and thickness, the corner pieces' definition, the face variants and the backs (game #561)
 - `data/sprites/stair_ramp_stone.json`: the ramp's drawings north and west, its `ramp` table, its landing a cliff top (game #561)
