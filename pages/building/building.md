@@ -92,7 +92,7 @@ Only what players made can be taken apart:
 - any wall, door, or window a player built, including a door or window built into a wall of the village
 - a round room a player built, whole: any edge of it lights up the whole ring, and a wall or a door it took in is left as it was (see [[Round rooms#Taking one apart|Round rooms]])
 - a cliff wall a player built, only while Free building is on ("Cliffs come apart only in Free building"; see [[Cliffs]])
-- a floor a player laid, a tile at a time, when nothing else that can be taken apart is under the cursor; the floor it was laid over comes back on the ground, and upstairs the tile is empty again. It is refused while a wall, a stair, furniture, a rug, a thing on the floor, or anyone stands on it (see [[Upper floors#Building floors and stairs|Upper floors]])
+- a floor a player laid, a tile at a time, when nothing else that can be taken apart is under the cursor: its tile's diamond lights up, green or red, with the prompt at the tile; the floor it was laid over comes back on the ground, and upstairs the tile is empty again. It is refused while a wall, a stair, furniture, a rug, a thing on the floor, or anyone stands on it (see [[Upper floors#Building floors and stairs|Upper floors]])
 - any piece of furniture made at a station (a chest, a shelf, a workbench, a wheelbarrow, and the rest; see [[Crafting]]), whether or not it can be carried
 
 The village's own furniture never lights up, even after it has been carried somewhere else, and neither do walls that are part of the map (a round room of the map says "That is the village's."), stairs (a stair a player built included: none is ever taken apart), trees, the well, fires, or torch posts. Furniture is carried whole instead (see [[Carrying furniture]]).
@@ -153,6 +153,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 <!-- sources at d7cf736 -->
 - `data/build.json:209-270`, `src/placement.js:591`, `src/placement.js:635-636`, `src/placement.js:1091` (at 3233696): the five cliff pieces, Free building only ("Cliffs are not in the game yet"), "Not in a cliff", a cliff wall taken apart only with Free building (game #561)
+- `src/render/props.js:81-82`, `src/placement.js:1669` (at 7925955): the Take apart tool over a laid floor outlines its tile and puts its prompt there; before the fix (game #563) pointing it at a laid floor, a cliff top included, stopped the game
 - `src/placement.js:650-651`, `src/stations.js:268-279` (at eba3c56): no wall, door, or window built across a living body (each its own size), "Someone is in the way"; a corpse none (game #553)
 - `src/stations.js:254-279`, `src/placement.js:380`, `src/placement.js:617-623` (at eba3c56): "Someone is in the way" while a living body's circle reaches into one of its tiles; a corpse never counts (game #553)
 - `data/build.json:158-209`, `src/placement.js:213-420`, `src/map.js:1049-1117`, `src/map.js:2650-2705` (at 6eba9c1): the Plank floor, the Stone floor, the Wood stair, and the Stone stair, Free building only ("Floors are not in the game yet", "Stairs are not in the game yet"); building on the builder's own floor; a laid floor taken apart; a stair never (game #549, following the ruling of game #538)

@@ -86,5 +86,6 @@ A guest builds cliff walls, cliff tops, and the ramp through the same build comm
 - `src/map.js:2651-2664`, `src/map.js:2769-2771`: a stair's material wood, stone, or one with its own definition; a ramp walked on a smooth slope; its landing the floor its definition names (game #561)
 - `src/cliffs.js:1-94`: the plateau the floored tiles a storey up; a buried cliff drawn as nothing; the corners, outer and inner, and their halves; the face variant by the edge, the back (game #561)
 - `src/render/walls.js:822-860`: a cliff's face cut under its plateau's floor, its back, its corner pieces (game #561)
+- `src/render/scene.js:206-235` (at 7925955): an upper storey also draws the first row and column of a chunk it does not hold beside one it does, so a corner piece at a chunk's corner on a storey is drawn (game #564; before it, the corner and both its edges drew as nothing)
 - `src/render/storeys.js:273-300`, `src/render/storeys.js:413`: the ramp drawn on its planes (game #561)
 - The game's pull request #561: the guest's side, the limits (the plateau's fog from the ground, no fade behind a hill), the plan of `docs/29-world/10` not built

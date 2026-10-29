@@ -113,6 +113,7 @@ Every floor is the host's world. A guest climbs a stair by their own walking, as
 ## Sources
 
 <!-- sources at 6eba9c1 -->
+- `src/main.js:1580`, `src/render/props.js:385`, `src/render/scene.js:206-235` (at 7925955): an item lying on the floor drawn from `lying_<id>`, so the stone floor keeps its own picture (before game #564 the item stone's picture took the stone floor's name, and a stone stair's landing and every stone floor drew as one pebble on an empty tile); an upper storey also draws the first row and column of a chunk it does not hold beside one it does, so a post at a chunk's corner there is drawn (game #564)
 - `src/map.js:2651-2664`, `src/map.js:2769-2771`, `data/sprites/stair_ramp_stone.json` (at 3233696): the Stone ramp a stair of its own material, walked on a smooth slope, its landing a cliff top unless floored already (game #561)
 - `data/build.json:158-209`: the Plank floor, the Stone floor, the Wood stair, and the Stone stair, each `dev`, its cost a placeholder, its seconds; a stair north or west only, never taken apart (game #549)
 - `src/placement.js:213-357`: a build on the builder's own storey; a floor laid a tile at a time by a click or a drag at most `MAX_DRAG` a side, each tile's reason, reach by a clear line, laid out from what is walkable, "Floors are not in the game yet", half of a laid floor laid over given back (game #549)

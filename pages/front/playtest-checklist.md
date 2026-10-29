@@ -192,6 +192,8 @@ Each area lists its newest changes first. The box at the front of each entry is 
 
 ## Bug fixes
 
+- ☐ **Fixed: stone floors drawn as a pebble, and corners missing upstairs** (game #564, merged 2026-10-28): Walk into the chapel, the crypt, the manor, the merchant's house, the smithy, Long Acre's barn, or the mill, and across the stone bridge on the high street: the floor is drawn as stone, not as one pebble on a bare tile. Drop a stone on the ground: it lies as a stone. With Free building, build a Stone stair and walk up: its landing is stone. Build a hill on a hill (a ring of cliff walls on the ground and another on the first storey, Stone ramps, and Cliff top laid over each ring) and a few walls with posts upstairs, and look at them from the ground and from each storey: every corner piece, cliff wall, and post is drawn, with no gap at a corner. Read: [[Cliffs]], [[Upper floors]].
+- ☐ **Fixed: the Take apart tool over a laid floor stopped the game** (game #563, merged 2026-10-28): With Free building, lay a Plank floor tile and a Cliff top, press X, and point at each: its tile is outlined with the prompt at it, and the game no longer stops. Click to take the tile up. Read: [[Building]], [[Upper floors]].
 - ☐ **A round wall goes up over a corpse** (game #556, merged 2026-10-28): With Free building on, kill one of the dead, then drag a Round stone wall so its outline crosses the body: it builds, as a straight wall does. With one of the dead standing on the outline it still says "Someone is in the way". Read: [[Round rooms]].
 - ☐ **Fixed: tree crowns flickered** (game #544, merged 2026-10-27): Walk through the woods past trees whose crowns overlap: no bars of one tree flash over the other as you walk. Read: [[Trees]].
 - ☐ **Fire pit light, and a campfire on water** (game #531, merged 2026-10-27): Light a fire pit at night: its pool is centred on its flames, not on its back tile. Try to Place a campfire on the river's ford: "Not on water"; on someone standing there: "Someone is in the way" (since game #553 a corpse no longer counts). Read: [[Fire pit]], [[Campfire]], [[Light]].
@@ -232,8 +234,8 @@ Done since they were filed: **floors built a tile at a time** (game #538, built 
 
 ## Sources
 
-<!-- sources at 3233696 -->
-- The game's merged pull requests, #128 to #561, named in each entry: their bodies say what a player can try
+<!-- sources at 7925955 -->
+- The game's merged pull requests, #128 to #564, named in each entry: their bodies say what a player can try
 - The playtest checklist's items, written from those pull requests for Michael's playtest (2026-10-26)
 - `data/tuning.json` `player.hp`: a player's health, a hundred
 - `data/items.json`: the bags, `bag` on the burlap sack, the linen satchel, and the rucksack
