@@ -5,7 +5,7 @@ aliases: [Door, Doors, Window, Windows, Shutters, Climbing, Climb through]
 summary: Doors and windows, which are walls with a kind and a state; opening them with E, what shutters do to sight, and why nobody passes a window.
 ---
 
-**Openings** are the doors and windows of a building. An opening is not an object: it is a [[Walls|wall]] on a tile's edge with a different kind, door or window, and a state: open or shut, whole or broken, with or without [[Boards|boards]]. Doors and windows both start closed.
+**Openings** are the doors and windows of a building. (The stone [[Castle gates|castle gates]], built only with Free building, are doors of a kind: one run of walls, opened with E, with a portcullis whose bars pass sight and light and stop bodies; the dead cannot break one.) An opening is not an object: it is a [[Walls|wall]] on a tile's edge with a different kind, door or window, and a state: open or shut, whole or broken, with or without [[Boards|boards]]. Doors and windows both start closed.
 
 ## How it works
 
@@ -72,12 +72,14 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 - [[Boards]]
 - [[Breaking in]]
 - [[Fences]], whose gates are doors you can see through
+- [[Castle gates]], stone gates with a portcullis
 - [[Sight]]
 - [[Controls]]
 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:1691-1845`, `src/interact.js:773-807` (at 77fee9d): a castle gate is a door-kind wall on each edge of its run, opened and shut by E on any edge, the whole gate together, never boarded, never stamped over (game #570)
 - `src/placement.js:650-651`, `src/stations.js:271-279`, `src/map.js:2928-2975` (at eba3c56): no door or window built across a living body; a door shut on one, which may move only where it goes no deeper (game #553)
 - `src/map.js:1444-1452`, `src/map.js:1518-1555` (at da57a57): a door or a window on a ring only at a door point; taken out, the ring's wall back (game #536)
 - `src/render/rings.js:96-232`, `src/render/walls.js:273` (at a0cf5a2): a door or a window at a door point drawn in the curve, with no straight frame or post (game #537)

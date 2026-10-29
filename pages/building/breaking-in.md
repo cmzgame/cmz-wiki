@@ -77,6 +77,8 @@ At {{n tuning.zombie.siegeEndHour}} o'clock the siege ends: wherever it has got 
 
 Nothing breaks a plain wall and nobody passes a window, so the dead never get into a room with no door; but you cannot walk out of it either. Building never refuses a room for having no door.
 
+The same holds for a room whose only ways in are shut [[Castle gates|castle gates]]: the dead cannot break a shut gate (Michael's ruling of 2026-10-29, which he will probably overrule later), they never target it, and a bite does not pass its bars. They see you through it and cannot reach you. You walk out by opening the gate.
+
 ### What a broken door or shutter becomes
 
 A broken door is an open doorway for good. Broken shutters are a permanent hole, drawn as open shutters with no leaves, that still lets no one through. Nothing repairs them, but they can be boarded again, and a new door can be built over a broken door, or a new window over broken shutters, whole and shut (see [[Building]] and [[Openings]]).
@@ -136,6 +138,7 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 - `src/map.js:792-797`: a broken door stays open, broken shutters stay open
 - `src/map.js:811-826`: a window needs breaking while shut or boarded, and never passes a body
 - `src/entities/zombie.js:719-726`: through a door once open; a window open is the end of it
+- `src/map.js:1716-1726`, `src/entities/zombie.js:330` (at 77fee9d): the dead cannot break a shut castle gate, never target it, and cannot bite through it (game #570)
 - `src/entities/zombie.js:660-682`, `src/entities/zombie.js:244-278`: no door it can reach: a fence across the way struck, a gate first; else a search
 - `src/entities/zombie.js:790-805`, `src/entities/zombie.js:212-215`: a striking one bites across the fence, and does not give up unseen while it last saw the player in a room (game #171)
 - `src/entities/zombie.js:607-622`, `src/visibility.js:12-48`: a bite needs the contact distance and a clear line, which an open window passes (game #171)

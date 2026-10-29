@@ -17,7 +17,7 @@ An entry of the build menu says which tab it is on, and the menu shows the tab b
 
 Each tab lists its rows under small headings:
 
-- **Build:** Walls and openings, Props, Floors and stairs.
+- **Build:** Walls and openings, Props, Floors and stairs, and, with Free building on, Castle (the two [[Castle gates]]).
 - **Terrain:** **Ground** (Grass, Dirt, Cobblestone, Random spawn), **Water** (Shallow water, Water), and **Landforms** (the Cliff wall, Grassy cliff wall, Cliff top, Grassy cliff top, and Stone ramp; see [[Cliffs]]).
 
 A terrain row shows its floor's colour, a small diamond, where a building row shows its cost. The five landforms are built as they were before they moved to this tab, but for the Stone ramp, which is placed at once and for free like the ground's paints (see [[Cliffs#The stone ramp|Cliffs]]).

@@ -42,7 +42,7 @@ Whatever you do to a thing, you do with a clear line to it as well as within rea
 
 ### Sealed
 
-The debug corner says whether your room is sealed or open. A room is sealed when every door is shut and whole or boarded, and every window is shuttered and whole or boarded. Nothing in the game reads the mark itself: sleep and the dead do not change with it, and the dead still break a sealed room's doors.
+The debug corner says whether your room is sealed or open. A room is sealed when every door is shut and whole or boarded, and every window is shuttered and whole or boarded. Nothing in the game reads the mark itself: sleep and the dead do not change with it, and the dead still break a sealed room's doors. A shut [[Castle gates|castle gate]] counts as a shut door, and the dead cannot break one: a room closed by gates alone is a cell for them.
 
 A room with **no door at all** is another matter: nothing breaks a plain wall and nobody passes a window, so the dead never get in, and you cannot walk out (see [[Breaking in#A room with no door|Breaking in]]), though you may build your own way out (above). The light follows the openings, not the mark: a room with every door and shutter shut is dark by day (see [[Light]]).
 
@@ -80,4 +80,5 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 - `src/render/walls.js:355-371`, `src/render/walls.js:163-169`, `src/render/walls.js:306-316`: near walls faded, posts only when every wall is near
 - `src/render/scene.js:38-43`: only trees open the hole round the player
 - `src/map.js:828-842`, `src/main.js:1314`: sealed, computed only for the debug corner
+- `src/map.js:2003-2014`, `src/map.js:2660` (at 77fee9d): a shut castle gate bounds a room, passes its sight and light, and counts as a shut door for sealed (game #570)
 - `src/render/scene.js:35`: the faded walls' opacity

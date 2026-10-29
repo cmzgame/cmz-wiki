@@ -51,6 +51,7 @@ The path is checked once, when the shot is loosed. A shot is stopped by:
 
 - a wall, below the wall's own height: a house wall's {{n sprites.wall_wood.wall.height}} pixels, a [[Fences|fence]]'s {{n sprites.wall_fence.wall.height}} (a wall with no height of its own, {{n combat.bow.wallHeight}}), unless it passes through an open or broken door below its lintel, or an open or broken window without boards between its sill and its top,
 - boards, always,
+- a shut or open [[Castle gates|castle gate]] from its crown, {{n sprites.wall_stone_gate_2.wall.gate.opening.crown}} pixels, up to the wall's top; below its crown a shot flies through the arch, bars and all,
 - tree trunks and round props, below {{n combat.bow.trunkHeight}} pixels,
 - other solid props, below their own height, up to {{n combat.bow.propHeight}} pixels.
 
@@ -126,6 +127,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## Sources
 
 <!-- sources at 125bffb -->
+- `src/archery.js:193-199`, `src/map.js:1728-1733` (at 77fee9d): a castle gate lets a shot through under its crown, shut or open (game #570)
 - `src/archery.js:135`, `src/archery.js:282`, `src/archery.js:309`, `src/archery.js:377` (at da57a57): a flight on its shooter's layer, hitting and landing there alone (game #534)
 - `src/archery.js:312`, `src/entities/zombie.js:126-136`, `src/entities/zombie.js:559-587` (at 5eb40e6): a shot's hit tells the dead one where it was loosed from, and one it does not kill calls the dead that see it (game #504)
 - `src/archery.js:809-829`, `src/archery.js:919-950`, `src/archery.js:284-335`, `src/archery.js:734-776`, `src/interact.js:262-310`, `data/items.json:13-14` (at 307ed34): the throwing knife and axe: the left button from the main hand, one from the stack, the knockdown and break rolled at the landing, the spin and the lying picture, the pile taken with E (game #494)

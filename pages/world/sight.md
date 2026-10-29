@@ -25,6 +25,7 @@ Lines are drawn from the middle of your tile to every tile on screen, plus a mar
 - Open doors and open shutters: you see through a window whose shutters stand open. See [[Openings]].
 - A broken door or broken shutters: the hole is open.
 - Fences and fence gates, shut or open: a fence is a wall you can see over.
+- A shut [[Castle gates|castle gate]]: its portcullis is bars, and sight and light pass them, though bodies, blows, and bites do not.
 - Trees, rocks, and furniture.
 
 ### Darkness
@@ -96,6 +97,7 @@ Each player sees the dead in the dark by their own sight and their own torch, fr
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:2660`, `src/map.js:2668-2670` (at 77fee9d): a shut castle gate passes sight and light and not a blow or a bite (game #570)
 - `src/visibility.js:12`, `src/visibility.js:94-106`, `src/render/storeys.js:44-67` (at da57a57): sight on the viewer's own layer; the hiding rule and a hidden storey's bodies (game #534)
 - `src/visibility.js:12-48`, `src/visibility.js:86-109`, `src/camera.js:58-75`: rays from your tile over the viewport and a margin; the corner points
 - `src/main.js:1170-1179`: recomputed on a new tile, a world change, or a resize

@@ -87,10 +87,12 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - [[Openings]]
 - [[Breaking in]]
 - [[Sight]]
+- [[Castle gates]], stone gates with a portcullis the dead cannot break
 
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:1691-1845` (at 77fee9d): the castle gate is a different thing from a fence's gate: its own wall kind of door the dead cannot break, no hit points they can take (game #570); the page [[Castle gates]]
 - `data/sprites/wall_fence.json`, `data/sprites/post_fence.json`, `data/sprites/wall_parts_fence.json`, `data/sprites/wall_boards_gate.json`: the drawn fence, its post, its gate's leaves, and a drawing of boards across a gate (game #343, at b0df8fc), which no gate can take since game #398
 - `data/build.json`: the Fence and the Gate, their costs, seconds, and tool; a gate `over` the fence (game #343, at b0df8fc)
 - `src/placement.js:204-212`: a build entry's wall kind, and a gate refused in any wall but a fence ("Only in a fence") (game #343, at b0df8fc)

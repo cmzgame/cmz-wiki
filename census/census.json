@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "e5ab36c2512608e0af73d15fe9ac2ebcdbacd304",
-  "short": "e5ab36c",
-  "date": "2026-10-29T00:55:30-05:00",
-  "subject": "Merge pull request #569 from cmzgame/build/ramp-fixes",
+  "commit": "77fee9dff9f359fd9139d94cf52338c9b187713f",
+  "short": "77fee9d",
+  "date": "2026-10-29T02:10:34-05:00",
+  "subject": "Merge pull request #570 from cmzgame/build/castle-gates",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 97,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 219,
+  "sprites": 223,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -24,9 +24,9 @@
   "liveRules": 5,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 105,
+  "menuLabels": 106,
   "events": 38,
-  "checks": 95,
+  "checks": 96,
   "modules": 153
  },
  "items": [
@@ -8613,6 +8613,18 @@
    "note": "the fence gate's leaves (art round 3, #332): open (leaf_<o>), and the swing's two in-between leaves (leaf_<o>_30, leaf_<o>_60); a fence's leaf always swings toward the camera, so there is no far leaf"
   },
   {
+   "id": "wall_parts_gate_stone_2",
+   "kind": "wall",
+   "drawn": true,
+   "note": "DRAFT (art round 12): the 2-wide gate's portcullis, three frames per run: closed (tips at the ground), mid (tips at 30), raised (tips at 60). Drawn after the wall piece; already clipped to what the arch shows"
+  },
+  {
+   "id": "wall_parts_gate_stone_3",
+   "kind": "wall",
+   "drawn": true,
+   "note": "DRAFT (art round 12): the 3-wide gate's portcullis, three frames per run: closed (tips at the ground), mid (tips at 30), raised (tips at 60). Drawn after the wall piece; already clipped to what the arch shows"
+  },
+  {
    "id": "wall_parts_log",
    "kind": "wall",
    "drawn": true,
@@ -8665,6 +8677,18 @@
    "kind": "wall",
    "drawn": true,
    "note": "a drawn wall (docs/17), five variants per side; anchors at the tile's top vertex"
+  },
+  {
+   "id": "wall_stone_gate_2",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a stone-wall castle gate 2 tiles wide (art round 12, Michael's approval 2026-10-29): one wall object per edge of its run, each drawing its own slice of the picture; the portcullis is a flat grille drawn after the wall (wall_parts_gate_stone_2); the flags are docs/02, 2026-10-29: the dead cannot break a closed gate (deadBreak), bites and melee do not pass its bars (bitesPass), shots do (shotsPass), fire does not spread through it (fireSpreads), sight and light pass it closed (grille)"
+  },
+  {
+   "id": "wall_stone_gate_3",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a stone-wall castle gate 3 tiles wide (art round 12, Michael's approval 2026-10-29): one wall object per edge of its run, each drawing its own slice of the picture; the portcullis is a flat grille drawn after the wall (wall_parts_gate_stone_3); the flags are docs/02, 2026-10-29: the dead cannot break a closed gate (deadBreak), bites and melee do not pass its bars (bitesPass), shots do (shotsPass), fire does not spread through it (fireSpreads), sight and light pass it closed (grille)"
   },
   {
    "id": "wall_winterpine",
@@ -10673,6 +10697,24 @@
    "tab": "terrain",
    "group": "Landforms",
    "note": "art round 10: a sloped slab of the cliff's rock climbing one storey over three tiles, north or west, built as a stair (docs/49 section 5) and walked at 32 px a tile with no treads (map.riseOn); its landing a cliff top (its definition's `landing`) unless a floor is laid there already; it lays its own square side walls (wall_ramp_side) on the ground under its landing, so it keeps its whole solid shape; never taken apart, as a stair; Free building only; placed at once and free like the Terrain tab's other pieces (Michael, 2026-10-29: \"make ramps build immediately for now just for building\"): no bar, no cost, no tool"
+  },
+  "gate_stone_2": {
+   "label": "Stone gate (2 wide)",
+   "kind": "gate",
+   "sprite": "wall_stone_gate_2",
+   "dev": true,
+   "group": "Castle",
+   "hint": "Click, then click a plain stone wall: a 2-tile gate with a portcullis replaces the wall at once; E opens and shuts it",
+   "note": "docs/09 (Michael, 2026-10-29: \"Free building only\", \"Agreed, for now\"): a 2-tile castle gate stamped over 2 plain stone wall edges in a row, shut, placed at once and free as the Stone ramp is (no bar, no cost, no tool); E opens and shuts it like a door; taking it apart puts the plain wall back"
+  },
+  "gate_stone_3": {
+   "label": "Stone gate (3 wide)",
+   "kind": "gate",
+   "sprite": "wall_stone_gate_3",
+   "dev": true,
+   "group": "Castle",
+   "hint": "Click, then click a plain stone wall: a 3-tile gate with a portcullis replaces the wall at once; E opens and shuts it",
+   "note": "docs/09 (Michael, 2026-10-29: \"Free building only\", \"Agreed, for now\"): a 3-tile castle gate stamped over 3 plain stone wall edges in a row, shut, placed at once and free as the Stone ramp is (no bar, no cost, no tool); E opens and shuts it like a door; taking it apart puts the plain wall back"
   }
  },
  "looks": {
@@ -10992,13 +11034,13 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1641"
+    "interact.js:1644"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1643"
+    "interact.js:1646"
    ]
   },
   {
@@ -11029,15 +11071,15 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:913",
-    "placement.js:924",
-    "placement.js:928"
+    "placement.js:981",
+    "placement.js:992",
+    "placement.js:996"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1642"
+    "interact.js:1645"
    ]
   },
   {
@@ -11313,7 +11355,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:941"
+    "interact.js:943"
    ]
   }
  ],
@@ -11346,31 +11388,37 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:1103"
+    "interact.js:1105"
    ]
   },
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1761"
+    "placement.js:1854"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1754"
+    "placement.js:1847"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:1786"
+    "placement.js:1879"
+   ]
+  },
+  {
+   "key": "Click to place the gate at once · Esc cancel",
+   "at": [
+    "placement.js:1885"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1321"
+    "placement.js:1389"
    ]
   },
   {
@@ -11406,41 +11454,41 @@
   {
    "key": "Drink",
    "at": [
-    "interact.js:1824",
-    "interact.js:1919"
+    "interact.js:1827",
+    "interact.js:1922"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1882"
+    "interact.js:1885"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1821",
-    "interact.js:1917"
+    "interact.js:1824",
+    "interact.js:1920"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1797",
-    "interact.js:1928"
+    "interact.js:1800",
+    "interact.js:1931"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1798",
-    "interact.js:1929"
+    "interact.js:1801",
+    "interact.js:1932"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1926"
+    "interact.js:1929"
    ]
   },
   {
@@ -11452,7 +11500,7 @@
   {
    "key": "Fill waterskins (they hold clean water)",
    "at": [
-    "interact.js:1063"
+    "interact.js:1065"
    ]
   },
   {
@@ -11494,8 +11542,8 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:883",
-    "interact.js:898"
+    "interact.js:885",
+    "interact.js:900"
    ]
   },
   {
@@ -11519,7 +11567,7 @@
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2315"
+    "interact.js:2318"
    ]
   },
   {
@@ -11567,16 +11615,16 @@
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1792"
+    "interact.js:1795"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1784",
-    "interact.js:1786",
-    "interact.js:1788",
-    "interact.js:1791"
+    "interact.js:1787",
+    "interact.js:1789",
+    "interact.js:1791",
+    "interact.js:1794"
    ]
   },
   {
@@ -11588,7 +11636,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1936"
+    "interact.js:1939"
    ]
   },
   {
@@ -11708,7 +11756,7 @@
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:942"
+    "interact.js:944"
    ]
   },
   {
@@ -11720,8 +11768,8 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1893",
-    "interact.js:1950"
+    "interact.js:1896",
+    "interact.js:1953"
    ]
   },
   {
@@ -11733,8 +11781,8 @@
   {
    "key": "Use",
    "at": [
-    "interact.js:1778",
-    "interact.js:1880"
+    "interact.js:1781",
+    "interact.js:1883"
    ]
   },
   {
@@ -11752,13 +11800,13 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:1124"
+    "interact.js:1126"
    ]
   },
   {
    "key": "Water (no water carried)",
    "at": [
-    "interact.js:869"
+    "interact.js:871"
    ]
   },
   {
@@ -11776,7 +11824,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2251"
+    "interact.js:2254"
    ]
   },
   {
@@ -11788,13 +11836,13 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:785"
+    "interact.js:786"
    ]
   },
   {
    "key": "${water.BOIL_BUCKET} (no tainted water in it)",
    "at": [
-    "interact.js:1186"
+    "interact.js:1188"
    ]
   },
   {
@@ -11806,88 +11854,89 @@
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:960"
+    "interact.js:962"
    ]
   },
   {
    "key": "Boil water (${water.NO_TAINTED.replace(/\\.$/, \"\").toLowerCase()})",
    "at": [
-    "interact.js:1177"
+    "interact.js:1179"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
     "placement.js:200",
-    "placement.js:504",
-    "placement.js:1682",
-    "placement.js:1719"
+    "placement.js:507",
+    "placement.js:573",
+    "placement.js:1775",
+    "placement.js:1812"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1797"
+    "placement.js:1895"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1787"
+    "placement.js:1880"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1340"
+    "placement.js:1409"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1775"
+    "placement.js:1868"
    ]
   },
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:1046"
+    "interact.js:1048"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1536"
+    "interact.js:1539"
    ]
   },
   {
    "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1931"
+    "interact.js:1934"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1801"
+    "interact.js:1804"
    ]
   },
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:372"
+    "placement.js:375"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2363"
+    "interact.js:2366"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2300"
+    "interact.js:2303"
    ]
   },
   {
@@ -11901,19 +11950,19 @@
    "at": [
     "interact.js:309",
     "interact.js:331",
-    "interact.js:1782"
+    "interact.js:1785"
    ]
   },
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:427"
+    "placement.js:430"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:967"
+    "interact.js:969"
    ]
   },
   {
@@ -11931,13 +11980,13 @@
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:947"
+    "interact.js:949"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2400"
+    "interact.js:2403"
    ]
   },
   {
@@ -11949,19 +11998,19 @@
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1836"
+    "interact.js:1839"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2388"
+    "interact.js:2391"
    ]
   },
   {
    "key": "Water with the ${getItem(skin.id).name.toLowerCase()}",
    "at": [
-    "interact.js:868"
+    "interact.js:870"
    ]
   }
  ],
@@ -11981,13 +12030,13 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:351"
+    "archery.js:355"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:968"
+    "archery.js:972"
    ]
   },
   {
@@ -12011,7 +12060,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1244"
+    "placement.js:1312"
    ]
   },
   {
@@ -12021,7 +12070,7 @@
     "interact.js:315",
     "interact.js:339",
     "interact.js:577",
-    "interact.js:2264",
+    "interact.js:2267",
     "ui/station-panel.js:84",
     "ui/station-panel.js:111"
    ]
@@ -12059,7 +12108,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1732"
+    "map.js:1894"
    ]
   },
   {
@@ -12120,7 +12169,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1110"
+    "entities/zombie.js:1112"
    ]
   },
   {
@@ -12181,20 +12230,20 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1111"
+    "entities/zombie.js:1113"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:923",
-    "map.js:1728"
+    "entities/zombie.js:925",
+    "map.js:1890"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:976",
+    "archery.js:980",
     "combat.js:455",
     "game.js:739"
    ]
@@ -12329,6 +12378,7 @@
   "floaters",
   "food",
   "frame",
+  "gates",
   "ground",
   "growth",
   "handed",
@@ -12392,11 +12442,11 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3919
+   "lines": 4091
   },
   {
    "path": "interact.js",
-   "lines": 2464
+   "lines": 2467
   },
   {
    "path": "main.js",
@@ -12404,11 +12454,11 @@
   },
   {
    "path": "placement.js",
-   "lines": 1799
+   "lines": 1897
   },
   {
    "path": "net.js",
-   "lines": 1676
+   "lines": 1679
   },
   {
    "path": "placeholders.js",
@@ -12424,15 +12474,19 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 1124
+   "lines": 1126
   },
   {
    "path": "archery.js",
-   "lines": 1021
+   "lines": 1025
   },
   {
    "path": "ground.js",
    "lines": 1011
+  },
+  {
+   "path": "render/walls.js",
+   "lines": 1005
   },
   {
    "path": "entities/animal.js",
@@ -12441,10 +12495,6 @@
   {
    "path": "game.js",
    "lines": 949
-  },
-  {
-   "path": "render/walls.js",
-   "lines": 907
   },
   {
    "path": "ui/inventory-panel.js",
@@ -12499,12 +12549,12 @@
    "lines": 438
   },
   {
-   "path": "ui/map-panel.js",
-   "lines": 412
+   "path": "render/props.js",
+   "lines": 422
   },
   {
-   "path": "render/props.js",
-   "lines": 410
+   "path": "ui/map-panel.js",
+   "lines": 412
   },
   {
    "path": "render/scene.js",
@@ -12515,12 +12565,12 @@
    "lines": 380
   },
   {
-   "path": "sound-gen.js",
+   "path": "sound-cues.js",
    "lines": 363
   },
   {
-   "path": "sound-cues.js",
-   "lines": 362
+   "path": "sound-gen.js",
+   "lines": 363
   },
   {
    "path": "gather-art.js",
@@ -12755,6 +12805,10 @@
    "lines": 116
   },
   {
+   "path": "visibility.js",
+   "lines": 116
+  },
+  {
    "path": "moodles.js",
    "lines": 115
   },
@@ -12764,10 +12818,6 @@
   },
   {
    "path": "ui/context-menu.js",
-   "lines": 110
-  },
-  {
-   "path": "visibility.js",
    "lines": 110
   },
   {
@@ -13216,7 +13266,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 26,
+   "PROTOCOL": 27,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,

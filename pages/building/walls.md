@@ -23,6 +23,8 @@ Every wall has a material, which is its art. The corner posts take the heaviest 
 - **Fence**: {{n sprites.wall_fence.wall.height}} pixels tall, {{n sprites.wall_fence.wall.thickness}} thick, and see-through. See [[Fences]].
 - **Cliff**, bare or grassy: {{n sprites.wall_cliff.wall.height}} pixels tall, {{n sprites.wall_cliff.wall.thickness}} thick, a rock face built only with Free building on, for experimenting with hills. It blocks bodies and sight as stone, and takes no door or window ("Not in a cliff") and no painting or torch ("Not on a cliff"). It is drawn by the plateau a storey up: a face, a back, a corner piece, or nothing where plateau lies on both its sides. See [[Cliffs]].
 
+- **Castle gate**, stone: {{n sprites.wall_stone_gate_2.wall.height}} pixels tall, a stone wall's, two or three tiles wide with a portcullis in an arch, built only with Free building over a plain stone wall's edges. It is a door in each edge of its run, shut or raised; the dead cannot break it. See [[Castle gates]].
+
 A building may mix materials, with a different wall on each side. A door or a window built into a wall is made of that wall's material; in a wall of wood its leaves and shutters may be of another wood (see [[Woods]]).
 
 A house wall of any material is about twice a person's height. Doors and windows sit at the same heights in every wall, whatever its material: a door's top is {{n census.constants.placeholders.DOOR_TOP}} pixels up, clear over a person's head, and a window runs from {{n census.constants.placeholders.WINDOW_SILL}} pixels, about the waist, to {{n census.constants.placeholders.WINDOW_TOP}}, over the head (see [[Openings]]).
@@ -67,6 +69,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 - [[Fences]]
 - [[Round rooms]]
 - [[Cliffs]]
+- [[Castle gates]]
 - [[Upper floors]]
 - [[Woods]]
 - [[Rooms]]
@@ -75,6 +78,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/sprites/wall_stone_gate_2.json`, `data/sprites/wall_stone_gate_3.json`, `src/map.js:1691-1845` (at 77fee9d): the castle gate is a stone-height wall of kind door on each edge of its run (game #570)
 - `data/sprites/wall_cliff.json`, `src/map.js:1164`, `src/paintings.js:57`, `src/placement.js:636`, `src/placement.js:1091`, `src/cliffs.js:1-94` (at 3233696): the cliff wall, its height and thickness, no opening or painting or torch on it, taken apart only with Free building, drawn by its plateau (game #561)
 - `src/render/walls.js:268-294`, `src/render/walls.js:355-395`, `src/render/walls.js:495-520`, `src/map.js:1175-1203`, `src/placement.js:638` (at 6eba9c1): the walls along a stair faded for a body on it; a wall or a post under a floor of the storey above with no cap, flush at a stairwell's edge; a post on a post with no stone foot; no wall across a stair; "No floor there" (games #546, #549, #551)
 - `src/map.js:61-67`, `src/map.js:1444-1513`, `docs/02-decisions.md` (2026-10-27, Thrown things clear fences, not walls) (at da57a57): walls on each layer; a ring's edges walls of stone, doors only at its door points; the thrown-things ruling (games #533, #536)

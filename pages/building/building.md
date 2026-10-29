@@ -14,7 +14,7 @@ summary: Building log walls, walls of each wood, fences, gates, doors, and windo
 
 ### The palette
 
-N opens a short list on the left of the screen. It has two tabs, **Build** and **Terrain**: Terrain is offered only while Free building is on, and with it off the list is the Build tab alone, with no tab bar. The list scrolls under a greatest height (see [[Terrain#The list|Terrain]]). The Build tab has a row for each piece, under small headings (Walls and openings, Props, Floors and stairs), and a **Take apart** row:
+N opens a short list on the left of the screen. It has two tabs, **Build** and **Terrain**: Terrain is offered only while Free building is on, and with it off the list is the Build tab alone, with no tab bar. The list scrolls under a greatest height (see [[Terrain#The list|Terrain]]). The Build tab has a row for each piece, under small headings (Walls and openings, Props, Floors and stairs, and, with Free building on, Castle), and a **Take apart** row:
 
 - **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built in {{n build.wall.seconds seconds}}, with a [[Hatchet]] on you.
 - **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each costing {{n build.wall_oak.cost.plank}} [[Plank|plank]], built in {{n build.wall_oak.seconds seconds}}, with a [[Smith's hammer]] on you. **Winter Pine wall** and **Bloodbark wall** are listed only while Free building is on (see [[Woods]]).
@@ -30,6 +30,7 @@ N opens a short list on the left of the screen. It has two tabs, **Build** and *
 - **Wood stair** and **Stone stair**, listed only while Free building is on: a stair three tiles long climbing one storey north or west, away from you, with its landing laid on the floor above, built in {{n build.stair_wood.seconds seconds}} in wood and {{n build.stair_stone.seconds seconds}} in stone. Without Free building they are refused, "Stairs are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 - On the **Terrain** tab, listed only while Free building is on, the ground is painted a drag at a time: **Grass**, **Dirt**, **Cobblestone**, **Shallow water**, **Water**, and the pink **Random spawn** tile, a tag for where random things can spawn, which does nothing yet. Painting is instant and free, on the ground only, and leaves nothing to take apart. See [[Terrain]].
 - Also on the **Terrain** tab, under Landforms, **Cliff wall**, **Grassy cliff wall**, **Cliff top**, **Grassy cliff top**, and **Stone ramp**, listed only while Free building is on, for experimenting with hills: a cliff wall is a rock wall on an edge that takes no door, window, painting, or torch; a cliff top is a floor laid as the Plank floor is; the ramp is a stair of rock climbing north or west on a smooth slope, its landing a cliff top, placed at once and for free (no bar, no cost, no tool) with its own solid sides round the ground under its landing. Without Free building they are refused, "Cliffs are not in the game yet". See [[Cliffs]].
+- **Stone gate (2 wide)** and **Stone gate (3 wide)**, listed only while Free building is on, under the heading **Castle**: a stone castle gate with a portcullis, stamped over two or three consecutive edges of a plain stone wall, placed at once and for free (no bar, no cost, no tool). E raises and lowers it. Without Free building it is refused, "Castle gates are not in the game yet". See [[Castle gates]].
 
 Everything is built on the floor you stand on: upstairs, walls, doors, windows, and carried furniture go on that floor (a wall upstairs needs floor beside it, "No floor there"). A rug, a painting, a set-down, a torch on a wall, and the Fireplace, the fire pit, and the trough are refused upstairs for now, "Not upstairs yet". No wall, door, or window is built across a stair's run ("Not across a stair") or its top ("Not across a stair's top").
 
@@ -61,7 +62,7 @@ When a wall goes up or comes down, the [[Rooms|rooms]] on either side of it are 
 
 ### Building over a wall or a broken opening
 
-A log wall, a wall of wood, or a fence needs an empty edge. A gate goes on an empty edge or into a fence, and nowhere else ("Only in a fence"; see [[Fences]]). A door or a window may also be built over what stands on the edge:
+A log wall, a wall of wood, or a fence needs an empty edge. A gate goes on an empty edge or into a fence, and nowhere else ("Only in a fence"; see [[Fences]]). A castle gate goes over two or three plain stone wall edges in a row and nowhere else (see [[Castle gates]]). A door or a window may also be built over what stands on the edge:
 
 - **Over a plain wall**, authored or built: the door or window takes the wall's place, shut, and is made of the wall's material, so a door built into a stone wall is a stone door. The wall it replaced is remembered.
 - **Over a fence**, a door only: it is a gate in the fence, as the palette's Gate is. A window cannot be built into a fence (see [[Fences]]).
@@ -121,6 +122,7 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Plank floor: {{n build.floor_wood.cost.plank}} plank a tile; Stone floor: {{n build.floor_stone.cost.stone}} stone a tile; {{n build.floor_wood.seconds second}} a tile; never charged (Free building only).
 - Wood stair: {{n build.stair_wood.cost.plank}} planks, {{n build.stair_wood.seconds seconds}}; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, {{n build.stair_stone.seconds seconds}}; never charged (Free building only).
 - Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} stone each, {{n build.wall_cliff.seconds seconds}}; Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, {{n build.floor_cliff_top.seconds second}} a tile; the Stone ramp costs nothing and takes no time or tool; none of these is charged (Free building only).
+- Stone gate (2 wide) and Stone gate (3 wide): no cost, time, or tool; placed at once (Free building only); see [[Castle gates]].
 - Terrain painting: a drag of at most {{n census.constants.placement.TERRAIN_DRAG}} tiles a side, reaching {{n build.terrain_grass.reach tiles}}, instant and free (Free building only); see [[Terrain]].
 - Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
@@ -135,7 +137,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Round stone wall (see [[Round rooms]]), the floors and stairs (see [[Upper floors]]), the cliffs and the stone ramp (see [[Cliffs]]), and the whole Terrain tab, which paints the ground (see [[Terrain]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Round stone wall (see [[Round rooms]]), the floors and stairs (see [[Upper floors]]), the cliffs and the stone ramp (see [[Cliffs]]), the castle gates (see [[Castle gates]]), and the whole Terrain tab, which paints the ground (see [[Terrain]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
@@ -144,6 +146,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - [[Upper floors]], its stairs and floors built with Free building
 - [[Terrain]], the build menu's second tab: painting the ground with Free building
 - [[Cliffs]], hills built with Free building
+- [[Castle gates]], stone gates with a portcullis, built with Free building
 - [[Openings]]
 - [[Boards]]
 - [[Rooms]]
@@ -155,6 +158,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `data/build.json` (`gate_stone_2`, `gate_stone_3`), `src/placement.js:253-255`, `src/placement.js:530-592` (at 77fee9d): the Stone gate rows under Castle, Free building only, placed at once, free, with no tool; "Castle gates are not in the game yet" (game #570); the page [[Castle gates]] has the rest
 - `src/ui/build-palette.js`, `src/placement.js:81-97`, `data/build.json` (at c0448ec): the build menu's two tabs, an entry's `tab` and `group`, the Terrain tab offered only with Free building, the list that scrolls under a height cap, the Take apart row on the Build tab alone (game #565)
 - `src/placement.js:255-296`, `src/map.js:1097-1123` (at c0448ec): the Terrain tab's rows paint the ground, instant, free, ground only, nothing kept to take apart (game #565); the page [[Terrain]] has the rest
 - `data/build.json:209-270`, `src/placement.js:591`, `src/placement.js:635-636`, `src/placement.js:1091` (at 3233696): the five cliff pieces, Free building only ("Cliffs are not in the game yet"), "Not in a cliff", a cliff wall taken apart only with Free building (game #561)
