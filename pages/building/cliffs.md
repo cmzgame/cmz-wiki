@@ -17,7 +17,7 @@ With Free building on, the build palette (N) has a **Terrain** tab, and the five
 
 - **Cliff wall** and **Grassy cliff wall**: a cliff face on a tile's edge, built as any wall.
 - **Cliff top** and **Grassy cliff top**: a floor, laid a tile at a time or by a drag, on the ground or a storey up, as a [[Upper floors#Building floors and stairs|built floor]] is.
-- **Stone ramp**: a sloped slab of rock three tiles long climbing one storey, built as a stair.
+- **Stone ramp**: a sloped slab of rock three tiles long climbing one storey, built as a stair, placed at once and for free, and bringing its own solid sides.
 
 Without Free building they are not listed, and are refused if asked for (a guest's command too): "Cliffs are not in the game yet" for the walls, "Floors are not in the game yet" for the tops, "Stairs are not in the game yet" for the ramp.
 
@@ -46,7 +46,13 @@ Nothing of a cliff is outlined.
 
 ### The stone ramp
 
-A stone ramp is a stair of rock: it is built as a [[Upper floors#Stairs|stair]] is, by the same rules and refusals, three tiles from the cursor climbing one storey, north or west only ("Stairs climb away from the camera"). It has no treads: a body walks up it on a smooth slope, rising evenly from its foot to its top, and crosses its top edge onto the landing. Building it lays its landing as a cliff top, unless a floor is laid there already. Like every stair, it is never taken apart.
+A stone ramp is a stair of rock: it is checked as a [[Upper floors#Stairs|stair]] is, by the same rules and refusals, three tiles from the cursor climbing one storey, north or west only ("Stairs climb away from the camera"). It has no treads: a body walks up it on a smooth slope, rising evenly from its foot to its top, and crosses its top edge onto the landing. Building it lays its landing as a cliff top, unless a floor is laid there already. Like every stair, it is never taken apart.
+
+**It is placed at once and for free.** Click the ramp's row, then click the ground: it goes up on that click, with no bar, no cost, and no tool, as the [[Terrain]] tab's ground paints do (the prompt reads "Click to place"). The wood and stone stairs on the Build tab stay timed and priced.
+
+**It brings its own sides.** The ramp's landing floats a storey over the ground, so the ground under the landing would be open on every side. The ramp walls it: a plain, square stone wall, {{n sprites.wall_ramp_side.wall.height}} pixels tall, on each of the three edges of that ground tile that are not the head's (the edge it shares with the ramp's top step stays open). Where a cliff wall or any wall stands on one of those edges already, it is left as it is and counts as the side. The sides are solid like a cliff wall: they block bodies and [[Sight|sight]], take no door or window ("Not in solid rock") and no painting or torch ("Not on solid rock"), and are never taken apart, as the ramp is not. They are saved and sent like any wall. The ramp's picture and its sides are drawn to read as one solid shape, its top meeting the cliff top, and a side has no post at its ends.
+
+**What refuses it.** Besides the stair's own refusals, a ramp is refused while a body (a player, a villager, an animal, or one of the dead), a corpse, an item, a rug, or a prop is on the ground tile under its landing, so nothing is walled in with it: "Someone is in the way", "A body lies there", or "Something is in the way". A cliff wall standing across the ramp's head is refused in its own words: "A cliff wall is at its head: take it down first".
 
 ### What is not built yet
 
@@ -57,12 +63,12 @@ Cliffs in the ordinary game, cliffs placed by the map, and a cliff-edged world a
 - A cliff wall: {{n sprites.wall_cliff.wall.height}} pixels tall, {{n sprites.wall_cliff.wall.thickness}} thick.
 - Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} [[Stone|stone]] each, {{n build.wall_cliff.seconds seconds}}.
 - Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, {{n build.floor_cliff_top.seconds second}} a tile.
-- Stone ramp: {{n build.stair_ramp_stone.cost.stone}} stone and {{n build.stair_ramp_stone.cost.plank}} [[Plank|plank]], {{n build.stair_ramp_stone.seconds seconds}}; three tiles, one storey.
-- These costs are placeholders, copied from the stone pieces, never charged while cliffs are built only with Free building.
+- Stone ramp: placed at once, with no cost, time, or tool; three tiles, one storey. Its sides: {{n sprites.wall_ramp_side.wall.height}} pixels tall, {{n sprites.wall_ramp_side.wall.thickness}} thick.
+- The walls' and tops' costs are placeholders, copied from the stone pieces, never charged while cliffs are built only with Free building.
 
 ## With friends
 
-A guest builds cliff walls, cliff tops, and the ramp through the same build command as the host, and the host checks them by the same rules; without Free building the host refuses them. A guest walks up a ramp with their own keys, and their game reckons the slope as the host's does. Cliffs, their tops, and the ramp travel in the map's chunks as walls, floors, and stairs do, so every player draws the same corners and faces, and they are kept in the save.
+A guest builds cliff walls, cliff tops, and the ramp through the same build command as the host, and the host checks them by the same rules (a guest's ramp goes up at once too, with its sides); without Free building the host refuses them. A guest walks up a ramp with their own keys, and their game reckons the slope as the host's does. Cliffs, their tops, and the ramp with its sides travel in the map's chunks as walls, floors, and stairs do, so every player draws the same corners and faces, and they are kept in the save.
 
 ## Settings that change it
 
@@ -76,11 +82,17 @@ A guest builds cliff walls, cliff tops, and the ramp through the same build comm
 
 ## Sources
 
-<!-- sources at 3233696 -->
+<!-- sources at e5ab36c -->
 - `data/build.json` (at c0448ec): the five cliff pieces carry `tab` terrain and `group` Landforms; the Terrain tab is offered only with Free building (game #565)
 - `data/build.json:209-270`: the Cliff wall, the Grassy cliff wall, the Cliff top, the Grassy cliff top, and the Stone ramp, each `dev`, its cost a placeholder, its seconds (game #561)
 - `data/sprites/wall_cliff.json`, `data/sprites/wall_cliff_grass.json`: `wall.cliff`, the height and thickness, the corner pieces' definition, the face variants and the backs (game #561)
-- `data/sprites/stair_ramp_stone.json`: the ramp's drawings north and west, its `ramp` table, its landing a cliff top (game #561)
+- `data/sprites/stair_ramp_stone.json`: the ramp's drawings north and west, its `ramp` table, its landing a cliff top (game #561); redrawn in art round 11 (game #569)
+- `data/build.json` (at e5ab36c): the Stone ramp's entry has no `cost`, `seconds`, or `tool` (game #569)
+- `data/sprites/wall_ramp_side.json`: the ramp's own side, `wall.solid`, 96 tall (game #569)
+- `src/placement.js:253-255`, `src/placement.js:471-482`, `src/placement.js:506-519`, `src/placement.js:614`: `isInstantStair`, the ramp placed with no bar, cost, or tool; "Someone is in the way" and "A body lies there" for a body on the ground under the landing (game #569)
+- `src/map.js:2711-2724`, `src/map.js:2749-2781`: the ramp refused for a prop, rug, or item under its landing, the head's cliff wall's own words, `landingSideEdges` and the three sides laid with the ramp, an existing wall left as the side (game #569)
+- `src/map.js:1194-1200`, `src/map.js:2580-2585`, `src/placement.js:738`, `src/paintings.js:57`: a solid wall takes no door, window, or painting ("Not in solid rock", "Not on solid rock") (game #569)
+- `src/render/walls.js:343-347`: a ramp's side stands post-less (game #569)
 - `src/placement.js:591`, `src/placement.js:635-636`, `src/placement.js:1091`: "Cliffs are not in the game yet", "Not in a cliff", "Cliffs come apart only in Free building" (game #561)
 - `src/map.js:1164`, `src/map.js:2543`: no door or window stamped over a cliff; a wall's `cliff` rule (game #561)
 - `src/paintings.js:57`, `src/setdown.js:269`: "Not on a cliff" for a painting and a torch's bracket (game #561)

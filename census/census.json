@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "5257b92eea6f1fba91cf3331a051217a879e73ac",
-  "short": "5257b92",
-  "date": "2026-10-28T23:51:54-05:00",
-  "subject": "Merge pull request #567 from cmzgame/build/flat-map-and-picker",
+  "commit": "e5ab36c2512608e0af73d15fe9ac2ebcdbacd304",
+  "short": "e5ab36c",
+  "date": "2026-10-29T00:55:30-05:00",
+  "subject": "Merge pull request #569 from cmzgame/build/ramp-fixes",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 97,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 218,
+  "sprites": 219,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -24,7 +24,7 @@
   "liveRules": 5,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 104,
+  "menuLabels": 105,
   "events": 38,
   "checks": 95,
   "modules": 153
@@ -8045,7 +8045,7 @@
    "kind": "other",
    "drawn": true,
    "carry": false,
-   "note": "a stone ramp (art round 10): a sloped rock slab climbing one storey over three tiles, six shallow worn steps cut in it (3 px each), its sides closed by rock in the cliff's strata, its edges rounded over as the cliff's lip; facings n and w only (climbing away from the camera)"
+   "note": "the stone ramp, redrawn in art round 11: the slab as round 10's, its flanks now square-edged (rounding 1.5 px, was 5) and its strata continuing without a seam into wall_ramp_side's faces at the head; the landing's sides are the wall_ramp_side pieces, not part of this picture"
   },
   {
    "id": "stair_stone",
@@ -8647,6 +8647,12 @@
    "kind": "wall",
    "drawn": true,
    "note": "a drawn wall's open door leaves and shutters, near and far side (docs/17)"
+  },
+  {
+   "id": "wall_ramp_side",
+   "kind": "wall",
+   "drawn": true,
+   "note": "the Stone ramp's own side for its landing tile (art round 11): bare cliff rock in the ramp's strata, a plain straight face on the edge line (not 8 px out as a cliff's is), 96 tall, a flat top course, no lip, no top strip drawn (the landing's floor is the top), no post (omit wall.post). The same picture serves both of an edge's sides: its face shows where the camera sees it (the edge's +Y face for north, +X for west), and the rock behind it lies on the edge's near side (north: Y -8 to 0, west: X -8 to 0)."
   },
   {
    "id": "wall_spruce",
@@ -10663,16 +10669,10 @@
    "kind": "stair",
    "sprite": "stair_ramp_stone",
    "material": "ramp_stone",
-   "cost": {
-    "stone": 9,
-    "plank": 1
-   },
-   "seconds": 30,
-   "tool": "build",
    "dev": true,
    "tab": "terrain",
    "group": "Landforms",
-   "note": "art round 10: a sloped slab of the cliff's rock climbing one storey over three tiles, north or west, built as a stair (docs/49 section 5) and walked at 32 px a tile with no treads (map.riseOn); its landing a cliff top (its definition's `landing`) unless a floor is laid there already; never taken apart, as a stair; Free building only; the cost the stone stair's, a placeholder"
+   "note": "art round 10: a sloped slab of the cliff's rock climbing one storey over three tiles, north or west, built as a stair (docs/49 section 5) and walked at 32 px a tile with no treads (map.riseOn); its landing a cliff top (its definition's `landing`) unless a floor is laid there already; it lays its own square side walls (wall_ramp_side) on the ground under its landing, so it keeps its whole solid shape; never taken apart, as a stair; Free building only; placed at once and free like the Terrain tab's other pieces (Michael, 2026-10-29: \"make ramps build immediately for now just for building\"): no bar, no cost, no tool"
   }
  },
  "looks": {
@@ -11029,9 +11029,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:905",
-    "placement.js:916",
-    "placement.js:920"
+    "placement.js:913",
+    "placement.js:924",
+    "placement.js:928"
    ]
   },
   {
@@ -11352,19 +11352,25 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1753"
+    "placement.js:1761"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1746"
+    "placement.js:1754"
+   ]
+  },
+  {
+   "key": "Click to place · Esc cancel",
+   "at": [
+    "placement.js:1786"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1313"
+    "placement.js:1321"
    ]
   },
   {
@@ -11813,33 +11819,33 @@
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
     "placement.js:200",
-    "placement.js:496",
-    "placement.js:1674",
-    "placement.js:1711"
+    "placement.js:504",
+    "placement.js:1682",
+    "placement.js:1719"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1788"
+    "placement.js:1797"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1778"
+    "placement.js:1787"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1332"
+    "placement.js:1340"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1767"
+    "placement.js:1775"
    ]
   },
   {
@@ -11869,7 +11875,7 @@
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:369"
+    "placement.js:372"
    ]
   },
   {
@@ -11901,7 +11907,7 @@
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:424"
+    "placement.js:427"
    ]
   },
   {
@@ -12005,7 +12011,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1236"
+    "placement.js:1244"
    ]
   },
   {
@@ -12386,7 +12392,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3888
+   "lines": 3919
   },
   {
    "path": "interact.js",
@@ -12398,7 +12404,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 1790
+   "lines": 1799
   },
   {
    "path": "net.js",
@@ -12438,7 +12444,7 @@
   },
   {
    "path": "render/walls.js",
-   "lines": 906
+   "lines": 907
   },
   {
    "path": "ui/inventory-panel.js",

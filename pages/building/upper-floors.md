@@ -71,7 +71,7 @@ With **Free building** on, the build palette (N) has four more rows: **Plank flo
 - nothing is over it on the floor above: no floor ("A floor is over it"), no stair ("Another stair is over it"), no wall across its top there ("A wall is over it"), and no round room's curve ("A round wall is over it");
 - its landing above is open, empty or a floor a player laid ("Its landing must be open"), with nothing on it ("Something is on its landing").
 
-Building it lays its landing on the floor above, planks for a wood stair, a stone floor for a stone one, and a cliff top for the Stone ramp, and leaves the stairwell open over its run; a landing already floored keeps its floor. A stair is never taken apart (ruled).
+Building it lays its landing on the floor above, planks for a wood stair, a stone floor for a stone one, and a cliff top for the Stone ramp, and leaves the stairwell open over its run; a landing already floored keeps its floor. A stair is never taken apart (ruled). The Stone ramp alone is placed at once and free, with its own solid sides round the ground under its landing (see [[Cliffs#The stone ramp|Cliffs]]); the wood and stone stairs stay timed and priced.
 
 **Building upstairs.** What you build goes on your own floor: walls, fences, doors, and windows, and furniture you carry and put down. A wall upstairs needs a floor on at least one side ("No floor there"), and a door needs floor on both, so no door opens onto an open edge. Not yet upstairs ("Not upstairs yet"): a rug, a painting, a campfire or a torch post set down, a torch put on a wall, and the palette's pieces that stand on tiles (the [[Fireplace]], the [[Fire pit]], the [[Feeding trough]]). A [[Round rooms|round room]] is never built across a stair.
 

@@ -16,7 +16,7 @@ Character creation has {{n census.constants.ui_screens.CREATION_STEPS}} steps, w
 - **First, the identity**: choose one of the browser's identities, edit one, or make a new one. Next needs one chosen.
 - **Second, skills and profession**: a placeholder page; there is nothing to choose yet.
 
-The last button reads **Into the valley** for a new world or a new survivor, or **Join as this** in a friend's world. **Back** on the first step returns to where creation began.
+The last button reads **Into the world** for a new world or a new survivor, or **Join as this** in a friend's world. **Back** on the first step returns to where creation began.
 
 {{planned doc="31-multiplayer/09" note="Skills and a profession, chosen on creation's second step."}}
 
@@ -47,7 +47,7 @@ Each browser has its own character in a friend's world. The world knows whose is
 - `src/ui/screens.js:80`: `CREATION_STEPS`, two steps
 - `src/ui/screens.js:375`: Next on the first step needs an identity chosen
 - `src/ui/screens.js:415-435`: the identity step (Choose, Edit, New identity), the placeholder second step, Back, and the last button's words
-- `src/ui/screens.js:885-898`: Into the valley or Join as this
+- `src/ui/screens.js:1156`: Into the world or Join as this (it read Into the valley until game #568)
 - `src/ui/screens.js:1008-1018`: the pause menu's Character screen: the name, "A survivor of", the figure, read only
 - `src/ui/screens.js:1044-1050`: the dead screen, its words and its two buttons
 - `src/main.js:400-429`: New character: creation again and a new survivor at the spawn of the same world
