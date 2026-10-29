@@ -1,7 +1,7 @@
 ---
 title: World rules
 categories: [Mechanics, Multiplayer, Settings]
-aliases: [World rule, Sandbox, Sandbox step, Rules, Starting population, Population, Trees rule, Village stations, Extra starting items, Starting kit]
+aliases: [World rule, Unlimited mana, Sandbox, Sandbox step, Rules, Starting population, Population, Trees rule, Village stations, Extra starting items, Starting kit]
 summary: Each world keeps its own rules, chosen at the Sandbox step of New world; the host changes most of them from the pause menu, and the rest are fixed when the world is made.
 ---
 
@@ -15,7 +15,8 @@ The **world rules** say how a [[Worlds|world]] plays: whether the dead hunt you 
 
 - **Zombie aggro** (default On): on, the dead hunt you. Off, they wander and ignore you. See [[The dead]].
 - **Survival** (default On): hunger, thirst, and tiredness. Off, the body has no needs. See [[Survival]].
-- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) the Round stone wall, the only way to build a [[Round rooms|round room]], the Plank floor, the Stone floor, the Wood stair, and the Stone stair, the only way to lay a floor or build a stair (see [[Upper floors]]), and the cliff walls, cliff tops, and Stone ramp, the only way to build a hill, and to take a cliff wall apart (see [[Cliffs]]). It also offers the build menu's Terrain tab, which paints the ground in grass, dirt, cobblestone, water, shallow water, and the pink No random spawn tile (see [[Terrain]]); without it the menu is the Build tab alone. See [[Building]].
+- **Free building** (default Off): building costs nothing, and the hammer and the hatchet are not asked for, for trying out structures. Boarding up still wants a plank and a hammer. It also lists what is not otherwise built yet: the Winter Pine and Bloodbark walls (see [[Woods]]) the Round stone wall, the only way to build a [[Round rooms|round room]], the Plank floor, the Stone floor, the Wood stair, and the Stone stair, the only way to lay a floor or build a stair (see [[Upper floors]]), and the cliff walls, cliff tops, and Stone ramp, the only way to build a hill, and to take a cliff wall apart (see [[Cliffs]]). It also offers the build menu's Terrain tab, which paints the ground in grass, dirt, cobblestone, water, shallow water, and the pink Random spawn tile (see [[Terrain]]); without it the menu is the Build tab alone. See [[Building]].
+- **Unlimited mana** (default Off): a dev switch beside Free building, for trying out spells. On, a cast costs no mana and is never refused for mana, and the mana bar reads full; the [[Fireball]]'s card says "but Unlimited mana is on: it costs nothing." Potions and the [[Altar]] change nothing. See [[Mana]].
 - **Multi-hit** (default Off): on, a blow reaches everything in its wedge, "the easy button"; off, only the nearest, the intended way. See [[Combat]].
 
 **Chosen once, when the world is made**, never changed after:
@@ -35,13 +36,13 @@ A world without trees has a few more of the dead in the wild than one with them 
 
 ### The Sandbox step
 
-**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the four switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), Village stations, the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
+**New world** on the [[Worlds]] page asks for the world's name and then its rules, in two parts: **How it plays** ("You can change these later from the pause menu.") with the five switches, then **Chosen once, when the world is made** ("These are chosen now and cannot be changed afterwards.") with Trees, Starting population (a dropdown), Village stations, the **Dev chest** (see [[Developer chest]]), Dev bag, and Extra starting items (a text box). **Next** goes on to [[Characters|character creation]].
 
 The choices are offered first as this browser last chose them when it made a world; the very first time, at their defaults. Changing a rule in a world later does not change what the next Sandbox step offers.
 
 ### World rules on the pause menu
 
-**World rules** on the pause menu opens a screen of the same rows, over the world, with the line "How this world plays. A change is made at once, for everyone in it." In your own world the four are switches: a change applies at once and the world is saved with it. Trees and Starting population are shown locked, marked "(set when the world was made)". The kit's two rules are not on this screen at all, since nothing about them can change once the world is made. **Back** returns to the pause menu.
+**World rules** on the pause menu opens a screen of the same rows, over the world, with the line "How this world plays. A change is made at once, for everyone in it." In your own world the five are switches: a change applies at once and the world is saved with it. Trees and Starting population are shown locked, marked "(set when the world was made)". The kit's two rules are not on this screen at all, since nothing about them can change once the world is made. **Back** returns to the pause menu.
 
 ### Worlds made before the rules were per world
 
@@ -57,7 +58,7 @@ A world made before each world kept its own rules plays by the rules saved with 
 
 The rules are the host's. A change the host makes from World rules reaches every guest at once, and a guest's own copy of the world is made with the host's trees and the host's dead. A guest's World rules screen shows the same rows, every one locked and marked "(the host's)", with the line "How this world plays. They are the host's to change." A guest cannot change them.
 
-In a [[Server worlds|server world]] the owner changes the four from the owner's screen, which shows Trees, Starting population, and Village stations locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the four marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the four.
+In a [[Server worlds|server world]] the owner changes the five from the owner's screen, which shows Trees, Starting population, and Village stations locked too; joined as its owner, the pause menu's World rules says "They are yours to change from the Owner screen." Anyone else in a server world, which has no host player, sees the five marked "(the world's owner's)" and the line "How this world plays. They are the world's owner's to change." A world moved to the server keeps the Trees and Starting population it was made with, and its kit's two rules come with its save; its owner can change none of the five.
 
 ## See also
 
@@ -67,7 +68,8 @@ In a [[Server worlds|server world]] the owner changes the four from the owner's 
 
 ## Sources
 
-<!-- sources at 3c0a243 -->
+<!-- sources at 5257b92 -->
+- `src/settings.js:19`, `src/settings.js:76`, `src/rules.js:20`, `server/relay.js:247` (at 5257b92): Unlimited mana, a rules-group switch beside Free building, off by default; a server owner may set it (game #567)
 - `src/placement.js:255-296`, `src/placement.js:81-97` (at c0448ec): the Terrain tab offered only with Free building, "Terrain is not in the game yet" without it (game #565)
 - `data/build.json:209-270`, `src/placement.js:635`, `src/placement.js:1091` (at 3233696): the cliff pieces `dev`, listed and built only with Free building, "Cliffs are not in the game yet"; a cliff wall taken apart only with it (game #561)
 - `src/settings.js:72`, `src/rules.js:13-14`, `server/relay.js` (at 26a0a8f): no Zombies attack villagers: gone from the settings, the world's rules, and a server world's; a stored value of it dropped (game #559)
@@ -87,6 +89,6 @@ In a [[Server worlds|server world]] the owner changes the four from the owner's 
 - `src/ui/screens.js:1020-1036`, `src/main.js:755-757`: World rules on the pause menu, only the rules group (the kit's two are the Sandbox group's): the line, the switches, the fixed two locked, a guest's all locked as the host's, or the world's owner's in a world with no host player (game #149)
 - `src/game.js:77-82`, `src/game.js:215`, `src/game.js:282-283`, `src/save.js:34`: set at creation, kept in the save, restored from it with the defaults for any missing
 - `src/net.js:885`, `src/net.js:1126`, `src/game.js:429`: sent to guests when they change, in the sync check
-- `src/ui/screens.js:963-969`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the four; a moved world's Trees and Starting population kept in its meta
+- `src/ui/screens.js:963-969`, `server/world.js:367-374`, `server/relay.js:243-257`: the owner's screen; a server world's owner can change only the five; a moved world's Trees and Starting population kept in its meta
 - `src/game.js:282-283`: a world's rules, the kit's two among them, restored from its save, a server world's too
 - `src/rules.js`, `src/settings.js`, `src/placement.js:105-117`, `src/stations.js:57-64`, `data/recipes.json`, `server/relay.js:243-258`: Village stations, a fixed rule, its words; the village's stations carried with it on; their recipes hidden while it is off; a moved world keeps it in its meta (game #431, at 49b8c44)

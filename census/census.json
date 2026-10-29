@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "c0448ecbe856db5d95bdf521fe2d79825f81f9f6",
-  "short": "c0448ec",
-  "date": "2026-10-28T22:47:44-05:00",
-  "subject": "Merge pull request #565 from cmzgame/build/terrain-menu",
+  "commit": "5257b92eea6f1fba91cf3331a051217a879e73ac",
+  "short": "5257b92",
+  "date": "2026-10-28T23:51:54-05:00",
+  "subject": "Merge pull request #567 from cmzgame/build/flat-map-and-picker",
   "ref": "origin/main"
  },
  "counts": {
@@ -18,16 +18,16 @@
   "mapProps": 42,
   "zombieWardrobes": 10,
   "villageWardrobes": 7,
-  "settings": 37,
-  "rules": 9,
+  "settings": 38,
+  "rules": 10,
   "fixedRules": 5,
-  "liveRules": 4,
+  "liveRules": 5,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 103,
+  "menuLabels": 104,
   "events": 38,
-  "checks": 94,
-  "modules": 152
+  "checks": 95,
+  "modules": 153
  },
  "items": [
   {
@@ -7425,10 +7425,10 @@
    "drawn": false
   },
   {
-   "id": "floor_nospawn",
+   "id": "floor_randomspawn",
    "kind": "floor",
    "drawn": false,
-   "note": "No random spawn (Michael, 2026-10-28): bubblegum pink on purpose, so it cannot be missed by day or night. For building the map by hand: a tile where nothing random may spawn. It tags a tile and does nothing yet; nothing reads it (the future: the scatter, the trees, and the spawns skip a tile that carries it). Walked as ground, no `walk` field."
+   "note": "Random spawn (Michael, 2026-10-28; first the pink was No random spawn, swapped the same day): bubblegum pink on purpose, so it cannot be missed by day or night. Where random things may spawn: for building the map by hand. It marks a tile and does nothing yet; nothing reads it. Walked as ground, no `walk` field."
   },
   {
    "id": "floor_stone",
@@ -10563,18 +10563,18 @@
    "dev": true,
    "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; cobbles, inside a dirt verge as the valley's roads are; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
   },
-  "terrain_nospawn": {
-   "label": "No random spawn",
-   "already": "That is already marked no-spawn ground",
+  "terrain_randomspawn": {
+   "label": "Random spawn",
+   "already": "That is already random-spawn ground",
    "kind": "terrain",
    "tab": "terrain",
    "group": "Ground",
-   "sprite": "floor_nospawn",
+   "sprite": "floor_randomspawn",
    "cost": {},
    "seconds": 0,
    "reach": 12,
    "dev": true,
-   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; bubblegum pink, on purpose: a tag for the hand-built map (Michael, 2026-10-28); it marks a tile where nothing random may spawn and does nothing else yet; its future use is the scatter, the trees, and the spawns skipping a tile that carries it; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
+   "note": "Terrain tab (Michael, 2026-10-28: split the build menu in two, Build and Terrain): paints the ground's floor outright by a drag (up to 24 tiles a side), a tile at a time, no cost and no `built` record, so there is nothing to take apart; bubblegum pink, on purpose: a tag for the hand-built map (Michael, 2026-10-28, who swapped its meaning the same day from No random spawn): it marks a tile where random things CAN spawn (trees, the dead, whatever the map's scatter and spawn rules later place) and does nothing else yet: nothing reads it; ground only, Free building only; `seconds` 0 (instant) and `reach` 12 tiles are a world-editing tool's, Primary's defaults"
   },
   "terrain_water_shallow": {
    "label": "Shallow water",
@@ -10804,6 +10804,11 @@
    "note": "on: building costs nothing (docs/13), for testing structures"
   },
   {
+   "key": "unlimitedMana",
+   "default": "false",
+   "note": "on: a cast costs no mana and the bar reads full (docs/47 section 5), for testing spells (Michael, 2026-10-28)"
+  },
+  {
    "key": "trees",
    "default": "true",
    "note": "the world has trees: the last choice at a Sandbox step (a world's own rule since #130; it replaced Combat testing's tree strip)"
@@ -10944,6 +10949,7 @@
   "multiHit",
   "survival",
   "freeBuilding",
+  "unlimitedMana",
   "trees",
   "population",
   "villageStations",
@@ -10961,26 +10967,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1151"
+    "main.js:1250"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1150"
+    "main.js:1249"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1128"
+    "main.js:1227"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:967",
-    "main.js:981"
+    "main.js:1066",
+    "main.js:1080"
    ]
   },
   {
@@ -10998,19 +11004,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1148"
+    "main.js:1247"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1131"
+    "main.js:1230"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1130"
+    "main.js:1229"
    ]
   },
   {
@@ -11037,56 +11043,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1126"
+    "main.js:1225"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1132"
+    "main.js:1231"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1139"
+    "main.js:1238"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1128"
+    "main.js:1227"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1215"
+    "main.js:1314"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1215"
+    "main.js:1314"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1129"
+    "main.js:1228"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1226"
+    "main.js:1325"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:967",
-    "main.js:973"
+    "main.js:1066",
+    "main.js:1072"
    ]
   }
  ],
@@ -11232,7 +11238,7 @@
   {
    "key": "pray",
    "at": [
-    "mana.js:97"
+    "mana.js:107"
    ]
   },
   {
@@ -11315,25 +11321,25 @@
   {
    "key": "Aim guide",
    "at": [
-    "settings.js:69"
+    "settings.js:70"
    ]
   },
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1634"
+    "main.js:1734"
    ]
   },
   {
    "key": "Belt slot order",
    "at": [
-    "settings.js:65"
+    "settings.js:66"
    ]
   },
   {
    "key": "Build",
    "at": [
-    "main.js:866",
+    "main.js:965",
     "placement.js:83"
    ]
   },
@@ -11364,31 +11370,31 @@
   {
    "key": "Cursor",
    "at": [
-    "settings.js:62"
+    "settings.js:63"
    ]
   },
   {
    "key": "Debug corner",
    "at": [
-    "settings.js:79"
+    "settings.js:81"
    ]
   },
   {
    "key": "Dev bag",
    "at": [
-    "settings.js:83"
+    "settings.js:85"
    ]
   },
   {
    "key": "Dev chest",
    "at": [
-    "settings.js:82"
+    "settings.js:84"
    ]
   },
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1507"
+    "main.js:1607"
    ]
   },
   {
@@ -11434,7 +11440,7 @@
   {
    "key": "Extra starting items",
    "at": [
-    "settings.js:84"
+    "settings.js:86"
    ]
   },
   {
@@ -11446,13 +11452,13 @@
   {
    "key": "Floating numbers",
    "at": [
-    "settings.js:66"
+    "settings.js:67"
    ]
   },
   {
    "key": "Free building",
    "at": [
-    "settings.js:74"
+    "settings.js:75"
    ]
   },
   {
@@ -11470,13 +11476,13 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1609"
+    "main.js:1709"
    ]
   },
   {
    "key": "Hit shapes",
    "at": [
-    "settings.js:81"
+    "settings.js:83"
    ]
   },
   {
@@ -11489,7 +11495,7 @@
   {
    "key": "Interface size",
    "at": [
-    "settings.js:60"
+    "settings.js:61"
    ]
   },
   {
@@ -11501,7 +11507,7 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1488"
+    "main.js:1588"
    ]
   },
   {
@@ -11513,37 +11519,37 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1547"
+    "main.js:1647"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1595"
+    "main.js:1695"
    ]
   },
   {
    "key": "Multi-hit",
    "at": [
-    "settings.js:75"
+    "settings.js:77"
    ]
   },
   {
    "key": "Names over heads",
    "at": [
-    "settings.js:63"
+    "settings.js:64"
    ]
   },
   {
    "key": "Object Highlight",
    "at": [
-    "settings.js:80"
+    "settings.js:82"
    ]
   },
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1647"
+    "main.js:1747"
    ]
   },
   {
@@ -11570,7 +11576,7 @@
   {
    "key": "Pray",
    "at": [
-    "mana.js:79"
+    "mana.js:89"
    ]
   },
   {
@@ -11600,25 +11606,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1454"
+    "main.js:1553"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1450"
+    "main.js:1549"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1490"
+    "main.js:1590"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1489"
+    "main.js:1589"
    ]
   },
   {
@@ -11630,7 +11636,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1656"
+    "main.js:1756"
    ]
   },
   {
@@ -11642,37 +11648,37 @@
   {
    "key": "Small text",
    "at": [
-    "settings.js:64"
+    "settings.js:65"
    ]
   },
   {
    "key": "Sound",
    "at": [
-    "settings.js:70"
+    "settings.js:71"
    ]
   },
   {
    "key": "Starting population",
    "at": [
-    "settings.js:78"
+    "settings.js:80"
    ]
   },
   {
    "key": "Survival",
    "at": [
-    "settings.js:73"
+    "settings.js:74"
    ]
   },
   {
    "key": "Swing targets",
    "at": [
-    "settings.js:68"
+    "settings.js:69"
    ]
   },
   {
    "key": "Swing timer",
    "at": [
-    "settings.js:67"
+    "settings.js:68"
    ]
   },
   {
@@ -11702,7 +11708,7 @@
   {
    "key": "Trees",
    "at": [
-    "settings.js:76"
+    "settings.js:78"
    ]
   },
   {
@@ -11710,6 +11716,12 @@
    "at": [
     "interact.js:1893",
     "interact.js:1950"
+   ]
+  },
+  {
+   "key": "Unlimited mana",
+   "at": [
+    "settings.js:76"
    ]
   },
   {
@@ -11722,13 +11734,13 @@
   {
    "key": "Village stations",
    "at": [
-    "settings.js:77"
+    "settings.js:79"
    ]
   },
   {
    "key": "Volume",
    "at": [
-    "settings.js:71"
+    "settings.js:72"
    ]
   },
   {
@@ -11746,13 +11758,13 @@
   {
    "key": "Zombie aggro",
    "at": [
-    "settings.js:72"
+    "settings.js:73"
    ]
   },
   {
    "key": "Zoom",
    "at": [
-    "settings.js:61"
+    "settings.js:62"
    ]
   },
   {
@@ -11975,7 +11987,7 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1359"
+    "main.js:1458"
    ]
   },
   {
@@ -12327,6 +12339,7 @@
   "layers",
   "light",
   "mana",
+  "maps",
   "melee",
   "menuwalk",
   "mine",
@@ -12373,7 +12386,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 3881
+   "lines": 3888
   },
   {
    "path": "interact.js",
@@ -12381,7 +12394,7 @@
   },
   {
    "path": "main.js",
-   "lines": 2128
+   "lines": 2237
   },
   {
    "path": "placement.js",
@@ -12401,7 +12414,7 @@
   },
   {
    "path": "ui/screens.js",
-   "lines": 1300
+   "lines": 1323
   },
   {
    "path": "entities/zombie.js",
@@ -12473,7 +12486,7 @@
   },
   {
    "path": "item-info.js",
-   "lines": 445
+   "lines": 446
   },
   {
    "path": "render/rings.js",
@@ -12629,7 +12642,7 @@
   },
   {
    "path": "dev.js",
-   "lines": 176
+   "lines": 177
   },
   {
    "path": "view.js",
@@ -12680,11 +12693,11 @@
    "lines": 152
   },
   {
-   "path": "rugs.js",
-   "lines": 145
+   "path": "settings.js",
+   "lines": 147
   },
   {
-   "path": "settings.js",
+   "path": "rugs.js",
    "lines": 145
   },
   {
@@ -12698,6 +12711,10 @@
   {
    "path": "ui/hud.js",
    "lines": 137
+  },
+  {
+   "path": "mana.js",
+   "lines": 133
   },
   {
    "path": "netsmooth.js",
@@ -12718,10 +12735,6 @@
   {
    "path": "ui/speech.js",
    "lines": 124
-  },
-  {
-   "path": "mana.js",
-   "lines": 123
   },
   {
    "path": "ui/inspect-card.js",
@@ -12840,15 +12853,15 @@
    "lines": 72
   },
   {
+   "path": "rules.js",
+   "lines": 70
+  },
+  {
    "path": "ui/belt-icons.js",
    "lines": 70
   },
   {
    "path": "debuffs.js",
-   "lines": 69
-  },
-  {
-   "path": "rules.js",
    "lines": 69
   },
   {
@@ -12910,6 +12923,10 @@
   {
    "path": "render/rugs.js",
    "lines": 46
+  },
+  {
+   "path": "maps.js",
+   "lines": 45
   },
   {
    "path": "world.js",

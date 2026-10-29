@@ -18,6 +18,8 @@ summary: Join a game takes a friend's code; Rejoin returns to a friend's world, 
 
 When the host's world arrives the screen says "Receiving the world", draws the ground round you, and goes; the site goes with it and the game fills the window. **Cancel** gives up the join and shows the Worlds page. It is there only until the host's world arrives: once "Receiving the world" shows, Cancel is gone, and the way out is **Exit game** on the pause menu.
 
+If the host's world is on another [[Maps|map]] than your page's, the welcome names it and your page moves to the host's map first: it reloads onto that map once, keeping the code (and the owner key, for a world of yours on the server), and joins again. A map this version of the game does not have, or a second mismatch after the move, is refused on the Worlds page with a word ("That world is on ... and this page could not move there. Reload the game and join again."), never a loop.
+
 While waiting, you stand in an empty stand-in world that is never saved, hidden under the loading screen and the site. If nobody answers within {{n census.constants.net.JOIN_WAIT_MS}} milliseconds, the join gives up and you are returned to the site's Home page, which says why.
 
 The friend's world is added to Friends' worlds as soon as you try, so a failed join still leaves a card to Rejoin from.
@@ -69,6 +71,7 @@ As a guest, the [[World rules|world's rules]] are the host's, shown locked on th
 ## Sources
 
 <!-- sources at 2a9a308 -->
+- `src/main.js:469-485`, `src/main.js:2044`, `src/host.js:169`, `server/world.js:245` (at 5257b92): the welcome names the host's map; a guest on another map reloads onto it once and joins again, or is refused with a word, never a loop (game #567)
 - `src/ui/screens.js:365-371`, `src/ui/screens.js:873-884`, `src/main.js:674-685`: Join a game, its line and the code field; the join under the loading screen
 - `src/main.js:276-286`: "Joining" and the code, "Asking the host", Cancel back to the Worlds page with the wire closed
 - `src/host.js:71-91`: a living character of this browser's comes back; otherwise the host asks who

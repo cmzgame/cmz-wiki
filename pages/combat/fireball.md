@@ -21,7 +21,7 @@ The **Fireball** is the game's one spell. It is cast by holding the [[Staff of F
 - **What it lights.** Where it comes down, it lights an unlit campfire with fuel in it, and a torch mounted in a bracket or on a post that is out, within {{n combat.bow.kindleRadius tiles}}, with no wall between. It never lights a fireplace, a fire pit, an [[Oven]], or a [[Forge]], and a campfire with no fuel stays out (see [[Fire]] and [[Torch posts and brackets]]). Nothing else catches, and fire never spreads.
 - **Who it can hit.** One of the dead, and not a corpse, or a wild animal, which takes the damage and does not burn. It passes over a [[Villagers|villager]], another player, and the caster, as every shot does (see [[Combat]]), and it passes tame animals by: an arrow may hit stock when nothing else is there, a spell never does.
 - **Its card.** The Book of Fire's hover card says all of this in three lines (see [[Book of Fire]]).
-- **Its cost:** {{n items.book_of_fire.book.spell.mana}} [[Mana]] a cast, paid on the release, the same at any draw. A cast the bar cannot pay for is refused before the draw starts: "Not enough mana.", the mana bar flashes, and nothing is spent. A draw let go too early to fly, or cancelled, costs nothing. See [[Mana]].
+- **Its cost:** {{n items.book_of_fire.book.spell.mana}} [[Mana]] a cast, paid on the release, the same at any draw. A cast the bar cannot pay for is refused before the draw starts: "Not enough mana.", the mana bar flashes, and nothing is spent. A draw let go too early to fly, or cancelled, costs nothing. With the world rule **Unlimited mana** on, a cast costs nothing and is never refused. See [[Mana]].
 
 ## Numbers
 

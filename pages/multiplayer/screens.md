@@ -36,7 +36,7 @@ No world runs behind the site, and nothing of a world is drawn. The game's inter
 
 `Escape` with nothing else open opens it. Its first line says where you are: the world's name and your character ("World, as Name."), and when hosting, "Open to friends, code" with how many are with you. A guest's line reads "In Host's world, World, as Name.", with the host's and the world's names from the join (in a [[Server worlds|server world]], which has no host player, "In World, as Name.").
 
-Its heading is **Paused** when playing alone. In a world open to friends it is **Menu**, with the line "The world goes on while you are here; your character stands still." (see [[Multiplayer]]).
+Its heading is **Paused** when playing alone. In a world open to friends it is **Menu**, with the line "The world goes on while you are here; your character stands still." (see [[Multiplayer]]). Under the first line is a line naming the map the page is on, "Map: The valley" or "Map: Flat grass" (see [[Maps]]); a guest's page is on the host's map.
 
 Buttons:
 
@@ -100,6 +100,7 @@ Played alone, every screen pauses the game. In a world open to friends, as host 
 - `index.html:68-88`, `src/main.js:1782-1786`, `src/boot.js:58-65`: the site at the first paint; a button pressed before the game is ready shows the loading screen and its page opens when boot is done; a failure always shows
 - `src/main.js:100-104`, `src/main.js:1239-1241`, `style.css:1115`: no world in: nothing of a world drawn, the interface hidden, the chat box and the debug corner with it
 - `src/ui/screens.js:245-274`, `src/main.js:833-834`: Escape out of a world steps back; Home stays
+- `src/ui/screens.js:1178`, `src/main.js:895-896` (at 5257b92): the pause menu's "Map: ..." line (game #567)
 - `src/ui/screens.js:910-921`, `src/main.js:724-743`: the pause menu, its first line (a guest's naming the host and the world), "Paused" or "Menu", its buttons and who sees them
 - `src/main.js:1505-1507`, `src/main.js:435-448`: Save world
 - `src/ui/screens.js:1008-1018`: the Character screen

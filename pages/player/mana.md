@@ -23,7 +23,7 @@ A spell's cost is on the spell itself, in the data. The one spell, the [[Firebal
 
 - **A cast the bar cannot pay for is refused before its draw starts.** The game says "Not enough mana.", the bar flashes (its edge turns red, it glows blue, and its fill brightens, for a moment), and nothing is spent. The staff does not rise; nothing is drawn.
 - **The cost is paid on the release**, when the ball flies. A draw let go too early to fly, or cancelled, costs nothing. A ball drawn only part of the way does less damage but costs the same.
-- **The book's card** says the cost: "Costs {{n items.book_of_fire.book.spell.mana}} mana a cast, spent when it is released."
+- **The book's card** says the cost: "Costs {{n items.book_of_fire.book.spell.mana}} mana a cast, spent when it is released." With the world rule **Unlimited mana** on, it says "Costs {{n items.book_of_fire.book.spell.mana}} mana a cast, but Unlimited mana is on: it costs nothing."
 
 So a full bar pays for a few casts in a row, and then the caster waits for it to come back, prays, or drinks.
 
@@ -31,6 +31,10 @@ So a full bar pays for a few casts in a row, and then the caster waits for it to
 
 - **Pray at an altar.** The [[Altar]] in [[The chapel]] has **Pray** on its menu: a bar of {{n tuning.potions.praySeconds seconds}}, and at its end mana and stamina are full. It has no cooldown; the walk to the chapel is its cost.
 - **Drink a [[Mana potion]]:** {{n tuning.potions.mana}} mana at once, up to the most. A potion counts against the wait between potions (see [[Potions]]).
+
+### Unlimited mana
+
+The world rule **Unlimited mana** (default Off; a switch beside Free building, for trying out spells; see [[World rules]]) takes mana out of the game for that world. With it on, a cast is never refused for mana and spends nothing, and the bar reads full at its most. Potions and the [[Altar]] change nothing, since the bar is full already.
 
 ## Numbers
 
@@ -46,7 +50,7 @@ A cast refused for mana makes a short falling note, heard only by the player who
 
 ## With friends
 
-Mana is each player's own, kept on the host: the host's step brings it back and spends it, and a guest's bar is drawn from the host's record of them, so it can lag a moment behind. A guest's cast is refused on the host by the same rule; the guest's own screen flashes the bar at once on the same click, so a refusal is seen without waiting, and the host's "Not enough mana." follows. A guest prays through the same menu entry, sent to the host by its label, and the host runs the bar and fills that player's bars. Mana is kept in the save with each player, and it is part of the multiplayer sync check.
+Mana is each player's own, kept on the host: the host's step brings it back and spends it, and a guest's bar is drawn from the host's record of them, so it can lag a moment behind. The Unlimited mana rule is the world's, so a guest's casts follow the host's setting, and the guest's own screen reads the same rule when it flashes the bar. A guest's cast is refused on the host by the same rule; the guest's own screen flashes the bar at once on the same click, so a refusal is seen without waiting, and the host's "Not enough mana." follows. A guest prays through the same menu entry, sent to the host by its label, and the host runs the bar and fills that player's bars. Mana is kept in the save with each player, and it is part of the multiplayer sync check.
 
 ## See also
 
@@ -65,6 +69,7 @@ Mana is each player's own, kept on the host: the host's step brings it back and 
 - `src/archery.js:826-830`: a cast the bar cannot pay for refused before the draw starts, with the line and the flash, nothing spent
 - `src/archery.js:850-865`: the mana spent on a release that flies; a dry or cancelled draw spends nothing; the cost the same at any draw
 - `src/item-info.js:203`: the card's cost line
+- `src/mana.js:36-48`, `src/mana.js:65-72`, `src/item-info.js:221`, `src/settings.js:76`: Unlimited mana, a world rule: a cast never refused and never spent, the bar held full, the card's line (game #567, at 5257b92)
 - `src/mana.js:66-122`, `data/sprites/altar.json`, `data/tuning.json:202`: Pray at the altar, its bar, mana and stamina filled, no cooldown
 - `src/potions.js:62-64`, `data/tuning.json` `potions.mana`: the mana potion, up to the most
 - `data/sounds.json:284-311`, `src/sound-cues.js:178-201`: `mana_short` with the flash and `pray` as the bar begins, each heard by that player alone, placeholders on the cast's recipe

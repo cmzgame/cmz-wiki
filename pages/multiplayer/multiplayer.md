@@ -33,7 +33,7 @@ A world remembers which survivor belongs to which browser, so a friend who comes
 
 ### The host's rules
 
-The [[World rules|world rules]] belong to the world, not to each player: **Zombie aggro**, **Survival**, **Free building**, and **Multi-hit**, which the host changes from **World rules** on the pause menu, and **Trees** and **Starting population**, chosen when the world was made. They are kept in the world's save. A guest's World rules screen shows them as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
+The [[World rules|world rules]] belong to the world, not to each player: **Zombie aggro**, **Survival**, **Free building**, **Unlimited mana**, and **Multi-hit**, which the host changes from **World rules** on the pause menu, and **Trees** and **Starting population**, chosen when the world was made. They are kept in the world's save. A guest's World rules screen shows them as the host set them, marked "(the host's)" and locked. In a [[Server worlds|server world]] the owner sets them.
 
 ### The world never pauses
 

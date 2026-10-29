@@ -32,7 +32,7 @@ A lost owner key can be replaced from the same screen with the creator key: the 
 **Owner**, on the world's row or on the pause menu while in it, opens the owner's screen:
 
 - **Change the code**: the old code stops working at once; whoever is in stays.
-- **The world's rules**: the [[World rules|world rules]], each with the same label and line as at New world. The {{n census.counts.liveRules}} that play can change (Zombie aggro, Survival, Free building, Multi-hit) are switches, set for the world and reaching everyone in it at once; Trees and Starting population are shown locked, "(set when the world was made)". A world moved up from a browser keeps the ones it was made with.
+- **The world's rules**: the [[World rules|world rules]], each with the same label and line as at New world. The {{n census.counts.liveRules}} that play can change (Zombie aggro, Survival, Free building, Unlimited mana, Multi-hit) are switches, set for the world and reaching everyone in it at once; Trees and Starting population are shown locked, "(set when the world was made)". A world moved up from a browser keeps the ones it was made with.
 - **Remove** a player: they are told "The world's owner removed you from it.", their character goes dormant, and their browser is barred from the world.
 - **Remove and change the code**: the same, with a new code.
 - **Let back in**: lifts a bar.
@@ -66,7 +66,7 @@ A server world is made for friends: nobody has to keep a browser open for the ot
 - `server/relay.js:303-318`: the owner's character filed under `owner`
 - `src/ui/screens.js:209-242`, `src/ui/screens.js:668-723`, `src/main.js:458-531`: the owner's screen and its powers
 - `src/ui/screens.js:935-941`, `src/settings.js:58-64`: the owner's rules from the settings' registry, Trees and Starting population locked (game commit f2b8062)
-- `server/relay.js:243-257`, `server/world.js:97`, `server/world.js:367-374`: an owner sets only the five; a moved world's two kept in its meta (game commit f2b8062)
+- `server/relay.js:243-257`, `server/world.js:97`, `server/world.js:367-374`: an owner sets only the five (Unlimited mana among them since game #567); a moved world's two kept in its meta (game commit f2b8062)
 - `server/world.js:245`, `data/tuning.json:80`, `src/main.js:1733`: a server world's cap, `world.playerCapServer`, and "This world is full." (game commit f2b8062)
 - `src/ui/screens.js:1000`: the owner's World rules line (game commit f2b8062)
 - `src/ui/screens.js:998-1000`, `src/main.js:737`: anyone else's rows and line "the world's owner's", a server world having no host player (game commit 9d9a5b5)

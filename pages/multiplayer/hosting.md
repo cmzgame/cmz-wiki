@@ -30,7 +30,7 @@ Without a relay, a friend can join only from another tab of the same browser; th
 
 ### What the host decides
 
-The world's [[World rules|rules]] are the host's: Zombie aggro, Survival, Free building, and Multi-hit, changed from **World rules** on the pause menu, and Trees and Starting population, chosen when the world was made and never changed. A change reaches every guest at once. A guest's World rules screen shows them as the host set them, each marked "(the host's)" and locked. Everything in [[Settings]] (zoom, cursor, the swing timer, and so on) is each player's own.
+The world's [[World rules|rules]] are the host's: Zombie aggro, Survival, Free building, Unlimited mana, and Multi-hit, changed from **World rules** on the pause menu, and Trees and Starting population, chosen when the world was made and never changed. A change reaches every guest at once. A guest's World rules screen shows them as the host set them, each marked "(the host's)" and locked. Everything in [[Settings]] (zoom, cursor, the swing timer, and so on) is each player's own.
 
 The host's clock is the world's clock.
 
