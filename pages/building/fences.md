@@ -87,7 +87,7 @@ The strikes are the host's. A fence's damage is kept on the host and saved with 
 - [[Openings]]
 - [[Breaking in]]
 - [[Sight]]
-- [[Castle gates]], stone gates with a portcullis the dead cannot break
+- [[Castle gates]], stone gates with a portcullis, which the dead break at about three doors' hit points
 
 ## Sources
 

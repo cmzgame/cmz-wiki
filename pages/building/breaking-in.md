@@ -77,7 +77,7 @@ At {{n tuning.zombie.siegeEndHour}} o'clock the siege ends: wherever it has got 
 
 Nothing breaks a plain wall and nobody passes a window, so the dead never get into a room with no door; but you cannot walk out of it either. Building never refuses a room for having no door.
 
-The same holds for a room whose only ways in are shut [[Castle gates|castle gates]]: the dead cannot break a shut gate (Michael's ruling of 2026-10-29, which he will probably overrule later), they never target it, and a bite does not pass its bars. They see you through it and cannot reach you. You walk out by opening the gate.
+A room whose only ways in are shut [[Castle gates|castle gates]] is broken into too: the dead break a shut gate at {{n sprites.wall_stone_gate_2.wall.gate.hp}} hit points an edge, the whole gate giving way at once (Michael's ruling of 2026-10-30). Until it gives, a bite does not pass its bars; they see you through it and cannot reach you.
 
 A [[Battlements|battlement]], the parapet of a wall walk, is another wall the dead cannot strike down: it has no hit points and they never target it. It stops bodies at its edge and nothing else, so it keeps nobody safe by itself; a wall walk is no room.
 

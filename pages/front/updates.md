@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `6179bb0`
+
+- **Changed in the game:** **building's rules** (game #607, `docs/53` step 6; network protocol 30). The castle gates break, at {{n sprites.wall_stone_gate_2.wall.gate.hp}} hit points an edge, the whole gate giving way (Michael's ruling of 2026-10-30), and a hand stops at their shut bars. A rug, a painting, a torch on a wall, a set-down, the campfire, and the build menu's pieces go upstairs on your own floor; a snare and a sapling stay on the ground. With Free building on, a stair you built comes up again, unless someone would be left above with no way down. A wall out of sight is refused before it starts. The pieces of a hill never stand on a building's floor. A round tower holds its own stair. Nothing is built above the sixth storey. The arrow loops on battlements are spread evenly. [[Castle gates]], [[Breaking in]], [[Upper floors]], [[Building]], [[Round rooms]], [[Battlements]], [[Cliffs]], [[Fences]].
+
 ## 2026-10-30: synced to `c976e39`
 
 - **Changed in the game:** **the picture per storey** (game #605, `docs/53` step 4, in part; network protocol 29): up to {{n census.constants.gl.STOREY_SETS}} floors in view each have their own light, shade, and fog, so a torch-lit room two or three storeys up shows its pool from the ground and a cellar is dark by day; arrows, thrown things, and splashes lying upstairs are drawn on their floor; a body burning upstairs burns there, embers and smoke too, and a shield's sparks and a fence's splinters fly on the floor where they happen, for a friend as well. [[Upper floors]].

@@ -55,7 +55,7 @@ The Take apart tool (X) takes a battlement as it takes any built wall: it lights
 
 - Height: {{n sprites.wall_battlement.wall.height}} pixels; a shot above it passes. It has no thickness of its own: it stands wholly outside its edge line.
 - Cost, time, and tool: none; placed at once (Free building only).
-- The arrow loop: about {{pct sprites.wall_battlement.special.chance}} of the straight pieces.
+- The arrow loop: {{pct sprites.wall_battlement.special.chance}} of the straight pieces, spread evenly: one in each run of ten along a line, at a different place in each run.
 
 ## With friends
 

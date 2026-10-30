@@ -16,8 +16,10 @@ summary: Cliff walls, cliff tops, and the stone ramp, built only with Free build
 With Free building on, the build palette (N) has a **Terrain** tab, and the five cliff pieces are its Landforms (see [[Building]] and [[Terrain]]); before the Terrain tab they were rows on the one list:
 
 - **Cliff wall** and **Grassy cliff wall**: a cliff face on a tile's edge, built as any wall.
-- **Cliff top** and **Grassy cliff top**: a floor, laid a tile at a time or by a drag, on the ground or a storey up, as a [[Upper floors#Building floors and stairs|built floor]] is.
+- **Cliff top** and **Grassy cliff top**: a floor, laid a tile at a time or by a drag, on the ground or a storey up, as a [[Upper floors#Building floors and stairs|built floor]] is, never over a building's floor.
 - **Stone ramp**: a sloped slab of rock three tiles long climbing one storey, built as a stair, placed at once and for free, and bringing its own solid sides.
+
+The pieces of a hill stand between the ground and the first storey, never on a building's floor: a cliff wall and the ramp on the ground, a cliff top on the ground or a storey up ("Not on a built floor"). A hill on a hill is not in the game yet ("Hills on hills are not in the game yet").
 
 Without Free building they are not listed, and are refused if asked for (a guest's command too): "Cliffs are not in the game yet" for the walls, "Floors are not in the game yet" for the tops, "Stairs are not in the game yet" for the ramp.
 
