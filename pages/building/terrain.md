@@ -59,7 +59,7 @@ Tilled soil is not here: tilling makes it (see [[Farming]]).
 ## Numbers
 
 - A drag: at most {{n census.constants.placement.TERRAIN_DRAG}} tiles a side.
-- Reach: {{n build.terrain_grass.reach tiles}}.
+- Reach: {{n build.terrain_grass.reach tiles}} on each entry; since Free building, which the tab always has, waived its reach, it reads {{n census.constants.placement.FREE_REACH tiles}} in its place, so a drag paints as far as the screen shows.
 - Time: {{n build.terrain_grass.seconds seconds}} (instant), cost: nothing.
 
 ## With friends

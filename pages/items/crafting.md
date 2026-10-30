@@ -32,7 +32,7 @@ The ingredients are counted, and taken, from:
 - the station's own output box;
 - every container within {{n census.constants.stations.REACH tiles}} of you, with a clear line to it, that has already been searched (an unsearched chest's contents do not exist yet; see [[Containers]]). A chest in the next room, through a wall, does not count.
 
-They are taken from your bag first, then the belt, then your hands, then the containers, and each is spent wherever it was taken from. Some recipes ask for any of a kind rather than one item: "any cloth" takes [[Linen cloth]], [[Woollen cloth]], a [[Rag]], or a garment (a bandage is not cloth), and a garment is taken last, so a rag or a cloth goes before a tunic; "any meat" takes any of the six raw meats (not bacon); "any plant" garlic or a cabbage; "any binder" lard or honey.
+They are taken from your bag first, then the belt, then your hands, then the containers, and each is spent wherever it was taken from. Some recipes ask for any of a kind rather than one item: "any cloth" takes [[Linen cloth]], [[Woollen cloth]], a [[Rag]], or a garment (a bandage is not cloth), and a garment is taken last, so a rag or a cloth goes before a tunic; "any meat" takes any of the six raw meats (not bacon); "any plant" garlic or a cabbage; "any binder" lard or honey. A [[Jar of honey]] spent in a recipe leaves its empty [[Clay jar]] in your bag, or at your feet, as the make starts.
 
 All the ingredients for the count are taken when you press Make. If anything is short, nothing is taken and the game says what is missing ("Short of ...").
 

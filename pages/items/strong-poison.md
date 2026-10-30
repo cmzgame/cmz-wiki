@@ -18,10 +18,11 @@ It is **never drunk**. It is used as ordinary poison is (see [[Poison]] for the 
 - [[Use|Used]] on a blade (the [[Arming sword]], the [[Dirk]], the [[Hatchet]], the [[Scythe]], or the [[Throwing spear]]), it coats it for {{n combat.poison.hits}} landed hits: "You coat the dirk with strong poison." The card of a coated blade says "Strongly poisoned:" and the hits left.
 - Used on plain arrows, it makes up to {{n combat.poison.arrows}} [[Strongly poisoned arrow|strongly poisoned arrows]]: "You coat 5 arrows with strong poison."
 - The empty vial comes back, as from a drink.
+- Held in the main hand and thrown from the middle button or Q, it shatters where it lands and strongly poisons every one of the dead and every wild animal within {{n items.strong_poison.thrown.splash.radius tiles}}, never a player, a villager, or a tame animal; the vial is gone (see [[Poison#Throwing it|Poison]]).
 
 What it hits drains faster: {{n combat.poison.dpsByStacks.strong.0}}, {{n combat.poison.dpsByStacks.strong.1}}, or {{n combat.poison.dpsByStacks.strong.2}} health a second for one, two, or three stacks, against ordinary poison's {{n combat.poison.dpsByStacks.ordinary.0}}, {{n combat.poison.dpsByStacks.ordinary.1}}, or {{n combat.poison.dpsByStacks.ordinary.2}}, for {{n combat.poison.duration seconds}} after the last hit. A strong hit on a body that is already poisoned makes the whole of it strong, and an ordinary hit after that adds its stack and leaves it strong. A strongly poisoned body is drawn a darker green.
 
-Its card reads "Strong poison", its kind "Poison", "Strong poison: never drunk.", what a vial coats, "Strongly poisons the dead and game it hits: ...", and "**Use** on a blade or arrows: coat."; on a belt slot it leads with "carried only". Its key in any belt slot, or a double-click on it in your own bag, says "Poison isn't for drinking. Use it on a blade or on arrows."
+Its card reads "Strong poison", its kind "Poison", "Strong poison: never drunk.", what a vial coats, "Strongly poisons the dead and game it hits: ...", and "**Use** on a blade or arrows: coat."; on a belt slot it leads with "carried only". Its key in the utility slot, or a double-click on it in your own bag, says "Poison isn't for drinking. Use it on a blade or on arrows."; a hand slot's key draws it, to throw.
 
 {{item-sections strong_poison}}
 
@@ -32,6 +33,7 @@ As for [[Poison#With friends|ordinary poison]]: a guest coats with their own Use
 ## Sources
 
 <!-- sources at 307ed34 -->
+- `data/items.json:142` `hands`, `thrown`, `src/archery.js:313-322`, `src/archery.js:631-642`, `src/inventory.js:456-459` (at 8d361e5): held and thrown, the splash's strong stacks on the dead and wild game alone; the utility slot's line and a hand slot's draw (game #586)
 - `data/items.json:144`: the item, `poison: { tier: 2 }`, "a vial of", its stack, `belt`, its black seal and darker band
 - `data/recipes.json`: two wolfsbane, a grave moss, a clay vial, water, at the cauldron
 - `data/interactions.json:22-25`, `src/poison.js:146-188`: the `coat` rows and verb, the lines (game #496)

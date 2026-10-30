@@ -6,7 +6,7 @@ summary: Nettle, a common herb, grows wild anywhere about the valley and is gath
 
 {{infobox-item nettle}}
 
-**Nettle** is a common herb, one of the eleven [[Herbs]]. It grows wild on open grass anywhere about [[The valley]], one plant here and there, never in a patch: the valley keeps about {{n valley.resources.nettle.count}}. The plant is drawn small, with dark, toothed leaves, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into the [[Stamina potion]], two to a potion, with one [[Pot of honey]] (see [[Potions]]); the herb tea and seasoning are not built.
+**Nettle** is a common herb, one of the eleven [[Herbs]]. It grows wild on open grass anywhere about [[The valley]], one plant here and there, never in a patch: the valley keeps about {{n valley.resources.nettle.count}}. The plant is drawn small, with dark, toothed leaves, and its art has a dark outline all the way round; it sways when clicked or walked through, and does not block anyone. It is brewed at a [[Cauldron]] into the [[Stamina potion]], two to a potion, with one [[Jar of honey]] (see [[Potions]]); the herb tea and seasoning are not built.
 
 ## Gathering
 

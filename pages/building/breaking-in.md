@@ -79,6 +79,8 @@ Nothing breaks a plain wall and nobody passes a window, so the dead never get in
 
 The same holds for a room whose only ways in are shut [[Castle gates|castle gates]]: the dead cannot break a shut gate (Michael's ruling of 2026-10-29, which he will probably overrule later), they never target it, and a bite does not pass its bars. They see you through it and cannot reach you. You walk out by opening the gate.
 
+A [[Battlements|battlement]], the parapet of a wall walk, is another wall the dead cannot strike down: it has no hit points and they never target it. It stops bodies at its edge and nothing else, so it keeps nobody safe by itself; a wall walk is no room.
+
 ### What a broken door or shutter becomes
 
 A broken door is an open doorway for good. Broken shutters are a permanent hole, drawn as open shutters with no leaves, that still lets no one through. Nothing repairs them, but they can be boarded again, and a new door can be built over a broken door, or a new window over broken shutters, whole and shut (see [[Building]] and [[Openings]]).
@@ -124,6 +126,7 @@ The dead see a guest as they see the host, so a guest can be besieged too. A sie
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/sprites/wall_battlement.json` (`seeThrough`, no `fence`, no hit points), `src/map.js:2762` (game #574) (at 8d361e5)
 - `src/entities/zombie.js:638-659`: a way in chosen on the step the path fails; out of the zombie's own room, else into the target's
 - `src/entities/zombie.js:307-309`, `src/rules.js:13-14`, `src/settings.js:12`: hunting needs Zombie aggro, on by default
 - `src/map.js:843-878`: a room's openings to break, nearest first, the door towards the target's room first from inside, shut or boarded windows only from outside, an opening already open never one

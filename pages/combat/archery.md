@@ -7,7 +7,7 @@ numbersOk: true
 ---
 
 <!-- typed: the damage formula 0.4 + 0.6 times the draw and the damages at the least draw that flies (19, 74, 22, and the knife's 7 and the axe's 15), from archery.shotDamage and the data (games #471, #494) -->
-**Archery** covers the [[Hunting bow]] and the thrown weapons, the [[Throwing spear]], the [[Throwing knife]], and the [[Throwing axe]], which share the same draw. Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
+**Archery** covers the [[Hunting bow]] and the thrown weapons, the [[Throwing spear]], the [[Throwing knife]], and the [[Throwing axe]], which share the same draw, and the throw of a potion or a poison, which flies the same way from the main hand's other mode (see [[Potions#Holding and throwing one|Potions]]). Hold the left button to draw, aim with the cursor, and let go to loose. The shot is fixed when it leaves the hand.
 
 ## How it works
 
@@ -50,6 +50,7 @@ A [[Poisoned arrow|poisoned]] or [[Strongly poisoned arrow|strongly poisoned arr
 The path is checked once, when the shot is loosed. A shot is stopped by:
 
 - a wall, below the wall's own height: a house wall's {{n sprites.wall_wood.wall.height}} pixels, a [[Fences|fence]]'s {{n sprites.wall_fence.wall.height}} (a wall with no height of its own, {{n combat.bow.wallHeight}}), unless it passes through an open or broken door below its lintel, or an open or broken window without boards between its sill and its top,
+- a [[Battlements|battlement]], below its {{n sprites.wall_battlement.wall.height}} pixels; above it a shot clears the parapet,
 - boards, always,
 - a shut or open [[Castle gates|castle gate]] from its crown, {{n sprites.wall_stone_gate_2.wall.gate.opening.crown}} pixels, up to the wall's top; below its crown a shot flies through the arch, bars and all,
 - tree trunks and round props, below {{n combat.bow.trunkHeight}} pixels,
@@ -127,6 +128,7 @@ A guest's draw fills on the host from the button they hold, and looses at the gr
 ## Sources
 
 <!-- sources at 125bffb -->
+- `data/sprites/wall_battlement.json` `wall.height` 28, `src/archery.js:194-205` (game #574); `src/archery.js:313-322`, `src/archery.js:906-911`: a potion's or poison's flight, launched on the other mode, splashing where it lands (game #586) (at 8d361e5)
 - `src/archery.js:193-199`, `src/map.js:1728-1733` (at 77fee9d): a castle gate lets a shot through under its crown, shut or open (game #570)
 - `src/archery.js:135`, `src/archery.js:282`, `src/archery.js:309`, `src/archery.js:377` (at da57a57): a flight on its shooter's layer, hitting and landing there alone (game #534)
 - `src/archery.js:312`, `src/entities/zombie.js:126-136`, `src/entities/zombie.js:559-587` (at 5eb40e6): a shot's hit tells the dead one where it was loosed from, and one it does not kill calls the dead that see it (game #504)

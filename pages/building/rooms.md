@@ -17,7 +17,7 @@ An area is outdoors when:
 
 - it is larger than {{n census.constants.map.ROOM_MAX tiles}}
 - it reaches ground that has not been grown yet
-- it is closed in only by see-through walls, such as [[Fences|fences]]
+- it is closed in only by see-through walls, such as [[Fences|fences]] and [[Battlements|battlements]]
 
 So a fenced field or yard is outdoors.
 

@@ -26,7 +26,7 @@ The wall is drawn as a smooth ring as tall and as thick as a straight stone wall
 
 - **No furniture on the eight tiles the curve crosses** (the ends of the outer rows and columns): set-down, a carried piece, a made piece's spot, and the palette's pieces are refused there ("Not against the curve"). Things on the floor and rugs may lie there.
 - **No wall inside**: a wall between two of the room's tiles is refused ("Not inside a round room").
-- **A floor** may be laid on its tiles with Free building on (see [[Upper floors#Building floors and stairs|Upper floors]]); where the curve crosses a tile, the laid floor is drawn inside the curve alone, and the floor it was laid over outside it.
+- **A floor** may be laid on its tiles with Free building on (see [[Upper floors#Building floors and stairs|Upper floors]]); where the curve crosses a tile, the laid floor is drawn inside the curve alone, and the floor it was laid over outside it. On a storey only the tiles the ring steps over are clipped so: a floor laid in the ring's square beyond them, the corners of a wall walk round a tower, stays whole.
 - **A torch** may go on the ring with **Place torch**, at its point on the curve, on a face the camera sees; on a face turned away it is refused ("Not on that side of the curve"). See [[Torch posts and brackets#A torch on a wall|Torch posts and brackets]].
 - **No painting** hangs on the ring ("It would not hang flat on the curve"). See [[Paintings]].
 - **No fireplace** stands against the ring: a [[Fireplace]] needs a flat wall ("Against a wall"). A round room's fire is a [[Fire pit]], which fits inside one, a 7 by 7 with room to spare.
@@ -42,10 +42,10 @@ With **Free building** on, the build palette (N) has a **Round stone wall** row.
 
 The ghost is red, with the reason, unless:
 
-- every tile of the room is open floor, not water ("Not on water or empty ground"), with nothing standing on it ("Something is in the way"), nothing lying on it ("Clear the floor first"), and no wall between two of its tiles ("A wall is in the way");
+- every tile of the room is open floor, not water ("Not on water or empty ground"); upstairs, with a floor under every one of them ("A round room upstairs needs a floor under all of it") and none over a stair's hole ("A stairwell is under it: keep the ring off the stair's hole"); with nothing standing on it ("Something is in the way"), nothing lying on it ("Clear the floor first"), and no wall between two of its tiles ("A wall is in the way");
 - no other round room's square overlaps it ("Another round room is there");
 - every edge of its outline is empty, a plain wall, or a door or a window already at a door point: a fence refuses it ("Not over a fence"), as does a door or a window anywhere else on the outline ("A door or a window is in the way") and a lantern in a bracket ("A lantern is in the way");
-- its nearest edge is within reach ("Too far"), and nobody living stands across its outline ("Someone is in the way"; "Step back" when it is you), a corpse lying across it not counting;
+- its nearest edge is within reach ("Too far"; with Free building on, which a round room always has, that is {{n census.constants.placement.FREE_REACH tiles}}), and nobody living stands across its outline ("Someone is in the way"; "Step back" when it is you), a corpse lying across it not counting;
 - its outline crosses no stair's run or top ("Not across a stair", "Not across a stair's top"); nor may a stair be built with a ring's curve over its stairwell or its landing (see [[Upper floors]]).
 
 A plain wall already on the outline is taken into the ring: a round room can stand against a house as an apse, the house's wall drawn as the curve. A torch on that wall falls to the floor, put out, and a painting falls whole. A door or a window already at a door point stays where it is.
@@ -81,6 +81,9 @@ A guest builds a round room through the same path as the host: their drag sends 
 ## Sources
 
 <!-- sources at a0cf5a2 -->
+- `src/map.js:1598-1603` (at 8d361e5): upstairs, a void tile under the ring says "A round room upstairs needs a floor under all of it", or over a stair's hole "A stairwell is under it: keep the ring off the stair's hole" (game #576)
+- `src/render/storeys.js:457-462` (at 8d361e5): a storey's floor clipped to the curve only on the ring's stepped tiles, the square's corners whole (game #577)
+- `src/placement.js:43-50`, `src/placement.js:185-187` (at 8d361e5): a ring's reach with Free building (game #575)
 - `src/stations.js:245-248`, `src/placement.js:130` (at 26a0a8f): a body across the outline refuses the ring, a corpse never (game #556, as a straight wall since #553)
 - `data/build.json:146-157`: the Round stone wall, stone, its cost an edge, its seconds, `dev` (game #536)
 - `src/round.js:8-11`, `src/round.js:77-114`: the sizes, the stepped tiles, the outline, the door points, the curve's chords

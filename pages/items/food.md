@@ -13,6 +13,7 @@ summary: Eating food fills hunger by the food's value and heals by its heal valu
 
 - **Eat** on a food's menu, in your bag or in an open container, eats it. Most food does not stack, each taking a cell of its own, an [[Egg]] too; [[Pemmican]] stacks.
 - A food on your [[Belt]] is eaten from its slot: its belt key, **Eat** on the slot's menu, or a double-click on the slot.
+- A [[Jar of honey]] eaten leaves its empty [[Clay jar]] where the honey was.
 
 Eating is instant, and your character holds the food out for a moment. **You can eat whenever you like,** hungry or full: hunger stops at its maximum, and the food still heals. What it heals rises over your head as a green number (see [[Interface#Floating numbers|Interface]]).
 
@@ -96,6 +97,7 @@ Eating is sent to the host and done for that player, from the bag, the belt's ke
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/interact.js:1722-1731`, `data/items.json:19` (at 8d361e5): a food whose definition names a `jar` leaves it in place when the last is eaten (game #585)
 - `data/tuning.json:52-55`: hunger's most, its drain time, and `fullAt`
 - `src/entities/player.js:83-100`: well fed at `fullAt`, or always with Survival off; eating adds hunger and thirst, capped, and the whole heal; the dead eat nothing (game #259)
 - `src/entities/player.js:140-152`: hunger drains, or stays full with Survival off

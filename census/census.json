@@ -1,17 +1,17 @@
 {
  "version": {
-  "commit": "77fee9dff9f359fd9139d94cf52338c9b187713f",
-  "short": "77fee9d",
-  "date": "2026-10-29T02:10:34-05:00",
-  "subject": "Merge pull request #570 from cmzgame/build/castle-gates",
+  "commit": "8d361e5ee3523062e55ccf82ae4e588a20cc68a7",
+  "short": "8d361e5",
+  "date": "2026-10-29T20:38:42-05:00",
+  "subject": "Merge #587: TODO.md's Status block for tonight's laptop session",
   "ref": "origin/main"
  },
  "counts": {
-  "items": 144,
-  "recipes": 97,
+  "items": 146,
+  "recipes": 99,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 223,
+  "sprites": 225,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -26,8 +26,8 @@
   "verbs": 31,
   "menuLabels": 106,
   "events": 38,
-  "checks": 96,
-  "modules": 153
+  "checks": 97,
+  "modules": 154
  },
  "items": [
   {
@@ -632,7 +632,7 @@
   },
   {
    "id": "honey",
-   "name": "Pot of honey",
+   "name": "Jar of honey",
    "kind": "food",
    "size": [
     1,
@@ -655,7 +655,7 @@
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "from the village's beehives every few game days (docs/43 section 6, #410; src/hives.js); never rots when rot comes (2026-10-23) and binds pemmican"
+   "note": "from the village's beehives every few game days, an empty clay jar carried needed and filled (docs/02, 2026-10-26, Honey goes into a clay jar; docs/43 section 6, #410, #500; src/hives.js); never rots when rot comes (2026-10-23) and binds pemmican; eaten, or spent as pemmican's binder or the stamina potion's secondary, the empty jar is left behind (`jar`), as drinking a potion leaves its vial"
   },
   {
    "id": "tinderbox",
@@ -3881,11 +3881,12 @@
    },
    "madeBy": [],
    "usedIn": [
-    "workbench: unfired_vial"
+    "workbench: unfired_vial",
+    "workbench: unfired_jar"
    ],
    "foundIn": [],
    "interactions": [],
-   "note": "dug from a clay bank by the river with a shovel (docs/39 section 4, Mining 3; src/gather.js). Shaped into vials at the workbench (docs/47, #481); jugs and jars (docs/39 section 3) are not built"
+   "note": "dug from a clay bank by the river with a shovel (docs/39 section 4, Mining 3; src/gather.js). Shaped into vials, or into jars for honey, at the workbench (docs/47, #481; docs/02, 2026-10-26, Honey goes into a clay jar, #500); jugs (docs/39 section 3) are not built"
   },
   {
    "id": "salt",
@@ -3968,6 +3969,58 @@
    "note": "the empty vial (docs/47 section 2, #481): fired in an oven from an unfired vial; a potion is brewed into it at a cauldron, and drinking leaves it again, so a vial is refilled, not remade. Bare: unsealed and unglazed. Drawn (art round 5, 2026-10-26)"
   },
   {
+   "id": "unfired_jar",
+   "name": "Unfired jar",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "clay"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "workbench"
+   ],
+   "usedIn": [
+    "oven: clay_jar"
+   ],
+   "foundIn": [],
+   "interactions": [],
+   "note": "clay shaped at the workbench, one a clay, bigger than a vial so one clay makes one, not two (docs/02, 2026-10-26, Honey goes into a clay jar; #500); fired in any oven it is a clay jar. Its own item so the oven's time is the busywork it should be. Undrawn: the vial's own placeholder design until its own art round comes"
+  },
+  {
+   "id": "clay_jar",
+   "name": "Clay jar",
+   "kind": "material",
+   "size": [
+    1,
+    1
+   ],
+   "stack": 10,
+   "tags": [
+    "clay"
+   ],
+   "art": {
+    "icon": true,
+    "held": false,
+    "drawn": true
+   },
+   "madeBy": [
+    "oven"
+   ],
+   "usedIn": [],
+   "foundIn": [],
+   "interactions": [],
+   "note": "the empty jar (docs/02, 2026-10-26, Honey goes into a clay jar; #500): fired in an oven from an unfired jar. Taking honey needs one carried and fills it into a jar of honey; eating it, or spending it in a recipe (pemmican's binder, the stamina potion's secondary), leaves the empty jar again, so a jar is refilled, not remade, as a clay vial is (`honey`'s own `jar` field). Undrawn: the vial's own placeholder design until its own art round comes"
+  },
+  {
    "id": "healing_potion",
    "name": "Healing potion",
    "kind": "potion",
@@ -3975,8 +4028,10 @@
     1,
     1
    ],
+   "hands": "either",
    "stack": 5,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
@@ -3998,8 +4053,10 @@
     1,
     1
    ],
+   "hands": "either",
    "stack": 5,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
@@ -4021,8 +4078,10 @@
     1,
     1
    ],
+   "hands": "either",
    "stack": 5,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
@@ -4044,8 +4103,10 @@
     1,
     1
    ],
+   "hands": "either",
    "stack": 5,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
@@ -4070,8 +4131,10 @@
     1,
     1
    ],
+   "hands": "either",
    "stack": 5,
    "tags": [],
+   "thrown": true,
    "art": {
     "icon": true,
     "held": true,
@@ -5816,6 +5879,39 @@
    "seconds": 10,
    "fire": true,
    "note": "docs/47 section 2 (#481): an unfired vial fired in any oven, no kiln (docs/39 sections 3 and 5.7)"
+  },
+  {
+   "id": "unfired_jar",
+   "station": "workbench",
+   "out": {
+    "id": "unfired_jar",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "clay",
+     "count": 1
+    }
+   ],
+   "seconds": 4,
+   "note": "docs/02 (2026-10-26, Honey goes into a clay jar; #500): one clay shaped into one unfired jar, bigger than a vial's two-to-one (Crafting 1, the clay's Mining 3, recorded, open to all until the skills)"
+  },
+  {
+   "id": "clay_jar",
+   "station": "oven",
+   "out": {
+    "id": "clay_jar",
+    "count": 1
+   },
+   "in": [
+    {
+     "id": "unfired_jar",
+     "count": 1
+    }
+   ],
+   "seconds": 10,
+   "fire": true,
+   "note": "docs/02 (2026-10-26, Honey goes into a clay jar; #500): an unfired jar fired in any oven, no kiln, as a vial (docs/39 sections 3 and 5.7)"
   },
   {
    "id": "cauldron",
@@ -8535,6 +8631,18 @@
    "note": "the UI kit (docs/23, step 4): the brick frame, the cutout well (and a thin one for the belt), the cell the bag's grid is tiled with, the flat plate (headers, the belt's bar), the button in three states; `slices` is each picture's corner in interface pixels (src/ui/kit.js); the colours are Michael's to tune"
   },
   {
+   "id": "wall_battlement",
+   "kind": "wall",
+   "drawn": true,
+   "note": "a castle battlement (art round 13): a parapet 28 high with merlons 44 high, 16 thick, wholly on the OUTSIDE of the edge line (half on the wall's top ledge, half hanging over its outer face on a slab and stepped corbels); the walkway's tile keeps its whole diamond. `<north|west>_<far|near>_*`: far = the walkway is south/east of the edge (outside north/west, the camera's far side: the merlons' inner faces are seen), near = the walkway is north/west (outside south/east: the outer faces and the corbels are seen). Anchors at the tile's top vertex at the walkway's floor, as wall_stone's. Written for a wall on layer 1 (the floor surface 96 over the ground), standing on the village stone wall.. Wired (docs/02, 2026-10-29): which side the walkway is on is derived from the floors of the wall's own layer (src/battlements.js), never stored; the depth plane is the edge line (far) or 16 beyond it (near); no cap, no post (vertex pieces by src/battlements.js)."
+  },
+  {
+   "id": "wall_battlement_vertices",
+   "kind": "wall",
+   "drawn": true,
+   "note": "the vertex pieces of the battlement (art round 13), anchored on the vertex at the walkway's floor, as a post (no +16). Corners are named as the cliffs' (outer_<where the vertex sits on the walkway's tile>, inner_<where it sits on the notch tile>) and need the same classification (src/cliffs.js cornerBase, read on the floor of the SAME layer). Each is the 16 x 16 block that turns the corner, in the quadrant opposite the walkway (outer) or in the notch (inner); the straight pictures at its two ends are unchanged, except at an inner corner where the two edges use their `late` / `early` pictures. An `end` piece completes the half merlon beyond a run's free end."
+  },
+  {
    "id": "wall_bloodbark",
    "kind": "wall",
    "drawn": true,
@@ -10429,6 +10537,19 @@
    "tool": "build",
    "group": "Walls and openings"
   },
+  "wall_stone": {
+   "label": "Stone wall",
+   "kind": "wall",
+   "sprite": "wall_stone",
+   "cost": {
+    "stone": 1
+   },
+   "seconds": 6,
+   "tool": "build",
+   "dev": true,
+   "group": "Walls and openings",
+   "note": "the village's stone wall, built a segment at a time like the wooden walls; shown and buildable only while Free building is on (as the round stone wall), its cost the placeholder and Primary's default, never charged while Free building is on (Michael, 2026-10-29: straight stone walls were missing from the build menu; the castle's gates and battlements stamp over it)"
+  },
   "fence": {
    "label": "Fence",
    "kind": "wall",
@@ -10715,6 +10836,15 @@
    "group": "Castle",
    "hint": "Click, then click a plain stone wall: a 3-tile gate with a portcullis replaces the wall at once; E opens and shuts it",
    "note": "docs/09 (Michael, 2026-10-29: \"Free building only\", \"Agreed, for now\"): a 3-tile castle gate stamped over 3 plain stone wall edges in a row, shut, placed at once and free as the Stone ramp is (no bar, no cost, no tool); E opens and shuts it like a door; taking it apart puts the plain wall back"
+  },
+  "battlement_stone": {
+   "label": "Battlement",
+   "kind": "wall",
+   "sprite": "wall_battlement",
+   "dev": true,
+   "group": "Castle",
+   "hint": "Click an edge of a wall walk's floor, upstairs: a parapet with merlons stands on the edge outside the walkway, which stays whole",
+   "note": "docs/09 (Michael, 2026-10-29: \"design me a short stone wall with these merlons ... make sure the whole of the battlement sits outside the walkway\", art round 13 approved): a castle's parapet, a short stone wall wholly on the outside of a tile edge of a floor on layer 1 or higher, with the walkway's floor on one side of the edge and none on the other (src/battlements.js); its side, its variant, and its corners and ends are read from the floors and the neighbouring edges, never saved; sight and light pass it, bodies and the dead do not, and the dead cannot strike it down; placed at once and free as the Stone ramp is (no bar, no cost, no tool); Free building only"
   }
  },
  "looks": {
@@ -11071,9 +11201,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:981",
-    "placement.js:992",
-    "placement.js:996"
+    "placement.js:993",
+    "placement.js:1004",
+    "placement.js:1008"
    ]
   },
   {
@@ -11172,7 +11302,7 @@
   {
    "key": "craft",
    "at": [
-    "stations.js:435"
+    "stations.js:451"
    ]
   },
   {
@@ -11226,7 +11356,7 @@
   {
    "key": "honey",
    "at": [
-    "hives.js:38"
+    "hives.js:72"
    ]
   },
   {
@@ -11369,7 +11499,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1734"
+    "main.js:1735"
    ]
   },
   {
@@ -11382,7 +11512,7 @@
    "key": "Build",
    "at": [
     "main.js:965",
-    "placement.js:83"
+    "placement.js:89"
    ]
   },
   {
@@ -11394,31 +11524,31 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1854"
+    "placement.js:1866"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1847"
+    "placement.js:1859"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:1879"
+    "placement.js:1891"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:1885"
+    "placement.js:1897"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1389"
+    "placement.js:1401"
    ]
   },
   {
@@ -11448,47 +11578,48 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1607"
+    "main.js:1608"
    ]
   },
   {
    "key": "Drink",
    "at": [
-    "interact.js:1827",
-    "interact.js:1922"
+    "interact.js:1832",
+    "interact.js:1927",
+    "interact.js:1961"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1885"
+    "interact.js:1890"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1824",
-    "interact.js:1920"
+    "interact.js:1829",
+    "interact.js:1925"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1800",
-    "interact.js:1931"
+    "interact.js:1805",
+    "interact.js:1936"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1801",
-    "interact.js:1932"
+    "interact.js:1806",
+    "interact.js:1937"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1929"
+    "interact.js:1934"
    ]
   },
   {
@@ -11530,7 +11661,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1709"
+    "main.js:1710"
    ]
   },
   {
@@ -11561,25 +11692,25 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1588"
+    "main.js:1589"
    ]
   },
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2318"
+    "interact.js:2326"
    ]
   },
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1647"
+    "main.js:1648"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1695"
+    "main.js:1696"
    ]
   },
   {
@@ -11603,7 +11734,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1747"
+    "main.js:1748"
    ]
   },
   {
@@ -11615,16 +11746,16 @@
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1795"
+    "interact.js:1800"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1787",
-    "interact.js:1789",
-    "interact.js:1791",
-    "interact.js:1794"
+    "interact.js:1792",
+    "interact.js:1794",
+    "interact.js:1796",
+    "interact.js:1799"
    ]
   },
   {
@@ -11636,7 +11767,7 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1939"
+    "interact.js:1944"
    ]
   },
   {
@@ -11660,25 +11791,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1553"
+    "main.js:1554"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1549"
+    "main.js:1550"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1590"
+    "main.js:1591"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1589"
+    "main.js:1590"
    ]
   },
   {
@@ -11690,7 +11821,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1756"
+    "main.js:1757"
    ]
   },
   {
@@ -11738,7 +11869,7 @@
   {
    "key": "Take honey",
    "at": [
-    "hives.js:74"
+    "hives.js:104"
    ]
   },
   {
@@ -11750,7 +11881,7 @@
   {
    "key": "Terrain",
    "at": [
-    "placement.js:83"
+    "placement.js:89"
    ]
   },
   {
@@ -11768,8 +11899,8 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1896",
-    "interact.js:1953"
+    "interact.js:1901",
+    "interact.js:1959"
    ]
   },
   {
@@ -11781,8 +11912,8 @@
   {
    "key": "Use",
    "at": [
-    "interact.js:1781",
-    "interact.js:1883"
+    "interact.js:1786",
+    "interact.js:1888"
    ]
   },
   {
@@ -11824,7 +11955,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2254"
+    "interact.js:2262"
    ]
   },
   {
@@ -11866,35 +11997,35 @@
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:200",
-    "placement.js:507",
-    "placement.js:573",
-    "placement.js:1775",
-    "placement.js:1812"
+    "placement.js:206",
+    "placement.js:513",
+    "placement.js:579",
+    "placement.js:1787",
+    "placement.js:1824"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1895"
+    "placement.js:1907"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1880"
+    "placement.js:1892"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1409"
+    "placement.js:1421"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1868"
+    "placement.js:1880"
    ]
   },
   {
@@ -11912,37 +12043,37 @@
   {
    "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1934"
+    "interact.js:1939"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1804"
+    "interact.js:1809"
    ]
   },
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:375"
+    "placement.js:381"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2366"
+    "interact.js:2374"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2303"
+    "interact.js:2311"
    ]
   },
   {
    "key": "No honey yet (more in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "hives.js:69"
+    "hives.js:99"
    ]
   },
   {
@@ -11950,13 +12081,13 @@
    "at": [
     "interact.js:309",
     "interact.js:331",
-    "interact.js:1785"
+    "interact.js:1790"
    ]
   },
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:430"
+    "placement.js:436"
    ]
   },
   {
@@ -11986,7 +12117,7 @@
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2403"
+    "interact.js:2411"
    ]
   },
   {
@@ -11998,13 +12129,13 @@
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1839"
+    "interact.js:1844"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2391"
+    "interact.js:2399"
    ]
   },
   {
@@ -12030,13 +12161,14 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:355"
+    "archery.js:320",
+    "archery.js:370"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:972"
+    "archery.js:1052"
    ]
   },
   {
@@ -12048,19 +12180,19 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:455"
+    "game.js:456"
    ]
   },
   {
    "key": "blocked",
    "at": [
-    "combat.js:175"
+    "combat.js:177"
    ]
   },
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1312"
+    "placement.js:1324"
    ]
   },
   {
@@ -12070,7 +12202,7 @@
     "interact.js:315",
     "interact.js:339",
     "interact.js:577",
-    "interact.js:2267",
+    "interact.js:2275",
     "ui/station-panel.js:84",
     "ui/station-panel.js:111"
    ]
@@ -12078,25 +12210,25 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:853"
+    "game.js:854"
    ]
   },
   {
    "key": "craftDone",
    "at": [
-    "stations.js:411"
+    "stations.js:427"
    ]
   },
   {
    "key": "craftStarted",
    "at": [
-    "stations.js:225"
+    "stations.js:241"
    ]
   },
   {
    "key": "drank",
    "at": [
-    "game.js:828"
+    "game.js:829"
    ]
   },
   {
@@ -12108,7 +12240,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1894"
+    "map.js:1901"
    ]
   },
   {
@@ -12139,31 +12271,31 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:927"
+    "game.js:928"
    ]
   },
   {
    "key": "guardBroken",
    "at": [
-    "combat.js:166"
+    "combat.js:168"
    ]
   },
   {
    "key": "kicked",
    "at": [
-    "combat.js:311"
+    "combat.js:314"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:438"
+    "combat.js:441"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:387"
+    "combat.js:390"
    ]
   },
   {
@@ -12181,7 +12313,7 @@
   {
    "key": "shove",
    "at": [
-    "combat.js:485"
+    "combat.js:488"
    ]
   },
   {
@@ -12199,7 +12331,7 @@
   {
    "key": "taintedOnly",
    "at": [
-    "game.js:829"
+    "game.js:830"
    ]
   },
   {
@@ -12237,15 +12369,15 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:925",
-    "map.js:1890"
+    "map.js:1897"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:980",
-    "combat.js:455",
-    "game.js:739"
+    "archery.js:1060",
+    "combat.js:458",
+    "game.js:740"
    ]
   },
   {
@@ -12347,6 +12479,7 @@
   "apples",
   "arrows",
   "atlas",
+  "battlements",
   "bees",
   "belt",
   "boil",
@@ -12442,19 +12575,19 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 4091
+   "lines": 4098
   },
   {
    "path": "interact.js",
-   "lines": 2467
+   "lines": 2475
   },
   {
    "path": "main.js",
-   "lines": 2237
+   "lines": 2238
   },
   {
    "path": "placement.js",
-   "lines": 1897
+   "lines": 1909
   },
   {
    "path": "net.js",
@@ -12478,15 +12611,15 @@
   },
   {
    "path": "archery.js",
-   "lines": 1025
+   "lines": 1105
+  },
+  {
+   "path": "render/walls.js",
+   "lines": 1097
   },
   {
    "path": "ground.js",
    "lines": 1011
-  },
-  {
-   "path": "render/walls.js",
-   "lines": 1005
   },
   {
    "path": "entities/animal.js",
@@ -12494,7 +12627,7 @@
   },
   {
    "path": "game.js",
-   "lines": 949
+   "lines": 950
   },
   {
    "path": "ui/inventory-panel.js",
@@ -12510,19 +12643,19 @@
   },
   {
    "path": "inventory.js",
-   "lines": 609
+   "lines": 613
   },
   {
    "path": "render/storeys.js",
-   "lines": 581
+   "lines": 583
   },
   {
    "path": "ui/inventory-actions.js",
-   "lines": 554
+   "lines": 556
   },
   {
    "path": "combat.js",
-   "lines": 543
+   "lines": 547
   },
   {
    "path": "figure/rig.js",
@@ -12534,15 +12667,15 @@
   },
   {
    "path": "stations.js",
-   "lines": 451
+   "lines": 467
+  },
+  {
+   "path": "item-info.js",
+   "lines": 456
   },
   {
    "path": "entities/player.js",
    "lines": 449
-  },
-  {
-   "path": "item-info.js",
-   "lines": 446
   },
   {
    "path": "render/rings.js",
@@ -12558,7 +12691,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 390
+   "lines": 393
   },
   {
    "path": "entities/villager.js",
@@ -12597,6 +12730,10 @@
    "lines": 319
   },
   {
+   "path": "render/entities.js",
+   "lines": 314
+  },
+  {
    "path": "tuning.js",
    "lines": 298
   },
@@ -12607,10 +12744,6 @@
   {
    "path": "items.js",
    "lines": 288
-  },
-  {
-   "path": "render/entities.js",
-   "lines": 286
   },
   {
    "path": "paintings.js",
@@ -12661,6 +12794,10 @@
    "lines": 214
   },
   {
+   "path": "input.js",
+   "lines": 208
+  },
+  {
    "path": "ui/dye-panel.js",
    "lines": 206
   },
@@ -12669,8 +12806,8 @@
    "lines": 198
   },
   {
-   "path": "input.js",
-   "lines": 198
+   "path": "potions.js",
+   "lines": 191
   },
   {
    "path": "grid.js",
@@ -12715,10 +12852,6 @@
   {
    "path": "figure/wardrobe.js",
    "lines": 164
-  },
-  {
-   "path": "potions.js",
-   "lines": 161
   },
   {
    "path": "talk.js",
@@ -12797,6 +12930,10 @@
    "lines": 123
   },
   {
+   "path": "battlements.js",
+   "lines": 121
+  },
+  {
    "path": "floaters.js",
    "lines": 116
   },
@@ -12811,6 +12948,10 @@
   {
    "path": "moodles.js",
    "lines": 115
+  },
+  {
+   "path": "hives.js",
+   "lines": 114
   },
   {
    "path": "ui/hover-card.js",
@@ -12863,10 +13004,6 @@
   {
    "path": "ui/debuff-row.js",
    "lines": 88
-  },
-  {
-   "path": "hives.js",
-   "lines": 84
   },
   {
    "path": "fishing.js",
@@ -13056,6 +13193,7 @@
  "problems": [],
  "constants": {
   "archery": {
+   "SPLASH_SECONDS": 2,
    "tunables_range": 22,
    "tunables_speed": 16,
    "tunables_arcMin": 8,
@@ -13304,6 +13442,7 @@
    "PLACE_REACH": 2.6,
    "BUILD_REACH": 2.6,
    "REMOVE_REACH": 2.6,
+   "FREE_REACH": 48,
    "EDGE_CLEARANCE": 0.45,
    "MAX_DRAG": 12,
    "TERRAIN_DRAG": 24

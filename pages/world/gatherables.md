@@ -5,7 +5,7 @@ aliases: [Gathering, Wobble, Sway]
 summary: Trees, rocks, herbs, mushrooms, clay banks, salt rocks, crops, pumpkins, and beehives: the things that sway when clicked, are outlined, and give something when gathered.
 ---
 
-Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Herbs]], [[Mushrooms]], [[Clay|clay banks]], [[Salt|salt rocks]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, rocks mined for [[Stone]], [[Iron ore]], or [[Salt]], herbs gathered and mushrooms foraged by hand, and clay banks dug for [[Clay]]; beehives give a [[Pot of honey]]; pumpkins give nothing yet.
+Gatherables are the things in the world that are meant to be gathered: [[Trees]], [[Rocks]], [[Herbs]], [[Mushrooms]], [[Clay|clay banks]], [[Salt|salt rocks]], [[Crops]], pumpkins, and [[Beehive|beehives]]. Each sways when clicked, and its art has a dark outline all the way round so it stands out from the decoration (trees are excused from the outline). Trees are chopped for [[Log|logs]] and apple trees picked, crops harvested, rocks mined for [[Stone]], [[Iron ore]], or [[Salt]], herbs gathered and mushrooms foraged by hand, and clay banks dug for [[Clay]]; beehives give a [[Jar of honey]]; pumpkins give nothing yet.
 
 ## How it works
 
@@ -32,7 +32,7 @@ Decoration, such as the flowers and leaves on the ground, does neither.
 - **Mushrooms:** **Forage mushroom**, or `E`, gives a [[Mushroom]] in {{n sprites.mushroom_0.gather.seconds seconds}} by hand, and inside the valley another grows elsewhere near trees later. See [[Mushrooms]].
 - **Clay banks**, on the river's bank: **Dig clay**, with a [[Shovel]] carried, gives {{n sprites.clay_bank.dig.count.0}} [[Clay]] in {{n sprites.clay_bank.dig.seconds seconds}}, and the bank is gone; another appears elsewhere along the river later. See [[Clay]].
 - **Pumpkins:** they sway, and nothing more.
-- **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on the menu, or `E`, gives {{n tuning.work.honey.count.0}} [[Pot of honey]] in {{n tuning.work.honey.seconds seconds}}, and the hive has more {{n tuning.work.honey.days}} game days later. Every hive has honey at the start. See [[Beehive]].
+- **Beehives**, at [[Your cottage]], [[Hollow Farm]], and [[The manor]]: **Take honey** on the menu, or `E`, gives {{n tuning.work.honey.count.0}} [[Jar of honey]] in {{n tuning.work.honey.seconds seconds}}, and the hive has more {{n tuning.work.honey.days}} game days later. Every hive has honey at the start. See [[Beehive]].
 
 ## Numbers
 

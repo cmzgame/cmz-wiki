@@ -2,7 +2,7 @@
 title: Beehive
 categories: [Props, Gatherables, Food]
 aliases: [Beehives, Hive, Hives, Skep, Take honey]
-summary: A straw skep on a plank stand, with bees about it by day, that gives a pot of honey, and has more some game days later.
+summary: A straw skep on a plank stand, with bees about it by day, that fills an empty clay jar with honey, and has more some game days later.
 numbersOk: true
 ---
 
@@ -10,11 +10,11 @@ numbersOk: true
 
 {{infobox-prop beehive}}
 
-A **beehive** is a straw skep on a plank stand. Hives stand in three places: two at [[Your cottage]], along the south of the farm plot; three in the yard of [[Hollow Farm]], east of the lane; and three in the garden of [[The manor]]. It is a [[Gatherables|gatherable]]: outlined, and a click sways it. Each gives a [[Pot of honey]], and has more {{n tuning.work.honey.days}} [[The day|game days]] after it was last taken from. Every hive has honey at the start. Taking it is open to everyone. {{planned note="Beastlore at level five will be the hives' gate once the skills are built; until then no one is refused."}}
+A **beehive** is a straw skep on a plank stand. Hives stand in three places: two at [[Your cottage]], along the south of the farm plot; three in the yard of [[Hollow Farm]], east of the lane; and three in the garden of [[The manor]]. It is a [[Gatherables|gatherable]]: outlined, and a click sways it. Each fills an empty [[Clay jar]] you carry with a [[Jar of honey]], and has more {{n tuning.work.honey.days}} [[The day|game days]] after it was last taken from. Every hive has honey at the start. Taking it is open to everyone. {{planned note="Beastlore at level five will be the hives' gate once the skills are built; until then no one is refused."}}
 
 ## Using it
 
-Right-click a hive and choose **Take honey**, or press `E` beside it. It takes {{n tuning.work.honey.seconds seconds}}; moving ends it. You get {{n tuning.work.honey.count.0}} pot of honey: "You take a pot of honey from the hive." It goes into your bag, or falls at your feet if the bag has no room ("...; ... at your feet."). {{planned doc=02 note="Ruled 2026-10-26, not built (game #500): taking honey will need an empty clay jar carried, which it fills; without one, 'You need a clay jar to take honey.'"}} The Beastlore skill's picture rises over your head with the count (see [[Interface#Floating numbers|Floating numbers]]).
+Right-click a hive and choose **Take honey**, or press `E` beside it, with an empty [[Clay jar]] on you: in a hand, on the belt, or in your bag, never in a chest beside you. Without one the take is refused: "You need a clay jar to take honey." (the entry is offered all the same, and says so when chosen). It takes {{n tuning.work.honey.seconds seconds}}; moving ends it. The jar fills: you get {{n tuning.work.honey.count.0}} [[Jar of honey]], "You take a jar of honey from the hive." It is filled where the jar was when that was the last of its stack, else it goes into your bag, or falls at your feet if the bag has no room ("Your bag is full: a jar of honey is at your feet."). Eating the honey, or spending it in a recipe, leaves the empty jar again. The Beastlore skill's picture rises over your head with the count (see [[Interface#Floating numbers|Floating numbers]]).
 
 A hive that has been taken from has a greyed entry until its honey is back, saying how many days are left, rounded up: "No honey yet (more in about ... days)". Apart from its bees (below), the hive looks the same either way. Asked for honey another way, an empty hive refuses with "The bees have made no more honey yet."
 
@@ -31,7 +31,7 @@ Every player sees the same bees: each screen draws them from the hive and the ga
 ## Sources
 
 <!-- sources at 261cd7a -->
-- `docs/02-decisions.md` (at 5eb40e6): honey into a clay jar, ruled and not built (game #499, #500)
+- `src/hives.js:28-56`, `src/hives.js:74-91`, `data/items.json:19` `jar` (at 8d361e5): an empty clay jar carried, found in the hands, the belt, then the bag, never a container; refused "You need a clay jar to take honey." (the menu's entry runs the verb and shows its reason); the jar filled in its own place, else the bag, else the feet with its line; one a take (game #585, the ruling of 2026-10-26)
 - `data/sprites/beehive.json`: the drawn skep, `interactable`, fixed, `hive: true`
 - `tools/mapgen/valley.py:201-202`, `tools/mapgen/valley.py:320`, `tools/mapgen/valley.py:464-466` (at 393acaf): two hives at the cottage, three in the manor's garden, three in Hollow Farm's yard
 - `src/hives.js:1-7`: honey until taken, more `work.honey.days` later; skills not read yet

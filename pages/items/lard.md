@@ -6,7 +6,7 @@ summary: Pig fat, butchered from a pig with a dirk carried; a binder for pemmica
 
 {{infobox-item lard}}
 
-**Lard** is a pig's fat. Butchering a pig's carcass with a [[Dirk]] carried gives {{n animals.species.pig.yields.butcher.2.count.0}} as a whole yield, beside its pork and bacon, at the share the kill left (see [[Hunting]]). Only a pig gives it. It is a binder: [[Pemmican]] takes lard or a [[Pot of honey]] to bind its meat and plant. A line counts it as one thing: the butcher's line ends "and some lard."
+**Lard** is a pig's fat. Butchering a pig's carcass with a [[Dirk]] carried gives {{n animals.species.pig.yields.butcher.2.count.0}} as a whole yield, beside its pork and bacon, at the share the kill left (see [[Hunting]]). Only a pig gives it. It is a binder: [[Pemmican]] takes lard or a [[Jar of honey]] to bind its meat and plant. A line counts it as one thing: the butcher's line ends "and some lard."
 
 {{item-sections lard}}
 

@@ -11,7 +11,7 @@ numbersOk: true
 
 **Poison**, a vial of it, is brewed at a [[Cauldron]] from two [[Nightshade]], one [[Grave moss]], a [[Clay vial]], and a draught of clean water, over the cauldron's lit fire (see [[Potions]]). It is the ordinary of the two poisons; [[Strong poison]] is the other. It stacks to {{n items.poison.stack}} in one cell and may ride the [[Belt]]. Its vial has a green seal and a green glazed band. Grave moss grows only in the graveyard of [[The chapel]], so poison is scarce.
 
-It is **never drunk**. [[Use|Used]] on a blade it coats it, and used on arrows it makes [[Poisoned arrow|poisoned arrows]]; either way the dead and the animals they hit are poisoned, losing health every second for a while.
+It is **never drunk**. [[Use|Used]] on a blade it coats it, and used on arrows it makes [[Poisoned arrow|poisoned arrows]]; either way the dead and the animals they hit are poisoned, losing health every second for a while. Held in the main hand it is thrown, and splashes its poison on everything of the dead and the wild game where it shatters.
 
 ## Coating a blade
 
@@ -30,6 +30,10 @@ Use the poison on plain [[Arrow|arrows]] you carry: up to {{n combat.poison.arro
 
 Poison and fire do not mix. A poison on a [[Fire arrow]], or a poisoned arrow on a fire, does nothing: "Nothing interesting happens."
 
+## Throwing it
+
+A vial of poison is held in either hand (Equip on its menu, a drag onto a hand, or a main-hand or off-hand belt slot's key) and thrown from the main hand's other mode, the middle button or Q, with the bow's draw, as a potion is (see [[Potions#Holding and throwing one|Potions]]). It shatters where it lands, the vial gone, and every one of [[The dead]] and every wild [[Animals|animal]] within {{n items.poison.thrown.splash.radius tiles}} takes one poisoned hit of its tier: a stack each, as below. It never touches a player, a [[Villagers|villager]], or a tame animal. The left button swings nothing with it in hand. Its card says: "Throw (middle button or Q): shatters where it lands, up to {{n items.poison.thrown.range}} tiles, splashing ... across." and "Splashes every one of the dead and every wild animal within reach; never a player, a villager, or a tame animal."
+
 ## The empty vial
 
 Coating spends the vial and gives back an empty [[Clay vial]], as a drink does: where the poison was if it was the last of its stack, else into your bag, else at your feet. See [[Potions#The empty vial|Potions]].
@@ -43,7 +47,7 @@ Coating spends the vial and gives back an empty [[Clay vial]], as a drink does: 
 
 ## Poisoned
 
-A poisoned hit on one of [[The dead]] or an [[Animals|animal]] adds a stack of poison, up to {{n combat.poison.max}}, and sets its timer back to {{n combat.poison.duration seconds}}. While it lasts the body loses health every second, more for more stacks:
+A poisoned hit on one of [[The dead]] or an [[Animals|animal]], a thrown vial's splash included, adds a stack of poison, up to {{n combat.poison.max}}, and sets its timer back to {{n combat.poison.duration seconds}}. While it lasts the body loses health every second, more for more stacks:
 
 - ordinary poison: {{n combat.poison.dpsByStacks.ordinary.0}}, {{n combat.poison.dpsByStacks.ordinary.1}}, or {{n combat.poison.dpsByStacks.ordinary.2}} a second, for one, two, or three stacks;
 - strong poison: {{n combat.poison.dpsByStacks.strong.0}}, {{n combat.poison.dpsByStacks.strong.1}}, or {{n combat.poison.dpsByStacks.strong.2}} a second.
@@ -56,7 +60,7 @@ Poison never spreads, never lights anything, and stands beside a [[Burning|burn]
 
 ## The card
 
-Its card reads "Poison", its kind "Poison", "Ordinary poison: never drunk.", "A vial coats a blade for {{n combat.poison.hits}} landed hits, or {{n combat.poison.arrows}} arrows; the empty vial is kept.", "Poisons the dead and game it hits: a stack a hit, up to {{n combat.poison.max}}, draining {{n combat.poison.dpsByStacks.ordinary.0}}, {{n combat.poison.dpsByStacks.ordinary.1}}, or {{n combat.poison.dpsByStacks.ordinary.2}} a second for {{n combat.poison.duration}} seconds after the last.", and "**Use** on a blade or arrows: coat.", the word Use in the Use mode's gold; on a belt slot it leads with "carried only". Its key in any belt slot, or a double-click on it in your own bag, says "Poison isn't for drinking. Use it on a blade or on arrows." and does nothing else. The herbs that are poisonous, nightshade and wolfsbane, are not poisons themselves and coat nothing.
+Its card reads "Poison", its kind "Poison", "Ordinary poison: never drunk.", "A vial coats a blade for {{n combat.poison.hits}} landed hits, or {{n combat.poison.arrows}} arrows; the empty vial is kept.", "Poisons the dead and game it hits: a stack a hit, up to {{n combat.poison.max}}, draining {{n combat.poison.dpsByStacks.ordinary.0}}, {{n combat.poison.dpsByStacks.ordinary.1}}, or {{n combat.poison.dpsByStacks.ordinary.2}} a second for {{n combat.poison.duration}} seconds after the last.", and "**Use** on a blade or arrows: coat.", the word Use in the Use mode's gold; on a belt slot it leads with "carried only". Its key in the utility slot, or a double-click on it in your own bag, says "Poison isn't for drinking. Use it on a blade or on arrows." and does nothing else; a main-hand or off-hand slot's key draws it into that hand. The herbs that are poisonous, nightshade and wolfsbane, are not poisons themselves and coat nothing.
 
 {{item-sections poison}}
 
@@ -73,6 +77,9 @@ A guest coats with their own Use, which the host carries out by the vial's and t
 ## Sources
 
 <!-- sources at 307ed34 -->
+- `data/items.json:141` `hands`, `thrown` (at 8d361e5): held in either hand, thrown on the other mode, `splash.radius` (game #586)
+- `src/archery.js:313-322`, `src/archery.js:631-642`, `src/poison.js` `apply` (at 8d361e5): the splash poisons every one of the dead and every wild animal within the radius, as one hit of the tier; never a player, a villager, or a tame animal; the vial gone (game #586)
+- `src/inventory.js:456-459`, `src/item-info.js:187-197` (at 8d361e5): the utility slot's line, a hand slot's draw; the card's throw lines (game #586)
 - `data/items.json:143`: the item, `poison: { tier: 1 }`, "a vial of", its stack, `belt`, its green seal and band
 - `data/recipes.json`: two nightshade, a grave moss, a clay vial, water, at the cauldron
 - `data/interactions.json:22-25`: the four `coat` rows, `exact` so the herbs tagged `poison` never match (game #496)

@@ -16,8 +16,10 @@ The three buttons are roles, not fixed actions (see [[Combat]]):
 - **Left button**: the main hand. With a weapon it swings; with nothing in hand, fists. When placing something it confirms the spot, and in Use mode it picks the target. With an actions menu open, a left click only closes the menu. Clicking a gatherable within {{n census.constants.interact.CLICK_REACH}} tiles makes it sway. With a weapon in each hand, the two take turns.
 - **Right button, tapped** (let go within {{n census.constants.buttons.TAP_TIME}} seconds): the actions menu for whatever is under the cursor. During a bow's draw a tap cancels the draw; in Use mode it puts the item away. With a placement ghost up (a build, a rug, a painting, a set-down from the bag, a torch for a wall) or the Take apart tool on, a tap puts it away as `Escape` does and opens no menu; a piece of furniture you are carrying is no ghost, so its menu still opens, to put it down.
 - **Right button, held**: the off hand's stance: block with a [[Wooden shield|shield]], brace, or an off-hand swing.
-- **Middle button**: the main hand's other mode (also `Q`).
+- **Middle button**: the main hand's other mode (also `Q`): the [[Halberd]]'s thrust, the [[Throwing spear]]'s throw, or the throw of a potion or a poison held in the main hand (see [[Potions]]).
 - **Wheel**: zoom one step in or out, with the panels open or closed (not while an item is being dragged, and not faster than once every {{n census.constants.main.ZOOM_PACE}} seconds). Over the chat log it scrolls the chat log, over a panel it does nothing to the world, and while dragging an item it rotates it.
+
+A press and drag on the game works the game alone: the browser never starts dragging the picture of the game or selecting the page, outside a text field.
 
 ## The row of buttons
 
@@ -37,7 +39,7 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `B`, tapped: board up the nearest opening (needs a [[Plank|plank]] and a [[Smith's hammer]] on you); a gate takes none. Held: pull a board off, with the hammer, and get the plank back.
 - `T`: light or put out the [[Torch|torch]] in your hand, or else on your belt; lighting needs a [[Tinderbox]] ("You need a tinderbox to light it."). With no torch in a hand or on the belt, it takes one from the bag into a hand, still out. The Controls screen says "Light or put out the torch in hand (a tinderbox lights it)".
 - `Q`: the main hand's other mode, as the middle button.
-- `1` `2` `3` `4` `5`: the belt's slots. A main-hand or off-hand slot's key draws what is there into that hand, swapping what the hand held onto the slot, or eats a food; the utility slot's key only eats. Any slot's key drinks a potion (see [[Potions]]). An empty slot's key does nothing, and a waterskin's drinks by itself and is never drunk by its key. Which key is which slot is the **Belt slot order** setting: by default `1` main hand, `2` off hand, `3` utility, and a leather belt's `4` main hand and `5` off hand (see [[Belt]]). The Controls screen says "Use a belt slot: a hand slot draws what is there into its hand (or eats it), the utility slot eats; the order is a setting".
+- `1` `2` `3` `4` `5`: the belt's slots. A main-hand or off-hand slot's key draws what is there into that hand, swapping what the hand held onto the slot, or eats a food; the utility slot's key only eats. The utility slot's key drinks a potion; a hand slot's key draws a potion or a poison into that hand, to throw (see [[Potions]]). An empty slot's key does nothing, and a waterskin's drinks by itself and is never drunk by its key. Which key is which slot is the **Belt slot order** setting: by default `1` main hand, `2` off hand, `3` utility, and a leather belt's `4` main hand and `5` off hand (see [[Belt]]). The Controls screen says "Use a belt slot: a hand slot draws what is there into its hand (or eats it), the utility slot eats; the order is a setting".
 
 ### Panels and building
 
@@ -89,6 +91,7 @@ A guest's keys and clicks go to the host, who performs them. A guest's wave, fro
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `src/inventory.js:456-459`, `src/archery.js:906-911` (game #586); `src/input.js:102-111`: dragstart and selectstart cancelled outside a text field (game #573) (at 8d361e5)
 - `src/input.js:52-71` (at 5eb40e6): the pointer followed over the whole window, so the aim turns over any panel (game #501)
 - `src/ui/screens.js:23-61`, `src/ui/screens.js:1079-1086`, `src/settings.js:41-65`: the Controls screen is a fixed list in six groups, R once, the wiki linked at its foot, and no setting rebinds a key
 - `index.html:50`, `src/ui/screens.js:948`: Controls on the site's menu and on the pause menu

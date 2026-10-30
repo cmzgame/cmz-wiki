@@ -16,7 +16,7 @@ A **castle gate** is a gate of stone with a **portcullis**, an iron grille that 
 
 ### Building one
 
-With Free building on, the build palette (N) has a **Castle** heading on its Build tab, under Floors and stairs, with the two gates (see [[Building]]). Click the row, then click a plain stone wall: the gate goes up on that click, at once and for free, with no bar, no cost, and no tool, as the [[Cliffs#The stone ramp|Stone ramp]] does. The prompt reads "Click to place the gate at once". It is built shut.
+With Free building on, the build palette (N) has a **Castle** heading on its Build tab, under Floors and stairs, with the two gates (see [[Building]]). Click the row, then click a plain stone wall, the village's or one built from the palette's own Stone wall row (listed with Free building too, see [[Building]]): the gate goes up on that click, at once and for free, with no bar, no cost, and no tool, as the [[Cliffs#The stone ramp|Stone ramp]] does. The prompt reads "Click to place the gate at once". It is built shut.
 
 A gate is stamped over two or three **consecutive edges of one run** of plain stone wall, each one a plain wall and nothing more. The ghost spans the run: for the two-wide gate, the edge under the cursor and the one beside it on the side of the edge the cursor is nearer; for the three-wide gate, the edge under the cursor in the middle. It is green where the gate can go and red where it cannot, with the reason:
 
@@ -27,7 +27,7 @@ A gate is stamped over two or three **consecutive edges of one run** of plain st
 - "Take what hangs there down first": a [[Paintings|painting]] hangs on an edge.
 - "Take the torch down first": a torch is in a bracket on an edge (see [[Torch posts and brackets]]).
 - "No room": an edge of the run could not take a door, since it needs both its tiles clear of furniture and rugs and no stair across it (see [[Openings#A door's tiles stay clear|Openings]]).
-- "Too far": no edge of the run is within the build reach of you.
+- "Too far": no edge of the run is within {{n census.constants.placement.FREE_REACH tiles}} of you, Free building's reach, since a gate is built only with it.
 - "Step back": you are standing too close to an edge of the run.
 - "Someone is in the way": anyone living (a player, a villager, one of the dead, or an animal) stands across an edge of the run. A corpse does not count.
 - "Castle gates are not in the game yet": Free building is off. A guest's command is refused the same way.
@@ -84,6 +84,7 @@ A guest builds a gate through the same build command as the host, naming the fir
 
 - [[Walls]]
 - [[Openings]]
+- [[Battlements]], the parapet of a wall walk, from the art round after the gates'
 - [[Fences]], whose gates are planks the dead strike down
 - [[Rooms]]
 - [[Building]]
@@ -92,6 +93,7 @@ A guest builds a gate through the same build command as the host, naming the fir
 ## Sources
 
 <!-- sources at 77fee9d -->
+- `data/build.json` (`wall_stone`), `src/placement.js:43-50`, `src/placement.js:563-565` (at 8d361e5): the Stone wall buildable with Free building; a gate's "Too far" at Free building's reach (games #573, #575)
 - `data/build.json` (`gate_stone_2`, `gate_stone_3`): the two rows, `kind` gate, `dev`, group Castle, no cost, time, or tool (game #570)
 - `data/sprites/wall_stone_gate_2.json`, `data/sprites/wall_stone_gate_3.json`: `wall.gate`: `span`, `opening` (`springing`, `crown`), `leaf` (`plane`, three frames), `swing`, the flags `grille`, `deadBreak`, `bitesPass`, `shotsPass`, `fireSpreads`, `hp`; `wall.run` `wall_stone` (game #570)
 - `src/placement.js:253-255`, `src/placement.js:530-592`: a gate row is instant, free, and Free building only; the run under the cursor, the ghost, the refusals in order, "Castle gates are not in the game yet", "Step back", "Someone is in the way", "Too far" (game #570)

@@ -23,7 +23,7 @@ What a slot's key does is read from the slot's role and the item there:
 - **An off-hand slot** does the same for the off hand: it draws a book, a shield, a torch, or a second weapon into the off hand, or eats a food. "The throwing spear can't be held in your off hand."
 - **The utility slot** only eats a food. With anything else it does nothing and says why: "You can't equip a weapon from the utility slot." for a weapon, a bow, a shield, or a staff, or with the item named for anything else held, as "You can't equip the torch from the utility slot." It is storage: a spare weapon, a torch, or food carried without taking a bag cell.
 - **An empty slot** does nothing at all and says nothing, whatever its role. It never puts away what you hold, so a stray key in a fight never takes the weapon out of your hand.
-- **A potion**, in any slot, is drunk by its key, whatever the slot's role, and its empty vial goes back onto the slot when it was the last of the stack (see [[Potions]]). **A poison** in any slot is never drunk: its key says "Poison isn't for drinking. Use it on a blade or on arrows."
+- **A potion** in the utility slot is drunk by its key, and its empty vial goes back onto the slot when it was the last of the stack; in a main-hand or an off-hand slot its key draws it into that hand, to throw, as any held thing's does (see [[Potions]]). **A poison** in the utility slot is never drunk: its key says "Poison isn't for drinking. Use it on a blade or on arrows."; in a hand slot its key draws it into that hand.
 - **A waterskin**, in any slot, is never drunk by its key: "Your waterskin drinks by itself from your belt." It sips by itself when you are thirsty, as from the bag (see [[Waterskin]]).
 - **The tinderbox** is not held, so its key says "The tinderbox is not held in a hand." It is used from the belt as it is from the bag.
 
@@ -69,7 +69,7 @@ Resting the pointer on a slot shows a card (see [[Inventory#The hover card|Inven
 
 - **An empty slot**: its role ("Main-hand slot", "Off-hand slot", "Utility slot"), its key, and what it is for: "This is a main-hand slot. Its key draws what's here into your main hand, or eats it if it is food.", where two-handed items may go, that tapped empty it does nothing, and that a waterskin in any slot sips by itself.
 - **A locked place**: "Locked slot", and that a leather belt adds a slot there.
-- **A filled slot**: the item's card, led by what the key does with it there: "From this main-hand slot: drawn into your main hand.", "From the utility slot: eaten.", "From this main-hand slot: drunk." for a potion, "carried only" for a poison, or for a held item the key does not draw, "From the utility slot: stored. You can't equip a weapon from the utility slot. Its menu equips it."
+- **A filled slot**: the item's card, led by what the key does with it there: "From this main-hand slot: drawn into your main hand.", "From the utility slot: eaten.", "From the utility slot: drunk." for a potion there (in a hand slot it is drawn, like any held thing), "carried only" for a poison in the utility slot, or for a held item the key does not draw, "From the utility slot: stored. You can't equip a weapon from the utility slot. Its menu equips it."
 
 A two-handed item's card says "Equip: both hands; on the belt, a main-hand slot or the utility slot."
 
@@ -79,7 +79,7 @@ A slot's menu offers **Use**, then:
 
 - **Equip**, where the key would draw the item (it does what the key does);
 - for a held item the key does not draw (anything in the utility slot, a shield in a main-hand slot), an Equip into its own hand: **Equip (main hand)** and **Equip (off hand)** for an item that fits either, **Equip (both hands)** for a two-handed one, **Equip (off hand)** for a shield. What that hand held goes by [[Belt#The swap|the swap]], so it takes the freed slot only where that slot's key would draw it, and never the bag before an empty slot of its own hand;
-- **Eat** for a food; **Drink** for a potion, as its key does; **Drink**, with how full it is, for a waterskin, which is the one way to drink from a skin on the belt by hand; **Boil water** at a lit cooking fire for a waterskin or a [[Bucket]] of tainted water (see [[Water]]);
+- **Eat** for a food; **Drink** for a potion in the utility slot, as its key does (in a hand slot its menu offers Equip); **Drink**, with how full it is, for a waterskin, which is the one way to drink from a skin on the belt by hand; **Boil water** at a lit cooking fire for a waterskin or a [[Bucket]] of tainted water (see [[Water]]);
 - **Put in bag** ("No room in your bag." if it is full), and **Drop**.
 
 A double-click on a slot does what its key does: it eats, drinks a potion, or draws the item, or else shows the key's line. A double-click never drinks a skin on the belt and never equips from the utility slot.
@@ -116,6 +116,7 @@ The belt keys are part of each player's input, carried out by the host's world f
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `src/inventory.js:453-459`, `src/interact.js:1926`, `src/item-info.js:419`: a potion or a poison drawn by a hand slot's key, drunk by the utility slot's; the menu's Drink only where the key drinks; the card's words (game #586) (at 8d361e5)
 - `data/items.json:33-34`: the rope belt's and the leather belt's slot counts
 - `src/inventory.js:295-312`: the slots' roles by index (`BELT_ROLES`), the key events by role (`BELT_EVENTS`), and the two key orders (`beltPositions`) (game #478)
 - `src/inventory.js:35-41`: an old world's rope belt of two grows to three

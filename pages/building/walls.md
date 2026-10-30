@@ -24,6 +24,7 @@ Every wall has a material, which is its art. The corner posts take the heaviest 
 - **Cliff**, bare or grassy: {{n sprites.wall_cliff.wall.height}} pixels tall, {{n sprites.wall_cliff.wall.thickness}} thick, a rock face built only with Free building on, for experimenting with hills. It blocks bodies and sight as stone, and takes no door or window ("Not in a cliff") and no painting or torch ("Not on a cliff"). It is drawn by the plateau a storey up: a face, a back, a corner piece, or nothing where plateau lies on both its sides. See [[Cliffs]].
 
 - **Castle gate**, stone: {{n sprites.wall_stone_gate_2.wall.height}} pixels tall, a stone wall's, two or three tiles wide with a portcullis in an arch, built only with Free building over a plain stone wall's edges. It is a door in each edge of its run, shut or raised; the dead cannot break it. See [[Castle gates]].
+- **Battlement**, stone: {{n sprites.wall_battlement.wall.height}} pixels tall, a short parapet with merlons on the outer edge of a wall walk upstairs, standing wholly outside its edge line, built only with Free building. Sight and light pass over it, bodies do not, nothing breaks it, and it takes no door, window, painting, or torch. See [[Battlements]].
 
 A building may mix materials, with a different wall on each side. A door or a window built into a wall is made of that wall's material; in a wall of wood its leaves and shutters may be of another wood (see [[Woods]]).
 
@@ -37,7 +38,7 @@ A [[Round rooms|round room]]'s wall is stone, drawn as a ring round a square of 
 
 ### Building and taking apart walls
 
-You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N (and, with Free building on, round stone rooms), and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall but a cliff, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart, and a cliff wall is taken apart only while Free building is on. See [[Building]].
+You can build log walls, walls of each wood, fences, gates, doors, and windows from the palette on N (and, with Free building on, straight stone walls, round stone rooms, castle gates, and battlements), and take apart what you built with X, for half its cost back. A door or a window can be built into any plain wall but a cliff, the village's own included, and a door into a fence as a gate; taking it apart puts the wall back. Walls that are part of the map cannot be taken apart, and a cliff wall is taken apart only while Free building is on. See [[Building]].
 
 ### Brackets
 
@@ -58,6 +59,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 - Log wall: {{n sprites.wall_log.wall.height}} tall, {{n sprites.wall_log.wall.thickness}} thick.
 - Fence: {{n sprites.wall_fence.wall.height}} tall, {{n sprites.wall_fence.wall.thickness}} thick.
 - Cliff: {{n sprites.wall_cliff.wall.height}} tall, {{n sprites.wall_cliff.wall.thickness}} thick.
+- Battlement: {{n sprites.wall_battlement.wall.height}} tall, no thickness of its own.
 - Top of a door: {{n census.constants.placeholders.DOOR_TOP}} pixels up.
 - Window: from {{n census.constants.placeholders.WINDOW_SILL}} to {{n census.constants.placeholders.WINDOW_TOP}} pixels up.
 - A bracket: {{n census.constants.placeholders.BRACKET_UP}} pixels up.
@@ -70,6 +72,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 - [[Round rooms]]
 - [[Cliffs]]
 - [[Castle gates]]
+- [[Battlements]]
 - [[Upper floors]]
 - [[Woods]]
 - [[Rooms]]
@@ -78,6 +81,8 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `data/sprites/wall_battlement.json`, `src/battlements.js`, `src/map.js:1200`, `src/map.js:2762` (at 8d361e5): the battlement, a see-through wall of height 28 and no thickness on a wall walk's outer edge, nothing stamped over it (game #574)
+- `data/build.json` (`wall_stone`) (at 8d361e5): the straight stone wall in the palette with Free building (game #573)
 - `data/sprites/wall_stone_gate_2.json`, `data/sprites/wall_stone_gate_3.json`, `src/map.js:1691-1845` (at 77fee9d): the castle gate is a stone-height wall of kind door on each edge of its run (game #570)
 - `data/sprites/wall_cliff.json`, `src/map.js:1164`, `src/paintings.js:57`, `src/placement.js:636`, `src/placement.js:1091`, `src/cliffs.js:1-94` (at 3233696): the cliff wall, its height and thickness, no opening or painting or torch on it, taken apart only with Free building, drawn by its plateau (game #561)
 - `src/render/walls.js:268-294`, `src/render/walls.js:355-395`, `src/render/walls.js:495-520`, `src/map.js:1175-1203`, `src/placement.js:638` (at 6eba9c1): the walls along a stair faded for a body on it; a wall or a post under a floor of the storey above with no cap, flush at a stairwell's edge; a post on a post with no stone foot; no wall across a stair; "No floor there" (games #546, #549, #551)

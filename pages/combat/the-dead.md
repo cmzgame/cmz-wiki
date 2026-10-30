@@ -110,7 +110,7 @@ At no health one of the dead falls, and once the fall has played its body stays 
 - Hits, pushes, staggers, and knockdowns are on [[Combat]] and [[Stagger and knockdown]].
 - A floored zombie takes finishers while it lies, not while it gets up.
 - A hit during a bite's wind-up cancels it, whatever the weapon; a bite already landed cannot be cancelled.
-- [[Burning|Fire]] and [[Poison]] go on hurting one after the hit: a burn and a poison each take health a second for a while, and one of the dead may carry both. A poisoned one is drawn tinted green.
+- [[Burning|Fire]] and [[Poison]] go on hurting one after the hit: a burn and a poison each take health a second for a while, and one of the dead may carry both. A thrown poison's splash poisons every one of the dead in it. A poisoned one is drawn tinted green.
 - A hit on one of the dead, or its first sight of you, brings the others near it that can see it (see [[Sight-pull]]). To take one at a time, pull one at the edge of a group, out of the others' line, or in the dark.
 - Only a few of a crowd bite at once; the rest wait their turn, or strike the fence between, and a [[Shove]] that clears a biter hands its place on.
 - A hit that staggers one makes it reel, arms flung up and leaning back, for the length of the stagger; a hit that does not stagger it only flinches. One lying downed has its health bar just over the body, and is outlined when the pointer is over it.

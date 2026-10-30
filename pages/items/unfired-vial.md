@@ -7,7 +7,7 @@ summary: A vial shaped from clay at the workbench, two from one clay; fired in a
 
 {{infobox-item unfired_vial}}
 
-An **unfired vial** is clay shaped into a vial but not yet fired. The [[Workbench]] shapes two from one [[Clay]]. It has one use: fired in an [[Oven]] over its lit fire, it becomes a [[Clay vial]], the empty vial that [[Potions]] are brewed into. It is its own item so that firing it in the oven is a step of its own. It stacks to {{n items.unfired_vial.stack}} in one cell.
+An **unfired vial** is clay shaped into a vial but not yet fired. The [[Workbench]] shapes two from one [[Clay]]. It has one use: fired in an [[Oven]] over its lit fire, it becomes a [[Clay vial]], the empty vial that [[Potions]] are brewed into. It is its own item so that firing it in the oven is a step of its own. It stacks to {{n items.unfired_vial.stack}} in one cell. The [[Unfired jar]] is its bigger sibling, one from one clay.
 
 Its card reads "Unfired vial", its kind "Material", that it is made at a workbench, and that it goes into the clay vial. It is drawn as a vial of grey raw clay, unglazed.
 

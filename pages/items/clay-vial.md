@@ -7,7 +7,7 @@ summary: The empty vial: an unfired vial fired in an oven; every potion is brewe
 
 {{infobox-item clay_vial}}
 
-A **clay vial** is the empty vial. An [[Unfired vial]] fired in an [[Oven]] over its lit fire becomes one. Every one of the [[Potions]], and both poisons, is brewed into a clay vial at a [[Cauldron]], and drinking a potion gives the empty vial back, so a vial is refilled, not made again. It stacks to {{n items.clay_vial.stack}} in one cell and may ride the [[Belt]], where its key does nothing but say it is not held in a hand.
+A **clay vial** is the empty vial. An [[Unfired vial]] fired in an [[Oven]] over its lit fire becomes one. Every one of the [[Potions]], and both poisons, is brewed into a clay vial at a [[Cauldron]], and drinking a potion gives the empty vial back, so a vial is refilled, not made again. It stacks to {{n items.clay_vial.stack}} in one cell and may ride the [[Belt]], where its key does nothing but say it is not held in a hand. The [[Clay jar]] for a hive's honey is made and refilled the same way, one a clay.
 
 It is bare earthenware, with an open mouth and no seal or glaze; a filled vial has its potion's colour on its seal and a band round its shoulder (see [[Potions#The look|Potions]]). Its card reads "Clay vial", its kind "Material", that it is made at an oven, and the potions it goes into.
 

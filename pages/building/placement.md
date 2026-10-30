@@ -44,7 +44,7 @@ Some things are set down from the bag rather than carried: a [[Campfire]], a [[T
 ## Numbers
 
 - Reach to put down furniture: {{n census.constants.placement.PLACE_REACH tiles}}.
-- Reach to build: {{n census.constants.placement.BUILD_REACH tiles}}.
+- Reach to build: {{n census.constants.placement.BUILD_REACH tiles}}; with Free building on, {{n census.constants.placement.FREE_REACH tiles}} to build, take apart, or put down a made piece, the clear line still asked for.
 
 ## With friends
 

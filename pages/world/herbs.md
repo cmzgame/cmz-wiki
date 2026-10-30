@@ -52,7 +52,7 @@ An herb gathered inside the valley is owed back to its kind: {{n tuning.resource
 Seven herbs, and the [[Mushroom]], go into the brews at a [[Cauldron]], two of a potion's own herb and one of a second ingredient to each (see [[Potions]]):
 
 - [[Yarrow]] and [[Sage]]: the [[Healing potion]].
-- [[Nettle]] and a [[Pot of honey]]: the [[Stamina potion]].
+- [[Nettle]] and a [[Jar of honey]]: the [[Stamina potion]].
 - [[Mageroot]] and a mushroom: the [[Mana potion]].
 - [[Nightshade]] and [[Grave moss]]: [[Poison]].
 - [[Wolfsbane]] and grave moss: [[Strong poison]].

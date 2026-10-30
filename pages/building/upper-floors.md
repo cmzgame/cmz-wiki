@@ -73,7 +73,7 @@ With **Free building** on, the build palette (N) has four more rows: **Plank flo
 
 Building it lays its landing on the floor above, planks for a wood stair, a stone floor for a stone one, and a cliff top for the Stone ramp, and leaves the stairwell open over its run; a landing already floored keeps its floor. A stair is never taken apart (ruled). The Stone ramp alone is placed at once and free, with its own solid sides round the ground under its landing (see [[Cliffs#The stone ramp|Cliffs]]); the wood and stone stairs stay timed and priced.
 
-**Building upstairs.** What you build goes on your own floor: walls, fences, doors, and windows, and furniture you carry and put down. A wall upstairs needs a floor on at least one side ("No floor there"), and a door needs floor on both, so no door opens onto an open edge. Not yet upstairs ("Not upstairs yet"): a rug, a painting, a campfire or a torch post set down, a torch put on a wall, and the palette's pieces that stand on tiles (the [[Fireplace]], the [[Fire pit]], the [[Feeding trough]]). A [[Round rooms|round room]] is never built across a stair.
+**Building upstairs.** What you build goes on your own floor: walls, fences, doors, and windows, and furniture you carry and put down. A wall upstairs needs a floor on at least one side ("No floor there"), and a door needs floor on both, so no door opens onto an open edge. Not yet upstairs ("Not upstairs yet"): a rug, a painting, a campfire or a torch post set down, a torch put on a wall, and the palette's pieces that stand on tiles (the [[Fireplace]], the [[Fire pit]], the [[Feeding trough]]). A [[Round rooms|round room]] is never built across a stair, and upstairs needs a floor under all of its tiles. A [[Battlements|battlement]], a short parapet, stands on the outer edge of a floor upstairs, the walkway's floor on one side of the edge and none on the other, a stairwell's hole counting as the walkway's; placed at once and free with Free building.
 
 **Taking a floor up.** The Take apart tool (X) takes a floor you laid when nothing else that can be taken apart is under the cursor: furniture, walls, and doors are taken first. It is refused where a wall stands on its edge ("A wall stands on it"), where a stair or a landing is ("A stair stands on it"), where furniture or a rug stands ("Something stands on it"), where something lies ("Something lies on it"), and where anyone stands ("Someone is standing on it"); a floor of the map is not yours ("That floor is not one you laid"). On the ground the floor it covered comes back; upstairs the tile is empty again, and the tiles round it stay as they are. Like everything taken apart, it gives back half its cost rounded down, which for a tile of one plank or one stone is nothing; laying a new floor over one you laid gives back the same.
 
@@ -107,6 +107,7 @@ Every floor is the host's world. A guest climbs a stair by their own walking, as
 - [[The tall house]]
 - [[Walls]], [[Rooms]], [[Sight]]
 - [[Round rooms]]
+- [[Battlements]], the parapet of a wall walk
 - [[Cliffs]], whose tops are floors and whose ramp is a stair
 - [[Building]]
 

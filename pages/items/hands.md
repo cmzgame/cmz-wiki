@@ -16,7 +16,7 @@ Every item that can be held says where it may go:
 - **Main**: the main hand only (the [[Throwing spear]]).
 - **Off**: the off hand only (the [[Wooden shield]]).
 - **Both**: it takes both hands (the [[Hunting bow]], the [[Halberd]]).
-- **Either**: whichever hand you choose. Its menu offers **Equip (main hand)** and **Equip (off hand)**. Equipped with no choice (a double-click, or picking it up), it goes to the main hand if that is free, else the off hand if that is free, else it swaps with what is in the main hand.
+- **Either**: whichever hand you choose, a potion or a poison included (see [[Potions]]). Its menu offers **Equip (main hand)** and **Equip (off hand)**. Equipped with no choice (a double-click, or picking it up), it goes to the main hand if that is free, else the off hand if that is free, else it swaps with what is in the main hand.
 
 Items that cannot be held (food, materials) have no hand Equip entry. Clothing and bags have an **Equip** of their own, which puts them on rather than in a hand (see [[Clothing]]).
 
@@ -46,6 +46,10 @@ With a weapon in each hand you fight with both in turn (see [[Combat]]). The [[T
 
 Picking up a single holdable item puts it in a free hand before the bag, so picking up a sword with a torch in one hand leaves you holding both.
 
+### A potion in hand
+
+A potion or a poison is held to be thrown: in the main hand it flies from the middle button or `Q`, with the bow's draw, and the left button does nothing with it, not even fists; in the off hand it is only held. A held potion's menu still offers **Drink**, its vial back into that hand; a held poison's does not. See [[Potions#Holding and throwing one|Potions]].
+
 ## With friends
 
 A guest's equips, unequips, and swaps are sent to the host by the item's id and the slot, and the host performs them for that player. What each player holds is drawn for everyone. A guest's handedness comes with their identity when they join, is kept on their character in the host's world and its save, and every player sees which arm holds their weapon.
@@ -58,6 +62,7 @@ A guest's equips, unequips, and swaps are sent to the host by the item's id and 
 ## Sources
 
 <!-- sources at 9205ad7 -->
+- `data/items.json` `hands: "either"` on the five, `src/combat.js:84-88`, `src/combat.js:502`, `src/interact.js:1958-1961`, `src/archery.js:906-911` (game #586) (at 8d361e5)
 - `src/ui/hud.js:111-116`: the "Hands" line
 - `data/items.json`: each item's `hands`
 - `src/items.js:112-172`: canHold, pickHand, hold, release

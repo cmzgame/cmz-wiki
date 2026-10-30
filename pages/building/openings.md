@@ -45,7 +45,7 @@ A door or shutters the dead break are gone for good. A broken door stays open as
 
 ### Building openings
 
-A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door. A door can also be built over a fence, as a gate; a window cannot. In a wall of wood, a door's leaves and a window's shutters may be of another wood than the wall's, chosen with R while building (see [[Woods]]). The palette's Gate is built on an empty edge or into a fence (see [[Fences]]). A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
+A door or window can be built with the palette on N, with a [[Smith's hammer]] on you, on an empty edge or **over a plain wall**: it takes the wall's place, made of the wall's material, so a door built into a stone wall is a stone door, but never into a cliff ("Not in a cliff") or a [[Battlements|battlement]] ("Not in a battlement"). A door can also be built over a fence, as a gate; a window cannot. In a wall of wood, a door's leaves and a window's shutters may be of another wood than the wall's, chosen with R while building (see [[Woods]]). The palette's Gate is built on an empty edge or into a fence (see [[Fences]]). A door or window you built into a wall is removed with the removal tool, which also asks for a hammer, and the wall is back, never a hole. Boarding one up and pulling a board off ask for the hammer too (see [[Boards]]). See [[Building]].
 
 In a [[Round rooms|round room]] a door or a window goes only at one of the ring's four door points, the middles of its square's sides ("Only at a door point of the curve" anywhere else on the ring). It is drawn in the curve from its own art, with no square posts: an arched frame of dressed stone, a curved door or arched shutters shut, open, or broken, and boards on the face the camera sees; the east door point's door is hinged at its other end, so it swings clear of its doorway (see [[Round rooms]]). Taken out, it leaves the ring's wall.
 
@@ -79,6 +79,7 @@ A guest's E is sent with its input and carried out by the host, so a door opened
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/placement.js:817`, `src/map.js:1200`: no door or window in a battlement (game #574) (at 8d361e5)
 - `src/map.js:1691-1845`, `src/interact.js:773-807` (at 77fee9d): a castle gate is a door-kind wall on each edge of its run, opened and shut by E on any edge, the whole gate together, never boarded, never stamped over (game #570)
 - `src/placement.js:650-651`, `src/stations.js:271-279`, `src/map.js:2928-2975` (at eba3c56): no door or window built across a living body; a door shut on one, which may move only where it goes no deeper (game #553)
 - `src/map.js:1444-1452`, `src/map.js:1518-1555` (at da57a57): a door or a window on a ring only at a door point; taken out, the ring's wall back (game #536)

@@ -25,12 +25,14 @@ N opens a short list on the left of the screen. It has two tabs, **Build** and *
 - **Fireplace**, costing {{n build.fireplace.cost.stone}} [[Stone|stone]], built in {{n build.fireplace.seconds seconds}}, with no tool: two tiles indoors with its back along a plain wall ("Indoors only", "Against a wall"), facing out from the wall the cursor finds. See [[Fireplace]].
 - **Fire pit**, costing {{n build.fire_pit.cost.stone}} stone, built in {{n build.fire_pit.seconds seconds}}, with no tool: two tiles by two on open ground, indoors or out, never on water ("Not on water"). See [[Fire pit]].
 - **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built in {{n build.feed_trough.seconds seconds}}, with a smith's hammer on you. See [[Feeding trough]].
+- **Stone wall**, listed only while Free building is on: the village's own straight stone wall, built a segment at a time in {{n build.wall_stone.seconds seconds}}; its cost of {{n build.wall_stone.cost.stone}} [[Stone|stone]] is a placeholder, never charged. Without Free building it is refused, "Not in the game yet". It is the wall a [[Castle gates|castle gate]] is stamped over, and the wall a wall walk's floor usually stands on (see [[Battlements]]).
 - **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built in {{n build.round_stone.seconds seconds}} at 5. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
 - **Plank floor** and **Stone floor**, listed only while Free building is on: a floor laid a tile at a time, or a rectangle by a drag, {{n build.floor_wood.seconds second}} a tile, on the ground or on an upper floor wherever it touches floor already there. Without Free building they are refused, "Floors are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 - **Wood stair** and **Stone stair**, listed only while Free building is on: a stair three tiles long climbing one storey north or west, away from you, with its landing laid on the floor above, built in {{n build.stair_wood.seconds seconds}} in wood and {{n build.stair_stone.seconds seconds}} in stone. Without Free building they are refused, "Stairs are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 - On the **Terrain** tab, listed only while Free building is on, the ground is painted a drag at a time: **Grass**, **Dirt**, **Cobblestone**, **Shallow water**, **Water**, and the pink **Random spawn** tile, a tag for where random things can spawn, which does nothing yet. Painting is instant and free, on the ground only, and leaves nothing to take apart. See [[Terrain]].
 - Also on the **Terrain** tab, under Landforms, **Cliff wall**, **Grassy cliff wall**, **Cliff top**, **Grassy cliff top**, and **Stone ramp**, listed only while Free building is on, for experimenting with hills: a cliff wall is a rock wall on an edge that takes no door, window, painting, or torch; a cliff top is a floor laid as the Plank floor is; the ramp is a stair of rock climbing north or west on a smooth slope, its landing a cliff top, placed at once and for free (no bar, no cost, no tool) with its own solid sides round the ground under its landing. Without Free building they are refused, "Cliffs are not in the game yet". See [[Cliffs]].
 - **Stone gate (2 wide)** and **Stone gate (3 wide)**, listed only while Free building is on, under the heading **Castle**: a stone castle gate with a portcullis, stamped over two or three consecutive edges of a plain stone wall, placed at once and for free (no bar, no cost, no tool). E raises and lowers it. Without Free building it is refused, "Castle gates are not in the game yet". See [[Castle gates]].
+- **Battlement**, listed only while Free building is on, under **Castle** too: a short stone parapet with merlons on a tile edge of a floor upstairs, with the walkway's floor on one side of the edge and none on the other, standing wholly outside the walkway; placed at once and for free, a click per edge. Without Free building it is refused, "Not in the game yet". See [[Battlements]].
 
 Everything is built on the floor you stand on: upstairs, walls, doors, windows, and carried furniture go on that floor (a wall upstairs needs floor beside it, "No floor there"). A rug, a painting, a set-down, a torch on a wall, and the Fireplace, the fire pit, and the trough are refused upstairs for now, "Not upstairs yet". No wall, door, or window is built across a stair's run ("Not across a stair") or its top ("Not across a stair's top").
 
@@ -46,7 +48,7 @@ N does nothing while you are [[Carrying furniture|carrying furniture]] ("Your ha
 
 Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest edge of the tile under it. The ghost is green where the piece can go and red where it cannot, with the reason:
 
-- **Too far**: the edge's midpoint is more than {{n census.constants.placement.BUILD_REACH tiles}} from you.
+- **Too far**: the edge's midpoint is more than {{n census.constants.placement.BUILD_REACH tiles}} from you. With Free building on there is no reach worth the name: {{n census.constants.placement.FREE_REACH tiles}}, so anything you can see on the screen (Michael, 2026-10-29: "If I can see it, I can stamp it"); the lines of sight that a made piece's spot and a laid floor keep still hold.
 - **Already a wall**: the edge already holds something this piece cannot be built over (see below).
 - **No room**: a single solid piece of furniture spans both tiles of the edge, or a laid [[Rugs|rug]] does: a wall is never built through a rug, only along its outer edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
@@ -70,14 +72,14 @@ A log wall, a wall of wood, or a fence needs an empty edge. A gate goes on an em
 
 While a Door or a Window is picked, **R** cycles the wood of its leaves and shutters, shown as "leaves: Spruce · R" under its row and beside the ghost; only a wall of wood takes another wood's door or window (see [[Woods]]).
 
-Never over a door or a window that is whole. A door still needs both its tiles clear ("No room"). A torch in a bracket on a wall built over falls to the floor, put out, and the bracket goes (a lantern goes with the wall); a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
+Never over a door or a window that is whole, and never into a cliff ("Not in a cliff") or a [[Battlements|battlement]] ("Not in a battlement"). A door still needs both its tiles clear ("No room"). A torch in a bracket on a wall built over falls to the floor, put out, and the bracket goes (a lantern goes with the wall); a [[Paintings|painting]] hung on it falls to the floor, whole. Whatever it is made of, a door or a window you build can be broken by the dead (see [[Breaking in]]).
 
 ### Taking apart
 
 X, or the palette's **Take apart** row, turns on the tool. The front-most thing under the cursor that can be taken apart lights up green, and the prompt says what comes back: "Click to take apart door (1 plank back)". It lights up red with the reason when it cannot be taken apart now:
 
 - "You need a smith's hammer." (or "You need a hatchet." for a log wall) without the tool on you;
-- "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away;
+- "Too far" when it is more than {{n census.constants.placement.REMOVE_REACH tiles}} away, or {{n census.constants.placement.FREE_REACH tiles}} with Free building on;
 - "There is a wall in the way." for a piece of furniture behind a wall (a wall, a door, or a window is taken apart by distance alone, from either side);
 - "Empty it first." for a container or a station with anything in it, its output box included;
 - "It is still making something." for a station with something in its queue;
@@ -122,11 +124,13 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 - Plank floor: {{n build.floor_wood.cost.plank}} plank a tile; Stone floor: {{n build.floor_stone.cost.stone}} stone a tile; {{n build.floor_wood.seconds second}} a tile; never charged (Free building only).
 - Wood stair: {{n build.stair_wood.cost.plank}} planks, {{n build.stair_wood.seconds seconds}}; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, {{n build.stair_stone.seconds seconds}}; never charged (Free building only).
 - Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} stone each, {{n build.wall_cliff.seconds seconds}}; Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, {{n build.floor_cliff_top.seconds second}} a tile; the Stone ramp costs nothing and takes no time or tool; none of these is charged (Free building only).
+- Stone wall: {{n build.wall_stone.cost.stone}} stone, {{n build.wall_stone.seconds seconds}}; never charged (Free building only).
 - Stone gate (2 wide) and Stone gate (3 wide): no cost, time, or tool; placed at once (Free building only); see [[Castle gates]].
+- Battlement: no cost, time, or tool; placed at once (Free building only); see [[Battlements]].
 - Terrain painting: a drag of at most {{n census.constants.placement.TERRAIN_DRAG}} tiles a side, reaching {{n build.terrain_grass.reach tiles}}, instant and free (Free building only); see [[Terrain]].
-- Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint.
+- Build reach: {{n census.constants.placement.BUILD_REACH tiles}} to the edge's midpoint; {{n census.constants.placement.FREE_REACH tiles}} with Free building on.
 - Closest you may stand to the edge: {{n census.constants.placement.EDGE_CLEARANCE tiles}}.
-- Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}.
+- Take apart reach: {{n census.constants.placement.REMOVE_REACH tiles}}; {{n census.constants.placement.FREE_REACH tiles}} with Free building on.
 - Take apart gives back half the materials, rounded down.
 
 ## With friends
@@ -137,7 +141,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 
 {{devonly note="Free building is for testing structures."}}
 
-- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Round stone wall (see [[Round rooms]]), the floors and stairs (see [[Upper floors]]), the cliffs and the stone ramp (see [[Cliffs]]), the castle gates (see [[Castle gates]]), and the whole Terrain tab, which paints the ground (see [[Terrain]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
+- **Free building** (default Off): every cost becomes free, and building and Take apart do not ask for the hammer or the hatchet; what is built while it is on gives nothing back when taken apart. The build time still applies. It waives the reach too: anything within {{n census.constants.placement.FREE_REACH tiles}} is built or taken apart from where you stand, in place of {{n census.constants.placement.BUILD_REACH tiles}} (Michael, 2026-10-29), the lines of sight kept. It also lists what is not otherwise in the palette: the Winter Pine and Bloodbark walls (see [[Woods]]), the Stone wall, the Round stone wall (see [[Round rooms]]), the floors and stairs (see [[Upper floors]]), the cliffs and the stone ramp (see [[Cliffs]]), the castle gates and the battlement (see [[Castle gates]], [[Battlements]]), and the whole Terrain tab, which paints the ground (see [[Terrain]]). Boarding up still asks for a plank and a hammer (see [[Boards]]). It is a world rule: on a guest it is the host's.
 
 ## See also
 
@@ -147,6 +151,7 @@ A guest's click is sent to the host as a build command. The host checks the gues
 - [[Terrain]], the build menu's second tab: painting the ground with Free building
 - [[Cliffs]], hills built with Free building
 - [[Castle gates]], stone gates with a portcullis, built with Free building
+- [[Battlements]], the parapet of a wall walk, built with Free building
 - [[Openings]]
 - [[Boards]]
 - [[Rooms]]
@@ -158,6 +163,9 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `data/build.json` (`wall_stone`), `src/placement.js:812` (at 8d361e5): the Stone wall row, `dev`, its placeholder cost and seconds, "Not in the game yet" without Free building (game #573)
+- `data/build.json` (`battlement_stone`), `src/placement.js:813-817`, `src/battlements.js:29-45` (at 8d361e5): the Battlement row under Castle, placed at once and free, its refusals, "Not in a battlement" for a door or a window (game #574); the page [[Battlements]] has the rest
+- `src/placement.js:43-50`, `src/placement.js:1141-1144`, `docs/02-decisions.md` (2026-10-29, Free building has no reach limit) (at 8d361e5): `FREE_REACH` 48 in place of the build and take-apart reach with Free building on, every build and the removal tool, the lines of sight kept (game #575)
 - `data/build.json` (`gate_stone_2`, `gate_stone_3`), `src/placement.js:253-255`, `src/placement.js:530-592` (at 77fee9d): the Stone gate rows under Castle, Free building only, placed at once, free, with no tool; "Castle gates are not in the game yet" (game #570); the page [[Castle gates]] has the rest
 - `src/ui/build-palette.js`, `src/placement.js:81-97`, `data/build.json` (at c0448ec): the build menu's two tabs, an entry's `tab` and `group`, the Terrain tab offered only with Free building, the list that scrolls under a height cap, the Take apart row on the Build tab alone (game #565)
 - `src/placement.js:255-296`, `src/map.js:1097-1123` (at c0448ec): the Terrain tab's rows paint the ground, instant, free, ground only, nothing kept to take apart (game #565); the page [[Terrain]] has the rest
