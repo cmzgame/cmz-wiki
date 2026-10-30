@@ -87,7 +87,7 @@ Floors and stairs in the ordinary game (until their cost is settled, Free buildi
 - A storey: {{n census.constants.map.STOREY}} pixels, a wall's height.
 - A stair: three tiles, one storey, {{n census.constants.map.STAIR_TREADS}} treads.
 - How far the stair's sides hold the feet of a body on it from its middle line: {{n census.constants.map.STAIR_FEET}} of a tile.
-- A storey behind which you stand fades to {{pct census.constants.render_scene.NEAR_WALL_ALPHA}} solid.
+- A storey that covers you is hidden outright; a body covered by something built shows its shape at {{pct tuning.cover.seenAlpha}}.
 - Plank floor: {{n build.floor_wood.cost.plank}} [[Plank|plank]] a tile; Stone floor: {{n build.floor_stone.cost.stone}} [[Stone|stone]] a tile; {{n build.floor_wood.seconds second}} a tile; a drag at most {{n census.constants.placement.MAX_DRAG}} tiles a side.
 - Wood stair: {{n build.stair_wood.cost.plank}} planks, {{n build.stair_wood.seconds seconds}}; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, {{n build.stair_stone.seconds seconds}}.
 - These costs are placeholders, never charged while floors and stairs are built only with Free building.

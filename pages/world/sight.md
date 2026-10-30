@@ -70,7 +70,7 @@ When you walk behind a tall tree, a soft round hole opens in its canopy so you c
 - Longest line walked: {{n census.constants.visibility.MAX_STEPS}} steps.
 - Fog strength: {{n tuning.cover.fogAlpha}} (`cover.fogAlpha`, a lever).
 - Tree hole: clear within {{n census.constants.render_scene.HOLE_INNER}} px, solid by {{n census.constants.render_scene.HOLE_OUTER}} px.
-- Near walls drawn at {{n census.constants.render_scene.NEAR_WALL_ALPHA}}.
+- Near walls cut to a stub {{n tuning.cover.stub}} pixels tall; a body seen but covered shown at {{n tuning.cover.seenAlpha}}.
 - In the dark, the dead seen whole within {{n tuning.sight.darkRadius tiles}}, or the radius of the light you carry; hidden {{n tuning.sight.edge tiles}} past it.
 - In light from {{n tuning.sight.litFull}} at their feet; not at all below {{n tuning.sight.litNone}}.
 - Counted as seen from {{n tuning.sight.seenAt}} of whole; not drawn below {{n tuning.sight.drawCutoff}}.

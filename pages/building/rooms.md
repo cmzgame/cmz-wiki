@@ -49,7 +49,7 @@ A room with **no door at all** is another matter: nothing breaks a plain wall an
 ## Numbers
 
 - Largest room: {{n census.constants.map.ROOM_MAX tiles}}.
-- Faded near walls are drawn at {{n census.constants.render_scene.NEAR_WALL_ALPHA}} of their opacity.
+- Near walls are cut to a stub {{n tuning.cover.stub}} pixels tall; a door or a window in one is drawn at {{n tuning.cover.openingAlpha}} of its opacity.
 
 ## See also
 
