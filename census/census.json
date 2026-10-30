@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "008b7a200f5a34731765b7cc5e940d5e3f3c514b",
-  "short": "008b7a2",
-  "date": "2026-10-30T15:31:34-05:00",
-  "subject": "Merge #603: docs/53 step 3, the cover rule: hide what is in the way, never fade",
+  "commit": "c976e39b4f8d6782d4ba6f3a93c206b819f6c92b",
+  "short": "c976e39",
+  "date": "2026-10-30T16:58:36-05:00",
+  "subject": "Merge #606: docs/53 step 5: the dead upstairs",
   "ref": "origin/main"
  },
  "counts": {
@@ -12308,7 +12308,7 @@
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1101"
+    "entities/zombie.js:1130"
    ]
   },
   {
@@ -12369,13 +12369,13 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1102"
+    "entities/zombie.js:1131"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:914",
+    "entities/zombie.js:941",
     "map.js:2018"
    ]
   },
@@ -12590,7 +12590,7 @@
   },
   {
    "path": "main.js",
-   "lines": 2239
+   "lines": 2242
   },
   {
    "path": "placement.js",
@@ -12598,7 +12598,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1682
+   "lines": 1684
   },
   {
    "path": "placeholders.js",
@@ -12606,7 +12606,7 @@
   },
   {
    "path": "gl.js",
-   "lines": 1369
+   "lines": 1392
   },
   {
    "path": "ui/screens.js",
@@ -12622,7 +12622,7 @@
   },
   {
    "path": "entities/zombie.js",
-   "lines": 1115
+   "lines": 1144
   },
   {
    "path": "ground.js",
@@ -12646,7 +12646,7 @@
   },
   {
    "path": "render/storeys.js",
-   "lines": 728
+   "lines": 748
   },
   {
    "path": "figure/draw.js",
@@ -12686,11 +12686,11 @@
   },
   {
    "path": "render/rings.js",
-   "lines": 443
+   "lines": 449
   },
   {
    "path": "render/props.js",
-   "lines": 422
+   "lines": 423
   },
   {
    "path": "ui/map-panel.js",
@@ -12698,7 +12698,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 398
+   "lines": 405
   },
   {
    "path": "entities/villager.js",
@@ -12714,7 +12714,7 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 343
+   "lines": 344
   },
   {
    "path": "gather-art.js",
@@ -12737,16 +12737,16 @@
    "lines": 325
   },
   {
+   "path": "visibility.js",
+   "lines": 325
+  },
+  {
    "path": "host.js",
    "lines": 319
   },
   {
    "path": "tuning.js",
    "lines": 310
-  },
-  {
-   "path": "visibility.js",
-   "lines": 306
   },
   {
    "path": "ui/nav-row.js",
@@ -12797,11 +12797,11 @@
    "lines": 233
   },
   {
-   "path": "figure/held.js",
-   "lines": 223
+   "path": "pathfind.js",
+   "lines": 232
   },
   {
-   "path": "pathfind.js",
+   "path": "figure/held.js",
    "lines": 223
   },
   {
@@ -12818,7 +12818,7 @@
   },
   {
    "path": "fire.js",
-   "lines": 198
+   "lines": 204
   },
   {
    "path": "potions.js",
@@ -12831,6 +12831,10 @@
   {
    "path": "poison.js",
    "lines": 189
+  },
+  {
+   "path": "entities/movement.js",
+   "lines": 186
   },
   {
    "path": "ui/station-panel.js",
@@ -12883,10 +12887,6 @@
   {
    "path": "ui/talk-panel.js",
    "lines": 153
-  },
-  {
-   "path": "entities/movement.js",
-   "lines": 152
   },
   {
    "path": "render/depth.js",
@@ -13268,6 +13268,9 @@
    "LOOK_EVERY": 0.25,
    "BODY_REACH": 2.6
   },
+  "entities_movement": {
+   "FAR_SEARCH": 2000
+  },
   "figure_draw": {
    "SHADE_DYE": 0.16,
    "FAR_ARM_SLIVER": 2,
@@ -13319,6 +13322,7 @@
    "FLAG_STANDING": 16,
    "FLAG_SOLID": 32,
    "FLAG_UPPER": 64,
+   "STOREY_SETS": 6,
    "PASS_FLAT": 0,
    "PASS_STAND": 1,
    "PASS_TRANS": 2,
@@ -13412,7 +13416,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 28,
+   "PROTOCOL": 29,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,

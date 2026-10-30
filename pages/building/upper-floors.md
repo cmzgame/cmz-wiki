@@ -36,7 +36,7 @@ A body on a floor hidden from you is not drawn, nor its health bar or speech bub
 
 Everything you do is on the floor you stand on. `E`, the right-click menu, the Use mode, and the cursor read your own floor: what is under the cursor upstairs is the upstairs, and a chest, a door, a body, or anything else on another floor has no actions for you ("That is on another floor."). Doors and shutters open and shut, torches are lit and taken, and things are put down and dropped on your own floor.
 
-Blows and bites stay on the floor they start on, never through a floor. Arrows, thrown knives and axes, and thrown potions come down on the floor you aim at: the highest floor under the cursor that you can see, else the ground. From a wall walk, a battlement, or an upstairs window a shot comes down on the ground where you aim, and from the ground you can shoot up onto a floor you can see. A spear and the [[Fireball]] keep to your own floor and stop where it ends. See [[Archery]]. A fire upstairs lights its own floor, never the ground under it (see [[Light]]).
+Blows and bites stay on the floor they start on, never through a floor. Arrows, thrown knives and axes, and thrown potions come down on the floor you aim at: the highest floor under the cursor that you can see, else the ground. From a wall walk, a battlement, or an upstairs window a shot comes down on the ground where you aim, and from the ground you can shoot up onto a floor you can see. A spear and the [[Fireball]] keep to your own floor and stop where it ends. See [[Archery]]. A fire upstairs lights its own floor, never the ground under it (see [[Light]]). Up to {{n census.constants.gl.STOREY_SETS}} floors in view each have their own light, shade, and fog, so a torch-lit room two or three storeys up shows its pool from the ground, a room up there with no fire stays dark, and a cellar is dark by day; a floor past that many is lit as the open sky. An arrow, a thrown knife or axe, or a potion's splash lying on a floor upstairs is drawn on that floor. A body burning up there burns there, its embers and smoke with it, and a blow met by a shield upstairs throws its sparks there; a friend sees them on the same floor.
 
 Nothing rests on thin air: anything let go over the open air of a storey, a dropped thing or an arrow that misses, falls to the first floor below.
 
@@ -46,9 +46,7 @@ Sight between floors is one line with heights (see [[Sight]]): a wall stops it b
 
 ### The dead upstairs
 
-[[The dead]] walk stairs as you do, and see across floors by the same line you do: one on the ground that can see you on a walk or at an upstairs window turns to hunt you. One that sees you go up a stair follows you by the stair, up to the landing and on; with no stair to take, one that has lost you on another floor stays where it is and looks round. They bite only on their own floor, never through a floor or up through the stairwell.
-
-{{planned doc=53 step=5 note="The dead hunting across storeys: finding the stair whose landing reaches you, pressing the door below a player they see but cannot reach, breaking into a room upstairs."}}
+[[The dead]] walk stairs as you do, and see across floors by the same line you do: one on the ground that can see you on a walk or at an upstairs window turns to hunt you. To reach you on another floor it takes the stair whose top really leads to you, walking the floor beyond it in its head first, never one whose landing goes nowhere near you. Shut in an upstairs room, you are broken in on from your own floor: the dead climb and batter the door from the landing side, never from the ground under it. Standing where no stair reaches, over a room on the ground, you see the dead break that room's door and gather under you; with no room under you, they stand where they see you and search once they lose you. One shut in a room with you up on a walk breaks out by its door to look for a stair. They bite and strike only on their own floor, never through a floor, with one exception: one on a stair's top step and you on that stair's landing can bite and hit each other, as can you it.
 
 ### Building floors and stairs
 
@@ -141,5 +139,7 @@ Every floor is the host's world. A guest climbs a stair by their own walking, as
 - `src/visibility.js:168-300`, `data/tuning.json` `sight.leanReach` (at b4b6f7e): sight across floors by one line with heights, a floor a plane, leaning out at an edge (game #601)
 - `src/entities/zombie.js:379-395` (at b4b6f7e): the dead see across floors by the same line (game #601); `src/entities/movement.js:49-60`: they follow by the stair, and stay with none (game #534, at a0cf5a2)
 - `src/light.js:50-58`: each layer's light from its own sources, never crossing a floor (game #533, at a0cf5a2)
+- `src/gl.js` `STOREY_SETS`, `src/render/area.js`, `src/render/scene.js:240-260`, `src/render/storeys.js:36-48`, `src/fire.js:40-100` (at c976e39): each floor in view lit, shaded, and fogged by its own set, a cellar too; flat things on a floor's plane; a burning body's flames, embers, and smoke on its floor (game #605)
+- `src/entities/movement.js:30-115`, `src/entities/zombie.js:808-900`, `src/visibility.js:160-185` (at c976e39): the dead across floors (game #606)
 - `docs/49-upper-floors.md` (its status, section 16): what is not built yet
 - `src/net.js`, `src/save.js:26-32`: a player's layer and rise in its record, a command's layer, the host refusing another layer's command; the save in layers (games #533, #534, at a0cf5a2)

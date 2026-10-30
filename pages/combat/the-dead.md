@@ -91,7 +91,7 @@ At night, from {{n census.constants.clock.DUSK_START}} o'clock, one of the dead 
 
 ### Up and down stairs
 
-The dead walk [[Upper floors|stairs]] as players do. One that sees you go up a stair follows you up it, and down again. A storey apart, the dead and a player see each other by the same line as on one floor: one on the ground sees you on a wall walk or at an upstairs window, and turns to hunt you, but never through a floor. One that has lost you on another floor with no stair to take stays where it is. They bite and strike only on their own floor, never through it.
+The dead walk [[Upper floors|stairs]] as players do. A storey apart, the dead and a player see each other by the same line as on one floor: one on the ground sees you on a wall walk or at an upstairs window, and turns to hunt you, but never through a floor. To reach you it takes the stair whose top leads to you, never a nearer one that goes nowhere near you. A door between you and it upstairs is battered from its own floor, after the climb, never from under it, and a siege on an upstairs room is held the same way. If no stair reaches you, it breaks into the room under you, if there is one, and stands there; otherwise it stands where it sees you, and searches once it loses you. One shut in a room while you are on another floor breaks out by its door to look for a stair. They bite and strike only on their own floor, never through it, but for a stair's top: one on the top step and a player on that stair's landing reach each other.
 
 ### The groan
 
@@ -148,6 +148,7 @@ Each of the dead picks the nearest player it can see; a fallen player draws no o
 ## Sources
 
 <!-- sources at 879d0a7 -->
+- `src/entities/movement.js:30-115`, `src/entities/zombie.js:808-900`, `src/visibility.js:160-185`, `src/map.js:2152-2185` (at c976e39): the stair taken by a real path on the next floor, breaking in from the opening's own floor, the room under a player no stair reaches, breaking out toward a stair, the bite across a stair's top (game #606)
 - `src/entities/zombie.js:389-405`, `src/entities/zombie.js:492`, `src/entities/zombie.js:328`, `src/entities/movement.js:49-60` (at da57a57): the dead on stairs, seeing a storey away only by a stair, following by it, biting on one layer (game #534)
 - `src/poison.js:85-142`, `src/game.js:835` (at 307ed34): poison on the dead, beside a burn, and its green (game #496)
 - `data/tuning.json`: the `zombie` block (hp, speed, sight, sightDarkFraction, sightCheck, flame, search, contact, damage, cooldown, biteTokens, biteTokensPer, breach, noWayTime, groan) and `world.activeTiles`, `twoTorches`, `beltLight`
