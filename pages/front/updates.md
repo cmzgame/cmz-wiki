@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `bece981`
+
+- **New in the game:** **ladders** (game #608, `docs/53` step 6b; network protocol 31): the **Wood ladder** with Free building on, on one tile leaning north or west, climbed with E or its menu's Climb ladder and Descend ladder in {{n tuning.ladder.climbSeconds seconds}} a storey, both hands on it and nothing else done meanwhile; the dead, villagers, and animals ignore ladders, so up one you are reached only by the door below; taken apart with Free building when nobody would be cut off. [[Upper floors#Ladders|Upper floors]], [[Building]], [[The dead]].
+- **Changed in the game:** **everyone by floor** (game #609, `docs/53` step 7): footsteps sound the floor under the foot on its own floor; doors and shutters creak on the storeys above and below you too, at {{pct sounds.openings.storeyVolume}} of their loudness; deer, villagers, and the boar heed only what is on their own floor. [[Sound]], [[Animals]], [[Villagers]].
+
 ## 2026-10-30: synced to `6179bb0`
 
 - **Changed in the game:** **building's rules** (game #607, `docs/53` step 6; network protocol 30). The castle gates break, at {{n sprites.wall_stone_gate_2.wall.gate.hp}} hit points an edge, the whole gate giving way (Michael's ruling of 2026-10-30), and a hand stops at their shut bars. A rug, a painting, a torch on a wall, a set-down, the campfire, and the build menu's pieces go upstairs on your own floor; a snare and a sapling stay on the ground. With Free building on, a stair you built comes up again, unless someone would be left above with no way down. A wall out of sight is refused before it starts. The pieces of a hill never stand on a building's floor. A round tower holds its own stair. Nothing is built above the sixth storey. The arrow loops on battlements are spread evenly. [[Castle gates]], [[Breaking in]], [[Upper floors]], [[Building]], [[Round rooms]], [[Battlements]], [[Cliffs]], [[Fences]].

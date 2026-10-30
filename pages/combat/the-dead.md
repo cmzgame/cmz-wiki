@@ -24,7 +24,7 @@ The dead see the [[Player]] by the same rule the player sees by: a clear line, a
 
 The dead ignore [[Animals|animals]], wild and tame: they never chase, bite, or count one, though deer and rabbits run from them.
 
-They never hunt or bite a [[Villagers|villager]] either: every villager is immune to them, so a villager walking past never draws one of the dead off a player, a window or a door it is breaking, or a house it is waiting about. A villager who sees one of the dead near cowers and runs a few tiles off (see [[Villagers#Fleeing the dead|Villagers]]).
+They never climb a [[Upper floors#Ladders|ladder]]. They never hunt or bite a [[Villagers|villager]] either: every villager is immune to them, so a villager walking past never draws one of the dead off a player, a window or a door it is breaking, or a house it is waiting about. A villager who sees one of the dead near cowers and runs a few tiles off (see [[Villagers#Fleeing the dead|Villagers]]).
 
 ### Flames at night
 

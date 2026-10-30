@@ -14,7 +14,7 @@ The game's **sounds** are made by the game itself when it loads, from noise and 
 
 ### What makes a sound
 
-- **Footsteps:** every walking character steps as its foot comes down, about four steps a second. The step sounds of the floor under it: dirt (farm soil too), wood, stone (cobble too), or shallow water. Grass, and any floor without a step of its own, sounds the dead's shuffle. Only the {{n sounds.footsteps.nearest}} nearest walkers are heard at once.
+- **Footsteps:** every walking character steps as its foot comes down, about four steps a second. The step sounds of the floor under it, on its own floor (planks upstairs, never the grass under them; on a stair the floor its landing takes): dirt (farm soil too), wood, stone (cobble too), or shallow water. Grass, and any floor without a step of its own, sounds the dead's shuffle. Only the {{n sounds.footsteps.nearest}} nearest walkers are heard at once.
 - **The dead** shuffle instead of stepping, quieter than a footfall, whatever the floor.
 - **A swing** whooshes as it is made, loudest at the click, as the [[Combat|swing timer]]'s bar starts to fill. A weapon whose swing takes {{n sounds.swing.heavyAt seconds}} or more (the [[Halberd]]) makes a heavier, lower whoosh. With a weapon in each hand, each hand's swing makes its own, the off hand's by its own weapon (see [[Dual wielding]]).
 - **A shove** (`Space`) has a short push of its own as it is made, whether or not it reaches anyone. See [[Shove]].
@@ -26,7 +26,7 @@ The game's **sounds** are made by the game itself when it loads, from noise and 
 - **The dead fall and die:** one of the dead knocked down thumps to the ground, and one killed makes a heavier sound of its own (only that, if one blow floors and kills it).
 - **The dead moan** as they come for someone: one that was standing, wandering, searching, or waiting turns to chase a player, or to break in at a door or shutters, or to push at a fence, and moans. One of the dead moans no more often than every {{n sounds.moan.again seconds}}, and no moan follows another sooner than {{n sounds.moan.gap seconds}} after it, so a crowd turning at once gives one, not a drone. One already chasing, or turning back to the chase from a bite, is silent.
 - **The dead strike:** a blow of the dead on a door, shutters, boards, or a fence makes a knock, the same for all of them, as the wall gives its small jolt.
-- **Doors and shutters** creak as they open or shut, with the same creak for both. Only an opening already in earshot sounds: a door that changed while you were away is silent when you come back to it. A door broken by the dead makes no creak; the sound of breaking is to come.
+- **Doors and shutters** creak as they open or shut, with the same creak for both, on your own floor and on the storeys above and below it; one a storey away at {{pct sounds.openings.storeyVolume}} of its loudness. Only an opening already in earshot sounds: a door that changed while you were away is silent when you come back to it. A door broken by the dead makes no creak; the sound of breaking is to come.
 
 ### Hearing
 

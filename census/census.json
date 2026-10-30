@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "6179bb07031e3c0d0033c95fd3a542d88af64bb6",
-  "short": "6179bb0",
-  "date": "2026-10-30T17:44:24-05:00",
-  "subject": "Merge #607: docs/53 step 6: building's rules",
+  "commit": "bece9815bdf25a7dda5fc715445fb179d6328431",
+  "short": "bece981",
+  "date": "2026-10-30T18:08:53-05:00",
+  "subject": "Merge #608: docs/53 step 6b: ladders",
   "ref": "origin/main"
  },
  "counts": {
@@ -11,7 +11,7 @@
   "recipes": 99,
   "interactions": 42,
   "lootTables": 29,
-  "sprites": 225,
+  "sprites": 226,
   "places": 50,
   "villagers": 9,
   "authoredDead": 62,
@@ -27,7 +27,7 @@
   "menuLabels": 106,
   "events": 38,
   "checks": 97,
-  "modules": 154
+  "modules": 155
  },
  "items": [
   {
@@ -7714,6 +7714,13 @@
    "note": "Yarrow: the healing herb (docs/39 section 4, Herbalism 1). Grows like a weed at random on natural ground and comes back elsewhere once gathered (docs/46, src/resources.js); gathered by hand (src/gather.js). Drawn art: art round 5 (the herbs), the node and the item from one design."
   },
   {
+   "id": "ladder_wood",
+   "kind": "placeholder box",
+   "label": "Ladder",
+   "drawn": false,
+   "note": "the wood ladder's placeholder (docs/53 step 6b): the build menu's picture; in the world a ladder is drawn by render/storeys.js (ladderDrawables), its rails and rungs in the dev stairs' wood, until the art pass draws one"
+  },
+  {
    "id": "lantern_post",
    "kind": "fire",
    "drawn": false,
@@ -10082,6 +10089,9 @@
    "fogAlpha": 0.36,
    "seenAlpha": 0.5
   },
+  "ladder": {
+   "climbSeconds": 1.5
+  },
   "objectHighlight": {
    "color": "#f4f0e6",
    "alpha": 1,
@@ -10670,6 +10680,19 @@
    "group": "Floors and stairs",
    "note": "docs/49 section 5: a stair three tiles long from the tile under the cursor, climbing on away from the player, its landing's planks laid on the storey above (one of its planks); north and west only for now (Primary's default: \"Stairs climb away from the camera\", Michael to confirm); the drawn stair (art round 8); never taken apart (ruled); Free building only for now; the cost docs/49 section 5's default, never charged while Free building is on; the seconds the builder's default"
   },
+  "ladder_wood": {
+   "label": "Wood ladder",
+   "kind": "ladder",
+   "sprite": "ladder_wood",
+   "cost": {
+    "plank": 4
+   },
+   "seconds": 10,
+   "tool": "build",
+   "dev": true,
+   "group": "Floors and stairs",
+   "note": "docs/53 step 6b (`49` section 4b, folded in by Michael's ruling of 2026-10-30, \"towers by ladders\"): one tile, leaning on its far edge north or west, climbed up through the hole over it to its landing a storey up (its planks laid with it where there were none); a timed climb, never a walk, so the dead, villagers, and animals ignore it; Free building only for now, as the stairs; taken apart with Free building when nobody would be cut off; the cost and the seconds Primary's defaults"
+  },
   "stair_stone": {
    "label": "Stone stair",
    "kind": "stair",
@@ -11171,13 +11194,13 @@
   {
    "key": "KeyE",
    "at": [
-    "interact.js:1646"
+    "interact.js:1678"
    ]
   },
   {
    "key": "KeyG",
    "at": [
-    "interact.js:1648"
+    "interact.js:1680"
    ]
   },
   {
@@ -11208,15 +11231,15 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:1032",
-    "placement.js:1043",
-    "placement.js:1047"
+    "placement.js:1083",
+    "placement.js:1094",
+    "placement.js:1098"
    ]
   },
   {
    "key": "KeyT",
    "at": [
-    "interact.js:1647"
+    "interact.js:1679"
    ]
   },
   {
@@ -11291,7 +11314,7 @@
   {
    "key": "butcher",
    "at": [
-    "entities/animal.js:812"
+    "entities/animal.js:813"
    ]
   },
   {
@@ -11369,13 +11392,13 @@
   {
    "key": "lead",
    "at": [
-    "entities/animal.js:488"
+    "entities/animal.js:489"
    ]
   },
   {
    "key": "letgo",
    "at": [
-    "entities/animal.js:502"
+    "entities/animal.js:503"
    ]
   },
   {
@@ -11435,13 +11458,13 @@
   {
    "key": "skin",
    "at": [
-    "entities/animal.js:799"
+    "entities/animal.js:800"
    ]
   },
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:272"
+    "entities/player.js:274"
    ]
   },
   {
@@ -11492,7 +11515,7 @@
    "key": "till",
    "at": [
     "farming.js:163",
-    "interact.js:944"
+    "interact.js:971"
    ]
   }
  ],
@@ -11525,37 +11548,37 @@
   {
    "key": "Cast the line",
    "at": [
-    "interact.js:1106"
+    "interact.js:1133"
    ]
   },
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:1946"
+    "placement.js:2059"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:1939"
+    "placement.js:2052"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:1971"
+    "placement.js:2088"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:1977"
+    "placement.js:2094"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1478"
+    "placement.js:1563"
    ]
   },
   {
@@ -11591,42 +11614,42 @@
   {
    "key": "Drink",
    "at": [
-    "interact.js:1834",
-    "interact.js:1929",
-    "interact.js:1963"
+    "interact.js:1867",
+    "interact.js:1962",
+    "interact.js:1996"
    ]
   },
   {
    "key": "Drop",
    "at": [
-    "interact.js:1892"
+    "interact.js:1925"
    ]
   },
   {
    "key": "Eat",
    "at": [
-    "interact.js:1831",
-    "interact.js:1927"
+    "interact.js:1864",
+    "interact.js:1960"
    ]
   },
   {
    "key": "Equip (main hand)",
    "at": [
-    "interact.js:1807",
-    "interact.js:1938"
+    "interact.js:1840",
+    "interact.js:1971"
    ]
   },
   {
    "key": "Equip (off hand)",
    "at": [
-    "interact.js:1808",
-    "interact.js:1939"
+    "interact.js:1841",
+    "interact.js:1972"
    ]
   },
   {
    "key": "Equip",
    "at": [
-    "interact.js:1936"
+    "interact.js:1969"
    ]
   },
   {
@@ -11638,7 +11661,7 @@
   {
    "key": "Fill waterskins (they hold clean water)",
    "at": [
-    "interact.js:1066"
+    "interact.js:1093"
    ]
   },
   {
@@ -11680,8 +11703,8 @@
   {
    "key": "Inspect",
    "at": [
-    "interact.js:885",
-    "interact.js:900"
+    "interact.js:912",
+    "interact.js:927"
    ]
   },
   {
@@ -11693,7 +11716,7 @@
   {
    "key": "Light the torch",
    "at": [
-    "interact.js:697"
+    "interact.js:724"
    ]
   },
   {
@@ -11705,7 +11728,7 @@
   {
    "key": "Look at the snare",
    "at": [
-    "interact.js:2328"
+    "interact.js:2361"
    ]
   },
   {
@@ -11747,22 +11770,22 @@
   {
    "key": "Pick up torch",
    "at": [
-    "interact.js:719"
+    "interact.js:746"
    ]
   },
   {
    "key": "Place as decoration (it will not be food again)",
    "at": [
-    "interact.js:1802"
+    "interact.js:1835"
    ]
   },
   {
    "key": "Place",
    "at": [
-    "interact.js:1794",
-    "interact.js:1796",
-    "interact.js:1798",
-    "interact.js:1801"
+    "interact.js:1827",
+    "interact.js:1829",
+    "interact.js:1831",
+    "interact.js:1834"
    ]
   },
   {
@@ -11774,25 +11797,25 @@
   {
    "key": "Put in bag",
    "at": [
-    "interact.js:1946"
+    "interact.js:1979"
    ]
   },
   {
    "key": "Put out the campfire",
    "at": [
-    "interact.js:653"
+    "interact.js:680"
    ]
   },
   {
    "key": "Put out the lantern",
    "at": [
-    "interact.js:762"
+    "interact.js:789"
    ]
   },
   {
    "key": "Put out the torch",
    "at": [
-    "interact.js:712"
+    "interact.js:739"
    ]
   },
   {
@@ -11834,7 +11857,7 @@
   {
    "key": "Sleep",
    "at": [
-    "interact.js:670"
+    "interact.js:697"
    ]
   },
   {
@@ -11882,7 +11905,7 @@
   {
    "key": "Take the torch",
    "at": [
-    "interact.js:723"
+    "interact.js:750"
    ]
   },
   {
@@ -11894,7 +11917,7 @@
   {
    "key": "Till the soil",
    "at": [
-    "interact.js:945"
+    "interact.js:972"
    ]
   },
   {
@@ -11906,8 +11929,8 @@
   {
    "key": "Unequip",
    "at": [
-    "interact.js:1903",
-    "interact.js:1961"
+    "interact.js:1936",
+    "interact.js:1994"
    ]
   },
   {
@@ -11919,8 +11942,8 @@
   {
    "key": "Use",
    "at": [
-    "interact.js:1788",
-    "interact.js:1890"
+    "interact.js:1821",
+    "interact.js:1923"
    ]
   },
   {
@@ -11938,13 +11961,13 @@
   {
    "key": "Walk here",
    "at": [
-    "interact.js:1127"
+    "interact.js:1154"
    ]
   },
   {
    "key": "Water (no water carried)",
    "at": [
-    "interact.js:871"
+    "interact.js:898"
    ]
   },
   {
@@ -11962,7 +11985,7 @@
   {
    "key": "${c.searched ? \"Open\" : \"Search\"} body (it is burning)",
    "at": [
-    "interact.js:2264"
+    "interact.js:2297"
    ]
   },
   {
@@ -11974,13 +11997,13 @@
   {
    "key": "${name}: boarded (${parts.join(\", \")})",
    "at": [
-    "interact.js:786"
+    "interact.js:813"
    ]
   },
   {
    "key": "${water.BOIL_BUCKET} (no tainted water in it)",
    "at": [
-    "interact.js:1189"
+    "interact.js:1216"
    ]
   },
   {
@@ -11992,89 +12015,91 @@
   {
    "key": "Bare (fruit in about ${days} day${days > 1 ? \"s\" : \"\"})",
    "at": [
-    "interact.js:963"
+    "interact.js:990"
    ]
   },
   {
    "key": "Boil water (${water.NO_TAINTED.replace(/\\.$/, \"\").toLowerCase()})",
    "at": [
-    "interact.js:1180"
+    "interact.js:1207"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
     "placement.js:214",
-    "placement.js:533",
-    "placement.js:601",
-    "placement.js:1867",
-    "placement.js:1904"
+    "placement.js:534",
+    "placement.js:585",
+    "placement.js:652",
+    "placement.js:1980",
+    "placement.js:2017"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:1987"
+    "placement.js:2104"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:1972"
+    "placement.js:2084",
+    "placement.js:2089"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1498"
+    "placement.js:1584"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:1960"
+    "placement.js:2073"
    ]
   },
   {
    "key": "Drink from the ${source.name}${source.clean ? \"\" : \" (tainted)\"}",
    "at": [
-    "interact.js:1049"
+    "interact.js:1076"
    ]
   },
   {
    "key": "E: ${a.label}",
    "at": [
-    "interact.js:1541"
+    "interact.js:1573"
    ]
   },
   {
    "key": "Equip (${bdef.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1941"
+    "interact.js:1974"
    ]
   },
   {
    "key": "Equip (${def.hands === \"both\" ? \"both hands\" : ",
    "at": [
-    "interact.js:1811"
+    "interact.js:1844"
    ]
   },
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:401"
+    "placement.js:402"
    ]
   },
   {
    "key": "Let go of the ${c.name}",
    "at": [
-    "interact.js:2376"
+    "interact.js:2409"
    ]
   },
   {
    "key": "Look at the ${c.name}",
    "at": [
-    "interact.js:2313"
+    "interact.js:2346"
    ]
   },
   {
@@ -12086,69 +12111,69 @@
   {
    "key": "Open ${def.name.toLowerCase()}",
    "at": [
-    "interact.js:309",
-    "interact.js:331",
-    "interact.js:1792"
+    "interact.js:336",
+    "interact.js:358",
+    "interact.js:1825"
    ]
   },
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:456"
+    "placement.js:457"
    ]
   },
   {
    "key": "Pick ${name}s",
    "at": [
-    "interact.js:970"
+    "interact.js:997"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"painting\"}",
    "at": [
-    "interact.js:508"
+    "interact.js:535"
    ]
   },
   {
    "key": "Pick up ${def ? def.name.toLowerCase() : \"rug\"}",
    "at": [
-    "interact.js:491"
+    "interact.js:518"
    ]
   },
   {
    "key": "Plant ${kind}",
    "at": [
-    "interact.js:950"
+    "interact.js:977"
    ]
   },
   {
    "key": "Poke ${c.name}",
    "at": [
-    "interact.js:2413"
+    "interact.js:2446"
    ]
   },
   {
    "key": "Put out the ${name}",
    "at": [
-    "interact.js:636"
+    "interact.js:663"
    ]
   },
   {
    "key": "Split into ${countName(s.id, s.count)}${noAxe ? ",
    "at": [
-    "interact.js:1846"
+    "interact.js:1879"
    ]
   },
   {
    "key": "Talk to ${c.name}",
    "at": [
-    "interact.js:2401"
+    "interact.js:2434"
    ]
   },
   {
    "key": "Water with the ${getItem(skin.id).name.toLowerCase()}",
    "at": [
-    "interact.js:870"
+    "interact.js:897"
    ]
   }
  ],
@@ -12156,13 +12181,13 @@
   {
    "key": "animalBite",
    "at": [
-    "entities/animal.js:383"
+    "entities/animal.js:384"
    ]
   },
   {
    "key": "animalKilled",
    "at": [
-    "entities/animal.js:730"
+    "entities/animal.js:731"
    ]
   },
   {
@@ -12187,7 +12212,7 @@
   {
    "key": "bitten",
    "at": [
-    "game.js:456"
+    "game.js:465"
    ]
   },
   {
@@ -12199,17 +12224,17 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1401"
+    "placement.js:1486"
    ]
   },
   {
    "key": "containerOpened",
    "at": [
-    "interact.js:253",
-    "interact.js:315",
-    "interact.js:339",
-    "interact.js:577",
-    "interact.js:2277",
+    "interact.js:280",
+    "interact.js:342",
+    "interact.js:366",
+    "interact.js:604",
+    "interact.js:2310",
     "ui/station-panel.js:84",
     "ui/station-panel.js:111"
    ]
@@ -12217,7 +12242,7 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:854"
+    "game.js:863"
    ]
   },
   {
@@ -12235,7 +12260,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:829"
+    "game.js:838"
    ]
   },
   {
@@ -12247,38 +12272,38 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:2031"
+    "map.js:2043"
    ]
   },
   {
    "key": "fireFed",
    "at": [
-    "map.js:216"
+    "map.js:217"
    ]
   },
   {
    "key": "fireLit",
    "at": [
-    "map.js:510",
-    "map.js:519"
+    "map.js:511",
+    "map.js:520"
    ]
   },
   {
    "key": "fireOut",
    "at": [
-    "map.js:200"
+    "map.js:201"
    ]
   },
   {
    "key": "firePutOut",
    "at": [
-    "map.js:491"
+    "map.js:492"
    ]
   },
   {
    "key": "gameOver",
    "at": [
-    "game.js:928"
+    "game.js:937"
    ]
   },
   {
@@ -12314,7 +12339,7 @@
   {
    "key": "playerPicked",
    "at": [
-    "game.js:75"
+    "game.js:76"
    ]
   },
   {
@@ -12326,19 +12351,19 @@
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:260"
+    "entities/player.js:262"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:251"
+    "entities/player.js:253"
    ]
   },
   {
    "key": "taintedOnly",
    "at": [
-    "game.js:830"
+    "game.js:839"
    ]
   },
   {
@@ -12356,8 +12381,8 @@
   {
    "key": "torchSpent",
    "at": [
-    "map.js:262",
-    "map.js:276"
+    "map.js:263",
+    "map.js:277"
    ]
   },
   {
@@ -12376,7 +12401,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:941",
-    "map.js:2027"
+    "map.js:2039"
    ]
   },
   {
@@ -12384,7 +12409,7 @@
    "at": [
     "archery.js:1154",
     "combat.js:468",
-    "game.js:740"
+    "game.js:749"
    ]
   },
   {
@@ -12582,11 +12607,11 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 4332
+   "lines": 4471
   },
   {
    "path": "interact.js",
-   "lines": 2477
+   "lines": 2510
   },
   {
    "path": "main.js",
@@ -12594,11 +12619,11 @@
   },
   {
    "path": "placement.js",
-   "lines": 1989
+   "lines": 2106
   },
   {
    "path": "net.js",
-   "lines": 1687
+   "lines": 1693
   },
   {
    "path": "placeholders.js",
@@ -12630,22 +12655,22 @@
   },
   {
    "path": "entities/animal.js",
-   "lines": 984
+   "lines": 985
   },
   {
    "path": "game.js",
-   "lines": 950
+   "lines": 959
   },
   {
    "path": "ui/inventory-panel.js",
    "lines": 826
   },
   {
-   "path": "assets.js",
-   "lines": 748
+   "path": "render/storeys.js",
+   "lines": 784
   },
   {
-   "path": "render/storeys.js",
+   "path": "assets.js",
    "lines": 748
   },
   {
@@ -12666,7 +12691,7 @@
   },
   {
    "path": "figure/rig.js",
-   "lines": 493
+   "lines": 503
   },
   {
    "path": "light.js",
@@ -12677,12 +12702,12 @@
    "lines": 471
   },
   {
-   "path": "item-info.js",
-   "lines": 456
+   "path": "entities/player.js",
+   "lines": 462
   },
   {
-   "path": "entities/player.js",
-   "lines": 450
+   "path": "item-info.js",
+   "lines": 456
   },
   {
    "path": "render/rings.js",
@@ -12690,7 +12715,7 @@
   },
   {
    "path": "render/props.js",
-   "lines": 428
+   "lines": 438
   },
   {
    "path": "ui/map-panel.js",
@@ -12698,7 +12723,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 405
+   "lines": 406
   },
   {
    "path": "entities/villager.js",
@@ -12706,7 +12731,7 @@
   },
   {
    "path": "sound-cues.js",
-   "lines": 363
+   "lines": 378
   },
   {
    "path": "sound-gen.js",
@@ -12746,7 +12771,7 @@
   },
   {
    "path": "tuning.js",
-   "lines": 310
+   "lines": 315
   },
   {
    "path": "ui/nav-row.js",
@@ -12989,6 +13014,10 @@
    "lines": 98
   },
   {
+   "path": "entities/ladders.js",
+   "lines": 97
+  },
+  {
    "path": "cliffs.js",
    "lines": 95
   },
@@ -13069,12 +13098,12 @@
    "lines": 68
   },
   {
-   "path": "rng.js",
+   "path": "player-controller.js",
    "lines": 67
   },
   {
-   "path": "player-controller.js",
-   "lines": 63
+   "path": "rng.js",
+   "lines": 67
   },
   {
    "path": "bleed.js",
@@ -13418,7 +13447,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 30,
+   "PROTOCOL": 31,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -13498,7 +13527,10 @@
    "STRINGER_UNDER": 2,
    "SIDE_OVER": 10,
    "NEWEL_H": 30,
-   "HEAD_POST_H": 114
+   "HEAD_POST_H": 114,
+   "LADDER_GAP": 0.12,
+   "LADDER_HALF": 0.28,
+   "LADDER_RAIL": 0.07
   },
   "render_walls": {
    "L_FACE": 0,

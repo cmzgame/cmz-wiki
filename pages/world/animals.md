@@ -10,6 +10,8 @@ numbersOk: true
 
 <table class="infobox"><caption>Animals</caption><tr><th>Kinds</th><td>Seven: deer, rabbit, boar, hen, cow, pig, sheep</td></tr><tr><th>Wild game</th><td>Deer, rabbits, and boar, renewed up to a cap</td></tr><tr><th>Livestock</th><td>Hens, cows, pigs, and sheep, in their pens; never renewed, but bred (see [[Keeping]])</td></tr><tr><th>Renewal</th><td>One a home every {{n animals.renew.seconds seconds}} of the game's clock, never within {{n animals.renew.clear tiles}} of a player</td></tr><tr><th>Hunted</th><td>Skinned and butchered with a [[Dirk]] (see [[Hunting]])</td></tr><tr><th>The dead</th><td>Ignore them</td></tr></table>
 
+Animals keep to the ground, and nothing on another floor frightens or draws them: a deer under a wall walk grazes on with you on the walk over it, and a boar you shoot from a floor up loses you and gives up.
+
 **Animals** live in [[The valley]]: deer, rabbits, and boar in the woods ringing it, hens at [[Hollow Farm]]'s coop, cows and pigs in the farm's new pens west of [[The orchard]], and sheep in the croft's sheepfold past the ford. They graze, wander about their homes, and the deer and rabbits run from anyone they see coming. [[The dead]] ignore them. Wild game is [[Hunting|hunted]]: a kill leaves a carcass to skin and butcher for meat, hides, and feathers, and the boar fights back. Livestock is [[Keeping|kept]]: led on a [[Lead]], fed from a [[Feeding trough]], it gives milk, wool, and eggs, and two in a pen breed.
 
 ## Where they live

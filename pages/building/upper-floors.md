@@ -52,7 +52,7 @@ Sight between floors is one line with heights (see [[Sight]]): a wall stops it b
 
 {{devonly note="Floors and stairs are not in the game yet: the four rows are listed in the build palette only while Free building is on, until their cost is settled."}}
 
-With **Free building** on, the build palette (N) has four more rows: **Plank floor**, **Stone floor**, **Wood stair**, and **Stone stair** (see [[Building]]). Without it they are refused: "Floors are not in the game yet", "Stairs are not in the game yet". Floors are built a tile at a time, with no physics (Michael, 2026-10-27): nothing holds a floor up, and nothing ever falls.
+With **Free building** on, the build palette (N) has five more rows: **Plank floor**, **Stone floor**, **Wood stair**, **Stone stair**, and **Wood ladder** (see [[Building]]). Without it they are refused: "Floors are not in the game yet", "Stairs are not in the game yet". Floors are built a tile at a time, with no physics (Michael, 2026-10-27): nothing holds a floor up, and nothing ever falls.
 
 **A floor** is laid a tile at a time. A click lays the tile under the cursor; press and drag to lay a rectangle, at most {{n census.constants.placement.MAX_DRAG}} tiles a side. The ghost shows each tile green or red, and the prompt says how many of the rectangle's tiles will be laid and what each costs. Each tile is its own build, with its own reason when it is refused; one bar runs for them all, {{n build.floor_wood.seconds second}} a tile, and every tile is checked again when it ends.
 
@@ -75,11 +75,21 @@ Building it lays its landing on the floor above, planks for a wood stair, a ston
 
 **Taking a floor up.** The Take apart tool (X) takes a floor you laid when nothing else that can be taken apart is under the cursor: furniture, walls, and doors are taken first. It is refused where a wall stands on its edge ("A wall stands on it"), where a stair or a landing is ("A stair stands on it"), where furniture or a rug stands ("Something stands on it"), and where anyone stands ("Someone is standing on it"); a floor of the map is not yours ("That floor is not one you laid"). On the ground the floor it covered comes back; upstairs the tile is empty again, and what lay on it falls to the floor below. The tiles round it stay as they are. Like everything taken apart, it gives back half its cost rounded down, which for a tile of one plank or one stone is nothing; laying a new floor over one you laid gives back the same.
 
+### Ladders
+
+A **ladder** is the one-tile way between floors, where a stair's five tiles in a line will not fit, as up a round tower. It stands on a tile and leans on that tile's far edge, north or west, away from the camera ("Ladders lean away from the camera"); above it is a hole in the floor, and beyond the hole its **landing**, whose planks it lays where there was no floor. Build one from the palette's **Wood ladder** with Free building on ({{n build.ladder_wood.cost.plank}} planks and {{n build.ladder_wood.seconds seconds}}, nothing charged while Free building is on). Its tile, its hole, and its landing are its own: no floor in its hole, no wall across its top, no stair onto it, and nothing set down on it. Its landing is the empty air or a floor you laid, never one of the map's.
+
+**Climbing.** Stand on its tile or on the side it is climbed from and press `E`, or choose **Climb ladder** from its menu; from its landing a storey up, **Descend ladder**. The climb takes {{n tuning.ladder.climbSeconds seconds}} a storey: you rise up the ladder with both hands on it, the walk keys do nothing, and nothing else is done from a ladder (no swing, no guard, no eating from the belt, no building, no bed). At the top you stand on its landing; at the bottom on its tile. One climber at a time. Fall while climbing and you land at its foot.
+
+**The dead ignore ladders**, as villagers and animals do: none climbs one, so up a ladder you are reached only by the door below, which the dead who see you break (see [[The dead]]). A climber is on the lower floor until the top, so the dead at the foot can reach you while you are low on it.
+
+**Taking one apart.** With Free building on, the Take apart tool takes a ladder you built, pointed at from its tile or from above: half its cost back. Its landing's own planks go with it (a floor you laid there stays). It is refused while anyone, living or dead, is on it or its landing or climbing it ("Someone is on it"), while a wall stands on its own landing, and while anyone up there would be left with no other way to the ground ("Someone up there would have no way down").
+
 ### What is not built yet
 
-Floors and stairs in the ordinary game (until their cost is settled, Free building only), stairs climbing east or south, ladders and hatches (the map's, climbed with `E`), villagers going upstairs (they and the animals keep to the ground), and the valley's other upper floors and root cellars are planned.
+Floors and stairs in the ordinary game (until their cost is settled, Free building only), stairs climbing east or south, a hatch in a floor, villagers going upstairs (they and the animals keep to the ground), and the valley's other upper floors and root cellars are planned.
 
-{{planned doc=49 step=3b note="Ladders and hatches, placed by the map only, climbed with E, and ignored by the dead."}}
+{{planned doc=49 step=3b note="Hatches: a ladder's hole with a lid, shut and opened."}}
 {{planned doc=49 step=7 note="The valley's other upper floors and root cellars: the inn, a house, two root cellars, the barn's loft."}}
 
 ## Numbers
@@ -141,6 +151,7 @@ Every floor is the host's world. A guest climbs a stair by their own walking, as
 - `src/visibility.js:168-300`, `data/tuning.json` `sight.leanReach` (at b4b6f7e): sight across floors by one line with heights, a floor a plane, leaning out at an edge (game #601)
 - `src/entities/zombie.js:379-395` (at b4b6f7e): the dead see across floors by the same line (game #601); `src/entities/movement.js:49-60`: they follow by the stair, and stay with none (game #534, at a0cf5a2)
 - `src/light.js:50-58`: each layer's light from its own sources, never crossing a floor (game #533, at a0cf5a2)
+- `src/map.js` `buildLadder`, `ladderBuildProblem`, `ladderTakeUpProblem`, `removeLadder`, `src/entities/ladders.js`, `src/interact.js` `ladderActions`, `data/build.json` `ladder_wood`, `data/tuning.json` `ladder` (at bece981): ladders, built, climbed, and taken apart (game #608)
 - `src/gl.js` `STOREY_SETS`, `src/render/area.js`, `src/render/scene.js:240-260`, `src/render/storeys.js:36-48`, `src/fire.js:40-100` (at c976e39): each floor in view lit, shaded, and fogged by its own set, a cellar too; flat things on a floor's plane; a burning body's flames, embers, and smoke on its floor (game #605)
 - `src/entities/movement.js:30-115`, `src/entities/zombie.js:808-900`, `src/visibility.js:160-185` (at c976e39): the dead across floors (game #606)
 - `docs/49-upper-floors.md` (its status, section 16): what is not built yet
