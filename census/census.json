@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "bece9815bdf25a7dda5fc715445fb179d6328431",
-  "short": "bece981",
-  "date": "2026-10-30T18:08:53-05:00",
-  "subject": "Merge #608: docs/53 step 6b: ladders",
+  "commit": "f47cd9821f55082bb7a435ee9c6555fbb14c954a",
+  "short": "f47cd98",
+  "date": "2026-10-30T18:57:11-05:00",
+  "subject": "Merge #611: Mountains in tiers; no player-built way up a hill",
   "ref": "origin/main"
  },
  "counts": {
@@ -11231,9 +11231,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:1083",
-    "placement.js:1094",
-    "placement.js:1098"
+    "placement.js:1103",
+    "placement.js:1114",
+    "placement.js:1118"
    ]
   },
   {
@@ -11554,31 +11554,31 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:2059"
+    "placement.js:2079"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:2052"
+    "placement.js:2072"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:2088"
+    "placement.js:2108"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:2094"
+    "placement.js:2114"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1563"
+    "placement.js:1583"
    ]
   },
   {
@@ -12031,33 +12031,33 @@
     "placement.js:534",
     "placement.js:585",
     "placement.js:652",
-    "placement.js:1980",
-    "placement.js:2017"
+    "placement.js:2000",
+    "placement.js:2037"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:2104"
+    "placement.js:2124"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:2084",
-    "placement.js:2089"
+    "placement.js:2104",
+    "placement.js:2109"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1584"
+    "placement.js:1604"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:2073"
+    "placement.js:2093"
    ]
   },
   {
@@ -12224,7 +12224,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1486"
+    "placement.js:1506"
    ]
   },
   {
@@ -12272,7 +12272,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:2043"
+    "map.js:2072"
    ]
   },
   {
@@ -12401,7 +12401,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:941",
-    "map.js:2039"
+    "map.js:2068"
    ]
   },
   {
@@ -12607,7 +12607,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 4471
+   "lines": 4509
   },
   {
    "path": "interact.js",
@@ -12619,7 +12619,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 2106
+   "lines": 2126
   },
   {
    "path": "net.js",

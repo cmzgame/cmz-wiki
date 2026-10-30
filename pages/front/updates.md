@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `f47cd98`
+
+- **Changed in the game:** **mountains in tiers** (game #611, Michael's ruling of 2026-10-30): hills climb in tiers to the sixth storey, a hill on dirt, grass, or another hill alone; and no player-built floor, stair, or ladder reaches a hill's top ("Not up onto a hill"), so the map's ramps are the only ways up. [[Cliffs]].
+
 ## 2026-10-30: synced to `bece981`
 
 - **New in the game:** **ladders** (game #608, `docs/53` step 6b; network protocol 31): the **Wood ladder** with Free building on, on one tile leaning north or west, climbed with E or its menu's Climb ladder and Descend ladder in {{n tuning.ladder.climbSeconds seconds}} a storey, both hands on it and nothing else done meanwhile; the dead, villagers, and animals ignore ladders, so up one you are reached only by the door below; taken apart with Free building when nobody would be cut off. [[Upper floors#Ladders|Upper floors]], [[Building]], [[The dead]].
