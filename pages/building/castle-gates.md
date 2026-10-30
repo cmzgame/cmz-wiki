@@ -61,7 +61,7 @@ The Take apart tool (X) lights up the whole gate when any of its edges is under 
 
 ### How it is drawn
 
-The gate's frame is one picture as wide as its run, with the arch cut out of the stone, and each edge of the run draws its own slice of it, so a gate sorts, fades when it is near, and sits under an upper floor as the wall beside it does. The portcullis is drawn after the wall, a flat grille on its own plane, set back from the edge line. No corner post stands at the gate's ends or inside its arch: the gate and the stone wall beside it are one run.
+The gate's frame is one picture as wide as its run, with the arch cut out of the stone, and each edge of the run draws its own slice of it, so a gate sorts, is drawn faint when it is a near wall of your room (a gate is an opening, drawn whole), and sits under an upper floor as the wall beside it does. The portcullis is drawn after the wall, a flat grille on its own plane, set back from the edge line. No corner post stands at the gate's ends or inside its arch: the gate and the stone wall beside it are one run.
 
 ## Numbers
 

@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "b4b6f7e5bdfdb2aa80f83593d909a5dbfcdad246",
-  "short": "b4b6f7e",
-  "date": "2026-10-30T15:00:55-05:00",
-  "subject": "Merge #602: docs/53 step 2, shooting down and up, and items fall (PROTOCOL 28)",
+  "commit": "008b7a200f5a34731765b7cc5e940d5e3f3c514b",
+  "short": "008b7a2",
+  "date": "2026-10-30T15:31:34-05:00",
+  "subject": "Merge #603: docs/53 step 3, the cover rule: hide what is in the way, never fade",
   "ref": "origin/main"
  },
  "counts": {
@@ -10076,6 +10076,12 @@
    "delayMs": 60,
    "gap": 14
   },
+  "cover": {
+   "stub": 8,
+   "openingAlpha": 0.3,
+   "fogAlpha": 0.36,
+   "seenAlpha": 0.5
+  },
   "objectHighlight": {
    "color": "#f4f0e6",
    "alpha": 1,
@@ -12169,7 +12175,7 @@
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:1127"
+    "archery.js:1146"
    ]
   },
   {
@@ -12376,7 +12382,7 @@
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:1135",
+    "archery.js:1154",
     "combat.js:468",
     "game.js:740"
    ]
@@ -12600,7 +12606,7 @@
   },
   {
    "path": "gl.js",
-   "lines": 1357
+   "lines": 1369
   },
   {
    "path": "ui/screens.js",
@@ -12608,11 +12614,11 @@
   },
   {
    "path": "render/walls.js",
-   "lines": 1252
+   "lines": 1315
   },
   {
    "path": "archery.js",
-   "lines": 1180
+   "lines": 1199
   },
   {
    "path": "entities/zombie.js",
@@ -12639,16 +12645,16 @@
    "lines": 748
   },
   {
+   "path": "render/storeys.js",
+   "lines": 728
+  },
+  {
    "path": "figure/draw.js",
    "lines": 644
   },
   {
    "path": "inventory.js",
    "lines": 613
-  },
-  {
-   "path": "render/storeys.js",
-   "lines": 583
   },
   {
    "path": "combat.js",
@@ -12680,7 +12686,7 @@
   },
   {
    "path": "render/rings.js",
-   "lines": 438
+   "lines": 443
   },
   {
    "path": "render/props.js",
@@ -12692,7 +12698,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 397
+   "lines": 398
   },
   {
    "path": "entities/villager.js",
@@ -12705,6 +12711,10 @@
   {
    "path": "sound-gen.js",
    "lines": 363
+  },
+  {
+   "path": "render/entities.js",
+   "lines": 343
   },
   {
    "path": "gather-art.js",
@@ -12731,16 +12741,12 @@
    "lines": 319
   },
   {
-   "path": "render/entities.js",
-   "lines": 317
+   "path": "tuning.js",
+   "lines": 310
   },
   {
    "path": "visibility.js",
    "lines": 306
-  },
-  {
-   "path": "tuning.js",
-   "lines": 299
   },
   {
    "path": "ui/nav-row.js",
@@ -13318,6 +13324,7 @@
    "PASS_TRANS": 2,
    "PASS_TOP": 3,
    "PASS_FADE": 4,
+   "PASS_XRAY": 5,
    "DEPTH_HALF_RANGE": 4096,
    "DEPTH_CENTRE_STEP": 256,
    "ALPHA_TEST": 0.5,
@@ -13469,7 +13476,6 @@
    "SKIRT_TUCK": 0.04
   },
   "render_scene": {
-   "FOG_ALPHA": 0.36,
    "NEAR_WALL_ALPHA": 0.42,
    "OCCLUDER_MIN_HEIGHT": 64,
    "HOLE_INNER": 34,

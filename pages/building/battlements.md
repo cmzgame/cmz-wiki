@@ -45,7 +45,7 @@ The pieces are chosen at draw time from the neighbouring edges too: an outer cor
 
 ### Near battlements
 
-A battlement on the camera's side of you, where you stand on the walkway just behind it or on the tile either side, is drawn translucent, so it never hides your own character. A wall walk is no room, so this is its own rule, not the room's fade (see [[Rooms#Near walls|Rooms]]).
+A battlement on the camera's side of you, where you stand on the walkway just behind it or on the tile either side, is cut down to a stub at its foot, so it never hides your own character. A wall walk is no room, so this is its own rule, the same cut as a room's near walls (see [[Rooms#Near walls|Rooms]]).
 
 ### Taking one apart
 

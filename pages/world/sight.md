@@ -56,7 +56,7 @@ A blow still lands on it: a swing hits whatever is in its wedge, and an arrow, a
 
 ### The fog
 
-Tiles out of sight are drawn under a purple fog at {{n census.constants.render_scene.FOG_ALPHA}} strength. The ground and the buildings still show through it, but characters there, the dead, villagers, and other players alike, are hidden. A fire's flames are drawn only when you can see it.
+Tiles out of sight are drawn under a purple fog at {{n tuning.cover.fogAlpha}} strength. The ground and the buildings still show through it, but characters there, the dead, villagers, and other players alike, are hidden. A fire's flames are drawn only when you can see it.
 
 ### Seeing through trees
 
@@ -68,7 +68,7 @@ When you walk behind a tall tree, a soft round hole opens in its canopy so you c
 
 - Corner points tested: {{n census.constants.visibility.CORNER}} of a tile from the centre.
 - Longest line walked: {{n census.constants.visibility.MAX_STEPS}} steps.
-- Fog strength: {{n census.constants.render_scene.FOG_ALPHA}}.
+- Fog strength: {{n tuning.cover.fogAlpha}} (`cover.fogAlpha`, a lever).
 - Tree hole: clear within {{n census.constants.render_scene.HOLE_INNER}} px, solid by {{n census.constants.render_scene.HOLE_OUTER}} px.
 - Near walls drawn at {{n census.constants.render_scene.NEAR_WALL_ALPHA}}.
 - In the dark, the dead seen whole within {{n tuning.sight.darkRadius tiles}}, or the radius of the light you carry; hidden {{n tuning.sight.edge tiles}} past it.
@@ -78,7 +78,7 @@ When you walk behind a tall tree, a soft round hole opens in its canopy so you c
 
 ### On an upper floor
 
-On your own floor sight is worked out by its walls and openings, as on the ground. Between floors it is one line with heights: a wall stops it below its own height, a door's or a window's gap lets it through between its own heights, and a floor stops it as a flat sheet. So from a wall walk or an upstairs window you see the open ground below and the dead on it, but not into closed rooms on the ground; from the ground you see someone on a walk once you stand far enough out that the wall's top is under your line. Standing within {{n tuning.sight.leanReach tiles}} of an edge you look out over (an open window, a battlement, or a floor's drop), you look from the edge itself and see the foot of the wall below, and you are seen there from below. Each floor in view is fogged by its own sight (see [[Upper floors]]). Inside a house the floors above yours are hidden over it, and a body on a floor hidden from you is not drawn.
+On your own floor sight is worked out by its walls and openings, as on the ground. Between floors it is one line with heights: a wall stops it below its own height, a door's or a window's gap lets it through between its own heights, and a floor stops it as a flat sheet. So from a wall walk or an upstairs window you see the open ground below and the dead on it, but not into closed rooms on the ground; from the ground you see someone on a walk once you stand far enough out that the wall's top is under your line. Standing within {{n tuning.sight.leanReach tiles}} of an edge you look out over (an open window, a battlement, or a floor's drop), you look from the edge itself and see the foot of the wall below, and you are seen there from below. Each floor in view is fogged by its own sight (see [[Upper floors]]). A body you can see that something built covers on screen (a wall it stands behind, a cliff, a plateau's edge) shows its shape over what covers it, pale ({{pct tuning.cover.seenAlpha}}): your own character, a friend, or anyone on another floor; the dead on your own floor behind a wall or a tree stay hidden. Inside a house the floors above yours are hidden over it, and a body on a floor hidden from you is not drawn.
 
 ## With friends
 

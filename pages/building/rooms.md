@@ -34,7 +34,7 @@ When a wall is built or removed, only the rooms on either side of it are worked 
 
 ### Translucent near walls
 
-While you are inside a room, its walls on the camera's side are drawn faded, so you can see the room and the people in it. Its doors and windows still work as usual. A corner post fades only when every wall meeting at it is a near wall. Walls never get the soft hole round the player that tree canopies get.
+While you are inside a room, its walls on the camera's side are cut down to a stub {{n tuning.cover.stub}} pixels tall at their foot, their tops drawn along the cut, so you see the whole room and the people in it. A door or a window in such a wall is drawn whole, at its full height, faint ({{pct tuning.cover.openingAlpha}} solid), and works as usual. A corner post is cut with its walls only when every wall meeting at it is a near wall. A fence or bars stand as they are. Nothing is faded any more (Michael, 2026-10-30: "hide what is in the way, never fade"). Walls never get the soft hole round the player that tree canopies get.
 
 ### Nothing in reach through a wall
 

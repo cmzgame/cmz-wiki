@@ -46,7 +46,7 @@ Some walls carry a bracket on one side. Most hold one of the village's lanterns,
 
 ### Near walls
 
-While you are inside a room, its walls on the camera's side are drawn faded. See [[Rooms]]. While you are on a stair, the walls along its sides on the camera's side fade too, on its own floor and round its stairwell above, though both sides of them are one room; those on its far side stand. No wall is built across a stair's run or its top (see [[Upper floors]]).
+While you are inside a room, its walls on the camera's side are cut down to a stub at their foot, a door or a window in them drawn whole and faint. See [[Rooms]]. While you are on a stair, the walls along its sides on the camera's side are cut too, on its own floor and round its stairwell above, though both sides of them are one room; those on its far side stand. No wall is built across a stair's run or its top (see [[Upper floors]]).
 
 ### Storeys
 
