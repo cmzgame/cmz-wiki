@@ -20,7 +20,7 @@ Only the dead within {{n tuning.world.activeTiles tiles}} of some player (in a s
 
 ### Sight
 
-The dead see the [[Player]] by the same rule the player sees by: a clear line (see [[Sight]]). How far they see depends on the [[Light]] where the player stands: {{n tuning.zombie.sight tiles}} in full light, falling to {{n tuning.zombie.sightDarkFraction}} of that when the player stands unlit. Each looks every {{n tuning.zombie.sightCheck seconds}}.
+The dead see the [[Player]] by the same rule the player sees by: a clear line, across floors too (see [[Sight]]). How far they see depends on the [[Light]] where the player stands, on the player's own floor: {{n tuning.zombie.sight tiles}} in full light, falling to {{n tuning.zombie.sightDarkFraction}} of that when the player stands unlit. Each looks every {{n tuning.zombie.sightCheck seconds}}.
 
 The dead ignore [[Animals|animals]], wild and tame: they never chase, bite, or count one, though deer and rabbits run from them.
 
@@ -28,7 +28,7 @@ They never hunt or bite a [[Villagers|villager]] either: every villager is immun
 
 ### Flames at night
 
-At night, once one of the dead has not seen a player for {{n tuning.zombie.flamePatience seconds}}, it can be drawn by a lit flame in its line of sight on its own floor, from as far as {{n tuning.zombie.flameRange tiles}} in full dark. A torch a player carries counts as seeing its carrier. Two torches are seen {{n tuning.world.twoTorches}} times as far; a torch on the belt is seen from {{n tuning.world.beltLight}} times as far.
+At night, once one of the dead has not seen a player for {{n tuning.zombie.flamePatience seconds}}, it can be drawn by a lit flame in its line of sight, on any floor, from as far as {{n tuning.zombie.flameRange tiles}} in full dark. A torch a player carries counts as seeing its carrier. Two torches are seen {{n tuning.world.twoTorches}} times as far; a torch on the belt is seen from {{n tuning.world.beltLight}} times as far.
 
 **A fixed flame never draws one of the dead off a player's trail.** A fire, a lantern, or a torch on a wall is ignored by one hunting a player (until its search runs out and it gives them up), one holding a siege on a house it saw a player go into, and one breaking a door or a window's shutters or boards: each stays on what it is doing, and loses the trail only by its own rules. A torch a player carries still leads one hunting, since following it is following the player. Only the dead with no player to follow (idle, wandering, or already walking to a flame) go to a fixed flame. So a fire lit by the house does not draw away the dead that know you are inside.
 
@@ -91,7 +91,7 @@ At night, from {{n census.constants.clock.DUSK_START}} o'clock, one of the dead 
 
 ### Up and down stairs
 
-The dead walk [[Upper floors|stairs]] as players do. One that sees you go up a stair follows you up it, and down again; a storey apart, the dead and a player see each other only when both are near a stair between them, so a floor hides you otherwise, and one that has lost you on another floor with no stair to take stays where it is. They bite and strike only on their own floor, never through it.
+The dead walk [[Upper floors|stairs]] as players do. One that sees you go up a stair follows you up it, and down again. A storey apart, the dead and a player see each other by the same line as on one floor: one on the ground sees you on a wall walk or at an upstairs window, and turns to hunt you, but never through a floor. One that has lost you on another floor with no stair to take stays where it is. They bite and strike only on their own floor, never through it.
 
 ### The groan
 

@@ -2,7 +2,7 @@
 title: Upper floors
 categories: [Building, Mechanics]
 aliases: [Upper floor, Stairs, Stair, Storeys, Storey, Upstairs, First floor, Layers, Wood stair, Stone stair, Plank floor, Stone floor, Floors, Floor building, Storey fade]
-summary: The map in floors: a stair three tiles long climbs one storey, the floors above you hidden while you are inside a house and faded while you stand behind one, everything you do kept to your own floor, and floors and stairs built with Free building.
+summary: The map in floors: a stair three tiles long climbs one storey, the floors above you hidden while you are inside a house and faded while you stand behind one, what you do by hand kept to your own floor while sight and shots cross between floors, and floors and stairs built with Free building.
 ---
 
 The map has **upper floors**: a building may have a floor over its ground floor, a storey up, joined to it by a **stair**. A storey is {{n census.constants.map.STOREY}} pixels, a house wall's height (see [[Walls]]). In the valley one house has an upper floor so far, [[The tall house]] east of [[Your cottage]]; the proving ground's tower house has a cellar and two floors over its ground floor. With Free building on, players can build stairs and lay floors of their own, upstairs and down. Upstairs is the same world, walked into, with no loading and no cut.
@@ -36,21 +36,19 @@ A body on a floor hidden from you is not drawn, nor its health bar or speech bub
 
 Everything you do is on the floor you stand on. `E`, the right-click menu, the Use mode, and the cursor read your own floor: what is under the cursor upstairs is the upstairs, and a chest, a door, a body, or anything else on another floor has no actions for you ("That is on another floor."). Doors and shutters open and shut, torches are lit and taken, and things are put down and dropped on your own floor.
 
-Blows, bites, arrows, and thrown things stay on the floor they start on: a shot loosed upstairs flies and lands upstairs, and nothing hits through a floor (see [[Archery]]). A fire upstairs lights its own floor, never the ground under it (see [[Light]]).
+Blows and bites stay on the floor they start on, never through a floor. Arrows, thrown knives and axes, and thrown potions come down on the floor you aim at: the highest floor under the cursor that you can see, else the ground. From a wall walk, a battlement, or an upstairs window a shot comes down on the ground where you aim, and from the ground you can shoot up onto a floor you can see. A spear and the [[Fireball]] keep to your own floor and stop where it ends. See [[Archery]]. A fire upstairs lights its own floor, never the ground under it (see [[Light]]).
 
-{{planned doc=49 step=5 note="Shooting down from a window: bows and thrown knives and axes, from the ground floor and the first floor; never a spell or a spear."}}
+Nothing rests on thin air: anything let go over the open air of a storey, a dropped thing or an arrow that misses, falls to the first floor below.
 
 ### Sight between floors
 
-You see by the walls and openings of your own floor (see [[Sight]]). A floor hides what is above and below it: two bodies a storey apart see each other only when both are near a stair between them, on it, at its foot, or on its landing.
-
-{{planned doc=49 step=4 note="Looking down: seeing the dead on the ground from an upstairs window, and being seen from below."}}
+Sight between floors is one line with heights (see [[Sight]]): a wall stops it below its own height, and a floor stops it as a flat sheet. From a wall walk you see the open ground below but not into the closed rooms on the ground. From the ground you see a friend on a walk once you stand far enough out that the wall's top is under your line, and not from close under the wall. Standing within {{n tuning.sight.leanReach tiles}} of an edge you look out over (an open window, a battlement, or a floor's drop), you look from the edge itself, so you see the foot of the wall below you, and you are seen there from below.
 
 ### The dead upstairs
 
-[[The dead]] walk stairs as you do. One that sees you go up a stair follows you by the stair, up to the landing and on; with no stair to take, one that has lost you on another floor stays where it is and looks round. They bite only on their own floor, never through a floor or up through the stairwell.
+[[The dead]] walk stairs as you do, and see across floors by the same line you do: one on the ground that can see you on a walk or at an upstairs window turns to hunt you. One that sees you go up a stair follows you by the stair, up to the landing and on; with no stair to take, one that has lost you on another floor stays where it is and looks round. They bite only on their own floor, never through a floor or up through the stairwell.
 
-{{planned doc=49 step=6 note="The dead hunting across storeys: breaking into a room upstairs, stopping at its door, coming down into a cellar."}}
+{{planned doc=53 step=5 note="The dead hunting across storeys: finding the stair whose landing reaches you, pressing the door below a player they see but cannot reach, breaking into a room upstairs."}}
 
 ### Building floors and stairs
 
@@ -75,11 +73,11 @@ Building it lays its landing on the floor above, planks for a wood stair, a ston
 
 **Building upstairs.** What you build goes on your own floor: walls, fences, doors, and windows, and furniture you carry and put down. A wall upstairs needs a floor on at least one side ("No floor there"), and a door needs floor on both, so no door opens onto an open edge. Not yet upstairs ("Not upstairs yet"): a rug, a painting, a campfire or a torch post set down, a torch put on a wall, and the palette's pieces that stand on tiles (the [[Fireplace]], the [[Fire pit]], the [[Feeding trough]]). A [[Round rooms|round room]] is never built across a stair, and upstairs needs a floor under all of its tiles. A [[Battlements|battlement]], a short parapet, stands on the outer edge of a floor upstairs, the walkway's floor on one side of the edge and none on the other, a stairwell's hole counting as the walkway's; placed at once and free with Free building.
 
-**Taking a floor up.** The Take apart tool (X) takes a floor you laid when nothing else that can be taken apart is under the cursor: furniture, walls, and doors are taken first. It is refused where a wall stands on its edge ("A wall stands on it"), where a stair or a landing is ("A stair stands on it"), where furniture or a rug stands ("Something stands on it"), where something lies ("Something lies on it"), and where anyone stands ("Someone is standing on it"); a floor of the map is not yours ("That floor is not one you laid"). On the ground the floor it covered comes back; upstairs the tile is empty again, and the tiles round it stay as they are. Like everything taken apart, it gives back half its cost rounded down, which for a tile of one plank or one stone is nothing; laying a new floor over one you laid gives back the same.
+**Taking a floor up.** The Take apart tool (X) takes a floor you laid when nothing else that can be taken apart is under the cursor: furniture, walls, and doors are taken first. It is refused where a wall stands on its edge ("A wall stands on it"), where a stair or a landing is ("A stair stands on it"), where furniture or a rug stands ("Something stands on it"), and where anyone stands ("Someone is standing on it"); a floor of the map is not yours ("That floor is not one you laid"). On the ground the floor it covered comes back; upstairs the tile is empty again, and what lay on it falls to the floor below. The tiles round it stay as they are. Like everything taken apart, it gives back half its cost rounded down, which for a tile of one plank or one stone is nothing; laying a new floor over one you laid gives back the same.
 
 ### What is not built yet
 
-Floors and stairs in the ordinary game (until their cost is settled, Free building only), stairs climbing east or south, rugs and paintings upstairs, a fade for storeys built of laid floors, ladders and hatches (the map's, climbed with `E`), looking and shooting down, villagers going upstairs (they and the animals keep to the ground), and the valley's other upper floors and root cellars are planned.
+Floors and stairs in the ordinary game (until their cost is settled, Free building only), stairs climbing east or south, rugs and paintings upstairs, a fade for storeys built of laid floors, ladders and hatches (the map's, climbed with `E`), villagers going upstairs (they and the animals keep to the ground), and the valley's other upper floors and root cellars are planned.
 
 {{planned doc=49 step=3b note="Ladders and hatches, placed by the map only, climbed with E, and ignored by the dead."}}
 {{planned doc=49 step=7 note="The valley's other upper floors and root cellars: the inn, a house, two root cellars, the barn's loft."}}
@@ -96,7 +94,7 @@ Floors and stairs in the ordinary game (until their cost is settled, Free buildi
 
 ## With friends
 
-Every floor is the host's world. A guest climbs a stair by their own walking, as on the ground, and their game steps them over the top edge as the host's does, so they do not stick at the top. Which floor each player is on, and how far up a stair, reaches every player. What is hidden is each player's own: a guest upstairs and the host on the ground see different cut-aways, each by their own character. A guest's commands name their floor, and the host refuses one aimed at another floor than the guest's own. A guest builds floors and stairs through the same path as the host: their build command names the rectangle's two corners, or the stair's first tile and the way it climbs, on their own floor, and the host checks reach, floor, and touching by the same rules and builds on the guest's own character. A laid floor and a built stair travel in the map's chunks, so they reach every player and are kept in the save. The fade of a storey you stand behind is each player's own.
+Every floor is the host's world. A guest climbs a stair by their own walking, as on the ground, and their game steps them over the top edge as the host's does, so they do not stick at the top. Which floor each player is on, and how far up a stair, reaches every player. What is hidden is each player's own: a guest upstairs and the host on the ground see different cut-aways, each by their own character. A guest's commands name their floor, and the host refuses one aimed at another floor than the guest's own. A guest builds floors and stairs through the same path as the host: their build command names the rectangle's two corners, or the stair's first tile and the way it climbs, on their own floor, and the host checks reach, floor, and touching by the same rules and builds on the guest's own character. A laid floor and a built stair travel in the map's chunks, so they reach every player and are kept in the save. The fade of a storey you stand behind is each player's own, and so is sight between floors, worked out on each player's own copy of the map. A guest's aim names the floor it means, and the host's flight comes down there for everyone.
 
 ## Settings that change it
 
@@ -138,9 +136,10 @@ Every floor is the host's world. A guest climbs a stair by their own walking, as
 - `src/render/walls.js:290-307`, `src/render/walls.js:414-475`: the storeys' seam, a wall or post with one over it drawing no cap, the one on it drawn a step nearer (game #540, at a0cf5a2)
 - `src/render/storeys.js:1-67`, `src/camera.js:11-13`, `src/camera.js:41-43`: each layer drawn lifted a storey, the hiding rule by the building you stand in, a cellar alone, a hidden storey's bodies not drawn; the camera on the lifted body (game #534, at a0cf5a2)
 - `src/interact.js:1147`, `src/interact.js:1277-1295`, `src/interact.js:2196`, `src/interact.js:2379`, `src/interact.js:2454`, `src/reach.js:24-28`, `src/main.js:869`, `src/highlight.js:31`: E, the menu, Use mode, and the cursor on the player's own floor; "That is on another floor." (game #534, at a0cf5a2)
-- `src/archery.js:135`, `src/archery.js:282`, `src/archery.js:309`, `src/archery.js:377`: a flight on its shooter's layer, hitting and landing there alone (game #534, at a0cf5a2)
-- `src/visibility.js:12`, `src/visibility.js:94-106`: sight on the viewer's own layer (game #534, at a0cf5a2)
-- `src/entities/zombie.js:389-405`, `src/entities/zombie.js:492`, `src/entities/movement.js:49-60`: the dead see a storey away only by a stair both stand near, follow by the stair, stay with none (game #534, at a0cf5a2)
+- `src/archery.js:118-160`, `src/archery.js:237-320`, `src/archery.js:1022-1040` (at b4b6f7e): a flight comes down on the floor aimed at, its height measured from it; walls, props, and floors stop it by height; a spear and a spell keep to their floor and stop at its edge upstairs; the aim's floor from the cursor and the viewer's sight (game #602)
+- `src/map.js:879-895`, `src/map.js:1147-1170` (at b4b6f7e): nothing rests on the void, it falls to the first floor below; a floor taken up drops what lay on it (game #602)
+- `src/visibility.js:168-300`, `data/tuning.json` `sight.leanReach` (at b4b6f7e): sight across floors by one line with heights, a floor a plane, leaning out at an edge (game #601)
+- `src/entities/zombie.js:379-395` (at b4b6f7e): the dead see across floors by the same line (game #601); `src/entities/movement.js:49-60`: they follow by the stair, and stay with none (game #534, at a0cf5a2)
 - `src/light.js:50-58`: each layer's light from its own sources, never crossing a floor (game #533, at a0cf5a2)
 - `docs/49-upper-floors.md` (its status, section 16): what is not built yet
 - `src/net.js`, `src/save.js:26-32`: a player's layer and rise in its record, a command's layer, the host refusing another layer's command; the save in layers (games #533, #534, at a0cf5a2)

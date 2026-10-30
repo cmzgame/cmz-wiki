@@ -1,7 +1,7 @@
 {
-  "commit": "bdaae90642ad99540dc083855e20ad2c14e82c90",
-  "short": "bdaae90",
-  "date": "2026-10-29T22:42:59-05:00",
-  "subject": "Merge #589, reviewed: Straight walls join a round wall at a step of its outline, the filler drawn to the curve (#588)",
+  "commit": "b4b6f7e5bdfdb2aa80f83593d909a5dbfcdad246",
+  "short": "b4b6f7e",
+  "date": "2026-10-30T15:00:55-05:00",
+  "subject": "Merge #602: docs/53 step 2, shooting down and up, and items fall (PROTOCOL 28)",
   "ref": "origin/main"
 }

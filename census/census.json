@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "bdaae90642ad99540dc083855e20ad2c14e82c90",
-  "short": "bdaae90",
-  "date": "2026-10-29T22:42:59-05:00",
-  "subject": "Merge #589, reviewed: Straight walls join a round wall at a step of its outline, the filler drawn to the curve (#588)",
+  "commit": "b4b6f7e5bdfdb2aa80f83593d909a5dbfcdad246",
+  "short": "b4b6f7e",
+  "date": "2026-10-30T15:00:55-05:00",
+  "subject": "Merge #602: docs/53 step 2, shooting down and up, and items fall (PROTOCOL 28)",
   "ref": "origin/main"
  },
  "counts": {
@@ -10220,7 +10220,8 @@
    "seenAt": 0.5,
    "drawCutoff": 0.02,
    "groanGap": 20,
-   "groanRadius": 6
+   "groanRadius": 6,
+   "leanReach": 0.8
   },
   "work": {
    "grindstone": {
@@ -11139,26 +11140,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1250"
+    "main.js:1251"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1249"
+    "main.js:1250"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1227"
+    "main.js:1228"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:1066",
-    "main.js:1080"
+    "main.js:1067",
+    "main.js:1081"
    ]
   },
   {
@@ -11176,19 +11177,19 @@
   {
    "key": "KeyL",
    "at": [
-    "main.js:1247"
+    "main.js:1248"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1230"
+    "main.js:1231"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1229"
+    "main.js:1230"
    ]
   },
   {
@@ -11215,56 +11216,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1225"
+    "main.js:1226"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1231"
+    "main.js:1232"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1238"
+    "main.js:1239"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1227"
+    "main.js:1228"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1314"
+    "main.js:1315"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1314"
+    "main.js:1315"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1228"
+    "main.js:1229"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1325"
+    "main.js:1326"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:1066",
-    "main.js:1072"
+    "main.js:1067",
+    "main.js:1073"
    ]
   }
  ],
@@ -11434,7 +11435,7 @@
   {
    "key": "sleep",
    "at": [
-    "entities/player.js:271"
+    "entities/player.js:272"
    ]
   },
   {
@@ -11499,7 +11500,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1735"
+    "main.js:1736"
    ]
   },
   {
@@ -11511,7 +11512,7 @@
   {
    "key": "Build",
    "at": [
-    "main.js:965",
+    "main.js:966",
     "placement.js:89"
    ]
   },
@@ -11578,7 +11579,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1608"
+    "main.js:1609"
    ]
   },
   {
@@ -11661,7 +11662,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1710"
+    "main.js:1711"
    ]
   },
   {
@@ -11692,7 +11693,7 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1589"
+    "main.js:1590"
    ]
   },
   {
@@ -11704,13 +11705,13 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1648"
+    "main.js:1649"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1696"
+    "main.js:1697"
    ]
   },
   {
@@ -11734,7 +11735,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1748"
+    "main.js:1749"
    ]
   },
   {
@@ -11791,25 +11792,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1554"
+    "main.js:1555"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1550"
+    "main.js:1551"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1591"
+    "main.js:1592"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1590"
+    "main.js:1591"
    ]
   },
   {
@@ -11821,7 +11822,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1757"
+    "main.js:1758"
    ]
   },
   {
@@ -12161,20 +12162,20 @@
   {
    "key": "arrowLanded",
    "at": [
-    "archery.js:320",
-    "archery.js:370"
+    "archery.js:378",
+    "archery.js:428"
    ]
   },
   {
    "key": "arrowShot",
    "at": [
-    "archery.js:1052"
+    "archery.js:1127"
    ]
   },
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1458"
+    "main.js:1459"
    ]
   },
   {
@@ -12240,7 +12241,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:2002"
+    "map.js:2022"
    ]
   },
   {
@@ -12283,25 +12284,25 @@
   {
    "key": "kicked",
    "at": [
-    "combat.js:314"
+    "combat.js:324"
    ]
   },
   {
    "key": "meleeHit",
    "at": [
-    "combat.js:441"
+    "combat.js:451"
    ]
   },
   {
    "key": "meleeSwing",
    "at": [
-    "combat.js:390"
+    "combat.js:400"
    ]
   },
   {
    "key": "playerHit",
    "at": [
-    "entities/zombie.js:1112"
+    "entities/zombie.js:1101"
    ]
   },
   {
@@ -12313,19 +12314,19 @@
   {
    "key": "shove",
    "at": [
-    "combat.js:488"
+    "combat.js:498"
    ]
   },
   {
    "key": "sleepEnd",
    "at": [
-    "entities/player.js:259"
+    "entities/player.js:260"
    ]
   },
   {
    "key": "sleepStart",
    "at": [
-    "entities/player.js:250"
+    "entities/player.js:251"
    ]
   },
   {
@@ -12362,21 +12363,21 @@
   {
    "key": "villagerHit",
    "at": [
-    "entities/zombie.js:1113"
+    "entities/zombie.js:1102"
    ]
   },
   {
    "key": "wallStruck",
    "at": [
-    "entities/zombie.js:925",
-    "map.js:1998"
+    "entities/zombie.js:914",
+    "map.js:2018"
    ]
   },
   {
    "key": "weaponBroke",
    "at": [
-    "archery.js:1060",
-    "combat.js:458",
+    "archery.js:1135",
+    "combat.js:468",
     "game.js:740"
    ]
   },
@@ -12575,7 +12576,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 4199
+   "lines": 4219
   },
   {
    "path": "interact.js",
@@ -12583,7 +12584,7 @@
   },
   {
    "path": "main.js",
-   "lines": 2238
+   "lines": 2239
   },
   {
    "path": "placement.js",
@@ -12591,7 +12592,7 @@
   },
   {
    "path": "net.js",
-   "lines": 1679
+   "lines": 1682
   },
   {
    "path": "placeholders.js",
@@ -12610,12 +12611,12 @@
    "lines": 1252
   },
   {
-   "path": "entities/zombie.js",
-   "lines": 1126
+   "path": "archery.js",
+   "lines": 1180
   },
   {
-   "path": "archery.js",
-   "lines": 1105
+   "path": "entities/zombie.js",
+   "lines": 1115
   },
   {
    "path": "ground.js",
@@ -12650,12 +12651,12 @@
    "lines": 583
   },
   {
-   "path": "ui/inventory-actions.js",
-   "lines": 556
+   "path": "combat.js",
+   "lines": 557
   },
   {
-   "path": "combat.js",
-   "lines": 547
+   "path": "ui/inventory-actions.js",
+   "lines": 556
   },
   {
    "path": "figure/rig.js",
@@ -12675,7 +12676,7 @@
   },
   {
    "path": "entities/player.js",
-   "lines": 449
+   "lines": 450
   },
   {
    "path": "render/rings.js",
@@ -12691,7 +12692,7 @@
   },
   {
    "path": "render/scene.js",
-   "lines": 393
+   "lines": 397
   },
   {
    "path": "entities/villager.js",
@@ -12731,11 +12732,15 @@
   },
   {
    "path": "render/entities.js",
-   "lines": 314
+   "lines": 317
+  },
+  {
+   "path": "visibility.js",
+   "lines": 306
   },
   {
    "path": "tuning.js",
-   "lines": 298
+   "lines": 299
   },
   {
    "path": "ui/nav-row.js",
@@ -12939,10 +12944,6 @@
   },
   {
    "path": "gather.js",
-   "lines": 116
-  },
-  {
-   "path": "visibility.js",
    "lines": 116
   },
   {
@@ -13404,7 +13405,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 27,
+   "PROTOCOL": 28,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -13594,7 +13595,9 @@
   "visibility": {
    "MAX_STEPS": 400,
    "KEY_OFF": 32768,
-   "CORNER": 0.42
+   "CORNER": 0.42,
+   "EYE": 40,
+   "CHEST": 30
   }
  },
  "starterKit": {

@@ -32,7 +32,7 @@ A battlement is a wall on its edge, {{n sprites.wall_battlement.wall.height}} pi
 
 - **It stops bodies**: yours, a friend's, a villager's, and the dead's, at the edge line, as any wall does. An edge with no battlement is an open edge, and holds you as any upper floor's edge does.
 - **It passes sight and light**, like a [[Fences|fence]]: you see over it from the walk, and the dead below see you. See [[Sight]] and [[Light]].
-- **It passes a shot above its height**: an arrow, a thrown thing, or a spell flying higher than {{n sprites.wall_battlement.wall.height}} pixels clears it, and one lower is stopped by it (see [[Archery#What stops a shot|Archery]]). A flight stays on its own floor, so nothing is shot down from the walk yet.
+- **It passes a shot above its height**: an arrow, a thrown thing, or a spell flying higher than {{n sprites.wall_battlement.wall.height}} pixels clears it, and one lower is stopped by it (see [[Archery#What stops a shot|Archery]]). From the walk a shot that clears it comes down on the ground where you aim (see [[Archery#Between floors|Archery]]).
 - **It bounds no room**: like a fence, a ring of battlements is outdoors, and a wall walk is no room.
 - **The dead cannot strike it down.** It has no hit points, they never target it, and it is not a fence they batter. One of the dead on the walk with you is stopped at it as you are.
 - **It takes no door, window, painting, or torch**: a door or a window on its edge is refused, "Not in a battlement"; a painting or Place torch on it, "Nothing to hang it on".

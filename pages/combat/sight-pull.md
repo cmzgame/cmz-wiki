@@ -27,7 +27,7 @@ Every other one of the dead that:
 - is not already hunting a player,
 - is on its feet, or getting up (one lying on the floor does not answer),
 - stands within {{n tuning.zombie.pullRadius tiles}} of the caller, and
-- has a clear line to the caller: walls, shut doors, and shut shutters stop it, as they stop a player's [[Sight|sight]].
+- has a clear line to the caller: walls, shut doors, and shut shutters stop it, as they stop a player's [[Sight|sight]], and a floor between them stops it; one on another floor that sees the caller answers too.
 
 **The light counts.** The reach is scaled by the [[Light|light]] where the caller stands, as the dead's sight of a player is: the whole {{n tuning.zombie.pullRadius tiles}} in full light, and {{n tuning.zombie.sightDarkFraction}} of it where the caller stands unlit, about a tile and a half. A pull in the dark brings fewer.
 

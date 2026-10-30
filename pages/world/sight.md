@@ -78,9 +78,7 @@ When you walk behind a tall tree, a soft round hole opens in its canopy so you c
 
 ### On an upper floor
 
-Sight is worked out on your own floor, by its walls and openings. A floor hides what is above and below it: from upstairs you do not see the dead on the ground through the floor, and they do not see you, except near a stair between you (see [[Upper floors]]). Inside a house the floors above yours are hidden over it, and a body on a floor hidden from you is not drawn.
-
-{{planned doc=49 step=4 note="Looking down from an upstairs window at the dead on the ground, and being seen from below."}}
+On your own floor sight is worked out by its walls and openings, as on the ground. Between floors it is one line with heights: a wall stops it below its own height, a door's or a window's gap lets it through between its own heights, and a floor stops it as a flat sheet. So from a wall walk or an upstairs window you see the open ground below and the dead on it, but not into closed rooms on the ground; from the ground you see someone on a walk once you stand far enough out that the wall's top is under your line. Standing within {{n tuning.sight.leanReach tiles}} of an edge you look out over (an open window, a battlement, or a floor's drop), you look from the edge itself and see the foot of the wall below, and you are seen there from below. Each floor in view is fogged by its own sight (see [[Upper floors]]). Inside a house the floors above yours are hidden over it, and a body on a floor hidden from you is not drawn.
 
 ## With friends
 
@@ -100,7 +98,8 @@ Each player sees the dead in the dark by their own sight and their own torch, fr
 <!-- sources at 3c0a243 -->
 - `data/sprites/wall_battlement.json` `seeThrough`, `src/map.js:2664` (game #574) (at 8d361e5)
 - `src/map.js:2660`, `src/map.js:2668-2670` (at 77fee9d): a shut castle gate passes sight and light and not a blow or a bite (game #570)
-- `src/visibility.js:12`, `src/visibility.js:94-106`, `src/render/storeys.js:44-67` (at da57a57): sight on the viewer's own layer; the hiding rule and a hidden storey's bodies (game #534)
+- `src/visibility.js:12`, `src/render/storeys.js:44-67` (at da57a57): sight on the viewer's own layer by its walls; the hiding rule and a hidden storey's bodies (game #534)
+- `src/visibility.js:168-300`, `src/render/scene.js` `seenOn`, `src/main.js` `computeSeen` (at b4b6f7e): sight between floors by one line with heights, each floor's own set, leaning out at an edge within `sight.leanReach` (game #601)
 - `src/visibility.js:12-48`, `src/visibility.js:86-109`, `src/camera.js:58-75`: rays from your tile over the viewport and a margin; the corner points
 - `src/main.js:1170-1179`: recomputed on a new tile, a world change, or a resize
 - `src/map.js:1363-1376`: walls, shut doors, closed shutters, and boards block sight; open and broken openings and see-through fences do not
