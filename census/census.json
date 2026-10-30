@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "8d361e5ee3523062e55ccf82ae4e588a20cc68a7",
-  "short": "8d361e5",
-  "date": "2026-10-29T20:38:42-05:00",
-  "subject": "Merge #587: TODO.md's Status block for tonight's laptop session",
+  "commit": "bdaae90642ad99540dc083855e20ad2c14e82c90",
+  "short": "bdaae90",
+  "date": "2026-10-29T22:42:59-05:00",
+  "subject": "Merge #589, reviewed: Straight walls join a round wall at a step of its outline, the filler drawn to the curve (#588)",
   "ref": "origin/main"
  },
  "counts": {
@@ -12240,7 +12240,7 @@
   {
    "key": "fenceBurst",
    "at": [
-    "map.js:1901"
+    "map.js:2002"
    ]
   },
   {
@@ -12369,7 +12369,7 @@
    "key": "wallStruck",
    "at": [
     "entities/zombie.js:925",
-    "map.js:1897"
+    "map.js:1998"
    ]
   },
   {
@@ -12575,7 +12575,7 @@
  "modules": [
   {
    "path": "map.js",
-   "lines": 4098
+   "lines": 4199
   },
   {
    "path": "interact.js",
@@ -12606,16 +12606,16 @@
    "lines": 1323
   },
   {
+   "path": "render/walls.js",
+   "lines": 1252
+  },
+  {
    "path": "entities/zombie.js",
    "lines": 1126
   },
   {
    "path": "archery.js",
    "lines": 1105
-  },
-  {
-   "path": "render/walls.js",
-   "lines": 1097
   },
   {
    "path": "ground.js",
@@ -12766,6 +12766,10 @@
    "lines": 246
   },
   {
+   "path": "round.js",
+   "lines": 244
+  },
+  {
    "path": "audio.js",
    "lines": 240
   },
@@ -12824,10 +12828,6 @@
   {
    "path": "woods.js",
    "lines": 186
-  },
-  {
-   "path": "round.js",
-   "lines": 178
   },
   {
    "path": "water.js",

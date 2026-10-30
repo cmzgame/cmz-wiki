@@ -50,13 +50,14 @@ Once a piece is picked, a ghost of it follows the cursor, snapped to the nearest
 
 - **Too far**: the edge's midpoint is more than {{n census.constants.placement.BUILD_REACH tiles}} from you. With Free building on there is no reach worth the name: {{n census.constants.placement.FREE_REACH tiles}}, so anything you can see on the screen (Michael, 2026-10-29: "If I can see it, I can stamp it"); the lines of sight that a made piece's spot and a laid floor keep still hold.
 - **Already a wall**: the edge already holds something this piece cannot be built over (see below).
+- **Start it at a step of the round wall**: the wall would end in a [[Round rooms|round room]]'s corner pocket, at its square's own corner, with no wall there yet. A wall meeting a round wall ends at a step of its outline; one through a pocket is built from the step corner outward (see [[Round rooms#A straight wall meeting a ring|Round rooms]]).
 - **No room**: a single solid piece of furniture spans both tiles of the edge, or a laid [[Rugs|rug]] does: a wall is never built through a rug, only along its outer edge. A door also needs both tiles walkable and nothing standing on either, so it cannot stand in water or beside any prop, solid or not: the dead must be able to stand at a door (see [[Openings]]). A wall or a window may be built over water or beside furniture.
 - **Step back**: you are standing closer than {{n census.constants.placement.EDGE_CLEARANCE tiles}} to the edge.
 - **Someone is in the way**: someone else living, a player, a villager, one of the dead, or an animal, stands across the edge, so the wall would go up through them. A corpse lying there does not count. A wall, a door, or a window is never built across a body, since a body caught in one could not walk out of it.
 - **You need a ...**: you lack the piece's tool, and it names it ("You need a smith's hammer.").
 - **Need**: you lack the materials, and it names them.
 
-A click on a green ghost starts the build. A bar runs for the piece's time. Nothing is spent until the bar finishes, and every rule is checked again then. Moving cancels the build, as does going a little beyond the build reach. Only one build runs at a time.
+A click on a green ghost starts the build. A bar runs for the piece's time. Nothing is spent until the bar finishes, and every rule is checked again then. Moving cancels the build, as does going a little beyond the build reach, or a wall coming between you and the edge: with Free building's long reach the line of sight is kept, so a timed build is cancelled the moment a wall stands between you and the edge, and a yard's second wall can need a step to the side first. Only one build runs at a time.
 
 Build mode stays on after a piece is finished, so a run of wall can be laid click by click. N, Escape, or a right click leaves it; that right click opens no menu.
 
@@ -163,6 +164,8 @@ A guest's click is sent to the host as a build command. The host checks the gues
 ## Sources
 
 <!-- sources at d7cf736 -->
+- `src/map.js:1580-1646`, `src/map.js:1229`, `src/placement.js:823` (at bdaae90): "Start it at a step of the round wall", a straight wall toward a round room ending at a step of its outline, the ghost and a guest's command alike (game #589)
+- `src/interact.js:1427-1434`, `src/reach.js` (at bdaae90): a timed build cancelled when the builder moves, drifts out of reach, or a wall stands between them and the edge (game #575's reach, noted at #589)
 - `data/build.json` (`wall_stone`), `src/placement.js:812` (at 8d361e5): the Stone wall row, `dev`, its placeholder cost and seconds, "Not in the game yet" without Free building (game #573)
 - `data/build.json` (`battlement_stone`), `src/placement.js:813-817`, `src/battlements.js:29-45` (at 8d361e5): the Battlement row under Castle, placed at once and free, its refusals, "Not in a battlement" for a door or a window (game #574); the page [[Battlements]] has the rest
 - `src/placement.js:43-50`, `src/placement.js:1141-1144`, `docs/02-decisions.md` (2026-10-29, Free building has no reach limit) (at 8d361e5): `FREE_REACH` 48 in place of the build and take-apart reach with Free building on, every build and the removal tool, the lines of sight kept (game #575)

@@ -34,7 +34,7 @@ An arrow or a throw in flight is stopped by a wall only below that wall's own he
 
 ### Round walls
 
-A [[Round rooms|round room]]'s wall is stone, drawn as a ring round a square of five or seven tiles, but in the world it is ordinary walls on the edges of the tiles inside the circle: it stops bodies, sight, and light as any stone wall does, and nothing breaks it. Bodies are also held off the drawn curve. Doors and windows go only at its four door points. [[Hollow Farm's dovecote]] is one; players build them only with Free building on.
+A [[Round rooms|round room]]'s wall is stone, drawn as a ring round a square of five or seven tiles, but in the world it is ordinary walls on the edges of the tiles inside the circle: it stops bodies, sight, and light as any stone wall does, and nothing breaks it. Bodies are also held off the drawn curve. Doors and windows go only at its four door points. [[Hollow Farm's dovecote]] is one; players build them only with Free building on. A straight wall built up to a round room ends at a step of the ring's stepped outline, never in one of the square's corner pockets ("Start it at a step of the round wall"; a wall through a pocket is built from the step corner outward), and its picture runs on from the step to the curve, with no post where it runs straight into the curve and a corner post where it turns down the step's edge; fences, bars, cliffs, and battlements keep their own ends. See [[Round rooms#A straight wall meeting a ring|Round rooms]].
 
 ### Building and taking apart walls
 
@@ -81,6 +81,7 @@ A wall standing on a wall of the floor below is drawn with it as one face, two s
 ## Sources
 
 <!-- sources at 3c0a243 -->
+- `src/map.js:1580-1646`, `src/render/walls.js:464-485`, `src/render/walls.js:496-625` (at bdaae90): a straight wall toward a ring ends at a step of its outline, "Start it at a step of the round wall"; its picture run on to the curve, the post at the join (game #589)
 - `data/sprites/wall_battlement.json`, `src/battlements.js`, `src/map.js:1200`, `src/map.js:2762` (at 8d361e5): the battlement, a see-through wall of height 28 and no thickness on a wall walk's outer edge, nothing stamped over it (game #574)
 - `data/build.json` (`wall_stone`) (at 8d361e5): the straight stone wall in the palette with Free building (game #573)
 - `data/sprites/wall_stone_gate_2.json`, `data/sprites/wall_stone_gate_3.json`, `src/map.js:1691-1845` (at 77fee9d): the castle gate is a stone-height wall of kind door on each edge of its run (game #570)

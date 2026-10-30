@@ -6,7 +6,7 @@ numbersOk: true
 summary: Round stone rooms, 5 or 7 tiles across: a circle drawn round stepped tile walls, doors and windows only at its four door points, on the map and built only with Free building for now.
 ---
 
-<!-- typed: a round room's inside, 21 tiles at 5 across and 37 at 7, its outline's 20 and 28 edges, and its eight curve-crossed tiles are its geometry (`src/round.js` `shape`), not named numbers; the 5 and the 7 are `round.SIZES`, a list a lookup cannot name; the build's two fifths longer at 7 is a factor typed in `src/placement.js` -->
+<!-- typed: a round room's inside, 21 tiles at 5 across and 37 at 7, its outline's 20 and 28 edges, and its eight curve-crossed tiles are its geometry (`src/round.js` `shape`), not named numbers; the 5 and the 7 are `round.SIZES`, a list a lookup cannot name; the build's two fifths longer at 7 is a factor typed in `src/placement.js`; how far a straight wall's filler runs along the outline (half a tile, about a third, almost nothing) is the curve's crossing, worked out in `src/round.js` `base`, not a named number -->
 
 A **round room** is a room with a circular stone wall, 5 or 7 tiles across, drawn as a ring round a square of tiles. On the map, [[Hollow Farm's dovecote]] is one, and the proving ground has a 7 by 7 room and a two-storey round tower. Players can build them only with **Free building** on: round walls are stone only, a few on the map, and not in the game's normal build menu until their cost is settled (Michael, 2026-10-27).
 
@@ -48,14 +48,19 @@ The ghost is red, with the reason, unless:
 - its nearest edge is within reach ("Too far"; with Free building on, which a round room always has, that is {{n census.constants.placement.FREE_REACH tiles}}), and nobody living stands across its outline ("Someone is in the way"; "Step back" when it is you), a corpse lying across it not counting;
 - its outline crosses no stair's run or top ("Not across a stair", "Not across a stair's top"); nor may a stair be built with a ring's curve over its stairwell or its landing (see [[Upper floors]]).
 
-A plain wall already on the outline is taken into the ring: a round room can stand against a house as an apse, the house's wall drawn as the curve. A torch on that wall falls to the floor, put out, and a painting falls whole. A door or a window already at a door point stays where it is.
+A plain wall already on the outline is taken into the ring: a round room can stand against a house as an apse, the house's wall drawn as the curve. A torch on that wall falls to the floor, put out, and a painting falls whole. A door or a window already at a door point stays where it is. A straight wall that already ends in one of the square's corner pockets refuses the ring ("A wall ends in its corner: start it at a step"; see below); a house's corner standing on the square's own corner, or a wall running on through it, does not.
+
+### A straight wall meeting a ring
+
+A straight wall built up to a round room ends at a **step of the ring's outline**: a corner of the stepped outline, where the join is a wall corner and the rooms on either side are closed by the ring's own edges. It may not end in a **corner pocket**, the tiles of the square outside the circle: a wall whose end nearer the ring's centre would be the square's own corner, or on a 7 by 7 the pocket corner on either side of it, with no other wall already standing there, is refused, "Start it at a step of the round wall". Walls go up an edge at a time, so a wall that runs through a pocket is built **from the ring outward**: its first edge from the step corner, each later edge against the one before. That is how a wall along the square's side is built (from the step corner out), and on a 7 by 7 a wall through its pocket to the diagonal corner. A wall square to the ring's side, coming in from outside toward a step corner, is built edge by edge as usual, since each edge ends on the outline or against the edge before it. A wall may run outward from the ring as far as you like, and a wall to a door point's end is a wall to a step like any other. Fences follow the same rule. A door or a window stamped over a wall already standing is not checked, since no wall's end changes; the rule is asked when a wall is built, so taking down the edge nearest the ring leaves the rest standing where it is. A building whose corner would land on the square's own corner, built after the ring, has its first wall refused there, since the rule sees one wall at a time; the second would have closed the corner.
+
+Where the wall meets the ring, its own picture **runs on to the curve**: from the step corner along the outline's edge to where the curve crosses it, and no further (half a tile on a 5 by 5's step corners, about a third of a tile on a 7 by 7's, and almost nothing at a 7 by 7's diagonal corners). A wall square to the ring runs on along its own line into the curve; a wall along the square's side, tangent to the curve, turns down the step edge to it. At a door point's ends, where the curve touches the square, there is nothing to fill. The filler is a picture alone, drawn by each player's game from the walls that stand: nothing is saved or sent. It fades with its wall when that wall is a near wall (see [[Rooms]]), and a faded filler stops at the face of a faded post. The post at the join follows the straight walls' rule with the filler counted as a piece of the joining wall: a wall running on into the curve has no post at the join; a wall along the side, turning down the step edge, gets a corner post there; a plain wall ending at a door point's end gets no post, its end in the curve. A [[Fences|fence]], bars, a [[Cliffs|cliff]], a stone ramp's side, and a [[Battlements|battlement]] take no filler and keep their own ends, a lone fence at a door point's end its end post among them; a [[Castle gates|castle gate]]'s run gets its plain stone wall's.
 
 ### Taking one apart
 
 The Take apart tool (X) takes a round room you built **whole**, never one edge alone: pointing at any edge of it lights up the whole ring. A wall or a door it took in when it was built is left as it was, straight again. A ring built with Free building gives nothing back. A round room that is part of the map cannot be taken apart ("That is the village's.").
 
 {{planned doc=50 step=4 note="Rounded corners: a quarter circle joining two straight walls at a room's corner."}}
-{{planned doc=50 step=3 note="A straight wall meeting a ring: its picture run on to the curve, and the build rule that it ends at a corner of the stepped outline."}}
 
 ## Numbers
 
@@ -66,7 +71,7 @@ The Take apart tool (X) takes a round room you built **whole**, never one edge a
 
 ## With friends
 
-A guest builds a round room through the same path as the host: their drag sends a build command naming the square's corner and its size, which the host checks and builds on the guest's own character; Take apart works the same way, a command naming the ring. The ring travels as its walls in the map's chunks, so a guest's game rebuilds the room and its curve from them, and each player draws it for themselves.
+A guest builds a round room through the same path as the host: their drag sends a build command naming the square's corner and its size, which the host checks and builds on the guest's own character; Take apart works the same way, a command naming the ring. The ring travels as its walls in the map's chunks, so a guest's game rebuilds the room and its curve from them, and each player draws it for themselves. A guest's straight wall toward a ring goes through the same build command and is refused by the host with the same words; the filler at a join is each player's own drawing from the walls they already have, so nothing new travels for it.
 
 ## Settings that change it
 
@@ -81,6 +86,10 @@ A guest builds a round room through the same path as the host: their drag sends 
 ## Sources
 
 <!-- sources at a0cf5a2 -->
+- `src/map.js:1580-1646`, `src/round.js:68-100`, `src/round.js:199-232` (at bdaae90): a straight wall toward a ring ends at a vertex of the stepped outline, never at a corner pocket's with no other wall there, "Start it at a step of the round wall"; the outline's and the pockets' vertices; where the curve crosses each outline edge from a vertex (half a tile at most), nothing at a door point's ends (game #589, issue #588)
+- `src/map.js:1708-1721` (at bdaae90): a ring refused over a straight wall already ending in one of its corner pockets, "A wall ends in its corner: start it at a step" (game #589)
+- `src/map.js:1648-1678`, `src/render/walls.js:464-485`, `src/render/walls.js:496-625`, `src/render/walls.js:826-830` (at bdaae90): the filler, the joining wall's own picture on the outline edge from the vertex to the curve, a picture alone, faded with its wall and cut at a faded post's face; no filler for a fence, bars, a cliff, a ramp's side, or a battlement, a gate's run's plain wall; the post at the join: none where the wall runs on into the curve, the corner's where it turns down the step edge, none for a plain wall at a door point's end, a lone fence there keeping its own (game #589)
+- `src/map.js:1229`, `src/placement.js:823` (at bdaae90): `canBuildWall`, the ghost, and a guest's build command meet the rule through the one hook, `map.ringWallProblem` (game #589)
 - `src/map.js:1598-1603` (at 8d361e5): upstairs, a void tile under the ring says "A round room upstairs needs a floor under all of it", or over a stair's hole "A stairwell is under it: keep the ring off the stair's hole" (game #576)
 - `src/render/storeys.js:457-462` (at 8d361e5): a storey's floor clipped to the curve only on the ring's stepped tiles, the square's corners whole (game #577)
 - `src/placement.js:43-50`, `src/placement.js:185-187` (at 8d361e5): a ring's reach with Free building (game #575)
