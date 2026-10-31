@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-31: synced to `4b035da`
+
+- **Fixed in the game:** **a tower's top drawn round** (game #618, Michael's playtest of 2026-10-31): a floor over a round tower is cut to its wall and its corners filled, a whole disc to the rim. [[Round rooms]] updated.
+- **Fixed in the game:** **battlements beside a stair** (game #619, Michael's playtest of 2026-10-31): a battlement along the edge of a stairwell is no longer refused with "No floor there". [[Battlements]] updated.
+
 ## 2026-10-30: synced to `f0336bd`
 
 - **Changed in the game:** **the cutaway and walls down** (game #616, Michael's ruling of 2026-10-30): a wall between the camera and you, or the cursor while building, is cut to a stub indoors and out, and H with the build menu open puts every wall on your floor down. [[Building]] and [[Controls]] updated.

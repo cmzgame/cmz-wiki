@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "f0336bd12de9a4649106e1d53520c9ed15a0adf4",
-  "short": "f0336bd",
-  "date": "2026-10-30T23:36:37-05:00",
-  "subject": "Merge #617: The Planning tool",
+  "commit": "4b035dab16831a1d4aeb578b667389a097562986",
+  "short": "4b035da",
+  "date": "2026-10-31T11:55:04-05:00",
+  "subject": "Merge #619: Battlements beside a stair",
   "ref": "origin/main"
  },
  "counts": {
@@ -11260,9 +11260,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:1150",
-    "placement.js:1161",
-    "placement.js:1165"
+    "placement.js:1152",
+    "placement.js:1163",
+    "placement.js:1167"
    ]
   },
   {
@@ -11583,31 +11583,31 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:2151"
+    "placement.js:2153"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:2144"
+    "placement.js:2146"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:2186"
+    "placement.js:2188"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:2192"
+    "placement.js:2194"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1633"
+    "placement.js:1635"
    ]
   },
   {
@@ -12038,7 +12038,7 @@
   {
    "key": "${size} · click to take it up",
    "at": [
-    "placement.js:2170"
+    "placement.js:2172"
    ]
   },
   {
@@ -12077,39 +12077,39 @@
     "placement.js:580",
     "placement.js:631",
     "placement.js:698",
-    "placement.js:2072",
-    "placement.js:2109"
+    "placement.js:2074",
+    "placement.js:2111"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:2202"
+    "placement.js:2204"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:2182",
-    "placement.js:2187"
+    "placement.js:2184",
+    "placement.js:2189"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1654"
+    "placement.js:1656"
    ]
   },
   {
    "key": "Click to build ${g.n} across (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:2197"
+    "placement.js:2199"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:2165"
+    "placement.js:2167"
    ]
   },
   {
@@ -12276,7 +12276,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1556"
+    "placement.js:1558"
    ]
   },
   {
@@ -12671,7 +12671,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 2204
+   "lines": 2206
   },
   {
    "path": "net.js",
@@ -12714,12 +12714,12 @@
    "lines": 970
   },
   {
-   "path": "ui/inventory-panel.js",
-   "lines": 826
+   "path": "render/storeys.js",
+   "lines": 876
   },
   {
-   "path": "render/storeys.js",
-   "lines": 784
+   "path": "ui/inventory-panel.js",
+   "lines": 826
   },
   {
    "path": "assets.js",
