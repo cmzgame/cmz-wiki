@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `f0336bd`
+
+- **Changed in the game:** **the cutaway and walls down** (game #616, Michael's ruling of 2026-10-30): a wall between the camera and you, or the cursor while building, is cut to a stub indoors and out, and H with the build menu open puts every wall on your floor down. [[Building]] and [[Controls]] updated.
+- **New in the game:** **Planning** (game #617, Michael's ruling of 2026-10-30): the Ruler leaves the build menu for its own tool, P or Plan in the right-click menu: rulers in five pastels that stay in the world with their size on them, taken up with a click; the build menu and the Planning panel have close buttons. [[Planning]] is new; [[Building]] and [[Controls]] updated.
+
 ## 2026-10-30: synced to `89f3f0e`
 
 - **New in the game:** **the Ruler, and the build menu stays open** (game #615, Michael's ruling of 2026-10-30): a Ruler row on both of the build menu's tabs counts the tiles of a drag, outlined in yellow; picking a row no longer closes the menu, Escape puts the piece down and then closes it, N closes both. [[Building]] updated.

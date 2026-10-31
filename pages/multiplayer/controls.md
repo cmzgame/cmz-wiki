@@ -46,6 +46,8 @@ The buttons at the bottom right (see [[Interface#The row of buttons|Interface]])
 - `Tab`: the bag (or the character panel if you have no bag on your back). Also closes the actions menu.
 - `C`: the character panel.
 - `N`: the build palette (see [[Building]]). Not with the bag open: the game says "Close your bag to build."
+- `H`: with the build palette open, puts every wall on your floor down to its foot, and again raises them (see [[Building]]).
+- `P`: the Planning panel, rulers laid on the ground that stay (see [[Planning]]). Not with the bag open, as `N`.
 - `X`: Take apart, which highlights what players built or made; a click takes it apart for half its materials (see [[Building]]). Not with the bag open, as `N`.
 - `R`: turn the thing being placed; rotate an item being dragged.
 - `M`: the [[Map]]: what anyone in the world has seen, and where every player is. The wheel zooms it and a drag moves it; the world keeps running while it is open.

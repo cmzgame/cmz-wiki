@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "89f3f0ecb49700aff74c230e9b7fdc93f1b63c3f",
-  "short": "89f3f0e",
-  "date": "2026-10-30T22:37:12-05:00",
-  "subject": "Merge #615: The ruler; the build menu stays open",
+  "commit": "f0336bd12de9a4649106e1d53520c9ed15a0adf4",
+  "short": "f0336bd",
+  "date": "2026-10-30T23:36:37-05:00",
+  "subject": "Merge #617: The Planning tool",
   "ref": "origin/main"
  },
  "counts": {
@@ -22,12 +22,12 @@
   "rules": 10,
   "fixedRules": 5,
   "liveRules": 5,
-  "keys": 21,
+  "keys": 23,
   "verbs": 31,
-  "menuLabels": 109,
+  "menuLabels": 110,
   "events": 38,
   "checks": 97,
-  "modules": 155
+  "modules": 159
  },
  "items": [
   {
@@ -10087,7 +10087,9 @@
    "stub": 8,
    "openingAlpha": 0.3,
    "fogAlpha": 0.36,
-   "seenAlpha": 0.5
+   "seenAlpha": 0.5,
+   "cutReach": 7,
+   "cutWidth": 4
   },
   "ladder": {
    "climbSeconds": 1.5
@@ -10456,13 +10458,6 @@
   }
  },
  "build": {
-  "ruler": {
-   "label": "Ruler",
-   "kind": "ruler",
-   "group": "Tools",
-   "hint": "Click, then press and drag on the ground: it counts the tiles",
-   "note": "Michael, 2026-10-30: \"a click and drag ruler tool. drag and it tells you tile count. Yellow? Put it in the build menu\": a measuring tool, not a build: no sprite, no cost, no command; shown on both tabs (placement.onTab), always offered; the drag's rectangle drawn in yellow with its count, kept after the release until the next press; this client's own"
-  },
   "wall": {
    "label": "Log wall",
    "sprite": "wall_log",
@@ -11191,26 +11186,26 @@
   {
    "key": "BracketLeft",
    "at": [
-    "main.js:1251"
+    "main.js:1301"
    ]
   },
   {
    "key": "BracketRight",
    "at": [
-    "main.js:1250"
+    "main.js:1300"
    ]
   },
   {
    "key": "Enter",
    "at": [
-    "main.js:1228"
+    "main.js:1273"
    ]
   },
   {
    "key": "KeyC",
    "at": [
-    "main.js:1067",
-    "main.js:1081"
+    "main.js:1112",
+    "main.js:1126"
    ]
   },
   {
@@ -11226,21 +11221,33 @@
    ]
   },
   {
+   "key": "KeyH",
+   "at": [
+    "main.js:1277"
+   ]
+  },
+  {
    "key": "KeyL",
    "at": [
-    "main.js:1248"
+    "main.js:1298"
    ]
   },
   {
    "key": "KeyM",
    "at": [
-    "main.js:1231"
+    "main.js:1281"
    ]
   },
   {
    "key": "KeyN",
    "at": [
-    "main.js:1230"
+    "main.js:1275"
+   ]
+  },
+  {
+   "key": "KeyP",
+   "at": [
+    "main.js:1276"
    ]
   },
   {
@@ -11253,9 +11260,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:1140",
-    "placement.js:1151",
-    "placement.js:1155"
+    "placement.js:1150",
+    "placement.js:1161",
+    "placement.js:1165"
    ]
   },
   {
@@ -11267,56 +11274,56 @@
   {
    "key": "KeyV",
    "at": [
-    "main.js:1226"
+    "main.js:1271"
    ]
   },
   {
    "key": "KeyX",
    "at": [
-    "main.js:1232"
+    "main.js:1282"
    ]
   },
   {
    "key": "KeyZ",
    "at": [
-    "main.js:1239"
+    "main.js:1289"
    ]
   },
   {
    "key": "NumpadEnter",
    "at": [
-    "main.js:1228"
+    "main.js:1273"
    ]
   },
   {
    "key": "ShiftLeft",
    "at": [
-    "main.js:1315"
+    "main.js:1369"
    ]
   },
   {
    "key": "ShiftRight",
    "at": [
-    "main.js:1315"
+    "main.js:1369"
    ]
   },
   {
    "key": "Slash",
    "at": [
-    "main.js:1229"
+    "main.js:1274"
    ]
   },
   {
    "key": "Space",
    "at": [
-    "main.js:1326"
+    "main.js:1380"
    ]
   },
   {
    "key": "Tab",
    "at": [
-    "main.js:1067",
-    "main.js:1073"
+    "main.js:1112",
+    "main.js:1118"
    ]
   }
  ],
@@ -11551,7 +11558,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1737"
+    "main.js:1794"
    ]
   },
   {
@@ -11563,8 +11570,8 @@
   {
    "key": "Build",
    "at": [
-    "main.js:966",
-    "placement.js:89"
+    "main.js:971",
+    "placement.js:90"
    ]
   },
   {
@@ -11576,31 +11583,31 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:2129"
+    "placement.js:2151"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:2122"
+    "placement.js:2144"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:2163"
+    "placement.js:2186"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:2169"
+    "placement.js:2192"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1626"
+    "placement.js:1633"
    ]
   },
   {
@@ -11630,7 +11637,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1610"
+    "main.js:1667"
    ]
   },
   {
@@ -11713,7 +11720,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1712"
+    "main.js:1769"
    ]
   },
   {
@@ -11744,7 +11751,7 @@
   {
    "key": "Loading the art",
    "at": [
-    "main.js:1590"
+    "main.js:1648"
    ]
   },
   {
@@ -11756,13 +11763,13 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1650"
+    "main.js:1707"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1698"
+    "main.js:1755"
    ]
   },
   {
@@ -11786,7 +11793,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1750"
+    "main.js:1807"
    ]
   },
   {
@@ -11811,15 +11818,15 @@
    ]
   },
   {
-   "key": "Pray",
+   "key": "Plan",
    "at": [
-    "mana.js:89"
+    "main.js:972"
    ]
   },
   {
-   "key": "Press and drag to measure · Esc cancel",
+   "key": "Pray",
    "at": [
-    "placement.js:2147"
+    "mana.js:89"
    ]
   },
   {
@@ -11849,25 +11856,25 @@
   {
    "key": "Reading the data",
    "at": [
-    "main.js:1555"
+    "main.js:1613"
    ]
   },
   {
    "key": "Reading the manifest",
    "at": [
-    "main.js:1551"
+    "main.js:1609"
    ]
   },
   {
    "key": "Reading the map",
    "at": [
-    "main.js:1592"
+    "main.js:1650"
    ]
   },
   {
    "key": "Reading the painted layers",
    "at": [
-    "main.js:1591"
+    "main.js:1649"
    ]
   },
   {
@@ -11879,7 +11886,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1759"
+    "main.js:1816"
    ]
   },
   {
@@ -11939,7 +11946,7 @@
   {
    "key": "Terrain",
    "at": [
-    "placement.js:89"
+    "placement.js:90"
    ]
   },
   {
@@ -12029,6 +12036,12 @@
    ]
   },
   {
+   "key": "${size} · click to take it up",
+   "at": [
+    "placement.js:2170"
+   ]
+  },
+  {
    "key": "${water.BOIL_BUCKET} (no tainted water in it)",
    "at": [
     "interact.js:1216"
@@ -12055,48 +12068,48 @@
   {
    "key": "Building ${d.label.replace(/ \\(.*\\)$/, \"\").toLowerCase()}",
    "at": [
-    "placement.js:219"
+    "placement.js:217"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:571",
-    "placement.js:622",
-    "placement.js:689",
-    "placement.js:2050",
-    "placement.js:2087"
+    "placement.js:580",
+    "placement.js:631",
+    "placement.js:698",
+    "placement.js:2072",
+    "placement.js:2109"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:2179"
+    "placement.js:2202"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:2159",
-    "placement.js:2164"
+    "placement.js:2182",
+    "placement.js:2187"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1647"
+    "placement.js:1654"
    ]
   },
   {
    "key": "Click to build ${g.n} across (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:2174"
+    "placement.js:2197"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:2143"
+    "placement.js:2165"
    ]
   },
   {
@@ -12126,7 +12139,7 @@
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:439"
+    "placement.js:448"
    ]
   },
   {
@@ -12158,7 +12171,7 @@
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:494"
+    "placement.js:503"
    ]
   },
   {
@@ -12245,13 +12258,13 @@
   {
    "key": "autosaveTick",
    "at": [
-    "main.js:1459"
+    "main.js:1515"
    ]
   },
   {
    "key": "bitten",
    "at": [
-    "game.js:465"
+    "game.js:475"
    ]
   },
   {
@@ -12263,7 +12276,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1549"
+    "placement.js:1556"
    ]
   },
   {
@@ -12281,7 +12294,7 @@
   {
    "key": "corpseBurnedAway",
    "at": [
-    "game.js:863"
+    "game.js:874"
    ]
   },
   {
@@ -12299,7 +12312,7 @@
   {
    "key": "drank",
    "at": [
-    "game.js:838"
+    "game.js:849"
    ]
   },
   {
@@ -12342,7 +12355,7 @@
   {
    "key": "gameOver",
    "at": [
-    "game.js:937"
+    "game.js:948"
    ]
   },
   {
@@ -12378,7 +12391,7 @@
   {
    "key": "playerPicked",
    "at": [
-    "game.js:76"
+    "game.js:80"
    ]
   },
   {
@@ -12402,7 +12415,7 @@
   {
    "key": "taintedOnly",
    "at": [
-    "game.js:839"
+    "game.js:850"
    ]
   },
   {
@@ -12448,7 +12461,7 @@
    "at": [
     "archery.js:1154",
     "combat.js:468",
-    "game.js:749"
+    "game.js:760"
    ]
   },
   {
@@ -12654,15 +12667,15 @@
   },
   {
    "path": "main.js",
-   "lines": 2242
+   "lines": 2309
   },
   {
    "path": "placement.js",
-   "lines": 2181
+   "lines": 2204
   },
   {
    "path": "net.js",
-   "lines": 1693
+   "lines": 1698
   },
   {
    "path": "placeholders.js",
@@ -12673,12 +12686,12 @@
    "lines": 1392
   },
   {
-   "path": "ui/screens.js",
-   "lines": 1323
+   "path": "render/walls.js",
+   "lines": 1329
   },
   {
-   "path": "render/walls.js",
-   "lines": 1316
+   "path": "ui/screens.js",
+   "lines": 1325
   },
   {
    "path": "archery.js",
@@ -12698,7 +12711,7 @@
   },
   {
    "path": "game.js",
-   "lines": 959
+   "lines": 970
   },
   {
    "path": "ui/inventory-panel.js",
@@ -12749,20 +12762,20 @@
    "lines": 456
   },
   {
-   "path": "render/rings.js",
-   "lines": 449
+   "path": "render/props.js",
+   "lines": 453
   },
   {
-   "path": "render/props.js",
-   "lines": 446
+   "path": "render/rings.js",
+   "lines": 451
+  },
+  {
+   "path": "render/scene.js",
+   "lines": 414
   },
   {
    "path": "ui/map-panel.js",
    "lines": 412
-  },
-  {
-   "path": "render/scene.js",
-   "lines": 406
   },
   {
    "path": "entities/villager.js",
@@ -12805,12 +12818,12 @@
    "lines": 325
   },
   {
-   "path": "host.js",
-   "lines": 319
+   "path": "tuning.js",
+   "lines": 320
   },
   {
-   "path": "tuning.js",
-   "lines": 315
+   "path": "host.js",
+   "lines": 319
   },
   {
    "path": "ui/nav-row.js",
@@ -12881,12 +12894,12 @@
    "lines": 206
   },
   {
-   "path": "fire.js",
-   "lines": 204
+   "path": "ui/build-palette.js",
+   "lines": 205
   },
   {
-   "path": "ui/build-palette.js",
-   "lines": 202
+   "path": "fire.js",
+   "lines": 204
   },
   {
    "path": "potions.js",
@@ -13101,6 +13114,10 @@
    "lines": 78
   },
   {
+   "path": "plans.js",
+   "lines": 77
+  },
+  {
    "path": "sawpit.js",
    "lines": 77
   },
@@ -13133,6 +13150,10 @@
    "lines": 69
   },
   {
+   "path": "ui/planning-panel.js",
+   "lines": 69
+  },
+  {
    "path": "sick.js",
    "lines": 68
   },
@@ -13149,6 +13170,10 @@
    "lines": 62
   },
   {
+   "path": "render/cutaway.js",
+   "lines": 61
+  },
+  {
    "path": "tracks.js",
    "lines": 58
   },
@@ -13163,6 +13188,10 @@
   {
    "path": "mining.js",
    "lines": 56
+  },
+  {
+   "path": "ui/plan-labels.js",
+   "lines": 55
   },
   {
    "path": "ui/kit.js",
@@ -13486,7 +13515,7 @@
    "OUTDOORS": -2
   },
   "net": {
-   "PROTOCOL": 31,
+   "PROTOCOL": 32,
    "GRACE_S": 60,
    "MAX_PENDING": 180,
    "MAX_BACKLOG": 10,
@@ -13528,6 +13557,10 @@
    "EDGE_CLEARANCE": 0.45,
    "MAX_DRAG": 12,
    "TERRAIN_DRAG": 24
+  },
+  "plans": {
+   "MAX_SPAN": 256,
+   "MAX_PLANS": 500
   },
   "render_area": {
    "CORE_GAIN": 1.4
