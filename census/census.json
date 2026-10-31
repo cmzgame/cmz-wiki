@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "4303e441ff88923987c448358534c4c3b386b98b",
-  "short": "4303e44",
-  "date": "2026-10-30T22:08:44-05:00",
-  "subject": "Merge #614: The build menu's search, kept until changed or the tab closes",
+  "commit": "89f3f0ecb49700aff74c230e9b7fdc93f1b63c3f",
+  "short": "89f3f0e",
+  "date": "2026-10-30T22:37:12-05:00",
+  "subject": "Merge #615: The ruler; the build menu stays open",
   "ref": "origin/main"
  },
  "counts": {
@@ -24,7 +24,7 @@
   "liveRules": 5,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 108,
+  "menuLabels": 109,
   "events": 38,
   "checks": 97,
   "modules": 155
@@ -10456,6 +10456,13 @@
   }
  },
  "build": {
+  "ruler": {
+   "label": "Ruler",
+   "kind": "ruler",
+   "group": "Tools",
+   "hint": "Click, then press and drag on the ground: it counts the tiles",
+   "note": "Michael, 2026-10-30: \"a click and drag ruler tool. drag and it tells you tile count. Yellow? Put it in the build menu\": a measuring tool, not a build: no sprite, no cost, no command; shown on both tabs (placement.onTab), always offered; the drag's rectangle drawn in yellow with its count, kept after the release until the next press; this client's own"
+  },
   "wall": {
    "label": "Log wall",
    "sprite": "wall_log",
@@ -11246,9 +11253,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:1105",
-    "placement.js:1116",
-    "placement.js:1120"
+    "placement.js:1140",
+    "placement.js:1151",
+    "placement.js:1155"
    ]
   },
   {
@@ -11544,7 +11551,7 @@
   {
    "key": "Baking the ground",
    "at": [
-    "main.js:1736"
+    "main.js:1737"
    ]
   },
   {
@@ -11569,31 +11576,31 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:2076"
+    "placement.js:2129"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:2069"
+    "placement.js:2122"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:2105"
+    "placement.js:2163"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:2111"
+    "placement.js:2169"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1584"
+    "placement.js:1626"
    ]
   },
   {
@@ -11623,7 +11630,7 @@
   {
    "key": "Dressing everyone",
    "at": [
-    "main.js:1609"
+    "main.js:1610"
    ]
   },
   {
@@ -11706,7 +11713,7 @@
   {
    "key": "Growing the world",
    "at": [
-    "main.js:1711"
+    "main.js:1712"
    ]
   },
   {
@@ -11749,13 +11756,13 @@
   {
    "key": "Making the held things",
    "at": [
-    "main.js:1649"
+    "main.js:1650"
    ]
   },
   {
    "key": "Making the sounds",
    "at": [
-    "main.js:1697"
+    "main.js:1698"
    ]
   },
   {
@@ -11779,7 +11786,7 @@
   {
    "key": "Packing the atlas",
    "at": [
-    "main.js:1749"
+    "main.js:1750"
    ]
   },
   {
@@ -11807,6 +11814,12 @@
    "key": "Pray",
    "at": [
     "mana.js:89"
+   ]
+  },
+  {
+   "key": "Press and drag to measure · Esc cancel",
+   "at": [
+    "placement.js:2147"
    ]
   },
   {
@@ -11866,7 +11879,7 @@
   {
    "key": "Setting the table",
    "at": [
-    "main.js:1758"
+    "main.js:1759"
    ]
   },
   {
@@ -12042,48 +12055,48 @@
   {
    "key": "Building ${d.label.replace(/ \\(.*\\)$/, \"\").toLowerCase()}",
    "at": [
-    "placement.js:216"
+    "placement.js:219"
    ]
   },
   {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:536",
-    "placement.js:587",
-    "placement.js:654",
-    "placement.js:1997",
-    "placement.js:2034"
+    "placement.js:571",
+    "placement.js:622",
+    "placement.js:689",
+    "placement.js:2050",
+    "placement.js:2087"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:2121"
+    "placement.js:2179"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:2101",
-    "placement.js:2106"
+    "placement.js:2159",
+    "placement.js:2164"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1605"
+    "placement.js:1647"
    ]
   },
   {
    "key": "Click to build ${g.n} across (${costText(g.wallKind)}) · Esc cancel",
    "at": [
-    "placement.js:2116"
+    "placement.js:2174"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:2090"
+    "placement.js:2143"
    ]
   },
   {
@@ -12113,7 +12126,7 @@
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:404"
+    "placement.js:439"
    ]
   },
   {
@@ -12145,7 +12158,7 @@
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:459"
+    "placement.js:494"
    ]
   },
   {
@@ -12250,7 +12263,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1507"
+    "placement.js:1549"
    ]
   },
   {
@@ -12645,7 +12658,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 2123
+   "lines": 2181
   },
   {
    "path": "net.js",
@@ -12741,7 +12754,7 @@
   },
   {
    "path": "render/props.js",
-   "lines": 438
+   "lines": 446
   },
   {
    "path": "ui/map-panel.js",

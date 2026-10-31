@@ -1,7 +1,7 @@
 {
-  "commit": "4303e441ff88923987c448358534c4c3b386b98b",
-  "short": "4303e44",
-  "date": "2026-10-30T22:08:44-05:00",
-  "subject": "Merge #614: The build menu's search, kept until changed or the tab closes",
+  "commit": "89f3f0ecb49700aff74c230e9b7fdc93f1b63c3f",
+  "short": "89f3f0e",
+  "date": "2026-10-30T22:37:12-05:00",
+  "subject": "Merge #615: The ruler; the build menu stays open",
   "ref": "origin/main"
 }

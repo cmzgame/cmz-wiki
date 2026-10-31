@@ -16,6 +16,10 @@ summary: Building log walls, walls of each wood, fences, gates, doors, and windo
 
 N opens a short list on the left of the screen. It has two tabs, **Build** and **Terrain**: Terrain is offered only while Free building is on, and with it off the list is the Build tab alone, with no tab bar. The list scrolls under a greatest height (see [[Terrain#The list|Terrain]]). The Build tab has a row for each piece, under small headings (Walls and openings, Props, Floors and stairs, and, with Free building on, Castle), and a **Take apart** row:
 
+**The palette stays open** while you build (Michael's ruling of 2026-10-30: "using it does not close the build tool. Nor does building. It can stay open"): pick a row and the piece is in your hand with the list still up, so the next piece is a click away. Escape puts the piece down, and Escape again, with nothing in hand, closes the palette; N closes it and puts the piece down at once.
+
+**The Ruler** is the first row on both tabs, under **Tools** ("a click and drag ruler tool. drag and it tells you tile count. Yellow?"). Pick it, press on the ground, and drag: the rectangle from where you pressed to the tile under the cursor is outlined in yellow tiles, and the prompt says its size, "7 tiles" for a straight run and "5 × 4 tiles (20)" for a rectangle. When you let go the measure stays until you press again. It builds nothing, costs nothing, and is your own: no other player sees it.
+
 **A search box** sits under the tabs (Michael's ruling of 2026-10-30: "if I search "stone" and close the build menu, I want it to still be filtered to that until I log off or change it"). Type in it and each tab shows only the rows with every word you typed in their name or heading: "stone" leaves the stone pieces, "gate 3" the wide stone gate; a tab with none says "Nothing here matches". The search stays when you close the palette and when the page reloads, until you change it or close the browser tab. Keys typed in it never move you or close the palette; Escape leaves the box, and Enter picks the first row shown.
 
 - **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built at once, with a [[Hatchet]] on you.

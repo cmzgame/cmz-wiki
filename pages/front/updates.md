@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `89f3f0e`
+
+- **New in the game:** **the Ruler, and the build menu stays open** (game #615, Michael's ruling of 2026-10-30): a Ruler row on both of the build menu's tabs counts the tiles of a drag, outlined in yellow; picking a row no longer closes the menu, Escape puts the piece down and then closes it, N closes both. [[Building]] updated.
+
 ## 2026-10-30: synced to `4303e44`
 
 - **Changed in the game:** **round walls by size** (game #613, Michael's ruling of 2026-10-30): the Round stone wall is two rows, 5 across and 7 across, each placed by a click centred on the cursor, the drag gone. [[Round rooms]] and [[Building]] updated.
