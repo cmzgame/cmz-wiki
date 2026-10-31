@@ -26,7 +26,7 @@ The valley's own buildings are built in oak, spruce, mahogany, and daub, mixed: 
 
 ### Building them
 
-The build palette has a row for each wall: **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each {{n build.wall_oak.cost.plank}} [[Plank|plank]] and {{n build.wall_oak.seconds seconds}} with a [[Smith's hammer]] on you, beside the **Log wall**. **Winter Pine wall** and **Bloodbark wall** appear only while **Free building** is on, until their regions can be reached; built without it they are refused ("Winter Pine is found beyond the valley").
+The build palette has a row for each wall: **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each {{n build.wall_oak.cost.plank}} [[Plank|plank]], built at once with a [[Smith's hammer]] on you, beside the **Log wall**. **Winter Pine wall** and **Bloodbark wall** appear only while **Free building** is on, until their regions can be reached; built without it they are refused ("Winter Pine is found beyond the valley").
 
 ### The wood of a door or a window
 
@@ -41,7 +41,7 @@ Removing a door or a window you built puts the wall back in its own wood.
 
 ## Numbers
 
-- A wall of any of the six woods: {{n build.wall_oak.cost.plank}} plank, {{n build.wall_oak.seconds seconds}}.
+- A wall of any of the six woods: {{n build.wall_oak.cost.plank}} plank, built at once.
 - Height and thickness: oak {{n sprites.wall_wood.wall.height}} by {{n sprites.wall_wood.wall.thickness}}, spruce {{n sprites.wall_spruce.wall.height}} by {{n sprites.wall_spruce.wall.thickness}}, mahogany {{n sprites.wall_mahogany.wall.height}} by {{n sprites.wall_mahogany.wall.thickness}}, daub {{n sprites.wall_daub.wall.height}} by {{n sprites.wall_daub.wall.thickness}}, Winter Pine {{n sprites.wall_winterpine.wall.height}} by {{n sprites.wall_winterpine.wall.thickness}}, Bloodbark {{n sprites.wall_bloodbark.wall.height}} by {{n sprites.wall_bloodbark.wall.thickness}} pixels.
 - A door: {{n build.door.cost.plank}} planks; a window: {{n build.window.cost.plank}} planks, in any wood.
 

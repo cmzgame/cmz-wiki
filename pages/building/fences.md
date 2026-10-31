@@ -50,8 +50,8 @@ A gate is a door in a fence. Tap E to open or close it, as with any door (see [[
 
 The build palette on N has a **Fence** and a **Gate**, both built with a [[Smith's hammer]] on you (see [[Building]]):
 
-- A **Fence** costs {{n build.fence.cost.plank}} [[Plank|plank]] a stretch and takes {{n build.fence.seconds seconds}}. It needs an empty edge.
-- A **Gate** costs {{n build.gate.cost.plank}} planks and takes {{n build.gate.seconds seconds}}. It goes on an empty edge or into a stretch of fence, and never into another wall: laid on a wall of wood, stone, or logs, it says "Only in a fence". Like any door, it needs both its tiles clear.
+- A **Fence** costs {{n build.fence.cost.plank}} [[Plank|plank]] a stretch and is built at once. It needs an empty edge.
+- A **Gate** costs {{n build.gate.cost.plank}} planks and is built at once. It goes on an empty edge or into a stretch of fence, and never into another wall: laid on a wall of wood, stone, or logs, it says "Only in a fence". Like any door, it needs both its tiles clear.
 
 A Door from the palette laid on a stretch of fence also becomes a gate, at a door's cost. A window cannot be built into a fence. Removing a gate built into a fence puts the fence back; removing one built on an empty edge leaves the edge empty.
 
@@ -65,8 +65,8 @@ The valley has fences round the graveyard, your cottage's garden, the inn's yard
 
 - Height: {{n sprites.wall_fence.wall.height}} pixels.
 - Thickness: {{n sprites.wall_fence.wall.thickness}} pixels.
-- To build a stretch of fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
-- To build a gate: {{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}.
+- To build a stretch of fence: {{n build.fence.cost.plank}} plank, built at once.
+- To build a gate: {{n build.gate.cost.plank}} planks, built at once.
 - A gate's swing: {{n census.constants.render_walls.SWING_S seconds}}.
 - Hit points of a stretch of fence: {{n tuning.world.fenceHp}}; of a gate, {{n tuning.world.fenceGateFactor}} of that.
 - Hit points a strike takes: {{n tuning.zombie.fenceStrike}}.

@@ -38,7 +38,7 @@ A round room with its door shut is as safe as any room: nothing breaks the ring,
 
 {{devonly note="Round walls are not in the game yet: the Round stone wall is listed in the build palette only while Free building is on, until their cost is settled."}}
 
-With **Free building** on, the build palette (N) has a **Round stone wall** row. Press on a tile to start the room's square at that corner and drag outward: the ghost is a circle in its square, 5 across, growing to 7 once the drag covers seven tiles either way. Release to build. A timed bar runs, as for any wall ("Building round stone wall"), {{n build.round_stone.seconds seconds}} for a 5 by 5 and two fifths longer for a 7 by 7. Without Free building the round stone wall is refused: "Round walls are not in the game yet".
+With **Free building** on, the build palette (N) has a **Round stone wall** row. Press on a tile to start the room's square at that corner and drag outward: the ghost is a circle in its square, 5 across, growing to 7 once the drag covers seven tiles either way. Release to build: the room goes up at once, as everything in the build menu does (Michael's ruling of 2026-10-30, Build times 0). Without Free building the round stone wall is refused: "Round walls are not in the game yet".
 
 The ghost is red, with the reason, unless:
 
@@ -66,7 +66,7 @@ The Take apart tool (X) takes a round room you built **whole**, never one edge a
 
 - Sizes: 5 or 7 tiles across.
 - The round stone wall's cost: {{n build.round_stone.cost.stone}} [[Stone|stone]] an edge it lays, never charged while it is buildable only with Free building.
-- Its time: {{n build.round_stone.seconds seconds}} for a 5 by 5, two fifths more for a 7 by 7.
+- Its time: none; it is built at once.
 - The curve for bodies: a straight piece every {{n census.constants.round.CHORD_DEG}} degrees; the drawn ring: {{n census.constants.render_rings.SEGMENTS}} segments.
 
 ## With friends

@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "f47cd9821f55082bb7a435ee9c6555fbb14c954a",
-  "short": "f47cd98",
-  "date": "2026-10-30T18:57:11-05:00",
-  "subject": "Merge #611: Mountains in tiers; no player-built way up a hill",
+  "commit": "6ddc2f02897719dcf3a23f9b52102951c828fe12",
+  "short": "6ddc2f0",
+  "date": "2026-10-30T21:49:59-05:00",
+  "subject": "Merge #612: Build times 0; everything in the build menu built at once",
   "ref": "origin/main"
  },
  "counts": {
@@ -10462,7 +10462,7 @@
    "cost": {
     "log": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "notch",
    "group": "Walls and openings"
   },
@@ -10473,7 +10473,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10484,7 +10484,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10495,7 +10495,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10506,7 +10506,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10517,7 +10517,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "region": true,
    "group": "Walls and openings"
@@ -10529,7 +10529,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "region": true,
    "group": "Walls and openings"
@@ -10540,7 +10540,7 @@
    "cost": {
     "plank": 3
    },
-   "seconds": 4,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10550,7 +10550,7 @@
    "cost": {
     "plank": 2
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10561,7 +10561,7 @@
    "cost": {
     "stone": 1
    },
-   "seconds": 6,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Walls and openings",
@@ -10574,7 +10574,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 2,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10586,7 +10586,7 @@
    "cost": {
     "plank": 2
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "group": "Walls and openings"
   },
@@ -10597,7 +10597,7 @@
    "cost": {
     "stone": 2
    },
-   "seconds": 20,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Walls and openings",
@@ -10611,7 +10611,7 @@
    "cost": {
     "stone": 6
    },
-   "seconds": 8,
+   "seconds": 0,
    "group": "Props",
    "note": "the Fireplace (Michael, 2026-10-26, the fire rulings under Round rooms: a spec; it replaced the generated hearth): the drawn fireplace, two tiles along a flat wall indoors, its facing from the wall it backs onto (src/setdown.js fitFor); a switch (docs/43 section 3), out when built; cooks; never moved; taken apart out for half its stone; no tool (the builder's default, as the hearth's was)"
   },
@@ -10623,7 +10623,7 @@
    "cost": {
     "stone": 8
    },
-   "seconds": 10,
+   "seconds": 0,
    "group": "Props",
    "note": "the fire pit (Michael, 2026-10-26, the fire rulings): 2 by 2 on open ground, indoors or out, never on water (roads are fine), clear of a door's two tiles; a switch, out when built; cooks; never moved; taken apart out for half its stone; the cost and the seconds Primary's and the builder's defaults; no tool, as the Fireplace"
   },
@@ -10635,7 +10635,7 @@
    "cost": {
     "plank": 3
    },
-   "seconds": 6,
+   "seconds": 0,
    "tool": "build",
    "group": "Props",
    "note": "docs/45 section 3: a feeding trough (not the water trough) in a pen, filled with grain, vegetables, or hay; built from the palette, planks (Primary's default)"
@@ -10647,7 +10647,7 @@
    "cost": {
     "plank": 1
    },
-   "seconds": 1,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Floors and stairs",
@@ -10660,7 +10660,7 @@
    "cost": {
     "stone": 1
    },
-   "seconds": 1,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Floors and stairs",
@@ -10674,7 +10674,7 @@
    "cost": {
     "plank": 10
    },
-   "seconds": 20,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Floors and stairs",
@@ -10687,7 +10687,7 @@
    "cost": {
     "plank": 4
    },
-   "seconds": 10,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Floors and stairs",
@@ -10702,7 +10702,7 @@
     "stone": 9,
     "plank": 1
    },
-   "seconds": 30,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "group": "Floors and stairs",
@@ -10790,7 +10790,7 @@
    "cost": {
     "stone": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "tab": "terrain",
@@ -10804,7 +10804,7 @@
    "cost": {
     "stone": 1
    },
-   "seconds": 3,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "tab": "terrain",
@@ -10818,7 +10818,7 @@
    "cost": {
     "stone": 1
    },
-   "seconds": 1,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "tab": "terrain",
@@ -10832,7 +10832,7 @@
    "cost": {
     "stone": 1
    },
-   "seconds": 1,
+   "seconds": 0,
    "tool": "build",
    "dev": true,
    "tab": "terrain",

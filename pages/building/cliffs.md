@@ -65,8 +65,8 @@ Cliffs in the ordinary game, cliffs placed by the map, and a cliff-edged world a
 ## Numbers
 
 - A cliff wall: {{n sprites.wall_cliff.wall.height}} pixels tall, {{n sprites.wall_cliff.wall.thickness}} thick.
-- Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} [[Stone|stone]] each, {{n build.wall_cliff.seconds seconds}}.
-- Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, {{n build.floor_cliff_top.seconds second}} a tile.
+- Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} [[Stone|stone]] each, built at once.
+- Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, built at once.
 - Stone ramp: placed at once, with no cost, time, or tool; three tiles, one storey. Its sides: {{n sprites.wall_ramp_side.wall.height}} pixels tall, {{n sprites.wall_ramp_side.wall.thickness}} thick.
 - The walls' and tops' costs are placeholders, copied from the stone pieces, never charged while cliffs are built only with Free building.
 

@@ -16,20 +16,20 @@ summary: Building log walls, walls of each wood, fences, gates, doors, and windo
 
 N opens a short list on the left of the screen. It has two tabs, **Build** and **Terrain**: Terrain is offered only while Free building is on, and with it off the list is the Build tab alone, with no tab bar. The list scrolls under a greatest height (see [[Terrain#The list|Terrain]]). The Build tab has a row for each piece, under small headings (Walls and openings, Props, Floors and stairs, and, with Free building on, Castle), and a **Take apart** row:
 
-- **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built in {{n build.wall.seconds seconds}}, with a [[Hatchet]] on you.
-- **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each costing {{n build.wall_oak.cost.plank}} [[Plank|plank]], built in {{n build.wall_oak.seconds seconds}}, with a [[Smith's hammer]] on you. **Winter Pine wall** and **Bloodbark wall** are listed only while Free building is on (see [[Woods]]).
-- **Door**, costing {{n build.door.cost.plank}} [[Plank|planks]], built in {{n build.door.seconds seconds}}, with a [[Smith's hammer]] on you.
-- **Window**, costing {{n build.window.cost.plank}} planks, built in {{n build.window.seconds seconds}}, with a smith's hammer on you.
-- **Fence**, costing {{n build.fence.cost.plank}} plank a stretch, built in {{n build.fence.seconds seconds}}, with a smith's hammer on you.
-- **Gate**, costing {{n build.gate.cost.plank}} planks, built in {{n build.gate.seconds seconds}}, with a smith's hammer on you.
-- **Fireplace**, costing {{n build.fireplace.cost.stone}} [[Stone|stone]], built in {{n build.fireplace.seconds seconds}}, with no tool: two tiles indoors with its back along a plain wall ("Indoors only", "Against a wall"), facing out from the wall the cursor finds. See [[Fireplace]].
-- **Fire pit**, costing {{n build.fire_pit.cost.stone}} stone, built in {{n build.fire_pit.seconds seconds}}, with no tool: two tiles by two on open ground, indoors or out, never on water ("Not on water"). See [[Fire pit]].
-- **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built in {{n build.feed_trough.seconds seconds}}, with a smith's hammer on you. See [[Feeding trough]].
-- **Stone wall**, listed only while Free building is on: the village's own straight stone wall, built a segment at a time in {{n build.wall_stone.seconds seconds}}; its cost of {{n build.wall_stone.cost.stone}} [[Stone|stone]] is a placeholder, never charged. Without Free building it is refused, "Not in the game yet". It is the wall a [[Castle gates|castle gate]] is stamped over, and the wall a wall walk's floor usually stands on (see [[Battlements]]).
-- **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built in {{n build.round_stone.seconds seconds}} at 5. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
-- **Plank floor** and **Stone floor**, listed only while Free building is on: a floor laid a tile at a time, or a rectangle by a drag, {{n build.floor_wood.seconds second}} a tile, on the ground or on an upper floor wherever it touches floor already there. Without Free building they are refused, "Floors are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
+- **Log wall**, costing {{n build.wall.cost.log}} [[Log]], built at once, with a [[Hatchet]] on you.
+- **Oak wall**, **Spruce wall**, **Mahogany wall**, and **Daub wall**, each costing {{n build.wall_oak.cost.plank}} [[Plank|plank]], built at once, with a [[Smith's hammer]] on you. **Winter Pine wall** and **Bloodbark wall** are listed only while Free building is on (see [[Woods]]).
+- **Door**, costing {{n build.door.cost.plank}} [[Plank|planks]], built at once, with a [[Smith's hammer]] on you.
+- **Window**, costing {{n build.window.cost.plank}} planks, built at once, with a smith's hammer on you.
+- **Fence**, costing {{n build.fence.cost.plank}} plank a stretch, built at once, with a smith's hammer on you.
+- **Gate**, costing {{n build.gate.cost.plank}} planks, built at once, with a smith's hammer on you.
+- **Fireplace**, costing {{n build.fireplace.cost.stone}} [[Stone|stone]], built at once, with no tool: two tiles indoors with its back along a plain wall ("Indoors only", "Against a wall"), facing out from the wall the cursor finds. See [[Fireplace]].
+- **Fire pit**, costing {{n build.fire_pit.cost.stone}} stone, built at once, with no tool: two tiles by two on open ground, indoors or out, never on water ("Not on water"). See [[Fire pit]].
+- **Feeding trough**, costing {{n build.feed_trough.cost.plank}} planks, built at once, with a smith's hammer on you. See [[Feeding trough]].
+- **Stone wall**, listed only while Free building is on: the village's own straight stone wall, built a segment at a time, each at once; its cost of {{n build.wall_stone.cost.stone}} [[Stone|stone]] is a placeholder, never charged. Without Free building it is refused, "Not in the game yet". It is the wall a [[Castle gates|castle gate]] is stamped over, and the wall a wall walk's floor usually stands on (see [[Battlements]]).
+- **Round stone wall**, listed only while Free building is on: a round stone room 5 or 7 tiles across, dragged out from one corner of its square, built at once. Without Free building it is refused, "Round walls are not in the game yet". See [[Round rooms]].
+- **Plank floor** and **Stone floor**, listed only while Free building is on: a floor laid a tile at a time, or a rectangle by a drag, all at once, on the ground or on an upper floor wherever it touches floor already there. Without Free building they are refused, "Floors are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 - **Wood ladder**, listed only while Free building is on: a ladder on one tile, climbed with E to its landing a storey up (see [[Upper floors#Ladders|Ladders]]).
-- **Wood stair** and **Stone stair**, listed only while Free building is on: a stair three tiles long climbing one storey north or west, away from you, with its landing laid on the floor above, built in {{n build.stair_wood.seconds seconds}} in wood and {{n build.stair_stone.seconds seconds}} in stone. Without Free building they are refused, "Stairs are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
+- **Wood stair** and **Stone stair**, listed only while Free building is on: a stair three tiles long climbing one storey north or west, away from you, with its landing laid on the floor above, built at once. Without Free building they are refused, "Stairs are not in the game yet". See [[Upper floors#Building floors and stairs|Upper floors]].
 - On the **Terrain** tab, listed only while Free building is on, the ground is painted a drag at a time: **Grass**, **Dirt**, **Cobblestone**, **Shallow water**, **Water**, and the pink **Random spawn** tile, a tag for where random things can spawn, which does nothing yet. Painting is instant and free, on the ground only, and leaves nothing to take apart. See [[Terrain]].
 - Also on the **Terrain** tab, under Landforms, **Cliff wall**, **Grassy cliff wall**, **Cliff top**, **Grassy cliff top**, and **Stone ramp**, listed only while Free building is on, for experimenting with hills: a cliff wall is a rock wall on an edge that takes no door, window, painting, or torch; a cliff top is a floor laid as the Plank floor is; the ramp is a stair of rock climbing north or west on a smooth slope, its landing a cliff top, placed at once and for free (no bar, no cost, no tool) with its own solid sides round the ground under its landing. Without Free building they are refused, "Cliffs are not in the game yet". See [[Cliffs]].
 - **Stone gate (2 wide)** and **Stone gate (3 wide)**, listed only while Free building is on, under the heading **Castle**: a stone castle gate with a portcullis, stamped over two or three consecutive edges of a plain stone wall, placed at once and for free (no bar, no cost, no tool). E raises and lowers it. Without Free building it is refused, "Castle gates are not in the game yet". See [[Castle gates]].
@@ -113,20 +113,20 @@ The tool cannot be used while carrying furniture ("Your hands are full.") or wit
 
 ## Numbers
 
-- Log wall: {{n build.wall.cost.log}} log, {{n build.wall.seconds seconds}}.
-- A wall of any wood: {{n build.wall_oak.cost.plank}} plank, {{n build.wall_oak.seconds seconds}}.
-- Door: {{n build.door.cost.plank}} planks, {{n build.door.seconds seconds}}.
-- Window: {{n build.window.cost.plank}} planks, {{n build.window.seconds seconds}}.
-- Fence: {{n build.fence.cost.plank}} plank, {{n build.fence.seconds seconds}}.
-- Gate: {{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}.
-- Fireplace: {{n build.fireplace.cost.stone}} stone, {{n build.fireplace.seconds seconds}}.
-- Fire pit: {{n build.fire_pit.cost.stone}} stone, {{n build.fire_pit.seconds seconds}}.
-- Feeding trough: {{n build.feed_trough.cost.plank}} planks, {{n build.feed_trough.seconds seconds}}.
-- Round stone wall: {{n build.round_stone.cost.stone}} stone an edge it lays, never charged (Free building only); {{n build.round_stone.seconds seconds}} at 5 across, two fifths more at 7.
-- Plank floor: {{n build.floor_wood.cost.plank}} plank a tile; Stone floor: {{n build.floor_stone.cost.stone}} stone a tile; {{n build.floor_wood.seconds second}} a tile; never charged (Free building only).
-- Wood stair: {{n build.stair_wood.cost.plank}} planks, {{n build.stair_wood.seconds seconds}}; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, {{n build.stair_stone.seconds seconds}}; never charged (Free building only).
-- Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} stone each, {{n build.wall_cliff.seconds seconds}}; Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, {{n build.floor_cliff_top.seconds second}} a tile; the Stone ramp costs nothing and takes no time or tool; none of these is charged (Free building only).
-- Stone wall: {{n build.wall_stone.cost.stone}} stone, {{n build.wall_stone.seconds seconds}}; never charged (Free building only).
+- Log wall: {{n build.wall.cost.log}} log, built at once.
+- A wall of any wood: {{n build.wall_oak.cost.plank}} plank, built at once.
+- Door: {{n build.door.cost.plank}} planks, built at once.
+- Window: {{n build.window.cost.plank}} planks, built at once.
+- Fence: {{n build.fence.cost.plank}} plank, built at once.
+- Gate: {{n build.gate.cost.plank}} planks, built at once.
+- Fireplace: {{n build.fireplace.cost.stone}} stone, built at once.
+- Fire pit: {{n build.fire_pit.cost.stone}} stone, built at once.
+- Feeding trough: {{n build.feed_trough.cost.plank}} planks, built at once.
+- Round stone wall: {{n build.round_stone.cost.stone}} stone an edge it lays, never charged (Free building only); built at once.
+- Plank floor: {{n build.floor_wood.cost.plank}} plank a tile; Stone floor: {{n build.floor_stone.cost.stone}} stone a tile; built at once; never charged (Free building only).
+- Wood stair: {{n build.stair_wood.cost.plank}} planks, built at once; Stone stair: {{n build.stair_stone.cost.stone}} stone and {{n build.stair_stone.cost.plank}} plank, built at once; never charged (Free building only).
+- Cliff wall and Grassy cliff wall: {{n build.wall_cliff.cost.stone}} stone each, built at once; Cliff top and Grassy cliff top: {{n build.floor_cliff_top.cost.stone}} stone a tile, built at once; the Stone ramp costs nothing and takes no time or tool; none of these is charged (Free building only).
+- Stone wall: {{n build.wall_stone.cost.stone}} stone, built at once; never charged (Free building only).
 - Stone gate (2 wide) and Stone gate (3 wide): no cost, time, or tool; placed at once (Free building only); see [[Castle gates]].
 - Battlement: no cost, time, or tool; placed at once (Free building only); see [[Battlements]].
 - Terrain painting: a drag of at most {{n census.constants.placement.TERRAIN_DRAG}} tiles a side, reaching {{n build.terrain_grass.reach tiles}}, instant and free (Free building only); see [[Terrain]].

@@ -1,7 +1,7 @@
 {
-  "commit": "f47cd9821f55082bb7a435ee9c6555fbb14c954a",
-  "short": "f47cd98",
-  "date": "2026-10-30T18:57:11-05:00",
-  "subject": "Merge #611: Mountains in tiers; no player-built way up a hill",
+  "commit": "6ddc2f02897719dcf3a23f9b52102951c828fe12",
+  "short": "6ddc2f0",
+  "date": "2026-10-30T21:49:59-05:00",
+  "subject": "Merge #612: Build times 0; everything in the build menu built at once",
   "ref": "origin/main"
 }

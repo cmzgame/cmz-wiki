@@ -32,7 +32,7 @@ Four stand in the valley, each empty until a player fills it:
 - in [[Hollow Farm's pigsty]], for the pigs;
 - in [[The croft's sheepfold]], for the sheep.
 
-More can be built from the [[Building|build palette]]: **Feeding trough**, from {{n build.feed_trough.cost.plank}} [[Plank|planks]] in {{n build.feed_trough.seconds seconds}}, with a [[Smith's hammer]] on you. It is placed on the ground like any piece of the palette.
+More can be built from the [[Building|build palette]]: **Feeding trough**, from {{n build.feed_trough.cost.plank}} [[Plank|planks]], built at once, with a [[Smith's hammer]] on you. It is placed on the ground like any piece of the palette.
 
 {{prop-sections feed_trough}}
 

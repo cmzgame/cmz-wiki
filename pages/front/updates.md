@@ -9,6 +9,10 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `6ddc2f0`
+
+- **Changed in the game:** **build times 0** (game #612, Michael's ruling of 2026-10-30, for building the map by hand): everything in the build menu is built at once, with no bar, a guest's builds too. [[Building]], [[Woods]], [[Fences]], [[Round rooms]], [[Upper floors]], [[Cliffs]], and [[Feeding trough]] updated.
+
 ## 2026-10-30: synced to `f47cd98`
 
 - **Changed in the game:** **mountains in tiers** (game #611, Michael's ruling of 2026-10-30): hills climb in tiers to the sixth storey, a hill on dirt, grass, or another hill alone; and no player-built floor, stair, or ladder reaches a hill's top ("Not up onto a hill"), so the map's ramps are the only ways up. [[Cliffs]].
@@ -44,7 +48,7 @@ Each time the wiki is synced with the game, an entry goes here, newest first, wi
 ## 2026-10-30: synced to `8d361e5`
 
 - **New in the game:** **castle battlements** (game #574, Michael's art round 13 and his ruling of 2026-10-29, and #576): a **Battlement** row under Castle on the build menu's Build tab, with Free building only, placed at once and free, a click per edge, on a tile edge of a floor upstairs with the walkway's floor on one side and none on the other ("It needs a wall walk to stand on", "Only along the outer edge of a wall walk"); a stair's hole counts as the walkway's (game #576). A short stone parapet with merlons, {{n sprites.wall_battlement.wall.height}} pixels, standing wholly outside the walkway's edge: sight and light pass it, a shot above its height clears it, bodies and the dead do not cross it, the dead cannot strike it down, and it takes no door, window, painting, or torch. Which side it faces, its corners, its ends, and its arrow loops are read from the floors and the neighbouring edges at draw time, never saved; a near one goes translucent where you stand behind it. No protocol change. New page [[Battlements]]; [[Building]], [[Walls]], [[World rules]], [[Castle gates]], [[Upper floors]], [[Sight]], [[Rooms]], [[Breaking in]], [[Openings]], [[Archery]], [[Levers]], and the [[Playtest checklist]] updated.
-- **Changed in the game:** the straight **Stone wall** is in the build menu with Free building (game #573): the village's own stone wall, {{n build.wall_stone.seconds seconds}} a segment, its {{n build.wall_stone.cost.stone}} stone never charged, the wall a castle gate is stamped over. [[Building]], [[Walls]], [[Castle gates]], [[World rules]], and the checklist updated.
+- **Changed in the game:** the straight **Stone wall** is in the build menu with Free building (game #573): the village's own stone wall, 6 seconds a segment, its {{n build.wall_stone.cost.stone}} stone never charged, the wall a castle gate is stamped over. [[Building]], [[Walls]], [[Castle gates]], [[World rules]], and the checklist updated.
 - **Changed in the game:** **Free building has no reach limit** (game #575, Michael: "If I can see it, I can stamp it"): with it on, every build, drag, gate, battlement, round room, palette prop, and the Take apart tool reach {{n census.constants.placement.FREE_REACH tiles}} in place of {{n census.constants.placement.BUILD_REACH tiles}}, the lines of sight kept; off, nothing changes. [[Building]], [[World rules]], [[Placement]], [[Terrain]], [[Castle gates]], [[Round rooms]], [[Levers]], and the checklist updated.
 - **Changed in the game:** a round room upstairs says why it is refused, "A round room upstairs needs a floor under all of it" or "A stairwell is under it: keep the ring off the stair's hole" (game #576), and a storey's floor round a ring keeps its outer corners, only the tiles the curve cuts clipped (game #577). [[Round rooms]] and the checklist updated.
 - **Changed in the game:** a click and drag only ever works the game: the browser never drags the game's picture or selects the page outside a text field (game #573). [[Controls]] and the checklist updated.
@@ -329,7 +333,7 @@ The first four steps of the game's dead ends work (its `docs/43`) to be built: t
 
 ## 2026-10-20: synced to `9d1681f`
 
-- **New in the game:** the woods (game #348, #351). Six wooden walls, each its own: oak, spruce, mahogany, and daub, which the valley's houses are now built in, mixed, and Winter Pine and Bloodbark, the woods of regions beyond the valley. The build palette has a wall of each valley wood ({{n build.wall_oak.cost.plank}} plank, {{n build.wall_oak.seconds seconds}}) and the regions' two while Free building is on. A door or a window may be of another wood than its wall: **R** cycles its wood while building, and a door rebuilt over a broken one starts in the broken one's wood. The plank's card now says it builds a wood wall, a door, a window, a fence, and a gate. [[Woods]] is new; [[Walls]], [[Building]], [[Openings]], and [[Valley day]] say so.
+- **New in the game:** the woods (game #348, #351). Six wooden walls, each its own: oak, spruce, mahogany, and daub, which the valley's houses are now built in, mixed, and Winter Pine and Bloodbark, the woods of regions beyond the valley. The build palette has a wall of each valley wood ({{n build.wall_oak.cost.plank}} plank, 3 seconds) and the regions' two while Free building is on. A door or a window may be of another wood than its wall: **R** cycles its wood while building, and a door rebuilt over a broken one starts in the broken one's wood. The plank's card now says it builds a wood wall, a door, a window, a fence, and a gate. [[Woods]] is new; [[Walls]], [[Building]], [[Openings]], and [[Valley day]] say so.
 
 ## 2026-10-20: synced to `9ac68a2`
 
@@ -337,7 +341,7 @@ The first four steps of the game's dead ends work (its `docs/43`) to be built: t
 
 ## 2026-10-20: synced to `b0df8fc`
 
-- **New in the game:** fences and gates are drawn and buildable (game #343). The fence is a rickety run of split rails with a post at its ends and corners; a gate swings open and shut through two drawn in-between positions, where a house door still snaps. The build palette has a **Fence** ({{n build.fence.cost.plank}} plank a stretch, {{n build.fence.seconds seconds}}) and a **Gate** ({{n build.gate.cost.plank}} planks, {{n build.gate.seconds seconds}}), with a smith's hammer on you; a gate goes on an empty edge or into a fence, never into another wall ("Only in a fence"). A guest builds them too, and every screen plays the swing. [[Fences]], [[Building]], [[Openings]], [[Walls]], and [[Valley day]] say so.
+- **New in the game:** fences and gates are drawn and buildable (game #343). The fence is a rickety run of split rails with a post at its ends and corners; a gate swings open and shut through two drawn in-between positions, where a house door still snaps. The build palette has a **Fence** ({{n build.fence.cost.plank}} plank a stretch, 2 seconds) and a **Gate** ({{n build.gate.cost.plank}} planks, 3 seconds), with a smith's hammer on you; a gate goes on an empty edge or into a fence, never into another wall ("Only in a fence"). A guest builds them too, and every screen plays the swing. [[Fences]], [[Building]], [[Openings]], [[Walls]], and [[Valley day]] say so.
 
 ## 2026-10-20: synced to `499e344`
 
