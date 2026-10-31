@@ -9,6 +9,11 @@ numbersOk: true
 
 Each time the wiki is synced with the game, an entry goes here, newest first, with the pages it touched. The game itself is in development; its own decision log is `docs/02-decisions.md` in the game's repository.
 
+## 2026-10-30: synced to `4303e44`
+
+- **Changed in the game:** **round walls by size** (game #613, Michael's ruling of 2026-10-30): the Round stone wall is two rows, 5 across and 7 across, each placed by a click centred on the cursor, the drag gone. [[Round rooms]] and [[Building]] updated.
+- **New in the game:** **the build menu's search** (game #614, Michael's ruling of 2026-10-30): a box under the tabs filters the rows, kept through closing the palette and a reload until it is changed or the browser tab is closed. [[Building]] updated.
+
 ## 2026-10-30: synced to `6ddc2f0`
 
 - **Changed in the game:** **build times 0** (game #612, Michael's ruling of 2026-10-30, for building the map by hand): everything in the build menu is built at once, with no bar, a guest's builds too. [[Building]], [[Woods]], [[Fences]], [[Round rooms]], [[Upper floors]], [[Cliffs]], and [[Feeding trough]] updated.

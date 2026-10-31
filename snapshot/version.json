@@ -1,7 +1,7 @@
 {
-  "commit": "6ddc2f02897719dcf3a23f9b52102951c828fe12",
-  "short": "6ddc2f0",
-  "date": "2026-10-30T21:49:59-05:00",
-  "subject": "Merge #612: Build times 0; everything in the build menu built at once",
+  "commit": "4303e441ff88923987c448358534c4c3b386b98b",
+  "short": "4303e44",
+  "date": "2026-10-30T22:08:44-05:00",
+  "subject": "Merge #614: The build menu's search, kept until changed or the tab closes",
   "ref": "origin/main"
 }

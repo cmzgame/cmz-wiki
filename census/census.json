@@ -1,9 +1,9 @@
 {
  "version": {
-  "commit": "6ddc2f02897719dcf3a23f9b52102951c828fe12",
-  "short": "6ddc2f0",
-  "date": "2026-10-30T21:49:59-05:00",
-  "subject": "Merge #612: Build times 0; everything in the build menu built at once",
+  "commit": "4303e441ff88923987c448358534c4c3b386b98b",
+  "short": "4303e44",
+  "date": "2026-10-30T22:08:44-05:00",
+  "subject": "Merge #614: The build menu's search, kept until changed or the tab closes",
   "ref": "origin/main"
  },
  "counts": {
@@ -24,7 +24,7 @@
   "liveRules": 5,
   "keys": 21,
   "verbs": 31,
-  "menuLabels": 106,
+  "menuLabels": 108,
   "events": 38,
   "checks": 97,
   "modules": 155
@@ -10591,8 +10591,9 @@
    "group": "Walls and openings"
   },
   "round_stone": {
-   "label": "Round stone wall",
+   "label": "Round stone wall (5 across)",
    "kind": "round",
+   "size": 5,
    "sprite": "wall_stone",
    "cost": {
     "stone": 2
@@ -10601,7 +10602,21 @@
    "tool": "build",
    "dev": true,
    "group": "Walls and openings",
-   "note": "docs/50: a round room, 5 or 7 across, by a drag from one corner of its square; stone only, shown and buildable only while Free building is on (Michael, 2026-10-27: \"A few on the map, buildable by dev settings, otherwise not in the game yet until we settle on cost, etc.\"); its cost is per edge of the outline (40 stone at 5, 56 at 7), a placeholder and Primary's default, never charged since Free building waives it; the seconds the builder's default (two fifths more at 7)"
+   "note": "docs/50: a round room 5 across, placed by a click centred on the cursor (Michael, 2026-10-30: the sizes two separate options, since a drag out to 7 built on the release before it could be placed); stone only, shown and buildable only while Free building is on (Michael, 2026-10-27: \"A few on the map, buildable by dev settings, otherwise not in the game yet until we settle on cost, etc.\"); its cost is per edge of the outline (40 stone at 5), a placeholder and Primary's default, never charged since Free building waives it; built at once (Build times 0)"
+  },
+  "round_stone_7": {
+   "label": "Round stone wall (7 across)",
+   "kind": "round",
+   "size": 7,
+   "sprite": "wall_stone",
+   "cost": {
+    "stone": 2
+   },
+   "seconds": 0,
+   "tool": "build",
+   "dev": true,
+   "group": "Walls and openings",
+   "note": "docs/50: a round room 7 across, its own option beside the 5 (Michael, 2026-10-30), placed by a click centred on the cursor; as `round_stone` in all else: stone only, Free building only, its cost per edge of the outline (56 stone at 7), a placeholder never charged; built at once"
   },
   "fireplace": {
    "label": "Fireplace",
@@ -11231,9 +11246,9 @@
   {
    "key": "KeyR",
    "at": [
-    "placement.js:1103",
-    "placement.js:1114",
-    "placement.js:1118"
+    "placement.js:1105",
+    "placement.js:1116",
+    "placement.js:1120"
    ]
   },
   {
@@ -11554,31 +11569,31 @@
   {
    "key": "Click to hang the painting · Esc cancel",
    "at": [
-    "placement.js:2079"
+    "placement.js:2076"
    ]
   },
   {
    "key": "Click to lay the rug · R turn · Esc cancel",
    "at": [
-    "placement.js:2072"
+    "placement.js:2069"
    ]
   },
   {
    "key": "Click to place · Esc cancel",
    "at": [
-    "placement.js:2108"
+    "placement.js:2105"
    ]
   },
   {
    "key": "Click to place the gate at once · Esc cancel",
    "at": [
-    "placement.js:2114"
+    "placement.js:2111"
    ]
   },
   {
    "key": "Click to put the torch on the wall · Esc cancel",
    "at": [
-    "placement.js:1583"
+    "placement.js:1584"
    ]
   },
   {
@@ -12025,39 +12040,50 @@
    ]
   },
   {
+   "key": "Building ${d.label.replace(/ \\(.*\\)$/, \"\").toLowerCase()}",
+   "at": [
+    "placement.js:216"
+   ]
+  },
+  {
    "key": "Building ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:214",
-    "placement.js:534",
-    "placement.js:585",
-    "placement.js:652",
-    "placement.js:2000",
-    "placement.js:2037"
+    "placement.js:536",
+    "placement.js:587",
+    "placement.js:654",
+    "placement.js:1997",
+    "placement.js:2034"
    ]
   },
   {
    "key": "Click to build (${costText(g.wallKind)})${wood} · Esc cancel",
    "at": [
-    "placement.js:2124"
+    "placement.js:2121"
    ]
   },
   {
    "key": "Click to build (${costText(g.what)}) · Esc cancel",
    "at": [
-    "placement.js:2104",
-    "placement.js:2109"
+    "placement.js:2101",
+    "placement.js:2106"
    ]
   },
   {
    "key": "Click to build (${costText(what)}) · Esc cancel",
    "at": [
-    "placement.js:1604"
+    "placement.js:1605"
+   ]
+  },
+  {
+   "key": "Click to build ${g.n} across (${costText(g.wallKind)}) · Esc cancel",
+   "at": [
+    "placement.js:2116"
    ]
   },
   {
    "key": "Click to take apart ${targetName(t)}${back.length ? ",
    "at": [
-    "placement.js:2093"
+    "placement.js:2090"
    ]
   },
   {
@@ -12087,7 +12113,7 @@
   {
    "key": "Laying ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:402"
+    "placement.js:404"
    ]
   },
   {
@@ -12119,7 +12145,7 @@
   {
    "key": "Painting ${d.label.toLowerCase()}",
    "at": [
-    "placement.js:457"
+    "placement.js:459"
    ]
   },
   {
@@ -12224,7 +12250,7 @@
   {
    "key": "containerGone",
    "at": [
-    "placement.js:1506"
+    "placement.js:1507"
    ]
   },
   {
@@ -12619,7 +12645,7 @@
   },
   {
    "path": "placement.js",
-   "lines": 2126
+   "lines": 2123
   },
   {
    "path": "net.js",
@@ -12846,6 +12872,10 @@
    "lines": 204
   },
   {
+   "path": "ui/build-palette.js",
+   "lines": 202
+  },
+  {
    "path": "potions.js",
    "lines": 191
   },
@@ -12904,10 +12934,6 @@
   {
    "path": "repair.js",
    "lines": 157
-  },
-  {
-   "path": "ui/build-palette.js",
-   "lines": 153
   },
   {
    "path": "ui/talk-panel.js",

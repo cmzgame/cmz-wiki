@@ -38,7 +38,7 @@ A round room with its door shut is as safe as any room: nothing breaks the ring,
 
 {{devonly note="Round walls are not in the game yet: the Round stone wall is listed in the build palette only while Free building is on, until their cost is settled."}}
 
-With **Free building** on, the build palette (N) has a **Round stone wall** row. Press on a tile to start the room's square at that corner and drag outward: the ghost is a circle in its square, 5 across, growing to 7 once the drag covers seven tiles either way. Release to build: the room goes up at once, as everything in the build menu does (Michael's ruling of 2026-10-30, Build times 0). Without Free building the round stone wall is refused: "Round walls are not in the game yet".
+With **Free building** on, the build palette (N) has two rows, **Round stone wall (5 across)** and **Round stone wall (7 across)** (Michael's ruling of 2026-10-30: "Size 5 and 7 round stone walls needs to be two separate options"). Pick one and the ghost is the ring, centred on the tile under the cursor; click to build it there: the room goes up at once, as everything in the build menu does (Michael's ruling of 2026-10-30, Build times 0). Without Free building the round stone wall is refused: "Round walls are not in the game yet".
 
 The ghost is red, with the reason, unless:
 
@@ -65,13 +65,13 @@ The Take apart tool (X) takes a round room you built **whole**, never one edge a
 ## Numbers
 
 - Sizes: 5 or 7 tiles across.
-- The round stone wall's cost: {{n build.round_stone.cost.stone}} [[Stone|stone]] an edge it lays, never charged while it is buildable only with Free building.
+- The round stone wall's cost: {{n build.round_stone.cost.stone}} [[Stone|stone]] an edge it lays (the same for either size), never charged while it is buildable only with Free building.
 - Its time: none; it is built at once.
 - The curve for bodies: a straight piece every {{n census.constants.round.CHORD_DEG}} degrees; the drawn ring: {{n census.constants.render_rings.SEGMENTS}} segments.
 
 ## With friends
 
-A guest builds a round room through the same path as the host: their drag sends a build command naming the square's corner and its size, which the host checks and builds on the guest's own character; Take apart works the same way, a command naming the ring. The ring travels as its walls in the map's chunks, so a guest's game rebuilds the room and its curve from them, and each player draws it for themselves. A guest's straight wall toward a ring goes through the same build command and is refused by the host with the same words; the filler at a join is each player's own drawing from the walls they already have, so nothing new travels for it.
+A guest builds a round room through the same path as the host: their click sends a build command naming the square's corner and its row's size (another size is refused), which the host checks and builds on the guest's own character; Take apart works the same way, a command naming the ring. The ring travels as its walls in the map's chunks, so a guest's game rebuilds the room and its curve from them, and each player draws it for themselves. A guest's straight wall toward a ring goes through the same build command and is refused by the host with the same words; the filler at a join is each player's own drawing from the walls they already have, so nothing new travels for it.
 
 ## Settings that change it
 
